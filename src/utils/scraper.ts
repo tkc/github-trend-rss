@@ -12,7 +12,7 @@ export async function fetchGitHubTrending(
 ): Promise<TrendingRepo[]> {
   let url = baseUrl;
 
-  if (language) {
+  if (language && language !== 'all') {
     url += `/${encodeURIComponent(language)}`;
   }
 

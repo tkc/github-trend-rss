@@ -188,7 +188,7 @@ export function loadConfig(configPath: string): ConfigFile {
           `Source at index ${index} is missing required field 'name'`
         );
       }
-      if (!source.language) {
+      if (source.language === undefined || source.language === null) {
         throw new Error(
           `Source '${source.name}' is missing required field 'language'`
         );
