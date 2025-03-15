@@ -19,7 +19,6 @@ This project automatically fetches the trending repositories from GitHub and con
 
 You can subscribe to these RSS feeds in your favorite RSS reader:
 
-- 🌎 **All Languages**: [https://raw.githubusercontent.com/tkc/github-trend-rss/main/rss/github-trending.xml](https://raw.githubusercontent.com/tkc/github-trend-rss/main/rss/github-trending.xml)
 - 🐍 **Python**: [https://raw.githubusercontent.com/tkc/github-trend-rss/main/rss/python-daily.xml](https://raw.githubusercontent.com/tkc/github-trend-rss/main/rss/python-daily.xml)
 - 🟨 **JavaScript**: [https://raw.githubusercontent.com/tkc/github-trend-rss/main/rss/javascript-daily.xml](https://raw.githubusercontent.com/tkc/github-trend-rss/main/rss/javascript-daily.xml)
 - 🔷 **TypeScript**: [https://raw.githubusercontent.com/tkc/github-trend-rss/main/rss/typescript-daily.xml](https://raw.githubusercontent.com/tkc/github-trend-rss/main/rss/typescript-daily.xml)
