@@ -1,0 +1,41 @@
+{
+  "name": "github-trend-rss",
+  "version": "1.1.0",
+  "description": "GitHub Trending repositories as RSS feed",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "bun src/index.ts",
+    "build": "bun build src/index.ts --outdir ./dist",
+    "daily": "bun src/index.ts --time-range daily",
+    "weekly": "bun src/index.ts --time-range weekly",
+    "monthly": "bun src/index.ts --time-range monthly",
+    "serve": "bun server.js",
+    "generate-all": "bun src/index.ts --config config.json",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix",
+    "format": "prettier --write \"**/*.{js,json,md}\"",
+    "check": "bun run lint"
+  },
+  "keywords": [
+    "github",
+    "trending",
+    "rss",
+    "feed",
+    "bun"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.0.0",
+    "feed": "^4.2.2",
+    "linkedom": "^0.16.8",
+    "p-limit": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^20.11.19",
+    "bun-types": "latest",
+    "eslint": "8.56.0"
+  }
+}
