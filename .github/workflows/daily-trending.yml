@@ -9,9 +9,13 @@ on:
 jobs:
   update-trending:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # コンテンツを書き込む権限を明示的に指定
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 完全なヒストリーを取得
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
@@ -30,14 +34,13 @@ jobs:
       - name: Check for changes
         id: git-check
         run: |
-          git status --porcelain
-          echo "changes=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
+          git diff --exit-code --quiet || echo "changes=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push if there are changes
-        if: steps.git-check.outputs.changes != '0'
+        if: steps.git-check.outputs.changes == 'true'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add github-trending.xml rss/*.xml
+          git add -A
           git commit -m "Update GitHub trending RSS feed ($(date +'%Y-%m-%d'))"
           git push
