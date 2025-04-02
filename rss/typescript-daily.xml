@@ -4,167 +4,24 @@
         <title>GitHub Trending Today for typescript - TypeScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for typescript.</description>
-        <lastBuildDate>Tue, 01 Apr 2025 00:05:18 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 02 Apr 2025 00:04:58 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2025, GitHub</copyright>
         <item>
-            <title><![CDATA[ahmedkhaleel2004/gitdiagram]]></title>
-            <link>https://github.com/ahmedkhaleel2004/gitdiagram</link>
-            <guid>https://github.com/ahmedkhaleel2004/gitdiagram</guid>
-            <pubDate>Tue, 01 Apr 2025 00:05:18 GMT</pubDate>
-            <description><![CDATA[Free, simple, fast interactive diagrams for any GitHub repository]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/ahmedkhaleel2004/gitdiagram">ahmedkhaleel2004/gitdiagram</a></h1>
-            <p>Free, simple, fast interactive diagrams for any GitHub repository</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 5,500</p>
-            <p>Forks: 380</p>
-            <p>Stars today: 920 stars today</p>
-            <h2>README</h2><pre>[![Image](./docs/readme_img.png &quot;GitDiagram Front Page&quot;)](https://gitdiagram.com/)
-
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-[![Kofi](https://img.shields.io/badge/Kofi-F16061.svg?logo=ko-fi&amp;logoColor=white)](https://ko-fi.com/ahmedkhaleel2004)
-
-# GitDiagram
-
-Turn any GitHub repository into an interactive diagram for visualization in seconds.
-
-You can also replace `hub` with `diagram` in any Github URL to access its diagram.
-
-## 🚀 Features
-
-- 👀 **Instant Visualization**: Convert any GitHub repository structure into a system design / architecture diagram
-- 🎨 **Interactivity**: Click on components to navigate directly to source files and relevant directories
-- ⚡ **Fast Generation**: Powered by Claude 3.5 Sonnet for quick and accurate diagrams
-- 🔄 **Customization**: Modify and regenerate diagrams with custom instructions
-- 🌐 **API Access**: Public API available for integration (WIP)
-
-## ⚙️ Tech Stack
-
-- **Frontend**: Next.js, TypeScript, Tailwind CSS, ShadCN
-- **Backend**: FastAPI, Python, Server Actions
-- **Database**: PostgreSQL (with Drizzle ORM)
-- **AI**: OpenAI o3-mini
-- **Deployment**: Vercel (Frontend), EC2 (Backend)
-- **CI/CD**: GitHub Actions
-- **Analytics**: PostHog, Api-Analytics
-
-## 🤔 About
-
-I created this because I wanted to contribute to open-source projects but quickly realized their codebases are too massive for me to dig through manually, so this helps me get started - but it&#039;s definitely got many more use cases!
-
-Given any public (or private!) GitHub repository it generates diagrams in Mermaid.js with OpenAI&#039;s o3-mini! (Previously Claude 3.5 Sonnet)
-
-I extract information from the file tree and README for details and interactivity (you can click components to be taken to relevant files and directories)
-
-Most of what you might call the &quot;processing&quot; of this app is done with prompt engineering - see `/backend/app/prompts.py`. This basically extracts and pipelines data and analysis for a larger action workflow, ending in the diagram code.
-
-## 🔒 How to diagram private repositories
-
-You can simply click on &quot;Private Repos&quot; in the header and follow the instructions by providing a GitHub personal access token with the `repo` scope.
-
-You can also self-host this app locally (backend separated as well!) with the steps below.
-
-## 🛠️ Self-hosting / Local Development
-
-1. Clone the repository
-
-```bash
-git clone https://github.com/ahmedkhaleel2004/gitdiagram.git
-cd gitdiagram
-```
-
-2. Install dependencies
-
-```bash
-pnpm i
-```
-
-3. Set up environment variables (create .env)
-
-```bash
-cp .env.example .env
-```
-
-Then edit the `.env` file with your Anthropic API key and optional GitHub personal access token.
-
-4. Run backend
-
-```bash
-docker-compose up --build -d
-```
-
-Logs available at `docker-compose logs -f`
-The FastAPI server will be available at `localhost:8000`
-
-5. Start local database
-
-```bash
-chmod +x start-database.sh
-./start-database.sh
-```
-
-When prompted to generate a random password, input yes.
-The Postgres database will start in a container at `localhost:5432`
-
-6. Initialize the database schema
-
-```bash
-pnpm db:push
-```
-
-You can view and interact with the database using `pnpm db:studio`
-
-7. Run Frontend
-
-```bash
-pnpm dev
-```
-
-You can now access the website at `localhost:3000` and edit the rate limits defined in `backend/app/routers/generate.py` in the generate function decorator.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## Acknowledgements
-
-Shoutout to [Romain Courtois](https://github.com/cyclotruc)&#039;s [Gitingest](https://gitingest.com/) for inspiration and styling
-
-## 📈 Rate Limits
-
-I am currently hosting it for free with no rate limits though this is somewhat likely to change in the future.
-
-&lt;!-- If you would like to bypass these, self-hosting instructions are provided. I also plan on adding an input for your own Anthropic API key.
-
-Diagram generation:
-
-- 1 request per minute
-- 5 requests per day --&gt;
-
-## 🤔 Future Steps
-
-- Implement font-awesome icons in diagram
-- Implement an embedded feature like star-history.com but for diagrams. The diagram could also be updated progressively as commits are made.
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
             <title><![CDATA[th-ch/youtube-music]]></title>
             <link>https://github.com/th-ch/youtube-music</link>
             <guid>https://github.com/th-ch/youtube-music</guid>
-            <pubDate>Tue, 01 Apr 2025 00:05:17 GMT</pubDate>
+            <pubDate>Wed, 02 Apr 2025 00:04:58 GMT</pubDate>
             <description><![CDATA[YouTube Music Desktop App bundled with custom plugins (and built-in ad blocker / downloader)]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/th-ch/youtube-music">th-ch/youtube-music</a></h1>
             <p>YouTube Music Desktop App bundled with custom plugins (and built-in ad blocker / downloader)</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 14,259</p>
-            <p>Forks: 740</p>
-            <p>Stars today: 1,950 stars today</p>
+            <p>Stars: 15,778</p>
+            <p>Forks: 816</p>
+            <p>Stars today: 1,534 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
 
 # YouTube Music
@@ -575,100 +432,961 @@ the in-app-menu plugin)
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[dubinc/dub]]></title>
-            <link>https://github.com/dubinc/dub</link>
-            <guid>https://github.com/dubinc/dub</guid>
-            <pubDate>Tue, 01 Apr 2025 00:05:16 GMT</pubDate>
-            <description><![CDATA[Open-source link attribution platform. Loved by modern marketing teams like Twilio, Perplexity, Vercel, and Huberman Labs.]]></description>
+            <title><![CDATA[ahmedkhaleel2004/gitdiagram]]></title>
+            <link>https://github.com/ahmedkhaleel2004/gitdiagram</link>
+            <guid>https://github.com/ahmedkhaleel2004/gitdiagram</guid>
+            <pubDate>Wed, 02 Apr 2025 00:04:57 GMT</pubDate>
+            <description><![CDATA[Free, simple, fast interactive diagrams for any GitHub repository]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/dubinc/dub">dubinc/dub</a></h1>
-            <p>Open-source link attribution platform. Loved by modern marketing teams like Twilio, Perplexity, Vercel, and Huberman Labs.</p>
+            <h1><a href="https://github.com/ahmedkhaleel2004/gitdiagram">ahmedkhaleel2004/gitdiagram</a></h1>
+            <p>Free, simple, fast interactive diagrams for any GitHub repository</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 20,634</p>
-            <p>Forks: 2,288</p>
-            <p>Stars today: 95 stars today</p>
-            <h2>README</h2><pre>&lt;a href=&quot;https://dub.co&quot;&gt;
-  &lt;img alt=&quot;Dub.co is the open-source link management infrastructure for modern marketing teams.&quot; src=&quot;https://github.com/dubinc/dub/assets/28986134/3815d859-afaa-48f9-a9b3-c09964e4d404&quot;&gt;
-&lt;/a&gt;
+            <p>Stars: 6,337</p>
+            <p>Forks: 441</p>
+            <p>Stars today: 818 stars today</p>
+            <h2>README</h2><pre>[![Image](./docs/readme_img.png &quot;GitDiagram Front Page&quot;)](https://gitdiagram.com/)
 
-&lt;h3 align=&quot;center&quot;&gt;Dub.co&lt;/h3&gt;
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+[![Kofi](https://img.shields.io/badge/Kofi-F16061.svg?logo=ko-fi&amp;logoColor=white)](https://ko-fi.com/ahmedkhaleel2004)
 
-&lt;p align=&quot;center&quot;&gt;
-    The open-source link attribution platform.
-    &lt;br /&gt;
-    &lt;a href=&quot;https://dub.co&quot;&gt;&lt;strong&gt;Learn more »&lt;/strong&gt;&lt;/a&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;
-    &lt;a href=&quot;#introduction&quot;&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/a&gt; ·
-    &lt;a href=&quot;#features&quot;&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/a&gt; ·
-    &lt;a href=&quot;#tech-stack&quot;&gt;&lt;strong&gt;Tech Stack&lt;/strong&gt;&lt;/a&gt; ·
-    &lt;a href=&quot;#self-hosting&quot;&gt;&lt;strong&gt;Self-hosting&lt;/strong&gt;&lt;/a&gt; ·
-    &lt;a href=&quot;#contributing&quot;&gt;&lt;strong&gt;Contributing&lt;/strong&gt;&lt;/a&gt;
-&lt;/p&gt;
+# GitDiagram
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://twitter.com/dubdotco&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/twitter/follow/dubdotco?style=flat&amp;label=%40dubdotco&amp;logo=twitter&amp;color=0bf&amp;logoColor=fff&quot; alt=&quot;Twitter&quot; /&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://news.ycombinator.com/item?id=32939407&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Hacker%20News-255-%23FF6600&quot; alt=&quot;Hacker News&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/dubinc/dub/blob/main/LICENSE.md&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/github/license/dubinc/dub?label=license&amp;logo=github&amp;color=f80&amp;logoColor=fff&quot; alt=&quot;License&quot; /&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
+Turn any GitHub repository into an interactive diagram for visualization in seconds.
 
-&lt;br/&gt;
+You can also replace `hub` with `diagram` in any Github URL to access its diagram.
 
-## Introduction
+## 🚀 Features
 
-Dub.co is the open-source link attribution platform for modern marketing teams.
+- 👀 **Instant Visualization**: Convert any GitHub repository structure into a system design / architecture diagram
+- 🎨 **Interactivity**: Click on components to navigate directly to source files and relevant directories
+- ⚡ **Fast Generation**: Powered by Claude 3.5 Sonnet for quick and accurate diagrams
+- 🔄 **Customization**: Modify and regenerate diagrams with custom instructions
+- 🌐 **API Access**: Public API available for integration (WIP)
 
-## Features
+## ⚙️ Tech Stack
 
-- **Free custom domains**: Create branded short links [with your own domain](https://dub.co/help/article/how-to-add-custom-domain) and [improve click-through rates by 30%](https://dub.co/blog/custom-domains). Paid plans also include a [complimentary custom domain](https://dub.co/help/article/free-dot-link-domain).
-- **Advanced link features**: Supercharge your links with [custom link previews](https://dub.co/help/article/custom-link-previews), [device targeting](https://dub.co/help/article/device-targeting), [geo targeting](https://dub.co/help/article/geo-targeting), [link cloaking](https://dub.co/help/article/link-cloaking), [password protection](https://dub.co/help/article/password-protected-links), and more.
-- **Advanced Analytics**: Dub provides [powerful analytics](https://dub.co/analytics) for your links, including geolocation, device, browser, and referrer information.
-- **QR Codes**: QR codes and short links are like peas in a pod. Dub offers [free QR codes](https://dub.co/tools/qr-code) for every short link you create. Feeling artsy? [Customize them with your own logo](https://dub.co/help/article/custom-qr-codes).
-- **Team collaboration**: [Invite your teammates](https://dub.co/help/article/how-to-invite-teammates) to collaborate on your links. For [enterprises](https://dub.co/enterprise), Dub offers [SAML SSO](https://dub.co/help/category/saml-sso) with Okta, Google, and Azure AD for higher security.
+- **Frontend**: Next.js, TypeScript, Tailwind CSS, ShadCN
+- **Backend**: FastAPI, Python, Server Actions
+- **Database**: PostgreSQL (with Drizzle ORM)
+- **AI**: OpenAI o3-mini
+- **Deployment**: Vercel (Frontend), EC2 (Backend)
+- **CI/CD**: GitHub Actions
+- **Analytics**: PostHog, Api-Analytics
 
-## Tech Stack
+## 🤔 About
 
-- [Next.js](https://nextjs.org/) – framework
-- [TypeScript](https://www.typescriptlang.org/) – language
-- [Tailwind](https://tailwindcss.com/) – CSS
-- [Upstash](https://upstash.com/) – redis
-- [Tinybird](https://tinybird.com/) – analytics
-- [PlanetScale](https://planetscale.com/) – database
-- [NextAuth.js](https://next-auth.js.org/) – auth
-- [BoxyHQ](https://boxyhq.com/enterprise-sso) – SSO/SAML
-- [Turborepo](https://turbo.build/repo) – monorepo
-- [Stripe](https://stripe.com/) – payments
-- [Resend](https://resend.com/) – emails
-- [Vercel](https://vercel.com/) – deployments
-- [Pangea](https://pangea.cloud/services/domain-intel/reputation) - link scanning
+I created this because I wanted to contribute to open-source projects but quickly realized their codebases are too massive for me to dig through manually, so this helps me get started - but it&#039;s definitely got many more use cases!
 
-## Self-Hosting
+Given any public (or private!) GitHub repository it generates diagrams in Mermaid.js with OpenAI&#039;s o3-mini! (Previously Claude 3.5 Sonnet)
 
-You can self-host Dub.co for greater control over your data and design. [Read this guide](https://dub.co/docs/self-hosting/guide) to learn more.
+I extract information from the file tree and README for details and interactivity (you can click components to be taken to relevant files and directories)
+
+Most of what you might call the &quot;processing&quot; of this app is done with prompt engineering - see `/backend/app/prompts.py`. This basically extracts and pipelines data and analysis for a larger action workflow, ending in the diagram code.
+
+## 🔒 How to diagram private repositories
+
+You can simply click on &quot;Private Repos&quot; in the header and follow the instructions by providing a GitHub personal access token with the `repo` scope.
+
+You can also self-host this app locally (backend separated as well!) with the steps below.
+
+## 🛠️ Self-hosting / Local Development
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/ahmedkhaleel2004/gitdiagram.git
+cd gitdiagram
+```
+
+2. Install dependencies
+
+```bash
+pnpm i
+```
+
+3. Set up environment variables (create .env)
+
+```bash
+cp .env.example .env
+```
+
+Then edit the `.env` file with your Anthropic API key and optional GitHub personal access token.
+
+4. Run backend
+
+```bash
+docker-compose up --build -d
+```
+
+Logs available at `docker-compose logs -f`
+The FastAPI server will be available at `localhost:8000`
+
+5. Start local database
+
+```bash
+chmod +x start-database.sh
+./start-database.sh
+```
+
+When prompted to generate a random password, input yes.
+The Postgres database will start in a container at `localhost:5432`
+
+6. Initialize the database schema
+
+```bash
+pnpm db:push
+```
+
+You can view and interact with the database using `pnpm db:studio`
+
+7. Run Frontend
+
+```bash
+pnpm dev
+```
+
+You can now access the website at `localhost:3000` and edit the rate limits defined in `backend/app/routers/generate.py` in the generate function decorator.
 
 ## Contributing
 
-We love our contributors! Here&#039;s how you can contribute:
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-- [Open an issue](https://github.com/dubinc/dub/issues) if you believe you&#039;ve encountered a bug.
-- Follow the [local development guide](https://dub.co/docs/local-development) to get your local dev environment set up.
-- Make a [pull request](https://github.com/dubinc/dub/pull) to add new features/make quality-of-life improvements/fix bugs.
+## Acknowledgements
 
-&lt;a href=&quot;https://github.com/dubinc/dub/graphs/contributors&quot;&gt;
-  &lt;img src=&quot;https://contrib.rocks/image?repo=dubinc/dub&quot; /&gt;
+Shoutout to [Romain Courtois](https://github.com/cyclotruc)&#039;s [Gitingest](https://gitingest.com/) for inspiration and styling
+
+## 📈 Rate Limits
+
+I am currently hosting it for free with no rate limits though this is somewhat likely to change in the future.
+
+&lt;!-- If you would like to bypass these, self-hosting instructions are provided. I also plan on adding an input for your own Anthropic API key.
+
+Diagram generation:
+
+- 1 request per minute
+- 5 requests per day --&gt;
+
+## 🤔 Future Steps
+
+- Implement font-awesome icons in diagram
+- Implement an embedded feature like star-history.com but for diagrams. The diagram could also be updated progressively as commits are made.
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[louislam/dockge]]></title>
+            <link>https://github.com/louislam/dockge</link>
+            <guid>https://github.com/louislam/dockge</guid>
+            <pubDate>Wed, 02 Apr 2025 00:04:56 GMT</pubDate>
+            <description><![CDATA[A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/louislam/dockge">louislam/dockge</a></h1>
+            <p>A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 16,185</p>
+            <p>Forks: 474</p>
+            <p>Stars today: 171 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot; width=&quot;100%&quot;&gt;
+    &lt;img src=&quot;./frontend/public/icon.svg&quot; width=&quot;128&quot; alt=&quot;&quot; /&gt;
+&lt;/div&gt;
+
+# Dockge
+
+A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager.
+
+[![GitHub Repo stars](https://img.shields.io/github/stars/louislam/dockge?logo=github&amp;style=flat)](https://github.com/louislam/dockge) [![Docker Pulls](https://img.shields.io/docker/pulls/louislam/dockge?logo=docker)](https://hub.docker.com/r/louislam/dockge/tags) [![Docker Image Version (latest semver)](https://img.shields.io/docker/v/louislam/dockge/latest?label=docker%20image%20ver.)](https://hub.docker.com/r/louislam/dockge/tags) [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/louislam/dockge/master?logo=github)](https://github.com/louislam/dockge/commits/master/)
+
+&lt;img src=&quot;https://github.com/louislam/dockge/assets/1336778/26a583e1-ecb1-4a8d-aedf-76157d714ad7&quot; width=&quot;900&quot; alt=&quot;&quot; /&gt;
+
+View Video: https://youtu.be/AWAlOQeNpgU?t=48
+
+## ⭐ Features
+
+- 🧑‍💼 Manage your `compose.yaml` files
+  - Create/Edit/Start/Stop/Restart/Delete
+  - Update Docker Images
+- ⌨️ Interactive Editor for `compose.yaml`
+- 🦦 Interactive Web Terminal
+- 🕷️ (1.4.0 🆕) Multiple agents support - You can manage multiple stacks from different Docker hosts in one single interface
+- 🏪 Convert `docker run ...` commands into `compose.yaml`
+- 📙 File based structure - Dockge won&#039;t kidnap your compose files, they are stored on your drive as usual. You can interact with them using normal `docker compose` commands
+
+&lt;img src=&quot;https://github.com/louislam/dockge/assets/1336778/cc071864-592e-4909-b73a-343a57494002&quot; width=300 /&gt;
+
+- 🚄 Reactive - Everything is just responsive. Progress (Pull/Up/Down) and terminal output are in real-time
+- 🐣 Easy-to-use &amp; fancy UI - If you love Uptime Kuma&#039;s UI/UX, you will love this one too
+
+![](https://github.com/louislam/dockge/assets/1336778/89fc1023-b069-42c0-a01c-918c495f1a6a)
+
+## 🔧 How to Install
+
+Requirements:
+- [Docker](https://docs.docker.com/engine/install/) 20+ / Podman
+- (Podman only) podman-docker (Debian: `apt install podman-docker`)
+- OS:
+  - Major Linux distros that can run Docker/Podman such as:
+     - ✅ Ubuntu
+     - ✅ Debian (Bullseye or newer)
+     - ✅ Raspbian (Bullseye or newer)
+     - ✅ CentOS
+     - ✅ Fedora
+     - ✅ ArchLinux
+  - ❌ Debian/Raspbian Buster or lower is not supported
+  - ❌ Windows (Will be supported later)
+- Arch: armv7, arm64, amd64 (a.k.a x86_64)
+
+### Basic
+
+- Default Stacks Directory: `/opt/stacks`
+- Default Port: 5001
+
+```
+# Create directories that store your stacks and stores Dockge&#039;s stack
+mkdir -p /opt/stacks /opt/dockge
+cd /opt/dockge
+
+# Download the compose.yaml
+curl https://raw.githubusercontent.com/louislam/dockge/master/compose.yaml --output compose.yaml
+
+# Start the server
+docker compose up -d
+
+# If you are using docker-compose V1 or Podman
+# docker-compose up -d
+```
+
+Dockge is now running on http://localhost:5001
+
+### Advanced
+
+If you want to store your stacks in another directory, you can generate your compose.yaml file by using the following URL with custom query strings.
+
+```
+# Download your compose.yaml
+curl &quot;https://dockge.kuma.pet/compose.yaml?port=5001&amp;stacksPath=/opt/stacks&quot; --output compose.yaml
+```
+
+- port=`5001`
+- stacksPath=`/opt/stacks`
+
+Interactive compose.yaml generator is available on: 
+https://dockge.kuma.pet
+
+## How to Update
+
+```bash
+cd /opt/dockge
+docker compose pull &amp;&amp; docker compose up -d
+```
+
+## Screenshots
+
+![](https://github.com/louislam/dockge/assets/1336778/e7ff0222-af2e-405c-b533-4eab04791b40)
+
+
+![](https://github.com/louislam/dockge/assets/1336778/7139e88c-77ed-4d45-96e3-00b66d36d871)
+
+![](https://github.com/louislam/dockge/assets/1336778/f019944c-0e87-405b-a1b8-625b35de1eeb)
+
+![](https://github.com/louislam/dockge/assets/1336778/a4478d23-b1c4-4991-8768-1a7cad3472e3)
+
+
+## Motivations
+
+- I have been using Portainer for some time, but for the stack management, I am sometimes not satisfied with it. For example, sometimes when I try to deploy a stack, the loading icon keeps spinning for a few minutes without progress. And sometimes error messages are not clear.
+- Try to develop with ES Module + TypeScript
+
+If you love this project, please consider giving it a ⭐.
+
+
+## 🗣️ Community and Contribution
+
+### Bug Report
+https://github.com/louislam/dockge/issues
+
+### Ask for Help / Discussions
+https://github.com/louislam/dockge/discussions
+
+### Translation
+If you want to translate Dockge into your language, please read [Translation Guide](https://github.com/louislam/dockge/blob/master/frontend/src/lang/README.md)
+
+### Create a Pull Request
+
+Be sure to read the [guide](https://github.com/louislam/dockge/blob/master/CONTRIBUTING.md), as we don&#039;t accept all types of pull requests and don&#039;t want to waste your time.
+
+## FAQ
+
+#### &quot;Dockge&quot;?
+
+&quot;Dockge&quot; is a coinage word which is created by myself. I originally hoped it sounds like `Dodge`, but apparently many people called it `Dockage`, it is also acceptable.
+
+The naming idea came from Twitch emotes like `sadge`, `bedge` or `wokege`. They all end in `-ge`.
+
+#### Can I manage a single container without `compose.yaml`?
+
+The main objective of Dockge is to try to use the docker `compose.yaml` for everything. If you want to manage a single container, you can just use Portainer or Docker CLI.
+
+#### Can I manage existing stacks?
+
+Yes, you can. However, you need to move your compose file into the stacks directory:
+
+1. Stop your stack
+2. Move your compose file into `/opt/stacks/&lt;stackName&gt;/compose.yaml`
+3. In Dockge, click the &quot; Scan Stacks Folder&quot; button in the top-right corner&#039;s dropdown menu
+4. Now you should see your stack in the list
+
+#### Is Dockge a Portainer replacement?
+
+Yes or no. Portainer provides a lot of Docker features. While Dockge is currently only focusing on docker-compose with a better user interface and better user experience.
+
+If you want to manage your container with docker-compose only, the answer may be yes.
+
+If you still need to manage something like docker networks, single containers, the answer may be no.
+
+#### Can I install both Dockge and Portainer?
+
+Yes, you can.
+
+## Others
+
+Dockge is built on top of [Compose V2](https://docs.docker.com/compose/migrate/). `compose.yaml`  also known as `docker-compose.yml`.
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[executeautomation/mcp-playwright]]></title>
+            <link>https://github.com/executeautomation/mcp-playwright</link>
+            <guid>https://github.com/executeautomation/mcp-playwright</guid>
+            <pubDate>Wed, 02 Apr 2025 00:04:55 GMT</pubDate>
+            <description><![CDATA[Playwright Model Context Protocol Server - Tool to automate Browsers and APIs in Claude Desktop, Cline, Cursor IDE and More 🔌]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/executeautomation/mcp-playwright">executeautomation/mcp-playwright</a></h1>
+            <p>Playwright Model Context Protocol Server - Tool to automate Browsers and APIs in Claude Desktop, Cline, Cursor IDE and More 🔌</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 2,186</p>
+            <p>Forks: 168</p>
+            <p>Stars today: 127 stars today</p>
+            <h2>README</h2><pre># Playwright MCP Server 🎭
+
+[![smithery badge](https://smithery.ai/badge/@executeautomation/playwright-mcp-server)](https://smithery.ai/server/@executeautomation/playwright-mcp-server)
+
+A Model Context Protocol server that provides browser automation capabilities using Playwright. This server enables LLMs to interact with web pages, take screenshots, generate test code, web scraps the page and execute JavaScript in a real browser environment.
+
+&lt;a href=&quot;https://glama.ai/mcp/servers/yh4lgtwgbe&quot;&gt;&lt;img width=&quot;380&quot; height=&quot;200&quot; src=&quot;https://glama.ai/mcp/servers/yh4lgtwgbe/badge&quot; alt=&quot;mcp-playwright MCP server&quot; /&gt;&lt;/a&gt;
+
+## Screenshot
+![Playwright + Claude](image/playwright_claude.png)
+
+## [Documentation](https://executeautomation.github.io/mcp-playwright/) | [API reference](https://executeautomation.github.io/mcp-playwright/docs/playwright-web/Supported-Tools)
+
+## Installation
+
+You can install the package using either npm, mcp-get, or Smithery:
+
+Using npm:
+```bash
+npm install -g @executeautomation/playwright-mcp-server
+```
+
+Using mcp-get:
+```bash
+npx @michaellatman/mcp-get@latest install @executeautomation/playwright-mcp-server
+```
+Using Smithery
+
+To install Playwright MCP for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@executeautomation/playwright-mcp-server):
+
+```bash
+npx -y @smithery/cli install @executeautomation/playwright-mcp-server --client claude
+```
+#### Installation in VS Code
+
+Install the Playwright MCP server in VS Code using one of these buttons:
+
+&lt;!--
+// Generate using?:
+const config = JSON.stringify({ name: &#039;playwright&#039;, command: &#039;npx&#039;, args: [&quot;-y&quot;, &quot;@executeautomation/playwright-mcp-server&quot;] });
+const urlForWebsites = `vscode:mcp/install?${encodeURIComponent(config)}`;
+// Github markdown does not allow linking to `vscode:` directly, so you can use our redirect:
+const urlForGithub = `https://insiders.vscode.dev/redirect?url=${encodeURIComponent(urlForWebsites)}`;
+--&gt;
+
+[&lt;img alt=&quot;Install in VS Code Insiders&quot; src=&quot;https://img.shields.io/badge/VS_Code_Insiders-VS_Code_Insiders?style=flat-square&amp;label=Install%20Server&amp;color=24bfa5&quot;&gt;](https://insiders.vscode.dev/redirect?url=vscode-insiders%3Amcp%2Finstall%3F%257B%2522name%2522%253A%2522playwright%2522%252C%2522command%2522%253A%2522npx%2522%252C%2522args%2522%253A%255B%2522-y%2522%252C%2522%2540executeautomation%252Fplaywright-mcp-server%2522%255D%257D)
+
+Alternatively, you can install the Playwright MCP server using the VS Code CLI:
+
+```bash
+# For VS Code
+code --add-mcp &#039;{&quot;name&quot;:&quot;playwright&quot;,&quot;command&quot;:&quot;npx&quot;,&quot;args&quot;:[&quot;@executeautomation/playwright-mcp-server&quot;]}&#039;
+```
+
+```bash
+# For VS Code Insiders
+code-insiders --add-mcp &#039;{&quot;name&quot;:&quot;playwright&quot;,&quot;command&quot;:&quot;npx&quot;,&quot;args&quot;:[&quot;@executeautomation/playwright-mcp-server&quot;]}&#039;
+```
+
+After installation, the ExecuteAutomation Playwright MCP server will be available for use with your GitHub Copilot agent in VS Code.
+
+## Configuration to use Playwright Server
+Here&#039;s the Claude Desktop configuration to use the Playwright server:
+
+```json
+{
+  &quot;mcpServers&quot;: {
+    &quot;playwright&quot;: {
+      &quot;command&quot;: &quot;npx&quot;,
+      &quot;args&quot;: [&quot;-y&quot;, &quot;@executeautomation/playwright-mcp-server&quot;]
+    }
+  }
+}
+```
+
+## Testing
+
+This project uses Jest for testing. The tests are located in the `src/__tests__` directory.
+
+### Running Tests
+
+You can run the tests using one of the following commands:
+
+```bash
+# Run tests using the custom script (with coverage)
+node run-tests.cjs
+
+# Run tests using npm scripts
+npm test           # Run tests without coverage
+npm run test:coverage  # Run tests with coverage
+npm run test:custom    # Run tests with custom script (same as node run-tests.cjs)
+```
+
+The test coverage report will be generated in the `coverage` directory.
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=executeautomation/mcp-playwright&amp;type=Date)](https://star-history.com/#executeautomation/mcp-playwright&amp;Date)
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[Budibase/budibase]]></title>
+            <link>https://github.com/Budibase/budibase</link>
+            <guid>https://github.com/Budibase/budibase</guid>
+            <pubDate>Wed, 02 Apr 2025 00:04:54 GMT</pubDate>
+            <description><![CDATA[Create business apps and automate workflows in minutes. Supports PostgreSQL, MySQL, MariaDB, MSSQL, MongoDB, Rest API, Docker, K8s, and more 🚀 No code / Low code platform..]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/Budibase/budibase">Budibase/budibase</a></h1>
+            <p>Create business apps and automate workflows in minutes. Supports PostgreSQL, MySQL, MariaDB, MSSQL, MongoDB, Rest API, Docker, K8s, and more 🚀 No code / Low code platform..</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 23,780</p>
+            <p>Forks: 1,678</p>
+            <p>Stars today: 15 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://www.budibase.com&quot;&gt;
+    &lt;img alt=&quot;Budibase&quot; src=&quot;https://res.cloudinary.com/daog6scxm/image/upload/v1696515725/Branding/Assets/Symbol/RGB/Full%20Colour/Budibase_Symbol_RGB_FullColour_cbqvha_1_z5cwq2.svg&quot; width=&quot;60&quot; /&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  Budibase
+&lt;/h1&gt;
+
+&lt;h3 align=&quot;center&quot;&gt;
+  The low code platform you&#039;ll enjoy using
+&lt;/h3&gt;
+&lt;p align=&quot;center&quot;&gt;
+  Budibase is an open-source low-code platform that saves engineers 100s of hours building forms, portals, and approval apps, securely.
+&lt;/p&gt;
+
+&lt;h3 align=&quot;center&quot;&gt;
+ 🤖 🎨 🚀
+&lt;/h3&gt;
+&lt;br&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img alt=&quot;Budibase design ui&quot; src=&quot;https://res.cloudinary.com/daog6scxm/image/upload/v1680181644/ui/homepage-design-ui_sizp7b.png&quot;&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://github.com/Budibase/budibase/releases&quot;&gt;
+    &lt;img alt=&quot;GitHub all releases&quot; src=&quot;https://img.shields.io/github/downloads/Budibase/budibase/total&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://github.com/Budibase/budibase/releases&quot;&gt;
+    &lt;img alt=&quot;GitHub release (latest by date)&quot; src=&quot;https://img.shields.io/github/v/release/Budibase/budibase&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/intent/follow?screen_name=budibase&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/twitter/follow/budibase?style=social&quot; alt=&quot;Follow @budibase&quot; /&gt;
+  &lt;/a&gt;
+  &lt;img src=&quot;https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg&quot; alt=&quot;Code of conduct&quot; /&gt;
+  &lt;a href=&quot;https://codecov.io/gh/Budibase/budibase&quot;&gt;
+    &lt;img src=&quot;https://codecov.io/gh/Budibase/budibase/graph/badge.svg?token=E8W2ZFXQOH&quot;/&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;h3 align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://account.budibase.app/register&quot;&gt;Get started - we host (Budibase Cloud)&lt;/a&gt;
+  &lt;span&gt; · &lt;/span&gt;
+  &lt;a href=&quot;https://docs.budibase.com/docs/hosting-methods&quot;&gt;Get started - you host (Docker, K8s, DO)&lt;/a&gt;
+  &lt;span&gt; · &lt;/span&gt;
+  &lt;a href=&quot;https://docs.budibase.com/docs&quot;&gt;Docs&lt;/a&gt;
+  &lt;span&gt; · &lt;/span&gt;
+  &lt;a href=&quot;https://github.com/Budibase/budibase/discussions?discussions_q=category%3AIdeas&quot;&gt;Feature request&lt;/a&gt;
+  &lt;span&gt; · &lt;/span&gt;
+  &lt;a href=&quot;https://github.com/Budibase/budibase/issues&quot;&gt;Report a bug&lt;/a&gt;
+  &lt;span&gt; · &lt;/span&gt;
+  Support: &lt;a href=&quot;https://github.com/Budibase/budibase/discussions&quot;&gt;Discussions&lt;/a&gt;
+&lt;/h3&gt;
+
+&lt;br /&gt;&lt;br /&gt;
+
+## ✨ Features
+
+### Build and ship real software
+
+Unlike other platforms, with Budibase you build and ship single page applications. Budibase applications have performance baked in and can be designed responsively, providing users with a great experience.
+&lt;br /&gt;&lt;br /&gt;
+
+### Open source and extensible
+
+Budibase is open-source - licensed as GPL v3. This should fill you with confidence that Budibase will always be around. You can also code against Budibase or fork it and make changes as you please, providing a developer-friendly experience.
+&lt;br /&gt;&lt;br /&gt;
+
+### Load data or start from scratch
+
+Budibase pulls data from multiple sources, including MongoDB, CouchDB, PostgreSQL, MariaDB, MySQL, Airtable, S3, DynamoDB, or a REST API. And unlike other platforms, with Budibase you can start from scratch and create business apps with no data sources. [Request new datasources](https://github.com/Budibase/budibase/discussions?discussions_q=category%3AIdeas).
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img alt=&quot;Budibase data&quot; src=&quot;https://res.cloudinary.com/daog6scxm/image/upload/v1680281798/ui/data_klbuna.png&quot;&gt;
+&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;
+
+### Design and build apps with powerful pre-made components
+
+Budibase comes out of the box with beautifully designed, powerful components which you can use like building blocks to build your UI. We also expose many of your favourite CSS styling options so you can go that extra creative mile. [Request new component](https://github.com/Budibase/budibase/discussions?discussions_q=category%3AIdeas).
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img alt=&quot;Budibase design&quot; src=&quot;https://res.cloudinary.com/daog6scxm/image/upload/v1675437167/ui/form_2x_mbli8y.png&quot;&gt;
+&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;
+
+### Automate processes, integrate with other tools and connect to webhooks
+
+Save time by automating manual processes and workflows. From connecting to webhooks to automating emails, simply tell Budibase what to do and let it work for you. You can easily [create new automations for Budibase here](https://github.com/Budibase/automations) or [Request new automation](https://github.com/Budibase/budibase/discussions?discussions_q=category%3AIdeas).
+&lt;br /&gt;&lt;br /&gt;
+
+### Integrate with your favorite tools
+
+Budibase integrates with a number of popular tools allowing you to build apps that perfectly fit your stack.
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img alt=&quot;Budibase integrations&quot; src=&quot;https://res.cloudinary.com/daog6scxm/image/upload/v1680195228/ui/automate_fg9z07.png&quot;&gt;
+&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;
+
+### Deploy with confidence and security
+
+Budibase is made to scale. With Budibase, you can self-host on your own infrastructure and globally manage users, onboarding, SMTP, apps, groups, theming and more. You can also provide users/groups with an app portal and disseminate user management to the group manager.
+
+- Checkout the promo video: https://youtu.be/xoljVpty_Kw
+
+&lt;br /&gt;
+
+---
+
+&lt;br /&gt;
+
+## Budibase Public API
+
+As with anything that we build in Budibase, our new public API is simple to use, flexible, and introduces new extensibility. To summarize, the Budibase API enables:
+
+- Budibase as a backend
+- Interoperability
+
+#### Docs
+
+You can learn more about the Budibase API at the following places:
+
+- [General documentation](https://docs.budibase.com/docs/public-api): Learn how to get your API key, how to use spec, and how to use Postman
+- [Interactive API documentation](https://docs.budibase.com/reference/appcreate) : Learn how to interact with the API
+
+&lt;br /&gt;&lt;br /&gt;
+
+## 🏁 Get started
+
+Deploy Budibase using Docker, Kubernetes, and Digital Ocean on your existing infrastructure. Or use Budibase Cloud if you don&#039;t need to self-host and would like to get started quickly.
+
+### [Get started with self-hosting Budibase](https://docs.budibase.com/docs/hosting-methods)
+
+- [Docker - single ARM compatible image](https://docs.budibase.com/docs/docker)
+- [Docker Compose](https://docs.budibase.com/docs/docker-compose)
+- [Kubernetes](https://docs.budibase.com/docs/kubernetes-k8s)
+- [Digital Ocean](https://docs.budibase.com/docs/digitalocean)
+- [Portainer](https://docs.budibase.com/docs/portainer)
+
+### [Get started with Budibase Cloud](https://budibase.com)
+
+&lt;br /&gt;&lt;br /&gt;
+
+## 🎓 Learning Budibase
+
+The Budibase documentation [lives here](https://docs.budibase.com/docs).
+&lt;br /&gt;
+
+&lt;br /&gt;&lt;br /&gt;
+
+## 💬 Community
+
+If you have a question or would like to talk with other Budibase users and join our community, please hop over to [Github discussions](https://github.com/Budibase/budibase/discussions)
+
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+
+## ❗ Code of conduct
+
+Budibase is dedicated to providing everyone a welcoming, diverse, and harassment-free experience. We expect everyone in the Budibase community to abide by our [**Code of Conduct**](https://github.com/Budibase/budibase/blob/HEAD/docs/CODE_OF_CONDUCT.md). Please read it.
+&lt;br /&gt;
+
+&lt;br /&gt;&lt;br /&gt;
+
+## 🙌 Contributing to Budibase
+
+From opening a bug report to creating a pull request: every contribution is appreciated and welcomed. If you&#039;re planning to implement a new feature or change the API, please create an issue first. This way, we can ensure your work is not in vain.
+Environment setup instructions are available [here](https://github.com/Budibase/budibase/tree/HEAD/docs/CONTRIBUTING.md).
+
+### Not Sure Where to Start?
+
+A good place to start contributing is by looking for the [good first issue](https://github.com/Budibase/budibase/labels/good%20first%20issue) tag.
+
+### How the repository is organized
+
+Budibase is a monorepo managed by lerna. Lerna manages the building and publishing of the budibase packages. At a high level, here are the packages that make up Budibase.
+
+- [packages/builder](https://github.com/Budibase/budibase/tree/HEAD/packages/builder) - contains code for the budibase builder client-side svelte application.
+
+- [packages/client](https://github.com/Budibase/budibase/tree/HEAD/packages/client) - A module that runs in the browser responsible for reading JSON definition and creating living, breathing web apps from it.
+
+- [packages/server](https://github.com/Budibase/budibase/tree/HEAD/packages/server) - The budibase server. This Koa app is responsible for serving the JS for the builder and budibase apps, as well as providing the API for interaction with the database and file system.
+
+For more information, see [CONTRIBUTING.md](https://github.com/Budibase/budibase/blob/HEAD/docs/CONTRIBUTING.md)
+
+&lt;br /&gt;&lt;br /&gt;
+
+## 📝 License
+
+Budibase is open-source, licensed as [GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html). The client and component libraries are licensed as [MPL](https://directory.fsf.org/wiki/License:MPL-2.0) - so the apps you build can be licensed however you like.
+
+&lt;br /&gt;&lt;br /&gt;
+
+## ⭐ Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/Budibase/budibase.svg)](https://starchart.cc/Budibase/budibase)
+
+If you are having issues between updates of the builder, please use the guide [here](https://github.com/Budibase/budibase/blob/HEAD/docs/CONTRIBUTING.md#troubleshooting) to clear down your environment.
+
+&lt;br /&gt;&lt;br /&gt;
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+&lt;a href=&quot;https://github.com/Budibase/budibase/graphs/contributors&quot;&gt;
+  &lt;img src=&quot;https://contrib.rocks/image?repo=Budibase/budibase&quot; /&gt;
 &lt;/a&gt;
 
-## Repo Activity
+Made with [contrib.rocks](https://contrib.rocks).
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[cuixueshe/earthworm]]></title>
+            <link>https://github.com/cuixueshe/earthworm</link>
+            <guid>https://github.com/cuixueshe/earthworm</guid>
+            <pubDate>Wed, 02 Apr 2025 00:04:53 GMT</pubDate>
+            <description><![CDATA[Learning English through the method of constructing sentences with conjunctions]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/cuixueshe/earthworm">cuixueshe/earthworm</a></h1>
+            <p>Learning English through the method of constructing sentences with conjunctions</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 7,756</p>
+            <p>Forks: 864</p>
+            <p>Stars today: 71 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+  &lt;img alt=&quot;Earthworm&quot; width=&quot;120&quot; height=&quot;120&quot; src=&quot;./assets/logo/logo-1000.png&quot;&gt;
+  &lt;h1&gt;Earthworm&lt;/h1&gt;
+  &lt;span&gt;English | &lt;a href=&quot;./README.zh-CN.md&quot;&gt;中文&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt;
 
-![Dub.co repo activity – generated by Axiom](https://repobeats.axiom.co/api/embed/6ac4c94a89ea20e2e10032b932a128b6d8442e66.svg &quot;Repobeats analytics image&quot;)
+&lt;div align=&quot;center&quot;&gt;
+  &lt;br/&gt;
+  &lt;a href=&quot;https://hellogithub.com/repository/9433615761f548cf9648434c670cd85b&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://abroad.hellogithub.com/v1/widgets/recommend.svg?rid=9433615761f548cf9648434c670cd85b&amp;claim_uid=249cPWvjfNmU7dp&quot; alt=&quot;Featured｜HelloGitHub&quot; style=&quot;width: 250px; height: 54px;&quot; width=&quot;250&quot; height=&quot;54&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
 
-## License
+## ⚡ Introduction
 
-Inspired by [Plausible](https://plausible.io/), Dub is open-source under the GNU Affero General Public License Version 3 (AGPLv3) or any later version. You can [find it here](https://github.com/dubinc/dub/blob/main/LICENSE.md).
+By constructing sentences with conjunctions, it helps you learn English better~ 😊
+
+## 🚀 How To Start?
+
+**The mentioned operations below are based on the root directory of the current project, please be attentive to ensure there are no errors!**
+
+### Requirements
+
+- **pnpm version &gt;= 8**
+
+  ```bash
+  corepack enable
+  ```
+
+- **Node.js version &gt;= v20**
+  &gt; Use the version from .node-version. [Supported tools](https://github.com/shadowspawn/node-version-usage#compatibility-testing)
+- **Postgres version &gt;= 14.0.0**
+- **Redis version &gt;= 5.0.0**
+- **Docker**. please make sure it is installed and running successfully on your local machine.
+
+```bash
+docker --version # Docker version 24.0.7, build afdd53b
+
+node --version # v20+
+
+pnpm -v # 8+
+```
+
+### Editor
+
+#### VSCode
+
+- Install the recommended extensions [extensions.json](./.vscode/extensions.json)
+
+### 1. Install Dependencies
+
+```bash
+pnpm install
+```
+
+### 2. Configure the `.env` File
+
+You can choose to copy the contents of `./apps/api/.env.example` to`./apps/api/.env`. note that the&#039; example&#039; file contains sample configuration. the main storage system&#039;s environment variable information, such as database connection address, user name, password, port, key, etc. the back-end service will read the configuration from this file, **of course you can also change it to your own configuration information**.
+
+Windows users recommend shortcut keys to copy and paste, Linux users can operate through the following command.
+
+#### Server
+
+```bash
+cp ./apps/api/.env.example ./apps/api/.env
+```
+
+#### Client
+
+```bash
+cp ./apps/client/.env.example ./apps/client/.env
+```
+
+### 3. Restore Data Of Logto
+
+Uncompress `logto_db_init_data.zip` to `.volumes/`
+
+```bash
+unzip logto_db_init_data.zip -d .volumes/
+```
+
+- Admin URL: http://localhost:3011
+- Username: admin
+- Password: WkN7g5-i8ZrJckX
+
+&gt; if you want to [Manual Configuration Logto](https://github.com/cuixueshe/earthworm/wiki/%E8%BF%81%E7%A7%BB-Logto-%E7%94%A8%E6%88%B7%E7%B3%BB%E7%BB%9F%E5%90%8E%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8%E9%85%8D%E7%BD%AE%E6%96%B9%E6%A1%88%EF%BC%88%E8%B4%A1%E7%8C%AE%E8%80%85%EF%BC%89)
+
+### 4. Start Docker Compose Service
+
+The backend relies on Postgres and Redis services. Start and stop these services using the commands configured in `package.json` below.
+
+```bash
+# start
+pnpm docker:start
+
+# When needed, execute the following command
+# stop
+pnpm docker:stop
+# delete
+pnpm docker:delete
+# Complete deletion (including Volume data)
+pnpm docker:down
+```
+
+If you prefer manual, you can use the commands below.
+
+```bash
+docker compose up -d
+docker compose stop
+docker compose down
+
+# commands compatible with older versions of Docker
+docker-compose up -d
+```
+
+### 5. Initialize Database Schema
+
+When executing this command, try to keep a little time from the previous command, because the `-d` parameter just used will suspend its service execution in the background. At this time, the docker service may still be running. If an error is found, execute it again.
+
+```bash
+pnpm db:init
+```
+
+### 6. Create and Upload Course Data
+
+**Only Execute This During the Initial Database Initialization**.
+
+```bash
+pnpm db:upload
+```
+
+### 7. Start the Backend Service
+
+```bash
+pnpm dev:serve
+```
+
+### 8. Start the Frontend Service
+
+```bash
+pnpm dev:client
+```
+
+## 🛠️ About testing
+
+**Run the test before submitting the commit, and submit the code after the test passes, so as to avoid multiple commits to solve the test problem**.
+
+### Front-end Testing
+
+The main is the single test of Vitest and the automated test of cypress, execute the following command:
+
+```bash
+# Enter the front-end project directory
+cd apps/client
+
+# vitest
+pnpm test:unit:run
+# cypress
+pnpm test:e2e:run
+
+# monitor vitest, convenient hot update to see test results
+pnpm test:unit:watch
+```
+
+### Backend Testing
+
+Mainly Jest single test and end-to-end test, but need to access the test database, so you need to ensure that:
+
+1. testdb and testRedis services in Docker Compose started normally.
+2. The configuration information in the `.env.test` file is correct. If there is no such file, you can copy the contents of the `apps/api/.env.test.example` file to the `apps/api/.env.test` file. The following command is provided to directly use.
+
+Execute the following command:
+
+```bash
+# Enter Backend Project Directory
+cd apps/api
+
+# If you have an.env.test file, you don&#039;t need to run this step
+cp .env.test.example .env.test
+
+# Single test
+pnpm test:unit
+# End-to-end testing
+pnpm test:e2e
+# Single test and end-to-end test run together
+pnpm test
+```
+
+## Docs Project
+
+Project based on Vitepress documentation，execute the following command:
+
+```bash
+# Local Development
+pnpm docs:dev
+```
+
+## ❓ FAQ
+
+### Database connection failed
+
+My Docker and the database inside are running normally, but when I run the `db:init` command, I still report an error, indicating that the database connection failed.
+
+You can check whether the database configuration in the `.env` file is correct, or even whether this file has it! 😠
+
+### How To Correctly Update Course Data?
+
+when you identify incorrect course data and make modifications, you should use the following command to update the course data in the database.
+
+```bash
+pnpm db:update
+```
+
+### pnpm Install Error?
+
+Some dependencies require compilation during installation, necessitating the presence of relevant build environments.
+If these environments are not available, the compilation process may fail. Additionally, different modules may require different build environments, so specific issues need to be analyzed individually.
+Below are specific problems encountered along with their solutions.
+
+First try the following command to update `pnpm`.
+
+```shell
+pnpm i -g
+# or
+pnpm i -g pnpm
+# or
+npx pnpm i -g pnpm@latest
+```
+
+**Error Installing the argon2 Module On Windows**
+
+- Install Visual Studio 2015 or later, specifically the &quot;Desktop development with C++&quot; component. (In practice, any component containing C++ development tools and libraries will suffice.)
+- If you encounter Chinese characters display issues during compilation, execute `chcp 437` in the command prompt, then rerun the install command.
+
+### Docker Permission Denied in Docker?
+
+When using WSL2 as a development environment in Windows, the following error occurs when starting Docker with `docker compose up -d` :
+
+```bash
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get &quot;http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/json&quot;: dial unix /var/run/docker.sock: connect: permission denied
+```
+
+&gt; Solution
+
+Add the current user to the docker group
+
+```bash
+# Add docker user group
+sudo groupadd docker
+# Add the logged-in user to the docker user group
+sudo gpasswd -a $USER docker
+# Update user group
+newgrp docker
+# Test if docker command is working properly
+docker images
+```
+
+## 🤝 Frontend Development Guideline
+
+1. Do not Destructure Pinia store.
+
+   - The readability will be better when using `store`
+   - Destructuring can lead to reactivity loss and using `storeToRefs` is also quite cumbersome
+
+2. Avoid including UI logic in composables.
+
+   - Such as `toast.info()`
+   - We categorize the router as UI logic, and for ease of testing, avoid including routerrelated logic in there
+
+## 🚀 Star History
+
+[![Stargazers over time](https://starchart.cc/cuixueshe/earthworm.svg?variant=adaptive)](https://starchart.cc/cuixueshe/earthworm)
+
+## 🌟 Contributing
+
+Thanks to everyone who has already contributed to Earthworm! 🎉
+
+&lt;a href=&quot;https://github.com//cuixueshe/earthworm/graphs/contributors&quot;&gt;&lt;img src=&quot;https://contributors.nn.ci/api?repo=cuixueshe/earthworm&quot; /&gt;&lt;/a&gt;
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
@@ -677,14 +1395,14 @@ Inspired by [Plausible](https://plausible.io/), Dub is open-source under the GNU
             <title><![CDATA[supabase/supabase]]></title>
             <link>https://github.com/supabase/supabase</link>
             <guid>https://github.com/supabase/supabase</guid>
-            <pubDate>Tue, 01 Apr 2025 00:05:15 GMT</pubDate>
+            <pubDate>Wed, 02 Apr 2025 00:04:52 GMT</pubDate>
             <description><![CDATA[The open source Firebase alternative. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/supabase/supabase">supabase/supabase</a></h1>
             <p>The open source Firebase alternative. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 80,093</p>
-            <p>Forks: 8,124</p>
+            <p>Stars: 80,153</p>
+            <p>Forks: 8,132</p>
             <p>Stars today: 77 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://user-images.githubusercontent.com/8291514/213727234-cda046d6-28c6-491a-b284-b86c5cede25d.png#gh-light-mode-only&quot;&gt;
@@ -978,430 +1696,22 @@ Our approach for client libraries is modular. Each sub-library is a standalone i
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[al1abb/invoify]]></title>
-            <link>https://github.com/al1abb/invoify</link>
-            <guid>https://github.com/al1abb/invoify</guid>
-            <pubDate>Tue, 01 Apr 2025 00:05:14 GMT</pubDate>
-            <description><![CDATA[An invoice generator app built using Next.js, Typescript, and Shadcn]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/al1abb/invoify">al1abb/invoify</a></h1>
-            <p>An invoice generator app built using Next.js, Typescript, and Shadcn</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 5,100</p>
-            <p>Forks: 513</p>
-            <p>Stars today: 61 stars today</p>
-            <h2>README</h2><pre>[![Discord](https://img.shields.io/badge/Discord-%40Invoify-000000?style=flat&amp;logo=Discord&amp;logoColor=#5865F2)](https://discord.gg/uhXKHbVKHZ)
-# Invoify
-
-Invoify is a web-based invoice generator application built with Next.js 13, TypeScript, React, and the Shadcn UI library. It provides an easy way to create and manage professional invoices.
-
-![Invoify Website image](/public/assets/img/invoify-web-app.png)
-
-## Table of Contents
-
-- [Invoify](#invoify)
-  - [Table of Contents](#table-of-contents)
-  - [Technologies](#technologies)
-    - [Core Technologies](#core-technologies)
-    - [Additional Dependencies](#additional-dependencies)
-  - [Roadmap](#roadmap)
-  - [Demo](#demo)
-  - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
-  - [License](#license)
-
-
-## Technologies
-
-### Core Technologies
-
-- **Next.js:** React framework for SSR and client-side navigation.
-- **TypeScript:** JavaScript superset with static typing.
-- **Shadcn-UI:** UI library for enhanced visuals.
-- **Tailwind:** Utility-first CSS framework.
-- **React Hook Form:** Form management for React.
-- **Zod:** TypeScript-first schema validation.
-- **Puppeteer:** PDF generation with headless browsers.
-
-### Additional Dependencies
-
-- **Nodemailer:** Node.js module for sending emails.
-- **Lucide Icons:** Collection of customizable SVG icons.
-
-## Roadmap
-
-- [x] **Easily Create Invoices:** Utilize a simple form to quickly generate invoices.
-- [x] **Save for Future Access:** Store your invoices directly in your browser for easy retrieval.
-- [x] **Retrieve Invoices Effortlessly:** Load and access invoices seamlessly from your saved list.
-- [x] **Flexible Download Options:** Download invoices directly or send them via email in PDF format.
-- [x] **Template Variety:** Choose from multiple (currently 2) invoice templates.
-- [x] **Live Preview:** Edit the form and see changes in real-time with the live preview feature.
-- [x] **Export in Various Formats:** Export invoices in different formats, including JSON, XLSX, CSV, and XML.
-- [ ] **I18N Support:** i18n support with multiple languages for UI and templates.
-- [ ] **Themeable Templates:** Select a theme color for the invoice
-- [ ] **Custom Inputs:** Define your own inputs that are missing from the default invoice builder. (Ex: VAT number)
-- [ ] **Individual Tax for Line Items:** Add tax details for a specific line item other than the general tax
-
-## Demo
-
-&gt; [!NOTE]
-&gt; Please be advised that there are currently issues when using this application in the Mozilla Firefox browser. For more information, refer to [Issue #11](https://github.com/aliabb01/invoify/issues/11).
-
-Visit the [live demo](https://invoify.vercel.app) to see Invoify in action.
-
-## Getting Started
-
-Follow these instructions to get Invoify up and running on your local machine.
-
-### Prerequisites
-
-- Node.js and npm installed on your system.
-
-### Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/al1abb/invoify.git
-   cd invoify
-   ```
-2. Install dependencies
-   
-   ```bash
-   npm install
-   ```
-3. Create an .env.local file with this content (This step is for sending pdf to email feature):
-   ```env
-   NODEMAILER_EMAIL=your_email@example.com
-   NODEMAILER_PW=your_email_password
-   ```
-4. Start development server
-
-    ```bash
-    npm run dev
-    ```
-5. Open your web browser and access the application at [http://localhost:3000](http://localhost:3000)
-&lt;!-- LICENSE --&gt;
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-## Discord
-Join the Discord server [here](https://discord.gg/uhXKHbVKHZ)
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[cuixueshe/earthworm]]></title>
-            <link>https://github.com/cuixueshe/earthworm</link>
-            <guid>https://github.com/cuixueshe/earthworm</guid>
-            <pubDate>Tue, 01 Apr 2025 00:05:13 GMT</pubDate>
-            <description><![CDATA[Learning English through the method of constructing sentences with conjunctions]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/cuixueshe/earthworm">cuixueshe/earthworm</a></h1>
-            <p>Learning English through the method of constructing sentences with conjunctions</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 7,704</p>
-            <p>Forks: 855</p>
-            <p>Stars today: 222 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-  &lt;img alt=&quot;Earthworm&quot; width=&quot;120&quot; height=&quot;120&quot; src=&quot;./assets/logo/logo-1000.png&quot;&gt;
-  &lt;h1&gt;Earthworm&lt;/h1&gt;
-  &lt;span&gt;English | &lt;a href=&quot;./README.zh-CN.md&quot;&gt;中文&lt;/a&gt;&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-  &lt;br/&gt;
-  &lt;a href=&quot;https://hellogithub.com/repository/9433615761f548cf9648434c670cd85b&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://abroad.hellogithub.com/v1/widgets/recommend.svg?rid=9433615761f548cf9648434c670cd85b&amp;claim_uid=249cPWvjfNmU7dp&quot; alt=&quot;Featured｜HelloGitHub&quot; style=&quot;width: 250px; height: 54px;&quot; width=&quot;250&quot; height=&quot;54&quot; /&gt;&lt;/a&gt;
-&lt;/div&gt;
-
-## ⚡ Introduction
-
-By constructing sentences with conjunctions, it helps you learn English better~ 😊
-
-## 🚀 How To Start?
-
-**The mentioned operations below are based on the root directory of the current project, please be attentive to ensure there are no errors!**
-
-### Requirements
-
-- **pnpm version &gt;= 8**
-
-  ```bash
-  corepack enable
-  ```
-
-- **Node.js version &gt;= v20**
-  &gt; Use the version from .node-version. [Supported tools](https://github.com/shadowspawn/node-version-usage#compatibility-testing)
-- **Postgres version &gt;= 14.0.0**
-- **Redis version &gt;= 5.0.0**
-- **Docker**. please make sure it is installed and running successfully on your local machine.
-
-```bash
-docker --version # Docker version 24.0.7, build afdd53b
-
-node --version # v20+
-
-pnpm -v # 8+
-```
-
-### Editor
-
-#### VSCode
-
-- Install the recommended extensions [extensions.json](./.vscode/extensions.json)
-
-### 1. Install Dependencies
-
-```bash
-pnpm install
-```
-
-### 2. Configure the `.env` File
-
-You can choose to copy the contents of `./apps/api/.env.example` to`./apps/api/.env`. note that the&#039; example&#039; file contains sample configuration. the main storage system&#039;s environment variable information, such as database connection address, user name, password, port, key, etc. the back-end service will read the configuration from this file, **of course you can also change it to your own configuration information**.
-
-Windows users recommend shortcut keys to copy and paste, Linux users can operate through the following command.
-
-#### Server
-
-```bash
-cp ./apps/api/.env.example ./apps/api/.env
-```
-
-#### Client
-
-```bash
-cp ./apps/client/.env.example ./apps/client/.env
-```
-
-### 3. Restore Data Of Logto
-
-Uncompress `logto_db_init_data.zip` to `.volumes/`
-
-```bash
-unzip logto_db_init_data.zip -d .volumes/
-```
-
-- Admin URL: http://localhost:3011
-- Username: admin
-- Password: WkN7g5-i8ZrJckX
-
-&gt; if you want to [Manual Configuration Logto](https://github.com/cuixueshe/earthworm/wiki/%E8%BF%81%E7%A7%BB-Logto-%E7%94%A8%E6%88%B7%E7%B3%BB%E7%BB%9F%E5%90%8E%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8%E9%85%8D%E7%BD%AE%E6%96%B9%E6%A1%88%EF%BC%88%E8%B4%A1%E7%8C%AE%E8%80%85%EF%BC%89)
-
-### 4. Start Docker Compose Service
-
-The backend relies on Postgres and Redis services. Start and stop these services using the commands configured in `package.json` below.
-
-```bash
-# start
-pnpm docker:start
-
-# When needed, execute the following command
-# stop
-pnpm docker:stop
-# delete
-pnpm docker:delete
-# Complete deletion (including Volume data)
-pnpm docker:down
-```
-
-If you prefer manual, you can use the commands below.
-
-```bash
-docker compose up -d
-docker compose stop
-docker compose down
-
-# commands compatible with older versions of Docker
-docker-compose up -d
-```
-
-### 5. Initialize Database Schema
-
-When executing this command, try to keep a little time from the previous command, because the `-d` parameter just used will suspend its service execution in the background. At this time, the docker service may still be running. If an error is found, execute it again.
-
-```bash
-pnpm db:init
-```
-
-### 6. Create and Upload Course Data
-
-**Only Execute This During the Initial Database Initialization**.
-
-```bash
-pnpm db:upload
-```
-
-### 7. Start the Backend Service
-
-```bash
-pnpm dev:serve
-```
-
-### 8. Start the Frontend Service
-
-```bash
-pnpm dev:client
-```
-
-## 🛠️ About testing
-
-**Run the test before submitting the commit, and submit the code after the test passes, so as to avoid multiple commits to solve the test problem**.
-
-### Front-end Testing
-
-The main is the single test of Vitest and the automated test of cypress, execute the following command:
-
-```bash
-# Enter the front-end project directory
-cd apps/client
-
-# vitest
-pnpm test:unit:run
-# cypress
-pnpm test:e2e:run
-
-# monitor vitest, convenient hot update to see test results
-pnpm test:unit:watch
-```
-
-### Backend Testing
-
-Mainly Jest single test and end-to-end test, but need to access the test database, so you need to ensure that:
-
-1. testdb and testRedis services in Docker Compose started normally.
-2. The configuration information in the `.env.test` file is correct. If there is no such file, you can copy the contents of the `apps/api/.env.test.example` file to the `apps/api/.env.test` file. The following command is provided to directly use.
-
-Execute the following command:
-
-```bash
-# Enter Backend Project Directory
-cd apps/api
-
-# If you have an.env.test file, you don&#039;t need to run this step
-cp .env.test.example .env.test
-
-# Single test
-pnpm test:unit
-# End-to-end testing
-pnpm test:e2e
-# Single test and end-to-end test run together
-pnpm test
-```
-
-## Docs Project
-
-Project based on Vitepress documentation，execute the following command:
-
-```bash
-# Local Development
-pnpm docs:dev
-```
-
-## ❓ FAQ
-
-### Database connection failed
-
-My Docker and the database inside are running normally, but when I run the `db:init` command, I still report an error, indicating that the database connection failed.
-
-You can check whether the database configuration in the `.env` file is correct, or even whether this file has it! 😠
-
-### How To Correctly Update Course Data?
-
-when you identify incorrect course data and make modifications, you should use the following command to update the course data in the database.
-
-```bash
-pnpm db:update
-```
-
-### pnpm Install Error?
-
-Some dependencies require compilation during installation, necessitating the presence of relevant build environments.
-If these environments are not available, the compilation process may fail. Additionally, different modules may require different build environments, so specific issues need to be analyzed individually.
-Below are specific problems encountered along with their solutions.
-
-First try the following command to update `pnpm`.
-
-```shell
-pnpm i -g
-# or
-pnpm i -g pnpm
-# or
-npx pnpm i -g pnpm@latest
-```
-
-**Error Installing the argon2 Module On Windows**
-
-- Install Visual Studio 2015 or later, specifically the &quot;Desktop development with C++&quot; component. (In practice, any component containing C++ development tools and libraries will suffice.)
-- If you encounter Chinese characters display issues during compilation, execute `chcp 437` in the command prompt, then rerun the install command.
-
-### Docker Permission Denied in Docker?
-
-When using WSL2 as a development environment in Windows, the following error occurs when starting Docker with `docker compose up -d` :
-
-```bash
-permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get &quot;http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/json&quot;: dial unix /var/run/docker.sock: connect: permission denied
-```
-
-&gt; Solution
-
-Add the current user to the docker group
-
-```bash
-# Add docker user group
-sudo groupadd docker
-# Add the logged-in user to the docker user group
-sudo gpasswd -a $USER docker
-# Update user group
-newgrp docker
-# Test if docker command is working properly
-docker images
-```
-
-## 🤝 Frontend Development Guideline
-
-1. Do not Destructure Pinia store.
-
-   - The readability will be better when using `store`
-   - Destructuring can lead to reactivity loss and using `storeToRefs` is also quite cumbersome
-
-2. Avoid including UI logic in composables.
-
-   - Such as `toast.info()`
-   - We categorize the router as UI logic, and for ease of testing, avoid including routerrelated logic in there
-
-## 🚀 Star History
-
-[![Stargazers over time](https://starchart.cc/cuixueshe/earthworm.svg?variant=adaptive)](https://starchart.cc/cuixueshe/earthworm)
-
-## 🌟 Contributing
-
-Thanks to everyone who has already contributed to Earthworm! 🎉
-
-&lt;a href=&quot;https://github.com//cuixueshe/earthworm/graphs/contributors&quot;&gt;&lt;img src=&quot;https://contributors.nn.ci/api?repo=cuixueshe/earthworm&quot; /&gt;&lt;/a&gt;
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
             <title><![CDATA[Zippland/worth-calculator]]></title>
             <link>https://github.com/Zippland/worth-calculator</link>
             <guid>https://github.com/Zippland/worth-calculator</guid>
-            <pubDate>Tue, 01 Apr 2025 00:05:12 GMT</pubDate>
+            <pubDate>Wed, 02 Apr 2025 00:04:51 GMT</pubDate>
             <description><![CDATA[Calculating the actual value of your job beyond just salary]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/Zippland/worth-calculator">Zippland/worth-calculator</a></h1>
             <p>Calculating the actual value of your job beyond just salary</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 995</p>
-            <p>Forks: 60</p>
-            <p>Stars today: 69 stars today</p>
+            <p>Stars: 1,061</p>
+            <p>Forks: 64</p>
+            <p>Stars today: 63 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
 
-# Job Worth Calculator
+&lt;img src=&quot;title.png&quot; alt=&quot;Job Worth Calculator&quot; width=&quot;500&quot; /&gt;
+&lt;br&gt;&lt;br&gt;
 
 &lt;a href=&quot;https://trendshift.io/repositories/13145&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/13145&quot; alt=&quot;Zippland%2Fworth-calculator | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
 
@@ -1411,12 +1721,6 @@ Thanks to everyone who has already contributed to Earthworm! 🎉
    &lt;img src=&quot;https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&amp;logo=tailwind-css&amp;logoColor=white&quot; alt=&quot;Tailwind CSS&quot; /&gt;
    &lt;img src=&quot;https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&amp;logo=typescript&amp;logoColor=white&quot; alt=&quot;TypeScript&quot; /&gt;
 &lt;/p&gt;
-
-&lt;p&gt;Calculating the actual value of your job beyond just salary&lt;/p&gt;
-
-&lt;p&gt;计算薪资之外的工作真实价值&lt;/p&gt;
-
-&lt;p&gt;給料だけでなく、仕事の本当の価値を計算する&lt;/p&gt;
 
 &lt;div align=&quot;center&quot;&gt;
 
@@ -1440,7 +1744,7 @@ Thanks to everyone who has already contributed to Earthworm! 🎉
 
 &lt;h2 align=&quot;center&quot;&gt;📊 Job Worth Calculator&lt;/h2&gt;
 
-&lt;p align=&quot;center&quot;&gt;&lt;i&gt;Calculate how much your job is really worth considering all factors&lt;/i&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;i&gt;Calculating the actual value of your job beyond just salary&lt;/i&gt;&lt;/p&gt;
 
 ### ✨ Features
 
@@ -1492,7 +1796,7 @@ Please make sure to test your changes before submitting a PR.
 
 &lt;h2 align=&quot;center&quot;&gt;📊 工作性价比计算器&lt;/h2&gt;
 
-&lt;p align=&quot;center&quot;&gt;&lt;i&gt;全面考量各种因素，算一算你的工作到底值不值&lt;/i&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;i&gt;全面考量，计算薪资之外的工作真实价值&lt;/i&gt;&lt;/p&gt;
 
 ### ✨ 特点
 
@@ -1544,7 +1848,7 @@ Please make sure to test your changes before submitting a PR.
 
 &lt;h2 align=&quot;center&quot;&gt;📊 仕事の価値計算機&lt;/h2&gt;
 
-&lt;p align=&quot;center&quot;&gt;&lt;i&gt;あなたの仕事が本当にどれだけの価値があるか、様々な要素を考慮して計算します&lt;/i&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;i&gt;給料だけでなく、仕事の本当の価値を計算する&lt;/i&gt;&lt;/p&gt;
 
 ### ✨ 特徴
 
@@ -1596,15 +1900,15 @@ PRを提出する前に変更をテストしてください。
             <title><![CDATA[iib0011/omni-tools]]></title>
             <link>https://github.com/iib0011/omni-tools</link>
             <guid>https://github.com/iib0011/omni-tools</guid>
-            <pubDate>Tue, 01 Apr 2025 00:05:11 GMT</pubDate>
+            <pubDate>Wed, 02 Apr 2025 00:04:50 GMT</pubDate>
             <description><![CDATA[Self-hosted collection of powerful web-based tools for everyday tasks. No ads, no tracking, just fast, accessible utilities right from your browser!]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/iib0011/omni-tools">iib0011/omni-tools</a></h1>
             <p>Self-hosted collection of powerful web-based tools for everyday tasks. No ads, no tracking, just fast, accessible utilities right from your browser!</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 997</p>
-            <p>Forks: 41</p>
-            <p>Stars today: 172 stars today</p>
+            <p>Stars: 1,043</p>
+            <p>Forks: 45</p>
+            <p>Stars today: 73 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
         &lt;img src=&quot;src/assets/logo.png&quot; width=&quot;300&quot; /&gt;
         &lt;br /&gt;&lt;br /&gt;
@@ -1770,18 +2074,691 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
             <category>TypeScript</category>
         </item>
         <item>
+            <title><![CDATA[hoppscotch/hoppscotch]]></title>
+            <link>https://github.com/hoppscotch/hoppscotch</link>
+            <guid>https://github.com/hoppscotch/hoppscotch</guid>
+            <pubDate>Wed, 02 Apr 2025 00:04:49 GMT</pubDate>
+            <description><![CDATA[Open source API development ecosystem - https://hoppscotch.io (open-source alternative to Postman, Insomnia)]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/hoppscotch/hoppscotch">hoppscotch/hoppscotch</a></h1>
+            <p>Open source API development ecosystem - https://hoppscotch.io (open-source alternative to Postman, Insomnia)</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 70,759</p>
+            <p>Forks: 4,839</p>
+            <p>Stars today: 51 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://hoppscotch.io&quot;&gt;
+    &lt;img
+      src=&quot;https://avatars.githubusercontent.com/u/56705483&quot;
+      alt=&quot;Hoppscotch&quot;
+      height=&quot;64&quot;
+    /&gt;
+  &lt;/a&gt;
+  &lt;h3&gt;
+    &lt;b&gt;
+      Hoppscotch
+    &lt;/b&gt;
+  &lt;/h3&gt;
+  &lt;b&gt;
+    Open Source API Development Ecosystem
+  &lt;/b&gt;
+  &lt;p&gt;
+
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen?logo=github)](CODE_OF_CONDUCT.md) [![Website](https://img.shields.io/website?url=https%3A%2F%2Fhoppscotch.io&amp;logo=hoppscotch)](https://hoppscotch.io) [![Tests](https://github.com/hoppscotch/hoppscotch/actions/workflows/tests.yml/badge.svg)](https://github.com/hoppscotch/hoppscotch/actions) [![Tweet](https://img.shields.io/twitter/url?url=https%3A%2F%2Fhoppscotch.io%2F)](https://twitter.com/share?text=%F0%9F%91%BD%20Hoppscotch%20%E2%80%A2%20Open%20source%20API%20development%20ecosystem%20-%20Helps%20you%20create%20requests%20faster,%20saving%20precious%20time%20on%20development.&amp;url=https://hoppscotch.io&amp;hashtags=hoppscotch&amp;via=hoppscotch_io)
+
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;sub&gt;
+      Built with ❤︎ by
+      &lt;a href=&quot;https://github.com/hoppscotch/hoppscotch/graphs/contributors&quot;&gt;
+        contributors
+      &lt;/a&gt;
+    &lt;/sub&gt;
+  &lt;/p&gt;
+  &lt;br /&gt;
+  &lt;p&gt;
+    &lt;a href=&quot;https://hoppscotch.io&quot;&gt;
+      &lt;picture&gt;
+        &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;./packages/hoppscotch-common/public/images/banner-dark.png&quot;&gt;
+        &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;./packages/hoppscotch-common/public/images/banner-light.png&quot;&gt;
+        &lt;img alt=&quot;Hoppscotch&quot; src=&quot;./packages/hoppscotch-common/public/images/banner-dark.png&quot;&gt;
+      &lt;/picture&gt;
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+
+_We highly recommend you take a look at the [**Hoppscotch Documentation**](https://docs.hoppscotch.io) to learn more about the app._
+
+#### **Support**
+
+[![Chat on Discord](https://img.shields.io/badge/chat-Discord-7289DA?logo=discord)](https://hoppscotch.io/discord) [![Chat on Telegram](https://img.shields.io/badge/chat-Telegram-2CA5E0?logo=telegram)](https://hoppscotch.io/telegram) [![Discuss on GitHub](https://img.shields.io/badge/discussions-GitHub-333333?logo=github)](https://github.com/hoppscotch/hoppscotch/discussions)
+
+### **Features**
+
+❤️ **Lightweight:** Crafted with minimalistic UI design.
+
+⚡️ **Fast:** Send requests and get responses in real time.
+
+🗄️ **HTTP Methods:** Request methods define the type of action you are requesting to be performed.
+
+- `GET` - Requests retrieve resource information
+- `POST` - The server creates a new entry in a database
+- `PUT` - Updates an existing resource
+- `PATCH` - Very similar to `PUT` but makes a partial update on a resource
+- `DELETE` - Deletes resource or related component
+- `HEAD` - Retrieve response headers identical to those of a GET request, but without the response body.
+- `CONNECT` - Establishes a tunnel to the server identified by the target resource
+- `OPTIONS` - Describe the communication options for the target resource
+- `TRACE` - Performs a message loop-back test along the path to the target resource
+- `&lt;custom&gt;` - Some APIs use custom request methods such as `LIST`. Type in your custom methods.
+
+🌈 **Theming:** Customizable combinations for background, foreground, and accent colors — [customize now](https://hoppscotch.io/settings).
+
+- Choose a theme: System preference, Light, Dark, and Black
+- Choose accent colors: Green, Teal, Blue, Indigo, Purple, Yellow, Orange, Red, and Pink
+- Distraction-free Zen mode
+
+_Customized themes are synced with your cloud/local session._
+
+🔥 **PWA:** Install as a [Progressive Web App](https://web.dev/progressive-web-apps) on your device.
+
+- Instant loading with Service Workers
+- Offline support
+- Low RAM/memory and CPU usage
+- Add to Home Screen
+- Desktop PWA
+
+🚀 **Request:** Retrieve response from endpoint instantly.
+
+1. Choose `method`
+2. Enter `URL`
+3. Send
+
+- Copy/share public &quot;Share URL&quot;
+- Generate/copy request code snippets for 10+ languages and frameworks
+- Import `cURL`
+- Label requests
+
+🔌 **WebSocket:** Establish full-duplex communication channels over a single TCP connection.
+
+📡 **Server-Sent Events:** Receive a stream of updates from a server over an HTTP connection without resorting to polling.
+
+🌩 **Socket.IO:** Send and Receive data with the SocketIO server.
+
+🦟 **MQTT:** Subscribe and Publish to topics of an MQTT Broker.
+
+🔮 **GraphQL:** GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.
+
+- Set endpoint and get schema
+- Multi-column docs
+- Set custom request headers
+- Query schema
+- Get query response
+
+🔐 **Authorization:** Allows to identify the end-user.
+
+- None
+- Basic
+- Bearer Token
+- OAuth 2.0
+- OIDC Access Token/PKCE
+
+📢 **Headers:** Describes the format the body of your request is being sent in.
+
+📫 **Parameters:** Use request parameters to set varying parts in simulated requests.
+
+📃 **Request Body:** Used to send and receive data via the REST API.
+
+- Set `Content Type`
+- FormData, JSON, and many more
+- Toggle between key-value and RAW input parameter list
+
+📮 **Response:** Contains the status line, headers, and the message/response body.
+
+- Copy the response to the clipboard
+- Download the response as a file
+- View response headers
+- View raw and preview HTML, image, JSON, and XML responses
+
+⏰ **History:** Request entries are synced with your cloud/local session storage.
+
+📁 **Collections:** Keep your API requests organized with collections and folders. Reuse them with a single click.
+
+- Unlimited collections, folders, and requests
+- Nested folders
+- Export and import as a file or GitHub gist
+
+_Collections are synced with your cloud/local session storage._
+
+📜 **Pre-Request Scripts:** Snippets of code associated with a request that is executed before the request is sent.
+
+- Set environment variables
+- Include timestamp in the request headers
+- Send a random alphanumeric string in the URL parameters
+- Any JavaScript functions
+
+👨‍👩‍👧‍👦 **Teams:** Helps you collaborate across your teams to design, develop, and test APIs faster.
+
+- Create unlimited teams
+- Create unlimited shared collections
+- Create unlimited team members
+- Role-based access control
+- Cloud sync
+- Multiple devices
+
+👥 **Workspaces:** Organize your personal and team collections environments into workspaces. Easily switch between workspaces to manage multiple projects.
+
+- Create unlimited workspaces
+- Switch between personal and team workspaces
+
+⌨️ **Keyboard Shortcuts:** Optimized for efficiency.
+
+&gt; **[Read our documentation on Keyboard Shortcuts](https://docs.hoppscotch.io/documentation/features/shortcuts)**
+
+🌐 **Proxy:** Enable Proxy Mode from Settings to access blocked APIs.
+
+- Hide your IP address
+- Fixes [`CORS`](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) (Cross-Origin Resource Sharing) issues
+- Access APIs served in non-HTTPS (`http://`) endpoints
+- Use your Proxy URL
+
+_Official proxy server is hosted by Hoppscotch - **[GitHub](https://github.com/hoppscotch/proxyscotch)** - **[Privacy Policy](https://docs.hoppscotch.io/support/privacy)**._
+
+🌎 **i18n:** Experience the app in your language.
+
+Help us to translate Hoppscotch. Please read [`TRANSLATIONS`](TRANSLATIONS.md) for details on our [`CODE OF CONDUCT`](CODE_OF_CONDUCT.md) and the process for submitting pull requests to us.
+
+☁️ **Auth + Sync:** Sign in and sync your data in real-time across all your devices.
+
+**Sign in with:**
+
+- GitHub
+- Google
+- Microsoft
+- Email
+- SSO (Single Sign-On)[^EE]
+
+**🔄 Synchronize your data:** Handoff to continue tasks on your other devices.
+
+- Workspaces
+- History
+- Collections
+- Environments
+- Settings
+
+✅ **Post-Request Tests:** Write tests associated with a request that is executed after the request&#039;s response.
+
+- Check the status code as an integer
+- Filter response headers
+- Parse the response data
+- Set environment variables
+- Write JavaScript code
+
+🌱 **Environments:** Environment variables allow you to store and reuse values in your requests and scripts.
+
+- Unlimited environments and variables
+- Initialize through the pre-request script
+- Export as / import from GitHub gist
+
+&lt;details&gt;
+  &lt;summary&gt;&lt;i&gt;Use-cases&lt;/i&gt;&lt;/summary&gt;
+
+---
+
+- By storing a value in a variable, you can reference it throughout your request section
+- If you need to update the value, you only have to change it in one place
+- Using variables increases your ability to work efficiently and minimizes the likelihood of error
+
+---
+
+&lt;/details&gt;
+
+🚚 **Bulk Edit:** Edit key-value pairs in bulk.
+
+- Entries are separated by newline
+- Keys and values are separated by `:`
+- Prepend `#` to any row you want to add but keep disabled
+
+🎛️ **Admin dashboard:** Manage your team and invite members.
+
+- Insights
+- Manage users
+- Manage teams
+
+📦 **Add-ons:** Official add-ons for hoppscotch.
+
+- **[Hoppscotch CLI](https://github.com/hoppscotch/hoppscotch/tree/main/packages/hoppscotch-cli)** - Command-line interface for Hoppscotch.
+- **[Proxy](https://github.com/hoppscotch/proxyscotch)** - A simple proxy server created for Hoppscotch.
+- **[Browser Extensions](https://github.com/hoppscotch/hoppscotch-extension)** - Browser extensions that enhance your Hoppscotch experience.
+
+  [![Firefox](https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_16x16.png) **Firefox**](https://addons.mozilla.org/en-US/firefox/addon/hoppscotch) &amp;nbsp;|&amp;nbsp; [![Chrome](https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_16x16.png) **Chrome**](https://chrome.google.com/webstore/detail/hoppscotch-extension-for-c/amknoiejhlmhancpahfcfcfhllgkpbld)
+
+  &gt; **Extensions fix `CORS` issues.**
+
+_Add-ons are developed and maintained under **[Hoppscotch Organization](https://github.com/hoppscotch)**._
+
+**For a complete list of features, please read our [documentation](https://docs.hoppscotch.io).**
+
+## **Demo**
+
+- Web : [hoppscotch.io](https://hoppscotch.io)
+- Windows/Linux/macOS : [Desktop Apps](https://docs.hoppscotch.io/documentation/clients/desktop#download-hoppscotch-desktop-app)
+
+## **Usage**
+
+1. Provide your API endpoint in the URL field
+2. Click &quot;Send&quot; to simulate the request
+3. View the response
+
+## **Developing**
+
+Follow our [self-hosting documentation](https://docs.hoppscotch.io/documentation/self-host/getting-started) to get started with the development environment.
+
+## **Contributing**
+
+Please contribute using [GitHub Flow](https://guides.github.com/introduction/flow). Create a branch, add commits, and [open a pull request](https://github.com/hoppscotch/hoppscotch/compare).
+
+Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDUCT`](CODE_OF_CONDUCT.md), and the process for submitting pull requests to us.
+
+## **Continuous Integration**
+
+We use [GitHub Actions](https://github.com/features/actions) for continuous integration. Check out our [build workflows](https://github.com/hoppscotch/hoppscotch/actions).
+
+## **Changelog**
+
+See the [`CHANGELOG`](CHANGELOG.md) file for details.
+
+## **Authors**
+
+This project owes its existence to the collective efforts of all those who contribute — [contribute now](CONTRIBUTING.md).
+
+&lt;div align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://github.com/hoppscotch/hoppscotch/graphs/contributors&quot;&gt;
+    &lt;img src=&quot;https://opencollective.com/hoppscotch/contributors.svg?width=840&amp;button=false&quot;
+      alt=&quot;Contributors&quot;
+      width=&quot;100%&quot; /&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+
+## **License**
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) — see the [`LICENSE`](LICENSE) file for details.
+
+[^EE]: Enterprise edition feature. [Learn more](https://docs.hoppscotch.io/documentation/self-host/getting-started).
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[apache/superset]]></title>
+            <link>https://github.com/apache/superset</link>
+            <guid>https://github.com/apache/superset</guid>
+            <pubDate>Wed, 02 Apr 2025 00:04:48 GMT</pubDate>
+            <description><![CDATA[Apache Superset is a Data Visualization and Data Exploration Platform]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/apache/superset">apache/superset</a></h1>
+            <p>Apache Superset is a Data Visualization and Data Exploration Platform</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 65,372</p>
+            <p>Forks: 14,761</p>
+            <p>Stars today: 72 stars today</p>
+            <h2>README</h2><pre>&lt;!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+&quot;License&quot;); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+&quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+--&gt;
+
+# Superset
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/license/apache-2-0)
+[![Latest Release on Github](https://img.shields.io/github/v/release/apache/superset?sort=semver)](https://github.com/apache/superset/releases/latest)
+[![Build Status](https://github.com/apache/superset/actions/workflows/superset-python-unittest.yml/badge.svg)](https://github.com/apache/superset/actions)
+[![PyPI version](https://badge.fury.io/py/apache_superset.svg)](https://badge.fury.io/py/apache_superset)
+[![Coverage Status](https://codecov.io/github/apache/superset/coverage.svg?branch=master)](https://codecov.io/github/apache/superset)
+[![PyPI](https://img.shields.io/pypi/pyversions/apache_superset.svg?maxAge=2592000)](https://pypi.python.org/pypi/apache_superset)
+[![Get on Slack](https://img.shields.io/badge/slack-join-orange.svg)](http://bit.ly/join-superset-slack)
+[![Documentation](https://img.shields.io/badge/docs-apache.org-blue.svg)](https://superset.apache.org)
+
+&lt;picture width=&quot;500&quot;&gt;
+  &lt;source
+    width=&quot;600&quot;
+    media=&quot;(prefers-color-scheme: dark)&quot;
+    src=&quot;https://superset.apache.org/img/superset-logo-horiz-dark.svg&quot;
+    alt=&quot;Superset logo (dark)&quot;
+  /&gt;
+  &lt;img
+    width=&quot;600&quot;
+    src=&quot;https://superset.apache.org/img/superset-logo-horiz-apache.svg&quot;
+    alt=&quot;Superset logo (light)&quot;
+  /&gt;
+&lt;/picture&gt;
+
+A modern, enterprise-ready business intelligence web application.
+
+[**Why Superset?**](#why-superset) |
+[**Supported Databases**](#supported-databases) |
+[**Installation and Configuration**](#installation-and-configuration) |
+[**Release Notes**](https://github.com/apache/superset/blob/master/RELEASING/README.md#release-notes-for-recent-releases) |
+[**Get Involved**](#get-involved) |
+[**Contributor Guide**](#contributor-guide) |
+[**Resources**](#resources) |
+[**Organizations Using Superset**](https://github.com/apache/superset/blob/master/RESOURCES/INTHEWILD.md)
+
+## Why Superset?
+
+Superset is a modern data exploration and data visualization platform. Superset can replace or augment proprietary business intelligence tools for many teams. Superset integrates well with a variety of data sources.
+
+Superset provides:
+
+- A **no-code interface** for building charts quickly
+- A powerful, web-based **SQL Editor** for advanced querying
+- A **lightweight semantic layer** for quickly defining custom dimensions and metrics
+- Out of the box support for **nearly any SQL** database or data engine
+- A wide array of **beautiful visualizations** to showcase your data, ranging from simple bar charts to geospatial visualizations
+- Lightweight, configurable **caching layer** to help ease database load
+- Highly extensible **security roles and authentication** options
+- An **API** for programmatic customization
+- A **cloud-native architecture** designed from the ground up for scale
+
+## Screenshots &amp; Gifs
+
+**Video Overview**
+
+&lt;!-- File hosted here https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 --&gt;
+
+[superset-video-1080p.webm](https://github.com/user-attachments/assets/b37388f7-a971-409c-96a7-90c4e31322e6)
+
+&lt;br/&gt;
+
+**Large Gallery of Visualizations**
+
+&lt;kbd&gt;&lt;img title=&quot;Gallery&quot; src=&quot;https://superset.apache.org/img/screenshots/gallery.jpg&quot;/&gt;&lt;/kbd&gt;&lt;br/&gt;
+
+**Craft Beautiful, Dynamic Dashboards**
+
+&lt;kbd&gt;&lt;img title=&quot;View Dashboards&quot; src=&quot;https://superset.apache.org/img/screenshots/slack_dash.jpg&quot;/&gt;&lt;/kbd&gt;&lt;br/&gt;
+
+**No-Code Chart Builder**
+
+&lt;kbd&gt;&lt;img title=&quot;Slice &amp; dice your data&quot; src=&quot;https://superset.apache.org/img/screenshots/explore.jpg&quot;/&gt;&lt;/kbd&gt;&lt;br/&gt;
+
+**Powerful SQL Editor**
+
+&lt;kbd&gt;&lt;img title=&quot;SQL Lab&quot; src=&quot;https://superset.apache.org/img/screenshots/sql_lab.jpg&quot;/&gt;&lt;/kbd&gt;&lt;br/&gt;
+
+## Supported Databases
+
+Superset can query data from any SQL-speaking datastore or data engine (Presto, Trino, Athena, [and more](https://superset.apache.org/docs/configuration/databases)) that has a Python DB-API driver and a SQLAlchemy dialect.
+
+Here are some of the major database solutions that are supported:
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/redshift.png&quot; alt=&quot;redshift&quot; border=&quot;0&quot; width=&quot;200&quot;/&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/google-biquery.png&quot; alt=&quot;google-biquery&quot; border=&quot;0&quot; width=&quot;200&quot;/&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/snowflake.png&quot; alt=&quot;snowflake&quot; border=&quot;0&quot; width=&quot;200&quot;/&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/trino.png&quot; alt=&quot;trino&quot; border=&quot;0&quot; width=&quot;150&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/presto.png&quot; alt=&quot;presto&quot; border=&quot;0&quot; width=&quot;200&quot;/&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/databricks.png&quot; alt=&quot;databricks&quot; border=&quot;0&quot; width=&quot;160&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/druid.png&quot; alt=&quot;druid&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/firebolt.png&quot; alt=&quot;firebolt&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/timescale.png&quot; alt=&quot;timescale&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/rockset.png&quot; alt=&quot;rockset&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/postgresql.png&quot; alt=&quot;postgresql&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/mysql.png&quot; alt=&quot;mysql&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/mssql-server.png&quot; alt=&quot;mssql-server&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/ibm-db2.svg&quot; alt=&quot;db2&quot; border=&quot;0&quot; width=&quot;220&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/sqlite.png&quot; alt=&quot;sqlite&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/sybase.png&quot; alt=&quot;sybase&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/mariadb.png&quot; alt=&quot;mariadb&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/vertica.png&quot; alt=&quot;vertica&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/oracle.png&quot; alt=&quot;oracle&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/firebird.png&quot; alt=&quot;firebird&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/greenplum.png&quot; alt=&quot;greenplum&quot; border=&quot;0&quot; width=&quot;200&quot;  /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/clickhouse.png&quot; alt=&quot;clickhouse&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/exasol.png&quot; alt=&quot;exasol&quot; border=&quot;0&quot; width=&quot;160&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/monet-db.png&quot; alt=&quot;monet-db&quot; border=&quot;0&quot; width=&quot;200&quot;  /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/apache-kylin.png&quot; alt=&quot;apache-kylin&quot; border=&quot;0&quot; width=&quot;80&quot;/&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/hologres.png&quot; alt=&quot;hologres&quot; border=&quot;0&quot; width=&quot;80&quot;/&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/netezza.png&quot; alt=&quot;netezza&quot; border=&quot;0&quot; width=&quot;80&quot;/&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/pinot.png&quot; alt=&quot;pinot&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/teradata.png&quot; alt=&quot;teradata&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/yugabyte.png&quot; alt=&quot;yugabyte&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/databend.png&quot; alt=&quot;databend&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/starrocks.png&quot; alt=&quot;starrocks&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/doris.png&quot; alt=&quot;doris&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/oceanbase.svg&quot; alt=&quot;oceanbase&quot; border=&quot;0&quot; width=&quot;220&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/sap-hana.png&quot; alt=&quot;oceanbase&quot; border=&quot;0&quot; width=&quot;220&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/denodo.png&quot; alt=&quot;denodo&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/ydb.svg&quot; alt=&quot;ydb&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+  &lt;img src=&quot;https://superset.apache.org/img/databases/tdengine.png&quot; alt=&quot;TDengine&quot; border=&quot;0&quot; width=&quot;200&quot; /&gt;
+&lt;/p&gt;
+
+**A more comprehensive list of supported databases** along with the configuration instructions can be found [here](https://superset.apache.org/docs/configuration/databases).
+
+Want to add support for your datastore or data engine? Read more [here](https://superset.apache.org/docs/frequently-asked-questions#does-superset-work-with-insert-database-engine-here) about the technical requirements.
+
+## Installation and Configuration
+
+Try out Superset&#039;s [quickstart](https://superset.apache.org/docs/quickstart/) guide or learn about [the options for production deployments](https://superset.apache.org/docs/installation/architecture/).
+
+## Get Involved
+
+- Ask and answer questions on [StackOverflow](https://stackoverflow.com/questions/tagged/apache-superset) using the **apache-superset** tag
+- [Join our community&#039;s Slack](http://bit.ly/join-superset-slack)
+  and please read our [Slack Community Guidelines](https://github.com/apache/superset/blob/master/CODE_OF_CONDUCT.md#slack-community-guidelines)
+- [Join our dev@superset.apache.org Mailing list](https://lists.apache.org/list.html?dev@superset.apache.org). To join, simply send an email to [dev-subscribe@superset.apache.org](mailto:dev-subscribe@superset.apache.org)
+- If you want to help troubleshoot GitHub Issues involving the numerous database drivers that Superset supports, please consider adding your name and the databases you have access to on the [Superset Database Familiarity Rolodex](https://docs.google.com/spreadsheets/d/1U1qxiLvOX0kBTUGME1AHHi6Ywel6ECF8xk_Qy-V9R8c/edit#gid=0)
+- Join Superset&#039;s Town Hall and [Operational Model](https://preset.io/blog/the-superset-operational-model-wants-you/) recurring meetings. Meeting info is available on the [Superset Community Calendar](https://superset.apache.org/community)
+
+## Contributor Guide
+
+Interested in contributing? Check out our
+[CONTRIBUTING.md](https://github.com/apache/superset/blob/master/CONTRIBUTING.md)
+to find resources around contributing along with a detailed guide on
+how to set up a development environment.
+
+## Resources
+
+- [Superset &quot;In the Wild&quot;](https://github.com/apache/superset/blob/master/RESOURCES/INTHEWILD.md) - open a PR to add your org to the list!
+- [Feature Flags](https://github.com/apache/superset/blob/master/RESOURCES/FEATURE_FLAGS.md) - the status of Superset&#039;s Feature Flags.
+- [Standard Roles](https://github.com/apache/superset/blob/master/RESOURCES/STANDARD_ROLES.md) - How RBAC permissions map to roles.
+- [Superset Wiki](https://github.com/apache/superset/wiki) - Tons of additional community resources: best practices, community content and other information.
+- [Superset SIPs](https://github.com/orgs/apache/projects/170) - The status of Superset&#039;s SIPs (Superset Improvement Proposals) for both consensus and implementation status.
+
+Understanding the Superset Points of View
+
+- [The Case for Dataset-Centric Visualization](https://preset.io/blog/dataset-centric-visualization/)
+- [Understanding the Superset Semantic Layer](https://preset.io/blog/understanding-superset-semantic-layer/)
+
+- Getting Started with Superset
+  - [Superset in 2 Minutes using Docker Compose](https://superset.apache.org/docs/installation/docker-compose#installing-superset-locally-using-docker-compose)
+  - [Installing Database Drivers](https://superset.apache.org/docs/configuration/databases#installing-database-drivers)
+  - [Building New Database Connectors](https://preset.io/blog/building-database-connector/)
+  - [Create Your First Dashboard](https://superset.apache.org/docs/using-superset/creating-your-first-dashboard/)
+  - [Comprehensive Tutorial for Contributing Code to Apache Superset
+    ](https://preset.io/blog/tutorial-contributing-code-to-apache-superset/)
+- [Resources to master Superset by Preset](https://preset.io/resources/)
+
+- Deploying Superset
+
+  - [Official Docker image](https://hub.docker.com/r/apache/superset)
+  - [Helm Chart](https://github.com/apache/superset/tree/master/helm/superset)
+
+- Recordings of Past [Superset Community Events](https://preset.io/events)
+
+  - [Mixed Time Series Charts](https://preset.io/events/mixed-time-series-visualization-in-superset-workshop/)
+  - [How the Bing Team Customized Superset for the Internal Self-Serve Data &amp; Analytics Platform](https://preset.io/events/how-the-bing-team-heavily-customized-superset-for-their-internal-data/)
+  - [Live Demo: Visualizing MongoDB and Pinot Data using Trino](https://preset.io/events/2021-04-13-visualizing-mongodb-and-pinot-data-using-trino/)
+  - [Introduction to the Superset API](https://preset.io/events/introduction-to-the-superset-api/)
+  - [Building a Database Connector for Superset](https://preset.io/events/2021-02-16-building-a-database-connector-for-superset/)
+
+- Visualizations
+
+  - [Creating Viz Plugins](https://superset.apache.org/docs/contributing/creating-viz-plugins/)
+  - [Managing and Deploying Custom Viz Plugins](https://medium.com/nmc-techblog/apache-superset-manage-custom-viz-plugins-in-production-9fde1a708e55)
+  - [Why Apache Superset is Betting on Apache ECharts](https://preset.io/blog/2021-4-1-why-echarts/)
+
+- [Superset API](https://superset.apache.org/docs/rest-api)
+
+## Repo Activity
+
+&lt;a href=&quot;https://next.ossinsight.io/widgets/official/compose-last-28-days-stats?repo_id=39464018&quot; target=&quot;_blank&quot; align=&quot;center&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://next.ossinsight.io/widgets/official/compose-last-28-days-stats/thumbnail.png?repo_id=39464018&amp;image_size=auto&amp;color_scheme=dark&quot; width=&quot;655&quot; height=&quot;auto&quot; /&gt;
+    &lt;img alt=&quot;Performance Stats of apache/superset - Last 28 days&quot; src=&quot;https://next.ossinsight.io/widgets/official/compose-last-28-days-stats/thumbnail.png?repo_id=39464018&amp;image_size=auto&amp;color_scheme=light&quot; width=&quot;655&quot; height=&quot;auto&quot; /&gt;
+  &lt;/picture&gt;
+&lt;/a&gt;
+
+&lt;!-- Made with [OSS Insight](https://ossinsight.io/) --&gt;
+
+&lt;!-- telemetry/analytics pixel: --&gt;
+&lt;img referrerpolicy=&quot;no-referrer-when-downgrade&quot; src=&quot;https://static.scarf.sh/a.png?x-pxid=bc1c90cd-bc04-4e11-8c7b-289fb2839492&quot; /&gt;
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[dubinc/dub]]></title>
+            <link>https://github.com/dubinc/dub</link>
+            <guid>https://github.com/dubinc/dub</guid>
+            <pubDate>Wed, 02 Apr 2025 00:04:47 GMT</pubDate>
+            <description><![CDATA[Open-source link attribution platform. Loved by modern marketing teams like Twilio, Perplexity, Vercel, and Huberman Labs.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/dubinc/dub">dubinc/dub</a></h1>
+            <p>Open-source link attribution platform. Loved by modern marketing teams like Twilio, Perplexity, Vercel, and Huberman Labs.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 20,787</p>
+            <p>Forks: 2,308</p>
+            <p>Stars today: 195 stars today</p>
+            <h2>README</h2><pre>&lt;a href=&quot;https://dub.co&quot;&gt;
+  &lt;img alt=&quot;Dub.co is the open-source link management infrastructure for modern marketing teams.&quot; src=&quot;https://github.com/dubinc/dub/assets/28986134/3815d859-afaa-48f9-a9b3-c09964e4d404&quot;&gt;
+&lt;/a&gt;
+
+&lt;h3 align=&quot;center&quot;&gt;Dub.co&lt;/h3&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+    The open-source link attribution platform.
+    &lt;br /&gt;
+    &lt;a href=&quot;https://dub.co&quot;&gt;&lt;strong&gt;Learn more »&lt;/strong&gt;&lt;/a&gt;
+    &lt;br /&gt;
+    &lt;br /&gt;
+    &lt;a href=&quot;#introduction&quot;&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/a&gt; ·
+    &lt;a href=&quot;#features&quot;&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/a&gt; ·
+    &lt;a href=&quot;#tech-stack&quot;&gt;&lt;strong&gt;Tech Stack&lt;/strong&gt;&lt;/a&gt; ·
+    &lt;a href=&quot;#self-hosting&quot;&gt;&lt;strong&gt;Self-hosting&lt;/strong&gt;&lt;/a&gt; ·
+    &lt;a href=&quot;#contributing&quot;&gt;&lt;strong&gt;Contributing&lt;/strong&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://twitter.com/dubdotco&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/twitter/follow/dubdotco?style=flat&amp;label=%40dubdotco&amp;logo=twitter&amp;color=0bf&amp;logoColor=fff&quot; alt=&quot;Twitter&quot; /&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://news.ycombinator.com/item?id=32939407&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Hacker%20News-255-%23FF6600&quot; alt=&quot;Hacker News&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/dubinc/dub/blob/main/LICENSE.md&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/github/license/dubinc/dub?label=license&amp;logo=github&amp;color=f80&amp;logoColor=fff&quot; alt=&quot;License&quot; /&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;br/&gt;
+
+## Introduction
+
+Dub.co is the open-source link attribution platform for modern marketing teams.
+
+## Features
+
+- **Free custom domains**: Create branded short links [with your own domain](https://dub.co/help/article/how-to-add-custom-domain) and [improve click-through rates by 30%](https://dub.co/blog/custom-domains). Paid plans also include a [complimentary custom domain](https://dub.co/help/article/free-dot-link-domain).
+- **Advanced link features**: Supercharge your links with [custom link previews](https://dub.co/help/article/custom-link-previews), [device targeting](https://dub.co/help/article/device-targeting), [geo targeting](https://dub.co/help/article/geo-targeting), [link cloaking](https://dub.co/help/article/link-cloaking), [password protection](https://dub.co/help/article/password-protected-links), and more.
+- **Advanced Analytics**: Dub provides [powerful analytics](https://dub.co/analytics) for your links, including geolocation, device, browser, and referrer information.
+- **QR Codes**: QR codes and short links are like peas in a pod. Dub offers [free QR codes](https://dub.co/tools/qr-code) for every short link you create. Feeling artsy? [Customize them with your own logo](https://dub.co/help/article/custom-qr-codes).
+- **Team collaboration**: [Invite your teammates](https://dub.co/help/article/how-to-invite-teammates) to collaborate on your links. For [enterprises](https://dub.co/enterprise), Dub offers [SAML SSO](https://dub.co/help/category/saml-sso) with Okta, Google, and Azure AD for higher security.
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org/) – framework
+- [TypeScript](https://www.typescriptlang.org/) – language
+- [Tailwind](https://tailwindcss.com/) – CSS
+- [Upstash](https://upstash.com/) – redis
+- [Tinybird](https://tinybird.com/) – analytics
+- [PlanetScale](https://planetscale.com/) – database
+- [NextAuth.js](https://next-auth.js.org/) – auth
+- [BoxyHQ](https://boxyhq.com/enterprise-sso) – SSO/SAML
+- [Turborepo](https://turbo.build/repo) – monorepo
+- [Stripe](https://stripe.com/) – payments
+- [Resend](https://resend.com/) – emails
+- [Vercel](https://vercel.com/) – deployments
+- [Pangea](https://pangea.cloud/services/domain-intel/reputation) - link scanning
+
+## Self-Hosting
+
+You can self-host Dub.co for greater control over your data and design. [Read this guide](https://dub.co/docs/self-hosting/guide) to learn more.
+
+## Contributing
+
+We love our contributors! Here&#039;s how you can contribute:
+
+- [Open an issue](https://github.com/dubinc/dub/issues) if you believe you&#039;ve encountered a bug.
+- Follow the [local development guide](https://dub.co/docs/local-development) to get your local dev environment set up.
+- Make a [pull request](https://github.com/dubinc/dub/pull) to add new features/make quality-of-life improvements/fix bugs.
+
+&lt;a href=&quot;https://github.com/dubinc/dub/graphs/contributors&quot;&gt;
+  &lt;img src=&quot;https://contrib.rocks/image?repo=dubinc/dub&quot; /&gt;
+&lt;/a&gt;
+
+## Repo Activity
+
+![Dub.co repo activity – generated by Axiom](https://repobeats.axiom.co/api/embed/6ac4c94a89ea20e2e10032b932a128b6d8442e66.svg &quot;Repobeats analytics image&quot;)
+
+## License
+
+Inspired by [Plausible](https://plausible.io/), Dub is open-source under the GNU Affero General Public License Version 3 (AGPLv3) or any later version. You can [find it here](https://github.com/dubinc/dub/blob/main/LICENSE.md).
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[nestjs/nest]]></title>
+            <link>https://github.com/nestjs/nest</link>
+            <guid>https://github.com/nestjs/nest</guid>
+            <pubDate>Wed, 02 Apr 2025 00:04:46 GMT</pubDate>
+            <description><![CDATA[A progressive Node.js framework for building efficient, scalable, and enterprise-grade server-side applications with TypeScript/JavaScript 🚀]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/nestjs/nest">nestjs/nest</a></h1>
+            <p>A progressive Node.js framework for building efficient, scalable, and enterprise-grade server-side applications with TypeScript/JavaScript 🚀</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 70,252</p>
+            <p>Forks: 7,815</p>
+            <p>Stars today: 42 stars today</p>
+            <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
             <title><![CDATA[btjawa/BiliTools]]></title>
             <link>https://github.com/btjawa/BiliTools</link>
             <guid>https://github.com/btjawa/BiliTools</guid>
-            <pubDate>Tue, 01 Apr 2025 00:05:10 GMT</pubDate>
+            <pubDate>Wed, 02 Apr 2025 00:04:45 GMT</pubDate>
             <description><![CDATA[A cross-platform bilibili toolbox. 跨平台哔哩哔哩工具箱，支持视频、音乐、番剧、课程下载……持续更新]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/btjawa/BiliTools">btjawa/BiliTools</a></h1>
             <p>A cross-platform bilibili toolbox. 跨平台哔哩哔哩工具箱，支持视频、音乐、番剧、课程下载……持续更新</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 266</p>
-            <p>Forks: 16</p>
-            <p>Stars today: 61 stars today</p>
+            <p>Stars: 336</p>
+            <p>Forks: 24</p>
+            <p>Stars today: 71 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
     &lt;img src=&quot;./assets/bilitools.png&quot; width=&quot;500&quot; /&gt;
 &lt;/p&gt;
@@ -1799,32 +2776,32 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 &lt;/div&gt;
 
 ## 介绍
-
-### 请查看下方下拉栏
-&lt;details open&gt;
-&lt;summary&gt;前言&lt;/summary&gt;
-没想到在几天时间里 Star 翻了这么多倍，一个小项目居然能有这么热门
-
-看了一下Traffic，发现很多人是从52pojie来的，感谢大佬们对项目的支持
-
-也希望大家遵循开源精神，不要把项目用作商业用途，我不想这个项目成为下一个 bilidown
-
-既然热度起来了，接下来几周我会加快速度更新（我是学生，基本只能维持一周一个提交）
-
-在 `v1.3.3` 中会新添加 `aria2c` 与 `ffmpeg` 的完整守护逻辑，以及更加稳定的解析逻辑（或与可以解决 `v1.3.2` 中一些奇奇怪怪的问题）
-&lt;/details&gt;
-&lt;hr /&gt;&lt;br /&gt;
-
 基于 [Tauri v2](https://github.com/tauri-apps/tauri) 构建，支持下载解析哔哩哔哩各类资源，未来还会陆续支持更多功能（请看 [Project](https://github.com/users/btjawa/projects/4)）
 
 请确保只在该项目的 `Release` 页下载应用（或自行构建），**不保证其他来源的安全性**
 
-**大会员下载仅限本身开通了大会员服务的账号，普通账号无法解析付费、大会员内容**
+文档 / 其他信息发布页：[https://www.btjawa.top/bilitools](https://www.btjawa.top/bilitools) 
 
-**本项目仅供学习用途，请勿将本项目用于商业用途**
+&gt; [!WARNING]  
+&gt; **大会员下载仅限本身开通了大会员服务的账号，普通账号无法解析付费、大会员内容**&lt;br&gt;
+&gt; **本项目仅供学习用途，请勿将本项目用于商业用途**&lt;br&gt;
+&gt; **添加下载项目后，须在 下载-&gt;等待中 右下角点击开始下载，不写成立即下载是为了方便添加后续项目**
 
-- 文档：[博客](https://www.btjawa.top/bilitools) 
-- 反馈 / 新功能：[在提交 Issue 时务必按照提示提供足够充足的信息](https://github.com/btjawa/BiliTools/issues/new/choose)
+## 参与贡献
+
+该项目由我一人维护，开发难度较大；**我本人是学生，要准备中考，时间并不多**
+
+如果想要提出新功能，或是发现有任何 `BUG`，欢迎提交 [Issue](https://github.com/btjawa/BiliTools/issues/new/choose)
+
+提交 `Issue` 请注意以下几点：
+
+- 门当户对，不要在已有的与问题无关的Issue下跟楼，按照对应需求选择Issue模板创建新Issue
+- 尽量把问题或需求描述清楚，若是 `BUG`，提交足够的日志或错误页面截图
+- **说话客气点，这是开源 &amp; 免费项目**
+
+不符合以上条件的 `Issue` 我 **也许** 不会处理
+
+在其他渠道提交的问题我 **也许** 不会处理
 
 ## 功能
 
@@ -1837,23 +2814,23 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 | 音乐    | ✅ 已完成 | &lt;ul&gt;&lt;li&gt;支持无损 FLAC 与 320Kbps 音乐(AU)&lt;/li&gt;&lt;/ul&gt; |
 | 历史弹幕 | ✅ 已完成 | &lt;ul&gt;&lt;li&gt;ASS 字幕格式&lt;/li&gt;&lt;li&gt;支持 ProtoBuf 方式&lt;/li&gt;&lt;/ul&gt; |
 | 实时弹幕 | ✅ 已完成 | &lt;ul&gt;&lt;li&gt;ASS 字幕格式&lt;/li&gt;&lt;li&gt;支持 XML、ProtoBuf 方式&lt;/li&gt;&lt;/ul&gt; |
-| 封面    | ✅ 已完成 |                         |
-| 字幕    | ⚠️ WIP   | &lt;ul&gt;&lt;li&gt;支持 SRT 格式&lt;/li&gt;&lt;/ul&gt; |
-| AI总结  | ✅ 已完成 | MD Markdown格式         |
+| 封面    | ✅ 已完成 ||
+| 字幕    | ⚠️ WIP   | 支持 SRT 格式 |
+| AI总结  | ✅ 已完成 | MD Markdown格式 |
 | 漫画    | ❌ TODO | 暂时停止该功能的更新 \| 原因：[博客](https://btjawa.top/bilitools#关于漫画) |
 
 ### 登录相关
 
 | 功能             | 状态       |
 |------------------|------------|
-| 扫码登录          | ✅ 已完成  |
-| 密码登录          | ✅ 已完成  |
-| 短信登录          | ✅ 已完成  |
-| 自动刷新登录状态   | ✅ 已完成  |
-| Wbi 签名          | ✅ 已完成  |
-| buvid 参数验证     | ✅ 已完成  |
-| v_voucher 风控验证 | ✅ 已完成  |
-| 客户端指纹验证      | ✅ 已完成  |
+| 扫码登录          | ✅ 已完成 |
+| 密码登录          | ✅ 已完成 |
+| 短信登录          | ✅ 已完成 |
+| 自动刷新登录状态   | ✅ 已完成 |
+| Wbi 签名          | ✅ 已完成 |
+| buvid 参数验证     | ✅ 已完成 |
+| v_voucher 风控验证 | ✅ 已完成 |
+| 客户端指纹验证      | ✅ 已完成 |
 
 ### I18N Translations
 
@@ -1870,26 +2847,14 @@ I work on translations mainly to improve my English. If you find anything unnatu
 
 ## 开发 / 构建
 
-需要 Rust 2021+ Edition 与 Node.js 20+
+- 需要 Rust 2021+ Edition 与 Node.js 20+
 
-### 克隆项目与安装依赖
-```bash
-git clone https://github.com/btjawa/BiliTools.git
-cd BiliTools
-npm install // pnpm, yarn, etc.
-```
+1. 克隆项目 `git clone https://github.com/btjawa/BiliTools.git`
+2. 进入目录 `cd BiliTools`
+3. 安装依赖 `npm install`
 
-### 开发
-
-```shell
-npm run tauri dev
-```
-
-### 构建
-
-```shell
-npm run tauri build
-```
+- 开发 `npm run tauri dev`
+- 构建 `npm run tauri build`
 
 ## 声明
 
@@ -1903,11 +2868,9 @@ npm run tauri build
 
 该项目根据 `GPL-3.0-or-later` 许可证进行授权，请参考 [LICENSE](/LICENSE) 文件
 
-本项目参考了 [bilibili-API-collect](https://github.com/SocialSisterYi/bilibili-API-collect) 项目的内容，由 [SocialSisterYi](https://github.com/SocialSisterYi) 根据 [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.en) 协议发布，并仅限于非商业用途。
+参考、使用的其他开源项目：
 
-### 使用、参考的其他开源项目
-
- - [bilibili-API-collect](https://github.com/SocialSisterYi/bilibili-API-collect) 部分接口请求参考
+- [bilibili-API-collect](https://github.com/SocialSisterYi/bilibili-API-collect) 部分接口请求规范参考
 
  - [aria2](https://github.com/aria2/aria2) 用于多线程高效下载数据
 
@@ -1916,722 +2879,436 @@ npm run tauri build
  - [DanmakuFactory](https://github.com/hihkm/DanmakuFactory) 用于将 XML 转换为 ASS 字幕
 
  - 其余可查看 `package.json` 与 `src-tauri/Cargo.toml`
-</pre>
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=btjawa/BiliTools&amp;type=Date)](https://www.star-history.com/#btjawa/BiliTools&amp;Date)</pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[eez-open/studio]]></title>
-            <link>https://github.com/eez-open/studio</link>
-            <guid>https://github.com/eez-open/studio</guid>
-            <pubDate>Tue, 01 Apr 2025 00:05:09 GMT</pubDate>
-            <description><![CDATA[Cross-platform low-code GUI and automation]]></description>
+            <title><![CDATA[beekeeper-studio/beekeeper-studio]]></title>
+            <link>https://github.com/beekeeper-studio/beekeeper-studio</link>
+            <guid>https://github.com/beekeeper-studio/beekeeper-studio</guid>
+            <pubDate>Wed, 02 Apr 2025 00:04:44 GMT</pubDate>
+            <description><![CDATA[Modern and easy to use SQL client for MySQL, Postgres, SQLite, SQL Server, and more. Linux, MacOS, and Windows.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/eez-open/studio">eez-open/studio</a></h1>
-            <p>Cross-platform low-code GUI and automation</p>
+            <h1><a href="https://github.com/beekeeper-studio/beekeeper-studio">beekeeper-studio/beekeeper-studio</a></h1>
+            <p>Modern and easy to use SQL client for MySQL, Postgres, SQLite, SQL Server, and more. Linux, MacOS, and Windows.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 975</p>
-            <p>Forks: 148</p>
-            <p>Stars today: 13 stars today</p>
-            <h2>README</h2><pre>[![GitHub release](https://img.shields.io/github/release/eez-open/studio.svg)](https://github.com/eez-open/studio/releases) [![license](https://img.shields.io/github/license/eez-open/studio.svg)](https://github.com/eez-open/studio/blob/master/LICENSE.TXT) [![liberapay](https://img.shields.io/liberapay/receives/eez-open.svg?logo=liberapay)](https://liberapay.com/eez-open/donate) [![Downloads](https://img.shields.io/github/downloads/eez-open/studio/total)](https://github.com/eez-open/studio/releases)
-
-### Tehnical support
-
-Your comments, suggestions, new feature requests and bug reports are welcome and can be made in the [Issues](https://github.com/eez-open/studio/issues) section. However, please take into account that reported issues will be processed by the Envox team according to the best effort principle, so adjust your expectations accordingly. However, if you want a more prompt and high-quality response as well as direct contact with technical support, you can choose one of our [Support plans](https://www.envox.eu/support-plans/) (check also [this](https://www.envox.eu/premium-technical-support-for-eez-studio/) blog post).  
-You are invited to join our community on [Discord](https://discord.gg/q5KAeeenNG) where you can get answers to some questions from other members. You can also start a discussion under [Discussions](https://github.com/eez-open/studio/discussions).
-
-
-### Ownership and License
-
-The contributors are listed in CONTRIB.TXT. This project uses the GPL v3 license, see LICENSE.TXT.
-EEZ Studio uses the [C4.1 (Collective Code Construction Contract)](http://rfc.zeromq.org/spec:22) process for contributions.
-To report an issue, use the [EEZ Studio issue tracker](https://github.com/eez-open/studio/issues).
-
-_Important note: Envox d.o.o. does not claim any ownership rights to the source code generated by the `Build` command except in the case of a project that uses EEZ Flow when it is given under the MIT license._  
-_The user owns the `.eez-project` file and all the source code generated from the file template definitions that are part of `eez-project` file. EEZ Studio may also generate files that are under MIT, BSD 2.0 or Public Domain license._
+            <p>Stars: 18,234</p>
+            <p>Forks: 1,186</p>
+            <p>Stars today: 108 stars today</p>
+            <h2>README</h2><pre># Beekeeper Studio
 
-### Links
-
--   [Web page](https://www.envox.eu/studio/studio-introduction/)
--   [FAQ](https://github.com/eez-open/studio/wiki/Q&amp;A)
--   [Discord](https://discord.gg/q5KAeeenNG) server
--   [X (Twitter)](https://twitter.com/envox)
--   [Mastodon](https://mastodon.social/@envox)
--   [YouTube](https://www.youtube.com/c/eezopen) channel
--   [Liberapay](https://liberapay.com/eez-open/donate) donations &lt;img src=&quot;https://liberapay.com/assets/liberapay/icon-v2_white-on-yellow.svg&quot; width=&quot;16&quot; /&gt;
+Beekeeper Studio is a cross-platform SQL editor and database manager available for Linux, Mac, and Windows.
 
-## Introduction
+[Download Beekeeper Studio](https://beekeeperstudio.io/get-community)
 
-EEZ Studio is a free and open source cross-platform low-code visual tool for desktop and embedded GUIs with [LVGL](https://lvgl.io/) support. Built-in _EEZ Flow_ enables the creation of complex scenarios for test and measurement automation, and the Instruments feature offers remote control of multiple devices and T&amp;M equipment including [EEZ BB3](https://github.com/eez-open/modular-psu) T&amp;M chassis and [EEZ H24005](https://github.com/eez-open/psu-hw) programmable power supply and any other T&amp;M devices that support [SCPI](https://www.ivifoundation.org/scpi/) from manufacturers such as Keysight, Rigol, Siglent, etc.
+We publish binaries for MacOS, Windows, and Linux.
 
-### EEZ Studio _Project_
+[![image](https://user-images.githubusercontent.com/279769/203650152-4a34af1f-8a38-47cf-a273-d34d1c84feeb.png)](https://beekeeperstudio.io/get)
 
-![EEZ Studio Project](docs/images/projects_intro.png)
 
--   Modular visual development environment for designing TFT display screen decorations and defining user interaction (embedded GUI)
--   Generate C++ code for embedded GUI functionality that can be directly included in [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html) for BB3 and other STM32 target platforms or [Arduino IDE](https://www.arduino.cc/en/software) for H24005 and other Arduino compatible target platforms
--   _Instrument definition file_ (IDF) builder with context sensitive SCPI commands help (based on Keysight’s [Offline Command Expert command set](https://www.keysight.com/main/software.jspx?cc=US&amp;lc=eng&amp;ckey=2333687&amp;nid=-11143.0.00&amp;id=2333687) XML structure) suitable for EEZ Studio _Instrument_ and [Keysight Command Expert](https://www.keysight.com/en/pd-2036130/command-expert)
--   SCPI command help generator based on bookmarked HTML generated directly from .odt file using [EEZ WebPublish](https://github.com/eez-open/WebPublish) extension for OpenOffice/LibreOffice.
--   [LVGL](https://lvgl.io/) (Light and Versatile Graphics Library) 8.x and 9.x support
--   Project templates (using giteo.io repositories) and comparison of projects
--   Drag&amp;drop editor for creating instrument&#039;s desktop dashboard (for remote control and management)
--   Flowchart based low-code programming for desktop dashboard
+Beekeeper Studio is free to download and provides a lot of features for free, no sign-up, registration, or credit card required. The app provides some premium features for a reasonable cost license fee. [Learn more here](https://beekeeperstudio.io/pricing)
 
-![Flow](docs/images/flow_intro.png)
 
-### EEZ Studio _Instrument_
+Most of the code in this repo is open source under the GPLv3 license. Paid features are also in this repository under a commercial source-available license.
 
-![EEZ Studio Instrument](docs/images/instruments_intro.png)
+We welcome community contributions!
 
--   Dynamic environment where multiple instruments can be configured and easily accessed
--   Session oriented interaction with each SCPI instrument
--   Serial (via USB), Ethernet and VISA (via free [R&amp;S®VISA](https://www.rohde-schwarz.com/us/driver-pages/remote-control/3-visa-and-tools_231388.html)) T&amp;M instrument interfaces support
--   Direct import of EEZ Studio generated IDFs and **Keysight’s Offline Command Expert command** sets
--   IEXT (Instrument EXTension) catalog with growing number of supported instruments (Rigol, Siglent, Keysight, etc.)
--   History of all activities with search/content filtering
--   Quick navigation via calendar (&quot;heatmap&quot;) or sessions list view
--   Shortcuts (hotkeys and buttons) that can be user defined or come predefined from imported IDF. The shortcut can contain single or sequence of SCPI commands or Javascript code.
--   Javascript code for task automation (e.g. logfile, or programming list upload/download, etc.) can be also assigned to the shortcut
--   SCPI commands context sensitive help with search
--   File upload (instrument to PC) with image preview (e.g. screenshots)
--   File download (PC to instrument) automation for transferring instrument profiles
--   Simple arbitrary waveform editor (envelope and table mode)
--   Displaying measurement data as graphs
--   FFT analysis, harmonics and simple math functions (Period, Frequency, Min, Max, Peak-to-Peak, Average)
--   Export graphs as .CSV file
 
----
+## Supported Databases
 
-New functionality is under development thanks to the sponsorship of the [NGI0 PET](https://nlnet.nl/project/EEZ-DIB/) and [NGI0 Entrust](https://nlnet.nl/project/EEZ-Studio/#ack) funds from NLnet. The following milestones have been achieved so far:
+&lt;!-- Don&#039;t edit this, it gets built automatically from docs/includes/supported_databases.md --&gt;
+&lt;!-- SUPPORT_BEGIN --&gt;
 
--   [M1](https://github.com/eez-open/studio/issues/102) - Visual editor
--   [M2](https://github.com/eez-open/studio/issues/103) - Interpreter for PC
--   [M3](https://github.com/eez-open/studio/issues/104) - Interpreter for BB3
--   [M4](https://github.com/eez-open/studio/issues/134) - Debugger for PC
--   [M5](https://github.com/eez-open/studio/issues/135) - Debugger for BB3
--   [M6](https://github.com/eez-open/studio/releases/tag/0.9.90) - EEZ flow engine unification
--   [M7](https://github.com/eez-open/studio/releases/tag/v0.9.91) - Multilanguage support in project
--   [M8](https://github.com/eez-open/studio/releases/tag/v0.9.92) - Widgets advanced control
--   [M9](https://github.com/eez-open/studio/releases/tag/v0.9.93) - Project templates
--   [M10](https://github.com/eez-open/studio/releases/tag/v0.9.94) - Gitea.io integration
--   [M11](https://github.com/eez-open/studio/releases/tag/v0.9.95) - New EEZ Flow extensions
--   [M12](https://github.com/eez-open/studio/releases/tag/v0.9.96) - LVGL integration
--   [M13](https://github.com/eez-open/studio/releases/tag/v0.9.98) - Standalone Flow dashboard
--   [M14](https://github.com/eez-open/studio/releases/tag/v0.9.99) - Home page modifications and enhancements
--   [M15](https://github.com/eez-open/studio/releases/tag/v0.10.1) - Enhancements (more examples, extension manager, MQTT)
--   [M16](https://github.com/eez-open/studio/releases/tag/v0.10.2) - Online help, enhancements, bug fixing for “Actions”
--   [M17](https://github.com/eez-open/studio/releases/tag/v0.10.3) - Online help, enhancements, bug fixing for “Widgets”
--   [M18](https://github.com/eez-open/studio/releases/tag/v0.12.0) - Simultaneous control of multiple instruments
--   [M19](https://github.com/eez-open/studio/releases/tag/v0.13.0) - Support for non-SCPI instruments and devices
--   [M20](https://github.com/eez-open/studio/releases/tag/v0.14.0) - Hybrid table/tree/grid widget
--   [M21](https://github.com/eez-open/studio/releases/tag/v0.15.0) - Project scrapbook
--   [M22](https://github.com/eez-open/studio/releases/tag/v0.16.0) - Improvement of session-centric work with instruments and data management
--   [M23](https://github.com/eez-open/studio/releases/tag/v0.17.0) - Multimedia support / Support for networking / other Instruments related
----
+| Database                                                 | Support                      | Community | Ultimate |                             Beekeeper Links |
+| :------------------------------------------------------- | :--------------------------- | :-------: | :------: | -----------------------------------------: |
+| [PostgreSQL](https://postgresql.org)                     | ⭐ Full Support              |    ✅     |    ✅    |  [Features](https://beekeeperstudio.io/db/postgres-client) |
+| [MySQL](https://www.mysql.com/)                          | ⭐ Full Support              |    ✅     |    ✅    |  [Features](https://beekeeperstudio.io/db/mysql-client)|
+| [SQLite](https://sqlite.org)                             | ⭐ Full Support              |    ✅     |    ✅    |   [Features](https://beekeeperstudio.io/db/sqlite-client), [Docs](https://docs.beekeeperstudio.io/user_guide/connecting/sqlite) |
+| [SQL Server](https://www.microsoft.com/en-us/sql-server) | ⭐ Full Support              |    ✅     |    ✅    |   [Features](https://beekeeperstudio.io/db/sql-server-client)  |
+| [Amazon Redshift](https://aws.amazon.com/redshift/)      | ⭐ Full Support              |    ✅     |    ✅    |    [Features](https://beekeeperstudio.io/db/redshift-client) |
+| [CockroachDB](https://www.cockroachlabs.com/)            | ⭐ Full Support              |    ✅     |    ✅    | [Features](https://beekeeperstudio.io/db/cockroachdb-client)|
+| [MariaDB](https://mariadb.org/)                          | ⭐ Full Support              |    ✅     |    ✅    |     [Features](https://beekeeperstudio.io/db/mariadb-client) |
+| [TiDB](https://pingcap.com/products/tidb/)               | ⭐ Full Support              |    ✅     |    ✅    |        [Features](https://beekeeperstudio.io/db/tidb-client) |
+| [Google BigQuery](https://cloud.google.com/bigquery)     | ⭐ Full Support             |    ✅     |    ✅    |    [Features](https://beekeeperstudio.io/db/google-big-query-client), [Docs](https://docs.beekeeperstudio.io/user_guide/connecting/bigquery) |
+| [Oracle Database](https://www.oracle.com/database/)      | ⭐ Full Support              |           |    ✅    |      [Features](https://beekeeperstudio.io/db/oracle-client), [Docs](https://docs.beekeeperstudio.io/user_guide/connecting/oracle) |
+| [Cassandra](http://cassandra.apache.org/)                | ⭐ Full Support              |           |    ✅    |   [Features](https://beekeeperstudio.io/db/cassandra-client) |
+| [Firebird](https://firebirdsql.org/)                     | ⭐ Full Support              |           |    ✅    |    [Features](https://beekeeperstudio.io/db/firebird-client), [Docs](https://docs.beekeeperstudio.io/user_guide/connecting/firebird) |
+| [LibSQL](https://libsql.org/)                            | ⭐ Full Support               |           |    ✅    |      [Features](https://beekeeperstudio.io/db/libsql-client) |
+| [ClickHouse](https://clickhouse.tech/)                   | ⭐ Full Support                |           |    ✅    |  -- |
+| [DuckDB](https://duckdb.org/)                            | ⭐ Full Support                |           |    ✅    |      -- |
+| [MongoDB](https://www.mongodb.com/)                      | 🧪 Alpha Support (5.1+)               |           |    ✅    |     -- |
+| [Snowflake](https://www.snowflake.com/)                  | ⏳ Coming Soon                |           |    ✅    |   -- |
+| [Trino](https://trino.io/) / [Presto](https://prestodb.io/) | ⏳ Coming Soon                |           |    ✅    |      -- |
+| [Redis](https://redis.io/)                               | 🗓️ Planned               |           |    ✅    |       -- |
+| [DynamoDB](https://aws.amazon.com/dynamodb/)             | 🗓️ Planned               |           |    ✅    |       -- |
 
-## Installation
 
-64-bit OS is required in all cases.
 
-### Linux
 
-Depending on your linux distribution, choose one of the listed packages (.deb, .rpm) and start the installation using the associated installer.
-In addition, there is a self-executing .AppImage version that, after downloading, needs to enable the `Allow executing file as program` under file `Permissions` before starting it.
-If you encounter a problem running the .AppImage version on your Linux distribution, try running it using the `--no-sandbox` option, i.e. `./EEZ-Studio-[version].AppImage --no-sandbox`
+&lt;!-- SUPPORT_END --&gt;
 
-### Mac
+## Editions of Beekeeper Studio
 
-Download `eezstudio-mac.zip`, unpack and move `eezstudio.app` to Applications.
+Beekeeper Studio is a single download with in-app upgrades for premium features.
 
-### Windows
+We&#039;d love to make Beekeeper Studio totally free for everyone, but building good software is hard work and expensive. We think our paid editions are fairly priced, I hope you do too.
 
-Download and start `EEZ_Studio_setup.exe`.
+👉 [Compare Beekeeper Studio Editions](https://beekeeperstudio.io/pricing)
 
-### Nix
+## Beekeeper Studio Features
 
-The Nix flake provides a derivation for EEZ Studio or an overlay
-that provides that derivation. It can be used to install the project using
-[Nix package manager](https://nixos.org/).
+Top feature: It&#039;s smooth 🍫, fast 🏎, and you&#039;ll actually enjoy using it 🥰
 
-### Build and run from source (all operating systems)
+- Truly cross-platform: Windows, MacOS, and Linux
+- Autocomplete SQL query editor with syntax highlighting
+- Tabbed interface, so you can multitask
+- Sort and filter table data to find just what you need
+- Sensible keyboard-shortcuts
+- Save queries for later
+- Query run-history, so you can find that one query you got working 3 days ago
+- Great dark theme
+- Import/export
+- Backup/restore
+- View data as JSON
+- Loads more
 
--   Install `Node.JS 16.x` or newer
--   Install `node-gyp`, more information at https://github.com/nodejs/node-gyp#installation
+## Our approach to UX
 
-#### Only Linux:
+One of our frustrations with other open-source SQL editors and database managers is that they take a &#039;kitchen sink&#039; approach to features, adding so many features that the UI becomes cluttered and hard to navigate. We wanted a good looking, open source SQL workbench that&#039;s powerful, but also easy to use. We couldn&#039;t find one, so we created Beekeeper Studio!
 
-```
-sudo apt-get install build-essential libudev-dev libnss3
-```
+Generally our guiding star is to only build software that &#039;feels good&#039; to use. That means at the very least we value Beekeeper being fast, straightforward to use, and modern. If a new feature compromises this vision, we kill it.
 
-#### Only Raspbian:
 
-Install Node.js 16 and npm on Raspberry Pi: https://lindevs.com/install-node-js-and-npm-on-raspberry-pi/
+## Supporting Beekeeper Studio
 
-```
-sudo apt-get install build-essential libudev-dev libopenjp2-tools ruby-full
-sudo gem install fpm
-```
+We love working on Beekeeper Studio, and we&#039;d love to keep growing and improving it forever. To do that I need your help.
 
-#### All platforms:
+The best way to support Beekeeper Studio is to purchase a paid [license](https://beekeeperstudio.io/pricing). Every purchase directly supports our work on Beekeeper Studio.
 
-```
-git clone https://github.com/eez-open/studio
-cd studio
-npm install
-npm run build
-```
+If you&#039;re at a business and using Beekeeper Studio for your job, you should probably get your boss to [buy you a license](https://beekeeperstudio.io/pricing).
 
-Start with:
+If you can&#039;t afford a license, please use the free version, that&#039;s why we make a free version!
 
-```
-npm start
-```
+Thank you for your continued support!
 
-Create distribution packages (except MacOS and Raspbian):
 
-```
-npm run dist
-```
+## Documentation
 
-On MacOS:
-
-```
-npm run dist-mac-arm64
-```
-
-or
-
-```
-npm run dist-mac-x64
-```
-
-On Raspbian:
-
-```
-npm run dist-raspbian
-```
-
-#### Nix
-
-To build:
-
-```
-nix build &#039;github:eez-open/studio&#039;
-```
-
-To start:
-
-```
-nix run &#039;github:eez-open/studio&#039;
-```
-
-## USB TMC
-
-The USB TMC driver must be installed if you want to access the T&amp;M instrument using the USB-TMC interface from EEZ Studio _Instrument_ section.
-
-### Windows
-
-Download and start [Zadig](http://zadig.akeo.ie/). Select your device, select libusb-win32 and press &quot;Replace Driver&quot; button:
-
-![Zadig](docs/images/usbtmc_zadin_windows.png)
-
-### Linux
-
-You will probably need to add your Linux account to the usbtmc group before you can access the instrument using EEZ Studio. Connect your instrument with a USB cable and turn it on. Wait until booting is complete. Now check the instrument group name by entering the following command:
-
-```
-ls -l /dev/usbtmc*
-```
-
-In case it is root, enter the command:
-
-```
-sudo groupadd usbtmc
-```
-
-Now, add your account (&lt;username&gt;) to the group:
-
-```
-sudo usermod -a -G usbtmc &lt;username&gt;
-```
-
-A reboot is required. After that, the gid of `/dev/usbtmc0` should be set to `usbtmc` and
-you are ready to use your instrument via USB-TMC interface.
-
-## FAQ
-
-[FAQ Wiki](https://github.com/eez-open/studio/wiki/FAQ)
-
-**Q**: Where is the database file by default?
-**A**: Depending on the operating system, it can be:
-
--   Linux: `~/.config/eezstudio/storage.db`
--   Mac: `~/Library/Application\ Support/eezstudio/storage.db`
--   Windows: `%appdata%\eezstudio\storage.db`
-
-The default created database as well as its location can be changed later through the options in the _Settings_ section of EEZ Studio.
-
-**Q**: Where are the IEXTs (Instrument EXTensions) used to access T&amp;M instruments stored?
-**A**: Depending on the operating system, it can be:
-
--   Linux: `~/.config/eezstudio/extensions`
--   Mac: `~/Library/Application\ Support/eezstudio/extensions`
--   Windows: `%appdata%\eezstudio\extensions`
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[linkwarden/linkwarden]]></title>
-            <link>https://github.com/linkwarden/linkwarden</link>
-            <guid>https://github.com/linkwarden/linkwarden</guid>
-            <pubDate>Tue, 01 Apr 2025 00:05:08 GMT</pubDate>
-            <description><![CDATA[⚡️⚡️⚡️Self-hosted collaborative bookmark manager to collect, organize, and preserve webpages, articles, and documents.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/linkwarden/linkwarden">linkwarden/linkwarden</a></h1>
-            <p>⚡️⚡️⚡️Self-hosted collaborative bookmark manager to collect, organize, and preserve webpages, articles, and documents.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 10,935</p>
-            <p>Forks: 417</p>
-            <p>Stars today: 17 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-  &lt;img src=&quot;./assets/logo.png&quot; width=&quot;100px&quot; /&gt;
-  &lt;h1&gt;Linkwarden&lt;/h1&gt;
-  &lt;h3&gt;Bookmark Preservation for Individuals and Teams&lt;/h3&gt;
-
-&lt;a href=&quot;https://discord.com/invite/CtuYV47nuJ&quot;&gt;&lt;img src=&quot;https://img.shields.io/discord/1117993124669702164?logo=discord&amp;style=flat&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://twitter.com/LinkwardenHQ&quot;&gt;&lt;img src=&quot;https://img.shields.io/twitter/follow/linkwarden&quot; alt=&quot;Twitter&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://news.ycombinator.com/item?id=36942308&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Hacker%20News-280-%23FF6600&quot;&gt;&lt;/img&gt;&lt;/a&gt;
-
-&lt;a href=&quot;https://github.com/linkwarden/linkwarden/releases&quot;&gt;&lt;img alt=&quot;GitHub release&quot; src=&quot;https://img.shields.io/github/v/release/linkwarden/linkwarden&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/linkwarden&quot;&gt;&lt;img src=&quot;https://img.shields.io/opencollective/all/linkwarden&quot; alt=&quot;Open Collective&quot;&gt;&lt;/a&gt;
-
-&lt;/div&gt;
-
-&lt;div align=&#039;center&#039;&gt;
-
-[« LAUNCH DEMO »](https://demo.linkwarden.app)
-
-[Cloud](https://cloud.linkwarden.app) · [Website](https://linkwarden.app) · [Features](https://github.com/linkwarden/linkwarden#features) · [Docs](https://docs.linkwarden.app)
-
-&lt;/div&gt;
-
-## Intro &amp; motivation
-
-**Linkwarden is a self-hosted, open-source collaborative bookmark manager to collect, organize and archive webpages.**
-
-The objective is to organize useful webpages and articles you find across the web in one place, and since useful webpages can go away (see the inevitability of [Link Rot](https://www.howtogeek.com/786227/what-is-link-rot-and-how-does-it-threaten-the-web/)), Linkwarden also saves a copy of each webpage as a Screenshot and PDF, ensuring accessibility even if the original content is no longer available.
-
-Additionally, Linkwarden is designed with collaboration in mind, sharing links with the public and/or allowing multiple users to work together seamlessly.
-
-&gt; [!TIP]  
-&gt; Our official [Cloud](https://linkwarden.app/#pricing) offering provides the simplest way to begin using Linkwarden and it&#039;s the preferred choice for many due to its time-saving benefits. &lt;br&gt; Your subscription supports our hosting infrastructure and ongoing development. &lt;br&gt; Alternatively, if you prefer self-hosting Linkwarden, you can do so by following our [Installation documentation](https://docs.linkwarden.app/self-hosting/installation).
-
-&lt;img src=&quot;./assets/dashboard.png&quot; /&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-&lt;img src=&quot;./assets/all_links.jpg&quot; width=&quot;23%&quot; /&gt;
-
-&lt;img src=&quot;./assets/list_view.jpg&quot; width=&quot;23%&quot; /&gt;
-
-&lt;img src=&quot;./assets/all_collections.jpg&quot; width=&quot;23%&quot; /&gt;
-
-&lt;img src=&quot;./assets/manage_team.jpg&quot; width=&quot;23%&quot; /&gt;
-
-&lt;img src=&quot;./assets/readable_view.jpg&quot; width=&quot;23%&quot; /&gt;
-
-&lt;img src=&quot;./assets/preserved_formats.jpg&quot; width=&quot;23%&quot; /&gt;
-
-&lt;img src=&quot;./assets/public_page.jpg&quot; width=&quot;23%&quot; /&gt;
-
-&lt;img src=&quot;./assets/light_dashboard.jpg&quot; width=&quot;23%&quot; /&gt;
-&lt;/div&gt;
-
-## Features
-
-- 📸 Auto capture a screenshot, PDF, single html file, and readable view of each webpage.
-- 🏛️ Send your webpage to Wayback Machine ([archive.org](https://archive.org)) for a snapshot. (Optional)
-- ✨ Local AI Tagging to automatically tag your links based on their content (Optional).
-- 📂 Organize links by collection, sub-collection, name, description and multiple tags.
-- 👥 Collaborate on gathering links in a collection.
-- 🎛️ Customize the permissions of each member.
-- 🌐 Share your collected links and preserved formats with the world.
-- 📌 Pin your favorite links to dashboard.
-- 🔍 Full text search, filter and sort for easy retrieval.
-- 📱 Responsive design and supports most modern browsers.
-- 🌓 Dark/Light mode support.
-- 🧩 Browser extension. [Star it here!](https://github.com/linkwarden/browser-extension)
-- 🔄 Browser Synchronization (using [Floccus](https://floccus.org)!)
-- ⬇️ Import and export your bookmarks.
-- 🔐 SSO integration. (Enterprise and Self-hosted users only)
-- 📦 Installable Progressive Web App (PWA).
-- 🍎 iOS Shortcut to save Links to Linkwarden.
-- 🔑 API keys.
-- ✅ Bulk actions.
-- 👥 User administration.
-- 🌐 Support for Other Languages (i18n).
-- 📁 Image and PDF Uploads.
-- 🎨 Custom Icons for Links and Collections.
-- 🔔 RSS Feed Subscription.
-- ✨ And many more features. (Literally!)
-
-## Like what we&#039;re doing? Give us a Star ⭐
-
-![Star Us](https://raw.githubusercontent.com/linkwarden/linkwarden/main/assets/star_repo.gif)
-
-## We&#039;re building our Community 🌐
-
-Join and follow us in the following platforms to stay up to date about the most recent features and for support:
-
-&lt;a href=&quot;https://discord.com/invite/CtuYV47nuJ&quot;&gt;&lt;img src=&quot;https://img.shields.io/discord/1117993124669702164?logo=discord&amp;style=flat&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt;
-
-&lt;a href=&quot;https://twitter.com/LinkwardenHQ&quot;&gt;&lt;img src=&quot;https://img.shields.io/twitter/follow/linkwarden&quot; alt=&quot;Twitter&quot;&gt;&lt;/a&gt;
-
-&lt;a href=&quot;https://fosstodon.org/@linkwarden&quot;&gt;&lt;img src=&quot;https://img.shields.io/mastodon/follow/110748840237143200?domain=https%3A%2F%2Ffosstodon.org&quot; alt=&quot;Mastodon&quot;&gt;&lt;/a&gt;
-
-## Suggestions
-
-We _usually_ go after the [popular suggestions](https://github.com/linkwarden/linkwarden/issues?q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc). Feel free to open a [new issue](https://github.com/linkwarden/linkwarden/issues/new?assignees=&amp;labels=enhancement&amp;projects=&amp;template=feature_request.md&amp;title=) to suggest one - others might be interested too! :)
-
-## Roadmap
-
-Make sure to check out our [public roadmap](https://github.com/orgs/linkwarden/projects/1).
-
-## Community Projects
-
-Here are some community-maintained projects that are built around Linkwarden:
-
-- [My Links](https://apps.apple.com/ca/app/my-links-for-linkwarden/id6504573402) - iOS and MacOS Apps, maintained by [JGeek00](https://github.com/JGeek00).
-- [LinkDroid](https://fossdroid.com/a/linkdroid-for-linkwarden.html) - Android App with share sheet integration, [source code](https://github.com/Dacid99/LinkDroid-for-Linkwarden).
-- [LinkGuardian](https://github.com/Elbullazul/LinkGuardian) - An Android client for Linkwarden. Built with Kotlin and Jetpack compose.
-- [StarWarden](https://github.com/rtuszik/starwarden) - A browser extension to save your starred GitHub repositories to Linkwarden.
-
-## Development
-
-If you want to contribute, Thanks! Start by checking our [public roadmap](https://github.com/orgs/linkwarden/projects/1), there you&#039;ll see a [README for contributers](https://github.com/orgs/linkwarden/projects/1?pane=issue&amp;itemId=34708277) for the rest of the info on how to contribute and the main tech stack.
-
-## Security
-
-If you found a security vulnerability, please do **not** create a public issue, instead send an email to [security@linkwarden.app](mailto:security@linkwarden.app) stating the vulnerability. Thanks!
-
-## Support &lt;3
-
-Other than using our official [Cloud](https://linkwarden.app/#pricing) offering, any [donations](https://opencollective.com/linkwarden) are highly appreciated as well!
-
-Here are the other ways to support/cheer this project:
-
-- Starring this repository.
-- Joining us on [Discord](https://discord.com/invite/CtuYV47nuJ).
-- Referring Linkwarden to a friend.
-
-If you did any of the above, Thanksss! Otherwise thanks.
-
-## Thanks to All the Contributors 💪
-
-Huge thanks to these guys for spending their time helping Linkwarden grow. They rock! ⚡️
-
-&lt;img src=&quot;https://contributors-img.web.app/image?repo=linkwarden/linkwarden&quot; alt=&quot;Contributors&quot;/&gt;
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[freeCodeCamp/freeCodeCamp]]></title>
-            <link>https://github.com/freeCodeCamp/freeCodeCamp</link>
-            <guid>https://github.com/freeCodeCamp/freeCodeCamp</guid>
-            <pubDate>Tue, 01 Apr 2025 00:05:07 GMT</pubDate>
-            <description><![CDATA[freeCodeCamp.org's open-source codebase and curriculum. Learn to code for free.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/freeCodeCamp/freeCodeCamp">freeCodeCamp/freeCodeCamp</a></h1>
-            <p>freeCodeCamp.org's open-source codebase and curriculum. Learn to code for free.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 414,795</p>
-            <p>Forks: 39,581</p>
-            <p>Stars today: 125 stars today</p>
-            <h2>README</h2><pre>[![freeCodeCamp Social Banner](https://cdn.freecodecamp.org/platform/universal/fcc_banner_new.png)](https://www.freecodecamp.org/)
-
-[![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](https://makeapullrequest.com)
-[![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://www.firsttimersonly.com/)
-[![Open Source Helpers](https://www.codetriage.com/freecodecamp/freecodecamp/badges/users.svg)](https://www.codetriage.com/freecodecamp/freecodecamp)
-[![Setup Automated](https://img.shields.io/badge/setup-automated-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
-[![Discord](https://img.shields.io/discord/692816967895220344?logo=discord&amp;label=Discord&amp;color=5865F2)](https://discord.gg/PRyKn3Vbay)
-
-## freeCodeCamp.org&#039;s open-source codebase and curriculum
-
-[freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) charity](https://www.freecodecamp.org/donate) to help millions of busy adults transition into tech. Our community has already helped more than 40,000 people get their first developer job.
-
-Our full-stack web development and machine learning curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
-
-## Table of Contents
-
-- [Certifications](#certifications)
-- [The Learning Platform](#the-learning-platform)
-- [Reporting Bugs and Issues](#reporting-bugs-and-issues)
-- [Reporting Security Issues and Responsible Disclosure](#reporting-security-issues-and-responsible-disclosure)
-- [Contributing](#contributing)
-- [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
-- [License](#license)
-
-### Certifications
-
-freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginner programmer around 300 hours to earn.
-
-Each of these 50 projects in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally and ensure you&#039;ve fulfilled all the user stories before you submit it.
-
-You can pull in these test suites through [freeCodeCamp&#039;s CDN](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). This means you can build these projects on websites like CodePen and Replit - or even on your local computer&#039;s development environment.
-
-Once you&#039;ve earned a certification, you will always have it. You will always be able to link to it from your LinkedIn or resume. And when your prospective employers or freelance clients click that link, they&#039;ll see a verified certification specific to you.
-
-The one exception to this is if we discover violations of our [Academic Honesty Policy](https://www.freecodecamp.org/news/academic-honesty-policy/). When we catch people unambiguously plagiarizing (submitting other people&#039;s code or projects as their own without citation), we do what all rigorous institutions of learning should do - we revoke their certifications and ban those people.
-
-Here are our twelve core certifications:
-
-#### 1. [Responsive Web Design Certification](https://www.freecodecamp.org/learn/2022/responsive-web-design/)
-
-- [Learn HTML by Building a Cat Photo App](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-html-by-building-a-cat-photo-app)
-- [Learn Basic CSS by Building a Cafe Menu](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-basic-css-by-building-a-cafe-menu)
-- [Learn CSS Colors by Building a Set of Colored Markers](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-css-colors-by-building-a-set-of-colored-markers)
-- [Learn HTML Forms by Building a Registration Form](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-html-forms-by-building-a-registration-form)
-- [Learn the CSS Box Model by Building a Rothko Painting](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-the-css-box-model-by-building-a-rothko-painting)
-- [Learn CSS Flexbox by Building a Photo Gallery](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-css-flexbox-by-building-a-photo-gallery)
-- [Learn Typography by Building a Nutrition Label](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-typography-by-building-a-nutrition-label)
-- [Learn Accessibility by Building a Quiz](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-accessibility-by-building-a-quiz)
-- [Learn More About CSS Pseudo Selectors by Building A Balance Sheet](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet)
-- [Learn Intermediate CSS by Building a Picasso Painting](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-intermediate-css-by-building-a-picasso-painting)
-- [Learn Responsive Web Design by Building a Piano](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-responsive-web-design-by-building-a-piano)
-- [Learn CSS Variables by Building a City Skyline](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-css-variables-by-building-a-city-skyline)
-- [Learn CSS Grid by Building a Magazine](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-css-grid-by-building-a-magazine)
-- [Learn CSS Transforms by Building a Penguin](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-css-transforms-by-building-a-penguin)
-- [Learn CSS Animations by Building a Ferris Wheel](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-css-animation-by-building-a-ferris-wheel)
-  &lt;br /&gt;
-  &lt;br /&gt;
-  **Projects**: [Survey Form](https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form), [Tribute Page](https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page), [Technical Documentation Page](https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-technical-documentation-page-project/build-a-technical-documentation-page), [Product Landing Page](https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-product-landing-page-project/build-a-product-landing-page), [Personal Portfolio Webpage](https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-personal-portfolio-webpage-project/build-a-personal-portfolio-webpage)
-
-#### 2. [JavaScript Algorithms and Data Structures Certification](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/)
-
-- [Learn Introductory JavaScript by Building a Pyramid Generator](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-introductory-javascript-by-building-a-pyramid-generator)
-- [Learn Basic JavaScript by Building a Role Playing Game](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-basic-javascript-by-building-a-role-playing-game)
-- [Learn Form Validation by Building a Calorie Counter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-form-validation-by-building-a-calorie-counter)
-- [Learn Basic String and Array Methods by Building a Music Player](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-basic-string-and-array-methods-by-building-a-music-player)
-- [Learn the Date Object by Building a Date Formatter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-the-date-object-by-building-a-date-formatter)
-- [Learn Modern JavaScript Methods By Building Football Team Cards](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-modern-javascript-methods-by-building-football-team-cards)
-- [Learn localStorage by Building a Todo App](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-localstorage-by-building-a-todo-app)
-- [Learn Recursion by Building a Decimal to Binary Converter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-recursion-by-building-a-decimal-to-binary-converter)
-- [Learn Basic Algorithmic Thinking by Building a Number Sorter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-basic-algorithmic-thinking-by-building-a-number-sorter)
-- [Learn Advanced Array Methods by Building a Statistics Calculator](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-advanced-array-methods-by-building-a-statistics-calculator)
-- [Learn Functional Programming by Building a Spreadsheet](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-functional-programming-by-building-a-spreadsheet)
-- [Learn Regular Expressions by Building a Spam Filter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-regular-expressions-by-building-a-spam-filter)
-- [Learn Basic OOP by Building a Shopping Cart](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-basic-oop-by-building-a-shopping-cart)
-- [Learn Intermediate OOP by Building a Platformer Game](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-intermediate-oop-by-building-a-platformer-game)
-- [Learn Intermediate Algorithmic Thinking by Building a Dice Game](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#review-algorithmic-thinking-by-building-a-dice-game)
-- [Learn Fetch and Promises By Building an fCC Authors Page](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-fetch-and-promises-by-building-an-fcc-authors-page)
-- [Learn Asynchronous Programming by Building an fCC Forum Leaderboard](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard)
-  &lt;br /&gt;
-  &lt;br /&gt;
-  **Projects**: [Palindrome Checker](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-palindrome-checker-project/build-a-palindrome-checker), [Roman Numeral Converter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-roman-numeral-converter-project/build-a-roman-numeral-converter), [Telephone Number Validator](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-telephone-number-validator-project/build-a-telephone-number-validator), [Cash Register](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-cash-register-project/build-a-cash-register), [Pokémon Search App](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-pokemon-search-app-project/build-a-pokemon-search-app)
-
-#### 3. [Front End Libraries Certification](https://www.freecodecamp.org/learn/front-end-development-libraries/)
-
-- [Bootstrap](https://www.freecodecamp.org/learn/front-end-development-libraries/#bootstrap)
-- [jQuery](https://www.freecodecamp.org/learn/front-end-development-libraries/#jquery)
-- [Sass](https://www.freecodecamp.org/learn/front-end-development-libraries/#sass)
-- [React](https://www.freecodecamp.org/learn/front-end-development-libraries/#react)
-- [Redux](https://www.freecodecamp.org/learn/front-end-development-libraries/#redux)
-- [React and Redux](https://www.freecodecamp.org/learn/front-end-development-libraries/#react-and-redux)
-  &lt;br /&gt;
-  &lt;br /&gt;
-  **Projects**: [Random Quote Machine](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine), [Markdown Previewer](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-markdown-previewer), [Drum Machine](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-drum-machine), [JavaScript Calculator](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-javascript-calculator), [25 + 5 Clock](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-25--5-clock)
-
-#### 4. [Data Visualization Certification](https://www.freecodecamp.org/learn/data-visualization/)
-
-- [Data Visualization with D3](https://www.freecodecamp.org/learn/data-visualization/#data-visualization-with-d3)
-- [JSON APIs and Ajax](https://www.freecodecamp.org/learn/data-visualization/#json-apis-and-ajax)
-  &lt;br /&gt;
-  &lt;br /&gt;
-  **Projects**: [Bar Chart](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-bar-chart), [Scatterplot Graph](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-scatterplot-graph), [Heat Map](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-heat-map), [Choropleth Map](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-choropleth-map), [Treemap Diagram](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-treemap-diagram)
-
-#### 5. [Relational Database](https://www.freecodecamp.org/learn/relational-database/)
-
-- [Learn Bash by Building a Boilerplate](https://www.freecodecamp.org/learn/relational-database/#learn-bash-by-building-a-boilerplate)
-- [Learn Relational Databases by Building a Mario Database](https://www.freecodecamp.org/learn/relational-database/#learn-relational-databases-by-building-a-mario-database)
-- [Learn Bash Scripting by Building Five Programs](https://www.freecodecamp.org/learn/relational-database/#learn-bash-scripting-by-building-five-programs)
-- [Learn SQL by Building a Student Database: Part 1](https://www.freecodecamp.org/learn/relational-database/#learn-sql-by-building-a-student-database-part-1)
-- [Learn SQL by Building a Student Database: Part 2](https://www.freecodecamp.org/learn/relational-database/#learn-sql-by-building-a-student-database-part-2)
-- [Learn Advanced Bash by Building a Kitty Ipsum Translator](https://www.freecodecamp.org/learn/relational-database/#learn-advanced-bash-by-building-a-kitty-ipsum-translator)
-- [Learn Bash and SQL by Building a Bike Rental Shop](https://www.freecodecamp.org/learn/relational-database/#learn-bash-and-sql-by-building-a-bike-rental-shop)
-- [Learn Nano by Building a Castle](https://www.freecodecamp.org/learn/relational-database/#learn-nano-by-building-a-castle)
-- [Learn Git by Building an SQL Reference Object](https://www.freecodecamp.org/learn/relational-database/#learn-git-by-building-an-sql-reference-object)
-  &lt;br /&gt;
-  &lt;br /&gt;
-  **Projects**: [Salon Appointment Scheduler](https://www.freecodecamp.org/learn/relational-database/#build-a-salon-appointment-scheduler-project), [Celestial Bodies Database](https://www.freecodecamp.org/learn/relational-database/#build-a-celestial-bodies-database-project), [Periodic Table Database](https://www.freecodecamp.org/learn/relational-database/#build-a-periodic-table-database-project), [Number Guessing Game](https://www.freecodecamp.org/learn/relational-database/#build-a-number-guessing-game-project), [World Cup Database](https://www.freecodecamp.org/learn/relational-database/#build-a-world-cup-database-project)
-
-#### 6. [Back End Development and APIs Certification](https://www.freecodecamp.org/learn/back-end-development-and-apis/)
-
-- [Managing Packages with Npm](https://www.freecodecamp.org/learn/back-end-development-and-apis/#managing-packages-with-npm)
-- [Basic Node and Express](https://www.freecodecamp.org/learn/back-end-development-and-apis/#basic-node-and-express)
-- [MongoDB and Mongoose](https://www.freecodecamp.org/learn/back-end-development-and-apis/#mongodb-and-mongoose)
-  &lt;br /&gt;
-  &lt;br /&gt;
-  **Projects**: [Timestamp Microservice](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/timestamp-microservice), [Request Header Parser](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/request-header-parser-microservice), [URL Shortener](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/url-shortener-microservice), [Exercise Tracker](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/exercise-tracker), [File Metadata Microservice](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/file-metadata-microservice)
-
-#### 7. [Quality Assurance Certification](https://www.freecodecamp.org/learn/quality-assurance/)
-
-- [Quality Assurance and Testing with Chai](https://www.freecodecamp.org/learn/quality-assurance/#quality-assurance-and-testing-with-chai)
-- [Advanced Node and Express](https://www.freecodecamp.org/learn/quality-assurance/#advanced-node-and-express)
-  &lt;br /&gt;
-  &lt;br /&gt;
-  **Projects**: [Metric-Imperial Converter](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/metric-imperial-converter), [Issue Tracker](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/issue-tracker), [Personal Library](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/personal-library), [Sudoku Solver](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/sudoku-solver), [American British Translator](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/american-british-translator)
-
-#### 8. [Scientific Computing with Python Certification](https://www.freecodecamp.org/learn/scientific-computing-with-python/)
-
-- [Learn String Manipulation by Building a Cipher](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-string-manipulation-by-building-a-cipher)
-- [Learn How to Work with Numbers and Strings by Implementing the Luhn Algorithm](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-how-to-work-with-numbers-and-strings-by-implementing-the-luhn-algorithm)
-- [Learn Lambda Functions by Building an Expense Tracker](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-lambda-functions-by-building-an-expense-tracker)
-- [Learn List Comprehension by Building a Case Converter Program](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-list-comprehension-by-building-a-case-converter-program)
-- [Learn the Bisection Method by Finding the Square Root of a Number](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-the-bisection-method-by-finding-the-square-root-of-a-number)
-- [Learn Regular Expressions by Building a Password Generator](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-regular-expressions-by-building-a-password-generator)
-- [Learn Algorithm Design by Building a Shortest Path Algorithm](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-algorithm-design-by-building-a-shortest-path-algorithm)
-- [Learn Recursion by Solving the Tower of Hanoi Puzzle](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-recursion-by-solving-the-tower-of-hanoi-puzzle)
-- [Learn Data Structures by Building the Merge Sort Algorithm](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-data-structures-by-building-the-merge-sort-algorithm)
-- [Learn Classes and Objects by Building a Sudoku Solver](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-classes-and
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[balena-io/etcher]]></title>
-            <link>https://github.com/balena-io/etcher</link>
-            <guid>https://github.com/balena-io/etcher</guid>
-            <pubDate>Tue, 01 Apr 2025 00:05:06 GMT</pubDate>
-            <description><![CDATA[Flash OS images to SD cards & USB drives, safely and easily.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/balena-io/etcher">balena-io/etcher</a></h1>
-            <p>Flash OS images to SD cards & USB drives, safely and easily.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 30,984</p>
-            <p>Forks: 2,193</p>
-            <p>Stars today: 17 stars today</p>
-            <h2>README</h2><pre># Etcher
-
-&gt; Flash OS images to SD cards &amp; USB drives, safely and easily.
-
-Etcher is a powerful OS image flasher built with web technologies to ensure
-flashing an SDCard or USB drive is a pleasant and safe experience. It protects
-you from accidentally writing to your hard-drives, ensures every byte of data
-was written correctly, and much more. It can also directly flash Raspberry Pi devices that support [USB device boot mode](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#usb-device-boot-mode).
-
-[![Current Release](https://img.shields.io/github/release/balena-io/etcher.svg?style=flat-square)](https://balena.io/etcher)
-[![License](https://img.shields.io/github/license/balena-io/etcher.svg?style=flat-square)](https://github.com/balena-io/etcher/blob/master/LICENSE)
-[![Balena.io Forums](https://img.shields.io/discourse/https/forums.balena.io/topics.svg?style=flat-square&amp;label=balena.io%20forums)](https://forums.balena.io/c/etcher)
-
----
-
-[**Download**][etcher] | [**Support**][support] | [**Documentation**][user-documentation] | [**Contributing**][contributing] | [**Roadmap**][milestones]
-
-## Supported Operating Systems
-
-- Linux; most distros; Intel 64-bit.
-- Windows 10 and later; Intel 64-bit.
-- macOS 10.13 (High Sierra) and later; both Intel and Apple Silicon.
-
-## Installers
-
-Refer to the [downloads page][etcher] for the latest pre-made
-installers for all supported operating systems.
-
-## Packages
-
-#### Debian and Ubuntu based Package Repository (GNU/Linux x86/x64)
-
-Package for Debian and Ubuntu can be downloaded from the [Github release page](https://github.com/balena-io/etcher/releases/)
-
-##### Install .deb file using apt
-
-   ```sh
-      sudo apt install ./balena-etcher_******_amd64.deb
-   ```
-
-##### Uninstall
-
-   ```sh
-      sudo apt remove balena-etcher
-   ```
-
-#### Redhat (RHEL) and Fedora-based Package Repository (GNU/Linux x86/x64)
-
-##### Yum
-
-Package for Fedora-based and Redhat can be downloaded from the [Github release page](https://github.com/balena-io/etcher/releases/)
-
-1. Install using yum
-
-```sh
-   sudo yum localinstall balena-etcher-***.x86_64.rpm
-```
-
-#### Arch/Manjaro Linux (GNU/Linux x64)
-
-Etcher is offered through the Arch User Repository and can be installed on both Manjaro and Arch systems. You can compile it from the source code in this repository using [`balena-etcher`](https://aur.archlinux.org/packages/balena-etcher/). The following example uses a common AUR helper to install the latest release:
-
-```sh
-yay -S balena-etcher
-```
-
-##### Uninstall
-
-```sh
-yay -R balena-etcher
-```
-
-#### WinGet (Windows)
-
-This package is updated by [gh-action](https://github.com/vedantmgoyal2009/winget-releaser), and is kept up to date automatically.
-
-```sh
-winget install balenaEtcher #or Balena.Etcher
-```
-
-##### Uninstall
-
-```sh
-winget uninstall balenaEtcher
-```
-
-#### Chocolatey (Windows)
-
-This package is maintained by [@majkinetor](https://github.com/majkinetor), and
-is kept up to date automatically.
-
-```sh
-choco install etcher
-```
-
-##### Uninstall
-
-```sh
-choco uninstall etcher
-```
-
-## Support
-
-If you&#039;re having any problem, please [raise an issue][newissue] on GitHub, and
-the balena.io team will be happy to help.
+Check out [docs.beekeeperstudio.io](https://docs.beekeeperstudio.io) for user guides, FAQs, troubleshooting tips, and more.
 
 ## License
 
-Etcher is free software and may be redistributed under the terms specified in
-the [license].
+Beekeeper Studio Community Edition (the code in this repository) is licensed under the GPLv3 license.
 
-[etcher]: https://balena.io/etcher
-[electron]: https://electronjs.org/
-[electron-supported-platforms]: https://electronjs.org/docs/tutorial/support#supported-platforms
-[support]: https://github.com/balena-io/etcher/blob/master/docs/SUPPORT.md
-[contributing]: https://github.com/balena-io/etcher/blob/master/docs/CONTRIBUTING.md
-[user-documentation]: https://github.com/balena-io/etcher/blob/master/docs/USER-DOCUMENTATION.md
-[milestones]: https://github.com/balena-io/etcher/milestones
-[newissue]: https://github.com/balena-io/etcher/issues/new
-[license]: https://github.com/balena-io/etcher/blob/master/LICENSE
+Beekeeper Studio Ultimate Edition contains extra features and is licensed under a [commercial end user agreement (EULA)](https://beekeeperstudio.io/legal/commercial-eula/).
+
+Beekeeper Studio&#039;s trademarks (words marks and logos) are not open source. See our [trademark guidelines](https://beekeeperstudio.io/legal/trademark/) for more information.
+
+## Trademark Guidelines
+
+Trademarks can be complicated with open source projects, so we have adapted a set of standard guidelines for using our trademarks that are common to many open source projects.
+
+If you are just using the Beekeeper Studio app, and you are not forking or distributing Beekeeper Studio code in any way, these probably don&#039;t apply to you.
+
+👉 [Beekeeper Studio Trademark Guidelines](https://beekeeperstudio.io/legal/trademark/)
+
+## Contributing to Beekeeper Studio
+
+We love *any* community engagement. Even if you&#039;re complaining because you don&#039;t like something about the app!
+
+
+### Contributor Agreements
+
+- Building an inclusive and welcoming community is important to us, so please follow our [code of conduct](code_of_conduct.md) as you engage with the project.
+
+- By contributing to the project you agree to the terms of our [contributor guidelines](CONTRIBUTING.md).
+
+### Contribute without coding
+
+We have you covered, read our [guide to contributing in 10 minutes without coding](https://github.com/beekeeper-studio/beekeeper-studio/issues/287).
+
+### Compiling and Running Beekeeper Studio Locally
+
+Want to write some code and improve Beekeeper Studio? Getting set-up is easy on Mac, Linux, or Windows.
+
+```bash
+# First: Install NodeJS 20, NPM, and Yarn
+# ...
+
+# 1. Fork the Beekeeper Studio Repo (click fork button at top right of this screen)
+# 2. Check out your fork:
+git clone git@github.com:&lt;your-username&gt;/beekeeper-studio.git beekeeper-studio
+cd beekeeper-studio/
+yarn install # installs dependencies
+
+
+# Now you can start the app:
+yarn run electron:serve ## the app will now start
+```
+
+**If you get `error:03000086:digital envelope routines::initialization error`, you&#039;ll have to update openssl.**
+
+- On Ubuntu/Debian:
+```
+sudo apt-get update
+sudo apt-get upgrade openssl
+```
+
+- On CentOS/RHEL:
+```
+sudo yum update openssl
+```
+
+- On macOS (using Homebrew):
+```
+brew update
+brew upgrade openssl
+```
+
+### Where to make changes?
+
+This repo is now a monorepo, we have several places with code, but only really a couple of important entry points.
+
+All app code lives in `apps/studio`, some shared code lives in `shared/src`. This is shared with other apps.
+
+Beekeeper Studio has two entry points:
+- `background.js` - this is the electron-side code that controls native things like showing windows.
+- `main.js` - this is the entry point for the Vue.js app. You can follow the Vue component breadcrumbs from `App.vue` to find the screen you need.
+
+**Generally we have two &#039;screens&#039;:**
+- ConnectionInterface - connecting to a DB
+- CoreInterface - interacting with a database
+
+### How to submit a change?
+
+
+- Push your changes to your repository and open a Pull Request from our github page (this page)
+- Make sure to write some notes about what your change does! A gif is always welcome for visual changes.
+
+## Maintainer notes (casual readers can ignore this stuff)
+
+### Upgrading Electron Gotchas
+
+This is always a total pain and will break the build 9/10.
+
+Some things you need to consider when upgrading Electron:
+
+1. Does it use a different node version. Eg Electron-18 uses node 14, 22 uses node 16. So everyone needs to upgrade
+2. Does node-abi need to be upgraded to be able to understand the electron version? This is used in the build to fetch prebuilt packages. You need to upgrade this in root/package.json#resolutions
+3. Were any APIs deprecated or removed? Make sure all features that interact with the Electron APIs still work, stuff like - selecting a file, maximizing a window, running a query, etc.
+
+
+### Release Process
+
+1. Up the version number in package.json
+2. Replace `build/release-notes.md` with the latest release notes. Follow the format that is there.
+  - run `git log &lt;last-tag&gt;..HEAD --oneline | grep &#039;Merge pull&#039;` to find PRs merged
+2. Commit
+3. Push to master
+4. Create a tag `git tag v&lt;version&gt;`. It must start with a &#039;v&#039;
+5. `git push origin &lt;tagname&gt;`
+  - Now wait for the build/publish action to complete on Github
+6. Push the new release live
+  - Go to the new &#039;draft&#039; release on the releases tab of github, edit the notes, publish
+  - Log into snapcraft.io, drag the uploaded release into the &#039;stable&#039; channel for each architecture.
+
+This should also publish the latest docs
+
+Post Release:
+1. Copy release notes to a blog post, post on website
+2. Tweet link
+3. Share on LinkedIn
+4. Send to mailing list on SendInBlue
+
+
+## Big Thanks
+
+Beekeeper Studio wouldn&#039;t exist without [Sqlectron-core](https://github.com/sqlectron/sqlectron-core), the core database libraries from the [Sqlectron project](https://github.com/sqlectron/sqlectron-gui). Beekeeper Studio started as an experimental fork of that repository. A big thanks to @maxcnunes and the rest of the Sqlectron community.
+
+The original license from sqlectron-core is included here:
+
+```
+Copyright (c) 2015 The SQLECTRON Team
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+&#039;Software&#039;), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &#039;AS IS&#039;, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+```
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[remotion-dev/remotion]]></title>
+            <link>https://github.com/remotion-dev/remotion</link>
+            <guid>https://github.com/remotion-dev/remotion</guid>
+            <pubDate>Wed, 02 Apr 2025 00:04:43 GMT</pubDate>
+            <description><![CDATA[🎥 Make videos programmatically with React]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/remotion-dev/remotion">remotion-dev/remotion</a></h1>
+            <p>🎥 Make videos programmatically with React</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 21,834</p>
+            <p>Forks: 1,135</p>
+            <p>Stars today: 19 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://github.com/remotion-dev/logo&quot;&gt;
+    &lt;picture&gt;
+      &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.gif&quot;&gt;
+      &lt;img alt=&quot;Animated Remotion Logo&quot; src=&quot;https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif&quot;&gt;
+    &lt;/picture&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+[![Discord Shield](https://img.shields.io/discord/809501355504959528?color=000000&amp;label=Discord&amp;logo=fdgssdf)](https://remotion.dev/discord)
+[![NPM Version](https://img.shields.io/npm/v/remotion.svg?style=flat&amp;color=black)](https://www.npmjs.org/package/remotion)
+[![NPM Downloads](https://img.shields.io/npm/dm/remotion.svg?style=flat&amp;color=black&amp;label=Downloads)](https://npmcharts.com/compare/remotion?minimal=true)
+[![Open Bounties](https://img.shields.io/endpoint?url=https%3A%2F%2Fconsole.algora.io%2Fapi%2Fshields%2Fremotion%2Fbounties%3Fstatus%3Dopen&amp;style=flat&amp;color=black&amp;labelColor=grey&amp;label=Open+Bounties)](https://github.com/remotion-dev/remotion/issues?q=is%3Aopen+label%3A%22%F0%9F%92%8E+Bounty%22+sort%3Aupdated-desc)
+&lt;a href=&quot;https://twitter.com/remotion&quot;&gt;&lt;img src=&quot;https://img.shields.io/twitter/follow/remotion?label=Twitter&amp;color=black&quot; alt=&quot;Twitter&quot;&gt;&lt;/a&gt;
+
+Remotion is a framework for **creating videos programmatically using React.**
+
+## Why create videos in React?
+
+- **Leverage web technologies**: Use all of CSS, Canvas, SVG, WebGL, etc.
+- **Leverage programming**: Use variables, functions, APIs, math and algorithms to create new effects
+- **Leverage React**: Reusable components, Powerful composition, Fast Refresh, Package ecosystem
+
+## Created with Remotion
+
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;
+&lt;img style=&quot;width: 290px&quot; src=&quot;https://remotion-assets.s3.eu-central-1.amazonaws.com/fireship-quick.gif&quot; /&gt;
+&lt;p&gt;&quot;This video was made with code&quot; &lt;em&gt;- Fireship&lt;/em&gt; &lt;a href=&quot;https://youtu.be/deg8bOoziaE&quot;&gt;Watch&lt;/a&gt; • &lt;a href=&quot;https://github.com/wcandillon/remotion-fireship&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;
+&lt;img style=&quot;width: 240px&quot; src=&quot;https://remotion-assets.s3.eu-central-1.amazonaws.com/unwrapped-2023.gif&quot; /&gt;
+&lt;p&gt;GitHub Unwrapped - Personalized Year in Review &lt;a href=&quot;https://www.githubunwrapped.com&quot;&gt;Try&lt;/a&gt; • &lt;a href=&quot;https://github.com/remotion-dev/github-unwrapped&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;
+&lt;em&gt;View more in the &lt;a href=&quot;https://remotion.dev/showcase&quot;&gt;Remotion Showcase&lt;/a&gt;!&lt;/em&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+## Get started
+
+If you already have Node.JS installed, type
+
+```console
+npx create-video@latest
+```
+
+to get started. Otherwise, read the [installation page](https://www.remotion.dev/docs/) in the documentation.
+
+## Documentation
+
+Documentation: [**remotion.dev/docs**](https://www.remotion.dev/docs)  
+API Reference: [**remotion.dev/api**](https://www.remotion.dev/api)
+
+## License
+
+Be aware of that Remotion has a special license and requires obtaining a company license in some cases. Read the [LICENSE](LICENSE.md) page for more information.
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) to learn about contributing to this project.
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[vitejs/vite]]></title>
+            <link>https://github.com/vitejs/vite</link>
+            <guid>https://github.com/vitejs/vite</guid>
+            <pubDate>Wed, 02 Apr 2025 00:04:42 GMT</pubDate>
+            <description><![CDATA[Next generation frontend tooling. It's fast!]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/vitejs/vite">vitejs/vite</a></h1>
+            <p>Next generation frontend tooling. It's fast!</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 71,794</p>
+            <p>Forks: 6,558</p>
+            <p>Stars today: 23 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://vite.dev&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+    &lt;img width=&quot;180&quot; src=&quot;https://vite.dev/logo.svg&quot; alt=&quot;Vite logo&quot;&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+&lt;br/&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://npmjs.com/package/vite&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/v/vite.svg&quot; alt=&quot;npm package&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://nodejs.org/en/about/previous-releases&quot;&gt;&lt;img src=&quot;https://img.shields.io/node/v/vite.svg&quot; alt=&quot;node compatibility&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/vitejs/vite/actions/workflows/ci.yml&quot;&gt;&lt;img src=&quot;https://github.com/vitejs/vite/actions/workflows/ci.yml/badge.svg?branch=main&quot; alt=&quot;build status&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://pr.new/vitejs/vite&quot;&gt;&lt;img src=&quot;https://developer.stackblitz.com/img/start_pr_dark_small.svg&quot; alt=&quot;Start new PR in StackBlitz Codeflow&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://chat.vite.dev&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/chat-discord-blue?style=flat&amp;logo=discord&quot; alt=&quot;discord chat&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;br/&gt;
+
+# Vite ⚡
+
+&gt; Next Generation Frontend Tooling
+
+- 💡 Instant Server Start
+- ⚡️ Lightning Fast HMR
+- 🛠️ Rich Features
+- 📦 Optimized Build
+- 🔩 Universal Plugin Interface
+- 🔑 Fully Typed APIs
+
+Vite (French word for &quot;quick&quot;, pronounced [`/vit/`](https://cdn.jsdelivr.net/gh/vitejs/vite@main/docs/public/vite.mp3), like &quot;veet&quot;) is a new breed of frontend build tooling that significantly improves the frontend development experience. It consists of two major parts:
+
+- A dev server that serves your source files over [native ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules), with [rich built-in features](https://vite.dev/guide/features.html) and astonishingly fast [Hot Module Replacement (HMR)](https://vite.dev/guide/features.html#hot-module-replacement).
+
+- A [build command](https://vite.dev/guide/build.html) that bundles your code with [Rollup](https://rollupjs.org), pre-configured to output highly optimized static assets for production.
+
+In addition, Vite is highly extensible via its [Plugin API](https://vite.dev/guide/api-plugin.html) and [JavaScript API](https://vite.dev/guide/api-javascript.html) with full typing support.
+
+[Read the Docs to Learn More](https://vite.dev).
+
+## Packages
+
+| Package                                         | Version (click for changelogs)                                                                                                    |
+| ----------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
+| [vite](packages/vite)                           | [![vite version](https://img.shields.io/npm/v/vite.svg?label=%20)](packages/vite/CHANGELOG.md)                                    |
+| [@vitejs/plugin-legacy](packages/plugin-legacy) | [![plugin-legacy version](https://img.shields.io/npm/v/@vitejs/plugin-legacy.svg?label=%20)](packages/plugin-legacy/CHANGELOG.md) |
+| [create-vite](packages/create-vite)             | [![create-vite version](https://img.shields.io/npm/v/create-vite.svg?label=%20)](packages/create-vite/CHANGELOG.md)               |
+
+## Contribution
+
+See [Contributing Guide](CONTRIBUTING.md).
+
+## License
+
+[MIT](LICENSE).
+
+## Sponsors
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a target=&quot;_blank&quot; href=&quot;https://github.com/sponsors/yyx990803&quot;&gt;
+    &lt;img alt=&quot;sponsors&quot; src=&quot;https://sponsors.vuejs.org/vite.svg?v2&quot;&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
