@@ -4,24 +4,858 @@
         <title>GitHub Trending Today for javascript - JavaScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for javascript.</description>
-        <lastBuildDate>Sat, 12 Jul 2025 00:04:52 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 13 Jul 2025 00:05:25 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2025, GitHub</copyright>
         <item>
+            <title><![CDATA[gorhill/uBlock]]></title>
+            <link>https://github.com/gorhill/uBlock</link>
+            <guid>https://github.com/gorhill/uBlock</guid>
+            <pubDate>Sun, 13 Jul 2025 00:05:25 GMT</pubDate>
+            <description><![CDATA[uBlock Origin - An efficient blocker for Chromium and Firefox. Fast and lean.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/gorhill/uBlock">gorhill/uBlock</a></h1>
+            <p>uBlock Origin - An efficient blocker for Chromium and Firefox. Fast and lean.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 55,414</p>
+            <p>Forks: 3,560</p>
+            <p>Stars today: 221 stars today</p>
+            <h2>README</h2><pre>[![Badge Commits]][Commit Rate]
+[![Badge Issues]][Issues]
+[![Badge Localization]][Crowdin]
+[![Badge License]][License]
+[![Badge NPM]][NPM]
+[![Badge Mozilla]][Mozilla]
+[![Badge Chrome]][Chrome]
+[![Badge Edge]][Edge]
+
+***
+
+&lt;h1 align=&quot;center&quot;&gt;
+&lt;sub&gt;
+&lt;img src=&quot;https://github.com/gorhill/uBlock/blob/master/src/img/ublock.svg&quot; height=&quot;38&quot; width=&quot;38&quot;&gt;
+&lt;/sub&gt;
+uBlock Origin (uBO)
+&lt;/h1&gt;
+
+| Browser   | Install from ... | Status |
+| :-------: | ---------------- | ------ |
+| &lt;img src=&quot;https://github.com/user-attachments/assets/b0136512-56a5-4856-8c50-4971c957a24f&quot; alt=&quot;Get uBlock Origin for Firefox&quot;&gt; | &lt;a href=&quot;https://addons.mozilla.org/addon/ublock-origin/&quot;&gt;Firefox Add-ons&lt;/a&gt; | [uBO works best on Firefox](https://github.com/gorhill/uBlock/wiki/uBlock-Origin-works-best-on-Firefox) |
+| &lt;img src=&quot;https://github.com/user-attachments/assets/3a7569f8-688b-4eb1-a643-8d0fe173aefe&quot; alt=&quot;Get uBlock Origin for Microsoft Edge&quot;&gt; | &lt;a href=&quot;https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak&quot;&gt;Edge Add-ons&lt;/a&gt; |
+| &lt;img src=&quot;https://github.com/user-attachments/assets/938f080c-fe64-4e48-8b89-4bfceabb56e6&quot; alt=&quot;Get uBlock Origin for Opera&quot;&gt; | &lt;a href=&quot;https://addons.opera.com/extensions/details/ublock/&quot;&gt;Opera Add-ons&lt;/a&gt; |
+| &lt;img src=&quot;https://github.com/user-attachments/assets/5463ef88-873b-4516-8514-5277664cfde7&quot; alt=&quot;Get uBlock Origin for Chromium&quot;&gt; | &lt;a href=&quot;https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh&quot;&gt;Chrome Web Store&lt;/a&gt; | &lt;a href=&quot;https://github.com/uBlockOrigin/uBlock-issues/wiki/About-Google-Chrome&#039;s-%22This-extension-may-soon-no-longer-be-supported%22&quot;&gt;About Google Chrome&#039;s &quot;This extension may soon no longer be supported&quot;&lt;/a&gt;&lt;br&gt;End of support on Chrome 139 |
+| &lt;img src=&quot;https://github.com/user-attachments/assets/2e9037c4-836d-44c1-a716-ba96e89daaff&quot; alt=&quot;Get uBlock Origin for Thunderbird&quot;&gt; | &lt;a href=&quot;https://addons.thunderbird.net/en-Us/thunderbird/addon/ublock-origin/&quot;&gt;Thunderbird Add-ons&lt;/a&gt; | [No longer updated and stuck at 1.49.2](https://github.com/uBlockOrigin/uBlock-issues/issues/2928) |
+
+***
+
+uBlock Origin (uBO) is a CPU and memory-efficient [wide-spectrum content blocker][Blocking] for Chromium and Firefox. It blocks ads, trackers, coin miners, popups, annoying anti-blockers, malware sites, etc., by default using [EasyList][EasyList], [EasyPrivacy][EasyPrivacy], [Peter Lowe&#039;s Blocklist][Peter Lowe&#039;s Blocklist], [Online Malicious URL Blocklist][Malicious Blocklist], and uBO [filter lists][uBO Filters]. There are many other lists available to block even more. Hosts files are also supported. uBO uses the EasyList filter syntax and [extends][Extended Syntax] the syntax to work with custom rules and filters.
+
+You may easily unselect any preselected filter lists if you think uBO blocks too much. For reference, Adblock Plus installs with only EasyList, ABP filters, and Acceptable Ads enabled by default.
+
+It is important to note that using a blocker is **NOT** [theft]. Do not fall for this creepy idea. The _ultimate_ logical consequence of `blocking = theft` is the criminalization of the inalienable right to privacy.
+
+Ads, &quot;unintrusive&quot; or not, are just the visible portion of the privacy-invading means entering your browser when you visit most sites. **uBO&#039;s primary goal is to help users neutralize these privacy-invading methods** in a way that welcomes those users who do not wish to use more technical means.
+
+***
+
+* [Documentation](#documentation)
+* [Installation](#installation)
+  * [Firefox](#firefox)
+  * [Thunderbird](#thunderbird)
+  * [Chromium](#chromium)
+  * [All Programs](#all-programs)
+  * [Enterprise Deployment](#enterprise-deployment)
+* [Release History](#release-history)
+* [Translations](#translations)
+* [About](#about)
+
+## Documentation
+
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Basic Mode&lt;/th&gt;
+            &lt;th&gt;Advanced Mode&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;The &lt;a href=&quot;https://github.com/gorhill/uBlock/wiki/Quick-guide:-popup-user-interface&quot;&gt;simple popup user interface&lt;/a&gt; for an install-it-and-forget-it type of installation that is configured optimally by default.&lt;/td&gt;
+            &lt;td&gt;The &lt;a href=&quot;https://github.com/gorhill/uBlock/wiki/Dynamic-filtering:-quick-guide&quot;&gt;advanced popup user interface&lt;/a&gt; includes a point-and-click firewall that is configurable on a per-site basis.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td align=&quot;center&quot; valign=&quot;top&quot;&gt;&lt;a href=&quot;https://github.com/gorhill/uBlock/wiki/Quick-guide:-popup-user-interface&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/585534/232531044-c4ac4dd5-0b60-4c1e-aabb-914be04b846c.png&quot;/&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td align=&quot;center&quot; valign=&quot;top&quot;&gt;&lt;a href=&quot;https://github.com/gorhill/uBlock/wiki/Dynamic-filtering:-quick-guide&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/585534/232531439-a8f81cc3-6622-45c4-8b32-7348cecf6e98.png&quot;/&gt;&lt;/a&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+Visit the [Wiki][Wiki] for documentation.
+
+For support, questions, or help, visit [/r/uBlockOrigin][Reddit].
+
+## Installation
+
+[Required Permissions][Permissions]
+
+#### Firefox
+
+[Firefox Add-ons][Mozilla]
+
+[Development Builds][Beta]
+
+uBO [works best][Works Best] on Firefox and is available for desktop and Android versions.
+
+#### Thunderbird
+
+[Thunderbird Add-ons][Thunderbird]
+
+In Thunderbird, uBlock Origin does not affect emails, just feeds.
+
+#### Chromium
+
+[Chrome Web Store][Chrome]
+
+[Microsoft Edge Add-ons][Edge] (Published by [Nicole Rolls][Nicole Rolls] until version 1.62. Ownership transfer at version 1.64.)
+
+[Opera Add-ons][Opera]
+
+[Development Builds][Chrome Dev]
+
+uBO should be compatible with any Chromium-based browser.
+
+#### All Programs
+
+Do **NOT** use uBO with any other content blocker. uBO [performs][Performance] as well as or better than most popular blockers. Other blockers can prevent uBO&#039;s privacy or anti-blocker-defusing features from working correctly.
+
+[Manual Installation][Manual Installation]
+
+#### Enterprise Deployment
+
+[Deploying uBO][Deployment]
+
+## Release History
+
+[Releases Page][Releases]
+
+## Translations
+
+Help translate uBO via [Crowdin][Crowdin].
+
+## About
+
+[Manifesto][Manifesto]
+
+[Privacy Policy][Privacy Policy]
+
+[GPLv3 License][License]
+
+Free. Open-source. For users by users. No donations sought.
+
+If you ever want to contribute something, think about the people working hard to maintain the filter lists you are using, which are available to use by all for free.
+
+
+&lt;!-----------------------------------------------------------------------------&gt;
+
+[Peter Lowe&#039;s Blocklist]: https://pgl.yoyo.org/adservers/
+[Malicious Blocklist]: https://gitlab.com/malware-filter/urlhaus-filter#malicious-url-blocklist
+[Performance]: https://www.debugbear.com/blog/chrome-extensions-website-performance#the-impact-of-ad-blocking-on-website-performance
+[EasyPrivacy]: https://easylist.to/#easyprivacy
+[Thunderbird]: https://addons.thunderbird.net/thunderbird/addon/ublock-origin/
+[Chrome Dev]: https://chromewebstore.google.com/detail/ublock-origin-development/cgbcahbpdhpcegmbfconppldiemgcoii
+[EasyList]: https://easylist.to/#easylist
+[Mozilla]: https://addons.mozilla.org/addon/ublock-origin/
+[Crowdin]: https://crowdin.com/project/ublock
+[Chrome]: https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm
+[Reddit]: https://www.reddit.com/r/uBlockOrigin/
+[Theft]: https://x.com/LeaVerou/status/518154828166725632
+[Opera]: https://addons.opera.com/extensions/details/ublock/
+[Edge]: https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak
+[NPM]: https://www.npmjs.com/package/@gorhill/ubo-core
+
+[Manifesto]: MANIFESTO.md
+[License]: LICENSE.txt
+
+[Nicole Rolls]: https://github.com/nicole-ashley
+
+&lt;!---------------------------------[ Internal ]--------------------------------&gt;
+
+[Manual Installation]: https://github.com/gorhill/uBlock/tree/master/dist#install
+[Extended Syntax]: https://github.com/gorhill/uBlock/wiki/Static-filter-syntax#extended-syntax
+[Privacy Policy]: https://github.com/gorhill/uBlock/wiki/Privacy-policy
+[uBO Filters]: https://github.com/uBlockOrigin/uAssets/tree/master/filters
+[Permissions]: https://github.com/gorhill/uBlock/wiki/Permissions
+[Commit Rate]: https://github.com/gorhill/uBlock/commits/master
+[Works Best]: https://github.com/gorhill/uBlock/wiki/uBlock-Origin-works-best-on-Firefox
+[Deployment]: https://github.com/gorhill/uBlock/wiki/Deploying-uBlock-Origin
+[Blocking]: https://github.com/gorhill/uBlock/wiki/Blocking-mode
+[Releases]: https://github.com/gorhill/uBlock/releases
+[Issues]: https://github.com/uBlockOrigin/uBlock-issues/issues
+[Beta]: https://github.com/gorhill/uBlock/blob/master/dist/README.md#for-beta-version
+[Wiki]: https://github.com/gorhill/uBlock/wiki
+
+&lt;!----------------------------------[ Badges ]---------------------------------&gt;
+
+[Badge Localization]: https://d322cqt584bo4o.cloudfront.net/ublock/localized.svg
+[Badge Commits]: https://img.shields.io/github/commit-activity/m/gorhill/ublock?label=Commits
+[Badge Mozilla]: https://img.shields.io/amo/rating/ublock-origin?label=Firefox
+[Badge License]: https://img.shields.io/badge/License-GPLv3-blue.svg
+[Badge Chrome]: https://img.shields.io/chrome-web-store/rating/cjpalhdlnbpafiamejdnhcphjbkeiagm?label=Chrome
+[Badge Edge]: https://img.shields.io/badge/dynamic/json?label=Edge&amp;color=brightgreen&amp;query=%24.averageRating&amp;suffix=%2F%35&amp;url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fodfafepnkmbhccpbejgmiehpchacaeak
+[Badge Issues]: https://img.shields.io/github/issues/uBlockOrigin/uBlock-issues
+[Badge NPM]: https://img.shields.io/npm/v/@gorhill/ubo-core
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[poloclub/transformer-explainer]]></title>
+            <link>https://github.com/poloclub/transformer-explainer</link>
+            <guid>https://github.com/poloclub/transformer-explainer</guid>
+            <pubDate>Sun, 13 Jul 2025 00:05:24 GMT</pubDate>
+            <description><![CDATA[Transformer Explained Visually: Learn How LLM Transformer Models Work with Interactive Visualization]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/poloclub/transformer-explainer">poloclub/transformer-explainer</a></h1>
+            <p>Transformer Explained Visually: Learn How LLM Transformer Models Work with Interactive Visualization</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 4,836</p>
+            <p>Forks: 490</p>
+            <p>Stars today: 12 stars today</p>
+            <h2>README</h2><pre># Transformer Explainer: Interactive Learning of Text-Generative Models
+
+Transformer Explainer is an interactive visualization tool designed to help anyone learn how Transformer-based models like GPT work. It runs a live GPT-2 model right in your browser, allowing you to experiment with your own text and observe in real time how internal components and operations of the Transformer work together to predict the next tokens. Try Transformer Explainer at http://poloclub.github.io/transformer-explainer and watch a demo video on YouTube https://youtu.be/TFUc41G2ikY.&lt;br/&gt;&lt;br/&gt;
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+[![arxiv badge](https://img.shields.io/badge/arXiv-2408.04619-red)](https://arxiv.org/abs/2408.04619)
+
+&lt;a href=&quot;https://youtu.be/TFUc41G2ikY&quot; target=&quot;_blank&quot;&gt;&lt;img width=&quot;100%&quot; src=&#039;https://github.com/user-attachments/assets/0a4d8888-6555-4df5-bc71-77f1299115c3&#039;&gt;&lt;/a&gt;
+
+## Live Demo
+Try Transformer Explainer: http://poloclub.github.io/transformer-explainer
+
+## Research Paper
+
+[**Transformer Explainer: Interactive Learning of Text-Generative Models**](https://arxiv.org/abs/2408.04619).
+Aeree Cho, Grace C. Kim, Alexander Karpekov, Alec Helbling, Zijie J. Wang, Seongmin Lee, Benjamin Hoover, Duen Horng Chau.
+_Poster, IEEE VIS 2024._
+
+## How to run locally
+
+#### Prerequisites
+
+- Node.js v20 or higher
+- NPM v10 or higher
+
+#### Steps
+
+```bash
+git clone https://github.com/poloclub/transformer-explainer.git
+cd transformer-explainer
+npm install
+npm run dev
+```
+
+Then, on your web browser, access http://localhost:5173.
+
+## Credits
+
+Transformer Explainer was created by &lt;a href=&quot;https://aereeeee.github.io/&quot; target=&quot;_blank&quot;&gt;Aeree Cho&lt;/a&gt;, &lt;a href=&quot;https://www.linkedin.com/in/chaeyeonggracekim/&quot; target=&quot;_blank&quot;&gt;Grace C. Kim&lt;/a&gt;, &lt;a href=&quot;https://alexkarpekov.com/&quot; target=&quot;_blank&quot;&gt;Alexander Karpekov&lt;/a&gt;, &lt;a href=&quot;https://alechelbling.com/&quot; target=&quot;_blank&quot;&gt;Alec Helbling&lt;/a&gt;, &lt;a href=&quot;https://zijie.wang/&quot; target=&quot;_blank&quot;&gt;Jay Wang&lt;/a&gt;, &lt;a href=&quot;https://seongmin.xyz/&quot; target=&quot;_blank&quot;&gt;Seongmin Lee&lt;/a&gt;, &lt;a href=&quot;https://bhoov.com/&quot; target=&quot;_blank&quot;&gt;Benjamin Hoover&lt;/a&gt;, and &lt;a href=&quot;https://poloclub.github.io/polochau/&quot; target=&quot;_blank&quot;&gt;Polo Chau&lt;/a&gt; at the Georgia Institute of Technology.
+
+## Citation
+
+```bibTeX
+@article{cho2024transformer,
+  title = {Transformer Explainer: Interactive Learning of Text-Generative Models},
+  shorttitle = {Transformer Explainer},
+  author = {Cho, Aeree and Kim, Grace C. and Karpekov, Alexander and Helbling, Alec and Wang, Zijie J. and Lee, Seongmin and Hoover, Benjamin and Chau, Duen Horng},
+  journal={IEEE VIS Poster},
+  year={2024}
+}
+```
+
+## License
+
+The software is available under the [MIT License](https://github.com/poloclub/transformer-explainer/blob/main/LICENSE).
+
+## Contact
+
+If you have any questions, feel free to [open an issue](https://github.com/poloclub/transformer-explainer/issues/new/choose) or contact [Aeree Cho](https://aereeeee.github.io/) or any of the contributors listed above.
+
+## More AI explainers to check out
+
+- [**Diffusion Explainer**](https://poloclub.github.io/diffusion-explainer) for learning how Stable Diffusion transforms text prompt into image
+- [**CNN Explainer**](https://poloclub.github.io/cnn-explainer)
+- [**GAN Lab**](https://poloclub.github.io/ganlab) for playing with Generative Adversarial Networks in browser
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[pollinations/pollinations]]></title>
+            <link>https://github.com/pollinations/pollinations</link>
+            <guid>https://github.com/pollinations/pollinations</guid>
+            <pubDate>Sun, 13 Jul 2025 00:05:23 GMT</pubDate>
+            <description><![CDATA[Free Open-Source Image and Text Generation]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/pollinations/pollinations">pollinations/pollinations</a></h1>
+            <p>Free Open-Source Image and Text Generation</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 2,428</p>
+            <p>Forks: 282</p>
+            <p>Stars today: 30 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+  &lt;img src=&quot;operations/assets/pollinations_ai_logo_text_black.png&quot; alt=&quot;Pollinations.AI Logo&quot; width=&quot;100%&quot;/&gt;
+&lt;/div&gt;
+
+## 🆕 Latest News
+
+- **🔐 Auth Dashboard** - New and live! Visit [auth.pollinations.ai](https://auth.pollinations.ai) to manage your API tokens and referrer domains. [Learn more](APIDOCS.md#authentication-).
+- **🏆 Tier System:** Seed, Flower, Nectar—higher tiers unlock more features. [Details](APIDOCS.md#tiers)
+- **🔍 Special Bee:** Request Flower/Nectar upgrade. [Apply here](https://github.com/pollinations/pollinations/issues/new?template=special-bee-request.yml)
+- **💲 Support Us** - You can now support us with our new **Tip Us** button. Optionally connect your Discord account to **Ko-Fi** to get premium Discord roles!
+- **🎵 Audio Generation** - New text-to-speech and speech-to-text capabilities are now available! Try the `openai-audio` model - see our [API documentation](APIDOCS.md#audio-generation-api) for details.
+- **🤖 AI Code Assistant** - We&#039;re excited to announce MentatBot, the autonomous AI coding assistant that implements new features directly from GitHub issues! Simply [create an issue](https://github.com/pollinations/pollinations/issues/new) describing what you&#039;d like to see, and MentatBot will analyze and implement it. [Learn more](https://mentat.ai/).
+- **🖼️ GPT Image** - Introducing our new state-of-the-art text-to-image model, GPT Image, which generates high-resolution, contextually accurate visuals from any prompt. Learn more about OpenAI&#039;s latest image generation model [here](https://openai.com/index/introducing-4o-image-generation/).
+---
+
+[![Pollinations.AI Logo](https://pollinations.ai/p/3D_wireframe_blueprint_of_the_conceptual_isometric_world_of_Pollinations_AI_a_surreal_hyperrealistic_digital_garden_Elements_emerge_partially_from_all_sides?width=3000&amp;height=1000&amp;seed=-1)](https://pollinations.ai/p/3D_wireframe_blueprint_of_the_conceptual_isometric_world_of_Pollinations_AI_a_surreal_hyperrealistic_digital_garden_Elements_emerge_partially_from_all_sides?width=3000&amp;height=1000&amp;seed=-1)
+
+## 🌟 Introduction
+
+[Pollinations.AI](https://pollinations.ai) is an open-source gen AI startup based in Berlin, providing the most easy-to-use, free text and image generation API available. No signups or API keys required. We prioritize your privacy with zero data storage and completely anonymous usage.
+
+## 🚀 Key Features
+
+- 🔓 **100% Open Source**
+- 🆓 **_Free to use_**
+- 🔒 **Simplicity and privacy:** No logins, no keys, no data stored
+- 🖼️ **Embed like any normal image or text**
+- 🎵 **Audio generation:** Text-to-speech and speech-to-text capabilities
+- 🌍 Free AI image and text generation APIs
+- 🤝 Used by various **open-source LLMs**, **bots**, and **communities**
+- 🎣 **_Easy-to-use React hooks_** ([React Hooks Examples](https://react-hooks.pollinations.ai/))
+- 🤖 **Autonomous Development:** Features implemented by our MentatBot coding assistant through GitHub issues
+
+&lt;a href=&quot;https://star-history.com/#pollinations/pollinations&amp;Date&quot;&gt;
+ &lt;picture&gt;
+   &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/svg?repos=pollinations/pollinations&amp;type=Date&amp;theme=dark&quot; width=&quot;600&quot; /&gt;
+   &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/svg?repos=pollinations/pollinations&amp;type=Date&quot; width=&quot;600&quot; /&gt;
+   &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/svg?repos=pollinations/pollinations&amp;type=Date&quot; width=&quot;600&quot; /&gt;
+ &lt;/picture&gt;
+&lt;/a&gt;
+
+## 🚀 Getting Started
+
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/pollinations/pollinations)
+
+### Image Generation
+
+1. Visit [https://pollinations.ai](https://pollinations.ai)
+2. Type your description in the text box
+3. Click &quot;Generate&quot; and watch the magic happen!
+
+### Text Generation
+
+1. Visit [https://text.pollinations.ai](https://text.pollinations.ai)
+2. Start chatting with the AI
+
+### Audio Generation
+
+1. Use the `openai-audio` model with our API ([explore voices at OpenAI.fm](https://www.openai.fm/))
+2. Generate speech from text or transcribe audio to text
+
+### MCP Server for AI Assistants
+
+Our MCP (Model Context Protocol) server enables AI assistants like Claude to generate images and audio directly. [Learn more](./model-context-protocol/README.md)
+
+#### Configuration
+
+Add this to your MCP client configuration:
+
+```json
+{
+  &quot;mcpServers&quot;: {
+    &quot;pollinations&quot;: {
+      &quot;command&quot;: &quot;npx&quot;,
+      &quot;args&quot;: [
+        &quot;@pollinations/model-context-protocol&quot;
+      ]
+    }
+  }
+}
+
+
+```
+### Run with npx (no installation required)
+npx @pollinations/model-context-protocol
+```
+
+Community alternatives like [MCPollinations](https://github.com/pinkpixel-dev/MCPollinations) are also available.
+
+AI assistants can:
+- Generate images from text descriptions
+- Create text-to-speech audio with various voice options
+- Play audio responses through the system speakers
+- Access all Pollinations.AI models and services
+- List available models, voices, and capabilities
+
+For more advanced usage, check out our [API documentation](APIDOCS.md).
+
+## 🖥️ How to Use
+
+### Web Interface
+
+Our web interface is user-friendly and doesn&#039;t require any technical knowledge. Simply visit [https://pollinations.ai](https://pollinations.ai) and start creating!
+
+### API
+
+Use our API directly in your browser or applications:
+
+    https://pollinations.ai/p/conceptual_isometric_world_of_pollinations_ai_surreal_hyperrealistic_digital_garden
+
+Replace the description with your own, and you&#039;ll get a unique image based on your words!
+
+## 🎨 Examples
+
+### Image Generation
+
+Here&#039;s an example of a generated image:
+
+[![Conceptual Isometric World](https://pollinations.ai/p/3d_wireframe_blueprint_for_the_prompt_conceptual%20isometric%20world%20of%20pollinations%20ai%20surreal%20hyperrealistic%20digital%20garden?width=2000&amp;height=500&amp;nologo=true&amp;seed=-1)](https://pollinations.ai/p/3d_wireframe_blueprint_for_the_prompt_conceptual%20isometric%20world%20of%20pollinations%20ai%20surreal%20hyperrealistic%20digital%20garden?width=2000&amp;height=500&amp;nologo=true&amp;seed=-1)
+
+Python code to download the generated image:
+
+    import requests
+
+    def download_image(prompt):
+        url = f&quot;https://pollinations.ai/p/{prompt}&quot;
+        response = requests.get(url)
+        with open(&#039;generated_image.jpg&#039;, &#039;wb&#039;) as file:
+            file.write(response.content)
+        print(&#039;Image downloaded!&#039;)
+
+    download_image(&quot;conceptual_isometric_world_of_pollinations_ai_surreal_hyperrealistic_digital_garden&quot;)
+
+### Text Generation
+
+To generate text, use this URL:
+
+    https://text.pollinations.ai/What%20is%20artificial%20intelligence?
+
+### Audio Generation
+
+To generate audio from text, use this URL:
+
+    https://text.pollinations.ai/Welcome%20to%20Pollinations?model=openai-audio&amp;voice=nova
+
+## 🛠️ Integration
+
+### React Hooks
+
+We offer React hooks for easy integration. Example usage:
+
+    import React from &#039;react&#039;;
+    import { usePollinationsImage, usePollinationsText } from &#039;@pollinations/react&#039;;
+    import ReactMarkdown from &#039;react-markdown&#039;;
+
+    const AIGeneratedContent = () =&gt; {
+      const imageUrl = usePollinationsImage(&quot;Beautiful landscape of Paris with Eiffel Tower&quot;, { width: 800, height: 600, seed: 42 });
+      const markdown = usePollinationsText(&quot;Write a brief travel guide for Paris, including top attractions and local cuisine in markdown&quot;, { seed: 42 });
+
+      return (
+        &lt;div&gt;
+          &lt;h2&gt;AI-Generated Travel Guide&lt;/h2&gt;
+          &lt;img src={imageUrl} alt=&quot;AI Generated&quot; /&gt;
+          {markdown ? (
+            &lt;ReactMarkdown&gt;{markdown}&lt;/ReactMarkdown&gt;
+          ) : (
+            &lt;p&gt;Loading markdown content...&lt;/p&gt;
+          )}
+        &lt;/div&gt;
+      );
+    };
+
+    export default AIGeneratedContent;
+
+Check out our [Pollinations React Hooks](./pollinations-react/README.md) for more details.
+
+## Architecture
+```mermaid
+graph LR
+    Q[Bots - Discord, Telegram, WhatsApp] --&gt; L1
+    
+    N[30+ Mobile and Web Apps] --&gt; L1
+    N --&gt; L2
+    
+    A[pollinations.ai Web Frontend] --&gt; L1
+    A --&gt; L2
+    
+    R[AI Agents - Qwen, Sillytavern, ...] --&gt; L1
+    
+    AI[AI Assistants - Claude] --&gt; MCP[MCP Server]
+    MCP --&gt; L1
+    
+    L1[Image CDN] --&gt; CF[Cloudflare Worker with R2 Cache]
+    L2[Text CDN] --&gt; C
+    
+    CF --&gt; B
+    
+    B[image-origin.pollinations.ai - AWS EC2 CPU] --&gt; F[Azure OpenAI - Prompt Enhancing]
+    B --&gt; S[LlamaGuard - Safety Checker]
+    F --&gt; E[Translation Service - 1 GPU VM]
+    E --&gt; D[FLUX image generation model - 2-6 GPU VMs on AWS]
+    
+    C[text.pollinations.ai - AWS EC2 CPU] --&gt; P[karma.yt - Realtime News]
+    C --&gt; SC[Scaleway API]
+    C --&gt; DS[Deepseek API]
+    C --&gt; G[Azure-hosted Serverless LLMs]
+    C --&gt; CFM[Cloudflare AI]
+    SC --&gt; MI[Mistral Models]
+    SC --&gt; QW[Qwen Models]
+    SC --&gt; LL[Llama Models]
+    DS --&gt; DM[Deepseek Models]
+    G --&gt; H[OpenAI]
+    G --&gt; K[Claude]
+    CFM --&gt; CFL[Llama &amp; Deepseek Models]
+```
+
+## Projects Using Pollinations.AI
+
+&gt; **⭐ GitHub Star Counts:** Projects with GitHub repositories include star counts to help you gauge their popularity.
+&gt; 
+&gt; **🆕 NEW Tag:** Projects are marked with the 🆕 emoji when they are recently added. This tag is automatically removed after 15 days from the submission date or if no date is specified.
+&gt; 
+&lt;!-- AUTO-GENERATED-CONTENT:START --&gt;
+
+&gt; **Note:** Some projects may be temporarily hidden from this list if they are currently broken or undergoing maintenance.
+
+Pollinations.AI is used in various projects, including:
+
+### Vibe Coding ✨
+
+| Project | Description | Creator |
+|---------|-------------|--------|
+| Qwen-Agent ([⭐ 6.6k](https://github.com/QwenLM/Qwen-Agent)) | A framework for developing agentic LLM applications. | - |
+| Pollinations Task Master ([⭐ 3](https://github.com/LousyBook94/pollinations-task-master)) | A task management system that uses AI to help break down and organize development tasks through natural language interaction. | @LousyBook94 |
+| 🆕 [PairFusion](https://pair-fusion.vercel.app/) ([⭐ 0](https://github.com/auraticabhi/PairFusion)) | A real-time AI powered, scalable and feature-rich collaborative IDE built for modern development teams. Experience seamless pair programming, instant feedback, and a professional-grade toolset designed for maximum productivity. | @auraticabhi |
+| [CraftUI](https://craftui.studio/) | An AI-powered tool that simplifies UI design by turning text prompts or images into clean, production-ready components. It supports real-time customization with theme switching, framework selection (like Tailwind or Bootstrap), and intuitive editing. Whether you&#039;re a developer or designer, CraftUI helps you design faster, smarter, and with ease. Explore, remix, and share your creations in a growing creative community. | @imhardikdesai |
+| [AI Code Generator](https://codegen.on.websim.com/) | A websim project that generates code from description, selected programming language and other options. Integrates Pollinations because it allows for more models to choose from for potentially better results. It has modes like: Code Generator, Code Explainer, Reviewer, etc. | @Miencraft2 |
+| VibeCoder | A conversational coding environment that lets you create applications by describing them in natural language. | @Aashir__Shaikh |
+| [JCode Website Builder](https://jcode-ai-website-bulder.netlify.app/) | A website generator using Pollinations text API. | @rtxpower |
+| [Pollinations.DIY](https://pollinations.diy) | A browser-based coding environment based on bolt.diy, featuring integrated Pollinations AI services, visual code editing, and project management tools. | @thomash |
+| [NetSim](https://netsim.us.to/) | websim.ai clone that&#039;s actually good | @kennet678 |
+| [Pollin-Coder](https://pollin-coder.megavault.in) | A free AI-powered website builder that lets anyone create a clean site just by describing it. It uses Pollinations AI to generate the content and layout instantly. | @r3ap3redit |
+| [JustBuildThings](https://justbuildthings.com) | A natural language programming interface that lets users create web applications by simply describing what they want to build, using Pollinations AI to generate code and assets. | @buildmaster |
+| [Websim](https://websim.ai/c/bXsmNE96e3op5rtUS) | A web simulation tool that integrates Pollinations.ai. | @thomash |
+
+### Creative 🎨
+
+| Project | Description | Creator |
+|---------|-------------|--------|
+| MoneyPrinterTurbo ([⭐ 32.2k](https://github.com/harry0703/MoneyPrinterTurbo)) | Simply provide a topic or keyword for a video, and it will automatically generate the video copy, video materials, video subtitles, and video background music before synthesizing a high-definition short video. Integrates Pollinations&#039; text generation service to create engaging and relevant video scripts. | @harry0703 |
+| [FoldaScan](https://fs.wen.bar) ([⭐ 178](https://github.com/0010skn/WebFS-Toolkit-Local-Folder-Scan-Monitor-Versioning-AI-Prep)) | Use Natural Language to &quot;Converse&quot; with Your Codebase, Folda-Scan Smart Project Q&amp;A, powered by advanced vectorization technology, allows you to easily understand complex code, pinpoint information, and offers unprecedented convenience for AI collaboration. | @0010skn |
+| [Elixpo-Art](https://elixpo-art.com) ([⭐ 18](https://github.com/elixpo/art-platform)) | A digital art platform that combines AI image generation with traditional digital art tools, offering creative filters and style transfers powered by Pollinations. | @elixpo |
+| [Elixpo Art](https://elixpoart.vercel.app) ([⭐ 8](https://github.com/Circuit-Overtime/elixpo_ai_chapter)) | A Web interface to create thematic images from prompts, with multiple aspect ratios and also image reference inputs. | Ayushman Bhattacharya |
+| [POLLIPAPER](https://github.com/Tolerable/POLLIPAPER) | A dynamic wallpaper app that uses Pollinations AI. | @intolerant0ne |
+| [Elixpo Art Chrome Extension](https://chromewebstore.google.com/detail/elixpo-art-select-text-an/hcjdeknbbbllfllddkbacfgehddpnhdh) ([⭐ 8](https://github.com/Circuit-Overtime/elixpo_ai_chapter/tree/main/Elixpo%20Chrome%20%20Extension)) | It uses the pollinations image endpoint to generate an image with `boltning` as the model in 4 types of aspect ratios and themes with prompt engineering thus transforming selected texts into art smoothly with a disposable GUI in web. | Ayushman Bhatacharya |
+| Pollinations.ai Image Generation (for Frame) ([⭐ 3](https://github.com/CitizenOneX/frame_pollinations)) | A Flutter application that listens for image generation prompts, requests images from Pollinations.AI, and displays them on the Frame wearable device. Users can use voice commands to generate images and save/share them using the device&#039;s sharing mechanism. | CitizenOneX |
+| [Imagen](https://altkriz.github.io/imagen/) ([⭐ 3](https://github.com/altkriz/imagen)) | A beautiful web interface for generating images using Pollinations.ai API with only the &quot;flux&quot; and &quot;turbo&quot; models. | @altkriz |
+| [Imagen](https://altkriz.github.io/imagen/) ([⭐ 3](https://github.com/altkriz/imagen)) | A beautiful web interface for generating images using Pollinations.ai API with only the &quot;flux&quot; and &quot;turbo&quot; models. | @altkriz |
+| [CatGPT Meme Generator 🐱](https://pollinations.github.io/catgpt/) ([⭐ 2](https://github.com/pollinations/catgpt)) | Transform your questions into sassy cat wisdom! An AI-powered meme generator that creates personalized cat comics in response to your questions. A collaboration between Pollinations.AI and Tanika Godbole, the original creator of the CatGPT comic. | @voodoohop |
+| [Dreamscape AI](https://dreamscape.pinkpixel.dev) ([⭐ 2](https://github.com/pinkpixel-dev/dreamscape-ai)) | Dreamscape AI is a creative studio for generating, enhancing, and transforming images, plus conversational AI capabilities with text and voice interfaces, and a deep research tool. The entire site is almost all powered by Pollinations API aside from the image enhancement tools. It generates images, optimizes prompts and creates image titles with the text API, features lots of image styling prompts, also has chat and voice chat with chat memory, and a research tool. | @sizzlebop |
+| MASala ([⭐ 1](https://github.com/Naman009/MASala)) | Multi-Agent AI That Cooks Up Recipes Just for You ~ From fridge to feast, MASALA plans it all. | @Naman009 |
+| 🆕 [Argent Script](https://perchance.org/ai-text-to-audio) | AI Voice Generator - Generate text to audio for free and without limits, powered by GPT-4o Audio. Instantly convert your words into natural, lifelike speech. | [Link](https://github.com/withthatway) |
+| [Unfoldtech](https://studio.unfoldtech.online/) | Easily generate new images inspired by the Pexels website with embedded IPTC (title, description, keywords) on download. Find beautiful image inspiration from Pexels, create prompts from images, and generate new images with metadata embedded for immediate use in stock photography or upscaling. | kengkreingkrai@gmail.com |
+| [Celebrity AI Image Generator](https://www.aicelebrity.design/) ([⭐ 0](https://github.com/Colin-Zero)) | An AI-powered celebrity image generator that uses Pollinations.ai and a1.art APIs. Users can directly input celebrity text to generate celebrities doing anything. Features celebrity photo shooting capabilities where users can upload their pictures and take selfies with celebrities like Labubu, Taylor Swift, and more. | @Colin-Zero |
+| [Coloring AI 🎨](https://coloring-ai.com/) | An intelligent web-based coloring assistant that turns black-and-white sketches into fully colored artworks using AI. Features multiple artistic styles, AI coloring generator, sketch-to-image conversion, and image-to-coloring page tools. | 962900862@qq.com |
+| [JSON Pollinations API](https://pollinations-json.deno.dev/openai) | A Deno Deploy API wrapper for Pollinations that provides JSON-formatted responses. Designed for applications that require JSON API integration with Pollinations services. | @apersonwhomakesstuff |
+| [MrEgonAI](https://mr-egon-ai.vercel.app/) | An image generator powered by pollinations.ai and its image generation models. Features text-to-image generation with various AI models. | @mregon |
+| [Image Creator](https://saepulwap.blogspot.com/p/flux-image-creator.html) | Create images with multi-language prompts, the language will be automatically translated by AI into English. | [Link](https://facebook.com/403.frobidden) |
+| [Avatar GenStudio](https://astudio-dcae4.web.app) | A system for creating custom characters that uses the Pollinations API for totally free and unlimited image generation. | @nic-wq |
+| [StoryBolt](https://storybolt.vercel.app/) ([⭐ 0](https://github.com/sahilalamgir/StoryBolt)) | Generate stories with enticing narratives and beautiful illustrations. Users can enter a prompt, customize the genre and art style, and publish their stories! Users can favorite, download, and listen to their stories, and read other books created by the community. | @gumbasil |
+| [CalcuBite AI](https://calcubite.vercel.app/) | CalcuBite AI is a smart tool that analyzes food from images to provide calorie and nutrient details. Just take a photo, and it quickly gives you an estimate of your meal&#039;s nutritional value. It uses AI for accurate analysis, and if you run out of free scans, you can watch an ad to get more! | @sugamdeol |
+| 🇮🇩 [Generator AI Image 🇮🇩](https://kenthir.my.id/advanced-generator/) | Advanced AI Image Generator adalah platform inovatif yang memungkinkan Anda membuat gambar digital menakjubkan dengan kecerdasan buatan by pollinations.ai. Dengan dukungan berbagai model AI canggih seperti DALL·E 3, Stable Diffusion, dan Flux-Default. (An innovative platform that allows you to create amazing digital images with artificial intelligence powered by pollinations.ai. Supports various advanced AI models like DALL-E 3, Stable Diffusion, and Flux-Default.) | @kenthirai |
+| [NailsGen](https://www.nailsgen.com/) | Create beautiful nail art designs with AI. Generate unique nail art designs with different styles and colors. | lip
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[uBlockOrigin/uBOL-home]]></title>
+            <link>https://github.com/uBlockOrigin/uBOL-home</link>
+            <guid>https://github.com/uBlockOrigin/uBOL-home</guid>
+            <pubDate>Sun, 13 Jul 2025 00:05:22 GMT</pubDate>
+            <description><![CDATA[uBO Lite home (MV3)]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/uBlockOrigin/uBOL-home">uBlockOrigin/uBOL-home</a></h1>
+            <p>uBO Lite home (MV3)</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 2,164</p>
+            <p>Forks: 79</p>
+            <p>Stars today: 25 stars today</p>
+            <h2>README</h2><pre># uBO Lite
+
+| Browser | Install from ... | Browser | Install from ... |
+| --- | --- | --- | --- |
+| &lt;img src=&quot;https://github.com/user-attachments/assets/d5033882-0c94-424f-9e8b-e00ed832acf7&quot; alt=&quot;Get uBO Lite for Chromium&quot;&gt; | &lt;a href=&quot;https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh&quot;&gt;Chrome Web Store&lt;/a&gt; | &lt;img src=&quot;https://github.com/user-attachments/assets/8a33b8ba-57ee-4a54-a83c-7d21f9b2dafb&quot; alt=&quot;Get uBlock Origin Lite for Firefox&quot;&gt; | &lt;a href=&quot;https://github.com/uBlockOrigin/uBOL-home/releases/download/uBOLite_2025.5.7.895-beta/uBOLite.beta.firefox.signed.xpi&quot;&gt;Self-distributed&lt;/a&gt; (Beta) |
+| &lt;img src=&quot;https://github.com/user-attachments/assets/acff1f85-d3f0-49eb-928e-7c43c5ef8f6c&quot; alt=&quot;Get uBlock Origin Lite for Microsoft Edge&quot;&gt; | &lt;a href=&quot;https://microsoftedge.microsoft.com/addons/detail/ublock-origin-lite/cimighlppcgcoapaliogpjjdehbnofhn&quot;&gt;Edge Add-ons&lt;/a&gt; | &lt;img src=&quot;https://github.com/user-attachments/assets/d267b13e-b403-4040-93ea-fff38fea8c1b&quot; alt=&quot;Get uBlock Origin Lite for Safari&quot;&gt; | &lt;a href=&quot;https://testflight.apple.com/join/JjTcThrV&quot;&gt;TestFlight&lt;/a&gt; (Beta) |
+
+## Description
+
+[Frequently asked questions (FAQ)](https://github.com/uBlockOrigin/uBOL-home/wiki/Frequently-asked-questions-(FAQ))
+
+**uBO Lite** (uBOL) is an efficient content blocker based on the [MV3 API](https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3).
+
+uBOL operates entirely declaratively, meaning no permanent process is required for filtering. The browser handles CSS/JS injection for content filtering, ensuring that uBOL does not consume CPU or memory resources while blocking content. The service worker process is only active when interacting with the popup panel or options pages.
+
+The default ruleset includes at least uBlock Origin&#039;s default filter set:
+
+- uBlock Origin&#039;s built-in filter lists
+- EasyList
+- EasyPrivacy
+- Peter Lowe’s Ad and tracking server list
+
+You can enable additional rulesets by visiting the options page — click the _Cogs_ icon in the popup panel.
+
+## Changelog
+
+See the [_Releases_ section](https://github.com/uBlockOrigin/uBOL-home/releases).
+
+Previous releases can be found in the [_Releases_ section of the uBlock repo](https://github.com/gorhill/uBlock/releases?q=uBOL).
+
+## Issues
+
+All uBO Lite-related issues (including filter-related ones) can be reported [here](https://github.com/uBlockOrigin/uBOL-home/issues).
+
+## Admin Policies
+
+uBOL exposes settings that can be defined by administrators through [managed storage](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/storage/managed). See [Managed settings](https://github.com/uBlockOrigin/uBOL-home/wiki/Managed-settings).
+
+## Frequently Asked Questions (FAQ)
+
+For more information, check the [_Wiki_](https://github.com/uBlockOrigin/uBOL-home/wiki/Frequently-asked-questions-(FAQ)).
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[vercel/next.js]]></title>
+            <link>https://github.com/vercel/next.js</link>
+            <guid>https://github.com/vercel/next.js</guid>
+            <pubDate>Sun, 13 Jul 2025 00:05:21 GMT</pubDate>
+            <description><![CDATA[The React Framework]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/vercel/next.js">vercel/next.js</a></h1>
+            <p>The React Framework</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 133,102</p>
+            <p>Forks: 28,808</p>
+            <p>Stars today: 23 stars today</p>
+            <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[projectdiscovery/nuclei-templates]]></title>
+            <link>https://github.com/projectdiscovery/nuclei-templates</link>
+            <guid>https://github.com/projectdiscovery/nuclei-templates</guid>
+            <pubDate>Sun, 13 Jul 2025 00:05:20 GMT</pubDate>
+            <description><![CDATA[Community curated list of templates for the nuclei engine to find security vulnerabilities.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/projectdiscovery/nuclei-templates">projectdiscovery/nuclei-templates</a></h1>
+            <p>Community curated list of templates for the nuclei engine to find security vulnerabilities.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 10,452</p>
+            <p>Forks: 2,916</p>
+            <p>Stars today: 7 stars today</p>
+            <h2>README</h2><pre>
+
+&lt;h1 align=&quot;center&quot;&gt;
+Nuclei Templates
+&lt;/h1&gt;
+&lt;h4 align=&quot;center&quot;&gt;Community curated list of templates for the nuclei engine to find security vulnerabilities in applications.&lt;/h4&gt;
+
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;a href=&quot;https://github.com/projectdiscovery/nuclei-templates/issues&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/projectdiscovery/nuclei-templates/releases&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/release/projectdiscovery/nuclei-templates&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;https://twitter.com/pdnuclei&quot;&gt;&lt;img src=&quot;https://img.shields.io/twitter/follow/pdnuclei.svg?logo=twitter&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;https://discord.gg/projectdiscovery&quot;&gt;&lt;img src=&quot;https://img.shields.io/discord/695645237418131507.svg?logo=discord&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+      
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://nuclei.projectdiscovery.io/templating-guide/&quot;&gt;Documentation&lt;/a&gt; •
+  &lt;a href=&quot;#-contributions&quot;&gt;Contributions&lt;/a&gt; •
+  &lt;a href=&quot;#-discussion&quot;&gt;Discussion&lt;/a&gt; •
+  &lt;a href=&quot;#-community&quot;&gt;Community&lt;/a&gt; •
+  &lt;a href=&quot;https://nuclei.projectdiscovery.io/faq/templates/&quot;&gt;FAQs&lt;/a&gt; •
+  &lt;a href=&quot;https://discord.gg/projectdiscovery&quot;&gt;Join Discord&lt;/a&gt;
+&lt;/p&gt;
+
+----
+
+Templates are the core of the [nuclei scanner](https://github.com/projectdiscovery/nuclei) which powers the actual scanning engine.
+This repository stores and houses various templates for the scanner provided by our team, as well as contributed by the community.
+We hope that you also contribute by sending templates via **pull requests** or [Github issues](https://github.com/projectdiscovery/nuclei-templates/issues/new?assignees=&amp;labels=&amp;template=submit-template.md&amp;title=%5Bnuclei-template%5D+) to grow the list.
+
+
+## Nuclei Templates overview
+
+
+An overview of the nuclei template project, including statistics on unique tags, author, directory, severity, and type of templates. The table below contains the top ten statistics for each matrix; an expanded version of this is [available here](TEMPLATES-STATS.md), and also available in [JSON](TEMPLATES-STATS.json) format for integration.
+
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt; 
+
+## Nuclei Templates Top 10 statistics
+
+|    TAG    | COUNT |    AUTHOR     | COUNT | DIRECTORY  | COUNT | SEVERITY | COUNT | TYPE | COUNT |
+|-----------|-------|---------------|-------|------------|-------|----------|-------|------|-------|
+| cve       |  3225 | dhiyaneshdk   |  1866 | http       |  8825 | info     |  4118 | file |   435 |
+| panel     |  1327 | daffainfo     |   868 | cloud      |   657 | high     |  2423 | dns  |    26 |
+| xss       |  1246 | dwisiswant0   |   806 | file       |   435 | medium   |  2339 |      |       |
+| wordpress |  1168 | princechaddha |   806 | dast       |   255 | critical |  1391 |      |       |
+| exposure  |  1094 | ritikchaddha  |   633 | workflows  |   202 | low      |   318 |      |       |
+| wp-plugin |  1023 | pussycat0x    |   519 | code       |   174 | unknown  |    54 |      |       |
+| osint     |   810 | pikpikcu      |   352 | network    |   141 |          |       |      |       |
+| tech      |   782 | pdteam        |   308 | javascript |    71 |          |       |      |       |
+| lfi       |   772 | pdresearch    |   251 | ssl        |    38 |          |       |      |       |
+| rce       |   770 | ricardomaia   |   249 | dns        |    23 |          |       |      |       |
+
+**840 directories, 11171 files**.
+
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+📖 Documentation
+-----
+
+Please navigate to https://nuclei.projectdiscovery.io for detailed documentation to **build** new or your own **custom** templates.
+We have also added a set of templates to help you understand how things work.
+
+💪 Contributions
+-----
+
+Nuclei-templates is powered by major contributions from the community.
+[Template contributions ](https://github.com/projectdiscovery/nuclei-templates/issues/new?assignees=&amp;labels=&amp;template=submit-template.md&amp;title=%5Bnuclei-template%5D+), [Feature Requests](https://github.com/projectdiscovery/nuclei-templates/issues/new?assignees=&amp;labels=&amp;template=feature_request.md&amp;title=%5BFeature%5D+) and [Bug Reports](https://github.com/projectdiscovery/nuclei-templates/issues/new?assignees=&amp;labels=&amp;template=bug_report.md&amp;title=%5BBug%5D+) are more than welcome.
+
+![Alt](https://repobeats.axiom.co/api/embed/55ee65543bb9a0f9c797626c4e66d472a517d17c.svg &quot;Repobeats analytics image&quot;)
+
+💬 Discussion
+-----
+
+Have questions / doubts / ideas to discuss?
+Feel free to open a discussion on [Github discussions](https://github.com/projectdiscovery/nuclei-templates/discussions) board.
+
+👨‍💻 Community
+-----
+
+You are welcome to join the active [Discord Community](https://discord.gg/projectdiscovery) to discuss directly with project maintainers and share things with others around security and automation.
+Additionally, you may follow us on [Twitter](https://twitter.com/pdnuclei) to be updated on all the things about Nuclei.
+
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;a href=&quot;https://github.com/projectdiscovery/nuclei-templates/graphs/contributors&quot;&gt;
+  &lt;img src=&quot;https://contrib.rocks/image?repo=projectdiscovery/nuclei-templates&amp;max=300&quot;&gt;
+&lt;/a&gt;
+&lt;/p&gt;
+
+
+Thanks again for your contribution and keeping this community vibrant. :heart:
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[MHSanaei/3x-ui]]></title>
+            <link>https://github.com/MHSanaei/3x-ui</link>
+            <guid>https://github.com/MHSanaei/3x-ui</guid>
+            <pubDate>Sun, 13 Jul 2025 00:05:19 GMT</pubDate>
+            <description><![CDATA[Xray panel supporting multi-protocol multi-user expire day & traffic & IP limit (Vmess & Vless & Trojan & ShadowSocks & Wireguard)]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/MHSanaei/3x-ui">MHSanaei/3x-ui</a></h1>
+            <p>Xray panel supporting multi-protocol multi-user expire day & traffic & IP limit (Vmess & Vless & Trojan & ShadowSocks & Wireguard)</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 21,371</p>
+            <p>Forks: 4,646</p>
+            <p>Stars today: 38 stars today</p>
+            <h2>README</h2><pre>[English](/README.md) | [فارسی](/README.fa_IR.md) | [العربية](/README.ar_EG.md) |  [中文](/README.zh_CN.md) | [Español](/README.es_ES.md) | [Русский](/README.ru_RU.md)
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;./media/3x-ui-dark.png&quot;&gt;
+    &lt;img alt=&quot;3x-ui&quot; src=&quot;./media/3x-ui-light.png&quot;&gt;
+  &lt;/picture&gt;
+&lt;/p&gt;
+
+[![](https://img.shields.io/github/v/release/mhsanaei/3x-ui.svg?style=for-the-badge)](https://github.com/MHSanaei/3x-ui/releases)
+[![](https://img.shields.io/github/actions/workflow/status/mhsanaei/3x-ui/release.yml.svg?style=for-the-badge)](https://github.com/MHSanaei/3x-ui/actions)
+[![GO Version](https://img.shields.io/github/go-mod/go-version/mhsanaei/3x-ui.svg?style=for-the-badge)](#)
+[![Downloads](https://img.shields.io/github/downloads/mhsanaei/3x-ui/total.svg?style=for-the-badge)](https://github.com/MHSanaei/3x-ui/releases/latest)
+[![License](https://img.shields.io/badge/license-GPL%20V3-blue.svg?longCache=true&amp;style=for-the-badge)](https://www.gnu.org/licenses/gpl-3.0.en.html)
+
+**3X-UI** — advanced, open-source web-based control panel designed for managing Xray-core server. It offers a user-friendly interface for configuring and monitoring various VPN and proxy protocols.
+
+&gt; [!IMPORTANT]
+&gt; This project is only for personal using, please do not use it for illegal purposes, please do not use it in a production environment.
+
+As an enhanced fork of the original X-UI project, 3X-UI provides improved stability, broader protocol support, and additional features.
+
+## Quick Start
+
+```bash
+bash &lt;(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
+```
+
+For full documentation, please visit the [project Wiki](https://github.com/MHSanaei/3x-ui/wiki).
+
+## A Special Thanks to
+
+- [alireza0](https://github.com/alireza0/)
+
+## Acknowledgment
+
+- [Iran v2ray rules](https://github.com/chocolate4u/Iran-v2ray-rules) (License: **GPL-3.0**): _Enhanced v2ray/xray and v2ray/xray-clients routing rules with built-in Iranian domains and a focus on security and adblocking._
+- [Russia v2ray rules](https://github.com/runetfreedom/russia-v2ray-rules-dat) (License: **GPL-3.0**): _This repository contains automatically updated V2Ray routing rules based on data on blocked domains and addresses in Russia._
+
+## Support project
+
+**If this project is helpful to you, you may wish to give it a**:star2:
+
+&lt;p align=&quot;left&quot;&gt;
+  &lt;a href=&quot;https://buymeacoffee.com/mhsanaei&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;./media/buymeacoffe.png&quot; alt=&quot;Image&quot;&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+- USDT (TRC20): `TXncxkvhkDWGts487Pjqq1qT9JmwRUz8CC`
+- MATIC (polygon): `0x41C9548675D044c6Bfb425786C765bc37427256A`
+- LTC (Litecoin): `ltc1q2ach7x6d2zq0n4l0t4zl7d7xe2s6fs7a3vspwv`
+
+## Stargazers over Time
+
+[![Stargazers over time](https://starchart.cc/MHSanaei/3x-ui.svg?variant=adaptive)](https://starchart.cc/MHSanaei/3x-ui)
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
             <title><![CDATA[open-webui/open-webui]]></title>
             <link>https://github.com/open-webui/open-webui</link>
             <guid>https://github.com/open-webui/open-webui</guid>
-            <pubDate>Sat, 12 Jul 2025 00:04:52 GMT</pubDate>
+            <pubDate>Sun, 13 Jul 2025 00:05:18 GMT</pubDate>
             <description><![CDATA[User-friendly AI Interface (Supports Ollama, OpenAI API, ...)]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/open-webui/open-webui">open-webui/open-webui</a></h1>
             <p>User-friendly AI Interface (Supports Ollama, OpenAI API, ...)</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 102,224</p>
-            <p>Forks: 13,648</p>
-            <p>Stars today: 147 stars today</p>
+            <p>Stars: 102,337</p>
+            <p>Forks: 13,658</p>
+            <p>Stars today: 104 stars today</p>
             <h2>README</h2><pre># Open WebUI 👋
 
 ![GitHub stars](https://img.shields.io/github/stars/open-webui/open-webui?style=social)
@@ -285,186 +1119,18 @@ Created by [Timothy Jaeryang Baek](https://github.com/tjbck) - Let&#039;s make O
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[Neet-Nestor/Telegram-Media-Downloader]]></title>
-            <link>https://github.com/Neet-Nestor/Telegram-Media-Downloader</link>
-            <guid>https://github.com/Neet-Nestor/Telegram-Media-Downloader</guid>
-            <pubDate>Sat, 12 Jul 2025 00:04:51 GMT</pubDate>
-            <description><![CDATA[A script allowing you to download images and videos from Telegram web even if the group restricts downloading.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/Neet-Nestor/Telegram-Media-Downloader">Neet-Nestor/Telegram-Media-Downloader</a></h1>
-            <p>A script allowing you to download images and videos from Telegram web even if the group restricts downloading.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 2,545</p>
-            <p>Forks: 227</p>
-            <p>Stars today: 6 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-
-# Telegram Video Downloader / Telegram Media Downloader
-
-**Unlock Telegram: Download Anything You Like.**
-
-[![GitHub License](https://img.shields.io/github/license/Neet-Nestor/Telegram-Media-Downloader)](./LICENSE)
-[![Greasy Fork Version](https://img.shields.io/greasyfork/v/446342-telegram-media-downloader)](https://greasyfork.org/scripts/446342-telegram-media-downloader)
-[![Greasy Fork Downloads](https://img.shields.io/greasyfork/dt/446342-telegram-media-downloader)](https://greasyfork.org/scripts/446342-telegram-media-downloader)
-
-&lt;/div&gt;
-
-## Overview
-This user script unlocks and enables download of images, GIFs, audios, and videos in Telegram webapps from chats, stories, and even private channels where downloading is disabled or restricted.
-
-(Note: some features are only available for specific Telegram webapp version. e.g. Audio message download is only available for the K webapp version.)
-
-### What are user scripts?
-User scripts put you in control of your  browsing experience. Once installed, they automatically make the sites you visit better by adding features, making them easier to use, or taking out the annoying bits. The user scripts on Greasy Fork were written by other users and posted to share with the world. They&#039;re free to install and easy to use.
-
-## Installation
-### Greasy Fork
-1. install a user script manager
-
-    To use user scripts you need to first install a user script manager. Which user script manager you can use depends on which browser you use.
-
-    - Chrome: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag)
-    - Firefox: [Greasemonkey](https://addons.mozilla.org/firefox/addon/greasemonkey/), [Tampermonkey](https://addons.mozilla.org/firefox/addon/tampermonkey/), or [Violentmonkey](https://addons.mozilla.org/firefox/addon/violentmonkey/)
-    - Safari: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or [Userscripts](https://apps.apple.com/app/userscripts/id1463298887)
-    - Microsoft Edge: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag)
-    - Opera: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag)
-    - Maxthon: [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag)
-
-    (Note, If you are using Tampermonkey extension in a Chrome-based browser, following [instructions](https://www.tampermonkey.net/faq.php#Q209) to enable Developer Mode.)
-
-2. Install this script by visiting Greasy Fork:
-    https://greasyfork.org/scripts/446342-telegram-media-downloader
-
-### Manual Installation
-1. install a user script manager
-
-    To use user scripts you need to first install a user script manager. Which user script manager you can use depends on which browser you use.
-
-    - Chrome: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag)
-    - Firefox: [Greasemonkey](https://addons.mozilla.org/firefox/addon/greasemonkey/), [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), or [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag)
-    - Safari: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or [Userscripts](https://apps.apple.com/app/userscripts/id1463298887)
-    - Microsoft Edge: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag)
-    - Opera: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag)
-    - Maxthon: [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag)
-
-    (Note, If you are using Tampermonkey extension in a Chrome-based browser, following [instructions](https://www.tampermonkey.net/faq.php#Q209) to enable Developer Mode.)
-    
-2. Open Tampermonkey Dashboard, drag &amp; drop src/tel_download.js into it and clicks the &quot;install&quot; button
-
-## How to Use
-This script only works on Telegram Webapp.
-
-For channels and chats that allow saving content, this script will have no effect. Please just use the official download button provided by the telegram webapp instead.
-
-For channels and chats that disable downloading and restrict saving content, this script will add the download button back for images, GIFs and videos.
-
-![Image Download](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2VjNmU2ZDM0YTFlOWY4YTMzZDZmNjVlMDE2ODQ4OGY4N2E3MDFkNSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/lqCVcw0pCd2VA3zqoE/giphy.gif)
-![GIF Download](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzYwMzM3ZTMzYmI1MzA4M2EyYmY0NTFlOTg4OWFhNjhjNDk5YTkzYiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/wnYzW4vwpPdeuo62nQ/giphy.gif)
-![Video Download](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXcxYnJxaXMxcW05YW5rZ2YzZzE0bTU4aTBwYXI1N3pmdnVzbDFrdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EEPbblwmSpteAmwLls/giphy.gif)
-![Story Download](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3Z5Y2VzM2QzbW1xc3ZwNTQ2N3Q0a3lnanpxdW55c2Qzajl5NXZsaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xJFjBGi8isHPR5cuHl/giphy.gif)
-
-For videos, a progress bar will show on the bottom-right corder after you started downloading. For images and audios, there won&#039;t be a progress bar.
-
-### Supported Webapp Versions
-There are 2 different versions of telegram webapps:
-- https://webk.telegram.org / https://web.telegram.org/k/ (**Recommended**)
-- https://webz.telegram.org / https://web.telegram.org/a/
-
-This script should work on both versions of webapp, but some features are only available in the /k/ version (such as voice message downloads). If certain features are not working, switching to the /k/ version is recommended.
-
-### Check Downloading Progress
-A progress bar will show on the bottom-right of the screen for videos. You can also check [DevTools console](https://developer.chrome.com/docs/devtools/open/) for logs.
-
-## Contributing
-
-We welcome contributions from the community! If you’d like to contribute to Telegram Media Downloader, follow these steps:
-
-### Reporting Issues
-If you find a bug, compatibility issue, or have a feature request, please:
-
-1. Check if the issue has already been reported in the Issues tab.
-2. If not, create a new issue with a clear title and description. Attach screenshots or logs if applicable.
-
-### Submitting Pull Requests
-
-1. **Fork the repository**: Click on the &quot;Fork&quot; button in the top-right of the repo.
-
-2. **Clone your fork**:
-
-    ```bash
-    git clone https://github.com/YOUR-USERNAME/Telegram-Media-Downloader.git
-    cd Telegram-Media-Downloader
-    ```
-
-3. **Create a new branch** for your feature or bugfix:
-
-    ```bash
-    git checkout -b feature-or-bugfix-name
-    ```
-
-    Make your changes and ensure the script still works correctly on supported Telegram webapps.
-
-4. **Make your changes** and ensure the script still works correctly on supported Telegram webapps.
-
-5. **Commit your changes** with a descriptive message:
-
-    ```bash
-    git commit -m &quot;Add feature/fix issue: Brief description&quot;
-    ```
-
-6. **Push to your fork:**
-
-    ```bash
-    git push origin feature-or-bugfix-name
-    ```
-
-7. **Submit a Pull Request (PR):**
-
-    - Go to the original repository: [Neet-Nestor/Telegram-Media-Downloader](https://github.com/Neet-Nestor/Telegram-Media-Downloader).
-
-    - Click &quot;New Pull Request&quot; and select your branch.
-
-    - Add a description of your changes and submit.
-
-### Development Guidelines
-- Keep your code clean and well-documented.
-- Follow the existing coding style.
-- Test your changes on both Telegram WebK and WebZ versions.
-- Ensure compatibility with major user script managers like Tampermonkey and Violentmonkey.
-
-### Help with Translations
-We want Telegram Media Downloader to be accessible to users worldwide! If you’d like to help translate the script’s Greasy Fork page, follow these steps:
-
-#### How to Contribute a Translation
-
-Check for existing translations in the [`docs/greasyfork`](/docs/greasyfork/) folder of the repository.
-
-Add a new file in docs/&lt;language-code&gt;.md, using the appropriate language code (e.g., docs/fr-FR.md for French, docs/de-DE.md for German).
-
-Translate the content from [`docs/greasyfork/en-US.md`](/docs/greasyfork/en-US.md) into your language while keeping the formatting intact. Submit a Pull Request following the steps in the [Submitting Pull Requests](#submitting-pull-requests) section above.
-
-#### Language Codes
-Use standard IETF Language Tag (e.g., `es-ES` for Spanish, `ja-JP` for Japanese). You can find a full list of codes [here](https://docs.dyspatch.io/localization/supported_languages/).
-
-## Support Author
-If you like this script, you can support me via [Venmo](https://venmo.com/u/NeetNestor) or [buy me a coffee](https://ko-fi.com/neetnestor) :)
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
             <title><![CDATA[Mintplex-Labs/anything-llm]]></title>
             <link>https://github.com/Mintplex-Labs/anything-llm</link>
             <guid>https://github.com/Mintplex-Labs/anything-llm</guid>
-            <pubDate>Sat, 12 Jul 2025 00:04:50 GMT</pubDate>
+            <pubDate>Sun, 13 Jul 2025 00:05:17 GMT</pubDate>
             <description><![CDATA[The all-in-one Desktop & Docker AI application with built-in RAG, AI agents, No-code agent builder, MCP compatibility, and more.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/Mintplex-Labs/anything-llm">Mintplex-Labs/anything-llm</a></h1>
             <p>The all-in-one Desktop & Docker AI application with built-in RAG, AI agents, No-code agent builder, MCP compatibility, and more.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 46,371</p>
-            <p>Forks: 4,668</p>
-            <p>Stars today: 48 stars today</p>
+            <p>Stars: 46,417</p>
+            <p>Forks: 4,675</p>
+            <p>Stars today: 54 stars today</p>
             <h2>README</h2><pre>&lt;a name=&quot;readme-top&quot;&gt;&lt;/a&gt;
 
 &lt;p align=&quot;center&quot;&gt;
@@ -722,1321 +1388,512 @@ We take privacy very seriously, and we hope you understand that we want to learn
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[MobSF/Mobile-Security-Framework-MobSF]]></title>
-            <link>https://github.com/MobSF/Mobile-Security-Framework-MobSF</link>
-            <guid>https://github.com/MobSF/Mobile-Security-Framework-MobSF</guid>
-            <pubDate>Sat, 12 Jul 2025 00:04:49 GMT</pubDate>
-            <description><![CDATA[Mobile Security Framework (MobSF) is an automated, all-in-one mobile application (Android/iOS/Windows) pen-testing, malware analysis and security assessment framework capable of performing static and dynamic analysis.]]></description>
+            <title><![CDATA[simple-icons/simple-icons]]></title>
+            <link>https://github.com/simple-icons/simple-icons</link>
+            <guid>https://github.com/simple-icons/simple-icons</guid>
+            <pubDate>Sun, 13 Jul 2025 00:05:16 GMT</pubDate>
+            <description><![CDATA[SVG icons for popular brands]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/MobSF/Mobile-Security-Framework-MobSF">MobSF/Mobile-Security-Framework-MobSF</a></h1>
-            <p>Mobile Security Framework (MobSF) is an automated, all-in-one mobile application (Android/iOS/Windows) pen-testing, malware analysis and security assessment framework capable of performing static and dynamic analysis.</p>
+            <h1><a href="https://github.com/simple-icons/simple-icons">simple-icons/simple-icons</a></h1>
+            <p>SVG icons for popular brands</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 19,004</p>
-            <p>Forks: 3,410</p>
-            <p>Stars today: 15 stars today</p>
-            <h2>README</h2><pre># Mobile Security Framework (MobSF)
+            <p>Stars: 22,997</p>
+            <p>Forks: 2,834</p>
+            <p>Stars today: 36 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://cdn.simpleicons.org/simpleicons/000/fff&quot; alt=&quot;Simple Icons&quot; width=70&gt;
+&lt;h3 align=&quot;center&quot;&gt;Simple Icons&lt;/h3&gt;
+&lt;p align=&quot;center&quot;&gt;
+Over 3300 SVG icons for popular brands. See them all on one page at &lt;a href=&quot;https://simpleicons.org&quot;&gt;SimpleIcons.org&lt;/a&gt;. Contributions, corrections &amp; requests can be made on GitHub.&lt;/p&gt;
+&lt;/p&gt;
 
-![](https://cloud.githubusercontent.com/assets/4301109/20019521/cc61f7fc-a2f2-11e6-95f3-407030d9fdde.png)
+&lt;p align=&quot;center&quot;&gt;
+&lt;a href=&quot;https://simpleicons.org&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/dynamic/json?color=informational&amp;label=icons&amp;prefix=%20&amp;logo=simpleicons&amp;query=%24.length&amp;url=https%3A%2F%2Fraw.githubusercontent.com%2Fsimple-icons%2Fsimple-icons%2Fdevelop%2Fdata%2Fsimple-icons.json&quot; alt=&quot;Number of icons currently in the library&quot;/&gt;&lt;/a&gt;
+&lt;a href=&quot;https://www.npmjs.com/package/simple-icons&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/v/simple-icons.svg?logo=npm&quot; alt=&quot;NPM version&quot;/&gt;&lt;/a&gt;
+&lt;a href=&quot;https://packagist.org/packages/simple-icons/simple-icons&quot;&gt;&lt;img src=&quot;https://img.shields.io/packagist/v/simple-icons/simple-icons?logo=packagist&amp;logoColor=white&quot; alt=&quot;Build status&quot;/&gt;&lt;/a&gt;
+&lt;br/&gt;
+&lt;a href=&quot;https://github.com/simple-icons/simple-icons/actions?query=workflow%3AVerify+branch%3Adevelop&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/actions/workflow/status/simple-icons/simple-icons/verify.yml?branch=develop&amp;logo=github&amp;label=tests&quot; alt=&quot;Build status&quot;/&gt;&lt;/a&gt;
+&lt;a href=&quot;https://discord.gg/vUXFa7t5xJ&quot;&gt;&lt;img src=&quot;https://img.shields.io/discord/1142044630909726760?logo=discord&amp;logoColor=white&amp;label=discord&quot; alt=&quot;Number of users active in our Discord server&quot;/&gt;&lt;/a&gt;
+&lt;a href=&quot;https://opencollective.com/simple-icons&quot;&gt;&lt;img src=&quot;https://img.shields.io/opencollective/all/simple-icons?logo=opencollective&quot; alt=&quot;Backers and sponsors on Open Collective&quot;/&gt;&lt;/a&gt;
+&lt;/p&gt;
 
-Mobile Security Framework (MobSF) is a security research platform for mobile applications in Android, iOS and Windows Mobile. MobSF can be used for a variety of use cases such as mobile application security, penetration testing, malware analysis, and privacy analysis. The Static Analyzer supports popular mobile app binaries like APK, IPA, APPX and source code. Meanwhile, the Dynamic Analyzer supports both Android and iOS applications and offers a platform for interactive instrumented testing, runtime data and network traffic analysis. MobSF seamlessly integrates with your DevSecOps or CI/CD pipeline, facilitated by REST APIs and CLI tools, enhancing your security workflow with ease.
+## Usage
 
-Made with ![Love](https://cloud.githubusercontent.com/assets/4301109/16754758/82e3a63c-4813-11e6-9430-6015d98aeaab.png) in India
+&gt; [!IMPORTANT]\
+&gt; We ask that all users read our [legal disclaimer](https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md) before using icons from Simple Icons.
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/opensecurity/mobile-security-framework-mobsf?style=social)](https://hub.docker.com/r/opensecurity/mobile-security-framework-mobsf/) [![python](https://img.shields.io/badge/python-3.10+-blue.svg?logo=python&amp;labelColor=yellow)](https://www.python.org/downloads/)
-[![PyPI version](https://badge.fury.io/py/mobsf.svg)](https://badge.fury.io/py/mobsf)
-[![platform](https://img.shields.io/badge/platform-osx%2Flinux%2Fwindows-green.svg)](https://github.com/MobSF/Mobile-Security-Framework-MobSF/)
-[![License](https://img.shields.io/:license-GPL--3.0--only-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
-[![MobSF tests](https://github.com/MobSF/Mobile-Security-Framework-MobSF/workflows/MobSF%20tests/badge.svg?branch=master)](https://github.com/MobSF/Mobile-Security-Framework-MobSF/actions)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=MobSF_Mobile-Security-Framework-MobSF&amp;metric=alert_status)](https://sonarcloud.io/dashboard?id=MobSF_Mobile-Security-Framework-MobSF)
-![GitHub closed issues](https://img.shields.io/github/issues-closed/MobSF/Mobile-Security-Framework-MobSF)
-[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/6392/badge)](https://bestpractices.coreinfrastructure.org/projects/6392)
+### General Usage
 
+Icons can be downloaded as SVGs directly from [simpleicons.org](https://simpleicons.org) - simply click the download button of the icon you want, and the download will start automatically.
 
-[![ToolsWatch Best Security Tools 2016](https://img.shields.io/badge/ToolsWatch-Rank%205%20%7C%20Year%202016-red.svg)](http://www.toolswatch.org/2017/02/2016-top-security-tools-as-voted-by-toolswatch-org-readers/)
-[![ToolsWatch Best Security Tools 2017](https://img.shields.io/badge/ToolsWatch-Rank%209%20%7C%20Year%202017-red.svg)](http://www.toolswatch.org/2018/01/black-hat-arsenal-top-10-security-tools/)
-[![Blackhat Arsenal Asia 2015](https://img.shields.io/badge/Black%20Hat%20Arsenal-Asia%202015-blue.svg)](https://www.blackhat.com/asia-15/arsenal.html#yso-mobile-security-framework)
-[![Blackhat Arsenal Asia 2018](https://img.shields.io/badge/Black%20Hat%20Arsenal-Asia%202018-blue.svg)](https://www.blackhat.com/asia-18/arsenal.html#mobile-security-framework-mobsf)
-[![Blackhat Arsenal Europe 2023](https://img.shields.io/badge/Black%20Hat%20Arsenal-Europe%202023-blue.svg)](https://www.blackhat.com/eu-23/arsenal/schedule/index.html#mobile-security-framework---mobsf-35327)
+### CDN Usage
 
+Icons can be served from a CDN such as [jsDelivr](https://www.jsdelivr.com/package/npm/simple-icons) or [unpkg](https://unpkg.com/browse/simple-icons/). Simply use the `simple-icons` npm package and specify a version in the URL like the following:
 
-MobSF is also bundled with [Android Tamer](https://tamerplatform.com), [BlackArch](https://blackarch.org/mobile.html) and [Pentoo](https://www.pentoo.ch/).
-
-### Support MobSF
-
-[![Donate to MobSF](https://user-images.githubusercontent.com/4301109/117404264-7aab5480-aebe-11eb-9cbd-da82d7346bb3.png)](https://opensecurity.in/donate)
-
-
-&gt; Has MobSF made a difference for you? Show your support and help us innovate with a donation. It&#039;s easy to build open source, maintaining one is a different story. 
-
-*Long live open source!*
-
-## Documentation
-
-Quick setup with docker
-
-```
-docker pull opensecurity/mobile-security-framework-mobsf:latest
-docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
-
-# Default username and password: mobsf/mobsf
+```html
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/[ICON SLUG].svg&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://unpkg.com/simple-icons@v15/icons/[ICON SLUG].svg&quot; /&gt;
 ```
 
-[![See MobSF Documentation](https://user-images.githubusercontent.com/4301109/70686099-3855f780-1c79-11ea-8141-899e39459da2.png)](https://mobsf.github.io/docs)
+Where `[ICON SLUG]` is replaced by the [slug] of the icon you want to use, for example:
 
-* Try MobSF Static Analyzer Online: [mobsf.live](https://mobsf.live)
-* MobSF in CI/CD: [mobsfscan](https://github.com/MobSF/mobsfscan)
-* Conference Presentations: [Slides &amp; Videos](https://mobsf.github.io/Mobile-Security-Framework-MobSF/presentations.html)
-* MobSF Online Course: [OpSecX MAS](https://opsecx.com/index.php/product/automated-mobile-application-security-assessment-with-mobsf/)
-* What&#039;s New: [See Changelog](https://mobsf.github.io/Mobile-Security-Framework-MobSF/changelog.html)
-
-## Collaborators
-
-[Ajin Abraham](https://in.linkedin.com/in/ajinabraham) ![india](https://user-images.githubusercontent.com/4301109/37564171-6549d678-2ab6-11e8-9b9d-21327c7f5d5b.png)  | [Magaofei](https://github.com/magaofei) ![china](https://user-images.githubusercontent.com/4301109/44515364-00bbe880-a6e0-11e8-944d-5b48a86427da.png) | [Matan Dobrushin](https://github.com/matandobr) ![israel](https://user-images.githubusercontent.com/4301109/37564177-782f1758-2ab6-11e8-91e5-c76bde37b330.png) | [Vincent Nadal](https://github.com/superpoussin22) ![france](https://user-images.githubusercontent.com/4301109/37564175-71d6d92c-2ab6-11e8-89d7-d21f5aa0bda8.png)
-
-## e-Learning Courses &amp; Certifications
-![MobSF Course](https://user-images.githubusercontent.com/4301109/76344880-ad68b580-62d8-11ea-8cde-9e3475fc92f6.png) [Automated Mobile Application Security Assessment with MobSF -MAS](https://opsecx.com/index.php/product/automated-mobile-application-security-assessment-with-mobsf/)
-
-![Android Security Tools Course](https://user-images.githubusercontent.com/4301109/76344939-c709fd00-62d8-11ea-8208-774f1d5a7c52.png) [Android Security Tools Expert -ATX](https://opsecx.com/index.php/product/android-security-tools-expert-atx/)
-
-## MobSF Support
-
-* **Free Support:** Free limited support, questions, help and discussions, join our Slack channel [![Join_MobSF_Slack](https://img.shields.io/badge/mobsf%20slack-join-green?logo=slack&amp;labelColor=4A154B)](https://join.slack.com/t/mobsf/shared_invite/zt-2umjnqlsm-sNSh9g4GFraPUBPqatwTxw)
-* **Enterprise Support:** Priority feature requests, live support &amp; onsite training, see [![MobSF Support Packages](https://img.shields.io/badge/enterprise-support%20package-blue?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGMAAABaCAMAAACbkBjCAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAkNQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////o1yoNQAAAMF0Uk5TAAQ1YH6IXzYFAUqq9P/1rU4CPdHWQ4X+jgOkro+hVWYR6vIajJvz+XN/z9sjLW6lrNPX+PsGHyE5TE9XWV1hW0k6LC7hs7SEhgr2sGRiFBCXJf38sgwOtmpoIiDf68vSGS+Z9yeR70RNvUEVfOa/WgdCR8XuUeeA8Du7Vporrx66SwlcqWV92g2HY+2Ki/GQJjxpM8TVcIGodjJ3ybETJOjUyiop4sxYkkVSGJ/pD6cdwlTOHNnIZ+B13bXkKL7NMOC0/xQAAAPPSURBVHic7dn5PxVRFADwY0sPN0t4Uj0vLQq9lkelRVFRKklZs+RRiiTtSbRoD9GuhdK+Ky3S9qf1Zu68bczcO5rjhz4f5yfnOud9mTszd+Y+gLH4f8PL28fXz893nP/4UQIMAYFBRIoJwSGho0CETSQeER6BLYRGGoksjFGTcIlouSDEZNRpmaJEEDIVkTApE4TEoBHmaWpG7HQsY4YaQchMJMI8S92IQ/pHZqsThMzBMeJZRgIKkcgiCJmLYcSwDQuGMY9tzMcwFrCNhQiEl5VtJCXrNxaxCUIW6zf8ecYS/UYKz1iq31jGM5brN1bwDB/9RirPQFhDuMdqpX5jFc9I0W+k8Yww/UY6z1it3zDzDLN+A9awiTUIBKxlGxkYRibbWIdhLGUbCLcrgPUTWETWegyDPSEbUAjYyDI24RjZWepE7GYcA3LUjSlIBGzJVSO2JmIZsG2UZ1wI1TUEYZ11RJ7KrFvz8Qy1S6QAkYBCZaMI0yhWNrZjGlCiRJSiElCmZJSPGWOGrtiheKFjGhW2yiVVO+XL+i6bz9pqHCB09x77B9YA1O6tcwHGffX7oYGQsnr9+2R5MeHiZx4QkmTTQSocsqUL+WHh5yNHs3UJxVHHpL87RBo5HphkbDwhvS770N9lNZ38Z6Gm2bXGmpyjLa7l1eI8cqdO/8tW7JmNHnutZ6XhtJzA1nOOx7bzbgUXLBdHKLRcKvU8iS4Lo2YL3de4cpXe1Ns8Sto7ro1A6AxMkl8KXQDXbc5tapLbuNsA0CSvumHy0gTkF96Ut9rjFtyWjRwFuDO8ruRuLVfoblLePLwH4bKRmwAFSpXW6E4WYC66rwjYw3fYY8MDgIMqxeWWh8qAobq1Uk0gJBJ6ej0GensAHqmWW1urDQoH6bE6YI82gD53pPeJvecpq+OZt5x4ztkJewEeSG+f0NTObIlL9SReDjtZZWEDd4QSoaqP2jRyX7kTr49wCPJGrKuqE5O34h0R3vGaYqvcjAxeNXlPC+k7biZNPnC7+l1EA7eYBNPKVjG5QxPuLgchH51GP79YetP/JCbxNDnOb5voIE7ya0kjvYboTSCInvsBGvocG5odGmrpkR2QsgF6vmvos0nGZw21X8TKCClrELOvGvq+UYK7SSwEnYIiKesSs0EtjXSl6dZSGi6WOr5ei3I7kTnRrd34LpYOSdmQmL1ANn6IpQlSRr+8mYpsiK9MyY672lbx4acZ2WgXKp84059C+gvZsAqVrt0ycWPsN7JhNHicrIPus6PBMJu0hPAcWOHM/giNKVr6zDAWI4i/nmw15nhs85kAAAAASUVORK5CYII=)](https://opensecurity.in/#support)
-
-
-## Contribution, Feature Requests &amp; Bugs
-
-* Read [CONTRIBUTING.md](https://github.com/MobSF/Mobile-Security-Framework-MobSF/blob/master/.github/CONTRIBUTING.md) before opening bugs, feature requests and pull request.
-* For Project updates and announcements, follow [@ajinabraham](https://twitter.com/ajinabraham) or [@OpenSecurity_IN](https://twitter.com/OpenSecurity_IN).
-* Github Issues are only for tracking bugs and feature requests. Do not post support or help queries there. We have a slack channel for that.
-
-### Static Analysis - Android
-
-![mobsf_android_static_analysis](https://user-images.githubusercontent.com/4301109/95506503-f9b6c980-097d-11eb-803a-f88321e1feb7.gif)
-
-### Static Analysis - iOS
-
-![mobsf_ios_ipa_static_analysis](https://user-images.githubusercontent.com/4301109/95507865-16540100-0980-11eb-9e4d-887668d46969.gif)
-
-### Dynamic Analysis - Android APK
-
-![mobsf_android_dynamic_analysis](https://user-images.githubusercontent.com/4301109/95514697-5e782100-098a-11eb-8390-47bb3822a2d7.gif)
-
-### Web API Viewer
-
-![mobsf_web_api_fuzzing_with_burp](https://user-images.githubusercontent.com/4301109/95516560-69808080-098d-11eb-9e0b-fb5a25e96585.gif)
-
-### Dynamic Analysis - iOS IPA
-
-![mobsf_ios_dynamic_analysis](https://github.com/MobSF/Mobile-Security-Framework-MobSF/assets/4301109/34014c4d-1535-48ad-9944-a4b1b728a030)
-
-## Past Collaborators
-
-* [Dominik Schlecht](https://github.com/sn0b4ll) ![germany](https://user-images.githubusercontent.com/4301109/37564176-743238ba-2ab6-11e8-9666-5d98f0a1d127.png)
-
-## Honorable Contributors &amp; Shoutouts
-
-* Amrutha VC - For the new MobSF logo
-* Dominik Schlecht - For the awesome work on adding Windows Phone App Static Analysis to MobSF
-* Esteban - Better Android Manifest Analysis and Static Analysis Improvement.
-* Matan Dobrushin - For adding Android ARM Emulator support to MobSF - Special thanks goes for cuckoo-droid
-* Shuxin - Android Binary Analysis
-* Abhinav Saxena - (@xandfury) - For Travis CI and Logging integration
-* ![netguru](https://user-images.githubusercontent.com/4301109/76340877-a3dc4f00-62d2-11ea-8631-b4cc8d9e42ed.png) [Netguru](https://www.netguru.com/) (@karolpiateknet, @mtbrzeski) - For iOS Swift support, Rule contributions and SAST refactoring.
-* Maxime Fawe - (@Arenash13) - For Matching Strategy implementation of SAST pattern matching algorithms.
-* Abhinav Sejpal (@Abhinav_Sejpal) - For poking me with bugs, feature requests, and UI &amp; UX suggestions
-* Anant Srivastava (@anantshri) - For Activity Tester Idea
-* Anto Joseph (@antojoseph) - For the help with SuperSU
-* Bharadwaj Machiraju (@tunnelshade) - For writing pyWebProxy from scratch
-* Rahul (@c0dist) - Kali Support
-* MindMac - For writing Android Blue Pill
-* Oscar Alfonso Diaz - (@OscarAkaElvis) - For Dockerfile contributions
-* Thomas Abraham - For JS Hacks on UI
-* Tim Brown (@timb_machine) - For the iOS Binary Analysis Ruleset
-* Shanil Prasad (@Rajuraju14) - For improving iOS ATS Analysis
-* Jovan Petrovic (@JovanPetrovic) - For sponsoring a server to host mobsf.live
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[poloclub/transformer-explainer]]></title>
-            <link>https://github.com/poloclub/transformer-explainer</link>
-            <guid>https://github.com/poloclub/transformer-explainer</guid>
-            <pubDate>Sat, 12 Jul 2025 00:04:48 GMT</pubDate>
-            <description><![CDATA[Transformer Explained Visually: Learn How LLM Transformer Models Work with Interactive Visualization]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/poloclub/transformer-explainer">poloclub/transformer-explainer</a></h1>
-            <p>Transformer Explained Visually: Learn How LLM Transformer Models Work with Interactive Visualization</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 4,823</p>
-            <p>Forks: 489</p>
-            <p>Stars today: 15 stars today</p>
-            <h2>README</h2><pre># Transformer Explainer: Interactive Learning of Text-Generative Models
-
-Transformer Explainer is an interactive visualization tool designed to help anyone learn how Transformer-based models like GPT work. It runs a live GPT-2 model right in your browser, allowing you to experiment with your own text and observe in real time how internal components and operations of the Transformer work together to predict the next tokens. Try Transformer Explainer at http://poloclub.github.io/transformer-explainer and watch a demo video on YouTube https://youtu.be/TFUc41G2ikY.&lt;br/&gt;&lt;br/&gt;
-[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
-[![arxiv badge](https://img.shields.io/badge/arXiv-2408.04619-red)](https://arxiv.org/abs/2408.04619)
-
-&lt;a href=&quot;https://youtu.be/TFUc41G2ikY&quot; target=&quot;_blank&quot;&gt;&lt;img width=&quot;100%&quot; src=&#039;https://github.com/user-attachments/assets/0a4d8888-6555-4df5-bc71-77f1299115c3&#039;&gt;&lt;/a&gt;
-
-## Live Demo
-Try Transformer Explainer: http://poloclub.github.io/transformer-explainer
-
-## Research Paper
-
-[**Transformer Explainer: Interactive Learning of Text-Generative Models**](https://arxiv.org/abs/2408.04619).
-Aeree Cho, Grace C. Kim, Alexander Karpekov, Alec Helbling, Zijie J. Wang, Seongmin Lee, Benjamin Hoover, Duen Horng Chau.
-_Poster, IEEE VIS 2024._
-
-## How to run locally
-
-#### Prerequisites
-
-- Node.js v20 or higher
-- NPM v10 or higher
-
-#### Steps
-
-```bash
-git clone https://github.com/poloclub/transformer-explainer.git
-cd transformer-explainer
-npm install
-npm run dev
+```html
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/simpleicons.svg&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://unpkg.com/simple-icons@v15/icons/simpleicons.svg&quot; /&gt;
 ```
 
-Then, on your web browser, access http://localhost:5173.
+These examples use the latest major version. This means you won&#039;t receive any updates following the next major release. You can use `@latest` instead to receive updates indefinitely. However, this will result in a `404` error if the icon is removed.
 
-## Credits
+#### CDN with colors
 
-Transformer Explainer was created by &lt;a href=&quot;https://aereeeee.github.io/&quot; target=&quot;_blank&quot;&gt;Aeree Cho&lt;/a&gt;, &lt;a href=&quot;https://www.linkedin.com/in/chaeyeonggracekim/&quot; target=&quot;_blank&quot;&gt;Grace C. Kim&lt;/a&gt;, &lt;a href=&quot;https://alexkarpekov.com/&quot; target=&quot;_blank&quot;&gt;Alexander Karpekov&lt;/a&gt;, &lt;a href=&quot;https://alechelbling.com/&quot; target=&quot;_blank&quot;&gt;Alec Helbling&lt;/a&gt;, &lt;a href=&quot;https://zijie.wang/&quot; target=&quot;_blank&quot;&gt;Jay Wang&lt;/a&gt;, &lt;a href=&quot;https://seongmin.xyz/&quot; target=&quot;_blank&quot;&gt;Seongmin Lee&lt;/a&gt;, &lt;a href=&quot;https://bhoov.com/&quot; target=&quot;_blank&quot;&gt;Benjamin Hoover&lt;/a&gt;, and &lt;a href=&quot;https://poloclub.github.io/polochau/&quot; target=&quot;_blank&quot;&gt;Polo Chau&lt;/a&gt; at the Georgia Institute of Technology.
+We also provide a CDN service which allows you to use colors.
 
-## Citation
-
-```bibTeX
-@article{cho2024transformer,
-  title = {Transformer Explainer: Interactive Learning of Text-Generative Models},
-  shorttitle = {Transformer Explainer},
-  author = {Cho, Aeree and Kim, Grace C. and Karpekov, Alexander and Helbling, Alec and Wang, Zijie J. and Lee, Seongmin and Hoover, Benjamin and Chau, Duen Horng},
-  journal={IEEE VIS Poster},
-  year={2024}
-}
+```html
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/[ICON SLUG]&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/[ICON SLUG]/[COLOR]&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/[ICON SLUG]/[COLOR]/[DARK_MODE_COLOR]&quot; /&gt;
 ```
 
-## License
+Where `[COLOR]` is optional, and can be replaced by the [hex colors](https://developer.mozilla.org/en-US/docs/Web/CSS/hex-color) or [CSS keywords](https://www.w3.org/wiki/CSS/Properties/color/keywords) of the icon you want to use. The color is defaulted to the HEX color of the icon shown in [simpleicons.org website](https://simpleicons.org). `[DARK_MODE_COLOR]` is used for dark mode. The [CSS prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) will be used when a value is specified. For example:
 
-The software is available under the [MIT License](https://github.com/poloclub/transformer-explainer/blob/main/LICENSE).
-
-## Contact
-
-If you have any questions, feel free to [open an issue](https://github.com/poloclub/transformer-explainer/issues/new/choose) or contact [Aeree Cho](https://aereeeee.github.io/) or any of the contributors listed above.
-
-## More AI explainers to check out
-
-- [**Diffusion Explainer**](https://poloclub.github.io/diffusion-explainer) for learning how Stable Diffusion transforms text prompt into image
-- [**CNN Explainer**](https://poloclub.github.io/cnn-explainer)
-- [**GAN Lab**](https://poloclub.github.io/ganlab) for playing with Generative Adversarial Networks in browser
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[DataDog/documentation]]></title>
-            <link>https://github.com/DataDog/documentation</link>
-            <guid>https://github.com/DataDog/documentation</guid>
-            <pubDate>Sat, 12 Jul 2025 00:04:47 GMT</pubDate>
-            <description><![CDATA[The source for Datadog's documentation site.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/DataDog/documentation">DataDog/documentation</a></h1>
-            <p>The source for Datadog's documentation site.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 524</p>
-            <p>Forks: 1,184</p>
-            <p>Stars today: 2 stars today</p>
-            <h2>README</h2><pre># Documentation site for Datadog
-
-Welcome to the Datadog documentation repository. The markdown stored in this repo is published to the [Datadog documentation site][17] using [hugo][1], a static website generation tool.
-
-## Contribute to the docs
-
-Contributions are encouraged! If you notice something on one of the pages that needs an edit, open a pull request in this repo for the documentation team to review
-
-Most pages on the documentation site feature an **Edit** button that sends you to the source file in this repo. You can make an edit straight from the GitHub website!
-
-![The edit button on a docs page](static/images/edit_link.png)
-
-For more information on contributing, see the [contribution guidelines][18].
-
-## Working on Docs
-
-### Outside Contributors
-Follow these steps if you are NOT a Datadog employee:
-
-- Fork the master branch.
-- Consult our [contributing guidelines][8].
-- When you&#039;re ready to finalize your changes, commit them and make a pull request back to `DataDog/master`.
-- A Datadog technical writer might change your PR title with a DOCS ticket number, such as &quot;[DOCS-9000],&quot; which means it has been added to the team&#039;s internal Jira queue to triage and review. No action is necessary from you if we change the title of your PR.
-
-### Datadog Staff
-Follow these steps if you are a Datadog employee:
-
-- Always branch off of master; never commit directly to master.
-- You MUST name your branch `&lt;name&gt;/&lt;description&gt;`. If you do not include the forward slash (`/`), the GitLab pipeline won&#039;t run, you won&#039;t get a branch preview, and your pull request will not pass in CI. Getting a branch preview makes it easier for us to check for any issues with your PR, such as broken links. Using a [Slack username][21] also ensures you get build notifications in Slack.
-- Consult our [contributing guidelines][8].
-- When you&#039;re ready to commit, create a new pull request to master from your branch.
-- Use GitHub&#039;s [draft pull request][15] feature and appropriate labels such as &quot;Do Not Merge&quot; or &quot;Work in Progress&quot; until your PR is ready to be merged and live on production.
-- If you&#039;ve named your branch correctly, a GitHub bot posts a link to the docs preview website for your PR. After the preview build completes, you can use the link to preview your changes.
-- Running the build locally is optional. If you followed the branch naming conventions above, your pull request should generate a preview. For information on local builds, see the [Build setup guide][20].
-
-### A note about markdown
-
-This site uses [Goldmark][9] for markdown, which is compliant with [CommonMark 0.29][10].
-
-If you include ANY Markdown in a file, give it a `.md` extension.
-
-Make sure all files are lowercase. Macs are case-insensitive when creating links to images and pages, but our build server is not, so tests may work locally, but the site will fail in production.
-
-## Releasing
-
-Merging to `master` triggers an automatic deployment. This process typically begins within 10 minutes and usually takes around 35 minutes to complete, though these times may vary. 
-
-## How to add a new integration
-
-[See the dedicated doc page][11].
-
-[1]: https://gohugo.io
-[2]: https://nodejs.org/en/download/package-manager#macos
-[3]: https://www.python.org/downloads
-[4]: https://github.com/pyenv/pyenv#unixmacos
-[5]: https://github.com/DataDog/documentation/blob/master/Makefile.config.example
-[6]: https://github.com/DataDog/documentation/wiki/Github-personal-token
-[7]: https://github.com/DataDog/documentation/wiki/Documentation-Build
-[8]: https://github.com/DataDog/documentation/blob/master/CONTRIBUTING.md
-[9]: https://github.com/yuin/goldmark
-[10]: https://spec.commonmark.org/0.29/
-[11]: https://docs.datadoghq.com/developers/integrations
-[12]: https://www.docker.com/products/docker-desktop/
-[13]: https://gohugo.io/getting-started/installing/
-[14]: https://golang.org/doc/install
-[15]: https://github.blog/2019-02-14-introducing-draft-pull-requests/
-[16]: https://github.com/DataDog/documentation#docker-development
-[17]: https://docs.datadoghq.com
-[18]: /CONTRIBUTING.md
-[19]: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
-[20]: https://datadoghq.atlassian.net/wiki/spaces/docs4docs/pages/3960766866/Build+setup+guide
-[21]: https://www.highviewapps.com/kb/how-do-i-find-my-slack-username/
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[facebook/react]]></title>
-            <link>https://github.com/facebook/react</link>
-            <guid>https://github.com/facebook/react</guid>
-            <pubDate>Sat, 12 Jul 2025 00:04:46 GMT</pubDate>
-            <description><![CDATA[The library for web and native user interfaces.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/facebook/react">facebook/react</a></h1>
-            <p>The library for web and native user interfaces.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 237,172</p>
-            <p>Forks: 48,907</p>
-            <p>Stars today: 37 stars today</p>
-            <h2>README</h2><pre># [React](https://react.dev/) &amp;middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![(Runtime) Build and Test](https://github.com/facebook/react/actions/workflows/runtime_build_and_test.yml/badge.svg)](https://github.com/facebook/react/actions/workflows/runtime_build_and_test.yml) [![(Compiler) TypeScript](https://github.com/facebook/react/actions/workflows/compiler_typescript.yml/badge.svg?branch=main)](https://github.com/facebook/react/actions/workflows/compiler_typescript.yml) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://legacy.reactjs.org/docs/how-to-contribute.html#your-first-pull-request)
-
-React is a JavaScript library for building user interfaces.
-
-* **Declarative:** React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes. Declarative views make your code more predictable, simpler to understand, and easier to debug.
-* **Component-Based:** Build encapsulated components that manage their own state, then compose them to make complex UIs. Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep the state out of the DOM.
-* **Learn Once, Write Anywhere:** We don&#039;t make assumptions about the rest of your technology stack, so you can develop new features in React without rewriting existing code. React can also render on the server using [Node](https://nodejs.org/en) and power mobile apps using [React Native](https://reactnative.dev/).
-
-[Learn how to use React in your project](https://react.dev/learn).
-
-## Installation
-
-React has been designed for gradual adoption from the start, and **you can use as little or as much React as you need**:
-
-* Use [Quick Start](https://react.dev/learn) to get a taste of React.
-* [Add React to an Existing Project](https://react.dev/learn/add-react-to-an-existing-project) to use as little or as much React as you need.
-* [Create a New React App](https://react.dev/learn/start-a-new-react-project) if you&#039;re looking for a powerful JavaScript toolchain.
-
-## Documentation
-
-You can find the React documentation [on the website](https://react.dev/).
-
-Check out the [Getting Started](https://react.dev/learn) page for a quick overview.
-
-The documentation is divided into several sections:
-
-* [Quick Start](https://react.dev/learn)
-* [Tutorial](https://react.dev/learn/tutorial-tic-tac-toe)
-* [Thinking in React](https://react.dev/learn/thinking-in-react)
-* [Installation](https://react.dev/learn/installation)
-* [Describing the UI](https://react.dev/learn/describing-the-ui)
-* [Adding Interactivity](https://react.dev/learn/adding-interactivity)
-* [Managing State](https://react.dev/learn/managing-state)
-* [Advanced Guides](https://react.dev/learn/escape-hatches)
-* [API Reference](https://react.dev/reference/react)
-* [Where to Get Support](https://react.dev/community)
-* [Contributing Guide](https://legacy.reactjs.org/docs/how-to-contribute.html)
-
-You can improve it by sending pull requests to [this repository](https://github.com/reactjs/react.dev).
-
-## Examples
-
-We have several examples [on the website](https://react.dev/). Here is the first one to get you started:
-
-```jsx
-import { createRoot } from &#039;react-dom/client&#039;;
-
-function HelloMessage({ name }) {
-  return &lt;div&gt;Hello {name}&lt;/div&gt;;
-}
-
-const root = createRoot(document.getElementById(&#039;container&#039;));
-root.render(&lt;HelloMessage name=&quot;Taylor&quot; /&gt;);
+```html
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/simpleicons&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/simpleicons/gray&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/simpleicons/hotpink&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/simpleicons/0cf&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/simpleicons/0cf9&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/simpleicons/00ccff&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/simpleicons/00ccff99&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/simpleicons/orange/pink&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/simpleicons/_/eee&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/simpleicons/eee/_&quot; /&gt;
 ```
 
-This example will render &quot;Hello Taylor&quot; into a container on the page.
-
-You&#039;ll notice that we used an HTML-like syntax; [we call it JSX](https://react.dev/learn#writing-markup-with-jsx). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML.
-
-## Contributing
-
-The main purpose of this repository is to continue evolving React core, making it faster and easier to use. Development of React happens in the open on GitHub, and we are grateful to the community for contributing bugfixes and improvements. Read below to learn how you can take part in improving React.
-
-### [Code of Conduct](https://code.fb.com/codeofconduct)
-
-Facebook has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://code.fb.com/codeofconduct) so that you can understand what actions will and will not be tolerated.
-
-### [Contributing Guide](https://legacy.reactjs.org/docs/how-to-contribute.html)
-
-Read our [contributing guide](https://legacy.reactjs.org/docs/how-to-contribute.html) to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to React.
-
-### [Good First Issues](https://github.com/facebook/react/labels/good%20first%20issue)
-
-To help you get your feet wet and get you familiar with our contribution process, we have a list of [good first issues](https://github.com/facebook/react/labels/good%20first%20issue) that contain bugs that have a relatively limited scope. This is a great place to get started.
-
-### License
-
-React is [MIT licensed](./LICENSE).
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[jgraph/drawio-desktop]]></title>
-            <link>https://github.com/jgraph/drawio-desktop</link>
-            <guid>https://github.com/jgraph/drawio-desktop</guid>
-            <pubDate>Sat, 12 Jul 2025 00:04:45 GMT</pubDate>
-            <description><![CDATA[Official electron build of draw.io]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/jgraph/drawio-desktop">jgraph/drawio-desktop</a></h1>
-            <p>Official electron build of draw.io</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 55,758</p>
-            <p>Forks: 5,359</p>
-            <p>Stars today: 14 stars today</p>
-            <h2>README</h2><pre>About
------ 
-
-**drawio-desktop** is a diagramming desktop app based on [Electron](https://electronjs.org/) that wraps the [core draw.io editor](https://github.com/jgraph/drawio).
-
-Download built binaries from the [releases section](https://github.com/jgraph/drawio-desktop/releases).
-
-**Can I use this app for free?** Yes, under the apache 2.0 license. If you don&#039;t change the code and accept it is provided &quot;as-is&quot;, you can use it for any purpose.
-
-Security
---------
-
-draw.io Desktop is designed to be completely isolated from the Internet, apart from the update process. This checks github.com at startup for a newer version and downloads it from an AWS S3 bucket owned by Github. All JavaScript files are self-contained, the Content Security Policy forbids running remotely loaded JavaScript.
-
-No diagram data is ever sent externally, nor do we send any analytics about app usage externally. There is a Content Security Policy in place on the web part of the interface to ensure external transmission cannot happen, even by accident.
-
-Security and isolating the app are the primarily objectives of draw.io desktop. If you ask for anything that involves external connections enabled in the app by default, the answer will be no.
-
-Support
--------
-
-Support is provided on a reasonable business constraints basis, but without anything contractually binding. All support is provided via this repo. There is no private ticketing support for non-paying users.
-
-Purchasing draw.io for Confluence or Jira does not entitle you to commercial support for draw.io desktop.
-
-Developing
-----------
-
-**draw.io** is a git submodule of **drawio-desktop**. To get both you need to clone recursively:
-
-`git clone --recursive https://github.com/jgraph/drawio-desktop.git`
-
-To run this:
-1. `npm install` (in the root directory of this repo)
-2. export DRAWIO_ENV=dev if you want to develop/debug in dev mode.
-3. `npm start` _in the root directory of this repo_ runs the app. For debugging, use `npm start --enable-logging`.
-
-Note: If a symlink is used to refer to drawio repo (instead of the submodule), then symlink the `node_modules` directory inside `drawio/src/main/webapp` also.
-
-To release:
-1. Update the draw.io sub-module and push the change. Add version tag before pushing to origin.
-2. Wait for the builds to complete (https://travis-ci.org/jgraph/drawio-desktop and https://ci.appveyor.com/project/davidjgraph/drawio-desktop)
-3. Go to https://github.com/jgraph/drawio-desktop/releases, edit the preview release.
-4. Download the windows exe and windows portable, sign them using `signtool sign /a /tr http://rfc3161timestamp.globalsign.com/advanced /td SHA256 c:/path/to/your/file.exe`
-5. Re-upload signed file as `draw.io-windows-installer-x.y.z.exe` and `draw.io-windows-no-installer-x.y.z.exe`
-6. Add release notes
-7. Publish release
-
-*Note*: In Windows release, when using both x64 and is32 as arch, the result is one big file with both archs. This is why we split them.
-
-Local Storage and Session Storage is stored in the AppData folder:
-
-- macOS: `~/Library/Application Support/draw.io`
-- Windows: `C:\Users\&lt;USER-NAME&gt;\AppData\Roaming\draw.io\`
-
-Not open-contribution
----------------------
-
-draw.io is closed to contributions (unless a maintainer permits it, which is extremely rare).
-
-The level of complexity of this project means that even simple changes 
-can break a _lot_ of other moving parts. The amount of testing required 
-is far more than it first seems. If we were to receive a PR, we&#039;d have 
-to basically throw it away and write it how we want it to be implemented.
-
-We are grateful for community involvement, bug reports, &amp; feature requests. We do
-not wish to come off as anything but welcoming, however, we&#039;ve
-made the decision to keep this project closed to contributions for 
-the long term viability of the project.
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[elastic/mcp-server-elasticsearch]]></title>
-            <link>https://github.com/elastic/mcp-server-elasticsearch</link>
-            <guid>https://github.com/elastic/mcp-server-elasticsearch</guid>
-            <pubDate>Sat, 12 Jul 2025 00:04:44 GMT</pubDate>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/elastic/mcp-server-elasticsearch">elastic/mcp-server-elasticsearch</a></h1>
-            <p></p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 336</p>
-            <p>Forks: 68</p>
-            <p>Stars today: 6 stars today</p>
-            <h2>README</h2><pre># Elasticsearch MCP Server
-
-This repository contains experimental features intended for research and evaluation and are not production-ready.
-
-Connect to your Elasticsearch data directly from any MCP Client (like Claude Desktop) using the Model Context Protocol (MCP).
-
-This server connects agents to your Elasticsearch data using the Model Context Protocol. It allows you to interact with your Elasticsearch indices through natural language conversations.
-
-&lt;a href=&quot;https://glama.ai/mcp/servers/@elastic/mcp-server-elasticsearch&quot;&gt;
-  &lt;img width=&quot;380&quot; height=&quot;200&quot; src=&quot;https://glama.ai/mcp/servers/@elastic/mcp-server-elasticsearch/badge&quot; alt=&quot;Elasticsearch Server MCP server&quot; /&gt;
-&lt;/a&gt;
-
-## Available Tools
-
-* `list_indices`: List all available Elasticsearch indices
-* `get_mappings`: Get field mappings for a specific Elasticsearch index
-* `search`: Perform an Elasticsearch search with the provided query DSL. Supports highlighting, query profiling, and query explanation.
-* `get_shards`: Get shard information for all or specific indices
-
-## Prerequisites
-
-* An Elasticsearch instance
-* Elasticsearch authentication credentials (API key or username/password)
-* Docker (or an OCI runtime)
-* MCP Client (e.g. Claude Desktop)
-
-## Demo
-
-&lt;https://github.com/user-attachments/assets/5dd292e1-a728-4ca7-8f01-1380d1bebe0c&gt;
-
-## Installation &amp; Setup
-
-### Using Docker
-
-1. **Configure MCP Client**
-   * Open your MCP Client. See the [list of MCP Clients](https://modelcontextprotocol.io/clients), here we are configuring Claude Desktop.
-   * Go to **Settings &gt; Developer &gt; MCP Servers**
-   * Click `Edit Config` and add a new MCP Server with the following configuration:
-
-   ```json
-   {
-     &quot;mcpServers&quot;: {
-       &quot;elasticsearch-mcp-server&quot;: {
-         &quot;command&quot;: &quot;docker&quot;,
-         &quot;args&quot;: [
-           &quot;run&quot;, &quot;--rm&quot;, &quot;-i&quot;,
-           &quot;-e&quot;, &quot;ES_URL&quot;,
-           &quot;-e&quot;, &quot;ES_API_KEY&quot;,
-           &quot;docker.elastic.co/mcp/elasticsearch&quot;, &quot;stdio&quot;
-         ],
-         &quot;env&quot;: {
-           &quot;ES_URL&quot;: &quot;&lt;your-elasticsearch-url&gt;&quot;,
-           &quot;ES_API_KEY&quot;: &quot;&lt;your-api-key&gt;&quot;
-         }
-       }
-     }
-   }
-   ```
-
-2. **Start a Conversation**
-   * Open a new conversation in your MCP Client
-   * The MCP server should connect automatically
-   * You can now ask questions about your Elasticsearch data
-
-
-### Using the Published NPM Package
-
-1. **Configure MCP Client**
-   * Open your MCP Client. See the [list of MCP Clients](https://modelcontextprotocol.io/clients), here we are configuring Claude Desktop.
-   * Go to **Settings &gt; Developer &gt; MCP Servers**
-   * Click `Edit Config` and add a new MCP Server with the following configuration:
-
-   ```json
-   {
-     &quot;mcpServers&quot;: {
-       &quot;elasticsearch-mcp-server&quot;: {
-         &quot;command&quot;: &quot;npx&quot;,
-         &quot;args&quot;: [
-           &quot;-y&quot;,
-           &quot;@elastic/mcp-server-elasticsearch&quot;
-         ],
-         &quot;env&quot;: {
-           &quot;ES_URL&quot;: &quot;&lt;your-elasticsearch-url&gt;&quot;,
-           &quot;ES_API_KEY&quot;: &quot;&lt;your-api-key&gt;&quot;,
-           &quot;OTEL_LOG_LEVEL&quot;: &quot;none&quot;
-         }
-       }
-     }
-   }
-   ```
-
-2. **Start a Conversation**
-   * Open a new conversation in your MCP Client
-   * The MCP server should connect automatically
-   * You can now ask questions about your Elasticsearch data
-
-### Configuration Options
-
-The Elasticsearch MCP Server supports configuration options to connect to your Elasticsearch:
-
-&gt; [!NOTE]
-&gt; You must provide either an API key or both username and password for authentication.
-
-| Environment Variable | Description                                                           | Required |
-|----------------------|-----------------------------------------------------------------------|----------|
-| `ES_URL`             | Your Elasticsearch instance URL                                       | Yes      |
-| `ES_API_KEY`         | Elasticsearch API key for authentication                              | No       |
-| `ES_USERNAME`        | Elasticsearch username for basic authentication                       | No       |
-| `ES_PASSWORD`        | Elasticsearch password for basic authentication                       | No       |
-| `ES_CA_CERT`         | Path to custom CA certificate for Elasticsearch SSL/TLS               | No       |
-| `ES_SSL_SKIP_VERIFY` | Set to &#039;1&#039; or &#039;true&#039; to skip SSL certificate verification             | No       |
-| `ES_PATH_PREFIX`     | Path prefix for Elasticsearch instance exposed at a non-root path     | No       |
-| `ES_VERSION`         | Server assumes Elasticsearch 9.x. Set to `8` target Elasticsearch 8.x | No       |
-
-### Developing Locally
-
-&gt; [!NOTE]
-&gt; If you want to modify or extend the MCP Server, follow these local development steps.
-
-1. **Use the correct Node.js version**
-
-   ```bash
-   nvm use
-   ```
-
-2. **Install Dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Build the Project**
-
-   ```bash
-   npm run build
-   ```
-
-4. **Run locally in Claude Desktop App**
-   * Open **Claude Desktop App**
-   * Go to **Settings &gt; Developer &gt; MCP Servers**
-   * Click `Edit Config` and add a new MCP Server with the following configuration:
-
-   ```json
-   {
-     &quot;mcpServers&quot;: {
-       &quot;elasticsearch-mcp-server-local&quot;: {
-         &quot;command&quot;: &quot;node&quot;,
-         &quot;args&quot;: [
-           &quot;/path/to/your/project/dist/index.js&quot;
-         ],
-         &quot;env&quot;: {
-           &quot;ES_URL&quot;: &quot;your-elasticsearch-url&quot;,
-           &quot;ES_API_KEY&quot;: &quot;your-api-key&quot;,
-           &quot;OTEL_LOG_LEVEL&quot;: &quot;none&quot;
-         }
-       }
-     }
-   }
-   ```
-
-5. **Debugging with MCP Inspector**
-
-   ```bash
-   ES_URL=your-elasticsearch-url ES_API_KEY=your-api-key npm run inspector
-   ```
-
-   This will start the MCP Inspector, allowing you to debug and analyze requests. You should see:
-
-   ```bash
-   Starting MCP inspector...
-   Proxy server listening on port 3000
-
-   🔍 MCP Inspector is up and running at http://localhost:5173 🚀
-   ```
-
-## Contributing
-
-We welcome contributions from the community! For details on how to contribute, please see [Contributing Guidelines](/docs/CONTRIBUTING.md).
-
-## Example Questions
-
-&gt; [!TIP]
-&gt; Here are some natural language queries you can try with your MCP Client.
-
-* &quot;What indices do I have in my Elasticsearch cluster?&quot;
-* &quot;Show me the field mappings for the &#039;products&#039; index.&quot;
-* &quot;Find all orders over $500 from last month.&quot;
-* &quot;Which products received the most 5-star reviews?&quot;
-
-## How It Works
-
-1. The MCP Client analyzes your request and determines which Elasticsearch operations are needed.
-2. The MCP server carries out these operations (listing indices, fetching mappings, performing searches).
-3. The MCP Client processes the results and presents them in a user-friendly format.
-
-## Security Best Practices
-
-&gt; [!WARNING]
-&gt; Avoid using cluster-admin privileges. Create dedicated API keys with limited scope and apply fine-grained access control at the index level to prevent unauthorized data access.
-
-You can create a dedicated Elasticsearch API key with minimal permissions to control access to your data:
-
+You can use a `viewbox=auto` parameter to get a auto-sized viewbox. This is useful if you want all icons rendered with consistent size:
+
+```html
+&lt;img height=&quot;20&quot; src=&quot;https://cdn.simpleicons.org/github?viewbox=auto&quot; /&gt;
+&lt;img height=&quot;20&quot; src=&quot;https://cdn.simpleicons.org/simpleicons?viewbox=auto&quot; /&gt;
+&lt;img height=&quot;20&quot; src=&quot;https://cdn.simpleicons.org/awesomelists?viewbox=auto&quot; /&gt;
 ```
-POST /_security/api_key
+
+### Node Usage &lt;img src=&quot;https://cdn.simpleicons.org/nodedotjs/000/fff&quot; alt=&quot;Node&quot; align=left width=24&gt;
+
+The icons are also available through our npm package. To install, simply run:
+
+```shell
+npm install simple-icons
+```
+
+All icons are imported from a single file, where `[ICON SLUG]` is replaced by a capitalized [slug]. We highly recommend using a bundler that can tree shake such as [webpack](https://webpack.js.org/) to remove the unused icon code:
+
+```javascript
+// Import a specific icon by its slug as:
+// import { si[ICON SLUG] } from &#039;simple-icons&#039;
+
+// For example:
+// use import/esm to allow tree shaking
+import {siSimpleicons} from &#039;simple-icons&#039;;
+// or with require/cjs
+const {siSimpleicons} = require(&#039;simple-icons&#039;);
+```
+
+It will return an icon object:
+
+```javascript
+console.log(siSimpleicons);
+
+/*
 {
-  &quot;name&quot;: &quot;es-mcp-server-access&quot;,
-  &quot;role_descriptors&quot;: {
-    &quot;mcp_server_role&quot;: {
-      &quot;cluster&quot;: [
-        &quot;monitor&quot;
-      ],
-      &quot;indices&quot;: [
-        {
-          &quot;names&quot;: [
-            &quot;index-1&quot;,
-            &quot;index-2&quot;,
-            &quot;index-pattern-*&quot;
-          ],
-          &quot;privileges&quot;: [
-            &quot;read&quot;,
-            &quot;view_index_metadata&quot;
-          ]
-        }
-      ]
+    title: &#039;Simple Icons&#039;,
+    slug: &#039;simpleicons&#039;,
+    hex: &#039;111111&#039;,
+    source: &#039;https://simpleicons.org/&#039;,
+    svg: &#039;&lt;svg role=&quot;img&quot; viewBox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;...&lt;/svg&gt;&#039;,
+    path: &#039;M12 12v-1.5c-2.484 ...&#039;,
+    guidelines: &#039;https://simpleicons.org/styleguide&#039;,
+    license: {
+        type: &#039;...&#039;,
+        url: &#039;https://example.com/&#039;
     }
-  }
+}
+
+NOTE: the `guidelines` entry will be `undefined` if we do not yet have guidelines for the icon.
+NOTE: the `license` entry will be `undefined` if we do not yet have license data for the icon.
+*/
+```
+
+If you need to iterate over all icons, use:
+
+```javascript
+import * as icons from &#039;simple-icons&#039;;
+```
+
+#### TypeScript Usage &lt;img src=&quot;https://cdn.simpleicons.org/typescript/000/fff&quot; alt=&quot;Typescript&quot; align=left width=19 height=19&gt;
+
+Type definitions are bundled with the package.
+
+```typescript
+import type {SimpleIcon} from &#039;simple-icons&#039;;
+```
+
+### PHP Usage &lt;img src=&quot;https://cdn.simpleicons.org/php/000/fff&quot; alt=&quot;Php&quot; align=left width=24 height=24&gt;
+
+The icons are also available through our Packagist package. To install, simply run:
+
+```shell
+composer require simple-icons/simple-icons
+```
+
+The package can then be used as follows, where `[ICON SLUG]` is replaced by a [slug]:
+
+```php
+&lt;?php
+// Import a specific icon by its slug as:
+echo file_get_contents(&#039;path/to/package/icons/[ICON SLUG].svg&#039;);
+
+// For example:
+echo file_get_contents(&#039;path/to/package/icons/simpleicons.svg&#039;);
+
+// &lt;svg role=&quot;img&quot; viewBox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;...&lt;/svg&gt;
+?&gt;
+```
+
+## Third-Party Extensions
+
+The below are known extensions to third-party tools.
+
+| Extension | Author |
+| :-- | :-- |
+| [Blender add-on](https://github.com/mondeja/simple-icons-blender) &lt;img src=&quot;https://cdn.simpleicons.org/blender/000/fff&quot; alt=&quot;Blender&quot; align=left width=24 height=24&gt; | [@mondeja](https://github.com/mondeja) |
+| [Boxy SVG library](https://boxy-svg.com/ideas/298/simple-icons-library-provider) &lt;img src=&quot;https://cdn.simpleicons.org/boxysvg/000/fff&quot; alt=&quot;Boxy SVG&quot; align=left width=24 height=24&gt; | [@Jarek](https://boxy-svg.com/profiles/0000000000/jarek) |
+| [Drawio library](https://github.com/mondeja/simple-icons-drawio) &lt;img src=&quot;https://cdn.simpleicons.org/diagramsdotnet/000/fff&quot; alt=&quot;Drawio&quot; align=left width=24 height=24&gt; | [@mondeja](https://github.com/mondeja) |
+| [Figma plugin](https://www.figma.com/community/plugin/1149614463603005908) &lt;img src=&quot;https://cdn.simpleicons.org/figma/000/fff&quot; alt=&quot;Figma&quot; align=left width=24 height=24&gt; | [@LitoMore](https://github.com/LitoMore) |
+| [Jekyll plugin](https://github.com/pirafrank/jekyll-simple-icons) &lt;img src=&quot;https://cdn.simpleicons.org/jekyll/000/fff&quot; alt=&quot;Jekyll&quot; align=left width=24 height=24&gt; | [@pirafrank](https://github.com/pirafrank) |
+| [Kando icon theme](https://kando.menu/icon-themes#built-in-icon-themes) &lt;img src=&quot;https://brands.deno.dev/kando/000/fff&quot; alt=&quot;Kando&quot; align=left width=24 height=24&gt; | [@Schneegans](https://github.com/Schneegans) |
+| [Miro app](https://miro.com/marketplace/brand-icons/) &lt;img src=&quot;https://cdn.simpleicons.org/miro/000/fff&quot; alt=&quot;Miro&quot; align=left width=24 height=24&gt; | [@LitoMore](https://github.com/LitoMore) |
+| [Raycast extension](https://www.raycast.com/litomore/simple-icons) &lt;img src=&quot;https://cdn.simpleicons.org/raycast/000/fff&quot; alt=&quot;Raycast&quot; align=left width=24 height=24&gt; | [@LitoMore](https://github.com/LitoMore) |
+| [Stream Deck icon pack](https://github.com/mackenly/simple-icons-stream-deck) &lt;img src=&quot;https://cdn.simpleicons.org/elgato/000/fff&quot; alt=&quot;Stream Deck&quot; align=left width=24 height=24&gt; | [@mackenly](https://github.com/mackenly) |
+| [Webflow app](https://webflow.com/apps/detail/simple-icons) &lt;img src=&quot;https://cdn.simpleicons.org/webflow/000/fff&quot; alt=&quot;Webflow&quot; align=left width=24 height=24&gt; | [@diegoliv](https://github.com/diegoliv) |
+
+Maintain an extension? [Submit a PR][open-pr] to include it in the list above.
+
+## Third-Party Libraries
+
+The below are known third-party libraries for use in your own projects. We only keep items in the list that are at least up to date with our previous major version.
+
+| Library | Author | License | Simple Icons |
+| :-- | :-- | :-: | :-: |
+| [Angular package](https://github.com/khalilou88/semantic-icons/tree/main/libs/simple-icons) &lt;img src=&quot;https://cdn.simpleicons.org/angular/000/fff&quot; alt=&quot;Angular&quot; align=left width=24 height=24&gt; | [@khalilou88](https://github.com/khalilou88) | ![License](https://img.shields.io/github/license/khalilou88/semantic-icons?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fkhalilou88%2Fsemantic-icons%2Fmain%2Fpackage.json&amp;query=%24..devDependencies%5B&#039;simple-icons&#039;%5D&amp;label=) |
+| [Astro package](https://github.com/dzeiocom/simple-icons-astro) &lt;img src=&quot;https://cdn.simpleicons.org/astro/000/fff&quot; alt=&quot;Astro&quot; align=left width=24 height=24&gt; | [@Aviortheking](https://github.com/aviortheking) | ![License](https://img.shields.io/github/license/dzeiocom/simple-icons-astro?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdzeiocom%2Fsimple-icons-astro%2Fmaster%2Fpackage.json&amp;query=%24.version&amp;label=) |
+| [Blazor Nuget package](https://github.com/TimeWarpEngineering/timewarp-simple-icons) &lt;img src=&quot;https://cdn.simpleicons.org/blazor/000/fff&quot; alt=&quot;Blazor&quot; align=left width=24 height=24&gt; | [@TimeWarpEngineering](https://github.com/TimeWarpEngineering) | ![License](https://img.shields.io/github/license/TimeWarpEngineering/timewarp-simple-icons?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/xml?url=https%3A%2F%2Fraw.githubusercontent.com%2FTimeWarpEngineering%2Ftimewarp-simple-icons%2Fmain%2Fsource%2Ftimewarp-simple-icons%2Ftimewarp-simple-icons.csproj&amp;query=%2FProject%2FPropertyGroup%2FVersion&amp;label=) |
+| [Flutter package](https://github.com/jlnrrg/simple_icons) &lt;img src=&quot;https://cdn.simpleicons.org/flutter/000/fff&quot; alt=&quot;Flutter&quot; align=left width=24 height=24&gt; | [@jlnrrg](https://github.com/jlnrrg) | ![License](https://img.shields.io/github/license/jlnrrg/simple_icons?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjlnrrg%2Fsimple_icons%2Fmaster%2Fpubspec.yaml&amp;query=%24.version&amp;logoColor=white&amp;label=) |
+| [Framer component](https://github.com/LitoMore/simple-icons-framer) &lt;img src=&quot;https://cdn.simpleicons.org/framer/000/fff&quot; alt=&quot;Framer&quot; align=left width=24 height=24&gt; | [@LitoMore](https://github.com/LitoMore) | ![License](https://img.shields.io/github/license/LitoMore/simple-icons-framer?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsimple-icons%2Fsimple-icons%2Fmaster%2Fpackage.json&amp;query=%24.version&amp;label=) |
+| [Hugo module](https://github.com/foo-dogsquared/hugo-mod-simple-icons) &lt;img src=&quot;https://cdn.simpleicons.org/hugo/000/fff&quot; alt=&quot;Hugo&quot; align=left width=24 height=24&gt; | [@foo-dogsquared](https://github.com/foo-dogsquared) | ![License](https://img.shields.io/github/license/foo-dogsquared/hugo-mod-simple-icons?label=) | ![Simple Icons version](https://img.shields.io/github/v/tag/foo-dogsquared/hugo-mod-simple-icons?label=) |
+| [Java library](https://github.com/silentsoft/simpleicons4j) &lt;img src=&quot;https://cdn.simpleicons.org/openjdk/000/fff&quot; alt=&quot;Java&quot; align=left width=24 height=24&gt; | [@silentsoft](https://github.com/silentsoft) | ![License](https://img.shields.io/github/license/silentsoft/simpleicons4j?label=) | ![Simple Icons version](https://img.shields.io/maven-central/v/org.silentsoft/simpleicons4j?label=) |
+| [Kirby plugin](https://github.com/runxel/kirby3-simpleicons) &lt;img src=&quot;https://cdn.simpleicons.org/kirby/000/fff&quot; alt=&quot;Kirby&quot; align=left width=24 height=24&gt; | [@runxel](https://github.com/runxel) | ![License](https://img.shields.io/github/license/runxel/kirby3-simpleicons?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Frunxel%2Fkirby3-simpleicons%2Fmaster%2Fcomposer.json&amp;query=%24..%5B&#039;simple-icons%2Fsimple-icons&#039;%5D&amp;label=) |
+| [LaTeX package](https://github.com/ineshbose/simple-icons-latex) &lt;img src=&quot;https://cdn.simpleicons.org/latex/000/fff&quot; alt=&quot;LaTeX&quot; align=left width=24 height=24&gt; | [@ineshbose](https://github.com/ineshbose) | ![License](https://img.shields.io/github/license/ineshbose/simple-icons-latex?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fineshbose%2Fsimple-icons-latex%2Fdevelop%2Fpackage.json&amp;query=%24..%5B&#039;simple-icons-font&#039;%5D&amp;label=) |
+| [Laravel package](https://github.com/ublabs/blade-simple-icons) &lt;img src=&quot;https://cdn.simpleicons.org/laravel/000/fff&quot; alt=&quot;Laravel&quot; align=left width=24 height=24&gt; | [@adrian-ub](https://github.com/adrian-ub) | ![License](https://img.shields.io/github/license/ublabs/blade-simple-icons?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsimple-icons%2Fsimple-icons%2Fmaster%2Fpackage.json&amp;query=%24.version&amp;label=) |
+| [Python wheel](https://github.com/carstencodes/simplepycons) &lt;img src=&quot;https://cdn.simpleicons.org/python/000/fff&quot; alt=&quot;Python&quot; align=left width=24 height=24&gt; | [@carstencodes](https://github.com/carstencodes) | ![License](https://img.shields.io/github/license/carstencodes/simplepycons?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2Fcarstencodes%2Fsimplepycons%2Frefs%2Fheads%2Fmain%2F.gitmodules&amp;search=%5C%5Bsubmodule%20%22vendor%5C%2Fsimple-icons%22%5C%5D%5B%5E%5C%5B%5D%2Bbranch%5Cs*%3D%5Cs*%28%3F%3Cversion%3E%5Cd%2B%5C.%5Cd%2B%5C.%5Cd%2B%3F%29&amp;replace=%24%3Cversion%3E&amp;flags=ims&amp;label=) |
+| [React package](https://github.com/icons-pack/react-simple-icons) &lt;img src=&quot;https://cdn.simpleicons.org/react/000/fff&quot; alt=&quot;React&quot; align=left width=24 height=24&gt; | [@wootsbot](https://github.com/wootsbot) | ![License](https://img.shields.io/github/license/icons-pack/react-simple-icons?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Ficons-pack%2Freact-simple-icons%2Fmain%2Fpackage.json&amp;query=%24..%5B&#039;simple-icons&#039;%5D&amp;label=) |
+| [Ruby gem](https://rubygems.org/gems/simple-icons-rails) &lt;img src=&quot;https://cdn.simpleicons.org/rubygems/000/fff&quot; alt=&quot;Ruby&quot; align=left width=24 height=24&gt; | [@thepew](https://github.com/the-pew-inc) | ![License](https://img.shields.io/github/license/the-pew-inc/simple-icons-rails?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsimple-icons%2Fsimple-icons%2Fmaster%2Fpackage.json&amp;query=%24.version&amp;label=) |
+| [Rust crate](https://github.com/carloskiki/icondata) &lt;img src=&quot;https://cdn.simpleicons.org/rust/000/fff&quot; alt=&quot;Rust&quot; align=left width=24 height=24&gt; | [@carloskiki](https://github.com/carloskiki) | ![License](https://img.shields.io/github/license/carloskiki/icondata?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2Fcarloskiki%2Ficondata%2Frefs%2Fheads%2Fmain%2Fbuild%2Fsrc%2Fpackage%2Fmod.rs&amp;search=%22Simple%20Icons%22%5B%5E%7D%5D%2B%22%28%3F%3Cversion%3E%5Cd%2B%5C.%5Cd%2B%5C.%5Cd%2B%29%22&amp;replace=%24%3Cversion%3E&amp;flags=ims&amp;label=) |
+| [Svelte package](https://github.com/icons-pack/svelte-simple-icons) &lt;img src=&quot;https://cdn.simpleicons.org/svelte/000/fff&quot; alt=&quot;Svelte&quot; align=left width=24 height=24&gt; | [@wootsbot](https://github.com/wootsbot) | ![License](https://img.shields.io/github/license/icons-pack/svelte-simple-icons?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Ficons-pack%2Fsvelte-simple-icons%2Fmain%2Fpackage.json&amp;query=%24..%5B&#039;simple-icons&#039;%5D&amp;label=) |
+| [Vue 3 package](https://github.com/wyatt-herkamp/vue3-simple-icons) &lt;img src=&quot;https://cdn.simpleicons.org/vuedotjs/000/fff&quot; alt=&quot;Vue&quot; align=left width=24 height=24&gt; | [@wyatt-herkamp](https://github.com/wyatt-herkamp) | ![License](https://img.shields.io/github/license/wyatt-herkamp/vue3-simple-icons?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fwyatt-herkamp%2Fvue3-simple-icons%2Fmain%2Fsimple-icons.json&amp;query=simpleIconsVersion&amp;label=) |
+
+Maintain a library? [Submit a PR][open-pr] to include it in the list above.
+
+## Contribute
+
+[![Good first issues](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fsearch%2Fissues%3Fq%3Drepo%3Asimple-icons%2Fsimple-icons%2520label%3A%2522good%2520first%2520issue%2522%2520is%3Aopen%2520-linked%3Apr&amp;query=%24.total_count&amp;suffix=%20open&amp;logo=github&amp;label=good%20first%20issues&amp;color=228f6c&amp;labelColor=228f6c&amp;logoColor=white&amp;style=flat-square)](https://github.com/simple-icons/simple-icons/issues?q=is%3Aopen+label%3A%22good+first+issue%22+-linked%3Apr) [![Icon issues](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fsearch%2Fissues%3Fq%3Drepo%3Asimple-icons%2Fsimple-icons%2520label%3A%2522update%2520icon%2Fdata%2522%2C%2522new%2520icon%2522%2520is%3Aopen%2520-linked%3Apr&amp;query=%24.total_count&amp;suffix=%20open&amp;logo=svg&amp;logoColor=333&amp;label=icon%20issues&amp;labelColor=FFB13B&amp;color=FFB13B&amp;style=flat-square)](https://github.com/simple-icons/simple-icons/issues?q=is%3Aissue+is%3Aopen+label%3A%22new+icon%22%2C%22update+icon%2Fdata%22) [![Code issues](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fsearch%2Fissues%3Fq%3Drepo%3Asimple-icons%2Fsimple-icons%2520is%3Aissue%2520is%3Aopen%2520label%3Ameta%2Cpackage%2520-linked%3Apr&amp;query=%24.total_count&amp;suffix=%20open&amp;logo=typescript&amp;logoColor=white&amp;label=code%20issues&amp;labelColor=3178C6&amp;color=3178C6&amp;styl
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[HackTricks-wiki/hacktricks]]></title>
+            <link>https://github.com/HackTricks-wiki/hacktricks</link>
+            <guid>https://github.com/HackTricks-wiki/hacktricks</guid>
+            <pubDate>Sun, 13 Jul 2025 00:05:15 GMT</pubDate>
+            <description><![CDATA[Welcome to the page where you will find each trick/technique/whatever I have learnt in CTFs, real life apps, and reading researches and news.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/HackTricks-wiki/hacktricks">HackTricks-wiki/hacktricks</a></h1>
+            <p>Welcome to the page where you will find each trick/technique/whatever I have learnt in CTFs, real life apps, and reading researches and news.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 10,039</p>
+            <p>Forks: 2,879</p>
+            <p>Stars today: 4 stars today</p>
+            <h2>README</h2><pre>src/README.md</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[blackmatrix7/ios_rule_script]]></title>
+            <link>https://github.com/blackmatrix7/ios_rule_script</link>
+            <guid>https://github.com/blackmatrix7/ios_rule_script</guid>
+            <pubDate>Sun, 13 Jul 2025 00:05:14 GMT</pubDate>
+            <description><![CDATA[分流规则、重写写规则及脚本。]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/blackmatrix7/ios_rule_script">blackmatrix7/ios_rule_script</a></h1>
+            <p>分流规则、重写写规则及脚本。</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 21,718</p>
+            <p>Forks: 3,527</p>
+            <p>Stars today: 11 stars today</p>
+            <h2>README</h2><pre># Rules And Scripts
+
+## 前言
+
+各平台的分流规则、复写规则及自动化脚本。
+
+## 特别声明
+
+1. 本项目内所有资源文件，禁止任何公众号、自媒体进行任何形式的转载、发布。
+2. 编写本项目主要目的为学习和研究ES6，无法保证项目内容的合法性、准确性、完整性和有效性。
+3. 本项目涉及的数据由使用的个人或组织自行填写，本项目不对数据内容负责，包括但不限于数据的真实性、准确性、合法性。使用本项目所造成的一切后果，与本项目的所有贡献者无关，由使用的个人或组织完全承担。
+4. 本项目中涉及的第三方硬件、软件等，与本项目没有任何直接或间接的关系。本项目仅对部署和使用过程进行客观描述，不代表支持使用任何第三方硬件、软件。使用任何第三方硬件、软件，所造成的一切后果由使用的个人或组织承担，与本项目无关。
+5. 本项目中所有内容只供学习和研究使用，不得将本项目中任何内容用于违反国家/地区/组织等的法律法规或相关规定的其他用途。
+6. 所有基于本项目源代码，进行的任何修改，为其他个人或组织的自发行为，与本项目没有任何直接或间接的关系，所造成的一切后果亦与本项目无关。
+7. 所有直接或间接使用本项目的个人和组织，应24小时内完成学习和研究，并及时删除本项目中的所有内容。如对本项目的功能有需求，应自行开发相关功能。
+8. 本项目保留随时对免责声明进行补充或更改的权利，直接或间接使用本项目内容的个人或组织，视为接受本项目的特别声明。
+
+## 规则
+
+**我们并不生产规则，我们只是开源规则的搬运工。**
+
+分流规则
+
+https://github.com/blackmatrix7/ios_rule_script/tree/master/rule
+
+复写规则
+
+https://github.com/blackmatrix7/ios_rule_script/tree/master/rewrite
+
+所有规则数据都来自互联网，感谢开源规则项目作者的辛勤付出。
+
+## 脚本
+
+### 脚本说明
+
+| 脚本                                                         | 介绍                                 | 框架        | 维护状态 |
+| ------------------------------------------------------------ | ------------------------------------ | ----------- | -------- |
+| [什么值得买](https://github.com/blackmatrix7/ios_rule_script/tree/master/script/smzdm) | 什么值得买任务和去广告               | MagicJS 2/3 | 正常     |
+| [百度贴吧](https://github.com/blackmatrix7/ios_rule_script/tree/master/script/tieba) | 带重试功能的贴吧签到，提高签到成功率 | MagicJS 3   | 正常     |
+| [开屏去广告](https://github.com/blackmatrix7/ios_rule_script/tree/master/script/startup) | 通过脚本去除缓存到本地的APP开屏广告  | MagicJS 3   | 正常     |
+| [慢慢买](https://github.com/blackmatrix7/ios_rule_script/tree/master/script/manmanbuy) | 每日自动签到                         | MagicJS 2   | 正常     |
+| [叮咚买菜](https://github.com/blackmatrix7/ios_rule_script/tree/master/script/dingdong) | 每日自动签到                         | MagicJS 3   | 正常     |
+| [Fa米家](https://github.com/blackmatrix7/ios_rule_script/tree/master/script/famijia) | 每日自动签到                         | MagicJS 2   | 正常     |
+| [Luka](https://github.com/blackmatrix7/ios_rule_script/tree/master/script/luka) | 每日自动签到                         | MagicJS 2   | 正常     |
+| [哲也同学](https://github.com/blackmatrix7/ios_rule_script/tree/master/script/zheye) | 之乎者也                             | MagicJS 3   | 正常     |
+| [Synology](https://github.com/blackmatrix7/ios_rule_script/tree/master/script/synology) | 群晖Download Station资源离线下载     | MagicJS 3   | 正常     |
+| [AppleStore](https://github.com/blackmatrix7/ios_rule_script/tree/master/script/applestore) | AppleStore 商品库存监控              | MagicJS 3   | 暂停     |
+
+#### Quantumult X Gallery
+
+部分脚本已配置为Quantumult X Gallery。
+
+地址： https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/gallery.json
+
+#### BoxJS
+
+感谢 [@chouchoui](https://github.com/chouchoui) 为本项目添加BoxJS的订阅。
+
+地址：https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/boxjs.json
+
+### 外部资源
+
+项目中资源来自互联网上其他开源项目（具体以不同目录的说明为准），这里主要进行一些整合和备份。对于此类资源，无法对使用过程中出现的任何问题进行解答，您需要联系原作者。
+
+地址：https://github.com/blackmatrix7/ios_rule_script/tree/master/external
+
+# 感谢
+
+以下排名不分先后
+
+[@BaileyZyp](https://github.com/BaileyZyp)   [@Mazeorz](https://github.com/Mazeorz)   [@LuzMasonj](https://github.com/LuzMasonj)  [@chouchoui](https://github.com/chouchoui)  [@ypannnn](https://github.com/ypannnn)  [@echizenryoma](https://github.com/echizenryoma)  [@zirawell](https://github.com/zirawell)  [@urzz](https://github.com/urzz)  [@ASD-max](https://github.com/ASD-max)
+
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[qist/tvbox]]></title>
+            <link>https://github.com/qist/tvbox</link>
+            <guid>https://github.com/qist/tvbox</guid>
+            <pubDate>Sun, 13 Jul 2025 00:05:13 GMT</pubDate>
+            <description><![CDATA[OK影视、tvbox配置文件，如果喜欢，请Fork自用。使用前请仔细阅读仓库说明，一旦使用将被视为你已了解。]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/qist/tvbox">qist/tvbox</a></h1>
+            <p>OK影视、tvbox配置文件，如果喜欢，请Fork自用。使用前请仔细阅读仓库说明，一旦使用将被视为你已了解。</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 5,388</p>
+            <p>Forks: 2,054</p>
+            <p>Stars today: 8 stars today</p>
+            <h2>README</h2><pre>OK影视、TVBox、猫影视配置文件。所有资源均来自于各路大神无私分享，如有侵权，请联系删除。
+
+所有以任何方式查看本仓库内容的人、或直接或间接使用本仓库内容的使用者都应仔细阅读此声明。本仓库管理者保留随时更改或补充此免责声明的权利。一旦使用、复制、修改了本仓库内容，则视为您已接受此免责声明。
+
+本仓库管理者不能保证本仓库内容的合法性、准确性、完整性和有效性，请根据情况自行判断。本仓库内容，仅用于测试和学习研究，禁止用于商业用途，不得将其用于违反国家、地区、组织等的法律法规或相关规定的其他用途，禁止任何公众号、自媒体进行任何形式的转载、发布，请不要在中华人民共和国境内使用本仓库内容，否则后果自负。
+
+本仓库内容中涉及的第三方硬件、软件等，与本仓库内容没有任何直接或间接的关系。本仓库内容仅对部署和使用过程进行客观描述，不代表支持使用任何第三方硬件、软件。使用任何第三方硬件、软件，所造成的一切后果由使用的个人或组织承担，与本仓库内容无关。
+
+所有直接或间接使用本仓库内容的个人和组织，应 24 小时内完成学习和研究，并及时删除本仓库内容。如对本仓库内容的功能有需求，应自行开发相关功能。所有基于本仓库内容的源代码，进行的任何修改，为其他个人或组织的自发行为，与本仓库内容没有任何直接或间接的关系，所造成的一切后果亦与本仓库内容和本仓库管理者无关。
+
+1. tvbox配置：
+
+（1）0707.json  OK影视多线配置接口,仅适用于Fengmi影视；
+
+（2）0821.json  大而全的配置，在饭太硬配置的基础上添加了若干优质点播源、直播线路和解析；
+
+（3）0822.json  极简配置，OK大佬的jar，还包括几条路飞、俊于的源。
+
+（4）0825.json  小而精的配置，jar包来源于Panda Groove的go包，其中泥巴、星星等，需要替换成自己的代理url；
+
+（5）0826.json  完全来源于饭太硬的jar包和配置；
+
+（6）0827.json  jar包和配置来源于fongmi；
+
+（7）0828.json  jar包和配置来源于唐三；
+
+（8）js.json  jar包来源于Panda Groove的go包，资源来源于道长drpy(js)仓库 添加 YouTube 直播；
+
+（9）XBPQ.json  XBPQ源，jar包和配置来源于小米小爆脾气；
+
+（10）XYQ.json  XYQ源，jar包和配置来源于香雅情；
+
+（11）cat.json  cat源，资源来源于网络各路大佬。/cat/js配合猫影视可直接食用；
+
+（12） jsm.json 来自js.json + 0826.json 合集 家庭电视可用 删除YouTube 直播，OK影视 可用 电视建议使用OK影视 https://github.com/FongMi/Release 支持多直播选择。
+ 
+
+猫影视使用github 配置
+
+ 配置教程：&lt;https://omii.top/1296.html&gt;
+
+`注意使用Gitee或Github导入，并设置为私有仓库，CatVodOpen仅支持私有仓库跟dav`
+
+V1.1.3版本以上
+
+`github://Token@github.com/xxxxx/tvbox/dist/index.js.md5`
+
+改动
+
+* quickjs改为nodejs，proxy设置修改
+* 在ios上无法使用local，使用db替换local所有方法
+* nodejs 的优势在于更加灵活
+
+V1.1.2版本以下
+
+`github://Token@gitee.com/xxxxx/tvbox/js/open_config.json`
+
+1. APP推荐:
+
+（1）OK影视版本  项目地址：&lt;https://github.com/FongMi/TV&gt; 支持直播多线路、自动换源、直播倍速，手机投屏；
+
+（2）q215613905版本  项目地址：&lt;https://github.com/q215613905/TVBoxOS&gt; 支持直播回放；
+
+（3）takagen99版本  项目地址：&lt;https://github.com/takagen99/Box&gt; 支持直播回放，界面美观；
+
+（4）皮皮虾版本  发布频道：&lt;https://t.me/pipixiawerun&gt; 支持直播回放，支持弹幕；
+
+（5）新版猫影视   项目地址：&lt;https://github.com/catvod/CatVodOpen&gt; 界面简洁，支持多平台。
+
+（6）手机版本  项目地址：&lt;https://github.com/XiaoRanLiu3119/TVBoxOS-Mobile&gt; 竖屏
+
+（7）q215613905 takagen99 编译apk 项目地址：https://github.com/o0HalfLife0o/TVBoxOSC
+
+3. TVBox各路大佬配置（排名不分先后）：
+
+（1）饭太硬：http://www.饭太硬.top/tv/
+
+（2）okjack：https://jihulab.com/okcaptain/kko/raw/main/ok.txt
+
+（3）王二小放牛娃：http://tvbox.王二小放牛娃.xyz
+
+（4）摸鱼儿：http://我不是.摸鱼儿.top
+
+（5）霜辉月明py：https://999740.xyz/raw.githubusercontent.com/lm317379829/PyramidStore/pyramid/py.json
+
+（6）小米小爆脾气：http://xhww.fun/小米/DEMO.json
+
+（7）南风：https://agit.ai/Yoursmile7/TVBox/raw/branch/master/XC.json
+
+（8）神器：https://神器每日推送.tk/pz.json
+
+（9）巧技：http://pandown.pro/tvbox/tvbox.json
+
+（10）Ray：https://100km.top/0
+
+（11）俊于：http://home.jundie.top:81/top98.json
+
+（12）橘子柚：https://mirror.ghproxy.com/https://raw.githubusercontent.com/hackyjso/box/main/jzy.txt
+
+（13）电视（自用）： &lt;https://github.moeyy.xyz/raw.githubusercontent.com/qist/tvbox/master/jsm.json&gt;
+
+（14）github代理地址： `https://github.moeyy.xyz https://mirror.ghproxy.com/ https://gh-proxy.com https://ghproxy.net` 选择一个速度快使用
+
+（15） 还可以使用域名: `https://qist.ugigc.dpdns.org/jsm.json` cloudflare Pages 构建
+ 
+（16） 添加潇洒 接口： https://raw.githubusercontent.com/qist/tvbox/refs/heads/master/xiaosa/api.json 或者 https://qist.ugigc.dpdns.org/xiaosa/api.json
+
+1. token.json格式说明：
+
+模板文件json/tokentemplate.json
+
+特别警告：据传阿里要求使用者不得使用多线程加速方式使用阿里云盘资源，若并发连接数超过10有可能导致被限制访问或封禁帐号的处理，所以下方线程限制设置超过10所需承担的风险请使用者自行斟酌。
+
+特别警告2：迅雷云盘限制极为严格，不要尝试单token多用户异地使用，或多线程使用，随时可能封号。
+
+可以透过配置中的“网盘及弹幕配置”的视频源来实现快捷方便的获取32位token及opentoken的功能。在“网盘及弹幕配置”中扫过任何一个OpenToken后，会自动激活“转存原画”功能
+
+提示：如果遇到极速GO原画反复快速报错，不一定是被封号，可尝试杀掉播放器重启，或重启整个播放设备解决。
+
+提示2：如果遇到“转存原画”速度被限制在2M左右，那麽请尝试在阿里云盘APP里退出登录，然后重新登录，然后删除播放设备SD卡的TV目
+
+
+```json
+{
+&quot;token&quot;:&quot;这里填写阿里云盘的32位token,也可以不填写,在播放阿里云盘属性时会弹出窗口,点击QrCode,用阿里云盘app扫码&quot;,
+&quot;open_token&quot;:&quot;这里填写通过alist或其他openapi提供方申请的280位aliyun openapi token,也可以不写,会自动隐藏转存原画&quot;,
+&quot;thread_limit&quot;:32,//这里是阿里云盘的GO代理的并发协程数或java代理的并发线程数,若遇到账号被限制并发数,请将此数值改为10
+&quot;is_vip&quot;:true,//是否是阿里云盘的VIP用户,设置为true后,使用vip_thread_limit设置的数值来并发加速。如本设置项目不是true,则自动隐藏&quot;转存原画&quot;
+&quot;vip_thread_limit&quot;:10,//这里是阿里云盘的转存原画（OpenToken）并发线程数,若遇到账号被限制并发数,请将此数值改为10
+&quot;quark_thread_limit&quot;:32,//这里是夸克网盘GO代理的并发协程数或java代理的并发线程数,若遇到账号被限制并发数,请将此数值改为10
+&quot;quark_vip_thread_limit&quot;:16,//这里是夸克网盘设置quark_is_vip:true之后的并发线程数,若遇到账号被限制并发数,请将此数值改为10
+&quot;quark_is_vip&quot;:false,//是否是夸克网盘的VIP用户,设置为true后,线程数受quark_vip_thread_limit控制
+&quot;vod_flags&quot;:&quot;4k|4kz|auto&quot;,//这里是播放阿里云的画质选项,4k代表不转存原画（GO原画）,4kz代表转存原画,其他都代表预览画质,可选的预览画质包括qhd,fhd,hd,sd,ld,
+&quot;quark_flags&quot;:&quot;4kz|auto&quot;,//这里是播放夸克网盘的画质选项,4kz代表转存原画（GO原画）,其他都代表转码画质,可选的预览画质包括4k,2k,super,high,low,normal
+&quot;uc_thread_limit&quot;:0,
+&quot;uc_is_vip&quot;:false,
+&quot;uc_flags&quot;:&quot;4kz|auto&quot;,
+&quot;uc_vip_thread_limit&quot;:0,
+&quot;thunder_thread_limit&quot;:0,
+&quot;thunder_is_vip&quot;:false,
+&quot;thunder_vip_thread_limit&quot;:0,
+&quot;thunder_flags&quot;:&quot;4k|4kz|auto&quot;,
+&quot;aliproxy&quot;:&quot;这里填写外部的加速代理,用于在盒子性能不够的情况下,使用外部的加速代理来加速播放,可以不填写&quot;,
+&quot;proxy&quot;:&quot;这里填写用于科学上网的地址,连接openapi或某些资源站可能会需要用到,可以不填写&quot;,
+&quot;open_api_url&quot;:&quot;https://api.xhofe.top/alist/ali_open/token&quot;,//这是alist的openapi接口地址,也可使用其他openapi提供商的地址。
+&quot;danmu&quot;:true,//是否全局开启阿里云盘所有csp的弹幕支持,聚合类CSP仍需单独设置,例如Wogg,Wobg
+&quot;quark_danmu&quot;:true,//是否全局开启夸克网盘的所有csp的弹幕支持,聚合类CSP仍需单独设置,例如Wogg,Wobg
+&quot;quark_cookie&quot;:&quot;这里填写通过https://pan.quark.cn网站获取到的cookie,会很长,全数填入即可。&quot;
+&quot;uc_cookie&quot;:&quot;这里填写通过https://drive.uc.cn网站登录获取的cookie&quot;,
+&quot;thunder_username&quot;:&quot;这里填入用户名或手机号,如果是手机号,记得是类似&#039;+86 139123457&#039;这样的格式,+86后有空格才对&quot;,
+&quot;thunder_password&quot;:&quot;密码&quot;,
+&quot;thunder_captchatoken&quot;:&quot;首次使用迅雷网盘时,需要使用app弹出的登陆地址去接码登录,并获取captchaToken,具体方法参考alist网站的文档:https://alist.nn.ci/zh/guide/drivers/thunder.html&quot;,
+&quot;pikpak_username&quot;:&quot;PikPak网盘的用户名&quot;,
+&quot;pikpak_password&quot;:&quot;PikPak网盘的密码&quot;,
+&quot;pikpak_flags&quot;:&quot;4k|auto&quot;,
+&quot;pikpak_thread_limit&quot;:2,
+&quot;pikpak_vip_thread_limit&quot;:2,
+&quot;pikpak_proxy&quot;:&quot;用于科学上网连接PikPak网盘的代理服务器地址&quot;
 }
 ```
 
-## License
+自用仓库，如果喜欢，请Fork自用，谢谢！
 
-This project is licensed under the Apache License 2.0.
-
-## Troubleshooting
-
-* Ensure your MCP configuration is correct.
-* Verify that your Elasticsearch URL is accessible from your machine.
-* Check that your authentication credentials (API key or username/password) have the necessary permissions.
-* If using SSL/TLS with a custom CA, verify that the certificate path is correct and the file is readable.
-* Look at the terminal output for error messages.
-
-If you encounter issues, feel free to open an issue on the GitHub repository.
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[adam-p/markdown-here]]></title>
-            <link>https://github.com/adam-p/markdown-here</link>
-            <guid>https://github.com/adam-p/markdown-here</guid>
-            <pubDate>Sat, 12 Jul 2025 00:04:43 GMT</pubDate>
-            <description><![CDATA[Google Chrome, Firefox, and Thunderbird extension that lets you write email in Markdown and render it before sending.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/adam-p/markdown-here">adam-p/markdown-here</a></h1>
-            <p>Google Chrome, Firefox, and Thunderbird extension that lets you write email in Markdown and render it before sending.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 59,946</p>
-            <p>Forks: 11,199</p>
-            <p>Stars today: 3 stars today</p>
-            <h2>README</h2><pre># ![Markdown Here logo](https://raw.github.com/adam-p/markdown-here/master/src/common/images/icon48.png) Markdown Here
-
-[**Visit the website.**](https://markdown-here.com)&lt;br&gt;
-[**Get it for Chrome.**](https://chrome.google.com/webstore/detail/elifhakcjgalahccnjkneoccemfahfoa)&lt;br&gt;
-[**Get it for Firefox.**](https://addons.mozilla.org/firefox/addon/markdown-here/)&lt;br&gt;
-[**Get it for Thunderbird.**](https://addons.mozilla.org/thunderbird/addon/markdown-here/)&lt;br&gt;
-[**Get it for Opera.**](https://addons.opera.com/extensions/details/markdown-here/)&lt;br&gt;
-[**Discuss it and ask questions in GitHub Discussions.**](https://github.com/adam-p/markdown-here/discussions)&lt;br&gt;
-
-*Markdown Here* is a Google Chrome, Firefox, Opera, and Thunderbird extension that lets you write email&lt;sup&gt;&amp;dagger;&lt;/sup&gt; in Markdown&lt;sup&gt;&amp;Dagger;&lt;/sup&gt; and render them before sending. It also supports syntax highlighting (just specify the language in a fenced code block).
-
-Writing email with code in it is pretty tedious. Writing Markdown with code in it is easy. I found myself writing email in Markdown in the GitHub in-browser editor, then copying the preview into email. This is a pretty absurd workflow, so I decided to create a tool to write and render Markdown right in the email.
-
-To discover what can be done with Markdown in *Markdown Here*, check out the [Markdown Here Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet) and the other [wiki pages](https://github.com/adam-p/markdown-here/wiki).
-
-&lt;sup&gt;&amp;dagger;: And Google Groups posts, and Blogger posts, and Evernote notes, and Wordpress posts! [See more](#compatibility).&lt;/sup&gt;&lt;br&gt;
-&lt;sup&gt;&amp;Dagger;: And TeX mathematical formulae!&lt;/sup&gt;
-
-![screenshot of conversion](https://raw.github.com/adam-p/markdown-here/master/store-assets/markdown-here-image1.gimp.png)
-
-### Table of Contents
-**[Installation Instructions](#installation-instructions)**&lt;br&gt;
-**[Usage Instructions](#usage-instructions)**&lt;br&gt;
-**[Troubleshooting](#troubleshooting)**&lt;br&gt;
-**[Compatibility](#compatibility)**&lt;br&gt;
-**[Notes and Miscellaneous](#notes-and-miscellaneous)**&lt;br&gt;
-**[Building the Extension Bundles](#building-the-extension-bundles)**&lt;br&gt;
-**[Next Steps, Credits, Feedback, License](#next-steps)**&lt;br&gt;
-
-## Installation Instructions
-
-### Chrome
-
-#### Chrome Web Store
-
-Go to the [Chrome Web Store page for *Markdown Here*](https://chrome.google.com/webstore/detail/elifhakcjgalahccnjkneoccemfahfoa) and install normally.
-
-After installing, make sure to reload your webmail or restart Chrome!
-
-#### Manual/Development
-
-1. Clone this repo.
-2. In Chrome, open the Extensions settings. (Wrench button, Tools, Extensions.)
-3. On the Extensions settings page, click the &quot;Developer Mode&quot; checkbox.
-4. Click the now-visible &quot;Load unpacked extension…&quot; button. Navigate to the directory where you cloned the repo, then the `src` directory under that.
-5. The *Markdown Here* extension should now be visible in your extensions list.
-6. Reload your webmail page (and maybe application) before trying to convert an email.
-
-### Firefox and Thunderbird
-
-#### Mozilla Add-ons site
-
-Go to the [Firefox Add-ons page for *Markdown Here*](https://addons.mozilla.org/en-US/firefox/addon/markdown-here/) and install normally.
-
-Or go to the &quot;Tools &gt; Add-ons&quot; menu and then search for &quot;Markdown Here&quot;.
-
-After installing, make sure to restart Firefox/Thunderbird!
-
-**Note:** It takes up to a month for Mozilla to approve changes to the Firefox/Thunderbird extension, so updates (features, fixes) will lag behind what is shown here. You can manually choose to install the newest version before it&#039;s reviewed from the list of versions: [https://addons.mozilla.org/en-US/firefox/addon/markdown-here/versions/](https://addons.mozilla.org/en-US/firefox/addon/markdown-here/versions/)
-
-#### Manual/Development
-
-1. Clone this repo.
-2. Follow the instructions in the MDN [&quot;Your first WebExtension&quot;](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension#installing) article.
-
-### Opera
-
-Note that *Markdown Here* only works with Opera versions 16 and higher (i.e., the ones that are based on Chromium).
-
-Go to the [Opera Add-ons store page for *Markdown Here*](https://addons.opera.com/en/extensions/details/markdown-here/) and install normally.
-
-After installing, make sure to reload your webmail or restart Chrome!
-
-## Usage Instructions
-
-Install it, and then…
-
-1. In Chrome/Opera, *make sure* you reload your web mail page before trying to use Markdown Here.
-2. In Chrome/Firefox/Opera, log into your Gmail, Hotmail, or Yahoo account and start a new email. In Thunderbird, start a new message.
-3. Make sure you&#039;re using the rich editor.
-   * In Gmail, click the &quot;Rich formatting&quot; link, if it&#039;s visible.
-   * In Thunderbird, make sure &quot;Compose messages in HTML format&quot; is enabled in your &quot;Account Settings&quot;, &quot;Composition &amp; Addressing&quot; pane.
-4. Compose an email in Markdown. For example:
-
-   &lt;pre&gt;
-   **Hello** `world`.
-
-   ```javascript
-   alert(&#039;Hello syntax highlighting.&#039;);
-   ```
-   &lt;/pre&gt;
-
-5. Right-click in the compose box and choose the &quot;Markdown Toggle&quot; item from the context menu. Or click the button that appears on your toolbar. Or use the hotkey (&lt;kbd&gt;SHIFT&lt;/kbd&gt;+&lt;kbd&gt;ALT&lt;/kbd&gt;+&lt;kbd&gt;M&lt;/kbd&gt; by default).
-6. You should see your email rendered correctly from Markdown into rich HTML.
-7. Send your awesome email to everyone you know. It will appear to them the same way it looks to you.
-
-### Revert to Markdown
-
-After rendering your Markdown to pretty HTML, you can still get back to your original Markdown. Just right-click anywhere in the newly rendered Markdown and click &quot;Markdown Toggle&quot; -- your email compose body will change back to the Markdown you had written.
-
-Note that any changes you make to the pretty HTML will be lost when you revert to Markdown.
-
-In Gmail, you can also use the browser&#039;s Undo command (&lt;kbd&gt;CTRL&lt;/kbd&gt;+&lt;kbd&gt;Z&lt;/kbd&gt; / &lt;kbd&gt;CMD&lt;/kbd&gt;+&lt;kbd&gt;Z&lt;/kbd&gt;, or from the Edit menu). Be warned that you might also lose the last few characters you entered.
-
-### Replies
-
-In Gmail, Thunderbird, and Google Groups, you can use &quot;Markdown Toggle&quot; normally: just write your reply (top, bottom, inline, wherever) and then convert. The original email that you&#039;re replying to will be left alone. (Technically: Existing `blockquote` blocks will be left intact.)
-
-In Hotmail and Yahoo (which don&#039;t put the original in a `blockquote`), and optionally in Gmail, Thunderbird, and Google Groups, you can ensure that only the part of the reply that you wrote gets converted by selecting what you want to convert and then clicking &quot;Markdown Toggle&quot; -- see the next section.
-
-### Selection/Piecemeal Conversion
-
-Sometimes you don&#039;t want to convert the entire email; sometimes your email isn&#039;t entirely Markdown. To convert only part of the email, select the text (with your mouse or keyboard), right-click on it, and click the &quot;Markdown Toggle&quot; menu item. Your selection is magically rendered into pretty HTML.
-
-To revert back to Markdown, just put your cursor anywhere in the block of converted text, right-click, and click the &quot;Markdown Toggle&quot; menu item again. Now it&#039;s magically back to the original Markdown.
-
-![screenshot of selection conversion](https://raw.github.com/adam-p/markdown-here/master/store-assets/markdown-here-image2.gimp.png)
-
-#### Things to know about converting/reverting a selection
-
-* If you select only part of a block of text, only that text will be converted. The converted block will be wrapped in a paragraph element, so the original line will be broken up. You probably don&#039;t want to ever do this.
-
-* You can select and revert multiple converted blocks at the same time. One upshot of this is that you can select your entire email, click &quot;Markdown Toggle&quot;, and all portions of it that you had converted will be reverted.
-
-* If you don&#039;t have anything selected when you click &quot;Markdown Toggle&quot;, *Markdown Here* will check if there are converted blocks anywhere in the message and revert them. If there no converted blocks are found, it will convert the entire email.
-
-### Options
-
-The *Markdown Here* Options page can be accessed via the Chrome, Firefox, or Thunderbird extensions list. The available options include:
-
-* Styling modifications for the rendered Markdown.
-* Syntax highlighting theme selection and modification.
-* TeX math formulae processing enabling and customization.
-* What the hotkey should be.
-
-For Chrome and Firefox, any changes made in the *Markdown Here* Options are automatically synchronized between your other installations of that browser (if you have the sync feature enabled in the browser).
-
-![screenshot of options](https://raw.githubusercontent.com/adam-p/markdown-here/master/store-assets/markdown-here-chrome-options-1.gimp.png)
-
-
-## Troubleshooting
-
-See the [Troubleshooting wiki page](https://github.com/adam-p/markdown-here/wiki/Troubleshooting).
-
-
-## Compatibility
-
-See the [Compatibility wiki page](https://github.com/adam-p/markdown-here/wiki/Compatibility).
-
-
-## Notes and Miscellaneous
-
-* *Markdown Here* uses [Github Flavored Markdown](https://github.github.com/gfm/), with the limitation that GFM special links are not supported ([issue #11](https://github.com/adam-p/markdown-here/issues/11)); nor will they be, as MDH is not Github-specific.
-
-* Available languages for syntax highlighting (and the way they should be written in the fenced code block) can be seen on the [highlight.js demo page](https://highlightjs.org/demo).
-
-* Images embedded inline in your Markdown will be retained when you &quot;Markdown Toggle&quot;. Gmail allows you to put images inline in your email -- this can be much easier than referencing an external image.
-
-* Email signatures are automatically excluded from conversion. Specifically, anything after the semi-standard `&#039;-- &#039;` (note the trailing space) is left alone.
-  * Note that Hotmail and Yahoo do *not* automatically add the `&#039;-- &#039;` to signatures, so you have to add it yourself.
-
-* The &quot;Markdown Toggle&quot; menu item shows up for more element types than it can correctly render. This is intended to help people realize that they&#039;re not using a rich editor. Otherwise they just don&#039;t see the menu item and don&#039;t know why.
-
-* Styling:
-  * The use of browser-specific styles (-moz-, -webkit-) should be avoided. If used, they may not render correctly for people reading the email in a different browser from the one where the email was sent.
-  * The use of state-dependent styles (like `a:hover`) don&#039;t work because they don&#039;t match at the time the styles are made explicit. (In email, styles must be explicitly applied to all elements -- stylesheets get stripped.)
-
-* For more tweaky features, visit the [Tips and Tricks](https://github.com/adam-p/markdown-here/wiki/Tips-and-Tricks) section.
-
-## Building the Extension Bundles
-
-```
-cd utils
-node build.js
-```
-
-### Chrome, Opera, and Firefox (WebExtension) extension
-
-Create a file with a `.zip` extension containing these files and directories:
-
-```
-manifest.json
-common/
-chrome/
-_locales
-```
-
-## Next Steps
-
-See the [issues list](https://github.com/adam-p/markdown-here/issues) and the [Notes Wiki](https://github.com/adam-p/markdown-here/wiki/Development-Notes). All ideas, bugs, plans, complaints, and dreams will end up in one of those two places.
-
-Feel free to create a feature request issue if what you want isn&#039;t already there. If you&#039;d prefer a less formal approach to floating an idea, post to our [GitHub Discussions](https://github.com/adam-p/markdown-here/discussions).
-
-It also takes a fair bit of work to stay up-to-date with the latest changes in all the applications and web sites where Markdown Here works.
-
-## Credits
-
-*Markdown Here* was coded on the shoulders of giants.
-
-* Markdown-to-HTML: [chjj/marked](https://github.com/chjj/marked)
-* Syntax highlighting: [isagalaev/highlight.js](https://github.com/isagalaev/highlight.js)
-* HTML-to-text: [mtrimpe/jsHtmlToText](https://github.com/mtrimpe/jsHtmlToText)
-
-## Feedback
-
-All bugs, feature requests, pull requests, feedback, etc., are welcome. [Create an issue](https://github.com/adam-p/markdown-here/issues). Or [post to out GitHub Discussions](https://github.com/adam-p/markdown-here/discussions).
-
-## License
-
-### Code
-
-MIT License: https://adampritchard.mit-license.org/ or see [the `LICENSE` file](https://github.com/adam-p/markdown-here/blob/master/LICENSE).
-
-### Logo
-
-Copyright 2015, [Austin Anderson](https://www.angerson.org/). Licensed to Markdown Here under the [MDH contributor license agreement](https://github.com/adam-p/markdown-here/blob/master/CLA-individual.md).
-
-### Other images
-
-[Creative Commons Attribution 3.0 Unported (CC BY 3.0) License](https://creativecommons.org/licenses/by/3.0/)
-
----
-
-![Dos Equis man says](https://raw.github.com/adam-p/markdown-here/master/store-assets/dos-equis-MDH.jpg)
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[microsoft/monaco-editor]]></title>
-            <link>https://github.com/microsoft/monaco-editor</link>
-            <guid>https://github.com/microsoft/monaco-editor</guid>
-            <pubDate>Sat, 12 Jul 2025 00:04:42 GMT</pubDate>
-            <description><![CDATA[A browser based code editor]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/microsoft/monaco-editor">microsoft/monaco-editor</a></h1>
-            <p>A browser based code editor</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 43,187</p>
-            <p>Forks: 3,806</p>
-            <p>Stars today: 12 stars today</p>
-            <h2>README</h2><pre># Monaco Editor
-
-[![Versions](https://img.shields.io/npm/v/monaco-editor)](https://www.npmjs.com/package/monaco-editor)
-[![Versions](https://img.shields.io/npm/v/monaco-editor/next)](https://www.npmjs.com/package/monaco-editor)
-[![Feature Requests](https://img.shields.io/github/issues/microsoft/monaco-editor/feature-request.svg)](https://github.com/microsoft/monaco-editor/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areactions-%2B1-desc)
-[![Bugs](https://img.shields.io/github/issues/microsoft/monaco-editor/bug.svg)](https://github.com/microsoft/monaco-editor/issues?utf8=✓&amp;q=is%3Aissue+is%3Aopen+label%3Abug)
-
-The Monaco Editor is the fully featured code editor from [VS Code](https://github.com/microsoft/vscode). Check out the [VS Code docs](https://code.visualstudio.com/docs/editor/editingevolved) to see some of the supported features.
-
-![image](https://user-images.githubusercontent.com/5047891/94183711-290c0780-fea3-11ea-90e3-c88ff9d21bd6.png)
-
-## Try it out
-
-Try out the editor and see various examples [in our interactive playground](https://microsoft.github.io/monaco-editor/playground.html).
-
-The playground is the best way to learn about how to use the editor, which features is supports, to try out different versions and to create minimal reproducible examples for bug reports.
-
-## Installing
-
-```
-&gt; npm install monaco-editor
-```
-
-You will get:
-
-- inside `/esm`: ESM version of the editor (compatible with e.g. webpack)
-- inside `/dev`: AMD bundled, not minified
-- inside `/min`: AMD bundled, and minified
-- inside `/min-maps`: source maps for `min`
-- `monaco.d.ts`: this specifies the API of the editor (this is what is actually versioned, everything else is considered private and might break with any release).
-
-It is recommended to develop against the `dev` version, and in production to use the `min` version.
-
-## Concepts
-
-Monaco editor is best known for being the text editor that powers VS Code. However, it&#039;s a bit more nuanced. Some basic understanding about the underlying concepts is needed to use Monaco editor effectively.
-
-### Models
-
-Models are at the heart of Monaco editor. It&#039;s what you interact with when managing content. A model represents a file that has been opened. This could represent a file that exists on a file system, but it doesn&#039;t have to. For example, the model holds the text content, determines the language of the content, and tracks the edit history of the content.
-
-### URIs
-
-Each model is identified by a URI. This is why it&#039;s not possible for two models to have the same URI. Ideally when you represent content in Monaco editor, you should think of a virtual file system that matches the files your users are editing. For example, you could use `file:///` as a base path. If a model is created without a URI, its URI will be `inmemory://model/1`. The number increases as more models are created.
-
-### Editors
-
-An editor is a user facing view of the model. This is what gets attached to the DOM and what your users see visually. Typical editor operations are displaying a model, managing the view state, or executing actions or commands.
-
-### Providers
-
-Providers provide smart editor features. For example, this includes completion and hover information. It is not the same as, but often maps to [language server protocol](https://microsoft.github.io/language-server-protocol) features.
-
-Providers work on models. Some smart features depends on the file URI. For example, for TypeScript to resolve imports, or for JSON IntelliSense to determine which JSON schema to apply to which model. So it&#039;s important to choose proper model URIs.
-
-### Disposables
-
-Many Monaco related objects often implement the `.dispose()` method. This method is intended to perform cleanups when a resource is no longer needed. For example, calling `model.dispose()` will unregister it, freeing up the URI for a new model. Editors should be disposed to free up resources and remove their model listeners.
-
-## Documentation
-
-- Learn how to integrate the editor with these [complete samples](./samples/).
-  - [Integrate the AMD version](./docs/integrate-amd.md).
-  - [Integrate the ESM version](./docs/integrate-esm.md)
-- Learn how to use the editor API and try out your own customizations in the [playground](https://microsoft.github.io/monaco-editor/playground.html).
-- Explore the [API docs](https://microsoft.github.io/monaco-editor/docs.html) or read them straight from [`monaco.d.ts`](https://github.com/microsoft/monaco-editor/blob/gh-pages/node_modules/monaco-editor/monaco.d.ts).
-- Read [this guide](https://github.com/microsoft/monaco-editor/wiki/Accessibility-Guide-for-Integrators) to ensure the editor is accessible to all your users!
-- Create a Monarch tokenizer for a new programming language [in the Monarch playground](https://microsoft.github.io/monaco-editor/monarch.html).
-- Ask questions on [StackOverflow](https://stackoverflow.com/questions/tagged/monaco-editor)! Search open and closed issues, there are a lot of tips in there!
-
-## Issues
-
-Create [issues](https://github.com/microsoft/monaco-editor/issues) in this repository for anything related to the Monaco Editor. Please search for existing issues to avoid duplicates.
-
-## FAQ
-
-❓ **What is the relationship between VS Code and the Monaco Editor?**
-
-The Monaco Editor is generated straight from VS Code&#039;s sources with some shims around services the code needs to make it run in a web browser outside of its home.
-
-❓ **What is the relationship between VS Code&#039;s version and the Monaco Editor&#039;s version?**
-
-None. The Monaco Editor is a library and it reflects directly the source code.
-
-❓ **I&#039;ve written an extension for VS Code, will it work on the Monaco Editor in a browser?**
-
-No.
-
-&gt; Note: If the extension is fully based on the [LSP](https://microsoft.github.io/language-server-protocol/) and if the language server is authored in JavaScript, then it would be possible.
-
-❓ **Why all these web workers and why should I care?**
-
-Language services create web workers to compute heavy stuff outside of the UI thread. They cost hardly anything in terms of resource overhead and you shouldn&#039;t worry too much about them, as long as you get them to work (see above the cross-domain case).
-
-❓ **What is this `loader.js`? Can I use `require.js`?**
-
-It is an AMD loader that we use in VS Code. Yes.
-
-❓ **I see the warning &quot;Could not create web worker&quot;. What should I do?**
-
-HTML5 does not allow pages loaded on `file://` to create web workers. Please load the editor with a web server on `http://` or `https://` schemes.
-
-❓ **Is the editor supported in mobile browsers or mobile web app frameworks?**
-
-No.
-
-❓ **Why doesn&#039;t the editor support TextMate grammars?**
-
-- Please see https://github.com/bolinfest/monaco-tm which puts together `monaco-editor`, `vscode-oniguruma` and `vscode-textmate` to get TM grammar support in the editor.
-
-## Contributing / Local Development
-
-We are welcoming contributions from the community!
-Please see [CONTRIBUTING](./CONTRIBUTING.md) for details how you can contribute effectively, how you can run the editor from sources and how you can debug and fix issues.
-
-## Code of Conduct
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-## License
-
-Licensed under the [MIT](https://github.com/microsoft/monaco-editor/blob/main/LICENSE.txt) License.
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[sveltejs/svelte]]></title>
-            <link>https://github.com/sveltejs/svelte</link>
-            <guid>https://github.com/sveltejs/svelte</guid>
-            <pubDate>Sat, 12 Jul 2025 00:04:41 GMT</pubDate>
-            <description><![CDATA[web development for the rest of us]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/sveltejs/svelte">sveltejs/svelte</a></h1>
-            <p>web development for the rest of us</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 83,369</p>
-            <p>Forks: 4,560</p>
-            <p>Stars today: 19 stars today</p>
-            <h2>README</h2><pre>&lt;a href=&quot;https://svelte.dev&quot;&gt;
-	&lt;picture&gt;
-		&lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;assets/banner_dark.png&quot;&gt;
-		&lt;img src=&quot;assets/banner.png&quot; alt=&quot;Svelte - web development for the rest of us&quot; /&gt;
-	&lt;/picture&gt;
-&lt;/a&gt;
-
-[![License](https://img.shields.io/npm/l/svelte.svg)](LICENSE.md) [![Chat](https://img.shields.io/discord/457912077277855764?label=chat&amp;logo=discord)](https://svelte.dev/chat)
-
-## What is Svelte?
-
-Svelte is a new way to build web applications. It&#039;s a compiler that takes your declarative components and converts them into efficient JavaScript that surgically updates the DOM.
-
-Learn more at the [Svelte website](https://svelte.dev), or stop by the [Discord chatroom](https://svelte.dev/chat).
-
-## Supporting Svelte
-
-Svelte is an MIT-licensed open source project with its ongoing development made possible entirely by fantastic volunteers. If you&#039;d like to support their efforts, please consider:
-
-- [Becoming a backer on Open Collective](https://opencollective.com/svelte).
-
-Funds donated via Open Collective will be used for compensating expenses related to Svelte&#039;s development such as hosting costs. If sufficient donations are received, funds may also be used to support Svelte&#039;s development more directly.
-
-## Roadmap
-
-You may view [our roadmap](https://svelte.dev/roadmap) if you&#039;d like to see what we&#039;re currently working on.
-
-## Contributing
-
-Please see the [Contributing Guide](CONTRIBUTING.md) and the [`svelte`](packages/svelte) package for information on contributing to Svelte.
-
-## Is svelte.dev down?
-
-Probably not, but it&#039;s possible. If you can&#039;t seem to access any `.dev` sites, check out [this SuperUser question and answer](https://superuser.com/q/1413402).
-
-## License
-
-[MIT](LICENSE.md)
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[usebruno/bruno]]></title>
-            <link>https://github.com/usebruno/bruno</link>
-            <guid>https://github.com/usebruno/bruno</guid>
-            <pubDate>Sat, 12 Jul 2025 00:04:40 GMT</pubDate>
-            <description><![CDATA[Opensource IDE For Exploring and Testing API's (lightweight alternative to Postman/Insomnia)]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/usebruno/bruno">usebruno/bruno</a></h1>
-            <p>Opensource IDE For Exploring and Testing API's (lightweight alternative to Postman/Insomnia)</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 35,533</p>
-            <p>Forks: 1,738</p>
-            <p>Stars today: 31 stars today</p>
-            <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[TryGhost/Ghost]]></title>
-            <link>https://github.com/TryGhost/Ghost</link>
-            <guid>https://github.com/TryGhost/Ghost</guid>
-            <pubDate>Sat, 12 Jul 2025 00:04:39 GMT</pubDate>
-            <description><![CDATA[Independent technology for modern publishing, memberships, subscriptions and newsletters.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/TryGhost/Ghost">TryGhost/Ghost</a></h1>
-            <p>Independent technology for modern publishing, memberships, subscriptions and newsletters.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 49,807</p>
-            <p>Forks: 10,913</p>
-            <p>Stars today: 19 stars today</p>
-            <h2>README</h2><pre>&amp;nbsp;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://ghost.org/#gh-light-mode-only&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;https://user-images.githubusercontent.com/65487235/157884383-1b75feb1-45d8-4430-b636-3f7e06577347.png&quot; alt=&quot;Ghost&quot; width=&quot;200px&quot;&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://ghost.org/#gh-dark-mode-only&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;https://user-images.githubusercontent.com/65487235/157849205-aa24152c-4610-4d7d-b752-3a8c4f9319e6.png&quot; alt=&quot;Ghost&quot; width=&quot;200px&quot;&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-&amp;nbsp;
-
-&lt;p align=&quot;center&quot;&gt;
-    &lt;a href=&quot;https://ghost.org/&quot;&gt;Ghost.org&lt;/a&gt; •
-    &lt;a href=&quot;https://forum.ghost.org&quot;&gt;Forum&lt;/a&gt; •
-    &lt;a href=&quot;https://ghost.org/docs/&quot;&gt;Docs&lt;/a&gt; •
-    &lt;a href=&quot;https://github.com/TryGhost/Ghost/blob/main/.github/CONTRIBUTING.md&quot;&gt;Contributing&lt;/a&gt; •
-    &lt;a href=&quot;https://twitter.com/ghost&quot;&gt;Twitter&lt;/a&gt;
-    &lt;br /&gt;&lt;br /&gt;
-    &lt;a href=&quot;https://ghost.org/&quot;&gt;
-        &lt;img src=&quot;https://img.shields.io/badge/downloads-100M+-brightgreen.svg&quot; alt=&quot;Downloads&quot; /&gt;
-    &lt;/a&gt;
-    &lt;a href=&quot;https://github.com/TryGhost/Ghost/releases/&quot;&gt;
-        &lt;img src=&quot;https://img.shields.io/github/release/TryGhost/Ghost.svg&quot; alt=&quot;Latest release&quot; /&gt;
-    &lt;/a&gt;
-    &lt;a href=&quot;https://github.com/TryGhost/Ghost/actions&quot;&gt;
-        &lt;img src=&quot;https://github.com/TryGhost/Ghost/workflows/CI/badge.svg?branch=main&quot; alt=&quot;Build status&quot; /&gt;
-    &lt;/a&gt;
-    &lt;a href=&quot;https://github.com/TryGhost/Ghost/contributors/&quot;&gt;
-        &lt;img src=&quot;https://img.shields.io/github/contributors/TryGhost/Ghost.svg&quot; alt=&quot;Contributors&quot; /&gt;
-    &lt;/a&gt;
-&lt;/p&gt;
-
-&amp;nbsp;
-
-&gt; [!NOTE]  
-&gt; Love open source? We&#039;re hiring! Ghost is looking staff engineers to [join the team](https://careers.ghost.org) and work with us full-time
-
-&lt;a href=&quot;https://ghost.org/&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/353959/169805900-66be5b89-0859-4816-8da9-528ed7534704.png&quot; alt=&quot;Fiercely independent, professional publishing. Ghost is the most popular open source, headless Node.js CMS which already works with all the tools you know and love.&quot; /&gt;&lt;/a&gt;
-
-&amp;nbsp;
-
-&lt;a href=&quot;https://ghost.org/pricing/#gh-light-mode-only&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/65487235/157849437-9b8fcc48-1920-4b26-a1e8-5806db0e6bb9.png&quot; alt=&quot;Ghost(Pro)&quot; width=&quot;165px&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://ghost.org/pricing/#gh-dark-mode-only&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/65487235/157849438-79889b04-b7b6-4ba7-8de6-4c1e4b4e16a5.png&quot; alt=&quot;Ghost(Pro)&quot; width=&quot;165px&quot; /&gt;&lt;/a&gt;
-
-The easiest way to get a production instance deployed is with our official **[Ghost(Pro)](https://ghost.org/pricing/)** managed service. It takes about 2 minutes to launch a new site with worldwide CDN, backups, security and maintenance all done for you.
-
-For most people this ends up being the best value option because of [how much time it saves](https://ghost.org/docs/hosting/) — and 100% of revenue goes to the Ghost Foundation; funding the maintenance and further development of the project itself. So you’ll be supporting open source software *and* getting a great service!
-
-&amp;nbsp;
-
-# Quickstart install
-
-If you want to run your own instance of Ghost, in most cases the best way is to use our **CLI tool**
-
-```
-npm install ghost-cli -g
-```
-
-&amp;nbsp;
-
-Then, if installing locally add the `local` flag to get up and running in under a minute - [Local install docs](https://ghost.org/docs/install/local/)
-
-```
-ghost install local
-```
-
-&amp;nbsp;
-
-or on a server run the full install, including automatic SSL setup using LetsEncrypt - [Production install docs](https://ghost.org/docs/install/ubuntu/)
-
-```
-ghost install
-```
-
-&amp;nbsp;
-
-Check out our [official documentation](https://ghost.org/docs/) for more information about our [recommended hosting stack](https://ghost.org/docs/hosting/) &amp; properly [upgrading Ghost](https://ghost.org/docs/update/), plus everything you need to develop your own Ghost [themes](https://ghost.org/docs/themes/) or work with [our API](https://ghost.org/docs/content-api/).
-
-### Contributors &amp; advanced developers
-
-For anyone wishing to contribute to Ghost or to hack/customize core files we recommend following our full development setup guides: [Contributor guide](https://ghost.org/docs/contributing/) • [Developer setup](https://ghost.org/docs/install/source/)
-
-&amp;nbsp;
-
-# Ghost sponsors
-
-A big thanks to our sponsors and partners who make Ghost possible. If you&#039;re interested in sponsoring Ghost and supporting the project, please check out our profile on [GitHub sponsors](https://github.com/sponsors/TryGhost) :heart:
-
-**[DigitalOcean](https://m.do.co/c/9ff29836d717)** • **[Fastly](https://www.fastly.com/)**
-
-&amp;nbsp;
-
-# Getting help
-
-Everyone can get help and support from a large community of developers over on the [Ghost forum](https://forum.ghost.org/). **Ghost(Pro)** customers have access to 24/7 email support.
-
-To stay up to date with all the latest news and product updates, make sure you [subscribe to our changelog newsletter](https://ghost.org/changelog/) — or follow us [on Twitter](https://twitter.com/Ghost), if you prefer your updates bite-sized and facetious. :saxophone::turtle:
-
-&amp;nbsp;
-
-# Copyright &amp; license
-
-Copyright (c) 2013-2025 Ghost Foundation - Released under the [MIT license](LICENSE). 
-Ghost and the Ghost Logo are trademarks of Ghost Foundation Ltd. Please see our [trademark policy](https://ghost.org/trademark/) for info on acceptable usage.
+尽自己所能更新，不保证配置的有效性和时效性。
 </pre>
           ]]></content:encoded>
             <category>JavaScript</category>
