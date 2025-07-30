@@ -4,238 +4,330 @@
         <title>GitHub Trending Today for python - Python Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for python.</description>
-        <lastBuildDate>Mon, 28 Jul 2025 00:05:06 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 30 Jul 2025 00:05:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2025, GitHub</copyright>
         <item>
-            <title><![CDATA[Genesis-Embodied-AI/Genesis]]></title>
-            <link>https://github.com/Genesis-Embodied-AI/Genesis</link>
-            <guid>https://github.com/Genesis-Embodied-AI/Genesis</guid>
-            <pubDate>Mon, 28 Jul 2025 00:05:06 GMT</pubDate>
-            <description><![CDATA[A generative world for general-purpose robotics & embodied AI learning.]]></description>
+            <title><![CDATA[9001/copyparty]]></title>
+            <link>https://github.com/9001/copyparty</link>
+            <guid>https://github.com/9001/copyparty</guid>
+            <pubDate>Wed, 30 Jul 2025 00:05:00 GMT</pubDate>
+            <description><![CDATA[Portable file server with accelerated resumable uploads, dedup, WebDAV, FTP, TFTP, zeroconf, media indexer, thumbnails++ all in one file, no deps]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/Genesis-Embodied-AI/Genesis">Genesis-Embodied-AI/Genesis</a></h1>
-            <p>A generative world for general-purpose robotics & embodied AI learning.</p>
+            <h1><a href="https://github.com/9001/copyparty">9001/copyparty</a></h1>
+            <p>Portable file server with accelerated resumable uploads, dedup, WebDAV, FTP, TFTP, zeroconf, media indexer, thumbnails++ all in one file, no deps</p>
             <p>Language: Python</p>
-            <p>Stars: 26,285</p>
-            <p>Forks: 2,396</p>
-            <p>Stars today: 211 stars today</p>
-            <h2>README</h2><pre>![Genesis](imgs/big_text.png)
+            <p>Stars: 10,432</p>
+            <p>Forks: 304</p>
+            <p>Stars today: 4,125 stars today</p>
+            <h2>README</h2><pre>&lt;img src=&quot;https://github.com/9001/copyparty/raw/hovudstraum/docs/logo.svg&quot; width=&quot;250&quot; align=&quot;right&quot;/&gt;
 
-![Teaser](imgs/teaser.png)
+### 💾🎉 copyparty
 
-[![PyPI - Version](https://img.shields.io/pypi/v/genesis-world)](https://pypi.org/project/genesis-world/)
-[![PyPI Downloads](https://static.pepy.tech/badge/genesis-world)](https://pepy.tech/projects/genesis-world)
-[![GitHub Issues](https://img.shields.io/github/issues/Genesis-Embodied-AI/Genesis)](https://github.com/Genesis-Embodied-AI/Genesis/issues)
-[![GitHub Discussions](https://img.shields.io/github/discussions/Genesis-Embodied-AI/Genesis)](https://github.com/Genesis-Embodied-AI/Genesis/discussions)
-[![Discord](https://img.shields.io/discord/1322086972302430269?logo=discord)](https://discord.gg/nukCuhB47p)
-&lt;a href=&quot;https://drive.google.com/uc?export=view&amp;id=1ZS9nnbQ-t1IwkzJlENBYqYIIOOZhXuBZ&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/WeChat-07C160?style=for-the-badge&amp;logo=wechat&amp;logoColor=white&quot; height=&quot;20&quot; style=&quot;display:inline&quot;&gt;&lt;/a&gt;
+turn almost any device into a file server with resumable uploads/downloads using [*any*](#browser-support) web browser
 
-[![README in English](https://img.shields.io/badge/English-d9d9d9)](./README.md)
-[![README en Français](https://img.shields.io/badge/Francais-d9d9d9)](./README_FR.md)
-[![한국어 README](https://img.shields.io/badge/한국어-d9d9d9)](./README_KR.md)
-[![简体中文版自述文件](https://img.shields.io/badge/简体中文-d9d9d9)](./README_CN.md)
-[![日本語版 README](https://img.shields.io/badge/日本語-d9d9d9)](./README_JA.md)
+* server only needs Python (2 or 3), all dependencies optional
+* 🔌 protocols: [http](#the-browser) // [webdav](#webdav-server) // [ftp](#ftp-server) // [tftp](#tftp-server) // [smb/cifs](#smb-server)
+* 📱 [android app](#android-app) // [iPhone shortcuts](#ios-shortcuts)
 
-# Genesis
+👉 **[Get started](#quickstart)!** or visit the **[read-only demo server](https://a.ocv.me/pub/demo/)** 👀 running on a nuc in my basement
 
-## 🔥 News
-- [2025-07-02] The development of Genesis is now officially supported by [Genesis AI](https://genesis-ai.company/).
-- [2025-01-09] We released a [detailed performance benchmarking and comparison report](https://github.com/zhouxian/genesis-speed-benchmark) on Genesis, together with all the test scripts.
-- [2025-01-08] Released v0.2.1 🎊 🎉
-- [2025-01-08] Created [Discord](https://discord.gg/nukCuhB47p) and [Wechat](https://drive.google.com/uc?export=view&amp;id=1ZS9nnbQ-t1IwkzJlENBYqYIIOOZhXuBZ) group.
-- [2024-12-25] Added a [docker](#docker) including support for the ray-tracing renderer
-- [2024-12-24] Added guidelines for [contributing to Genesis](https://github.com/Genesis-Embodied-AI/Genesis/blob/main/.github/CONTRIBUTING.md)
+📷 **screenshots:** [browser](#the-browser) // [upload](#uploading) // [unpost](#unpost) // [thumbnails](#thumbnails) // [search](#searching) // [fsearch](#file-search) // [zip-DL](#zip-downloads) // [md-viewer](#markdown-viewer)
 
-## Table of Contents
+🎬 **videos:** [upload](https://a.ocv.me/pub/demo/pics-vids/up2k.webm) // [cli-upload](https://a.ocv.me/pub/demo/pics-vids/u2cli.webm) // [race-the-beam](https://a.ocv.me/pub/g/nerd-stuff/cpp/2024-0418-race-the-beam.webm) // 👉 **[feature-showcase](https://a.ocv.me/pub/demo/showcase-hq.webm)** ([youtube](https://www.youtube.com/watch?v=15_-hgsX2V0))
 
-1. [What is Genesis?](#what-is-genesis)
-2. [Key Features](#key-features)
-3. [Quick Installation](#quick-installation)
-4. [Docker](#docker)
-5. [Documentation](#documentation)
-6. [Contributing to Genesis](#contributing-to-genesis)
-7. [Support](#support)
-8. [License and Acknowledgments](#license-and-acknowledgments)
-9. [Associated Papers](#associated-papers)
-10. [Citation](#citation)
+made in Norway 🇳🇴
 
-## What is Genesis?
 
-Genesis is a physics platform designed for general-purpose *Robotics/Embodied AI/Physical AI* applications. It is simultaneously multiple things:
+## readme toc
 
-1. A **universal physics engine** re-built from the ground up, capable of simulating a wide range of materials and physical phenomena.
-2. A **lightweight**, **ultra-fast**, **pythonic**, and **user-friendly** robotics simulation platform.
-3. A powerful and fast **photo-realistic rendering system**.
-4. A **generative data engine** that transforms user-prompted natural language description into various modalities of data.
+* top
+    * [quickstart](#quickstart) - just run **[copyparty-sfx.py](https://github.com/9001/copyparty/releases/latest/download/copyparty-sfx.py)** -- that&#039;s it! 🎉
+        * [at home](#at-home) - make it accessible over the internet
+        * [on servers](#on-servers) - you may also want these, especially on servers
+    * [features](#features) - also see [comparison to similar software](./docs/versus.md)
+    * [testimonials](#testimonials) - small collection of user feedback
+* [motivations](#motivations) - project goals / philosophy
+    * [notes](#notes) - general notes
+* [bugs](#bugs) - roughly sorted by chance of encounter
+    * [not my bugs](#not-my-bugs) - same order here too
+* [breaking changes](#breaking-changes) - upgrade notes
+* [FAQ](#FAQ) - &quot;frequently&quot; asked questions
+* [accounts and volumes](#accounts-and-volumes) - per-folder, per-user permissions
+    * [shadowing](#shadowing) - hiding specific subfolders
+    * [dotfiles](#dotfiles) - unix-style hidden files/folders
+* [the browser](#the-browser) - accessing a copyparty server using a web-browser
+    * [tabs](#tabs) - the main tabs in the ui
+    * [hotkeys](#hotkeys) - the browser has the following hotkeys
+    * [navpane](#navpane) - switching between breadcrumbs or navpane
+    * [thumbnails](#thumbnails) - press `g` or `田` to toggle grid-view instead of the file listing
+    * [zip downloads](#zip-downloads) - download folders (or file selections) as `zip` or `tar` files
+    * [uploading](#uploading) - drag files/folders into the web-browser to upload
+        * [file-search](#file-search) - dropping files into the browser also lets you see if they exist on the server
+        * [unpost](#unpost) - undo/delete accidental uploads
+        * [self-destruct](#self-destruct) - uploads can be given a lifetime
+        * [race the beam](#race-the-beam) - download files while they&#039;re still uploading ([demo video](http://a.ocv.me/pub/g/nerd-stuff/cpp/2024-0418-race-the-beam.webm))
+        * [incoming files](#incoming-files) - the control-panel shows the ETA for all incoming files
+    * [file manager](#file-manager) - cut/paste, rename, and delete files/folders (if you have permission)
+    * [shares](#shares) - share a file or folder by creating a temporary link
+    * [batch rename](#batch-rename) - select some files and press `F2` to bring up the rename UI
+    * [rss feeds](#rss-feeds) - monitor a folder with your RSS reader
+    * [recent uploads](#recent-uploads) - list all recent uploads
+    * [media player](#media-player) - plays almost every audio format there is
+        * [playlists](#playlists) - create and play [m3u8](https://en.wikipedia.org/wiki/M3U) playlists
+        * [creating a playlist](#creating-a-playlist) - with a standalone mediaplayer or copyparty
+        * [audio equalizer](#audio-equalizer) - and [dynamic range compressor](https://en.wikipedia.org/wiki/Dynamic_range_compression)
+        * [fix unreliable playback on android](#fix-unreliable-playback-on-android) - due to phone / app settings
+    * [textfile viewer](#textfile-viewer) - with realtime streaming of logfiles and such ([demo](https://a.ocv.me/pub/demo/logtail/))
+    * [markdown viewer](#markdown-viewer) - and there are *two* editors
+        * [markdown vars](#markdown-vars) - dynamic docs with serverside variable expansion
+    * [other tricks](#other-tricks)
+    * [searching](#searching) - search by size, date, path/name, mp3-tags, ...
+* [server config](#server-config) - using arguments or config files, or a mix of both
+    * [zeroconf](#zeroconf) - announce enabled services on the LAN ([pic](https://user-images.githubusercontent.com/241032/215344737-0eae8d98-9496-4256-9aa8-cd2f6971810d.png))
+        * [mdns](#mdns) - LAN domain-name and feature announcer
+        * [ssdp](#ssdp) - windows-explorer announcer
+    * [qr-code](#qr-code) - print a qr-code [(screenshot)](https://user-images.githubusercontent.com/241032/194728533-6f00849b-c6ac-43c6-9359-83e454d11e00.png) for quick access
+    * [ftp server](#ftp-server) - an FTP server can be started using `--ftp 3921`
+    * [webdav server](#webdav-server) - with read-write support
+        * [connecting to webdav from windows](#connecting-to-webdav-from-windows) - using the GUI
+    * [tftp server](#tftp-server) - a TFTP server (read/write) can be started using `--tftp 3969`
+    * [smb server](#smb-server) - unsafe, slow, not recommended for wan
+    * [browser ux](#browser-ux) - tweaking the ui
+    * [opengraph](#opengraph) - discord and social-media embeds
+    * [file deduplication](#file-deduplication) - enable symlink-based upload deduplication
+    * [file indexing](#file-indexing) - enable music search, upload-undo, and better dedup
+        * [exclude-patterns](#exclude-patterns) - to save some time
+        * [filesystem guards](#filesystem-guards) - avoid traversing into other filesystems
+        * [periodic rescan](#periodic-rescan) - filesystem monitoring
+    * [upload rules](#upload-rules) - set upload rules using volflags
+    * [compress uploads](#compress-uploads) - files can be autocompressed on upload
+    * [other flags](#other-flags)
+    * [database location](#database-location) - in-volume (`.hist/up2k.db`, default) or somewhere else
+    * [metadata from audio files](#metadata-from-audio-files) - set `-e2t` to index tags on upload
+    * [file parser plugins](#file-parser-plugins) - provide custom parsers to index additional tags
+    * [event hooks](#event-hooks) - trigger a program on uploads, renames etc ([examples](./bin/hooks/))
+        * [zeromq](#zeromq) - event-hooks can send zeromq messages
+        * [upload events](#upload-events) - the older, more powerful approach ([examples](./bin/mtag/))
+    * [handlers](#handlers) - redefine behavior with plugins ([examples](./bin/handlers/))
+    * [ip auth](#ip-auth) - autologin based on IP range (CIDR)
+    * [identity providers](#identity-providers) - replace copyparty passwords with oauth and such
+    * [user-changeable passwords](#user-changeable-passwords) - if permitted, users can change their own passwords
+    * [using the cloud as storage](#using-the-cloud-as-storage) - connecting to an aws s3 bucket and similar
+    * [hiding from google](#hiding-from-google) - tell search engines you don&#039;t wanna be indexed
+    * [themes](#themes)
+    * [complete examples](#complete-examples)
+    * [listen on port 80 and 443](#listen-on-port-80-and-443) - become a *real* webserver
+    * [reverse-proxy](#reverse-proxy) - running copyparty next to other websites
+        * [real-ip](#real-ip) - teaching copyparty how to see client IPs
+        * [reverse-proxy performance](#reverse-proxy-performance)
+    * [permanent cloudflare tunnel](#permanent-cloudflare-tunnel) - if you have a domain and want to get your copyparty online real quick
+    * [prometheus](#prometheus) - metrics/stats can be enabled
+    * [other extremely specific features](#other-extremely-specific-features) - you&#039;ll never find a use for these
+        * [custom mimetypes](#custom-mimetypes) - change the association of a file extension
+        * [GDPR compliance](#GDPR-compliance) - imagine using copyparty professionally...
+        * [feature chickenbits](#feature-chickenbits) - buggy feature? rip it out
+        * [feature beefybits](#feature-beefybits) - force-enable features with known issues on your OS/env
+* [packages](#packages) - the party might be closer than you think
+    * [arch package](#arch-package) - `pacman -S copyparty` (in [arch linux extra](https://archlinux.org/packages/extra/any/copyparty/))
+    * [fedora package](#fedora-package) - does not exist yet
+    * [nix package](#nix-package) - `nix profile install github:9001/copyparty`
+    * [nixos module](#nixos-module)
+* [browser support](#browser-support) - TLDR: yes
+* [client examples](#client-examples) - interact with copyparty using non-browser clients
+    * [folder sync](#folder-sync) - sync folders to/from copyparty
+    * [mount as drive](#mount-as-drive) - a remote copyparty server as a local filesystem
+* [android app](#android-app) - upload to copyparty with one tap
+* [iOS shortcuts](#iOS-shortcuts) - there is no iPhone app, but
+* [performance](#performance) - defaults are usually fine - expect `8 GiB/s` download, `1 GiB/s` upload
+    * [client-side](#client-side) - when uploading files
+* [security](#security) - there is a [discord server](https://discord.gg/25J8CdTT6G)
+    * [gotchas](#gotchas) - behavior that might be unexpected
+    * [cors](#cors) - cross-site request config
+    * [filekeys](#filekeys) - prevent filename bruteforcing
+        * [dirkeys](#dirkeys) - share specific folders in a volume
+    * [password hashing](#password-hashing) - you can hash passwords
+    * [https](#https) - both HTTP and HTTPS are accepted
+* [recovering from crashes](#recovering-from-crashes)
+    * [client crashes](#client-crashes)
+        * [firefox wsod](#firefox-wsod) - firefox 87 can crash during uploads
+* [HTTP API](#HTTP-API) - see [devnotes](./docs/devnotes.md#http-api)
+* [dependencies](#dependencies) - mandatory deps
+    * [optional dependencies](#optional-dependencies) - install these to enable bonus features
+        * [dependency chickenbits](#dependency-chickenbits) - prevent loading an optional dependency
+    * [optional gpl stuff](#optional-gpl-stuff)
+* [sfx](#sfx) - the self-contained &quot;binary&quot; (recommended!)
+    * [copyparty.exe](#copypartyexe) - download [copyparty.exe](https://github.com/9001/copyparty/releases/latest/download/copyparty.exe) (win8+) or [copyparty32.exe](https://github.com/9001/copyparty/releases/latest/download/copyparty32.exe) (win7+)
+    * [zipapp](#zipapp) - another emergency alternative, [copyparty.pyz](https://github.com/9001/copyparty/releases/latest/download/copyparty.pyz)
+* [install on android](#install-on-android)
+* [reporting bugs](#reporting-bugs) - ideas for context to include, and where to submit them
+* [devnotes](#devnotes) - for build instructions etc, see [./docs/devnotes.md](./docs/devnotes.md)
 
-Powered by a universal physics engine re-designed and re-built from the ground up, Genesis integrates various physics solvers and their coupling into a unified framework. This core physics engine is further enhanced by a generative agent framework that operates at an upper level, aiming towards fully automated data generation for robotics and beyond.
 
-**Note**: Currently, we are open-sourcing the _underlying physics engine_ and the _simulation platform_. Our _generative framework_ is a modular system that incorporates many different generative modules, each handling a certain range of data modalities, routed by a high level agent. Some of the modules integrated existing papers and some are still under submission. Access to our generative feature will be gradually rolled out in the near future. If you are interested, feel free to explore more in the [paper list](#associated-papers) below.
+## quickstart
 
-Genesis aims to:
+just run **[copyparty-sfx.py](https://github.com/9001/copyparty/releases/latest/download/copyparty-sfx.py)** -- that&#039;s it! 🎉
 
-- **Lower the barrier** to using physics simulations, making robotics research accessible to everyone. See our [mission statement](https://genesis-world.readthedocs.io/en/latest/user_guide/overview/mission.html).
-- **Unify diverse physics solvers** into a single framework to recreate the physical world with the highest fidelity.
-- **Automate data generation**, reducing human effort and letting the data flywheel spin on its own.
+* or install through [pypi](https://pypi.org/project/copyparty/): `python3 -m pip install --user -U copyparty`
+* or if you cannot install python, you can use [copyparty.exe](#copypartyexe) instead
+* or install [on arch](#arch-package) ╱ [on NixOS](#nixos-module) ╱ [through nix](#nix-package)
+* or if you are on android, [install copyparty in termux](#install-on-android)
+* or maybe you have a [synology nas / dsm](./docs/synology-dsm.md)
+* or if your computer is messed up and nothing else works, [try the pyz](#zipapp)
+* or if your OS is dead, give the [bootable flashdrive / cd-rom](https://a.ocv.me/pub/stuff/edcd001/enterprise-edition/) a spin
+* or if you don&#039;t trust copyparty yet and want to isolate it a little, then...
+  * ...maybe [prisonparty](./bin/prisonparty.sh) to create a tiny [chroot](https://wiki.archlinux.org/title/Chroot) (very portable),
+  * ...or [bubbleparty](./bin/bubbleparty.sh) to wrap it in [bubblewrap](https://github.com/containers/bubblewrap) (much better)
+* or if you prefer to [use docker](./scripts/docker/) 🐋 you can do that too
+  * docker has all deps built-in, so skip this step:
 
-Project Page: &lt;https://genesis-embodied-ai.github.io/&gt;
+enable thumbnails (images/audio/video), media indexing, and audio transcoding by installing some recommended deps:
 
-## Key Features
+* **Alpine:** `apk add py3-pillow ffmpeg`
+* **Debian:** `apt install --no-install-recommends python3-pil ffmpeg`
+* **Fedora:** rpmfusion + `dnf install python3-pillow ffmpeg --allowerasing`
+* **FreeBSD:** `pkg install py39-sqlite3 py39-pillow ffmpeg`
+* **MacOS:** `port install py-Pillow ffmpeg`
+* **MacOS** (alternative): `brew install pillow ffmpeg`
+* **Windows:** `python -m pip install --user -U Pillow`
+  * install [python](https://www.python.org/downloads/windows/) and [ffmpeg](#optional-dependencies) manually; do not use `winget` or `Microsoft Store` (it breaks $PATH)
+  * copyparty.exe comes with `Pillow` and only needs [ffmpeg](#optional-dependencies) for mediatags/videothumbs
+* see [optional dependencies](#optional-dependencies) to enable even more features
 
-- **Speed**: Over 43 million FPS when simulating a Franka robotic arm with a single RTX 4090 (430,000 times faster than real-time).
-- **Cross-platform**: Runs on Linux, macOS, Windows, and supports multiple compute backends (CPU, Nvidia/AMD GPUs, Apple Metal).
-- **Integration of diverse physics solvers**: Rigid body, MPM, SPH, FEM, PBD, Stable Fluid.
-- **Wide range of material models**: Simulation and coupling of rigid bodies, liquids, gases, deformable objects, thin-shell objects, and granular materials.
-- **Compatibility with various robots**: Robotic arms, legged robots, drones, *soft robots*, and support for loading `MJCF (.xml)`, `URDF`, `.obj`, `.glb`, `.ply`, `.stl`, and more.
-- **Photo-realistic rendering**: Native ray-tracing-based rendering.
-- **Differentiability**: Genesis is designed to be fully differentiable. Currently, our MPM solver and Tool Solver support differentiability, with other solvers planned for future versions (starting with rigid &amp; articulated body solver).
-- **Physics-based tactile simulation**: Differentiable [tactile sensor simulation](https://github.com/Genesis-Embodied-AI/DiffTactile) coming soon (expected in version 0.3.0).
-- **User-friendliness**: Designed for simplicity, with intuitive installation and APIs.
+running copyparty without arguments (for example doubleclicking it on Windows) will give everyone read/write access to the current folder; you may want [accounts and volumes](#accounts-and-volumes)
 
-## Quick Installation
+or see [some usage examples](#complete-examples) for inspiration, or the [complete windows example](./docs/examples/windows.md)
 
-Install **PyTorch** first following the [official instructions](https://pytorch.org/get-started/locally/).
+some recommended options:
+* `-e2dsa` enables general [file indexing](#file-indexing)
+* `-e2ts` enables audio metadata indexing (needs either FFprobe or Mutagen)
+* `-v /mnt/music:/music:r:rw,foo -a foo:bar` shares `/mnt/music` as `/music`, `r`eadable by anyone, and read-write for user `foo`, password `bar`
+  * replace `:r:rw,foo` with `:r,foo` to only make the folder readable by `foo` and nobody else
+  * see [accounts and volumes](#accounts-and-volumes) (or `--help-accounts`) for the syntax and other permissions
 
-Then, install Genesis via PyPI:
-```bash
-pip install genesis-world  # Requires Python&gt;=3.10,&lt;3.13;
+
+### at home
+
+make it accessible over the internet  by starting a [cloudflare quicktunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/do-more-with-tunnels/trycloudflare/) like so:
+
+first download [cloudflared](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/) and then start the tunnel with `cloudflared tunnel --url http://127.0.0.1:3923`
+
+as the tunnel starts, it will show a URL which you can share to let anyone browse your stash or upload files to you
+
+but if you have a domain, then you probably want to skip the random autogenerated URL and instead make a [permanent cloudflare tunnel](#permanent-cloudflare-tunnel)
+
+since people will be connecting through cloudflare, run copyparty with `--xff-hdr cf-connecting-ip` to detect client IPs correctly
+
+
+### on servers
+
+you may also want these, especially on servers:
+
+* [contrib/systemd/copyparty.service](contrib/systemd/copyparty.service) to run copyparty as a systemd service (see guide inside)
+* [contrib/systemd/prisonparty.service](contrib/systemd/prisonparty.service) to run it in a chroot (for extra security)
+* [contrib/openrc/copyparty](contrib/openrc/copyparty) to run copyparty on Alpine / Gentoo
+* [contrib/rc/copyparty](contrib/rc/copyparty) to run copyparty on FreeBSD
+* [nixos module](#nixos-module) to run copyparty on NixOS hosts
+* [contrib/nginx/copyparty.conf](contrib/nginx/copyparty.conf) to [reverse-proxy](#reverse-proxy) behind nginx (for better https)
+
+and remember to open the ports you want; here&#039;s a complete example including every feature copyparty has to offer:
 ```
-
-For the latest version to date, make sure that `pip` is up-to-date via `pip install --upgrade pip`, then run command:
-```bash
-pip install git+https://github.com/Genesis-Embodied-AI/Genesis.git
+firewall-cmd --permanent --add-port={80,443,3921,3923,3945,3990}/tcp  # --zone=libvirt
+firewall-cmd --permanent --add-port=12000-12099/tcp  # --zone=libvirt
+firewall-cmd --permanent --add-port={69,1900,3969,5353}/udp  # --zone=libvirt
+firewall-cmd --reload
 ```
-Note that the package must still be updated manually to sync with main branch.
-
-Users seeking to edit the source code of Genesis are encourage to install Genesis in editable mode. First, make sure that `genesis-world` has been uninstalled, then clone the repository and install locally:
-```bash
-git clone https://github.com/Genesis-Embodied-AI/Genesis.git
-cd Genesis
-pip install -e &quot;.[dev]&quot;
-```
-
-## Docker
-
-If you want to use Genesis from Docker, you can first build the Docker image as:
-
-```bash
-docker build -t genesis -f docker/Dockerfile docker
-```
-
-Then you can run the examples inside the docker image (mounted to `/workspace/examples`):
-
-```bash
-xhost +local:root # Allow the container to access the display
-
-docker run --gpus all --rm -it \
--e DISPLAY=$DISPLAY \
--v /dev/dri:/dev/dri \
--v /tmp/.X11-unix/:/tmp/.X11-unix \
--v $PWD:/workspace \
-genesis
-```
-
-### AMD users
-AMD users can use Genesis using the `docker/Dockerfile.amdgpu` file, which is built by running:
-```
-docker build -t genesis-amd -f docker/Dockerfile.amdgpu docker
-```
-
-and can then be used by running:
-
-```xhost +local:docker \
-docker run -it --network=host \
- --device=/dev/kfd \
- --device=/dev/dri \
- --group-add=video \
- --ipc=host \
- --cap-add=SYS_PTRACE \
- --security-opt seccomp=unconfined \
- --shm-size 8G \
- -v $PWD:/workspace \
- -e DISPLAY=$DISPLAY \
- genesis-amd
- ```
-
-The examples will be accessible from `/workspace/examples`. Note: AMD users should use the vulkan backend. This means you will need to call `gs.init(vulkan)` to initialise Genesis.
+(69:tftp, 1900:ssdp, 3921:ftp, 3923:http/https, 3945:smb, 3969:tftp, 3990:ftps, 5353:mdns, 12000:passive-ftp)
 
 
-## Documentation
+## features
 
-Comprehensive documentation is available in [English](https://genesis-world.readthedocs.io/en/latest/user_guide/index.html), [Chinese](https://genesis-world.readthedocs.io/zh-cn/latest/user_guide/index.html), and [Japanese](https://genesis-world.readthedocs.io/ja/latest/user_guide/index.html). This includes detailed installation steps, tutorials, and API references.
+also see [comparison to similar software](./docs/versus.md)
 
-## Contributing to Genesis
+* backend stuff
+  * ☑ IPv6 + unix-sockets
+  * ☑ [multiprocessing](#performance) (actual multithreading)
+  * ☑ volumes (mountpoints)
+  * ☑ [accounts](#accounts-and-volumes)
+  * ☑ [ftp server](#ftp-server)
+  * ☑ [tftp server](#tftp-server)
+  * ☑ [webdav server](#webdav-server)
+  * ☑ [smb/cifs server](#smb-server)
+  * ☑ [qr-code](#qr-code) for quick access
+  * ☑ [upnp / zeroconf / mdns / ssdp](#zeroconf)
+  * ☑ [event hooks](#event-hooks) / script runner
+  * ☑ [reverse-proxy support](https://github.com/9001/copyparty#reverse-proxy)
+  * ☑ cross-platform (Windows, Linux, Macos, Android, FreeBSD, arm32/arm64, ppc64le, s390x, risc-v/riscv64)
+* upload
+  * ☑ basic: plain multipart, ie6 support
+  * ☑ [up2k](#uploading): js, resumable, multithreaded
+    * **no filesize limit!** even on Cloudflare
+  * ☑ stash: simple PUT filedropper
+  * ☑ filename randomizer
+  * ☑ write-only folders
+  * ☑ [unpost](#unpost): undo/delete accidental uploads
+  * ☑ [self-destruct](#self-destruct) (specified server-side or client-side)
+  * ☑ [race the beam](#race-the-beam) (almost like peer-to-peer)
+  * ☑ symlink/discard duplicates (content-matching)
+* download
+  * ☑ single files in browser
+  * ☑ [folders as zip / tar files](#zip-downloads)
+  * ☑ [FUSE client](https://github.com/9001/copyparty/tree/hovudstraum/bin#partyfusepy) (read-only)
+* browser
+  * ☑ [navpane](#navpane) (directory tree sidebar)
+  * ☑ file manager (cut/paste, delete, [batch-rename](#batch-rename))
+  * ☑ audio player (with [OS media controls](https://user-images.githubusercontent.com/241032/215347492-b4250797-6c90-4e09-9a4c-721edf2fb15c.png) and opus/mp3 transcoding)
+    * ☑ play video files as audio (converted on server)
+    * ☑ create and play [m3u8 playlists](#playlists)
+  * ☑ image gallery with webm player
+  * ☑ [textfile browser](#textfile-viewer) with syntax hilighting
+    * ☑ realtime streaming of growing files (logfiles and such)
+  * ☑ [thumbnails](#thumbnails)
+    * ☑ ...of images using Pillow, pyvips, or FFmpeg
+    * ☑ ...of videos using FFmpeg
+    * ☑ ...of audio (spectrograms) using FFmpeg
+    * ☑ cache eviction (max-age; maybe max-size eventually)
+  * ☑ multilingual UI (english, norwegian, chinese, [add your own](./docs/rice/#translations)))
+  * ☑ SPA (browse while uploading)
+* server indexing
+  * ☑ [locate files by contents](#file-search)
+  * ☑ search by name/path/date/size
+  * ☑ [search by ID3-tags etc.](#searching)
+* client support
+  * ☑ [folder sync](#folder-sync) (one-way only; full sync will never be supported)
+  * ☑ [curl-friendly](https://user-images.githubusercontent.com/241032/215322619-ea5fd606-3654-40ad-94ee-2bc058647bb2.png)
+  * ☑ [opengraph](#opengraph) (discord embeds)
+* markdown
+  * ☑ [viewer](#markdown-viewer)
+  * ☑ editor (sure why not)
+  * ☑ [variables](#markdown-vars)
 
-The Genesis project is an open and collaborative effort. We welcome all forms of contributions from the community, including:
+PS: something missing? post any crazy ideas you&#039;ve got as a [feature request](https://github.com/9001/copyparty/issues/new?assignees=9001&amp;labels=enhancement&amp;template=feature_request.md) or [discussion](https://github.com/9001/copyparty/discussions/new?category=ideas) 🤙
 
-- **Pull requests** for new features or bug fixes.
-- **Bug reports** through GitHub Issues.
-- **Suggestions** to improve Genesis&#039;s usability.
 
-Refer to our [contribution guide](https://github.com/Genesis-Embodied-AI/Genesis/blob/main/.github/CONTRIBUTING.md) for more details.
+## testimonials
 
-## Support
+small collection of user feedback
 
-- Report bugs or request features via GitHub [Issues](https://github.com/Genesis-Embodied-AI/Genesis/issues).
-- Join discussions or ask questions on GitHub [Discussions](https://github.com/Genesis-Embodied-AI/Genesis/discussions).
+`good enough`, `surprisingly correct`, `certified good software`, `just works`, `why`, `wow this is better than nextcloud`
 
-## License and Acknowledgments
+* UI просто ужасно. Если буду описывать детально не смогу удержаться в рамках приличий
 
-The Genesis source code is licensed under Apache 2.0.
 
-Genesis&#039;s development has been made possible thanks to these open-source projects:
+# motivations
 
-- [Taichi](https://github.com/taichi-dev/taichi): High-performance cross-platform compute backend. Kudos to the Taichi team for their technical support!
-- [FluidLab](https://github.com/zhouxian/FluidLab): Reference MPM solver implementation.
-- [SPH_Taichi](https://github.com/erizmr/SPH_Taichi): Reference SPH solver implementation.
-- [Ten Minute Physics](https://matthias-research.github.io/pages/tenMinutePhysics/index.html) and [PBF3D](https://github.com/WASD4959/PBF3D): Reference PBD solver implementations.
-- [MuJoCo](https://github.com/google-deepmind/mujoco): Reference for rigid body dynamics.
-- [libccd](https://github.com/danfis/libccd): Reference for collision detection.
-- [PyRender](https://github.com/mmatl/pyrender): Rasterization-based renderer.
-- [LuisaCompute](https://github.com/LuisaGroup/LuisaCompute) and [LuisaRender](https://github.com/LuisaGroup/LuisaRender): Ray-tracing DSL.
+project goals / philosophy
 
-## Associated Papers
+* inverse linux philosophy -- do all the things, and do an *okay* job
+  * quick drop-in service to get a lot of features in a pinch
+  * some of [the alternatives](./docs/versus.md) might be a better fit for you
+* run anywhere, support everything
+  * as many web-browsers and python versions as possible
 
-Genesis is a large scale effort that integrates state-of-the-art technologies of various existing and on-going research work into a single system. Here we include a non-exhaustive list of all the papers that contributed to the Genesis project in one way or another:
 
-- Xian, Zhou, et al. &quot;Fluidlab: A differentiable environment for benchmarking complex fluid manipulation.&quot; arXiv preprint arXiv:2303.02346 (2023).
-- Xu, Zhenjia, et al. &quot;Roboninja: Learning an adaptive cutting policy for multi-material objects.&quot; arXiv preprint arXiv:2302.11553 (2023).
-- Wang, Yufei, et al. &quot;Robogen: Towards unleashing infinite data for automated robot learning via generative simulation.&quot; arXiv preprint arXiv:2311.01455 (2023).
-- Wang, Tsun-Hsuan, et al. &quot;Softzoo: A soft robot co-design benchmark for locomotion in diverse environments.&quot; arXiv preprint arXiv:2303.09555 (2023).
-- Wang, Tsun-Hsuan Johnson, et al. &quot;Diffusebot: Breeding soft robots with physics-augmented generative diffusion models.&quot; Advances in Neural Information Processing Systems 36 (2023): 44398-44423.
-- Katara, Pushkal, Zhou Xian, and Katerina Fragkiadaki. &quot;Gen2sim: Scaling up robot learning in simulation with generative models.&quot; 2024 IEEE International Conference on Robotics and Automation (ICRA). IEEE, 2024.
-- Si, Zilin, et al. &quot;DiffTactile: A Physics-based Differentiable Tactile Simulator for Contact-rich Robotic Manipulation.&quot; arXiv preprint arXiv:2403.08716 (2024).
-- Wang, Yian, et al. &quot;Thin-Shell Object Manipulations With Differentiable Physics Simulations.&quot; arXiv preprint arXiv:2404.00451 (2024).
-- Lin, Chunru, et al. &quot;UBSoft: A Simulation Platform for Robotic Skill Learning in Unbounded Soft Environments.&quot; arXiv preprint arXiv:2411.12711 (2024).
-- Zhou, Wenyang, et al. &quot;EMDM: Efficient motion diffusion model for fast and high-quality motion generation.&quot; European Conference on Computer Vision. Springer, Cham, 2025.
-- Qiao, Yi-Ling, Junbang Liang, Vladlen Koltun, and Ming C. Lin. &quot;Scalable differentiable physics for learning and control.&quot; International Conference on Machine Learning. PMLR, 2020.
-- Qiao, Yi-Ling, Junbang Liang, Vladlen Koltun, and Ming C. Lin. &quot;Efficient differentiable simulation of articulated bodies.&quot; In International Conference on Machine Learning, PMLR, 2021.
-- Qiao, Yi-Ling, Junbang Liang, Vladlen Koltun, and Ming Lin. &quot;Differentiable simulation of soft multi-body systems.&quot; Advances in Neural Information Processing Systems 34 (2021).
-- Wan, Weilin, et al. &quot;Tlcontrol: Trajectory and language control for human motion synthesis.&quot; arXiv preprint arXiv:2311.17135 (2023).
-- Wang, Yian, et al. &quot;Architect: Generating Vivid and Interactive 3D Scenes with Hierarchical 2D Inpainting.&quot; arXiv preprint arXiv:2411.09823 (2024).
-- Zheng, Shaokun, et al. &quot;LuisaRender: A high-performance rendering framework with layered and unified interfaces on stream architectures.&quot; ACM Transactions on Graphics (TOG) 41.6 (2022): 1-19.
-- Fan, Yingruo, et al. &quot;Faceformer: Speech-driven 3d facial animation with transformers.&quot; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2022.
-- Wu, Sichun, Kazi Injamamul Haque, and Zerrin Yumak. &quot;ProbTalk3D: Non-Deterministic Emotion Controllable Speech-Driven 3D Facial Animation Synthesis Using VQ-VAE.&quot; Proceedings of the 17th ACM SIGGRAPH Conference on Motion, Interaction, and Games. 2024.
-- Dou, Zhiyang, et al. &quot;C· ase: Learning conditional adversarial skill embeddings for physics-based characters.&quot; SIGGRAPH Asia 2023 Conference Papers. 2023.
-
-... and many more on-going work.
-
-## Citation
-
-If you use Genesis in your research, please consider citing:
-
-```bibtex
-@misc{Genesis,
-  author = {Genesis Authors},
-  title = {Genesis: A Generative and Universal Physics Engine for Robotics and Beyond},
-  month = {December},
-  year = {2024},
-  url = {https://github.com/Genesis-Embodied-AI/Genesis}
-}
-</pre>
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
             <category>Python</category>
         </item>
@@ -243,15 +335,15 @@ If you use Genesis in your research, please consider citing:
             <title><![CDATA[Shubhamsaboo/awesome-llm-apps]]></title>
             <link>https://github.com/Shubhamsaboo/awesome-llm-apps</link>
             <guid>https://github.com/Shubhamsaboo/awesome-llm-apps</guid>
-            <pubDate>Mon, 28 Jul 2025 00:05:05 GMT</pubDate>
+            <pubDate>Wed, 30 Jul 2025 00:04:59 GMT</pubDate>
             <description><![CDATA[Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/Shubhamsaboo/awesome-llm-apps">Shubhamsaboo/awesome-llm-apps</a></h1>
             <p>Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.</p>
             <p>Language: Python</p>
-            <p>Stars: 52,136</p>
-            <p>Forks: 6,100</p>
-            <p>Stars today: 488 stars today</p>
+            <p>Stars: 53,535</p>
+            <p>Forks: 6,220</p>
+            <p>Stars today: 638 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
   &lt;a href=&quot;http://www.theunwindai.com&quot;&gt;
     &lt;img src=&quot;docs/banner/unwind_black.png&quot; width=&quot;900px&quot; alt=&quot;Unwind AI&quot;&gt;
@@ -444,173 +536,18 @@ Contributions are welcome! If you have any ideas, improvements, or new apps to a
             <category>Python</category>
         </item>
         <item>
-            <title><![CDATA[frappe/hrms]]></title>
-            <link>https://github.com/frappe/hrms</link>
-            <guid>https://github.com/frappe/hrms</guid>
-            <pubDate>Mon, 28 Jul 2025 00:05:04 GMT</pubDate>
-            <description><![CDATA[Open Source HR and Payroll Software]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/frappe/hrms">frappe/hrms</a></h1>
-            <p>Open Source HR and Payroll Software</p>
-            <p>Language: Python</p>
-            <p>Stars: 4,864</p>
-            <p>Forks: 1,405</p>
-            <p>Stars today: 323 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-	&lt;a href=&quot;https://frappe.io/hr&quot;&gt;
-		&lt;img src=&quot;.github/frappe-hr-logo.png&quot; height=&quot;80px&quot; width=&quot;80px&quot; alt=&quot;Frappe HR Logo&quot;&gt;
-	&lt;/a&gt;
-	&lt;h2&gt;Frappe HR&lt;/h2&gt;
-	&lt;p align=&quot;center&quot;&gt;
-		&lt;p&gt;Open Source, modern, and easy-to-use HR and Payroll Software&lt;/p&gt;
-	&lt;/p&gt;
-
-[![CI](https://github.com/frappe/hrms/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/frappe/hrms/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/frappe/hrms/branch/develop/graph/badge.svg?token=0TwvyUg3I5)](https://codecov.io/gh/frappe/hrms)
-
-&lt;a href=&quot;https://trendshift.io/repositories/10972&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/10972&quot; alt=&quot;frappe%2Fhrms | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-	&lt;img src=&quot;.github/hrms-hero.png&quot;/&gt;
-&lt;/div&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-	&lt;a href=&quot;https://frappe.io/hr&quot;&gt;Website&lt;/a&gt;
-	-
-	&lt;a href=&quot;https://docs.frappe.io/hr/introduction&quot;&gt;Documentation&lt;/a&gt;
-&lt;/div&gt;
-
-## Frappe HR
-
-Frappe HR has everything you need to drive excellence within the company. It&#039;s a complete HRMS solution with over 13 different modules right from Employee Management, Onboarding, Leaves, to Payroll, Taxation, and more!
-
-## Motivation
-When Frappe team started growing in terms of size, we needed an open-source HR and Payroll software. We didn&#039;t find any &quot;true&quot; open-source HR software out there and so decided to build one ourselves.
-Initially, it was a set of modules within ERPNext but version 14 onwards, as the modules became more mature, Frappe HR was created as a separate product.
-
-## Key Features
-
-- **Employee Lifecycle**: From onboarding employees, managing promotions and transfers, all the way to documenting feedback with exit interviews, make life easier for employees throughout their life cycle.
-- **Leave and Attendance**: Configure leave policies, pull regional holidays with a click, check-in and check-out with geolocation capturing, track leave balances and attendance with reports.
-- **Expense Claims and Advances**: Manage employee advances, claim expenses, configure multi-level approval workflows, all this with seamless integration with ERPNext accounting.
-- **Performance Management**: Track goals, align goals with key result areas (KRAs), enable employees to evaluate themselves, make managing appraisal cycles easy.
-- **Payroll &amp; Taxation**: Create salary structures, configure income tax slabs, run standard payroll, accomodate additional salaries and off cycle payments, view income breakup on salary slips and so much more.
-- **Frappe HR Mobile App**: Apply for and approve leaves on the go, check-in and check-out, access employee profile right from the mobile app.
-
-&lt;details open&gt;
-
-&lt;summary&gt;View Screenshots&lt;/summary&gt;
-	&lt;img src=&quot;.github/hrms-appraisal.png&quot;/&gt;
-	&lt;img src=&quot;.github/hrms-requisition.png&quot;/&gt;
-	&lt;img src=&quot;.github/hrms-attendance.png&quot;/&gt;
-	&lt;img src=&quot;.github/hrms-salary.png&quot;/&gt;
-	&lt;img src=&quot;.github/hrms-pwa.png&quot;/&gt;
-&lt;/details&gt;
-
-### Under the Hood
-
-- [**Frappe Framework**](https://github.com/frappe/frappe): A full-stack web application framework written in Python and Javascript. The framework provides a robust foundation for building web applications, including a database abstraction layer, user authentication, and a REST API.
-
-- [**Frappe UI**](https://github.com/frappe/frappe-ui): A Vue-based UI library, to provide a modern user interface. The Frappe UI library provides a variety of components that can be used to build single-page applications on top of the Frappe Framework.
-
-## Production Setup
-
-### Managed Hosting
-
-You can try [Frappe Cloud](https://frappecloud.com), a simple, user-friendly and sophisticated [open-source](https://github.com/frappe/press) platform to host Frappe applications with peace of mind.
-
-It takes care of installation, setup, upgrades, monitoring, maintenance and support of your Frappe deployments. It is a fully featured developer platform with an ability to manage and control multiple Frappe deployments.
-
-&lt;div&gt;
-	&lt;a href=&quot;https://frappecloud.com/hrms/signup&quot; target=&quot;_blank&quot;&gt;
-		&lt;picture&gt;
-			&lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://frappe.io/files/try-on-fc-white.png&quot;&gt;
-			&lt;img src=&quot;https://frappe.io/files/try-on-fc-black.png&quot; alt=&quot;Try on Frappe Cloud&quot; height=&quot;28&quot; /&gt;
-		&lt;/picture&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-
-
-## Development setup
-### Docker
-You need Docker, docker-compose and git setup on your machine. Refer [Docker documentation](https://docs.docker.com/). After that, run the following commands:
-```
-git clone https://github.com/frappe/hrms
-cd hrms/docker
-docker-compose up
-```
-
-Wait for some time until the setup script creates a site. After that you can access `http://localhost:8000` in your browser and the login screen for HR should show up.
-
-Use the following credentials to log in:
-
-- Username: `Administrator`
-- Password: `admin`
-
-### Local
-
-1. Set up bench by following the [Installation Steps](https://frappeframework.com/docs/user/en/installation) and start the server and keep it running
-	```sh
-	$ bench start
-	```
-2. In a separate terminal window, run the following commands
-	```sh
-	$ bench new-site hrms.local
-	$ bench get-app erpnext
-	$ bench get-app hrms
-	$ bench --site hrms.local install-app hrms
-	$ bench --site hrms.local add-to-hosts
-	```
-3. You can access the site at `http://hrms.local:8080`
-
-## Learning and Community
-
-1. [Frappe School](https://frappe.school) - Learn Frappe Framework and ERPNext from the various courses by the maintainers or from the community.
-2. [Documentation](https://docs.frappe.io/hr) - Extensive documentation for Frappe HR.
-3. [User Forum](https://discuss.erpnext.com/) - Engage with the community of ERPNext users and service providers.
-4. [Telegram Group](https://t.me/frappehr) - Get instant help from the community of users.
-
-
-## Contributing
-
-1. [Issue Guidelines](https://github.com/frappe/erpnext/wiki/Issue-Guidelines)
-1. [Report Security Vulnerabilities](https://erpnext.com/security)
-1. [Pull Request Requirements](https://github.com/frappe/erpnext/wiki/Contribution-Guidelines)
-
-
-## Logo and Trademark Policy
-
-Please read our [Logo and Trademark Policy](TRADEMARK_POLICY.md).
-
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;div align=&quot;center&quot; style=&quot;padding-top: 0.75rem;&quot;&gt;
-	&lt;a href=&quot;https://frappe.io&quot; target=&quot;_blank&quot;&gt;
-		&lt;picture&gt;
-			&lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://frappe.io/files/Frappe-white.png&quot;&gt;
-			&lt;img src=&quot;https://frappe.io/files/Frappe-black.png&quot; alt=&quot;Frappe Technologies&quot; height=&quot;28&quot;/&gt;
-		&lt;/picture&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-
-</pre>
-          ]]></content:encoded>
-            <category>Python</category>
-        </item>
-        <item>
             <title><![CDATA[daveebbelaar/ai-cookbook]]></title>
             <link>https://github.com/daveebbelaar/ai-cookbook</link>
             <guid>https://github.com/daveebbelaar/ai-cookbook</guid>
-            <pubDate>Mon, 28 Jul 2025 00:05:03 GMT</pubDate>
+            <pubDate>Wed, 30 Jul 2025 00:04:58 GMT</pubDate>
             <description><![CDATA[Examples and tutorials to help developers build AI systems]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/daveebbelaar/ai-cookbook">daveebbelaar/ai-cookbook</a></h1>
             <p>Examples and tutorials to help developers build AI systems</p>
             <p>Language: Python</p>
-            <p>Stars: 1,764</p>
-            <p>Forks: 794</p>
-            <p>Stars today: 33 stars today</p>
+            <p>Stars: 2,330</p>
+            <p>Forks: 835</p>
+            <p>Stars today: 268 stars today</p>
             <h2>README</h2><pre># Introduction
 
 This Cookbook contains examples and tutorials to help developers build AI systems, offering copy/paste code snippets that you can easily integrate into your own projects.
@@ -643,91 +580,678 @@ Whether you&#039;re a learner, a freelancer, or a business looking for AI expert
             <category>Python</category>
         </item>
         <item>
-            <title><![CDATA[OWASP/Nest]]></title>
-            <link>https://github.com/OWASP/Nest</link>
-            <guid>https://github.com/OWASP/Nest</guid>
-            <pubDate>Mon, 28 Jul 2025 00:05:02 GMT</pubDate>
-            <description><![CDATA[Your gateway to OWASP. Discover, engage, and help shape the future!]]></description>
+            <title><![CDATA[sinaptik-ai/pandas-ai]]></title>
+            <link>https://github.com/sinaptik-ai/pandas-ai</link>
+            <guid>https://github.com/sinaptik-ai/pandas-ai</guid>
+            <pubDate>Wed, 30 Jul 2025 00:04:57 GMT</pubDate>
+            <description><![CDATA[Chat with your database or your datalake (SQL, CSV, parquet). PandasAI makes data analysis conversational using LLMs and RAG.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/OWASP/Nest">OWASP/Nest</a></h1>
-            <p>Your gateway to OWASP. Discover, engage, and help shape the future!</p>
+            <h1><a href="https://github.com/sinaptik-ai/pandas-ai">sinaptik-ai/pandas-ai</a></h1>
+            <p>Chat with your database or your datalake (SQL, CSV, parquet). PandasAI makes data analysis conversational using LLMs and RAG.</p>
             <p>Language: Python</p>
-            <p>Stars: 125</p>
-            <p>Forks: 158</p>
-            <p>Stars today: 6 stars today</p>
+            <p>Stars: 21,163</p>
+            <p>Forks: 2,048</p>
+            <p>Stars today: 31 stars today</p>
+            <h2>README</h2><pre># ![PandasAI](assets/logo.png)
+
+[![Release](https://img.shields.io/pypi/v/pandasai?label=Release&amp;style=flat-square)](https://pypi.org/project/pandasai/)
+[![CI](https://github.com/sinaptik-ai/pandas-ai/actions/workflows/ci-core.yml/badge.svg)](https://github.com/sinaptik-ai/pandas-ai/actions/workflows/ci-core.yml/badge.svg)
+[![CD](https://github.com/sinaptik-ai/pandas-ai/actions/workflows/cd.yml/badge.svg)](https://github.com/sinaptik-ai/pandas-ai/actions/workflows/cd.yml/badge.svg)
+[![Coverage](https://codecov.io/gh/sinaptik-ai/pandas-ai/branch/main/graph/badge.svg)](https://codecov.io/gh/sinaptik-ai/pandas-ai)
+[![Discord](https://dcbadge.vercel.app/api/server/kF7FqH2FwS?style=flat&amp;compact=true)](https://discord.gg/KYKj9F2FRH)
+[![Downloads](https://static.pepy.tech/badge/pandasai)](https://pepy.tech/project/pandasai) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ZnO-njhL7TBOYPZaqvMvGtsjckZKrv2E?usp=sharing)
+
+PandasAI is a Python platform that makes it easy to ask questions to your data in natural language. It helps non-technical users to interact with their data in a more natural way, and it helps technical users to save time, and effort when working with data.
+
+# 🔧 Getting started
+
+You can find the full documentation for PandasAI [here](https://pandas-ai.readthedocs.io/en/latest/).
+
+You can either decide to use PandasAI in your Jupyter notebooks, Streamlit apps, or use the client and server architecture from the repo.
+
+## 📚 Using the library
+
+### Python Requirements
+
+Python version `3.8+ &lt;3.12`
+
+### 📦 Installation
+
+You can install the PandasAI library using pip or poetry.
+
+With pip:
+
+```bash
+pip install &quot;pandasai&gt;=3.0.0b2&quot;
+```
+
+With poetry:
+
+```bash
+poetry add &quot;pandasai&gt;=3.0.0b2&quot;
+```
+
+### 💻 Usage
+
+#### Ask questions
+
+```python
+import pandasai as pai
+from pandasai_openai.openai import OpenAI
+
+llm = OpenAI(&quot;OPEN_AI_API_KEY&quot;)
+
+pai.config.set({
+    &quot;llm&quot;: llm
+})
+
+# Sample DataFrame
+df = pai.DataFrame({
+    &quot;country&quot;: [&quot;United States&quot;, &quot;United Kingdom&quot;, &quot;France&quot;, &quot;Germany&quot;, &quot;Italy&quot;, &quot;Spain&quot;, &quot;Canada&quot;, &quot;Australia&quot;, &quot;Japan&quot;, &quot;China&quot;],
+    &quot;revenue&quot;: [5000, 3200, 2900, 4100, 2300, 2100, 2500, 2600, 4500, 7000]
+})
+
+df.chat(&#039;Which are the top 5 countries by sales?&#039;)
+```
+
+```
+China, United States, Japan, Germany, Australia
+```
+
+---
+
+Or you can ask more complex questions:
+
+```python
+df.chat(
+    &quot;What is the total sales for the top 3 countries by sales?&quot;
+)
+```
+
+```
+The total sales for the top 3 countries by sales is 16500.
+```
+
+#### Visualize charts
+
+You can also ask PandasAI to generate charts for you:
+
+```python
+df.chat(
+    &quot;Plot the histogram of countries showing for each one the gd. Use different colors for each bar&quot;,
+)
+```
+
+![Chart](assets/histogram-chart.png?raw=true)
+
+#### Multiple DataFrames
+
+You can also pass in multiple dataframes to PandasAI and ask questions relating them.
+
+```python
+import pandasai as pai
+from pandasai_openai.openai import OpenAI
+
+employees_data = {
+    &#039;EmployeeID&#039;: [1, 2, 3, 4, 5],
+    &#039;Name&#039;: [&#039;John&#039;, &#039;Emma&#039;, &#039;Liam&#039;, &#039;Olivia&#039;, &#039;William&#039;],
+    &#039;Department&#039;: [&#039;HR&#039;, &#039;Sales&#039;, &#039;IT&#039;, &#039;Marketing&#039;, &#039;Finance&#039;]
+}
+
+salaries_data = {
+    &#039;EmployeeID&#039;: [1, 2, 3, 4, 5],
+    &#039;Salary&#039;: [5000, 6000, 4500, 7000, 5500]
+}
+
+llm = OpenAI(&quot;OPEN_AI_API_KEY&quot;)
+
+pai.config.set({
+    &quot;llm&quot;: llm
+})
+
+employees_df = pai.DataFrame(employees_data)
+salaries_df = pai.DataFrame(salaries_data)
+
+
+pai.chat(&quot;Who gets paid the most?&quot;, employees_df, salaries_df)
+```
+
+```
+Olivia gets paid the most.
+```
+
+#### Docker Sandbox
+
+You can run PandasAI in a Docker sandbox, providing a secure, isolated environment to execute code safely and mitigate the risk of malicious attacks.
+
+##### Python Requirements
+
+```bash
+pip install &quot;pandasai-docker&quot;
+```
+
+##### Usage
+
+```python
+import pandasai as pai
+from pandasai_docker import DockerSandbox
+from pandasai_openai.openai import OpenAI
+
+# Initialize the sandbox
+sandbox = DockerSandbox()
+sandbox.start()
+
+employees_data = {
+    &#039;EmployeeID&#039;: [1, 2, 3, 4, 5],
+    &#039;Name&#039;: [&#039;John&#039;, &#039;Emma&#039;, &#039;Liam&#039;, &#039;Olivia&#039;, &#039;William&#039;],
+    &#039;Department&#039;: [&#039;HR&#039;, &#039;Sales&#039;, &#039;IT&#039;, &#039;Marketing&#039;, &#039;Finance&#039;]
+}
+
+salaries_data = {
+    &#039;EmployeeID&#039;: [1, 2, 3, 4, 5],
+    &#039;Salary&#039;: [5000, 6000, 4500, 7000, 5500]
+}
+
+llm = OpenAI(&quot;OPEN_AI_API_KEY&quot;)
+
+pai.config.set({
+    &quot;llm&quot;: llm
+})
+
+employees_df = pai.DataFrame(employees_data)
+salaries_df = pai.DataFrame(salaries_data)
+
+pai.chat(&quot;Who gets paid the most?&quot;, employees_df, salaries_df, sandbox=sandbox)
+
+# Don&#039;t forget to stop the sandbox when done
+sandbox.stop()
+```
+
+```
+Olivia gets paid the most.
+```
+
+You can find more examples in the [examples](examples) directory.
+
+## 📜 License
+
+PandasAI is available under the MIT expat license, except for the `pandasai/ee` directory of this repository, which has its [license here](https://github.com/sinaptik-ai/pandas-ai/blob/main/ee/LICENSE).
+
+If you are interested in managed PandasAI Cloud or self-hosted Enterprise Offering, [contact us](https://getpanda.ai/pricing).
+
+## Resources
+
+&gt; **Beta Notice**  
+&gt; Release v3 is currently in beta. The following documentation and examples reflect the features and functionality in progress and may change before the final release.
+
+- [Docs](https://pandas-ai.readthedocs.io/en/latest/) for comprehensive documentation
+- [Examples](examples) for example notebooks
+- [Discord](https://discord.gg/KYKj9F2FRH) for discussion with the community and PandasAI team
+
+## 🤝 Contributing
+
+Contributions are welcome! Please check the outstanding issues and feel free to open a pull request.
+For more information, please check out the [contributing guidelines](CONTRIBUTING.md).
+
+### Thank you!
+
+[![Contributors](https://contrib.rocks/image?repo=sinaptik-ai/pandas-ai)](https://github.com/sinaptik-ai/pandas-ai/graphs/contributors)
+</pre>
+          ]]></content:encoded>
+            <category>Python</category>
+        </item>
+        <item>
+            <title><![CDATA[allenai/olmocr]]></title>
+            <link>https://github.com/allenai/olmocr</link>
+            <guid>https://github.com/allenai/olmocr</guid>
+            <pubDate>Wed, 30 Jul 2025 00:04:56 GMT</pubDate>
+            <description><![CDATA[Toolkit for linearizing PDFs for LLM datasets/training]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/allenai/olmocr">allenai/olmocr</a></h1>
+            <p>Toolkit for linearizing PDFs for LLM datasets/training</p>
+            <p>Language: Python</p>
+            <p>Stars: 13,379</p>
+            <p>Forks: 983</p>
+            <p>Stars today: 20 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+  &lt;!-- &lt;img src=&quot;https://github.com/allenai/OLMo/assets/8812459/774ac485-a535-4768-8f7c-db7be20f5cc3&quot; width=&quot;300&quot;/&gt; --&gt;
+&lt;img src=&quot;https://github.com/user-attachments/assets/d70c8644-3e64-4230-98c3-c52fddaeccb6&quot; alt=&quot;olmOCR Logo&quot; width=&quot;300&quot;/&gt;
+&lt;hr/&gt;
+&lt;/div&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://github.com/allenai/OLMo/blob/main/LICENSE&quot;&gt;
+    &lt;img alt=&quot;GitHub License&quot; src=&quot;https://img.shields.io/github/license/allenai/OLMo&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://github.com/allenai/olmocr/releases&quot;&gt;
+    &lt;img alt=&quot;GitHub release&quot; src=&quot;https://img.shields.io/github/release/allenai/olmocr.svg&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://olmocr.allenai.org/papers/olmocr.pdf&quot;&gt;
+    &lt;img alt=&quot;Tech Report&quot; src=&quot;https://img.shields.io/badge/Paper-olmOCR-blue&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://olmocr.allenai.org&quot;&gt;
+    &lt;img alt=&quot;Demo&quot; src=&quot;https://img.shields.io/badge/Ai2-Demo-F0529C&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://discord.gg/sZq3jTNVNG&quot;&gt;
+    &lt;img alt=&quot;Discord&quot; src=&quot;https://img.shields.io/badge/Discord%20-%20blue?style=flat&amp;logo=discord&amp;label=Ai2&amp;color=%235B65E9&quot;&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
 
-&lt;picture&gt;
-  &lt;source srcset=&quot;https://nest.owasp.org/img/owasp_icon_white_sm.png&quot; media=&quot;(prefers-color-scheme: dark)&quot;&gt;
-  &lt;img src=&quot;https://nest.owasp.org/img/owasp_icon_black_sm.png&quot; alt=&quot;OWASP Logo&quot; width=&quot;200&quot;&gt;
-&lt;/picture&gt;
+A toolkit for converting PDFs and other image-based document formats into clean, readable, plain text format.
 
-# [OWASP Nest](https://nest.owasp.org/)
+Try the online demo: [https://olmocr.allenai.org/](https://olmocr.allenai.org/)
 
-[![OWASP](https://img.shields.io/badge/OWASP-Incubator-blue?style=for-the-badge)](https://owasp.org/www-project-nest/) ![OWASP](https://img.shields.io/badge/OWASP-Code-blue?style=for-the-badge) [![Project-Nest](https://img.shields.io/badge/OWASP-%23project--nest-blue?logo=slack&amp;logoColor=white&amp;style=for-the-badge)](https://owasp.slack.com/messages/project-nest)
+Features:
+ - Convert PDF, PNG, and JPEG based documents into clean Markdown
+ - Support for equations, tables, handwriting, and complex formatting
+ - Automatically removes headers and footers
+ - Convert into text with a natural reading order, even in the presence of
+   figures, multi-column layouts, and insets
+ - Efficient, less than $200 USD per million pages converted
+ - (Based on a 7B parameter VLM, so it requires a GPU)
 
-![License](https://img.shields.io/github/license/owasp/nest?color=41BE4A&amp;label=License&amp;style=for-the-badge) ![Last Commit](https://img.shields.io/github/last-commit/owasp/nest/main?style=for-the-badge&amp;label=Last%20commit) ![Contributors](https://img.shields.io/github/contributors/owasp/nest?style=for-the-badge&amp;label=Contributors)
+### News
+ - July 24, 2025 - v0.2.1 - [New model release](https://huggingface.co/allenai/olmOCR-7B-0725-FP8), scores 3 points higher on [olmOCR-Bench](https://github.com/allenai/olmocr/tree/main/olmocr/bench), also runs significantly faster because it&#039;s default FP8, and needs much fewer retries per document.
+ - July 23, 2025 - v0.2.0 - New cleaned up [trainer code](https://github.com/allenai/olmocr/tree/main/olmocr/train), makes it much simpler to train olmOCR models yourself.
+ - June 17, 2025 - v0.1.75 - Switch from sglang to vllm based inference pipeline, updated docker image to CUDA 12.8.
+ - May 23, 2025 - v0.1.70 - Official docker support and images are now available! [See Docker usage](#using-docker)
+ - May 19, 2025 - v0.1.68 - [olmOCR-Bench](https://github.com/allenai/olmocr/tree/main/olmocr/bench) launch, scoring 77.4. Launch includes 2 point performance boost in olmOCR pipeline due to bug fixes with prompts.
+ - Mar 17, 2025 - v0.1.60 - Performance improvements due to better temperature selection in sampling.
+ - Feb 25, 2025 - v0.1.58 -  Initial public launch and demo.
 
-[![CI/CD](https://img.shields.io/github/actions/workflow/status/owasp/nest/run-ci-cd.yaml?branch=main&amp;label=Build&amp;style=for-the-badge)](https://github.com/owasp/nest/actions/workflows/run-ci-cd.yaml?query=branch%3Amain) [![CodeQL](https://img.shields.io/github/actions/workflow/status/owasp/nest/run-code-ql.yaml?branch=main&amp;label=CodeQL&amp;style=for-the-badge)](https://github.com/owasp/nest/actions/workflows/run-code-ql.yaml?query=branch%3Amain) [![Sonarqube](https://img.shields.io/sonar/quality_gate/OWASP_Nest?server=https://sonarcloud.io&amp;style=for-the-badge&amp;label=Sonarqube)](https://sonarcloud.io/project/information?id=OWASP_Nest)
+### Benchmark
 
-![Issues](https://img.shields.io/github/issues/owasp/nest?color=blue&amp;style=for-the-badge&amp;label=Issues) ![Pull Requests](https://img.shields.io/github/issues-pr/owasp/nest?color=blue&amp;style=for-the-badge&amp;label=Pull%20Requests)
+[**olmOCR-Bench**](https://github.com/allenai/olmocr/tree/main/olmocr/bench):
+We also ship a comprehensive benchmark suite covering over 7,000 test cases across 1,400 documents to help measure performance of OCR systems. 
 
-[![OpenSSF](https://img.shields.io/badge/OpenSSF-84%25-blue?style=for-the-badge)](https://www.bestpractices.dev/projects/10174) [![Snyk Security](https://img.shields.io/badge/Snyk-Scanned-blue?style=for-the-badge)](https://snyk.io)
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th align=&quot;left&quot;&gt;&lt;strong&gt;Model&lt;/strong&gt;&lt;/th&gt;
+      &lt;th align=&quot;center&quot;&gt;ArXiv&lt;/th&gt;
+      &lt;th align=&quot;center&quot;&gt;Old Scans Math&lt;/th&gt;
+      &lt;th align=&quot;center&quot;&gt;Tables&lt;/th&gt;
+      &lt;th align=&quot;center&quot;&gt;Old Scans&lt;/th&gt;
+      &lt;th align=&quot;center&quot;&gt;Headers and Footers&lt;/th&gt;
+      &lt;th align=&quot;center&quot;&gt;Multi column&lt;/th&gt;
+      &lt;th align=&quot;center&quot;&gt;Long tiny text&lt;/th&gt;
+      &lt;th align=&quot;center&quot;&gt;Base&lt;/th&gt;
+      &lt;th align=&quot;center&quot;&gt;Overall&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;left&quot;&gt;Marker v1.7.5 (base, force_ocr)&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;76.0&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;57.9&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;57.6&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;27.8&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;84.9&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;72.9&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;&lt;strong&gt;84.6&lt;/strong&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;99.1&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;70.1 ± 1.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;left&quot;&gt;MinerU v1.3.10&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;75.4&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;47.4&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;60.9&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;17.3&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;&lt;strong&gt;96.6&lt;/strong&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;59.0&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;39.1&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;96.6&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;61.5 ± 1.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;left&quot;&gt;Mistral OCR API&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;77.2&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;67.5&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;60.6&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;29.3&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;93.6&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;71.3&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;77.1&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;&lt;strong&gt;99.4&lt;/strong&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;72.0 ± 1.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;left&quot;&gt;olmOCR v0.1.75 (Anchored)&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;74.9&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;71.2&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;71.0&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;42.2&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;94.5&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;78.3&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;73.3&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;98.3&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;75.5 ± 1.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;left&quot;&gt;olmOCR v0.2.0&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;&lt;strong&gt;78.8&lt;/strong&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;&lt;strong&gt;77.5&lt;/strong&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;71.9&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;&lt;strong&gt;45.4&lt;/strong&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;94.2&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;&lt;strong&gt;78.6&lt;/strong&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;81.4&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;&lt;strong&gt;99.8&lt;/strong&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;&lt;strong&gt;78.5 ± 1.1&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
-![Forks](https://img.shields.io/github/forks/owasp/nest?style=for-the-badge&amp;label=Forks) ![Stars](https://img.shields.io/github/stars/owasp/nest?style=for-the-badge&amp;label=Stars)
 
-[![CREATED](https://img.shields.io/badge/created-aug,%202024-blue?style=for-the-badge)](https://github.com/OWASP/Nest/commit/2a213c2efcfc2f8889c2f1d330da0d2e6f649fc1)
+### Installation
 
+Requirements:
+ - Recent NVIDIA GPU (tested on RTX 4090, L40S, A100, H100) with at least 20 GB of GPU RAM
+ - 30GB of free disk space
+
+You will need to install poppler-utils and additional fonts for rendering PDF images.
+
+Install dependencies (Ubuntu/Debian)
+```bash
+sudo apt-get update
+sudo apt-get install poppler-utils ttf-mscorefonts-installer msttcorefonts fonts-crosextra-caladea fonts-crosextra-carlito gsfonts lcdf-typetools
+```
+
+Set up a conda environment and install olmocr. The requirements for running olmOCR
+are difficult to install in an existing python environment, so please do make a clean python environment to install into.
+```bash
+conda create -n olmocr python=3.11
+conda activate olmocr
+
+# For CPU-only operations, ex running the benchmark
+pip install olmocr[bench]
+
+# For actually converting the files with your own GPU
+pip install olmocr[gpu]  --extra-index-url https://download.pytorch.org/whl/cu128
+
+# Recommended: Install flash infer for faster inference on GPU
+pip install https://download.pytorch.org/whl/cu128/flashinfer/flashinfer_python-0.2.5%2Bcu128torch2.7-cp38-abi3-linux_x86_64.whl
+```
+
+### Local Usage Example
+
+For quick testing, try the [web demo](https://olmocr.allen.ai/). To run locally, a GPU is required, as inference is powered by [sglang](https://github.com/sgl-project/sglang) under the hood.
+
+Convert a Single PDF:
+```bash
+# Download a sample PDF
+curl -o olmocr-sample.pdf https://olmocr.allenai.org/papers/olmocr_3pg_sample.pdf
+
+# Convert it to markdown
+python -m olmocr.pipeline ./localworkspace --markdown --pdfs olmocr-sample.pdf
+```
+
+Convert an Image file:
+```bash
+python -m olmocr.pipeline ./localworkspace --markdown --pdfs random_page.png
+```
+
+Convert Multiple PDFs:
+```bash
+python -m olmocr.pipeline ./localworkspace --markdown --pdfs tests/gnarly_pdfs/*.pdf
+```
+
+With the addition of the `--markdown` flag, results will be stored as markdown files inside of `./localworkspace/markdown/`. 
+
+#### Viewing Results
+
+The `./localworkspace/` workspace folder will then have both [Dolma](https://github.com/allenai/dolma) and markdown files (if using `--markdown`).
+
+
+```bash
+cat localworkspace/markdown/olmocr-sample.md 
+```
+
+```
+olmOCR: Unlocking Trillions of Tokens in PDFs with Vision Language Models
+...
+```
+
+### Multi-node / Cluster Usage
+
+If you want to convert millions of PDFs, using multiple nodes running in parallel, then olmOCR supports
+reading your PDFs from AWS S3, and coordinating work using an AWS S3 output bucket.
+
+For example, you can start this command on your first worker node, and it will set up
+a simple work queue in your AWS bucket and start converting PDFs.
+
+```bash
+python -m olmocr.pipeline s3://my_s3_bucket/pdfworkspaces/exampleworkspace --pdfs s3://my_s3_bucket/jakep/gnarly_pdfs/*.pdf
+```
+
+Now on any subsequent nodes, just run this and they will start grabbing items from the same workspace queue.
+```bash
+python -m olmocr.pipeline s3://my_s3_bucket/pdfworkspaces/exampleworkspace
+```
+
+If you are at Ai2 and want to linearize millions of PDFs efficiently using [beaker](https://www.beaker.org), just add the `--beaker`
+flag. This will prepare the workspace on your local machine, and then launch N GPU workers in the cluster to start
+converting PDFs.
+
+For example:
+```bash
+python -m olmocr.pipeline s3://my_s3_bucket/pdfworkspaces/exampleworkspace --pdfs s3://my_s3_bucket/jakep/gnarly_pdfs/*.pdf --beaker --beaker_gpus 4
+```
+
+### Using Docker
+
+Pull the Docker image.
+```bash
+docker pull alleninstituteforai/olmocr:latest
+```
+
+To run the container interactively:
+```bash
+docker run -it --gpus all --name olmocr_container alleninstituteforai/olmocr:latest /bin/bash
+```
+
+If you want to access your local files inside the container, use volume mounting:
+```bash
+docker run -it --gpus all \
+  -v /path/to/your/local/files:/local_files \
+  --name olmocr_container \
+  alleninstituteforai/olmocr:latest /bin/bash
+```
+
+All dependencies are already installed. Once you’re inside the container, you can run olmOCR commands. For example:
+
+```bash
+curl -o olmocr-sample.pdf https://olmocr.allenai.org/papers/olmocr_3pg_sample.pdf
+
+python -m olmocr.pipeline ./localworkspace --markdown --pdfs olmocr-sample.pdf
+```
+&gt; You can also visit our Docker repository on [Docker Hub](https://hub.docker.com/r/alleninstituteforai/olmocr).
+
+### Full documentation for the pipeline
+
+```bash
+python -m olmocr.pipeline --help
+usage: pipeline.py [-h] [--pdfs [PDFS ...]] [--model MODEL] [--workspace_profile WORKSPACE_PROFILE] [--pdf_profile PDF_PROFILE] [--pages_per_group PAGES_PER_GROUP] [--max_page_retries MAX_PAGE_RETRIES] [--max_page_error_rate MAX_PAGE_ERROR_RATE] [--workers WORKERS]
+                   [--apply_filter] [--stats] [--markdown] [--target_longest_image_dim TARGET_LONGEST_IMAGE_DIM] [--target_anchor_text_len TARGET_ANCHOR_TEXT_LEN] [--guided_decoding] [--gpu-memory-utilization GPU_MEMORY_UTILIZATION] [--max_model_len MAX_MODEL_LEN]
+                   [--tensor-parallel-size TENSOR_PARALLEL_SIZE] [--data-parallel-size DATA_PARALLEL_SIZE] [--port PORT] [--beaker] [--beaker_workspace BEAKER_WORKSPACE] [--beaker_cluster BEAKER_CLUSTER] [--beaker_gpus BEAKER_GPUS] [--beaker_priority BEAKER_PRIORITY]
+                   workspace
+
+Manager for running millions of PDFs through a batch inference pipeline
+
+positional arguments:
+  workspace             The filesystem path where work will be stored, can be a local folder, or an s3 path if coordinating work with many workers, s3://bucket/prefix/
+
+options:
+  -h, --help            show this help message and exit
+  --pdfs [PDFS ...]     Path to add pdfs stored in s3 to the workspace, can be a glob path s3://bucket/prefix/*.pdf or path to file containing list of pdf paths
+  --model MODEL         Path where the model is located, allenai/olmOCR-7B-0725-FP8 is the default, can be local, s3, or hugging face.
+  --workspace_profile WORKSPACE_PROFILE
+                        S3 configuration profile for accessing the workspace
+  --pdf_profile PDF_PROFILE
+                        S3 configuration profile for accessing the raw pdf documents
+  --pages_per_group PAGES_PER_GROUP
+                        Aiming for this many pdf pages per work item group
+  --max_page_retries MAX_PAGE_RETRIES
+                        Max number of times we will retry rendering a page
+  --max_page_error_rate MAX_PAGE_ERROR_RATE
+                        Rate of allowable failed pages in a document, 1/250 by default
+  --workers WORKERS     Number of workers to run at a time
+  --apply_filter        Apply basic filtering to English pdfs which are not forms, and not likely seo spam
+  --stats               Instead of running any job, reports some statistics about the current workspace
+  --markdown            Also write natural text to markdown files preserving the folder structure of the input pdfs
+  --target_longest_image_dim TARGET_LONGEST_IMAGE_DIM
+                        Dimension on longest side to use for rendering the pdf pages
+  --target_anchor_text_len TARGET_ANCHOR_TEXT_LEN
+                        Maximum amount of anchor text to use (characters), not used for new models
+  --guided_decoding     Enable guided decoding for model YAML type outputs
+
+VLLM Forwarded arguments:
+  --gpu-memory-utilization GPU_MEMORY_UTILIZATION
+                        Fraction of VRAM vLLM may pre-allocate for KV-cache (passed through to vllm serve).
+  --max_model_len MAX_MODEL_LEN
+                        Upper bound (tokens) vLLM will allocate KV-cache for, lower if VLLM won&#039;t start
+  --tensor-parallel-size TENSOR_PARALLEL_SIZE, -tp TENSOR_PARALLEL_SIZE
+                        Tensor parallel size for vLLM
+  --data-parallel-size DATA_PARALLEL_SIZE, -dp DATA_PARALLEL_SIZE
+                        Data parallel size for vLLM
+  --port PORT           Port to use for the VLLM server
+
+beaker/cluster execution:
+  --beaker              Submit this job to beaker instead of running locally
+  --beaker_workspace BEAKER_WORKSPACE
+                        Beaker workspace to submit to
+  --beaker_cluster BEAKER_CLUSTER
+                        Beaker clusters you want to run on
+  --beaker_gpus BEAKER_GPUS
+                        Number of gpu replicas to run
+  --beaker_priority BEAKER_PRIORITY
+                        Beaker priority level for the job
+```
+
+## Code overview
+
+There are some nice reusable pieces of the code that may be useful for your own projects:
+ - A prompting strategy to get really good natural text parsing using ChatGPT 4o - [buildsilver.py](https://github.com/allenai/olmocr/blob/main/olmocr/data/buildsilver.py)
+ - An side-by-side eval toolkit for comparing different pipeline versions - [runeval.py](https://github.com/allenai/olmocr/blob/main/olmocr/eval/runeval.py)
+ - Basic filtering by language and SEO spam removal - [filter.py](https://github.com/allenai/olmocr/blob/main/olmocr/filter/filter.py)
+ - Finetuning code for Qwen2-VL and Molmo-O - [train.py](https://github.com/allenai/olmocr/blob/main/olmocr/train/train.py)
+ - Processing millions of PDFs through a finetuned model using Sglang - [pipeline.py](https://github.com/allenai/olmocr/blob/main/olmocr/pipeline.py)
+ - Viewing [Dolma docs](https://github.com/allenai/dolma) created from PDFs - [dolmaviewer.py](https://github.com/allenai/olmocr/blob/main/olmocr/viewer/dolmaviewer.py)
+
+
+
+## Team
+
+&lt;!-- start team --&gt;
+
+**olmOCR** is developed and maintained by the AllenNLP team, backed by [the Allen Institute for Artificial Intelligence (AI2)](https://allenai.org/).
+AI2 is a non-profit institute with the mission to contribute to humanity through high-impact AI research and engineering.
+To learn more about who specifically contributed to this codebase, see [our contributors](https://github.com/allenai/olmocr/graphs/contributors) page.
+
+&lt;!-- end team --&gt;
+
+## License
+
+&lt;!-- start license --&gt;
+
+**olmOCR** is licensed under [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+A full copy of the license can be found [on GitHub](https://github.com/allenai/olmocr/blob/main/LICENSE).
+
+&lt;!-- end license --&gt;
+
+## Citing
+
+```bibtex
+@misc{olmocr,
+      title={{olmOCR: Unlocking Trillions of Tokens in PDFs with Vision Language Models}},
+      author={Jake Poznanski and Jon Borchardt and Jason Dunkelberger and Regan Huff and Daniel Lin and Aman Rangapur and Christopher Wilhelm and Kyle Lo and Luca Soldaini},
+      year={2025},
+      eprint={2502.18443},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2502.18443},
+}
+```
+</pre>
+          ]]></content:encoded>
+            <category>Python</category>
+        </item>
+        <item>
+            <title><![CDATA[myshell-ai/MeloTTS]]></title>
+            <link>https://github.com/myshell-ai/MeloTTS</link>
+            <guid>https://github.com/myshell-ai/MeloTTS</guid>
+            <pubDate>Wed, 30 Jul 2025 00:04:55 GMT</pubDate>
+            <description><![CDATA[High-quality multi-lingual text-to-speech library by MyShell.ai. Support English, Spanish, French, Chinese, Japanese and Korean.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/myshell-ai/MeloTTS">myshell-ai/MeloTTS</a></h1>
+            <p>High-quality multi-lingual text-to-speech library by MyShell.ai. Support English, Spanish, French, Chinese, Japanese and Korean.</p>
+            <p>Language: Python</p>
+            <p>Stars: 6,433</p>
+            <p>Forks: 897</p>
+            <p>Stars today: 40 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+  &lt;div&gt;&amp;nbsp;&lt;/div&gt;
+  &lt;img src=&quot;logo.png&quot; width=&quot;300&quot;/&gt; &lt;br&gt;
+  &lt;a href=&quot;https://trendshift.io/repositories/8133&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/8133&quot; alt=&quot;myshell-ai%2FMeloTTS | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
 &lt;/div&gt;
 
-**OWASP Nest** is a comprehensive platform designed to enhance collaboration and contribution within the OWASP community. The application serves as a central hub for exploring OWASP projects and ways to contribute to them, empowering contributors to find opportunities that align with their interests and expertise.
+## Introduction
+MeloTTS is a **high-quality multi-lingual** text-to-speech library by [MIT](https://www.mit.edu/) and [MyShell.ai](https://myshell.ai). Supported languages include:
 
-Key features of the platform include:
+| Language | Example |
+| --- | --- |
+| English (American)    | [Link](https://myshell-public-repo-host.s3.amazonaws.com/myshellttsbase/examples/en/EN-US/speed_1.0/sent_000.wav) |
+| English (British)     | [Link](https://myshell-public-repo-host.s3.amazonaws.com/myshellttsbase/examples/en/EN-BR/speed_1.0/sent_000.wav) |
+| English (Indian)      | [Link](https://myshell-public-repo-host.s3.amazonaws.com/myshellttsbase/examples/en/EN_INDIA/speed_1.0/sent_000.wav) |
+| English (Australian)  | [Link](https://myshell-public-repo-host.s3.amazonaws.com/myshellttsbase/examples/en/EN-AU/speed_1.0/sent_000.wav) |
+| English (Default)     | [Link](https://myshell-public-repo-host.s3.amazonaws.com/myshellttsbase/examples/en/EN-Default/speed_1.0/sent_000.wav) |
+| Spanish               | [Link](https://myshell-public-repo-host.s3.amazonaws.com/myshellttsbase/examples/es/ES/speed_1.0/sent_000.wav) |
+| French                | [Link](https://myshell-public-repo-host.s3.amazonaws.com/myshellttsbase/examples/fr/FR/speed_1.0/sent_000.wav) |
+| Chinese (mix EN)      | [Link](https://myshell-public-repo-host.s3.amazonaws.com/myshellttsbase/examples/zh/ZH/speed_1.0/sent_008.wav) |
+| Japanese              | [Link](https://myshell-public-repo-host.s3.amazonaws.com/myshellttsbase/examples/jp/JP/speed_1.0/sent_000.wav) |
+| Korean                | [Link](https://myshell-public-repo-host.s3.amazonaws.com/myshellttsbase/examples/kr/KR/speed_1.0/sent_000.wav) |
 
-- **Advanced Search Capabilities:** Enables efficient navigation and filtering of projects and issues based on keywords, tags, and contributor preferences.
-- **Slack Integration:** Supports seamless communication through a [Slack bot](https://owasp.slack.com/team/U07M1C4JASK) that facilitates direct and channel messaging for updates and discussions.
-- **OWASP Chapters Proximity Page:** Offers localized information about nearby OWASP chapters to foster community engagement.
-- **AI-Generated Insights:** Provides summarized descriptions and actionable steps for tackling project issues.
+Some other features include:
+- The Chinese speaker supports `mixed Chinese and English`.
+- Fast enough for `CPU real-time inference`.
 
-OWASP Nest promotes collaboration, making it easier for both new and experienced contributors to engage meaningfully with OWASP&#039;s mission to improve software security worldwide.
+## Usage
+- [Use without Installation](docs/quick_use.md)
+- [Install and Use Locally](docs/install.md)
+- [Training on Custom Dataset](docs/training.md)
 
-## Leaders
+The Python API and model cards can be found in [this repo](https://github.com/myshell-ai/MeloTTS/blob/main/docs/install.md#python-api) or on [HuggingFace](https://huggingface.co/myshell-ai).
 
-OWASP Nest is led by a dedicated team committed to fostering collaboration and supporting contributors. The leadership team ensures the platform aligns with OWASP&#039;s mission, continually improving its features to serve the community better.
-Current Leaders:
+**Contributing**
 
-- [Arkadii Yakovets](https://github.com/arkid15r/)  -- CCSP, CISSP, CSSLP
-- [Kate Golovanova](https://github.com/kasya/) -- CC
-- [Starr Brown](https://github.com/mamicidal/) -- CISSP
+If you find this work useful, please consider contributing to this repo.
 
-All OWASP Nest leaders are certified ISC2 professionals and adhere to the OWASP Code of Conduct.
-For questions or discussions with the leadership team and other contributors, please use the [#project-nest](https://owasp.slack.com/archives/project-nest) channel on OWASP Slack.
+- Many thanks to [@fakerybakery](https://github.com/fakerybakery) for adding the Web UI and CLI part.
 
-## Contributing
+## Authors
 
-OWASP Nest thrives on community contributions. Whether you are a developer, designer, writer, or enthusiast, there are various ways to get involved:
+- [Wenliang Zhao](https://wl-zhao.github.io) at Tsinghua University
+- [Xumin Yu](https://yuxumin.github.io) at Tsinghua University
+- [Zengyi Qin](https://www.qinzy.tech) (project lead) at MIT and MyShell
 
-- Code Contributions: Help improve the platform by fixing issues or adding new features.
-- Code Review: Review and provide feedback on pull requests to ensure code quality and maintainability.
-- Documentation: Enhance user guides or create tutorials to help others navigate the platform.
-- Issue Reporting: Identify and report bugs or suggest improvements.
-- Engagement: Share feedback, participate in discussions, or promote the project in your network.
+**Citation**
+```
+@software{zhao2024melo,
+  author={Zhao, Wenliang and Yu, Xumin and Qin, Zengyi},
+  title = {MeloTTS: High-quality Multi-lingual Multi-accent Text-to-Speech},
+  url = {https://github.com/myshell-ai/MeloTTS},
+  year = {2023}
+}
+```
 
-To get started, visit the [OWASP Nest Repository](https://github.com/OWASP/Nest), explore the [Contributing Guidelines](https://github.com/OWASP/Nest/blob/main/CONTRIBUTING.md), and [Code of Conduct](https://github.com/OWASP/Nest/blob/main/CODE_OF_CONDUCT.md).
+## License
 
-## About
+This library is under MIT License, which means it is free for both commercial and non-commercial use.
 
-OWASP Nest was **originally created by Arkadii Yakovets** (Ark) to address challenges in navigating OWASP projects. The project was **built from scratch based on Ark&#039;s ideas and discussions with Starr Brown** (Starr), ensuring a well-structured system design aligned with OWASP&#039;s ecosystem. Ark, an experienced software development professional with over 10 years of expertise in Python, Django, Django REST Framework (DRF), and related backend technologies, led the development of the backend using widely adopted Python **open-source frameworks and libraries**, including DRF, django-filter, OpenAI, Algolia Search, slack-bolt, PyGitHub, pre-commit, pytest, and more. The initial frontend, based on Vue.js, was introduced by **Kateryna Golovanova** (Kate), who later became the project co-leader due to her invaluable frontend and project management skills. The **code is licensed under the MIT License**, encouraging contributions while protecting the authors from legal claims. All OWASP Nest leaders are OWASP members and adhere to the OWASP Code of Conduct.
+## Acknowledgements
 
-Over time, OWASP Nest has expanded to address broader OWASP community needs, such as Google Summer of Code (GSoC) student guidance and contribution opportunities discovery. The platform, along with NestBot, has become a popular entry point for various OWASP aspects, including projects, chapters, users, and aggregated contribution opportunities -- with even more features planned. OWASP Nest&#039;s success is also the result of many valuable [contributions](https://github.com/OWASP/Nest/graphs/contributors) from the broader [OWASP Nest community](https://owasp.slack.com/archives/project-nest), whose efforts have helped shape and improve the project in countless ways.
-
-**No other OWASP projects&#039; code was used in OWASP Nest&#039;s development.** While explicit attribution (other than per MIT license) is not required, contributors and other OWASP project leaders are welcome to provide it at their discretion.
-
-### Community and Social Media
-
-- [BlueSky account](https://bsky.app/profile/nest.owasp.org)
-- [LinkedIn group](https://www.linkedin.com/groups/14656108/)
-- [Slack channel](https://owasp.slack.com/archives/project-nest) (join [here](https://owasp.org/slack/invite))
+This implementation is based on [TTS](https://github.com/coqui-ai/TTS), [VITS](https://github.com/jaywalnut310/vits), [VITS2](https://github.com/daniilrobnikov/vits2) and [Bert-VITS2](https://github.com/fishaudio/Bert-VITS2). We appreciate their awesome work.
 </pre>
           ]]></content:encoded>
             <category>Python</category>
@@ -736,15 +1260,15 @@ Over time, OWASP Nest has expanded to address broader OWASP community needs, suc
             <title><![CDATA[dgtlmoon/changedetection.io]]></title>
             <link>https://github.com/dgtlmoon/changedetection.io</link>
             <guid>https://github.com/dgtlmoon/changedetection.io</guid>
-            <pubDate>Mon, 28 Jul 2025 00:05:01 GMT</pubDate>
+            <pubDate>Wed, 30 Jul 2025 00:04:54 GMT</pubDate>
             <description><![CDATA[Best and simplest tool for website change detection, web page monitoring, and website change alerts. Perfect for tracking content changes, price drops, restock alerts, and website defacement monitoring—all for free or enjoy our SaaS plan!]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/dgtlmoon/changedetection.io">dgtlmoon/changedetection.io</a></h1>
             <p>Best and simplest tool for website change detection, web page monitoring, and website change alerts. Perfect for tracking content changes, price drops, restock alerts, and website defacement monitoring—all for free or enjoy our SaaS plan!</p>
             <p>Language: Python</p>
-            <p>Stars: 25,185</p>
-            <p>Forks: 1,393</p>
-            <p>Stars today: 120 stars today</p>
+            <p>Stars: 25,665</p>
+            <p>Forks: 1,412</p>
+            <p>Stars today: 409 stars today</p>
             <h2>README</h2><pre># Detect Website Changes Automatically — Monitor Web Page Changes in Real Time
 
 Monitor websites for updates — get notified via Discord, Email, Slack, Telegram, Webhook and many more.
@@ -1067,742 +1591,682 @@ Recognition of fantastic contributors to the project
             <category>Python</category>
         </item>
         <item>
-            <title><![CDATA[sherlock-project/sherlock]]></title>
-            <link>https://github.com/sherlock-project/sherlock</link>
-            <guid>https://github.com/sherlock-project/sherlock</guid>
-            <pubDate>Mon, 28 Jul 2025 00:05:00 GMT</pubDate>
-            <description><![CDATA[Hunt down social media accounts by username across social networks]]></description>
+            <title><![CDATA[potpie-ai/potpie]]></title>
+            <link>https://github.com/potpie-ai/potpie</link>
+            <guid>https://github.com/potpie-ai/potpie</guid>
+            <pubDate>Wed, 30 Jul 2025 00:04:53 GMT</pubDate>
+            <description><![CDATA[Prompt-To-Agent : Create custom engineering agents for your codebase]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/sherlock-project/sherlock">sherlock-project/sherlock</a></h1>
-            <p>Hunt down social media accounts by username across social networks</p>
+            <h1><a href="https://github.com/potpie-ai/potpie">potpie-ai/potpie</a></h1>
+            <p>Prompt-To-Agent : Create custom engineering agents for your codebase</p>
             <p>Language: Python</p>
-            <p>Stars: 67,445</p>
-            <p>Forks: 7,740</p>
-            <p>Stars today: 88 stars today</p>
-            <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
-          ]]></content:encoded>
-            <category>Python</category>
-        </item>
-        <item>
-            <title><![CDATA[ml-explore/mlx-lm]]></title>
-            <link>https://github.com/ml-explore/mlx-lm</link>
-            <guid>https://github.com/ml-explore/mlx-lm</guid>
-            <pubDate>Mon, 28 Jul 2025 00:04:59 GMT</pubDate>
-            <description><![CDATA[Run LLMs with MLX]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/ml-explore/mlx-lm">ml-explore/mlx-lm</a></h1>
-            <p>Run LLMs with MLX</p>
-            <p>Language: Python</p>
-            <p>Stars: 1,397</p>
-            <p>Forks: 178</p>
-            <p>Stars today: 14 stars today</p>
-            <h2>README</h2><pre>## MLX LM 
+            <p>Stars: 4,811</p>
+            <p>Forks: 442</p>
+            <p>Stars today: 20 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://potpie.ai?utm_source=github&quot;&gt;
+    &lt;img src=&quot;https://github.com/user-attachments/assets/1a0b9824-833b-4c0a-b56d-ede5623295ca&quot; width=&quot;318px&quot; alt=&quot;Potpie AI logo&quot; /&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
 
-MLX LM is a Python package for generating text and fine-tuning large language
-models on Apple silicon with MLX.
+&lt;br/&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;a href=&quot;https://trendshift.io/repositories/12918&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/12918&quot; alt=&quot;potpie-ai%2Fpotpie | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+&lt;/br&gt;
+  &lt;br /&gt;
+  &lt;a href=&quot;https://app.potpie.ai&quot; rel=&quot;dofollow&quot;&gt;App&lt;/a&gt; | &lt;a href=&quot;https://docs.potpie.ai&quot; rel=&quot;dofollow&quot;&gt;Documentation&lt;/a&gt; | &lt;a href=&quot;https://docs.potpie.ai/open-source&quot;  rel=&quot;dofollow&quot;&gt;API Reference&lt;/a&gt; | &lt;a href=&quot;https://app.potpie.ai/newchat?repo=potpie-ai/potpie&amp;branch=main&quot; rel=&quot;dofollow&quot;&gt;Chat with 🥧 Repo&lt;/a&gt;
+  &lt;br /&gt;
 
-Some key features include:
+  &lt;/p&gt;
 
-* Integration with the Hugging Face Hub to easily use thousands of LLMs with a
-  single command. 
-* Support for quantizing and uploading models to the Hugging Face Hub.
-* [Low-rank and full model
-  fine-tuning](https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LORA.md)
-  with support for quantized models.
-* Distributed inference and fine-tuning with `mx.distributed`
+&lt;p align=&quot;center&quot;&gt;
 
-The easiest way to get started is to install the `mlx-lm` package:
+  &lt;a href=&quot;https://github.com/potpie-ai/potpie/blob/main/LICENSE&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/github/license/potpie-ai/potpie&quot; alt=&quot;Apache 2.0&quot;&gt;
+  &lt;/a&gt;
 
-**With `pip`**:
+  &lt;a href=&quot;https://github.com/potpie-ai/potpie&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/github/stars/potpie-ai/potpie&quot; alt=&quot;GitHub Repo stars&quot;&gt;
+  &lt;/a&gt;
 
-```sh
-pip install mlx-lm
-```
+&lt;/br&gt;
 
-**With `conda`**:
 
-```sh
-conda install -c conda-forge mlx-lm
-```
+&lt;a href=&quot;https://discord.gg/ryk5CMD5v6&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/Join%20our-Discord-5865F2?style=for-the-badge&amp;logo=discord&amp;logoColor=white&quot; alt=&quot;Join our Discord&quot;&gt;
+&lt;/a&gt;
+&lt;/br&gt;
+&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=PotpieAI.potpie-vscode-extension&quot;&gt;
+    &lt;img src=&quot;https://custom-icon-badges.demolab.com/badge/Visual%20Studio%20Code-0078d7.svg?logo=vsc&amp;logoColor=white&quot; alt=&quot;VS Code Extension&quot;&gt;
+&lt;/a&gt;
+&lt;/br&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?text=I%20created%20custom%20engineering%20agents%20for%20my%20codebase%20in%20minutes%20with%20potpie.ai%20@potpiedotai%20!🥧&quot;&gt;
+    &lt;img alt=&quot;tweet&quot; src=&quot;https://img.shields.io/twitter/url/http/shields.io.svg?style=social&quot;&gt;
+&lt;/a&gt;
 
-### Quick Start
+&lt;/p&gt;
 
-To generate text with an LLM use:
+&lt;h1 align=&quot;center&quot;&gt;
 
-```bash
-mlx_lm.generate --prompt &quot;How tall is Mt Everest?&quot;
-```
+Prompt-To-Agent: Create custom engineering agents for your code
+&lt;/h1&gt;
 
-To chat with an LLM use:
+Potpie is an open-source platform that creates AI agents specialized in your codebase, enabling automated code analysis, testing, and development tasks. By building a comprehensive knowledge graph of your code, Potpie&#039;s agents can understand complex relationships and assist with everything from debugging to feature development.
 
-```bash
-mlx_lm.chat
-```
+&lt;p align=&quot;center&quot;&gt;
+&lt;img width=&quot;1506&quot; alt=&quot;Screenshot 2025-03-28 at 2 51 34 PM&quot; src=&quot;https://github.com/user-attachments/assets/efa6b8ba-447b-474c-a62e-2c65940085ee&quot; /&gt;
 
-This will give you a chat REPL that you can use to interact with the LLM. The
-chat context is preserved during the lifetime of the REPL.
 
-Commands in `mlx-lm` typically take command line options which let you specify
-the model, sampling parameters, and more. Use `-h` to see a list of available
-options for a command, e.g.:
 
-```bash
-mlx_lm.generate -h
-```
 
-### Python API
+## 📚 Table of Contents
+- [🥧 Why Potpie?](#why-potpie)
+- [🤖 Our Prebuilt Agents](#prebuilt-agents)
+- [🛠️ Tooling](#potpies-tooling-system)
+- [🚀 Getting Started](#getting-started)
+- [💡 Use Cases](#use-cases)
+- [🛠️ Custom Agents](#custom-agents-upgrade)
+- [🗝️ Accessing Agents via API Key](#accessing-agents-via-api-key)
+- [🎨 Make Potpie Your Own](#make-potpie-your-own)
+- [🤝 Contributing](#contributing)
+- [📜 License](#license)
+- [💪 Contributors](#-thanks-to-all-contributors)
 
-You can use `mlx-lm` as a module:
 
-```python
-from mlx_lm import load, generate
+## 🥧 Why Potpie?
+- 🧠 **Deep Code Understanding**: Built-in knowledge graph captures relationships between code components
+- 🤖 **Pre-built &amp; Custom Agents**: Ready-to-use agents for common tasks + build your own
+- 🔄 **Seamless Integration**: Works with your existing development workflow
+- 📈 **Flexible**: Handles codebases of any size or language
 
-model, tokenizer = load(&quot;mlx-community/Mistral-7B-Instruct-v0.3-4bit&quot;)
 
-prompt = &quot;Write a story about Einstein&quot;
+## 🔌 VSCode Extension
 
-messages = [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: prompt}]
-prompt = tokenizer.apply_chat_template(
-    messages, add_generation_prompt=True
-)
+Bring the power of Potpie&#039;s AI agents directly into your development environment with our VSCode extension:
 
-text = generate(model, tokenizer, prompt=prompt, verbose=True)
-```
+- **Direct Integration**: Access all Potpie agents without leaving your editor
+- **Quick Setup**: Install directly from the [VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=PotpieAI.potpie-vscode-extension)
+- **Seamless Workflow**: Ask questions, get explanations, and implement suggestions right where you code
 
-To see a description of all the arguments you can do:
+## 🧩 Slack Integration
 
-```
-&gt;&gt;&gt; help(generate)
-```
+Bring your custom AI agents directly into your team&#039;s communication hub with our Slack integration:
 
-Check out the [generation
-example](https://github.com/ml-explore/mlx-lm/tree/main/mlx_lm/examples/generate_response.py)
-to see how to use the API in more detail.
+- **Team Collaboration**: Access all Potpie agents where your team already communicates
+- **Effortless Setup**: Install and configure in under 2 minutes. Checkout [Potpie docs](https://docs.potpie.ai/extensions/slack)
+- **Contextual Assistance**: Get answers, code solutions, and project insights directly in your Slack threads
 
-The `mlx-lm` package also comes with functionality to quantize and optionally
-upload models to the Hugging Face Hub.
+👉 Install the Potpie Slack App: [Here](https://slack.potpie.ai/slack/install)
 
-You can convert models using the Python API:
+## 🤖 Potpie&#039;s Prebuilt Agents
 
-```python
-from mlx_lm import convert
-
-repo = &quot;mistralai/Mistral-7B-Instruct-v0.3&quot;
-upload_repo = &quot;mlx-community/My-Mistral-7B-Instruct-v0.3-4bit&quot;
-
-convert(repo, quantize=True, upload_repo=upload_repo)
-```
-
-This will generate a 4-bit quantized Mistral 7B and upload it to the repo
-`mlx-community/My-Mistral-7B-Instruct-v0.3-4bit`. It will also save the
-converted model in the path `mlx_model` by default.
-
-To see a description of all the arguments you can do:
-
-```
-&gt;&gt;&gt; help(convert)
-```
-
-#### Streaming
-
-For streaming generation, use the `stream_generate` function. This yields
-a generation response object.
-
-For example,
-
-```python
-from mlx_lm import load, stream_generate
-
-repo = &quot;mlx-community/Mistral-7B-Instruct-v0.3-4bit&quot;
-model, tokenizer = load(repo)
-
-prompt = &quot;Write a story about Einstein&quot;
-
-messages = [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: prompt}]
-prompt = tokenizer.apply_chat_template(
-    messages, add_generation_prompt=True
-)
-
-for response in stream_generate(model, tokenizer, prompt, max_tokens=512):
-    print(response.text, end=&quot;&quot;, flush=True)
-print()
-```
-
-#### Sampling
-
-The `generate` and `stream_generate` functions accept `sampler` and
-`logits_processors` keyword arguments. A sampler is any callable which accepts
-a possibly batched logits array and returns an array of sampled tokens.  The
-`logits_processors` must be a list of callables which take the token history
-and current logits as input and return the processed logits. The logits
-processors are applied in order.
-
-Some standard sampling functions and logits processors are provided in
-`mlx_lm.sample_utils`.
-
-### Command Line
-
-You can also use `mlx-lm` from the command line with:
-
-```
-mlx_lm.generate --model mistralai/Mistral-7B-Instruct-v0.3 --prompt &quot;hello&quot;
-```
-
-This will download a Mistral 7B model from the Hugging Face Hub and generate
-text using the given prompt.
-
-For a full list of options run:
-
-```
-mlx_lm.generate --help
-```
-
-To quantize a model from the command line run:
-
-```
-mlx_lm.convert --hf-path mistralai/Mistral-7B-Instruct-v0.3 -q
-```
-
-For more options run:
-
-```
-mlx_lm.convert --help
-```
-
-You can upload new models to Hugging Face by specifying `--upload-repo` to
-`convert`. For example, to upload a quantized Mistral-7B model to the
-[MLX Hugging Face community](https://huggingface.co/mlx-community) you can do:
-
-```
-mlx_lm.convert \
-    --hf-path mistralai/Mistral-7B-Instruct-v0.3 \
-    -q \
-    --upload-repo mlx-community/my-4bit-mistral
-```
-
-Models can also be converted and quantized directly in the
-[mlx-my-repo](https://huggingface.co/spaces/mlx-community/mlx-my-repo) Hugging
-Face Space.
-
-### Long Prompts and Generations 
-
-`mlx-lm` has some tools to scale efficiently to long prompts and generations:
-
-- A rotating fixed-size key-value cache.
-- Prompt caching
-
-To use the rotating key-value cache pass the argument `--max-kv-size n` where
-`n` can be any integer. Smaller values like `512` will use very little RAM but
-result in worse quality. Larger values like `4096` or higher will use more RAM
-but have better quality.
-
-Caching prompts can substantially speedup reusing the same long context with
-different queries. To cache a prompt use `mlx_lm.cache_prompt`. For example:
-
-```bash
-cat prompt.txt | mlx_lm.cache_prompt \
-  --model mistralai/Mistral-7B-Instruct-v0.3 \
-  --prompt - \
-  --prompt-cache-file mistral_prompt.safetensors
-``` 
-
-Then use the cached prompt with `mlx_lm.generate`:
-
-```
-mlx_lm.generate \
-    --prompt-cache-file mistral_prompt.safetensors \
-    --prompt &quot;\nSummarize the above text.&quot;
-```
-
-The cached prompt is treated as a prefix to the supplied prompt. Also notice
-when using a cached prompt, the model to use is read from the cache and need
-not be supplied explicitly.
-
-Prompt caching can also be used in the Python API in order to avoid
-recomputing the prompt. This is useful in multi-turn dialogues or across
-requests that use the same context. See the
-[example](https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/examples/chat.py)
-for more usage details.
-
-### Supported Models
-
-`mlx-lm` supports thousands of Hugging Face format LLMs. If the model you want to
-run is not supported, file an
-[issue](https://github.com/ml-explore/mlx-lm/issues/new) or better yet,
-submit a pull request.
-
-Here are a few examples of Hugging Face models that work with this example:
-
-- [mistralai/Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1)
-- [meta-llama/Llama-2-7b-hf](https://huggingface.co/meta-llama/Llama-2-7b-hf)
-- [deepseek-ai/deepseek-coder-6.7b-instruct](https://huggingface.co/deepseek-ai/deepseek-coder-6.7b-instruct)
-- [01-ai/Yi-6B-Chat](https://huggingface.co/01-ai/Yi-6B-Chat)
-- [microsoft/phi-2](https://huggingface.co/microsoft/phi-2)
-- [mistralai/Mixtral-8x7B-Instruct-v0.1](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1)
-- [Qwen/Qwen-7B](https://huggingface.co/Qwen/Qwen-7B)
-- [pfnet/plamo-13b](https://huggingface.co/pfnet/plamo-13b)
-- [pfnet/plamo-13b-instruct](https://huggingface.co/pfnet/plamo-13b-instruct)
-- [stabilityai/stablelm-2-zephyr-1_6b](https://huggingface.co/stabilityai/stablelm-2-zephyr-1_6b)
-- [internlm/internlm2-7b](https://huggingface.co/internlm/internlm2-7b)
-- [tiiuae/falcon-mamba-7b-instruct](https://huggingface.co/tiiuae/falcon-mamba-7b-instruct)
-
-Most
-[Mistral](https://huggingface.co/models?library=transformers,safetensors&amp;other=mistral&amp;sort=trending),
-[Llama](https://huggingface.co/models?library=transformers,safetensors&amp;other=llama&amp;sort=trending),
-[Phi-2](https://huggingface.co/models?library=transformers,safetensors&amp;other=phi&amp;sort=trending),
-and
-[Mixtral](https://huggingface.co/models?library=transformers,safetensors&amp;other=mixtral&amp;sort=trending)
-style models should work out of the box.
-
-For some models (such as `Qwen` and `plamo`) the tokenizer requires you to
-enable the `trust_remote_code` option. You can do this by passing
-`--trust-remote-code` in the command line. If you don&#039;t specify the flag
-explicitly, you will be prompted to trust remote code in the terminal when
-running the model. 
-
-For `Qwen` models you must also specify the `eos_token`. You can do this by
-passing `--eos-token &quot;&lt;|endoftext|&gt;&quot;` in the command
-line. 
-
-These options can also be set in the Python API. For example:
-
-```python
-model, tokenizer = load(
-    &quot;qwen/Qwen-7B&quot;,
-    tokenizer_config={&quot;eos_token&quot;: &quot;&lt;|endoftext|&gt;&quot;, &quot;trust_remote_code&quot;: True},
-)
-```
-
-### Large Models
-
-&gt; [!NOTE]
-    This requires macOS 15.0 or higher to work.
-
-Models which are large relative to the total RAM available on the machine can
-be slow. `mlx-lm` will attempt to make them faster by wiring the memory
-occupied by the model and cache. This requires macOS 15 or higher to
-work.
-
-If you see the following warning message:
-
-&gt; [WARNING] Generating with a model that requires ...
-
-then the model will likely be slow on the given machine. If the model fits in
-RAM then it can often be sped up by increasing the system wired memory limit.
-To increase the limit, set the following `sysctl`:
-
-```bash
-sudo sysctl iogpu.wired_limit_mb=N
-```
-
-The value `N` should be larger than the size of the model in megabytes but
-smaller than the memory size of the machine.
-</pre>
-          ]]></content:encoded>
-            <category>Python</category>
-        </item>
-        <item>
-            <title><![CDATA[Intelligent-Internet/ii-agent]]></title>
-            <link>https://github.com/Intelligent-Internet/ii-agent</link>
-            <guid>https://github.com/Intelligent-Internet/ii-agent</guid>
-            <pubDate>Mon, 28 Jul 2025 00:04:58 GMT</pubDate>
-            <description><![CDATA[II-Agent: a new open-source framework to build and deploy intelligent agents]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/Intelligent-Internet/ii-agent">Intelligent-Internet/ii-agent</a></h1>
-            <p>II-Agent: a new open-source framework to build and deploy intelligent agents</p>
-            <p>Language: Python</p>
-            <p>Stars: 2,738</p>
-            <p>Forks: 403</p>
-            <p>Stars today: 24 stars today</p>
-            <h2>README</h2><pre>&lt;img width=&quot;3600&quot; height=&quot;1890&quot; alt=&quot;II-Agent-updated&quot; src=&quot;https://github.com/user-attachments/assets/4e6211d1-c565-42a9-9d53-d809154a9493&quot; /&gt;
-
-# II Agent
-
-[![GitHub stars](https://img.shields.io/github/stars/Intelligent-Internet/ii-agent?style=social)](https://github.com/Intelligent-Internet/ii-agent/stargazers)
-[![Discord Follow](https://dcbadge.limes.pink/api/server/yDWPsshPHB?style=flat)](https://discord.gg/yDWPsshPHB)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Blog](https://img.shields.io/badge/Blog-II--Agent-blue)](https://ii.inc/web/blog/post/ii-agent)
-[![GAIA Benchmark](https://img.shields.io/badge/GAIA-Benchmark-green)](https://ii-agent-gaia.ii.inc/)
-[&lt;img src=&quot;https://devin.ai/assets/deepwiki-badge.png&quot; alt=&quot;Ask DeepWiki.com&quot; height=&quot;20&quot;/&gt;](https://deepwiki.com/Intelligent-Internet/ii-agent)
-
-&lt;/div&gt;
-
-II-Agent is an open-source intelligent assistant designed to streamline and enhance workflows across multiple domains. It represents a significant advancement in how we interact with technology—shifting from passive tools to intelligent systems capable of independently executing complex tasks.
-
-### Discord Join US
-
-📢 Join Our [Discord Channel](https://discord.gg/yDWPsshPHB)! Looking forward to seeing you there! 🎉
-
-## Introduction
-
-&lt;https://github.com/user-attachments/assets/2707b106-f37d-41a8-beff-8802b1c9b186&gt;
-
-## (New Features) Full-stack Web Agent Show cases!
-
-https://github.com/user-attachments/assets/8399f494-1e5a-43ba-9c7b-32861c51075e
-
-https://github.com/user-attachments/assets/647e6bae-bc62-4c8b-9e6e-a7c8946caf56
-
-## Overview
-
-II Agent is built around providing an agentic interface to leading language models. It offers:
-
-- A CLI interface for direct command-line interaction
-- A WebSocket server that powers a modern React-based frontend
-- Integration with multiple LLM providers:
-  - Anthropic Claude models (direct API or via Google Cloud Vertex AI)
-  - Google Gemini models (direct API or via Google Cloud Vertex AI)
-
-## GAIA Benchmark Evaluation
-
-II-Agent has been evaluated on the GAIA benchmark, which assesses LLM-based agents operating within realistic scenarios across multiple dimensions including multimodal processing, tool utilization, and web searching.
-
-We identified several issues with the GAIA benchmark during our evaluation:
-
-- **Annotation Errors**: Several incorrect annotations in the dataset (e.g., misinterpreting date ranges, calculation errors)
-- **Outdated Information**: Some questions reference websites or content no longer accessible
-- **Language Ambiguity**: Unclear phrasing leading to different interpretations of questions
-
-Despite these challenges, II-Agent demonstrated strong performance on the benchmark, particularly in areas requiring complex reasoning, tool use, and multi-step planning.
-
-![GAIA Benchmark](assets/gaia.jpg)
-You can view the full traces of some samples here: [GAIA Benchmark Traces](https://ii-agent-gaia.ii.inc/)
-
-## Requirements
-
-- Docker Compose
-- Python 3.10+
-- Node.js 18+ (for frontend)
-- At least one of the following:
-  - Anthropic API key, or
-  - Google Gemini API key, or
-  - Google Cloud project with Vertex AI API enabled
-
-&gt; \[!TIP]
-&gt;
-&gt; - For best performance, we recommend using Claude 4.0 Sonnet or Claude Opus 4.0 models.
-&gt; - For fast and cheap, we recommend using GPT4.1 from OpenAI.
-&gt; - Gemini 2.5 Pro is a good balance between performance and cost.
-
-## Installation
-
-### Docker Installation (Recommended)
-
-1. Clone the repository
-2. Run the following command
-
-```
-chmod +x start.sh
-./start.sh
-```
-
-&lt;img width=&quot;821&quot; alt=&quot;Screenshot 2025-07-08 at 17 50 34&quot; src=&quot;https://github.com/user-attachments/assets/094f73aa-7384-4500-a670-528853f92ae7&quot; /&gt;
-
-Our II-Agent supports popular models such as Claude, Gemini, and OpenAI. If you’d like to use a model from OpenRouter, simply configure your OpenAI endpoint with your OpenRouter API key.
-If you are using Vertex, run with these variables
-
-```
-chmod +x start.sh
-GOOGLE_APPLICATION_CREDENTIALS=absolute-path-to-credential ./start.sh
-```
-
-
-
-(Optional) You can fill Google API credentials to connect to google drive. Press enter to skip these steps
-
-### Runtime Environment
-
-&lt;img width=&quot;821&quot; alt=&quot;Screenshot 2025-07-08 at 17 48 08&quot; src=&quot;https://github.com/user-attachments/assets/b1fb9f11-b1ef-4f62-bbea-9b67eba45322&quot; /&gt;
-
-You can now select from a variety of models, set your API key, and configure environments—all directly from the frontend settings page—to equip your agents with powerful tools and capabilities. You can also change the agents&#039; runtime environment. Currently, we support three runtime modes: Local, Docker, and E2B. For full-stack web application development, Docker and E2B are highly recommended, while Local Mode is best suited for lighter tasks such as basic webpage building and research.
-
-In addition, agents come equipped with built-in NeonDB and Vercel integration, enabling seamless cloud deployment of full-stack applications using a serverless database and serverless infrastructure.
-
-## Core Capabilities
-
-II-Agent is a versatile open-source assistant built to elevate your productivity across domains:
-
-| Domain                        | What II‑Agent Can Do                                                                                       |
-| ----------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| Research &amp; Fact‑Checking      | Multistep web search, source triangulation, structured note‑taking, rapid summarization                    |
-| Content Generation            | Blog &amp; article drafts, lesson plans, creative prose, technical manuals, Website creations                  |
-| Data Analysis &amp; Visualization | Cleaning, statistics, trend detection, charting, and automated report generation                           |
-| Software Development          | Code synthesis, refactoring, debugging, test‑writing, and step‑by‑step tutorials across multiple languages |
-| Dynamic Website Development |Full-stack web application creation with live hosting, framework templates, and real-time deployment     |
-| Workflow Automation           | Script generation, browser automation, file management, process optimization                               |
-| Problem Solving               | Decomposition, alternative‑path exploration, stepwise guidance, troubleshooting                            |
-
-## Methods
-
-The II-Agent system represents a sophisticated approach to building versatile AI agents. Our methodology centers on:
-
-1. **Core Agent Architecture and LLM Interaction**
-
-   - System prompting with dynamically tailored context
-   - Comprehensive interaction history management
-   - Intelligent context management to handle token limitations
-   - Systematic LLM invocation and capability selection
-   - Iterative refinement through execution cycles
-
-2. **Planning and Reflection**
-
-   - Structured reasoning for complex problem-solving
-   - Problem decomposition and sequential thinking
-   - Transparent decision-making process
-   - Hypothesis formation and testing
-
-3. **Execution Capabilities**
-
-   - File system operations with intelligent code editing
-   - Command line execution in a secure environment
-   - Advanced web interaction and browser automation
-   - Task finalization and reporting
-   - Specialized capabilities for various modalities (Experimental) (PDF, audio, image, video, slides)
-   - Deep research integration
-
-4. **Context Management**
-
-   - Token usage estimation and optimization
-   - Strategic truncation for lengthy interactions
-   - File-based archival for large outputs
-
-5. **Real-time Communication**
-   - WebSocket-based interface for interactive use
-   - Isolated agent instances per client
-   - Streaming operational events for responsive UX
-
-## Conclusion
-
-The II-Agent framework, architected around the reasoning capabilities of large language models like Claude 4.0 Sonnet or Gemini 2.5 Pro, presents a comprehensive and robust methodology for building versatile AI agents. Through its synergistic combination of a powerful LLM, a rich set of execution capabilities, an explicit mechanism for planning and reflection, and intelligent context management strategies, II-Agent is well-equipped to address a wide spectrum of complex, multi-step tasks. Its open-source nature and extensible design provide a strong foundation for continued research and development in the rapidly evolving field of agentic AI.
-
-## Acknowledgement
-
-We would like to express our sincere gratitude to the following projects and individuals for their invaluable contributions that have helped shape this project:
-
-- **AugmentCode**: We have incorporated and adapted several key components from the [AugmentCode project](https://github.com/augmentcode/augment-swebench-agent). AugmentCode focuses on SWE-bench, a benchmark that tests AI systems on real-world software engineering tasks from GitHub issues in popular open-source projects. Their system provides tools for bash command execution, file operations, and sequential problem-solving capabilities designed specifically for software engineering tasks.
-
-- **Manus**: Our system prompt architecture draws inspiration from Manus&#039;s work, which has helped us create more effective and contextually aware AI interactions.
-
-- **Index Browser Use**: We have built upon and extended the functionality of the [Index Browser Use project](https://github.com/lmnr-ai/index/tree/main), particularly in our web interaction and browsing capabilities. Their foundational work has enabled us to create more sophisticated web-based agent behaviors.
-
-We are committed to open source collaboration and believe in acknowledging the work that has helped us build this project. If you feel your work has been used in this project but hasn&#039;t been properly acknowledged, please reach out to us.
-</pre>
-          ]]></content:encoded>
-            <category>Python</category>
-        </item>
-        <item>
-            <title><![CDATA[emarco177/ice_breaker]]></title>
-            <link>https://github.com/emarco177/ice_breaker</link>
-            <guid>https://github.com/emarco177/ice_breaker</guid>
-            <pubDate>Mon, 28 Jul 2025 00:04:57 GMT</pubDate>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/emarco177/ice_breaker">emarco177/ice_breaker</a></h1>
-            <p></p>
-            <p>Language: Python</p>
-            <p>Stars: 784</p>
-            <p>Forks: 1,272</p>
-            <p>Stars today: 2 stars today</p>
-            <h2>README</h2><pre># 🧊 Ice Breaker
-
-**An intelligent ice breaker generator powered by LangChain and social media intelligence**
-
-![Ice Breaker Demo](https://github.com/emarco177/ice_breaker/blob/main/static/demo.gif)
-
-[![LangChain](https://img.shields.io/badge/LangChain-🦜🔗-brightgreen)](https://langchain.com/)
-[![Tavily](https://img.shields.io/badge/Tavily-🔍-orange)](https://app.tavily.com/home?utm_campaign=eden_marco&amp;utm_medium=socials&amp;utm_source=linkedin)
-[![Python](https://img.shields.io/badge/Python-3.8+-blue)](https://www.python.org/)
-[![Flask](https://img.shields.io/badge/Flask-2.0+-red)](https://flask.palletsprojects.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Udemy Course](https://img.shields.io/badge/LangChain%20Udemy%20Course-Coupon%20%2412.99-brightgreen)](https://www.udemy.com/course/langchain/?referralCode=JJULY-2025)
-
-## 🎯 Overview
-
-**Ice Breaker** is a sophisticated AI-powered web application that creates personalized ice breakers by analyzing LinkedIn and Twitter profiles. This project serves as a comprehensive learning tool for mastering LangChain while building a practical generative AI application that combines social media intelligence with natural language generation.
-
-### ✨ Key Features
-
-**AI Pipeline Flow:**
-
-1. 🔍 **Profile Discovery**: Intelligent lookup and discovery of LinkedIn and Twitter profiles
-2. 🌐 **Data Extraction**: Advanced web scraping of professional and social media data
-3. 🧠 **AI Analysis**: Deep analysis of personality, interests, and professional background
-4. ✍️ **Ice Breaker Generation**: Context-aware creation of personalized conversation starters
-5. 🎨 **Smart Formatting**: Professional presentation of generated content
-6. 💬 **Interactive Interface**: User-friendly web interface powered by Flask
-7. 🚀 **Real-time Processing**: Fast end-to-end pipeline from profile input to ice breaker output
-
-
-_Watch Ice Breaker analyze social profiles and generate personalized conversation starters_
-
-## 🛠️ Tech Stack
-
-| Component | Technology | Description |
-|-----------|------------|-------------|
-| 🖥️ **Frontend** | Flask | Web application framework |
-| 🧠 **AI Framework** | LangChain 🦜🔗 | Orchestrates the AI pipeline |
-| 🔍 **LinkedIn Data** | Scrapin.io | Professional profile scraping |
-| 🐦 **Twitter Data** | Twitter API | Social media content analysis |
-| 🌐 **Web Search** | Tavily | Enhanced profile discovery |
-| 🤖 **LLM** | OpenAI GPT | Powers the conversation generation |
-| 📊 **Monitoring** | LangSmith | Optional tracing and debugging |
-| 🐍 **Backend** | Python 3.8+ | Core application logic |
-
-## 🚀 Quick Start
+Potpie offers a suite of specialized codebase agents for automating and optimizing key aspects of software development:
+
+- **Debugging Agent**: Automatically analyzes stacktraces and provides debugging steps specific to your codebase.
+- **Codebase Q&amp;A Agent**: Answers questions about your codebase and explains functions, features, and architecture.
+- **Code Changes Agent**: Analyzes code changes, identifies affected APIs, and suggests improvements before merging.
+- **Integration Test Agent**: Generates integration test plans and code for flows to ensure components work together properly.
+- **Unit Test Agent**: Automatically creates unit test plan and code for individual functions to enhance test coverage.
+- **LLD Agent**: Creates a low level design for implementing a new feature by providing functional requirements to this agent.
+- **Code Generation Agent**: Generates code for new features, refactors existing code, and suggests optimizations.
+
+## 🛠️ Potpie&#039;s Tooling System
+
+Potpie provides a set of tools that agents can use to interact with the knowledge graph and the underlying infrastructure:
+
+- **get_code_from_probable_node_name**: Retrieves code snippets based on a probable node name.
+- **get_code_from_node_id**: Fetches code associated with a specific node ID.
+- **get_code_from_multiple_node_ids**: Retrieves code snippets for multiple node IDs simultaneously.
+- **ask_knowledge_graph_queries**: Executes vector similarity searches to obtain relevant information.
+- **get_nodes_from_tags**: Retrieves nodes tagged with specific keywords.
+- **get_code_graph_from_node_id/name**: Fetches code graph structures for a specific node.
+- **change_detection**: Detects changes in the current branch compared to the default branch.
+- **get_code_file_structure**: Retrieves the file structure of the codebase.
+
+## 🚀 Getting Started
 
 ### Prerequisites
+- Docker installed and running
+- Git installed (for repository access)
+- Python 3.10.x
 
-* Python 3.8 or higher
-* OpenAI API key
-* Scrapin.io API key
-* Twitter API credentials
-* Tavily API key
+### Potpie UI
+  An easy to use interface to interact with your Agents
+  ## Initialize the UI Submodule
+  To initialize the submodule:
 
-### Installation
+  ```bash
+  git submodule update --init
+  ```
 
-1. **Clone the repository**
+  ### 1. Navigate to the `potpie-ui` Directory
+
+  ```bash
+  cd potpie-ui
+  ```
+
+  ### 2. Update the Main Branch and Checkout
+
+  ```bash
+  git checkout main
+  git pull origin main
+  ```
+
+  ### 3. Set Up the Environment
+
+  Create a `.env` file in the `potpie-ui` directory and copy the required configuration from `.env.template`.
+
+  ```bash
+  cp .env.template .env
+  ```
+
+  ### 4. Build the Frontend
+
+  ```bash
+  pnpm build
+  ```
+
+  ### 5. Start the Application
+
+  ```bash
+  pnpm start
+  ```
+
+
+### Setup Steps
+
+**Install Python 3.10**
+   - Download and install Python 3.10 from the official Python website:
+     https://www.python.org/downloads/release/python-3100/
+
+1. **Prepare Your Environment**
+   - Create a `.env` file based on the `.env.template`
+   - Add the following required configurations:
+      ```bash
+      isDevelopmentMode=enabled
+      ENV=development
+      POSTGRES_SERVER=postgresql://postgres:mysecretpassword@localhost:5432/momentum
+      NEO4J_URI=bolt://127.0.0.1:7687
+      NEO4J_USERNAME=neo4j
+      NEO4J_PASSWORD=mysecretpassword
+      REDISHOST=127.0.0.1
+      REDISPORT=6379
+      BROKER_URL=redis://127.0.0.1:6379/0
+      CELERY_QUEUE_NAME=dev
+      defaultUsername=defaultuser
+      PROJECT_PATH=projects #repositories will be downloaded/cloned to this path on your system.
+      {PROVIDER}_API_KEY=sk-proj-your-key #your provider key e.g. ANTHROPIC_API_KEY for Anthropic
+      INFERENCE_MODEL=ollama_chat/qwen2.5-coder:7b #provider model name
+      CHAT_MODEL=ollama_chat/qwen2.5-coder:7b #provider model name
+      ```
+      **`INFERENCE_MODEL`** and **`CHAT_MODEL`** correspond to the models that will be used for generating knowledge graph and for agent reasoning respectively. These model names should be in the format of `provider/model_name` format or as expected by Litellm. For more information, refer to the [Litellm documentation](https://docs.litellm.ai/docs/providers).
+      &lt;br&gt;
+   -  Create a Virtual Environment using Python 3.10:
+      ```
+      python3.10 -m venv venv
+      source venv/bin/activate
+
+    - Install dependencies in your venv:
+      ```bash
+      pip install -r requirements.txt
+
+2. **Start Potpie**
+
+   To start all Potpie services:
    ```bash
-   git clone https://github.com/emarco177/ice_breaker.git
-   cd ice_breaker
+   chmod +x start.sh
+   ./start.sh
+   ```
+   **Windows**
+    ```powershell
+    ./start.ps1
+    ```
+
+   This will:
+   - Start required Docker services
+   - Wait for PostgreSQL to be ready
+   - Apply database migrations
+   - Start the FastAPI application
+   - Start the Celery worker
+
+3. **Stop Potpie**
+
+   To stop all Potpie services:
+   ```bash
+   ./stop.sh
+   ```
+   **Windows**
+   ```powershell
+   ./stop.ps1
+   ```
+   This will gracefully stop:
+   - The FastAPI application
+   - The Celery worker
+   - All Docker Compose services
+
+4. **Authentication Setup** (Skip this step in development mode)
+   ```bash
+   curl -X POST &#039;http://localhost:8001/api/v1/login&#039; \
+     -H &#039;Content-Type: application/json&#039; \
+     -d &#039;{
+       &quot;email&quot;: &quot;your-email&quot;,
+       &quot;password&quot;: &quot;your-password&quot;
+     }&#039;
+   # Save the bearer token from the response for subsequent requests
+
+5. **Initialize Repository Parsing**
+   ```bash
+   # For development mode:
+   curl -X POST &#039;http://localhost:8001/api/v1/parse&#039; \
+     -H &#039;Content-Type: application/json&#039; \
+     -d &#039;{
+       &quot;repo_path&quot;: &quot;path/to/local/repo&quot;,
+       &quot;branch_name&quot;: &quot;main&quot;
+     }&#039;
+
+   # For production mode:
+   curl -X POST &#039;http://localhost:8001/api/v1/parse&#039; \
+     -H &#039;Content-Type: application/json&#039; \
+     -d &#039;{
+       &quot;repo_name&quot;: &quot;owner/repo-name&quot;,
+       &quot;branch_name&quot;: &quot;main&quot;
+     }&#039;
+   # Save the project_id from the response
+
+6. **Monitor Parsing Status**
+   ```bash
+   curl -X GET &#039;http://localhost:8001/api/v1/parsing-status/your-project-id&#039;
+   # Wait until parsing is complete
+
+7. **View Available Agents**
+   ```bash
+   curl -X GET &#039;http://localhost:8001/api/v1/list-available-agents/?list_system_agents=true&#039;
+   # Note down the agent_id you want to use
    ```
 
-2. **Set up environment variables**
-   
-   Create a `.env` file in the root directory with your API keys (see [Environment Variables](#-environment-variables) section for details).
-
-3. **Install dependencies**
+8. **Create a Conversation**
    ```bash
-   pipenv install
+   curl -X POST &#039;http://localhost:8001/api/v1/conversations/&#039; \
+     -H &#039;Content-Type: application/json&#039; \
+     -d &#039;{
+       &quot;user_id&quot;: &quot;your_user_id&quot;,
+       &quot;title&quot;: &quot;My First Conversation&quot;,
+       &quot;status&quot;: &quot;active&quot;,
+       &quot;project_ids&quot;: [&quot;your-project-id&quot;],
+       &quot;agent_ids&quot;: [&quot;chosen-agent-id&quot;]
+     }&#039;
+   # Save the conversation_id from the response
+
+9. **Start Interacting with Your Agent**
+   ```bash
+   curl -X POST &#039;http://localhost:8001/api/v1/conversations/your-conversation-id/message/&#039; \
+     -H &#039;Content-Type: application/json&#039; \
+     -d &#039;{
+       &quot;content&quot;: &quot;Your question or request here&quot;,
+       &quot;node_ids&quot;:[]
+     }&#039;
    ```
 
-4. **Start the application**
+10. **View Conversation History** (Optional)
    ```bash
-   pipenv run app.py
+   curl -X GET &#039;http://localhost:8001/api/v1/conversations/your-conversation-id/messages/?start=0&amp;limit=10&#039;
    ```
 
-5. **Open your browser** and navigate to `http://localhost:5000`
+## 💡 Use Cases
 
-## 🧪 Testing
+- **Onboarding**: For developers new to a codebase, the codebase QnA agent helps them understand the codebase and get up to speed quickly. Ask it how to setup a new project, how to run the tests etc
+&gt;We tried to onboard ourselves with Potpie to the [**AgentOps**](https://github.com/AgentOps-AI/AgentOps) codebase and it worked like a charm : Video [here](https://youtu.be/_mPixNDn2r8).
 
-Run the test suite to ensure everything is working correctly:
+- **Codebase Understanding**: Answer questions about any library you&#039;re integrating, explain functions, features, and architecture.
+&gt;We used the Q&amp;A agent to understand the underlying working of a feature of the [**CrewAI**](https://github.com/CrewAIInc/CrewAI) codebase that was not documented in official docs : Video [here](https://www.linkedin.com/posts/dhirenmathur_what-do-you-do-when-youre-stuck-and-even-activity-7256704603977613312-8X8G).
 
-```bash
-pipenv run pytest .
-```
+- **Low Level Design**: Get detailed implementation plans for new features or improvements before writing code.
+&gt;We fed an open issue from the [**Portkey-AI/Gateway**](https://github.com/Portkey-AI/Gateway) project to this agent to generate a low level design for it: Video [here](https://www.linkedin.com/posts/dhirenmathur_potpie-ai-agents-vs-llms-i-am-extremely-activity-7255607456448286720-roOC).
 
-## 💰 API Costs &amp; Credits
+- **Reviewing Code Changes**: Understand the functional impact of changes and compute the blast radius of modifications.
 
-&gt; **📋 Note**: This project uses paid API services for optimal functionality:
-&gt; 
-&gt; - **[Scrapin.io](https://app.scrapin.io/auth/register)** 💼 - LinkedIn data scraping  
-&gt;   *[Sign up for API access](https://app.scrapin.io/auth/register)*
-&gt; 
-&gt; - **[Tavily](https://app.tavily.com/home?utm_campaign=eden_marco&amp;utm_medium=socials&amp;utm_source=linkedin)** 🌐 - Enhanced web search and profile discovery  
-&gt;   *[Sign up for Tavily API access](https://app.tavily.com/home?utm_campaign=eden_marco&amp;utm_medium=socials&amp;utm_source=linkedin)*
-&gt; 
-&gt; - **Twitter API** 🐦 - Social media content access  
-&gt;   *Paid service for accessing Twitter data*
+- **Debugging**: Get step-by-step debugging guidance based on stacktraces and codebase context.
 
-&gt; **⚠️ Important**: If you enable LangSmith tracing (`LANGCHAIN_TRACING_V2=true`), ensure you have a valid `LANGCHAIN_API_KEY`. Without it, the application will throw an error. If you don&#039;t need tracing, simply omit these variables.
+- **Testing**: Generate contextually aware unit and integration test plans and test code that understand your codebase&#039;s structure and purpose.
 
-## 📁 Project Structure
+## 🛠️ Custom Agents [Upgrade ✨](https://potpie.ai/pricing)
 
-```
-ice_breaker/
-├── agents/                    # AI agents for profile lookup
-│   ├── linkedin_lookup_agent.py
-│   └── twitter_lookup_agent.py
-├── chains/                    # LangChain custom chains
-│   └── custom_chains.py
-├── third_parties/            # External API integrations
-│   ├── linkedin.py
-│   └── twitter.py
-├── tools/                    # Utility tools and functions
-│   └── tools.py
-├── templates/                # Flask HTML templates
-│   └── index.html
-├── static/                   # Static assets
-│   ├── banner.jpeg
-│   └── demo.gif
-├── app.py                    # Flask application entry point
-├── ice_breaker.py           # Core ice breaker logic
-├── output_parsers.py        # Response formatting utilities
-└── requirements files       # Pipfile, Pipfile.lock
-```
+With Custom Agents, you can design personalized tools that handle repeatable tasks with precision. Key components include:
+- **System Instructions**: Define the agent&#039;s task, goal, and expected output
+- **Agent Information**: Metadata about the agent&#039;s role and context
+- **Tasks**: Individual steps for job completion
+- **Tools**: Functions for querying the knowledge graph or retrieving code
 
-## 🔧 Environment Variables
+## 🗝️ Accessing Agents via API Key
 
-Create a `.env` file in the root directory:
+You can access Potpie Agents through an API key, enabling integration into CI/CD workflows and other automated processes. For detailed instructions, please refer to the [Potpie API documentation](https://docs.potpie.ai/agents/api-access).
 
-```env
-OPENAI_API_KEY=your_openai_api_key_here
-SCRAPIN_API_KEY=your_scrapin_api_key_here
-TAVILY_API_KEY=your_tavily_api_key_here
+- **Generate an API Key**: Easily create an API key for secure access.
+- **Parse Repositories**: Use the Parse API to analyze code repositories and obtain a project ID.
+- **Monitor Parsing Status**: Check the status of your parsing requests.
+- **Create Conversations**: Initiate conversations with specific agents using project and agent IDs adn get a conversation id.
+- **Send Messages**: Communicate with agents by sending messages within a conversation.
 
-# Optional: Twitter scraping (if you want Twitter data)
-TWITTER_API_KEY=your_twitter_api_key_here
-TWITTER_API_SECRET=your_twitter_api_secret_here
-TWITTER_ACCESS_TOKEN=your_twitter_access_token_here
-TWITTER_ACCESS_SECRET=your_twitter_access_secret_here
+## 🎨 Make Potpie Your Own
 
-# Optional: Enable LangSmith tracing
-LANGCHAIN_TRACING_V2=true
-LANGCHAIN_API_KEY=your_langsmith_api_key_here
-LANGCHAIN_PROJECT=ice_breaker
-```
+Potpie is designed to be flexible and customizable. Here are key areas to personalize your own deployment:
 
-&gt; **⚠️ Important Note**: If you enable tracing by setting `LANGCHAIN_TRACING_V2=true`, you must have a valid LangSmith API key set in `LANGCHAIN_API_KEY`. Without a valid API key, the application will throw an error. If you don&#039;t need tracing, simply remove or comment out these environment variables.
+### **Effortless Agent Creation**:
+Design custom agents tailored to your specific tasks using a single prompt. Utilize the following API to create your custom agents:
 
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `OPENAI_API_KEY` | Your OpenAI API key for LLM access | ✅ |
-| `SCRAPIN_API_KEY` | Scrapin.io API key for LinkedIn scraping | ✅ |
-| `TAVILY_API_KEY` | Tavily API key for enhanced web search | ✅ |
-| `TWITTER_API_KEY` | Twitter API key for social data access (optional) | ⚪ |
-| `TWITTER_API_SECRET` | Twitter API secret (optional) | ⚪ |
-| `TWITTER_ACCESS_TOKEN` | Twitter access token (optional) | ⚪ |
-| `TWITTER_ACCESS_SECRET` | Twitter access token secret (optional) | ⚪ |
-| `LANGCHAIN_TRACING_V2` | Enable LangSmith tracing (optional) | ⚪ |
-| `LANGCHAIN_API_KEY` | LangSmith API key (required if tracing enabled) | ⚪ |
-| `LANGCHAIN_PROJECT` | LangSmith project name (optional) | ⚪ |
+  ```bash
+  curl -X POST &quot;http://localhost:8001/api/v1/custom-agents/agents/auto&quot; \
+       -H &quot;Content-Type: application/json&quot; \
+       -d &#039;{
+             &quot;prompt&quot;: &quot;Aan agent that takes stacktrace as input and gives root cause analysis and proposed solution as output&quot;
+           }&#039;
+  ```
+
+  Read more about other custom agent APIs to edit and delete your custom agents in our [documentation](https://docs.potpie.ai/open-source/agents/create-agent-from-prompt).
+
+### Tool Integration
+Edit or add tools in the `app/modules/intelligence/tools` directory for your custom agents.
+Initialise the tools in the  `app/modules/intelligence/tools/tool_service.py` file and include them in your agent.
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+We welcome contributions! To contribute:
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature-branch`)
+3. Make your changes
+4. Commit (`git commit -m &#039;Add new feature&#039;`)
+5. Push to the branch (`git push origin feature-branch`)
+6. Open a Pull Request
 
-## 📚 Learning Resources
+See [Contributing Guide](./contributing.md) for more details.
 
-This project is designed as a comprehensive learning tool for understanding:
+## 📜 License
 
-* 🦜 **LangChain Framework** - Agent orchestration and chain composition
-* 🔗 **API Integration** - Working with multiple external services
-* 🧠 **AI Application Architecture** - Building production-ready AI systems
-* 🌐 **Web Scraping** - Ethical data collection from social platforms
-* 💬 **Natural Language Generation** - Context-aware content creation
+This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details.
 
-## 📄 License
+## 💪 Thanks To All Contributors
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Thanks for spending your time helping build Potpie. Keep rocking 🥂
 
-## 🌟 Support
+&lt;img src=&quot;https://contributors-img.web.app/image?repo=potpie-ai/potpie&quot; alt=&quot;Contributors&quot;/&gt;
+</pre>
+          ]]></content:encoded>
+            <category>Python</category>
+        </item>
+        <item>
+            <title><![CDATA[commaai/openpilot]]></title>
+            <link>https://github.com/commaai/openpilot</link>
+            <guid>https://github.com/commaai/openpilot</guid>
+            <pubDate>Wed, 30 Jul 2025 00:04:52 GMT</pubDate>
+            <description><![CDATA[openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/commaai/openpilot">commaai/openpilot</a></h1>
+            <p>openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars.</p>
+            <p>Language: Python</p>
+            <p>Stars: 55,590</p>
+            <p>Forks: 9,986</p>
+            <p>Stars today: 20 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot; style=&quot;text-align: center;&quot;&gt;
 
-If you find this project helpful, please consider:
+&lt;h1&gt;openpilot&lt;/h1&gt;
 
-* ⭐ Starring the repository
-* 🐛 Reporting issues
-* 💡 Contributing improvements
-* 📢 Sharing with others
-* 🎓 Taking the [LangChain Course](https://www.udemy.com/course/langchain/?referralCode=JJULY-2025)
+&lt;p&gt;
+  &lt;b&gt;openpilot is an operating system for robotics.&lt;/b&gt;
+  &lt;br&gt;
+  Currently, it upgrades the driver assistance system in 300+ supported cars.
+&lt;/p&gt;
 
----
+&lt;h3&gt;
+  &lt;a href=&quot;https://docs.comma.ai&quot;&gt;Docs&lt;/a&gt;
+  &lt;span&gt; · &lt;/span&gt;
+  &lt;a href=&quot;https://docs.comma.ai/contributing/roadmap/&quot;&gt;Roadmap&lt;/a&gt;
+  &lt;span&gt; · &lt;/span&gt;
+  &lt;a href=&quot;https://github.com/commaai/openpilot/blob/master/docs/CONTRIBUTING.md&quot;&gt;Contribute&lt;/a&gt;
+  &lt;span&gt; · &lt;/span&gt;
+  &lt;a href=&quot;https://discord.comma.ai&quot;&gt;Community&lt;/a&gt;
+  &lt;span&gt; · &lt;/span&gt;
+  &lt;a href=&quot;https://comma.ai/shop&quot;&gt;Try it on a comma 3X&lt;/a&gt;
+&lt;/h3&gt;
 
-### 🔗 Connect with Me
+Quick start: `bash &lt;(curl -fsSL openpilot.comma.ai)`
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-000?style=for-the-badge&amp;logo=ko-fi&amp;logoColor=white)](https://www.udemy.com/course/langchain/?referralCode=JJULY)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white)](https://www.linkedin.com/in/eden-marco/)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&amp;logo=twitter&amp;logoColor=white)](https://www.udemy.com/user/eden-marco/)
+[![openpilot tests](https://github.com/commaai/openpilot/actions/workflows/selfdrive_tests.yaml/badge.svg)](https://github.com/commaai/openpilot/actions/workflows/selfdrive_tests.yaml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![X Follow](https://img.shields.io/twitter/follow/comma_ai)](https://x.com/comma_ai)
+[![Discord](https://img.shields.io/discord/469524606043160576)](https://discord.comma.ai)
 
-**Built with ❤️ by Eden Marco**
+&lt;/div&gt;
 
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;a href=&quot;https://youtu.be/NmBfgOanCyk&quot; title=&quot;Video By Greer Viau&quot;&gt;&lt;img src=&quot;https://github.com/commaai/openpilot/assets/8762862/2f7112ae-f748-4f39-b617-fabd689c3772&quot;&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;a href=&quot;https://youtu.be/VHKyqZ7t8Gw&quot; title=&quot;Video By Logan LeGrand&quot;&gt;&lt;img src=&quot;https://github.com/commaai/openpilot/assets/8762862/92351544-2833-40d7-9e0b-7ef7ae37ec4c&quot;&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;a href=&quot;https://youtu.be/SUIZYzxtMQs&quot; title=&quot;A drive to Taco Bell&quot;&gt;&lt;img src=&quot;https://github.com/commaai/openpilot/assets/8762862/05ceefc5-2628-439c-a9b2-89ce77dc6f63&quot;&gt;&lt;/a&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+Using openpilot in a car
+------
+
+To use openpilot in a car, you need four things:
+1. **Supported Device:** a comma 3/3X, available at [comma.ai/shop](https://comma.ai/shop/comma-3x).
+2. **Software:** The setup procedure for the comma 3/3X allows users to enter a URL for custom software. Use the URL `openpilot.comma.ai` to install the release version.
+3. **Supported Car:** Ensure that you have one of [the 275+ supported cars](docs/CARS.md).
+4. **Car Harness:** You will also need a [car harness](https://comma.ai/shop/car-harness) to connect your comma 3/3X to your car.
+
+We have detailed instructions for [how to install the harness and device in a car](https://comma.ai/setup). Note that it&#039;s possible to run openpilot on [other hardware](https://blog.comma.ai/self-driving-car-for-free/), although it&#039;s not plug-and-play.
+
+### Branches
+| branch           | URL                                    | description                                                                         |
+|------------------|----------------------------------------|-------------------------------------------------------------------------------------|
+| `release3`         | openpilot.comma.ai                      | This is openpilot&#039;s release branch.                                                 |
+| `release3-staging` | openpilot-test.comma.ai                | This is the staging branch for releases. Use it to get new releases slightly early. |
+| `nightly`          | openpilot-nightly.comma.ai             | This is the bleeding edge development branch. Do not expect this to be stable.      |
+| `nightly-dev`      | installer.comma.ai/commaai/nightly-dev | Same as nightly, but includes experimental development features for some cars.      |
+| `secretgoodopenpilot` | installer.comma.ai/commaai/secretgoodopenpilot | This is a preview branch from the autonomy team where new driving models get merged earlier than master. |
+
+To start developing openpilot
+------
+
+openpilot is developed by [comma](https://comma.ai/) and by users like you. We welcome both pull requests and issues on [GitHub](http://github.com/commaai/openpilot).
+
+* Join the [community Discord](https://discord.comma.ai)
+* Check out [the contributing docs](docs/CONTRIBUTING.md)
+* Check out the [openpilot tools](tools/)
+* Code documentation lives at https://docs.comma.ai
+* Information about running openpilot lives on the [community wiki](https://github.com/commaai/openpilot/wiki)
+
+Want to get paid to work on openpilot? [comma is hiring](https://comma.ai/jobs#open-positions) and offers lots of [bounties](https://comma.ai/bounties) for external contributors.
+
+Safety and Testing
+----
+
+* openpilot observes [ISO26262](https://en.wikipedia.org/wiki/ISO_26262) guidelines, see [SAFETY.md](docs/SAFETY.md) for more details.
+* openpilot has software-in-the-loop [tests](.github/workflows/selfdrive_tests.yaml) that run on every commit.
+* The code enforcing the safety model lives in panda and is written in C, see [code rigor](https://github.com/commaai/panda#code-rigor) for more details.
+* panda has software-in-the-loop [safety tests](https://github.com/commaai/panda/tree/master/tests/safety).
+* Internally, we have a hardware-in-the-loop Jenkins test suite that builds and unit tests the various processes.
+* panda has additional hardware-in-the-loop [tests](https://github.com/commaai/panda/blob/master/Jenkinsfile).
+* We run the latest openpilot in a testing closet containing 10 comma devices continuously replaying routes.
+
+&lt;details&gt;
+&lt;summary&gt;MIT Licensed&lt;/summary&gt;
+
+openpilot is released under the MIT license. Some parts of the software are released under other licenses as specified.
+
+Any user of this software shall indemnify and hold harmless Comma.ai, Inc. and its directors, officers, employees, agents, stockholders, affiliates, subcontractors and customers from and against all allegations, claims, actions, suits, demands, damages, liabilities, obligations, losses, settlements, judgments, costs and expenses (including without limitation attorneys’ fees and costs) which arise out of, relate to or result from any use of this software by user.
+
+**THIS IS ALPHA QUALITY SOFTWARE FOR RESEARCH PURPOSES ONLY. THIS IS NOT A PRODUCT.
+YOU ARE RESPONSIBLE FOR COMPLYING WITH LOCAL LAWS AND REGULATIONS.
+NO WARRANTY EXPRESSED OR IMPLIED.**
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;User Data and comma Account&lt;/summary&gt;
+
+By default, openpilot uploads the driving data to our servers. You can also access your data through [comma connect](https://connect.comma.ai/). We use your data to train better models and improve openpilot for everyone.
+
+openpilot is open source software: the user is free to disable data collection if they wish to do so.
+
+openpilot logs the road-facing cameras, CAN, GPS, IMU, magnetometer, thermal sensors, crashes, and operating system logs.
+The driver-facing camera and microphone are only logged if you explicitly opt-in in settings.
+
+By using openpilot, you agree to [our Privacy Policy](https://comma.ai/privacy). You understand that use of this software or its related services will generate certain types of user data, which may be logged and stored at the sole discretion of comma. By accepting this agreement, you grant an irrevocable, perpetual, worldwide right to comma for the use of this data.
+&lt;/details&gt;
+</pre>
+          ]]></content:encoded>
+            <category>Python</category>
+        </item>
+        <item>
+            <title><![CDATA[sissbruecker/linkding]]></title>
+            <link>https://github.com/sissbruecker/linkding</link>
+            <guid>https://github.com/sissbruecker/linkding</guid>
+            <pubDate>Wed, 30 Jul 2025 00:04:51 GMT</pubDate>
+            <description><![CDATA[Self-hosted bookmark manager that is designed be to be minimal, fast, and easy to set up using Docker.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/sissbruecker/linkding">sissbruecker/linkding</a></h1>
+            <p>Self-hosted bookmark manager that is designed be to be minimal, fast, and easy to set up using Docker.</p>
+            <p>Language: Python</p>
+            <p>Stars: 8,751</p>
+            <p>Forks: 432</p>
+            <p>Stars today: 27 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+    &lt;br&gt;
+    &lt;a href=&quot;https://github.com/sissbruecker/linkding&quot;&gt;
+        &lt;img src=&quot;assets/header.svg&quot; height=&quot;50&quot;&gt;
+    &lt;/a&gt;
+    &lt;br&gt;
+&lt;/div&gt;
+
+##  Introduction
+
+linkding is a bookmark manager that you can host yourself.
+It&#039;s designed be to be minimal, fast, and easy to set up using Docker.
+
+The name comes from:
+- *link* which is often used as a synonym for URLs and bookmarks in common language
+- *Ding* which is German for thing
+- ...so basically something for managing your links
+
+**Feature Overview:**
+- Clean UI optimized for readability
+- Organize bookmarks with tags
+- Bulk editing, Markdown notes, read it later functionality
+- Share bookmarks with other users or guests
+- Automatically provides titles, descriptions and icons of bookmarked websites
+- Automatically archive websites, either as local HTML file or on Internet Archive
+- Import and export bookmarks in Netscape HTML format
+- Installable as a Progressive Web App (PWA)
+- Extensions for [Firefox](https://addons.mozilla.org/firefox/addon/linkding-extension/) and [Chrome](https://chrome.google.com/webstore/detail/linkding-extension/beakmhbijpdhipnjhnclmhgjlddhidpe), as well as a bookmarklet
+- SSO support via OIDC or authentication proxies
+- REST API for developing 3rd party apps
+- Admin panel for user self-service and raw data access
+
+
+**Demo:** https://demo.linkding.link/
+
+**Screenshot:**
+
+![Screenshot](/docs/public/linkding-screenshot.png?raw=true &quot;Screenshot&quot;)
+
+## Getting Started
+
+The following links help you to get started with linkding:
+- [Install linkding on your own server](https://linkding.link/installation) or [check managed hosting options](https://linkding.link/managed-hosting)
+- [Install the browser extension](https://linkding.link/browser-extension)
+- [Check out community projects](https://linkding.link/community), which include mobile apps, browser extensions, libraries and more
+
+## Documentation
+
+The full documentation is now available at [linkding.link](https://linkding.link/).
+
+If you want to contribute to the documentation, you can find the source files in the `docs` folder.
+
+If you want to contribute a community project, feel free to [submit a PR](https://github.com/sissbruecker/linkding/edit/master/docs/src/content/docs/community.md).
+
+## Contributing
+
+Small improvements, bugfixes and documentation improvements are always welcome. If you want to contribute a larger feature, consider opening an issue first to discuss it. I may choose to ignore PRs for features that don&#039;t align with the project&#039;s goals or that I don&#039;t want to maintain.
+
+## Development
+
+The application is built using the Django web framework. You can get started by checking out the excellent [Django docs](https://docs.djangoproject.com/en/4.1/). The `bookmarks` folder contains the actual bookmark application. Other than that the code should be self-explanatory / standard Django stuff 🙂.
+
+### Prerequisites
+- Python 3.12
+- Node.js
+
+### Setup
+
+Create a virtual environment for the application (https://docs.python.org/3/tutorial/venv.html):
+```
+python3 -m venv ~/environments/linkding
+```
+Activate the environment for your shell:
+```
+source ~/environments/linkding/bin/activate[.csh|.fish]
+```
+Within the active environment install the application dependencies from the application folder:
+```
+pip3 install -r requirements.txt -r requirements.dev.txt
+```
+Install frontend dependencies:
+```
+npm install
+```
+Initialize database:
+```
+mkdir -p data
+python3 manage.py migrate
+```
+Create a user for the frontend:
+```
+python3 manage.py createsuperuser --username=joe --email=joe@example.com
+```
+Start the Node.js development server (used for compiling JavaScript components like tag auto-completion) with:
+```
+npm run dev
+```
+Start the Django development server with:
+```
+python3 manage.py runserver
+```
+The frontend is now available under http://localhost:8000
+
+### Tests
+
+Run all tests with pytest:
+```
+make test
+```
+
+### Formatting
+
+Format Python code with black, and JavaScript code with prettier:
+```
+make format
+```
+
+### DevContainers
+
+This repository also supports DevContainers: [![Open in Remote - Containers](https://img.shields.io/static/v1?label=Remote%20-%20Containers&amp;message=Open&amp;color=blue&amp;logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/sissbruecker/linkding.git)
+
+Once checked out, only the following commands are required to get started:
+
+Create a user for the frontend:
+```
+python3 manage.py createsuperuser --username=joe --email=joe@example.com
+```
+Start the Node.js development server (used for compiling JavaScript components like tag auto-completion) with:
+```
+npm run dev
+```
+Start the Django development server with:
+```
+python3 manage.py runserver
+```
+The frontend is now available under http://localhost:8000
 </pre>
           ]]></content:encoded>
             <category>Python</category>
