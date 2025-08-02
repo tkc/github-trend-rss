@@ -4,24 +4,199 @@
         <title>GitHub Trending Today for typescript - TypeScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for typescript.</description>
-        <lastBuildDate>Fri, 01 Aug 2025 00:06:04 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 02 Aug 2025 00:05:31 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2025, GitHub</copyright>
         <item>
+            <title><![CDATA[devlikeapro/waha]]></title>
+            <link>https://github.com/devlikeapro/waha</link>
+            <guid>https://github.com/devlikeapro/waha</guid>
+            <pubDate>Sat, 02 Aug 2025 00:05:31 GMT</pubDate>
+            <description><![CDATA[WAHA - WhatsApp HTTP API (REST API) that you can configure in a click! 3 engines: WEBJS (browser based), NOWEB (websocket nodejs), GOWS (websocket go)]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/devlikeapro/waha">devlikeapro/waha</a></h1>
+            <p>WAHA - WhatsApp HTTP API (REST API) that you can configure in a click! 3 engines: WEBJS (browser based), NOWEB (websocket nodejs), GOWS (websocket go)</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 2,581</p>
+            <p>Forks: 656</p>
+            <p>Stars today: 152 stars today</p>
+            <h2>README</h2><pre># WAHA
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;./logo.png&quot; style=&#039;border-radius: 50%&#039; width=&#039;150&#039;/&gt;
+&lt;/p&gt;
+
+**WAHA** - **W**hats**A**pp **H**TTP **A**PI (REST API) that you can install on your own server and run in less than 5 minutes!
+
+[![Docker Pulls](https://img.shields.io/docker/pulls/devlikeapro/waha)](https://hub.docker.com/r/devlikeapro/waha)
+
+- Documentation: [https://waha.devlike.pro/](https://waha.devlike.pro/)
+- Dashboard Example: [https://waha.devlike.pro/dashboard](https://waha.devlike.pro/dashboard)
+- Swagger Example: [https://waha.devlike.pro/swagger](https://waha.devlike.pro/swagger)
+
+# Tables of Contents
+
+&lt;!-- toc --&gt;
+
+- [Quick start](#quick-start)
+  * [Requirements](#requirements)
+  * [Send your first message](#send-your-first-message)
+    + [1. Download image](#1-download-image)
+    + [2. Run WhatsApp HTTP API](#2-run-whatsapp-http-api)
+    + [3. Start a new session](#3-start-a-new-session)
+    + [4. Get and scan QR](#4-get-and-scan-qr)
+    + [5. Get the screenshot](#5-get-the-screenshot)
+    + [6. Send a text message](#6-send-a-text-message)
+  * [What is next?](#what-is-next)
+- [Development](#development)
+  * [Start the project](#start-the-project)
+
+&lt;!-- tocstop --&gt;
+
+# Quick start
+
+## Requirements
+
+Only thing that you must have - installed docker. Please follow the original
+instruction &lt;a href=&quot;https://docs.docker.com/get-docker/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;how to install docker -&gt;&lt;/a&gt;.
+
+When you are ready - come back and follows the below steps to send the first text message to WhatsApp via HTTP API!
+
+## Send your first message
+
+Let&#039;s go over steps that allow you to send your first text message via WhatsApp HTTP API!
+
+### 1. Download image
+
+Assuming you have installed [Docker](https://docs.docker.com/get-docker/), let&#039;s download the image.
+
+
+```bash
+docker pull devlikeapro/waha
+```
+
+
+```bash
+docker login -u devlikeapro -p {KEY}
+docker pull devlikeapro/waha-plus
+docker logout
+```
+
+Read more about how to get `PASSWORD` for [**➕ WAHA Plus**](https://waha.devlike.pro/docs/how-to/waha-plus/)
+
+### 2. Run WhatsApp HTTP API
+
+Run WhatsApp HTTP API:
+
+```bash
+docker run -it --rm -p 3000:3000/tcp --name waha devlikeapro/waha
+
+# It prints logs and the last line must be
+# WhatsApp HTTP API is running on: http://[::1]:3000
+```
+
+Open the link in your browser [http://localhost:3000/](http://localhost:3000/) and you&#039;ll see API documentation
+(Swagger).
+
+
+### 3. Start a new session
+
+To start a new session you should have your mobile phone with installed WhatsApp application close to you.
+
+Please go and read how what we&#039;ll need to a bit
+later:
+&lt;a href=&quot;https://faq.whatsapp.com/381777293328336/?helpref=hc_fnav&quot; target=&quot;_blank&quot;&gt;
+How to log in - the instruction on WhatsApp site
+&lt;/a&gt;
+
+When your ready - find `POST /api/sessions`, click on **Try it out**, then **Execute** a bit below.
+
+
+The example payload:
+```json
+{
+  &quot;name&quot;: &quot;default&quot;
+}
+```
+
+
+By using the request with `name` values you can start multiple session (WhatsApp accounts) inside the single docker container in Plus
+
+
+### 4. Get and scan QR
+
+Find `GET /api/screenshot` and execute it, it shows you QR code.
+
+
+**Scan the QR with your cell phone&#039;s WhatsApp app.**
+
+
+### 5. Get the screenshot
+
+Execute `GET /api/screenshot` after a few seconds after scanning the QR - it&#039;ll show you the screenshot of you Whatsapp
+instance. If you can get the actual screenshot - then you&#039;re ready to start sending messages!
+
+
+### 6. Send a text message
+
+Let&#039;s send a text message - find `POST /api/sendText`  in [swagger](http://localhost:3000/) and change `chatId` this
+way: use a phone international phone number without `+` symbol and add `@c.us` at the end.
+
+For phone number `12132132131` the `chatId` is  `12132132131@c.us`.
+
+The example payload:
+```json
+{
+  &quot;chatId&quot;: &quot;12132132130@c.us&quot;,
+  &quot;text&quot;: &quot;Hi there!&quot;,
+  &quot;session&quot;: &quot;default&quot;
+}
+```
+
+Also, you can use `curl` and send POST request like this:
+
+```bash
+# Phone without +
+export PHONE=12132132130
+curl -d &quot;{\&quot;chatId\&quot;: \&quot;${PHONE}@c.us\&quot;, \&quot;text\&quot;: \&quot;Hello from WhatsApp HTTP API\&quot; }&quot; -H &quot;Content-Type: application/json&quot; -X POST http://localhost:3000/api/sendText
+```
+
+## What is next?
+[Go and read the full documentation!](https://waha.devlike.pro/docs/overview/introduction/)
+
+# Development
+
+## Start the project
+1. Clone the repository
+2. Make sure you&#039;re using node&gt;=22 (check [.nvmrc](/.nvmrc) to get the version)
+3. Run the following commands:
+```bash
+# Install dependencies
+yarn install
+# Fetch and compile proto files
+yarn gows:proto
+# Run
+yarn start
+# open http://localhost:3000
+```</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
             <title><![CDATA[puppeteer/puppeteer]]></title>
             <link>https://github.com/puppeteer/puppeteer</link>
             <guid>https://github.com/puppeteer/puppeteer</guid>
-            <pubDate>Fri, 01 Aug 2025 00:06:04 GMT</pubDate>
+            <pubDate>Sat, 02 Aug 2025 00:05:30 GMT</pubDate>
             <description><![CDATA[JavaScript API for Chrome and Firefox]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/puppeteer/puppeteer">puppeteer/puppeteer</a></h1>
             <p>JavaScript API for Chrome and Firefox</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 91,385</p>
-            <p>Forks: 9,243</p>
-            <p>Stars today: 26 stars today</p>
+            <p>Stars: 91,538</p>
+            <p>Forks: 9,251</p>
+            <p>Stars today: 159 stars today</p>
             <h2>README</h2><pre># Puppeteer
 
 [![build](https://github.com/puppeteer/puppeteer/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/puppeteer/puppeteer/actions/workflows/ci.yml)
@@ -81,18 +256,571 @@ await browser.close();
             <category>TypeScript</category>
         </item>
         <item>
+            <title><![CDATA[dyad-sh/dyad]]></title>
+            <link>https://github.com/dyad-sh/dyad</link>
+            <guid>https://github.com/dyad-sh/dyad</guid>
+            <pubDate>Sat, 02 Aug 2025 00:05:29 GMT</pubDate>
+            <description><![CDATA[Free, local, open-source AI app builder | v0 / lovable / Bolt alternative | 🌟 Star if you like it!]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/dyad-sh/dyad">dyad-sh/dyad</a></h1>
+            <p>Free, local, open-source AI app builder | v0 / lovable / Bolt alternative | 🌟 Star if you like it!</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 3,097</p>
+            <p>Forks: 447</p>
+            <p>Stars today: 285 stars today</p>
+            <h2>README</h2><pre># dyad
+
+Dyad is a local, open-source AI app builder. It&#039;s fast, private and fully under your control — like Lovable, v0, or Bolt, but running right on your machine.
+
+![Image](https://github.com/user-attachments/assets/f6c83dfc-6ffd-4d32-93dd-4b9c46d17790)
+
+More info at: [http://dyad.sh/](http://dyad.sh/)
+
+## 🚀 Features
+
+- ⚡️ **Local**: Fast, private and no lock-in.
+- 🛠 **Bring your own keys**: Use your own AI API keys with no vendor lock-in.
+- 🖥️ **Cross-platform**: Easy to run on Mac or Windows.
+
+## 📦 Download
+
+No sign-up required. Just download and go.
+
+### [👉 Download for your platform](https://www.dyad.sh/#download)
+
+**dyad** is open source (Apache 2.0-licensed).
+
+If you&#039;re interested in contributing to dyad, please read our [contributing](./CONTRIBUTING.md) doc.
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[playcanvas/editor]]></title>
+            <link>https://github.com/playcanvas/editor</link>
+            <guid>https://github.com/playcanvas/editor</guid>
+            <pubDate>Sat, 02 Aug 2025 00:05:28 GMT</pubDate>
+            <description><![CDATA[Powerful visual editor environment for building WebGL, WebGPU, WebXR apps]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/playcanvas/editor">playcanvas/editor</a></h1>
+            <p>Powerful visual editor environment for building WebGL, WebGPU, WebXR apps</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 493</p>
+            <p>Forks: 67</p>
+            <p>Stars today: 51 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+
+&lt;img width=&quot;200&quot; src=&quot;https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/platform/images/logo/playcanvas-logo-medium.png&quot;/&gt;
+
+# PlayCanvas Editor
+
+[User Manual](https://developer.playcanvas.com) | [Forum](https://forum.playcanvas.com)
+
+The PlayCanvas Editor is a visual editing environment for building WebGL/WebGPU/WebXR apps. It can be accessed at https://playcanvas.com.
+
+[![Average time to resolve an issue][resolution-badge]][isitmaintained-url]
+[![Percentage of issues still open][open-issues-badge]][isitmaintained-url]
+[![Twitter][twitter-badge]][twitter-url]
+
+![Editor](https://raw.githubusercontent.com/playcanvas/editor/refs/heads/main/images/editor.png)
+
+You can see more projects build using the Editor on the [PlayCanvas website](https://playcanvas.com/explore).
+
+&lt;/div&gt;
+
+## Local Development
+
+To initialize a local development environment for the Editor Frontend, ensure you have [Node.js](https://nodejs.org/) 18 or later installed. Follow these steps:
+
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/playcanvas/editor.git
+   cd editor
+   ```
+
+2. Install dependencies:
+
+   ```sh
+   npm install
+   ```
+
+3. Build Editor and start a local web server on port 51000:
+
+   ```sh
+   npm run develop
+   ```
+
+4. Append the query parameter `use_local_frontend` to load the development build:
+
+    ```
+    https://playcanvas.com/editor/project/2535?use_local_frontend
+    ```
+
+&gt; [!NOTE]
+&gt; This query parameter is also supported in the code editor and launch page
+
+## Library integration testing
+
+The Editor is built on the following open source libraries:
+
+| Library                                                       | Details                                     |
+| ------------------------------------------------------------- | ------------------------------------------- |
+| [PlayCanvas Engine](https://github.com/playcanvas/engine)     | Powers the Editor&#039;s 3D View and Launch Page |
+| [Observer](https://github.com/playcanvas/playcanvas-observer) | Data binding and history                    |
+| [PCUI](https://github.com/playcanvas/pcui)                    | Front-end component library                 |
+| [PCUI-Graph](https://github.com/playcanvas/pcui-graph)        | PCUI plugin for rendering node-based graphs |
+| [Editor API](https://github.com/playcanvas/editor-api)        | Public API for Editor automation            |
+
+To test the integration of these libraries use [npm link](https://docs.npmjs.com/cli/v9/commands/npm-link). Follow these steps:
+
+1. Create a global link from source
+
+    ```sh
+    cd &lt;library&gt;
+    npm run link
+    ```
+
+2. Create a link to the global link
+
+    ```sh
+    cd editor
+    npm run link &lt;library&gt;
+    ```
+
+[resolution-badge]: https://isitmaintained.com/badge/resolution/playcanvas/editor.svg
+[open-issues-badge]: https://isitmaintained.com/badge/open/playcanvas/editor.svg
+[isitmaintained-url]: https://isitmaintained.com/project/playcanvas/editor
+[twitter-badge]: https://img.shields.io/twitter/follow/playcanvas.svg?style=social&amp;label=Follow
+[twitter-url]: https://twitter.com/intent/follow?screen_name=playcanvas</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[apache/echarts]]></title>
+            <link>https://github.com/apache/echarts</link>
+            <guid>https://github.com/apache/echarts</guid>
+            <pubDate>Sat, 02 Aug 2025 00:05:27 GMT</pubDate>
+            <description><![CDATA[Apache ECharts is a powerful, interactive charting and data visualization library for browser]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/apache/echarts">apache/echarts</a></h1>
+            <p>Apache ECharts is a powerful, interactive charting and data visualization library for browser</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 64,120</p>
+            <p>Forks: 19,749</p>
+            <p>Stars today: 17 stars today</p>
+            <h2>README</h2><pre># Apache ECharts
+
+&lt;a href=&quot;https://echarts.apache.org/&quot;&gt;
+    &lt;img style=&quot;vertical-align: top;&quot; src=&quot;./asset/logo.png?raw=true&quot; alt=&quot;logo&quot; height=&quot;50px&quot;&gt;
+&lt;/a&gt;
+
+Apache ECharts is a free, powerful charting and visualization library offering easy ways to add intuitive, interactive, and highly customizable charts to your commercial products. It is written in pure JavaScript and based on &lt;a href=&quot;https://github.com/ecomfe/zrender&quot;&gt;zrender&lt;/a&gt;, which is a whole new lightweight canvas library.
+
+**[中文官网](https://echarts.apache.org/zh/index.html)** | **[ENGLISH HOMEPAGE](https://echarts.apache.org/en/index.html)**
+
+[![License](https://img.shields.io/npm/l/echarts?color=5470c6)](https://github.com/apache/echarts/blob/master/LICENSE) [![Latest npm release](https://img.shields.io/npm/v/echarts?color=91cc75)](https://www.npmjs.com/package/echarts) [![NPM downloads](https://img.shields.io/npm/dm/echarts.svg?label=npm%20downloads&amp;style=flat&amp;color=fac858)](https://www.npmjs.com/package/echarts) [![Contributors](https://img.shields.io/github/contributors/apache/echarts?color=3ba272)](https://github.com/apache/echarts/graphs/contributors)
+
+[![Build Status](https://github.com/apache/echarts/actions/workflows/ci.yml/badge.svg)](https://github.com/apache/echarts/actions/workflows/ci.yml)
+
+## Get Apache ECharts
+
+You may choose one of the following methods:
+
++ Download from the [official website](https://echarts.apache.org/download.html)
++ `npm install echarts --save`
++ CDN: [jsDelivr CDN](https://www.jsdelivr.com/package/npm/echarts?path=dist)
+
+## Docs
+
++ [Get Started](https://echarts.apache.org/handbook)
++ [API](https://echarts.apache.org/api.html)
++ [Option Manual](https://echarts.apache.org/option.html)
++ [Examples](https://echarts.apache.org/examples)
+
+## Get Help
+
++ [GitHub Issues](https://github.com/apache/echarts/issues) for bug report and feature requests
++ Email [dev@echarts.apache.org](mailto:dev@echarts.apache.org) for general questions
++ Subscribe to the [mailing list](https://echarts.apache.org/maillist.html) to get updated with the project
+
+## Build
+
+Build echarts source code:
+
+Execute the instructions in the root directory of the echarts:
+([Node.js](https://nodejs.org) is required)
+
+```shell
+# Install the dependencies from NPM:
+npm install
+
+# Rebuild source code immediately in watch mode when changing the source code.
+# It opens the `./test` directory, and you may open `-cases.html` to get the list
+# of all test cases.
+# If you wish to create a test case, run `npm run mktest:help` to learn more.
+npm run dev
+
+# Check the correctness of TypeScript code.
+npm run checktype
+
+# If intending to build and get all types of the &quot;production&quot; files:
+npm run release
+```
+
+Then the &quot;production&quot; files are generated in the `dist` directory.
+
+## Contribution
+
+Please refer to the [contributing](https://github.com/apache/echarts/blob/master/CONTRIBUTING.md) document if you wish to debug locally or make pull requests.
+
+## Resources
+
+### Awesome ECharts
+
+[https://github.com/ecomfe/awesome-echarts](https://github.com/ecomfe/awesome-echarts)
+
+### Extensions
+
++ [ECharts GL](https://github.com/ecomfe/echarts-gl) An extension pack of ECharts, which provides 3D plots, globe visualization, and WebGL acceleration.
+
++ [Liquidfill 水球图](https://github.com/ecomfe/echarts-liquidfill)
+
++ [Wordcloud 字符云](https://github.com/ecomfe/echarts-wordcloud)
+
++ [Extension for Baidu Map 百度地图扩展](https://github.com/apache/echarts/tree/master/extension-src/bmap) An extension provides a wrapper of Baidu Map Service SDK.
+
++ [vue-echarts](https://github.com/ecomfe/vue-echarts) ECharts component for Vue.js
+
++ [echarts-stat](https://github.com/ecomfe/echarts-stat) Statistics tool for ECharts
+
+## License
+
+ECharts is available under the Apache License V2.
+
+## Code of Conduct
+
+Please refer to [Apache Code of Conduct](https://www.apache.org/foundation/policies/conduct.html).
+
+## Paper
+
+Deqing Li, Honghui Mei, Yi Shen, Shuang Su, Wenli Zhang, Junting Wang, Ming Zu, Wei Chen.
+[ECharts: A Declarative Framework for Rapid Construction of Web-based Visualization](https://www.sciencedirect.com/science/article/pii/S2468502X18300068).
+Visual Informatics, 2018.
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[refinedev/refine]]></title>
+            <link>https://github.com/refinedev/refine</link>
+            <guid>https://github.com/refinedev/refine</guid>
+            <pubDate>Sat, 02 Aug 2025 00:05:26 GMT</pubDate>
+            <description><![CDATA[A React Framework for building internal tools, admin panels, dashboards & B2B apps with unmatched flexibility.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/refinedev/refine">refinedev/refine</a></h1>
+            <p>A React Framework for building internal tools, admin panels, dashboards & B2B apps with unmatched flexibility.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 32,024</p>
+            <p>Forks: 2,623</p>
+            <p>Stars today: 196 stars today</p>
+            <h2>README</h2><pre>packages/core/README.md</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[puckeditor/puck]]></title>
+            <link>https://github.com/puckeditor/puck</link>
+            <guid>https://github.com/puckeditor/puck</guid>
+            <pubDate>Sat, 02 Aug 2025 00:05:25 GMT</pubDate>
+            <description><![CDATA[The visual editor for React]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/puckeditor/puck">puckeditor/puck</a></h1>
+            <p>The visual editor for React</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 7,254</p>
+            <p>Forks: 509</p>
+            <p>Stars today: 61 stars today</p>
+            <h2>README</h2><pre>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+
+&lt;a href=&quot;https://puckeditor.com&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://res.cloudinary.com/die3nptcg/image/upload/Puck_Logo_White_RGB_j2rwgg.svg&quot; height=&quot;100px&quot; aria-label=&quot;Puck logo&quot;&gt;
+    &lt;img src=&quot;https://res.cloudinary.com/die3nptcg/image/upload/Puck_Logo_Black_RGB_dqsjag.svg&quot; height=&quot;100px&quot; aria-label=&quot;Puck logo&quot;&gt;
+  &lt;/picture&gt;
+&lt;/a&gt;
+
+_The visual editor for React_
+
+[Documentation](https://puckeditor.com/docs) • [Demo](https://demo.puckeditor.com/edit) • [Discord](https://discord.gg/V9mDAhuxyZ) • [Contributing](https://github.com/puckeditor/puck/blob/main/CONTRIBUTING.md)
+
+⭐️ Enjoying Puck? Please [leave a star](https://github.com/puckeditor/puck)!
+
+&lt;br /&gt;
+
+[![GIF showing a page being created in the Puck Editor, with components being added, arranged, and customized in real time](https://github.com/user-attachments/assets/25e1ae25-ca5e-450f-afa0-01816830b731)](https://demo.puckeditor.com/edit)
+
+&lt;/div&gt;
+
+## What is Puck?
+
+Puck is a modular, open-source visual editor for React.js. You can use Puck to build custom drag-and-drop experiences with your own application and React components.
+
+Because Puck is just a React component, it plays well with all React.js environments, including Next.js. You own your data and there’s no vendor lock-in.
+
+Puck is also [licensed under MIT](https://github.com/puckeditor/puck?tab=MIT-1-ov-file#readme), making it suitable for both internal systems and commercial applications.
+
+## Quick start
+
+Install the package:
+
+```sh
+npm i @measured/puck --save # or npx create-puck-app my-app
+```
+
+Render the editor:
+
+```jsx
+// Editor.jsx
+import { Puck } from &quot;@measured/puck&quot;;
+import &quot;@measured/puck/puck.css&quot;;
+
+// Create Puck component config
+const config = {
+  components: {
+    HeadingBlock: {
+      fields: {
+        children: {
+          type: &quot;text&quot;,
+        },
+      },
+      render: ({ children }) =&gt; {
+        return &lt;h1&gt;{children}&lt;/h1&gt;;
+      },
+    },
+  },
+};
+
+// Describe the initial data
+const initialData = {};
+
+// Save the data to your database
+const save = (data) =&gt; {};
+
+// Render Puck editor
+export function Editor() {
+  return &lt;Puck config={config} data={initialData} onPublish={save} /&gt;;
+}
+```
+
+Render the page:
+
+```jsx
+// Page.jsx
+import { Render } from &quot;@measured/puck&quot;;
+import &quot;@measured/puck/puck.css&quot;;
+
+export function Page() {
+  return &lt;Render config={config} data={data} /&gt;;
+}
+```
+
+## Recipes
+
+Use `create-puck-app` to quickly spin up a a pre-configured app based on our provided [recipes](https://github.com/measuredco/puck/tree/main/recipes):
+
+```sh
+npx create-puck-app my-app
+```
+
+Available recipes include:
+
+- [**next**](https://github.com/measuredco/puck/tree/main/recipes/next): Next.js example, using App Router and static page generation
+- [**remix**](https://github.com/measuredco/puck/tree/main/recipes/remix): Remix Run v2 example, using dynamic routes at root-level
+- [**react-router**](https://github.com/measuredco/puck/tree/main/recipes/react-router): React Router v7 app example, using dynamic routes to create pages at any level
+
+## Community
+
+- [Discord server](https://discord.gg/D9e4E3MQVZ) for discussions
+- [awesome-puck](https://github.com/measuredco/awesome-puck) community repo for plugins, custom fields &amp; more
+
+## Get support
+
+If you have any questions about Puck, please open a [GitHub issue](https://github.com/measuredco/puck/issues) or join us on [Discord](https://discord.gg/D9e4E3MQVZ).
+
+Or [book a discovery call](https://app.cal.com/chrisvxd/puck-enquiry/) for hands-on support and consultancy.
+
+## License
+
+MIT © [The Puck Contributors](https://github.com/measuredco/puck/graphs/contributors)
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[linkwarden/linkwarden]]></title>
+            <link>https://github.com/linkwarden/linkwarden</link>
+            <guid>https://github.com/linkwarden/linkwarden</guid>
+            <pubDate>Sat, 02 Aug 2025 00:05:24 GMT</pubDate>
+            <description><![CDATA[⚡️⚡️⚡️ Self-hosted collaborative bookmark manager to collect, read, annotate, and fully preserve what matters, all in one place.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/linkwarden/linkwarden">linkwarden/linkwarden</a></h1>
+            <p>⚡️⚡️⚡️ Self-hosted collaborative bookmark manager to collect, read, annotate, and fully preserve what matters, all in one place.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 13,729</p>
+            <p>Forks: 529</p>
+            <p>Stars today: 398 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+  &lt;img src=&quot;./assets/logo.png&quot; width=&quot;100px&quot; /&gt;
+  &lt;h1&gt;Linkwarden&lt;/h1&gt;
+  &lt;h3&gt;Bookmarks, Evolved&lt;/h3&gt;
+
+&lt;a href=&quot;https://discord.com/invite/CtuYV47nuJ&quot;&gt;&lt;img src=&quot;https://img.shields.io/discord/1117993124669702164?logo=discord&amp;style=flat&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;https://twitter.com/LinkwardenHQ&quot;&gt;&lt;img src=&quot;https://img.shields.io/twitter/follow/linkwarden&quot; alt=&quot;Twitter&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://news.ycombinator.com/item?id=36942308&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Hacker%20News-280-%23FF6600&quot;&gt;&lt;/img&gt;&lt;/a&gt;
+
+&lt;a href=&quot;https://github.com/linkwarden/linkwarden/releases&quot;&gt;&lt;img alt=&quot;GitHub release&quot; src=&quot;https://img.shields.io/github/v/release/linkwarden/linkwarden&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;https://crowdin.com/project/linkwarden&quot;&gt;
+&lt;img src=&quot;https://badges.crowdin.net/linkwarden/localized.svg&quot; alt=&quot;Crowdin&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://opencollective.com/linkwarden&quot;&gt;&lt;img src=&quot;https://img.shields.io/opencollective/all/linkwarden&quot; alt=&quot;Open Collective&quot;&gt;&lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;div align=&#039;center&#039;&gt;
+
+[« LAUNCH DEMO »](https://demo.linkwarden.app)
+
+[Cloud](https://cloud.linkwarden.app) · [Website](https://linkwarden.app) · [Features](https://github.com/linkwarden/linkwarden#features) · [Docs](https://docs.linkwarden.app)
+
+&lt;img src=&quot;./assets/home.png&quot; /&gt;
+
+&lt;/div&gt;
+
+## Intro &amp; motivation
+
+**Linkwarden is a self-hosted, open-source collaborative bookmark manager to collect, read, annotate, and fully preserve what matters, all in one place.**
+
+The objective is to organize useful webpages and articles you find across the web in one place, and since useful webpages can go away (see the inevitability of [Link Rot](https://en.wikipedia.org/wiki/Link_rot)), Linkwarden also saves a copy of each webpage as a Screenshot and PDF, ensuring accessibility even if the original content is no longer available.
+
+In addition to preservation, Linkwarden provides a user-friendly reading and annotation experience that blends the simplicity of a “read-it-later” tool with the reliability of a web archive. Whether you’re highlighting key ideas, jotting down thoughts, or revisiting content long after it’s disappeared from the web, Linkwarden keeps your knowledge accessible and organized.
+
+Linkwarden is also designed with collaboration in mind, enabling you to share links with the public and/or collaborate seamlessly with multiple users.
+
+&gt; [!TIP]  
+&gt; Our official [Cloud](https://linkwarden.app/#pricing) offering provides the simplest way to begin using Linkwarden and it&#039;s the preferred choice for many due to its time-saving benefits. &lt;br&gt; Your subscription supports our hosting infrastructure and ongoing development. &lt;br&gt; Alternatively, if you prefer self-hosting Linkwarden, you can do so by following our [Installation documentation](https://docs.linkwarden.app/self-hosting/installation).
+
+## Features
+
+- 📸 Auto capture a screenshot, PDF, and single html file of each webpage.
+- 📖 Reader view of the webpage, with the ability to highlight and annotate text.
+- 🏛️ Send your webpage to Wayback Machine ([archive.org](https://archive.org)) for a snapshot. (Optional)
+- ✨ Local AI Tagging to automatically tag your links based on their content (Optional).
+- 📂 Organize links by collection, sub-collection, name, description and multiple tags.
+- 👥 Collaborate on gathering links in a collection.
+- 🎛️ Customize the permissions of each member.
+- 🌐 Share your collected links and preserved formats with the world.
+- 📌 Pin your favorite links to dashboard.
+- 🔍 Full text search, filter and sort for easy retrieval.
+- 📱 Responsive design and supports most modern browsers.
+- 🌓 Dark/Light mode support.
+- 🧩 Browser extension. [Star it here!](https://github.com/linkwarden/browser-extension)
+- 🔄 Browser Synchronization (using [Floccus](https://floccus.org)!)
+- ⬇️ Import and export your bookmarks.
+- 🔐 SSO integration. (Enterprise and Self-hosted users only)
+- 📦 Installable Progressive Web App (PWA).
+- 🍎 iOS Shortcut to save Links to Linkwarden.
+- 🔑 API keys.
+- ✅ Bulk actions.
+- 👥 User administration.
+- 🌐 Support for Other Languages (i18n).
+- 📁 Image and PDF Uploads.
+- 🎨 Custom Icons for Links and Collections.
+- 🔔 RSS Feed Subscription.
+- ✨ And many more features. (Literally!)
+
+## Like what we&#039;re doing? Give us a Star ⭐
+
+![Star Us](https://raw.githubusercontent.com/linkwarden/linkwarden/main/assets/star_repo.gif)
+
+## We&#039;re building our Community 🌐
+
+Join and follow us in the following platforms to stay up to date about the most recent features and for support:
+
+&lt;a href=&quot;https://discord.com/invite/CtuYV47nuJ&quot;&gt;&lt;img src=&quot;https://img.shields.io/discord/1117993124669702164?logo=discord&amp;style=flat&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt;
+
+&lt;a href=&quot;https://twitter.com/LinkwardenHQ&quot;&gt;&lt;img src=&quot;https://img.shields.io/twitter/follow/linkwarden&quot; alt=&quot;Twitter&quot;&gt;&lt;/a&gt;
+
+&lt;a href=&quot;https://fosstodon.org/@linkwarden&quot;&gt;&lt;img src=&quot;https://img.shields.io/mastodon/follow/110748840237143200?domain=https%3A%2F%2Ffosstodon.org&quot; alt=&quot;Mastodon&quot;&gt;&lt;/a&gt;
+
+## Suggestions
+
+We _usually_ go after the [popular suggestions](https://github.com/linkwarden/linkwarden/issues?q=is%3Aissue%20is%3Aopen%20sort%3Areactions-%2B1-desc). Feel free to open a [new issue](https://github.com/linkwarden/linkwarden/issues/new?assignees=&amp;labels=enhancement&amp;projects=&amp;template=feature_request.md&amp;title=) to suggest one - others might be interested too! :)
+
+## Roadmap
+
+Make sure to check out our [public roadmap](https://github.com/orgs/linkwarden/projects/1).
+
+## Community Projects
+
+Here are some community-maintained projects that are built around Linkwarden:
+
+- [My Links](https://apps.apple.com/ca/app/my-links-for-linkwarden/id6504573402) - iOS and MacOS Apps, maintained by [JGeek00](https://github.com/JGeek00).
+- [LinkDroid](https://fossdroid.com/a/linkdroid-for-linkwarden.html) - Android App with share sheet integration, [source code](https://github.com/Dacid99/LinkDroid-for-Linkwarden).
+- [LinkGuardian](https://github.com/Elbullazul/LinkGuardian) - An Android client for Linkwarden. Built with Kotlin and Jetpack compose.
+- [StarWarden](https://github.com/rtuszik/starwarden) - A browser extension to save your starred GitHub repositories to Linkwarden.
+
+## Development
+
+If you want to contribute, Thanks! Start by choosing one of our [popular suggestions](https://github.com/linkwarden/linkwarden/issues?q=is%3Aissue%20is%3Aopen%20sort%3Areactions-%2B1-desc), just please stay in touch with [@daniel31x13](https://github.com/daniel31x13) before starting.
+
+# Translations
+
+If you want to help us translate Linkwarden to your language, please check out our [Crowdin page](https://crowdin.com/project/linkwarden) and start translating. We would love to have your help!
+
+To start translating a new language, please create an issue so we can set it up for you. New languages will be added once they reach at least 50% translation completion.
+
+&lt;a href=&quot;https://crowdin.com/project/linkwarden&quot;&gt;
+&lt;img src=&quot;https://badges.crowdin.net/linkwarden/localized.svg&quot; alt=&quot;Crowdin&quot; /&gt;&lt;/a&gt;
+
+## Security
+
+If you found a security vulnerability, please do **not** create a public issue, instead send an email to [security@linkwarden.app](mailto:security@linkwarden.app) stating the vulnerability. Thanks!
+
+## Support &lt;3
+
+Other than using our official [Cloud](https://linkwarden.app/#pricing) offering, any [donations](https://opencollective.com/linkwarden) are highly appreciated as well!
+
+Here are the other ways to support/cheer this project:
+
+- Starring this repository.
+- Joining us on [Discord](https://discord.com/invite/CtuYV47nuJ).
+- Referring Linkwarden to a friend.
+
+If you did any of the above, Thanksss! Otherwise thanks.
+
+## Thanks to All the Contributors 💪
+
+Huge thanks to these guys for spending their time helping Linkwarden grow. They rock! ⚡️
+
+&lt;img src=&quot;https://contributors-img.web.app/image?repo=linkwarden/linkwarden&quot; alt=&quot;Contributors&quot;/&gt;
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
             <title><![CDATA[Canner/WrenAI]]></title>
             <link>https://github.com/Canner/WrenAI</link>
             <guid>https://github.com/Canner/WrenAI</guid>
-            <pubDate>Fri, 01 Aug 2025 00:06:03 GMT</pubDate>
+            <pubDate>Sat, 02 Aug 2025 00:05:23 GMT</pubDate>
             <description><![CDATA[⚡️Wren AI is your GenBI Agent, that you can query any database with natural language, get accurate SQL(Text-to-SQL), charts(Text-to-Charts) & AI-generated insights in seconds.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/Canner/WrenAI">Canner/WrenAI</a></h1>
             <p>⚡️Wren AI is your GenBI Agent, that you can query any database with natural language, get accurate SQL(Text-to-SQL), charts(Text-to-Charts) & AI-generated insights in seconds.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 9,161</p>
-            <p>Forks: 938</p>
-            <p>Stars today: 119 stars today</p>
+            <p>Stars: 9,402</p>
+            <p>Forks: 951</p>
+            <p>Stars today: 335 stars today</p>
             <h2>README</h2><pre>
 &lt;p align=&quot;center&quot; id=&quot;top&quot;&gt;
   &lt;a href=&quot;https://getwren.ai/?utm_source=github&amp;utm_medium=title&amp;utm_campaign=readme&quot;&gt;
@@ -238,494 +966,18 @@ Please note that our [Code of Conduct](./CODE_OF_CONDUCT.md) applies to all Wren
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[fastrepl/hyprnote]]></title>
-            <link>https://github.com/fastrepl/hyprnote</link>
-            <guid>https://github.com/fastrepl/hyprnote</guid>
-            <pubDate>Fri, 01 Aug 2025 00:06:02 GMT</pubDate>
-            <description><![CDATA[Local-first AI Notepad for Private Meetings]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/fastrepl/hyprnote">fastrepl/hyprnote</a></h1>
-            <p>Local-first AI Notepad for Private Meetings</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 3,660</p>
-            <p>Forks: 185</p>
-            <p>Stars today: 174 stars today</p>
-            <h2>README</h2><pre>![github_banner_v2](https://github.com/user-attachments/assets/e5fac942-1a51-4180-9d64-f508db705f9d)
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;p align=&quot;center&quot;&gt;AI notepad for &lt;strong&gt;private&lt;/strong&gt; meetings. Not a single byte of data leaves your device.&lt;/p&gt;
-  &lt;p align=&quot;center&quot;&gt;
-   &lt;a href=&quot;https://deepwiki.com/fastrepl/hyprnote&quot;&gt;&lt;img src=&quot;https://deepwiki.com/badge.svg&quot; alt=&quot;Ask DeepWiki&quot;&gt;&lt;/a&gt;
-   &lt;a href=&quot;https://hyprnote.com/discord&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://img.shields.io/static/v1?label=Join%20our&amp;message=Discord&amp;color=blue&amp;logo=Discord&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt;
-   &lt;a href=&quot;https://x.com/tryhyprnote&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://img.shields.io/static/v1?label=Follow%20us%20on&amp;message=X&amp;color=black&amp;logo=x&quot; alt=&quot;X&quot;&gt;&lt;/a&gt;
-  &lt;/p&gt;
-&lt;/p&gt;
-   
-## What is Hyprnote?
-
-Hyprnote is a local-first AI notepad designed for people in back-to-back meetings.
-
-- Listens to your meetings while you write
-- Crafts smart summaries based on your quick notes
-- Runs completely **offline** using open-source models like Whisper or HyprLLM
-
-No clouds. No leaks. Just your notes—on your machine.
-
-## Installation
-
-```bash
-brew tap fastrepl/hyprnote &amp;&amp; brew install hyprnote --cask
-```
-
-- [macOS](https://hyprnote.com/download) (public beta)
-- [Windows](https://github.com/fastrepl/hyprnote/issues/66) (soon)
-- [Linux](https://github.com/fastrepl/hyprnote/issues/67) (of course)
-
-## Highlights
-
-### Realtime Transcript
-Watch a live transcript update as the meeting unfolds—accurate, fast, and fully local.
-&lt;img width=&quot;959&quot; height=&quot;712&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/d24b8b43-a052-44cd-803e-daa3ff600a9c&quot; /&gt;
-
-### From Memos to Summaries
-Jot things down during your call. Hyprnote turns them into a polished meeting summary—context-aware and easy to share.
-&lt;img width=&quot;959&quot; height=&quot;712&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/489f9239-1a32-4217-9d74-554906687fe1&quot; /&gt;
-
-### Truly Local
-No internet? No problem. Hyprnote works offline by default and keeps everything on your device.
-
-![offline](https://github.com/user-attachments/assets/c6649a63-3d41-40ea-a1fd-8c0713ad91bc)
-
-### Bring Your Own LLM
-Prefer something custom? You can swap in your own language model:
-
-- Run local models via Ollama
-- Use approved third-party APIs like Gemini, Claude, or Azure-hosted GPT
-- Stay compliant with whatever your org allows
-
-Hyprnote plays nice with whatever stack you’re running.
-
-&lt;img width=&quot;912&quot; height=&quot;712&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/717dc39a-3359-46d6-a92f-51de56907750&quot; /&gt;
-
-### Note Templates
-Prefer a certain style? Choose from predefined templates like bullet points, agenda-based, or paragraph summary. Or create your own.
-
-&lt;img width=&quot;959&quot; height=&quot;712&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/d826a854-4b6f-415c-9e97-270f517c0868&quot; /&gt;
-
-### Autonomy Selector
-Control how much freedom the AI takes:
-
-- Stick strictly to your quick notes
-- Let Hyprnote improvise and reframe based on the full conversation
-
-&lt;img width=&quot;912&quot; height=&quot;712&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/7de5c74f-5d99-46ec-8a5f-a38fb62bafb1&quot; /&gt;
-
-### AI Chat
-Ask follow-ups right inside your notes:
-
-- &quot;What were the action items?&quot;
-- &quot;Rewrite this in simpler language&quot;
-- &quot;Translate to Spanish&quot;
-
-&lt;img width=&quot;959&quot; height=&quot;712&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/52b7dc14-906f-445f-91f9-b0089d40a495&quot; /&gt;
-
-
-### Integrations
-- Apple Calendar, Contacts
-- Obsidian
-- Coming soon: Notion, Slack, Hubspot, Salesforce
-
-&lt;img width=&quot;912&quot; height=&quot;712&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/ab559e54-fda5-4c8c-97d7-ba1b9d134cc8&quot; /&gt;
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[linkwarden/linkwarden]]></title>
-            <link>https://github.com/linkwarden/linkwarden</link>
-            <guid>https://github.com/linkwarden/linkwarden</guid>
-            <pubDate>Fri, 01 Aug 2025 00:06:01 GMT</pubDate>
-            <description><![CDATA[⚡️⚡️⚡️ Self-hosted collaborative bookmark manager to collect, read, annotate, and fully preserve what matters, all in one place.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/linkwarden/linkwarden">linkwarden/linkwarden</a></h1>
-            <p>⚡️⚡️⚡️ Self-hosted collaborative bookmark manager to collect, read, annotate, and fully preserve what matters, all in one place.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 13,479</p>
-            <p>Forks: 523</p>
-            <p>Stars today: 70 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-  &lt;img src=&quot;./assets/logo.png&quot; width=&quot;100px&quot; /&gt;
-  &lt;h1&gt;Linkwarden&lt;/h1&gt;
-  &lt;h3&gt;Bookmarks, Evolved&lt;/h3&gt;
-
-&lt;a href=&quot;https://discord.com/invite/CtuYV47nuJ&quot;&gt;&lt;img src=&quot;https://img.shields.io/discord/1117993124669702164?logo=discord&amp;style=flat&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://twitter.com/LinkwardenHQ&quot;&gt;&lt;img src=&quot;https://img.shields.io/twitter/follow/linkwarden&quot; alt=&quot;Twitter&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://news.ycombinator.com/item?id=36942308&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Hacker%20News-280-%23FF6600&quot;&gt;&lt;/img&gt;&lt;/a&gt;
-
-&lt;a href=&quot;https://github.com/linkwarden/linkwarden/releases&quot;&gt;&lt;img alt=&quot;GitHub release&quot; src=&quot;https://img.shields.io/github/v/release/linkwarden/linkwarden&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://crowdin.com/project/linkwarden&quot;&gt;
-&lt;img src=&quot;https://badges.crowdin.net/linkwarden/localized.svg&quot; alt=&quot;Crowdin&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/linkwarden&quot;&gt;&lt;img src=&quot;https://img.shields.io/opencollective/all/linkwarden&quot; alt=&quot;Open Collective&quot;&gt;&lt;/a&gt;
-
-&lt;/div&gt;
-
-&lt;div align=&#039;center&#039;&gt;
-
-[« LAUNCH DEMO »](https://demo.linkwarden.app)
-
-[Cloud](https://cloud.linkwarden.app) · [Website](https://linkwarden.app) · [Features](https://github.com/linkwarden/linkwarden#features) · [Docs](https://docs.linkwarden.app)
-
-&lt;img src=&quot;./assets/home.png&quot; /&gt;
-
-&lt;/div&gt;
-
-## Intro &amp; motivation
-
-**Linkwarden is a self-hosted, open-source collaborative bookmark manager to collect, read, annotate, and fully preserve what matters, all in one place.**
-
-The objective is to organize useful webpages and articles you find across the web in one place, and since useful webpages can go away (see the inevitability of [Link Rot](https://en.wikipedia.org/wiki/Link_rot)), Linkwarden also saves a copy of each webpage as a Screenshot and PDF, ensuring accessibility even if the original content is no longer available.
-
-In addition to preservation, Linkwarden provides a user-friendly reading and annotation experience that blends the simplicity of a “read-it-later” tool with the reliability of a web archive. Whether you’re highlighting key ideas, jotting down thoughts, or revisiting content long after it’s disappeared from the web, Linkwarden keeps your knowledge accessible and organized.
-
-Linkwarden is also designed with collaboration in mind, enabling you to share links with the public and/or collaborate seamlessly with multiple users.
-
-&gt; [!TIP]  
-&gt; Our official [Cloud](https://linkwarden.app/#pricing) offering provides the simplest way to begin using Linkwarden and it&#039;s the preferred choice for many due to its time-saving benefits. &lt;br&gt; Your subscription supports our hosting infrastructure and ongoing development. &lt;br&gt; Alternatively, if you prefer self-hosting Linkwarden, you can do so by following our [Installation documentation](https://docs.linkwarden.app/self-hosting/installation).
-
-## Features
-
-- 📸 Auto capture a screenshot, PDF, and single html file of each webpage.
-- 📖 Reader view of the webpage, with the ability to highlight and annotate text.
-- 🏛️ Send your webpage to Wayback Machine ([archive.org](https://archive.org)) for a snapshot. (Optional)
-- ✨ Local AI Tagging to automatically tag your links based on their content (Optional).
-- 📂 Organize links by collection, sub-collection, name, description and multiple tags.
-- 👥 Collaborate on gathering links in a collection.
-- 🎛️ Customize the permissions of each member.
-- 🌐 Share your collected links and preserved formats with the world.
-- 📌 Pin your favorite links to dashboard.
-- 🔍 Full text search, filter and sort for easy retrieval.
-- 📱 Responsive design and supports most modern browsers.
-- 🌓 Dark/Light mode support.
-- 🧩 Browser extension. [Star it here!](https://github.com/linkwarden/browser-extension)
-- 🔄 Browser Synchronization (using [Floccus](https://floccus.org)!)
-- ⬇️ Import and export your bookmarks.
-- 🔐 SSO integration. (Enterprise and Self-hosted users only)
-- 📦 Installable Progressive Web App (PWA).
-- 🍎 iOS Shortcut to save Links to Linkwarden.
-- 🔑 API keys.
-- ✅ Bulk actions.
-- 👥 User administration.
-- 🌐 Support for Other Languages (i18n).
-- 📁 Image and PDF Uploads.
-- 🎨 Custom Icons for Links and Collections.
-- 🔔 RSS Feed Subscription.
-- ✨ And many more features. (Literally!)
-
-## Like what we&#039;re doing? Give us a Star ⭐
-
-![Star Us](https://raw.githubusercontent.com/linkwarden/linkwarden/main/assets/star_repo.gif)
-
-## We&#039;re building our Community 🌐
-
-Join and follow us in the following platforms to stay up to date about the most recent features and for support:
-
-&lt;a href=&quot;https://discord.com/invite/CtuYV47nuJ&quot;&gt;&lt;img src=&quot;https://img.shields.io/discord/1117993124669702164?logo=discord&amp;style=flat&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt;
-
-&lt;a href=&quot;https://twitter.com/LinkwardenHQ&quot;&gt;&lt;img src=&quot;https://img.shields.io/twitter/follow/linkwarden&quot; alt=&quot;Twitter&quot;&gt;&lt;/a&gt;
-
-&lt;a href=&quot;https://fosstodon.org/@linkwarden&quot;&gt;&lt;img src=&quot;https://img.shields.io/mastodon/follow/110748840237143200?domain=https%3A%2F%2Ffosstodon.org&quot; alt=&quot;Mastodon&quot;&gt;&lt;/a&gt;
-
-## Suggestions
-
-We _usually_ go after the [popular suggestions](https://github.com/linkwarden/linkwarden/issues?q=is%3Aissue%20is%3Aopen%20sort%3Areactions-%2B1-desc). Feel free to open a [new issue](https://github.com/linkwarden/linkwarden/issues/new?assignees=&amp;labels=enhancement&amp;projects=&amp;template=feature_request.md&amp;title=) to suggest one - others might be interested too! :)
-
-## Roadmap
-
-Make sure to check out our [public roadmap](https://github.com/orgs/linkwarden/projects/1).
-
-## Community Projects
-
-Here are some community-maintained projects that are built around Linkwarden:
-
-- [My Links](https://apps.apple.com/ca/app/my-links-for-linkwarden/id6504573402) - iOS and MacOS Apps, maintained by [JGeek00](https://github.com/JGeek00).
-- [LinkDroid](https://fossdroid.com/a/linkdroid-for-linkwarden.html) - Android App with share sheet integration, [source code](https://github.com/Dacid99/LinkDroid-for-Linkwarden).
-- [LinkGuardian](https://github.com/Elbullazul/LinkGuardian) - An Android client for Linkwarden. Built with Kotlin and Jetpack compose.
-- [StarWarden](https://github.com/rtuszik/starwarden) - A browser extension to save your starred GitHub repositories to Linkwarden.
-
-## Development
-
-If you want to contribute, Thanks! Start by choosing one of our [popular suggestions](https://github.com/linkwarden/linkwarden/issues?q=is%3Aissue%20is%3Aopen%20sort%3Areactions-%2B1-desc), just please stay in touch with [@daniel31x13](https://github.com/daniel31x13) before starting.
-
-# Translations
-
-If you want to help us translate Linkwarden to your language, please check out our [Crowdin page](https://crowdin.com/project/linkwarden) and start translating. We would love to have your help!
-
-To start translating a new language, please create an issue so we can set it up for you. New languages will be added once they reach at least 50% translation completion.
-
-&lt;a href=&quot;https://crowdin.com/project/linkwarden&quot;&gt;
-&lt;img src=&quot;https://badges.crowdin.net/linkwarden/localized.svg&quot; alt=&quot;Crowdin&quot; /&gt;&lt;/a&gt;
-
-## Security
-
-If you found a security vulnerability, please do **not** create a public issue, instead send an email to [security@linkwarden.app](mailto:security@linkwarden.app) stating the vulnerability. Thanks!
-
-## Support &lt;3
-
-Other than using our official [Cloud](https://linkwarden.app/#pricing) offering, any [donations](https://opencollective.com/linkwarden) are highly appreciated as well!
-
-Here are the other ways to support/cheer this project:
-
-- Starring this repository.
-- Joining us on [Discord](https://discord.com/invite/CtuYV47nuJ).
-- Referring Linkwarden to a friend.
-
-If you did any of the above, Thanksss! Otherwise thanks.
-
-## Thanks to All the Contributors 💪
-
-Huge thanks to these guys for spending their time helping Linkwarden grow. They rock! ⚡️
-
-&lt;img src=&quot;https://contributors-img.web.app/image?repo=linkwarden/linkwarden&quot; alt=&quot;Contributors&quot;/&gt;
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[puckeditor/puck]]></title>
-            <link>https://github.com/puckeditor/puck</link>
-            <guid>https://github.com/puckeditor/puck</guid>
-            <pubDate>Fri, 01 Aug 2025 00:06:00 GMT</pubDate>
-            <description><![CDATA[The visual editor for React]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/puckeditor/puck">puckeditor/puck</a></h1>
-            <p>The visual editor for React</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 7,198</p>
-            <p>Forks: 504</p>
-            <p>Stars today: 27 stars today</p>
-            <h2>README</h2><pre>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-
-&lt;a href=&quot;https://puckeditor.com&quot;&gt;
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://res.cloudinary.com/die3nptcg/image/upload/Puck_Logo_White_RGB_j2rwgg.svg&quot; height=&quot;100px&quot; aria-label=&quot;Puck logo&quot;&gt;
-    &lt;img src=&quot;https://res.cloudinary.com/die3nptcg/image/upload/Puck_Logo_Black_RGB_dqsjag.svg&quot; height=&quot;100px&quot; aria-label=&quot;Puck logo&quot;&gt;
-  &lt;/picture&gt;
-&lt;/a&gt;
-
-_The visual editor for React_
-
-[Documentation](https://puckeditor.com/docs) • [Demo](https://demo.puckeditor.com/edit) • [Discord](https://discord.gg/V9mDAhuxyZ) • [Contributing](https://github.com/puckeditor/puck/blob/main/CONTRIBUTING.md)
-
-⭐️ Enjoying Puck? Please [leave a star](https://github.com/puckeditor/puck)!
-
-&lt;br /&gt;
-
-[![GIF showing a page being created in the Puck Editor, with components being added, arranged, and customized in real time](https://github.com/user-attachments/assets/25e1ae25-ca5e-450f-afa0-01816830b731)](https://demo.puckeditor.com/edit)
-
-&lt;/div&gt;
-
-## What is Puck?
-
-Puck is a modular, open-source visual editor for React.js. You can use Puck to build custom drag-and-drop experiences with your own application and React components.
-
-Because Puck is just a React component, it plays well with all React.js environments, including Next.js. You own your data and there’s no vendor lock-in.
-
-Puck is also [licensed under MIT](https://github.com/puckeditor/puck?tab=MIT-1-ov-file#readme), making it suitable for both internal systems and commercial applications.
-
-## Quick start
-
-Install the package:
-
-```sh
-npm i @measured/puck --save # or npx create-puck-app my-app
-```
-
-Render the editor:
-
-```jsx
-// Editor.jsx
-import { Puck } from &quot;@measured/puck&quot;;
-import &quot;@measured/puck/puck.css&quot;;
-
-// Create Puck component config
-const config = {
-  components: {
-    HeadingBlock: {
-      fields: {
-        children: {
-          type: &quot;text&quot;,
-        },
-      },
-      render: ({ children }) =&gt; {
-        return &lt;h1&gt;{children}&lt;/h1&gt;;
-      },
-    },
-  },
-};
-
-// Describe the initial data
-const initialData = {};
-
-// Save the data to your database
-const save = (data) =&gt; {};
-
-// Render Puck editor
-export function Editor() {
-  return &lt;Puck config={config} data={initialData} onPublish={save} /&gt;;
-}
-```
-
-Render the page:
-
-```jsx
-// Page.jsx
-import { Render } from &quot;@measured/puck&quot;;
-import &quot;@measured/puck/puck.css&quot;;
-
-export function Page() {
-  return &lt;Render config={config} data={data} /&gt;;
-}
-```
-
-## Recipes
-
-Use `create-puck-app` to quickly spin up a a pre-configured app based on our provided [recipes](https://github.com/measuredco/puck/tree/main/recipes):
-
-```sh
-npx create-puck-app my-app
-```
-
-Available recipes include:
-
-- [**next**](https://github.com/measuredco/puck/tree/main/recipes/next): Next.js example, using App Router and static page generation
-- [**remix**](https://github.com/measuredco/puck/tree/main/recipes/remix): Remix Run v2 example, using dynamic routes at root-level
-- [**react-router**](https://github.com/measuredco/puck/tree/main/recipes/react-router): React Router v7 app example, using dynamic routes to create pages at any level
-
-## Community
-
-- [Discord server](https://discord.gg/D9e4E3MQVZ) for discussions
-- [awesome-puck](https://github.com/measuredco/awesome-puck) community repo for plugins, custom fields &amp; more
-
-## Get support
-
-If you have any questions about Puck, please open a [GitHub issue](https://github.com/measuredco/puck/issues) or join us on [Discord](https://discord.gg/D9e4E3MQVZ).
-
-Or [book a discovery call](https://app.cal.com/chrisvxd/puck-enquiry/) for hands-on support and consultancy.
-
-## License
-
-MIT © [The Puck Contributors](https://github.com/measuredco/puck/graphs/contributors)
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[wasp-lang/open-saas]]></title>
-            <link>https://github.com/wasp-lang/open-saas</link>
-            <guid>https://github.com/wasp-lang/open-saas</guid>
-            <pubDate>Fri, 01 Aug 2025 00:05:59 GMT</pubDate>
-            <description><![CDATA[A free, open-source SaaS app starter for React & Node.js with superpowers. Full-featured. Community-driven.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/wasp-lang/open-saas">wasp-lang/open-saas</a></h1>
-            <p>A free, open-source SaaS app starter for React & Node.js with superpowers. Full-featured. Community-driven.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 11,973</p>
-            <p>Forks: 1,277</p>
-            <p>Stars today: 104 stars today</p>
-            <h2>README</h2><pre>## Welcome to your new SaaS App! 🎉
-&lt;a href=&quot;https://www.producthunt.com/products/open-saas?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_source=badge-open&amp;#0045;saas&amp;#0045;2&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=991058&amp;theme=neutral&amp;t=1753776395137&quot; alt=&quot;Open&amp;#0032;SaaS - The&amp;#0032;open&amp;#0045;source&amp;#0032;SaaS&amp;#0032;boilerplate&amp;#0032;with&amp;#0032;superpowers&amp;#0033; | Product Hunt&quot; style=&quot;width: 250px; height: 54px;&quot; width=&quot;250&quot; height=&quot;54&quot; /&gt;&lt;/a&gt;
-
-https://github.com/user-attachments/assets/3856276b-23e9-455e-a564-b5f26f4f0e98
-
-You&#039;ve decided to build a SaaS app with the Open SaaS template. Great choice! 
-
-This template is:
-
-1. fully open-source
-2. completely free to use and distribute
-3. comes with a ton of features out of the box!
-4. focused on free, open-source services, where possible
-
-🧑‍💻 Check it out in action here: [OpenSaaS.sh](https://opensaas.sh)  
-📚 Check out the Docs here: [Open SaaS Docs](https://docs.opensaas.sh)
-
-## What&#039;s inside?
-
-The template itself is built on top of some very powerful tools and frameworks, including:
-
-- 🐝 [Wasp](https://wasp.sh) - a full-stack React, NodeJS, Prisma framework with superpowers
-- 🚀 [Astro](https://starlight.astro.build/) - Astro&#039;s lightweight &quot;Starlight&quot; template for documentation and blog
-- 💸 [Stripe](https://stripe.com) or [Lemon Squeezy](https://lemonsqueezy.com/) (with Polar.sh and Paddle coming soon!) - for products and payments
-- 💅 [ShadCN UI](https://tailwindcss.com) - for components &amp; styling (plus admin dashboard!)
-- 📈 [Plausible](https://plausible.io) or [Google](https://analytics.google.com/) Analytics
-- 🤖 [OpenAI](https://openai.com) - OpenAI API w/ function calling example
-- 📦 [AWS S3](https://aws.amazon.com/s3/) - for file uploads
-- 📧 [SendGrid](https://sendgrid.com), [MailGun](https://mailgun.com), or SMTP - for email sending
-- 🧪 [Playwright](https://playwright.dev) - end-to-end tests with Playwright
-
-Because we&#039;re using Wasp as the full-stack framework, we can leverage a lot of its features to build our SaaS in record time, including:
-
-- 🔐 [Full-stack Authentication](https://wasp.sh/docs/auth/overview) - Email verified + social Auth in a few lines of code.
-- ⛑ [End-to-end Type Safety](https://wasp.sh/docs/data-model/operations/overview) - Type your backend functions and get inferred types on the front-end automatically, without the need to install or configure any third-party libraries. Oh, and type-safe Links, too!
-- 🤖 [Jobs](https://wasp.sh/docs/advanced/jobs) - Run cron jobs in the background or set up queues simply by defining a function in the config file.
-- 🚀 [One-command Deploy](https://wasp.sh/docs/advanced/deployment/overview) - Easily deploy your DB, Server, &amp; Client with one commaned to [Railway](https://railway.app) or [Fly.io](https://fly.io) via the CLI. Or deploy manually to any other hosting serivce of your choice.
-
-You also get access to Wasp&#039;s diverse, helpful community if you get stuck or need help.
-- 🤝 [Wasp Discord](https://discord.gg/aCamt5wCpS)
-
-## Getting Started
-
-### Simple Instructions
-
-First, to install the latest version of [Wasp](https://wasp.sh/) on macOS, Linux, or Windows with WSL, run the following command:
-```bash
-curl -sSL https://get.wasp.sh/installer.sh | sh
-```
-
-Then, create a new SaaS app with the following command:
-
-```bash
-wasp new -t saas
-```
-
-This will create a **clean copy of the Open SaaS template** into a new directory, and you can start building your SaaS app right away!
-
-### Detailed Instructions
-
-For everything you need to know about getting started and using this template, check out the [Open SaaS Docs](https://docs.opensaas.sh).
-
-We&#039;ve documented everything in great detail, including installation instructions, pulling updates to the template, guides for integrating services, SEO, deployment, and more. 🚀
-
-## Getting Help &amp; Providing Feedback
-
-There are two ways to get help or provide feedback (and we try to always respond quickly!):
-1. [Open an issue](https://github.com/wasp-lang/open-saas/issues)
-2. [Wasp Discord](https://discord.gg/aCamt5wCpS) -- please direct questions to the #🙋questions forum channel
-
-## Contributing
-
-Note that we&#039;ve tried to get as many of the core features of a SaaS app into this template as possible, but there still might be some missing features or functionality.
-
-We could always use some help tying up loose ends: contributions are welcome! Check out [CONTRIBUTING.md](/CONTRIBUTING.md) for more details.
-
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
             <title><![CDATA[linshenkx/prompt-optimizer]]></title>
             <link>https://github.com/linshenkx/prompt-optimizer</link>
             <guid>https://github.com/linshenkx/prompt-optimizer</guid>
-            <pubDate>Fri, 01 Aug 2025 00:05:58 GMT</pubDate>
+            <pubDate>Sat, 02 Aug 2025 00:05:22 GMT</pubDate>
             <description><![CDATA[一款提示词优化器，助力于编写高质量的提示词]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/linshenkx/prompt-optimizer">linshenkx/prompt-optimizer</a></h1>
             <p>一款提示词优化器，助力于编写高质量的提示词</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 11,720</p>
-            <p>Forks: 1,421</p>
-            <p>Stars today: 375 stars today</p>
+            <p>Stars: 11,853</p>
+            <p>Forks: 1,438</p>
+            <p>Stars today: 144 stars today</p>
             <h2>README</h2><pre># Prompt Optimizer (提示词优化器) 🚀
 
 &lt;div align=&quot;center&quot;&gt;
@@ -1137,1024 +1389,1037 @@ pnpm dev:fresh        # 完整重置并重新启动开发环境
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[microsoft/playwright]]></title>
-            <link>https://github.com/microsoft/playwright</link>
-            <guid>https://github.com/microsoft/playwright</guid>
-            <pubDate>Fri, 01 Aug 2025 00:05:57 GMT</pubDate>
-            <description><![CDATA[Playwright is a framework for Web Testing and Automation. It allows testing Chromium, Firefox and WebKit with a single API.]]></description>
+            <title><![CDATA[galaxy-s10/billd-desk]]></title>
+            <link>https://github.com/galaxy-s10/billd-desk</link>
+            <guid>https://github.com/galaxy-s10/billd-desk</guid>
+            <pubDate>Sat, 02 Aug 2025 00:05:21 GMT</pubDate>
+            <description><![CDATA[基于Vue3 + WebRTC + Nodejs + Electron搭建的远程桌面控制]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/microsoft/playwright">microsoft/playwright</a></h1>
-            <p>Playwright is a framework for Web Testing and Automation. It allows testing Chromium, Firefox and WebKit with a single API.</p>
+            <h1><a href="https://github.com/galaxy-s10/billd-desk">galaxy-s10/billd-desk</a></h1>
+            <p>基于Vue3 + WebRTC + Nodejs + Electron搭建的远程桌面控制</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 75,445</p>
-            <p>Forks: 4,407</p>
-            <p>Stars today: 56 stars today</p>
-            <h2>README</h2><pre># 🎭 Playwright
+            <p>Stars: 3,604</p>
+            <p>Forks: 430</p>
+            <p>Stars today: 13 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://desk.hsslive.cn&quot; target=&quot;_blank&quot;&gt;
+    &lt;img
+      width=&quot;200&quot;
+      src=&quot;https://github.com/galaxy-s10/billd-desk/blob/main/readme_img/icon.png&quot;
+    /&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
 
-[![npm version](https://img.shields.io/npm/v/playwright.svg)](https://www.npmjs.com/package/playwright) &lt;!-- GEN:chromium-version-badge --&gt;[![Chromium version](https://img.shields.io/badge/chromium-139.0.7258.42-blue.svg?logo=google-chrome)](https://www.chromium.org/Home)&lt;!-- GEN:stop --&gt; &lt;!-- GEN:firefox-version-badge --&gt;[![Firefox version](https://img.shields.io/badge/firefox-141.0-blue.svg?logo=firefoxbrowser)](https://www.mozilla.org/en-US/firefox/new/)&lt;!-- GEN:stop --&gt; &lt;!-- GEN:webkit-version-badge --&gt;[![WebKit version](https://img.shields.io/badge/webkit-26.0-blue.svg?logo=safari)](https://webkit.org/)&lt;!-- GEN:stop --&gt; [![Join Discord](https://img.shields.io/badge/join-discord-informational)](https://aka.ms/playwright/discord)
-
-## [Documentation](https://playwright.dev) | [API reference](https://playwright.dev/docs/api/class-playwright)
-
-Playwright is a framework for Web Testing and Automation. It allows testing [Chromium](https://www.chromium.org/Home), [Firefox](https://www.mozilla.org/en-US/firefox/new/) and [WebKit](https://webkit.org/) with a single API. Playwright is built to enable cross-browser web automation that is **ever-green**, **capable**, **reliable** and **fast**.
-
-|          | Linux | macOS | Windows |
-|   :---   | :---: | :---: | :---:   |
-| Chromium &lt;!-- GEN:chromium-version --&gt;139.0.7258.42&lt;!-- GEN:stop --&gt; | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| WebKit &lt;!-- GEN:webkit-version --&gt;26.0&lt;!-- GEN:stop --&gt; | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Firefox &lt;!-- GEN:firefox-version --&gt;141.0&lt;!-- GEN:stop --&gt; | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-
-Headless execution is supported for all browsers on all platforms. Check out [system requirements](https://playwright.dev/docs/intro#system-requirements) for details.
-
-Looking for Playwright for [Python](https://playwright.dev/python/docs/intro), [.NET](https://playwright.dev/dotnet/docs/intro), or [Java](https://playwright.dev/java/docs/intro)?
-
-## Installation
-
-Playwright has its own test runner for end-to-end tests, we call it Playwright Test.
-
-### Using init command
-
-The easiest way to get started with Playwright Test is to run the init command.
-
-```Shell
-# Run from your project&#039;s root directory
-npm init playwright@latest
-# Or create a new project
-npm init playwright@latest new-project
-```
-
-This will create a configuration file, optionally add examples, a GitHub Action workflow and a first test example.spec.ts. You can now jump directly to writing assertions section.
-
-### Manually
-
-Add dependency and install browsers.
-
-```Shell
-npm i -D @playwright/test
-# install supported browsers
-npx playwright install
-```
-
-You can optionally install only selected browsers, see [install browsers](https://playwright.dev/docs/cli#install-browsers) for more details. Or you can install no browsers at all and use existing [browser channels](https://playwright.dev/docs/browsers).
-
-* [Getting started](https://playwright.dev/docs/intro)
-* [API reference](https://playwright.dev/docs/api/class-playwright)
-
-## Capabilities
-
-### Resilient • No flaky tests
-
-**Auto-wait**. Playwright waits for elements to be actionable prior to performing actions. It also has a rich set of introspection events. The combination of the two eliminates the need for artificial timeouts - a primary cause of flaky tests.
-
-**Web-first assertions**. Playwright assertions are created specifically for the dynamic web. Checks are automatically retried until the necessary conditions are met.
-
-**Tracing**. Configure test retry strategy, capture execution trace, videos and screenshots to eliminate flakes.
-
-### No trade-offs • No limits
-
-Browsers run web content belonging to different origins in different processes. Playwright is aligned with the architecture of the modern browsers and runs tests out-of-process. This makes Playwright free of the typical in-process test runner limitations.
-
-**Multiple everything**. Test scenarios that span multiple tabs, multiple origins and multiple users. Create scenarios with different contexts for different users and run them against your server, all in one test.
-
-**Trusted events**. Hover elements, interact with dynamic controls and produce trusted events. Playwright uses real browser input pipeline indistinguishable from the real user.
-
-Test frames, pierce Shadow DOM. Playwright selectors pierce shadow DOM and allow entering frames seamlessly.
-
-### Full isolation • Fast execution
-
-**Browser contexts**. Playwright creates a browser context for each test. Browser context is equivalent to a brand new browser profile. This delivers full test isolation with zero overhead. Creating a new browser context only takes a handful of milliseconds.
-
-**Log in once**. Save the authentication state of the context and reuse it in all the tests. This bypasses repetitive log-in operations in each test, yet delivers full isolation of independent tests.
-
-### Powerful Tooling
-
-**[Codegen](https://playwright.dev/docs/codegen)**. Generate tests by recording your actions. Save them into any language.
-
-**[Playwright inspector](https://playwright.dev/docs/inspector)**. Inspect page, generate selectors, step through the test execution, see click points and explore execution logs.
-
-**[Trace Viewer](https://playwright.dev/docs/trace-viewer)**. Capture all the information to investigate the test failure. Playwright trace contains test execution screencast, live DOM snapshots, action explorer, test source and many more.
-
-Looking for Playwright for [TypeScript](https://playwright.dev/docs/intro), [JavaScript](https://playwright.dev/docs/intro), [Python](https://playwright.dev/python/docs/intro), [.NET](https://playwright.dev/dotnet/docs/intro), or [Java](https://playwright.dev/java/docs/intro)?
-
-## Examples
-
-To learn how to run these Playwright Test examples, check out our [getting started docs](https://playwright.dev/docs/intro).
-
-#### Page screenshot
-
-This code snippet navigates to Playwright homepage and saves a screenshot.
-
-```TypeScript
-import { test } from &#039;@playwright/test&#039;;
-
-test(&#039;Page Screenshot&#039;, async ({ page }) =&gt; {
-  await page.goto(&#039;https://playwright.dev/&#039;);
-  await page.screenshot({ path: `example.png` });
-});
-```
-
-#### Mobile and geolocation
-
-This snippet emulates Mobile Safari on a device at given geolocation, navigates to maps.google.com, performs the action and takes a screenshot.
-
-```TypeScript
-import { test, devices } from &#039;@playwright/test&#039;;
-
-test.use({
-  ...devices[&#039;iPhone 13 Pro&#039;],
-  locale: &#039;en-US&#039;,
-  geolocation: { longitude: 12.492507, latitude: 41.889938 },
-  permissions: [&#039;geolocation&#039;],
-})
-
-test(&#039;Mobile and geolocation&#039;, async ({ page }) =&gt; {
-  await page.goto(&#039;https://maps.google.com&#039;);
-  await page.getByText(&#039;Your location&#039;).click();
-  await page.waitForRequest(/.*preview\/pwa/);
-  await page.screenshot({ path: &#039;colosseum-iphone.png&#039; });
-});
-```
-
-#### Evaluate in browser context
-
-This code snippet navigates to example.com, and executes a script in the page context.
-
-```TypeScript
-import { test } from &#039;@playwright/test&#039;;
-
-test(&#039;Evaluate in browser context&#039;, async ({ page }) =&gt; {
-  await page.goto(&#039;https://www.example.com/&#039;);
-  const dimensions = await page.evaluate(() =&gt; {
-    return {
-      width: document.documentElement.clientWidth,
-      height: document.documentElement.clientHeight,
-      deviceScaleFactor: window.devicePixelRatio
-    }
-  });
-  console.log(dimensions);
-});
-```
-
-#### Intercept network requests
-
-This code snippet sets up request routing for a page to log all network requests.
-
-```TypeScript
-import { test } from &#039;@playwright/test&#039;;
-
-test(&#039;Intercept network requests&#039;, async ({ page }) =&gt; {
-  // Log and continue all network requests
-  await page.route(&#039;**&#039;, route =&gt; {
-    console.log(route.request().url());
-    route.continue();
-  });
-  await page.goto(&#039;http://todomvc.com&#039;);
-});
-```
-
-## Resources
-
-* [Documentation](https://playwright.dev)
-* [API reference](https://playwright.dev/docs/api/class-playwright/)
-* [Contribution guide](CONTRIBUTING.md)
-* [Changelog](https://github.com/microsoft/playwright/releases)
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[devlikeapro/waha]]></title>
-            <link>https://github.com/devlikeapro/waha</link>
-            <guid>https://github.com/devlikeapro/waha</guid>
-            <pubDate>Fri, 01 Aug 2025 00:05:56 GMT</pubDate>
-            <description><![CDATA[WAHA - WhatsApp HTTP API (REST API) that you can configure in a click! 3 engines: WEBJS (browser based), NOWEB (websocket nodejs), GOWS (websocket go)]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/devlikeapro/waha">devlikeapro/waha</a></h1>
-            <p>WAHA - WhatsApp HTTP API (REST API) that you can configure in a click! 3 engines: WEBJS (browser based), NOWEB (websocket nodejs), GOWS (websocket go)</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 2,358</p>
-            <p>Forks: 646</p>
-            <p>Stars today: 349 stars today</p>
-            <h2>README</h2><pre># WAHA
+&lt;h1 align=&quot;center&quot;&gt;
+  BilldDesk
+&lt;/h1&gt;
 
 &lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;./logo.png&quot; style=&#039;border-radius: 50%&#039; width=&#039;150&#039;/&gt;
+  基于Vue3 + WebRTC + Nodejs + Electron搭建的跨平台远程桌面控制（win、mac、安卓）
 &lt;/p&gt;
 
-**WAHA** - **W**hats**A**pp **H**TTP **A**PI (REST API) that you can install on your own server and run in less than 5 minutes!
+&lt;div align=&quot;center&quot;&gt;
+
+![stars](https://img.shields.io/github/stars/galaxy-s10/billd-desk)
+![forks](https://img.shields.io/github/forks/galaxy-s10/billd-desk)
+
+![version](https://img.shields.io/github/package-json/v/galaxy-s10/billd-desk)
+![License](https://img.shields.io/github/license/galaxy-s10/billd-desk)
+![language](https://img.shields.io/github/languages/top/galaxy-s10/billd-desk)
+![language](https://img.shields.io/github/languages/top/galaxy-s10/billd-desk-server)
+![language](https://img.shields.io/github/languages/top/galaxy-s10/billd-desk-flutter)
+
+&lt;/div&gt;
+
+## ⭐️ BilldDesk
+
+&gt; [!CAUTION]
+&gt; BilldDesk 目前仍未发布稳定版，不建议开发者用于生产环境！
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/devlikeapro/waha)](https://hub.docker.com/r/devlikeapro/waha)
+BilldDesk 的由来仅仅是作者偶然的一个 idea，然后花了三天时间开发了初版（2024/2/28 第一次提交 Github）。
 
-- Documentation: [https://waha.devlike.pro/](https://waha.devlike.pro/)
-- Dashboard Example: [https://waha.devlike.pro/dashboard](https://waha.devlike.pro/dashboard)
-- Swagger Example: [https://waha.devlike.pro/swagger](https://waha.devlike.pro/swagger)
+大多数人关注到 BilldDesk 的都是从第三方的公众号、b 站、小红书、甚至推特给 BilldDesk 宣传了，并非作者本意。
 
-# Tables of Contents
+BilldDesk 只有作者一人开发。一开始代码还相对规范，后面发现其实没人参与，便开始将 master 当做 dev 开发（做过开源项目的应该都清楚，自己运行自己的代码简单，但是要让所有人都能运行你的代码，需要做非常多事情。），不再考虑外在因素。因此很多人反馈说代码运行不了，是假开源，作者统一回应：**BilldDesk 是开源项目**，但 BilldDesk 从未发布稳定版，每次提交都可能不兼容旧版本（即破坏性更新），可以尝试切换到其他 commit 运行。
 
-&lt;!-- toc --&gt;
+## ⚡️ BilldDeskPro
 
-- [Quick start](#quick-start)
-  * [Requirements](#requirements)
-  * [Send your first message](#send-your-first-message)
-    + [1. Download image](#1-download-image)
-    + [2. Run WhatsApp HTTP API](#2-run-whatsapp-http-api)
-    + [3. Start a new session](#3-start-a-new-session)
-    + [4. Get and scan QR](#4-get-and-scan-qr)
-    + [5. Get the screenshot](#5-get-the-screenshot)
-    + [6. Send a text message](#6-send-a-text-message)
-  * [What is next?](#what-is-next)
-- [Development](#development)
-  * [Start the project](#start-the-project)
+BilldDesk存在两个已知问题（权限，控制）在现有架构下，几乎不可修复。
 
-&lt;!-- tocstop --&gt;
+&gt; 为什么不可修复？看我发的b站视频：[https://www.bilibili.com/video/BV1yqN9zsEEd?vd_source=bf386c933a4aff3e8b19a1f003de0015&amp;p=2&amp;spm_id_from=333.788.videopod.sections](https://www.bilibili.com/video/BV1yqN9zsEEd?vd_source=bf386c933a4aff3e8b19a1f003de0015&amp;p=2&amp;spm_id_from=333.788.videopod.sections)，01:35秒开始到20:45秒
 
-# Quick start
+`BilldDeskPro` 完全重写了`BilldDesk`，修复了`BilldDesk`的已知问题（权限，控制）。并且稳定性更高、性能更强、代码可读性更好、更新更频繁！
 
-## Requirements
+&gt; [!WARNING]
+&gt; BilldDeskPro对普通用户不影响，一直免费。
+&gt;
+&gt; BilldDeskPro主要针对开发者。源码并不开源，需付费订阅：[https://desk.hsslive.cn/#/price](https://desk.hsslive.cn/#/price)
 
-Only thing that you must have - installed docker. Please follow the original
-instruction &lt;a href=&quot;https://docs.docker.com/get-docker/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;how to install docker -&gt;&lt;/a&gt;.
+## 简介
 
-When you are ready - come back and follows the below steps to send the first text message to WhatsApp via HTTP API!
+BilldDesk 远程桌面控制，目前实现了类似 ToDesk、向日葵等远程桌面的功能。
 
-## Send your first message
+## 对比ToDesk免费个人版
 
-Let&#039;s go over steps that allow you to send your first text message via WhatsApp HTTP API!
+&gt; 作者使用过很多远程软件：TeamViewer、向日葵、ToTesk、AnyDesk、RustDesk、UU远程、连连控，还有qq自带的远程协助等等，但用ToDesk免费个人版比较多，因此用ToTesk和BilldDesk作对比~
 
-### 1. Download image
+|                           | BilldDesk      | ToDesk免费个人版                                       |
+| ------------------------- | -------------- | ------------------------------------------------------ |
+| 连接限制                  | 无限制，免费   | 80h/月，200次/月，24h/次，超出需要购买专业版（¥24/月） |
+| 画质限制                  | 无限制，免费   | 最高1080p，30帧                                        |
+| 安卓被控                  | 支持，免费     | 不支持，需要购买专业版（¥24/月）或购买插件（¥15/月）   |
+| 自定义设备码              | 支持，免费     | 不支持                                                 |
+| 同时显示多屏              | 支持，免费     | 不支持，需要购买性能版（¥95/月）                       |
+| 屏幕墙                    | 支持，免费     | 不支持，需要购买ToDesk企业版（¥805/年）                |
+| 隐私屏                    | 支持，免费     | 不支持，需要购买专业版（¥24/月）                       |
+| 扩展屏/镜像屏             | 支持，免费     | 不支持，需要购买专业版（¥24/月）                       |
+| 远程时录屏                | 支持，免费     | 不支持                                                 |
+| web网页发起远程控制       | 支持，免费     | 不支持，需要购买ToDesk企业版（¥805/年）                |
+| 后台管理                  | 支持，免费     | 不支持                                                 |
+| 远程控制web网页（仅观看） | 支持，免费     | 不支持                                                 |
+| 同账号多主控同时发起远控  | 支持，免费     | 支持，需要购买插件（¥233/月）                          |
+| 私有化部署/二次开发       | 支持，开源免费 | 不支持，需要ToDesk企业版，定价未知                     |
 
-Assuming you have installed [Docker](https://docs.docker.com/get-docker/), let&#039;s download the image.
+## 生态
 
+| 项目名称            | 代码仓库                                                               | star &amp; fork                                                                                                                                                                                                                                                                                                     | 线上地址/下载地址                                                        |
+| ------------------- | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| 远程桌面网页/客户端 | [billd-desk](https://github.com/galaxy-s10/billd-desk)                 | [![github](https://img.shields.io/github/stars/galaxy-s10/billd-desk?label=star&amp;logo=GitHub)](https://github.com/galaxy-s10/billd-desk) [![github](https://img.shields.io/github/forks/galaxy-s10/billd-desk?label=fork&amp;logo=GitHub)](https://github.com/galaxy-s10/billd-desk)                                 | [https://desk.hsslive.cn](https://desk.hsslive.cn)                       |
+| 远程桌面后台        | [billd-desk-admin](https://github.com/galaxy-s10/billd-desk-admin)     | [![github](https://img.shields.io/github/stars/galaxy-s10/billd-desk-admin?label=star&amp;logo=GitHub)](https://github.com/galaxy-s10/billd-desk) [![github](https://img.shields.io/github/forks/galaxy-s10/billd-desk-admin?label=fork&amp;logo=GitHub)](https://github.com/galaxy-s10/billd-desk-admin)               | [https://desk-admin.hsslive.cn](https://desk-admin.hsslive.cn)           |
+| 远程桌面移动端      | [billd-desk-flutter](https://github.com/galaxy-s10/billd-desk-flutter) | [![github](https://img.shields.io/github/stars/galaxy-s10/billd-desk-flutter?label=star&amp;logo=GitHub)](https://github.com/galaxy-s10/billd-desk-flutter) [![github](https://img.shields.io/github/forks/galaxy-s10/billd-desk-flutter?label=fork&amp;logo=GitHub)](https://github.com/galaxy-s10/billd-desk-flutter) | [https://desk.hsslive.cn/#/download](https://desk.hsslive.cn/#/download) |
+| 远程桌面服务端      | [billd-desk-server](https://github.com/galaxy-s10/billd-desk-server)   | [![github](https://img.shields.io/github/stars/galaxy-s10/billd-desk-server?label=star&amp;logo=GitHub)](https://github.com/galaxy-s10/billd-desk-server) [![github](https://img.shields.io/github/forks/galaxy-s10/billd-desk-server?label=fork&amp;logo=GitHub)](https://github.com/galaxy-s10/billd-desk-server)     | [https://desk-api.hsslive.cn](https://desk-api.hsslive.cn)               |
 
-```bash
-docker pull devlikeapro/waha
-```
+## 功能
 
+- [x] `web网页` 控制 `电脑端`
+- [x] `web网页` 控制 `安卓端`
+- [x] `web网页` 控制 `web网页`（仅观看）
+- [x] `电脑端` 控制 `电脑端`
+- [x] `电脑端` 控制 `安卓端`
+- [x] `电脑端` 控制 `web网页`（仅观看）
+- [ ] `安卓端` 控制 `电脑端`
+- [ ] `安卓端` 控制 `安卓端`
+- [ ] `安卓端` 控制 `web网页`（仅观看）
+- [x] 多台设备同时远程一台设备
+- [x] 一台设备同时远程多台设备
+- [x] 多屏操作
+- [x] 连接鉴权
+- [x] 自定义设备码/连接密码
+- [x] 自定义接口（wws/api/中继服务器）
+- [x] 按键组合键
+- [x] 文件传输
+- [x] 开机自启
+- [x] 锁屏保活
+- [x] 屏幕墙
+- [x] 设备分组
+- [x] 支持 macOS 系统
+- [x] 支持 Windows 系统
+- [x] 支持 Linux 系统（未实际测试）
+- [x] 支持 安卓端（Flutter）
+- [ ] 支持 苹果端（Flutter）
+- [x] 后台管理
+- [ ] Docker一键部署
+- [x] 支持私有化部署
 
-```bash
-docker login -u devlikeapro -p {KEY}
-docker pull devlikeapro/waha-plus
-docker logout
-```
+## 预览
 
-Read more about how to get `PASSWORD` for [**➕ WAHA Plus**](https://waha.devlike.pro/docs/how-to/waha-plus/)
+快速体验：[https://desk.hsslive.cn](https://desk.hsslive.cn)
 
-### 2. Run WhatsApp HTTP API
+### web网页/电脑端控制电脑端
 
-Run WhatsApp HTTP API:
+![img](https://github.com/galaxy-s10/billd-desk/blob/main/readme_img/111.png?raw=true)
 
-```bash
-docker run -it --rm -p 3000:3000/tcp --name waha devlikeapro/waha
+### web网页/电脑端控制安卓端
 
-# It prints logs and the last line must be
-# WhatsApp HTTP API is running on: http://[::1]:3000
-```
+![img](https://github.com/galaxy-s10/billd-desk/blob/main/readme_img/222.png?raw=true)
 
-Open the link in your browser [http://localhost:3000/](http://localhost:3000/) and you&#039;ll see API documentation
-(Swagger).
+### web网页/电脑端控制web网页
 
+&gt; 仅观看模式
 
-### 3. Start a new session
+![img](https://github.com/galaxy-s10/billd-desk/blob/main/readme_img/333.png?raw=true)
 
-To start a new session you should have your mobile phone with installed WhatsApp application close to you.
+### web网页移动端
 
-Please go and read how what we&#039;ll need to a bit
-later:
-&lt;a href=&quot;https://faq.whatsapp.com/381777293328336/?helpref=hc_fnav&quot; target=&quot;_blank&quot;&gt;
-How to log in - the instruction on WhatsApp site
-&lt;/a&gt;
+&gt; 首页
 
-When your ready - find `POST /api/sessions`, click on **Try it out**, then **Execute** a bit below.
+![img](https://github.com/galaxy-s10/billd-desk/blob/main/readme_img/777.png?raw=true)
 
+&gt; 控制页
 
-The example payload:
-```json
-{
-  &quot;name&quot;: &quot;default&quot;
-}
-```
+![img](https://github.com/galaxy-s10/billd-desk/blob/main/readme_img/888.png?raw=true)
 
+### 屏幕墙
 
-By using the request with `name` values you can start multiple session (WhatsApp accounts) inside the single docker container in Plus
+![img](https://github.com/galaxy-s10/billd-desk/blob/main/readme_img/444.png?raw=true)
 
+### 设备分组
 
-### 4. Get and scan QR
+![img](https://github.com/galaxy-s10/billd-desk/blob/main/readme_img/999.png?raw=true)
 
-Find `GET /api/screenshot` and execute it, it shows you QR code.
+### 隐私屏（敬请期待！）
 
+&gt; TODO 50%
 
-**Scan the QR with your cell phone&#039;s WhatsApp app.**
-
-
-### 5. Get the screenshot
-
-Execute `GET /api/screenshot` after a few seconds after scanning the QR - it&#039;ll show you the screenshot of you Whatsapp
-instance. If you can get the actual screenshot - then you&#039;re ready to start sending messages!
-
-
-### 6. Send a text message
-
-Let&#039;s send a text message - find `POST /api/sendText`  in [swagger](http://localhost:3000/) and change `chatId` this
-way: use a phone international phone number without `+` symbol and add `@c.us` at the end.
-
-For phone number `12132132131` the `chatId` is  `12132132131@c.us`.
-
-The example payload:
-```json
-{
-  &quot;chatId&quot;: &quot;12132132130@c.us&quot;,
-  &quot;text&quot;: &quot;Hi there!&quot;,
-  &quot;session&quot;: &quot;default&quot;
-}
-```
-
-Also, you can use `curl` and send POST request like this:
-
-```bash
-# Phone without +
-export PHONE=12132132130
-curl -d &quot;{\&quot;chatId\&quot;: \&quot;${PHONE}@c.us\&quot;, \&quot;text\&quot;: \&quot;Hello from WhatsApp HTTP API\&quot; }&quot; -H &quot;Content-Type: application/json&quot; -X POST http://localhost:3000/api/sendText
-```
-
-## What is next?
-[Go and read the full documentation!](https://waha.devlike.pro/docs/overview/introduction/)
-
-# Development
-
-## Start the project
-1. Clone the repository
-2. Make sure you&#039;re using node&gt;=22 (check [.nvmrc](/.nvmrc) to get the version)
-3. Run the following commands:
-```bash
-# Install dependencies
-yarn install
-# Fetch and compile proto files
-yarn gows:proto
-# Run
-yarn start
-# open http://localhost:3000
-```</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[payloadcms/payload]]></title>
-            <link>https://github.com/payloadcms/payload</link>
-            <guid>https://github.com/payloadcms/payload</guid>
-            <pubDate>Fri, 01 Aug 2025 00:05:55 GMT</pubDate>
-            <description><![CDATA[Payload is the open-source, fullstack Next.js framework, giving you instant backend superpowers. Get a full TypeScript backend and admin panel instantly. Use Payload as a headless CMS or for building powerful applications.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/payloadcms/payload">payloadcms/payload</a></h1>
-            <p>Payload is the open-source, fullstack Next.js framework, giving you instant backend superpowers. Get a full TypeScript backend and admin panel instantly. Use Payload as a headless CMS or for building powerful applications.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 36,632</p>
-            <p>Forks: 2,745</p>
-            <p>Stars today: 26 stars today</p>
-            <h2>README</h2><pre>&lt;a href=&quot;https://payloadcms.com&quot;&gt;&lt;img width=&quot;100%&quot; src=&quot;https://l4wlsi8vxy8hre4v.public.blob.vercel-storage.com/github-banner-new-logo.jpg&quot; alt=&quot;Payload headless CMS Admin panel built with React&quot; /&gt;&lt;/a&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-
-&lt;p align=&quot;left&quot;&gt;
-  &lt;a href=&quot;https://github.com/payloadcms/payload/actions&quot;&gt;&lt;img alt=&quot;GitHub Workflow Status&quot; src=&quot;https://img.shields.io/github/actions/workflow/status/payloadcms/payload/main.yml?style=flat-square&quot;&gt;&lt;/a&gt;
-  &amp;nbsp;
-  &lt;a href=&quot;https://discord.gg/payload&quot;&gt;&lt;img alt=&quot;Discord&quot; src=&quot;https://img.shields.io/discord/967097582721572934?label=Discord&amp;color=7289da&amp;style=flat-square&quot; /&gt;&lt;/a&gt;
-  &amp;nbsp;
-  &lt;a href=&quot;https://www.npmjs.com/package/payload&quot;&gt;&lt;img alt=&quot;npm&quot; src=&quot;https://img.shields.io/npm/dw/payload?style=flat-square&quot; /&gt;&lt;/a&gt;
-  &amp;nbsp;
-  &lt;a href=&quot;https://github.com/payloadcms/payload/graphs/contributors&quot;&gt;&lt;img alt=&quot;npm&quot; src=&quot;https://img.shields.io/github/contributors-anon/payloadcms/payload?color=yellow&amp;style=flat-square&quot; /&gt;&lt;/a&gt;
-  &amp;nbsp;
-  &lt;a href=&quot;https://www.npmjs.com/package/payload&quot;&gt;&lt;img alt=&quot;npm&quot; src=&quot;https://img.shields.io/npm/v/payload?style=flat-square&quot; /&gt;&lt;/a&gt;
-  &amp;nbsp;
-  &lt;a href=&quot;https://twitter.com/payloadcms&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/follow-payloadcms-1DA1F2?logo=twitter&amp;style=flat-square&quot; alt=&quot;Payload Twitter&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-&lt;hr/&gt;
-&lt;h4&gt;
-&lt;a target=&quot;_blank&quot; href=&quot;https://payloadcms.com/docs/getting-started/what-is-payload&quot; rel=&quot;dofollow&quot;&gt;&lt;strong&gt;Explore the Docs&lt;/strong&gt;&lt;/a&gt;&amp;nbsp;·&amp;nbsp;&lt;a target=&quot;_blank&quot; href=&quot;https://payloadcms.com/community-help&quot; rel=&quot;dofollow&quot;&gt;&lt;strong&gt;Community Help&lt;/strong&gt;&lt;/a&gt;&amp;nbsp;·&amp;nbsp;&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/payloadcms/payload/discussions/1539&quot; rel=&quot;dofollow&quot;&gt;&lt;strong&gt;Roadmap&lt;/strong&gt;&lt;/a&gt;&amp;nbsp;·&amp;nbsp;&lt;a target=&quot;_blank&quot; href=&quot;https://www.g2.com/products/payload-cms/reviews#reviews&quot; rel=&quot;dofollow&quot;&gt;&lt;strong&gt;View G2 Reviews&lt;/strong&gt;&lt;/a&gt;
-&lt;/h4&gt;
-&lt;hr/&gt;
+### 扩展屏/镜像屏（敬请期待！）
 
-&gt; [!IMPORTANT]
-&gt; 🎉 &lt;strong&gt;We&#039;ve released 3.0!&lt;/strong&gt; Star this repo or keep an eye on it to follow along.
+&gt; TODO 90%
 
-Payload is the first-ever Next.js native CMS that can install directly in your existing `/app` folder. It&#039;s the start of a new era for headless CMS.
+### 安卓端控制电脑端【TODO】
 
-&lt;h3&gt;Benefits over a regular CMS&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Deploy anywhere, including serverless on Vercel for free&lt;/li&gt;
-  &lt;li&gt;Combine your front+backend in the same &lt;code&gt;/app&lt;/code&gt; folder if you want&lt;/li&gt;
-  &lt;li&gt;Don&#039;t sign up for yet another SaaS - Payload is open source&lt;/li&gt;
-  &lt;li&gt;Query your database in React Server Components&lt;/li&gt;
-  &lt;li&gt;Both admin and backend are 100% extensible&lt;/li&gt;
-  &lt;li&gt;No vendor lock-in&lt;/li&gt;
-  &lt;li&gt;Never touch ancient WP code again&lt;/li&gt;
-  &lt;li&gt;Build faster, never hit a roadblock&lt;/li&gt;
-&lt;/ul&gt;
+### 安卓端控制安卓端【TODO】
 
-## Quickstart
+### 安卓端控制web网页【TODO】
 
-Before beginning to work with Payload, make sure you have all of the [required software](https://payloadcms.com/docs/getting-started/installation).
+&gt; 仅观看模式
 
-```text
-pnpx create-payload-app@latest
-```
+### 文件传输
 
-**If you&#039;re new to Payload, you should start with the website template** (`pnpx create-payload-app@latest -t website`). It shows how to do _everything_ - including custom Rich Text blocks, on-demand revalidation, live preview, and more. It comes with a frontend built with Tailwind all in one `/app` folder.
+![img](https://github.com/galaxy-s10/billd-desk/blob/main/readme_img/666.png?raw=true)
 
-## One-click templates
+### 跨平台支持
 
-Jumpstart your next project by starting with a pre-made template. These are production-ready, end-to-end solutions designed to get you to market as fast as possible.
+![img](https://github.com/galaxy-s10/billd-desk/blob/main/readme_img/555.png?raw=true)
 
-### [🌐 Website](https://github.com/payloadcms/payload/tree/main/templates/website)
+### [后台] 控制台
 
-Build any kind of website, blog, or portfolio from small to enterprise. Comes with a fully functional front-end built with RSCs and Tailwind.
+![img](https://github.com/galaxy-s10/billd-desk/blob/main/readme_img/a2.png?raw=true)
 
-We&#039;re constantly adding more templates to our [Templates Directory](https://github.com/payloadcms/payload/tree/main/templates). If you maintain your own template, consider adding the `payload-template` topic to your GitHub repository for others to find.
+### [后台] 黑名单
 
-- [Official Templates](https://github.com/payloadcms/payload/tree/main/templates)
-- [Community Templates](https://github.com/topics/payload-template)
+![img](https://github.com/galaxy-s10/billd-desk/blob/main/readme_img/a1.png?raw=true)
 
-## ✨ Features
+### [后台] 设备分组
 
-- Completely free and open-source
-- Next.js native, built to run inside _your_ `/app` folder
-- Use server components to extend Payload UI
-- Query your database directly in server components, no need for REST / GraphQL
-- Fully TypeScript with automatic types for your data
-- [Auth out of the box](https://payloadcms.com/docs/authentication/overview)
-- [Versions and drafts](https://payloadcms.com/docs/versions/overview)
-- [Localization](https://payloadcms.com/docs/configuration/localization)
-- [Block-based layout builder](https://payloadcms.com/docs/fields/blocks)
-- [Customizable React admin](https://payloadcms.com/docs/admin/overview)
-- [Lexical rich text editor](https://payloadcms.com/docs/fields/rich-text)
-- [Conditional field logic](https://payloadcms.com/docs/fields/overview#conditional-logic)
-- Extremely granular [Access Control](https://payloadcms.com/docs/access-control/overview)
-- [Document and field-level hooks](https://payloadcms.com/docs/hooks/overview) for every action Payload provides
-- Intensely fast API
-- Highly secure thanks to HTTP-only cookies, CSRF protection, and more
+![img](https://github.com/galaxy-s10/billd-desk/blob/main/readme_img/a3.png?raw=true)
 
-&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/payloadcms/payload/discussions&quot;&gt;&lt;strong&gt;Request Feature&lt;/strong&gt;&lt;/a&gt;
+### [后台] 远程管理
 
-## 🗒️ Documentation
+- 远程记录
 
-Check out the [Payload website](https://payloadcms.com/docs/getting-started/what-is-payload) to find in-depth documentation for everything that Payload offers.
+![img](https://github.com/galaxy-s10/billd-desk/blob/main/readme_img/a4.png?raw=true)
 
-Migrating from v2 to v3? Check out the [3.0 Migration Guide](https://github.com/payloadcms/payload/blob/main/docs/migration-guide/overview.mdx) on how to do it.
+- 在线远程
 
-## 🙋 Contributing
+![img](https://github.com/galaxy-s10/billd-desk/blob/main/readme_img/a5.png?raw=true)
 
-If you want to add contributions to this repository, please follow the instructions in [contributing.md](./CONTRIBUTING.md).
+- 在线设备
 
-## 📚 Examples
+![img](https://github.com/galaxy-s10/billd-desk/blob/main/readme_img/a6.png?raw=true)
 
-The [Examples Directory](./examples) is a great resource for learning how to setup Payload in a variety of different ways, but you can also find great examples in our blog and throughout our social media.
+## 技术栈
 
-If you&#039;d like to run the examples, you can use `create-payload-app` to create a project from one:
+- 前端相关：[Vue3](https://vuejs.org) 以及相关技术栈、`Typescript`、`WebRTC`、`WebCodecs`、`Web Workder`、`Web Audio`、`Canvas`
+- 后端相关：[Nodejs](https://nodejs.org) 以及相关技术栈、`Koa2`、`Typescript`、`Sequelize`、`Mysql`、`Redis`、`Socket.io`
+- 桌面客户端相关：[Electron](https://www.electronjs.org)以及相关技术栈、`WebRTC`
+- 移动客户端相关：[Flutter3](https://flutter.dev)以及相关技术栈、`WebRTC`
+- 流媒体服务器相关：[SRS](https://ossrs.net)、 [FFmpeg](https://ffmpeg.org)、[Coturn](https://github.com/coturn/coturn)
+- Docker 相关：[Docker](https://www.docker.com)
+- 部署相关：[阿里云云效](https://devops.aliyun.com)、[billd-deploy](https://github.com/galaxy-s10/billd-deploy)
 
-```sh
-npx create-payload-app --example example_name
-```
+## 本地启动
 
-You can see more examples at:
+- [x] billd-desk(pro) 查看 [start-client.md](https://github.com/galaxy-s10/billd-desk/blob/main/doc/start-client.md)
 
-- [Examples Directory](./examples)
-- [Payload Blog](https://payloadcms.com/blog)
-- [Payload YouTube](https://www.youtube.com/@payloadcms)
+## 接口文档
 
-## 🔌 Plugins
+查看 [apifox](https://apifox.com/apidoc/shared-a8ba9715-7730-432d-896c-97f983050795)
 
-Payload is highly extensible and allows you to install or distribute plugins that add or remove functionality. There are both officially-supported and community-supported plugins available. If you maintain your own plugin, consider adding the `payload-plugin` topic to your GitHub repository for others to find.
+## 性能测试
 
-- [Official Plugins](https://github.com/orgs/payloadcms/repositories?q=topic%3Apayload-plugin)
-- [Community Plugins](https://github.com/topics/payload-plugin)
+查看 [benchmarking.md](https://github.com/galaxy-s10/billd-desk/blob/main/doc/benchmarking.md)
 
-## 🚨 Need help?
+## 常见问题
 
-There are lots of good conversations and resources in our Github Discussions board and our Discord Server. If you&#039;re struggling with something, chances are, someone&#039;s already solved what you&#039;re up against. :point_down:
+[https://desk.hsslive.cn/#/faq](https://desk.hsslive.cn/#/faq)
 
-- [GitHub Discussions](https://github.com/payloadcms/payload/discussions)
-- [GitHub Issues](https://github.com/payloadcms/payload/issues)
-- [Discord](https://t.co/30APlsQUPB)
-- [Community Help](https://payloadcms.com/community-help)
+## 问题反馈
 
-## ⭐ Like what we&#039;re doing? Give us a star
+欢迎提 [issue](https://github.com/galaxy-s10/billd-desk/issues)
 
-![payload-github-star](https://cms.payloadcms.com/media/payload-github-star.gif)
+## 参与贡献
 
-## 👏 Thanks to all our contributors
+欢迎提 [pr](https://github.com/galaxy-s10/billd-desk/pulls)
 
-&lt;img align=&quot;left&quot; src=&quot;https://contributors-img.web.app/image?repo=payloadcms/payload&quot;/&gt;
+## 私有化部署
+
+billd-desk完全开源（可商用），欢迎部署！
+
+## 客户端下载
+
+[https://desk.hsslive.cn/#/download](https://desk.hsslive.cn/#/download)
+
+## 官方交流群
+
+- [交流群（用户）.md](https://github.com/galaxy-s10/billd-desk/blob/main/doc/交流群（用户）.md)
+- [交流群（开发）.md](https://github.com/galaxy-s10/billd-desk/blob/main/doc/交流群（开发）.md)
+
+## 多平台支持
+
+- [x] Web网页（建议使用：[Chrome浏览器](https://www.google.com/intl/zh-CN/chrome/) / [Via浏览器](https://viayoo.com) / `Safari浏览器`）
+- [ ] Windows 7（[再见，Windows 7/8/8.1](https://www.electronjs.org/zh/blog/windows-7-to-8-1-deprecation-notice)）
+- [x] Windows 10、Windows 11
+- [x] macOS
+- [x] Linux
+- [x] Android 11 至 Android 15，其他安卓版本的未实际测试
+- [ ] iOS
+
+## 贡献者
+
+  &lt;a href=&quot;https://github.com/galaxy-s10/billd-desk/graphs/contributors&quot; target=&quot;_blank&quot;&gt;
+    &lt;img
+      width=&quot;200&quot;
+      src=&quot;https://contrib.rocks/image?repo=galaxy-s10/billd-desk&quot;
+      alt=&quot;BilldDesk logo&quot;
+    /&gt;
+  &lt;/a&gt;
+
+## 初心
+
+该项目初心只是作为[billd-live](https://github.com/galaxy-s10/billd-live)的衍生项目，但后面觉得远程桌面也挺有意思的，就一直坚持完善下去。
+
+## 愿景
+
+各大远程软件虽然免费都能用，但免费版的功能覆盖不够全面，比如有些普通个人用户可能只是临时需要远程一下安卓手机，但却需要开通一个月的服务才可以。BilldDesk完善了这些基本功能，让普通用户也能用上~
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[DefinitelyTyped/DefinitelyTyped]]></title>
-            <link>https://github.com/DefinitelyTyped/DefinitelyTyped</link>
-            <guid>https://github.com/DefinitelyTyped/DefinitelyTyped</guid>
-            <pubDate>Fri, 01 Aug 2025 00:05:54 GMT</pubDate>
-            <description><![CDATA[The repository for high quality TypeScript type definitions.]]></description>
+            <title><![CDATA[Hiram-Wong/ZyPlayer]]></title>
+            <link>https://github.com/Hiram-Wong/ZyPlayer</link>
+            <guid>https://github.com/Hiram-Wong/ZyPlayer</guid>
+            <pubDate>Sat, 02 Aug 2025 00:05:20 GMT</pubDate>
+            <description><![CDATA[跨平台桌面端视频资源播放器,免费高颜值.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/DefinitelyTyped/DefinitelyTyped">DefinitelyTyped/DefinitelyTyped</a></h1>
-            <p>The repository for high quality TypeScript type definitions.</p>
+            <h1><a href="https://github.com/Hiram-Wong/ZyPlayer">Hiram-Wong/ZyPlayer</a></h1>
+            <p>跨平台桌面端视频资源播放器,免费高颜值.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 50,120</p>
-            <p>Forks: 30,463</p>
-            <p>Stars today: 8 stars today</p>
-            <h2>README</h2><pre># Definitely Typed
+            <p>Stars: 7,276</p>
+            <p>Forks: 907</p>
+            <p>Stars today: 15 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;img width=&quot;128&quot; src=&quot;https://s2.loli.net/2024/02/29/7Q1nVbhkHdSmo5D.png&quot; &gt;
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://zy.catni.cn&quot; target=&quot;_blank&quot;&gt;文档&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/Hiram-Wong/ZyPlayer/wiki&quot; target=&quot;_blank&quot;&gt;维基&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/Hiram-Wong/ZyPlayer/issues&quot; target=&quot;_blank&quot;&gt;反馈&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/Hiram-Wong/ZyPlayer/releases&quot; target=&quot;_blank&quot;&gt;下载&lt;/a&gt;
+&lt;/p&gt;
 
-&gt; The repository for _high quality_ TypeScript type definitions.
+# 软件介绍
 
-_You can also read this README in [Español](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/README.es.md), [한국어](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/README.ko.md), [Русский](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/README.ru.md), [简体中文](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/README.zh-Hans.md), [Português](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/README.pt.md), [Italiano](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/README.it.md), [日本語](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/README.ja.md) and [Français](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/README.fr.md)!_
+&gt; 名称说明 zyfun[新名称 &gt;=3.3.8] zyplayer[老名称 &lt;=3.3.7]
 
-_Link to [Admin manual](./docs/admin.md)_
+`zyfun[zyplayer]`是一款免费易用且打造的全功能媒体播放器。它基于`electron-Vite`框架, 结合`TDesign`组件库和`vue3`全家桶, 致力于提供流畅、高效的跨平台娱乐体验。
 
-## !!! Important! This repo has recently changed layout! !!!
+**重要提醒**: 仅此Github发布，请勿上当受骗；请各位管理者不要费力宣传及引流本软件!
 
-Definitely Typed has recently changed to a proper `pnpm` monorepo; you may want to reread this document for changes to the layout of packages in this repo.
+**重要提醒**: 请务必支持正版版权，我们不提倡盗版!
 
-At the very least, you may want to `git clean -fdx` the repo (or `node ./scripts/clean-node-modules.js` on Windows) to clean up `node_modules` and run `pnpm install --filter .` to install the workspace root. See further sections for more info on `pnpm install`.
+**重要提醒**: 在开始使用前，请务必详读并同意用户协议，确保遵守相关规定!
 
-## Current status
+[![Star History Chart](https://api.star-history.com/svg?repos=Hiram-Wong/ZyPlayer&amp;type=Date)](https://star-history.com/#Hiram-Wong/ZyPlayer&amp;Date)
 
-This section tracks the health of the repository and publishing process.
-It may be helpful for contributors experiencing any issues with their PRs and packages.
+## 🌴 法律声明与注意事项
 
-- Most recent build [type-checked/linted](https://github.com/microsoft/DefinitelyTyped-tools/tree/master/packages/dtslint) cleanly: [![Build status](https://github.com/DefinitelyTyped/DefinitelyTyped/actions/workflows/CI.yml/badge.svg?branch=master&amp;event=push)](https://github.com/DefinitelyTyped/DefinitelyTyped/actions/workflows/CI.yml?query=branch%3Amaster+event%3Apush)
-- All packages are type-checking/linting cleanly: [![Build status](https://github.com/DefinitelyTyped/DefinitelyTyped/actions/workflows/CI.yml/badge.svg?branch=master&amp;event=schedule)](https://github.com/DefinitelyTyped/DefinitelyTyped/actions/workflows/CI.yml?query=branch%3Amaster+event%3Aschedule)
-- All packages are being [published to npm](https://github.com/microsoft/DefinitelyTyped-tools/tree/master/packages/publisher) in under an hour and a half: [![Publish Status](https://github.com/DefinitelyTyped/DefinitelyTyped/actions/workflows/watchdog-publisher.yml/badge.svg)](https://github.com/DefinitelyTyped/DefinitelyTyped/actions/workflows/watchdog-publisher.yml)
-- [typescript-bot](https://github.com/typescript-bot) has been active on Definitely Typed: [![Activity Status](https://github.com/DefinitelyTyped/DefinitelyTyped/actions/workflows/watchdog-typescript-bot.yml/badge.svg)](https://github.com/DefinitelyTyped/DefinitelyTyped/actions/workflows/watchdog-typescript-bot.yml)
-- Current [infrastructure status updates](https://github.com/DefinitelyTyped/DefinitelyTyped/issues/44317)
-
-If anything here seems wrong or any of the above are failing, please let us know in [the Definitely Typed channel on the TypeScript Community Discord server](https://discord.gg/typescript).
-
-## What are declaration files and how do I get them?
-
-See the [TypeScript handbook](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html).
-
-### npm
-
-This is the preferred method. For example:
-
-```sh
-npm install --save-dev @types/node
-```
-
-To install typings for a scoped module, remove the `@` and add double-underscore after the scope. For example, to install typings for `@babel/preset-env`:
-
-```sh
-npm install --save-dev @types/babel__preset-env
-```
-
-The types should then be automatically included by the compiler.
-You may need to add a `types` reference if you&#039;re not using modules:
-
-```ts
-/// &lt;reference types=&quot;node&quot; /&gt;
-```
-
-See more in the [handbook](https://www.typescriptlang.org/docs/handbook/declaration-files/consumption.html).
-
-For an npm package &quot;foo&quot;, typings for it will be at &quot;@types/foo&quot;.
-
-If your package has typings specified using the `types` or `typings` key in its `package.json`, the npm registry will display that the package has available bindings like so:
-
-![image](https://user-images.githubusercontent.com/30049719/228748963-56fabfd1-9101-42c2-9891-b586b775b01e.png)
-
-If you still can&#039;t find the typings, just look for any &quot;.d.ts&quot; files in the package and manually include them with a `/// &lt;reference path=&quot;&quot; /&gt;`.
-
-### Support Window
-
-Definitely Typed only tests packages on versions of TypeScript that are less than 2 years old.
-
-&lt;img src=&quot;docs/support-window.svg#gh-light-mode-only&quot; style=&quot;width:100%&quot;&gt;
-&lt;img src=&quot;docs/support-window.svg#gh-dark-mode-only&quot; style=&quot;width:100%&quot;&gt;
+- 强烈倡导合法观影，本软件仅作为播放工具，不涉及资源存储或分发。
+- 仅供个人学习交流之用，24小时内请自觉卸载，勿作商业用途。
+- 软件提供播放框架，具体播放源需用户自行配置。
+- 部分灵感来源于[ZY-Player](https://github.com/Hunlongyu/ZY-Player)，图标素材感谢[@fourbeauty]贡献。
 
 &lt;details&gt;
-&lt;summary&gt;Older versions of TypeScript&lt;/summary&gt;
+&lt;summary&gt;展开查看用户协议及免责申明&lt;/summary&gt;
+感谢您选择使用zyfun(以下简称本软件)，在使用产品和服务之前，请您仔细阅读和理解以下声明:
 
-`@types` packages have tags for versions of TypeScript that they explicitly support, so you can usually get older versions of packages that predate the 2-year window.
-For example, if you run `npm dist-tags @types/react`, you&#039;ll see that TypeScript 2.5 can use types for react@16.0, whereas TypeScript 2.6 and 2.7 can use types for react@16.4:
+1. 若您不同意本声明的任何内容，请您立即停止使用本软件。一旦您开始使用本软件产品和服务，则表示您已同意本声明的所有内容。
+2. 本软件仅供个人学习、研究和技术交流使用，仅提供展示功能，所有数据资源均由用户自身制作提供，包括但不限于视频网站、媒体分享站点等。本软件无法控制这些资源的合法性、准确性、完整性或可用性，因此不对资源内容的真实性、合法性或适用性负责。
+3. 由于数据源为用户自行制作，我们在此特别提醒, 视频或弹幕中可能出现的任何第三方广告、产品推广信息等相关内容，均系第三方(含用户)行为植入，非本软件策划或添加。请您在体验过程中保持警惕，对这类信息的真实性及合法性进行自主甄别，如用户遇诈骗因此产生的损失，本平台不承担任何责任。
+4. 本软件利用网络爬虫技术获取部分数据，旨在为用户提供更全面的信息服务。包括不限于豆瓣(douban.com)、酷云(ky.live)、云合(enlightent.cn)、112114(112114.xyz), 值得注意的是这些网站的API未经过授权。用户在使用这些数据时可能面临法律风险，如因此导致的法律责任，用户应自行承担。
+5. 本软件仅使用Iframe嵌入多家视频平台网站内容，包括但不限于爱奇艺(iqiyi.com)、腾讯视频(v.qq.com)、搜狐视频(tv.sohu.com)、聚力网(pptv.com)、360影视(360kan.com)及芒果TV(mgtv.com)等。对于用户在使用本软件过程中对如上网站进行的任何操作，本软件不承担任何责任。
+6. 本软件具备资源嗅探特性，可能会引发第三方数据的隐私和安全风险。用户在使用该特性时，需自行承担可能产生的信息泄露或滥用风险，并对其后果负全部责任。
+7. 本软件含“去广告”选项以增强体验，我们不鼓励任何侵犯版权或违反服务提供商条款的行为。启用前，请确保您的操作符合法律及服务商规则，并知悉可能的兼容性局限。
+8. 为遵守网络安全法的内容审核要求，本软件不提供弹幕发送服务。关于弹幕展示，受限于本地性能未做数据清理，可能存在不良言论，请勿相信因此引起非必的要麻烦。同时如果用户通过任何渠道发表不良言论行为，该行为与本软件无关。我们呼吁用户文明用语，共同维护网络健康环境。
+9. 我们深知您的隐私无价。因此，本软件绝不收集任何用户数据，除了必要的WebDev备份（此过程由专业第三方严格管理）外，所有信息均严格本地存储，确保您的数据仅在您掌控之中。此软件不与任何第三方共享您的任何信息。
+10. 赞赏行为纯属自愿，旨在表达对开源软件作者或贡献者的支持和感谢，并非购买商品或服务的交易行为。赞赏者应当清楚理解，赞赏款项不享有任何商品或服务的保证，也不构成任何形式的合同关系。
+11. 您在使用本软件时需自行负责所有操作和使用结果。本软件不对您通过使用本软件获取的任何内容负责，包括但不限于媒体资源的准确性、版权合规性、完整性、安全性和可用性。对于任何因使用本软件导致的损失、损害或法律纠纷，不承担任何责任。
+12. 您在使用本软件时必须遵守您所在国家/地区的相关法律法规，禁止使用本软件进行任何违反法律法规的活动，包括但不限于制作、上传、传播、存储任何违法、侵权、淫秽、诽谤、恶意软件等内容。如您违反相关法律法规，需自行承担法律责任。
+13. 本免责声明适用于本软件的所有用户。本软件保留随时修改、更新本声明的权利，并以Github Readme、软件更新等形式通知用户。请您定期查阅并遵守最新的免责声明。
 
-| Tag    | Version |
-| ------ | ------- |
-| latest | 16.9.23 |
-| ts2.0  | 15.0.1  |
-| ...    | ...     |
-| ts2.5  | 16.0.36 |
-| ts2.6  | 16.4.7  |
-| ts2.7  | 16.4.7  |
-| ...    | ...     |
-
-#### TypeScript 1.*
-
-- Manually download from the `master` branch of this repository and place them in your project
-- ~~[Typings](https://github.com/typings/typings)~~ (use preferred alternatives, typings is deprecated)
-- ~~[NuGet](https://nuget.org/packages?q=DefinitelyTyped)~~ (use preferred alternatives, nuget DT type publishing has been turned off)
-
-You may need to add manual [references](https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html).
+请您在使用本软件之前认真阅读并理解本免责声明的所有内容，感谢您的理解和支持。
 
 &lt;/details&gt;
 
-## How can I contribute?
+## 🎉 功能亮点
 
-Definitely Typed only works because of contributions by users like you!
+- **广泛兼容**：跨平台支持 Windows、Mac、Linux 系统。
+- **深色模式**：适配夜间使用，保护视力。
+- **资源接入**：轻松管理 json、xml 等格式的 CMS。
+- **IPTV支持**：无缝播放 m3u、genre 等格式。
+- **快捷隐藏**：内置老板键，隐私保护一键到位。
+- **多播放器**：内置多种播放器核心，满足不同需求。
+- **更多内容**: 自行探索...
 
-### Testing
+### 🖼️ 软件预览
 
-Before you share your improvement with the world, use the types yourself by creating a `typename.d.ts` file in your project and filling out its exports:
+&lt;details&gt;
+&lt;summary&gt;展开查看软件截图&lt;/summary&gt;
 
-```ts
-declare module &quot;libname&quot; {
-    // Types inside here
-    export function helloWorldMessage(): string;
-}
+|                            影视(首页)                            |                            影视(搜索)                            |
+| :--------------------------------------------------------------: | :--------------------------------------------------------------: |
+| ![影视-首页](https://s2.loli.net/2024/07/20/T8diRvA1q2QaJmP.png) | ![影视-搜索](https://s2.loli.net/2024/07/20/utwCUsVG6c7ShRJ.png) |
+|                            影视(播放)                            |                            解析(首页)                            |
+| ![影视播放](https://s2.loli.net/2024/07/20/DNFBu3LphASROVy.png)  | ![解析-首页](https://s2.loli.net/2024/07/20/JZANVebW4EHOU7I.png) |
+|                            直播(首页)                            |                            直播(播放)                            |
+| ![直播-首页](https://s2.loli.net/2024/07/20/ucxSw3nR2EahG59.png) | ![直播-播放](https://s2.loli.net/2024/07/20/jYEFc6NOwtdWJBV.png) |
+|                             历史记录                             |                               设置                               |
+| ![历史记录](https://s2.loli.net/2024/07/20/DiYsx4fbcH3KU6T.png)  |   ![设置](https://s2.loli.net/2024/07/20/QeaDxZ2IYCFoVki.png)    |
+
+&lt;/details&gt;
+
+### 🍿 播放器特性
+
+- **没有完美的播放器**
+- 如果只有画面没声音 - 一般为没有声轨
+- 如果黑屏有声音 - 一般为播放器不支持`H265[HEVC]`
+- 播放器选择需考虑格式兼容性-不支持`mkv`格式
+- 针对播放失败-建议切换播放器或者调用系统播放器
+- 播放能力-西瓜(`H265`兼容性较好), 其他(`H264`兼容性较好)
+
+### 💻 跨平台说明
+
+&gt; {appname}为软件名
+
+- **MacOS**:
+  - 提供 arm64(苹果芯)、x64(英特尔芯) 及 universal(通用) 三种架构安装包
+  - 日志路径: `~/Library/Logs/{appname}/log/`
+  - 数据库路径: `~/Library/Application\ Support/{appname}/database/`
+  - 插件路径: `~/Library/Application\ Support/{appname}/plugin/`
+  - 文件路径: `~/Library/Application\ Support/{appname}/file/`
+- **Linux**:
+  - 针对 arm64、x64 架构发行 image、deb、rpm 安装包
+  - 日志路径: `~/.config/{appname}/log/`
+  - 数据库路径: `~/.config/{appname}/database/`
+  - 插件路径: `~/.config/{appname}/plugin/`
+  - 文件路径: `~/.config/{appname}/file/`
+- **Windows**:
+  - 支持 arm64、x64、ia32，以及通用版本
+  - 日志路径: `%USERPROFILE%\AppData\Roaming\{appname}\log\`
+  - 数据库路径: `%USERPROFILE%\AppData\Roaming\{appname}\database\`
+  - 插件路径: `%USERPROFILE%\AppData\Roaming\{appname}\plugin\`
+  - 文件路径: `%USERPROFILE%\AppData\Roaming\{appname}\file\`
+
+## 🛠️ 下载安装
+
+&gt; **最新发布版下载**: 访问 [GitHub Releases页面](https://github.com/Hiram-Wong/ZyPlayer/releases) 获取。
+
+&gt; **最新开发版下载**: 访问 [GitHub Actions页面](https://github.com/Hiram-Wong/ZyPlayer/actions) 获取, 需登录Github账号。
+
+### MacOS 安装后打开提示「文件已损坏」
+
+```bash
+&gt; {appname}为软件名, 访问前自行替换[含括号一起替换]
+
+[1] 执行下面命令信任开发者, 会要求输入密码:
+    sudo spctl --master-disable
+[2] 执行下面命令放行软件 :
+    sudo xattr -cr /Applications/{appname}.app
 ```
 
-#### Test editing an existing package
+### Linux Appimage桌面快捷方式设置
 
-You can edit the types directly in `node_modules/@types/foo/index.d.ts` to validate your changes, then bring the changes to this repo with the steps below.
+```bash
+&gt; {appname}为软件名, 访问前自行替换[含括号一起替换]
 
-Alternatively, you can use [module augmentation](https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation) to extend existing types from the DT module or use the `declare module` technique above which will override the version in `node_modules`.
+[1] 选择一张icon图标下载
+[2] 在任意位置新建一个名为{appname}.desktop的文件，并写入如下内容
+    [Desktop Entry]
+    Name={appname}
+    Exec=/home/xxx/Downloads/{appname}-x.x.x.AppImage  # AppImage程序路径
+    Icon=/home/xxx/Downloads/{appname}.png  # 图标路径
+    Type=Application
+    StartupNotify=true
+[3] 保存{appname}.desktop后右键属性,在权限目录下允许作为程序执行文件上打钩
+[4] 将{appname}.desktop文件复制到/usr/share/applications路径下
+```
 
-#### Adding tests to a new package
+### Linux Appimage运行失败
 
-Add to your `tsconfig.json`:
+```bash
+# 报错关键词 Running as root without --no-sandbox is not supported. See https://ccrbug.com/638180.
+./文件名.AppImage --no-shawbox
+# 报错关键词 dlopen()：error loading libfuse.so.2
+sudo apt-get install libfuse2
+# 报错关键词 Exiting GPU process due to errors during initialization
+xhost +
+```
+
+### Linux deb安装失败
+
+```bash
+# 报错关键词 Package libnss3-1d is not installed
+sudo apt-get install libnss3-1d
+# 报错关键词 Package libxss1 is not installed
+sudo apt-get install libxss1
+```
+
+## 🚗 二次开发
+
+&gt; **需遵守开源协议**
+
+### 开发打包
+```shell
+[1] 安装 node.js version18 以上 + yarn 包安装管理工具
+[2] 克隆项目
+    git clone https://github.com/Hiram-Wong/ZyPlayer.git
+[3] 进入项目
+    cd ZyPlayer/
+[4] 打开项目&lt;此处使用命令行快捷打开vscode&gt;
+    code .
+[5] 修改代码
+[6] 安装依赖包
+    yarn
+[7] 全局安装electron-vite框架
+    yarn add electron-vite -D
+[8] 打包编译发布
+    yarn build:win[mac/linux]
+```
+&lt;details&gt;
+&lt;summary&gt;展开查看依赖说明&lt;/summary&gt;
+
+- 部分依赖可能依赖github, 需要科学上网
+    - `.npmrc`启用了淘宝镜像, 部分依赖可能404, 需切换到npm官方镜像
+    - 开发涉及`.npmrc`文件`electron_mirror`和`electron_builder_binaries_mirror`字段
+    - 编译涉及`electron-builder.yml`文件`electronDownload`字段
+- 兼容win7说明
+    - Electron 23 将包含 Chromium 110, 不再支持Windows(7/8/8.1)[点我查看](https://www.electronjs.org/zh/blog/windows-7-to-8-1-deprecation-notice)
+    - Electron 23 起不再支持 Win 7/8/8.1, 推荐`&quot;electron&quot;: &quot;~22.3.27&quot;`
+    - Electron 23 以下不支持升级fastif及相关插件, 最高版本为`4.x`
+    - Electron 23 以下不支持升级cheerio, 最高版本为`1.0.0-rc.12`
+    - Electron 23 以下puppeteer存在兼容性问题, 推荐`&quot;puppeteer-core&quot;: &quot;~21.3.8&quot;, &quot;puppeteer-in-electron&quot;: &quot;^3.0.5&quot;`
+- 启用HEVC硬解码说明 [点我查看](https://github.com/StaZhu/enable-chromium-hevc-hardware-decoding/blob/main/README.zh_CN.md)
+- 同步库说明
+    - sync-fetch: 
+        - 渲染进程 + webworker线程运行
+        - 主进程 + fork线程运行
+    - sync-request: 主进程 + fork线程运行
+        - tree-kill结束(普通结束可能结束不干净, 导致游离进程过多)
+        - sync-rpc子进程启动报错(参考[issue](https://github.com/ForbesLindesay/sync-rpc/issues/3))
+- 插件模块说明
+    - `&quot;npm&quot;: &quot;7.24.2&quot;` 之后的不再支持调用`npm`命令
+- `monaco-editor`无法粘贴
+    - 方案1: `win.webContents.paste()`, 该方案监听`ctrl+v`会导致普通输入框重复粘贴, 建议监听其他快捷键则正常(改编使用者习惯)
+    - 方案2: `editor.addAction`或`editor.onKeyDown`监听键盘按下事件, 该方案需手动写逻辑, 仅编辑器主体粘贴生效
+    - 方案3: `&quot;monaco-editor&quot;: &quot;^0.45.0&quot;`及以下版本, 参考[issue](https://github.com/microsoft/monaco-editor/issues/4855)
+    - 方案4: `Electron`配置`nodeIntegration: true`和`contextIsolation: false`会导致粘贴失效, 配置参数取反
+- `child_process`说明
+    - `windows`换行符为`\r\n`, `mac`和`linux`为`\n`
+    - `windows`执行结果乱码, 需`chcp 65001`设置编码, 如获取目录数据`chcp 65001 | dir`(`|`的作用为执行`dir`继承`chcp 65001`的`utf-8`编码)
+    - `&quot;electron-builder&quot;: &quot;^25.1.8&quot;`之后的编译器存在打包后`child_process`启动失败问题
+- 文件操作说明
+    - `FileSystemAccessAPI`受浏览器沙箱限制, 无法访问系统目录
+    - 可以使用`Electron`提供的`dialog`方法配合`fs`进行操作
+
+&lt;/details&gt;
+
+## 📚 数据结构
+
+&gt; 请严格按照数据结构填写, 避免不必要的报错(如数据字段类型不匹配)
+
+&gt; 数据合并,请先手动导出后编辑数据后导入(软件直接导入为覆盖数据)
+
+&lt;details&gt;
+&lt;summary&gt;展开查看接口说明&lt;/summary&gt;
 
 ```json
-&quot;baseUrl&quot;: &quot;types&quot;,
-&quot;typeRoots&quot;: [&quot;types&quot;],
-```
-
-Create `types/foo/index.d.ts` containing declarations for the module &quot;foo&quot;.
-You should now be able to import from `&quot;foo&quot;` in your code and it will route to the new type definition.
-Then build _and_ run the code to make sure your type definition actually corresponds to what happens at runtime.
-
-Once you&#039;ve tested your definitions with real code, make a [PR](#make-a-pull-request)
-then follow the instructions to [edit an existing package](#edit-an-existing-package) or
-[create a new package](#create-a-new-package).
-
-### Make a pull request
-
-Once you&#039;ve tested your package, you can share it on Definitely Typed.
-
-1. [Fork](https://guides.github.com/activities/forking/) this repository.
-1. Clone it.
-   - The Definitely Typed repo is large; you may want to consider using a [&quot;blobless clone&quot;](https://github.blog/open-source/git/get-up-to-speed-with-partial-clone-and-shallow-clone/#user-content-blobless-clones) to save time and space by passing `--filter=blob:none` when running `git clone`.
-1. Install [node](https://nodejs.org/).
-1. Run `pnpm install`.
-   - `pnpm install` will install the _entire_
-     repository, including packages you may not be editing. If you&#039;d like to install only a subset,
-     you can run `pnpm install -w --filter &quot;{./types/foo}...&quot;` to install `@types/foo` and all of
-     its dependencies. If you need to run tests for packages that _depend_ on `@types/foo`, you can run `pnpm install -w --filter &quot;...{./types/foo}...&quot;` to pull in all related packages for testing.
-
-&gt; [!NOTE]
-&gt; If you are using Windows, you may find that `git clean` does not remove the `node_modules` directory or hangs when doing so. If you need to remove `node_modules`, you can run `pnpm clean-node-modules` to reset the repo.
-
-We use a bot to let a large number of pull requests to DefinitelyTyped be handled entirely in a self-service manner. You can read more about [why and how here](https://devblogs.microsoft.com/typescript/changes-to-how-we-manage-definitelytyped/). Here is a handy reference showing the life cycle of a pull request to DT:
-
-&lt;img src=&quot;https://raw.githubusercontent.com/microsoft/DefinitelyTyped-tools/main/packages/mergebot/docs/dt-mergebot-lifecycle.svg&quot;&gt;
-
-#### Edit an existing package
-
-- Make changes. Remember to [edit tests](#my-package-teststs).
-  If you make breaking changes, do not forget to [update a major version](#if-a-library-is-updated-to-a-new-major-version-with-breaking-changes-how-should-i-update-its-type-declaration-package).
-- [Run `pnpm test &lt;package to test&gt;`](#running-tests).
-
-When you make a PR to edit an existing package, `dt-bot` should @-mention the package&#039;s owners.
-If it doesn&#039;t, you can do so yourself in the comment associated with the PR.
-
-#### Create a new package
-
-If you are the library author and your package is written in TypeScript, [bundle the generated declaration files](https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html) in your package instead of publishing to Definitely Typed.
-You can also generate declaration files from JavaScript files, using JSDoc for type annotations.
-
-If you are adding typings for an npm package, create a directory with the same name.
-If the package you are adding typings for is not on npm, make sure the name you choose for it does not conflict with the name of a package on npm.
-(You can use `npm info &lt;my-package&gt;` to check for the existence of the `&lt;my-package&gt;` package.)
-
-Your package should have this structure:
-
-| File                                           | Purpose                                                                                              |
-| ---------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `index.d.ts`                                   | This contains the typings for the package.                                                           |
-| [`&lt;my-package&gt;-tests.ts`](#my-package-teststs) | This contains sample code which tests the typings. This code does _not_ run, but it is type-checked. |
-| [`tsconfig.json`](#tsconfigjson)               | This allows you to run `tsc` within the package.                                                     |
-| [`.eslintrc.json`](#linter-eslintrcjson)       | (Rarely) Needed only to disable lint rules written for eslint.                                       |
-| [`package.json`](#packagejson)                 | Contains metadata for the package, including its name, version and dependencies.                     |
-| [`.npmignore`](#npmignore)                     | Specifies which files are intended to be included in the package.                                    |
-
-Generate these by running `npx dts-gen --dt --name &lt;my-package&gt; --template module`.
-See all options at [dts-gen](https://github.com/microsoft/DefinitelyTyped-tools/tree/main/packages/dts-gen).
-
-If you have `.d.ts` files besides `index.d.ts`, make sure that they are referenced either in `index.d.ts` or the tests.
-
-Definitely Typed members routinely monitor for new PRs, though keep in mind that the number of other PRs may slow things down.
-
-For a good example package, see [base64-js](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/a2ff1d2088143cbacc15786c7f3b0ec67179523c/types/base64-js).
-
-#### Removing a package
-
-When a package [bundles](https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html) its own types, types should be removed from Definitely Typed to avoid confusion.
-
-You can remove it by running `pnpm run not-needed &lt;typingsPackageName&gt; &lt;asOfVersion&gt; [&lt;libraryName&gt;]`.
-
-- `&lt;typingsPackageName&gt;`: This is the name of the directory to delete.
-- `&lt;asOfVersion&gt;`: A stub will be published to `@types/&lt;typingsPackageName&gt;` with this version. Should be higher than any currently published version and should be a version of `&lt;libraryName&gt;` on npm.
-- `&lt;libraryName&gt;`: Name of npm package that replaces the Definitely Typed types. Usually this is identical to `&lt;typingsPackageName&gt;`, in which case you can omit it.
-
-If a package was never on Definitely Typed, it does not need to be added to `notNeededPackages.json`.
-
-#### Running tests
-
-Test your changes by running `pnpm test &lt;package to test&gt;` where `&lt;package to test&gt;` is the name of your package.
-You need to run this from the DefinitelyTyped directory because individual package.jsons don&#039;t define test scripts.
-
-This script uses [dtslint](https://github.com/microsoft/DefinitelyTyped-tools/tree/master/packages/dtslint) to run the TypeScript compiler against your dts files.
-
-Once you have all your changes ready, use `pnpm run test-all` to see how your changes affect other modules.
-
-##### @arethetypeswrong/cli (`attw`) checks
-
-dtslint includes module format and `package.json` configuration checks from [@arethetypeswrong/cli](https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/packages/cli). The checks run only if a SemVer-major-compatible implementation package can be found on npm to compare against the DefinitelyTyped package. (DefinitelyTyped packages marked as `nonNpm` in their `package.json` are skipped.)
-
-Many packages currently fail the `attw` checks and need to be fixed. To allow us to make incremental progress, failed `attw` checks do not fail the `dtslint` run when the package is listed in `failingPackages` in [`attw.json`](./attw.json), but they will still be reported in the `pnpm test my-package` output. If you fix the package, remove it from `failingPackages` so that `attw` checks can start failing `dtslint` runs.
-
-All problems reported by `attw` have documentation linked in the output. Some rules of thumb to help avoid problems:
-
-- The `package.json` in the DefinitelyTyped package must have matching `type` and `exports` fields if the implementation package uses them in its `package.json`. For example, if an implementation `package.json` looks like:
-
-  ```json
-  {
-      &quot;name&quot;: &quot;my-package&quot;,
-      &quot;version&quot;: &quot;1.0.1&quot;,
-      &quot;type&quot;: &quot;module&quot;,
-      &quot;main&quot;: &quot;dist/cjs/index.cjs&quot;,
-      &quot;exports&quot;: {
-          &quot;.&quot;: {
-              &quot;import&quot;: &quot;./dist/esm/index.js&quot;,
-              &quot;require&quot;: &quot;./dist/cjs/index.cjs&quot;
-          },
-          &quot;./subpath&quot;: {
-              &quot;import&quot;: &quot;./dist/esm/subpath.js&quot;,
-              &quot;require&quot;: &quot;./dist/cjs/subpath.cjs&quot;
-          }
-      }
-  }
-  ```
-
-  then the DefinitelyTyped `package.json` should look something like:
-
-  ```json5
-  {
-      &quot;name&quot;: &quot;@types/my-package&quot;,
-      &quot;version&quot;: &quot;1.0.9999&quot;,
-      &quot;type&quot;: &quot;module&quot;,
-      &quot;types&quot;: &quot;index.d.ts&quot;,
-      &quot;exports&quot;: {
-          &quot;.&quot;: {
-              &quot;import&quot;: &quot;./index.d.ts&quot;,
-              &quot;require&quot;: &quot;./index.d.cts&quot;
-          },
-          &quot;./subpath&quot;: {
-              &quot;import&quot;: &quot;./subpath.d.ts&quot;,
-               &quot;require&quot;: &quot;./subpath.d.cts&quot;
-          }
-      }
-  }
-  ```
-
-  Notice that each `exports` subpath is reflected, and each JavaScript file has a corresponding declaration file with a matching file extension—a `.d.ts` file types a `.js` file, not a `.mjs` or `.cjs` file!
-
-- When the implementation package uses `module.exports = ...`, the DefinitelyTyped package should use `export =`, not `export default`. (Alternatively, if the `module.exports` is just an object of named properties, the DefinitelyTyped package can use a series of named exports.) The most common obstacle to correcting this problem is confusion about how to export types in addition to the primary export. For example, assume these types are incorrectly using `export default`:
-
-  ```ts
-  export interface Options {
-      // ...
-  }
-  export default function doSomething(options: Options): void;
-  ```
-
-  Changing the `export default` to an `export =` creates an error:
-
-  ```ts
-  export interface Options {
-      // ...
-  }
-  declare function doSomething(options: Options): void;
-  export = doSomething;
-  // ^^^^^^^^^^^^^^^^^
-  // Error: An export assignment cannot be used in a module with other exported elements.
-  ```
-
-  To fix this, move the types inside a namespace with the same name as the function:
-
-  ```ts
-  declare namespace doSomething {
-      export interface Options {
-          // ...
-      }
-  }
-  declare function doSomething(options: doSomething.Options): void;
-  export = doSomething;
-  ```
-
-If you need help fixing a problem, please ask in the DefinitelyTyped channel on the [TypeScript Community Discord server](https://discord.gg/typescript).
-
-#### Naming
-
-If you are adding typings for an npm package, create a directory with the same name.
-If the package you are adding typings for is not on npm, set `&quot;nonNpm&quot;: true` in the `package.json`, and make sure the name you choose for it does not conflict with the name of a package on npm.
-(You can use `npm info &lt;my-package&gt;` to check for the existence of the `&lt;my-package&gt;` package.)
-
-In rare occasions, `nonNpm` may be set to `&quot;conflict&quot;`, which incidates that there is a package on npm with the same name, but the types intentionally conflict with that package.
-This can be true for packages which define an environment like `@types/node` or for dummy packages like `aws-lambda`. Avoid using `&quot;conflict&quot;` where possible.
-
-#### `&lt;my-package&gt;-tests.ts`
-
-There should be a `&lt;my-package&gt;-tests.ts` file, which is considered your test file, along with any `*.ts` files it imports.
-If you don&#039;t see any test files in the module&#039;s folder, create a `&lt;my-package&gt;-tests.ts`.
-These files are used to validate the API exported from the `*.d.ts` files which are shipped as `@types/&lt;my-package&gt;`.
-They do not themselves ship.
-
-Changes to the `*.d.ts` files should include a corresponding `*.ts` file change which shows the API being used, so that someone doesn&#039;t accidentally break code you depend on.
-For example, this change to a function in a `.d.ts` file adding a new param to a function:
-
-`index.d.ts`:
-
-```diff
-- export function twoslash(body: string): string
-+ export function twoslash(body: string, config?: { version: string }): string
-```
-
-`&lt;my-package&gt;-tests.ts`:
-
-```diff
-import {twoslash} from &quot;./&quot;
-
-// $ExpectType string
-const result = twoslash(&quot;//&quot;)
-
-+ // Handle options param
-+ const resultWithOptions = twoslash(&quot;//&quot;, { version: &quot;3.7&quot; })
-+ // When the param is incorrect
-+ // @ts-expect-error
-+ const resultWithOptions = twoslash(&quot;//&quot;, {  })
-```
-
-If you&#039;re wondering where to start with test code, the examples in the README of the original package are a great place to start.
-
-You can [validate your changes](#running-tests) with `npm test &lt;package to test&gt;` from the root of this repo, which takes changed files into account.
-
-Use `$ExpectType` to assert that an expression is of a given type and `@ts-expect-error` to assert that a compile error. Examples:
-
-```js
-// $ExpectType void
-f(1);
-
-// @ts-expect-error
-f(&quot;one&quot;);
-```
-
-For more details, see [dtslint](https://github.com/Microsoft/DefinitelyTyped-tools/tree/master/packages/dtslint#write-tests) readme.
-
-##### Linter: `.eslintrc.json`
-
-If for some reason a lint rule needs to be disabled, disable it for a specific line:
-
-```ts
-// eslint-disable-next-line no-const-enum
-const enum Const {
-    One,
-}
-const enum Enum { // eslint-disable-line no-const-enum
-    Two,
+{
+  &quot;analyze&quot;: [
+    {
+      &quot;id&quot;: &quot;fddfb425-6fd9-0b39-459f-a21f69739a6e&quot;, // id唯一值不可重复[uuidv4]
+      &quot;key&quot;: &quot;51793af6-c923-5504-85db-0ef686624dec&quot;, // key值不建议重复[string] [3.4.0版本启用]
+      &quot;name&quot;: &quot;Parse&quot;, // 名称[string]
+      &quot;type&quot;: 0, // 类型[number | 0:web-1:json]
+      &quot;url&quot;: &quot;https://xxx.top/?jx=&quot;, // 解析源地址[string]
+      &quot;headers&quot;: &quot;&quot;, // 请求头[string] 未启用预留 [3.4.0版本启用]
+      &quot;isActive&quot;: true // 是否启用[boolean | true启用-false禁用]
+    }
+  ],
+  &quot;iptv&quot;: [
+    {
+      &quot;id&quot;: &quot;993841fe-5e91-5e5d-35d6-5be81822960b&quot;, // id唯一值不可重复[uuidv4]
+      &quot;key&quot;: &quot;51793af6-c923-5504-85db-0ef686624dec&quot;, // key值不建议重复[string] [3.4.0版本启用]
+      &quot;name&quot;: &quot;IPTV&quot;, // 名称[string]
+      &quot;url&quot;: &quot;https://xxx.com/m3u/iptv.m3u&quot;, // 直播源地址[string]
+      &quot;type&quot;: &quot;remote&quot;, // url格式[string | remote:远程m3u-local本地m3u文件路径-json本地手动文件]
+      &quot;epg&quot;: &quot;https://epg.112114.eu.org/?ch={name}&amp;date={date}&quot;, // 电子节目单地址[string]
+      &quot;logo&quot;: &quot;https://epg.112114.eu.org/logo/{name}.png&quot;, // 台标地址[string] - 3.3.8启用该参数
+      &quot;headers&quot;: &quot;&quot;, // 请求头[string] 未启用预留 [3.4.0版本启用]
+      &quot;isActive&quot;: true // 是否启用[boolean | true启用-false禁用]
+    }
+  ],
+  &quot;channel&quot;: [
+    {
+      &quot;id&quot;: &quot;0ede1ecd-de69-1042-15d9-4e5e9e3bb897&quot;, // id唯一值不可重复[uuidv4]
+      &quot;name&quot;: &quot;xx卫视&quot;, // 名称[string]
+      &quot;url&quot;: &quot;http://xxx.com/index.m3u8&quot;, // 播放地址[string]
+      &quot;group&quot;: &quot;默认&quot; // 分组[string]
+    }
+  ],
+  &quot;sites&quot;: [
+    {
+      &quot;id&quot;: &quot;51793af6-c923-5504-85db-0ef686624dec&quot;, // id唯一值不可重复[uuidv4]
+      &quot;key&quot;: &quot;51793af6-c923-5504-85db-0ef686624dec&quot;, // key值不建议重复[string]
+      &quot;name&quot;: &quot;xx9影视&quot;, // 名称[string]
+      &quot;api&quot;: &quot;https://www.xxx.com/api.php/provide/vod/&quot;, // 站点源地址[string]
+      &quot;playUrl&quot;: &quot;&quot;, // 配合解析去url地址[string]
+      &quot;search&quot;: 0, // 是否支持搜索[number | 0关闭-1聚合搜索-2仅搜索]
+      &quot;group&quot;: &quot;切片&quot;, // 分组[string]
+      &quot;type&quot;: 1, // 数据源类型[number | 0:T0(xml)-1:T1(json)-2:drpy(js0)-6:T4(hipy)-7:T3(js)-8:catvod(nodejs)-9:csp(XBPQ)-10:csp(XYQ)-11:csp(AppYsV2)]
+      &quot;ext&quot;: &quot;&quot;, // 扩展参数[string]
+      &quot;categories&quot;: &quot;电视,影视&quot;, // 按顺序展示所配置的分类 不配置则默认展示所有分类[string]
+      &quot;isActive&quot;: true // 是否启用[boolean | true启用-false禁用]
+    }
+  ],
+  &quot;drive&quot;: [
+    {
+      &quot;id&quot;: &quot;3293dc45-cf14-9c66-3028-5b7765b240b7&quot;,// id唯一值不可重复[uuidv4]
+      &quot;key&quot;: &quot;51793af6-c923-5504-85db-0ef686624dec&quot;, // key值不建议重复[string] [3.4.0版本启用]
+      &quot;name&quot;: &quot;alist&quot;, // 名称[string]
+      &quot;server&quot;: &quot;http://alist.xxx.pro/&quot;, // 网盘地址[string]
+      &quot;showAll&quot;: false, // 是否启用[boolean | true显示全部-false显示video]
+      &quot;startPage&quot;: &quot;&quot;, // 开始页路径[string]
+      &quot;search&quot;: false, // 是否支持搜索[boolean | true启用-false禁用] 未启用预留
+      &quot;headers&quot;: &quot;{}&quot;, // 请求头[string] 未启用预留
+      &quot;params&quot;: &quot;{}&quot;, // 参数[string]
+      &quot;isActive&quot;: true // 是否启用[boolean | true启用-false禁用]
+    }
+  ],
+  &quot;setting&quot;: [
+    {
+      &quot;version&quot;: &quot;3.3.2&quot;, // [3.3.2版本启用]当前版本 (一定要根据实际填写,不然数据库执行会报错)
+      &quot;theme&quot;: &quot;auto&quot;, // 主题 auto:跟随系统 light:亮色 dark:暗色
+      &quot;lang&quot;: &quot;zh_CN&quot;, // [3.3.4版本启用]语言 zh_CN:中文 en_US:英文
+      &quot;defaultHot&quot;: &quot;kylive&quot;, // 热搜 kylive:酷云数据 enlightent:云合数据
+      &quot;defaultSearchRecommend&quot;: &quot;site&quot;, // 搜索推荐 site:站点 quark:夸克 baidu:百度 douban:豆瓣  弃用
+      &quot;defaultSearchType&quot;: &quot;site&quot;, // 全局搜索模式 site:本站 group:组内 all:全部
+      &quot;defaultCheckModel&quot;: true, // [弃用] 忘了干嘛的
+      &quot;defaultChangeModel&quot;: false, // [弃用] 忘了干嘛的
+      &quot;pauseWhenMinimize&quot;: false, // [弃用] 最小化时暂停
+      &quot;defaultIptvEpg&quot;: &quot;https://epg.112114.eu.org/?ch={name}&amp;date={date}&quot;, // iptv epg
+      &quot;defaultIptvLogo&quot;: &quot;https://epg.112114.eu.org/logo/{name}.png&quot;, // iptv logo
+      &quot;iptvSkipIpv6&quot;: true, // [3.3.8版本弃用] iptv是否跳过ipv6节目
+      &quot;iptvMarkIp&quot;: true, // [3.3.8版本启用] iptv标识IP类型
+      &quot;iptvThumbnail&quot;: true, // iptv是否显示缩略图
+      &quot;iptvStatus&quot;: true, // [3.3.8版本弃用] iptv是否检测延迟
+      &quot;iptvDelay&quot;: true, // [3.3.8版本启用]  iptv是否检测延迟
+      &quot;defaultSite&quot;: &quot;51793af6-c923-5504-85db-0ef686624dec&quot;, // site 默认源标识
+      &quot;defaultIptv&quot;: &quot;993841fe-5e91-5e5d-35d6-5be81822960b&quot;, // iptv 默认源标识
+      &quot;defaultAnalyze&quot;: &quot;fddfb425-6fd9-0b39-459f-a21f69739a6e&quot;, // analyze 默认源标识
+      &quot;defaultDrive&quot;: &quot;3293dc45-cf14-9c66-3028-5b7765b240b7&quot;, // drive 默认源标识
+      &quot;defaultViewCasual&quot;: &quot;&quot;, // [3.3.4版本启用] 随心看地址
+      &quot;barrage&quot;: {
+        &quot;url&quot;: &quot;&quot;, // 弹幕地址
+        &quot;key&quot;: &quot;danmuku&quot;, // 弹幕接口返回数据对应的key
+        &quot;support&quot;: [&quot;qq&quot;, &quot;qiyi&quot;, &quot;youku&quot;, &quot;mgtv&quot;], // 弹幕支持的线路
+        &quot;start&quot;: &quot;0&quot;, // 弹幕接口返回数据对应的开始时间的位置
+        &quot;mode&quot;: &quot;1&quot;, // 弹幕接口返回数据对应的位置的位置
+        &quot;color&quot;: &quot;2&quot;, // 弹幕接口返回数据对应的颜色的位置
+        &quot;content&quot;: &quot;4&quot; // 弹幕接口返回数据对应的内容的位置
+      }, // [3.3.4版本启用]弹幕参数
+      &quot;analyzeFlag&quot;: [&quot;youku&quot;, &quot;qq&quot;, &quot;iqiyi&quot;, &quot;qiyi&quot;, &quot;letv&quot;, &quot;leshi&quot;, &quot;sohu&quot;, &quot;tudou&quot;, &quot;pptv&quot;, &quot;mgtv&quot;, &quot;imgo&quot;], // 解析标识
+      &quot;broadcasterType&quot;: &quot;xgplayer&quot;, // [3.3.4版本弃用,使用playerMode参数]播放器 xgplayer:西瓜 dplayer:呆呆 custom:自定义结合externalPlayer
+      &quot;externalPlayer&quot;: &quot;&quot;, // [3.3.4版本弃用,使用playerMode参数]播放器为custom,调用此处系统命令
+      &quot;playerMode&quot;: {
+        &quot;type&quot;: &quot;xgplayer&quot;, // 播放器 xgplayer:西瓜 dplayer:呆呆 custom:自定义结合external
+        &quot;external&quot;: &quot;&quot; // 播放器为custom,调用此处系统命令
+      }, // [3.3.4版本启用]
+      &quot;softSolution&quot;: false, // 是否使用软解 预留
+      &quot;communitySubscribe&quot;: &quot;&quot;, // 社区地址 预留
+      &quot;skipStartEnd&quot;: false, // [3.3.5版本弃用, pinia存储]是否跳过首尾空白
+      &quot;agreementMask&quot;: true, // 是否同意协议
+      &quot;recordShortcut&quot;: &quot;Shift+Command+Z&quot;, // 录制快捷键
+      &quot;snifferType&quot;: &quot;pie&quot;, // [3.3.4版本弃用,使用snifferMode参数]嗅探模式 pie iframe
+      &quot;snifferMode&quot;: {
+        &quot;type&quot;: &quot;pie&quot;, // 嗅探模式 pie iframe custom
+        &quot;url&quot;: &quot;&quot; // 当 type 为 custom 时填写自定义地址
+      }, // [3.3.4版本启用]
+      &quot;selfBoot&quot;: false, // 是否开机自启动
+      &quot;hardwareAcceleration&quot;: true, // 是否启用硬件加速
+      &quot;ua&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36&quot;, // UA
+      &quot;webdevUrl&quot;: &quot;https://dav.jianguoyun.com/dav/&quot;, // [3.3.4版本弃用,使用webdev参数]webdev同步盘地址 用于备份
+      &quot;webdevUsername&quot;: &quot;&quot;, // [3.3.4版本弃用,使用webdev参数]webdev用户名 用于备份
+      &quot;webdevPassword&quot;: &quot;&quot;, // [3.3.4版本弃用,使用webdev参数]webdev密码 用于备份
+      &quot;webdev&quot;: {
+        &quot;sync&quot;: false, // 自动同步
+        &quot;data&quot;: {
+          &quot;url&quot;: &quot;https://dav.jianguoyun.com/dav/&quot;, // webdev同步盘地址
+          &quot;user&quot;: &quot;&quot;, // webdev用户名
+          &quot;password&quot;: &quot;&quot; // webdev密码
+        } // webdev 用于备份
+      }, // [3.3.4版本启用]
+      &quot;restoreWindowPositionAndSize&quot;: false, // 弃用
+      &quot;windowPosition&quot;: {
+        &quot;status&quot;: false, // 是否记录窗口位置
+        &quot;position&quot;: {
+          &quot;width&quot;: 1000,
+          &quot;height&quot;: 640
+        }, // 窗口位置 [3.3.7版本弃用, 使用position_main｜position_play参数]
+        &quot;position_main&quot;: {
+          &quot;width&quot;: 1000,
+          &quot;height&quot;: 640
+        }, // 窗口位置 [3.3.7版本启用] 记录主窗口位置
+        &quot;position_play&quot;: {
+          &quot;width&quot;: 875,
+          &quot;height&quot;: 550
+        } // 窗口位置 [3.3.7版本启用] 记录播放窗口位置
+      },
+      &quot;debug&quot;: false, // [3.3.7版本启用] 用于在线调试和嗅探页面弹出
+      &quot;defaultFilterType&quot;: false, // [3.3.7版本启用] 用于影视搜索过滤关键词
+      &quot;timeout&quot;: 5000, // [3.3.5版本启用] 用于调整全局请求超时事件, 单位毫秒
+      &quot;dns&quot;: &quot;&quot; // [3.3.7版本启用] DNS-over-HTTP
+    }
+  ]
 }
 ```
 
-You can still disable rules with an .eslintrc.json, but should not in new packages.
-Disabling
+&lt;/details&gt;
 
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+## 💰 金主爸爸
+
+[NodeSupport](https://github.com/NodeSeekDev/NodeSupport)赞助了本项目
+
+[![yxvm_support.png](https://s2.loli.net/2025/04/09/JMyQZUKY2bX4G3q.png)](https://yxvm.com/)
+
+
+[![Powered by DartNode](https://dartnode.com/branding/DN-Open-Source-sm.png)](https://dartnode.com &quot;Powered by DartNode - Free VPS for Open Source&quot;)
+</pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[outline/outline]]></title>
-            <link>https://github.com/outline/outline</link>
-            <guid>https://github.com/outline/outline</guid>
-            <pubDate>Fri, 01 Aug 2025 00:05:53 GMT</pubDate>
-            <description><![CDATA[The fastest knowledge base for growing teams. Beautiful, realtime collaborative, feature packed, and markdown compatible.]]></description>
+            <title><![CDATA[sourcebot-dev/sourcebot]]></title>
+            <link>https://github.com/sourcebot-dev/sourcebot</link>
+            <guid>https://github.com/sourcebot-dev/sourcebot</guid>
+            <pubDate>Sat, 02 Aug 2025 00:05:19 GMT</pubDate>
+            <description><![CDATA[Sourcebot is a self-hosted tool that helps you understand your codebase.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/outline/outline">outline/outline</a></h1>
-            <p>The fastest knowledge base for growing teams. Beautiful, realtime collaborative, feature packed, and markdown compatible.</p>
+            <h1><a href="https://github.com/sourcebot-dev/sourcebot">sourcebot-dev/sourcebot</a></h1>
+            <p>Sourcebot is a self-hosted tool that helps you understand your codebase.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 33,822</p>
-            <p>Forks: 2,743</p>
+            <p>Stars: 2,263</p>
+            <p>Forks: 123</p>
             <p>Stars today: 200 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://user-images.githubusercontent.com/31465/34380645-bd67f474-eb0b-11e7-8d03-0151c1730654.png&quot; height=&quot;29&quot; /&gt;
+            <h2>README</h2><pre>
+&lt;div align=&quot;center&quot;&gt;
+&lt;picture&gt;
+  &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;.github/images/logo_dark.png&quot;&gt;
+  &lt;img height=&quot;150&quot; src=&quot;.github/images/logo_light.png&quot;&gt;
+&lt;/picture&gt;
+&lt;/div&gt;
+&lt;div align=&quot;center&quot;&gt;
+   &lt;div&gt;
+      &lt;h3&gt;
+         &lt;a href=&quot;https://docs.sourcebot.dev/self-hosting/overview&quot;&gt;
+            &lt;strong&gt;Self Host&lt;/strong&gt;
+         &lt;/a&gt; · 
+         &lt;a href=&quot;https://demo.sourcebot.dev&quot;&gt;
+            &lt;strong&gt;Public Demo&lt;/strong&gt;
+         &lt;/a&gt;
+      &lt;/h3&gt;
+   &lt;/div&gt;
+
+   &lt;div&gt;
+      &lt;a href=&quot;https://docs.sourcebot.dev/&quot;&gt;&lt;strong&gt;Docs&lt;/strong&gt;&lt;/a&gt; ·
+      &lt;a href=&quot;https://github.com/sourcebot-dev/sourcebot/issues&quot;&gt;&lt;strong&gt;Report Bug&lt;/strong&gt;&lt;/a&gt; ·
+      &lt;a href=&quot;https://github.com/sourcebot-dev/sourcebot/discussions/categories/ideas&quot;&gt;&lt;strong&gt;Feature Request&lt;/strong&gt;&lt;/a&gt; ·
+      &lt;a href=&quot;https://www.sourcebot.dev/changelog&quot;&gt;&lt;strong&gt;Changelog&lt;/strong&gt;&lt;/a&gt; ·
+      &lt;a href=&quot;https://www.sourcebot.dev/contact&quot;&gt;&lt;strong&gt;Contact&lt;/strong&gt;&lt;/a&gt; ·
+   &lt;/div&gt;
+   &lt;br/&gt;
+   &lt;span&gt;Sourcebot uses &lt;a href=&quot;https://github.com/sourcebot-dev/sourcebot/discussions&quot;&gt;&lt;strong&gt;Github Discussions&lt;/strong&gt;&lt;/a&gt;  for Support and Feature Requests.&lt;/span&gt;
+   &lt;br/&gt;
+   &lt;br/&gt;
+   &lt;div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;mailto:team@sourcebot.dev&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Email%20Us-brightgreen&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/sourcebot-dev/sourcebot/actions/workflows/ghcr-publish.yml&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/actions/workflow/status/sourcebot-dev/sourcebot/ghcr-publish.yml&quot;/&gt;&lt;a&gt;
+  &lt;a href=&quot;https://github.com/sourcebot-dev/sourcebot/stargazers&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/stars/sourcebot-dev/sourcebot&quot; /&gt;&lt;/a&gt;
 &lt;/p&gt;
 &lt;p align=&quot;center&quot;&gt;
-  &lt;i&gt;A fast, collaborative, knowledge base for your team built using React and Node.js.&lt;br/&gt;Try out Outline using our hosted version at &lt;a href=&quot;https://www.getoutline.com&quot;&gt;www.getoutline.com&lt;/a&gt;.&lt;/i&gt;
-  &lt;br/&gt;
-  &lt;img width=&quot;1640&quot; alt=&quot;screenshot&quot; src=&quot;https://user-images.githubusercontent.com/380914/110356468-26374600-7fef-11eb-9f6a-f2cc2c8c6590.png&quot;&gt;
 &lt;/p&gt;
+
+Sourcebot is a self-hosted tool that helps you understand your codebase. 
+
+- **Ask Sourcebot:** Ask questions about your codebase and have Sourcebot provide detailed answers grounded with inline citations.
+- **Code search:** Search and navigate across all your repos and branches, no matter where they’re hosted.
+
+Try it out in our [public demo](https://demo.sourcebot.dev)!
+
+https://github.com/user-attachments/assets/ed66a622-e38f-4947-a531-86df1e1e0218
+
+# Features
+![Sourcebot Features](https://github.com/user-attachments/assets/3aed7348-7aeb-4af3-89da-b617c3db2e02)
+
+## Ask Sourcebot
+Ask Sourcebot gives you the ability to ask complex questions about your codebase in natural language.
+
+It uses Sourcebot&#039;s existing code search and navigation tools to allow reasoning models to search your code, follow code nav references, and provide an answer that&#039;s rich with inline citations and navigable code snippets.
+
+https://github.com/user-attachments/assets/8212cd16-683f-468f-8ea5-67455c0931e2
+
+## Code Search
+Search across all your repos/branches across any code host platform. Blazingly fast, and supports regular expressions, repo/language search filters, boolean logic, and more.
+
+https://github.com/user-attachments/assets/3b381452-d329-4949-b6f2-2fc38952e481
+
+## Code Navigation
+IDE-level code navigation (goto definition and find references) across all your repos.
+
+https://github.com/user-attachments/assets/e2da2829-71cc-40af-98b4-7ba52e945530
+
+## Built-in File Explorer
+Explore every file across all of your repos. Modern UI with syntax highlighting, file tree, code navigation, etc.
+
+https://github.com/user-attachments/assets/31ec0669-707d-4e03-b511-1bc33d44197a
+
+# Deploy Sourcebot
+
+Sourcebot can be deployed in seconds using our official docker image. Visit our [docs](https://docs.sourcebot.dev/docs/deployment-guide) for more information.
+
+1. Create a config
+```sh
+touch config.json
+echo &#039;{
+    &quot;$schema&quot;: &quot;https://raw.githubusercontent.com/sourcebot-dev/sourcebot/main/schemas/v3/index.json&quot;,
+    &quot;connections&quot;: {
+        // Comments are supported
+        &quot;starter-connection&quot;: {
+            &quot;type&quot;: &quot;github&quot;,
+            &quot;repos&quot;: [
+                &quot;sourcebot-dev/sourcebot&quot;
+            ]
+        }
+    }
+}&#039; &gt; config.json
+```
+
+2. Run the docker container
+```sh
+docker run \
+  -p 3000:3000 \
+  --pull=always \
+  --rm \
+  -v $(pwd):/data \
+  -e CONFIG_PATH=/data/config.json \
+  --name sourcebot \
+  ghcr.io/sourcebot-dev/sourcebot:latest
+```
+&lt;details&gt;
+&lt;summary&gt;What does this command do?&lt;/summary&gt;
+
+- Pull and run the Sourcebot docker image from [ghcr.io/sourcebot-dev/sourcebot:latest](https://github.com/sourcebot-dev/sourcebot/pkgs/container/sourcebot).
+- Mount the current directory (`-v $(pwd):/data`) to allow Sourcebot to persist the `.sourcebot` cache.
+- Clones sourcebot at `HEAD` into `.sourcebot/github/sourcebot-dev/sourcebot`.
+- Indexes sourcebot into a .zoekt index file in `.sourcebot/index/`.
+- Map port 3000 between your machine and the docker image.
+- Starts the web server on port 3000.
+&lt;/details&gt;
+&lt;/br&gt;
+
+3. Visit `http://localhost:3000` to start using Sourcebot
+&lt;/br&gt;
+
+To configure Sourcebot (index your own repos, connect your LLMs, etc), check out our [docs](https://docs.sourcebot.dev/docs/configuration/config-file).
+
+&gt; [!NOTE]
+&gt; Sourcebot collects &lt;a href=&quot;https://demo.sourcebot.dev/~/search?query=captureEvent%5C(%20repo%3Asourcebot&quot;&gt;anonymous usage data&lt;/a&gt; by default to help us improve the product. No sensitive data is collected, but if you&#039;d like to disable this you can do so by setting the `SOURCEBOT_TELEMETRY_DISABLED` environment
+&gt; variable to `true`. Please refer to our [telemetry docs](https://docs.sourcebot.dev/self-hosting/overview#telemetry) for more information.
+
+# Build from source
+&gt;[!NOTE]
+&gt; Building from source is only required if you&#039;d like to contribute. If you&#039;d just like to use Sourcebot, we recommend checking out our self-hosting [docs](https://docs.sourcebot.dev/self-hosting/overview).
+
+If you&#039;d like to build from source, please checkout the `CONTRIBUTING.md` file for more information.
+
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[angular/angular]]></title>
+            <link>https://github.com/angular/angular</link>
+            <guid>https://github.com/angular/angular</guid>
+            <pubDate>Sat, 02 Aug 2025 00:05:18 GMT</pubDate>
+            <description><![CDATA[Deliver web apps with confidence 🚀]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/angular/angular">angular/angular</a></h1>
+            <p>Deliver web apps with confidence 🚀</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 98,394</p>
+            <p>Forks: 26,470</p>
+            <p>Stars today: 10 stars today</p>
+            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;Angular - The modern web developer&#039;s platform&lt;/h1&gt;
+
 &lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://circleci.com/gh/outline/outline&quot; rel=&quot;nofollow&quot;&gt;&lt;img src=&quot;https://circleci.com/gh/outline/outline.svg?style=shield&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;http://www.typescriptlang.org&quot; rel=&quot;nofollow&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg&quot; alt=&quot;TypeScript&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/prettier/prettier&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat&quot; alt=&quot;Prettier&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/styled-components/styled-components&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg&quot; alt=&quot;Styled Components&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://translate.getoutline.com/project/outline&quot; alt=&quot;Localized&quot;&gt;&lt;img src=&quot;https://badges.crowdin.net/outline/localized.svg&quot;&gt;&lt;/a&gt;
+  &lt;img src=&quot;adev/src/assets/images/press-kit/angular_icon_gradient.gif&quot; alt=&quot;angular-logo&quot; width=&quot;120px&quot; height=&quot;120px&quot;/&gt;
+  &lt;br&gt;
+  &lt;em&gt;Angular is a development platform for building mobile and desktop web applications
+    &lt;br&gt; using TypeScript/JavaScript and other languages.&lt;/em&gt;
+  &lt;br&gt;
 &lt;/p&gt;
 
-This is the source code that runs [**Outline**](https://www.getoutline.com) and all the associated services. If you want to use Outline then you don&#039;t need to run this code, we offer a hosted version of the app at [getoutline.com](https://www.getoutline.com). You can also find documentation on using Outline in [our guide](https://docs.getoutline.com/s/guide).
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://angular.dev/&quot;&gt;&lt;strong&gt;angular.dev&lt;/strong&gt;&lt;/a&gt;
+  &lt;br&gt;
+&lt;/p&gt;
 
-If you&#039;d like to run your own copy of Outline or contribute to development then this is the place for you.
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;CONTRIBUTING.md&quot;&gt;Contributing Guidelines&lt;/a&gt;
+  ·
+  &lt;a href=&quot;https://github.com/angular/angular/issues&quot;&gt;Submit an Issue&lt;/a&gt;
+  ·
+  &lt;a href=&quot;https://blog.angular.dev/&quot;&gt;Blog&lt;/a&gt;
+  &lt;br&gt;
+  &lt;br&gt;
+&lt;/p&gt;
 
-# Installation
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://www.npmjs.com/@angular/core&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/npm/v/@angular/core.svg?logo=npm&amp;logoColor=fff&amp;label=NPM+package&amp;color=limegreen&quot; alt=&quot;Angular on npm&quot; /&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
 
-Please see the [documentation](https://docs.getoutline.com/s/hosting/) for running your own copy of Outline in a production configuration.
+&lt;hr&gt;
 
-If you have questions or improvements for the docs please create a thread in [GitHub discussions](https://github.com/outline/outline/discussions).
+## Documentation
 
-# Development
+Get started with Angular, learn the fundamentals and explore advanced topics on our documentation website.
 
-There is a short guide for [setting up a development environment](https://docs.getoutline.com/s/hosting/doc/local-development-5hEhFRXow7) if you wish to contribute changes, fixes, and improvements to Outline.
+- [Getting Started][quickstart]
+- [Architecture][architecture]
+- [Components and Templates][componentstemplates]
+- [Forms][forms]
+- [API][api]
+
+### Advanced
+
+- [Angular Elements][angularelements]
+- [Server Side Rendering][ssr]
+- [Schematics][schematics]
+- [Lazy Loading][lazyloading]
+- [Animations][animations]
+
+### Local Development
+
+To contribute to the Angular Docs, check out the [Angular.dev README](adev/README.md)
+
+## Development Setup
+
+### Prerequisites
+
+- Install [Node.js] which includes [Node Package Manager][npm]
+
+### Setting Up a Project
+
+Install the Angular CLI globally:
+
+```
+npm install -g @angular/cli
+```
+
+Create workspace:
+
+```
+ng new [PROJECT NAME]
+```
+
+Run the application:
+
+```
+cd [PROJECT NAME]
+ng serve
+```
+
+Angular is cross-platform, fast, scalable, has incredible tooling, and is loved by millions.
+
+## Quickstart
+
+[Get started in 5 minutes][quickstart].
+
+## Ecosystem
+
+&lt;p&gt;
+  &lt;img src=&quot;/contributing-docs/images/angular-ecosystem-logos.png&quot; alt=&quot;angular ecosystem logos&quot; width=&quot;500px&quot; height=&quot;auto&quot;&gt;
+&lt;/p&gt;
+
+- [Angular Command Line (CLI)][cli]
+- [Angular Material][angularmaterial]
+
+## Changelog
+
+[Learn about the latest improvements][changelog].
+
+## Upgrading
+
+Check out our [upgrade guide](https://angular.dev/update-guide/) to find out the best way to upgrade your project.
 
 ## Contributing
 
-Outline is built and maintained by a small team – we&#039;d love your help to fix bugs and add features!
+### Contributing Guidelines
 
-Before submitting a pull request _please_ discuss with the core team by creating or commenting in an issue on [GitHub](https://www.github.com/outline/outline/issues) – we&#039;d also love to hear from you in the [discussions](https://www.github.com/outline/outline/discussions). This way we can ensure that an approach is agreed on before code is written. This will result in a much higher likelihood of your code being accepted.
+Read through our [contributing guidelines][contributing] to learn about our submission process, coding rules, and more.
 
-If you’re looking for ways to get started, here&#039;s a list of ways to help us improve Outline:
+### Want to Help?
 
-- [Translation](docs/TRANSLATION.md) into other languages
-- Issues with [`good first issue`](https://github.com/outline/outline/labels/good%20first%20issue) label
-- Performance improvements, both on server and frontend
-- Developer happiness and documentation
-- Bugs and other issues listed on GitHub
+Want to report a bug, contribute some code, or improve the documentation? Excellent! Read up on our guidelines for [contributing][contributing] and then check out one of our issues labeled as &lt;kbd&gt;[help wanted](https://github.com/angular/angular/labels/help%20wanted)&lt;/kbd&gt; or &lt;kbd&gt;[good first issue](https://github.com/angular/angular/labels/good%20first%20issue)&lt;/kbd&gt;.
 
-## Architecture
+### Code of Conduct
 
-If you&#039;re interested in contributing or learning more about the Outline codebase
-please refer to the [architecture document](docs/ARCHITECTURE.md) first for a high level overview of how the application is put together.
+Help us keep Angular open and inclusive. Please read and follow our [Code of Conduct][codeofconduct].
 
-## Debugging
+## Community
 
-In development Outline outputs simple logging to the console, prefixed by categories. In production it outputs JSON logs, these can be easily parsed by your preferred log ingestion pipeline.
+Join the conversation and help the community.
 
-HTTP logging is disabled by default, but can be enabled by setting the `DEBUG=http` environment variable.
+- [X (formerly Twitter)][X (formerly Twitter)]
+- [Bluesky][bluesky]
+- [Discord][discord]
+- [YouTube][youtube]
+- [StackOverflow][stackoverflow]
+- Find a Local [Meetup][meetup]
 
-## Tests
+[![Love Angular badge](https://img.shields.io/badge/angular-love-blue?logo=angular&amp;angular=love)](https://www.github.com/angular/angular)
 
-We aim to have sufficient test coverage for critical parts of the application and aren&#039;t aiming for 100% unit test coverage. All API endpoints and anything authentication related should be thoroughly tested.
+**Love Angular? Give our repo a star :star: :arrow_up:.**
 
-To add new tests, write your tests with [Jest](https://facebook.github.io/jest/) and add a file with `.test.js` extension next to the tested code.
-
-```shell
-# To run all tests
-make test
-
-# To run backend tests in watch mode
-make watch
-```
-
-Once the test database is created with `make test` you may individually run
-frontend and backend tests directly.
-
-```shell
-# To run backend tests
-yarn test:server
-
-# To run a specific backend test
-yarn test:server myTestFile
-
-# To run frontend tests
-yarn test:app
-```
-
-## Migrations
-
-Sequelize is used to create and run migrations, for example:
-
-```shell
-yarn sequelize migration:generate --name my-migration
-yarn sequelize db:migrate
-```
-
-Or to run migrations on test database:
-
-```shell
-yarn sequelize db:migrate --env test
-```
-
-# Activity
-
-![Alt](https://repobeats.axiom.co/api/embed/ff2e4e6918afff1acf9deb72d1ba6b071d586178.svg &quot;Repobeats analytics image&quot;)
-
-# License
-
-Outline is [BSL 1.1 licensed](LICENSE).
+[contributing]: CONTRIBUTING.md
+[quickstart]: https://angular.dev/tutorials/learn-angular
+[changelog]: CHANGELOG.md
+[ng]: https://angular.dev
+[documentation]: https://angular.dev/overview
+[angularmaterial]: https://material.angular.dev/
+[cli]: https://angular.dev/tools/cli
+[architecture]: https://angular.dev/essentials
+[componentstemplates]: https://angular.dev/tutorials/learn-angular/1-components-in-angular
+[forms]: https://angular.dev/tutorials/learn-angular/15-forms
+[api]: https://angular.dev/api
+[angularelements]: https://angular.dev/guide/elements
+[ssr]: https://angular.dev/guide/ssr
+[schematics]: https://angular.dev/tools/cli/schematics
+[lazyloading]: https://angular.dev/guide/ngmodules/lazy-loading
+[node.js]: https://nodejs.org/
+[npm]: https://www.npmjs.com/get-npm
+[codeofconduct]: CODE_OF_CONDUCT.md
+[X (formerly Twitter)]: https://www.twitter.com/angular
+[bluesky]: https://bsky.app/profile/angular.dev
+[discord]: https://discord.gg/angular
+[stackoverflow]: https://stackoverflow.com/questions/tagged/angular
+[youtube]: https://youtube.com/angular
+[meetup]: https://www.meetup.com/find/?keywords=angular
+[animations]: https://angular.dev/guide/animations
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
