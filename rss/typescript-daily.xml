@@ -4,254 +4,136 @@
         <title>GitHub Trending Today for typescript - TypeScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for typescript.</description>
-        <lastBuildDate>Sun, 17 Aug 2025 00:05:32 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 18 Aug 2025 00:05:40 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2025, GitHub</copyright>
         <item>
-            <title><![CDATA[microsoft/poml]]></title>
-            <link>https://github.com/microsoft/poml</link>
-            <guid>https://github.com/microsoft/poml</guid>
-            <pubDate>Sun, 17 Aug 2025 00:05:32 GMT</pubDate>
-            <description><![CDATA[Prompt Orchestration Markup Language]]></description>
+            <title><![CDATA[clash-verge-rev/clash-verge-rev]]></title>
+            <link>https://github.com/clash-verge-rev/clash-verge-rev</link>
+            <guid>https://github.com/clash-verge-rev/clash-verge-rev</guid>
+            <pubDate>Mon, 18 Aug 2025 00:05:40 GMT</pubDate>
+            <description><![CDATA[A modern GUI client based on Tauri, designed to run in Windows, macOS and Linux for tailored proxy experience]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/microsoft/poml">microsoft/poml</a></h1>
-            <p>Prompt Orchestration Markup Language</p>
+            <h1><a href="https://github.com/clash-verge-rev/clash-verge-rev">clash-verge-rev/clash-verge-rev</a></h1>
+            <p>A modern GUI client based on Tauri, designed to run in Windows, macOS and Linux for tailored proxy experience</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 2,817</p>
-            <p>Forks: 118</p>
-            <p>Stars today: 252 stars today</p>
-            <h2>README</h2><pre># POML: Prompt Orchestration Markup Language
+            <p>Stars: 70,525</p>
+            <p>Forks: 5,330</p>
+            <p>Stars today: 123 stars today</p>
+            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;
+  &lt;img src=&quot;./src-tauri/icons/icon.png&quot; alt=&quot;Clash&quot; width=&quot;128&quot; /&gt;
+  &lt;br&gt;
+  Continuation of &lt;a href=&quot;https://github.com/zzzgydi/clash-verge&quot;&gt;Clash Verge&lt;/a&gt;
+  &lt;br&gt;
+&lt;/h1&gt;
 
-[![Documentation](https://img.shields.io/badge/docs-microsoft.github.io-blue)](https://microsoft.github.io/poml/)
-[![VSCode Extension](https://img.shields.io/visual-studio-marketplace/v/poml-team.poml)](https://marketplace.visualstudio.com/items?itemName=poml-team.poml)
-[![PyPI](https://img.shields.io/pypi/v/poml)](https://pypi.org/project/poml/)
-[![npm (latest)](https://img.shields.io/npm/v/pomljs)](https://www.npmjs.com/package/pomljs)
-[![Test Status](https://github.com/microsoft/poml/actions/workflows/test.yml/badge.svg)](https://github.com/microsoft/poml/actions/workflows/test.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Discord](https://img.shields.io/badge/Discord-Join-5865F2?logo=discord&amp;logoColor=white)](https://discord.gg/FhMCqWzAn6)
+&lt;h3 align=&quot;center&quot;&gt;
+A Clash Meta GUI based on &lt;a href=&quot;https://github.com/tauri-apps/tauri&quot;&gt;Tauri&lt;/a&gt;.
+&lt;/h3&gt;
 
-**POML (Prompt Orchestration Markup Language)** is a novel markup language designed to bring structure, maintainability, and versatility to advanced prompt engineering for Large Language Models (LLMs). It addresses common challenges in prompt development, such as lack of structure, complex data integration, format sensitivity, and inadequate tooling. POML provides a systematic way to organize prompt components, integrate diverse data types seamlessly, and manage presentation variations, empowering developers to create more sophisticated and reliable LLM applications.
+## Preview
 
-## Demo Video
+| Dark                             | Light                             |
+| -------------------------------- | --------------------------------- |
+| ![预览](./docs/preview_dark.png) | ![预览](./docs/preview_light.png) |
 
-[![The 5-minute guide to POML](https://i3.ytimg.com/vi/b9WDcFsKixo/maxresdefault.jpg)](https://youtu.be/b9WDcFsKixo)
+## Install
 
-## Key Features
+请到发布页面下载对应的安装包：[Release page](https://github.com/clash-verge-rev/clash-verge-rev/releases)&lt;br&gt;
+Go to the [Release page](https://github.com/clash-verge-rev/clash-verge-rev/releases) to download the corresponding installation package&lt;br&gt;
+Supports Windows (x64/x86), Linux (x64/arm64) and macOS 10.15+ (intel/apple).
 
-* **Structured Prompting Markup**: Employs an HTML-like syntax with semantic components such as `&lt;role&gt;`, `&lt;task&gt;`, and `&lt;example&gt;` to encourage modular design, enhancing prompt readability, reusability, and maintainability.
-* **Comprehensive Data Handling**: Incorporates specialized data components (e.g., `&lt;document&gt;`, `&lt;table&gt;`, `&lt;img&gt;`) that seamlessly embed or reference external data sources like text files, spreadsheets, and images, with customizable formatting options.
-* **Decoupled Presentation Styling**: Features a CSS-like styling system that separates content from presentation. This allows developers to modify styling (e.g., verbosity, syntax format) via `&lt;stylesheet&gt;` definitions or inline attributes without altering core prompt logic, mitigating LLM format sensitivity.
-* **Integrated Templating Engine**: Includes a built-in templating engine with support for variables (`{{ }}`), loops (`for`), conditionals (`if`), and variable definitions (`&lt;let&gt;`) for dynamically generating complex, data-driven prompts.
-* **Rich Development Toolkit**:
-    * **IDE Extension (Visual Studio Code)**: Provides essential development aids like syntax highlighting, context-aware auto-completion, hover documentation, real-time previews, inline diagnostics for error checking, and integrated interactive testing.
-    * **Software Development Kits (SDKs)**: Offers SDKs for Node.js (JavaScript/TypeScript) and Python for seamless integration into various application workflows and popular LLM frameworks.
+#### 我应当怎样选择发行版
 
-## Quick Start
+| 版本      | 特征                                     | 链接                                                                                   |
+| :-------- | :--------------------------------------- | :------------------------------------------------------------------------------------- |
+| Stable    | 正式版，高可靠性，适合日常使用。         | [Release](https://github.com/clash-verge-rev/clash-verge-rev/releases)                 |
+| Alpha     | 早期测试版，功能未完善，可能存在缺陷。   | [Alpha](https://github.com/clash-verge-rev/clash-verge-rev/releases/tag/alpha)         |
+| AutoBuild | 滚动更新版，持续集成更新，适合开发测试。 | [AutoBuild](https://github.com/clash-verge-rev/clash-verge-rev/releases/tag/autobuild) |
 
-Here&#039;s a very simple POML example. Please put it in a file named `example.poml`. Make sure it resides in the same directory as the `photosynthesis_diagram.png` image file.
+#### 安装说明和常见问题，请到 [文档页](https://clash-verge-rev.github.io/) 查看
 
-```xml
-&lt;poml&gt;
-  &lt;role&gt;You are a patient teacher explaining concepts to a 10-year-old.&lt;/role&gt;
-  &lt;task&gt;Explain the concept of photosynthesis using the provided image as a reference.&lt;/task&gt;
+---
 
-  &lt;img src=&quot;photosynthesis_diagram.png&quot; alt=&quot;Diagram of photosynthesis&quot; /&gt;
+### TG 频道: [@clash_verge_rev](https://t.me/clash_verge_re)
 
-  &lt;output-format&gt;
-    Keep the explanation simple, engaging, and under 100 words.
-    Start with &quot;Hey there, future scientist!&quot;.
-  &lt;/output-format&gt;
-&lt;/poml&gt;
+## Promotion
+
+#### [狗狗加速 —— 技术流机场 Doggygo VPN](https://verge.dginv.click/#/register?code=oaxsAGo6)
+
+- 高性能海外机场，免费试用，优惠套餐，解锁流媒体，全球首家支持 Hysteria 协议。
+- 使用 Clash Verge 专属邀请链接注册送 3 天，每天 1G 流量免费试用：[点此注册](https://verge.dginv.click/#/register?code=oaxsAGo6)
+- Clash Verge 专属 8 折优惠码: verge20 (仅有 500 份)
+- 优惠套餐每月仅需 15.8 元，160G 流量，年付 8 折
+- 海外团队，无跑路风险，高达 50% 返佣
+- 集群负载均衡设计，高速专线(兼容老客户端)，极低延迟，无视晚高峰，4K 秒开
+- 全球首家 Hysteria 协议机场，现已上线更快的 `Hysteria2` 协议(Clash Verge 客户端最佳搭配)
+- 解锁流媒体及 ChatGPT
+- 官网：[https://狗狗加速.com](https://verge.dginv.click/#/register?code=oaxsAGo6)
+
+#### 本项目的构建与发布环境由 [YXVM](https://yxvm.com/aff.php?aff=827) 独立服务器全力支持，
+
+感谢提供 独享资源、高性能、高速网络 的强大后端环境。如果你觉得下载够快、使用够爽，那是因为我们用了好服务器！
+
+🧩 YXVM 独立服务器优势：
+
+- 🌎 优质网络，回程优化，下载快到飞起
+- 🔧 物理机独享资源，非VPS可比，性能拉满
+- 🧠 适合跑代理、搭建 WEB 站 CDN 站 、搞 CI/CD 或任何高负载应用
+- 💡 支持即开即用，多机房选择，CN2 / IEPL 可选
+- 📦 本项目使用配置已在售，欢迎同款入手！
+- 🎯 想要同款构建体验？[立即下单 YXVM 独立服务器！](https://yxvm.com/aff.php?aff=827)
+
+## Features
+
+- 基于性能强劲的 Rust 和 Tauri 2 框架
+- 内置[Clash.Meta(mihomo)](https://github.com/MetaCubeX/mihomo)内核，并支持切换 `Alpha` 版本内核。
+- 简洁美观的用户界面，支持自定义主题颜色、代理组/托盘图标以及 `CSS Injection`。
+- 配置文件管理和增强（Merge 和 Script），配置文件语法提示。
+- 系统代理和守卫、`TUN(虚拟网卡)` 模式。
+- 可视化节点和规则编辑
+- WebDav 配置备份和同步
+
+### FAQ
+
+Refer to [Doc FAQ Page](https://clash-verge-rev.github.io/faq/windows.html)
+
+### Donation
+
+[捐助Clash Verge Rev的开发](https://github.com/sponsors/clash-verge-rev)
+
+## Development
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
+
+To run the development server, execute the following commands after all prerequisites for **Tauri** are installed:
+
+```shell
+pnpm i
+pnpm run check
+pnpm dev
 ```
 
-This example defines a role and task for the LLM, includes an image for context, and specifies the desired output format. With the POML toolkit, the prompt can be easily rendered with a flexible format, and tested with a vision LLM.
+## Contributions
 
-## Installation
+Issue and PR welcome!
 
-### Visual Studio Code Extension
+## Acknowledgement
 
-Install from [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=poml-team.poml).
+Clash Verge rev was based on or inspired by these projects and so on:
 
-You can also install the extension manually by downloading the `.vsix` file from our [GitHub releases page](https://github.com/microsoft/poml/releases) and installing it in VS Code via the Extensions view.
-
-Before testing prompts with the POML toolkit, make sure you have configured your preferred LLM model, API key, and endpoint. If these are not set, prompt testing will not work.
-
-**To configure in Visual Studio Code:**
-- Open the extension settings (open &quot;Settings&quot; and search for &quot;POML&quot;).
-- Set your model provider (e.g., OpenAI, Azure, Google), API key, and endpoint URL in the POML section.
-- Alternatively, you can add these settings directly to your `settings.json` file.
-
-### Node.js (via npm)
-
-```bash
-npm install pomljs
-```
-
-### Python (via pip)
-
-```bash
-pip install poml
-```
-
-For development or local installation, you might use `pip install -e .` from a cloned repository.
-
-**Refer to the [documentation](https://microsoft.github.io/poml) for more details on installing the nightly build.**
-
-## Documentation
-
-For detailed information on POML syntax, components, styling, templating, SDKs, and the VS Code extension, please refer to our [documentation](https://microsoft.github.io/poml).
-
-## Learn More
-
-* **Watch our Demo Video on YouTube:** [POML Introduction &amp; Demo](https://youtu.be/b9WDcFsKixo)
-* **Join our Discord community:** Connect with the team and other users on our [Discord server](https://discord.gg/FhMCqWzAn6).
-* **Read the Research Paper (coming soon):** For an in-depth understanding of POML&#039;s design, implementation, and evaluation, check out our paper: [Paper link TBD](TBD).
-
-## Contributing
-
-This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
-
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-## Trademarks
-
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos is subject to and must follow [Microsoft&#039;s Trademark &amp; Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general). Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship. Any use of third-party trademarks or logos are subject to those third-party&#039;s policies.
-
-## Responsible AI
-
-This project has been evaluated and certified to comply with the Microsoft Responsible AI Standard. The team will continue to monitor and maintain the repository, addressing any severe issues, including potential harms, if they arise. For more details, refer to the [Responsible AI Readme](RAI_README.md).
+- [zzzgydi/clash-verge](https://github.com/zzzgydi/clash-verge): A Clash GUI based on tauri. Supports Windows, macOS and Linux.
+- [tauri-apps/tauri](https://github.com/tauri-apps/tauri): Build smaller, faster, and more secure desktop applications with a web frontend.
+- [Dreamacro/clash](https://github.com/Dreamacro/clash): A rule-based tunnel in Go.
+- [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo): A rule-based tunnel in Go.
+- [Fndroid/clash_for_windows_pkg](https://github.com/Fndroid/clash_for_windows_pkg): A Windows/macOS GUI based on Clash.
+- [vitejs/vite](https://github.com/vitejs/vite): Next generation frontend tooling. It&#039;s fast!
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[dataelement/bisheng]]></title>
-            <link>https://github.com/dataelement/bisheng</link>
-            <guid>https://github.com/dataelement/bisheng</guid>
-            <pubDate>Sun, 17 Aug 2025 00:05:31 GMT</pubDate>
-            <description><![CDATA[BISHENG is an open LLM devops platform for next generation Enterprise AI applications. Powerful and comprehensive features include: GenAI workflow, RAG, Agent, Unified model management, Evaluation, SFT, Dataset Management, Enterprise-level System Management, Observability and more.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/dataelement/bisheng">dataelement/bisheng</a></h1>
-            <p>BISHENG is an open LLM devops platform for next generation Enterprise AI applications. Powerful and comprehensive features include: GenAI workflow, RAG, Agent, Unified model management, Evaluation, SFT, Dataset Management, Enterprise-level System Management, Observability and more.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 9,436</p>
-            <p>Forks: 1,537</p>
-            <p>Stars today: 13 stars today</p>
-            <h2>README</h2><pre>**Proudly made by Chinese，May we, like the creators of Deepseek and Black Myth: Wukong, bring more wonder and greatness to the world.**
-
-&gt; 源自中国匠心，希望我们能像 [Deepseek]、[黑神话：悟空] 团队一样，给世界带来更多美好。
-
-&lt;img src=&quot;https://dataelem.com/bs/face.png&quot; alt=&quot;Bisheng banner&quot;&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-    &lt;a href=&quot;https://dataelem.feishu.cn/wiki/ZxW6wZyAJicX4WkG0NqcWsbynde&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/docs-Wiki-brightgreen&quot;&gt;&lt;/a&gt;
-    &lt;img src=&quot;https://img.shields.io/github/license/dataelement/bisheng&quot; alt=&quot;license&quot;/&gt;
-    &lt;a href=&quot;&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/last-commit/dataelement/bisheng&quot;&gt;&lt;/a&gt;
-    &lt;a href=&quot;https://star-history.com/#dataelement/bisheng&amp;Timeline&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/stars/dataelement/bisheng?color=yellow&quot;&gt;&lt;/a&gt; 
-&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;./README_CN.md&quot;&gt;简体中文&lt;/a&gt; |
-  &lt;a href=&quot;./README.md&quot;&gt;English&lt;/a&gt; |
-  &lt;a href=&quot;./README_JPN.md&quot;&gt;日本語&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://trendshift.io/repositories/717&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/717&quot; alt=&quot;dataelement%2Fbisheng | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
-&lt;/p&gt;
-&lt;div class=&quot;column&quot; align=&quot;middle&quot;&gt;
-  &lt;!-- &lt;a href=&quot;https://bisheng.slack.com/join/shared_invite/&quot;&gt; --&gt;
-    &lt;!-- &lt;img src=&quot;https://img.shields.io/badge/Join-Slack-orange&quot; alt=&quot;join-slack&quot;/&gt; --&gt;
-  &lt;/a&gt;
-  &lt;!-- &lt;img src=&quot;https://img.shields.io/github/license/bisheng-io/bisheng&quot; alt=&quot;license&quot;/&gt; --&gt;
-  &lt;!-- &lt;img src=&quot;https://img.shields.io/docker/pulls/bisheng-io/bisheng&quot; alt=&quot;docker-pull-count&quot; /&gt; --&gt;
-&lt;/div&gt;
-
-
-BISHENG is an open LLM application devops platform, focusing on enterprise scenarios. It has been used by a large number of industry leading organizations and Fortune 500 companies.
-
-&quot;Bi Sheng&quot; was the inventor of movable type printing, which played a vital role in promoting the transmission of human knowledge. We hope that BISHENG can also provide strong support for the widespread implementation of intelligent applications. Everyone is welcome to participate.
-
-
-## Features 
-1. Unique [BISHENG Workflow](https://dataelem.feishu.cn/wiki/R7HZwH5ZGiJUDrkHZXicA9pInif)
-   - 🧩 **Independent and comprehensive application orchestration framework**: Enables the execution of various tasks within a single framework (while similar products rely on bot invocation or separate chatflow and workflow modules for different tasks).
-   - 🔄 **Human in the loop**: Allows users to intervene and provide feedback during the execution of workflows (including multi-turn conversations), whereas similar products can only execute workflows from start to finish without intervention.
-   - 💥 **Powerful**: Supports loops, parallelism, batch processing, conditional logic, and free combination of all logic components. It also handles complex scenarios such as multi-type input/output, report generation, content review, and more.
-   - 🖐️ **User-friendly and intuitive**: Operations like loops, parallelism, and batch processing, which require specialized components in similar products, can be easily visualized in BISHENG as a &quot;flowchart&quot; (drawing a loop forms a loop, aligning elements creates parallelism, and selecting multiple items enables batch processing).
-   &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://dataelem.com/bs/bisheng_workflow.png&quot; alt=&quot;sence0&quot;&gt;&lt;/p&gt;
-
-2. &lt;b&gt;Designed for Enterprise Applications&lt;/b&gt;: Document review, fixed-layout report generation, multi-agent collaboration, policy update comparison, support ticket assistance, customer service assistance, meeting minutes generation, resume screening, call record analysis, unstructured data governance, knowledge mining, data analysis, and more. 
-
-​	The platform supports the construction of &lt;b&gt;highly complex enterprise application scenarios&lt;/b&gt; and offers &lt;b&gt;deep optimization&lt;/b&gt; 	with hundreds of components and thousands of parameters.
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://dataelem.com/bs/chat.png&quot; alt=&quot;sence1&quot;&gt;&lt;/p&gt;
-
-3. &lt;b&gt;Enterprise-grade&lt;/b&gt; features are the fundamental guarantee for application implementation: security review, RBAC, user group management, traffic control by group, SSO/LDAP, vulnerability scanning and patching, high availability deployment solutions, monitoring, statistics, and more.
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://dataelem.com/bs/pro.png&quot; alt=&quot;sence2&quot;&gt;&lt;/p&gt;
-
-4. &lt;b&gt;High-Precision Document Parsing&lt;/b&gt;: Our high-precision document parsing model is trained on a vast amount of high-quality data accumulated over past 5 years. It includes high-precision printed text, handwritten text, and rare character recognition models, table recognition models, layout analysis models, and seal models., table recognition models, layout analysis models, and seal models. You can deploy it privately for free.
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://dataelem.com/bs/ocr.png&quot; alt=&quot;sence3&quot;&gt;&lt;/p&gt;
-
-5. A community for sharing best practices across various enterprise scenarios: An open repository of application cases and best practices.
-## Quick start 
-
-Please ensure the following conditions are met before installing BISHENG:
-- CPU &gt;= 4 Virtual Cores
-- RAM &gt;= 16 GB
-- Docker 19.03.9+
-- Docker Compose 1.25.1+
-&gt; Recommended hardware condition: 18 virtual cores, 48G. In addition to installing BISHENG, we will also install the following third-party components by default: ES, Milvus, and Onlyoffice.
-
-Download BISHENG
-```bash
-git clone https://github.com/dataelement/bisheng.git
-# Enter the installation directory
-cd bisheng/docker
-
-# If the system does not have the git command, you can download the BISHENG code as a zip file.
-wget https://github.com/dataelement/bisheng/archive/refs/heads/main.zip
-# Unzip and enter the installation directory
-unzip main.zip &amp;&amp; cd bisheng-main/docker
-```
-Start BISHENG
-```bash
-docker compose -f docker-compose.yml -p bisheng up -d
-```
-After the startup is complete, access http://IP:3001 in the browser. The login page will appear, proceed with user registration. 
-
-By default, the first registered user will become the system admin. 
-
-For more installation and deployment issues, refer to:：[Self-hosting](https://dataelem.feishu.cn/wiki/BSCcwKd4Yiot3IkOEC8cxGW7nPc)
-
-## Acknowledgement 
-This repo benefits from [langchain](https://github.com/langchain-ai/langchain) [langflow](https://github.com/logspace-ai/langflow) [unstructured](https://github.com/Unstructured-IO/unstructured) and [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) . Thanks for their wonderful works.
-
-&lt;b&gt;Thank you to our contributors：&lt;/b&gt;
-
-&lt;a href=&quot;https://github.com/dataelement/bisheng/graphs/contributors&quot;&gt;
-  &lt;img src=&quot;https://contrib.rocks/image?repo=dataelement/bisheng&quot; /&gt;
-&lt;/a&gt;
-
-
-
-## Community &amp; contact 
-Welcome to join our discussion group
-
-&lt;img src=&quot;https://www.dataelem.com/nstatic/qrcode.png&quot; alt=&quot;Wechat QR Code&quot;&gt;
-
-
-&lt;!--
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=dataelement/bisheng&amp;type=Date)](https://star-history.com/#dataelement/bisheng&amp;Date)
---&gt;
+GPL-3.0 License. See [License here](./LICENSE) for details.
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
@@ -260,15 +142,15 @@ Welcome to join our discussion group
             <title><![CDATA[MotiaDev/motia]]></title>
             <link>https://github.com/MotiaDev/motia</link>
             <guid>https://github.com/MotiaDev/motia</guid>
-            <pubDate>Sun, 17 Aug 2025 00:05:30 GMT</pubDate>
+            <pubDate>Mon, 18 Aug 2025 00:05:39 GMT</pubDate>
             <description><![CDATA[Modern Backend Framework that unifies APIs, background jobs, workflows, and AI agents into a single cohesive system with built-in observability and state management.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/MotiaDev/motia">MotiaDev/motia</a></h1>
             <p>Modern Backend Framework that unifies APIs, background jobs, workflows, and AI agents into a single cohesive system with built-in observability and state management.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 6,024</p>
-            <p>Forks: 470</p>
-            <p>Stars today: 158 stars today</p>
+            <p>Stars: 6,199</p>
+            <p>Forks: 489</p>
+            <p>Stars today: 70 stars today</p>
             <h2>README</h2><pre>&lt;a href=&quot;https://motia.dev&quot;&gt;
   &lt;img src=&quot;assets/github-readme-banner.png&quot; alt=&quot;Motia Banner&quot; width=&quot;100%&quot;&gt;
 &lt;/a&gt;
@@ -567,1292 +449,1753 @@ Feel free to add comments to the issues, or create a new issue if you have a fea
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[fastrepl/hyprnote]]></title>
-            <link>https://github.com/fastrepl/hyprnote</link>
-            <guid>https://github.com/fastrepl/hyprnote</guid>
-            <pubDate>Sun, 17 Aug 2025 00:05:29 GMT</pubDate>
-            <description><![CDATA[Local-first AI Notepad for Private Meetings]]></description>
+            <title><![CDATA[hcengineering/platform]]></title>
+            <link>https://github.com/hcengineering/platform</link>
+            <guid>https://github.com/hcengineering/platform</guid>
+            <pubDate>Mon, 18 Aug 2025 00:05:38 GMT</pubDate>
+            <description><![CDATA[Huly — All-in-One Project Management Platform (alternative to Linear, Jira, Slack, Notion, Motion)]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/fastrepl/hyprnote">fastrepl/hyprnote</a></h1>
-            <p>Local-first AI Notepad for Private Meetings</p>
+            <h1><a href="https://github.com/hcengineering/platform">hcengineering/platform</a></h1>
+            <p>Huly — All-in-One Project Management Platform (alternative to Linear, Jira, Slack, Notion, Motion)</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 5,184</p>
-            <p>Forks: 271</p>
-            <p>Stars today: 87 stars today</p>
-            <h2>README</h2><pre>![github_banner_v2](https://github.com/user-attachments/assets/e5fac942-1a51-4180-9d64-f508db705f9d)
+            <p>Stars: 22,615</p>
+            <p>Forks: 1,530</p>
+            <p>Stars today: 221 stars today</p>
+            <h2>README</h2><pre># Huly Platform
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;p align=&quot;center&quot;&gt;AI notepad for &lt;strong&gt;private&lt;/strong&gt; meetings. Not a single byte of data leaves your laptop/server — have full control.&lt;/p&gt;
-  &lt;p align=&quot;center&quot;&gt;
-   &lt;a href=&quot;https://deepwiki.com/fastrepl/hyprnote&quot;&gt;&lt;img src=&quot;https://deepwiki.com/badge.svg&quot; alt=&quot;Ask DeepWiki&quot;&gt;&lt;/a&gt;
-   &lt;a href=&quot;https://hyprnote.com/discord&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://img.shields.io/static/v1?label=Join%20our&amp;message=Discord&amp;color=blue&amp;logo=Discord&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt;
-   &lt;a href=&quot;https://x.com/tryhyprnote&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://img.shields.io/static/v1?label=Follow%20us%20on&amp;message=X&amp;color=black&amp;logo=x&quot; alt=&quot;X&quot;&gt;&lt;/a&gt;
-   &lt;img referrerpolicy=&quot;no-referrer-when-downgrade&quot; src=&quot;https://pixel.hyprnote.com/a.png?x-pxid=082cd823-8c29-4e45-999b-0aa73f931a9d&amp;page=README.md&quot; /&gt;
-  &lt;/p&gt;
-&lt;/p&gt;
-   
-## What is Hyprnote?
+[![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/huly_io?style=for-the-badge)](https://x.com/huly_io)
+![GitHub License](https://img.shields.io/github/license/hcengineering/platform?style=for-the-badge)
 
-Hyprnote is a local-first AI notepad designed for people in back-to-back meetings.
+⭐️ Your star shines on us. Star us on GitHub!
 
-- Listens to your meetings while you write
-- Crafts smart summaries based on your quick notes
-- Runs completely **offline** using open-source models like Whisper or HyprLLM
+## About
 
-No clouds. No leaks. Just your notes—on your machine.
+The Huly Platform is a robust framework designed to accelerate the development of business applications, such as CRM systems. 
+This repository includes several applications, such as Chat, Project Management, CRM, HRM, and ATS. 
+Various teams are building products on top of the Platform, including [Huly](https://huly.io) and [TraceX](https://tracex.co).
+
+![Huly](https://repository-images.githubusercontent.com/392073243/6d27d5cc-38cd-4d88-affe-bb88b393180c)
+
+## Self-Hosting
+
+If you&#039;re primarily interested in self-hosting Huly without the intention to modify or contribute to its development, please use [huly-selfhost](https://github.com/hcengineering/huly-selfhost). 
+This project offers a convenient method to host Huly using `docker`, designed for ease of use and quick setup. Explore this option to effortlessly enjoy Huly on your own server.
+
+## Activity
+
+![Alt](https://repobeats.axiom.co/api/embed/c42c99e21691fa60ea61b5cdf11c2e0647621534.svg &quot;Repobeats analytics image&quot;)
+
+## Table of Content
+
+- [Huly Platform](#huly-platform)
+  - [About](#about)
+  - [Self-Hosting](#self-hosting)
+  - [Activity](#activity)
+  - [Table of Content](#table-of-content)
+  - [Pre-requisites](#pre-requisites)
+  - [Verification](#verification)
+  - [Installation](#installation)
+  - [Build and run](#build-and-run)
+  - [Run in development mode](#run-in-development-mode)
+  - [Update project structure and database](#update-project-structure-and-database)
+  - [Troubleshooting](#troubleshooting)
+  - [Build \&amp; Watch](#build--watch)
+  - [Tests](#tests)
+    - [Unit tests](#unit-tests)
+    - [UI tests](#ui-tests)
+  - [Package publishing](#package-publishing)
+  - [Additional testing](#additional-testing)
+
+## Pre-requisites
+
+- Before proceeding, ensure that your system meets the following requirements:
+  - [Node.js](https://nodejs.org/en/download/) (v20.11.0 is required)
+  - [Docker](https://docs.docker.com/get-docker/)
+  - [Docker Compose](https://docs.docker.com/compose/install/)
+
+## Verification
+
+To verify the installation, perform the following checks in your terminal:
+
+- Ensure that the `docker` commands are available:
+  ```bash
+  docker --version
+  docker compose version
+## Fast start
+
+```bash
+sh ./scripts/fast-start.sh
+```
 
 ## Installation
 
+You need Microsoft&#039;s [rush](https://rushjs.io) to install application.
+
+1. Install Rush globally using the command:
+   ```bash
+   npm install -g @microsoft/rush
+2. Navigate to the repository root and run the following commands:
+   ```bash
+   rush install
+   rush build
+Alternatively, you can just execute:
+
 ```bash
-brew tap fastrepl/hyprnote &amp;&amp; brew install hyprnote --cask
+sh ./scripts/presetup-rush.sh
 ```
 
-- [macOS](https://hyprnote.com/download) (public beta)
-- [Windows](https://github.com/fastrepl/hyprnote/issues/66) (soon)
-- [Linux](https://github.com/fastrepl/hyprnote/issues/67) (of course)
+## Build and run
 
-## Highlights
+Development environment setup requires Docker to be installed on system.
 
-### Realtime Transcript
-Watch a live transcript update as the meeting unfolds—accurate, fast, and fully local.
-&lt;img width=&quot;959&quot; height=&quot;712&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/d24b8b43-a052-44cd-803e-daa3ff600a9c&quot; /&gt;
+Support is available for both amd64 and arm64 containers on Linux and macOS.
 
-### From Memos to Summaries
-Jot things down during your call. Hyprnote turns them into a polished meeting summary—context-aware and easy to share.
-&lt;img width=&quot;959&quot; height=&quot;712&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/489f9239-1a32-4217-9d74-554906687fe1&quot; /&gt;
+```bash
+cd ./dev/
+rush build    # Will build all the required packages. 
+# rush rebuild  # could be used to omit build cache.
+rush bundle   # Will prepare bundles.
+rush package  # Will build all webpack packages.
+rush validate # Will validate all sources with typescript and generate d.ts files required for ts-node execution.
+rush svelte-check # Optional. svelte files validation using svelte-check.
+rush docker:build   # Will build Docker containers for all applications in the local Docker environment.
+rush docker:up # Will set up all the containers
+```
 
-### Truly Local
-No internet? No problem. Hyprnote works offline by default and keeps everything on your device.
+Be aware `rush docker:build` will automatically execute all required phases like build, bundle, package.
 
-![offline](https://github.com/user-attachments/assets/c6649a63-3d41-40ea-a1fd-8c0713ad91bc)
+Alternatively, you can just execute:
 
-### Bring Your Own LLM
-Prefer something custom? You can swap in your own language model:
+```bash
+sh ./scripts/build.sh
+```
 
-- Run local models via Ollama
-- Use approved third-party APIs like Gemini, Claude, or Azure-hosted GPT
-- Stay compliant with whatever your org allows
+By default, Docker volumes named dev_db, dev_elastic, and dev_files will be created for the MongoDB, Elasticsearch, and MinIO instances.
 
-Hyprnote plays nice with whatever stack you’re running.
+Before you can begin, you need to create a workspace and an account and associate it with the workspace.
 
-&lt;img width=&quot;912&quot; height=&quot;712&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/717dc39a-3359-46d6-a92f-51de56907750&quot; /&gt;
+```bash
+cd ./tool # dev/tool in the repository root
+rushx run-local create-workspace ws1 -w DevWorkspace # Create workspace
+rushx run-local create-account user1 -p 1234 -f John -l Appleseed # Create account
+rushx run-local configure ws1 --list --enable &#039;*&#039; # Enable all modules, even if they are not yet intended to be used by a wide audience.
+rushx run-local assign-workspace user1 ws1 # Assign workspace to user.
+rushx run-local confirm-email user1 # To allow the creation of additional test workspaces.
 
-### Note Templates
-Prefer a certain style? Choose from predefined templates like bullet points, agenda-based, or paragraph summary. Or create your own.
+```
 
-&lt;img width=&quot;959&quot; height=&quot;712&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/d826a854-4b6f-415c-9e97-270f517c0868&quot; /&gt;
+Alternatively, you can just execute:
 
-### Autonomy Selector
-Control how much freedom the AI takes:
+```bash
+sh ./scripts/create-workspace.sh
+```
 
-- Stick strictly to your quick notes
-- Let Hyprnote improvise and reframe based on the full conversation
+Add the following line to your /etc/hosts file
 
-&lt;img width=&quot;912&quot; height=&quot;712&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/7de5c74f-5d99-46ec-8a5f-a38fb62bafb1&quot; /&gt;
+```
+127.0.0.1 host.docker.internal
+```
 
-### AI Chat
-Ask follow-ups right inside your notes:
+Accessing the URL http://host.docker.internal:8087 will lead you to the app in development mode.
 
-- &quot;What were the action items?&quot;
-- &quot;Rewrite this in simpler language&quot;
-- &quot;Translate to Spanish&quot;
+Limitations:
 
-&lt;img width=&quot;959&quot; height=&quot;712&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/52b7dc14-906f-445f-91f9-b0089d40a495&quot; /&gt;
+- Local installation does not support sending emails, thus disabling functionalities such as password recovery and email notifications.
 
+## Run in development mode
 
-### Integrations
-- Apple Calendar, Contacts
-- Obsidian
-- Coming soon: Notion, Slack, Hubspot, Salesforce
+Development mode allows for live reloading and a smoother development process.
 
-&lt;img width=&quot;912&quot; height=&quot;712&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/ab559e54-fda5-4c8c-97d7-ba1b9d134cc8&quot; /&gt;
+```bash
+cd dev/prod
+rush validate
+rushx dev-server
+```
+
+Then go to http://localhost:8080
+
+Click on &quot;Login with password&quot; link on the bottom of the right panel and use the following login credentials:
+
+```plain
+Email: user1
+Password: 1234
+Workspace: ws1
+```
+
+## Update project structure and database
+
+If the project&#039;s structure is updated, it may be necessary to relink and rebuild the projects.
+
+```bash
+rush update
+rush build
+```
+
+It may also be necessary to upgrade the running database.
+
+```bash
+cd ./dev/tool
+rushx upgrade -f
+```
+
+## Troubleshooting
+
+If a build fails, but the code is correct, try to delete the [build cache](https://rushjs.io/pages/maintainer/build_cache/) and retry.
+
+```bash
+# from the project root
+rm -rf common/temp/build-cache
+```
+
+## Build &amp; Watch
+
+For development purpose `rush build:watch` action could be used.
+
+It includes build and validate phases in watch mode.
+
+## Tests
+
+### Unit tests
+
+```bash
+rush test # To execute all tests
+
+rushx test # For individual test execution inside a package directory
+```
+
+### UI tests
+
+```bash
+cd ./tests
+rush build
+rush bundle
+rush docker:build
+## creates test Docker containers and sets up test database
+./prepare.sh
+## runs UI tests
+rushx uitest
+```
+
+To execute tests in the development environment, please follow these steps:
+
+```bash
+cd ./tests
+./create-local.sh ## use ./restore-local.sh if you only want to restore the workspace to a predefined initial state for sanity.
+cd ./sanity
+rushx dev-uitest # To execute all tests against the development environment.
+rushx dev-debug -g &#039;pattern&#039; # To execute tests in debug mode with only the matching test pattern.
+```
+
+## Package publishing
+
+```bash
+node ./common/scripts/bump.js -p projectName
+```
+
+## Additional testing
+
+This project is tested with BrowserStack.
+
+&lt;sub&gt;&lt;sup&gt;&amp;copy; 2025 &lt;a href=&quot;https://hardcoreeng.com&quot;&gt;Hardcore Engineering Inc&lt;/a&gt;.&lt;/sup&gt;&lt;/sub&gt;
+
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[jitsi/jitsi-meet]]></title>
-            <link>https://github.com/jitsi/jitsi-meet</link>
-            <guid>https://github.com/jitsi/jitsi-meet</guid>
-            <pubDate>Sun, 17 Aug 2025 00:05:28 GMT</pubDate>
-            <description><![CDATA[Jitsi Meet - Secure, Simple and Scalable Video Conferences that you use as a standalone app or embed in your web application.]]></description>
+            <title><![CDATA[bytedance/UI-TARS-desktop]]></title>
+            <link>https://github.com/bytedance/UI-TARS-desktop</link>
+            <guid>https://github.com/bytedance/UI-TARS-desktop</guid>
+            <pubDate>Mon, 18 Aug 2025 00:05:37 GMT</pubDate>
+            <description><![CDATA[The Open-sourced Multimodal AI Agent Stack connecting Cutting-edge AI Models and Agent Infra.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/jitsi/jitsi-meet">jitsi/jitsi-meet</a></h1>
-            <p>Jitsi Meet - Secure, Simple and Scalable Video Conferences that you use as a standalone app or embed in your web application.</p>
+            <h1><a href="https://github.com/bytedance/UI-TARS-desktop">bytedance/UI-TARS-desktop</a></h1>
+            <p>The Open-sourced Multimodal AI Agent Stack connecting Cutting-edge AI Models and Agent Infra.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 26,679</p>
-            <p>Forks: 7,366</p>
-            <p>Stars today: 126 stars today</p>
-            <h2>README</h2><pre># &lt;p align=&quot;center&quot;&gt;Jitsi Meet&lt;/p&gt;
+            <p>Stars: 17,242</p>
+            <p>Forks: 1,548</p>
+            <p>Stars today: 393 stars today</p>
+            <h2>README</h2><pre>&lt;picture&gt;
+  &lt;img alt=&quot;Agent TARS Banner&quot; src=&quot;./images/tars.png&quot;&gt;
+&lt;/picture&gt;
 
-Jitsi Meet is a set of Open Source projects which empower users to use and deploy
-video conferencing platforms with state-of-the-art video quality and features.
+&lt;br/&gt;
 
-&lt;hr /&gt;
+## Introduction
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/jitsi/jitsi-meet/master/readme-img1.png&quot; width=&quot;900&quot; /&gt;
+English | [简体中文](./README.zh-CN.md)
+
+[![](https://trendshift.io/api/badge/repositories/13584)](https://trendshift.io/repositories/13584)
+
+&lt;b&gt;TARS&lt;sup&gt;\*&lt;/sup&gt;&lt;/b&gt; is a Multimodal AI Agent stack, currently shipping two projects: [Agent TARS](#agent-tars) and [UI-TARS-desktop](#ui-tars-desktop):
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th width=&quot;50%&quot; align=&quot;center&quot;&gt;&lt;a href=&quot;#agent-tars&quot;&gt;Agent TARS&lt;/a&gt;&lt;/th&gt;
+      &lt;th width=&quot;50%&quot; align=&quot;center&quot;&gt;&lt;a href=&quot;#ui-tars-desktop&quot;&gt;UI-TARS-desktop&lt;/a&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot;&gt;
+        &lt;video src=&quot;https://github.com/user-attachments/assets/c9489936-afdc-4d12-adda-d4b90d2a869d&quot; width=&quot;50%&quot;&gt;&lt;/video&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;
+        &lt;video src=&quot;https://github.com/user-attachments/assets/e0914ce9-ad33-494b-bdec-0c25c1b01a27&quot; width=&quot;50%&quot;&gt;&lt;/video&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;left&quot;&gt;
+        &lt;b&gt;Agent TARS&lt;/b&gt; is a general multimodal AI Agent stack, it brings the power of GUI Agent and Vision into your terminal, computer, browser and product.
+        &lt;br&gt;
+        &lt;br&gt;
+        It primarily ships with a &lt;a href=&quot;https://agent-tars.com/guide/basic/cli.html&quot; target=&quot;_blank&quot;&gt;CLI&lt;/a&gt; and &lt;a href=&quot;https://agent-tars.com/guide/basic/web-ui.html&quot; target=&quot;_blank&quot;&gt;Web UI&lt;/a&gt; for usage.
+        It aims to provide a workflow that is closer to human-like task completion through cutting-edge multimodal LLMs and seamless integration with various real-world &lt;a href=&quot;https://agent-tars.com/guide/basic/mcp.html&quot; target=&quot;_blank&quot;&gt;MCP&lt;/a&gt; tools.
+      &lt;/td&gt;
+      &lt;td align=&quot;left&quot;&gt;
+        &lt;b&gt;UI-TARS Desktop&lt;/b&gt; is a desktop application that provides a native GUI Agent based on the &lt;a href=&quot;https://github.com/bytedance/UI-TARS&quot; target=&quot;_blank&quot;&gt;UI-TARS&lt;/a&gt; model.
+        &lt;br&gt;
+        &lt;br&gt;
+        It primarily ships a
+        &lt;a href=&quot;https://github.com/bytedance/UI-TARS-desktop/blob/main/docs/quick-start.md#get-model-and-run-local-operator&quot; target=&quot;_blank&quot;&gt;local&lt;/a&gt; and 
+        &lt;a href=&quot;https://github.com/bytedance/UI-TARS-desktop/blob/main/docs/quick-start.md#run-remote-operator&quot; target=&quot;_blank&quot;&gt;remote&lt;/a&gt; computer as well as browser operators.
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+## Table of Contents
+
+&lt;!-- START doctoc generated TOC please keep comment here to allow auto update --&gt;
+&lt;!-- DON&#039;T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE --&gt;
+
+- [News](#news)
+- [Agent TARS](#agent-tars)
+  - [Showcase](#showcase)
+  - [Core Features](#core-features)
+  - [Quick Start](#quick-start)
+  - [Documentation](#documentation)
+- [UI-TARS Desktop](#ui-tars-desktop)
+  - [Showcase](#showcase-1)
+  - [Features](#features)
+  - [Quick Start](#quick-start-1)
+- [Contributing](#contributing)
+- [License](#license)
+- [Citation](#citation)
+
+&lt;!-- END doctoc generated TOC please keep comment here to allow auto update --&gt;
+
+## News
+
+- **\[2025-06-25\]** We released a Agent TARS Beta and Agent TARS CLI - [Introducing Agent TARS Beta](https://agent-tars.com/blog/2025-06-25-introducing-agent-tars-beta.html), a multimodal AI agent that aims to explore a work form that is closer to human-like task completion through rich multimodal capabilities (such as GUI Agent, Vision) and seamless integration with various real-world tools.
+- **\[2025-06-12\]** - 🎁 We are thrilled to announce the release of UI-TARS Desktop v0.2.0! This update introduces two powerful new features: **Remote Computer Operator** and **Remote Browser Operator**—both completely free. No configuration required: simply click to remotely control any computer or browser, and experience a new level of convenience and intelligence.
+- **\[2025-04-17\]** - 🎉 We&#039;re thrilled to announce the release of new UI-TARS Desktop application v0.1.0, featuring a redesigned Agent UI. The application enhances the computer using experience, introduces new browser operation features, and supports [the advanced UI-TARS-1.5 model](https://seed-tars.com/1.5) for improved performance and precise control.
+- **\[2025-02-20\]** - 📦 Introduced [UI TARS SDK](./docs/sdk.md), is a powerful cross-platform toolkit for building GUI automation agents.
+- **\[2025-01-23\]** - 🚀 We updated the **[Cloud Deployment](./docs/deployment.md#cloud-deployment)** section in the 中文版: [GUI模型部署教程](https://bytedance.sg.larkoffice.com/docx/TCcudYwyIox5vyxiSDLlgIsTgWf#U94rdCxzBoJMLex38NPlHL21gNb) with new information related to the ModelScope platform. You can now use the ModelScope platform for deployment.
+
+&lt;br&gt;
+
+## Agent TARS
+
+&lt;p&gt;
+    &lt;a href=&quot;https://npmjs.com/package/@agent-tars/cli?activeTab=readme&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/v/@agent-tars/cli?style=for-the-badge&amp;colorA=1a1a2e&amp;colorB=3B82F6&amp;logo=npm&amp;logoColor=white&quot; alt=&quot;npm version&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://npmcharts.com/compare/@agent-tars/cli?minimal=true&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/dm/@agent-tars/cli.svg?style=for-the-badge&amp;colorA=1a1a2e&amp;colorB=0EA5E9&amp;logo=npm&amp;logoColor=white&quot; alt=&quot;downloads&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://nodejs.org/en/about/previous-releases&quot;&gt;&lt;img src=&quot;https://img.shields.io/node/v/@agent-tars/cli.svg?style=for-the-badge&amp;colorA=1a1a2e&amp;colorB=06B6D4&amp;logo=node.js&amp;logoColor=white&quot; alt=&quot;node version&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://discord.gg/HnKcSBgTVx&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Discord-Join%20Community-5865F2?style=for-the-badge&amp;logo=discord&amp;logoColor=white&quot; alt=&quot;Discord Community&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://twitter.com/agent_tars&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Twitter-Follow%20%40agent__tars-1DA1F2?style=for-the-badge&amp;logo=twitter&amp;logoColor=white&quot; alt=&quot;Official Twitter&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://applink.larkoffice.com/client/chat/chatter/add_by_link?link_token=279h3365-b0fa-407f-89f3-0f96f36cd4d8&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/飞书群-加入交流群-00D4AA?style=for-the-badge&amp;logo=lark&amp;logoColor=white&quot; alt=&quot;飞书交流群&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://deepwiki.com/bytedance/UI-TARS-desktop&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/DeepWiki-Ask%20AI-8B5CF6?style=for-the-badge&amp;logo=gitbook&amp;logoColor=white&quot; alt=&quot;Ask DeepWiki&quot; /&gt;&lt;/a&gt;
 &lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;b&gt;Agent TARS&lt;/b&gt; is a general multimodal AI Agent stack, it brings the power of GUI Agent and Vision into your terminal, computer, browser and product. &lt;br&gt; &lt;br&gt;
+It primarily ships with a &lt;a href=&quot;https://agent-tars.com/guide/basic/cli.html&quot; target=&quot;_blank&quot;&gt;CLI&lt;/a&gt; and &lt;a href=&quot;https://agent-tars.com/guide/basic/web-ui.html&quot; target=&quot;_blank&quot;&gt;Web UI&lt;/a&gt; for usage.
+It aims to provide a workflow that is closer to human-like task completion through cutting-edge multimodal LLMs and seamless integration with various real-world &lt;a href=&quot;https://agent-tars.com/guide/basic/mcp.html&quot; target=&quot;_blank&quot;&gt;MCP&lt;/a&gt; tools.
 
-Amongst others here are the main features Jitsi Meet offers:
 
-* Support for all current browsers
-* Mobile applications
-* Web and native SDKs for integration
-* HD audio and video
-* Content sharing
-* Raise hand and reactions
-* Chat with private conversations
-* Polls
-* Virtual backgrounds
+### Showcase
 
-And many more!
+```
+Please help me book the earliest flight from San Jose to New York on September 1st and the last return flight on September 6th on Priceline
+```
 
-## Using Jitsi Meet
+https://github.com/user-attachments/assets/772b0eef-aef7-4ab9-8cb0-9611820539d8
 
-Using Jitsi Meet is straightforward, as it&#039;s browser based. Head over to [meet.jit.si](https://meet.jit.si) and give it a try. It&#039;s scalable and free to use. All you need is a Google, Facebook or GitHub account in order to start a meeting. All browsers are supported!
+&lt;br&gt;
 
-Using mobile? No problem, you can either use your mobile web browser or our fully-featured
-mobile apps:
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th width=&quot;50%&quot; align=&quot;center&quot;&gt;Booking Hotel&lt;/th&gt;
+      &lt;th width=&quot;50%&quot; align=&quot;center&quot;&gt;Generate Chart with extra MCP Servers&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot;&gt;
+        &lt;video src=&quot;https://github.com/user-attachments/assets/c9489936-afdc-4d12-adda-d4b90d2a869d&quot; width=&quot;50%&quot;&gt;&lt;/video&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;
+        &lt;video src=&quot;https://github.com/user-attachments/assets/a9fd72d0-01bb-4233-aa27-ca95194bbce9&quot; width=&quot;50%&quot;&gt;&lt;/video&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;left&quot;&gt;
+        &lt;b&gt;Instruction:&lt;/b&gt; &lt;i&gt;I am in Los Angeles from September 1st to September 6th, with a budget of $5,000. Please help me book a Ritz-Carlton hotel closest to the airport on booking.com and compile a transportation guide for me&lt;/i&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;left&quot;&gt;
+        &lt;b&gt;Instruction:&lt;/b&gt; &lt;i&gt;Draw me a chart of Hangzhou&#039;s weather for one month&lt;/i&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
-| Android | Android (F-Droid) | iOS |
-|:-:|:-:|:-:|
-| [&lt;img src=&quot;resources/img/google-play-badge.png&quot; height=&quot;50&quot;&gt;](https://play.google.com/store/apps/details?id=org.jitsi.meet) | [&lt;img src=&quot;resources/img/f-droid-badge.png&quot; height=&quot;50&quot;&gt;](https://f-droid.org/packages/org.jitsi.meet/) | [&lt;img src=&quot;resources/img/appstore-badge.png&quot; height=&quot;50&quot;&gt;](https://itunes.apple.com/us/app/jitsi-meet/id1165103905) |
+For more use cases, please check out [#842](https://github.com/bytedance/UI-TARS-desktop/issues/842).
 
-If you are feeling adventurous and want to get an early scoop of the features as they are being
-developed you can also sign up for our open beta testing here:
+### Core Features
 
-* [Android](https://play.google.com/apps/testing/org.jitsi.meet)
-* [iOS](https://testflight.apple.com/join/isy6ja7S)
+- 🖱️ **One-Click Out-of-the-box CLI** - Supports both **headful** [Web UI](https://agent-tars.com/guide/basic/web-ui.html) and **headless** [server](https://agent-tars.com/guide/advanced/server.html)) [execution](https://agent-tars.com/guide/basic/cli.html).
+- 🌐 **Hybrid Browser Agent** - Control browsers using [GUI Agent](https://agent-tars.com/guide/basic/browser.html#visual-grounding), [DOM](https://agent-tars.com/guide/basic/browser.html#dom), or a hybrid strategy.
+- 🔄 **Event Stream** - Protocol-driven Event Stream drives [Context Engineering](https://agent-tars.com/beta#context-engineering) and [Agent UI](https://agent-tars.com/blog/2025-06-25-introducing-agent-tars-beta.html#easy-to-build-applications).
+- 🧰 **MCP Integration** - The kernel is built on MCP and also supports mounting [MCP Servers](https://agent-tars.com/guide/basic/mcp.html) to connect to real-world tools.
 
-## Running your own instance
+### Quick Start
 
-If you&#039;d like to run your own Jitsi Meet installation head over to the [handbook](https://jitsi.github.io/handbook/docs/devops-guide/) to get started.
+&lt;img alt=&quot;Agent TARS CLI&quot; src=&quot;https://agent-tars.com/agent-tars-cli.png&quot;&gt;
 
-We provide Debian packages and a comprehensive Docker setup to make deployments as simple as possible.
-Advanced users also have the possibility of building all the components from source.
+```bash
+# Luanch with `npx`.
+npx @agent-tars/cli@latest
 
-You can check the latest releases [here](https://jitsi.github.io/handbook/docs/releases).
+# Install globally, required Node.js &gt;= 22
+npm install @agent-tars/cli@latest -g
 
-## Jitsi as a Service
+# Run with your preferred model provider
+agent-tars --provider volcengine --model doubao-1-5-thinking-vision-pro-250428 --apiKey your-api-key
+agent-tars --provider anthropic --model claude-3-7-sonnet-latest --apiKey your-api-key
+```
 
-If you like the branding capabilities of running your own instance but you&#039;d like
-to avoid dealing with the complexity of monitoring, scaling and updates, JaaS might be
-for you.
+Visit the comprehensive [Quick Start](https://agent-tars.com/guide/get-started/quick-start.html) guide for detailed setup instructions.
 
-[8x8 Jitsi as a Service (JaaS)](https://jaas.8x8.vc) is an enterprise-ready video meeting platform that allows developers, organizations and businesses to easily build and deploy video solutions. With Jitsi as a Service we now give you all the power of Jitsi running on our global platform so you can focus on building secure and branded video experiences.
+### Documentation
+
+&gt; 🌟 **Explore Agent TARS Universe** 🌟
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th width=&quot;20%&quot; align=&quot;center&quot;&gt;Category&lt;/th&gt;
+      &lt;th width=&quot;30%&quot; align=&quot;center&quot;&gt;Resource Link&lt;/th&gt;
+      &lt;th width=&quot;50%&quot; align=&quot;left&quot;&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot;&gt;🏠 &lt;strong&gt;Central Hub&lt;/strong&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;
+        &lt;a href=&quot;https://agent-tars.com&quot;&gt;
+          &lt;img src=&quot;https://img.shields.io/badge/Visit-Website-4F46E5?style=for-the-badge&amp;logo=globe&amp;logoColor=white&quot; alt=&quot;Website&quot; /&gt;
+        &lt;/a&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;left&quot;&gt;Your gateway to Agent TARS ecosystem&lt;/td&gt;
+    &lt;/tr&gt;
+      &lt;tr&gt;
+      &lt;td align=&quot;center&quot;&gt;📚 &lt;strong&gt;Quick Start&lt;/strong&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;
+        &lt;a href=&quot;https://agent-tars.com/guide/get-started/quick-start.html&quot;&gt;
+          &lt;img src=&quot;https://img.shields.io/badge/Get-Started-06B6D4?style=for-the-badge&amp;logo=rocket&amp;logoColor=white&quot; alt=&quot;Quick Start&quot; /&gt;
+        &lt;/a&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;left&quot;&gt;Zero to hero in 5 minutes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot;&gt;🚀 &lt;strong&gt;What&#039;s New&lt;/strong&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;
+        &lt;a href=&quot;https://agent-tars.com/beta&quot;&gt;
+          &lt;img src=&quot;https://img.shields.io/badge/Read-Blog-F59E0B?style=for-the-badge&amp;logo=rss&amp;logoColor=white&quot; alt=&quot;Blog&quot; /&gt;
+        &lt;/a&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;left&quot;&gt;Discover cutting-edge features &amp; vision&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot;&gt;🛠️ &lt;strong&gt;Developer Zone&lt;/strong&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;
+        &lt;a href=&quot;https://agent-tars.com/guide/get-started/introduction.html&quot;&gt;
+          &lt;img src=&quot;https://img.shields.io/badge/View-Docs-10B981?style=for-the-badge&amp;logo=gitbook&amp;logoColor=white&quot; alt=&quot;Docs&quot; /&gt;
+        &lt;/a&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;left&quot;&gt;Master every command &amp; features&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot;&gt;🎯 &lt;strong&gt;Showcase&lt;/strong&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;
+        &lt;a href=&quot;https://github.com/bytedance/UI-TARS-desktop/issues/842&quot;&gt;
+          &lt;img src=&quot;https://img.shields.io/badge/View-Examples-8B5CF6?style=for-the-badge&amp;logo=github&amp;logoColor=white&quot; alt=&quot;Examples&quot; /&gt;
+        &lt;/a&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;left&quot;&gt;View use cases built by the official and community&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot;&gt;🔧 &lt;strong&gt;Reference&lt;/strong&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;
+        &lt;a href=&quot;https://agent-tars.com/api/&quot;&gt;
+          &lt;img src=&quot;https://img.shields.io/badge/API-Reference-EF4444?style=for-the-badge&amp;logo=book&amp;logoColor=white&quot; alt=&quot;API&quot; /&gt;
+        &lt;/a&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;left&quot;&gt;Complete technical reference&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+
+## UI-TARS Desktop
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img alt=&quot;UI-TARS&quot; width=&quot;260&quot; src=&quot;./apps/ui-tars/resources/icon.png&quot;&gt;
+&lt;/p&gt;
+
+UI-TARS Desktop is a native GUI agent driven by [UI-TARS](https://github.com/bytedance/UI-TARS) and Seed-1.5-VL/1.6 series models, available on your local computer and remote VM sandbox on cloud.
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;p&gt;
+        &amp;nbsp&amp;nbsp 📑 &lt;a href=&quot;https://arxiv.org/abs/2501.12326&quot;&gt;Paper&lt;/a&gt; &amp;nbsp&amp;nbsp
+        | 🤗 &lt;a href=&quot;https://huggingface.co/ByteDance-Seed/UI-TARS-1.5-7B&quot;&gt;Hugging Face Models&lt;/a&gt;&amp;nbsp&amp;nbsp
+        | &amp;nbsp&amp;nbsp🫨 &lt;a href=&quot;https://discord.gg/pTXwYVjfcs&quot;&gt;Discord&lt;/a&gt;&amp;nbsp&amp;nbsp
+        | &amp;nbsp&amp;nbsp🤖 &lt;a href=&quot;https://www.modelscope.cn/collections/UI-TARS-bccb56fa1ef640&quot;&gt;ModelScope&lt;/a&gt;&amp;nbsp&amp;nbsp
+&lt;br&gt;
+🖥️ Desktop Application &amp;nbsp&amp;nbsp
+| &amp;nbsp&amp;nbsp 👓 &lt;a href=&quot;https://github.com/web-infra-dev/midscene&quot;&gt;Midscene (use in browser)&lt;/a&gt; &amp;nbsp&amp;nbsp
+&lt;/p&gt;
+
+&lt;/div&gt;
+
+### Showcase
+
+&lt;!-- // FIXME: Choose only two demo, one local computer and one remote computer showcase. --&gt;
+
+|                                                          Instruction                                                           |                                                Local Operator                                                |                                               Remote Operator                                                |
+| :----------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------: |
+| Please help me open the autosave feature of VS Code and delay AutoSave operations for 500 milliseconds in the VS Code setting. | &lt;video src=&quot;https://github.com/user-attachments/assets/e0914ce9-ad33-494b-bdec-0c25c1b01a27&quot; height=&quot;300&quot; /&gt; | &lt;video src=&quot;https://github.com/user-attachments/assets/01e49b69-7070-46c8-b3e3-2aaaaec71800&quot; height=&quot;300&quot; /&gt; |
+|                    Could you help me check the latest open issue of the UI-TARS-Desktop project on GitHub?                     | &lt;video src=&quot;https://github.com/user-attachments/assets/3d159f54-d24a-4268-96c0-e149607e9199&quot; height=&quot;300&quot; /&gt; | &lt;video src=&quot;https://github.com/user-attachments/assets/072fb72d-7394-4bfa-95f5-4736e29f7e58&quot; height=&quot;300&quot; /&gt; |
+
+### Features
+
+- 🤖 Natural language control powered by Vision-Language Model
+- 🖥️ Screenshot and visual recognition support
+- 🎯 Precise mouse and keyboard control
+- 💻 Cross-platform support (Windows/MacOS/Browser)
+- 🔄 Real-time feedback and status display
+- 🔐 Private and secure - fully local processing
+- 🛠️ Effortless setup and intuitive remote operators
+
+### Quick Start
+
+See [Quick Start](./docs/quick-start.md)
+
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md).
+
+## License
+
+This project is licensed under the Apache License 2.0.
+
+## Citation
+
+If you find our paper and code useful in your research, please consider giving a star :star: and citation :pencil:
+
+```BibTeX
+@article{qin2025ui,
+  title={UI-TARS: Pioneering Automated GUI Interaction with Native Agents},
+  author={Qin, Yujia and Ye, Yining and Fang, Junjie and Wang, Haoming and Liang, Shihao and Tian, Shizuo and Zhang, Junda and Li, Jiahao and Li, Yunxin and Huang, Shijue and others},
+  journal={arXiv preprint arXiv:2501.12326},
+  year={2025}
+}
+```</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[coaidev/coai]]></title>
+            <link>https://github.com/coaidev/coai</link>
+            <guid>https://github.com/coaidev/coai</guid>
+            <pubDate>Mon, 18 Aug 2025 00:05:36 GMT</pubDate>
+            <description><![CDATA[🚀 Next Generation AI One-Stop Internationalization Solution. 🚀 下一代 AI 一站式 B/C 端解决方案，支持 OpenAI，Midjourney，Claude，讯飞星火，Stable Diffusion，DALL·E，ChatGLM，通义千问，腾讯混元，360 智脑，百川 AI，火山方舟，新必应，Gemini，Moonshot 等模型，支持对话分享，自定义预设，云端同步，模型市场，支持弹性计费和订阅计划模式，支持图片解析，支持联网搜索，支持模型缓存，丰富美观的后台管理与仪表盘数据统计。]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/coaidev/coai">coaidev/coai</a></h1>
+            <p>🚀 Next Generation AI One-Stop Internationalization Solution. 🚀 下一代 AI 一站式 B/C 端解决方案，支持 OpenAI，Midjourney，Claude，讯飞星火，Stable Diffusion，DALL·E，ChatGLM，通义千问，腾讯混元，360 智脑，百川 AI，火山方舟，新必应，Gemini，Moonshot 等模型，支持对话分享，自定义预设，云端同步，模型市场，支持弹性计费和订阅计划模式，支持图片解析，支持联网搜索，支持模型缓存，丰富美观的后台管理与仪表盘数据统计。</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 8,689</p>
+            <p>Forks: 1,152</p>
+            <p>Stars today: 12 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+
+![chatnio](/app/public/logo.png)
+
+# [🥳 Chat Nio](https://chatnio.com)
+
+#### 🚀 Next Generation AIGC One-Stop Business Solution
+
+#### *&quot;Chat Nio &gt; [Next Web](https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web) + [One API](https://github.com/songquanpeng/one-api)&quot;*
+
+
+English · [简体中文](./README_zh-CN.md) · [日本語](./README_ja-JP.md) · [Docs](https://chatnio.com) · [Discord](https://discord.gg/rpzNSmqaF2) · [Deployment Guide](https://chatnio.com/docs/deploy)
+
+[![Deploy on Zeabur](https://zeabur.com/button.svg)](https://zeabur.com/templates/M86XJI)
+
+[![Chat Nio: #1 Repo Of The Day](https://trendshift.io/api/badge/repositories/6369)](https://trendshift.io/repositories/6369)
+
+&lt;img alt=&quot;Chat Nio Preview&quot; src=&quot;./screenshot/chatnio.png&quot; width=&quot;100%&quot; style=&quot;border-radius: 8px&quot;&gt;
+
+&lt;/div&gt;
+
+## 📝 Features
+1. 🤖️ **Rich Model Support**: Multi-model service provider support (OpenAI / Anthropic / Gemini / Midjourney and more than ten compatible formats &amp; private LLM support)
+2. 🤯 **Beautiful UI Design**: UI compatible with PC / Pad / Mobile, following [Shadcn UI](https://ui.shadcn.com) &amp; [Tremor Charts](https://blocks.tremor.so) design standards, rich and beautiful interface design and backend dashboard
+3. 🎃 **Complete Markdown Support**: Support for **LaTeX formulas** / **Mermaid mind maps** / table rendering / code highlighting / chart drawing / progress bars and other advanced Markdown syntax support
+4. 👀 **Multi-theme Support**: Support for multiple theme switching, including **Light Mode** for light themes and **Dark Mode** for dark themes. 👉 [Custom Color Scheme](https://github.com/Deeptrain-Community/chatnio/blob/main/app/src/assets/globals.less)
+5. 📚 **Internationalization Support**: Support for internationalization, multi-language switching 🇨🇳 🇺🇸 🇯🇵 🇷🇺 👉 Welcome to contribute translations [Pull Request](https://github.com/Deeptrain-Community/chatnio/pulls)
+6. 🎨 **Text-to-Image Support**: Support for multiple text-to-image models: **OpenAI DALL-E**✅ &amp; **Midjourney** (support for **U/V/R** operations)✅ &amp; Stable Diffusion✅ etc.
+7. 📡 **Powerful Conversation Sync**: **Zero-cost cross-device conversation sync support for users**, support for **conversation sharing** (link sharing &amp; save as image &amp; share management), **no need for WebDav / WebRTC and other dependencies and complex learning costs**
+8. 🎈 **Model Market &amp; Preset System**: Support for customizable model market in the backend, providing model introductions, tags, and other parameters. Site owners can customize model introductions according to the situation. Also supports a preset system, including **custom presets** and **cloud synchronization** functions.
+9. 📖 **Rich File Parsing**: **Out-of-the-box**, supports file parsing for **all models** (PDF / Docx / Pptx / Excel / image formats parsing), **supports more cloud image storage solutions** (S3 / R2 / MinIO etc.), **supports OCR image recognition** 👉 See project [Chat Nio Blob Service](https://github.com/Deeptrain-Community/chatnio-blob-service) for details (supports Vercel / Docker one-click deployment)
+10. 🌏 **Full Model Internet Search**: Based on the [SearXNG](https://github.com/searxng/searxng) open-source engine, supports rich search engines such as Google / Bing / DuckDuckGo / Yahoo / Wikipedia / Arxiv / Qwant, supports safe search mode, content truncation, image proxy, test search availability, and other functions.
+11. 💕 **Progressive Web App (PWA)**: Supports PWA applications &amp; desktop support (desktop based on [Tauri](https://github.com/tauri-apps/tauri))
+12. 🤩 **Comprehensive Backend Management**: Supports beautiful and rich dashboard, announcement &amp; notification management, user management, subscription management, gift code &amp; redemption code management, price setting, subscription setting, custom model market, custom site name &amp; logo, SMTP email settings, and other functions
+13. 🤑 **Multiple Billing Methods**: Supports 💴 **Subscription** and 💴 **Elastic Billing** two billing methods. Elastic billing supports per-request billing / token billing / no billing / anonymous calls and **minimum request points** detection and other powerful features
+14. 🎉 **Innovative Model Caching**: Supports enabling model caching: i.e., under the same request parameter hash, if it has been requested before, it will directly return the cached result (hitting the cache will not be billed), reducing the number of requests. You can customize whether to cache models, cache time, multiple cache result numbers, and other advanced cache settings
+15. 🥪 **Additional Features** (Support Discontinued): 🍎 **AI Project Generator Function** / 📂 **Batch Article Generation Function** / 🥪 **AI Card Function** (Deprecated)
+16. 😎 **Excellent Channel Management**: Self-written excellent channel algorithm, supports ⚡ **multi-channel management**, supports 🥳**priority** setting for channel call order, supports 🥳**weight** setting for load balancing probability distribution of channels at the same priority, supports 🥳**user grouping**, 🥳**automatic retry on failure**, 🥳**model redirection**, 🥳**built-in upstream hiding**, 🥳**channel status management** and other powerful **enterprise-level functions**
+17. ⭐ **OpenAI API Distribution &amp; Proxy System**: Supports calling various large models in **OpenAI API** standard format, integrates powerful channel management functions, only needs to deploy one site to achieve simultaneous development of B/C-end business💖
+18. 👌 **Quick Upstream Synchronization**: Channel settings, model market, price settings, and other settings can quickly synchronize with upstream sites, modify your site configuration based on this, quickly build your site, save time and effort, one-click synchronization, quick launch
+19. 👋 **SEO Optimization**: Supports SEO optimization, supports custom site name, site logo, and other SEO optimization settings to make search engines crawl faster, making your site stand out👋
+20. 🎫 **Multiple Redemption Code Systems**: Supports multiple redemption code systems, supports gift codes and redemption codes, supports batch generation, gift codes are suitable for promotional distribution, redemption codes are suitable for card sales, for gift codes of one type, a user can only redeem one code, which to some extent reduces the situation of one user redeeming multiple times in promotions😀
+21. 🥰 **Business-Friendly License**: Adopts the **Apache-2.0** open-source license, friendly for commercial secondary development &amp; distribution (please also comply with the provisions of the Apache-2.0 license, do not use for illegal purposes)
+
+&gt; ### ✨ Chat Nio Business
+&gt;
+&gt; ![Pro Version Preview](./screenshot/chatnio-pro.png)
+&gt;
+&gt; - ✅ Beautiful commercial-grade UI, elegant frontend interface and backend management
+&gt; - ✅ Supports TTS &amp; STT, plugin marketplace, RAG knowledge base and other rich features and modules
+&gt; - ✅ More payment providers, more billing models and advanced order management
+&gt; - ✅ Supports more authentication methods, including SMS login, OAuth login, etc.
+&gt; - ✅ Supports model monitoring, channel health detection, fault alarm automatic channel switching
+&gt; - ✅ Supports multi-tenant API Key distribution system, enterprise-level token permission management and visitor restrictions
+&gt; - ✅ Supports security auditing, logging, model rate limiting, API Gateway and other advanced features
+&gt; - ✅ Supports promotion rewards, professional data statistics, user profile analysis and other business analysis capabilities
+&gt; - ✅ Supports Discord/Telegram/Feishu and other bot integration capabilities (extension modules)
+&gt; - ...
+&gt;
+&gt; [👉 Learn More](https://www.chatnio.com/docs/contact)
+
+
+## 🔨 Supported Models
+1. OpenAI &amp; Azure OpenAI *(✅ Vision ✅ Function Calling)*
+2. Anthropic Claude *(✅ Vision ✅ Function Calling)*
+3. Google Gemini &amp; PaLM2 *(✅ Vision)*
+4. Midjourney *(✅ Mode Toggling ✅ U/V/R Actions)*
+5. iFlytek SparkDesk *(✅ Vision ✅ Function Calling)*
+6. Zhipu AI ChatGLM *(✅ Vision)*
+7. Alibaba Tongyi Qwen
+8. Tencent Hunyuan
+9. Baichuan AI
+10. Moonshot AI (👉 OpenAI)
+11. DeepSeek AI (👉 OpenAI)
+12. ByteDance Skylark *(✅ Function Calling)*
+13. Groq Cloud AI
+14. OpenRouter (👉 OpenAI)
+15. 360 GPT
+16. LocalAI / Ollama (👉 OpenAI)
+
+## 👻 OpenAI Compatible API Proxy
+   - [x] Chat Completions _(/v1/chat/completions)_
+   - [x] Image Generation _(/v1/images)_
+   - [x] Model List _(/v1/models)_
+   - [x] Dashboard Billing _(/v1/billing)_
+
+
+## 📦 Deployment
+&gt; [!TIP]
+&gt; **After successful deployment, the admin account is `root`, with the default password `chatnio123456`**
+
+### ✨ Zeabur (One-Click)
+[![Deploy on Zeabur](https://zeabur.com/button.svg)](https://zeabur.com/templates/M86XJI)
+
+&gt; Zeabur provides a certain free quota, you can use non-paid regions for one-click deployment, and also supports plan subscriptions and elastic billing for flexible expansion.
+&gt; 1. Click `Deploy` to deploy, and enter the domain name you wish to bind, wait for the deployment to complete.
+&gt; 2. After deployment is complete, please visit your domain name and log in to the backend management using the username `root` and password `chatnio123456`. Please follow the prompts to change the password in the chatnio backend in a timely manner.
+
+### 🐳 BTPanel (One-Click)
+
+1. Install Baota Panel by visiting [BTPanel](https://www.bt.cn/new/download.html) and install using the stable version script.
+2. Log in to the panel and click **Docker** on the left to enter Docker management.
+3. If prompted that Docker / Docker Compose is not installed, you can install according to the guide above.
+4. After installation is complete, enter **App Store**, search for `CoAI` and click **Install**.
+5. Configure basic application information such as your domain name, port, etc., and click **Confirm** (default configuration can be used).
+6. First-time installation may take 1-2 minutes to complete database initialization. If you encounter issues, please check the panel running logs for troubleshooting.
+7. Visit your configured domain or server `http://[ip]:[port]`, log in to the backend management using username `root` and password `chatnio123456`.
+
+### AlibabaCloud ComputeNest (One-Click)
+[![Deploy on AlibabaCloud ComputeNest International Edition](https://service-info-public.oss-cn-hangzhou.aliyuncs.com/computenest-en.svg)](https://computenest.console.aliyun.com/service/instance/create/ap-southeast-1?type=user&amp;ServiceName=CoAI%20%20Community%20Edition)
+1. Access the CoAI service on [ComputeNest International Edition](https://computenest.console.aliyun.com/service/instance/create/ap-southeast-1?type=user&amp;ServiceName=CoAI%20%20Community%20Edition). If you are in China, please visit [ComputeNest](https://computenest.console.aliyun.com/service/instance/create/default?type=user&amp;ServiceName=CoAI社区版), and fill in the deployment parameters as prompted.
+2. Select the payment type, fill in the instance parameters and network parameters, and click **Next: Confirm Order**.
+3. After confirming the deployment parameters and checking the estimated price, click Create Now and wait for the service instance to be deployed.
+4. Click **Service Instance** on the left. After the service instance is deployed, click the instance ID to enter the details interface.
+5. Click the address in **Use Now** on the details interface to enter the CoAI interface. The default username is `root` and the password is `chatnio123456` to log in to the backend management.
+6. For more operation details and payment information, see：[Service Details](https://computenest.console.aliyun.com/service/detail/ap-southeast-1/service-27e11d3a5c9b40628505/1?type=user&amp;isRecommend=true).
+
+
+### ⚡ Docker Compose Installation (Recommended)
+&gt; [!NOTE]
+&gt; After successful execution, the host machine mapping address is `http://localhost:8000`
+
+```shell
+git clone --depth=1 --branch=main --single-branch https://github.com/Deeptrain-Community/chatnio.git
+cd chatnio
+docker-compose up -d # Run the service
+# To use the stable version, use docker-compose -f docker-compose.stable.yaml up -d instead
+# To use Watchtower for automatic updates, use docker-compose -f docker-compose.watch.yaml up -d instead
+```
+
+Version update (_If Watchtower automatic updates are enabled, manual updates are not necessary_):
+```shell
+docker-compose down 
+docker-compose pull
+docker-compose up -d
+```
+
+&gt; - MySQL database mount directory: ~/**db**
+&gt; - Redis database mount directory: ~/**redis**
+&gt; - Configuration file mount directory: ~/**config**
+
+### ⚡ Docker Installation (Lightweight runtime, commonly used for external _MYSQL/RDS_ services)
+&gt; [!NOTE]
+&gt; After successful execution, the host machine address is `http://localhost:8094`.
+&gt; 
+&gt; To use the stable version, use `programzmh/chatnio:stable` instead of `programzmh/chatnio:latest`
+
+```shell
+docker run -d --name chatnio \
+   --network host \
+   -v ~/config:/config \
+   -v ~/logs:/logs \
+   -v ~/storage:/storage \
+   -e MYSQL_HOST=localhost \
+   -e MYSQL_PORT=3306 \
+   -e MYSQL_DB=chatnio \
+   -e MYSQL_USER=root \
+   -e MYSQL_PASSWORD=chatnio123456 \
+   -e REDIS_HOST=localhost \
+   -e REDIS_PORT=6379 \
+   -e SECRET=secret \
+   -e SERVE_STATIC=true \
+   programzmh/chatnio:latest
+```
+
+&gt; - *--network host* means using the host machine&#039;s network, allowing the Docker container to use the host&#039;s network. You can modify this as needed.
+&gt; - SECRET: JWT secret key, generate a random string and modify accordingly
+&gt; - SERVE_STATIC: Whether to enable static file serving (normally this doesn&#039;t need to be changed, see FAQ below for details)
+&gt; - *-v ~/config:/config* mounts the configuration file, *-v ~/logs:/logs* mounts the host machine directory for log files, *-v ~/storage:/storage* mounts the directory for additional feature generated files
+&gt; - MySQL and Redis services need to be configured. Please refer to the information above to modify the environment variables accordingly
+
+Version update (_After enabling Watchtower, manual updates are not necessary. After execution, follow the steps above to run again_):
+
+```shell
+docker stop chatnio
+docker rm chatnio
+docker pull programzmh/chatnio:latest
+```
+
+### ⚒ Compile and Install
+
+&gt; [!NOTE]
+&gt; After successful deployment, the default port is **8094**, and the access address is `http://localhost:8094`
+&gt; 
+&gt; Config settings (~/config/**config.yaml**) can be overridden using environment variables. For example, the `MYSQL_HOST` environment variable can override the `mysql.host` configuration item
+
+```shell
+git clone https://github.com/Deeptrain-Community/chatnio.git
+cd chatnio
+
+cd app
+npm install -g pnpm
+pnpm install
+pnpm build
+
+cd ..
+go build -o chatnio
+
+# e.g. using nohup (you can also use systemd or other service manager)
+nohup ./chatnio &gt; output.log &amp; # using nohup to run in background
+```
+
+## 📦 Tech Stack
+
+- 🥗 Frontend: React + Redux + Radix UI + Tailwind CSS
+- 🍎 Backend: Golang + Gin + Redis + MySQL
+- 🍒 Application Technology: PWA + WebSocket
+
+## 🤯 Why Create This Project &amp; Project Advantages
+
+- We found that most AIGC commercial sites on the market are frontend-oriented lightweight deployment projects with beautiful UI interface designs, such as the commercial version of [Next Chat](https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web). Due to its personal privatization-oriented design, there are some limitations in secondary commercial development, presenting some issues, such as:
+  1. **Difficult conversation synchronization**, for example, requiring services like WebDav, high user learning costs, and difficulties in real-time cross-device synchronization.
+  2. **Insufficient billing**, for example, only supporting elastic billing or only subscription-based, unable to meet the needs of different users.
+  3. **Inconvenient file parsing**, for example, only supporting uploading images to an image hosting service first, then returning to the site to input the URL direct link in the input box, without built-in file parsing functionality.
+  4. **No support for conversation URL sharing**, for example, only supporting conversation screenshot sharing, unable to support conversation URL sharing (or only supporting tools like ShareGPT, which cannot promote the site).
+  5. **Insufficient channel management**, for example, the backend only supports OpenAI format channels, making it difficult to be compatible with other format channels. And only one channel can be filled in, unable to support multi-channel management.
+  6. **No API call support**, for example, only supporting user interface calls, unable to support API proxying and management.
+
+- Another type is API distribution-oriented sites with powerful distribution systems, such as projects based on [One API](https://github.com/songquanpeng/one-api).
+Although these projects support powerful API proxying and management, they lack interface design and some C-end features, such as:
+  1. **Insufficient user interface**, for example, only supporting API calls, without built-in user interface chat. User interface chat requires manually copying the key and going to other sites to use, which has a high learning cost for ordinary users.
+  2. **No subscription system**, for example, only supporting elastic billing, lacking billing design for C-end users, unable to meet different user needs, and not user-friendly in terms of cost perception for users without a foundation.
+  3. **Insufficient C-end features**, for example, only supporting API calls, not supporting conversation synchronization, conversation sharing, file parsing, and other functions.
+  4. **Insufficient load balancing**, the open-source version does not support the **weight** parameter, unable to achieve balanced load distribution probability for channels at the same priority ([New API](https://github.com/Calcium-Ion/new-api) also solves this pain point, with a more beautiful UI).
+
+Therefore, we hope to combine the advantages of these two types of projects to create a project that has both a powerful API distribution system and a rich user interface design,
+thus meeting the needs of C-end users while developing B-end business, improving user experience, reducing user learning costs, and increasing user stickiness.
+
+Thus, **Chat Nio** was born. We hope to create a project that has both a powerful API distribution system and a rich user interface design, becoming the next-generation open-source AIGC project&#039;s one-stop commercial solution.
+
+
+## ❤ Donations
+
+If you find this project helpful, you can give it a Star to show your support!
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[lyswhut/lx-music-mobile]]></title>
+            <link>https://github.com/lyswhut/lx-music-mobile</link>
+            <guid>https://github.com/lyswhut/lx-music-mobile</guid>
+            <pubDate>Mon, 18 Aug 2025 00:05:35 GMT</pubDate>
+            <description><![CDATA[一个基于 React native 开发的音乐软件]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/lyswhut/lx-music-mobile">lyswhut/lx-music-mobile</a></h1>
+            <p>一个基于 React native 开发的音乐软件</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 13,878</p>
+            <p>Forks: 1,603</p>
+            <p>Stars today: 14 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https://github.com/lyswhut/lx-music-mobile&quot;&gt;&lt;img width=&quot;200&quot; src=&quot;https://github.com/lyswhut/lx-music-mobile/blob/master/doc/images/icon.png&quot; alt=&quot;lx-music logo&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 align=&quot;center&quot;&gt;LX Music 移动版&lt;/h1&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://github.com/lyswhut/lx-music-mobile/releases&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/release/lyswhut/lx-music-mobile&quot; alt=&quot;Release version&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/lyswhut/lx-music-mobile/actions/workflows/release.yml&quot;&gt;&lt;img src=&quot;https://github.com/lyswhut/lx-music-mobile/workflows/Build/badge.svg&quot; alt=&quot;Build status&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/lyswhut/lx-music-mobile/actions/workflows/beta-pack.yml&quot;&gt;&lt;img src=&quot;https://github.com/lyswhut/lx-music-mobile/workflows/Build%20Beta/badge.svg&quot; alt=&quot;Build status&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/facebook/react-native&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/package-json/dependency-version/lyswhut/lx-music-mobile/react-native/master&quot; alt=&quot;React native version&quot;&gt;&lt;/a&gt;
+  &lt;!-- &lt;a href=&quot;https://github.com/lyswhut/lx-music-mobile/releases&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/downloads/lyswhut/lx-music-mobile/latest/total&quot; alt=&quot;Downloads&quot;&gt;&lt;/a&gt; --&gt;
+  &lt;a href=&quot;https://github.com/lyswhut/lx-music-mobile/tree/dev&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/package-json/v/lyswhut/lx-music-mobile/dev&quot; alt=&quot;Dev branch version&quot;&gt;&lt;/a&gt;
+  &lt;!-- &lt;a href=&quot;https://github.com/lyswhut/lx-music-mobile/blob/master/LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/license/lyswhut/lx-music-mobile&quot; alt=&quot;License&quot;&gt;&lt;/a&gt; --&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;一个基于 React Native 开发的音乐软件&lt;/p&gt;
+
+## 说明
+
+所用技术栈：
+
+- React Native
+- Redux
+
+已支持的平台：
+
+- Android 5 及以上
+
+***注：目前没有计划支持 iOS 和 HarmonyOS NEXT**。*&lt;br&gt;
+*桌面版项目地址：&lt;https://github.com/lyswhut/lx-music-desktop&gt;*
+
+软件变化请查看[更新日志](https://github.com/lyswhut/lx-music-mobile/blob/master/CHANGELOG.md)。
+
+软件下载请查看 [GitHub Releases](https://github.com/lyswhut/lx-music-mobile/releases)。
+
+使用常见问题请参阅[移动版常见问题](https://lyswhut.github.io/lx-music-doc/mobile/faq)。
+
+目前本项目的原始发布地址只有 [**GitHub**](https://github.com/lyswhut/lx-music-mobile/releases)，其他渠道均为第三方转载发布，与本项目无关！
+
+为了提高使用门槛，本软件内的默认设置、UI 操作不以新手友好为目标，所以使用前建议先根据你的喜好浏览调整一遍软件设置，阅读一遍[音乐播放列表机制](https://lyswhut.github.io/lx-music-doc/mobile/faq/playlist)。
+
+### 数据同步服务
+
+从 v1.0.0 起，我们发布了一个独立的[数据同步服务](https://github.com/lyswhut/lx-music-sync-server#readme)。如果你有服务器，可以将其部署到服务器上作为私人多端同步服务使用，详情看该项目说明。
+
+## 贡献代码
+
+本项目欢迎 PR，但为了 PR 能顺利合并，需要注意以下几点：
+
+- 对于添加新功能的 PR，建议在提交 PR 前先创建 Issue 进行说明，以确认该功能是否确实需要；
+- 对于修复 bug 的 PR，请提供修复前后的说明及重现方式；
+- 对于其他类型的 PR，则适当附上说明。
+
+贡献代码步骤：
+
+1. 参照[源码使用方法](https://lyswhut.github.io/lx-music-doc/mobile/use-source-code)设置开发环境；
+2. 克隆本仓库代码并切换至 `dev` 分支进行开发；
+3. 提交 PR 至 `dev` 分支。
+
+&lt;!--
+## 用户界面
+
+&lt;p&gt;&lt;img width=&quot;100%&quot; src=&quot;https://github.com/lyswhut/lx-music-mobile/blob/master/doc/images/app.png&quot; alt=&quot;lx-music mobile UI&quot;&gt;&lt;/p&gt; --&gt;
+
+## 项目协议
+
+本项目基于 [Apache License 2.0](https://github.com/lyswhut/lx-music-mobile/blob/master/LICENSE) 许可证发行，以下协议是对于 Apache License 2.0 的补充，如有冲突，以以下协议为准。
+
+---
+
+*词语约定：本协议中的“本项目”指 LX Music（洛雪音乐）移动版项目；“使用者”指签署本协议的使用者；“官方音乐平台”指对本项目内置的包括酷我、酷狗、咪咕等音乐源的官方平台统称；“版权数据”指包括但不限于图像、音频、名字等在内的他人拥有所属版权的数据。*
+
+### 一、数据来源
+
+1.1 本项目的各官方平台在线数据来源原理是从其公开服务器中拉取数据（与未登录状态在官方平台 APP 获取的数据相同），经过对数据简单地筛选与合并后进行展示，因此本项目不对数据的合法性、准确性负责。
+
+1.2 本项目本身没有获取某个音频数据的能力，本项目使用的在线音频数据来源来自软件设置内“自定义源”设置所选择的“源”返回的在线链接。例如播放某首歌，本项目所做的只是将希望播放的歌曲名、艺术家等信息传递给“源”，若“源”返回了一个链接，则本项目将认为这就是该歌曲的音频数据而进行使用，至于这是不是正确的音频数据本项目无法校验其准确性，所以使用本项目的过程中可能会出现希望播放的音频与实际播放的音频不对应或者无法播放的问题。
+
+1.3 本项目的非官方平台数据（例如“我的列表”内列表）来自使用者本地系统或者使用者连接的同步服务，本项目不对这些数据的合法性、准确性负责。
+
+### 二、版权数据
+
+2.1 使用本项目的过程中可能会产生版权数据。对于这些版权数据，本项目不拥有它们的所有权。为了避免侵权，使用者务必在 **24 小时内** 清除使用本项目的过程中所产生的版权数据。
+
+### 三、音乐平台别名
+
+3.1 本项目内的官方音乐平台别名为本项目内对官方音乐平台的一个称呼，不包含恶意。如果官方音乐平台觉得不妥，可联系本项目更改或移除。
+
+### 四、资源使用
+
+4.1 本项目内使用的部分包括但不限于字体、图片等资源来源于互联网。如果出现侵权可联系本项目移除。
+
+### 五、免责声明
+
+5.1 由于使用本项目产生的包括由于本协议或由于使用或无法使用本项目而引起的任何性质的任何直接、间接、特殊、偶然或结果性损害（包括但不限于因商誉损失、停工、计算机故障或故障引起的损害赔偿，或任何及所有其他商业损害或损失）由使用者负责。
+
+### 六、使用限制
+
+6.1 本项目完全免费，且开源发布于 GitHub 面向全世界人用作对技术的学习交流。本项目不对项目内的技术可能存在违反当地法律法规的行为作保证。
+
+6.2 **禁止在违反当地法律法规的情况下使用本项目。** 对于使用者在明知或不知当地法律法规不允许的情况下使用本项目所造成的任何违法违规行为由使用者承担，本项目不承担由此造成的任何直接、间接、特殊、偶然或结果性责任。
+
+### 七、版权保护
+
+7.1 音乐平台不易，请尊重版权，支持正版。
+
+### 八、非商业性质
+
+8.1 本项目仅用于对技术可行性的探索及研究，不接受任何商业（包括但不限于广告等）合作及捐赠。
+
+### 九、接受协议
+
+9.1 若你使用了本项目，即代表你接受本协议。
+
+---
+
+若对此有疑问请 mail to: lyswhut+qq.com (请将 `+` 替换成 `@`)
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[blakeblackshear/frigate]]></title>
+            <link>https://github.com/blakeblackshear/frigate</link>
+            <guid>https://github.com/blakeblackshear/frigate</guid>
+            <pubDate>Mon, 18 Aug 2025 00:05:34 GMT</pubDate>
+            <description><![CDATA[NVR with realtime local object detection for IP cameras]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/blakeblackshear/frigate">blakeblackshear/frigate</a></h1>
+            <p>NVR with realtime local object detection for IP cameras</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 25,184</p>
+            <p>Forks: 2,309</p>
+            <p>Stars today: 126 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;img align=&quot;center&quot; alt=&quot;logo&quot; src=&quot;docs/static/img/frigate.png&quot;&gt;
+&lt;/p&gt;
+
+# Frigate - NVR With Realtime Object Detection for IP Cameras
+
+&lt;a href=&quot;https://hosted.weblate.org/engage/frigate-nvr/&quot;&gt;
+&lt;img src=&quot;https://hosted.weblate.org/widget/frigate-nvr/language-badge.svg&quot; alt=&quot;Translation status&quot; /&gt;
+&lt;/a&gt;
+
+\[English\] | [简体中文](https://github.com/blakeblackshear/frigate/blob/dev/README_CN.md)
+
+A complete and local NVR designed for [Home Assistant](https://www.home-assistant.io) with AI object detection. Uses OpenCV and Tensorflow to perform realtime object detection locally for IP cameras.
+
+Use of a GPU or AI accelerator such as a [Google Coral](https://coral.ai/products/) or [Hailo](https://hailo.ai/) is highly recommended. AI accelerators will outperform even the best CPUs with very little overhead.
+
+- Tight integration with Home Assistant via a [custom component](https://github.com/blakeblackshear/frigate-hass-integration)
+- Designed to minimize resource use and maximize performance by only looking for objects when and where it is necessary
+- Leverages multiprocessing heavily with an emphasis on realtime over processing every frame
+- Uses a very low overhead motion detection to determine where to run object detection
+- Object detection with TensorFlow runs in separate processes for maximum FPS
+- Communicates over MQTT for easy integration into other systems
+- Records video with retention settings based on detected objects
+- 24/7 recording
+- Re-streaming via RTSP to reduce the number of connections to your camera
+- WebRTC &amp; MSE support for low-latency live view
 
 ## Documentation
 
-All the Jitsi Meet documentation is available in [the handbook](https://jitsi.github.io/handbook/).
+View the documentation at https://docs.frigate.video
 
-## Security
+## Donations
 
-For a comprehensive description of all Jitsi Meet&#039;s security aspects, please check [this link](https://jitsi.org/security).
-
-For a detailed description of Jitsi Meet&#039;s End-to-End Encryption (E2EE) implementation,
-please check [this link](https://jitsi.org/e2ee-whitepaper/).
-
-For information on reporting security vulnerabilities in Jitsi Meet, see [SECURITY.md](./SECURITY.md).
-
-## Contributing
-
-If you are looking to contribute to Jitsi Meet, first of all, thank you! Please
-see our [guidelines for contributing](CONTRIBUTING.md).
-
-&lt;br /&gt;
-&lt;br /&gt;
-
-&lt;footer&gt;
-&lt;p align=&quot;center&quot; style=&quot;font-size: smaller;&quot;&gt;
-Built with ❤️ by the Jitsi team at &lt;a href=&quot;https://8x8.com&quot; target=&quot;_blank&quot;&gt;8x8&lt;/a&gt; and our community.
-&lt;/p&gt;
-&lt;/footer&gt;
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[Bistutu/FluentRead]]></title>
-            <link>https://github.com/Bistutu/FluentRead</link>
-            <guid>https://github.com/Bistutu/FluentRead</guid>
-            <pubDate>Sun, 17 Aug 2025 00:05:27 GMT</pubDate>
-            <description><![CDATA[Open Immersive Translate. A revolutionary open-source browser translation plugin that enables everyone to have a native-like reading experience. 开源的沉浸式翻译，一款革命性的浏览器翻译插件，让所有人都能够拥有母语般的阅读体验。]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/Bistutu/FluentRead">Bistutu/FluentRead</a></h1>
-            <p>Open Immersive Translate. A revolutionary open-source browser translation plugin that enables everyone to have a native-like reading experience. 开源的沉浸式翻译，一款革命性的浏览器翻译插件，让所有人都能够拥有母语般的阅读体验。</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 4,714</p>
-            <p>Forks: 200</p>
-            <p>Stars today: 79 stars today</p>
-            <h2>README</h2><pre># 流畅阅读 (FluentRead)
-
-&gt; [English](https://github.com/Bistutu/FluentRead/blob/main/misc/README_EN.md) | 中文
-
-Open Immersive Translate 开源的沉浸式翻译。
-
-一款革命性的浏览器开源翻译插件，让所有人都能够拥有母语般的阅读体验。
-
-1. [官方文档（必看）](https://fluent.thinkstu.com/)
-2. [B站视频介绍](https://www.bilibili.com/video/BV1ux4y1e73x/)
-3. [deepwiki 架构介绍](https://deepwiki.com/Bistutu/FluentRead)
-
-## 🌟 特性
-
-- **智能翻译**：支持 20+ 种翻译引擎，包括传统翻译和 AI 大模型。如：微软翻译、谷歌翻译、DeepL翻译、OpenAI、DeepSeek、Kimi、Ollama、自定义引擎等。
-- **双语对照**：支持原文与译文并列显示，让阅读更轻松。
-- **划词翻译**：选中任意文本，即可获得即时翻译结果，一键复制译文，提高阅读效率。
-- **全文翻译**：通过悬浮球一键翻译整个网页，无需刷新页面即可切换。
-- **隐私保护**：所有数据本地存储，代码开源透明。
-- **高度定制**：丰富的自定义选项，满足不同场景需求。
-- **完全免费**：开源免费，非商业化项目。
-
-&lt;kbd&gt;&lt;img src=&quot;./misc/sample-git-1.gif&quot; alt=&quot;sample-git-1.gif&quot; style=&quot;width: 80%; max-width: 100%;border: 1px solid black;&quot;&gt;&lt;/kbd&gt;
-
-&lt;kbd&gt;&lt;img src=&quot;./misc/sample-git-4.gif&quot; alt=&quot;sample-git-4.gif&quot; style=&quot;width: 80%; max-width: 100%;border: 1px solid black;&quot;&gt;&lt;/kbd&gt;
-
-&lt;kbd&gt;&lt;img src=&quot;./misc/highlight_trans.png&quot; alt=&quot;sample-git-4.gif&quot; style=&quot;width: 80%; max-width: 100%;border: 1px solid black;&quot;&gt;&lt;/kbd&gt;
-
-## 📦 安装
-
-| 浏览器 | 安装方式 |
-|-------|---------|
-| Chrome | [Chrome 应用商店](https://chromewebstore.google.com/detail/%E6%B5%81%E7%95%85%E9%98%85%E8%AF%BB/djnlaiohfaaifbibleebjggkghlmcpcj?hl=zh-CN&amp;authuser=0) \| [国内镜像](https://www.crxsoso.com/webstore/detail/djnlaiohfaaifbibleebjggkghlmcpcj) |
-| Edge | [Edge 应用商店](https://microsoftedge.microsoft.com/addons/detail/%E6%B5%81%E7%95%85%E9%98%85%E8%AF%BB/kakgmllfpjldjhcnkghpplmlbnmcoflp?hl=zh-CN) |
-| Firefox | [Firefox 附加组件商店](https://addons.mozilla.org/zh-CN/firefox/addon/%E6%B5%81%E7%95%85%E9%98%85%E8%AF%BB/) |
-
-## 📖 使用文档
-
-请直接访问 [流畅阅读官方文档](https://fluent.thinkstu.com/) 获取详细的：
-- 功能介绍
-- 配置指南
-- 使用教程
-- 常见问题
-
-# Star 历史记录
-
-[![Star History Chart](https://api.star-history.com/svg?repos=Bistutu/FluentRead&amp;type=Date)](https://star-history.com/#Bistutu/FluentRead&amp;Date)
-
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[purocean/yn]]></title>
-            <link>https://github.com/purocean/yn</link>
-            <guid>https://github.com/purocean/yn</guid>
-            <pubDate>Sun, 17 Aug 2025 00:05:26 GMT</pubDate>
-            <description><![CDATA[A highly extensible Markdown editor. Version control, AI Copilot, mind map, documents encryption, code snippet running, integrated terminal, chart embedding, HTML applets, Reveal.js, plug-in, and macro replacement.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/purocean/yn">purocean/yn</a></h1>
-            <p>A highly extensible Markdown editor. Version control, AI Copilot, mind map, documents encryption, code snippet running, integrated terminal, chart embedding, HTML applets, Reveal.js, plug-in, and macro replacement.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 6,284</p>
-            <p>Forks: 929</p>
-            <p>Stars today: 21 stars today</p>
-            <h2>README</h2><pre># Yank Note
-
-A **highly extensible** Markdown editor, designed for productivity. **[Download](https://github.com/purocean/yn/releases)** | **[Try it Online &gt;&gt;&gt;](https://demo.yank-note.com/)**
-
-[![Download](./help/mas_en.svg?.inline)](https://apps.apple.com/cn/app/yank-note/id1551528618) [Not recommended](https://github.com/purocean/yn/issues/65#issuecomment-1065799677)
-
-English | [中文说明](./README_ZH-CN.md) | [Русский](./README_RU.md)
-
-[toc]{level: [2]}
-
-![Screenshot](./help/1.png)
-
-## Highlights
-
-- **Easy to use:** Use *Monaco* kernel, optimize for Markdown editing, and have the same editing experience as VSCode.
-- **Powerful:** Support version control; Applets, runnable code blocks, tables, PlantUML, Drawio, macro replacements, etc., can be embedded in the document; support for AI Copilot.
-- **High compatibility:** Data is saved as local Markdown files, and the extension functions are implemented in the original syntax of Markdown as far as possible.
-- **Plug-in extension:** Support users to write their own plug-ins to expand the functionality of the editor.
-- **Encryption supported:** Use encryption to save private files such as account number, and the password can be set separately for each file.
-
-## Attention
-
-- For more extendable, Yank Note sacrifices security protection (command execution, arbitrary file reading and writing). If you want to use it to open a foreign Markdown file, ⚠️**be sure to carefully identify whether the content of the file is trustworthy**⚠️.
-- The encryption and decryption of encrypted files are both completed at the front end. Please **be sure to remember your password**. Once the password is lost, it can only be cracked violently.
-
-## Characteristic functions
-
-For more information on how to use the following functions, please see [characteristic functions description](./help/FEATURES.md)
-
-- **Sync scrolling:** the editing area and the preview area scroll synchronously, and the preview area can be scrolled independently
-- **Outline:** quickly jump to the corresponding location of the document through the directory outline in the preview area
-- **Version Control:** Support backtracking document history versions
-- **Encryption:** files ending with `.c.md` are treated as encrypted files
-- **Auto-save:** automatically save files after editing, with orange title bar reminder for unsaved files (encrypted documents are not automatically saved)
-- **Editing:** automatic completion of list
-- **Paste images:** you can quickly paste pictures from the clipboard and insert them as files or Base64
-- **Embed attachments:** you can add attachments to the document and click to open them in the operating system.
-- **Code running:** support to run JavaScript, PHP, nodejs, Python, bash code
-- **To-do list:** support to display the to-do progress in the document. Click to quickly switch the to-do status.
-- **Quickly Open:** you can use shortcut key to open the file switch panel to quickly open files, tagged files, and full-text search for file contents.
-- **Integrated terminal:** support to open the terminal in the editor to quickly switch the current working directory
-- **LaTeX:** support LaTeX expression
-- **Style:** Markdown uses GitHub styles and features
-- **Repository:** multiple data locations can be defined for document classification
-- **External link conversion:** convert external link or Base64 pictures into local pictures
-- HTML resolving：you can use HTML code directly in the document, or use shortcut keys to copy and paste HTML to Markdown
-- **Multiple formats export:** the backend uses pandoc as converter
-- **TOC:** write `[toc]{type:** &quot;ol&quot;, level:** [1,2,3]}` to generate TOC where you need to generate a directory
-- **Edit table cell:** double-click a table cell to quickly edit
-- **Copy title link:** copy title link path to the clipboard for easy insertion into other files
-- **Embedded Applets:** document supports embedded HTML Applets
-- **Embed PlantUML graphics:** document supports embedded plantUML graphics
-- **Embed drawio graphics:** document supports embedded drawio graphics
-- **Embed ECharts graphics:** document supports embedded Echarts graphics
-- **Embed Mermaid graphics:** document supports embedded Mermaid graphics
-- **Embed Luckysheet tables:** document supports embedded Luckysheet tables
-- **Mind map:** nested list can be displayed in the form of a mind map
-- **Element attribute writing:** any attribute of an element can be customized
-- **Table enhancement:** support table title with multiple lines of text, list and other features
-- **Document link:** support to link other documents in the document and jump to each other
-- **Footnote:** support writing footnotes in the document
-- **Custom container:** support custom containers similar to VuePress default themes
-- **Macro replacement:** support for embedded JavaScript expressions to dynamically replace document content
-- **Image hosting service:** support [PicGo](https://picgo.github.io/PicGo-Doc/) image hosting service
-- **OpenAI:** support for [OpenAI](https://openai.com) auto completion
-- **Custom plug-ins:** support writing JavaScript plug-ins to #expand editor functionality. The plug-in is placed in the `home directory/plugins`. Refer to [plug-in Development Guide](./help/PLUGIN.md)
+If you would like to make a donation to support development, please use [Github Sponsors](https://github.com/sponsors/blakeblackshear).
 
 ## Screenshots
 
-![Screenshot](./help/6.png)
-![Screenshot](./help/7.png)
-![Screenshot](./help/2.png)
-![Screenshot](./help/3.png)
-![Screenshot](./help/4.png)
-![Screenshot](./help/5.png)
+### Live dashboard
 
-## Changelogs
+&lt;div&gt;
+&lt;img width=&quot;800&quot; alt=&quot;Live dashboard&quot; src=&quot;https://github.com/blakeblackshear/frigate/assets/569905/5e713cb9-9db5-41dc-947a-6937c3bc376e&quot;&gt;
+&lt;/div&gt;
 
-### [v3.84.0](https://github.com/purocean/yn/releases/tag/v3.84.0) 2025-08-06
+### Streamlined review workflow
 
-[Windows](https://github.com/purocean/yn/releases/download/v3.84.0/Yank-Note-win-x64-3.84.0.exe) | [macOS arm64](https://github.com/purocean/yn/releases/download/v3.84.0/Yank-Note-mac-arm64-3.84.0.dmg) | [macOS x64](https://github.com/purocean/yn/releases/download/v3.84.0/Yank-Note-mac-x64-3.84.0.dmg) | [Linux AppImage](https://github.com/purocean/yn/releases/download/v3.84.0/Yank-Note-linux-x86_64-3.84.0.AppImage) | [Linux deb](https://github.com/purocean/yn/releases/download/v3.84.0/Yank-Note-linux-amd64-3.84.0.deb)
+&lt;div&gt;
+&lt;img width=&quot;800&quot; alt=&quot;Streamlined review workflow&quot; src=&quot;https://github.com/blakeblackshear/frigate/assets/569905/6fed96e8-3b18-40e5-9ddc-31e6f3c9f2ff&quot;&gt;
+&lt;/div&gt;
 
-1. feat: Support parsing `#tag` labels in documents and tags defined in frontmatter  
-2. feat: Support customizing the PlantUML API in settings  
-3. feat: Add editor wrap indent setting  
-4. feat(plugin): Support adding `suggestions` suggestion lists when defining plugin settings  
+### Multi-camera scrubbing
 
-[More release notes](https://github.com/purocean/yn/releases)
+&lt;div&gt;
+&lt;img width=&quot;800&quot; alt=&quot;Multi-camera scrubbing&quot; src=&quot;https://github.com/blakeblackshear/frigate/assets/569905/d6788a15-0eeb-4427-a8d4-80b93cae3d74&quot;&gt;
+&lt;/div&gt;
 
-## Supports
+### Built-in mask and zone editor
 
-Wechat Group
+&lt;div&gt;
+&lt;img width=&quot;800&quot; alt=&quot;Multi-camera scrubbing&quot; src=&quot;https://github.com/blakeblackshear/frigate/assets/569905/d7885fc3-bfe6-452f-b7d0-d957cb3e31f5&quot;&gt;
+&lt;/div&gt;
 
-&lt;img src=&quot;./help/qrcode-wechat.jpg?.inline&quot; width=&quot;150&quot;&gt;
+## Translations
+
+We use [Weblate](https://hosted.weblate.org/projects/frigate-nvr/) to support language translations. Contributions are always welcome.
+
+&lt;a href=&quot;https://hosted.weblate.org/engage/frigate-nvr/&quot;&gt;
+&lt;img src=&quot;https://hosted.weblate.org/widget/frigate-nvr/multi-auto.svg&quot; alt=&quot;Translation status&quot; /&gt;
+&lt;/a&gt;
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[openreplay/openreplay]]></title>
-            <link>https://github.com/openreplay/openreplay</link>
-            <guid>https://github.com/openreplay/openreplay</guid>
-            <pubDate>Sun, 17 Aug 2025 00:05:25 GMT</pubDate>
-            <description><![CDATA[Session replay, cobrowsing and product analytics you can self-host. Ideal for reproducing issues and iterating on your product.]]></description>
+            <title><![CDATA[plasmicapp/plasmic]]></title>
+            <link>https://github.com/plasmicapp/plasmic</link>
+            <guid>https://github.com/plasmicapp/plasmic</guid>
+            <pubDate>Mon, 18 Aug 2025 00:05:33 GMT</pubDate>
+            <description><![CDATA[Visual builder for React. Build apps, websites, and content. Integrate with your codebase.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/openreplay/openreplay">openreplay/openreplay</a></h1>
-            <p>Session replay, cobrowsing and product analytics you can self-host. Ideal for reproducing issues and iterating on your product.</p>
+            <h1><a href="https://github.com/plasmicapp/plasmic">plasmicapp/plasmic</a></h1>
+            <p>Visual builder for React. Build apps, websites, and content. Integrate with your codebase.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 10,958</p>
-            <p>Forks: 622</p>
-            <p>Stars today: 36 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;/README_FR.md&quot;&gt;Français&lt;/a&gt;
-  &amp;nbsp;|&amp;nbsp;
-  &lt;a href=&quot;/README_ESP.md&quot;&gt;Español&lt;/a&gt;
-  &amp;nbsp;|&amp;nbsp;
-  &lt;a href=&quot;/README_RU.md&quot;&gt;Русский&lt;/a&gt;
-  &amp;nbsp;|&amp;nbsp;
-  &lt;a href=&quot;/README_AR.md&quot;&gt;العربية&lt;/a&gt;
-&lt;/p&gt;
-
+            <p>Stars: 6,225</p>
+            <p>Forks: 576</p>
+            <p>Stars today: 85 stars today</p>
+            <h2>README</h2><pre>&lt;!-- AUTO-GENERATED-CONTENT:START (STARTER) --&gt;
 &lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://openreplay.com/#gh-light-mode-only&quot;&gt;
-    &lt;img src=&quot;static/openreplay-git-banner-light.png&quot; width=&quot;100%&quot;&gt;
-  &lt;/a&gt;
-    &lt;a href=&quot;https://openreplay.com/#gh-dark-mode-only&quot;&gt;
-    &lt;img src=&quot;static/openreplay-git-banner-dark.png&quot; width=&quot;100%&quot;&gt;
+  &lt;a href=&quot;https://www.plasmic.app&quot;&gt;
+    &lt;img alt=&quot;Plasmic&quot; role=&quot;img&quot; src=&quot;https://static1.plasmic.app/brand/2023/logo-cropped.png&quot; width=&quot;120&quot;&gt;
   &lt;/a&gt;
 &lt;/p&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  Plasmic
+&lt;/h1&gt;
+&lt;h3 align=&quot;center&quot;&gt;
+  The open-source visual builder for your codebase.
+&lt;/h3&gt;
+&lt;p align=&quot;center&quot;&gt;
+  Build beautiful apps and websites incredibly fast.
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+  Drag and drop your own components, integrate with your codebase.
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+  Break through the low-code ceiling.
+&lt;/p&gt;
 
-&lt;h3 align=&quot;center&quot;&gt;Session replay for developers&lt;/h3&gt;
-&lt;p align=&quot;center&quot;&gt;The most advanced session replay for building delightful web apps.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://docs.openreplay.com/deployment/deploy-aws&quot;&gt;
-    &lt;img src=&quot;static/btn-deploy-aws.svg&quot; height=&quot;40&quot;/&gt;
-  &lt;/a&gt;
-
-  &lt;a href=&quot;https://docs.openreplay.com/deployment/deploy-gcp&quot;&gt;
-    &lt;img src=&quot;static/btn-deploy-google-cloud.svg&quot; height=&quot;40&quot; /&gt;
-  &lt;/a&gt;
-
-  &lt;a href=&quot;https://docs.openreplay.com/deployment/deploy-azure&quot;&gt;
-    &lt;img src=&quot;static/btn-deploy-azure.svg&quot; height=&quot;40&quot; /&gt;
-  &lt;/a&gt;
-
-  &lt;a href=&quot;https://docs.openreplay.com/deployment/deploy-digitalocean&quot;&gt;
-    &lt;img src=&quot;static/btn-deploy-digital-ocean.svg&quot; height=&quot;40&quot; /&gt;
+  &lt;a href=&quot;https://www.plasmic.app&quot;&gt;
+    &lt;img src=&quot;https://user-images.githubusercontent.com/7129/146098801-0691ff13-e302-40fb-827e-90488a7a28b4.gif&quot;/&gt;
   &lt;/a&gt;
 &lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/openreplay/openreplay&quot;&gt;
-    &lt;img src=&quot;static/openreplay-git-hero.svg&quot;&gt;
+  &lt;a href=&quot;https://docs.plasmic.app/learn/quickstart&quot;&gt;
+    &lt;img src=&quot;https://user-images.githubusercontent.com/7129/139351025-8acd6f6d-8e32-4486-982e-a6f26a53d865.png&quot;/&gt;
   &lt;/a&gt;
 &lt;/p&gt;
 
-OpenReplay is an open-source session replay suite you can host yourself, that lets you see what users do on your web app, helping you troubleshoot issues faster.
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://github.com/plasmicapp/plasmic&quot;&gt;&lt;img alt=&quot;License&quot; src=&quot;https://img.shields.io/github/license/plasmicapp/plasmic&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://www.npmjs.com/package/@plasmicapp/loader-react&quot;&gt;&lt;img alt=&quot;Types&quot; src=&quot;https://img.shields.io/npm/types/@plasmicapp/loader-react&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/prettier/prettier&quot;&gt;&lt;img alt=&quot;code style: prettier&quot; src=&quot;https://img.shields.io/badge/code_style-prettier-ff69b4.svg&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/plasmicapp/plasmic/pulls&quot;&gt;&lt;img alt=&quot;PRs Welcome&quot; src=&quot;https://img.shields.io/badge/PRs-welcome-brightgreen.svg&quot; /&gt;&lt;/a&gt;
+&lt;/p&gt;
 
-- **Session replay.** OpenReplay replays what users do, but not only. It also shows you what went under the hood, how your website or app behaves by capturing network activity, console logs, JS errors, store actions/state, page speed metrics, cpu/memory usage and much more.
-- **Low footprint**. With a ~26KB (.br) tracker that asynchronously sends minimal data for a very limited impact on performance.
-- **Self-hosted**. No more security compliance checks, 3rd-parties processing user data. Everything OpenReplay captures stays in your cloud for a complete control over your data.
-- **Privacy controls**. Fine-grained security features for sanitizing user data.
-- **Easy deploy**. With support of major public cloud providers (AWS, GCP, Azure, DigitalOcean).
+## Quick links
 
-## Features
+- [Website](https://www.plasmic.app/)
+- [Documentation][docs]
+- [Quickstart][quickstart]
+- [Plasmic Forum][forum]
+- [Slack Community][slack]
 
-- **Session replay:** Lets you relive your users&#039; experience, see where they struggle and how it affects their behavior. Each session replay is automatically analyzed based on heuristics, for easy triage.
-- **Spot:** A Chrome extension that lets record bugs directly from your browser — each recording includes all the technical details developers need to fix them.
-- **DevTools:** It&#039;s like debugging in your own browser. OpenReplay provides you with the full context (network activity, JS errors, store actions/state and 40+ metrics) so you can instantly reproduce bugs and understand performance issues.
-- **Assist:** Helps you support your users by seeing their live screen and instantly hopping on call (WebRTC) with them without requiring any 3rd-party screen sharing software.
-- **Omni-search:** Search and filter by almost any user action/criteria, session attribute or technical event, so you can answer any question. No instrumentation required.
-- **Analytics:** For surfacing the most impactful issues causing conversion and revenue loss.
-- **Fine-grained privacy controls:** Choose what to capture, what to obscure or what to ignore so user data doesn&#039;t even reach your servers.
-- **Plugins oriented:** Get to the root cause even faster by tracking application state (Redux, VueX, MobX, NgRx, Pinia and Zustand) and logging GraphQL queries (Apollo, Relay) and Fetch/Axios requests.
-- **Integrations:** Sync your backend logs with your session replays and see what happened front-to-back. OpenReplay supports Sentry, Datadog, CloudWatch, Stackdriver, Elastic and more.
+[docs]: https://www.plasmic.app/learn/
+[quickstart]: https://www.plasmic.app/learn/quickstart/
+[forum]: https://forum.plasmic.app/
+[slack]: https://www.plasmic.app/slack
 
-## Deployment Options
+## See Plasmic in action
 
-OpenReplay can be deployed anywhere. Follow our step-by-step guides for deploying it on major public clouds:
+- Vercel marketing page: https://youtu.be/itvbmgLZvcM (live app: https://vercel-workflow.vercel.app)
 
-- [AWS](https://docs.openreplay.com/deployment/deploy-aws)
-- [Google Cloud](https://docs.openreplay.com/deployment/deploy-gcp)
-- [Azure](https://docs.openreplay.com/deployment/deploy-azure)
-- [Digital Ocean](https://docs.openreplay.com/deployment/deploy-digitalocean)
-- [Scaleway](https://docs.openreplay.com/deployment/deploy-scaleway)
-- [OVHcloud](https://docs.openreplay.com/deployment/deploy-ovhcloud)
-- [Kubernetes](https://docs.openreplay.com/deployment/deploy-kubernetes)
+- Apple.com: https://apple.plasmic.run
 
-## OpenReplay Cloud
+- Shopify headless storefront: https://commerce.plasmic.run
 
-For those who want to simply use OpenReplay as a service, [sign up](https://app.openreplay.com/signup) for a free account on our cloud offering.
+- Twitter clone: https://youtu.be/rpdjrFuVMog (live app: https://twitter.plasmic.run)
 
-## Community Support
+- Service desk app: https://youtu.be/rYqSpUEJSTw (live app: https://tickets.plasmic.run)
 
-Please refer to the [official OpenReplay documentation](https://docs.openreplay.com/). That should help you troubleshoot common issues. For additional help, you can reach out to us on one of these channels:
+- Interview with Lee Robinson, Plasmic as a visual CMS: https://www.youtube.com/watch?v=pcVzNR6FBAQ
 
-- [Slack](https://slack.openreplay.com) (Connect with our engineers and community)
-- [GitHub](https://github.com/openreplay/openreplay/issues) (Bug and issue reports)
-- [Twitter](https://twitter.com/OpenReplayHQ) (Product updates, Great content)
-- [YouTube](https://www.youtube.com/channel/UCcnWlW-5wEuuPAwjTR1Ydxw) (How-to tutorials, past Community Calls)
-- [Website chat](https://openreplay.com) (Talk to us)
+- Emails with React.Email: coming soon
 
-## Contributing
+## What is Plasmic?
 
-We&#039;re always on the lookout for contributions to OpenReplay, and we&#039;re glad you&#039;re considering it! Not sure where to start? Look for open issues, preferably those marked as good first issues.
+Plasmic is a visual builder for the web.
 
-See our [Contributing Guide](CONTRIBUTING.md) for more details.
+It enables rapidly designing and building applications and websites--code optional.
 
-Also, feel free to join our [Slack](https://slack.openreplay.com) to ask questions, discuss ideas or connect with our  contributors.
+Main use cases:
+
+- Content management: let marketing drag/drop your React components to build landing pages in your Next.js website, with design guardrails
+
+- Applications: let developers and technical users quickly build internal tools, client portals, and business software
+
+- Website builder and design tool that doesn’t limit you to some built-in ecommerce platform, CMS, or hosting
+
+Plasmic is powerful, with a deep feature set that scales to complex projects.
+And with codebase integration, it removes the ceiling typically associated with low-code tools.
+
+## What makes Plasmic special?
+
+Plasmic combines some seemingly disparate genres:
+
+- Webflow, Wordpress and other site builders
+- Retool and other tool builders
+- Glide and no-code app builders
+- Contentful and other CMSes
+
+Today these are different tools to specialize in, but the line between, say, a website and an application is blurry (consider an ecommerce storefront with user logins). With the right foundations, we think these can be unified—Plasmic’s UI can adapt to different levels of control for different personas/tasks.
+
+But more importantly, unlike existing tools, Plasmic integrates with codebases. This is critical to making low-code scale past the complexity ceiling that all such tools (including Plasmic) have. You can drag and drop existing complex React components, and you can visually create new UIs/components within traditionally-coded applications, seamlessly weaving code and no-code.
+
+Some feature highlights:
+
+- **Full design freedom** and speedy modern design tool UX.
+- **Integrate with codebases** to drag/drop existing React components, publish screens into existing applications, and extend/customize Plasmic Studio.
+- Create **rich stateful interactions and behavior**.
+- Connect with **arbitrary data source and backend integrations**.
+- **Powerful abstractions** like components, variants, slots, composable state management, and more that promote composition and let you build and maintain at scale.
+- **Customizable headless design system components** powered by [react-aria](https://react-spectrum.adobe.com/react-aria/).
+- **Content creator mode**: give specific collaborators a more simplified editing experience with design guardrails.
+- **Open integrations**: choose your own CMS, ecommerce platform, hosting provider, and more.
+- Deep collaboration with multiplayer, branching, cross-project imports, and multi-workspace organizations.
+- **Import designs from Figma**, translating its proprietary vector document format into DOM/CSS.
+- **Page performance and high-quality codegen**. Supports static site generation, automatic image optimization, layout shift reduction, and more.
+- **Deploy/host/export anywhere**, including Vercel, Netlify, or any hosting provider.
+- **End-user auth and permissions**, including RBAC and user-scoped permissions.
+- **Open-source platform** that you can always fork and control.
+
+Learn more on [our website][website] and [our docs][docs]. Or check out [comparisons of Plasmic vs other tools][comparisons].
+
+[website]: https://www.plasmic.app
+[comparisons]: https://docs.plasmic.app/learn/comparisons/
+
+## How do I integrate Plasmic as a CMS?
+
+This is one popular use case of Plasmic.
+
+**Step 1.** Install Plasmic into your codebase (exact package [depends on your framework][quickstart]).
+
+```
+npm install @plasmicapp/loader-nextjs
+```
+
+**Step 2 (optional).** Make components from your app or design system available for drag-and-drop in the visual editor:
+
+```tsx
+// Take any component from your app or design system...
+export default function HeroSection({ children }) {
+  return &lt;div className=&quot;hero-section&quot;&gt;{children}&lt;/div&gt;;
+}
+
+// ...and make it available for drag-and-drop, along with any props you want to
+// expose.
+PLASMIC.registerComponent(HeroSection, {
+  props: {
+    children: &quot;slot&quot;,
+  },
+});
+```
+
+**Step 3.** Add placeholders that render pages/components made in the visual editor anywhere in your app:
+
+```tsx
+// pages/index.tsx
+
+import {
+  PlasmicComponent,
+  PlasmicRootProvider,
+} from &quot;@plasmicapp/loader-nextjs&quot;;
+import { PLASMIC } from &quot;../plasmic-init&quot;;
+
+// Here we fetch dynamically on the client, but you can also fetch and render
+// components server-side in SSG/SSR frameworks, such as via getStaticProps
+// in Next.js.
+export default function IndexPage() {
+  return (
+    &lt;PlasmicRootProvider plasmic={PLASMIC}&gt;
+      &lt;PlasmicComponent component=&quot;Summer22LandingPage&quot; /&gt;
+    &lt;/PlasmicRootProvider&gt;
+  );
+}
+```
+
+**Step 4.** Non-developers (or developers!) can now create new pages, sections, or components that ship directly into the app/website.
+
+**Step 5.** When you hit Publish, changes get picked up via webhooks that trigger rebuilds,
+or more specific mechanisms such as incremental static revalidation or dynamic fetching from the Plasmic CDN.
+
+## Who uses Plasmic?
+
+Plasmic is used by companies ranging from Fortune 500s to boutique brands to solo makers.
+It&#039;s used for websites ranging from headless commerce storefronts to marketing websites to logged-in app content.
+
+Check out the [Case Studies and Community Showcase][customers].
+
+[customers]: https://www.plasmic.app/casestudies
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://www.plasmic.app/casestudies&quot;&gt;
+    &lt;img alt=&quot;Customer logos&quot; width=&quot;1106&quot;  src=&quot;https://github.com/plasmicapp/plasmic/assets/7129/2c682d45-6b72-4571-895a-e48b0c588647&quot;&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://www.plasmic.app/casestudies&quot;&gt;
+    &lt;img alt=&quot;Showcase&quot; src=&quot;https://user-images.githubusercontent.com/7129/139349675-a807ad9d-aaaf-411b-ab4b-8247a09be676.png&quot;&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+## How does Plasmic work?
+
+### How codebase integration works
+
+Note: you do not need to integrate Plasmic with a codebase.
+This is core to using Plasmic as a CMS, but you can build complete apps and websites without this, entirely within Plasmic.
+
+Read [the full technical overview](https://docs.plasmic.app/learn/technical-overview/).
+
+### Bring your own React components
+
+You can register your own arbitrary custom React components for use as building blocks within Plasmic Studio.
+[Learn more about code components](https://code-components.plasmic.site).
+
+### Codegen
+
+Besides the Headless API, you can also [generate React code](https://docs.plasmic.app/learn/codegen-guide) into your codebase.
+This is a powerful way to use Plasmic as a UI builder for creating rich interactive web applications—one example of this is Plasmic Studio itself.
+See the [application development tutorials](https://docs.plasmic.app/learn/minitwitter-tutorial) to learn more.
+
+## Note on versioning
+
+One common issue we see is mismatched or duplicate versions of packages.
+
+`@plasmicapp` packages can depend on each other.
+Each package always has an _exact_ version of its @plasmicapp dependencies.
+This is because we want to ensure that all packages are always in sync, and that we don&#039;t end up with a mismatched set of packages.
+
+Packages like `@plasmicapp/host` must also be deduped, since functionality such as `registerComponent` make use of globals and side effects, so with multiple versions you could end up using the wrong &quot;instance&quot; of this package.
+Additionally, types can be tightly coupled across multiple packages.
+
+Unfortunately, npm and yarn make it easy for you to end up with mismatched versions and duplicate versions of packages.
+Use the `npm list` command to ensure that you have unique deduped versions of packages.
+Furthermore, issues can be &quot;sticky,&quot; since npm/yarn are stateful.
+At times, you may need to rely on `npm dedupe`, or removing and reinstalling Plasmic packages (including `@plasmicpkgs` packages), resetting package-lock.json/yarn.lock, in order to unwedge npm/yarn.
+
+`@plasmicpkgs` (the built-in code component packages) have `@plasmicapp` packages as peer dependencies,
+and these specify ranges rather than exact versions--this is to offer some flexibility for developers to use the core package versions they need, while still using `@plasmicpkgs`.
+
+Note: exact versioning does not imply that every package increments versions for every release.
+Packages are only incremented if they or their dependencies have changed.
+Incrementing versions, including those referenced in `dependencies` and `devDependencies`, is done automatically when our deployment scripts run `lerna version patch --exact...`,
+which detects whether a package has changed since its last git-tagged release.
+
+## Contributing 🚀
+
+Please see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Get help and join our community
+
+Our [docs][docs] and our community [forum] and [Slack] with 3000+ members are the best places to get help with Plasmic.
+
+For support from the Plasmic team, please use the forum.
+The forum is also easily searchable for all previously asked questions and discussions.
+
+Both the docs and forum are indexed by search engines!
+Search both by including “plasmic” in your query.
 
 ## License
 
-This monorepo uses several licenses. See [LICENSE](/LICENSE) for more details.
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[ayangweb/BongoCat]]></title>
-            <link>https://github.com/ayangweb/BongoCat</link>
-            <guid>https://github.com/ayangweb/BongoCat</guid>
-            <pubDate>Sun, 17 Aug 2025 00:05:24 GMT</pubDate>
-            <description><![CDATA[🐱 跨平台桌宠 BongoCat，为桌面增添乐趣！]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/ayangweb/BongoCat">ayangweb/BongoCat</a></h1>
-            <p>🐱 跨平台桌宠 BongoCat，为桌面增添乐趣！</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 9,403</p>
-            <p>Forks: 465</p>
-            <p>Stars today: 35 stars today</p>
-            <h2>README</h2><pre>![BongoCat](https://socialify.git.ci/ayangweb/BongoCat/image?custom_description=&amp;description=1&amp;font=Source+Code+Pro&amp;forks=1&amp;issues=1&amp;logo=https%3A%2F%2Fgithub.com%2Fayangweb%2FBongoCat%2Fblob%2Fmaster%2Fsrc-tauri%2Fassets%2Flogo-mac.png%3Fraw%3Dtrue&amp;name=1&amp;owner=1&amp;pattern=Floating+Cogs&amp;pulls=1&amp;stargazers=1&amp;theme=Auto)
+All content outside of `platform/` is licensed under the MIT license--see LICENSE.md.
 
-&lt;div align=&quot;center&quot;&gt;
-  &lt;div&gt;
-    &lt;a href=&quot;https://github.com/ayangweb/BongoCat/releases&quot;&gt;
-      &lt;img
-        alt=&quot;Windows&quot;
-        src=&quot;https://img.shields.io/badge/-Windows-blue?style=flat-square&amp;logo=data:image/svg+xml;base64,PHN2ZyB0PSIxNzI2MzA1OTcxMDA2IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjE1NDgiIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4Ij48cGF0aCBkPSJNNTI3LjI3NTU1MTYxIDk2Ljk3MTAzMDEzdjM3My45OTIxMDY2N2g0OTQuNTEzNjE5NzVWMTUuMDI2NzU3NTN6TTUyNy4yNzU1NTE2MSA5MjguMzIzNTA4MTVsNDk0LjUxMzYxOTc1IDgwLjUyMDI4MDQ5di00NTUuNjc3NDcxNjFoLTQ5NC41MTM2MTk3NXpNNC42NzA0NTEzNiA0NzAuODMzNjgyOTdINDIyLjY3Njg1OTI1VjExMC41NjM2ODE5N2wtNDE4LjAwNjQwNzg5IDY5LjI1Nzc5NzUzek00LjY3MDQ1MTM2IDg0Ni43Njc1OTcwM0w0MjIuNjc2ODU5MjUgOTE0Ljg2MDMxMDEzVjU1My4xNjYzMTcwM0g0LjY3MDQ1MTM2eiIgcC1pZD0iMTU0OSIgZmlsbD0iI2ZmZmZmZiI+PC9wYXRoPjwvc3ZnPg==&quot;
-      /&gt;
-    &lt;/a&gt;
-    &lt;a href=&quot;https://github.com/ayangweb/BongoCat/releases&quot;&gt;
-      &lt;img
-        alt=&quot;MacOS&quot;
-        src=&quot;https://img.shields.io/badge/-MacOS-black?style=flat-square&amp;logo=apple&amp;logoColor=white&quot;
-      /&gt;
-    &lt;/a&gt;
-    &lt;a href=&quot;https://github.com/ayangweb/BongoCat/releases&quot;&gt;
-      &lt;img
-        alt=&quot;Linux&quot;
-        src=&quot;https://img.shields.io/badge/-Linux-yellow?style=flat-square&amp;logo=linux&amp;logoColor=white&quot;
-      /&gt;
-    &lt;/a&gt;
-  &lt;/div&gt;
+`platform/` is licensed under the AGPL--see LICENSE.platform.md.
 
-  &lt;p&gt;
-    &lt;a href=&quot;./LICENSE&quot;&gt;
-      &lt;img
-        src=&quot;https://img.shields.io/github/license/ayangweb/BongoCat?style=flat-square&quot;
-      /&gt;
-    &lt;/a&gt;
-    &lt;a href=&quot;https://github.com/ayangweb/BongoCat/releases/latest&quot;&gt;
-      &lt;img
-        src=&quot;https://img.shields.io/github/package-json/v/ayangweb/BongoCat?style=flat-square&quot;
-      /&gt;
-    &lt;/a&gt;
-    &lt;a href=&quot;https://github.com/ayangweb/BongoCat/releases&quot;&gt;
-      &lt;img
-        src=&quot;https://img.shields.io/github/downloads/ayangweb/BongoCat/total?style=flat-square&quot;
-      /&gt;
-    &lt;/a&gt;
-  &lt;/p&gt;
+## Contributors ❤️
 
-  &lt;p&gt;
-    &lt;a href=&quot;https://hellogithub.com/repository/7d23863fd4be47b39e816193ded385c9&quot; target=&quot;_blank&quot;&gt;
-      &lt;picture&gt;
-        &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://abroad.hellogithub.com/v1/widgets/recommend.svg?rid=7d23863fd4be47b39e816193ded385c9&amp;claim_uid=5ihRVIuTYBmSGtQ&amp;theme=dark&quot; /&gt;
-        &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://abroad.hellogithub.com/v1/widgets/recommend.svg?rid=7d23863fd4be47b39e816193ded385c9&amp;claim_uid=5ihRVIuTYBmSGtQ&amp;theme=neutral&quot; /&gt;
-        &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://abroad.hellogithub.com/v1/widgets/recommend.svg?rid=7d23863fd4be47b39e816193ded385c9&amp;claim_uid=5ihRVIuTYBmSGtQ&amp;theme=neutral&quot; /&gt;
-      &lt;/picture&gt;
-    &lt;/a&gt;
-  &lt;/p&gt;
-&lt;/div&gt;
+Thanks to all the people who make Plasmic!
 
-| macOS                                                                                        | Windows                                                                                        | Linux(x11)                                                                                   |
-| -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| ![macOS](https://i0.hdslb.com/bfs/openplatform/dff276b96d49c5d6c431b74b531aab72191b3d87.png) | ![Windows](https://i0.hdslb.com/bfs/openplatform/a4149b753856ee7f401989da902cf3b5ad35b39e.png) | ![Linux](https://i0.hdslb.com/bfs/openplatform/3b49f961819d3ff63b2b80251c1cc13c27e986b0.png) |
-
-## 赞助商
-
-&lt;a href=&quot;https://www.toolsetlink.com&quot;&gt;
-  &lt;img height=&quot;54&quot; alt=&quot;UpgradeLink&quot; src=&quot;https://github.com/user-attachments/assets/6b84fb0f-3f1d-44b5-9932-2298bc999d8d&quot; /&gt;
-&lt;/a&gt;
-
-## 开发背景
-
-本项目的灵感来源于 [MMmmmoko](https://github.com/MMmmmoko) 大佬开发的 [Bongo-Cat-Mver](https://github.com/MMmmmoko/Bongo-Cat-Mver)。它以独特的猫咪互动功能深受用户喜爱，但仅支持 Windows 平台。作为一名深度 macOS 用户，我特别希望在自己的设备上也能使用这款可爱的猫咪，于是我决定开发一个适配 macOS 的版本。
-
-同时，得益于 [Tauri](https://github.com/tauri-apps/tauri) 强大的跨平台能力，本项目不仅支持 macOS，还兼容 Windows 和 Linux(x11)，让更多的用户都能与这只可爱的猫咪互动！
-
-## 下载
-
-- [夸克网盘](https://pan.quark.cn/s/70f2f2663ce1)
-- [GitHub Releases](https://github.com/ayangweb/BongoCat/releases)
-
-不确定下载哪一个？请查阅[下载指南](.github/DOWNLOAD_GUIDE.md)。
-
-## 功能介绍
-
-- 适配 macOS、Windows 和 Linux(x11)。
-- 根据键盘、鼠标或手柄的操作，同步对应的动作。
-- 支持导入自定义模型，自由打造专属猫咪形象。
-- 完全开源，代码公开透明，绝不收集任何用户数据。
-- 支持离线运行，无需联网，保护用户隐私。
-
-## 模型转换
-
-如果你想将 Bongo-Cat-Mver 应用中的模型转换为兼容 BongoCat 的格式，可以使用以下工具：
-
-🔗 [在线转换](https://bongocat.vteamer.cc)
-
-## 更多模型
-
-你可以在这个仓库中探索、下载更多猫咪模型，或提交你的创作，与大家一起分享：
-
-📦 [Awesome-BongoCat](https://github.com/ayangweb/Awesome-BongoCat)
-
-## 社区交流
-
-&lt;a href=&quot;https://qm.qq.com/q/AS3gNv2Vzy&quot;&gt;
- &lt;picture&gt;
-   &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://i0.hdslb.com/bfs/openplatform/5ad8e4278c525cca6d3b4426c30b6d299d8a9654.png&quot; /&gt;
-   &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://i0.hdslb.com/bfs/openplatform/599680ad67bc9f9f876f76069c2239e9a85bb54d.png&quot; /&gt;
-   &lt;img alt=&quot;QQ Group&quot; src=&quot;https://i0.hdslb.com/bfs/openplatform/599680ad67bc9f9f876f76069c2239e9a85bb54d.png&quot; height=&quot;250&quot; /&gt;
- &lt;/picture&gt;
-&lt;/a&gt;
-
-## 贡献指南
-
-感谢大家为 BongoCat 做出的宝贵贡献！如果你也希望为 BongoCat 做出贡献，请查阅[贡献指南](.github/CONTRIBUTING.md)。
-
-&lt;a href=&quot;https://github.com/ayangweb/BongoCat/graphs/contributors&quot;&gt;
-  &lt;img src=&quot;https://contrib.rocks/image?repo=ayangweb/BongoCat&quot; /&gt;
-&lt;/a&gt;
-
-## 历史星标
-
-&lt;a href=&quot;https://www.star-history.com/#ayangweb/BongoCat&amp;Date&quot;&gt;
- &lt;picture&gt;
-   &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/svg?repos=ayangweb/BongoCat&amp;type=Date&amp;theme=dark&quot; /&gt;
-   &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/svg?repos=ayangweb/BongoCat&amp;type=Date&quot; /&gt;
-   &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/svg?repos=ayangweb/BongoCat&amp;type=Date&quot; /&gt;
- &lt;/picture&gt;
+&lt;a href=&quot;https://github.com/plasmicapp/plasmic/graphs/contributors&quot;&gt;
+  &lt;img src=&quot;https://contrib.rocks/image?repo=plasmicapp/plasmic&quot; /&gt;
 &lt;/a&gt;
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[upscayl/upscayl]]></title>
-            <link>https://github.com/upscayl/upscayl</link>
-            <guid>https://github.com/upscayl/upscayl</guid>
-            <pubDate>Sun, 17 Aug 2025 00:05:23 GMT</pubDate>
-            <description><![CDATA[🆙 Upscayl - #1 Free and Open Source AI Image Upscaler for Linux, MacOS and Windows.]]></description>
+            <title><![CDATA[Dokploy/dokploy]]></title>
+            <link>https://github.com/Dokploy/dokploy</link>
+            <guid>https://github.com/Dokploy/dokploy</guid>
+            <pubDate>Mon, 18 Aug 2025 00:05:32 GMT</pubDate>
+            <description><![CDATA[Open Source Alternative to Vercel, Netlify and Heroku.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/upscayl/upscayl">upscayl/upscayl</a></h1>
-            <p>🆙 Upscayl - #1 Free and Open Source AI Image Upscaler for Linux, MacOS and Windows.</p>
+            <h1><a href="https://github.com/Dokploy/dokploy">Dokploy/dokploy</a></h1>
+            <p>Open Source Alternative to Vercel, Netlify and Heroku.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 39,061</p>
-            <p>Forks: 1,811</p>
-            <p>Stars today: 71 stars today</p>
+            <p>Stars: 23,199</p>
+            <p>Forks: 1,281</p>
+            <p>Stars today: 61 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-
-  # v2.15 is out! 🥳 [Download Now ⬇️](https://github.com/upscayl/upscayl/releases/latest)
-
-&lt;h3&gt;Special thanks to our sponsors:&lt;/h3&gt;
-&lt;a href=&quot;https://www.warp.dev/upscayl&quot;&gt;
-   &lt;div&gt;
-   &lt;img alt=&quot;Warp sponsorship&quot; width=&quot;500&quot; src=&quot;https://github.com/user-attachments/assets/7626b7c6-e673-45ee-ac9a-3392e643f54f&quot;&gt;
-   &lt;/div&gt;
-   &lt;b&gt;Warp, the intelligent terminal for developers&lt;/b&gt;
-   &lt;div&gt;
-      &lt;sup&gt;Use images as AI context in your terminal!&lt;/sup&gt;
-   &lt;/div&gt;
-&lt;/a&gt;
-
-#
-
-&lt;a href=&quot;https://github.com/upscayl/upscayl/releases/latest&quot;&gt;
-  
-  ![Frame 111](https://github.com/upscayl/upscayl/assets/25067102/d1b4af3c-aade-4bc9-97d0-cf88db679931)
-&lt;/a&gt;
-
-&lt;a href=&quot;https://upscayl.org/#download&quot;&gt;
-  &lt;img src=&quot;https://img.shields.io/github/downloads/upscayl/upscayl/total.svg?style=for-the-badge&amp;logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAACIJJREFUeJzN21lUFFcaB3A9mbzNTB7zlDPzMHNyziwJIiCrssgi0OwoNPvWbLKoNCJL2BHjjggIaAybQDCoBBFDnMnMZBLNiVHUBE3c0bivGMf1m+82VHV1d61NL8U5v4eubm7V96/btdzqO2eOwN97i6Lm2rhH/wFlohF0Ef2KXiOQkefoF/QV+hDZot8I1cf5R/4Z+aO96JEMCjQmEBJGOvqd1OJ/ixpm9rS1C5mtV+gw+pPY4v+KxnUa8VCCnWI5uGZtB//qQ1D66W2oOPAQKoa4JbdPgPeH/+HkuryFbj9AtYG3LTE+GLwLhV0XIG3DEfBOqIL53gn6QdxHke+7R/EW/xc0Qf+TZww4RBaBR9kB8Nl0DHy3Hoew5jOw9gsQpOq+qvk8l4X5u+iNU2RtFdWmWHVjr6C4/xqErWgFe98UZggPUBxftz+p3esx4JKxDXw2HtXZcPMEsAXqyIabMASNsdeQ1XgUHJakMUN4jP6uX/wbaCuzePfVvawbbq4AanFjxagzAvnKLghIZ4ZwHL3NDMAPPaG6vWtmI+eGmyOAwMwtUPP5K061fMa46AaX23pCP4Sq+YsjSfGa8/xe6g2HpUX4fT9q8QCqD78U53NDNawMg4wu7WMGcAG9Rfb+H22o8zwe7T3K9vNuuDkCCMjcDFWjL9gdNtZLGhVe6b774BiYwQwhmQSQSy0gpzrqaG/RADI2Q+Xoc5FeiMIWJlm+dE03M4Ajc2YuEjQLXLOaeDfanAGUH3qmUSHoufEwwJWd55kBTJEArtAbUjMK4S0/8IpuOwvFQ1OC0jov87azuKCD3hD/jE1QPvJMvEPGIQGWjzwFW684et0kgGfUizI8XQjt2ZLPngj2EiKt6wpvOynrDusEUHbwf7w+GDEd5+AcnQDoF+SS0hoBLEnfBKXDT3UdlKZMArfwVXILYCOUDP8qWakohsG6RcgwgGJs19RKNAyDk10P8MMAivDASVkzW58xPTHgKrsAVBjAgceGhvhMGYUEJLsAfFUboHD/Iyg8wG+1jsdGk2UA6v0PJXqko1ACWQZQsO8BeiiJmg9PeK7hK9kDSGqf0FzC8iGFCX2GSO24xPt+cEk/vV6ftPWwavA+emC8fYYKOLhwBUDG6qxxL0ACWPHpPXSftlKMQePIIgC3vHbtelPXQf7euzMhmIs2WJcwKwbgvf4rcE7dCLZ+2nG6+d6J4J1SD6mtpyAPg+CSPyv3aFYK4DtYuGI3zFtsMFxNm+ehBP+cZsjumYTcgTuS5Am6S7NKAJricU9zFU+H4BkDfpkNkNN/C3I+uc1v4LbkoAhnSwdAuj3fnmejXP8PWI4hGPhE321OXME5h62wbADOKRt0C8SuTro752vkFJIHGdhGdv9NAbcks2gAZIR5fkAmvQ57vxRIWjsCiyLV2mW+yRBfuQ/v0rRdc55nLCQ2fw9ZfTdNzqIBLK7/ku7+ntHFsKZvUvO+p7KUXq+DXyqoO89D5fAUhOQ20b1hWf0YZPTeoGXOVt8051COAIoGbkH5wae81IP3QNF4UlBqx8Xpz/dOgh05+GFRy1Z3Qs3oM84AyFOc9C3/1rwmyyPrRiF9zy+iZejrZefEFYA57gXIXnVSZNGnOU9lCRR8fA48sDcwvxbZ249BUHaDdsASP6vc8jWoeq6Dag+/dEksHMDaL15rHn8z17PAXwV2Pkn0a1uvWHAM0HlgAfZL0iBx1zlI67k2KyoD1zGAfMveDa7uuYx7P0bSaTBA3QGp3ZNmcM3yARARq3ZqLnLEFO8coYak3RcgpeuqBJPcunVZJYCq4ScQmtcsqviorccgqfMKq2ROV7W6+DlaIwCCHOVzWvCyOHwV2OJ5nnkhZIffeX/s9vG7fobEjsvSYACJHIGxsVoAlOqRpxBbPkCv1y22HGJ2nIGEjkssLguSGphjiJUDIJhDYosS6yD+44ssLs1aAgvOAAoHbgo+aSnAC6FQvBoUQh6O8rUTVzusE0AsHvT0xe2+aBaOeJ/Bcyn8Ha+w5tOifpejwh7A187CvJ2MAGoh5qMLtFhjsATIZQF/AOYdEaLHBxhjggsTakG567woMZSPjCfLAKLx6M9FKYlwiLILwA0DiNr5k9GidfwsSIYB1MCy9nMm8BOrKD0LguUWQHwNLG07y+Mcu3ZufEHJLgBXDCCidYIWaeCsVtvsOQTnyi2Aagjf8SO7VmJCR8Qs6QfwnA5g3b+sEoALBhCGxfLhDMgI9opsnQBuUC8SGr+F7L4bvDJ6rkEyXk8LSeu8xNtOWJn2XsAlrhpCW34wiTA+O6bZMp5PkAD+S70gkw2scS/gElcFIdizTK5FK3SGYuPXzNvvlySAddQCn8RqzWQDSwfgjAEEN53m1izVGQ22ULwYP9BE4yQAMrvqBVlAppkU91+3SgCK7adoQU2mcNqAYtsJsGecAlEdCeBN9A21MHxlm2amhSUDcIqtgsDt46IpRDllwKtwD7P4e+gdasIEmRNIZldp5tiQIWrLBlAJAY0nBQU2jks3E5ofnuH09n4XmksF8Hs0Rr1Jhq3LBu9YNAB/7J7CTnIKoLAE599wHBwiCpnF30Hv688b+rMNY4IkGafPbxu3SACOMZWwpOF7EU4Y2sbPp/6f4BCuZhZPRL7rEsQ6cywWPWSGQMbuKoYemTmACvDDAk3Jd/O34K7u1u/2L1GTDdeUWptFUVQIj5mJOQZmQnRJLxTtuQIlQ1NmCUBMm2J413+p+TGGXVCu/l4nc50bOYvX6wl/s5meWqbfCNh6xWsed9sF5fAiDx/II3AuToHaR+bklyNC7QnCy1tb7ySD7Z1xF4WjNwSLZ4TwNqqymZ4tztWw3JFTXQc54Nm4h4iunf6b56kkQbyF0tARNCWDooSQi7oTqAa9g1/ruXw1/h/JQTLIQz2y/gAAAABJRU5ErkJggg==&amp;labelColor=ede9fe&amp;color=8e6bf6&quot; width=&quot;200px&quot; style=&quot;border-radius:50%&quot;/&gt;
-&lt;/a&gt;
-
+  &lt;a href=&quot;https://dokploy.com&quot;&gt;
+    &lt;img src=&quot;.github/sponsors/logo.png&quot; alt=&quot;Dokploy - Open Source Alternative to Vercel, Heroku and Netlify.&quot; width=&quot;100%&quot;  /&gt;
+  &lt;/a&gt;
   &lt;/br&gt;
   &lt;/br&gt;
-
-&lt;!--&lt;a href=&quot;https://github.com/upscayl/upscayl/releases/latest&quot;&gt;
-  &lt;img src=&quot;https://github.com/upscayl/upscayl/assets/25067102/6287fd40-2c91-4028-b1d6-3986e77d8211&quot; width=&quot;200px&quot; /&gt;
-&lt;/a&gt;--&gt;
-
-&lt;a href=&quot;https://t.me/iamnayam&quot;&gt;
-  &lt;img src=&quot;https://user-images.githubusercontent.com/25067102/209297095-a3db856f-b760-40bb-a68e-f3a3086e18c7.png&quot; width=&quot;200px&quot; /&gt;   
-&lt;/a&gt;      
-
-&lt;a href=&quot;https://x.com/upscayl&quot;&gt;
-  &lt;img src=&quot;https://github.com/upscayl/upscayl/assets/25067102/917dcf6f-452b-43e6-95cd-2c6b0a47913d&quot; width=&quot;200px&quot; /&gt;
-&lt;/a&gt;
-
-# 🆙 Upscayl
-
-#### Free and Open Source AI Image Upscaler
-Upscayl lets you enlarge and enhance low-resolution images using advanced AI algorithms.
-Enlarge images without losing quality. It&#039;s almost like magic! 🎩🪄
-
-**https://upscayl.org**
-
-&lt;video src=&quot;https://github.com/upscayl/upscayl/assets/25067102/ad2453b1-3c5a-4eb2-b992-4cf10e6a49f5&quot; autoplay muted loop /&gt;
-
+  &lt;p&gt;Join us on Discord for help, feedback, and discussions!&lt;/p&gt;
+  &lt;a href=&quot;https://discord.gg/2tBnJ3jDJc&quot;&gt;
+    &lt;img src=&quot;https://discordapp.com/api/guilds/1234073262418563112/widget.png?style=banner2&quot; alt=&quot;Discord Shield&quot;/&gt;
+  &lt;/a&gt;
 &lt;/div&gt;
+&lt;br /&gt;
 
-# Contents
+Dokploy is a free, self-hostable Platform as a Service (PaaS) that simplifies the deployment and management of applications and databases.
 
-- [👨‍💻 Installation](#-installation)
-  - [🐧 Linux](#-linux)
-  - [🍎 macOS](#-macos)
-  - [🐌 Windows](#-windows)
-- [👨‍🏫 Documentation - Tutorials and Guides](#-documentation---tutorials-and-guides)
-- [⚖️ Demo Results (Before and After)](#%EF%B8%8F-results)
-- [🤫 Roadmap](#-roadmap)
-- [🛠 Developing Upscayl](#-development)
-- [🤓 FAQ](#-faq)
-- [🎁 Donate and support the project](#-donate)
-- [❤ Credits](#-credits)
+## ✨ Features
 
-# 👨‍💻 Installation
+Dokploy includes multiple features to make your life easier.
 
-&gt; [!IMPORTANT]
-&gt; You&#039;ll need a Vulkan compatible GPU (Graphics Card) to upscale images. Many iGPUs (integrated graphics) do not work but, no harm in trying :)
+- **Applications**: Deploy any type of application (Node.js, PHP, Python, Go, Ruby, etc.).
+- **Databases**: Create and manage databases with support for MySQL, PostgreSQL, MongoDB, MariaDB, and Redis.
+- **Backups**: Automate backups for databases to an external storage destination.
+- **Docker Compose**: Native support for Docker Compose to manage complex applications.
+- **Multi Node**: Scale applications to multiple nodes using Docker Swarm to manage the cluster.
+- **Templates**: Deploy open-source templates (Plausible, Pocketbase, Calcom, etc.) with a single click.
+- **Traefik Integration**: Automatically integrates with Traefik for routing and load balancing.
+- **Real-time Monitoring**: Monitor CPU, memory, storage, and network usage for every resource.
+- **Docker Management**: Easily deploy and manage Docker containers.
+- **CLI/API**: Manage your applications and databases using the command line or through the API.
+- **Notifications**: Get notified when your deployments succeed or fail (via Slack, Discord, Telegram, Email, etc.).
+- **Multi Server**: Deploy and manage your applications remotely to external servers.
+- **Self-Hosted**: Self-host Dokploy on your VPS.
 
-## 🐧 Linux
+## 🚀 Getting Started
 
-  &lt;a href=&quot;https://flathub.org/apps/org.upscayl.Upscayl&quot;&gt;
-    &lt;img src=&quot;https://dl.flathub.org/assets/badges/flathub-badge-en.svg&quot; height=&quot;50px&quot;/&gt;
-  &lt;/a&gt;
+To get started, run the following command on a VPS:
 
-  &lt;a href=&quot;https://appimage.github.io/Upscayl/&quot;&gt;
-    &lt;img src=&quot;https://user-images.githubusercontent.com/25067102/191270389-9de37c0f-39a8-41f1-a659-8dd4e7b8ac28.png&quot; height=&quot;50px&quot;/&gt;
-  &lt;/a&gt;
+Want to skip the installation process? [Try the Dokploy Cloud](https://app.dokploy.com).
 
-  &lt;a href=&quot;https://aur.archlinux.org/packages/upscayl-bin&quot;&gt;
-    &lt;img src=&quot;https://user-images.githubusercontent.com/25067102/191269445-87050a77-c304-4284-9ea0-699721309c59.png&quot; height=&quot;50px&quot;/&gt;
-  &lt;/a&gt;
-
-  &lt;a href=&quot;https://snapcraft.io/upscayl/&quot;&gt;
-    &lt;img src=&quot;https://snapcraft.io/static/images/badges/en/snap-store-black.svg&quot; height=&quot;50px&quot;/&gt;
-  &lt;/a&gt;
-
-  &lt;a href=&quot;https://github.com/MrPenguin07/ebuilds&quot;&gt;
-    &lt;img src=&quot;https://github.com/upscayl/upscayl/assets/25067102/322aebc5-91aa-4fc6-ac3a-d5a054449554&quot; height=&quot;50px&quot;/&gt;
-  &lt;/a&gt;
-
-Upscayl should be available on the software listings of most Linux operating systems. Your distro&#039;s Store app might also support the [Flatpak](https://flatpak.org/setup) or Snap version.
-
-### 💼 Portable Method
-
-1. Go to [releases section](https://github.com/upscayl/upscayl/releases/latest) or [our official website](https://upscayl.org/).
-2. Download the `upscayl-x.x.x-linux.AppImage` file.
-3. Right Click AppImage -&gt; Go to Permissions tab -&gt; Check &#039;allow file to execute&#039; and then double click the file to run Upscayl.
-
-*You can also choose to install using other formats like RPM (Fedora), DEB (Debian/Ubuntu based), and ZIP (Any x86 Linux OS).*
-
-## 🍎 macOS
-(MacOS 12 and later)
-
-&lt;a href=&quot;https://apps.apple.com/us/app/upscayl/id6468265473?mt=12&quot;&gt;
-  &lt;img src=&quot;https://www.upscayl.org/appstore.svg&quot; height=&quot;60px&quot;/&gt;
-&lt;/a&gt;
-
-1. Go to [releases section](https://github.com/upscayl/upscayl/releases/latest) or [our official website](https://upscayl.org/).
-2. Download the `upscayl-x.x.x-mac.dmg` file.
-3. Double click dmg, drag Upscayl icon into Applications folder.
-4. Open Finder, click &#039;Applications&#039; tab in the left sidebar. Find Upscayl and right click on it. Select &#039;Open&#039;.
-5. In the window that appears, press &#039;Open&#039; yet again.
-
-### 🍺 Homebrew
-
-`brew install --cask upscayl`
-
-## 🐌 Windows
-(Windows 10 and later)
-
-1. Go to [releases section](https://github.com/upscayl/upscayl/releases/latest) or [our official website](https://upscayl.org/).
-2. Download the `upscayl-x.x.x-win.exe` file.
-3. Double click exe file to launch.
-4. If you get a SmartScreen warning - click &#039;More Info&#039; and then &#039;Run Anyway&#039; OR press &#039;YES&#039; on the unverified publisher dialog.
-5. Follow the installation steps.
-6. Profit!
-
-# 👨‍🏫 Documentation - Tutorials and Guides
-
-Check out our Documentation [here](https://docs.upscayl.org/).
-
-- [Try out even more new models!](https://github.com/upscayl/custom-models)
-- [Convert your own models](https://github.com/upscayl/upscayl/wiki/%F0%9F%96%A5%EF%B8%8F-Model-Conversion---Create-more-AI-models!)
-- [Compatibility List](https://github.com/upscayl/upscayl/wiki/Compatibility-List)
-- [Troubleshooting](https://github.com/upscayl/upscayl/wiki/Troubleshooting)
-
-# ⚖️ Results
-
-Check out Upscayl before/after comparisons [here](COMPARISONS.MD).
-
-# 🤫 Roadmap
-
-You can track all the progress here: https://github.com/orgs/upscayl/projects/1
-
-- Fix bugs
-- Make the whole world use FOSS (WIP 🚧)
-
-# 🛠 Development
-
-I recommend using Volta: https://volta.sh for installing Node.js.
-Download and install volta, then do: `volta install node`.
-
-## 🏃 Running
-&gt; [!NOTE]
-&gt; If you are not willing to install [git](https://git-scm.com/downloads), you can skip the first line, download [the source zip](https://github.com/upscayl/upscayl/archive/refs/heads/main.zip) and extract it to `upscayl` instead and carry on with the rest of the instructions.
-
-```sh
-git clone https://github.com/upscayl/upscayl
-cd upscayl
-
-# INSTALL DEPENDENCIES
-npm install
-
-# RUN THE DEVELOPMENT SERVER LOCALLY
-## YOUR LOGS WILL NOW APPEAR IN THE TERMINAL
-npm run start
+```bash
+curl -sSL https://dokploy.com/install.sh | sh
 ```
 
-## 🏗️ Building
+For detailed documentation, visit [docs.dokploy.com](https://docs.dokploy.com).
 
-```sh
-# INSTALL DEPENDENCIES
-npm install
+## ♥️ Sponsors
 
-# PACKAGE THE APP
-npm run dist
+🙏 We&#039;re deeply grateful to all our sponsors who make Dokploy possible! Your support helps cover the costs of hosting, testing, and developing new features.
 
-# PUBLISH THE APP, MAKE SURE TO ADD GH_TOKEN= IN SHELL
-# ONLY DO THIS IF YOU&#039;RE A MAINTAINER
-npm run publish-app
-```
+[Dokploy Open Collective](https://opencollective.com/dokploy)
 
-# 🤓 FAQ
+[Github Sponsors](https://github.com/sponsors/Siumauricio)
 
-- **How does Upscayl work?**
-  - Upscayl uses AI models to enhance your images by guessing what the details could be. It uses Real-ESRGAN and Vulkan architecture to achieve this. [Our backend](https://github.com/upscayl/upscayl-ncnn) is fully open-source under the AGPLv3 license.
-- **I don&#039;t see a drastic change in my upscaled image. Why is that?**
-  - Upscayl can enhance low resolution images and images that are pixelated but it cannot de-blur or do focus adjustment on your image. If your image is out-of-focus or totally blurred, Upscayl is not the right tool for it. Please use images that are similar to the [examples we&#039;ve given here.](COMPARISONS.MD)
-- **Is there a CLI available?**
-  - The CLI tool is called [upscayl-ncnn](https://github.com/upscayl/upscayl-ncnn).
-- **Do I need a GPU for this to work?**
-  - Yes, unfortunately. NCNN Vulkan requires a Vulkan-compatible GPU. Upscayl won&#039;t work with **most** iGPUs or CPUs. But hey, no harm in trying ;)
-    - @Wyrdgirn has contributed a workaround for Windows and Linux in [#390](https://github.com/upscayl/upscayl/issues/390)! Nobody knows how to manipulate the macOS and Haiku frameworks...
-- **I stopped the magic Batch Upscayl and my images haven&#039;t been processed, compressed, or are in the wrong scale!**
-  - When a model doesn&#039;t support an action, Upscayl will finish upscayling all the images first before post-processing them. What this means is that you should simply **wait** for the process to finish.
-- **How can I contribute?**
-  - You can report issues, fix code and add features by submitting PRs, or donate! 😊
-- **What&#039;s the GPU ID for?**
-  - It is for selecting which GPU to use. The specific procedure is detailed in the [Wiki](https://github.com/upscayl/upscayl/wiki/Guide).
-    - Note that for Windows systems, if Upscayl is not set to performance mode, the system may override this setting.
-- **Where do I find more models?**
-  -  More models can be taken from here: https://github.com/upscayl/custom-models
+&lt;!-- Hero Sponsors 🎖 --&gt;
 
-# 🎁 Donate
+&lt;!-- Add Hero Sponsors here --&gt;
 
-&lt;a href=&quot;https://www.buymeacoffee.com/fossisthefuture&quot;&gt;
-  &lt;img src=&quot;https://user-images.githubusercontent.com/25067102/154570688-9e143f2b-fee3-4b05-a9d2-a7a3013b2b51.png&quot; /&gt;
-&lt;a/&gt;
+### Hero Sponsors 🎖
 
-# ❤ Credits
-
-- Real-ESRGAN for their wonderful research work.
-[Real-ESRGAN: Copyright (c) 2021, Xintao Wang](https://github.com/xinntao/Real-ESRGAN/)
-- @JanDeDinoMan, @xanderfrangos, @Fdawgs, @keturn for their code contributions
-- @aaronliu0130 for providing community support :)
-- Helaman for their [HFA2k model](https://openmodeldb.info/models/4x-HFA2k) (included as &quot;High Fidelity&quot;)
-- Foolhardy for their [Remacri model](https://openmodeldb.info/models/4x-Remacri).
-- [Kim2091](https://upscale.wiki/wiki/User:Kim2091)	for their [Ultrasharp and Ultramix Balanced model](https://openmodeldb.info/models/4x-UltraSharp).
-- @NicKoehler for their amazing logo :)
-#
-
-&lt;div align=&quot;center&quot;&gt;
-
-Copyright © 2023 - **Upscayl**\
-By Nayam Amarshe and TGS963\
-Made with 🖱 &amp; ⌨
-
+&lt;div&gt;
+  &lt;a href=&quot;https://www.hostinger.com/vps-hosting?ref=dokploy&quot;&gt;&lt;img src=&quot;.github/sponsors/hostinger.jpg&quot; alt=&quot;Hostinger&quot; width=&quot;300&quot;/&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://www.lxaer.com/?ref=dokploy&quot;&gt;&lt;img src=&quot;.github/sponsors/lxaer.png&quot; alt=&quot;LX Aer&quot; width=&quot;100&quot;/&gt;&lt;/a&gt;
 &lt;/div&gt;
+
+&lt;!-- Premium Supporters 🥇 --&gt;
+
+&lt;!-- Add Premium Supporters here --&gt;
+
+### Premium Supporters 🥇
+
+&lt;div&gt;
+  &lt;a href=&quot;https://supafort.com/?ref=dokploy&quot;&gt;&lt;img src=&quot;https://supafort.com/build/q-4Ht4rBZR.webp&quot; alt=&quot;Supafort.com&quot; width=&quot;300&quot;/&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://agentdock.ai/?ref=dokploy&quot;&gt;&lt;img src=&quot;.github/sponsors/agentdock.png&quot; alt=&quot;agentdock.ai&quot; width=&quot;100&quot;/&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;!-- Elite Contributors 🥈 --&gt;
+
+&lt;!-- Add Elite Contributors here --&gt;
+
+### Elite Contributors 🥈
+
+&lt;div&gt;
+  &lt;a href=&quot;https://americancloud.com/?ref=dokploy&quot;&gt;&lt;img src=&quot;.github/sponsors/american-cloud.png&quot; alt=&quot;AmericanCloud&quot; width=&quot;300&quot;/&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://tolgee.io/?utm_source=github_dokploy&amp;utm_medium=banner&amp;utm_campaign=dokploy&quot;&gt;&lt;img src=&quot;https://dokploy.com/tolgee-logo.png&quot; alt=&quot;Tolgee&quot; width=&quot;100&quot;/&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+### Supporting Members 🥉
+
+&lt;div&gt;
+
+  &lt;a href=&quot;https://cloudblast.io/?ref=dokploy&quot;&gt;&lt;img src=&quot;https://cloudblast.io/img/logo-icon.193cf13e.svg&quot; width=&quot;250px&quot; alt=&quot;Cloudblast.io&quot;/&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://synexa.ai/?ref=dokploy&quot;&gt;&lt;img src=&quot;.github/sponsors/synexa.png&quot; width=&quot;65px&quot; alt=&quot;Synexa&quot;/&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+### Community Backers 🤝
+
+#### Organizations:
+
+[Sponsors on Open Collective](https://opencollective.com/dokploy)
+
+#### Individuals:
+
+[![Individual Contributors on Open Collective](https://opencollective.com/dokploy/individuals.svg?width=890)](https://opencollective.com/dokploy)
+
+### Contributors 🤝
+
+&lt;a href=&quot;https://github.com/dokploy/dokploy/graphs/contributors&quot;&gt;
+  &lt;img src=&quot;https://contrib.rocks/image?repo=dokploy/dokploy&quot; alt=&quot;Contributors&quot; /&gt;
+&lt;/a&gt;
+
+## 📺 Video Tutorial
+
+&lt;a href=&quot;https://youtu.be/mznYKPvhcfw&quot;&gt;
+  &lt;img src=&quot;https://dokploy.com/banner.png&quot; alt=&quot;Watch the video&quot; width=&quot;400&quot;/&gt;
+&lt;/a&gt;
+
+## 🤝 Contributing
+
+Check out the [Contributing Guide](CONTRIBUTING.md) for more information.
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[langgenius/dify]]></title>
-            <link>https://github.com/langgenius/dify</link>
-            <guid>https://github.com/langgenius/dify</guid>
-            <pubDate>Sun, 17 Aug 2025 00:05:22 GMT</pubDate>
-            <description><![CDATA[Production-ready platform for agentic workflow development.]]></description>
+            <title><![CDATA[antiwork/helper]]></title>
+            <link>https://github.com/antiwork/helper</link>
+            <guid>https://github.com/antiwork/helper</guid>
+            <pubDate>Mon, 18 Aug 2025 00:05:31 GMT</pubDate>
+            <description><![CDATA[Help customers help themselves]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/langgenius/dify">langgenius/dify</a></h1>
-            <p>Production-ready platform for agentic workflow development.</p>
+            <h1><a href="https://github.com/antiwork/helper">antiwork/helper</a></h1>
+            <p>Help customers help themselves</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 111,094</p>
-            <p>Forks: 16,966</p>
-            <p>Stars today: 75 stars today</p>
-            <h2>README</h2><pre>![cover-v5-optimized](./images/GitHub_README_if.png)
-
+            <p>Stars: 581</p>
+            <p>Forks: 229</p>
+            <p>Stars today: 5 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;./public/logo.svg#gh-light-mode-only&quot; alt=&quot;Helper logo&quot; width=&quot;192&quot; /&gt;
+  &lt;img src=&quot;./public/logo-white.svg#gh-dark-mode-only&quot; alt=&quot;Helper logo&quot; width=&quot;192&quot; /&gt;
+&lt;/p&gt;
 &lt;p align=&quot;center&quot;&gt;
-  📌 &lt;a href=&quot;https://dify.ai/blog/introducing-dify-workflow-file-upload-a-demo-on-ai-podcast&quot;&gt;Introducing Dify Workflow File Upload: Recreate Google NotebookLM Podcast&lt;/a&gt;
+    &lt;a href=&quot;https://helper.ai&quot;&gt;helper.ai&lt;/a&gt; |
+    &lt;a href=&quot;https://helper.ai/docs&quot;&gt;Docs&lt;/a&gt;
 &lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://cloud.dify.ai&quot;&gt;Dify Cloud&lt;/a&gt; ·
-  &lt;a href=&quot;https://docs.dify.ai/getting-started/install-self-hosted&quot;&gt;Self-hosting&lt;/a&gt; ·
-  &lt;a href=&quot;https://docs.dify.ai&quot;&gt;Documentation&lt;/a&gt; ·
-  &lt;a href=&quot;https://dify.ai/pricing&quot;&gt;Dify edition overview&lt;/a&gt;
-&lt;/p&gt;
+# Helper
 
-&lt;p align=&quot;center&quot;&gt;
-    &lt;a href=&quot;https://dify.ai&quot; target=&quot;_blank&quot;&gt;
-        &lt;img alt=&quot;Static Badge&quot; src=&quot;https://img.shields.io/badge/Product-F04438&quot;&gt;&lt;/a&gt;
-    &lt;a href=&quot;https://dify.ai/pricing&quot; target=&quot;_blank&quot;&gt;
-        &lt;img alt=&quot;Static Badge&quot; src=&quot;https://img.shields.io/badge/free-pricing?logo=free&amp;color=%20%23155EEF&amp;label=pricing&amp;labelColor=%20%23528bff&quot;&gt;&lt;/a&gt;
-    &lt;a href=&quot;https://discord.gg/FngNHpbcY7&quot; target=&quot;_blank&quot;&gt;
-        &lt;img src=&quot;https://img.shields.io/discord/1082486657678311454?logo=discord&amp;labelColor=%20%235462eb&amp;logoColor=%20%23f5f5f5&amp;color=%20%235462eb&quot;
-            alt=&quot;chat on Discord&quot;&gt;&lt;/a&gt;
-    &lt;a href=&quot;https://reddit.com/r/difyai&quot; target=&quot;_blank&quot;&gt;  
-        &lt;img src=&quot;https://img.shields.io/reddit/subreddit-subscribers/difyai?style=plastic&amp;logo=reddit&amp;label=r%2Fdifyai&amp;labelColor=white&quot;
-            alt=&quot;join Reddit&quot;&gt;&lt;/a&gt;
-    &lt;a href=&quot;https://twitter.com/intent/follow?screen_name=dify_ai&quot; target=&quot;_blank&quot;&gt;
-        &lt;img src=&quot;https://img.shields.io/twitter/follow/dify_ai?logo=X&amp;color=%20%23f5f5f5&quot;
-            alt=&quot;follow on X(Twitter)&quot;&gt;&lt;/a&gt;
-    &lt;a href=&quot;https://www.linkedin.com/company/langgenius/&quot; target=&quot;_blank&quot;&gt;
-        &lt;img src=&quot;https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&amp;logoColor=fff&quot;
-            alt=&quot;follow on LinkedIn&quot;&gt;&lt;/a&gt;
-    &lt;a href=&quot;https://hub.docker.com/u/langgenius&quot; target=&quot;_blank&quot;&gt;
-        &lt;img alt=&quot;Docker Pulls&quot; src=&quot;https://img.shields.io/docker/pulls/langgenius/dify-web?labelColor=%20%23FDB062&amp;color=%20%23f79009&quot;&gt;&lt;/a&gt;
-    &lt;a href=&quot;https://github.com/langgenius/dify/graphs/commit-activity&quot; target=&quot;_blank&quot;&gt;
-        &lt;img alt=&quot;Commits last month&quot; src=&quot;https://img.shields.io/github/commit-activity/m/langgenius/dify?labelColor=%20%2332b583&amp;color=%20%2312b76a&quot;&gt;&lt;/a&gt;
-    &lt;a href=&quot;https://github.com/langgenius/dify/&quot; target=&quot;_blank&quot;&gt;
-        &lt;img alt=&quot;Issues closed&quot; src=&quot;https://img.shields.io/github/issues-search?query=repo%3Alanggenius%2Fdify%20is%3Aclosed&amp;label=issues%20closed&amp;labelColor=%20%237d89b0&amp;color=%20%235d6b98&quot;&gt;&lt;/a&gt;
-    &lt;a href=&quot;https://github.com/langgenius/dify/discussions/&quot; target=&quot;_blank&quot;&gt;
-        &lt;img alt=&quot;Discussion posts&quot; src=&quot;https://img.shields.io/github/discussions/langgenius/dify?labelColor=%20%239b8afb&amp;color=%20%237a5af8&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
+Customer support via live chat and email.
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;./README.md&quot;&gt;&lt;img alt=&quot;README in English&quot; src=&quot;https://img.shields.io/badge/English-d9d9d9&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;./README_TW.md&quot;&gt;&lt;img alt=&quot;繁體中文文件&quot; src=&quot;https://img.shields.io/badge/繁體中文-d9d9d9&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;./README_CN.md&quot;&gt;&lt;img alt=&quot;简体中文版自述文件&quot; src=&quot;https://img.shields.io/badge/简体中文-d9d9d9&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;./README_JA.md&quot;&gt;&lt;img alt=&quot;日本語のREADME&quot; src=&quot;https://img.shields.io/badge/日本語-d9d9d9&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;./README_ES.md&quot;&gt;&lt;img alt=&quot;README en Español&quot; src=&quot;https://img.shields.io/badge/Español-d9d9d9&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;./README_FR.md&quot;&gt;&lt;img alt=&quot;README en Français&quot; src=&quot;https://img.shields.io/badge/Français-d9d9d9&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;./README_KL.md&quot;&gt;&lt;img alt=&quot;README tlhIngan Hol&quot; src=&quot;https://img.shields.io/badge/Klingon-d9d9d9&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;./README_KR.md&quot;&gt;&lt;img alt=&quot;README in Korean&quot; src=&quot;https://img.shields.io/badge/한국어-d9d9d9&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;./README_AR.md&quot;&gt;&lt;img alt=&quot;README بالعربية&quot; src=&quot;https://img.shields.io/badge/العربية-d9d9d9&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;./README_TR.md&quot;&gt;&lt;img alt=&quot;Türkçe README&quot; src=&quot;https://img.shields.io/badge/Türkçe-d9d9d9&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;./README_VI.md&quot;&gt;&lt;img alt=&quot;README Tiếng Việt&quot; src=&quot;https://img.shields.io/badge/Ti%E1%BA%BFng%20Vi%E1%BB%87t-d9d9d9&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;./README_DE.md&quot;&gt;&lt;img alt=&quot;README in Deutsch&quot; src=&quot;https://img.shields.io/badge/German-d9d9d9&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;./README_BN.md&quot;&gt;&lt;img alt=&quot;README in বাংলা&quot; src=&quot;https://img.shields.io/badge/বাংলা-d9d9d9&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
+Features:
 
-Dify is an open-source platform for developing LLM applications. Its intuitive interface combines agentic AI workflows, RAG pipelines, agent capabilities, model management, observability features, and more—allowing you to quickly move from prototype to production.
+- **AI agent:** Reads your docs to give world-class support for everyday queries.
+- **Dashboard:** A fully featured escalation flow for human agents to handle complex cases.
+- **Tools:** Enable customers and agents to interact with your systems using natural language.
+- **SDK:** Integrate live chat and AI-powered inline assistance into your website in seconds.
 
-## Quick start
+## Quick Start
 
-&gt; Before installing Dify, make sure your machine meets the following minimum system requirements:
-&gt;
-&gt; - CPU &gt;= 2 Core
-&gt; - RAM &gt;= 4 GiB
+### Install dependencies
 
-&lt;/br&gt;
+You&#039;ll need:
 
-The easiest way to start the Dify server is through [Docker Compose](docker/docker-compose.yaml). Before running Dify with the following commands, make sure that [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/) are installed on your machine:
+- [Docker](https://docs.docker.com/get-docker/)
+- [Node.js](https://nodejs.org/en/download/) (see [`.node-version`](.node-version))
 
-```bash
-cd dify
-cd docker
-cp .env.example .env
-docker compose up -d
+### Install local Certificate Authority
+
+```sh
+# Install mkcert on macOS
+brew install mkcert
+brew install nss
 ```
 
-After running, you can access the Dify dashboard in your browser at [http://localhost/install](http://localhost/install) and start the initialization process.
+```sh
+# Install mkcert on Windows
+# First ensure you have Chocolately installed (https://chocolatey.org/install), then:
+choco install mkcert
+```
 
-#### Seeking help
+_For other operating systems, see the [mkcert installation guide](https://github.com/FiloSottile/mkcert?tab=readme-ov-file#installation)._
 
-Please refer to our [FAQ](https://docs.dify.ai/getting-started/install-self-hosted/faqs) if you encounter problems setting up Dify. Reach out to [the community and us](#community--contact) if you are still having issues.
+### Set up environment variables
 
-&gt; If you&#039;d like to contribute to Dify or do additional development, refer to our [guide to deploying from source code](https://docs.dify.ai/getting-started/install-self-hosted/local-source-code)
+&gt; [!TIP]
+&gt; If you already have a Vercel project with development environment variables set up, you can skip this step. When you run `pnpm dev` you will be prompted to pull the environment variables from Vercel.
 
-## Key features
+Copy `.env.local.sample` to `.env.local`, then fill in values for:
 
-**1. Workflow**:
-Build and test powerful AI workflows on a visual canvas, leveraging all the following features and beyond.
+&lt;details&gt;
+&lt;summary&gt;OpenAI&lt;/summary&gt;
 
-**2. Comprehensive model support**:
-Seamless integration with hundreds of proprietary / open-source LLMs from dozens of inference providers and self-hosted solutions, covering GPT, Mistral, Llama3, and any OpenAI API-compatible models. A full list of supported model providers can be found [here](https://docs.dify.ai/getting-started/readme/model-providers).
+1. Create an account at [openai.com](https://openai.com).
+1. Create a new API key at [platform.openai.com/api-keys](https://platform.openai.com/api-keys).
+1. Add the API key to your `.env.local` file as `OPENAI_API_KEY`.
 
-![providers-v5](https://github.com/langgenius/dify/assets/13230914/5a17bdbe-097a-4100-8363-40255b70f6e3)
+&lt;/details&gt;
 
-**3. Prompt IDE**:
-Intuitive interface for crafting prompts, comparing model performance, and adding additional features such as text-to-speech to a chat-based app.
+_The app will start with placeholder values for other services - you can follow the instructions in the [development guide](https://helper.ai/docs/development#optional-integrations) to enable them later._
 
-**4. RAG Pipeline**:
-Extensive RAG capabilities that cover everything from document ingestion to retrieval, with out-of-box support for text extraction from PDFs, PPTs, and other common document formats.
+### Install dependencies
 
-**5. Agent capabilities**:
-You can define agents based on LLM Function Calling or ReAct, and add pre-built or custom tools for the agent. Dify provides 50+ built-in tools for AI agents, such as Google Search, DALL·E, Stable Diffusion and WolframAlpha.
+```sh
+pnpm install
+```
 
-**6. LLMOps**:
-Monitor and analyze application logs and performance over time. You could continuously improve prompts, datasets, and models based on production data and annotations.
+### Seed the database with sample data
 
-**7. Backend-as-a-Service**:
-All of Dify&#039;s offerings come with corresponding APIs, so you could effortlessly integrate Dify into your own business logic.
+```sh
+pnpm db:reset
+```
 
-## Feature Comparison
+### Start the application
 
-&lt;table style=&quot;width: 100%;&quot;&gt;
-  &lt;tr&gt;
-    &lt;th align=&quot;center&quot;&gt;Feature&lt;/th&gt;
-    &lt;th align=&quot;center&quot;&gt;Dify.AI&lt;/th&gt;
-    &lt;th align=&quot;center&quot;&gt;LangChain&lt;/th&gt;
-    &lt;th align=&quot;center&quot;&gt;Flowise&lt;/th&gt;
-    &lt;th align=&quot;center&quot;&gt;OpenAI Assistants API&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td align=&quot;center&quot;&gt;Programming Approach&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;API + App-oriented&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;Python Code&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;App-oriented&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;API-oriented&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td align=&quot;center&quot;&gt;Supported LLMs&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;Rich Variety&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;Rich Variety&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;Rich Variety&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;OpenAI-only&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td align=&quot;center&quot;&gt;RAG Engine&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;✅&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;✅&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;✅&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;✅&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td align=&quot;center&quot;&gt;Agent&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;✅&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;✅&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;✅&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td align=&quot;center&quot;&gt;Workflow&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;✅&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;✅&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td align=&quot;center&quot;&gt;Observability&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;✅&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;✅&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td align=&quot;center&quot;&gt;Enterprise Feature (SSO/Access control)&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;✅&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td align=&quot;center&quot;&gt;Local Deployment&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;✅&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;✅&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;✅&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
+```sh
+pnpm dev
+```
 
-## Using Dify
+Access the application at [helperai.dev](https://helperai.dev) 🚀
 
-- **Cloud &lt;/br&gt;**
-  We host a [Dify Cloud](https://dify.ai) service for anyone to try with zero setup. It provides all the capabilities of the self-deployed version, and includes 200 free GPT-4 calls in the sandbox plan.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fantiwork%2Fhelper&amp;env=OPENAI_API_KEY&amp;envDescription=See%20our%20deployment%20guide%20for%20details.&amp;envLink=https%3A%2F%2Fhelper.ai%2Fdocs%2Fdeployment&amp;project-name=helper&amp;repository-name=helper&amp;integration-ids=oac_VqOgBHqhEoFTPzGkPd7L0iH6)
 
-- **Self-hosting Dify Community Edition&lt;/br&gt;**
-  Quickly get Dify running in your environment with this [starter guide](#quick-start).
-  Use our [documentation](https://docs.dify.ai) for further references and more in-depth instructions.
+## Docs
 
-- **Dify for enterprise / organizations&lt;/br&gt;**
-  We provide additional enterprise-centric features. [Log your questions for us through this chatbot](https://udify.app/chat/22L1zSxg6yW1cWQg) or [send us an email](mailto:business@dify.ai?subject=[GitHub]Business%20License%20Inquiry) to discuss enterprise needs. &lt;/br&gt;
-  &gt; For startups and small businesses using AWS, check out [Dify Premium on AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-t22mebxzwjhu6) and deploy it to your own AWS VPC with one click. It&#039;s an affordable AMI offering with the option to create apps with custom logo and branding.
-
-## Staying ahead
-
-Star Dify on GitHub and be instantly notified of new releases.
-
-![star-us](https://github.com/langgenius/dify/assets/13230914/b823edc1-6388-4e25-ad45-2f6b187adbb4)
-
-## Advanced Setup
-
-If you need to customize the configuration, please refer to the comments in our [.env.example](docker/.env.example) file and update the corresponding values in your `.env` file. Additionally, you might need to make adjustments to the `docker-compose.yaml` file itself, such as changing image versions, port mappings, or volume mounts, based on your specific deployment environment and requirements. After making any changes, please re-run `docker-compose up -d`. You can find the full list of available environment variables [here](https://docs.dify.ai/getting-started/install-self-hosted/environments).
-
-If you&#039;d like to configure a highly-available setup, there are community-contributed [Helm Charts](https://helm.sh/) and YAML files which allow Dify to be deployed on Kubernetes.
-
-- [Helm Chart by @LeoQuote](https://github.com/douban/charts/tree/master/charts/dify)
-- [Helm Chart by @BorisPolonsky](https://github.com/BorisPolonsky/dify-helm)
-- [Helm Chart by @magicsong](https://github.com/magicsong/ai-charts)
-- [YAML file by @Winson-030](https://github.com/Winson-030/dify-kubernetes)
-- [YAML file by @wyy-holding](https://github.com/wyy-holding/dify-k8s)
-- [🚀 NEW! YAML files (Supports Dify v1.6.0) by @Zhoneym](https://github.com/Zhoneym/DifyAI-Kubernetes)
-
-#### Using Terraform for Deployment
-
-Deploy Dify to Cloud Platform with a single click using [terraform](https://www.terraform.io/)
-
-##### Azure Global
-
-- [Azure Terraform by @nikawang](https://github.com/nikawang/dify-azure-terraform)
-
-##### Google Cloud
-
-- [Google Cloud Terraform by @sotazum](https://github.com/DeNA/dify-google-cloud-terraform)
-
-#### Using AWS CDK for Deployment
-
-Deploy Dify to AWS with [CDK](https://aws.amazon.com/cdk/)
-
-##### AWS
-
-- [AWS CDK by @KevinZhao (EKS based)](https://github.com/aws-samples/solution-for-deploying-dify-on-aws)
-- [AWS CDK by @tmokmss (ECS based)](https://github.com/aws-samples/dify-self-hosted-on-aws)
-
-#### Using Alibaba Cloud Computing Nest
-
-Quickly deploy Dify to Alibaba cloud with [Alibaba Cloud Computing Nest](https://computenest.console.aliyun.com/service/instance/create/default?type=user&amp;ServiceName=Dify%E7%A4%BE%E5%8C%BA%E7%89%88) 
-
-#### Using Alibaba Cloud Data Management
-
-One-Click deploy Dify to Alibaba Cloud with [Alibaba Cloud Data Management](https://www.alibabacloud.com/help/en/dms/dify-in-invitational-preview/) 
-
-#### Deploy to AKS with Azure Devops Pipeline
-
-One-Click deploy Dify to AKS with [Azure Devops Pipeline Helm Chart by @LeoZhang](https://github.com/Ruiruiz30/Dify-helm-chart-AKS) 
-
-
-## Contributing
-
-For those who&#039;d like to contribute code, see our [Contribution Guide](https://github.com/langgenius/dify/blob/main/CONTRIBUTING.md).
-At the same time, please consider supporting Dify by sharing it on social media and at events and conferences.
-
-&gt; We are looking for contributors to help translate Dify into languages other than Mandarin or English. If you are interested in helping, please see the [i18n README](https://github.com/langgenius/dify/blob/main/web/i18n-config/README.md) for more information, and leave us a comment in the `global-users` channel of our [Discord Community Server](https://discord.gg/8Tpq4AcN9c).
-
-## Community &amp; contact
-
-- [GitHub Discussion](https://github.com/langgenius/dify/discussions). Best for: sharing feedback and asking questions.
-- [GitHub Issues](https://github.com/langgenius/dify/issues). Best for: bugs you encounter using Dify.AI, and feature proposals. See our [Contribution Guide](https://github.com/langgenius/dify/blob/main/CONTRIBUTING.md).
-- [Discord](https://discord.gg/FngNHpbcY7). Best for: sharing your applications and hanging out with the community.
-- [X(Twitter)](https://twitter.com/dify_ai). Best for: sharing your applications and hanging out with the community.
-
-**Contributors**
-
-&lt;a href=&quot;https://github.com/langgenius/dify/graphs/contributors&quot;&gt;
-  &lt;img src=&quot;https://contrib.rocks/image?repo=langgenius/dify&quot; /&gt;
-&lt;/a&gt;
-
-## Star history
-
-[![Star History Chart](https://api.star-history.com/svg?repos=langgenius/dify&amp;type=Date)](https://star-history.com/#langgenius/dify&amp;Date)
-
-## Security disclosure
-
-To protect your privacy, please avoid posting security issues on GitHub. Instead, report issues to security@dify.ai, and our team will respond with detailed answer.
+- [Project structure](https://helper.ai/docs/development/overview)
+- [Local development](https://helper.ai/docs/development)
+- [Deployment](https://helper.ai/docs/deployment)
 
 ## License
 
-This repository is licensed under the [Dify Open Source License](LICENSE), based on Apache 2.0 with additional conditions.
+Helper is licensed under the [MIT License](LICENSE.md).
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[sst/sst]]></title>
-            <link>https://github.com/sst/sst</link>
-            <guid>https://github.com/sst/sst</guid>
-            <pubDate>Sun, 17 Aug 2025 00:05:21 GMT</pubDate>
-            <description><![CDATA[Build full-stack apps on your own infrastructure.]]></description>
+            <title><![CDATA[pipeshub-ai/pipeshub-ai]]></title>
+            <link>https://github.com/pipeshub-ai/pipeshub-ai</link>
+            <guid>https://github.com/pipeshub-ai/pipeshub-ai</guid>
+            <pubDate>Mon, 18 Aug 2025 00:05:30 GMT</pubDate>
+            <description><![CDATA[The OpenSource Alternative to Glean's Workplace AI]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/sst/sst">sst/sst</a></h1>
-            <p>Build full-stack apps on your own infrastructure.</p>
+            <h1><a href="https://github.com/pipeshub-ai/pipeshub-ai">pipeshub-ai/pipeshub-ai</a></h1>
+            <p>The OpenSource Alternative to Glean's Workplace AI</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 24,350</p>
-            <p>Forks: 1,888</p>
-            <p>Stars today: 10 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://sst.dev/&quot;&gt;
-    &lt;img alt=&quot;SST&quot; src=&quot;https://raw.githubusercontent.com/sst/identity/main/variants/sst-full.svg&quot; width=&quot;300&quot; /&gt;
+            <p>Stars: 917</p>
+            <p>Forks: 167</p>
+            <p>Stars today: 31 stars today</p>
+            <h2>README</h2><pre>&lt;a name=&quot;readme-top&quot;&gt;&lt;/a&gt;
+
+&lt;h2 align=&quot;center&quot;&gt;
+&lt;a href=&quot;https://www.pipeshub.com/&quot;&gt;
+&lt;img width=&quot;50%&quot; src=&quot;https://raw.githubusercontent.com/pipeshub-ai/media-assets/refs/heads/main/images/pipeshub-logo.svg&quot;/&gt; 
+&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;Workplace AI Platform&lt;/p&gt;
+
+&lt;!--Links in Readme--&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;a href=&quot;https://docs.pipeshub.com/&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/docs-view-blue?style=for-the-badge&quot; alt=&quot;Documentation&quot;&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://discord.com/invite/K5RskzJBm2&quot; target=&quot;_blank&quot;&gt;
+     &lt;img src=&quot;https://img.shields.io/badge/discord-join-red?logo=discord&amp;logoColor=white&amp;style=for-the-badge&quot; alt=&quot;Discord&quot;&gt;
+&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;!--Intro--&gt;
+
+&lt;strong&gt;[PipesHub](https://github.com/pipeshub-ai/pipeshub-ai)&lt;/strong&gt; is the workplace AI platform for enterprises to improve how businesses operate and help employees and AI agents work more efficiently.
+In most companies, important work data is spread across multiple apps like Google Workspace, Microsoft 365, Slack, Jira, Confluence, and more. PipesHub AI helps you quickly find the right information using natural language search—just like Google.
+It can answer questions, provide insights, and more. The platform not only delivers the most relevant results but also shows where the information came from, with proper citations, using Knowledge Graphs and Page Ranking.
+Beyond search, our platform allows enterprises to create custom apps and AI agents using a No-Code interface.
+
+&lt;h2&gt;High Level Architecture Diagram&lt;/h2&gt;
+  &lt;img
+    width=&quot;700&quot;
+    height=&quot;500&quot;
+    src=&quot;https://raw.githubusercontent.com/pipeshub-ai/media-assets/refs/heads/main/images/Architecture%20Diagram.svg&quot;
+    alt=&quot;PipesHub System Architecture&quot;
+  /&gt;
+
+&lt;h2&gt;Spotlight Features&lt;/h2&gt;
+
+#### Your Workplace, Our AI.
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://youtu.be/PJ_b7IFhnsc&quot;&gt;
+    &lt;img src=&quot;https://img.youtube.com/vi/PJ_b7IFhnsc/maxresdefault.jpg&quot; alt=&quot;PipesHub Workplace AI&quot; width=&quot;600&quot; style=&quot;border-radius:10px&quot;/&gt;
+    &lt;br&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/Watch%20Video-red?style=for-the-badge&amp;logo=youtube&amp;logoColor=white&quot; alt=&quot;Watch on YouTube&quot;/&gt;
   &lt;/a&gt;
 &lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://sst.dev/discord&quot;&gt;&lt;img alt=&quot;Discord&quot; src=&quot;https://img.shields.io/discord/983865673656705025?style=flat-square&amp;label=Discord&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://www.npmjs.com/package/sst&quot;&gt;&lt;img alt=&quot;npm&quot; src=&quot;https://img.shields.io/npm/v/sst.svg?style=flat-square&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/sst/sst/actions/workflows/build.yml&quot;&gt;&lt;img alt=&quot;Build status&quot; src=&quot;https://img.shields.io/github/actions/workflow/status/sst/sst/build.yml?style=flat-square&amp;branch=dev&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
+## Unmatched Value of PipesHub
+
+- **Choose Any Model, Your Way** – Bring your preferred deep learning models for both indexing and inference with total flexibility.
+- **Real-Time or Scheduled Indexing** – Index data as it flows or schedule it to run exactly when you need.
+- **Access-Driven Visibility** – Source-level permissions ensure every document is shown only to those who are authorized.
+- **Built-In Data Security** – Sensitive information stays secure, always..
+- **Deploy Anywhere** – Fully supports both on-premise and cloud-based deployments.
+- **Knowledge Graph Backbone** – All data is seamlessly structured into a powerful knowledge graph.
+- **Enterprise-Grade Connectors** – Scalable, reliable, and built for secure access across your organization.
+- **Modular &amp; Scalable Architecture** – Every service is loosely coupled to scale independently and adapt to your needs.
+
+## Connectors
+
+- Google Drive
+- Gmail
+- Google Calendar
+- Onedrive(Release coming next month)
+- Sharepoint Online(Release coming next month)
+- Outlook(Release coming next month)
+- Outlook Calendar(Release coming next month)
+- Slack(Release coming next month)
+- Notion(Release coming next month)
+- Jira(Release coming next month)
+- Confluence(Release coming next month)
+- MS Teams(Release coming next month)
+
+## File Formats Supported
+
+- PDF(including scanned PDFs)
+- Docx/Doc
+- XLSX/XLS
+- PPTX/PPT
+- CSV
+- Markdown
+- HTML
+- Text
+- Google docs, slides, sheets
+- Images(Coming Soon)
+- Audio(Coming Soon)
+- Video(Coming Soon)
+
+## RoadMap
+
+- Code Search
+- Workplace AI Agents
+- MCP
+- APIs and SDKs
+- Personalized Search
+- Highly available and scalable Kubernetes deployment
+- PageRank
+
+## 🚀 Deployment Guide
+
+PipesHub — the Workplace AI Platform — can be run locally or deployed on the cloud using Docker Compose.
 
 ---
 
-Build full-stack apps on your own infrastructure.
-
-SST v3 uses a new engine for deploying SST apps. It uses Pulumi and Terraform, as opposed to CDK and CloudFormation. [Read the full announcement here](https://sst.dev/blog/sst-v3).
-
-## Installation
-
-If you are using SST as a part of your Node project, we recommend installing it locally.
+### 📦 Developer Deployment Build
 
 ```bash
-npm install sst
+# Clone the repository
+git clone https://github.com/pipeshub-ai/pipeshub-ai.git
+
+# 📁 Navigate to the deployment folder
+cd pipeshub-ai/deployment/docker-compose
+
+# Set Optional Environment Variables
+&gt; 👉 Set Environment Variables for secrets, passwords, and the public URLs of the **Frontend** and **Connector** services  
+&gt; _(Required for webhook notifications and real-time updates)_
+&gt; Refer to env.template
+
+# 🚀 Start the development deployment with build
+docker compose -f docker-compose.dev.yml -p pipeshub-ai up --build -d
+
+# 🛑 To stop the services
+docker compose -f docker-compose.dev.yml -p pipeshub-ai down
 ```
 
-If you are not using Node, you can install the CLI globally.
+### 📦 Production Deployment
 
 ```bash
-curl -fsSL https://sst.dev/install | bash
+# Clone the repository
+git clone https://github.com/pipeshub-ai/pipeshub-ai.git
+
+# 📁 Navigate to the deployment folder
+cd pipeshub-ai/deployment/docker-compose
+
+# Set Environment Variables
+&gt; 👉 Set Environment Variables for secrets, passwords, and the public URLs of the **Frontend** and **Connector** services
+&gt; _(Required for webhook notifications and real-time updates)_
+&gt; Refer to env.template
+
+# 🚀 Start the production deployment
+docker compose -f docker-compose.prod.yml -p pipeshub-ai up -d
+
+# 🛑 To stop the services
+docker compose -f docker-compose.prod.yml -p pipeshub-ai down
 ```
 
-To install a specific version.
+## 👥 Contributing
 
-```bash
-curl -fsSL https://sst.dev/install | VERSION=0.0.403 bash
-```
-
-To use a package manager, [check out our docs](https://sst.dev/docs/reference/cli/).
-
-#### Manually
-
-Download the pre-compiled binaries from the [releases](https://github.com/sst/sst/releases/latest) page and copy to the desired location.
-
-## Get Started
-
-Get started with your favorite framework:
-
-- [Next.js](https://sst.dev/docs/start/aws/nextjs)
-- [Remix](https://sst.dev/docs/start/aws/remix)
-- [Astro](https://sst.dev/docs/start/aws/astro)
-- [API](https://sst.dev/docs/start/aws/api)
-
-## Learn More
-
-Learn more about some of the key concepts:
-
-- [Live](https://sst.dev/docs/live)
-- [Linking](https://sst.dev/docs/linking)
-- [Console](https://sst.dev/docs/console)
-- [Components](https://sst.dev/docs/components)
-
-## Contributing
-
-Here&#039;s how you can contribute:
-
-- Help us improve our docs
-- Find a bug? Open an issue
-- Feature request? Submit a PR 
-
-## Running Locally
-
-1. Clone the repo
-2. `bun install`
-3. `go mod tidy`
-4. `cd platform &amp;&amp; bun run build`
-
-Now you can run the CLI locally on any of the `examples/` apps.
-
-```bash
-cd examples/aws-api
-go run ../../cmd/sst &lt;command&gt;
-```
-
-If you want to build the CLI, you can run `go build ./cmd/sst` from the root. This will create a
-`sst` binary that you can use.
+Want to join our community of developers? Please check out our [Contributing Guide](https://github.com/pipeshub-ai/pipeshub-ai/blob/main/CONTRIBUTING.md) for more details on how to set up the development environment, our coding standards, and the contribution workflow.
 
 ---
 
-**Join our community** [Discord](https://sst.dev/discord) | [YouTube](https://www.youtube.com/c/sst-dev) | [X.com](https://x.com/SST_dev)
+&lt;a href=&quot;https://star-history.com/#pipeshub-ai/pipeshub-ai&amp;Date&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/svg?repos=pipeshub-ai/pipeshub-ai&amp;type=Date&amp;theme=dark&quot; /&gt;
+    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/svg?repos=pipeshub-ai/pipeshub-ai&amp;type=Date&quot; /&gt;
+    &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/svg?repos=pipeshub-ai/pipeshub-ai&amp;type=Date&quot; /&gt;
+  &lt;/picture&gt;
+&lt;/a&gt;
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
