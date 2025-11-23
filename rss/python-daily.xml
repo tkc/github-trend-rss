@@ -4,7 +4,7 @@
         <title>GitHub Trending Today for python - Python Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for python.</description>
-        <lastBuildDate>Sat, 22 Nov 2025 00:04:17 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 23 Nov 2025 00:04:40 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
@@ -13,15 +13,15 @@
             <title><![CDATA[sansan0/TrendRadar]]></title>
             <link>https://github.com/sansan0/TrendRadar</link>
             <guid>https://github.com/sansan0/TrendRadar</guid>
-            <pubDate>Sat, 22 Nov 2025 00:04:17 GMT</pubDate>
+            <pubDate>Sun, 23 Nov 2025 00:04:40 GMT</pubDate>
             <description><![CDATA[🎯 告别信息过载，AI 助你看懂新闻资讯热点，简单的舆情监控分析 - 多平台热点聚合+基于 MCP 的AI分析工具。监控35个平台（抖音、知乎、B站、华尔街见闻、财联社等），智能筛选+自动推送+AI对话分析（用自然语言深度挖掘新闻：趋势追踪、情感分析、相似检索等13种工具）。支持企业微信/个人微信/飞书/钉钉/Telegram/邮件/ntfy推送，30秒网页部署，1分钟手机通知，无需编程。支持Docker部署⭐ 让算法为你服务，用AI理解热点]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/sansan0/TrendRadar">sansan0/TrendRadar</a></h1>
             <p>🎯 告别信息过载，AI 助你看懂新闻资讯热点，简单的舆情监控分析 - 多平台热点聚合+基于 MCP 的AI分析工具。监控35个平台（抖音、知乎、B站、华尔街见闻、财联社等），智能筛选+自动推送+AI对话分析（用自然语言深度挖掘新闻：趋势追踪、情感分析、相似检索等13种工具）。支持企业微信/个人微信/飞书/钉钉/Telegram/邮件/ntfy推送，30秒网页部署，1分钟手机通知，无需编程。支持Docker部署⭐ 让算法为你服务，用AI理解热点</p>
             <p>Language: Python</p>
-            <p>Stars: 23,208</p>
-            <p>Forks: 12,591</p>
-            <p>Stars today: 1,337 stars today</p>
+            <p>Stars: 24,470</p>
+            <p>Forks: 13,261</p>
+            <p>Stars today: 1,009 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot; id=&quot;trendradar&quot;&gt;
 
 &lt;a href=&quot;https://github.com/sansan0/TrendRadar&quot; title=&quot;TrendRadar&quot;&gt;
@@ -37,7 +37,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/sansan0/TrendRadar?style=flat-square&amp;logo=github&amp;color=yellow)](https://github.com/sansan0/TrendRadar/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/sansan0/TrendRadar?style=flat-square&amp;logo=github&amp;color=blue)](https://github.com/sansan0/TrendRadar/network/members)
 [![License](https://img.shields.io/badge/license-GPL--3.0-blue.svg?style=flat-square)](LICENSE)
-[![Version](https://img.shields.io/badge/version-v3.1.0-blue.svg)](https://github.com/sansan0/TrendRadar)
+[![Version](https://img.shields.io/badge/version-v3.1.1-blue.svg)](https://github.com/sansan0/TrendRadar)
 [![MCP](https://img.shields.io/badge/MCP-v1.0.2-green.svg)](https://github.com/sansan0/TrendRadar)
 
 [![企业微信通知](https://img.shields.io/badge/企业微信-通知-00D4AA?style=flat-square)](https://work.weixin.qq.com/)
@@ -339,6 +339,26 @@ GitHub 一键 Fork 即可使用，无需编程基础。
 - **大版本升级**：从 v1.x 升级到 v2.y，建议删除现有 fork 后重新 fork，这样更省力且避免配置冲突
 
 
+### 2025/11/22 - v3.1.1
+
+- **修复数据异常导致的崩溃问题**：解决部分用户在 GitHub Actions 环境中遇到的 `&#039;float&#039; object has no attribute &#039;lower&#039;` 错误
+- 新增双重防护机制：在数据获取阶段过滤无效标题（None、float、空字符串），同时在函数调用处添加类型检查
+- 提升系统稳定性，确保在数据源返回异常格式时仍能正常运行
+
+**升级说明**（GitHub Fork 用户）：
+- 必须更新：`main.py`
+- 建议使用小版本升级方式：复制替换上述文件
+
+
+### 2025/11/18 - mcp-v1.0.2
+
+  **MCP 模块更新:**
+  - 优化查询今日新闻却可能错误返回过去日期的情况
+
+
+&lt;details&gt;
+&lt;summary&gt;👉 点击展开：&lt;strong&gt;历史更新&lt;/strong&gt;&lt;/summary&gt;
+
 ### 2025/11/20 - v3.1.0
 
 - **新增个人微信推送支持**：企业微信应用可推送到个人微信，无需安装企业微信 APP
@@ -351,17 +371,6 @@ GitHub 一键 Fork 即可使用，无需编程基础。
 - 必须更新：`main.py`、`config/config.yaml`
 - 可选更新：`.github/workflows/crawler.yml`（如使用 GitHub Actions 部署）
 - 建议使用小版本升级方式：复制替换上述文件
-
-
-
-### 2025/11/18 - mcp-v1.0.2
-
-  **MCP 模块更新:**
-  - 优化查询今日新闻却可能错误返回过去日期的情况
-
-
-&lt;details&gt;
-&lt;summary&gt;👉 点击展开：&lt;strong&gt;历史更新&lt;/strong&gt;&lt;/summary&gt;
 
 ### 2025/11/12 - v3.0.5
 
@@ -725,14 +734,7 @@ frequency_words.txt 文件增加了一个【必须词】功能，使用 + 号
    &lt;summary&gt;👉 点击展开：&lt;strong&gt;飞书机器人&lt;/strong&gt;（消息显示最友好）&lt;/summary&gt;
    &lt;br&gt;
 
-   **GitHub Secret 配置（⚠️ Name 名称必须严格一致）：**
-   - **Name（名称）**：`FEISHU_WEBHOOK_URL`（请复制粘贴此名称，不要手打）
-   - **Secret（值）**：你的飞书机器人 Webhook 地址（该链接开头类似 https://www.feishu.cn/flow/api/trigger-webhook/********）
-   &lt;br&gt;
-
-   有两个方案，**方案一**配置简单，**方案二**配置复杂(但是稳定推送)
-
-   其中方案一，由 **ziventian**
+ 
 
 ... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
@@ -742,15 +744,15 @@ frequency_words.txt 文件增加了一个【必须词】功能，使用 + 号
             <title><![CDATA[yeongpin/cursor-free-vip]]></title>
             <link>https://github.com/yeongpin/cursor-free-vip</link>
             <guid>https://github.com/yeongpin/cursor-free-vip</guid>
-            <pubDate>Sat, 22 Nov 2025 00:04:16 GMT</pubDate>
+            <pubDate>Sun, 23 Nov 2025 00:04:39 GMT</pubDate>
             <description><![CDATA[[Support 0.49.x]（Reset Cursor AI MachineID & Bypass Higher Token Limit） Cursor Ai ，自动重置机器ID ， 免费升级使用Pro功能: You've reached your trial request limit. / Too many free trial accounts used on this machine. Please upgrade to pro. We have this limit in place to prevent abuse. Please let us know if you believe this is a mistake.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/yeongpin/cursor-free-vip">yeongpin/cursor-free-vip</a></h1>
             <p>[Support 0.49.x]（Reset Cursor AI MachineID & Bypass Higher Token Limit） Cursor Ai ，自动重置机器ID ， 免费升级使用Pro功能: You've reached your trial request limit. / Too many free trial accounts used on this machine. Please upgrade to pro. We have this limit in place to prevent abuse. Please let us know if you believe this is a mistake.</p>
             <p>Language: Python</p>
-            <p>Stars: 43,120</p>
-            <p>Forks: 5,181</p>
-            <p>Stars today: 170 stars today</p>
+            <p>Stars: 43,237</p>
+            <p>Forks: 5,188</p>
+            <p>Stars today: 124 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot; markdown=&quot;1&quot;&gt;
    &lt;sup&gt;Special thanks to:&lt;/sup&gt;
    &lt;br&gt;
@@ -1027,15 +1029,15 @@ Please refer to the [LICENSE](LICENSE.md) file for details.
             <title><![CDATA[HKUDS/LightRAG]]></title>
             <link>https://github.com/HKUDS/LightRAG</link>
             <guid>https://github.com/HKUDS/LightRAG</guid>
-            <pubDate>Sat, 22 Nov 2025 00:04:15 GMT</pubDate>
+            <pubDate>Sun, 23 Nov 2025 00:04:38 GMT</pubDate>
             <description><![CDATA[[EMNLP2025] "LightRAG: Simple and Fast Retrieval-Augmented Generation"]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/HKUDS/LightRAG">HKUDS/LightRAG</a></h1>
             <p>[EMNLP2025] "LightRAG: Simple and Fast Retrieval-Augmented Generation"</p>
             <p>Language: Python</p>
-            <p>Stars: 24,023</p>
-            <p>Forks: 3,520</p>
-            <p>Stars today: 122 stars today</p>
+            <p>Stars: 24,094</p>
+            <p>Forks: 3,526</p>
+            <p>Stars today: 85 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
 
 &lt;div style=&quot;margin: 20px 0;&quot;&gt;
@@ -1089,8 +1091,8 @@ Please refer to the [LICENSE](LICENSE.md) file for details.
 
 ---
 ## 🎉 News
-- [2025.11.05]🎯Add **RAGAS-based** Evaluation Framework and **Langfuse** observability for LightRAG (API can return retrieved contexts with query results).
-- [2025.10.22]🎯Eliminate bottlenecks in processing **large-scale datasets**.
+- [2025.11.05]🎯[New Feature]: Integrated **RAGAS for Evaluation** and **Langfuse for Tracing**. Updated the API to return retrieved contexts alongside query results to support context precision metrics.
+- [2025.10.22]🎯[Scalability Enhancement]: Eliminated processing bottlenecks to support **Large-Scale Datasets Efficiently**.
 - [2025.09.15]🎯Significantly enhances KG extraction accuracy for **small LLMs** like Qwen3-30B-A3B.
 - [2025.08.29]🎯**Reranker** is supported now , significantly boosting performance for mixed queries(Set as default query mode now).
 - [2025.08.04]🎯**Document deletion** with KG regeneration to ensure query performance.
@@ -1362,9 +1364,7 @@ Use QueryParam to control the behavior your query:
 
 ```python
 class QueryParam:
-    &quot;&quot;&quot;Configuration parameters for query execution in LightRAG.&quot;&quot;&quot;
-
-    mode: Literal[&quot;local&quot;, &quot;g
+   
 
 ... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
@@ -1374,15 +1374,15 @@ class QueryParam:
             <title><![CDATA[volcengine/verl]]></title>
             <link>https://github.com/volcengine/verl</link>
             <guid>https://github.com/volcengine/verl</guid>
-            <pubDate>Sat, 22 Nov 2025 00:04:14 GMT</pubDate>
+            <pubDate>Sun, 23 Nov 2025 00:04:37 GMT</pubDate>
             <description><![CDATA[verl: Volcano Engine Reinforcement Learning for LLMs]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/volcengine/verl">volcengine/verl</a></h1>
             <p>verl: Volcano Engine Reinforcement Learning for LLMs</p>
             <p>Language: Python</p>
-            <p>Stars: 16,305</p>
-            <p>Forks: 2,610</p>
-            <p>Stars today: 103 stars today</p>
+            <p>Stars: 16,360</p>
+            <p>Forks: 2,616</p>
+            <p>Stars today: 79 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
  👋 Hi, everyone!
     verl is a RL training library initiated by &lt;b&gt;ByteDance Seed team&lt;/b&gt; and maintained by the verl community.
@@ -1603,15 +1603,15 @@ verl is inspired by the design of Nemo-Aligner, Deepspeed-chat and OpenRLHF. The
             <title><![CDATA[GibsonAI/Memori]]></title>
             <link>https://github.com/GibsonAI/Memori</link>
             <guid>https://github.com/GibsonAI/Memori</guid>
-            <pubDate>Sat, 22 Nov 2025 00:04:13 GMT</pubDate>
+            <pubDate>Sun, 23 Nov 2025 00:04:36 GMT</pubDate>
             <description><![CDATA[Open-Source Memory Engine for LLMs, AI Agents & Multi-Agent Systems]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/GibsonAI/Memori">GibsonAI/Memori</a></h1>
             <p>Open-Source Memory Engine for LLMs, AI Agents & Multi-Agent Systems</p>
             <p>Language: Python</p>
-            <p>Stars: 5,892</p>
-            <p>Forks: 424</p>
-            <p>Stars today: 253 stars today</p>
+            <p>Stars: 6,117</p>
+            <p>Forks: 443</p>
+            <p>Stars today: 266 stars today</p>
             <h2>README</h2><pre>[![Memori Labs](https://s3.us-east-1.amazonaws.com/images.memorilabs.ai/banner.png)](https://memorilabs.ai/)
 
 &lt;p align=&quot;center&quot;&gt;
@@ -1904,15 +1904,15 @@ Apache 2.0 - see [LICENSE](./LICENSE)
             <title><![CDATA[microsoft/call-center-ai]]></title>
             <link>https://github.com/microsoft/call-center-ai</link>
             <guid>https://github.com/microsoft/call-center-ai</guid>
-            <pubDate>Sat, 22 Nov 2025 00:04:12 GMT</pubDate>
+            <pubDate>Sun, 23 Nov 2025 00:04:35 GMT</pubDate>
             <description><![CDATA[Send a phone call from AI agent, in an API call. Or, directly call the bot from the configured phone number!]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/microsoft/call-center-ai">microsoft/call-center-ai</a></h1>
             <p>Send a phone call from AI agent, in an API call. Or, directly call the bot from the configured phone number!</p>
             <p>Language: Python</p>
-            <p>Stars: 4,099</p>
-            <p>Forks: 505</p>
-            <p>Stars today: 135 stars today</p>
+            <p>Stars: 4,229</p>
+            <p>Forks: 516</p>
+            <p>Stars today: 144 stars today</p>
             <h2>README</h2><pre># Call Center AI
 
 AI-powered call center solution with Azure and OpenAI GPT.
@@ -2406,15 +2406,15 @@ By default, values are refreshed every 60 seconds. Refresh is not sync across al
             <title><![CDATA[MustardChef/WSABuilds]]></title>
             <link>https://github.com/MustardChef/WSABuilds</link>
             <guid>https://github.com/MustardChef/WSABuilds</guid>
-            <pubDate>Sat, 22 Nov 2025 00:04:11 GMT</pubDate>
+            <pubDate>Sun, 23 Nov 2025 00:04:34 GMT</pubDate>
             <description><![CDATA[Run Windows Subsystem For Android on your Windows 10 and Windows 11 PC using prebuilt binaries with Google Play Store (MindTheGapps) and/or Magisk or KernelSU (root solutions) built in.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/MustardChef/WSABuilds">MustardChef/WSABuilds</a></h1>
             <p>Run Windows Subsystem For Android on your Windows 10 and Windows 11 PC using prebuilt binaries with Google Play Store (MindTheGapps) and/or Magisk or KernelSU (root solutions) built in.</p>
             <p>Language: Python</p>
-            <p>Stars: 13,729</p>
-            <p>Forks: 2,032</p>
-            <p>Stars today: 71 stars today</p>
+            <p>Stars: 13,786</p>
+            <p>Forks: 2,035</p>
+            <p>Stars today: 85 stars today</p>
             <h2>README</h2><pre>&gt; [!CAUTION]
 &gt;
 &gt; # It seems that the last few Windows Updates released on many/all of the update channels (issue started from July) are breaking WSA installations for many users! 
@@ -2860,15 +2860,15 @@ By default, values are refreshed every 60 seconds. Refresh is not sync across al
             <title><![CDATA[Zie619/n8n-workflows]]></title>
             <link>https://github.com/Zie619/n8n-workflows</link>
             <guid>https://github.com/Zie619/n8n-workflows</guid>
-            <pubDate>Sat, 22 Nov 2025 00:04:10 GMT</pubDate>
+            <pubDate>Sun, 23 Nov 2025 00:04:33 GMT</pubDate>
             <description><![CDATA[all of the workflows of n8n i could find (also from the site itself)]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/Zie619/n8n-workflows">Zie619/n8n-workflows</a></h1>
             <p>all of the workflows of n8n i could find (also from the site itself)</p>
             <p>Language: Python</p>
-            <p>Stars: 43,154</p>
-            <p>Forks: 4,504</p>
-            <p>Stars today: 502 stars today</p>
+            <p>Stars: 43,432</p>
+            <p>Forks: 4,556</p>
+            <p>Stars today: 275 stars today</p>
             <h2>README</h2><pre># 🚀 n8n Workflow Collection
 
 &lt;div align=&quot;center&quot;&gt;
@@ -3150,15 +3150,15 @@ Made with ❤️ by [Zie619](https://github.com/Zie619) and [contributors](https
             <title><![CDATA[lzhoang2801/OpCore-Simplify]]></title>
             <link>https://github.com/lzhoang2801/OpCore-Simplify</link>
             <guid>https://github.com/lzhoang2801/OpCore-Simplify</guid>
-            <pubDate>Sat, 22 Nov 2025 00:04:09 GMT</pubDate>
+            <pubDate>Sun, 23 Nov 2025 00:04:32 GMT</pubDate>
             <description><![CDATA[A tool designed to simplify the creation of OpenCore EFI]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/lzhoang2801/OpCore-Simplify">lzhoang2801/OpCore-Simplify</a></h1>
             <p>A tool designed to simplify the creation of OpenCore EFI</p>
             <p>Language: Python</p>
-            <p>Stars: 2,700</p>
-            <p>Forks: 249</p>
-            <p>Stars today: 26 stars today</p>
+            <p>Stars: 2,724</p>
+            <p>Forks: 250</p>
+            <p>Stars today: 19 stars today</p>
             <h2>README</h2><pre>&lt;br/&gt;
 &lt;div align=&quot;center&quot;&gt;
   &lt;h3 align=&quot;center&quot;&gt;OpCore Simplify&lt;/h3&gt;
@@ -3348,15 +3348,15 @@ Distributed under the BSD 3-Clause License. See `LICENSE` for more information.
             <title><![CDATA[volcengine/MineContext]]></title>
             <link>https://github.com/volcengine/MineContext</link>
             <guid>https://github.com/volcengine/MineContext</guid>
-            <pubDate>Sat, 22 Nov 2025 00:04:08 GMT</pubDate>
+            <pubDate>Sun, 23 Nov 2025 00:04:31 GMT</pubDate>
             <description><![CDATA[MineContext is your proactive context-aware AI partner（Context-Engineering+ChatGPT Pulse）]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/volcengine/MineContext">volcengine/MineContext</a></h1>
             <p>MineContext is your proactive context-aware AI partner（Context-Engineering+ChatGPT Pulse）</p>
             <p>Language: Python</p>
-            <p>Stars: 3,895</p>
-            <p>Forks: 252</p>
-            <p>Stars today: 27 stars today</p>
+            <p>Stars: 3,920</p>
+            <p>Forks: 254</p>
+            <p>Stars today: 28 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
 
 &lt;picture&gt;
@@ -3815,15 +3815,15 @@ We will prioritize the expansion of Context Sources according to the following p
             <title><![CDATA[google/adk-python]]></title>
             <link>https://github.com/google/adk-python</link>
             <guid>https://github.com/google/adk-python</guid>
-            <pubDate>Sat, 22 Nov 2025 00:04:07 GMT</pubDate>
+            <pubDate>Sun, 23 Nov 2025 00:04:30 GMT</pubDate>
             <description><![CDATA[An open-source, code-first Python toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/google/adk-python">google/adk-python</a></h1>
             <p>An open-source, code-first Python toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.</p>
             <p>Language: Python</p>
-            <p>Stars: 15,440</p>
-            <p>Forks: 2,428</p>
-            <p>Stars today: 60 stars today</p>
+            <p>Stars: 15,496</p>
+            <p>Forks: 2,434</p>
+            <p>Stars today: 57 stars today</p>
             <h2>README</h2><pre># Agent Development Kit (ADK)
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
@@ -4011,15 +4011,15 @@ This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENS
             <title><![CDATA[MODSetter/SurfSense]]></title>
             <link>https://github.com/MODSetter/SurfSense</link>
             <guid>https://github.com/MODSetter/SurfSense</guid>
-            <pubDate>Sat, 22 Nov 2025 00:04:06 GMT</pubDate>
+            <pubDate>Sun, 23 Nov 2025 00:04:29 GMT</pubDate>
             <description><![CDATA[Open source alternative to NotebookLM, Perplexity, and Glean. Connects to search engines, Slack, Linear, Jira, ClickUp, Notion, YouTube, GitHub, Discord, and more. Join our Discord: https://discord.gg/ejRNvftDp9]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/MODSetter/SurfSense">MODSetter/SurfSense</a></h1>
             <p>Open source alternative to NotebookLM, Perplexity, and Glean. Connects to search engines, Slack, Linear, Jira, ClickUp, Notion, YouTube, GitHub, Discord, and more. Join our Discord: https://discord.gg/ejRNvftDp9</p>
             <p>Language: Python</p>
-            <p>Stars: 10,718</p>
+            <p>Stars: 10,725</p>
             <p>Forks: 877</p>
-            <p>Stars today: 16 stars today</p>
+            <p>Stars today: 13 stars today</p>
             <h2>README</h2><pre>
 ![new_header](https://github.com/user-attachments/assets/e236b764-0ddc-42ff-a1f1-8fbb3d2e0e65)
 
@@ -4343,15 +4343,15 @@ For detailed contribution guidelines, please see our [CONTRIBUTING.md](CONTRIBUT
             <title><![CDATA[RLinf/RLinf]]></title>
             <link>https://github.com/RLinf/RLinf</link>
             <guid>https://github.com/RLinf/RLinf</guid>
-            <pubDate>Sat, 22 Nov 2025 00:04:05 GMT</pubDate>
+            <pubDate>Sun, 23 Nov 2025 00:04:28 GMT</pubDate>
             <description><![CDATA[RLinf is a flexible and scalable open-source infrastructure designed for post-training foundation models (LLMs, VLMs, VLAs) via reinforcement learning.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/RLinf/RLinf">RLinf/RLinf</a></h1>
             <p>RLinf is a flexible and scalable open-source infrastructure designed for post-training foundation models (LLMs, VLMs, VLAs) via reinforcement learning.</p>
             <p>Language: Python</p>
-            <p>Stars: 1,355</p>
-            <p>Forks: 127</p>
-            <p>Stars today: 15 stars today</p>
+            <p>Stars: 1,369</p>
+            <p>Forks: 129</p>
+            <p>Stars today: 14 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
   &lt;img src=&quot;docs/source-en/_static/svg/logo_white.svg&quot; alt=&quot;RLinf-logo&quot; width=&quot;600&quot;/&gt;
 &lt;/div&gt;
@@ -4748,15 +4748,15 @@ and exhibits greater stability.
             <title><![CDATA[thinking-machines-lab/tinker-cookbook]]></title>
             <link>https://github.com/thinking-machines-lab/tinker-cookbook</link>
             <guid>https://github.com/thinking-machines-lab/tinker-cookbook</guid>
-            <pubDate>Sat, 22 Nov 2025 00:04:04 GMT</pubDate>
+            <pubDate>Sun, 23 Nov 2025 00:04:27 GMT</pubDate>
             <description><![CDATA[Post-training with Tinker]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/thinking-machines-lab/tinker-cookbook">thinking-machines-lab/tinker-cookbook</a></h1>
             <p>Post-training with Tinker</p>
             <p>Language: Python</p>
-            <p>Stars: 2,154</p>
-            <p>Forks: 178</p>
-            <p>Stars today: 17 stars today</p>
+            <p>Stars: 2,165</p>
+            <p>Forks: 180</p>
+            <p>Stars today: 10 stars today</p>
             <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;Tinker Cookbook&lt;/h1&gt;
 &lt;div align=&quot;center&quot;&gt;
   &lt;img src=&quot;assets/tinker-cover.png&quot; width=&quot;60%&quot; /&gt;
@@ -4855,15 +4855,15 @@ Or use this BibTeX citation:
             <title><![CDATA[googlefonts/googlesans-code]]></title>
             <link>https://github.com/googlefonts/googlesans-code</link>
             <guid>https://github.com/googlefonts/googlesans-code</guid>
-            <pubDate>Sat, 22 Nov 2025 00:04:03 GMT</pubDate>
+            <pubDate>Sun, 23 Nov 2025 00:04:26 GMT</pubDate>
             <description><![CDATA[The Google Sans Code font family]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/googlefonts/googlesans-code">googlefonts/googlesans-code</a></h1>
             <p>The Google Sans Code font family</p>
             <p>Language: Python</p>
-            <p>Stars: 1,876</p>
+            <p>Stars: 1,882</p>
             <p>Forks: 43</p>
-            <p>Stars today: 6 stars today</p>
+            <p>Stars today: 3 stars today</p>
             <h2>README</h2><pre># Google Sans Code
 
 ### In Memory of Chris Simpkins
@@ -4957,15 +4957,15 @@ Also see [TRADEMARKS.md](/TRADEMARKS.md) regarding naming issues.
             <title><![CDATA[google-agentic-commerce/AP2]]></title>
             <link>https://github.com/google-agentic-commerce/AP2</link>
             <guid>https://github.com/google-agentic-commerce/AP2</guid>
-            <pubDate>Sat, 22 Nov 2025 00:04:02 GMT</pubDate>
+            <pubDate>Sun, 23 Nov 2025 00:04:25 GMT</pubDate>
             <description><![CDATA[Building a Secure and Interoperable Future for AI-Driven Payments.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/google-agentic-commerce/AP2">google-agentic-commerce/AP2</a></h1>
             <p>Building a Secure and Interoperable Future for AI-Driven Payments.</p>
             <p>Language: Python</p>
-            <p>Stars: 2,485</p>
-            <p>Forks: 341</p>
-            <p>Stars today: 5 stars today</p>
+            <p>Stars: 2,492</p>
+            <p>Forks: 342</p>
+            <p>Stars today: 6 stars today</p>
             <h2>README</h2><pre># Agent Payments Protocol (AP2)
 
 [![Apache License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
@@ -5108,15 +5108,15 @@ uv pip install git+https://github.com/google-agentic-commerce/AP2.git@main
             <title><![CDATA[AtsushiSakai/PythonRobotics]]></title>
             <link>https://github.com/AtsushiSakai/PythonRobotics</link>
             <guid>https://github.com/AtsushiSakai/PythonRobotics</guid>
-            <pubDate>Sat, 22 Nov 2025 00:04:01 GMT</pubDate>
+            <pubDate>Sun, 23 Nov 2025 00:04:24 GMT</pubDate>
             <description><![CDATA[Python sample codes and textbook for robotics algorithms.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/AtsushiSakai/PythonRobotics">AtsushiSakai/PythonRobotics</a></h1>
             <p>Python sample codes and textbook for robotics algorithms.</p>
             <p>Language: Python</p>
-            <p>Stars: 26,780</p>
-            <p>Forks: 6,991</p>
-            <p>Stars today: 16 stars today</p>
+            <p>Stars: 26,793</p>
+            <p>Forks: 6,992</p>
+            <p>Stars today: 17 stars today</p>
             <h2>README</h2><pre>&lt;img src=&quot;https://github.com/AtsushiSakai/PythonRobotics/raw/master/icon.png?raw=true&quot; align=&quot;right&quot; width=&quot;300&quot; alt=&quot;header pic&quot;/&gt;
 
 # PythonRobotics
