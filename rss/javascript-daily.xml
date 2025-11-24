@@ -4,7 +4,7 @@
         <title>GitHub Trending Today for javascript - JavaScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for javascript.</description>
-        <lastBuildDate>Sun, 23 Nov 2025 00:04:56 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 24 Nov 2025 00:04:52 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
@@ -13,15 +13,15 @@
             <title><![CDATA[playcanvas/engine]]></title>
             <link>https://github.com/playcanvas/engine</link>
             <guid>https://github.com/playcanvas/engine</guid>
-            <pubDate>Sun, 23 Nov 2025 00:04:56 GMT</pubDate>
+            <pubDate>Mon, 24 Nov 2025 00:04:52 GMT</pubDate>
             <description><![CDATA[Powerful web graphics runtime built on WebGL, WebGPU, WebXR and glTF]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/playcanvas/engine">playcanvas/engine</a></h1>
             <p>Powerful web graphics runtime built on WebGL, WebGPU, WebXR and glTF</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 12,769</p>
-            <p>Forks: 1,604</p>
-            <p>Stars today: 112 stars today</p>
+            <p>Stars: 12,864</p>
+            <p>Forks: 1,609</p>
+            <p>Stars today: 122 stars today</p>
             <h2>README</h2><pre># PlayCanvas Engine
 
 [![NPM Version](https://img.shields.io/npm/v/playcanvas)](https://www.npmjs.com/package/playcanvas)
@@ -148,14 +148,14 @@ For Editor-related bugs and issues, please refer to the [Editor&#039;s repo](htt
             <title><![CDATA[serverless-dns/serverless-dns]]></title>
             <link>https://github.com/serverless-dns/serverless-dns</link>
             <guid>https://github.com/serverless-dns/serverless-dns</guid>
-            <pubDate>Sun, 23 Nov 2025 00:04:55 GMT</pubDate>
+            <pubDate>Mon, 24 Nov 2025 00:04:51 GMT</pubDate>
             <description><![CDATA[The RethinkDNS resolver that deploys to Cloudflare Workers, Deno Deploy, Fastly, and Fly.io]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/serverless-dns/serverless-dns">serverless-dns/serverless-dns</a></h1>
             <p>The RethinkDNS resolver that deploys to Cloudflare Workers, Deno Deploy, Fastly, and Fly.io</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 3,145</p>
-            <p>Forks: 2,129</p>
+            <p>Stars: 3,154</p>
+            <p>Forks: 2,135</p>
             <p>Stars today: 7 stars today</p>
             <h2>README</h2><pre>#### It&#039;s a bird, it&#039;s a plane, it&#039;s... a self-hosted, pi-hole esque, DNS resolver
 
@@ -177,8 +177,11 @@ Server-side processing takes from 0 milliseconds (ms) to 2ms (median), and end-t
 [&lt;img src=&quot;https://raw.githubusercontent.com/fossunited/Branding/main/asset/FOSS%20United%20Logo/Extra/Extra%20Logo%20white%20on%20black.jpg&quot;
      alt=&quot;FOSS United&quot;
      height=&quot;40&quot;&gt;](https://fossunited.org/grants)&amp;emsp;
+[&lt;img src=&quot;https://floss.fund/static/badge.svg&quot;
+    alt=&quot;FLOSS/fund badge&quot;
+    height=&quot;40&quot;&gt;](https://floss.fund)
 
-The *Rethink DNS* resolver on Fly.io is sponsored by [FOSS United](https://fossunited.org/grants).
+The *Rethink DNS* resolver on Fly.io is sponsored by [FLOSS/fund](https://floss.fund).
 
 ### Self-host
 
@@ -299,7 +302,7 @@ For Fastly Compute@Edge, setup env vars in [`fastly.toml`](fastly.toml), instead
 serverless-dns supports authentication with an *alpha-numeric* bearer token for both DoH and DoT. For a token, `msg-key` (secret), append the output of `hex(hmac-sha256(msg-key|domain.tld), msg)` to `ACCESS_KEYS` env var in csv format. Note: `msg` is currently fixed to `sdns-public-auth-info`.
 
 1. DoH: place the `msg-key` at the end of the blockstamp, like so:
-`1:1:4AIggAABEGAgAA:&lt;msg-key&gt;` (here, `1` is the version, `1:4AIggAABEGAgAA`
+`1:4AIggAABEGAgAA:&lt;msg-key&gt;` (here, `1` is the version, `1:4AIggAABEGAgAA`
 is the blockstamp, `&lt;msg-key&gt;` is the auth secret, and `:` is the delimiter).
 2. DoT: place the `msg-key` at the end of the SNI (domain-name) containing the blockstamp:
 `1-4abcbaaaaeigaiaa-&lt;msg-key&gt;` (here `1` is the version, `4abcbaaaaeigaiaa`
@@ -381,6 +384,10 @@ _base64_ encoded in env var `TLS_CERTKEY` ([ref](https://github.com/serverless-d
 TLS_OFFLOAD=&quot;true&quot;
 # OR: base64 representation of both key (private) and cert (public chain)
 TLS_CERTKEY=&quot;KEY=b64_key_content\nCRT=b64_cert_content&quot;
+# OPTIONALLY: use TLS with PSK ciphers (also permits domain fronting)
+TLS_PSK=&quot;random-hex-or-base64(64bytes)&quot;
+# OPTIONALLY: set TLS_ALLOW_ANY_SNI to true to permit domain fronting
+TLS_ALLOW_ANY_SNI=&quot;true&quot;
 ```
 
 For Deno, `key` and `cert` files are read from paths defined in env vars, `TLS_KEY_PATH` and `TLS_CRT_PATH` ([ref](https://github.com/serverless-dns/serverless-dns/blob/270d1a3c/src/server-deno.ts#L32-L35)).
@@ -452,15 +459,15 @@ when serving a DNS request.
             <title><![CDATA[davila7/claude-code-templates]]></title>
             <link>https://github.com/davila7/claude-code-templates</link>
             <guid>https://github.com/davila7/claude-code-templates</guid>
-            <pubDate>Sun, 23 Nov 2025 00:04:54 GMT</pubDate>
+            <pubDate>Mon, 24 Nov 2025 00:04:50 GMT</pubDate>
             <description><![CDATA[CLI tool for configuring and monitoring Claude Code]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/davila7/claude-code-templates">davila7/claude-code-templates</a></h1>
             <p>CLI tool for configuring and monitoring Claude Code</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 11,543</p>
-            <p>Forks: 1,002</p>
-            <p>Stars today: 19 stars today</p>
+            <p>Stars: 11,562</p>
+            <p>Forks: 1,007</p>
+            <p>Stars today: 28 stars today</p>
             <h2>README</h2><pre>[![npm version](https://img.shields.io/npm/v/claude-code-templates.svg)](https://www.npmjs.com/package/claude-code-templates)
 [![npm downloads](https://img.shields.io/npm/dt/claude-code-templates.svg)](https://www.npmjs.com/package/claude-code-templates)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -606,13 +613,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
             <title><![CDATA[WordPress/gutenberg]]></title>
             <link>https://github.com/WordPress/gutenberg</link>
             <guid>https://github.com/WordPress/gutenberg</guid>
-            <pubDate>Sun, 23 Nov 2025 00:04:53 GMT</pubDate>
+            <pubDate>Mon, 24 Nov 2025 00:04:49 GMT</pubDate>
             <description><![CDATA[The Block Editor project for WordPress and beyond. Plugin is available from the official repository.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/WordPress/gutenberg">WordPress/gutenberg</a></h1>
             <p>The Block Editor project for WordPress and beyond. Plugin is available from the official repository.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 11,449</p>
+            <p>Stars: 11,450</p>
             <p>Forks: 4,611</p>
             <p>Stars today: 0 stars today</p>
             <h2>README</h2><pre># Gutenberg
@@ -687,15 +694,15 @@ WordPress is free software, and is released under the terms of the GNU General P
             <title><![CDATA[jaywcjlove/awesome-mac]]></title>
             <link>https://github.com/jaywcjlove/awesome-mac</link>
             <guid>https://github.com/jaywcjlove/awesome-mac</guid>
-            <pubDate>Sun, 23 Nov 2025 00:04:52 GMT</pubDate>
+            <pubDate>Mon, 24 Nov 2025 00:04:48 GMT</pubDate>
             <description><![CDATA[ Now we have become very big, Different from the original idea. Collect premium software in various categories.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/jaywcjlove/awesome-mac">jaywcjlove/awesome-mac</a></h1>
             <p> Now we have become very big, Different from the original idea. Collect premium software in various categories.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 93,828</p>
-            <p>Forks: 7,078</p>
-            <p>Stars today: 61 stars today</p>
+            <p>Stars: 93,868</p>
+            <p>Forks: 7,080</p>
+            <p>Stars today: 48 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot; markdown=&quot;1&quot;&gt;
   &lt;sup&gt;Special thanks to:&lt;/sup&gt;
   &lt;br&gt;
@@ -923,15 +930,15 @@ Any comments, suggestions? [Let us know!](https://github.com/jaywcjlove/awesome-
             <title><![CDATA[open-webui/open-webui]]></title>
             <link>https://github.com/open-webui/open-webui</link>
             <guid>https://github.com/open-webui/open-webui</guid>
-            <pubDate>Sun, 23 Nov 2025 00:04:51 GMT</pubDate>
+            <pubDate>Mon, 24 Nov 2025 00:04:47 GMT</pubDate>
             <description><![CDATA[User-friendly AI Interface (Supports Ollama, OpenAI API, ...)]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/open-webui/open-webui">open-webui/open-webui</a></h1>
             <p>User-friendly AI Interface (Supports Ollama, OpenAI API, ...)</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 115,967</p>
-            <p>Forks: 16,253</p>
-            <p>Stars today: 80 stars today</p>
+            <p>Stars: 116,044</p>
+            <p>Forks: 16,270</p>
+            <p>Stars today: 86 stars today</p>
             <h2>README</h2><pre># Open WebUI 👋
 
 ![GitHub stars](https://img.shields.io/github/stars/open-webui/open-webui?style=social)
@@ -1173,14 +1180,14 @@ Created by [Timothy Jaeryang Baek](https://github.com/tjbck) - Let&#039;s make O
             <title><![CDATA[github/awesome-copilot]]></title>
             <link>https://github.com/github/awesome-copilot</link>
             <guid>https://github.com/github/awesome-copilot</guid>
-            <pubDate>Sun, 23 Nov 2025 00:04:50 GMT</pubDate>
+            <pubDate>Mon, 24 Nov 2025 00:04:46 GMT</pubDate>
             <description><![CDATA[Community-contributed instructions, prompts, and configurations to help you make the most of GitHub Copilot.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/github/awesome-copilot">github/awesome-copilot</a></h1>
             <p>Community-contributed instructions, prompts, and configurations to help you make the most of GitHub Copilot.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 12,550</p>
-            <p>Forks: 1,477</p>
+            <p>Stars: 12,593</p>
+            <p>Forks: 1,483</p>
             <p>Stars today: 39 stars today</p>
             <h2>README</h2><pre># 🤖 Awesome GitHub Copilot Customizations
 
@@ -1208,7 +1215,7 @@ Discover our curated collections of prompts, instructions, and chat modes organi
 | Name | Description | Items | Tags |
 | ---- | ----------- | ----- | ---- |
 | [Awesome Copilot](collections/awesome-copilot.md) | Meta prompts that help you discover and generate curated GitHub Copilot chat modes, collections, instructions, prompts, and agents. | 6 items | github-copilot, discovery, meta, prompt-engineering, agents |
-| [Partners](collections/partners.md) | Custom agents that have been created by GitHub partners | 18 items | devops, security, database, cloud, infrastructure, observability, feature-flags, cicd, migration, performance |
+| [Partners](collections/partners.md) | Custom agents that have been created by GitHub partners | 17 items | devops, security, database, cloud, infrastructure, observability, feature-flags, cicd, migration, performance |
 
 
 ## MCP Server
@@ -1378,15 +1385,15 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
             <title><![CDATA[projectdiscovery/nuclei-templates]]></title>
             <link>https://github.com/projectdiscovery/nuclei-templates</link>
             <guid>https://github.com/projectdiscovery/nuclei-templates</guid>
-            <pubDate>Sun, 23 Nov 2025 00:04:49 GMT</pubDate>
+            <pubDate>Mon, 24 Nov 2025 00:04:45 GMT</pubDate>
             <description><![CDATA[Community curated list of templates for the nuclei engine to find security vulnerabilities.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/projectdiscovery/nuclei-templates">projectdiscovery/nuclei-templates</a></h1>
             <p>Community curated list of templates for the nuclei engine to find security vulnerabilities.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 11,378</p>
-            <p>Forks: 3,164</p>
-            <p>Stars today: 2 stars today</p>
+            <p>Stars: 11,380</p>
+            <p>Forks: 3,167</p>
+            <p>Stars today: 1 star today</p>
             <h2>README</h2><pre>
 
 &lt;h1 align=&quot;center&quot;&gt;
@@ -1491,15 +1498,15 @@ Thanks again for your contribution and keeping this community vibrant. :heart:
             <title><![CDATA[jgraph/drawio-desktop]]></title>
             <link>https://github.com/jgraph/drawio-desktop</link>
             <guid>https://github.com/jgraph/drawio-desktop</guid>
-            <pubDate>Sun, 23 Nov 2025 00:04:48 GMT</pubDate>
+            <pubDate>Mon, 24 Nov 2025 00:04:44 GMT</pubDate>
             <description><![CDATA[Official electron build of draw.io]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/jgraph/drawio-desktop">jgraph/drawio-desktop</a></h1>
             <p>Official electron build of draw.io</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 58,002</p>
-            <p>Forks: 5,505</p>
-            <p>Stars today: 15 stars today</p>
+            <p>Stars: 58,007</p>
+            <p>Forks: 5,506</p>
+            <p>Stars today: 16 stars today</p>
             <h2>README</h2><pre>About
 ----- 
 
@@ -1577,14 +1584,14 @@ the long term viability of the project.
             <title><![CDATA[ryanmcdermott/clean-code-javascript]]></title>
             <link>https://github.com/ryanmcdermott/clean-code-javascript</link>
             <guid>https://github.com/ryanmcdermott/clean-code-javascript</guid>
-            <pubDate>Sun, 23 Nov 2025 00:04:47 GMT</pubDate>
+            <pubDate>Mon, 24 Nov 2025 00:04:43 GMT</pubDate>
             <description><![CDATA[Clean Code concepts adapted for JavaScript]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/ryanmcdermott/clean-code-javascript">ryanmcdermott/clean-code-javascript</a></h1>
             <p>Clean Code concepts adapted for JavaScript</p>
             <p>Language: JavaScript</p>
             <p>Stars: 94,044</p>
-            <p>Forks: 12,495</p>
+            <p>Forks: 12,498</p>
             <p>Stars today: 4 stars today</p>
             <h2>README</h2><pre># clean-code-javascript
 
@@ -2386,14 +2393,14 @@ const totalOutput = program
             <title><![CDATA[openwrt/luci]]></title>
             <link>https://github.com/openwrt/luci</link>
             <guid>https://github.com/openwrt/luci</guid>
-            <pubDate>Sun, 23 Nov 2025 00:04:46 GMT</pubDate>
+            <pubDate>Mon, 24 Nov 2025 00:04:42 GMT</pubDate>
             <description><![CDATA[LuCI - OpenWrt Configuration Interface]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/openwrt/luci">openwrt/luci</a></h1>
             <p>LuCI - OpenWrt Configuration Interface</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 7,251</p>
-            <p>Forks: 2,735</p>
+            <p>Stars: 7,252</p>
+            <p>Forks: 2,737</p>
             <p>Stars today: 1 star today</p>
             <h2>README</h2><pre># OpenWrt luci feed
 
@@ -2448,15 +2455,15 @@ Use [Weblate](https://hosted.weblate.org/engage/openwrt/?utm_source=widget) inst
             <title><![CDATA[academind/react-complete-guide-course-resources]]></title>
             <link>https://github.com/academind/react-complete-guide-course-resources</link>
             <guid>https://github.com/academind/react-complete-guide-course-resources</guid>
-            <pubDate>Sun, 23 Nov 2025 00:04:45 GMT</pubDate>
+            <pubDate>Mon, 24 Nov 2025 00:04:41 GMT</pubDate>
             <description><![CDATA[React - The Complete Guide Course Resources (Code, Attachments, Slides)]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/academind/react-complete-guide-course-resources">academind/react-complete-guide-course-resources</a></h1>
             <p>React - The Complete Guide Course Resources (Code, Attachments, Slides)</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 3,616</p>
-            <p>Forks: 2,777</p>
-            <p>Stars today: 5 stars today</p>
+            <p>Stars: 3,618</p>
+            <p>Forks: 2,780</p>
+            <p>Stars today: 4 stars today</p>
             <h2>README</h2><pre># React - The Complete Guide Course Resources
 
 This repository provides access to code files, code snapshots, slides &amp; other resources that are used or provided by the [React - The Complete Guide](https://acad.link/reactjs) course.
@@ -2484,14 +2491,14 @@ Of course, you can also try running those code snapshots on your machine. You&#0
             <title><![CDATA[airbnb/javascript]]></title>
             <link>https://github.com/airbnb/javascript</link>
             <guid>https://github.com/airbnb/javascript</guid>
-            <pubDate>Sun, 23 Nov 2025 00:04:44 GMT</pubDate>
+            <pubDate>Mon, 24 Nov 2025 00:04:40 GMT</pubDate>
             <description><![CDATA[JavaScript Style Guide]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/airbnb/javascript">airbnb/javascript</a></h1>
             <p>JavaScript Style Guide</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 147,892</p>
-            <p>Forks: 26,803</p>
+            <p>Stars: 147,894</p>
+            <p>Forks: 26,802</p>
             <p>Stars today: 8 stars today</p>
             <h2>README</h2><pre># Airbnb JavaScript Style Guide() {
 
@@ -3148,15 +3155,15 @@ Other Style Guides
             <title><![CDATA[Wei-Shaw/claude-relay-service]]></title>
             <link>https://github.com/Wei-Shaw/claude-relay-service</link>
             <guid>https://github.com/Wei-Shaw/claude-relay-service</guid>
-            <pubDate>Sun, 23 Nov 2025 00:04:43 GMT</pubDate>
+            <pubDate>Mon, 24 Nov 2025 00:04:39 GMT</pubDate>
             <description><![CDATA[CRS-自建Claude Code镜像，一站式开源中转服务，让 Claude、OpenAI、Gemini、Droid 订阅统一接入，支持拼车共享，更高效分摊成本，原生工具无缝使用。]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/Wei-Shaw/claude-relay-service">Wei-Shaw/claude-relay-service</a></h1>
             <p>CRS-自建Claude Code镜像，一站式开源中转服务，让 Claude、OpenAI、Gemini、Droid 订阅统一接入，支持拼车共享，更高效分摊成本，原生工具无缝使用。</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 5,484</p>
-            <p>Forks: 908</p>
-            <p>Stars today: 16 stars today</p>
+            <p>Stars: 5,508</p>
+            <p>Forks: 911</p>
+            <p>Stars today: 25 stars today</p>
             <h2>README</h2><pre># Claude Relay Service
 
 &lt;div align=&quot;center&quot;&gt;
@@ -3590,7 +3597,9 @@ GEMINI_API_KEY=&quot;后台创建的API密钥&quot;
 GEMINI_MODEL=&quot;gemini-2.5-pro&quot; # 如果你有gemini3权限可以填： gemini-3-pro-preview
 ```
 
-&gt; **认证**：只能选 ```Use Gemini API Key``` 进行认证，如果提示 ```Enter Gemini API Key``` 请直接留空按回车。如果一打开就跳 Google请删除 ```~/.gemini/settings.json``` 后再尝试启动```gemini```。  
+&gt; **认证**：只能选 ```Use Gemini API Key``` 进行认证，如果提示 ```Enter Gemini API Key``` 请直接留空按回车。如果一打开就跳 Google请删除 ```~/.gemini/settings.json``` 后再尝试启动```gemini```。
+
+&gt; 💡 **进阶用法**：想在 Claude Code 中直接使用 Gemini 3 模型？请参考 [Claude Code 调用 Gemini 3 模型指南](docs/claude-code-gemini3-guide/README.md)
 
 **使用 Claude Code：**
 
@@ -4124,15 +4133,15 @@ proxy_request_buffering off;
             <title><![CDATA[algorithm-visualizer/algorithm-visualizer]]></title>
             <link>https://github.com/algorithm-visualizer/algorithm-visualizer</link>
             <guid>https://github.com/algorithm-visualizer/algorithm-visualizer</guid>
-            <pubDate>Sun, 23 Nov 2025 00:04:42 GMT</pubDate>
+            <pubDate>Mon, 24 Nov 2025 00:04:38 GMT</pubDate>
             <description><![CDATA[🎆Interactive Online Platform that Visualizes Algorithms from Code]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/algorithm-visualizer/algorithm-visualizer">algorithm-visualizer/algorithm-visualizer</a></h1>
             <p>🎆Interactive Online Platform that Visualizes Algorithms from Code</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 48,171</p>
-            <p>Forks: 7,534</p>
-            <p>Stars today: 10 stars today</p>
+            <p>Stars: 48,183</p>
+            <p>Forks: 7,536</p>
+            <p>Stars today: 11 stars today</p>
             <h2>README</h2><pre># Algorithm Visualizer
 
 ## Introduction
