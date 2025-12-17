@@ -4,7 +4,7 @@
         <title>GitHub Trending Today for typescript - TypeScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for typescript.</description>
-        <lastBuildDate>Tue, 16 Dec 2025 00:05:39 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 17 Dec 2025 00:04:59 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
@@ -13,15 +13,15 @@
             <title><![CDATA[simstudioai/sim]]></title>
             <link>https://github.com/simstudioai/sim</link>
             <guid>https://github.com/simstudioai/sim</guid>
-            <pubDate>Tue, 16 Dec 2025 00:05:39 GMT</pubDate>
+            <pubDate>Wed, 17 Dec 2025 00:04:59 GMT</pubDate>
             <description><![CDATA[Open-source platform to build and deploy AI agent workflows.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/simstudioai/sim">simstudioai/sim</a></h1>
             <p>Open-source platform to build and deploy AI agent workflows.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 21,717</p>
-            <p>Forks: 2,752</p>
-            <p>Stars today: 1,451 stars today</p>
+            <p>Stars: 22,874</p>
+            <p>Forks: 2,862</p>
+            <p>Stars today: 1,357 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
   &lt;a href=&quot;https://sim.ai&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
     &lt;img src=&quot;apps/sim/public/logo/reverse/text/large.png&quot; alt=&quot;Sim Logo&quot; width=&quot;500&quot;/&gt;
@@ -154,6 +154,7 @@ When running with Docker, use `host.docker.internal` if vLLM is on your host mac
 
 **Requirements:**
 - [Bun](https://bun.sh/) runtime
+- [Node.js](https://nodejs.org/) v20+ (required for sandboxed code execution)
 - PostgreSQL 12+ with [pgvector extension](https://github.com/pgvector/pgvector) (required for AI embeddings)
 
 **Note:** Sim uses vector embeddings for AI features like knowledge bases and semantic search, which requires the `pgvector` PostgreSQL extension.
@@ -314,295 +315,781 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[shadcn-ui/ui]]></title>
-            <link>https://github.com/shadcn-ui/ui</link>
-            <guid>https://github.com/shadcn-ui/ui</guid>
-            <pubDate>Tue, 16 Dec 2025 00:05:38 GMT</pubDate>
-            <description><![CDATA[A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code.]]></description>
+            <title><![CDATA[thedotmack/claude-mem]]></title>
+            <link>https://github.com/thedotmack/claude-mem</link>
+            <guid>https://github.com/thedotmack/claude-mem</guid>
+            <pubDate>Wed, 17 Dec 2025 00:04:58 GMT</pubDate>
+            <description><![CDATA[A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/shadcn-ui/ui">shadcn-ui/ui</a></h1>
-            <p>A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code.</p>
+            <h1><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a></h1>
+            <p>A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 102,656</p>
-            <p>Forks: 7,459</p>
-            <p>Stars today: 374 stars today</p>
-            <h2>README</h2><pre># shadcn/ui
+            <p>Stars: 7,393</p>
+            <p>Forks: 435</p>
+            <p>Stars today: 632 stars today</p>
+            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;
+  &lt;br&gt;
+  &lt;a href=&quot;https://github.com/thedotmack/claude-mem&quot;&gt;
+    &lt;picture&gt;
+      &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/claude-mem-logo-for-dark-mode.webp&quot;&gt;
+      &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/claude-mem-logo-for-light-mode.webp&quot;&gt;
+      &lt;img src=&quot;https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/claude-mem-logo-for-light-mode.webp&quot; alt=&quot;Claude-Mem&quot; width=&quot;400&quot;&gt;
+    &lt;/picture&gt;
+  &lt;/a&gt;
+  &lt;br&gt;
+&lt;/h1&gt;
 
-A set of beautifully designed components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. **Use this to build your own component library**.
+&lt;h4 align=&quot;center&quot;&gt;Persistent memory compression system built for &lt;a href=&quot;https://claude.com/claude-code&quot; target=&quot;_blank&quot;&gt;Claude Code&lt;/a&gt;.&lt;/h4&gt;
 
-![hero](apps/v4/public/opengraph-image.png)
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;LICENSE&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/License-AGPL%203.0-blue.svg&quot; alt=&quot;License&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;package.json&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/version-6.5.0-green.svg&quot; alt=&quot;Version&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;package.json&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg&quot; alt=&quot;Node&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://github.com/thedotmack/awesome-claude-code&quot;&gt;
+    &lt;img src=&quot;https://awesome.re/mentioned-badge.svg&quot; alt=&quot;Mentioned in Awesome Claude Code&quot;&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://trendshift.io/repositories/15496&quot; target=&quot;_blank&quot;&gt;
+    &lt;picture&gt;
+      &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/trendshift-badge-dark.svg&quot;&gt;
+      &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/trendshift-badge.svg&quot;&gt;
+      &lt;img src=&quot;https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/trendshift-badge.svg&quot; alt=&quot;thedotmack/claude-mem | Trendshift&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;
+    &lt;/picture&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://github.com/thedotmack/claude-mem&quot;&gt;
+    &lt;picture&gt;
+      &lt;img src=&quot;https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/cm-preview.gif&quot; alt=&quot;Claude-Mem Preview&quot; width=&quot;800&quot;&gt;
+    &lt;/picture&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;#quick-start&quot;&gt;Quick Start&lt;/a&gt; •
+  &lt;a href=&quot;#how-it-works&quot;&gt;How It Works&lt;/a&gt; •
+  &lt;a href=&quot;#mcp-search-tools&quot;&gt;Search Tools&lt;/a&gt; •
+  &lt;a href=&quot;#documentation&quot;&gt;Documentation&lt;/a&gt; •
+  &lt;a href=&quot;#configuration&quot;&gt;Configuration&lt;/a&gt; •
+  &lt;a href=&quot;#troubleshooting&quot;&gt;Troubleshooting&lt;/a&gt; •
+  &lt;a href=&quot;#license&quot;&gt;License&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  Claude-Mem seamlessly preserves context across sessions by automatically capturing tool usage observations, generating semantic summaries, and making them available to future sessions. This enables Claude to maintain continuity of knowledge about projects even after sessions end or reconnect.
+&lt;/p&gt;
+
+---
+
+## Quick Start
+
+Start a new Claude Code session in the terminal and enter the following commands:
+
+```
+&gt; /plugin marketplace add thedotmack/claude-mem
+
+&gt; /plugin install claude-mem
+```
+
+Restart Claude Code. Context from previous sessions will automatically appear in new sessions.
+
+**Key Features:**
+
+- 🧠 **Persistent Memory** - Context survives across sessions
+- 📊 **Progressive Disclosure** - Layered memory retrieval with token cost visibility
+- 🔍 **Skill-Based Search** - Query your project history with mem-search skill
+- 🖥️ **Web Viewer UI** - Real-time memory stream at http://localhost:37777
+- 💻 **Claude Desktop Skill** - Search memory from Claude Desktop conversations
+- 🔒 **Privacy Control** - Use `&lt;private&gt;` tags to exclude sensitive content from storage
+- ⚙️ **Context Configuration** - Fine-grained control over what context gets injected
+- 🤖 **Automatic Operation** - No manual intervention required
+- 🔗 **Citations** - Reference past observations with IDs (access via http://localhost:37777/api/observation/{id} or view all in the web viewer at http://localhost:37777)
+- 🧪 **Beta Channel** - Try experimental features like Endless Mode via version switching
+
+---
 
 ## Documentation
 
-Visit http://ui.shadcn.com/docs to view the documentation.
+📚 **[View Full Documentation](docs/)** - Browse markdown docs on GitHub
+
+💻 **Local Preview**: Run Mintlify docs locally:
+
+```bash
+cd docs/public
+npx mintlify dev
+```
+
+### Getting Started
+
+- **[Installation Guide](https://docs.claude-mem.ai/installation)** - Quick start &amp; advanced installation
+- **[Usage Guide](https://docs.claude-mem.ai/usage/getting-started)** - How Claude-Mem works automatically
+- **[Search Tools](https://docs.claude-mem.ai/usage/search-tools)** - Query your project history with natural language
+- **[Beta Features](https://docs.claude-mem.ai/beta-features)** - Try experimental features like Endless Mode
+
+### Best Practices
+
+- **[Context Engineering](https://docs.claude-mem.ai/context-engineering)** - AI agent context optimization principles
+- **[Progressive Disclosure](https://docs.claude-mem.ai/progressive-disclosure)** - Philosophy behind Claude-Mem&#039;s context priming strategy
+
+### Architecture
+
+- **[Overview](https://docs.claude-mem.ai/architecture/overview)** - System components &amp; data flow
+- **[Architecture Evolution](https://docs.claude-mem.ai/architecture-evolution)** - The journey from v3 to v5
+- **[Hooks Architecture](https://docs.claude-mem.ai/hooks-architecture)** - How Claude-Mem uses lifecycle hooks
+- **[Hooks Reference](https://docs.claude-mem.ai/architecture/hooks)** - 7 hook scripts explained
+- **[Worker Service](https://docs.claude-mem.ai/architecture/worker-service)** - HTTP API &amp; Bun management
+- **[Database](https://docs.claude-mem.ai/architecture/database)** - SQLite schema &amp; FTS5 search
+- **[Search Architecture](https://docs.claude-mem.ai/architecture/search-architecture)** - Hybrid search with Chroma vector database
+
+### Configuration &amp; Development
+
+- **[Configuration](https://docs.claude-mem.ai/configuration)** - Environment variables &amp; settings
+- **[Development](https://docs.claude-mem.ai/development)** - Building, testing, contributing
+- **[Troubleshooting](https://docs.claude-mem.ai/troubleshooting)** - Common issues &amp; solutions
+
+---
+
+## How It Works
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│ Session Start → Inject recent observations as context      │
+└─────────────────────────────────────────────────────────────┘
+                            ↓
+┌─────────────────────────────────────────────────────────────┐
+│ User Prompts → Create session, save user prompts           │
+└─────────────────────────────────────────────────────────────┘
+                            ↓
+┌─────────────────────────────────────────────────────────────┐
+│ Tool Executions → Capture observations (Read, Write, etc.)  │
+└─────────────────────────────────────────────────────────────┘
+                            ↓
+┌─────────────────────────────────────────────────────────────┐
+│ Worker Processes → Extract learnings via Claude Agent SDK   │
+└─────────────────────────────────────────────────────────────┘
+                            ↓
+┌─────────────────────────────────────────────────────────────┐
+│ Session Ends → Generate summary, ready for next session     │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**Core Components:**
+
+1. **5 Lifecycle Hooks** - SessionStart, UserPromptSubmit, PostToolUse, Stop, SessionEnd (6 hook scripts)
+2. **Smart Install** - Cached dependency checker (pre-hook script, not a lifecycle hook)
+3. **Worker Service** - HTTP API on port 37777 with web viewer UI and 10 search endpoints, managed by Bun
+4. **SQLite Database** - Stores sessions, observations, summaries with FTS5 full-text search
+5. **mem-search Skill** - Natural language queries with progressive disclosure
+6. **Chroma Vector Database** - Hybrid semantic + keyword search for intelligent context retrieval
+
+See [Architecture Overview](https://docs.claude-mem.ai/architecture/overview) for details.
+
+---
+
+## mem-search Skill
+
+Claude-Mem provides intelligent search through the mem-search skill that auto-invokes when you ask about past work:
+
+**How It Works:**
+- Just ask naturally: *&quot;What did we do last session?&quot;* or *&quot;Did we fix this bug before?&quot;*
+- Claude automatically invokes the mem-search skill to find relevant context
+
+**Available Search Operations:**
+
+1. **Search Observations** - Full-text search across observations
+2. **Search Sessions** - Full-text search across session summaries
+3. **Search Prompts** - Search raw user requests
+4. **By Concept** - Find by concept tags (discovery, problem-solution, pattern, etc.)
+5. **By File** - Find observations referencing specific files
+6. **By Type** - Find by type (decision, bugfix, feature, refactor, discovery, change)
+7. **Recent Context** - Get recent session context for a project
+8. **Timeline** - Get unified timeline of context around a specific point in time
+9. **Timeline by Query** - Search for observations and get timeline context around best match
+10. **API Help** - Get search API documentation
+
+**Example Natural Language Queries:**
+
+```
+&quot;What bugs did we fix last session?&quot;
+&quot;How did we implement authentication?&quot;
+&quot;What changes were made to worker-service.ts?&quot;
+&quot;Show me recent work on this project&quot;
+&quot;What was happening when we added the viewer UI?&quot;
+```
+
+See [Search Tools Guide](https://docs.claude-mem.ai/usage/search-tools) for detailed examples.
+
+---
+
+## Beta Features &amp; Endless Mode
+
+&gt; **Note**: Endless Mode is an **experimental feature in the beta branch only**. It is not included in the stable release you install via the marketplace. You must manually switch to the beta channel to try it, and it comes with significant caveats (see below).
+
+Claude-Mem offers a **beta channel** with experimental features. Switch between stable and beta versions directly from the web viewer UI.
+
+### How to Try Beta
+
+1. Open http://localhost:37777
+2. Click Settings (gear icon)
+3. In **Version Channel**, click &quot;Try Beta (Endless Mode)&quot;
+4. Wait for the worker to restart
+
+Your memory data is preserved when switching versions.
+
+### Endless Mode (Beta)
+
+The flagship beta feature is **Endless Mode** - a biomimetic memory architecture that dramatically extends session length:
+
+**The Problem**: Standard Claude Code sessions hit context limits after ~50 tool uses. Each tool adds 1-10k+ tokens, and Claude re-synthesizes all previous outputs on every response (O(N²) complexity).
+
+**The Solution**: Endless Mode compresses tool outputs into ~500-token observations and transforms the transcript in real-time:
+
+```
+Working Memory (Context):     Compressed observations (~500 tokens each)
+Archive Memory (Disk):        Full tool outputs preserved for recall
+```
+
+**Projected Results** (based on theoretical modeling, not production measurements):
+- Significant token reduction in context window
+- More tool uses before context exhaustion
+- Linear O(N) scaling instead of quadratic O(N²)
+- Full transcripts preserved for perfect recall
+
+**Important Caveats**:
+- **Not in stable release** - You must switch to beta branch to use this feature
+- **Still in development** - May have bugs, breaking changes, or incomplete functionality
+- **Slower than standard mode** - Blocking observation generation adds latency to each tool use
+- **Theoretical projections** - The efficiency claims above are based on simulations, not real-world production data
+
+See [Beta Features Documentation](https://docs.claude-mem.ai/beta-features) for details.
+
+---
+
+## What&#039;s New
+
+**v6.4.9 - Context Configuration Settings:**
+- 11 new settings for fine-grained control over context injection
+- Configure token economics display, observation filtering by type/concept
+- Control number of observations and which fields to display
+
+**v6.4.0 - Dual-Tag Privacy System:**
+- `&lt;private&gt;` tags for user-controlled privacy - wrap sensitive content to exclude from storage
+- System-level `&lt;claude-mem-context&gt;` tags prevent recursive observation storage
+- Edge processing ensures private content never reaches database
+
+**v6.3.0 - Version Channel:**
+- Switch between stable and beta versions from the web viewer UI
+- Try experimental features like Endless Mode without manual git operations
+
+**Previous Highlights:**
+- **v6.0.0**: Major session management &amp; transcript processing improvements
+- **v5.5.0**: mem-search skill enhancement with 100% effectiveness rate
+- **v5.4.0**: Skill-based search architecture (~2,250 tokens saved per session)
+- **v5.1.0**: Web-based viewer UI with real-time updates
+- **v5.0.0**: Hybrid search with Chroma vector database
+
+See [CHANGELOG.md](CHANGELOG.md) for complete version history.
+
+---
+
+## System Requirements
+
+- **Node.js**: 18.0.0 or higher
+- **Claude Code**: Latest version with plugin support
+- **Bun**: JavaScript runtime and process manager (auto-installed if missing)
+- **uv**: Python package manager for vector search (auto-installed if missing)
+- **SQLite 3**: For persistent storage (bundled)
+
+---
+
+## Key Benefits
+
+### Progressive Disclosure Context
+
+- **Layered memory retrieval** mirrors human memory patterns
+- **Layer 1 (Index)**: See what observations exist with token costs at session start
+- **Layer 2 (Details)**: Fetch full narratives on-demand via MCP search
+- **Layer 3 (Perfect Recall)**: Access source code and original transcripts
+- **Smart decision-making**: Token counts help Claude choose between fetching details or reading code
+- **Type indicators**: Visual cues (🔴 critical, 🟤 decision, 🔵 informational) highlight observation importance
+
+### Automatic Memory
+
+- Context automatically injected when Claude starts
+- No manual commands or configuration needed
+- Works transparently in the background
+
+### Full History Search
+
+- Search across all sessions and observations
+- FTS5 full-text search for fast queries
+- Citations link back to specific observations
+
+### Structured Observations
+
+- AI-powered extraction of learnings
+- Categorized by type (decision, bugfix, feature, etc.)
+- Tagged with concepts and file references
+
+### Multi-Prompt Sessions
+
+- Sessions span multiple user prompts
+- Context preserved across `/clear` commands
+- Track entire conversation threads
+
+---
+
+## Configuration
+
+Settings are managed in `~/.claude-mem/settings.json`. The file is auto-created with defaults on first run.
+
+**Available Settings:**
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| `CLAUDE_MEM_MODEL` | `claude-sonnet-4-5` | AI model for observations |
+| `CLAUDE_MEM_WORKER_PORT` | `37777` | Worker service port |
+| `CLAUDE_MEM_WORKER_HOST` | `127.0.0.1` | Worker bind address (use `0.0.0.0` for remote access) |
+| `CLAUDE_MEM_DATA_DIR` | `~/.claude-mem` | Data directory location |
+| `CLAUDE_MEM_LOG_LEVEL` | `INFO` | Log verbosity (DEBUG, INFO, WARN, ERROR, SILENT) |
+| `CLAUDE_MEM_PYTHON_VERSION` | `3.13` | Python version for chroma-mcp |
+| `CLAUDE_CODE_PATH` | _(auto-detect)_ | Path to Claude executable |
+| `CLAUDE_MEM_CONTEXT_OBSERVATIONS` | `50` | Number of observations to inject at SessionStart |
+
+**Settings Management:**
+
+```bash
+# Edit settings via CLI helper
+./claude-mem-settings.sh
+
+# Or edit directly
+nano ~/.claude-mem/settings.json
+
+# View current settings
+curl http://localhost:37777/api/settings
+```
+
+**Settings File Format:**
+
+```json
+{
+  &quot;CLAUDE_MEM_MODEL&quot;: &quot;claude-sonnet-4-5&quot;,
+  &quot;CLAUDE_MEM_WORKER_PORT&quot;: &quot;37777&quot;,
+  &quot;CLAUDE_MEM_CONTEXT_OBSERVATIONS&quot;: &quot;50&quot;
+}
+```
+
+See [Configuration Guide](https://docs.claude-mem.ai/configuration) for details.
+
+---
+
+## Development
+
+```bash
+# Clone and build
+git clone https://github.com/thedotmack/claude-mem.git
+cd claude-mem
+npm install
+npm run build
+
+# Run tests
+npm test
+
+# Start worker
+npm run worker:start
+
+# View logs
+npm run worker:logs
+```
+
+See [Development Guide](https://docs.claude-mem.ai/development) for detailed instructions.
+
+---
+
+## Troubleshooting
+
+**Quick Diagnostic:**
+
+If you&#039;re experiencing issues, describe the problem to Claude and the troubleshoot skill will automatically activate to diagnose and provide fixes.
+
+**Common Issues:**
+
+- Worker not starting → `npm run worker:restart`
+- No context appearing → `npm run test:context`
+- Database issues → `sqlite3 ~/.claude-mem/claude-mem.db &quot;PRAGMA integrity_check;&quot;`
+- Search not working → Check FTS5 tables exist
+
+See [Troubleshooting Guide](https://docs.claude-mem.ai/troubleshooting) for complete solutions.
+
+### Windows Known Issues
+
+**Console Window Visibility**: On Windows, a console window may briefly appear when the worker service starts. This is a cosmetic issue that we&#039;re working to resolve. We&#039;ve prioritized stability by removing a workaround that was causing libuv crashes. The window does not affect functionality and will be addressed in a future release when the MCP SDK provides proper window hiding support.
+
+---
+
+## Bug Reports
+
+**Automated Bug Report Generator** - Create comprehensive bug reports with one command:
+
+```bash
+# From the plugin directory
+cd ~/.claude/plugins/marketplaces/thedotmack
+npm run bug-report
+```
+
+The bug report tool will:
+- 🌎 **Auto-translate** - Write in ANY language, automatically translates to English
+- 📊 **Collect diagnostics** - Gathers versions, platform info, worker status, logs, and configuration
+- 📝 **Interactive prompts** - Guides you through describing the issue with multiline support
+- 🤖 **AI formatting** - Uses Claude Agent SDK to generate professional GitHub issues
+- 🔒 **Privacy-safe** - Auto-sanitizes paths, optional `--no-logs` flag
+- 🌐 **Auto-submit** - Opens GitHub with pre-filled title and body
+
+**Plugin Directory Paths:**
+- **macOS/Linux**: `~/.claude/plugins/marketplaces/thedotmack`
+- **Windows**: `%USERPROFILE%\.claude\plugins\marketplaces\thedotmack`
+
+**Options:**
+```bash
+npm run bug-report --no-logs    # Skip logs for privacy
+npm run bug-report --verbose    # Show all diagnostics
+npm run bug-report --help       # Show help
+```
+
+---
 
 ## Contributing
 
-Please read the [contributing guide](/CONTRIBUTING.md).
+Contributions are welcome! Please:
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes with tests
+4. Update documentation
+5. Submit a Pull Request
+
+See [Development Guide](https://docs.claude-mem.ai/development) for contribution workflow.
+
+---
 
 ## License
 
-Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.md).
+This project is licensed under the **GNU Affero General Public License v3.0** (AGPL-3.0).
+
+Copyright (C) 2025 Alex Newman (@thedotmack). All rights reserved.
+
+See the [LICENSE](LICENSE) file for full details.
+
+**What This Means:**
+
+- You can use, modify, and distribute this software freely
+- If you modify and deploy on a network server, you must make your source code available
+- Derivative works must also be licensed under AGPL-3.0
+- There is NO WARRANTY for this software
+
+---
+
+## Support
+
+- **Documentation**: [docs/](docs/)
+- **Issues**: [GitHub Issues](https://github.com/thedotmack/claude-mem/issues)
+- **Repository**: [github.com/thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
+- **Author**: Alex Newman ([@thedotmack](https://github.com/thedotmack))
+
+---
+
+**Built with Claude Agent SDK** | **Powered by Claude Code** | **Made with TypeScript**
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[CopilotKit/CopilotKit]]></title>
-            <link>https://github.com/CopilotKit/CopilotKit</link>
-            <guid>https://github.com/CopilotKit/CopilotKit</guid>
-            <pubDate>Tue, 16 Dec 2025 00:05:37 GMT</pubDate>
-            <description><![CDATA[React UI + elegant infrastructure for AI Copilots, AI chatbots, and in-app AI agents. The Agentic Frontend 🪁]]></description>
+            <title><![CDATA[nicotsx/zerobyte]]></title>
+            <link>https://github.com/nicotsx/zerobyte</link>
+            <guid>https://github.com/nicotsx/zerobyte</guid>
+            <pubDate>Wed, 17 Dec 2025 00:04:57 GMT</pubDate>
+            <description><![CDATA[Backup automation for self-hosters]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/CopilotKit/CopilotKit">CopilotKit/CopilotKit</a></h1>
-            <p>React UI + elegant infrastructure for AI Copilots, AI chatbots, and in-app AI agents. The Agentic Frontend 🪁</p>
+            <h1><a href="https://github.com/nicotsx/zerobyte">nicotsx/zerobyte</a></h1>
+            <p>Backup automation for self-hosters</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 26,746</p>
-            <p>Forks: 3,481</p>
-            <p>Stars today: 130 stars today</p>
-            <h2>README</h2><pre>&lt;a href=&quot;https://go.copilotkit.ai/v150-whats-new&quot; target=&quot;_blank&quot;&gt;
-&lt;img width=&quot;1595&quot; height=&quot;284&quot; alt=&quot;Introducing CopilotKit  v1 50!&quot; src=&quot;https://github.com/user-attachments/assets/5d852a9b-290a-44b7-8c6a-9f75e51f1713&quot; /&gt;
-&lt;a /&gt; 
-
-&lt;br&gt;
-
-&lt;a href=&quot;https://go.copilotkit.ai/copilotkit-docs&quot; target=&quot;_blank&quot;&gt;
-&lt;img width=&quot;4096&quot; height=&quot;1588&quot; alt=&quot;header&quot; src=&quot;https://github.com/user-attachments/assets/dd638592-fb74-4e22-8c55-49dfc4d0e462&quot; /&gt;
-&lt;a /&gt;
-
-&lt;br&gt;
-  &lt;div align=&quot;start&quot; style=&quot;display:flex;justify-content:start;gap:16px;height:20px;margin: 0;&quot;&gt;
-  &lt;a href=&quot;https://www.npmjs.com/package/@copilotkit/react-core&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/npm/v/%40copilotkit%2Freact-core?logo=npm&amp;logoColor=%23FFFFFF&amp;label=Version&amp;color=%236963ff&quot; alt=&quot;NPM&quot;&gt;
+            <p>Stars: 2,771</p>
+            <p>Forks: 53</p>
+            <p>Stars today: 402 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+  &lt;h1&gt;Zerobyte&lt;/h1&gt;
+  &lt;h3&gt;Powerful backup automation for your remote storage&lt;br /&gt;Encrypt, compress, and protect your data with ease&lt;/h3&gt;
+  &lt;a href=&quot;https://github.com/nicotsx/zerobyte/blob/main/LICENSE&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/github/license/nicotsx/zerobyte&quot; /&gt;
   &lt;/a&gt;
-
-  &lt;a href=&quot;https://github.com/copilotkit/copilotkit/blob/main/LICENSE&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/github/license/copilotkit/copilotkit?color=%236963ff&amp;label=License&quot; alt=&quot;MIT&quot;&gt;
-  &lt;/a&gt;
-
-  &lt;a href=&quot;https://discord.gg/6dffbvGU3D&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/discord/1122926057641742418?logo=discord&amp;logoColor=%23FFFFFF&amp;label=Discord&amp;color=%236963ff&quot; alt=&quot;Discord&quot;&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-  &lt;br/&gt;
-  &lt;div&gt;
-    &lt;a href=&quot;https://www.producthunt.com/posts/copilotkit&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=428778&amp;theme=light&amp;period=daily&quot;&gt;
-  &lt;/a&gt;
-  &lt;/div&gt;
-
-## ⚡️ Quick Install
-```
-  npx copilotkit@latest create
-```
-
-&lt;br/&gt;
-
-&lt;a href=&quot;https://docs.copilotkit.ai/?ref=github_readme&quot;&gt;Read the Docs →&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;
-&lt;a href=&quot;https://cloud.copilotkit.ai?ref=github_readme&quot;&gt;Try Copilot Cloud →&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;
-&lt;a href=&quot;https://discord.gg/6dffbvGU3D?ref=github_readme&quot;&gt;Join our Discord →&lt;/a&gt;
-
-## 🚀 Getting Started
-
-1. Install: Run a simple CLI command
-1. Configure: Add CopilotKit provider to your app
-1. Customize: Use headless UI or the customizable pre-built components
-1. Deploy: You&#039;re done!
-
-&lt;br /&gt;
-  &lt;a href=&quot;https://docs.copilotkit.ai/#get-started-now?ref=github_readme&quot; target=&quot;_blank&quot;&gt;
-    Complete getting started guide →
-  &lt;/a&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-
-&lt;img width=&quot;4096&quot; height=&quot;2341&quot; alt=&quot;Best in class support across the ecosystem&quot; src=&quot;https://github.com/user-attachments/assets/bf399131-2a92-49f8-8748-38ed72353f9c&quot; /&gt;
-
-## ⭐️ useAgent
-
-The v2 hook `useAgent` is a proper superset of `useCoAgent`, which gives more control over the agent connection.
-
-Check out the [useAgent docs](https://go.copilotkit.ai/useagent-docs) to learn more.
-
-https://github.com/user-attachments/assets/46b7d161-a988-4453-9ca9-c0eca4c33da6
-
-## ✨ Why CopilotKit?
-
-- Minutes to integrate - Get started quickly with our CLI
-- Framework agnostic - Works with React, Next.js, AGUI, and more
-- Production-ready UI - Use customizable components or build with headless UI
-- Built-in security - Prompt injection protection
-- Open source - Full transparency and community-driven
-
-## 🧑‍💻 Real life use cases
-
-&lt;span&gt;Deploy deeply-integrated AI assistants &amp; agents that work alongside your users inside your applications.&lt;/span&gt;
-
-&lt;img width=&quot;4096&quot; height=&quot;2725&quot; alt=&quot;Headless UI&quot; src=&quot;https://github.com/user-attachments/assets/4dbe1e74-8b46-4798-a658-f79ee5a66189&quot; /&gt;
-
-
-## 🖥️ Code Samples
-
-&lt;span&gt;Drop in these building blocks and tailor them to your needs.&lt;/span&gt;
-
-&lt;h3&gt;Build with Headless APIs and Pre-Built Components&lt;/h3&gt;
-
-```ts
-// Headless UI with full control
-const { copilotkit } = useCopilotKit();
-const { agent } = useAgent({ agentId: &quot;my_agent&quot; });
-const { messages, addMessage, setMessages, state, ... } = agent;
-
-copilotkit.runAgent({ agent })
-
-// Pre-built components with deep customization options (CSS + pass custom sub-components)
-&lt;CopilotSidebar 
-  instructions={&quot;You are assisting the user as best as you can. Answer in the best way possible given the data you have.&quot;} 
-  labels={{ title: &quot;Sidebar Assistant&quot;, initial: &quot;Need any help?&quot; }} 
-/&gt;
-```
-
-&lt;h3&gt;Deeply integrate LLMs or agents into your application&lt;/h3&gt;
-
-```ts
-// Programmatically access and control your agents
-const { agent } = useAgent({ agentId: &quot;my_agent&quot; });
-
-// Render and update your agent&#039;s state
-return &lt;div&gt;
-  &lt;h1&gt;{agent.state.city}&lt;/h1&gt; 
-  &lt;button onClick={() =&gt; agent.setState({ city: &quot;NYC&quot; })}&gt;
-    Set City
-  &lt;/button&gt;
+  &lt;br /&gt;
+  &lt;figure&gt;
+    &lt;img src=&quot;https://github.com/nicotsx/zerobyte/blob/main/screenshots/backup-details.webp?raw=true&quot; alt=&quot;Demo&quot; /&gt;
+    &lt;figcaption&gt;
+      &lt;p align=&quot;center&quot;&gt;
+        Backup management with scheduling and monitoring
+      &lt;/p&gt;
+    &lt;/figcaption&gt;
+  &lt;/figure&gt;
 &lt;/div&gt;
-```
 
-```ts
-// Build generative UI based on your agent&#039;s state
-useCoAgentStateRender({
-  name: &quot;my_agent&quot;,
-  render: ({ state }) =&gt; &lt;WeatherDisplay {...state.final_response} /&gt;,
-});
-```
-
-```ts
-// Frontend actions + generative UI, with full streaming support
-useFrontendTool({
-  name: &quot;appendToSpreadsheet&quot;,
-  description: &quot;Append rows to the current spreadsheet&quot;,
-  parameters: [
-    { name: &quot;rows&quot;, type: &quot;object[]&quot;, attributes: [{ name: &quot;cells&quot;, type: &quot;object[]&quot;, attributes: [{ name: &quot;value&quot;, type: &quot;string&quot; }] }] }
-  ],
-  render: ({ status, args }) =&gt; &lt;Spreadsheet data={canonicalSpreadsheetData(args.rows)} /&gt;,
-  handler: ({ rows }) =&gt; setSpreadsheet({ ...spreadsheet, rows: [...spreadsheet.rows, ...canonicalSpreadsheetData(rows)] }),
-});
-```
-
-```ts
-// Human in the Loop (Approval)
-useHumanInTheLoop({
-  name: &quot;email_tool&quot;,
-  parameters: [
-    {
-      name: &quot;email_draft&quot;,
-      type: &quot;string&quot;,
-      description: &quot;The email content&quot;,
-      required: true,
-    },
-  ],
-  render: ({ args, status, respond }) =&gt; {
-    return (
-      &lt;EmailConfirmation
-        emailContent={args.email_draft || &quot;&quot;}
-        isExecuting={status === &quot;executing&quot;}
-        onCancel={() =&gt; respond?.({ approved: false })}
-        onSend={() =&gt;
-          respond?.({
-            approved: true,
-            metadata: { sentAt: new Date().toISOString() },
-          })
-        }
-      /&gt;
-    );
-  },
-});
-```
-```ts
-// Build generative UI on-top of your agent&#039;s tool calls
-useRenderToolCall({
-  name: &quot;get_weather&quot;, // tool defined in your agent
-  args: [{
-    name: &quot;city&quot;,
-    type: &quot;string&quot;,
-    required: true,
-  }],
-  render: ({ args, result }) =&gt; {
-    &lt;WeatherCard  
-      city={args.city}
-      temperature={result.temperature}
-      description={result.description}
-    /&gt;
-  }
-})
-````
-
-## 🏆 Featured Examples
+&gt; [!WARNING]
+&gt; Zerobyte is still in version 0.x.x and is subject to major changes from version to version. I am developing the core features and collecting feedbacks. Expect bugs! Please open issues or feature requests
 
 &lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://www.copilotkit.ai/examples/form-filling-copilot&quot;&gt;
-    &lt;img width=&quot;290&quot; height=&quot;304&quot; alt=&quot;Banner 2 A&quot; src=&quot;https://github.com/user-attachments/assets/90c42b54-8931-45ad-9c0b-53f7f67453a1&quot; /&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://www.copilotkit.ai/examples/state-machine-copilot&quot;&gt;
-    &lt;img width=&quot;290&quot; height=&quot;304&quot; alt=&quot;Banner 2 A-1&quot; src=&quot;https://github.com/user-attachments/assets/609c62eb-76af-4866-a353-5e3545470ec3&quot; /&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://www.copilotkit.ai/examples/chat-with-your-data&quot;&gt;
-    &lt;img width=&quot;290&quot; height=&quot;304&quot; alt=&quot;Banner 2 A-2&quot; src=&quot;https://github.com/user-attachments/assets/c614ac4e-d2b3-4514-9ef1-fdba04c0a082&quot; /&gt;
-  &lt;/a&gt;
+&lt;a href=&quot;https://www.buymeacoffee.com/nicotsx&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png&quot; alt=&quot;Buy Me A Coffee&quot; style=&quot;height: 60px !important;width: 217px !important;&quot; &gt;&lt;/a&gt;
 &lt;/p&gt;
 
-## 🖥️ AG-UI: The Agent–User Interaction Protocol
-Connect agent workflow to user-facing apps, with deep partnerships and 1st-party integrations across the agentic stack—including LangGraph, CrewAI, and more.
+## Intro
 
+Zerobyte is a backup automation tool that helps you save your data across multiple storage backends. Built on top of Restic, it provides an modern web interface to schedule, manage, and monitor encrypted backups of your remote storage.
 
-  &lt;a href=&quot;https://github.com/ag-ui-protocol/ag-ui&quot; target=&quot;_blank&quot;&gt;
-   Learn more in the AG-UI README →
-  &lt;/a&gt;
+### Features
 
-## 🤝 Community
-&lt;h3&gt;Have questions or need help?&lt;/h3&gt;
-  &lt;a href=&quot;https://discord.gg/6dffbvGU3D?ref=github_readme&quot; target=&quot;_blank&quot;&gt;
-   Join our Discord →
-  &lt;/a&gt; &lt;/br&gt;
-    &lt;a href=&quot;https://docs.copilotkit.ai/?ref=github_readme&quot; target=&quot;_blank&quot;&gt;
-  Read the Docs →
-  &lt;/a&gt; &lt;/br&gt;
-    &lt;a href=&quot;https://cloud.copilotkit.ai?ref=github_readme&quot; target=&quot;_blank&quot;&gt;
-   Try Copilot Cloud →
-  &lt;/a&gt;
-&lt;h3&gt;Stay up to date with our latest releases!&lt;/h3&gt;
-  &lt;a href=&quot;https://www.linkedin.com/company/copilotkit/&quot; target=&quot;_blank&quot;&gt;
-   Follow us on LinkedIn →
-  &lt;/a&gt; &lt;/br&gt;
-    &lt;a href=&quot;https://x.com/copilotkit&quot; target=&quot;_blank&quot;&gt;
-   Follow us on X →
-  &lt;/a&gt; 
-  
-## 🙋🏽‍♂️ Contributing
+- &amp;nbsp; **Automated backups** with encryption, compression and retention policies powered by Restic
+- &amp;nbsp; **Flexible scheduling** For automated backup jobs with fine-grained retention policies
+- &amp;nbsp; **End-to-end encryption** ensuring your data is always protected
+- &amp;nbsp; **Multi-protocol support**: Backup from NFS, SMB, WebDAV, or local directories
 
-Thanks for your interest in contributing to CopilotKit! 💜
+## Installation
 
-We value all contributions, whether it&#039;s through code, documentation, creating demo apps, or just spreading the word.
+In order to run Zerobyte, you need to have Docker and Docker Compose installed on your server. Then, you can use the provided `docker-compose.yml` file to start the application.
 
-Here are a few useful resources to help you get started:
+```yaml
+services:
+  zerobyte:
+    image: ghcr.io/nicotsx/zerobyte:v0.18
+    container_name: zerobyte
+    restart: unless-stopped
+    cap_add:
+      - SYS_ADMIN
+    ports:
+      - &quot;4096:4096&quot;
+    devices:
+      - /dev/fuse:/dev/fuse
+    environment:
+      - TZ=Europe/Paris  # Set your timezone here
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/lib/zerobyte:/var/lib/zerobyte
+```
 
-- For code contributions, [CONTRIBUTING.md](./CONTRIBUTING.md).
-- For documentation-related contributions, [check out the documentation contributions guide](https://docs.copilotkit.ai/contributing/docs-contributions?ref=github_readme).
+&gt; [!WARNING]
+&gt; Do not try to point `/var/lib/zerobyte` on a network share. You will face permission issues and strong performance degradation.
 
-- Want to contribute but not sure how? [Join our Discord](https://discord.gg/6dffbvGU3D) and we&#039;ll help you out!
+Then, run the following command to start Zerobyte:
 
-## 📄 License
+```bash
+docker compose up -d
+```
 
-This repository&#039;s source code is available under the [MIT License](https://github.com/CopilotKit/CopilotKit/blob/main/LICENSE).
+Once the container is running, you can access the web interface at `http://&lt;your-server-ip&gt;:4096`.
+
+### Simplified setup (No remote mounts)
+
+If you only need to back up locally mounted folders and don&#039;t require remote share mounting capabilities, you can remove the `SYS_ADMIN` capability and FUSE device from your `docker-compose.yml`:
+
+```yaml
+services:
+  zerobyte:
+    image: ghcr.io/nicotsx/zerobyte:v0.18
+    container_name: zerobyte
+    restart: unless-stopped
+    ports:
+      - &quot;4096:4096&quot;
+    environment:
+      - TZ=Europe/Paris  # Set your timezone here
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/lib/zerobyte:/var/lib/zerobyte
+      - /path/to/your/directory:/mydata
+```
+
+**Trade-offs:**
+- ✅ Improved security by reducing container capabilities
+- ✅ Support for local directories
+- ✅ Keep support all repository types (local, S3, GCS, Azure, rclone)
+- ❌ Cannot mount NFS, SMB, or WebDAV shares directly from Zerobyte
+
+If you need remote mount capabilities, keep the original configuration with `cap_add: SYS_ADMIN` and `devices: /dev/fuse:/dev/fuse`.
+
+## Adding your first volume
+
+Zerobyte supports multiple volume backends including NFS, SMB, WebDAV, and local directories. A volume represents the source data you want to back up and monitor.
+
+To add your first volume, navigate to the &quot;Volumes&quot; section in the web interface and click on &quot;Create volume&quot;. Fill in the required details such as volume name, type, and connection settings.
+
+If you want to track a local directory on the same server where Zerobyte is running, you&#039;ll first need to mount that directory into the Zerobyte container. You can do this by adding a volume mapping in your `docker-compose.yml` file. For example, to mount `/path/to/your/directory` from the host to `/mydata` in the container, you would add the following line under the `volumes` section:
+
+```diff
+services:
+  zerobyte:
+    image: ghcr.io/nicotsx/zerobyte:v0.18
+    container_name: zerobyte
+    restart: unless-stopped
+    cap_add:
+      - SYS_ADMIN
+    ports:
+      - &quot;4096:4096&quot;
+    devices:
+      - /dev/fuse:/dev/fuse
+    environment:
+      - TZ=Europe/Paris
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/lib/zerobyte:/var/lib/zerobyte
++     - /path/to/your/directory:/mydata
+```
+
+After updating the `docker-compose.yml` file, restart the Zerobyte container to apply the changes:
+
+```bash
+docker compose down
+docker compose up -d
+```
+
+Now, when adding a new volume in the Zerobyte web interface, you can select &quot;Directory&quot; as the volume type and search for your mounted path (e.g., `/mydata`) as the source path.
+
+![Preview](https://github.com/nicotsx/zerobyte/blob/main/screenshots/add-volume.png?raw=true)
+
+## Creating a repository
+
+A repository is where your backups will be securely stored encrypted. Zerobyte supports multiple storage backends for your backup repositories:
+
+- **Local directories** - Store backups on local disk at `/var/lib/zerobyte/repositories/&lt;repository-name&gt;`
+- **S3-compatible storage** - Amazon S3, MinIO, Wasabi, DigitalOcean Spaces, etc.
+- **Google Cloud Storage** - Google&#039;s cloud storage service
+- **Azure Blob Storage** - Microsoft Azure storage
+- **rclone remotes** - 40+ cloud storage providers via rclone (see below)
+
+Repositories are optimized for storage efficiency and data integrity, leveraging Restic&#039;s deduplication and encryption features.
+
+To create a repository, navigate to the &quot;Repositories&quot; section in the web interface and click on &quot;Create repository&quot;. Fill in the required details such as repository name, type, and connection settings.
+
+## Secret references (env:// and file://)
+
+Any field that is normally stored encrypted in Zerobyte (passwords, tokens, access keys, etc.) also accepts secret references.
+
+- `env://VAR_NAME` reads the value from `process.env.VAR_NAME` inside the Zerobyte container.
+- `file://secret_name` reads the value from `/run/secrets/secret_name` (Docker secrets).
+
+If you enter a normal value (not starting with `env://` or `file://`), Zerobyte will encrypt it before storing it in the database (values will look like `encv1:...`).
+
+Examples:
+
+```yaml
+# SMB volume password from an env var
+password: env://SMB_PASSWORD
+
+# S3 secret access key from a Docker secret
+secretAccessKey: file://s3-secret-access-key
+```
+
+### Using rclone for cloud storage
+
+Zerobyte can use [rclone](https://rclone.org/) to support 40+ cloud storage providers including Google Drive, Dropbox, OneDrive, Box, pCloud, Mega, and many more. This gives you the flexibility to store your backups on virtually any cloud storage service.
+
+**Setup instructions:**
+
+1. **Install rclone on your host system** (if not already installed):
+   ```bash
+   curl https://rclone.org/install.sh | sudo bash
+   ```
+
+2. **Configure your cloud storage remote** using rclone&#039;s interactive config:
+   ```bash
+   rclone config
+   ```
+   Follow the prompts to set up your cloud storage provider. For OAuth providers (Google Drive, Dropbox, etc.), rclone will guide you through the authentication flow.
+
+3. **Verify your remote is configured**:
+   ```bash
+   rclone listremotes
+   ```
+
+4. **Mount the rclone config into the Zerobyte container** by updating your `docker-compose.yml`:
+   ```diff
+   services:
+     zerobyte:
+       image: ghcr.io/nicotsx/zerobyte:v0.18
+       container_name: zerobyte
+       restart: unless-stopped
+       cap_add:
+         - SYS_ADMIN
+       ports:
+         - &quot;4096:4096&quot;
+       devices:
+         - /dev/fuse:/dev/fuse
+       environment:
+         - TZ=Europe/Paris
+       volumes:
+         - /etc/localtime:/etc/localtime:ro
+         - /var/lib/zerobyte:/var/lib/zerobyte
+   +     - ~/.config/rclone:/root/.config/rclone
+   ```
+
+5. **Restart the Zerobyte container**:
+   ```bash
+   docker compose down
+   docker compose up -d
+   ```
+
+6. **Create a repository** in Zerobyte:
+   - Select &quot;rclone&quot; as the repository type
+   - Choose your configured remote from the dropdown
+   - Specify the path within your remote (e.g., `backups/zerobyte`)
+
+For a complete list of supported providers, see the [rclone documentation](https://rclone.org/).
+
+## Your first backup job
+
+Once you have added a volume and created a repository, you can create your first backup job. A backup job defines the schedule and parameters for backing up a specific volume to a designated repository.
+
+When creating a backup job, you can specify the following settings:
+- **Schedule**: Define how often the backup should run (e.g., daily, weekly)
+- **Retention Policy**: Set rules for how long backups should be retained (e.g., keep daily backups for 7 days, weekly backups for 4 weeks)
+- **Paths**: Specify which files or directories to include in the backup
+
+After configuring the backup job, save it and Zerobyte will automatically execute the backup according to the defined schedule.
+You can monitor the progress and status of your backup jobs in the &quot;Backups&quot; section of the web interface.
+
+![Preview](https://github.com/nicotsx/zerobyte/blob/main/screenshots/backups-list.png?raw=true)
+
+## Restoring data
+
+Zerobyte allows you to easily restore your data from backups. To restore data, navigate to the &quot;Backups&quot; section and select the backup job from which you want to restore data. You can then choose a specific backup snapshot and select the files or directories you wish to restore. The data you select will be restored to their original location.
+
+![Preview](https://github.com/nicotsx/zerobyte/blob/main/screenshots/restoring.png?raw=true)
+
+## Third-Party Software
+
+This project includes the following third-party software components:
+
+### Restic
+
+Zerobyte includes [Restic](https://github.com/restic/restic) for backup functionality.
+
+- **License**: BSD 2-Clause License
+- **Copyright**: Copyright (c) 2014, Alexander Neumann &lt;alexander@bumpern.de&gt;
+- **Status**: Included unchanged
+- **License Text**: See [LICENSES/BSD-2-Clause-Restic.txt](LICENSES/BSD-2-Clause-Restic.txt)
+
+For a complete list of third-party software licenses and attributions, please refer to the [NOTICES.md](NOTICES.md) file.
+
+## Contributing
+
+Contributions by anyone are welcome! If you find a bug or have a feature request, please open an issue on GitHub. If you want to contribute code, feel free to fork the repository and submit a pull request. We require that all contributors sign a Contributor License Agreement (CLA) before we can accept your contributions. This is to protect both you and the project. Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for more details.
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
@@ -611,15 +1098,15 @@ This repository&#039;s source code is available under the [MIT License](https://
             <title><![CDATA[C4illin/ConvertX]]></title>
             <link>https://github.com/C4illin/ConvertX</link>
             <guid>https://github.com/C4illin/ConvertX</guid>
-            <pubDate>Tue, 16 Dec 2025 00:05:36 GMT</pubDate>
+            <pubDate>Wed, 17 Dec 2025 00:04:56 GMT</pubDate>
             <description><![CDATA[💾 Self-hosted online file converter. Supports 1000+ formats ⚙️]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/C4illin/ConvertX">C4illin/ConvertX</a></h1>
             <p>💾 Self-hosted online file converter. Supports 1000+ formats ⚙️</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 10,739</p>
-            <p>Forks: 546</p>
-            <p>Stars today: 85 stars today</p>
+            <p>Stars: 11,382</p>
+            <p>Forks: 572</p>
+            <p>Stars today: 628 stars today</p>
             <h2>README</h2><pre>![ConvertX](images/logo.png)
 
 # ConvertX
@@ -786,306 +1273,35 @@ Use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summar
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[daytonaio/daytona]]></title>
-            <link>https://github.com/daytonaio/daytona</link>
-            <guid>https://github.com/daytonaio/daytona</guid>
-            <pubDate>Tue, 16 Dec 2025 00:05:35 GMT</pubDate>
-            <description><![CDATA[Daytona is a Secure and Elastic Infrastructure for Running AI-Generated Code]]></description>
+            <title><![CDATA[shadcn-ui/ui]]></title>
+            <link>https://github.com/shadcn-ui/ui</link>
+            <guid>https://github.com/shadcn-ui/ui</guid>
+            <pubDate>Wed, 17 Dec 2025 00:04:55 GMT</pubDate>
+            <description><![CDATA[A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/daytonaio/daytona">daytonaio/daytona</a></h1>
-            <p>Daytona is a Secure and Elastic Infrastructure for Running AI-Generated Code</p>
+            <h1><a href="https://github.com/shadcn-ui/ui">shadcn-ui/ui</a></h1>
+            <p>A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 37,516</p>
-            <p>Forks: 2,797</p>
-            <p>Stars today: 341 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+            <p>Stars: 102,928</p>
+            <p>Forks: 7,479</p>
+            <p>Stars today: 333 stars today</p>
+            <h2>README</h2><pre># shadcn/ui
 
-[![Documentation](https://img.shields.io/github/v/release/daytonaio/docs?label=Docs&amp;color=23cc71)](https://www.daytona.io/docs)
-![License](https://img.shields.io/badge/License-AGPL--3-blue)
-[![Go Report Card](https://goreportcard.com/badge/github.com/daytonaio/daytona)](https://goreportcard.com/report/github.com/daytonaio/daytona)
-[![Issues - daytona](https://img.shields.io/github/issues/daytonaio/daytona)](https://github.com/daytonaio/daytona/issues)
-![GitHub Release](https://img.shields.io/github/v/release/daytonaio/daytona)
+A set of beautifully designed components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. **Use this to build your own component library**.
 
-&lt;/div&gt;
+![hero](apps/v4/public/opengraph-image.png)
 
-&amp;nbsp;
+## Documentation
 
-&lt;div align=&quot;center&quot;&gt;
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://github.com/daytonaio/daytona/raw/main/assets/images/Daytona-logotype-white.png&quot;&gt;
-    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://github.com/daytonaio/daytona/raw/main/assets/images/Daytona-logotype-black.png&quot;&gt;
-    &lt;img alt=&quot;Daytona logo&quot; src=&quot;https://github.com/daytonaio/daytona/raw/main/assets/images/Daytona-logotype-black.png&quot; width=&quot;50%&quot;&gt;
-  &lt;/picture&gt;
-&lt;/div&gt;
-
-&lt;h3 align=&quot;center&quot;&gt;
-  Run AI Code.
-  &lt;br/&gt;
-  Secure and Elastic Infrastructure for
-  Running Your AI-Generated Code.
-&lt;/h3&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-    &lt;a href=&quot;https://www.daytona.io/docs&quot;&gt; Documentation &lt;/a&gt;·
-    &lt;a href=&quot;https://github.com/daytonaio/daytona/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.md&amp;title=%F0%9F%90%9B+Bug+Report%3A+&quot;&gt; Report Bug &lt;/a&gt;·
-    &lt;a href=&quot;https://github.com/daytonaio/daytona/issues/new?assignees=&amp;labels=enhancement&amp;projects=&amp;template=feature_request.md&amp;title=%F0%9F%9A%80+Feature%3A+&quot;&gt; Request Feature &lt;/a&gt;·
-    &lt;a href=&quot;https://go.daytona.io/slack&quot;&gt; Join our Slack &lt;/a&gt;·
-    &lt;a href=&quot;https://x.com/daytonaio&quot;&gt; Connect on X &lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-    &lt;a href=&quot;https://www.producthunt.com/posts/daytona-2?embed=true&amp;utm_source=badge-top-post-badge&amp;utm_medium=badge&amp;utm_souce=badge-daytona&amp;#0045;2&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=957617&amp;theme=neutral&amp;period=daily&amp;t=1746176740150&quot; alt=&quot;Daytona&amp;#0032; - Secure&amp;#0032;and&amp;#0032;elastic&amp;#0032;infra&amp;#0032;for&amp;#0032;running&amp;#0032;your&amp;#0032;AI&amp;#0045;generated&amp;#0032;code&amp;#0046; | Product Hunt&quot; style=&quot;width: 250px; height: 54px;&quot; width=&quot;250&quot; height=&quot;54&quot; /&gt;&lt;/a&gt;
-    &lt;a href=&quot;https://www.producthunt.com/posts/daytona-2?embed=true&amp;utm_source=badge-top-post-topic-badge&amp;utm_medium=badge&amp;utm_souce=badge-daytona&amp;#0045;2&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=957617&amp;theme=neutral&amp;period=monthly&amp;topic_id=237&amp;t=1746176740150&quot; alt=&quot;Daytona&amp;#0032; - Secure&amp;#0032;and&amp;#0032;elastic&amp;#0032;infra&amp;#0032;for&amp;#0032;running&amp;#0032;your&amp;#0032;AI&amp;#0045;generated&amp;#0032;code&amp;#0046; | Product Hunt&quot; style=&quot;width: 250px; height: 54px;&quot; width=&quot;250&quot; height=&quot;54&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
----
-
-## Installation
-
-### Python SDK
-
-```bash
-pip install daytona
-```
-
-### TypeScript SDK
-
-```bash
-npm install @daytonaio/sdk
-```
-
----
-
-## Features
-
-- **Lightning-Fast Infrastructure**: Sub-90ms Sandbox creation from code to execution.
-- **Separated &amp; Isolated Runtime**: Execute AI-generated code with zero risk to your infrastructure.
-- **Massive Parallelization for Concurrent AI Workflows**: Fork Sandbox filesystem and memory state (Coming soon!)
-- **Programmatic Control**: File, Git, LSP, and Execute API
-- **Unlimited Persistence**: Your Sandboxes can live forever
-- **OCI/Docker Compatibility**: Use any OCI/Docker image to create a Sandbox
-
----
-
-## Quick Start
-
-1. Create an account at https://app.daytona.io
-1. Generate a [new API key](https://app.daytona.io/dashboard/keys)
-1. Follow the [Getting Started docs](https://www.daytona.io/docs/getting-started/) to start using the Daytona SDK
-
-## Creating your first Sandbox
-
-### Python SDK
-
-```py
-from daytona import Daytona, DaytonaConfig, CreateSandboxBaseParams
-
-# Initialize the Daytona client
-daytona = Daytona(DaytonaConfig(api_key=&quot;YOUR_API_KEY&quot;))
-
-# Create the Sandbox instance
-sandbox = daytona.create(CreateSandboxBaseParams(language=&quot;python&quot;))
-
-# Run code securely inside the Sandbox
-response = sandbox.process.code_run(&#039;print(&quot;Sum of 3 and 4 is &quot; + str(3 + 4))&#039;)
-if response.exit_code != 0:
-    print(f&quot;Error running code: {response.exit_code} {response.result}&quot;)
-else:
-    print(response.result)
-
-# Clean up the Sandbox
-daytona.delete(sandbox)
-```
-
-### Typescript SDK
-
-```jsx
-import { Daytona } from &#039;@daytonaio/sdk&#039;
-
-async function main() {
-  // Initialize the Daytona client
-  const daytona = new Daytona({
-    apiKey: &#039;YOUR_API_KEY&#039;,
-  })
-
-  let sandbox
-  try {
-    // Create the Sandbox instance
-    sandbox = await daytona.create({
-      language: &#039;typescript&#039;,
-    })
-    // Run code securely inside the Sandbox
-    const response = await sandbox.process.codeRun(&#039;console.log(&quot;Sum of 3 and 4 is &quot; + (3 + 4))&#039;)
-    if (response.exitCode !== 0) {
-      console.error(&#039;Error running code:&#039;, response.exitCode, response.result)
-    } else {
-      console.log(response.result)
-    }
-  } catch (error) {
-    console.error(&#039;Sandbox flow error:&#039;, error)
-  } finally {
-    if (sandbox) await daytona.delete(sandbox)
-  }
-}
-
-main().catch(console.error)
-```
-
----
+Visit http://ui.shadcn.com/docs to view the documentation.
 
 ## Contributing
 
-Daytona is Open Source under the [GNU AFFERO GENERAL PUBLIC LICENSE](LICENSE), and is the [copyright of its contributors](NOTICE). If you would like to contribute to the software, read the Developer Certificate of Origin Version 1.1 (https://developercertificate.org/). Afterwards, navigate to the [contributing guide](CONTRIBUTING.md) to get started.
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[immich-app/immich]]></title>
-            <link>https://github.com/immich-app/immich</link>
-            <guid>https://github.com/immich-app/immich</guid>
-            <pubDate>Tue, 16 Dec 2025 00:05:34 GMT</pubDate>
-            <description><![CDATA[High performance self-hosted photo and video management solution.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/immich-app/immich">immich-app/immich</a></h1>
-            <p>High performance self-hosted photo and video management solution.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 86,547</p>
-            <p>Forks: 4,556</p>
-            <p>Stars today: 80 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt; 
-  &lt;br/&gt;
-  &lt;a href=&quot;https://opensource.org/license/agpl-v3&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/License-AGPL_v3-blue.svg?color=3F51B5&amp;style=for-the-badge&amp;label=License&amp;logoColor=000000&amp;labelColor=ececec&quot; alt=&quot;License: AGPLv3&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://discord.immich.app&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/discord/979116623879368755.svg?label=Discord&amp;logo=Discord&amp;style=for-the-badge&amp;logoColor=000000&amp;labelColor=ececec&quot; alt=&quot;Discord&quot;/&gt;
-  &lt;/a&gt;
-  &lt;br/&gt;
-  &lt;br/&gt;
-&lt;/p&gt;
+Please read the [contributing guide](/CONTRIBUTING.md).
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;img src=&quot;design/immich-logo-stacked-light.svg&quot; width=&quot;300&quot; title=&quot;Login With Custom URL&quot;&gt;
-&lt;/p&gt;
-&lt;h3 align=&quot;center&quot;&gt;High performance self-hosted photo and video management solution&lt;/h3&gt;
-&lt;br/&gt;
-&lt;a href=&quot;https://immich.app&quot;&gt;
-&lt;img src=&quot;design/immich-screenshots.png&quot; title=&quot;Main Screenshot&quot;&gt;
-&lt;/a&gt;
-&lt;br/&gt;
+## License
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;readme_i18n/README_ca_ES.md&quot;&gt;Català&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_es_ES.md&quot;&gt;Español&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_fr_FR.md&quot;&gt;Français&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_it_IT.md&quot;&gt;Italiano&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_ja_JP.md&quot;&gt;日本語&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_ko_KR.md&quot;&gt;한국어&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_de_DE.md&quot;&gt;Deutsch&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_nl_NL.md&quot;&gt;Nederlands&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_tr_TR.md&quot;&gt;Türkçe&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_zh_CN.md&quot;&gt;简体中文&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_zh_TW.md&quot;&gt;正體中文&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_uk_UA.md&quot;&gt;Українська&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_ru_RU.md&quot;&gt;Русский&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_pt_BR.md&quot;&gt;Português Brasileiro&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_sv_SE.md&quot;&gt;Svenska&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_ar_JO.md&quot;&gt;العربية&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_vi_VN.md&quot;&gt;Tiếng Việt&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_th_TH.md&quot;&gt;ภาษาไทย&lt;/a&gt;
-&lt;/p&gt;
-
-
-&gt; [!WARNING]
-&gt; ⚠️ Always follow [3-2-1](https://www.backblaze.com/blog/the-3-2-1-backup-strategy/) backup plan for your precious photos and videos!
-&gt; 
- 
-
-&gt; [!NOTE]
-&gt; You can find the main documentation, including installation guides, at https://immich.app/.
-
-## Links
-
-- [Documentation](https://docs.immich.app/)
-- [About](https://docs.immich.app/overview/introduction)
-- [Installation](https://docs.immich.app/install/requirements)
-- [Roadmap](https://immich.app/roadmap)
-- [Demo](#demo)
-- [Features](#features)
-- [Translations](https://docs.immich.app/developer/translations)
-- [Contributing](https://docs.immich.app/overview/support-the-project)
-
-## Demo
-
-Access the demo [here](https://demo.immich.app). For the mobile app, you can use `https://demo.immich.app` for the `Server Endpoint URL`.
-
-### Login credentials
-
-| Email           | Password |
-| --------------- | -------- |
-| demo@immich.app | demo     |
-
-## Features
-
-| Features                                     | Mobile | Web |
-| :------------------------------------------- | ------ | --- |
-| Upload and view videos and photos            | Yes    | Yes |
-| Auto backup when the app is opened           | Yes    | N/A |
-| Prevent duplication of assets                | Yes    | Yes |
-| Selective album(s) for backup                | Yes    | N/A |
-| Download photos and videos to local device   | Yes    | Yes |
-| Multi-user support                           | Yes    | Yes |
-| Album and Shared albums                      | Yes    | Yes |
-| Scrubbable/draggable scrollbar               | Yes    | Yes |
-| Support raw formats                          | Yes    | Yes |
-| Metadata view (EXIF, map)                    | Yes    | Yes |
-| Search by metadata, objects, faces, and CLIP | Yes    | Yes |
-| Administrative functions (user management)   | No     | Yes |
-| Background backup                            | Yes    | N/A |
-| Virtual scroll                               | Yes    | Yes |
-| OAuth support                                | Yes    | Yes |
-| API Keys                                     | N/A    | Yes |
-| LivePhoto/MotionPhoto backup and playback    | Yes    | Yes |
-| Support 360 degree image display             | No     | Yes |
-| User-defined storage structure               | Yes    | Yes |
-| Public Sharing                               | Yes    | Yes |
-| Archive and Favorites                        | Yes    | Yes |
-| Global Map                                   | Yes    | Yes |
-| Partner Sharing                              | Yes    | Yes |
-| Facial recognition and clustering            | Yes    | Yes |
-| Memories (x years ago)                       | Yes    | Yes |
-| Offline support                              | Yes    | No  |
-| Read-only gallery                            | Yes    | Yes |
-| Stacked Photos                               | Yes    | Yes |
-| Tags                                         | No     | Yes |
-| Folder View                                  | Yes    | Yes |
-
-## Translations
-
-Read more about translations [here](https://docs.immich.app/developer/translations).
-
-&lt;a href=&quot;https://hosted.weblate.org/engage/immich/&quot;&gt;
-&lt;img src=&quot;https://hosted.weblate.org/widget/immich/immich/multi-auto.svg&quot; alt=&quot;Translation status&quot; /&gt;
-&lt;/a&gt;
-
-## Repository activity
-
-![Activities](https://repobeats.axiom.co/api/embed/9e86d9dc3ddd137161f2f6d2e758d7863b1789cb.svg &quot;Repobeats analytics image&quot;)
-
-## Star history
-
-&lt;a href=&quot;https://star-history.com/#immich-app/immich&amp;type=date&amp;legend=top-left&quot;&gt;
- &lt;picture&gt;
-   &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/svg?repos=immich-app/immich&amp;type=date&amp;theme=dark&quot; /&gt;
-   &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/svg?repos=immich-app/immich&amp;type=date&quot; /&gt;
-   &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/svg?repos=immich-app/immich&amp;type=date&quot; width=&quot;100%&quot; /&gt;
- &lt;/picture&gt;
-&lt;/a&gt;
-
-## Contributors
-
-&lt;a href=&quot;https://github.com/immich-app/immich/graphs/contributors&quot;&gt;
-  &lt;img src=&quot;https://contrib.rocks/image?repo=immich-app/immich&quot; width=&quot;100%&quot;/&gt;
-&lt;/a&gt;
+Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.md).
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
@@ -1094,15 +1310,15 @@ Read more about translations [here](https://docs.immich.app/developer/translatio
             <title><![CDATA[DayuanJiang/next-ai-draw-io]]></title>
             <link>https://github.com/DayuanJiang/next-ai-draw-io</link>
             <guid>https://github.com/DayuanJiang/next-ai-draw-io</guid>
-            <pubDate>Tue, 16 Dec 2025 00:05:33 GMT</pubDate>
+            <pubDate>Wed, 17 Dec 2025 00:04:54 GMT</pubDate>
             <description><![CDATA[A next.js web application that integrates AI capabilities with draw.io diagrams. This app allows you to create, modify, and enhance diagrams through natural language commands and AI-assisted visualization.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/DayuanJiang/next-ai-draw-io">DayuanJiang/next-ai-draw-io</a></h1>
             <p>A next.js web application that integrates AI capabilities with draw.io diagrams. This app allows you to create, modify, and enhance diagrams through natural language commands and AI-assisted visualization.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 11,558</p>
-            <p>Forks: 1,160</p>
-            <p>Stars today: 1,504 stars today</p>
+            <p>Stars: 12,258</p>
+            <p>Forks: 1,233</p>
+            <p>Stars today: 775 stars today</p>
             <h2>README</h2><pre># Next AI Draw.io
 
 &lt;div align=&quot;center&quot;&gt;
@@ -1362,347 +1578,565 @@ For support or inquiries, please open an issue on the GitHub repository or conta
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[badlogic/pi-mono]]></title>
-            <link>https://github.com/badlogic/pi-mono</link>
-            <guid>https://github.com/badlogic/pi-mono</guid>
-            <pubDate>Tue, 16 Dec 2025 00:05:32 GMT</pubDate>
-            <description><![CDATA[Monorepo for pi packages: TUI library, agent framework, and pod management CLI]]></description>
+            <title><![CDATA[f/awesome-chatgpt-prompts]]></title>
+            <link>https://github.com/f/awesome-chatgpt-prompts</link>
+            <guid>https://github.com/f/awesome-chatgpt-prompts</guid>
+            <pubDate>Wed, 17 Dec 2025 00:04:53 GMT</pubDate>
+            <description><![CDATA[Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/badlogic/pi-mono">badlogic/pi-mono</a></h1>
-            <p>Monorepo for pi packages: TUI library, agent framework, and pod management CLI</p>
+            <h1><a href="https://github.com/f/awesome-chatgpt-prompts">f/awesome-chatgpt-prompts</a></h1>
+            <p>Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 506</p>
-            <p>Forks: 75</p>
-            <p>Stars today: 12 stars today</p>
-            <h2>README</h2><pre># Pi Monorepo
+            <p>Stars: 139,503</p>
+            <p>Forks: 18,490</p>
+            <p>Stars today: 122 stars today</p>
+            <h2>README</h2><pre>## ⚠️ Where are all the prompts gone?
 
-Tools for building AI agents and managing LLM deployments.
+&gt; **No worries They are still here.** But it become impossible to maintain a monster README file. So now it has its own system. Still free, still open-sourced.
+&gt;
+&gt; 🌐 **[View All Prompts on prompts.chat](https://prompts.chat/prompts)**
+&gt; 
+&gt; 🔍 **[View All Prompts synced on GitHub (prompts.csv)](https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv)**
+&gt; 
+&gt; 📊 **[View All Prompts synced on Data Studio on HF (prompts.csv)](https://huggingface.co/datasets/fka/awesome-chatgpt-prompts/viewer?views%5B%5D=train)**
+&gt; 
 
-## Packages
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img width=&quot;558&quot; height=&quot;148&quot; alt=&quot;Screenshot 2025-12-12 at 02 40 52&quot; src=&quot;https://github.com/user-attachments/assets/8de2ba4c-5e89-4aae-aecb-32b188fb1bfb&quot; /&gt;
+  &lt;br&gt;
+  &lt;small&gt;a.k.a. Awesome ChatGPT Prompts&lt;/small&gt;
+&lt;/p&gt;
 
-| Package | Description |
-|---------|-------------|
-| **[@mariozechner/pi-ai](packages/ai)** | Unified multi-provider LLM API (OpenAI, Anthropic, Google, etc.) |
-| **[@mariozechner/pi-agent](packages/agent)** | Agent runtime with tool calling and state management |
-| **[@mariozechner/pi-coding-agent](packages/coding-agent)** | Interactive coding agent CLI |
-| **[@mariozechner/pi-mom](packages/mom)** | Slack bot that delegates messages to the pi coding agent |
-| **[@mariozechner/pi-tui](packages/tui)** | Terminal UI library with differential rendering |
-| **[@mariozechner/pi-web-ui](packages/web-ui)** | Web components for AI chat interfaces |
-| **[@mariozechner/pi-proxy](packages/proxy)** | CORS proxy for browser-based LLM API calls |
-| **[@mariozechner/pi](packages/pods)** | CLI for managing vLLM deployments on GPU pods |
+&lt;h2 align=&quot;center&quot;&gt;Sponsors&lt;/h3&gt;
 
-## Development
+&lt;div align=&quot;center&quot;&gt;
 
-### Setup
+  &lt;a href=&quot;https://clemta.com&quot; align=&quot;center&quot; target=&quot;_blank&quot;&gt;
+    &lt;img height=&quot;50&quot; alt=&quot;Clemta logo&quot; src=&quot;https://clemta.com/wp-content/uploads/2023/03/logo-clemta-com-1.png.webp&quot;&gt;
+  &lt;/a&gt;
+  &lt;br&gt;
+  &lt;sub&gt;With Clemta, you can run your company from the comfort of your home.&lt;/sub&gt;
+&lt;hr&gt;
+  &lt;sub&gt;&lt;a href=&quot;https://github.com/sponsors/f/sponsorships?sponsor=f&amp;amp;tier_id=529895&quot;&gt;Be my sponsor and your logo will be here!&lt;/a&gt;&lt;/sub&gt;
+&lt;/div&gt;
+
+---
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/f/awesome-chatgpt-prompts)
+
+Welcome to the &quot;Awesome ChatGPT Prompts&quot; repository! While this collection was originally created for [ChatGPT](https://chat.openai.com/chat), these prompts work great with other AI models like [Claude](https://claude.ai/new), [Gemini](https://gemini.google.com), [Hugging Face Chat](https://hf.co/chat), [Llama](https://meta.ai), [Mistral](https://chat.mistral.ai), and more.
+
+In this repository, you will find a variety of [prompts](prompts.csv) that can be used with ChatGPT and other AI chat models. We encourage you to [add your own prompts](https://prompts.chat) to the list, and to use AI to help generate new prompts as well. Your contributions to [prompts.chat](https://prompts.chat) will be contributions to this repository automatically.
+
+## Want to deploy your own private prompt library for your team?
+
+Check out our [Self-Hosting Guide](SELF-HOSTING.md) for instructions on setting up your own instance with **customizable branding, themes, and authentication**.
+
+### Quickstart
 
 ```bash
-npm install          # Install all dependencies
-npm run build        # Build all packages
-npm run check        # Lint, format, and type check
-```
-
-&gt; **Note:** `npm run check` requires `npm run build` to be run first. The web-ui package uses `tsc` which needs compiled `.d.ts` files from dependencies.
-
-### CI
-
-GitHub Actions runs on push to `main` and on pull requests. The workflow runs `npm run check` and `npm run test` for each package in parallel.
-
-**Do not add LLM API keys as secrets to this repository.** Tests that require LLM access use `describe.skipIf()` to skip when API keys are missing. This is intentional:
-
-- PRs from external contributors would have access to secrets in the CI environment
-- Malicious PR code could exfiltrate API keys
-- Tests that need LLM calls are skipped on CI and run locally by developers who have keys configured
-
-If you need to run LLM-dependent tests, run them locally with your own API keys.
-
-### Development
-
-Start watch builds for all packages:
-```bash
+git clone https://github.com/f/awesome-chatgpt-prompts.git
+cd awesome-chatgpt-prompts
+npm install
+npm run db:push
 npm run dev
 ```
 
-Then run with tsx:
-```bash
-cd packages/coding-agent &amp;&amp; npx tsx src/cli.ts
-cd packages/pods &amp;&amp; npx tsx src/cli.ts
-```
+### Private Clone Setup (Recommended for Teams)
 
-### Versioning (Lockstep)
-
-**All packages MUST always have the same version number.** Use these commands to bump versions:
+For private deployments, use our **interactive setup wizard** to configure your instance with custom branding, disable sponsorship sections, and set up authentication:
 
 ```bash
-npm run version:patch    # 0.7.5 -&gt; 0.7.6
-npm run version:minor    # 0.7.5 -&gt; 0.8.0
-npm run version:major    # 0.7.5 -&gt; 1.0.0
-```
-
-These commands:
-1. Update all package versions to the same number
-2. Update inter-package dependency versions (e.g., `pi-agent` depends on `pi-ai@^0.7.7`)
-3. Update `package-lock.json`
-
-**Never manually edit version numbers.** The lockstep system ensures consistency across the monorepo.
-
-### Publishing
-
-Complete release process:
-
-1. **Add changes to CHANGELOG.md** (if changes affect coding-agent):
-   ```bash
-   # Add your changes to the [Unreleased] section in packages/coding-agent/CHANGELOG.md
-   # Always add new entries under [Unreleased], never under already-released versions
-   ```
-
-2. **Bump version** (all packages):
-   ```bash
-   npm run version:patch    # For bug fixes
-   npm run version:minor    # For new features
-   npm run version:major    # For breaking changes
-   ```
-
-3. **Finalize CHANGELOG.md for release** (if changes affect coding-agent):
-   ```bash
-   # Change [Unreleased] to the new version number with today&#039;s date
-   # e.g., ## [0.7.16] - 2025-11-17
-   # NEVER add entries to already-released version sections
-   # Each version section is immutable once released
-   ```
-
-4. **Commit and tag**:
-   ```bash
-   git add .
-   git commit -m &quot;Release v0.7.16&quot;
-   git tag v0.7.16
-   git push origin main
-   git push origin v0.7.16
-   ```
-
-5. **Publish to npm**:
-   ```bash
-   npm run publish        # Publish all packages to npm
-   ```
-
-   **NPM Token Setup**: Publishing requires a granular access token with &quot;Bypass 2FA on publish&quot; enabled.
-   - Go to https://www.npmjs.com/settings/badlogic/tokens/
-   - Create a new &quot;Granular Access Token&quot;
-   - Select &quot;Bypass 2FA on publish&quot;
-   - Tokens expire after 90 days, so regenerate when needed
-   - Set the token: `npm config set //registry.npmjs.org/:_authToken=YOUR_TOKEN`
-
-6. **Add new [Unreleased] section** (for next development cycle):
-   ```bash
-   # Add a new [Unreleased] section at the top of CHANGELOG.md
-   # Commit: git commit -am &quot;Add [Unreleased] section&quot;
-   ```
-
-## License
-
-MIT</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[maotoumao/MusicFreeDesktop]]></title>
-            <link>https://github.com/maotoumao/MusicFreeDesktop</link>
-            <guid>https://github.com/maotoumao/MusicFreeDesktop</guid>
-            <pubDate>Tue, 16 Dec 2025 00:05:31 GMT</pubDate>
-            <description><![CDATA[插件化、定制化、无广告的免费音乐播放器]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/maotoumao/MusicFreeDesktop">maotoumao/MusicFreeDesktop</a></h1>
-            <p>插件化、定制化、无广告的免费音乐播放器</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 7,352</p>
-            <p>Forks: 684</p>
-            <p>Stars today: 67 stars today</p>
-            <h2>README</h2><pre># MusicFree 桌面版
-![GitHub Repo stars](https://img.shields.io/github/stars/maotoumao/MusicFreeDesktop) 
-![GitHub forks](https://img.shields.io/github/forks/maotoumao/MusicFreeDesktop)
-![star](https://gitcode.com/maotoumao/MusicFreeDesktop/star/badge.svg)
-
-![GitHub License](https://img.shields.io/github/license/maotoumao/MusicFreeDesktop)
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/maotoumao/MusicFreeDesktop/total)
-![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/maotoumao/MusicFreeDesktop)
-![GitHub package.json version](https://img.shields.io/github/package-json/v/maotoumao/MusicFreeDesktop)
-
-&lt;a href=&quot;https://trendshift.io/repositories/3961&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/3961&quot; alt=&quot;maotoumao%2FMusicFreeDesktop | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
----
-
-## 项目使用约定：
-本项目基于 AGPL 3.0 协议开源，使用此项目时请遵守开源协议。  
-除此外，希望你在使用代码时已经了解以下额外说明：
-
-1. 打包、二次分发 **请保留代码出处**：https://github.com/maotoumao/MusicFree
-2. 请不要用于商业用途，合法合规使用代码；
-3. 如果开源协议变更，将在此 Github 仓库更新，不另行通知。
----
-
-## 简介
-
-一个插件化、定制化、无广告的免费音乐播放器。
-&gt; 当前版本支持 Windows 和 macOS 和 Linux
-
-&lt;img src=&quot;./src/assets/imgs/wechat_channel1.png&quot; height=&quot;144px&quot; title=&quot;微信公众号&quot; style=&quot;display:inherit;&quot;/&gt;
-
-
-### 下载地址
-
-[飞书云文档](https://r0rvr854dd1.feishu.cn/drive/folder/IrVEfD67KlWZGkdqwjecLHFNnBb?from=from_copylink)
-
-## 特性
-
-- 插件化：本软件仅仅是一个播放器，本身**并不集成**任何平台的任何音源，所有的搜索、播放、歌单导入等功能全部基于**插件**。这也就意味着，**只要可以在互联网上搜索到的音源，只要有对应的插件，你都可以使用本软件进行搜索、播放等功能。** 关于插件的详细说明请参考 [安卓版 Readme 的插件部分](https://github.com/maotoumao/MusicFree#%E6%8F%92%E4%BB%B6)。
-
-- 插件支持的功能：搜索（音乐、专辑、作者、歌单）、播放、查看专辑、查看作者详细信息、导入单曲、导入歌单、获取歌词等。
-
-- 定制化：本软件可以通过主题包定义软件外观及背景，详见下方主题包一节。
-
-- 无广告：基于 AGPL3.0 协议开源，将会保持免费。
-
-- 隐私：软件所有数据存储在本地，本软件不会上传你的个人信息。
-
-## 插件
-
-插件协议和安卓版完全相同。
-
-[示例插件仓库](https://github.com/maotoumao/MusicFreePlugins)，你可以根据[插件开发文档](https://musicfree.catcat.work/plugin/introduction.html) 开发适配于任意音源的插件。
-
-## 主题包
-
-主题包是一个文件夹，文件夹内必须包含两个文件：
-
-```bash
-index.css
-config.json
-```
-
-### index.css
-
-index.css 中可以覆盖界面中的任何样式。你可以通过定义 css 变量来完成大部分颜色的替换，也可以查看源代码，根据类名等覆盖样式。
-
-支持的 css 变量如下：
-
-``` css
-:root {
-  --primaryColor: #f17d34; // 主色调
-  --backgroundColor: #fdfdfd; // 背景色
-  --dividerColor: rgba(0, 0, 0, 0.1); // 分割线颜色
-  --listHoverColor: rgba(0, 0, 0, 0.05); // 列表悬浮颜色
-  --listActiveColor: rgba(0, 0, 0, 0.1); // 列表选中颜色
-  --textColor: #333333; // 主文本颜色
-  --maskColor: rgba(51, 51, 51, 0.2); // 遮罩层颜色
-  --shadowColor: rgba(0, 0, 0, 0.2); // 对话框等阴影颜色
-  /** --shadow:  // shadow属性 */
-  --placeholderColor: #f4f4f4; // 输入区背景颜色
-  --successColor: #08A34C; // 成功颜色
-  --dangerColor: #FC5F5F; // 危险颜色
-  --infoColor: #0A95C8; // 通知颜色
-  --headerTextColor: white; // 顶部文本颜色
-}
-```
-
-具体的例子可以参考 [暗黑模式](https://github.com/maotoumao/MusicFreeThemePacks/blob/master/darkmode/index.css)
-
-除了通过 css 定义常规样式外，也可以通过在 config.json 中定义 iframes 字段，用来把任意的 html 文件作为软件背景，这样可以实现一些单纯用 css 无法实现的效果。
-
-### config.json
-
-config.json 是一个配置文件。
-
-```json
-{
-    &quot;name&quot;: &quot;主题包的名称&quot;,
-    &quot;preview&quot;: &quot;#000000&quot;, // 预览图，支持颜色或图片；
-    &quot;description&quot;: &quot;描述文本&quot;,
-    &quot;iframes&quot;: {
-        &quot;app&quot;: &quot;http://musicfree.catcat.work&quot;, // 整个软件的背景
-        &quot;header&quot;: &quot;&quot;, // 头部区域的背景
-        &quot;body&quot;: &quot;&quot;, // 侧边栏+主页面区域的背景
-        &quot;side-bar&quot;: &quot;&quot;, // 侧边栏区域的背景
-        &quot;page&quot;: &quot;&quot;, // 主页面区域的背景
-        &quot;music-bar&quot;: &quot;&quot;, // 底部音乐栏的背景
-
-    }
-}
-```
-
-如果需要指向本地的图片，可以通过 ```@/``` 表示主题包的路径；preview、iframes、以及 iframes 指向的 html 文件都会把 ```@/``` 替换为 ```主题包路径```。详情可参考 [樱花主题](https://github.com/maotoumao/MusicFreeThemePacks/tree/master/sakura)
-
-### 主题包示例
-
-示例仓库：https://github.com/maotoumao/MusicFreeThemePacks
-
-几个主题包效果截图：
-
-#### 暗黑模式
-[源代码](https://github.com/maotoumao/MusicFreeThemePacks/tree/master/darkmode)
-
-![暗黑模式](./.imgs/darkmode.png)
-
-#### 背景图片
-[源代码](https://github.com/maotoumao/MusicFreeThemePacks/tree/master/night-star)
-
-![背景图片](./.imgs/night-star.png)
-
-#### fliqlo
-[源代码](https://github.com/maotoumao/MusicFreeThemePacks/tree/master/fliqlo)
-
-![fliqlo](./.imgs/fliqlo.gif)
-
-#### 樱花
-[源代码](https://github.com/maotoumao/MusicFreeThemePacks/tree/master/sakura)
-
-![樱花](./.imgs/sakura.gif)
-
-#### 雨季
-[源代码](https://github.com/maotoumao/MusicFreeThemePacks/tree/master/rainy-season)
-
-![雨季](./.imgs/rainy-season.gif)
-
-## 启动项目
-
-下载仓库代码之后，在根目录下执行：
-
-```bash
+git clone https://github.com/f/awesome-chatgpt-prompts.git
+cd awesome-chatgpt-prompts
 npm install
-npm start
+npm run setup
 ```
 
-## 支持这个项目
+The setup wizard will guide you through:
+- **Branding** — Set your organization name, logo, and description
+- **Theme** — Choose colors, border radius, and UI style
+- **Authentication** — Configure GitHub, Google, Azure AD, or email/password login
+- **Features** — Enable/disable private prompts, categories, tags, AI search
+- **Languages** — Select supported locales
+- **Sponsors** — Optionally add your own sponsor logos (prompts.chat sponsors are disabled)
 
-如果你喜欢这个项目，或者希望我可以持续维护下去，你可以通过以下任何一种方式支持我;)
+After setup, complete the configuration:
 
-1. Star 这个项目，分享给你身边的人；
-2. 关注公众号【一只猫头猫】获取最新信息；
+```bash
+# Edit .env with your database and OAuth credentials
+nano .env
 
-&lt;img src=&quot;./src/assets/imgs/wechat_channel.jpg&quot; height=&quot;160px&quot; title=&quot;微信公众号&quot; style=&quot;display:inherit;&quot;/&gt;
+# Run database migrations
+npm run db:push
 
-## 截图
+# Start development server
+npm run dev
+```
 
-![screenshot](./.imgs/screenshot.png)
+&gt; 💡 **Tip:** The setup script automatically enables &quot;clone branding mode&quot; which hides prompts.chat branding, achievements, and sponsors from the homepage.
 
-![screenshot](./.imgs/screenshot1.png)
+We hope you find these prompts useful and have fun exploring AI chat models!
 
-![screenshot](./.imgs/screenshot2.png)
+**[View on prompts.chat](https://prompts.chat)**
+
+**[View Hugging Face Dataset](https://huggingface.co/datasets/fka/awesome-chatgpt-prompts/)**
+---
+
+&gt; ℹ️ **NOTE:** Sometimes, some of the prompts may not be working as you expected
+&gt; or may be rejected by the AI. Please try again, start a new thread, or log out
+&gt; and log back in. If these solutions do not work, please try rewriting the
+&gt; prompt using your own sentences while keeping the instructions same.
+
+### Want to Write Effective Prompts?
+
+I&#039;ve authored an e-book called **&quot;The Art of ChatGPT Prompting: A Guide to
+Crafting Clear and Effective Prompts&quot;**.
+
+📖 **[Read the e-book](https://fka.gumroad.com/l/art-of-chatgpt-prompting)**
+
+### Want to Learn How to Make Money using ChatGPT Prompts?
+
+I&#039;ve authored an e-book called **&quot;How to Make Money with ChatGPT: Strategies,
+Tips, and Tactics&quot;**.
+
+📖
+**[Buy the e-book](https://fka.gumroad.com/l/how-to-make-money-with-chatgpt)**
+
+### Want to Learn How to write image prompts for Midjourney AI?
+
+I&#039;ve authored an e-book called **&quot;The Art of Midjourney AI: A Guide to Creating
+Images from Text&quot;**.
+
+📖
+**[Read the e-book](https://fka.gumroad.com/l/the-art-of-midjourney-ai-guide-to-creating-images-from-text)**
+
+---
+
+# Prompts
+
+🔍 **[View All Prompts on GitHub (prompts.csv)](https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv)**
+
+📊 **[View All Prompts as Data Studio on HF (prompts.csv)](https://huggingface.co/datasets/fka/awesome-chatgpt-prompts/viewer?views%5B%5D=train)**
+
+🌐 **[View All Prompts on prompts.chat](https://prompts.chat/prompts)**
+
+---
+
+## Contributors 😍
+
+Many thanks to these AI whisperers:
+
+&lt;a href=&quot;https://github.com/f/awesome-chatgpt-prompts/graphs/contributors&quot;&gt;
+  &lt;img src=&quot;https://contrib.rocks/image?repo=f/awesome-chatgpt-prompts&quot; /&gt;
+&lt;/a&gt;
+
+# License
+
+This work is licensed under [CC0 1.0 Universal (Public Domain Dedication)](https://creativecommons.org/publicdomain/zero/1.0/).
+
+You can copy, modify, distribute, and use the prompts freely — even for commercial purposes — without asking permission or giving attribution. All prompts contributed to this repository are released into the public domain.
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[maotoumao/MusicFree]]></title>
-            <link>https://github.com/maotoumao/MusicFree</link>
-            <guid>https://github.com/maotoumao/MusicFree</guid>
-            <pubDate>Tue, 16 Dec 2025 00:05:30 GMT</pubDate>
-            <description><![CDATA[插件化、定制化、无广告的免费音乐播放器]]></description>
+            <title><![CDATA[rybbit-io/rybbit]]></title>
+            <link>https://github.com/rybbit-io/rybbit</link>
+            <guid>https://github.com/rybbit-io/rybbit</guid>
+            <pubDate>Wed, 17 Dec 2025 00:04:52 GMT</pubDate>
+            <description><![CDATA[🐸 Rybbit - open-source and privacy-friendly alternative to Google Analytics that is 10x more intuitive.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/maotoumao/MusicFree">maotoumao/MusicFree</a></h1>
-            <p>插件化、定制化、无广告的免费音乐播放器</p>
+            <h1><a href="https://github.com/rybbit-io/rybbit">rybbit-io/rybbit</a></h1>
+            <p>🐸 Rybbit - open-source and privacy-friendly alternative to Google Analytics that is 10x more intuitive.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 22,028</p>
-            <p>Forks: 1,515</p>
-            <p>Stars today: 53 stars today</p>
-            <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
+            <p>Stars: 10,409</p>
+            <p>Forks: 497</p>
+            <p>Stars today: 115 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://github.com/user-attachments/assets/be982e50-8d59-471c-9fb7-e8982658a608&quot; height=&quot;100&quot;&gt;
+    &lt;p align=&quot;center&quot;&gt;Open Source Web &amp; Product Analytics&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+    &lt;a href=&quot;https://rybbit.com&quot; target=&quot;_blank&quot;&gt;Website&lt;/a&gt; |
+    &lt;a href=&quot;https://demo.rybbit.com/1&quot; target=&quot;_blank&quot;&gt;Demo&lt;/a&gt; |
+    &lt;a href=&quot;https://rybbit.com/docs&quot; target=&quot;_blank&quot;&gt;Documentation&lt;/a&gt; |
+    &lt;a href=&quot;https://discord.gg/DEhGb4hYBj&quot; target=&quot;_blank&quot;&gt;Discord&lt;/a&gt; |
+    &lt;a href=&quot;https://github.com/rybbit-io/rybbit?tab=AGPL-3.0-1-ov-file&quot; target=&quot;_blank&quot;&gt;License (AGPL-3)&lt;/a&gt; |
+    &lt;a href=&quot;https://github.com/rybbit-io/rybbit/blob/master/CONTRIBUTE.md&quot; target=&quot;_blank&quot;&gt;Contribute&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;a href=&quot;https://rybbit.com/&quot; target=&quot;_blank&quot;&gt;Rybbit&lt;/a&gt; is the modern open source and privacy friendly alternative to Google Analytics. It takes only a couple minutes to setup and is super intuitive to use.
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://www.producthunt.com/products/rybbit?embed=true&amp;utm_source=badge-top-post-badge&amp;utm_medium=badge&amp;utm_source=badge-rybbit&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=1028220&amp;theme=standard&amp;period=daily&quot; alt=&quot;Rybbit - Open Source Google Analytics Replacement | Product Hunt&quot; width=&quot;250&quot; height=&quot;54&quot; /&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;strong&gt;&lt;a href=&quot;https://demo.rybbit.com/1&quot;&gt;🔍 View Live Demo&lt;/a&gt;&lt;/strong&gt; - See Rybbit running on a real-life production site with over a million visits a month.
+&lt;/p&gt;
+
+&lt;img width=&quot;1299&quot; height=&quot;797&quot; alt=&quot;Screenshot 2025-10-16 at 7 25 20 PM&quot; src=&quot;https://github.com/user-attachments/assets/7988ba04-64ee-4410-9972-847d278efa2f&quot; /&gt;
+
+&lt;hr&gt;
+
+## 🚀 Getting Started
+
+There are two ways to start using Rybbit:
+
+| Option                                                   | Description                                                   |
+| -------------------------------------------------------- | ------------------------------------------------------------- |
+| **[Hosted Service](https://rybbit.com)**                 | Free tier available - the fastest way to get started          |
+| **[Self-Hosting](https://rybbit.com/docs/self-hosting)** | Deploy and manage Rybbit on your own VPS for complete control |
+
+📚 Explore our [documentation](https://rybbit.com/docs) to learn more about installation, configuration, and usage.
+
+&lt;hr&gt;
+
+## Sponsors
+
+&lt;!-- sponsors --&gt;No sponsors yet. Be the first to support this project!&lt;!-- sponsors --&gt;
+
+## ✨ Key Features
+
+- All key web analytics metrics including sessions, unique users, pageviews, bounce rate, session duration
+- Session replays
+- No cookies &amp; privacy friendly
+- Customizable goals. retention, user journeys, and funnels dashboards
+- Advanced filtering across 15+ dimensions
+- Custom events with JSON properties
+- 3 level location tracking (country -&gt; region -&gt; city) + advanced map visualizations
+- Real time dashboard
+- Support for organizations and unlimited number of sites
+
+&lt;hr&gt;
+
+## 📊 Comparison
+
+See how Rybbit compares to other analytics solutions:
+
+| Feature                           | Rybbit | GA4        | Plausible  | Cloudflare |
+| --------------------------------- | ------ | ---------- | ---------- | ---------- |
+| **Open Source**                   | ✅     | ❌         | ✅         | ❌         |
+| **Self-Hosting**                  | ✅     | ❌         | ✅\*       | ❌         |
+| **Cookieless &amp; Privacy friendly** | ✅     | ❌         | ✅         | ✅         |
+| **Advanced Maps**                 | ✅     | ❌         | ❌         | ❌         |
+| **Advanced Filters**              | ✅     | ⚠️ Limited | ⚠️ Limited | ❌         |
+| **Web Vitals**                    | ✅\*\* | ❌         | ❌         | ❌         |
+| **Session Details**               | ✅     | ❌         | ❌         | ❌         |
+| **User Profiles**                 | ✅     | ❌         | ❌         | ❌         |
+| **Session Replays**               | ✅     | ❌         | ❌         | ❌         |
+| **Funnels**                       | ✅     | ✅         | ✅\*\*     | ❌         |
+| **User Journeys**                 | ✅     | ✅         | ❌         | ❌         |
+| **Retention Analysis**            | ✅     | ✅         | ❌         | ❌         |
+| **Goals &amp; Events**                | ✅     | ✅         | ✅         | ❌         |
+| **Real-time Dashboard**           | ✅     | ✅         | ✅         | ✅         |
+| **Custom Events (JSON)**          | ✅     | ✅         | ⚠️ Limited | ❌         |
+| **Error Tracking**                | ✅     | ❌         | ❌         | ❌         |
+| **Public Dashboards**             | ✅     | ❌         | ✅         | ❌         |
+| **Organizations**                 | ✅     | ✅         | ✅         | ✅         |
+| **Free Tier**                     | ✅     | ✅         | ❌         | ✅         |
+| **Frog 🐸**                       | ✅     | ❌         | ❌         | ❌         |
+
+\* Plausible&#039;s Community Edition has very limited features compared to their cloud version
+
+\*\* Only available on paid tiers
+
+&lt;hr&gt;
+
+## 📊 Dashboard Preview
+
+### Map
+
+&lt;img width=&quot;1299&quot; height=&quot;797&quot; alt=&quot;Screenshot 2025-10-16 at 7 27 12 PM&quot; src=&quot;https://github.com/user-attachments/assets/52643121-4f4d-4bbe-9910-2516226bf421&quot; /&gt;
+&lt;img width=&quot;1299&quot; height=&quot;797&quot; alt=&quot;Screenshot 2025-10-16 at 7 30 39 PM&quot; src=&quot;https://github.com/user-attachments/assets/153585d5-7ff6-43bb-8bf6-fecfbe240ef8&quot; /&gt;
+&lt;img width=&quot;1299&quot; height=&quot;797&quot; alt=&quot;Screenshot 2025-10-16 at 7 30 00 PM&quot; src=&quot;https://github.com/user-attachments/assets/3873bc6b-9f79-4e9a-b083-0676a7d52b1d&quot; /&gt;
+&lt;img width=&quot;1299&quot; height=&quot;797&quot; alt=&quot;Screenshot 2025-10-16 at 7 30 23 PM&quot; src=&quot;https://github.com/user-attachments/assets/04ceca1d-a4af-4f52-856c-f054deeb1023&quot; /&gt;
+
+## Session Replay
+
+&lt;img width=&quot;1299&quot; height=&quot;797&quot; alt=&quot;Screenshot 2025-10-16 at 7 29 18 PM&quot; src=&quot;https://github.com/user-attachments/assets/6906aef0-8ce0-41f9-9bbb-b175ef158df3&quot; /&gt;
+
+### Journeys
+
+&lt;img width=&quot;1299&quot; height=&quot;797&quot; alt=&quot;Screenshot 2025-10-16 at 7 34 13 PM&quot; src=&quot;https://github.com/user-attachments/assets/4cd465df-8f91-43bf-a121-647ae2c9e8e1&quot; /&gt;
+
+### Funnels
+
+&lt;img width=&quot;1299&quot; height=&quot;797&quot; alt=&quot;Screenshot 2025-10-16 at 7 34 05 PM&quot; src=&quot;https://github.com/user-attachments/assets/e3b083c2-4f18-4c8c-bc97-9491a6402439&quot; /&gt;
+
+### Goals
+
+&lt;img width=&quot;1299&quot; height=&quot;797&quot; alt=&quot;Screenshot 2025-10-16 at 7 28 26 PM&quot; src=&quot;https://github.com/user-attachments/assets/d34c5c00-1dec-4864-9115-bfa9e9811d60&quot; /&gt;
+
+### Users
+
+&lt;img width=&quot;1299&quot; height=&quot;797&quot; alt=&quot;Screenshot 2025-10-16 at 7 28 54 PM&quot; src=&quot;https://github.com/user-attachments/assets/f10c1bba-6658-4b6a-94a6-dcba351e4eea&quot; /&gt;
+
+### Errors
+
+&lt;img width=&quot;1299&quot; height=&quot;797&quot; alt=&quot;Screenshot 2025-10-16 at 7 40 56 PM&quot; src=&quot;https://github.com/user-attachments/assets/efd60f04-c203-45ea-981d-14f34ec2b1e1&quot; /&gt;
+
+### Retention
+
+&lt;img width=&quot;1299&quot; height=&quot;797&quot; alt=&quot;Screenshot 2025-10-16 at 7 34 20 PM&quot; src=&quot;https://github.com/user-attachments/assets/c56a31ac-7af5-419b-82a5-d3aedb68debc&quot; /&gt;
+
+### Web Vitals (Cloud only)
+
+&lt;img width=&quot;1299&quot; height=&quot;797&quot; alt=&quot;Screenshot 2025-10-16 at 7 28 01 PM&quot; src=&quot;https://github.com/user-attachments/assets/d88b8be0-cd30-4dd6-a0e5-5446c890c0f9&quot; /&gt;
+
+&lt;hr&gt;
+
+## ⭐ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=rybbit-io/rybbit&amp;type=Date)](https://www.star-history.com/#rybbit-io/rybbit&amp;Date)
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[n8n-io/n8n]]></title>
+            <link>https://github.com/n8n-io/n8n</link>
+            <guid>https://github.com/n8n-io/n8n</guid>
+            <pubDate>Wed, 17 Dec 2025 00:04:51 GMT</pubDate>
+            <description><![CDATA[Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/n8n-io/n8n">n8n-io/n8n</a></h1>
+            <p>Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 163,120</p>
+            <p>Forks: 52,153</p>
+            <p>Stars today: 240 stars today</p>
+            <h2>README</h2><pre>![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
+
+# n8n - Secure Workflow Automation for Technical Teams
+
+n8n is a workflow automation platform that gives technical teams the flexibility of code with the speed of no-code. With 400+ integrations, native AI capabilities, and a fair-code license, n8n lets you build powerful automations while maintaining full control over your data and deployments.
+
+![n8n.io - Screenshot](https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-screenshot-readme.png)
+
+## Key Capabilities
+
+- **Code When You Need It**: Write JavaScript/Python, add npm packages, or use the visual interface
+- **AI-Native Platform**: Build AI agent workflows based on LangChain with your own data and models
+- **Full Control**: Self-host with our fair-code license or use our [cloud offering](https://app.n8n.cloud/login)
+- **Enterprise-Ready**: Advanced permissions, SSO, and air-gapped deployments
+- **Active Community**: 400+ integrations and 900+ ready-to-use [templates](https://n8n.io/workflows)
+
+## Quick Start
+
+Try n8n instantly with [npx](https://docs.n8n.io/hosting/installation/npm/) (requires [Node.js](https://nodejs.org/en/)):
+
+```
+npx n8n
+```
+
+Or deploy with [Docker](https://docs.n8n.io/hosting/installation/docker/):
+
+```
+docker volume create n8n_data
+docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n
+```
+
+Access the editor at http://localhost:5678
+
+## Resources
+
+- 📚 [Documentation](https://docs.n8n.io)
+- 🔧 [400+ Integrations](https://n8n.io/integrations)
+- 💡 [Example Workflows](https://n8n.io/workflows)
+- 🤖 [AI &amp; LangChain Guide](https://docs.n8n.io/advanced-ai/)
+- 👥 [Community Forum](https://community.n8n.io)
+- 📖 [Community Tutorials](https://community.n8n.io/c/tutorials/28)
+
+## Support
+
+Need help? Our community forum is the place to get support and connect with other users:
+[community.n8n.io](https://community.n8n.io)
+
+## License
+
+n8n is [fair-code](https://faircode.io) distributed under the [Sustainable Use License](https://github.com/n8n-io/n8n/blob/master/LICENSE.md) and [n8n Enterprise License](https://github.com/n8n-io/n8n/blob/master/LICENSE_EE.md).
+
+- **Source Available**: Always visible source code
+- **Self-Hostable**: Deploy anywhere
+- **Extensible**: Add your own nodes and functionality
+
+[Enterprise licenses](mailto:license@n8n.io) available for additional features and support.
+
+Additional information about the license model can be found in the [docs](https://docs.n8n.io/sustainable-use-license/).
+
+## Contributing
+
+Found a bug 🐛 or have a feature idea ✨? Check our [Contributing Guide](https://github.com/n8n-io/n8n/blob/master/CONTRIBUTING.md) to get started.
+
+## Join the Team
+
+Want to shape the future of automation? Check out our [job posts](https://n8n.io/careers) and join our team!
+
+## What does n8n mean?
+
+**Short answer:** It means &quot;nodemation&quot; and is pronounced as n-eight-n.
+
+**Long answer:** &quot;I get that question quite often (more often than I expected) so I decided it is probably best to answer it here. While looking for a good name for the project with a free domain I realized very quickly that all the good ones I could think of were already taken. So, in the end, I chose nodemation. &#039;node-&#039; in the sense that it uses a Node-View and that it uses Node.js and &#039;-mation&#039; for &#039;automation&#039; which is what the project is supposed to help with. However, I did not like how long the name was and I could not imagine writing something that long every time in the CLI. That is when I then ended up on &#039;n8n&#039;.&quot; - **Jan Oberhauser, Founder and CEO, n8n.io**
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[daytonaio/daytona]]></title>
+            <link>https://github.com/daytonaio/daytona</link>
+            <guid>https://github.com/daytonaio/daytona</guid>
+            <pubDate>Wed, 17 Dec 2025 00:04:50 GMT</pubDate>
+            <description><![CDATA[Daytona is a Secure and Elastic Infrastructure for Running AI-Generated Code]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/daytonaio/daytona">daytonaio/daytona</a></h1>
+            <p>Daytona is a Secure and Elastic Infrastructure for Running AI-Generated Code</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 37,808</p>
+            <p>Forks: 2,806</p>
+            <p>Stars today: 322 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+
+[![Documentation](https://img.shields.io/github/v/release/daytonaio/docs?label=Docs&amp;color=23cc71)](https://www.daytona.io/docs)
+![License](https://img.shields.io/badge/License-AGPL--3-blue)
+[![Go Report Card](https://goreportcard.com/badge/github.com/daytonaio/daytona)](https://goreportcard.com/report/github.com/daytonaio/daytona)
+[![Issues - daytona](https://img.shields.io/github/issues/daytonaio/daytona)](https://github.com/daytonaio/daytona/issues)
+![GitHub Release](https://img.shields.io/github/v/release/daytonaio/daytona)
+
+&lt;/div&gt;
+
+&amp;nbsp;
+
+&lt;div align=&quot;center&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://github.com/daytonaio/daytona/raw/main/assets/images/Daytona-logotype-white.png&quot;&gt;
+    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://github.com/daytonaio/daytona/raw/main/assets/images/Daytona-logotype-black.png&quot;&gt;
+    &lt;img alt=&quot;Daytona logo&quot; src=&quot;https://github.com/daytonaio/daytona/raw/main/assets/images/Daytona-logotype-black.png&quot; width=&quot;50%&quot;&gt;
+  &lt;/picture&gt;
+&lt;/div&gt;
+
+&lt;h3 align=&quot;center&quot;&gt;
+  Run AI Code.
+  &lt;br/&gt;
+  Secure and Elastic Infrastructure for
+  Running Your AI-Generated Code.
+&lt;/h3&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+    &lt;a href=&quot;https://www.daytona.io/docs&quot;&gt; Documentation &lt;/a&gt;·
+    &lt;a href=&quot;https://github.com/daytonaio/daytona/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.md&amp;title=%F0%9F%90%9B+Bug+Report%3A+&quot;&gt; Report Bug &lt;/a&gt;·
+    &lt;a href=&quot;https://github.com/daytonaio/daytona/issues/new?assignees=&amp;labels=enhancement&amp;projects=&amp;template=feature_request.md&amp;title=%F0%9F%9A%80+Feature%3A+&quot;&gt; Request Feature &lt;/a&gt;·
+    &lt;a href=&quot;https://go.daytona.io/slack&quot;&gt; Join our Slack &lt;/a&gt;·
+    &lt;a href=&quot;https://x.com/daytonaio&quot;&gt; Connect on X &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+    &lt;a href=&quot;https://www.producthunt.com/posts/daytona-2?embed=true&amp;utm_source=badge-top-post-badge&amp;utm_medium=badge&amp;utm_souce=badge-daytona&amp;#0045;2&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=957617&amp;theme=neutral&amp;period=daily&amp;t=1746176740150&quot; alt=&quot;Daytona&amp;#0032; - Secure&amp;#0032;and&amp;#0032;elastic&amp;#0032;infra&amp;#0032;for&amp;#0032;running&amp;#0032;your&amp;#0032;AI&amp;#0045;generated&amp;#0032;code&amp;#0046; | Product Hunt&quot; style=&quot;width: 250px; height: 54px;&quot; width=&quot;250&quot; height=&quot;54&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://www.producthunt.com/posts/daytona-2?embed=true&amp;utm_source=badge-top-post-topic-badge&amp;utm_medium=badge&amp;utm_souce=badge-daytona&amp;#0045;2&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=957617&amp;theme=neutral&amp;period=monthly&amp;topic_id=237&amp;t=1746176740150&quot; alt=&quot;Daytona&amp;#0032; - Secure&amp;#0032;and&amp;#0032;elastic&amp;#0032;infra&amp;#0032;for&amp;#0032;running&amp;#0032;your&amp;#0032;AI&amp;#0045;generated&amp;#0032;code&amp;#0046; | Product Hunt&quot; style=&quot;width: 250px; height: 54px;&quot; width=&quot;250&quot; height=&quot;54&quot; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+---
+
+## Installation
+
+### Python SDK
+
+```bash
+pip install daytona
+```
+
+### TypeScript SDK
+
+```bash
+npm install @daytonaio/sdk
+```
+
+---
+
+## Features
+
+- **Lightning-Fast Infrastructure**: Sub-90ms Sandbox creation from code to execution.
+- **Separated &amp; Isolated Runtime**: Execute AI-generated code with zero risk to your infrastructure.
+- **Massive Parallelization for Concurrent AI Workflows**: Fork Sandbox filesystem and memory state (Coming soon!)
+- **Programmatic Control**: File, Git, LSP, and Execute API
+- **Unlimited Persistence**: Your Sandboxes can live forever
+- **OCI/Docker Compatibility**: Use any OCI/Docker image to create a Sandbox
+
+---
+
+## Quick Start
+
+1. Create an account at https://app.daytona.io
+1. Generate a [new API key](https://app.daytona.io/dashboard/keys)
+1. Follow the [Getting Started docs](https://www.daytona.io/docs/getting-started/) to start using the Daytona SDK
+
+## Creating your first Sandbox
+
+### Python SDK
+
+```py
+from daytona import Daytona, DaytonaConfig, CreateSandboxBaseParams
+
+# Initialize the Daytona client
+daytona = Daytona(DaytonaConfig(api_key=&quot;YOUR_API_KEY&quot;))
+
+# Create the Sandbox instance
+sandbox = daytona.create(CreateSandboxBaseParams(language=&quot;python&quot;))
+
+# Run code securely inside the Sandbox
+response = sandbox.process.code_run(&#039;print(&quot;Sum of 3 and 4 is &quot; + str(3 + 4))&#039;)
+if response.exit_code != 0:
+    print(f&quot;Error running code: {response.exit_code} {response.result}&quot;)
+else:
+    print(response.result)
+
+# Clean up the Sandbox
+daytona.delete(sandbox)
+```
+
+### Typescript SDK
+
+```jsx
+import { Daytona } from &#039;@daytonaio/sdk&#039;
+
+async function main() {
+  // Initialize the Daytona client
+  const daytona = new Daytona({
+    apiKey: &#039;YOUR_API_KEY&#039;,
+  })
+
+  let sandbox
+  try {
+    // Create the Sandbox instance
+    sandbox = await daytona.create({
+      language: &#039;typescript&#039;,
+    })
+    // Run code securely inside the Sandbox
+    const response = await sandbox.process.codeRun(&#039;console.log(&quot;Sum of 3 and 4 is &quot; + (3 + 4))&#039;)
+    if (response.exitCode !== 0) {
+      console.error(&#039;Error running code:&#039;, response.exitCode, response.result)
+    } else {
+      console.log(response.result)
+    }
+  } catch (error) {
+    console.error(&#039;Sandbox flow error:&#039;, error)
+  } finally {
+    if (sandbox) await daytona.delete(sandbox)
+  }
+}
+
+main().catch(console.error)
+```
+
+---
+
+## Contributing
+
+Daytona is Open Source under the [GNU AFFERO GENERAL PUBLIC LICENSE](LICENSE), and is the [copyright of its contributors](NOTICE). If you would like to contribute to the software, read the Developer Certificate of Origin Version 1.1 (https://developercertificate.org/). Afterwards, navigate to the [contributing guide](CONTRIBUTING.md) to get started.
+</pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
@@ -1710,15 +2144,15 @@ npm start
             <title><![CDATA[MotiaDev/motia]]></title>
             <link>https://github.com/MotiaDev/motia</link>
             <guid>https://github.com/MotiaDev/motia</guid>
-            <pubDate>Tue, 16 Dec 2025 00:05:29 GMT</pubDate>
+            <pubDate>Wed, 17 Dec 2025 00:04:49 GMT</pubDate>
             <description><![CDATA[Multi-Language Backend Framework that unifies APIs, background jobs, queues, workflows, streams, and AI agents with a single core primitive with built-in observability and state management.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/MotiaDev/motia">MotiaDev/motia</a></h1>
             <p>Multi-Language Backend Framework that unifies APIs, background jobs, queues, workflows, streams, and AI agents with a single core primitive with built-in observability and state management.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 12,966</p>
-            <p>Forks: 886</p>
-            <p>Stars today: 652 stars today</p>
+            <p>Stars: 13,230</p>
+            <p>Forks: 896</p>
+            <p>Stars today: 320 stars today</p>
             <h2>README</h2><pre>&lt;a href=&quot;https://motia.dev&quot;&gt;
   &lt;img src=&quot;assets/github-readme-banner.png&quot; alt=&quot;Motia Banner&quot; width=&quot;100%&quot;&gt;
 &lt;/a&gt;
@@ -2106,780 +2540,613 @@ We welcome contributions! Check our **[Contributing Guide](https://github.com/Mo
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[wood3n/biu]]></title>
-            <link>https://github.com/wood3n/biu</link>
-            <guid>https://github.com/wood3n/biu</guid>
-            <pubDate>Tue, 16 Dec 2025 00:05:28 GMT</pubDate>
-            <description><![CDATA[Bilibili音乐播放器]]></description>
+            <title><![CDATA[groupultra/telegram-search]]></title>
+            <link>https://github.com/groupultra/telegram-search</link>
+            <guid>https://github.com/groupultra/telegram-search</guid>
+            <pubDate>Wed, 17 Dec 2025 00:04:48 GMT</pubDate>
+            <description><![CDATA[🔍 导出并模糊搜索 Telegram 聊天记录 | Export and fuzzy search your Telegram chat history]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/wood3n/biu">wood3n/biu</a></h1>
-            <p>Bilibili音乐播放器</p>
+            <h1><a href="https://github.com/groupultra/telegram-search">groupultra/telegram-search</a></h1>
+            <p>🔍 导出并模糊搜索 Telegram 聊天记录 | Export and fuzzy search your Telegram chat history</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 1,019</p>
-            <p>Forks: 63</p>
-            <p>Stars today: 36 stars today</p>
-            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;【WIP】Bilibili音乐播放器&lt;/h1&gt;
+            <p>Stars: 3,537</p>
+            <p>Forks: 228</p>
+            <p>Stars today: 76 stars today</p>
+            <h2>README</h2><pre>![preview](./docs/assets/preview.png)
+
+---
+
 &lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;./screenshots/logo.svg&quot; alt=&quot;Biu logo&quot; width=&quot;120&quot; /&gt;
+  &lt;a href=&quot;https://trendshift.io/repositories/13868&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/13868&quot; alt=&quot;groupultra%2Ftelegram-search | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
 &lt;/p&gt;
+
 &lt;p align=&quot;center&quot;&gt;
-  基于 Bilibili API 的跨平台桌面音乐播放器 🎧🎶
+  [&lt;a href=&quot;https://search.lingogram.app&quot;&gt;立即体验&lt;/a&gt;] [&lt;a href=&quot;./docs/README_EN.md&quot;&gt;English&lt;/a&gt;] [&lt;a href=&quot;./docs/README_JA.md&quot;&gt;日本語&lt;/a&gt;]
 &lt;/p&gt;
+
 &lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/wood3n/biu/releases&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/github/v/release/wood3n/biu?include_prereleases&amp;label=最新版本&amp;color=blueviolet&quot; alt=&quot;Latest Version&quot; /&gt;
+  &lt;a href=&quot;https://discord.gg/NzYsmJSgCT&quot;&gt;
+    &lt;img alt=&quot;Discord&quot; src=&quot;https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscord.com%2Fapi%2Finvites%2FNzYsmJSgCT%3Fwith_counts%3Dtrue&amp;query=%24.approximate_member_count&amp;suffix=%20members&amp;logo=discord&amp;logoColor=white&amp;label=%20&amp;color=7389D8&amp;labelColor=6A7EC2&quot; /&gt;
   &lt;/a&gt;
-  &lt;a href=&quot;LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/license-PolyForm%20Noncommercial%201.0.0-orange.svg&quot; alt=&quot;License&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://t.me/+Gs3SH2qAPeFhYmU9&quot;&gt;
+    &lt;img alt=&quot;Telegram&quot; src=&quot;https://img.shields.io/badge/Telegram-%235AA9E6?logo=telegram&amp;labelColor=FFFFFF&quot; /&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://deepwiki.com/groupultra/telegram-search&quot;&gt;
+    &lt;img alt=&quot;DeepWiki&quot; src=&quot;https://deepwiki.com/badge.svg&quot; /&gt;
+  &lt;/a&gt;
+  &lt;br&gt;
+  &lt;a href=&quot;https://github.com/groupultra/telegram-search/releases&quot;&gt;
+    &lt;img alt=&quot;GitHub Package Version&quot; src=&quot;https://img.shields.io/github/package-json/v/groupultra/telegram-search?style=flat&amp;colorA=080f12&amp;colorB=1fa669&quot; /&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://github.com/groupultra/telegram-search/actions/workflows/release-docker.yaml&quot;&gt;
+    &lt;img alt=&quot;Release Docker / OCI&quot; src=&quot;https://github.com/groupultra/telegram-search/actions/workflows/release-docker.yaml/badge.svg&quot; /&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://github.com/groupultra/telegram-search/actions/workflows/ci.yaml&quot;&gt;
+    &lt;img alt=&quot;CI&quot; src=&quot;https://github.com/groupultra/telegram-search/actions/workflows/ci.yaml/badge.svg&quot; /&gt;
+  &lt;/a&gt;
 &lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td width=&quot;50%&quot; align=&quot;center&quot;&gt;
-      &lt;img src=&quot;./screenshots/home.png&quot; alt=&quot;home&quot; width=&quot;100%&quot; /&gt;
-    &lt;/td&gt;
-    &lt;td width=&quot;50%&quot; align=&quot;center&quot;&gt;
-      &lt;img src=&quot;./screenshots/main.png&quot; alt=&quot;main&quot; width=&quot;100%&quot; /&gt;
-    &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
+&gt; [!TIP]
+&gt; 您是否曾因 Telegram 无法搜索中文聊天记录而苦恼？
+&gt; 
+&gt; 或者想查找一条重要消息，却因消息过多而难以定位？
+&gt;
+&gt; 现在，使用 Telegram Search，您可以轻松查找和导出自己的 Telegram 消息。强大的语义搜索支持所有语言，完美应对无分词句子的检索场景。
+&gt; 
+&gt; 同时支持向量搜索，实现句子级别的模糊匹配，让查找更智能、更准确。
 
----
+## 💖 赞助者
 
-## ✨ 特色功能
-- 🔎 支持 Bilibili 音乐/视频综合搜索与播放
-- 🎼 支持登录 Bilibili 并获取收藏夹信息
-- 🎧 高品质音频播放，优先拉取更高码率音频流（如无损 Flac，192K/Hi-Res）
-- 🧩 轻量界面，内置深色主题，同时可自定义部分主题样式，细腻的滚动与动效体验
-- 💿 系统托盘与最小化隐藏（Windows），便捷控制播放
-- ♻️ 自动检测更新，始终保持最新体验
+![Sponsors](https://github.com/luoling8192/luoling8192/raw/master/sponsorkit/sponsors.svg)
 
-## 下载和使用
-- 下载页面：[Github Release](https://github.com/wood3n/biu/releases/latest)
-- 在 Releases 中选择与你系统和架构匹配的安装包；常见文件名示例：
-  - Windows 安装包：`Biu-&lt;version&gt;-win-setup.exe` / `Biu-&lt;version&gt;-win-setup-arm64.exe`
-  - Windows 免安装版：`Biu-&lt;version&gt;-win-portable-x64.exe` / `Biu-&lt;version&gt;-win-portable-arm64.exe`（portable，免安装）
-  - macOS：`Biu-&lt;version&gt;-mac-x64.dmg` / `Biu-&lt;version&gt;-mac-arm64.dmg`（或对应的 `zip`）
-  - Linux：`Biu-&lt;version&gt;-linux-*.AppImage` / `*.deb` / `*.rpm`（支持 `x64` / `arm64`）
-  - `*.yml`、`*.blockmap` 为自动更新辅助文件，手动下载时无需关注。
+## ✅ 功能特性
 
-- 系统要求（建议）
-  - Windows 10 / 11（`x64` / `arm64`）
-  - macOS 12+（`x64` / `arm64`）
-  - 主流 Linux 发行版（`x64` / `arm64`）
+### 📦 导出与备份
+- [x] 支持多种数据库导出聊天记录：PGlite、PostgreSQL
+- [x] 媒体资源可自动导出至 MinIO 对象存储
+- [x] 消息导出时自动完成向量嵌入和分词处理
+- [x] 实时同步，自动拉取最新对话内容
 
-- 自动更新说明
-  - 应用会定期检查 GitHub Releases，下载安装更新（多数安装方式均支持）。
-  - 使用便携版时，应用内下载更新受限，需要前往 Releases 手动下载最新版本。
+### 🔍 聊天记录搜索
+- [x] 智能分词精准检索，支持多语言
+- [x] 支持模糊匹配与向量语义搜索，查找更高效
+- [x] RAG 智能问答：直接与 AI 对话，基于历史上下文实时解答
 
-- 使用注意
-  - 部分音频清晰度与解析可能需要登录或大会员权限。
-  - 请遵循 Bilibili 使用条款，合理合规使用。
+## 🛣️ 未来规划
 
-## 🤝 贡献指南
-非常欢迎社区贡献！你可以按以下流程参与：
+### 🧠 AI 赋能
+- [ ] 自动生成会话总结
+- [ ] 超级大脑：基于历史消息自动抽取人物与事件知识图谱
 
-1. Fork 本仓库并创建分支：`feature/your-feature` / `fix/your-fix`
-2. 开发并通过本地构建与基本自测（如：`pnpm dev`、`pnpm build`）
-3. 提交 PR，详述改动点与影响范围
-4. 通过 CI 的构建与审查后合入主分支
+### 🔗 媒体与链接功能
+- [ ] 智能整理“已保存消息”收藏夹，更高效管理重要内容
+- [ ] 链接与图片深度索引：实现网页智能摘要、图片 OCR 文字识别与智能描述，赋能搜索与内容整理
 
-建议：
-- 保持代码风格一致（ESLint/Prettier 已配置）
-- 提交信息简洁规范（推荐使用 `feat: ...`、`fix: ...` 等约定式格式）
-- PR 中附上必要的截图或说明
+### 🌐 多平台扩展
+- [ ] 增加 Telegram Bot 支持，满足更多消息管理需求
+- [ ] 支持扩展至 Discord 及其他社交/通讯平台，实现跨平台统一检索与备份
 
-## 📄 许可证
-本项目以 PolyForm Noncommercial License 1.0.0（非商业许可）发布，禁止任何商业用途。详情参见 [`LICENSE`](LICENSE)（SPDX：`PolyForm-Noncommercial-1.0.0`）。
+## 🌐 立即使用
 
----
+我们提供了一个在线体验版，无需自行部署，即可体验 Telegram Search 的全部功能。
 
-如果你喜欢这个项目，欢迎 ⭐️ Star 支持！也欢迎提出 Issue 交流与反馈 🙌
-
-## 🙏 鸣谢
-- 特别感谢 [SocialSisterYi/bilibili-API-collect](https://github.com/SocialSisterYi/bilibili-API-collect) 对哔哩哔哩 API 的长期收集与整理，为本项目相关接口的使用提供了重要参考。
-- 在引用与使用相关资料时，我们遵循其许可条款（`CC-BY-NC 4.0`），仅用于学习与研究，不涉及任何商业用途。
-
-## ⚖️ 法律声明与使用限制
-- 本项目仅供学习与研究使用，禁止任何形式的商业用途（包括但不限于销售、收费服务、广告变现、商业集成等）。
-- 本项目与 Bilibili 无任何官方关联或背书，不使用其商标与标识；涉及的名称与商标归其权利人所有。
-- 数据来源于用户调用的公开接口与个人账户授权；使用时需遵守 Bilibili 的《用户协议》《社区规则》及相关法律法规。
-- 禁止绕过登录/会员权限、DRM/加密措施，或进行批量爬取、恶意抓取等违反平台规则的行为。
-- 如需商业授权或调整许可，请联系作者；如涉及权利或合规问题，请通过 Issues 反馈以便及时处理。
----
-## 🌟 Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=wood3n/biu&amp;type=date&amp;legend=top-left)](https://www.star-history.com/#wood3n/biu&amp;type=date&amp;legend=top-left)
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[nicotsx/zerobyte]]></title>
-            <link>https://github.com/nicotsx/zerobyte</link>
-            <guid>https://github.com/nicotsx/zerobyte</guid>
-            <pubDate>Tue, 16 Dec 2025 00:05:27 GMT</pubDate>
-            <description><![CDATA[Backup automation for self-hosters]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/nicotsx/zerobyte">nicotsx/zerobyte</a></h1>
-            <p>Backup automation for self-hosters</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 2,374</p>
-            <p>Forks: 45</p>
-            <p>Stars today: 133 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-  &lt;h1&gt;Zerobyte&lt;/h1&gt;
-  &lt;h3&gt;Powerful backup automation for your remote storage&lt;br /&gt;Encrypt, compress, and protect your data with ease&lt;/h3&gt;
-  &lt;a href=&quot;https://github.com/nicotsx/zerobyte/blob/main/LICENSE&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/github/license/nicotsx/zerobyte&quot; /&gt;
-  &lt;/a&gt;
-  &lt;br /&gt;
-  &lt;figure&gt;
-    &lt;img src=&quot;https://github.com/nicotsx/zerobyte/blob/main/screenshots/backup-details.webp?raw=true&quot; alt=&quot;Demo&quot; /&gt;
-    &lt;figcaption&gt;
-      &lt;p align=&quot;center&quot;&gt;
-        Backup management with scheduling and monitoring
-      &lt;/p&gt;
-    &lt;/figcaption&gt;
-  &lt;/figure&gt;
-&lt;/div&gt;
+访问以下网址开始使用：https://search.lingogram.app
 
 &gt; [!WARNING]
-&gt; Zerobyte is still in version 0.x.x and is subject to major changes from version to version. I am developing the core features and collecting feedbacks. Expect bugs! Please open issues or feature requests
+&gt; 本项目未发行任何虚拟货币，请警惕相关诈骗风险。
+&gt;
+&gt; 本软件仅供您导出和检索个人聊天记录使用，切勿将其用于任何违法用途。
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;a href=&quot;https://www.buymeacoffee.com/nicotsx&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png&quot; alt=&quot;Buy Me A Coffee&quot; style=&quot;height: 60px !important;width: 217px !important;&quot; &gt;&lt;/a&gt;
-&lt;/p&gt;
+## 🚀 快速开始
 
-## Intro
+默认使用 PGlite 作为消息数据库，如果需要使用更高性能的 PostgreSQL 数据库以及提供的 MinIO 作为媒体存储引擎，请参考下文自定义环境变量或者使用 `docker compose up -d` 启动全部服务。
 
-Zerobyte is a backup automation tool that helps you save your data across multiple storage backends. Built on top of Restic, it provides an modern web interface to schedule, manage, and monitor encrypted backups of your remote storage.
+镜像提供 latest 和 nightly 版本，请自行选择。
 
-### Features
-
-- &amp;nbsp; **Automated backups** with encryption, compression and retention policies powered by Restic
-- &amp;nbsp; **Flexible scheduling** For automated backup jobs with fine-grained retention policies
-- &amp;nbsp; **End-to-end encryption** ensuring your data is always protected
-- &amp;nbsp; **Multi-protocol support**: Backup from NFS, SMB, WebDAV, or local directories
-
-## Installation
-
-In order to run Zerobyte, you need to have Docker and Docker Compose installed on your server. Then, you can use the provided `docker-compose.yml` file to start the application.
-
-```yaml
-services:
-  zerobyte:
-    image: ghcr.io/nicotsx/zerobyte:v0.18
-    container_name: zerobyte
-    restart: unless-stopped
-    cap_add:
-      - SYS_ADMIN
-    ports:
-      - &quot;4096:4096&quot;
-    devices:
-      - /dev/fuse:/dev/fuse
-    environment:
-      - TZ=Europe/Paris  # Set your timezone here
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /var/lib/zerobyte:/var/lib/zerobyte
+```bash
+docker run -d --name telegram-search \
+  -p 3333:3333 \
+  -v telegram-search-data:/app/data \
+  ghcr.io/groupultra/telegram-search:latest
 ```
 
-&gt; [!WARNING]
-&gt; Do not try to point `/var/lib/zerobyte` on a network share. You will face permission issues and strong performance degradation.
+然后打开 **http://localhost:3333** 即可使用 🎉
 
-Then, run the following command to start Zerobyte:
+### 自定义环境变量
+
+&gt; [!IMPORTANT]
+&gt; AI Embedding &amp; LLM 设置现在在应用内**按账户**配置（设置 → API）。
+
+| 环境变量                      | 说明                                                                         | 示例值                                                |
+| ----------------------------- | ---------------------------------------------------------------------------- | ----------------------------------------------------- |
+| `TELEGRAM_API_ID`             | 从 [my.telegram.org](https://my.telegram.org/apps) 获取的 Telegram 应用 ID   |                                                       |
+| `TELEGRAM_API_HASH`           | 从 [my.telegram.org](https://my.telegram.org/apps) 获取的 Telegram 应用 Hash |                                                       |
+| `DATABASE_TYPE`               | 数据库类型，可选 `postgres` 或 `pglite`                                      | `pglite`                                              |
+| `DATABASE_URL`                | PostgreSQL 连接字符串（仅在 `DATABASE_TYPE=postgres` 时填写）                | `postgresql://postgres:123456@pgvector:5432/postgres` |
+| `PROXY_URL`                   | 代理地址（支持如 `socks5://user:pass@host:port` 等格式）                     | `socks5://user:pass@host:port`                        |
+| `PORT`                        | 后端服务 HTTP/WebSocket 监听端口                                             | `3333`                                                |
+| `HOST`                        | 后端服务监听地址                                                             | `0.0.0.0`                                             |
+| `BACKEND_URL`                 | Nginx 作为反向代理时用于 `/api` 和 `/ws` 的上游后端地址                      | `http://127.0.0.1:3333`                               |
+| `MINIO_URL`                   | MinIO 服务地址                                                               | `http://minio:9000`                                   |
+| `MINIO_ACCESS_KEY`            | MinIO 访问密钥                                                               | `minioadmin`                                          |
+| `MINIO_SECRET_KEY`            | MinIO 访问密钥对应的密钥                                                     | `minioadmin`                                          |
+| `MINIO_BUCKET`                | MinIO 存储桶名称                                                             | `telegram-media`                                      |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | OpenTelemetry OTLP 日志采集端点                                              | `http://loki:3100/otlp/v1/logs`                       |
+
+**使用 PostgreSQL 的示例：**
+
+```bash
+docker run -d --name telegram-search \
+  -p 3333:3333 \
+  -v telegram-search-data:/app/data \
+  -e DATABASE_TYPE=postgres \
+  -e DATABASE_URL=postgresql://&lt;host&gt;:5432/postgres \
+  ghcr.io/groupultra/telegram-search:latest
+```
+
+**代理格式：**
+- SOCKS5: `socks5://user:pass@host:port`
+- SOCKS4: `socks4://user:pass@host:port`
+- HTTP: `http://user:pass@host:port`
+- MTProxy: `mtproxy://secret@host:port`
+
+### 使用 Docker Compose 启动
+
+1. 克隆仓库。
+
+2. 运行 docker compose 启动包括数据库、MinIO 在内的全部服务：
 
 ```bash
 docker compose up -d
 ```
 
-Once the container is running, you can access the web interface at `http://&lt;your-server-ip&gt;:4096`.
+3. 访问 `http://localhost:3333` 打开搜索界面。
 
-### Simplified setup (No remote mounts)
+## 💻 开发指南
 
-If you only need to back up locally mounted folders and don&#039;t require remote share mounting capabilities, you can remove the `SYS_ADMIN` capability and FUSE device from your `docker-compose.yml`:
-
-```yaml
-services:
-  zerobyte:
-    image: ghcr.io/nicotsx/zerobyte:v0.18
-    container_name: zerobyte
-    restart: unless-stopped
-    ports:
-      - &quot;4096:4096&quot;
-    environment:
-      - TZ=Europe/Paris  # Set your timezone here
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /var/lib/zerobyte:/var/lib/zerobyte
-      - /path/to/your/directory:/mydata
-```
-
-**Trade-offs:**
-- ✅ Improved security by reducing container capabilities
-- ✅ Support for local directories
-- ✅ Keep support all repository types (local, S3, GCS, Azure, rclone)
-- ❌ Cannot mount NFS, SMB, or WebDAV shares directly from Zerobyte
-
-If you need remote mount capabilities, keep the original configuration with `cap_add: SYS_ADMIN` and `devices: /dev/fuse:/dev/fuse`.
-
-## Adding your first volume
-
-Zerobyte supports multiple volume backends including NFS, SMB, WebDAV, and local directories. A volume represents the source data you want to back up and monitor.
-
-To add your first volume, navigate to the &quot;Volumes&quot; section in the web interface and click on &quot;Create volume&quot;. Fill in the required details such as volume name, type, and connection settings.
-
-If you want to track a local directory on the same server where Zerobyte is running, you&#039;ll first need to mount that directory into the Zerobyte container. You can do this by adding a volume mapping in your `docker-compose.yml` file. For example, to mount `/path/to/your/directory` from the host to `/mydata` in the container, you would add the following line under the `volumes` section:
-
-```diff
-services:
-  zerobyte:
-    image: ghcr.io/nicotsx/zerobyte:v0.18
-    container_name: zerobyte
-    restart: unless-stopped
-    cap_add:
-      - SYS_ADMIN
-    ports:
-      - &quot;4096:4096&quot;
-    devices:
-      - /dev/fuse:/dev/fuse
-    environment:
-      - TZ=Europe/Paris
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /var/lib/zerobyte:/var/lib/zerobyte
-+     - /path/to/your/directory:/mydata
-```
-
-After updating the `docker-compose.yml` file, restart the Zerobyte container to apply the changes:
+### 纯浏览器模式
 
 ```bash
-docker compose down
-docker compose up -d
+git clone https://github.com/groupultra/telegram-search.git
+cd telegram-search
+pnpm install
+cp .env.example .env
+pnpm run dev
 ```
 
-Now, when adding a new volume in the Zerobyte web interface, you can select &quot;Directory&quot; as the volume type and search for your mounted path (e.g., `/mydata`) as the source path.
+### 服务器模式
 
-![Preview](https://github.com/nicotsx/zerobyte/blob/main/screenshots/add-volume.png?raw=true)
+```bash
+git clone https://github.com/groupultra/telegram-search.git
+cd telegram-search
+pnpm install
 
-## Creating a repository
+cp .env.example .env
 
-A repository is where your backups will be securely stored encrypted. Zerobyte supports multiple storage backends for your backup repositories:
+docker compose up -d pgvector minio
 
-- **Local directories** - Store backups on local disk at `/var/lib/zerobyte/repositories/&lt;repository-name&gt;`
-- **S3-compatible storage** - Amazon S3, MinIO, Wasabi, DigitalOcean Spaces, etc.
-- **Google Cloud Storage** - Google&#039;s cloud storage service
-- **Azure Blob Storage** - Microsoft Azure storage
-- **rclone remotes** - 40+ cloud storage providers via rclone (see below)
+pnpm run server:dev
+pnpm run web:dev
+```
 
-Repositories are optimized for storage efficiency and data integrity, leveraging Restic&#039;s deduplication and encryption features.
+📖 **更多开发细节和架构细节：** [CONTRIBUTING.md](./CONTRIBUTING.md)
 
-To create a repository, navigate to the &quot;Repositories&quot; section in the web interface and click on &quot;Create repository&quot;. Fill in the required details such as repository name, type, and connection settings.
+## 🚀 Activity
 
-### Using rclone for cloud storage
+![Alt](https://repobeats.axiom.co/api/embed/69d5ef9f5e72cd7901b32ff71b5f359bc7ca42ea.svg &quot;Repobeats analytics image&quot;)
 
-Zerobyte can use [rclone](https://rclone.org/) to support 40+ cloud storage providers including Google Drive, Dropbox, OneDrive, Box, pCloud, Mega, and many more. This gives you the flexibility to store your backups on virtually any cloud storage service.
-
-**Setup instructions:**
-
-1. **Install rclone on your host system** (if not already installed):
-   ```bash
-   curl https://rclone.org/install.sh | sudo bash
-   ```
-
-2. **Configure your cloud storage remote** using rclone&#039;s interactive config:
-   ```bash
-   rclone config
-   ```
-   Follow the prompts to set up your cloud storage provider. For OAuth providers (Google Drive, Dropbox, etc.), rclone will guide you through the authentication flow.
-
-3. **Verify your remote is configured**:
-   ```bash
-   rclone listremotes
-   ```
-
-4. **Mount the rclone config into the Zerobyte container** by updating your `docker-compose.yml`:
-   ```diff
-   services:
-     zerobyte:
-       image: ghcr.io/nicotsx/zerobyte:v0.18
-       container_name: zerobyte
-       restart: unless-stopped
-       cap_add:
-         - SYS_ADMIN
-       ports:
-         - &quot;4096:4096&quot;
-       devices:
-         - /dev/fuse:/dev/fuse
-       environment:
-         - TZ=Europe/Paris
-       volumes:
-         - /etc/localtime:/etc/localtime:ro
-         - /var/lib/zerobyte:/var/lib/zerobyte
-   +     - ~/.config/rclone:/root/.config/rclone
-   ```
-
-5. **Restart the Zerobyte container**:
-   ```bash
-   docker compose down
-   docker compose up -d
-   ```
-
-6. **Create a repository** in Zerobyte:
-   - Select &quot;rclone&quot; as the repository type
-   - Choose your configured remote from the dropdown
-   - Specify the path within your remote (e.g., `backups/zerobyte`)
-
-For a complete list of supported providers, see the [rclone documentation](https://rclone.org/).
-
-## Your first backup job
-
-Once you have added a volume and created a repository, you can create your first backup job. A backup job defines the schedule and parameters for backing up a specific volume to a designated repository.
-
-When creating a backup job, you can specify the following settings:
-- **Schedule**: Define how often the backup should run (e.g., daily, weekly)
-- **Retention Policy**: Set rules for how long backups should be retained (e.g., keep daily backups for 7 days, weekly backups for 4 weeks)
-- **Paths**: Specify which files or directories to include in the backup
-
-After configuring the backup job, save it and Zerobyte will automatically execute the backup according to the defined schedule.
-You can monitor the progress and status of your backup jobs in the &quot;Backups&quot; section of the web interface.
-
-![Preview](https://github.com/nicotsx/zerobyte/blob/main/screenshots/backups-list.png?raw=true)
-
-## Restoring data
-
-Zerobyte allows you to easily restore your data from backups. To restore data, navigate to the &quot;Backups&quot; section and select the backup job from which you want to restore data. You can then choose a specific backup snapshot and select the files or directories you wish to restore. The data you select will be restored to their original location.
-
-![Preview](https://github.com/nicotsx/zerobyte/blob/main/screenshots/restoring.png?raw=true)
-
-## Third-Party Software
-
-This project includes the following third-party software components:
-
-### Restic
-
-Zerobyte includes [Restic](https://github.com/restic/restic) for backup functionality.
-
-- **License**: BSD 2-Clause License
-- **Copyright**: Copyright (c) 2014, Alexander Neumann &lt;alexander@bumpern.de&gt;
-- **Status**: Included unchanged
-- **License Text**: See [LICENSES/BSD-2-Clause-Restic.txt](LICENSES/BSD-2-Clause-Restic.txt)
-
-For a complete list of third-party software licenses and attributions, please refer to the [NOTICES.md](NOTICES.md) file.
-
-## Contributing
-
-Contributions by anyone are welcome! If you find a bug or have a feature request, please open an issue on GitHub. If you want to contribute code, feel free to fork the repository and submit a pull request. We require that all contributors sign a Contributor License Agreement (CLA) before we can accept your contributions. This is to protect both you and the project. Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for more details.
+[![Star History Chart](https://api.star-history.com/svg?repos=groupultra/telegram-search&amp;type=Date)](https://star-history.com/#groupultra/telegram-search&amp;Date)
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[angular/angular]]></title>
-            <link>https://github.com/angular/angular</link>
-            <guid>https://github.com/angular/angular</guid>
-            <pubDate>Tue, 16 Dec 2025 00:05:26 GMT</pubDate>
-            <description><![CDATA[Deliver web apps with confidence 🚀]]></description>
+            <title><![CDATA[maotoumao/MusicFreeDesktop]]></title>
+            <link>https://github.com/maotoumao/MusicFreeDesktop</link>
+            <guid>https://github.com/maotoumao/MusicFreeDesktop</guid>
+            <pubDate>Wed, 17 Dec 2025 00:04:47 GMT</pubDate>
+            <description><![CDATA[插件化、定制化、无广告的免费音乐播放器]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/angular/angular">angular/angular</a></h1>
-            <p>Deliver web apps with confidence 🚀</p>
+            <h1><a href="https://github.com/maotoumao/MusicFreeDesktop">maotoumao/MusicFreeDesktop</a></h1>
+            <p>插件化、定制化、无广告的免费音乐播放器</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 99,526</p>
-            <p>Forks: 26,923</p>
-            <p>Stars today: 9 stars today</p>
-            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;Angular - The modern web developer&#039;s platform&lt;/h1&gt;
+            <p>Stars: 7,396</p>
+            <p>Forks: 690</p>
+            <p>Stars today: 48 stars today</p>
+            <h2>README</h2><pre># MusicFree 桌面版
+![GitHub Repo stars](https://img.shields.io/github/stars/maotoumao/MusicFreeDesktop) 
+![GitHub forks](https://img.shields.io/github/forks/maotoumao/MusicFreeDesktop)
+![star](https://gitcode.com/maotoumao/MusicFreeDesktop/star/badge.svg)
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;adev/src/assets/images/press-kit/angular_icon_gradient.gif&quot; alt=&quot;angular-logo&quot; width=&quot;120px&quot; height=&quot;120px&quot;/&gt;
-  &lt;br&gt;
-  &lt;em&gt;Angular is a development platform for building mobile and desktop web applications
-    &lt;br&gt; using TypeScript/JavaScript and other languages.&lt;/em&gt;
-  &lt;br&gt;
+![GitHub License](https://img.shields.io/github/license/maotoumao/MusicFreeDesktop)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/maotoumao/MusicFreeDesktop/total)
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/maotoumao/MusicFreeDesktop)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/maotoumao/MusicFreeDesktop)
+
+&lt;a href=&quot;https://trendshift.io/repositories/3961&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/3961&quot; alt=&quot;maotoumao%2FMusicFreeDesktop | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+---
+
+## 项目使用约定：
+本项目基于 AGPL 3.0 协议开源，使用此项目时请遵守开源协议。  
+除此外，希望你在使用代码时已经了解以下额外说明：
+
+1. 打包、二次分发 **请保留代码出处**：https://github.com/maotoumao/MusicFree
+2. 请不要用于商业用途，合法合规使用代码；
+3. 如果开源协议变更，将在此 Github 仓库更新，不另行通知。
+---
+
+## 简介
+
+一个插件化、定制化、无广告的免费音乐播放器。
+&gt; 当前版本支持 Windows 和 macOS 和 Linux
+
+&lt;img src=&quot;./src/assets/imgs/wechat_channel1.png&quot; height=&quot;144px&quot; title=&quot;微信公众号&quot; style=&quot;display:inherit;&quot;/&gt;
+
+
+### 下载地址
+
+[飞书云文档](https://r0rvr854dd1.feishu.cn/drive/folder/IrVEfD67KlWZGkdqwjecLHFNnBb?from=from_copylink)
+
+## 特性
+
+- 插件化：本软件仅仅是一个播放器，本身**并不集成**任何平台的任何音源，所有的搜索、播放、歌单导入等功能全部基于**插件**。这也就意味着，**只要可以在互联网上搜索到的音源，只要有对应的插件，你都可以使用本软件进行搜索、播放等功能。** 关于插件的详细说明请参考 [安卓版 Readme 的插件部分](https://github.com/maotoumao/MusicFree#%E6%8F%92%E4%BB%B6)。
+
+- 插件支持的功能：搜索（音乐、专辑、作者、歌单）、播放、查看专辑、查看作者详细信息、导入单曲、导入歌单、获取歌词等。
+
+- 定制化：本软件可以通过主题包定义软件外观及背景，详见下方主题包一节。
+
+- 无广告：基于 AGPL3.0 协议开源，将会保持免费。
+
+- 隐私：软件所有数据存储在本地，本软件不会上传你的个人信息。
+
+## 插件
+
+插件协议和安卓版完全相同。
+
+[示例插件仓库](https://github.com/maotoumao/MusicFreePlugins)，你可以根据[插件开发文档](https://musicfree.catcat.work/plugin/introduction.html) 开发适配于任意音源的插件。
+
+## 主题包
+
+主题包是一个文件夹，文件夹内必须包含两个文件：
+
+```bash
+index.css
+config.json
+```
+
+### index.css
+
+index.css 中可以覆盖界面中的任何样式。你可以通过定义 css 变量来完成大部分颜色的替换，也可以查看源代码，根据类名等覆盖样式。
+
+支持的 css 变量如下：
+
+``` css
+:root {
+  --primaryColor: #f17d34; // 主色调
+  --backgroundColor: #fdfdfd; // 背景色
+  --dividerColor: rgba(0, 0, 0, 0.1); // 分割线颜色
+  --listHoverColor: rgba(0, 0, 0, 0.05); // 列表悬浮颜色
+  --listActiveColor: rgba(0, 0, 0, 0.1); // 列表选中颜色
+  --textColor: #333333; // 主文本颜色
+  --maskColor: rgba(51, 51, 51, 0.2); // 遮罩层颜色
+  --shadowColor: rgba(0, 0, 0, 0.2); // 对话框等阴影颜色
+  /** --shadow:  // shadow属性 */
+  --placeholderColor: #f4f4f4; // 输入区背景颜色
+  --successColor: #08A34C; // 成功颜色
+  --dangerColor: #FC5F5F; // 危险颜色
+  --infoColor: #0A95C8; // 通知颜色
+  --headerTextColor: white; // 顶部文本颜色
+}
+```
+
+具体的例子可以参考 [暗黑模式](https://github.com/maotoumao/MusicFreeThemePacks/blob/master/darkmode/index.css)
+
+除了通过 css 定义常规样式外，也可以通过在 config.json 中定义 iframes 字段，用来把任意的 html 文件作为软件背景，这样可以实现一些单纯用 css 无法实现的效果。
+
+### config.json
+
+config.json 是一个配置文件。
+
+```json
+{
+    &quot;name&quot;: &quot;主题包的名称&quot;,
+    &quot;preview&quot;: &quot;#000000&quot;, // 预览图，支持颜色或图片；
+    &quot;description&quot;: &quot;描述文本&quot;,
+    &quot;iframes&quot;: {
+        &quot;app&quot;: &quot;http://musicfree.catcat.work&quot;, // 整个软件的背景
+        &quot;header&quot;: &quot;&quot;, // 头部区域的背景
+        &quot;body&quot;: &quot;&quot;, // 侧边栏+主页面区域的背景
+        &quot;side-bar&quot;: &quot;&quot;, // 侧边栏区域的背景
+        &quot;page&quot;: &quot;&quot;, // 主页面区域的背景
+        &quot;music-bar&quot;: &quot;&quot;, // 底部音乐栏的背景
+
+    }
+}
+```
+
+如果需要指向本地的图片，可以通过 ```@/``` 表示主题包的路径；preview、iframes、以及 iframes 指向的 html 文件都会把 ```@/``` 替换为 ```主题包路径```。详情可参考 [樱花主题](https://github.com/maotoumao/MusicFreeThemePacks/tree/master/sakura)
+
+### 主题包示例
+
+示例仓库：https://github.com/maotoumao/MusicFreeThemePacks
+
+几个主题包效果截图：
+
+#### 暗黑模式
+[源代码](https://github.com/maotoumao/MusicFreeThemePacks/tree/master/darkmode)
+
+![暗黑模式](./.imgs/darkmode.png)
+
+#### 背景图片
+[源代码](https://github.com/maotoumao/MusicFreeThemePacks/tree/master/night-star)
+
+![背景图片](./.imgs/night-star.png)
+
+#### fliqlo
+[源代码](https://github.com/maotoumao/MusicFreeThemePacks/tree/master/fliqlo)
+
+![fliqlo](./.imgs/fliqlo.gif)
+
+#### 樱花
+[源代码](https://github.com/maotoumao/MusicFreeThemePacks/tree/master/sakura)
+
+![樱花](./.imgs/sakura.gif)
+
+#### 雨季
+[源代码](https://github.com/maotoumao/MusicFreeThemePacks/tree/master/rainy-season)
+
+![雨季](./.imgs/rainy-season.gif)
+
+## 启动项目
+
+下载仓库代码之后，在根目录下执行：
+
+```bash
+npm install
+npm start
+```
+
+## 支持这个项目
+
+如果你喜欢这个项目，或者希望我可以持续维护下去，你可以通过以下任何一种方式支持我;)
+
+1. Star 这个项目，分享给你身边的人；
+2. 关注公众号【一只猫头猫】获取最新信息；
+
+&lt;img src=&quot;./src/assets/imgs/wechat_channel.jpg&quot; height=&quot;160px&quot; title=&quot;微信公众号&quot; style=&quot;display:inherit;&quot;/&gt;
+
+## 截图
+
+![screenshot](./.imgs/screenshot.png)
+
+![screenshot](./.imgs/screenshot1.png)
+
+![screenshot](./.imgs/screenshot2.png)
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[shuakami/qq-chat-exporter]]></title>
+            <link>https://github.com/shuakami/qq-chat-exporter</link>
+            <guid>https://github.com/shuakami/qq-chat-exporter</guid>
+            <pubDate>Wed, 17 Dec 2025 00:04:46 GMT</pubDate>
+            <description><![CDATA[🚀 QQ聊天记录、表情包导出工具 | 自动化提取图片/文字/图片消息，支持TXT/JSON导出，高效备份，支持NT QQ]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/shuakami/qq-chat-exporter">shuakami/qq-chat-exporter</a></h1>
+            <p>🚀 QQ聊天记录、表情包导出工具 | 自动化提取图片/文字/图片消息，支持TXT/JSON导出，高效备份，支持NT QQ</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 1,399</p>
+            <p>Forks: 55</p>
+            <p>Stars today: 84 stars today</p>
+            <h2>README</h2><pre># QQ Chat Exporter
+
+![Next.js](https://img.shields.io/badge/Next.js-14-0070F3?style=flat-square&amp;logo=next.js&amp;logoColor=white)
+![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&amp;logo=react&amp;logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&amp;logo=typescript&amp;logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-20-5FA04E?style=flat-square&amp;logo=nodedotjs&amp;logoColor=white)
+![License](https://img.shields.io/badge/License-GPL--3.0-10B981?style=flat-square&amp;logoColor=white)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/shuakami/qq-chat-exporter)
+
+![QCE V4 界面截图](https://github.com/shuakami/qq-chat-exporter/blob/9959f84b/image.png)
+
+
+&gt; [!NOTE]
+&gt; 这是一款功能强大的 QQ 聊天记录导出工具，可以将您的 QQ 聊天记录（包括消息、图片、视频、文件、表情包等）完整地导出为 `HTML`、`JSON`、`TXT` 等多种格式。最新的 V4 版本深度集成了 NapCatQQ 框架，提供企业级的聊天记录管理解决方案。
+
+&gt; [!WARNING]
+&gt; **macOS 兼容性说明**：由于技术兼容性问题，V4 版本暂时不支持 macOS 平台。我们正在努力解决相关问题，后续有进展会及时通知。推荐 macOS 用户使用 Windows 系统运行本工具。
+
+&gt; [!TIP]
+&gt; 如果导出聊天记录后，想深入分析聊天内容可以试试 [@hellodigua](https://github.com/hellodigua) 的 [AI 聊天分析应用](https://chatlab.fun/)
+&gt; 
+&gt; 也可以试试 [@CutrelyAlex](https://github.com/CutrelyAlex) 的 [QQChatAnalyzer](https://github.com/CutrelyAlex/QQChatAnalyzer) - 支持个人分析、群聊分析、社交网络可视化和 AI 摘要
+&gt;
+&gt; 如果需要 Python API 封装，可以使用 [@streetartist](https://github.com/streetartist) 的 [napcat-qce-python](https://github.com/streetartist/napcat-qce-python)
+
+## 快速开始
+
+本文档涵盖了系统的核心功能与架构。有关详细的安装和配置说明，请参阅[安装与设置](https://deepwiki.com/shuakami/qq-chat-exporter/1.1-installation-and-setup)。有关完整的使用说明和操作指南，请查看[快速入门指南](https://deepwiki.com/shuakami/qq-chat-exporter/1.2-quick-start-guide)。
+
+1.  **下载与解压**
+    前往 [GitHub Releases 页面](https://github.com/shuakami/qq-chat-exporter/releases)下载适用于您操作系统的最新 V4 版本压缩包并解压。
+
+2.  **启动与登录**
+    *   **Windows**: 双击运行 `launcher-user.bat`。
+    *   **Linux**: 将文件解压到 QQ 安装目录 (`/opt/QQ`) 后运行 `./launcher-user.sh`。
+    *   ~~**macOS**: 运行 `./launcher-user.sh`（暂不支持，开发中）~~
+    *   根据控制台提示，使用您的手机 QQ 扫描二维码完成登录。
+
+3.  **访问与使用**
+    *   在浏览器中打开：`http://localhost:40653/qce-v4-tool`。
+    *   输入控制台中显示的**访问令牌 (Access Token)** 以完成身份验证。
+    *   开始使用聊天记录导出功能。
+
+## 功能特性
+
+-   **多格式导出**: 支持导出为交互式 `HTML`、机器可读的 `JSON` 和纯文本 `TXT` 格式，以满足不同场景的需求。
+-   **完整的消息类型支持**: 支持导出文本、图片、文件、语音、视频、贴纸、回复和转发消息。
+-   **强大的资源管理**: 自动下载聊天记录中引用的所有媒体文件（如图片、视频、文件），并进行本地缓存和 MD5 完整性校验。
+-   **表情包导出**: 支持导出市场表情包、收藏表情和系统表情包，自动下载所有表情资源并生成结构化 JSON 文件，提供完整的表情包备份方案。
+-   **灵活的任务管理**:
+    *   支持创建多个并发导出任务。
+    *   通过 Web 界面实时监控任务进度和完成状态。
+    *   断点续传功能可在中断后恢复任务，无需重新下载已有数据。
+-   **定时自动备份**: 内置强大的定时任务系统，支持使用标准 cron 表达式配置每日、每周或自定义周期的自动导出。
+-   **现代化 Web 界面**: 基于 React 和 Next.js 构建的响应式 Web 仪表板，提供直观的图形化操作体验。
+
+## 支持平台
+
+| 平台 | 架构 | 状态 | 要求 |
+| :--- | :--- | :--- | :--- |
+| Windows | x64 | ✅ 完全支持 | Windows 10/11 |
+| Linux | x64 | ✅ 应该支持 | Ubuntu 20.04+ |
+| macOS | x64 / arm64 | ⚠️ 暂不支持 | 因兼容性问题暂不可用，开发中 |
+
+## 系统架构与鸣谢
+
+QCE V4.5 采用创新的 Overlay 插件架构设计，作为 [**NapCatQQ**](https://github.com/NapNeko/NapCatQQ) 框架的独立外部插件运行，通过双层代理机制实现了零业务代码修改的跨平台兼容。我们在此特别感谢 **NapCatQQ 团队**，没有其强大的插件生态和底层框架支持，V4 版本无法实现。
+
+-   **Overlay 层**: 创新的双层代理架构，编译期通过类型镜像提供 TypeScript 类型检查，运行期通过 JS 代理和 Bridge 机制委托宿主 NapCat 执行核心能力，彻底解决了原生模块依赖问题。
+-   **后端服务层**: 基于 Express.js 和 WebSocket 构建，使用 tsx 即时编译 TypeScript，负责处理 API 请求、编排导出流程、管理任务调度和持久化数据存储。
+-   **前端应用层**: 基于 Next.js 14 和 React 构建的现代化单页应用，为用户提供所有交互功能。
+-   **存储层**: 采用基于 **JSONL** 的文件存储系统并辅以内存索引，实现高性能的读写与任务恢复。
+
+## 技术栈
+
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&amp;logo=typescript&amp;logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-20-5FA04E?style=flat-square&amp;logo=nodedotjs&amp;logoColor=white)
+![tsx](https://img.shields.io/badge/tsx-Runtime-2D3748?style=flat-square)
+![Next.js](https://img.shields.io/badge/Next.js-14-0070F3?style=flat-square&amp;logo=next.js&amp;logoColor=white)
+![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&amp;logo=react&amp;logoColor=black)
+![Express.js](https://img.shields.io/badge/Express.js-FFA500?style=flat-square&amp;logo=express&amp;logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat-square&amp;logo=tailwindcss&amp;logoColor=white)
+
+## 统计数据
+
+[![Star History Chart](https://api.star-history.com/svg?repos=shuakami/qq-chat-exporter&amp;type=Date)](https://star-history.com/#shuakami/qq-chat-exporter&amp;Date)
+
+## 免责声明
+
+**请务必仔细阅读以下免责声明：**
+
+本项目仅供**个人学习研究**和**数据备份**使用，严禁用于任何商业用途和非法目的。本项目与腾讯公司无任何关联，属于**非官方第三方工具**。
+
+使用本工具可能违反 QQ 用户协议。尽管 V4 版本通过优化请求策略显著降低了风险，但用户仍需**自行承担使用本工具可能带来的一切风险**，包括但不限于账号安全问题。
+
+请严格遵守**数据隐私**原则，仅导出您本人拥有合法权利的聊天记录，不得用于侵犯他人隐私、诽谤、骚扰等任何违法行为。您导出的数据应妥善保管，防止泄露或被滥用。
+
+开发者不对因使用本工具而导致的**任何直接或间接损失**负责，包括但不限于账号安全、数据丢失或潜在的法律风险。
+
+如腾讯公司认为本项目存在不当之处，欢迎随时联系处理。
+
+**继续使用即表示您已充分理解并同意承担上述所有风险。如有任何疑虑，请立即停止使用。**
+
+## 许可证
+
+本项目采用 [GNU General Public License v3.0 (GPL-3.0)](https://www.gnu.org/licenses/gpl-3.0.html) 开源。
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[maotoumao/MusicFree]]></title>
+            <link>https://github.com/maotoumao/MusicFree</link>
+            <guid>https://github.com/maotoumao/MusicFree</guid>
+            <pubDate>Wed, 17 Dec 2025 00:04:45 GMT</pubDate>
+            <description><![CDATA[插件化、定制化、无广告的免费音乐播放器]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/maotoumao/MusicFree">maotoumao/MusicFree</a></h1>
+            <p>插件化、定制化、无广告的免费音乐播放器</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 22,069</p>
+            <p>Forks: 1,521</p>
+            <p>Stars today: 53 stars today</p>
+            <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[blakeblackshear/frigate]]></title>
+            <link>https://github.com/blakeblackshear/frigate</link>
+            <guid>https://github.com/blakeblackshear/frigate</guid>
+            <pubDate>Wed, 17 Dec 2025 00:04:44 GMT</pubDate>
+            <description><![CDATA[NVR with realtime local object detection for IP cameras]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/blakeblackshear/frigate">blakeblackshear/frigate</a></h1>
+            <p>NVR with realtime local object detection for IP cameras</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 28,097</p>
+            <p>Forks: 2,615</p>
+            <p>Stars today: 165 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;img align=&quot;center&quot; alt=&quot;logo&quot; src=&quot;docs/static/img/frigate.png&quot;&gt;
 &lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://angular.dev/&quot;&gt;&lt;strong&gt;angular.dev&lt;/strong&gt;&lt;/a&gt;
-  &lt;br&gt;
-&lt;/p&gt;
+# Frigate - NVR With Realtime Object Detection for IP Cameras
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;CONTRIBUTING.md&quot;&gt;Contributing Guidelines&lt;/a&gt;
-  ·
-  &lt;a href=&quot;https://github.com/angular/angular/issues&quot;&gt;Submit an Issue&lt;/a&gt;
-  ·
-  &lt;a href=&quot;https://blog.angular.dev/&quot;&gt;Blog&lt;/a&gt;
-  &lt;br&gt;
-  &lt;br&gt;
-&lt;/p&gt;
+&lt;a href=&quot;https://hosted.weblate.org/engage/frigate-nvr/&quot;&gt;
+&lt;img src=&quot;https://hosted.weblate.org/widget/frigate-nvr/language-badge.svg&quot; alt=&quot;Translation status&quot; /&gt;
+&lt;/a&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://www.npmjs.com/@angular/core&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/npm/v/@angular/core.svg?logo=npm&amp;logoColor=fff&amp;label=NPM+package&amp;color=limegreen&quot; alt=&quot;Angular on npm&quot; /&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
+\[English\] | [简体中文](https://github.com/blakeblackshear/frigate/blob/dev/README_CN.md)
 
-&lt;hr&gt;
+A complete and local NVR designed for [Home Assistant](https://www.home-assistant.io) with AI object detection. Uses OpenCV and Tensorflow to perform realtime object detection locally for IP cameras.
+
+Use of a GPU, Integrated GPU, or AI accelerator such as a [Hailo](https://hailo.ai/) is highly recommended. Dedicated hardware will outperform even the best CPUs with very little overhead.
+
+- Tight integration with Home Assistant via a [custom component](https://github.com/blakeblackshear/frigate-hass-integration)
+- Designed to minimize resource use and maximize performance by only looking for objects when and where it is necessary
+- Leverages multiprocessing heavily with an emphasis on realtime over processing every frame
+- Uses a very low overhead motion detection to determine where to run object detection
+- Object detection with TensorFlow runs in separate processes for maximum FPS
+- Communicates over MQTT for easy integration into other systems
+- Records video with retention settings based on detected objects
+- 24/7 recording
+- Re-streaming via RTSP to reduce the number of connections to your camera
+- WebRTC &amp; MSE support for low-latency live view
 
 ## Documentation
 
-Get started with Angular, learn the fundamentals and explore advanced topics on our documentation website.
+View the documentation at https://docs.frigate.video
 
-- [Getting Started][quickstart]
-- [Architecture][architecture]
-- [Components and Templates][componentstemplates]
-- [Forms][forms]
-- [API][api]
+## Donations
 
-### Advanced
+If you would like to make a donation to support development, please use [Github Sponsors](https://github.com/sponsors/blakeblackshear).
 
-- [Angular Elements][angularelements]
-- [Server Side Rendering][ssr]
-- [Schematics][schematics]
-- [Lazy Loading][lazyloading]
-- [Animations][animations]
+## Screenshots
 
-### Local Development
+### Live dashboard
 
-To contribute to the Angular Docs, check out the [Angular.dev README](adev/README.md)
+&lt;div&gt;
+&lt;img width=&quot;800&quot; alt=&quot;Live dashboard&quot; src=&quot;https://github.com/blakeblackshear/frigate/assets/569905/5e713cb9-9db5-41dc-947a-6937c3bc376e&quot;&gt;
+&lt;/div&gt;
 
-## Development Setup
+### Streamlined review workflow
 
-### Prerequisites
+&lt;div&gt;
+&lt;img width=&quot;800&quot; alt=&quot;Streamlined review workflow&quot; src=&quot;https://github.com/blakeblackshear/frigate/assets/569905/6fed96e8-3b18-40e5-9ddc-31e6f3c9f2ff&quot;&gt;
+&lt;/div&gt;
 
-- Install [Node.js] which includes [Node Package Manager][npm]
+### Multi-camera scrubbing
 
-### Setting Up a Project
+&lt;div&gt;
+&lt;img width=&quot;800&quot; alt=&quot;Multi-camera scrubbing&quot; src=&quot;https://github.com/blakeblackshear/frigate/assets/569905/d6788a15-0eeb-4427-a8d4-80b93cae3d74&quot;&gt;
+&lt;/div&gt;
 
-Install the Angular CLI globally:
+### Built-in mask and zone editor
 
-```
-npm install -g @angular/cli
-```
+&lt;div&gt;
+&lt;img width=&quot;800&quot; alt=&quot;Multi-camera scrubbing&quot; src=&quot;https://github.com/blakeblackshear/frigate/assets/569905/d7885fc3-bfe6-452f-b7d0-d957cb3e31f5&quot;&gt;
+&lt;/div&gt;
 
-Create workspace:
+## Translations
 
-```
-ng new [PROJECT NAME]
-```
+We use [Weblate](https://hosted.weblate.org/projects/frigate-nvr/) to support language translations. Contributions are always welcome.
 
-Run the application:
-
-```
-cd [PROJECT NAME]
-ng serve
-```
-
-Angular is cross-platform, fast, scalable, has incredible tooling, and is loved by millions.
-
-## Quickstart
-
-[Get started in 5 minutes][quickstart].
-
-## Ecosystem
-
-&lt;p&gt;
-  &lt;img src=&quot;/contributing-docs/images/angular-ecosystem-logos.png&quot; alt=&quot;angular ecosystem logos&quot; width=&quot;500px&quot; height=&quot;auto&quot;&gt;
-&lt;/p&gt;
-
-- [Angular Command Line (CLI)][cli]
-- [Angular Material][angularmaterial]
-
-## Changelog
-
-[Learn about the latest improvements][changelog].
-
-## Upgrading
-
-Check out our [upgrade guide](https://angular.dev/update-guide/) to find out the best way to upgrade your project.
-
-## Contributing
-
-### Contributing Guidelines
-
-Read through our [contributing guidelines][contributing] to learn about our submission process, coding rules, and more.
-
-### Want to Help?
-
-Want to report a bug, contribute some code, or improve the documentation? Excellent! Read up on our guidelines for [contributing][contributing] and then check out one of our issues labeled as &lt;kbd&gt;[help wanted](https://github.com/angular/angular/labels/help%20wanted)&lt;/kbd&gt; or &lt;kbd&gt;[good first issue](https://github.com/angular/angular/labels/good%20first%20issue)&lt;/kbd&gt;.
-
-### Code of Conduct
-
-Help us keep Angular open and inclusive. Please read and follow our [Code of Conduct][codeofconduct].
-
-## Community
-
-Join the conversation and help the community.
-
-- [X (formerly Twitter)][X (formerly Twitter)]
-- [Bluesky][bluesky]
-- [Discord][discord]
-- [YouTube][youtube]
-- [StackOverflow][stackoverflow]
-- Find a Local [Meetup][meetup]
-
-[![Love Angular badge](https://img.shields.io/badge/angular-love-blue?logo=angular&amp;angular=love)](https://www.github.com/angular/angular)
-
-**Love Angular? Give our repo a star :star: :arrow_up:.**
-
-[contributing]: CONTRIBUTING.md
-[quickstart]: https://angular.dev/tutorials/learn-angular
-[changelog]: CHANGELOG.md
-[ng]: https://angular.dev
-[documentation]: https://angular.dev/overview
-[angularmaterial]: https://material.angular.dev/
-[cli]: https://angular.dev/tools/cli
-[architecture]: https://angular.dev/essentials
-[componentstemplates]: https://angular.dev/tutorials/learn-angular/1-components-in-angular
-[forms]: https://angular.dev/tutorials/learn-angular/15-forms
-[api]: https://angular.dev/api
-[angularelements]: https://angular.dev/guide/elements
-[ssr]: https://angular.dev/guide/ssr
-[schematics]: https://angular.dev/tools/cli/schematics
-[lazyloading]: https://angular.dev/guide/routing/define-routes#lazily-loaded-components
-[node.js]: https://nodejs.org/
-[npm]: https://www.npmjs.com/get-npm
-[codeofconduct]: CODE_OF_CONDUCT.md
-[X (formerly Twitter)]: https://www.x.com/angular
-[bluesky]: https://bsky.app/profile/angular.dev
-[discord]: https://discord.gg/angular
-[stackoverflow]: https://stackoverflow.com/questions/tagged/angular
-[youtube]: https://youtube.com/angular
-[meetup]: https://www.meetup.com/find/?keywords=angular
-[animations]: https://angular.dev/guide/animations
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[danny-avila/LibreChat]]></title>
-            <link>https://github.com/danny-avila/LibreChat</link>
-            <guid>https://github.com/danny-avila/LibreChat</guid>
-            <pubDate>Tue, 16 Dec 2025 00:05:25 GMT</pubDate>
-            <description><![CDATA[Enhanced ChatGPT Clone: Features Agents, MCP, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message search, Code Interpreter, langchain, DALL-E-3, OpenAPI Actions, Functions, Secure Multi-User Auth, Presets, open-source for self-hosting. Active.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/danny-avila/LibreChat">danny-avila/LibreChat</a></h1>
-            <p>Enhanced ChatGPT Clone: Features Agents, MCP, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message search, Code Interpreter, langchain, DALL-E-3, OpenAPI Actions, Functions, Secure Multi-User Auth, Presets, open-source for self-hosting. Active.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 32,427</p>
-            <p>Forks: 6,412</p>
-            <p>Stars today: 37 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://librechat.ai&quot;&gt;
-    &lt;img src=&quot;client/public/assets/logo.svg&quot; height=&quot;256&quot;&gt;
-  &lt;/a&gt;
-  &lt;h1 align=&quot;center&quot;&gt;
-    &lt;a href=&quot;https://librechat.ai&quot;&gt;LibreChat&lt;/a&gt;
-  &lt;/h1&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://discord.librechat.ai&quot;&gt; 
-    &lt;img
-      src=&quot;https://img.shields.io/discord/1086345563026489514?label=&amp;logo=discord&amp;style=for-the-badge&amp;logoWidth=20&amp;logoColor=white&amp;labelColor=000000&amp;color=blueviolet&quot;&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://www.youtube.com/@LibreChat&quot;&gt; 
-    &lt;img
-      src=&quot;https://img.shields.io/badge/YOUTUBE-red.svg?style=for-the-badge&amp;logo=youtube&amp;logoColor=white&amp;labelColor=000000&amp;logoWidth=20&quot;&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://docs.librechat.ai&quot;&gt; 
-    &lt;img
-      src=&quot;https://img.shields.io/badge/DOCS-blue.svg?style=for-the-badge&amp;logo=read-the-docs&amp;logoColor=white&amp;labelColor=000000&amp;logoWidth=20&quot;&gt;
-  &lt;/a&gt;
-  &lt;a aria-label=&quot;Sponsors&quot; href=&quot;https://github.com/sponsors/danny-avila&quot;&gt;
-    &lt;img
-      src=&quot;https://img.shields.io/badge/SPONSORS-brightgreen.svg?style=for-the-badge&amp;logo=github-sponsors&amp;logoColor=white&amp;labelColor=000000&amp;logoWidth=20&quot;&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-&lt;a href=&quot;https://railway.app/template/b5k2mn?referralCode=HI9hWz&quot;&gt;
-  &lt;img src=&quot;https://railway.app/button.svg&quot; alt=&quot;Deploy on Railway&quot; height=&quot;30&quot;&gt;
+&lt;a href=&quot;https://hosted.weblate.org/engage/frigate-nvr/&quot;&gt;
+&lt;img src=&quot;https://hosted.weblate.org/widget/frigate-nvr/multi-auto.svg&quot; alt=&quot;Translation status&quot; /&gt;
 &lt;/a&gt;
-&lt;a href=&quot;https://zeabur.com/templates/0X2ZY8&quot;&gt;
-  &lt;img src=&quot;https://zeabur.com/button.svg&quot; alt=&quot;Deploy on Zeabur&quot; height=&quot;30&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://template.cloud.sealos.io/deploy?templateName=librechat&quot;&gt;
-  &lt;img src=&quot;https://raw.githubusercontent.com/labring-actions/templates/main/Deploy-on-Sealos.svg&quot; alt=&quot;Deploy on Sealos&quot; height=&quot;30&quot;&gt;
-&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://www.librechat.ai/docs/translation&quot;&gt;
-    &lt;img 
-      src=&quot;https://img.shields.io/badge/dynamic/json.svg?style=for-the-badge&amp;color=2096F3&amp;label=locize&amp;query=%24.translatedPercentage&amp;url=https://api.locize.app/badgedata/4cb2598b-ed4d-469c-9b04-2ed531a8cb45&amp;suffix=%+translated&quot; 
-      alt=&quot;Translation Progress&quot;&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-
-
-# ✨ Features
-
-- 🖥️ **UI &amp; Experience** inspired by ChatGPT with enhanced design and features
-
-- 🤖 **AI Model Selection**:  
-  - Anthropic (Claude), AWS Bedrock, OpenAI, Azure OpenAI, Google, Vertex AI, OpenAI Responses API (incl. Azure)
-  - [Custom Endpoints](https://www.librechat.ai/docs/quick_start/custom_endpoints): Use any OpenAI-compatible API with LibreChat, no proxy required
-  - Compatible with [Local &amp; Remote AI Providers](https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints):
-    - Ollama, groq, Cohere, Mistral AI, Apple MLX, koboldcpp, together.ai,
-    - OpenRouter, Helicone, Perplexity, ShuttleAI, Deepseek, Qwen, and more
-
-- 🔧 **[Code Interpreter API](https://www.librechat.ai/docs/features/code_interpreter)**: 
-  - Secure, Sandboxed Execution in Python, Node.js (JS/TS), Go, C/C++, Java, PHP, Rust, and Fortran
-  - Seamless File Handling: Upload, process, and download files directly
-  - No Privacy Concerns: Fully isolated and secure execution
-
-- 🔦 **Agents &amp; Tools Integration**:  
-  - **[LibreChat Agents](https://www.librechat.ai/docs/features/agents)**:
-    - No-Code Custom Assistants: Build specialized, AI-driven helpers
-    - Agent Marketplace: Discover and deploy community-built agents
-    - Collaborative Sharing: Share agents with specific users and groups
-    - Flexible &amp; Extensible: Use MCP Servers, tools, file search, code execution, and more
-    - Compatible with Custom Endpoints, OpenAI, Azure, Anthropic, AWS Bedrock, Google, Vertex AI, Responses API, and more
-    - [Model Context Protocol (MCP) Support](https://modelcontextprotocol.io/clients#librechat) for Tools
-
-- 🔍 **Web Search**:  
-  - Search the internet and retrieve relevant information to enhance your AI context
-  - Combines search providers, content scrapers, and result rerankers for optimal results
-  - **Customizable Jina Reranking**: Configure custom Jina API URLs for reranking services
-  - **[Learn More →](https://www.librechat.ai/docs/features/web_search)**
-
-- 🪄 **Generative UI with Code Artifacts**:  
-  - [Code Artifacts](https://youtu.be/GfTj7O4gmd0?si=WJbdnemZpJzBrJo3) allow creation of React, HTML, and Mermaid diagrams directly in chat
-
-- 🎨 **Image Generation &amp; Editing**
-  - Text-to-image and image-to-image with [GPT-Image-1](https://www.librechat.ai/docs/features/image_gen#1--openai-image-tools-recommended)
-  - Text-to-image with [DALL-E (3/2)](https://www.librechat.ai/docs/features/image_gen#2--dalle-legacy), [Stable Diffusion](https://www.librechat.ai/docs/features/image_gen#3--stable-diffusion-local), [Flux](https://www.librechat.ai/docs/features/image_gen#4--flux), or any [MCP server](https://www.librechat.ai/docs/features/image_gen#5--model-context-protocol-mcp)
-  - Produce stunning visuals from prompts or refine existing images with a single instruction
-
-- 💾 **Presets &amp; Context Management**:  
-  - Create, Save, &amp; Share Custom Presets  
-  - Switch between AI Endpoints and Presets mid-chat
-  - Edit, Resubmit, and Continue Messages with Conversation branching  
-  - Create and share prompts with specific users and groups
-  - [Fork Messages &amp; Conversations](https://www.librechat.ai/docs/features/fork) for Advanced Context control
-
-- 💬 **Multimodal &amp; File Interactions**:  
-  - Upload and analyze images with Claude 3, GPT-4.5, GPT-4o, o1, Llama-Vision, and Gemini 📸  
-  - Chat with Files using Custom Endpoints, OpenAI, Azure, Anthropic, AWS Bedrock, &amp; Google 🗃️
-
-- 🌎 **Multilingual UI**:
-  - English, 中文 (简体), 中文 (繁體), العربية, Deutsch, Español, Français, Italiano
-  - Polski, Português (PT), Português (BR), Русский, 日本語, Svenska, 한국어, Tiếng Việt
-  - Türkçe, Nederlands, עברית, Català, Čeština, Dansk, Eesti, فارسی
-  - Suomi, Magyar, Հայերեն, Bahasa Indonesia, ქართული, Latviešu, ไทย, ئۇيغۇرچە
-
-- 🧠 **Reasoning UI**:  
-  - Dynamic Reasoning UI for Chain-of-Thought/Reasoning AI models like DeepSeek-R1
-
-- 🎨 **Customizable Interface**:  
-  - Customizable Dropdown &amp; Interface that adapts to both power users and newcomers
-
-- 🗣️ **Speech &amp; Audio**:  
-  - Chat hands-free with Speech-to-Text and Text-to-Speech  
-  - Automatically send and play Audio  
-  - Supports OpenAI, Azure OpenAI, and Elevenlabs
-
-- 📥 **Import &amp; Export Conversations**:  
-  - Import Conversations from LibreChat, ChatGPT, Chatbot UI  
-  - Export conversations as screenshots, markdown, text, json
-
-- 🔍 **Search &amp; Discovery**:  
-  - Search all messages/conversations
-
-- 👥 **Multi-User &amp; Secure Access**:
-  - Multi-User, Secure Authentication with OAuth2, LDAP, &amp; Email Login Support
-  - Built-in Moderation, and Token spend tools
-
-- ⚙️ **Configuration &amp; Deployment**:  
-  - Configure Proxy, Reverse Proxy, Docker, &amp; many Deployment options  
-  - Use completely local or deploy on the cloud
-
-- 📖 **Open-Source &amp; Community**:  
-  - Completely Open-Source &amp; Built in Public  
-  - Community-driven development, support, and feedback
-
-[For a thorough review of our features, see our docs here](https://docs.librechat.ai/) 📚
-
-## 🪶 All-In-One AI Conversations with LibreChat
-
-LibreChat brings together the future of assistant AIs with the revolutionary technology of OpenAI&#039;s ChatGPT. Celebrating the original styling, LibreChat gives you the ability to integrate multiple AI models. It also integrates and enhances original client features such as conversation and message search, prompt templates and plugins.
-
-With LibreChat, you no longer need to opt for ChatGPT Plus and can instead use free or pay-per-call APIs. We welcome contributions, cloning, and forking to enhance the capabilities of this advanced chatbot platform.
-
-[![Watch the video](https://raw.githubusercontent.com/LibreChat-AI/librechat.ai/main/public/images/changelog/v0.7.6.gif)](https://www.youtube.com/watch?v=ilfwGQtJNlI)
-
-Click on the thumbnail to open the video☝️
-
----
-
-## 🌐 Resources
-
-**GitHub Repo:**
-  - **RAG API:** [github.com/danny-avila/rag_api](https://github.com/danny-avila/rag_api)
-  - **Website:** [github.com/LibreChat-AI/librechat.ai](https://github.com/LibreChat-AI/librechat.ai)
-
-**Other:**
-  - **Website:** [librechat.ai](https://librechat.ai)
-  - **Documentation:** [librechat.ai/docs](https://librechat.ai/docs)
-  - **Blog:** [librechat.ai/blog](https://librechat.ai/blog)
-
----
-
-## 📝 Changelog
-
-Keep up with the latest updates by visiting the releases page and notes:
-- [Releases](https://github.com/danny-avila/LibreChat/releases)
-- [Changelog](https://www.librechat.ai/changelog) 
-
-**⚠️ Please consult the [changelog](https://www.librechat.ai/changelog) for breaking changes before updating.**
-
----
-
-## ⭐ Star History
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://star-history.com/#danny-avila/LibreChat&amp;Date&quot;&gt;
-    &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/svg?repos=danny-avila/LibreChat&amp;type=Date&amp;theme=dark&quot; onerror=&quot;this.src=&#039;https://api.star-history.com/svg?repos=danny-avila/LibreChat&amp;type=Date&#039;&quot; /&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://trendshift.io/repositories/4685&quot; target=&quot;_blank&quot; style=&quot;padding: 10px;&quot;&gt;
-    &lt;img src=&quot;https://trendshift.io/api/badge/repositories/4685&quot; alt=&quot;danny-avila%2FLibreChat | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://runacap.com/ross-index/q1-24/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; style=&quot;margin-left: 20px;&quot;&gt;
-    &lt;img style=&quot;width: 260px; height: 56px&quot; src=&quot;https://runacap.com/wp-content/uploads/2024/04/ROSS_badge_white_Q1_2024.svg&quot; alt=&quot;ROSS Index - Fastest Growing Open-Source Startups in Q1 2024 | Runa Capital&quot; width=&quot;260&quot; height=&quot;56&quot;/&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-
----
-
-## ✨ Contributions
-
-Contributions, suggestions, bug reports and fixes are welcome!
-
-For new features, components, or extensions, please open an issue and discuss before sending a PR.
-
-If you&#039;d like to help translate LibreChat into your language, we&#039;d love your contribution! Improving our translations not only makes LibreChat more accessible to users around the world but also enhances the overall user experience. Please check out our [Translation Guide](https://www.librechat.ai/docs/translation).
-
----
-
-## 💖 This project exists in its current state thanks to all the people who contribute
-
-&lt;a href=&quot;https://github.com/danny-avila/LibreChat/graphs/contributors&quot;&gt;
-  &lt;img src=&quot;https://contrib.rocks/image?repo=danny-avila/LibreChat&quot; /&gt;
-&lt;/a&gt;
-
----
-
-## 🎉 Special Thanks
-
-We thank [Locize](https://locize.com) for their translation management tools that support multiple languages in LibreChat.
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://locize.com&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
-    &lt;img src=&quot;https://github.com/user-attachments/assets/d6b70894-6064-475e-bb65-92a9e23e0077&quot; alt=&quot;Locize Logo&quot; height=&quot;50&quot;&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
