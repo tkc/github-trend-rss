@@ -4,24 +4,222 @@
         <title>GitHub Trending Today for typescript - TypeScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for typescript.</description>
-        <lastBuildDate>Sun, 21 Dec 2025 00:05:37 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 22 Dec 2025 00:04:59 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2025, GitHub</copyright>
         <item>
+            <title><![CDATA[mifi/lossless-cut]]></title>
+            <link>https://github.com/mifi/lossless-cut</link>
+            <guid>https://github.com/mifi/lossless-cut</guid>
+            <pubDate>Mon, 22 Dec 2025 00:04:59 GMT</pubDate>
+            <description><![CDATA[The swiss army knife of lossless video/audio editing]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/mifi/lossless-cut">mifi/lossless-cut</a></h1>
+            <p>The swiss army knife of lossless video/audio editing</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 36,319</p>
+            <p>Forks: 1,741</p>
+            <p>Stars today: 71 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+	&lt;a href=&quot;https://go.warp.dev/lossless-cut&quot; target=&quot;_blank&quot;&gt;
+		&lt;sup&gt;Special thanks to:&lt;/sup&gt;
+		&lt;br&gt;
+		&lt;img alt=&quot;Warp sponsorship&quot; width=&quot;400&quot; src=&quot;https://github.com/warpdotdev/brand-assets/blob/main/Github/Sponsor/Warp-Github-LG-02.png&quot;&gt;
+		&lt;br&gt;
+		&lt;h&gt;Warp, built for coding with multiple AI agents&lt;/b&gt;
+		&lt;br&gt;
+		&lt;sup&gt;Available for macOS, Linux and Windows&lt;/sup&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;br&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+	&lt;br&gt;
+  &lt;p&gt;&lt;a href=&quot;https://mifi.no/losslesscut/&quot;&gt;&lt;img src=&quot;src/renderer/src/icon.svg&quot; width=&quot;120&quot; alt=&quot;LosslessCut&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;b&gt;LosslessCut&lt;/b&gt;&lt;/p&gt;
+  The swiss army knife of lossless video/audio editing
+	&lt;br&gt;
+  &lt;img src=&quot;https://github.com/mifi/lossless-cut/workflows/Build/release/badge.svg&quot; /&gt;
+  &lt;a href=&quot;https://paypal.me/mifino/usd&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Donate-PayPal-green.svg&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/mifi/lossless-cut#download&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/v/release/mifi/lossless-cut&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://discord.gg/fhnEREfUJ3&quot;&gt;&lt;img src=&quot;https://img.shields.io/discord/986051448385183804&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://twitter.com/losslesscut&quot;&gt;&lt;img src=&quot;https://img.shields.io/twitter/follow/losslesscut?label=Twitter&amp;style=social&quot; alt=&quot;Twitter&quot;&gt;&lt;/a&gt;
+	&lt;br&gt;
+	&lt;br&gt;
+  &lt;a href=&quot;https://mifi.no/thanks/&quot;&gt;Thanks to my supporters&lt;/a&gt; and everyone who purchased LosslessCut!
+	&lt;br&gt;
+	&lt;br&gt;
+  &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;main_screenshot.jpg&quot; width=&quot;600&quot; alt=&quot;screenshot&quot; /&gt;&lt;/p&gt;
+	&lt;br&gt;
+	&lt;br&gt;
+&lt;/div&gt;
+
+LosslessCut aims to be the ultimate cross platform FFmpeg GUI for extremely fast and lossless operations on video, audio, subtitle and other related media files.
+The main feature is lossless trimming and cutting of video and audio files, which is great for saving space by rough-cutting your large video files taken from a video camera, GoPro, drone, etc. It lets you quickly extract the good parts from your videos and discard many gigabytes of data without doing a slow re-encode and thereby losing quality. There are also many more [use cases](#typical-workflow). Everything is extremely fast because it does an almost direct data copy, fueled by the awesome FFmpeg which does all the grunt work.
+
+## Table of contents
+
+- [Features](#features)
+- [Example lossless use cases](#example-lossless-use-cases)
+- [Download](#download)
+- [Supported formats](#supported-formats)
+- [Documentation &amp; getting started](#documentation)
+- [Video demos](#video-demos)
+- [Featured](#featured)
+- [Attributions](#attributions)
+
+## Features
+
+- Lossless cutting of most video and audio formats
+- [Smart cut](https://github.com/mifi/lossless-cut/issues/126) (experimental)
+- Losslessly cut out parts of video/audio (for cutting away commercials etc.)
+- Losslessly rearrange the order of video/audio segments
+- Lossless merge/concatenation of arbitrary files (with identical codecs parameters, e.g. from the same camera)
+- Lossless multi track/stream editing
+  - Combine arbitrary tracks from multiple files (ex. add music or subtitle track to a video file)
+  - Remove unneeded tracks
+  - Replace or re-encode only some tracks
+  - Extract all tracks from a file (extract video, audio, subtitle, attachments and other tracks from one file into separate files)
+- View technical data about all tracks. Edit file metadata, per-track metadata and per-track disposition
+- Select video/audio tracks for playback. Playback multiple audio tracks simultaneously.
+- Fast multi-file workflow (note: no mass/batch export yet)
+- Keyboard shortcut workflow
+- Losslessly remux video/audio into a different container (file) format
+- Take full-resolution snapshots from videos in JPEG/PNG format (low or high quality)
+- Export ranges of video frames to images (every nth frame, second, by scene change, best thumbnails)
+  - Export only from a selected time range (segment)
+  - Optionally include original timestamps in image file names
+- Manual input of cutpoint times
+- Apply a per-file timecode offset (and auto load timecode from file)
+- Change rotation/orientation metadata in videos
+- Timeline zoom and frame/keyframe jumping for cutting around keyframes
+- Video thumbnails and audio waveform
+- Saves per project cut segments to project file
+- View FFmpeg last command log so you can modify and re-run recent commands on the command line
+- Undo/redo
+- Advanced segment query and mutation JS-based expression language.
+- Give labels to cut segments, annotate with tags
+- [Import/export](docs.md#import--export-projects) segments: MP4/MKV chapter marks, Text file, YouTube, CSV, CUE, XML (DaVinci, Final Cut Pro) and more
+- MKV/MP4 embedded chapters marks editor
+- View subtitles
+- Customizable keyboard hotkeys
+- Black scene detection, silent audio detection, and scene change detection
+- Divide timeline into segments of length L, size (X MB), N number of segments or even randomized segments!
+- Speed up / slow down video or audio file ([changing FPS](https://github.com/mifi/lossless-cut/issues/1712))
+- Basic [CLI](cli.md) and [HTTP API](api.md)
+- Show (DJI) embedded GPS track on a map
+- Losslessly Download videos over HTTP (e.g. HLS `.m3u8`)
+
+## Example lossless use cases
+
+- Cut out commercials from a recorded TV show (and re-format from TS to MP4).
+- Remove audio tracks from a file.
+- Extract music track from a video and cut it to your needs.
+- Add music to a video (or replace existing audio track).
+- Combine audio and video tracks from separate recordings.
+- Include an external subtitle into a video
+- Quickly change a H264/H265 MKV video to MOV or MP4 for playback on iPhone.
+- Import a list of cut times from other tool as a EDL (edit decision list, CSV) and run these cuts with LosslessCut.
+- Export a list of cut times as a CSV EDL and process these in another tool.
+- Quickly cut a file by its MP4/MKV chapters.
+- Quickly cut a [YouTube video](https://youtube-dl.org/) by its chapters (or music times from a comment).
+- Change the language of a file&#039;s audio/subtitle tracks.
+- Attach cover art / thumbnail to videos / audio from an external JPEG file or from a frame on the timeline.
+- Change author, title, GPS position, recording time of a video.
+- Fix rotation of a video that has the wrong orientation flag set.
+- Loop a video / audio clip X times quickly without re-encoding, see [#284](https://github.com/mifi/lossless-cut/issues/284).
+- Convert a video or parts of it into X image files (not lossless)
+- Losslessly split a video into one file per scene (note you probably have to shift segments, see [#330](https://github.com/mifi/lossless-cut/issues/330).)
+- Cut away silent parts from an audio/video file.
+- Split video into segments to for example respect Twitter&#039;s 140 second limit.
+- Annotate each segment with one or more tags, then use those tags to organize your segments or use it to create an output folder structure or hierarchy for your segments.
+
+See also [Recipe cookbook](./recipes.md)
+
+## Download
+
+If you want to support my continued work on LosslessCut, and you want the advantage of a secure and simple installation process with automatic, stable updates, consider getting it from your favorite store:
+
+&lt;a href=&quot;https://apps.apple.com/app/id1505323402&quot;&gt;&lt;img src=&quot;mac-app-store-badge.svg&quot; alt=&quot;Mac App Store&quot; height=&quot;50&quot;/&gt;&lt;/a&gt; &lt;a href=&quot;https://www.microsoft.com/store/apps/9P30LSR4705L?cid=storebadge&amp;ocid=badge&quot;&gt;&lt;img src=&quot;ms-store-badge.svg&quot; alt=&quot;MS badge&quot; height=&quot;50&quot;/&gt;&lt;/a&gt;
+
+For Linux these are some alternatives:
+
+&lt;a href=&quot;https://snapcraft.io/losslesscut&quot;&gt;&lt;img src=&quot;https://github.com/mifi/lossless-cut/raw/master/snap-store-black.svg?sanitize=true&quot; alt=&quot;Snapcraft&quot; height=&quot;50&quot;/&gt;&lt;/a&gt; &lt;a href=&quot;https://flathub.org/apps/details/no.mifi.losslesscut&quot;&gt;&lt;img src=&quot;https://github.com/mifi/lossless-cut/raw/master/flathub-badge.svg?sanitize=true&quot; alt=&quot;Flathub&quot; height=&quot;50&quot;/&gt;&lt;/a&gt;
+
+If you prefer to download the executables manually, this will of course always be free (see also [supported operating systems](./requirements.md)):
+
+- macOS: [Intel](https://github.com/mifi/lossless-cut/releases/latest/download/LosslessCut-mac-x64.dmg) / [Apple Silicon](https://github.com/mifi/lossless-cut/releases/latest/download/LosslessCut-mac-arm64.dmg) DMG (note that PKG does **not** work)
+- Windows: [7zip](https://github.com/mifi/lossless-cut/releases/latest/download/LosslessCut-win-x64.7z) (Windows 7, 8 and 8.1 is [no longer supported after v3.50.0](./requirements.md))
+- Linux: [x64 tar.bz2](https://github.com/mifi/lossless-cut/releases/latest/download/LosslessCut-linux-x64.tar.bz2) / [x64 AppImage](https://github.com/mifi/lossless-cut/releases/latest/download/LosslessCut-linux-x86_64.AppImage) / [arm64 tar.bz2](https://github.com/mifi/lossless-cut/releases/latest/download/LosslessCut-linux-arm64.tar.bz2) / [Raspberry Pi armv7l](https://github.com/mifi/lossless-cut/releases/latest/download/LosslessCut-linux-armv7l.tar.bz2)
+- [More releases](https://github.com/mifi/lossless-cut/releases) - Note that APPX (Windows) and PKG (macOS) do **not** work)
+- [Latest nightly builds 🧪](https://mifi.no/llc/nightly/)
+
+Difference between App Stores and GitHub download? [Please see FAQ](issues.md#app-stores-and-github-difference).
+
+[![](./donate.svg)](https://mifi.no/thanks)
+
+LosslessCut is maintained by me alone and will always remain free and open source. If it&#039;s useful to you, consider supporting my work. Alternatively [donate to FFmpeg](https://www.ffmpeg.org/donations.html) because they are doing the world a huge favor.
+
+[Paypal](https://paypal.me/mifino/usd) | [crypto](https://mifi.no/thanks) | [more](https://mifi.no/thanks)
+
+## Supported formats
+
+LosslessCut uses the Chromium browser&#039;s HTML5 video player, and not all formats/codecs are [natively supported](https://www.chromium.org/audio-video). Generally, the following file formats work: `MP4`, `MOV`, `WebM`, `Matroska`, `OGG` and `WAV`. Audio codecs: `FLAC`, `MP3`, `Opus`, `PCM`, `Vorbis` and `AAC`. Video codecs: `H264`, `AV1`, `Theora`, `VP8`, `VP9` and `H265` (with hardware decoder). Learn the [difference between a codec and a format](docs.md#primer-video--audio-formats-vs-codecs). Codecs and formats not listed above can still be converted to a supported format/codec from the `File` menu (try the option *Fastest: FFmpeg-assisted playback* first). A low quality version of the file will then be created and opened in the player. Note that the actual cut/export operation will still be performed on the original file, so it will be lossless. This allows for potentially opening any file that FFmpeg is able to decode.
+
+## Documentation
+
+- **[Getting started and documentation](docs.md)**
+- [FAQ, known issues, limitations and troubleshooting](issues.md)
+- [Contributing](CONTRIBUTING.md)
+
+### Video demos
+
+- [Common features](https://www.youtube.com/watch?v=pYHMxXy05Jg)
+- [How to add a thumbnail / cover art to an MP4](https://www.youtube.com/watch?v=4pYJ93cn80E)
+- [How to add multi-language audio to a video](https://www.youtube.com/watch?v=MRBGDsuw_WU)
+- Your video here?
+
+## Featured
+
+- [Console newsletter](https://console.substack.com/p/console-93)
+- Hacker News [2024](https://news.ycombinator.com/item?id=40829494) [2022](https://news.ycombinator.com/item?id=33969490) [2020-10](https://news.ycombinator.com/item?id=24883030) [2020-01](https://news.ycombinator.com/item?id=22026412) [2016](https://news.ycombinator.com/item?id=12885585)
+- [Wikipedia](https://en.m.wikipedia.org/wiki/LosslessCut)
+- Your link here?
+- theo (YouTube) [1](https://youtu.be/FI5ba4RRE8U?t=246) [2](https://youtu.be/uaCypXEJjes?t=381)
+
+&lt;img src=&quot;https://api.star-history.com/svg?repos=mifi/lossless-cut&amp;type=Date&quot; alt=&quot;Star History Chart&quot; width=&quot;400px&quot; /&gt;
+
+## Attributions
+- App icon made by [Dimi Kazak](http://www.flaticon.com/authors/dimi-kazak &quot;Dimi Kazak&quot;) from [www.flaticon.com](http://www.flaticon.com &quot;Flaticon&quot;) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/ &quot;Creative Commons BY 3.0&quot;).
+- [Lottie animation by Chris Gannon](https://lottiefiles.com/7077-magic-flow).
+- Thanks to Adi Abinun and [@abdul-alhasany](https://github.com/mifi/lossless-cut/issues/2561) for UI work.
+- Thanks to translators who helped translate the app. [You can too!](translation.md)
+- [Thanks to everyone for supporting](https://mifi.no/thanks/) my open source work 🙌
+
+---
+
+Made with ❤️ in [🇳🇴](https://www.youtube.com/watch?v=uQIv8Vo9_Jc)
+
+[More apps by mifi.no](https://mifi.no/)
+
+Follow me on [GitHub](https://github.com/mifi/), [YouTube](https://www.youtube.com/channel/UC6XlvVH63g0H54HSJubURQA), [IG](https://www.instagram.com/mifi.no/), [Twitter](https://twitter.com/mifi_no) for more awesome content!
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
             <title><![CDATA[iptv-org/iptv]]></title>
             <link>https://github.com/iptv-org/iptv</link>
             <guid>https://github.com/iptv-org/iptv</guid>
-            <pubDate>Sun, 21 Dec 2025 00:05:37 GMT</pubDate>
+            <pubDate>Mon, 22 Dec 2025 00:04:58 GMT</pubDate>
             <description><![CDATA[Collection of publicly available IPTV channels from all over the world]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/iptv-org/iptv">iptv-org/iptv</a></h1>
             <p>Collection of publicly available IPTV channels from all over the world</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 105,846</p>
-            <p>Forks: 4,844</p>
-            <p>Stars today: 228 stars today</p>
+            <p>Stars: 106,173</p>
+            <p>Forks: 4,889</p>
+            <p>Stars today: 349 stars today</p>
             <h2>README</h2><pre># IPTV [![update](https://github.com/iptv-org/iptv/actions/workflows/update.yml/badge.svg)](https://github.com/iptv-org/iptv/actions/workflows/update.yml)
 
 Collection of publicly available IPTV (Internet Protocol television) channels from all over the world.
@@ -106,229 +304,18 @@ No video files are stored in this repository. The repository simply contains use
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[nuxt-content/docus]]></title>
-            <link>https://github.com/nuxt-content/docus</link>
-            <guid>https://github.com/nuxt-content/docus</guid>
-            <pubDate>Sun, 21 Dec 2025 00:05:36 GMT</pubDate>
-            <description><![CDATA[Write beautiful documentations with Nuxt and Markdown.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/nuxt-content/docus">nuxt-content/docus</a></h1>
-            <p>Write beautiful documentations with Nuxt and Markdown.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 2,346</p>
-            <p>Forks: 208</p>
-            <p>Stars today: 117 stars today</p>
-            <h2>README</h2><pre>[![docus](https://docus.dev/__og-image__/static/og.png)](https://docus.dev)
-
-&gt; Create beautiful docs with Markdown &amp; Vue components
-
-[![npm version](https://img.shields.io/npm/v/docus.svg?style=flat&amp;colorA=020420&amp;colorB=EEEEEE)](https://npmjs.com/package/docus)
-[![npm downloads](https://img.shields.io/npm/dm/docus.svg?style=flat&amp;colorA=020420&amp;colorB=EEEEEE)](https://npm.chart.dev/docus)
-[![License](https://img.shields.io/npm/l/docus.svg?style=flat&amp;colorA=020420&amp;colorB=EEEEEE)](https://npmjs.com/package/docus)
-
-[![Install MCP in Cursor](https://mcp-toolkit.nuxt.dev/mcp/badge.svg?url=https://docus.dev/mcp)](https://docus.dev/mcp/mcp/deeplink)
-[![Install MCP in VS Code](https://mcp-toolkit.nuxt.dev/mcp/badge.svg?ide=vscode&amp;url=https://docus.dev/mcp)](https://docus.dev/mcp/mcp/deeplink?ide=vscode)
-
-## 🚀 Quick Start
-
-Create a new documentation project in seconds:
-
-```bash
-# Create a new project
-npx create-docus my-docs
-
-# Or create with i18n template for multi-language docs
-npx create-docus my-docs -t i18n
-
-# Navigate to your project
-cd my-docs
-
-# Start development server
-npm run dev
-```
-
-That&#039;s it! Your documentation site will be running at `http://localhost:3000`
-
-## 🎯 What it creates
-
-The CLI scaffolds a complete documentation project with:
-
-- ✨ **Beautiful Design** - Clean, modern documentation theme
-- 📱 **Responsive** - Mobile-first responsive design
-- 🌙 **Dark Mode** - Built-in dark/light mode support
-- 🌍 **Internationalization** - Native i18n support for multi-language docs
-- 🔍 **Search** - Full-text search functionality
-- 📝 **Markdown Enhanced** - Extended markdown with custom components
-- 🎨 **Customizable** - Easy theming and brand customization
-- ⚡ **Fast** - Optimized for performance with Nuxt 4
-- 🔧 **TypeScript** - Full TypeScript support
-- 🤖 **AI-Ready** - Automatic generation of `llms.txt` and `llms-full.txt` files for LLM integration
-- 🔌 **Native MCP Server** - Built-in Model Context Protocol server for AI tool integration (Cursor, VS Code, Claude, etc.)
-
-Learn more on the [Docus documentation](https://docus.dev).
-
-## 📁 Project Structure
-
-### Generated project
-
-```
-my-docs/
-├── content/              # Your markdown content
-│   ├── index.md         # Homepage
-│   └── docs/            # Documentation pages
-├── public/              # Static assets
-└── package.json         # Dependencies and scripts
-```
-
-### Optional files and folders
-
-Docus uses a layer system, you can go further and use any feature or file of a classical Nuxt project:
-
-```
-my-docs/
-├── app.config.ts        # App configuration
-├── nuxt.config.ts       # Nuxt configuration (add extra modules, components, etc.)
-├── app/                 # App directory
-│   ├── components/      # Components (add your own components)
-│   ├── layouts/         # Layouts (add your own layouts)
-│   └── pages/           # Pages (add your own pages)
-└── server/              # Server-side code (add your own server-side code)
-```
-
-### `/content` folder structure
-
-**Single language structure:**
-```
-content/
-├── index.md
-├── getting-started.md
-└── guide/
-    ├── introduction.md
-    └── configuration.md
-```
-
-**Multi-language structure (with i18n):**
-```
-content/
-├── en/
-│   ├── index.md
-│   └── guide/
-│       └── introduction.md
-└── fr/
-    ├── index.md
-    └── guide/
-        └── introduction.md
-```
-
-## ⚡ Built with
-
-Your project comes pre-configured with the best of the Nuxt ecosystem:
-
-- [Nuxt 4](https://nuxt.com) - The web framework
-- [Nuxt Content](https://content.nuxt.com/) - File-based CMS
-- [Nuxt UI](https://ui.nuxt.com) - UI components
-- [Nuxt Image](https://image.nuxt.com/) - Optimized images
-- [Tailwind CSS 4](https://tailwindcss.com/) - Utility-first CSS
-- [Docus Layer](https://www.npmjs.com/package/docus) - Documentation theme
-- [Nuxt i18n](https://i18n.nuxtjs.org/) - Internationalization
-
-## 📖 Documentation
-
-For detailed documentation on customizing your Docus project, visit the [Docus Documentation](https://docus.dev)
-
-## 🛠️ Development
-
-This repository contains the CLI tool source code.
-
-### Local Development
-
-To contribute to the CLI tool:
-
-```bash
-# Clone this repository
-git clone https://github.com/nuxt-content/docus
-
-# Install dependencies
-pnpm install
-
-# Run the dev server to run the docus docs
-pnpm run dev
-```
-
-### Package Structure
-
-This is a monorepo containing:
-
-- [**`/cli`**](https://github.com/nuxt-content/docus/tree/main/cli) - CLI tool (`create-docus`)
-- [**`/layer`**](https://github.com/nuxt-content/docus/tree/main/layer) - Docus Nuxt layer (`docus`)
-- [**`/docs`**](https://github.com/nuxt-content/docus/tree/main/docs) - Official documentation
-- [**`/.starters`**](https://github.com/nuxt-content/docus/tree/main/.starters) - Starters project
-
-## 📄 License
-
-Published under the [MIT](LICENSE) license.
-
----
-
-Docus has been entirely rewritten from scratch and is inspired from [undocs](https://github.com/unjs/undocs) made by [@pi0](https://github.com/pi0) 💚
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[fuma-nama/fumadocs]]></title>
-            <link>https://github.com/fuma-nama/fumadocs</link>
-            <guid>https://github.com/fuma-nama/fumadocs</guid>
-            <pubDate>Sun, 21 Dec 2025 00:05:35 GMT</pubDate>
-            <description><![CDATA[The beautiful & flexible React.js docs framework.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/fuma-nama/fumadocs">fuma-nama/fumadocs</a></h1>
-            <p>The beautiful & flexible React.js docs framework.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 9,965</p>
-            <p>Forks: 552</p>
-            <p>Stars today: 23 stars today</p>
-            <h2>README</h2><pre>![banner](./apps/docs/public/banner.png)
-
-The framework for building documentation websites in any React.js frameworks.
-
-**Officially Supported:**
-
-- Next.js
-- Vite: Tanstack Start, Waku, React Router
-
-📘 Learn More: [Documentation](https://fumadocs.dev).
-
-## Compatibility
-
-All packages are **ESM only**.
-
-## Sticker
-
-![logo](./documents/logo.png)
-
-Welcome to print it out :D
-
-## Contributions
-
-Make sure to read the [Contributing Guide](/.github/contributing.md) before submitting a pull request.
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
             <title><![CDATA[Effect-TS/effect]]></title>
             <link>https://github.com/Effect-TS/effect</link>
             <guid>https://github.com/Effect-TS/effect</guid>
-            <pubDate>Sun, 21 Dec 2025 00:05:34 GMT</pubDate>
+            <pubDate>Mon, 22 Dec 2025 00:04:57 GMT</pubDate>
             <description><![CDATA[Build production-ready applications in TypeScript]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/Effect-TS/effect">Effect-TS/effect</a></h1>
             <p>Build production-ready applications in TypeScript</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 12,334</p>
-            <p>Forks: 471</p>
-            <p>Stars today: 36 stars today</p>
+            <p>Stars: 12,353</p>
+            <p>Forks: 472</p>
+            <p>Stars today: 23 stars today</p>
             <h2>README</h2><pre>![npm version](https://img.shields.io/npm/v/effect)
 
 # Effect Monorepo
@@ -553,1495 +540,225 @@ Please be patient! We will do our best to review your pull request as soon as po
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[sparkjsdev/spark]]></title>
-            <link>https://github.com/sparkjsdev/spark</link>
-            <guid>https://github.com/sparkjsdev/spark</guid>
-            <pubDate>Sun, 21 Dec 2025 00:05:33 GMT</pubDate>
-            <description><![CDATA[✨ An advanced 3D Gaussian Splatting renderer for THREE.js]]></description>
+            <title><![CDATA[github/docs]]></title>
+            <link>https://github.com/github/docs</link>
+            <guid>https://github.com/github/docs</guid>
+            <pubDate>Mon, 22 Dec 2025 00:04:56 GMT</pubDate>
+            <description><![CDATA[The open-source repo for docs.github.com]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/sparkjsdev/spark">sparkjsdev/spark</a></h1>
-            <p>✨ An advanced 3D Gaussian Splatting renderer for THREE.js</p>
+            <h1><a href="https://github.com/github/docs">github/docs</a></h1>
+            <p>The open-source repo for docs.github.com</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 1,398</p>
-            <p>Forks: 116</p>
-            <p>Stars today: 9 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+            <p>Stars: 18,519</p>
+            <p>Forks: 65,073</p>
+            <p>Stars today: 12 stars today</p>
+            <h2>README</h2><pre># GitHub Docs &lt;!-- omit in toc --&gt;
 
-  ![Spark logo](https://github.com/user-attachments/assets/5287631a-083c-4c86-80f6-4dca24aa263f#gh-light-mode-only)
-  ![Spark logo](https://github.com/user-attachments/assets/91e8d74b-84a5-4073-bd72-d7228f948dc6#gh-dark-mode-only)
+Welcome to GitHub Docs! GitHub’s documentation is open source, meaning anyone from inside or outside the company can contribute. For full contributing guidelines, visit our [contributing guide](https://docs.github.com/en/contributing)
 
-  &lt;h3 align=&quot;center&quot;&gt;An advanced 3D Gaussian Splatting renderer for THREE.js&lt;/h3&gt;
-  &lt;div align=&quot;center&quot;&gt;
+## Quick links by contributor type
 
-  [Features](#features) -
-  [Getting Started](#getting-started) -
-  &lt;a href=&quot;https://sparkjs.dev/&quot;&gt;Documentation&lt;/a&gt; -
-  &lt;a href=&quot;https://sparkjs.dev/&quot;&gt;FAQ&lt;/a&gt;
-  &lt;/div&gt;
-  &lt;/p&gt;
+* **Hubbers (GitHub employees):** See [CONTRIBUTING.md](https://github.com/github/docs-content/blob/main/CONTRIBUTING.md) in the `docs-content` repository for GitHub-specific processes.
 
-   &lt;div align=&quot;center&quot;&gt;
+* **Open source contributors:** See [CONTRIBUTING.md](https://github.com/github/docs/blob/main/.github/CONTRIBUTING.md) in the `docs` repository for a quick-start summary.
 
-  [![License](https://img.shields.io/badge/license-MIT-%23d43e4c)](https://github.com/sparkjsdev/spark/blob/main/LICENSE)
-  [![npm version](https://img.shields.io/npm/v/@sparkjsdev/spark?color=d43e4c)](https://www.npmjs.com/package/@sparkjsdev/spark)
+## How we sync changes across Docs repositories
 
-  &lt;/div&gt;
+There are two GitHub Docs repositories: 
 
-&lt;p&gt;
-  &lt;a href=&quot;https://sparkjs.dev&quot; target=&quot;_blank&quot;&gt;
-    &lt;picture&gt;
-    &lt;/picture&gt;
-  &lt;/a&gt;
+- **`github/docs`** (public): Open to external contributions
 
-## Features
+- **`github/docs-internal`** (private): For GitHub employee contributions. 
 
-- Integrates with THREE.js rendering pipeline to fuse splat and mesh-based objects
-- Portable: Works across almost all devices, targeting 98%+ WebGL2 support
-- Renders fast even on low-powered mobile devices
-- Render multiple splat objects together with correct sorting
-- Most major splat file formats supported including: [.PLY](https://github.com/graphdeco-inria/gaussian-splatting) (also [compressed](https://blog.playcanvas.com/compressing-gaussian-splats/#compressed-ply-format)), [.SPZ](https://github.com/nianticlabs/spz), [.SPLAT](https://github.com/antimatter15/splat), [.KSPLAT](https://github.com/mkkellogg/GaussianSplats3D), [.SOG](https://developer.playcanvas.com/user-manual/gaussian-splatting/formats/sog/)
-- Render multiple viewpoints simultaneously
-- Fully dynamic: each splat can be transformed and edited for animation
-- Real-time splat color editing, displacement, and skeletal animation
-- Shader graph system to dynamically create/edit splats on the GPU
+The two repositories sync frequently. Content changes in one are reflected in the other.  Hubbers might prefer to post in `docs` when working with a customer, but `docs` has limitations on the types of contributions it accepts to safeguard the site and our workflows. Internal contributions should usually go to `docs-internal`.
 
-Check out all the [examples](https://sparkjs.dev/examples/)
+**Important:** The `docs` repository accepts contributions to content files (`.md` files in `/content` and select `/data` sections like reusables only). Infrastructure files, workflows, and site-building code are not open for external modification.
 
-## Getting Started
+## New to contributing
 
-### Copy Code
+Here are some resources to help you get started with open source contributions:
 
-Copy the following code into an `index.html` file.
-
-
-```html
-&lt;style&gt; body {margin: 0;} &lt;/style&gt;
-&lt;script type=&quot;importmap&quot;&gt;
-  {
-    &quot;imports&quot;: {
-      &quot;three&quot;: &quot;https://cdnjs.cloudflare.com/ajax/libs/three.js/0.178.0/three.module.js&quot;,
-      &quot;@sparkjsdev/spark&quot;: &quot;https://sparkjs.dev/releases/spark/0.1.10/spark.module.js&quot;
-    }
-  }
-&lt;/script&gt;
-&lt;script type=&quot;module&quot;&gt;
-  import * as THREE from &quot;three&quot;;
-  import { SplatMesh } from &quot;@sparkjsdev/spark&quot;;
-
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  document.body.appendChild(renderer.domElement)
-
-  const splatURL = &quot;https://sparkjs.dev/assets/splats/butterfly.spz&quot;;
-  const butterfly = new SplatMesh({ url: splatURL });
-  butterfly.quaternion.set(1, 0, 0, 0);
-  butterfly.position.set(0, 0, -3);
-  scene.add(butterfly);
-
-  renderer.setAnimationLoop(function animate(time) {
-    renderer.render(scene, camera);
-    butterfly.rotation.y += 0.01;
-  });
-&lt;/script&gt;
-```
-
-### Web Editor
-
-Remix the [glitch starter template](https://glitch.com/edit/#!/sparkjs-dev)
-
-### CDN
-
-```html
-&lt;script type=&quot;importmap&quot;&gt;
-  {
-    &quot;imports&quot;: {
-      &quot;three&quot;: &quot;https://cdnjs.cloudflare.com/ajax/libs/three.js/0.178.0/three.module.js&quot;,
-      &quot;@sparkjsdev/spark&quot;: &quot;https://sparkjs.dev/releases/spark/0.1.9/spark.module.js&quot;
-     }
-  }
-&lt;/script&gt;
-```
-
-### NPM
-
-```shell
-npm install @sparkjsdev/spark
-```
-
-## Run Examples locally
-
-Install [Rust](https://www.rust-lang.org/tools/install) if it&#039;s not already installed in your machine.
-
-Next, build Spark by running:
-```
-npm install
-npm run build
-```
-This will first build the Rust Wasm component (can be invoked via `npm run build:wasm`), then Spark itself (`npm run build`).
-
-The examples fetch assets from a remote URL. This step is optional, but offline development and faster loading times are possible if you download and cache the assets files locally with the following command:
-```
-npm run assets:download
-```
-
-Once you&#039;ve built Spark and optionally downloaded the assets, you can now run the examples:
-```
-npm start
-```
-This will run a dev server by default at [http://localhost:8080/](http://localhost:8080/). Check the console log output to see if yours is served on a different port.
-
-## Develop and contribute to the project
-
-### Build troubleshooting
-
-First try cleaning all the build files and re-building everything:
-```
-npm run clean
-npm install
-npm run build
-```
-
-There&#039;s no versioning system for assets. If you need to re-download a specific file you can delete that asset file individually or download all assets from scratch:
-
-```
- npm run assets:clean
- npm run assets:download
-```
-
-### Ignore dist directory during development
-
-To ignore the dist directory and prevent accidental commits and merge conflicts
-
-```
-git update-index --assume-unchanged dist/*
-```
-
-To revert and be able to commit into to the dist directory again:
-
-```
-git update-index --no-assume-unchanged dist/*
-```
-
-To list ignored files in case of need to troubleshoot
-
-```
-git ls-files -v | grep &#039;^[a-z]&#039; | cut -c3-
-```
-
-### Build docs and site
-
-Install [Mkdocs Material](https://squidfunk.github.io/mkdocs-material/)
-
-```
-pip install mkdocs-material
-```
-
-If you hit an `externally managed environment` error on macOS and if you installed python via `brew` try:
-
-```
-brew install mkdocs-material
-```
-
-Edit markdown in `/docs` directory
-
-```
-npm run docs
-```
-
-### Build Spark website
-
-Build the static site and docs in a `site` directory.
-
-```
-npm run site:build
-```
-
-You can run any static server in the `site` directory but for convenience you can run
-
-```
-npm run site:serve
-```
-
-### Deploy Spark website
-
-The following command will generate a static site from the `docs` directory and push it to the [repo](https://github.com/sparkjsdev/sparkjsdev.github.io) that hosts the site via `gh-pages`
-
-```
-npm run site:deploy
-```
-
-### Compress splats
-
-To compress a splat to [spz](https://scaniverse.com/spz) run
-
-`npm run assets:compress &lt;file or URL to ply&gt;`
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[hoppscotch/hoppscotch]]></title>
-            <link>https://github.com/hoppscotch/hoppscotch</link>
-            <guid>https://github.com/hoppscotch/hoppscotch</guid>
-            <pubDate>Sun, 21 Dec 2025 00:05:32 GMT</pubDate>
-            <description><![CDATA[Open-Source API Development Ecosystem • https://hoppscotch.io • Offline, On-Prem & Cloud • Web, Desktop & CLI • Open-Source Alternative to Postman, Insomnia]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/hoppscotch/hoppscotch">hoppscotch/hoppscotch</a></h1>
-            <p>Open-Source API Development Ecosystem • https://hoppscotch.io • Offline, On-Prem & Cloud • Web, Desktop & CLI • Open-Source Alternative to Postman, Insomnia</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 77,353</p>
-            <p>Forks: 5,472</p>
-            <p>Stars today: 17 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://hoppscotch.io&quot;&gt;
-    &lt;img
-      src=&quot;https://avatars.githubusercontent.com/u/56705483&quot;
-      alt=&quot;Hoppscotch&quot;
-      height=&quot;64&quot;
-    /&gt;
-  &lt;/a&gt;
-  &lt;h3&gt;
-    &lt;b&gt;
-      Hoppscotch
-    &lt;/b&gt;
-  &lt;/h3&gt;
-  &lt;b&gt;
-    Open Source API Development Ecosystem
-  &lt;/b&gt;
-  &lt;p&gt;
-
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen?logo=github)](CODE_OF_CONDUCT.md) [![Website](https://img.shields.io/website?url=https%3A%2F%2Fhoppscotch.io&amp;logo=hoppscotch)](https://hoppscotch.io) [![Tests](https://github.com/hoppscotch/hoppscotch/actions/workflows/tests.yml/badge.svg)](https://github.com/hoppscotch/hoppscotch/actions) [![Tweet](https://img.shields.io/twitter/url?url=https%3A%2F%2Fhoppscotch.io%2F)](https://x.com/share?text=%F0%9F%91%BD%20Hoppscotch%20%E2%80%A2%20Open%20source%20API%20development%20ecosystem%20-%20Helps%20you%20create%20requests%20faster,%20saving%20precious%20time%20on%20development.&amp;url=https://hoppscotch.io&amp;hashtags=hoppscotch&amp;via=hoppscotch_io)
-
-  &lt;/p&gt;
-  &lt;p&gt;
-    &lt;sub&gt;
-      Built with ❤︎ by
-      &lt;a href=&quot;https://github.com/hoppscotch/hoppscotch/graphs/contributors&quot;&gt;
-        contributors
-      &lt;/a&gt;
-    &lt;/sub&gt;
-  &lt;/p&gt;
-  &lt;br /&gt;
-  &lt;p&gt;
-    &lt;a href=&quot;https://hoppscotch.io&quot;&gt;
-      &lt;picture&gt;
-        &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;./packages/hoppscotch-common/public/images/banner-dark.png&quot;&gt;
-        &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;./packages/hoppscotch-common/public/images/banner-light.png&quot;&gt;
-        &lt;img alt=&quot;Hoppscotch&quot; src=&quot;./packages/hoppscotch-common/public/images/banner-dark.png&quot;&gt;
-      &lt;/picture&gt;
-    &lt;/a&gt;
-  &lt;/p&gt;
-&lt;/div&gt;
-
-_We highly recommend you take a look at the [**Hoppscotch Documentation**](https://docs.hoppscotch.io) to learn more about the app._
-
-#### **Support**
-
-[![Chat on Discord](https://img.shields.io/badge/chat-Discord-7289DA?logo=discord)](https://hoppscotch.io/discord) [![Chat on Telegram](https://img.shields.io/badge/chat-Telegram-2CA5E0?logo=telegram)](https://hoppscotch.io/telegram) [![Discuss on GitHub](https://img.shields.io/badge/discussions-GitHub-333333?logo=github)](https://github.com/hoppscotch/hoppscotch/discussions)
-
-### **Features**
-
-❤️ **Lightweight:** Crafted with minimalistic UI design.
-
-⚡️ **Fast:** Send requests and get responses in real time.
-
-🗄️ **HTTP Methods:** Request methods define the type of action you are requesting to be performed.
-
-- `GET` - Requests retrieve resource information
-- `POST` - The server creates a new entry in a database
-- `PUT` - Updates an existing resource
-- `PATCH` - Very similar to `PUT` but makes a partial update on a resource
-- `DELETE` - Deletes resource or related component
-- `HEAD` - Retrieve response headers identical to those of a GET request, but without the response body.
-- `CONNECT` - Establishes a tunnel to the server identified by the target resource
-- `OPTIONS` - Describe the communication options for the target resource
-- `TRACE` - Performs a message loop-back test along the path to the target resource
-- `&lt;custom&gt;` - Some APIs use custom request methods such as `LIST`. Type in your custom methods.
-
-🌈 **Theming:** Customizable combinations for background, foreground, and accent colors — [customize now](https://hoppscotch.io/settings).
-
-- Choose a theme: System preference, Light, Dark, and Black
-- Choose accent colors: Green, Teal, Blue, Indigo, Purple, Yellow, Orange, Red, and Pink
-- Distraction-free Zen mode
-
-_Customized themes are synced with your cloud/local session._
-
-🔥 **PWA:** Install as a [Progressive Web App](https://web.dev/progressive-web-apps) on your device.
-
-- Instant loading with Service Workers
-- Offline support
-- Low RAM/memory and CPU usage
-- Add to Home Screen
-- Desktop PWA
-
-🚀 **Request:** Retrieve response from endpoint instantly.
-
-1. Choose `method`
-2. Enter `URL`
-3. Send
-
-- Copy/share public &quot;Share URL&quot;
-- Generate/copy request code snippets for 10+ languages and frameworks
-- Import `cURL`
-- Label requests
-
-🔌 **WebSocket:** Establish full-duplex communication channels over a single TCP connection.
-
-📡 **Server-Sent Events:** Receive a stream of updates from a server over an HTTP connection without resorting to polling.
-
-🌩 **Socket.IO:** Send and Receive data with the SocketIO server.
-
-🦟 **MQTT:** Subscribe and Publish to topics of an MQTT Broker.
-
-🔮 **GraphQL:** GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.
-
-- Set endpoint and get schema
-- Multi-column docs
-- Set custom request headers
-- Query schema
-- Get query response
-
-🔐 **Authorization:** Allows to identify the end-user.
-
-- None
-- Basic
-- Bearer Token
-- OAuth 2.0
-- OIDC Access Token/PKCE
-
-📢 **Headers:** Describes the format the body of your request is being sent in.
-
-📫 **Parameters:** Use request parameters to set varying parts in simulated requests.
-
-📃 **Request Body:** Used to send and receive data via the REST API.
-
-- Set `Content Type`
-- FormData, JSON, and many more
-- Toggle between key-value and RAW input parameter list
-
-📮 **Response:** Contains the status line, headers, and the message/response body.
-
-- Copy the response to the clipboard
-- Download the response as a file
-- View response headers
-- View raw and preview HTML, image, JSON, and XML responses
-
-⏰ **History:** Request entries are synced with your cloud/local session storage.
-
-📁 **Collections:** Keep your API requests organized with collections and folders. Reuse them with a single click.
-
-- Unlimited collections, folders, and requests
-- Nested folders
-- Export and import as a file or GitHub gist
-
-_Collections are synced with your cloud/local session storage._
-
-📜 **Pre-Request Scripts:** Snippets of code associated with a request that is executed before the request is sent.
-
-- Set environment variables
-- Include timestamp in the request headers
-- Send a random alphanumeric string in the URL parameters
-- Any JavaScript functions
-
-👨‍👩‍👧‍👦 **Teams:** Helps you collaborate across your teams to design, develop, and test APIs faster.
-
-- Create unlimited teams
-- Create unlimited shared collections
-- Create unlimited team members
-- Role-based access control
-- Cloud sync
-- Multiple devices
-
-👥 **Workspaces:** Organize your personal and team collections environments into workspaces. Easily switch between workspaces to manage multiple projects.
-
-- Create unlimited workspaces
-- Switch between personal and team workspaces
-
-⌨️ **Keyboard Shortcuts:** Optimized for efficiency.
-
-&gt; **[Read our documentation on Keyboard Shortcuts](https://docs.hoppscotch.io/documentation/features/shortcuts)**
-
-🌐 **Proxy:** Enable Proxy Mode from Settings to access blocked APIs.
-
-- Hide your IP address
-- Fixes [`CORS`](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) (Cross-Origin Resource Sharing) issues
-- Access APIs served in non-HTTPS (`http://`) endpoints
-- Use your Proxy URL
-
-_Official proxy server is hosted by Hoppscotch - **[GitHub](https://github.com/hoppscotch/proxyscotch)** - **[Privacy Policy](https://docs.hoppscotch.io/support/privacy)**._
-
-🌎 **i18n:** Experience the app in your language.
-
-Help us to translate Hoppscotch. Please read [`TRANSLATIONS`](TRANSLATIONS.md) for details on our [`CODE OF CONDUCT`](CODE_OF_CONDUCT.md) and the process for submitting pull requests to us.
-
-☁️ **Auth + Sync:** Sign in and sync your data in real-time across all your devices.
-
-**Sign in with:**
-
-- GitHub
-- Google
-- Microsoft
-- Email
-- SSO (Single Sign-On)[^EE]
-
-**🔄 Synchronize your data:** Handoff to continue tasks on your other devices.
-
-- Workspaces
-- History
-- Collections
-- Environments
-- Settings
-
-✅ **Post-Request Tests:** Write tests associated with a request that is executed after the request&#039;s response.
-
-- Check the status code as an integer
-- Filter response headers
-- Parse the response data
-- Set environment variables
-- Write JavaScript code
-
-🌱 **Environments:** Environment variables allow you to store and reuse values in your requests and scripts.
-
-- Unlimited environments and variables
-- Initialize through the pre-request script
-- Export as / import from GitHub gist
-
-&lt;details&gt;
-  &lt;summary&gt;&lt;i&gt;Use-cases&lt;/i&gt;&lt;/summary&gt;
-
----
-
-- By storing a value in a variable, you can reference it throughout your request section
-- If you need to update the value, you only have to change it in one place
-- Using variables increases your ability to work efficiently and minimizes the likelihood of error
-
----
-
-&lt;/details&gt;
-
-🚚 **Bulk Edit:** Edit key-value pairs in bulk.
-
-- Entries are separated by newline
-- Keys and values are separated by `:`
-- Prepend `#` to any row you want to add but keep disabled
-
-🎛️ **Admin dashboard:** Manage your team and invite members.
-
-- Insights
-- Manage users
-- Manage teams
-
-📦 **Add-ons:** Official add-ons for hoppscotch.
-
-- **[Hoppscotch CLI](https://github.com/hoppscotch/hoppscotch/tree/main/packages/hoppscotch-cli)** - Command-line interface for Hoppscotch.
-- **[Proxy](https://github.com/hoppscotch/proxyscotch)** - A simple proxy server created for Hoppscotch.
-- **[Browser Extensions](https://github.com/hoppscotch/hoppscotch-extension)** - Browser extensions that enhance your Hoppscotch experience.
-
-  [![Firefox](https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_16x16.png) **Firefox**](https://addons.mozilla.org/en-US/firefox/addon/hoppscotch) &amp;nbsp;|&amp;nbsp; [![Chrome](https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_16x16.png) **Chrome**](https://chrome.google.com/webstore/detail/hoppscotch-extension-for-c/amknoiejhlmhancpahfcfcfhllgkpbld)
-
-  &gt; **Extensions fix `CORS` issues.**
-
-_Add-ons are developed and maintained under **[Hoppscotch Organization](https://github.com/hoppscotch)**._
-
-**For a complete list of features, please read our [documentation](https://docs.hoppscotch.io).**
-
-## **Demo**
-
-- Web : [hoppscotch.io](https://hoppscotch.io)
-- Windows/Linux/macOS : [Desktop Apps](https://docs.hoppscotch.io/documentation/clients/desktop#download-hoppscotch-desktop-app)
-
-## Usage
-
-1. Provide your API endpoint in the URL field
-2. Click &quot;Send&quot; to simulate the request
-3. View the response
-
-## Developing
-
-Follow our [self-hosting documentation](https://docs.hoppscotch.io/documentation/self-host/getting-started) to get started with the development environment.
-
-## Contributing
-
-Please contribute using [GitHub Flow](https://guides.github.com/introduction/flow). Create a branch, add commits, and [open a pull request](https://github.com/hoppscotch/hoppscotch/compare).
-
-Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDUCT`](CODE_OF_CONDUCT.md), and the process for submitting pull requests to us.
-
-## Continuous Integration
-
-We use [GitHub Actions](https://github.com/features/actions) for continuous integration. Check out our [build workflows](https://github.com/hoppscotch/hoppscotch/actions).
-
-## Changelog
-
-See the [`CHANGELOG`](CHANGELOG.md) file for details.
-
-## Authors
-
-This project owes its existence to the collective efforts of all those who contribute — [contribute now](CONTRIBUTING.md).
-
-&lt;div align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/hoppscotch/hoppscotch/graphs/contributors&quot;&gt;
-    &lt;img src=&quot;https://opencollective.com/hoppscotch/contributors.svg?width=840&amp;button=false&quot;
-      alt=&quot;Contributors&quot;
-      width=&quot;100%&quot; /&gt;
-  &lt;/a&gt;
-&lt;/div&gt;
+* [Finding ways to contribute to open source on GitHub](https://docs.github.com/en/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github)
+* [Set up Git](https://docs.github.com/en/get-started/git-basics/set-up-git)
+* [GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)
+* [Collaborating with pull requests](https://docs.github.com/en/github/collaborating-with-pull-requests)
 
 ## License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) — see the [`LICENSE`](LICENSE) file for details.
+This project is dual-licensed under:
 
-[^EE]: Enterprise edition feature. [Learn more](https://docs.hoppscotch.io/documentation/self-host/getting-started).
+* **Creative Commons Attribution 4.0** - for documentation and content in the assets, content, and data folders (see [LICENSE](LICENSE))
+* **MIT License** - for code (see [LICENSE-CODE](LICENSE-CODE))
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[MetaMask/metamask-mobile]]></title>
-            <link>https://github.com/MetaMask/metamask-mobile</link>
-            <guid>https://github.com/MetaMask/metamask-mobile</guid>
-            <pubDate>Sun, 21 Dec 2025 00:05:31 GMT</pubDate>
-            <description><![CDATA[Mobile web browser providing access to websites that use the Ethereum blockchain]]></description>
+            <title><![CDATA[nuxt-content/docus]]></title>
+            <link>https://github.com/nuxt-content/docus</link>
+            <guid>https://github.com/nuxt-content/docus</guid>
+            <pubDate>Mon, 22 Dec 2025 00:04:55 GMT</pubDate>
+            <description><![CDATA[Write beautiful documentations with Nuxt and Markdown.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/MetaMask/metamask-mobile">MetaMask/metamask-mobile</a></h1>
-            <p>Mobile web browser providing access to websites that use the Ethereum blockchain</p>
+            <h1><a href="https://github.com/nuxt-content/docus">nuxt-content/docus</a></h1>
+            <p>Write beautiful documentations with Nuxt and Markdown.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 2,751</p>
-            <p>Forks: 1,500</p>
-            <p>Stars today: 4 stars today</p>
-            <h2>README</h2><pre>&lt;img alt=&quot;MetaMask logo&quot; src=&quot;logo.png?raw=true&quot; width=&quot;50&quot; /&gt;
+            <p>Stars: 2,390</p>
+            <p>Forks: 210</p>
+            <p>Stars today: 69 stars today</p>
+            <h2>README</h2><pre>[![docus](https://docus.dev/__og-image__/static/og.png)](https://docus.dev)
 
-# MetaMask Mobile
+&gt; Create beautiful docs with Markdown &amp; Vue components
 
-[![CI](https://github.com/MetaMask/metamask-mobile/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/MetaMask/metamask-mobile/actions/workflows/ci.yml) [![CLA](https://github.com/MetaMask/metamask-mobile/actions/workflows/cla.yml/badge.svg?branch=main)](https://github.com/MetaMask/metamask-mobile/actions/workflows/cla.yml)
+[![npm version](https://img.shields.io/npm/v/docus.svg?style=flat&amp;colorA=020420&amp;colorB=EEEEEE)](https://npmjs.com/package/docus)
+[![npm downloads](https://img.shields.io/npm/dm/docus.svg?style=flat&amp;colorA=020420&amp;colorB=EEEEEE)](https://npm.chart.dev/docus)
+[![License](https://img.shields.io/npm/l/docus.svg?style=flat&amp;colorA=020420&amp;colorB=EEEEEE)](https://npmjs.com/package/docus)
 
-MetaMask is a mobile wallet that provides easy access to websites that use the [Ethereum](https://ethereum.org/) blockchain.
+[![Install MCP in Cursor](https://mcp-toolkit.nuxt.dev/mcp/badge.svg?url=https://docus.dev/mcp)](https://docus.dev/mcp/mcp/deeplink)
+[![Install MCP in VS Code](https://mcp-toolkit.nuxt.dev/mcp/badge.svg?ide=vscode&amp;url=https://docus.dev/mcp)](https://docus.dev/mcp/mcp/deeplink?ide=vscode)
 
-For up to the minute news, follow our [Twitter](https://twitter.com/metamask) or [Medium](https://medium.com/metamask) pages.
+## 🚀 Quick Start
 
-To learn how to develop MetaMask-compatible applications, visit our [Developer Docs](https://docs.metamask.io).
-
-To learn how to contribute to the MetaMask codebase, visit our [Contributor Docs](https://github.com/MetaMask/contributor-docs).
-
-## Documentation
-
-- [Architecture](./docs/readme/architecture.md)
-- [Expo Development Environment Setup](./docs/readme/expo-environment.md)
-- [Native Development Environment Setup](./docs/readme/environment.md)
-- [Build Troubleshooting](./docs/readme/troubleshooting.md)
-- [E2E Testing](./docs/readme/e2e-testing.md)
-- [Debugging](./docs/readme/debugging.md)
-- [Performance](./docs/readme/performance.md)
-- [Release Build Profiling](./docs/readme/release-build-profiler.md)
-- [Storybook](./docs/readme/storybook.md)
-- [Miscellaneous](./docs/readme/miscellaneous.md)
-- [E2E Testing Segment Events](./docs/testing/e2e/segment-events.md)
-- [Reassure Performance Testing (pilot)](./docs/readme/reassure.md)
-
-## Getting started
-
-### Infura Project Setup
-
-MetaMask Mobile requires an Infura project ID to connect to blockchain networks.
-
-#### Internal Contributors
-
-1. Grab the `.js.env` file from 1Password, ask around for the correct vault. This file contains the `MM_INFURA_PROJECT_ID`.
-
-#### External Contributors
-
-1. Go to [https://developer.metamask.io](https://developer.metamask.io) and create an account
-2. Generate an API key
-3. Add API key to `MM_INFURA_PROJECT_ID` in `.js.env.example`
-4. Rename `.js.env.example` to `.js.env`
-5. Rebuild the app
-
-[!CAUTION]
-
-&gt; Without an Infura project ID, the app cannot connect to blockchain networks.
-
-### Using Expo (recommended)
-
-Expo is the fastest way to start developing. With the Expo framework, developers don&#039;t need to compile the native side of the application as before, hence no need for any native environment setup, developers only need to download a precompiled development build and run the javascript bundler. The development build will then connect with the bundler to load the javascript code.
-
-#### Expo Environment Setup
-
-[Install node, yarn v3 and watchman.](./docs/readme/expo-environment.md)
-
-#### Clone the project
+Create a new documentation project in seconds:
 
 ```bash
-git clone git@github.com:MetaMask/metamask-mobile.git &amp;&amp; \
-cd metamask-mobile
+# Create a new project
+npx create-docus my-docs
+
+# Or create with i18n template for multi-language docs
+npx create-docus my-docs -t i18n
+
+# Navigate to your project
+cd my-docs
+
+# Start development server
+npm run dev
 ```
 
-#### Install dependencies
+That&#039;s it! Your documentation site will be running at `http://localhost:3000`
+
+## 🎯 What it creates
+
+The CLI scaffolds a complete documentation project with:
+
+- ✨ **Beautiful Design** - Clean, modern documentation theme
+- 📱 **Responsive** - Mobile-first responsive design
+- 🌙 **Dark Mode** - Built-in dark/light mode support
+- 🌍 **Internationalization** - Native i18n support for multi-language docs
+- 🔍 **Search** - Full-text search functionality
+- 📝 **Markdown Enhanced** - Extended markdown with custom components
+- 🎨 **Customizable** - Easy theming and brand customization
+- ⚡ **Fast** - Optimized for performance with Nuxt 4
+- 🔧 **TypeScript** - Full TypeScript support
+- 🤖 **AI-Ready** - Automatic generation of `llms.txt` and `llms-full.txt` files for LLM integration
+- 🔌 **Native MCP Server** - Built-in Model Context Protocol server for AI tool integration (Cursor, VS Code, Claude, etc.)
+
+Learn more on the [Docus documentation](https://docus.dev).
+
+## 📁 Project Structure
+
+### Generated project
+
+```
+my-docs/
+├── content/              # Your markdown content
+│   ├── index.md         # Homepage
+│   └── docs/            # Documentation pages
+├── public/              # Static assets
+└── package.json         # Dependencies and scripts
+```
+
+### Optional files and folders
+
+Docus uses a layer system, you can go further and use any feature or file of a classical Nuxt project:
+
+```
+my-docs/
+├── app.config.ts        # App configuration
+├── nuxt.config.ts       # Nuxt configuration (add extra modules, components, etc.)
+├── app/                 # App directory
+│   ├── components/      # Components (add your own components)
+│   ├── layouts/         # Layouts (add your own layouts)
+│   └── pages/           # Pages (add your own pages)
+└── server/              # Server-side code (add your own server-side code)
+```
+
+### `/content` folder structure
+
+**Single language structure:**
+```
+content/
+├── index.md
+├── getting-started.md
+└── guide/
+    ├── introduction.md
+    └── configuration.md
+```
+
+**Multi-language structure (with i18n):**
+```
+content/
+├── en/
+│   ├── index.md
+│   └── guide/
+│       └── introduction.md
+└── fr/
+    ├── index.md
+    └── guide/
+        └── introduction.md
+```
+
+## ⚡ Built with
+
+Your project comes pre-configured with the best of the Nuxt ecosystem:
+
+- [Nuxt 4](https://nuxt.com) - The web framework
+- [Nuxt Content](https://content.nuxt.com/) - File-based CMS
+- [Nuxt UI](https://ui.nuxt.com) - UI components
+- [Nuxt Image](https://image.nuxt.com/) - Optimized images
+- [Tailwind CSS 4](https://tailwindcss.com/) - Utility-first CSS
+- [Docus Layer](https://www.npmjs.com/package/docus) - Documentation theme
+- [Nuxt i18n](https://i18n.nuxtjs.org/) - Internationalization
+
+## 📖 Documentation
+
+For detailed documentation on customizing your Docus project, visit the [Docus Documentation](https://docus.dev)
+
+## 🛠️ Development
+
+This repository contains the CLI tool source code.
+
+### Local Development
+
+To contribute to the CLI tool:
 
 ```bash
-yarn setup:expo
+# Clone this repository
+git clone https://github.com/nuxt-content/docus
+
+# Install dependencies
+pnpm install
+
+# Run the dev server to run the docus docs
+pnpm run dev
 ```
 
-#### Run the bundler
+### Package Structure
 
-```bash
-yarn watch
-```
+This is a monorepo containing:
 
-#### Download and install the development build
-
-- Expo development builds are hosted in [Runway](https://www.runway.team/) buckets and are made available to all contributors through the public bucket links below. A new build is generated every time a PR is merged into the `main` branch.
-
-- For Android:
-  - Download and install an `.apk` file from this [Runway bucket](https://app.runway.team/bucket/hykQxdZCEGgoyyZ9sBtkhli8wupv9PiTA6uRJf3Lh65FTECF1oy8vzkeXdmuJKhm7xGLeV35GzIT1Un7J5XkBADm5OhknlBXzA0CzqB767V36gi1F3yg3Uss) onto your Android device or emulator.
-- For iOS:
-  - Physical device
-    - Your test device needs to first be registered with our Apple developer account.
-    - Once registered, download and install an `.ipa` file from this [Runway bucket](https://app.runway.team/bucket/MV2BJmn6D5_O7nqGw8jHpATpEA4jkPrBB4EcWXC6wV7z8jgwIbAsDhE5Ncl7KwF32qRQQD9YrahAIaxdFVvLT4v3UvBcViMtT3zJdMMfkXDPjSdqVGw=) onto your device.
-  - Simulator
-    - Download and install an `.app` file from this [Runway bucket](https://app.runway.team/bucket/aCddXOkg1p_nDryri-FMyvkC9KRqQeVT_12sf6Nw0u6iGygGo6BlNzjD6bOt-zma260EzAxdpXmlp2GQphp3TN1s6AJE4i6d_9V0Tv5h4pHISU49dFk=) onto your simulator.
-    - Note: Our `.app` files are zipped and hosted under `Additional Artifacts` in the bucket. Since this hosting additional artifacts in public buckets is a relatively new feature, contributors may find that some builds are missing additional artifacts. Under the hood, these are usually associated with failed or aborted Bitrise builds. We are working with the Runway team to better filter out these builds and are subject to change in the future.
-
-#### Load the app
-
-If on a simulator:
-
-- use the initial expo screen that appears when starting the development to choose the bundler url
-- OR press &quot;a&quot; for Android or &quot;i&quot; for iOS on the terminal where the bundler is running
-
-If on a physical device:
-
-- Use the camera app to scan the QR code presented by the bundler running on the terminal
-
-That&#039;s it! This will work for any javascript development, if you need to develop or modify native code please see the next section.
-
-### Native Development
-
-If developing or modifying native code or installing any library that introduces or uses native code, it is not possible to use an Expo precompiled development build as you need to compile the native side of the application again. To do so, please follow the steps stated in this section.
-
-#### Native Environment setup
-
-Before running the app for native development, make sure your development environment has all the required tools. Several of these tools (ie Node and Ruby) may require specific versions in order to successfully build the app.
-
-[Setup your development environment](./docs/readme/environment.md)
-
-#### Building the app
-
-**Clone the project**
-
-```bash
-git clone git@github.com:MetaMask/metamask-mobile.git &amp;&amp; \
-cd metamask-mobile
-```
-
-##### Firebase Messaging Setup
-
-MetaMask uses Firebase Cloud Messaging (FCM) to enable app communications. To integrate FCM, you&#039;ll need configuration files for both iOS and Android platforms.
-
-###### Internal Contributor instructions
-
-1. Grab the `.js.env` file from 1Password, ask around for the correct vault. This file contains the `GOOGLE_SERVICES_B64_ANDROID` and `GOOGLE_SERVICES_B64_IOS` secrets that will be used to generate the relevant configuration files for IOS/Android.
-2. [Install](./README.md#install-dependencies) and [run &amp; start](./README.md#running-the-app) the application as documented below.
-
-###### External Contributor instructions
-
-As an external contributor, you need to provide your own Firebase project configuration files:
-
-- **`GoogleService-Info.plist`** (iOS)
-- **`google-services.json`** (Android)
-
-1. Create a Free Firebase Project
-   - Set up a Firebase project in the Firebase Console.
-   - Configure the project with a client package name matching `io.metamask` (IMPORTANT).
-2. Add Configuration Files
-   - Create/Update the `google-services.json` and `GoogleService-Info.plist` files in:
-   - `android/app/google-services.json` (for Android)
-   - `ios/GoogleServices/GoogleService-Info.plist` directory (for iOS)
-3. Create the correct base64 environments variables.
-
-```bash
-# Generate Android Base64 Version of Google Services
-export GOOGLE_SERVICES_B64_ANDROID=&quot;$(base64 -w0 -i ./android/app/google-services.json)&quot; &amp;&amp; echo &quot;export GOOGLE_SERVICES_B64_ANDROID=\&quot;$GOOGLE_SERVICES_B64_ANDROID\&quot;&quot; | tee -a .js.env
-
-# Generate IOS Base64 Version of Google Services
-export GOOGLE_SERVICES_B64_IOS=&quot;$(base64 -w0 -i ./ios/GoogleServices/GoogleService-Info.plist)&quot; &amp;&amp; echo &quot;export GOOGLE_SERVICES_B64_IOS=\&quot;$GOOGLE_SERVICES_B64_IOS\&quot;&quot; | tee -a .js.env
-```
-
-[!CAUTION]
-
-&gt; In case you don&#039;t provide your own Firebase project config file or run the steps above, you will face the error `No matching client found for package name &#039;io.metamask&#039;`.
-
-In case of any doubt, please follow the instructions in the link below to get your Firebase project config file.
-[Firebase Project Quickstart](https://firebaseopensource.com/projects/firebase/quickstart-js/messaging/readme/#getting_started)
-
-##### Install dependencies
-
-```bash
-yarn setup
-```
-
-_Not the usual install command, this will run scripts and a lengthy postinstall flow_
-
-#### Running the app for native development
-
-**Run Metro bundler**
-
-```bash
-yarn watch
-```
-
-_Like a local server for the app_
-
-**Run on a iOS device**
-
-```bash
-yarn start:ios
-```
-
-**Run on an Android device**
-
-```bash
-yarn start:android
-```
-
-## Development Tools
-
-### Git Hooks (Husky)
-
-This project uses [Husky](https://typicode.github.io/husky/) to run pre-commit hooks that automatically format and lint your code before commits. The pre-commit hook runs `lint-staged` which executes:
-
-- **Prettier** - Code formatting for `*.{js,jsx,ts,tsx,json,feature}` files
-- **ESLint** - Linting and auto-fixing for `*.{js,jsx,ts,tsx}` files
-
-#### Disabling Husky Locally
-
-If you need to disable Husky pre-commit hooks temporarily (e.g., for emergency commits or debugging), you have several options:
-
-##### Option 1: Skip hooks for a single commit
-
-```bash
-git commit --no-verify -m &quot;your commit message&quot;
-```
-
-##### Option 2: Bypass hooks with environment variable
-
-```bash
-# Disable for current session
-export HUSKY=0
-git commit -m &quot;your commit message&quot;
-
-# Or disable for a single command
-HUSKY=0 git commit -m &quot;your commit message&quot;
-```
-
-**Note:** While these methods allow you to bypass the pre-commit hooks, remember that the CI/CD pipeline will still run linting checks. It&#039;s recommended to fix linting issues before pushing your changes to avoid build failures.
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[google/adk-js]]></title>
-            <link>https://github.com/google/adk-js</link>
-            <guid>https://github.com/google/adk-js</guid>
-            <pubDate>Sun, 21 Dec 2025 00:05:30 GMT</pubDate>
-            <description><![CDATA[An open-source, code-first Typescript toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/google/adk-js">google/adk-js</a></h1>
-            <p>An open-source, code-first Typescript toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 478</p>
-            <p>Forks: 37</p>
-            <p>Stars today: 212 stars today</p>
-            <h2>README</h2><pre># Agent Development Kit (ADK) for TypeScript
-
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![NPM Version](https://img.shields.io/npm/v/@google/adk)](https://www.npmjs.com/package/@google/adk)
-[![r/agentdevelopmentkit](https://img.shields.io/badge/Reddit-r%2Fagentdevelopmentkit-FF4500?style=flat&amp;logo=reddit&amp;logoColor=white)](https://www.reddit.com/r/agentdevelopmentkit/)
-
-&lt;html&gt;
-    &lt;h2 align=&quot;center&quot;&gt;
-      &lt;img src=&quot;https://raw.githubusercontent.com/google/adk-python/main/assets/agent-development-kit.png&quot; width=&quot;256&quot;/&gt;
-    &lt;/h2&gt;
-    &lt;h3 align=&quot;center&quot;&gt;
-      An open-source, code-first TypeScript toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.
-    &lt;/h3&gt;
-    &lt;h3 align=&quot;center&quot;&gt;
-      Important Links:
-      &lt;a href=&quot;https://google.github.io/adk-docs/&quot;&gt;Docs&lt;/a&gt;,
-      &lt;a href=&quot;https://github.com/google/adk-samples&quot;&gt;Samples&lt;/a&gt;,
-      &lt;a href=&quot;https://github.com/google/adk-python&quot;&gt;Python ADK&lt;/a&gt;.
-      &lt;a href=&quot;https://github.com/google/adk-java&quot;&gt;Java ADK&lt;/a&gt;,
-      &lt;a href=&quot;https://github.com/google/adk-go&quot;&gt;Go ADK&lt;/a&gt; &amp;
-      &lt;a href=&quot;https://github.com/google/adk-web&quot;&gt;Web ADK&lt;/a&gt;.
-    &lt;/h3&gt;
-&lt;/html&gt;
-
-Agent Development Kit (ADK) is designed for developers seeking fine-grained
-control and flexibility when building advanced AI agents that are tightly
-integrated with services in Google Cloud. It allows you to define agent
-behavior, orchestration, and tool use directly in code, enabling robust
-debugging, versioning, and deployment anywhere – from your laptop to the cloud.
-
---------------------------------------------------------------------------------
-
-## ✨ Key Features
-
--   **Rich Tool Ecosystem**: Utilize pre-built tools, custom functions, OpenAPI
-    specs, or integrate existing tools to give agents diverse capabilities, all
-    for tight integration with the Google ecosystem.
-
--   **Code-First Development**: Define agent logic, tools, and orchestration
-    directly in TypeScript for ultimate flexibility, testability, and versioning.
-
--   **Modular Multi-Agent Systems**: Design scalable applications by composing
-    multiple specialized agents into flexible hierarchies.
-
-## 🚀 Installation
-
-If you&#039;re using npm, add the following to your dependencies:
-
-```bash
-npm install @google/adk
-```
-
-Or with yarn:
-
-```bash
-yarn add @google/adk
-```
-
-## 📚 Documentation
-
-For building, evaluating, and deploying agents by follow the TypeScript
-documentation &amp; samples:
-
-*   **[Documentation](https://google.github.io/adk-docs)**
-*   **[Samples](https://github.com/google/adk-samples)**
-
-## 🏁 Feature Highlight
-
-### Same Features &amp; Familiar Interface As Other ADKs:
-
-```typescript
-import { LlmAgent, GOOGLE_SEARCH } from &#039;@google/adk&#039;;
-
-const rootAgent = new LlmAgent({
-    name: &#039;search_assistant&#039;,
-    description: &#039;An assistant that can search the web.&#039;,
-    model: &#039;gemini-2.5-flash&#039;, // Or your preferred models
-    instruction: &#039;You are a helpful assistant. Answer user questions using Google Search when needed.&#039;,
-    tools: [GOOGLE_SEARCH],
-});
-```
-
-### Development UI
-
-Same as the Python Development UI.
-A built-in development UI to help you test, evaluate, debug, and showcase your agent(s).
-&lt;img src=&quot;https://raw.githubusercontent.com/google/adk-python/main/assets/adk-web-dev-ui-function-call.png&quot;/&gt;
-
-### Evaluate Agents
-
-Coming soon...
-
-## 🤖 A2A and ADK integration
-
-For remote agent-to-agent communication, ADK integrates with the
-[A2A protocol](https://github.com/google/A2A/).
-Examples coming soon...
-
-## 🏗️ Building the Project
-
-This project uses `esbuild` to compile and bundle the TypeScript source code.
-You can build the project using the following npm scripts:
-
-*   `npm run build`: Compiles the TypeScript code into CommonJS, ESM, and Web formats in the `dist` directory.
-*   `npm run build:bundle`: Creates bundled versions of the output for easier distribution or use in environments that don&#039;t support tree-shaking well.
-*   `npm run build:watch`: Watches for changes in the source files and automatically rebuilds the project for ESM format only.
-
-## 🤝 Contributing
-
-We welcome contributions from the community! Whether it&#039;s bug reports, feature requests, documentation improvements, or code contributions, please see our
-- [General contribution guideline and flow](https://google.github.io/adk-docs/contributing-guide/).
-- Then if you want to contribute code, please read [Code Contributing Guidelines](./CONTRIBUTING.md) to get started.
+- [**`/cli`**](https://github.com/nuxt-content/docus/tree/main/cli) - CLI tool (`create-docus`)
+- [**`/layer`**](https://github.com/nuxt-content/docus/tree/main/layer) - Docus Nuxt layer (`docus`)
+- [**`/docs`**](https://github.com/nuxt-content/docus/tree/main/docs) - Official documentation
+- [**`/.starters`**](https://github.com/nuxt-content/docus/tree/main/.starters) - Starters project
 
 ## 📄 License
 
-This project is licensed under the Apache 2.0 License - see the
-[LICENSE](LICENSE) file for details.
-
-## Preview
-
-This feature is subject to the &quot;Pre-GA Offerings Terms&quot; in the General Service
-Terms section of the
-[Service Specific Terms](https://cloud.google.com/terms/service-terms#1). Pre-GA
-features are available &quot;as is&quot; and might have limited support. For more
-information, see the
-[launch stage descriptions](https://cloud.google.com/products?hl=en#product-launch-stages).
-
---------------------------------------------------------------------------------
-
-*Happy Agent Building!*
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[mifi/lossless-cut]]></title>
-            <link>https://github.com/mifi/lossless-cut</link>
-            <guid>https://github.com/mifi/lossless-cut</guid>
-            <pubDate>Sun, 21 Dec 2025 00:05:29 GMT</pubDate>
-            <description><![CDATA[The swiss army knife of lossless video/audio editing]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/mifi/lossless-cut">mifi/lossless-cut</a></h1>
-            <p>The swiss army knife of lossless video/audio editing</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 36,241</p>
-            <p>Forks: 1,739</p>
-            <p>Stars today: 62 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-	&lt;a href=&quot;https://go.warp.dev/lossless-cut&quot; target=&quot;_blank&quot;&gt;
-		&lt;sup&gt;Special thanks to:&lt;/sup&gt;
-		&lt;br&gt;
-		&lt;img alt=&quot;Warp sponsorship&quot; width=&quot;400&quot; src=&quot;https://github.com/warpdotdev/brand-assets/blob/main/Github/Sponsor/Warp-Github-LG-02.png&quot;&gt;
-		&lt;br&gt;
-		&lt;h&gt;Warp, built for coding with multiple AI agents&lt;/b&gt;
-		&lt;br&gt;
-		&lt;sup&gt;Available for macOS, Linux and Windows&lt;/sup&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;br&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-	&lt;br&gt;
-  &lt;p&gt;&lt;a href=&quot;https://mifi.no/losslesscut/&quot;&gt;&lt;img src=&quot;src/renderer/src/icon.svg&quot; width=&quot;120&quot; alt=&quot;LosslessCut&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;b&gt;LosslessCut&lt;/b&gt;&lt;/p&gt;
-  The swiss army knife of lossless video/audio editing
-	&lt;br&gt;
-  &lt;img src=&quot;https://github.com/mifi/lossless-cut/workflows/Build/release/badge.svg&quot; /&gt;
-  &lt;a href=&quot;https://paypal.me/mifino/usd&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Donate-PayPal-green.svg&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/mifi/lossless-cut#download&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/v/release/mifi/lossless-cut&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://discord.gg/fhnEREfUJ3&quot;&gt;&lt;img src=&quot;https://img.shields.io/discord/986051448385183804&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://twitter.com/losslesscut&quot;&gt;&lt;img src=&quot;https://img.shields.io/twitter/follow/losslesscut?label=Twitter&amp;style=social&quot; alt=&quot;Twitter&quot;&gt;&lt;/a&gt;
-	&lt;br&gt;
-	&lt;br&gt;
-  &lt;a href=&quot;https://mifi.no/thanks/&quot;&gt;Thanks to my supporters&lt;/a&gt; and everyone who purchased LosslessCut!
-	&lt;br&gt;
-	&lt;br&gt;
-  &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;main_screenshot.jpg&quot; width=&quot;600&quot; alt=&quot;screenshot&quot; /&gt;&lt;/p&gt;
-	&lt;br&gt;
-	&lt;br&gt;
-&lt;/div&gt;
-
-LosslessCut aims to be the ultimate cross platform FFmpeg GUI for extremely fast and lossless operations on video, audio, subtitle and other related media files.
-The main feature is lossless trimming and cutting of video and audio files, which is great for saving space by rough-cutting your large video files taken from a video camera, GoPro, drone, etc. It lets you quickly extract the good parts from your videos and discard many gigabytes of data without doing a slow re-encode and thereby losing quality. There are also many more [use cases](#typical-workflow). Everything is extremely fast because it does an almost direct data copy, fueled by the awesome FFmpeg which does all the grunt work.
-
-## Table of contents
-
-- [Features](#features)
-- [Example lossless use cases](#example-lossless-use-cases)
-- [Download](#download)
-- [Supported formats](#supported-formats)
-- [Documentation &amp; getting started](#documentation)
-- [Video demos](#video-demos)
-- [Featured](#featured)
-- [Attributions](#attributions)
-
-## Features
-
-- Lossless cutting of most video and audio formats
-- [Smart cut](https://github.com/mifi/lossless-cut/issues/126) (experimental)
-- Losslessly cut out parts of video/audio (for cutting away commercials etc.)
-- Losslessly rearrange the order of video/audio segments
-- Lossless merge/concatenation of arbitrary files (with identical codecs parameters, e.g. from the same camera)
-- Lossless multi track/stream editing
-  - Combine arbitrary tracks from multiple files (ex. add music or subtitle track to a video file)
-  - Remove unneeded tracks
-  - Replace or re-encode only some tracks
-  - Extract all tracks from a file (extract video, audio, subtitle, attachments and other tracks from one file into separate files)
-- View technical data about all tracks. Edit file metadata, per-track metadata and per-track disposition
-- Select video/audio tracks for playback. Playback multiple audio tracks simultaneously.
-- Fast multi-file workflow (note: no mass/batch export yet)
-- Keyboard shortcut workflow
-- Losslessly remux video/audio into a different container (file) format
-- Take full-resolution snapshots from videos in JPEG/PNG format (low or high quality)
-- Export ranges of video frames to images (every nth frame, second, by scene change, best thumbnails)
-  - Export only from a selected time range (segment)
-  - Optionally include original timestamps in image file names
-- Manual input of cutpoint times
-- Apply a per-file timecode offset (and auto load timecode from file)
-- Change rotation/orientation metadata in videos
-- Timeline zoom and frame/keyframe jumping for cutting around keyframes
-- Video thumbnails and audio waveform
-- Saves per project cut segments to project file
-- View FFmpeg last command log so you can modify and re-run recent commands on the command line
-- Undo/redo
-- Advanced segment query and mutation JS-based expression language.
-- Give labels to cut segments, annotate with tags
-- [Import/export](docs.md#import--export-projects) segments: MP4/MKV chapter marks, Text file, YouTube, CSV, CUE, XML (DaVinci, Final Cut Pro) and more
-- MKV/MP4 embedded chapters marks editor
-- View subtitles
-- Customizable keyboard hotkeys
-- Black scene detection, silent audio detection, and scene change detection
-- Divide timeline into segments of length L, size (X MB), N number of segments or even randomized segments!
-- Speed up / slow down video or audio file ([changing FPS](https://github.com/mifi/lossless-cut/issues/1712))
-- Basic [CLI](cli.md) and [HTTP API](api.md)
-- Show (DJI) embedded GPS track on a map
-- Losslessly Download videos over HTTP (e.g. HLS `.m3u8`)
-
-## Example lossless use cases
-
-- Cut out commercials from a recorded TV show (and re-format from TS to MP4).
-- Remove audio tracks from a file.
-- Extract music track from a video and cut it to your needs.
-- Add music to a video (or replace existing audio track).
-- Combine audio and video tracks from separate recordings.
-- Include an external subtitle into a video
-- Quickly change a H264/H265 MKV video to MOV or MP4 for playback on iPhone.
-- Import a list of cut times from other tool as a EDL (edit decision list, CSV) and run these cuts with LosslessCut.
-- Export a list of cut times as a CSV EDL and process these in another tool.
-- Quickly cut a file by its MP4/MKV chapters.
-- Quickly cut a [YouTube video](https://youtube-dl.org/) by its chapters (or music times from a comment).
-- Change the language of a file&#039;s audio/subtitle tracks.
-- Attach cover art / thumbnail to videos / audio from an external JPEG file or from a frame on the timeline.
-- Change author, title, GPS position, recording time of a video.
-- Fix rotation of a video that has the wrong orientation flag set.
-- Loop a video / audio clip X times quickly without re-encoding, see [#284](https://github.com/mifi/lossless-cut/issues/284).
-- Convert a video or parts of it into X image files (not lossless)
-- Losslessly split a video into one file per scene (note you probably have to shift segments, see [#330](https://github.com/mifi/lossless-cut/issues/330).)
-- Cut away silent parts from an audio/video file.
-- Split video into segments to for example respect Twitter&#039;s 140 second limit.
-- Annotate each segment with one or more tags, then use those tags to organize your segments or use it to create an output folder structure or hierarchy for your segments.
-
-See also [Recipe cookbook](./recipes.md)
-
-## Download
-
-If you want to support my continued work on LosslessCut, and you want the advantage of a secure and simple installation process with automatic, stable updates, consider getting it from your favorite store:
-
-&lt;a href=&quot;https://apps.apple.com/app/id1505323402&quot;&gt;&lt;img src=&quot;mac-app-store-badge.svg&quot; alt=&quot;Mac App Store&quot; height=&quot;50&quot;/&gt;&lt;/a&gt; &lt;a href=&quot;https://www.microsoft.com/store/apps/9P30LSR4705L?cid=storebadge&amp;ocid=badge&quot;&gt;&lt;img src=&quot;ms-store-badge.svg&quot; alt=&quot;MS badge&quot; height=&quot;50&quot;/&gt;&lt;/a&gt;
-
-For Linux these are some alternatives:
-
-&lt;a href=&quot;https://snapcraft.io/losslesscut&quot;&gt;&lt;img src=&quot;https://github.com/mifi/lossless-cut/raw/master/snap-store-black.svg?sanitize=true&quot; alt=&quot;Snapcraft&quot; height=&quot;50&quot;/&gt;&lt;/a&gt; &lt;a href=&quot;https://flathub.org/apps/details/no.mifi.losslesscut&quot;&gt;&lt;img src=&quot;https://github.com/mifi/lossless-cut/raw/master/flathub-badge.svg?sanitize=true&quot; alt=&quot;Flathub&quot; height=&quot;50&quot;/&gt;&lt;/a&gt;
-
-If you prefer to download the executables manually, this will of course always be free (see also [supported operating systems](./requirements.md)):
-
-- macOS: [Intel](https://github.com/mifi/lossless-cut/releases/latest/download/LosslessCut-mac-x64.dmg) / [Apple Silicon](https://github.com/mifi/lossless-cut/releases/latest/download/LosslessCut-mac-arm64.dmg) DMG (note that PKG does **not** work)
-- Windows: [7zip](https://github.com/mifi/lossless-cut/releases/latest/download/LosslessCut-win-x64.7z) (Windows 7, 8 and 8.1 is [no longer supported after v3.50.0](./requirements.md))
-- Linux: [x64 tar.bz2](https://github.com/mifi/lossless-cut/releases/latest/download/LosslessCut-linux-x64.tar.bz2) / [x64 AppImage](https://github.com/mifi/lossless-cut/releases/latest/download/LosslessCut-linux-x86_64.AppImage) / [arm64 tar.bz2](https://github.com/mifi/lossless-cut/releases/latest/download/LosslessCut-linux-arm64.tar.bz2) / [Raspberry Pi armv7l](https://github.com/mifi/lossless-cut/releases/latest/download/LosslessCut-linux-armv7l.tar.bz2)
-- [More releases](https://github.com/mifi/lossless-cut/releases) - Note that APPX (Windows) and PKG (macOS) do **not** work)
-- [Latest nightly builds 🧪](https://mifi.no/llc/nightly/)
-
-Difference between App Stores and GitHub download? [Please see FAQ](issues.md#app-stores-and-github-difference).
-
-[![](./donate.svg)](https://mifi.no/thanks)
-
-LosslessCut is maintained by me alone and will always remain free and open source. If it&#039;s useful to you, consider supporting my work. Alternatively [donate to FFmpeg](https://www.ffmpeg.org/donations.html) because they are doing the world a huge favor.
-
-[Paypal](https://paypal.me/mifino/usd) | [crypto](https://mifi.no/thanks) | [more](https://mifi.no/thanks)
-
-## Supported formats
-
-LosslessCut uses the Chromium browser&#039;s HTML5 video player, and not all formats/codecs are [natively supported](https://www.chromium.org/audio-video). Generally, the following file formats work: `MP4`, `MOV`, `WebM`, `Matroska`, `OGG` and `WAV`. Audio codecs: `FLAC`, `MP3`, `Opus`, `PCM`, `Vorbis` and `AAC`. Video codecs: `H264`, `AV1`, `Theora`, `VP8`, `VP9` and `H265` (with hardware decoder). Learn the [difference between a codec and a format](docs.md#primer-video--audio-formats-vs-codecs). Codecs and formats not listed above can still be converted to a supported format/codec from the `File` menu (try the option *Fastest: FFmpeg-assisted playback* first). A low quality version of the file will then be created and opened in the player. Note that the actual cut/export operation will still be performed on the original file, so it will be lossless. This allows for potentially opening any file that FFmpeg is able to decode.
-
-## Documentation
-
-- **[Getting started and documentation](docs.md)**
-- [FAQ, known issues, limitations and troubleshooting](issues.md)
-- [Contributing](CONTRIBUTING.md)
-
-### Video demos
-
-- [Common features](https://www.youtube.com/watch?v=pYHMxXy05Jg)
-- [How to add a thumbnail / cover art to an MP4](https://www.youtube.com/watch?v=4pYJ93cn80E)
-- [How to add multi-language audio to a video](https://www.youtube.com/watch?v=MRBGDsuw_WU)
-- Your video here?
-
-## Featured
-
-- [Console newsletter](https://console.substack.com/p/console-93)
-- Hacker News [2024](https://news.ycombinator.com/item?id=40829494) [2022](https://news.ycombinator.com/item?id=33969490) [2020-10](https://news.ycombinator.com/item?id=24883030) [2020-01](https://news.ycombinator.com/item?id=22026412) [2016](https://news.ycombinator.com/item?id=12885585)
-- [Wikipedia](https://en.m.wikipedia.org/wiki/LosslessCut)
-- Your link here?
-- theo (YouTube) [1](https://youtu.be/FI5ba4RRE8U?t=246) [2](https://youtu.be/uaCypXEJjes?t=381)
-
-&lt;img src=&quot;https://api.star-history.com/svg?repos=mifi/lossless-cut&amp;type=Date&quot; alt=&quot;Star History Chart&quot; width=&quot;400px&quot; /&gt;
-
-## Attributions
-- App icon made by [Dimi Kazak](http://www.flaticon.com/authors/dimi-kazak &quot;Dimi Kazak&quot;) from [www.flaticon.com](http://www.flaticon.com &quot;Flaticon&quot;) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/ &quot;Creative Commons BY 3.0&quot;).
-- [Lottie animation by Chris Gannon](https://lottiefiles.com/7077-magic-flow).
-- Thanks to Adi Abinun and [@abdul-alhasany](https://github.com/mifi/lossless-cut/issues/2561) for UI work.
-- Thanks to translators who helped translate the app. [You can too!](translation.md)
-- [Thanks to everyone for supporting](https://mifi.no/thanks/) my open source work 🙌
+Published under the [MIT](LICENSE) license.
 
 ---
 
-Made with ❤️ in [🇳🇴](https://www.youtube.com/watch?v=uQIv8Vo9_Jc)
-
-[More apps by mifi.no](https://mifi.no/)
-
-Follow me on [GitHub](https://github.com/mifi/), [YouTube](https://www.youtube.com/channel/UC6XlvVH63g0H54HSJubURQA), [IG](https://www.instagram.com/mifi.no/), [Twitter](https://twitter.com/mifi_no) for more awesome content!
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[nuxt/nuxt]]></title>
-            <link>https://github.com/nuxt/nuxt</link>
-            <guid>https://github.com/nuxt/nuxt</guid>
-            <pubDate>Sun, 21 Dec 2025 00:05:28 GMT</pubDate>
-            <description><![CDATA[The Progressive Web Framework.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/nuxt/nuxt">nuxt/nuxt</a></h1>
-            <p>The Progressive Web Framework.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 59,133</p>
-            <p>Forks: 5,465</p>
-            <p>Stars today: 9 stars today</p>
-            <h2>README</h2><pre>[![Nuxt banner](./.github/assets/banner.svg)](https://nuxt.com)
-
-# Nuxt
-
-&lt;p&gt;
-  &lt;a href=&quot;https://www.npmjs.com/package/nuxt&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/v/nuxt.svg?style=flat&amp;colorA=18181B&amp;colorB=28CF8D&quot; alt=&quot;Version&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://www.npmjs.com/package/nuxt&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/dm/nuxt.svg?style=flat&amp;colorA=18181B&amp;colorB=28CF8D&quot; alt=&quot;Downloads&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/nuxt/nuxt/blob/main/LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/license/nuxt/nuxt.svg?style=flat&amp;colorA=18181B&amp;colorB=28CF8D&quot; alt=&quot;License&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://nuxt.com&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Nuxt%20Docs-18181B?logo=nuxt&quot; alt=&quot;Website&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://chat.nuxt.dev&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Nuxt%20Discord-18181B?logo=discord&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://securityscorecards.dev/&quot;&gt;&lt;img src=&quot;https://api.securityscorecards.dev/projects/github.com/nuxt/nuxt/badge&quot; alt=&quot;Nuxt openssf scorecard score&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-Nuxt is a free and open-source framework with an intuitive and extendable way to create type-safe, performant and production-grade full-stack web applications and websites with Vue.js.
-
-It provides a number of features that make it easy to build fast, SEO-friendly, and scalable web applications, including:
-- Server-side rendering, static site generation, hybrid rendering and edge-side rendering
-- Automatic routing with code-splitting and pre-fetching
-- Data fetching and state management
-- Search engine optimization and defining meta tags
-- Auto imports of components, composables and utils
-- TypeScript with zero configuration
-- Go full-stack with our server/ directory
-- Extensible with [200+ modules](https://nuxt.com/modules)
-- Deployment to a variety of [hosting platforms](https://nuxt.com/deploy)
-- ...[and much more](https://nuxt.com) 🚀
-
-### Table of Contents
-
-- 🚀 [Getting Started](#getting-started)
-- 💻 [ Vue Development](#vue-development)
-- 📖 [Documentation](#documentation)
-- 🧩 [Modules](#modules)
-- ❤️ [Contribute](#contribute)
-- 🏠 [Local Development](#local-development)
-- 🛟 [Professional Support](#professional-support)
-- 🔗 [Follow Us](#follow-us)
-- ⚖️ [License](#license)
-
----
-
-## &lt;a name=&quot;getting-started&quot;&gt;🚀 Getting Started&lt;/a&gt;
-
-Use the following command to create a new starter project. This will create a starter project with all the necessary files and dependencies:
-
-```bash
-npm create nuxt@latest &lt;my-project&gt;
-```
-
-&gt; [!TIP]
-&gt; Discover also [nuxt.new](https://nuxt.new): Open a Nuxt starter on CodeSandbox, StackBlitz or locally to get up and running in a few seconds.
-
-## &lt;a name=&quot;vue-development&quot;&gt;💻 Vue Development&lt;/a&gt;
-
-Simple, intuitive and powerful, Nuxt lets you write Vue components in a way that makes sense. Every repetitive task is automated, so you can focus on writing your full-stack Vue application with confidence.
-
-Example of an `app.vue`:
-
-```vue
-&lt;script setup lang=&quot;ts&quot;&gt;
-useSeoMeta({
-  title: &#039;Meet Nuxt&#039;,
-  description: &#039;The Intuitive Vue Framework.&#039;,
-})
-&lt;/script&gt;
-
-&lt;template&gt;
-  &lt;div id=&quot;app&quot;&gt;
-    &lt;AppHeader /&gt;
-    &lt;NuxtPage /&gt;
-    &lt;AppFooter /&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-
-&lt;style scoped&gt;
-#app {
-  background-color: #020420;
-  color: #00DC82;
-}
-&lt;/style&gt;
-```
-
-## &lt;a name=&quot;documentation&quot;&gt;📖 Documentation&lt;/a&gt;
-
-We highly recommend you take a look at the [Nuxt documentation](https://nuxt.com/docs) to level up. It’s a great resource for learning more about the framework. It covers everything from getting started to advanced topics.
-
-## &lt;a name=&quot;modules&quot;&gt;🧩 Modules&lt;/a&gt;
-
-Discover our [list of modules](https://nuxt.com/modules) to supercharge your Nuxt project, created by the Nuxt team and community.
-
-## &lt;a name=&quot;contribute&quot;&gt;❤️ Contribute&lt;/a&gt;
-
-We invite you to contribute and help improve Nuxt 💚
-
-Here are a few ways you can get involved:
-- **Reporting Bugs:** If you come across any bugs or issues, please check out the [reporting bugs guide](https://nuxt.com/docs/4.x/community/reporting-bugs) to learn how to submit a bug report.
-- **Suggestions:** Have ideas to enhance Nuxt? We&#039;d love to hear them! Check out the [contribution guide](https://nuxt.com/docs/4.x/community/contribution) to share your suggestions.
-- **Questions:** If you have questions or need assistance, the [getting help guide](https://nuxt.com/docs/4.x/community/getting-help) provides resources to help you out.
-
-## &lt;a name=&quot;local-development&quot;&gt;🏠 Local Development&lt;/a&gt;
-
-Follow the docs to [Set Up Your Local Development Environment](https://nuxt.com/docs/4.x/community/framework-contribution#setup) to contribute to the framework and documentation.
-
-## &lt;a name=&quot;professional-support&quot;&gt;🛟 Professional Support&lt;/a&gt;
-
-- Technical audit &amp; consulting: [Nuxt Experts](https://nuxt.com/enterprise/support)
-- Custom development &amp; more: [Nuxt Agencies Partners](https://nuxt.com/enterprise/agencies)
-
-## &lt;a name=&quot;follow-us&quot;&gt;🔗 Follow Us&lt;/a&gt;
-
-&lt;p valign=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://go.nuxt.com/discord&quot;&gt;&lt;img width=&quot;20px&quot; src=&quot;./.github/assets/discord.svg&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;https://go.nuxt.com/x&quot;&gt;&lt;img width=&quot;20px&quot; src=&quot;./.github/assets/twitter.svg&quot; alt=&quot;Twitter&quot;&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;https://go.nuxt.com/github&quot;&gt;&lt;img width=&quot;20px&quot; src=&quot;./.github/assets/github.svg&quot; alt=&quot;GitHub&quot;&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;https://go.nuxt.com/bluesky&quot;&gt;&lt;img width=&quot;20px&quot; src=&quot;./.github/assets/bluesky.svg&quot; alt=&quot;Bluesky&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-## &lt;a name=&quot;license&quot;&gt;⚖️ License&lt;/a&gt;
-
-[MIT](https://github.com/nuxt/nuxt/blob/main/LICENSE)
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[11cafe/jaaz]]></title>
-            <link>https://github.com/11cafe/jaaz</link>
-            <guid>https://github.com/11cafe/jaaz</guid>
-            <pubDate>Sun, 21 Dec 2025 00:05:27 GMT</pubDate>
-            <description><![CDATA[The world's first open-source multimodal creative assistant This is a substitute for Canva and Manus that prioritizes privacy and is usable locally.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/11cafe/jaaz">11cafe/jaaz</a></h1>
-            <p>The world's first open-source multimodal creative assistant This is a substitute for Canva and Manus that prioritizes privacy and is usable locally.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 5,525</p>
-            <p>Forks: 497</p>
-            <p>Stars today: 42 stars today</p>
-            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://jaaz.app&quot; target=&quot;_blank&quot;&gt; Jaaz.app&lt;/a&gt;
-  &lt;p align=&quot;center&quot;&gt;Open source Canva AI alternative&lt;/p&gt;
-
- &lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://jaaz.app&quot;&gt;
-    &lt;img src=&quot;https://github.com/user-attachments/assets/e0cffb94-8c6f-4867-800a-c144aceb6d54&quot; alt=&quot;Jaaz Logo&quot; /&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-
-&lt;/h2&gt;
-&lt;p align=&quot;center&quot;&gt;The world&#039;s first open-source multimodal canvas creative agent&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;This is a substitute for Canva and Manus that prioritizes privacy and is usable locally.&lt;/p&gt;
-&lt;p&gt;
-  &lt;b&gt;📣 [New!] Enterprise Cloud “Full” Edition&lt;/b&gt; — Private/on-prem deployment &amp; commercial licensing (Docker image or full source). Includes all jaaz.app online features. 
-  &lt;b&gt;30% OFF&lt;/b&gt; through &lt;b&gt;Sep 15, 2025&lt;/b&gt;. 
-  &lt;a href=&quot;mailto:info@jaaz.app&quot;&gt;Contact us →&lt;/a&gt; info@jaaz.app
-  &lt;br&gt;
-  &lt;br&gt;
-  &lt;b&gt;📣 [New!] 企业云端完整版&lt;/b&gt; — 支持&lt;span&gt;私有化部署&lt;/span&gt;与&lt;span&gt;商业授权&lt;/span&gt;（Docker 镜像或源码交付），包含 jaaz.app 全量线上功能。限时 &lt;b&gt;30% OFF&lt;/b&gt;，截止 &lt;b&gt;2025-09-15&lt;/b&gt;。 
-  &lt;a href=&quot;mailto:info@jaaz.app&quot;&gt;了解/洽谈 →&lt;/a&gt; info@jaaz.app
-  
-  Download:https://github.com/11cafe/jaaz/releases
-&lt;/p&gt;
-&lt;br&gt;&lt;br&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-    &lt;a href=&quot;https://github.com/11cafe/jaaz/blob/main/README_zh.md&quot;&gt;中文版&lt;/a&gt;|
-  &lt;a href=&quot;https://mxnpt25l6k.feishu.cn/docx/LvcTdlVbFoRAZWxnhBYcqVydnpc&quot;&gt;新手指南&lt;/a&gt;
-  &lt;/p&gt;
-
-
-&lt;p align=&quot;center&quot;&gt;
- &lt;a href=&quot;https://discord.gg/dS7kuT66wc&quot;&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/Discord-5865F2?logo=discord&amp;logoColor=white&amp;style=for-the-badge&quot; alt=&quot;Discord&quot; /&gt;
-  &lt;/a&gt;
-   &lt;a href=&quot;https://github.com/11cafe/jaaz/stargazers&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/github/stars/11cafe/jaaz?style=for-the-badge&amp;logo=github&quot; alt=&quot;GitHub Stars&quot; /&gt;
-     &lt;/a&gt;  
-&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;
-Magic Canva!
-  
-&quot;Build&quot; your ideas like playing with LEGO—paint directly, point with arrows, and the AI instantly understands and generates results.
-&lt;img width=&quot;900&quot; alt=&quot;Screenshot 2025-06-02 at 3 03 49 PM&quot; src=&quot;https://github.com/user-attachments/assets/543b170c-14f7-4a73-96bd-909662138592&quot; /&gt;
-&lt;img width=&quot;900&quot; alt=&quot;Screenshot 2025-06-02 at 3 03 49 PM&quot; src=&quot;https://github.com/user-attachments/assets/7dd9af32-cc60-4145-9b30-7db96d8fa09a&quot; /&gt;
-
-
-Magic video!
-
-https://github.com/user-attachments/assets/b7abf987-c65d-49b1-8178-82770873c583
-
-
-Create Viral Shorts with a Single Sentence
-&lt;video src=&quot;https://github.com/user-attachments/assets/1c15e792-098a-4557-b310-d9c223f73442&quot; controls width=&quot;100%&quot; /&gt;
-
-
-
-
-
-
-## ✨ Getting started &amp; staying tuned with us.
-
-Star us, and you will receive all release notifications from GitHub without any delay!
-&lt;img width=&quot;900&quot; alt=&quot;Screenshot 2025-06-02 at 3 03 49 PM&quot; src=&quot;https://github.com/user-attachments/assets/1c9a3661-80a4-4fba-a30f-f469898b0aec&quot; /&gt;
-
-## ✨ Key Features
-
-🎬 One-Prompt Image &amp; Video Generation
-Turn one prompt into complete images or videos in seconds.
-
- -Supports GPT-4o, Midjourney, VEO3, Kling,veo3,seedance etc.
-
- -Auto-optimized prompts &amp; multi-turn refinement
-
-🧙 Magic Canvas&amp;Magic Video
-Prompt-free creation — build like Lego.
-
- -Simple sketching and free combination — AI instantly understands and generates.
-
- -AI understands and generates instantly
-
- -No prompt writing needed
- 
- -Describe steps simply on the video, and AI will generate following them.
-
-🖼️ Infinite Canvas &amp; Visual Storyboarding
-Plan scenes with an unlimited canvas
-
- -Link layouts, manage media visually
-
- -Real-time collaboration supported
-
-🤖 Smart AI Agent System
- -Chat to insert objects, transfer styles, control logic
-
- -Works with local (ComfyUI) &amp; cloud models
-
- -Maintains multi-character coherence
-
-⚙️ Flexible Deployment &amp; Local Assets
- -Fully offline or hybrid setup (Ollama + APIs)
-
- -Built-in library for media &amp; prompts
-
- -Cross-platform: Windows &amp; macOS
-
-🔐 Privacy &amp; Security
- -Local-first, no data leaves your device
-
- -Open-source, no tracking
-
- -Safe for commercial use — you own your data
-
----
-
-## Usage
-Download here: https://jaaz.app/
-
-Click the &quot;Log In&quot; button at the top right of the homepage to access API models. With a low-cost plan, you can seamlessly use a variety of powerful APIs.
-
-&lt;img width=&quot;400&quot; alt=&quot;Screenshot 2025-06-02 at 3 08 51 PM&quot; src=&quot;https://github.com/user-attachments/assets/0055557d-c247-4801-ac3f-01ed4fa775ae&quot; /&gt;
-
-
-Start chatting with agent to generate stories or storyboards!
-
-
-
-## Cases
-&lt;img width=&quot;889&quot; height=&quot;1103&quot; alt=&quot;Frame 122&quot; src=&quot;https://github.com/user-attachments/assets/90503110-0f5c-4297-bbfe-6d35e3f54d4c&quot; /&gt;
-
-- Prompt: Help me place this character in six different scenes, all in front of landmark buildings from around the world. The lighting is harmonious. He takes photos from all over the world, realistic, with warm light, high picture quality, and a picture ratio of 9:16
-
-![814c563b08f6ef44de0c2c31f0fdd00b-min](https://github.com/user-attachments/assets/4e2634b3-9068-47cd-a18f-ddde8f218d25)
-
-&lt;img width=&quot;1000&quot; alt=&quot;Screenshot 2025-06-02 at 3 51 56 AM&quot; src=&quot;https://github.com/user-attachments/assets/5d8efe74-99b0-41bc-aa3e-6f7b92b69c36&quot; /&gt;
-
-
-&lt;img width=&quot;900&quot; alt=&quot;Screenshot 2025-06-02 at 3 51 56 AM&quot; src=&quot;https://github.com/user-attachments/assets/186982a9-5e4e-4ac1-a42c-c840092fd616&quot; /&gt;
-
-&lt;img width=&quot;900&quot; alt=&quot;Screenshot 2025-06-02 at 3 03 49 PM&quot; src=&quot;https://github.com/user-attachments/assets/b8508efd-def8-40ed-8ab5-62ed3c26de67&quot; /&gt;
-
-![image26](https://github.com/user-attachments/assets/2065cabd-af32-43b6-bc01-59a935d9a287)
-
-## Team and Enterprise Support:
-Support for multi-user private deployment of enterprise teams, ensuring privacy and security.
-
-Please contact via email: aifoxdw@gmail.com
-
-&lt;img width=&quot;500&quot; alt=&quot;Screenshot 2025-06-02 at 3 51 56 AM&quot; src=&quot;https://github.com/user-attachments/assets/4a9eb8d2-41b4-44ff-9b17-6db937af56d2&quot; /&gt;
-
-
-## Manual Install (For Linux or local builds)
-
-🟠 **Need Python version &gt;=3.12**
-
-First git clone this repo:
-
-`git clone https://github.com/11cafe/localart`
-
-`cd react`
-
-`npm install --force`
-
-`npx vite build`
-
-`cd ../server`
-
-`pip install -r requirements.txt`
-
-`python main.py`
-
-## Development
-
-🟠 **Need Python version &gt;=3.12**
-
-VSCode/Cursor Install Extensions：
-
-- Black Formatter by ms-python (ms-python.black-formatter)
-
-`cd react`
-
-`npm install --force &amp;&amp; npm run dev`
-
-`cd server`
-
-`pip install -r requirements.txt`
-
-`python main.py`
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Docus has been entirely rewritten from scratch and is inspired from [undocs](https://github.com/unjs/undocs) made by [@pi0](https://github.com/pi0) 💚
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
@@ -2050,15 +767,15 @@ VSCode/Cursor Install Extensions：
             <title><![CDATA[firecrawl/firecrawl]]></title>
             <link>https://github.com/firecrawl/firecrawl</link>
             <guid>https://github.com/firecrawl/firecrawl</guid>
-            <pubDate>Sun, 21 Dec 2025 00:05:26 GMT</pubDate>
+            <pubDate>Mon, 22 Dec 2025 00:04:54 GMT</pubDate>
             <description><![CDATA[🔥 The Web Data API for AI - Turn entire websites into LLM-ready markdown or structured data]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></h1>
             <p>🔥 The Web Data API for AI - Turn entire websites into LLM-ready markdown or structured data</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 70,386</p>
-            <p>Forks: 5,533</p>
-            <p>Stars today: 157 stars today</p>
+            <p>Stars: 70,476</p>
+            <p>Forks: 5,537</p>
+            <p>Stars today: 120 stars today</p>
             <h2>README</h2><pre>&lt;h3 align=&quot;center&quot;&gt;
   &lt;a name=&quot;readme-top&quot;&gt;&lt;/a&gt;
   &lt;img
@@ -2656,977 +1373,943 @@ const firecrawl = new Firecrawl({ apiK
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[ChromeDevTools/chrome-devtools-mcp]]></title>
-            <link>https://github.com/ChromeDevTools/chrome-devtools-mcp</link>
-            <guid>https://github.com/ChromeDevTools/chrome-devtools-mcp</guid>
-            <pubDate>Sun, 21 Dec 2025 00:05:25 GMT</pubDate>
-            <description><![CDATA[Chrome DevTools for coding agents]]></description>
+            <title><![CDATA[danielmiessler/Personal_AI_Infrastructure]]></title>
+            <link>https://github.com/danielmiessler/Personal_AI_Infrastructure</link>
+            <guid>https://github.com/danielmiessler/Personal_AI_Infrastructure</guid>
+            <pubDate>Mon, 22 Dec 2025 00:04:53 GMT</pubDate>
+            <description><![CDATA[Personal AI Infrastructure for upgrading humans.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">ChromeDevTools/chrome-devtools-mcp</a></h1>
-            <p>Chrome DevTools for coding agents</p>
+            <h1><a href="https://github.com/danielmiessler/Personal_AI_Infrastructure">danielmiessler/Personal_AI_Infrastructure</a></h1>
+            <p>Personal AI Infrastructure for upgrading humans.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 17,401</p>
-            <p>Forks: 1,069</p>
-            <p>Stars today: 127 stars today</p>
-            <h2>README</h2><pre># Chrome DevTools MCP
+            <p>Stars: 1,662</p>
+            <p>Forks: 372</p>
+            <p>Stars today: 53 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
 
-[![npm chrome-devtools-mcp package](https://img.shields.io/npm/v/chrome-devtools-mcp.svg)](https://npmjs.org/package/chrome-devtools-mcp)
+&lt;picture&gt;
+  &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;./pai-logo.png&quot;&gt;
+  &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;./pai-logo.png&quot;&gt;
+  &lt;img alt=&quot;PAI Logo&quot; src=&quot;./pai-logo.png&quot; width=&quot;600&quot;&gt;
+&lt;/picture&gt;
 
-`chrome-devtools-mcp` lets your coding agent (such as Gemini, Claude, Cursor or Copilot)
-control and inspect a live Chrome browser. It acts as a Model-Context-Protocol
-(MCP) server, giving your AI coding assistant access to the full power of
-Chrome DevTools for reliable automation, in-depth debugging, and performance analysis.
+&lt;br/&gt;
+&lt;br/&gt;
 
-## [Tool reference](./docs/tool-reference.md) | [Changelog](./CHANGELOG.md) | [Contributing](./CONTRIBUTING.md) | [Troubleshooting](./docs/troubleshooting.md) | [Design Principles](./docs/design-principles.md)
+# Personal AI Infrastructure
 
-## Key features
+### Open-source scaffolding for building your own AI-powered operating system
 
-- **Get performance insights**: Uses [Chrome
-  DevTools](https://github.com/ChromeDevTools/devtools-frontend) to record
-  traces and extract actionable performance insights.
-- **Advanced browser debugging**: Analyze network requests, take screenshots and
-  check the browser console.
-- **Reliable automation**. Uses
-  [puppeteer](https://github.com/puppeteer/puppeteer) to automate actions in
-  Chrome and automatically wait for action results.
+&lt;br/&gt;
 
-## Disclaimers
+[![Version](https://img.shields.io/badge/version-0.9.1-blue?style=for-the-badge)](https://github.com/danielmiessler/Personal_AI_Infrastructure/releases)
+[![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-Powered-8B5CF6?style=for-the-badge)](https://claude.ai/code)
 
-`chrome-devtools-mcp` exposes content of the browser instance to the MCP clients
-allowing them to inspect, debug, and modify any data in the browser or DevTools.
-Avoid sharing sensitive or personal information that you don&#039;t want to share with
-MCP clients.
+&lt;br/&gt;
 
-## Requirements
+[**Quick Start**](#-quick-start) · [**Documentation**](#-documentation) · [**Examples**](#-examples) · [**Updating**](#-updating-pai) · [**Community**](#-community)
 
-- [Node.js](https://nodejs.org/) v20.19 or a newer [latest maintenance LTS](https://github.com/nodejs/Release#release-schedule) version.
-- [Chrome](https://www.google.com/chrome/) current stable version or newer.
-- [npm](https://www.npmjs.com/).
+&lt;br/&gt;
 
-## Getting started
+[![PAI Overview Video](https://img.youtube.com/vi/iKwRWwabkEc/maxresdefault.jpg)](https://youtu.be/iKwRWwabkEc)
 
-Add the following config to your MCP client:
+**[Watch the full PAI walkthrough](https://youtu.be/iKwRWwabkEc)** | **[Read: The Real Internet of Things](https://danielmiessler.com/blog/real-internet-of-things)**
 
-```json
-{
-  &quot;mcpServers&quot;: {
-    &quot;chrome-devtools&quot;: {
-      &quot;command&quot;: &quot;npx&quot;,
-      &quot;args&quot;: [&quot;-y&quot;, &quot;chrome-devtools-mcp@latest&quot;]
-    }
-  }
-}
-```
+---
 
-&gt; [!NOTE]  
-&gt; Using `chrome-devtools-mcp@latest` ensures that your MCP client will always use the latest version of the Chrome DevTools MCP server.
+# The best AI in the world should be available to everyone
 
-### MCP Client configuration
+&lt;picture&gt;
+  &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;docs/images/pai-overview.png&quot;&gt;
+  &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;docs/images/pai-overview.png&quot;&gt;
+  &lt;img alt=&quot;PAI Architecture Overview&quot; src=&quot;docs/images/pai-overview.png&quot; width=&quot;800&quot;&gt;
+&lt;/picture&gt;
+
+&lt;/div&gt;
+
+Right now the most powerful AI setups are being built inside companies for efficiency and profits.
+
+That&#039;s all good, but I think the purpose of technology is to serve humans—not the other way around. These new AI frameworks should be available to everyone, including people not in technology, so that regular people can use it to help them flourish.
+
+That&#039;s what PAI is. It&#039;s the foundation for building a Personal AI System that understands your larger goals and context, gets better over time, and that works for *you* because it&#039;s *yours*. Not some generic chatbot. Not some common assistant. A full platform for magnifying yourself and your impact on the world.
+
+**Related reading:**
+- [The Real Internet of Things](https://danielmiessler.com/blog/real-internet-of-things) — The vision behind PAI (full book)
+- [AI&#039;s Predictable Path: 7 Components](https://danielmiessler.com/blog/ai-predictable-path-7-components-2024) — Visual walkthrough of where AI is heading
+
+&lt;br/&gt;
+
+## What is PAI?
+
+PAI (Personal AI Infrastructure) is an open-source template for building your own AI-powered operating system. It&#039;s currently built on [Claude Code](https://claude.ai/code), but designed to be platform-independent — the architecture, skills, and workflows are structured so future migrations to other AI platforms are straightforward.
+
+&lt;picture&gt;
+  &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;docs/images/pai-infrastructure.png&quot;&gt;
+  &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;docs/images/pai-infrastructure.png&quot;&gt;
+  &lt;img alt=&quot;PAI Infrastructure Architecture&quot; src=&quot;docs/images/pai-infrastructure.png&quot; width=&quot;800&quot;&gt;
+&lt;/picture&gt;
+
+| Component | Description |
+|-----------|-------------|
+| **Skills** | Self-contained AI capabilities with routing, workflows, and documentation |
+| **Agents** | Specialized AI personalities for different tasks (engineer, researcher, designer) |
+| **Hooks** | Event-driven automation that captures work and manages state |
+| **History** | Automatic documentation system (UOCS) that captures everything |
+
+&gt; [!TIP]
+&gt; **Start clean, small, and simple.** Build the scaffolding that makes AI reliable.
+
+&lt;br/&gt;
+
+## What&#039;s New in v0.9.0
+
+Big updates! PAI is now fully **platform-agnostic** — your AI identity, your system.
+
+| Feature | Description |
+|---------|-------------|
+| 📊 **Observability Dashboard** | Real-time agent monitoring with live charts |
+| 🎭 **Genericized Identity** | Configure your DA name, it flows everywhere |
+| ⚙️ **Better Configuration** | Clear docs for all environment variables |
+
+👉 [**See full changelog**](#-updates)
+
+&lt;br/&gt;
+
+
+## 🚀 Quick Start
+
+Choose your platform:
 
 &lt;details&gt;
-  &lt;summary&gt;Amp&lt;/summary&gt;
-  Follow https://ampcode.com/manual#mcp and use the config provided above. You can also install the Chrome DevTools MCP server using the CLI:
+&lt;summary&gt;&lt;strong&gt;🍎 macOS&lt;/strong&gt;&lt;/summary&gt;
+
+&lt;br/&gt;
+
+**1. Clone PAI**
+```bash
+git clone https://github.com/danielmiessler/PAI.git ~/PAI
+```
+
+**2. Create Symlink**
+```bash
+# Remove existing ~/.claude if present (backup first if needed)
+[ -d ~/.claude ] &amp;&amp; mv ~/.claude ~/.claude.backup
+ln -s ~/PAI/.claude ~/.claude
+```
+
+**3. Run the Setup Wizard**
+```bash
+~/.claude/Tools/setup/bootstrap.sh
+```
+
+**4. Add Your API Keys**
+```bash
+cp ~/.claude/.env.example ~/.claude/.env
+nano ~/.claude/.env
+```
+
+**5. Start Claude Code**
+```bash
+source ~/.zshrc  # Load PAI environment
+claude
+```
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;🐧 Linux&lt;/strong&gt;&lt;/summary&gt;
+
+&lt;br/&gt;
+
+**1. Clone PAI**
+```bash
+git clone https://github.com/danielmiessler/PAI.git ~/PAI
+```
+
+**2. Create Symlink**
+```bash
+# Remove existing ~/.claude if present (backup first if needed)
+[ -d ~/.claude ] &amp;&amp; mv ~/.claude ~/.claude.backup
+ln -s ~/PAI/.claude ~/.claude
+```
+
+**3. Run the Setup Wizard**
+```bash
+~/.claude/Tools/setup/bootstrap.sh
+```
+
+**4. Add Your API Keys**
+```bash
+cp ~/.claude/.env.example ~/.claude/.env
+nano ~/.claude/.env
+```
+
+**5. Start Claude Code**
+```bash
+source ~/.bashrc  # Load PAI environment
+claude
+```
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;🪟 Windows&lt;/strong&gt;&lt;/summary&gt;
+
+&lt;br/&gt;
+
+**1. Clone PAI** (PowerShell)
+```powershell
+git clone https://github.com/danielmiessler/PAI.git $env:USERPROFILE\PAI
+```
+
+**2. Create Symlink** (Run PowerShell as Administrator)
+```powershell
+# Remove existing .claude if present (backup first if needed)
+if (Test-Path &quot;$env:USERPROFILE\.claude&quot;) { Rename-Item &quot;$env:USERPROFILE\.claude&quot; &quot;$env:USERPROFILE\.claude.backup&quot; }
+New-Item -ItemType SymbolicLink -Path &quot;$env:USERPROFILE\.claude&quot; -Target &quot;$env:USERPROFILE\PAI\.claude&quot;
+```
+
+**3. Run the Setup Wizard**
+```powershell
+&amp; &quot;$env:USERPROFILE\.claude\tools\setup\bootstrap.ps1&quot;
+```
+
+**4. Add Your API Keys**
+```powershell
+Copy-Item &quot;$env:USERPROFILE\.claude\.env.example&quot; &quot;$env:USERPROFILE\.claude\.env&quot;
+notepad &quot;$env:USERPROFILE\.claude\.env&quot;
+```
+
+**5. Start Claude Code**
+```powershell
+# Restart PowerShell to load environment, then:
+claude
+```
+
+&lt;/details&gt;
+
+&lt;br/&gt;
+
+&gt; [!TIP]
+&gt; The setup wizard will configure your name, email, AI assistant name, and environment variables to customize to your environment.
+
+📚 For detailed setup, see [`docs/QUICKSTART.md`](docs/QUICKSTART.md)
+
+&lt;br/&gt;
+
+## 📚 Documentation
+
+All documentation lives in the CORE skill (`.claude/Skills/CORE/`):
+
+| Document | Description |
+|----------|-------------|
+| [**CONSTITUTION.md**](.claude/Skills/CORE/CONSTITUTION.md) | System philosophy, architecture, operating principles |
+| [**SkillSystem.md**](.claude/Skills/CORE/SkillSystem.md) | **How to create your own skills** — the canonical skill structure guide |
+| [**SKILL.md**](.claude/Skills/CORE/SKILL.md) | Main PAI skill with identity, preferences, quick reference |
+| [HookSystem.md](.claude/Skills/CORE/HookSystem.md) | Event-driven automation |
+| [HistorySystem.md](.claude/Skills/CORE/HistorySystem.md) | Automatic work documentation (UOCS) |
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Additional Reference&lt;/strong&gt;&lt;/summary&gt;
+
+| Document | Description |
+|----------|-------------|
+| [Prompting.md](.claude/Skills/CORE/Prompting.md) | Prompt engineering patterns |
+| [Aesthetic.md](.claude/Skills/CORE/Aesthetic.md) | Visual design system |
+| [voice-server/README.md](.claude/voice-server/README.md) | Text-to-speech feedback |
+
+&lt;/details&gt;
+
+&lt;br/&gt;
+
+## 🎨 Examples
+
+Explore example skills in `.claude/Skills/`:
+
+| Skill | Description |
+|-------|-------------|
+| **Observability/** | Real-time agent monitoring dashboard with WebSocket streaming |
+| **BrightData/** | Four-tier progressive web scraping with automatic fallback |
+| **Fabric/** | **Native Fabric patterns** — 248 patterns run directly in Claude&#039;s context (no CLI needed) |
+| **Research/** | Multi-source research workflows |
+| **Createskill/** | Templates for creating new skills |
+
+Each skill demonstrates the skills-as-containers pattern with routing, workflows, and self-contained documentation.
+
+### Native Fabric Patterns
+
+The Fabric skill now executes patterns **natively** within Claude Code — no CLI spawning required:
+
+- **Your subscription&#039;s power** — Patterns run with your Opus/Sonnet model, not Fabric&#039;s configured model
+- **Full context** — Patterns have access to your entire conversation history
+- **Faster execution** — No process spawning overhead
+- **248 patterns included** — extract_wisdom, summarize, threat modeling, and more
 
 ```bash
-amp mcp add chrome-devtools -- npx chrome-devtools-mcp@latest
+# Update patterns from upstream
+.claude/Skills/Fabric/tools/update-patterns.sh
 ```
 
-&lt;/details&gt;
+Only use `fabric` CLI for YouTube transcripts (`-y`) or pattern updates (`-U`).
 
-&lt;details&gt;
-  &lt;summary&gt;Antigravity&lt;/summary&gt;
+&lt;br/&gt;
 
-To use the Chrome DevTools MCP server follow the instructions from &lt;a href=&quot;https://antigravity.google/docs/mcp&quot;&gt;Antigravity&#039;s docs&lt;a/&gt; to install a custom MCP server. Add the following config to the MCP servers config:
+## 🏗️ The Thirteen Founding Principles
+
+PAI is built on 13 foundational principles that define how to build reliable AI infrastructure.
+
+Complete architecture documentation: [`.claude/Skills/CORE/Architecture.md`](.claude/Skills/CORE/Architecture.md)
+
+---
+
+### 1. Clear Thinking + Prompting is King
+
+The quality of outcomes depends on the quality of thinking and prompts. Before any code, before any architecture—there must be clear thinking.
+
+&lt;img src=&quot;docs/images/principle-01-clear-thinking.png&quot; alt=&quot;Clear Thinking + Prompting&quot; width=&quot;100%&quot;&gt;
+
+---
+
+### 2. Scaffolding &gt; Model
+
+The system architecture matters more than the underlying AI model. A well-structured system with good scaffolding will outperform a more powerful model with poor structure.
+
+&lt;img src=&quot;docs/images/principle-02-scaffolding.png&quot; alt=&quot;Scaffolding &gt; Model&quot; width=&quot;100%&quot;&gt;
+
+---
+
+### 3. As Deterministic as Possible
+
+Favor predictable, repeatable outcomes over flexibility. Same input → Same output. Always.
+
+&lt;img src=&quot;docs/images/principle-03-deterministic.png&quot; alt=&quot;Deterministic Systems&quot; width=&quot;100%&quot;&gt;
+
+---
+
+### 4. Code Before Prompts
+
+Write code to solve problems, use prompts to orchestrate code. Prompts should never replicate functionality that code can provide.
+
+&lt;img src=&quot;docs/images/principle-04-code-before-prompts.png&quot; alt=&quot;Code Before Prompts&quot; width=&quot;100%&quot;&gt;
+
+---
+
+### 5. Spec / Test / Evals First
+
+Define expected behavior before writing implementation. If you can&#039;t specify it, you can&#039;t test it. If you can&#039;t test it, you can&#039;t trust it.
+
+&lt;img src=&quot;docs/images/principle-05-spec-test-evals.png&quot; alt=&quot;Spec / Test / Evals First&quot; width=&quot;100%&quot;&gt;
+
+---
+
+### 6. UNIX Philosophy
+
+Do one thing well. Compose tools through standard interfaces. Build small, focused tools—compose them for complex operations.
+
+&lt;img src=&quot;docs/images/principle-06-unix-philosophy.png&quot; alt=&quot;UNIX Philosophy&quot; width=&quot;100%&quot;&gt;
+
+---
+
+### 7. ENG / SRE Principles
+
+Apply software engineering and site reliability practices to AI systems. AI infrastructure is infrastructure—treat it with the same rigor.
+
+&lt;img src=&quot;docs/images/principle-07-eng-sre.png&quot; alt=&quot;ENG / SRE Principles&quot; width=&quot;100%&quot;&gt;
+
+---
+
+### 8. CLI as Interface
+
+Every operation should be accessible via command line. If there&#039;s no CLI command for it, you can&#039;t script it or test it reliably.
+
+&lt;img src=&quot;docs/images/principle-08-cli-interface.png&quot; alt=&quot;CLI as Interface&quot; width=&quot;100%&quot;&gt;
+
+---
+
+### 9. Goal → Code → CLI → Prompts → Agents
+
+The proper development pipeline for any new feature. Each layer builds on the previous—skip a layer, get a shaky system.
+
+&lt;img src=&quot;docs/images/principle-09-implementation-pipeline.png&quot; alt=&quot;Implementation Pipeline&quot; width=&quot;100%&quot;&gt;
+
+---
+
+### 10. Meta / Self Update System
+
+The system should be able to improve itself. A system that can&#039;t update itself will stagnate.
+
+&lt;img src=&quot;docs/images/principle-10-self-update.png&quot; alt=&quot;Self-Improving System&quot; width=&quot;100%&quot;&gt;
+
+---
+
+### 11. Custom Skill Management
+
+Skills are the organizational unit for all domain expertise. Skills are how PAI scales—each new domain gets its own skill, maintaining organization as the system grows.
+
+&lt;img src=&quot;docs/images/principle-11-skill-management.png&quot; alt=&quot;Skill Architecture&quot; width=&quot;100%&quot;&gt;
+
+---
+
+### 12. Custom History System
+
+Automatic capture and preservation of valuable work. Memory makes intelligence compound. Without history, every session starts from zero.
+
+&lt;img src=&quot;docs/images/principle-12-history-system.png&quot; alt=&quot;History System&quot; width=&quot;100%&quot;&gt;
+
+---
+
+### 13. Custom Agent Personalities / Voices
+
+Specialized agents with distinct personalities for different tasks. Personality isn&#039;t decoration—it&#039;s functional.
+
+&lt;img src=&quot;docs/images/principle-13-agent-personalities.png&quot; alt=&quot;Agent Personalities&quot; width=&quot;100%&quot;&gt;
+
+&lt;br/&gt;
+
+## 🛠️ Technology Stack
+
+| Category | Choice | Note |
+|----------|--------|------|
+| **Runtime** | Bun | NOT Node.js |
+| **Language** | TypeScript | NOT Python |
+| **Package Manager** | Bun | NOT npm/yarn/pnpm |
+| **Format** | Markdown | NOT HTML for basic content |
+| **Testing** | Vitest | When needed |
+| **Voice** | ElevenLabs | TTS integration |
+
+&lt;br/&gt;
+
+## 🔄 Updating PAI
+
+PAI includes an intelligent sideloading system that helps you update while preserving your customizations.
 
 ```bash
-{
-  &quot;mcpServers&quot;: {
-    &quot;chrome-devtools&quot;: {
-      &quot;command&quot;: &quot;npx&quot;,
-      &quot;args&quot;: [
-        &quot;chrome-devtools-mcp@latest&quot;,
-        &quot;--browser-url=http://127.0.0.1:9222&quot;,
-        &quot;-y&quot;
-      ]
-    }
-  }
-}
+# In Claude Code, run:
+/paiupdate    # or just /pa
 ```
 
-This will make the Chrome DevTools MCP server automatically connect to the browser that Antigravity is using. If you are not using port 9222, make sure to adjust accordingly.
+**What happens:**
+1. Your DA fetches the latest PAI to a staging area (doesn&#039;t touch your files)
+2. Analyzes differences between upstream and your customizations
+3. Generates a personalized report showing conflicts vs. safe updates
+4. You choose what to adopt — your DA handles the merge
 
-Chrome DevTools MCP will not start the browser instance automatically using this approach as as the Chrome DevTools MCP server runs in Antigravity&#039;s built-in browser. If the browser is not already running, you have to start it first by clicking the Chrome icon at the top right corner.
+Your custom skills, modified hooks, and personalized settings are **never blindly overwritten**. The system understands that your `env.DA`, custom environment variables, and personal tweaks are intentional.
+
+&lt;br/&gt;
+
+## 💬 Community
+
+Kai and I work hard to address issues and PRs throughout the week — we try not to get too far behind!
+
+| Channel | Link |
+|---------|------|
+| 🐛 **Issues** | [Report bugs or request features](https://github.com/danielmiessler/Personal_AI_Infrastructure/issues) |
+| 💬 **Discussions** | [Ask questions and share ideas](https://github.com/danielmiessler/Personal_AI_Infrastructure/discussions) |
+| 🎥 **Video** | [Watch the full PAI walkthrough](https://youtu.be/iKwRWwabkEc) |
+| 📝 **Blog** | [The Real Internet of Things](https://danielmiessler.com/blog/real-internet-of-things) |
+
+&lt;br/&gt;
+
+## 📝 Updates
+
+&lt;details open&gt;
+&lt;summary&gt;&lt;strong&gt;v0.9.1 (2025-12-04) — Setup Script Fix&lt;/strong&gt;&lt;/summary&gt;
+
+&lt;br/&gt;
+
+**PAI_DIR Auto-Configuration**
+- `setup.sh` now automatically configures `PAI_DIR` in `settings.json` with your actual home directory path
+- No more manual editing of `__HOME__/.claude` placeholder
+- Clear error messaging if hooks fail due to misconfigured paths
+
+**Improved Documentation**
+- Added `_setupNote` in `settings.json` explaining the fix
+- Updated `_envDocs` with troubleshooting guidance
+- QUICKSTART.md troubleshooting section for PAI_DIR issues
+
+**Bug Fix**
+- Fixes #110 — Hook failures caused by unexpanded PAI_DIR placeholder
 
 &lt;/details&gt;
 
 &lt;details&gt;
-  &lt;summary&gt;Claude Code&lt;/summary&gt;
-    Use the Claude Code CLI to add the Chrome DevTools MCP server (&lt;a href=&quot;https://docs.anthropic.com/en/docs/claude-code/mcp&quot;&gt;guide&lt;/a&gt;):
+&lt;summary&gt;&lt;strong&gt;v0.9.0 (2025-12-01) — Platform Agnostic Release&lt;/strong&gt;&lt;/summary&gt;
 
-```bash
-claude mcp add chrome-devtools npx chrome-devtools-mcp@latest
-```
+&lt;br/&gt;
 
-&lt;/details&gt;
+This release focuses on making PAI fully portable and fork-friendly. Your AI, your identity, your system.
 
-&lt;details&gt;
-  &lt;summary&gt;Cline&lt;/summary&gt;
-  Follow https://docs.cline.bot/mcp/configuring-mcp-servers and use the config provided above.
-&lt;/details&gt;
+**Observability Dashboard**
+- Complete real-time agent monitoring at `.claude/Skills/Observability/`
+- WebSocket streaming of all agent activity
+- Live pulse charts, event timelines, and swim lanes
+- Multiple themes (Tokyo Night, Nord, Catppuccin, etc.)
+- Security obfuscation for sensitive data
 
-&lt;details&gt;
-  &lt;summary&gt;Codex&lt;/summary&gt;
-  Follow the &lt;a href=&quot;https://github.com/openai/codex/blob/main/docs/advanced.md#model-context-protocol-mcp&quot;&gt;configure MCP guide&lt;/a&gt;
-  using the standard config from above. You can also install the Chrome DevTools MCP server using the Codex CLI:
+**Genericized Agent Identity**
+- All agent references now use `process.env.DA || &#039;main&#039;`
+- No more hardcoded names — your DA name flows through the entire system
+- Observability dashboard shows your configured identity
 
-```bash
-codex mcp add chrome-devtools -- npx chrome-devtools-mcp@latest
-```
+**Platform-Agnostic Configuration**
+- Clear separation: `settings.json` for identity/paths, `.env` for API keys
+- `DA` (Digital Assistant name) — your AI&#039;s identity
+- `PAI_DIR` — root directory for all configuration
+- `TIME_ZONE` — configurable timezone for timestamps
 
-**On Windows 11**
-
-Configure the Chrome install location and increase the startup timeout by updating `.codex/config.toml` and adding the following `env` and `startup_timeout_ms` parameters:
-
-```
-[mcp_servers.chrome-devtools]
-command = &quot;cmd&quot;
-args = [
-    &quot;/c&quot;,
-    &quot;npx&quot;,
-    &quot;-y&quot;,
-    &quot;chrome-devtools-mcp@latest&quot;,
-]
-env = { SystemRoot=&quot;C:\\Windows&quot;, PROGRAMFILES=&quot;C:\\Program Files&quot; }
-startup_timeout_ms = 20_000
-```
+**Skill System Improvements**
+- Canonical TitleCase file naming throughout
+- Standardized skill-workflow-notification script for dashboard detection
+- All paths use `${PAI_DIR}/` for location-agnostic installation
 
 &lt;/details&gt;
 
 &lt;details&gt;
-  &lt;summary&gt;Copilot CLI&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;v0.8.0 (2025-11-25) — Research &amp; Documentation&lt;/strong&gt;&lt;/summary&gt;
 
-Start Copilot CLI:
+&lt;br/&gt;
 
-```
-copilot
-```
+**Research Skill**
+- Comprehensive research skill with 10 specialized workflows
+- Multi-source research with parallel agent execution
+- Fabric pattern integration (242+ AI patterns)
 
-Start the dialog to add a new MCP server by running:
-
-```
-/mcp add
-```
-
-Configure the following fields and press `CTRL+S` to save the configuration:
-
-- **Server name:** `chrome-devtools`
-- **Server Type:** `[1] Local`
-- **Command:** `npx -y chrome-devtools-mcp@latest`
+**Infrastructure**
+- Path standardization using `${PAI_DIR}/` throughout
+- `PAI_CONTRACT.md` defining core guarantees
+- Self-test validation system for health checks
+- Protection system for PAI-specific files
 
 &lt;/details&gt;
 
 &lt;details&gt;
-  &lt;summary&gt;Copilot / VS Code&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;v0.7.0 (2025-11-20) — Protection &amp; Clarity&lt;/strong&gt;&lt;/summary&gt;
 
-**Click the button to install:**
+&lt;br/&gt;
 
-[&lt;img src=&quot;https://img.shields.io/badge/VS_Code-VS_Code?style=flat-square&amp;label=Install%20Server&amp;color=0098FF&quot; alt=&quot;Install in VS Code&quot;&gt;](https://vscode.dev/redirect/mcp/install?name=io.github.ChromeDevTools%2Fchrome-devtools-mcp&amp;config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22chrome-devtools-mcp%22%5D%2C%22env%22%3A%7B%7D%7D)
+**PAI Path Resolution System** (#112)
+- Centralized `pai-paths.ts` library — single source of truth
+- Smart detection with fallback to `~/.claude`
+- Updated 7 hooks to use centralized paths
 
-[&lt;img src=&quot;https://img.shields.io/badge/VS_Code_Insiders-VS_Code_Insiders?style=flat-square&amp;label=Install%20Server&amp;color=24bfa5&quot; alt=&quot;Install in VS Code Insiders&quot;&gt;](https://insiders.vscode.dev/redirect?url=vscode-insiders%3Amcp%2Finstall%3F%257B%2522name%2522%253A%2522io.github.ChromeDevTools%252Fchrome-devtools-mcp%2522%252C%2522config%2522%253A%257B%2522command%2522%253A%2522npx%2522%252C%2522args%2522%253A%255B%2522-y%2522%252C%2522chrome-devtools-mcp%2522%255D%252C%2522env%2522%253A%257B%257D%257D%257D)
+**PAI vs Kai Clarity** (#113)
+- `PAI_CONTRACT.md` — official contract defining boundaries
+- Self-test system (`bun ${PAI_DIR}/hooks/self-test.ts`)
+- Clear README section distinguishing PAI from Kai
 
-**Or install manually:**
-
-Follow the MCP install &lt;a href=&quot;https://code.visualstudio.com/docs/copilot/chat/mcp-servers#_add-an-mcp-server&quot;&gt;guide&lt;/a&gt;,
-with the standard config from above. You can also install the Chrome DevTools MCP server using the VS Code CLI:
-
-```bash
-code --add-mcp &#039;{&quot;name&quot;:&quot;io.github.ChromeDevTools/chrome-devtools-mcp&quot;,&quot;command&quot;:&quot;npx&quot;,&quot;args&quot;:[&quot;-y&quot;,&quot;chrome-devtools-mcp&quot;],&quot;env&quot;:{}}&#039;
-```
-
-&lt;/details&gt;
-
-&lt;details&gt;
-  &lt;summary&gt;Cursor&lt;/summary&gt;
-
-**Click the button to install:**
-
-[&lt;img src=&quot;https://cursor.com/deeplink/mcp-install-dark.svg&quot; alt=&quot;Install in Cursor&quot;&gt;](https://cursor.com/en/install-mcp?name=chrome-devtools&amp;config=eyJjb21tYW5kIjoibnB4IC15IGNocm9tZS1kZXZ0b29scy1tY3BAbGF0ZXN0In0%3D)
-
-**Or install manually:**
-
-Go to `Cursor Settings` -&gt; `MCP` -&gt; `New MCP Server`. Use the config provided above.
+**Protection System**
+- `.pai-protected.json` manifest of protected files
+- `validate-protected.ts` script for pre-commit validation
+- Pre-commit hook template for automated checks
 
 &lt;/details&gt;
 
 &lt;details&gt;
-  &lt;summary&gt;Factory CLI&lt;/summary&gt;
-Use the Factory CLI to add the Chrome DevTools MCP server (&lt;a href=&quot;https://docs.factory.ai/cli/configuration/mcp&quot;&gt;guide&lt;/a&gt;):
+&lt;summary&gt;&lt;strong&gt;v0.6.5 (2025-11-18) — BrightData Integration&lt;/strong&gt;&lt;/summary&gt;
 
-```bash
-droid mcp add chrome-devtools &quot;npx -y chrome-devtools-mcp@latest&quot;
-```
+&lt;br/&gt;
 
-&lt;/details&gt;
-
-&lt;details&gt;
-  &lt;summary&gt;Gemini CLI&lt;/summary&gt;
-Install the Chrome DevTools MCP server using the Gemini CLI.
-
-**Project wide:**
-
-```bash
-gemini mcp add chrome-devtools npx chrome-devtools-mcp@latest
-```
-
-**Globally:**
-
-```bash
-gemini mcp add -s user chrome-devtools npx chrome-devtools-mcp@latest
-```
-
-Alternatively, follow the &lt;a href=&quot;https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md#how-to-set-up-your-mcp-server&quot;&gt;MCP guide&lt;/a&gt; and use the standard config from above.
+**Four-Tier Progressive Web Scraping**
+- Tier 1: WebFetch (free, built-in)
+- Tier 2: cURL with headers (free, more reliable)
+- Tier 3: Playwright (free, JavaScript rendering)
+- Tier 4: Bright Data MCP (paid, anti-bot bypass)
 
 &lt;/details&gt;
 
 &lt;details&gt;
-  &lt;summary&gt;Gemini Code Assist&lt;/summary&gt;
-  Follow the &lt;a href=&quot;https://cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer#configure-mcp-servers&quot;&gt;configure MCP guide&lt;/a&gt;
-  using the standard config from above.
-&lt;/details&gt;
+&lt;summary&gt;&lt;strong&gt;v0.6.0 (2025-11-15) — Major Architecture Update&lt;/strong&gt;&lt;/summary&gt;
 
-&lt;details&gt;
-  &lt;summary&gt;JetBrains AI Assistant &amp; Junie&lt;/summary&gt;
+&lt;br/&gt;
 
-Go to `Settings | Tools | AI Assistant | Model Context Protocol (MCP)` -&gt; `Add`. Use the config provided above.
-The same way chrome-devtools-mcp can be configured for JetBrains Junie in `Settings | Tools | Junie | MCP Settings` -&gt; `Add`. Use the config provided above.
+**Repository Restructure**
+- Moved all configuration to `.claude/` directory
+- Skills-as-containers architecture
+- Three-tier progressive disclosure
 
-&lt;/details&gt;
+**Skills System**
+- Art skill with visual content generation
+- Story-explanation skill for narrative summaries
+- Create-skill and create-cli meta-skills
 
-&lt;details&gt;
-  &lt;summary&gt;Kiro&lt;/summary&gt;
+**Hook System**
+- Comprehensive event capture system
+- Session summary and tool output capture
+- Tab title updates
 
-In **Kiro Settings**, go to `Configure MCP` &gt; `Open Workspace or User MCP Config` &gt; Use the configuration snippet provided above.
-
-Or, from the IDE **Activity Bar** &gt; `Kiro` &gt; `MCP Servers` &gt; `Click Open MCP Config`. Use the configuration snippet provided above.
-
-&lt;/details&gt;
-
-&lt;details&gt;
-  &lt;summary&gt;Qoder&lt;/summary&gt;
-
-In **Qoder Settings**, go to `MCP Server` &gt; `+ Add` &gt; Use the configuration snippet provided above.
-
-Alternatively, follow the &lt;a href=&quot;https://docs.qoder.com/user-guide/chat/model-context-protocol&quot;&gt;MCP guide&lt;/a&gt; and use the standard config from above.
+**Voice Integration**
+- Voice server with ElevenLabs TTS
+- Session start notifications
 
 &lt;/details&gt;
 
 &lt;details&gt;
-  &lt;summary&gt;Qoder CLI&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;v0.5.0 and Earlier&lt;/strong&gt;&lt;/summary&gt;
 
-Install the Chrome DevTools MCP server using the Qoder CLI (&lt;a href=&quot;https://docs.qoder.com/cli/using-cli#mcp-servsers&quot;&gt;guide&lt;/a&gt;):
+&lt;br/&gt;
 
-**Project wide:**
+**v0.5.0 — Foundation**
+- CORE skill as central context loader
+- Constitution defining system principles
+- CLI-First Architecture pattern
+- Initial skills: Fabric, FFUF, Alex Hormozi pitch
 
-```bash
-qodercli mcp add chrome-devtools -- npx chrome-devtools-mcp@latest
-```
-
-**Globally:**
-
-```bash
-qodercli mcp add -s user chrome-devtools -- npx chrome-devtools-mcp@latest
-```
-
-&lt;/details&gt;
-
-&lt;details&gt;
-  &lt;summary&gt;Visual Studio&lt;/summary&gt;
-  
-  **Click the button to install:**
-  
-  [&lt;img src=&quot;https://img.shields.io/badge/Visual_Studio-Install-C16FDE?logo=visualstudio&amp;logoColor=white&quot; alt=&quot;Install in Visual Studio&quot;&gt;](https://vs-open.link/mcp-install?%7B%22name%22%3A%22chrome-devtools%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22chrome-devtools-mcp%40latest%22%5D%7D)
-&lt;/details&gt;
-
-&lt;details&gt;
-  &lt;summary&gt;Warp&lt;/summary&gt;
-
-Go to `Settings | AI | Manage MCP Servers` -&gt; `+ Add` to [add an MCP Server](https://docs.warp.dev/knowledge-and-collaboration/mcp#adding-an-mcp-server). Use the config provided above.
+**Pre-v0.5.0 — Early Development**
+- Initial repository setup
+- Basic settings.json structure
+- Agent personality definitions
+- Foundational hook experiments
 
 &lt;/details&gt;
 
-&lt;details&gt;
-  &lt;summary&gt;Windsurf&lt;/summary&gt;
-  Follow the &lt;a href=&quot;https://docs.windsurf.com/windsurf/cascade/mcp#mcp-config-json&quot;&gt;configure MCP guide&lt;/a&gt;
-  using the standard config from above.
-&lt;/details&gt;
+&lt;br/&gt;
 
-### Your first prompt
+## 📜 License
 
-Enter the following prompt in your MCP Client to check if everything is working:
+MIT License — see [`LICENSE`](LICENSE) for details.
 
-```
-Check the performance of https://developers.chrome.com
-```
+&lt;br/&gt;
 
-Your MCP client should open the browser and record a performance trace.
+## 🙏 Acknowledgments
 
-&gt; [!NOTE]  
-&gt; The MCP server will start the browser automatically once the MCP client uses a tool that requires a running browser instance. Connecting to the Chrome DevTools MCP server on its own will not automatically start the browser.
+**Built on [Claude Code](https://code.claude.com) by Anthropic.**
 
-## Tools
+PAI is the technical foundation for [Human 3.0](https://human3.unsupervised-learning.com) — a program I created to help people transform into a version of themselves that can thrive in the post-corporate world that&#039;s coming. Human 3.0 means AI-augmented humans who build and control their own AI systems.
 
-If you run into any issues, checkout our [troubleshooting guide](./docs/troubleshooting.md).
+Right now, the most sophisticated AI infrastructure exists inside corporations with massive engineering teams. PAI exists to change that. To give individuals the same scaffolding that companies spend millions building.
 
-&lt;!-- BEGIN AUTO GENERATED TOOLS --&gt;
+Your AI, knowing how you work, learning from your patterns, serving your goals — not some corporation&#039;s engagement metrics. That&#039;s what this enables.
 
-- **Input automation** (8 tools)
-  - [`click`](docs/tool-reference.md#click)
-  - [`drag`](docs/tool-reference.md#drag)
-  - [`fill`](docs/tool-reference.md#fill)
-  - [`fill_form`](docs/tool-reference.md#fill_form)
-  - [`handle_dialog`](docs/tool-reference.md#handle_dialog)
-  - [`hover`](docs/tool-reference.md#hover)
-  - [`press_key`](docs/tool-reference.md#press_key)
-  - [`upload_file`](docs/tool-reference.md#upload_file)
-- **Navigation automation** (6 tools)
-  - [`close_page`](docs/tool-reference.md#close_page)
-  - [`list_pages`](docs/tool-reference.md#list_pages)
-  - [`navigate_page`](docs/tool-reference.md#navigate_page)
-  - [`new_page`](docs/tool-reference.md#new_page)
-  - [`select_page`](docs/tool-reference.md#select_page)
-  - [`wait_for`](docs/tool-reference.md#wait_for)
-- **Emulation** (2 tools)
-  - [`emulate`](docs/tool-reference.md#emulate)
-  - [`resize_page`](docs/tool-reference.md#resize_page)
-- **Performance** (3 tools)
-  - [`performance_analyze_insight`](docs/tool-reference.md#performance_analyze_insight)
-  - [`performance_start_trace`](docs/tool-reference.md#performance_start_trace)
-  - [`performance_stop_trace`](docs/tool-reference.md#performance_stop_trace)
-- **Network** (2 tools)
-  - [`get_network_request`](docs/tool-reference.md#get_network_request)
-  - [`list_network_requests`](docs/tool-reference.md#list_network_requests)
-- **Debugging** (5 tools)
-  - [`evaluate_script`](docs/tool-reference.md#evaluate_script)
-  - [`get_console_message`](docs/tool-reference.md#get_console_message)
-  - [`list_console_messages`](docs/tool-reference.md#list_console_messages)
-  - [`take_screenshot`](docs/tool-reference.md#take_screenshot)
-  - [`take_snapshot`](docs/tool-reference.md#take_snapshot)
+&lt;br/&gt;
 
-&lt;!-- END AUTO GENERATED TOOLS --&gt;
+---
 
-## Configuration
+&lt;div align=&quot;center&quot;&gt;
 
-The Chrome DevTools MCP server supports the following configuration option:
+**Start clean. Start small. Build the AI infrastructure you need.**
 
-&lt;!-- BEGIN AUTO GENERATED OPTIONS --&gt;
+&lt;br/&gt;
 
-- **`--autoConnect`/ `--auto-connect`**
-  If specified, automatically connects to a browser (Chrome 145+) running in the user data directory identified by the channel param. Requires remote debugging being enabled in Chrome here: chrome://inspect/#remote-debugging.
-  - **Type:** boolean
-  - **Default:** `false`
+[⬆ Back to Top](#personal-ai-infrastructure)
 
-- **`--browserUrl`/ `--browser-url`, `-u`**
-  Connect to a running, debuggable Chrome instance (e.g. `http://127.0.0.1:9222`). For more details see: https://github.com/ChromeDevTools/chrome-devtools-mcp#connecting-to-a-running-chrome-instance.
-  - **Type:** string
-
-- **`--wsEndpoint`/ `--ws-endpoint`, `-w`**
-  WebSocket endpoint to connect to a running Chrome instance (e.g., ws://127.0.0.1:9222/devtools/browser/&lt;id&gt;). Alternative to --browserUrl.
-  - **Type:** string
-
-- **`--wsHeaders`/ `--ws-headers`**
-  Custom headers for WebSocket connection in JSON format (e.g., &#039;{&quot;Authorization&quot;:&quot;Bearer token&quot;}&#039;). Only works with --wsEndpoint.
-  - **Type:** string
-
-- **`--headless`**
-  Whether to run in headless (no UI) mode.
-  - **Type:** boolean
-  - **Default:** `false`
-
-- **`--executablePath`/ `--executable-path`, `-e`**
-  Path to custom Chrome executable.
-  - **Type:** string
-
-- **`--isolated`**
-  If specified, creates a temporary user-data-dir that is automatically cleaned up after the browser is closed. Defaults to false.
-  - **Type:** boolean
-
-- **`--userDataDir`/ `--user-data-dir`**
-  Path to the user data directory for Chrome. Default is $HOME/.cache/chrome-devtools-mcp/chrome-profile$CHANNEL_SUFFIX_IF_NON_STABLE
-  - **Type:** string
-
-- **`--channel`**
-  Specify a different Chrome channel that should be used. The default is the stable channel version.
-  - **Type:** string
-  - **Choices:** `stable`, `canary`, `beta`, `dev`
-
-- **`--logFile`/ `--log-file`**
-  Path to a file to write debug logs to. Set the env variable `DEBUG` to `*` to enable verbose logs. Useful for submitting bug reports.
-  - **Type:** string
-
-- **`--viewport`**
-  Initial viewport size for the Chrome instances started by the server. For example, `1280x720`. In headless mode, max size is 3840x2160px.
-  - **Type:** string
-
-- **`--proxyServer`/ `--proxy-server`**
-  Proxy server configuration for Chrome passed as --proxy-server when launching the browser. See https://www.chromium.org/developers/design-documents/network-settings/ for details.
-  - **Type:** string
-
-- **`--acceptInsecureCerts`/ `--accept-insecure-certs`**
-  If enabled, ignores errors relative to self-signed and expired certificates. Use with caution.
-  - **Type:** boolean
-
-- **`--chromeArg`/ `--chrome-arg`**
-  Additional arguments for Chrome. Only applies when Chrome is launched by chrome-devtools-mcp.
-  - **Type:** array
-
-- **`--categoryEmulation`/ `--category-emulation`**
-  Set to false to exclude tools related to emulation.
-  - **Type:** boolean
-  - **Default:** `true`
-
-- **`--categoryPerformance`/ `--category-performance`**
-  Set to false to exclude tools related to performance.
-  - **Type:** boolean
-  - **Default:** `true`
-
-- **`--categoryNetwork`/ `--category-network`**
-  Set to false to exclude tools related to network.
-  - **Type:** boolean
-  - **Default:** `true`
-
-&lt;!-- END AUTO GENERATED OPTIONS --&gt;
-
-Pass them via the `args` property in the JSON configuration. For example:
-
-```json
-{
-  &quot;mcpServers&quot;: {
-    &quot;chrome-devtools&quot;: {
-      &quot;command&quot;: &quot;npx&quot;,
-      &quot;args&quot;: [
-        &quot;chrome-devtools-mcp@latest&quot;,
-        &quot;--channel=canary&quot;,
-        &quot;--headless=true&quot;,
-        &quot;--isolated=true&quot;
-      ]
-    }
-  }
-}
-```
-
-### Connecting via WebSocket with custom headers
-
-You can connect directly to a Chrome WebSocket endpoint and include custom headers (e.g., for authentication):
-
-```json
-{
-  &quot;mcpServers&quot;: {
-    &quot;chrome-devtools&quot;: {
-      &quot;command&quot;: &quot;npx&quot;,
-      &quot;args&quot;: [
-        &quot;chrome-devtools-mcp@latest&quot;,
-        &quot;--wsEndpoint=ws://127.0.0.1:9222/devtools/browser/&lt;id&gt;&quot;,
-        &quot;--wsHeaders={\&quot;Authorization\&quot;:\&quot;Bearer YOUR_TOKEN\&quot;}&quot;
-      ]
-    }
-  }
-}
-```
-
-To get the WebSocket endpoint from a running Chrome instance, visit `http://127.0.0.1:9222/json/version` and look for the `webSocketDebuggerUrl` field.
-
-You can also run `npx chrome-devtools-mcp@latest --help` to see all available configuration options.
-
-## Concepts
-
-### User data directory
-
-`chrome-devtools-mcp` starts a Chrome&#039;s stable channel instance using the following user
-data directory:
-
-- Linux / macOS: `$HOME/.cache/chrome-devtools-mcp/chrome-profile-$CHANNEL`
-- Windows: `%HOMEPATH%/.cache/chrome-devtools-mcp/chrome-profile-$CHANNEL`
-
-The user data directory is not cleared between runs and shared across
-all instances of `chrome-devtools-mcp`. Set the `isolated` option to `true`
-to use a temporary user data dir instead which will be cleared automatically after
-the browser is closed.
-
-### Connecting to a running Chrome instance
-
-By default, the Chrome DevTools MCP server will start a new Chrome instance with a dedicated profile. This might not be ideal in all situations:
-
-- If you would like to maintain the same application state when alternating between manual site testing and agent-driven testing.
-- When the MCP needs to sign into a website. Some accounts may prevent sign-in when the browser is controlled via WebDriver (the default launch mechanism for the Chrome DevTools MCP server).
-- If you&#039;re running your LLM inside a sandboxed environment, but you would like to connect to a Chrome instance that runs outside the sandbox.
-
-In these cases, start Chrome first and let the Chrome DevTools MCP server connect to it. There are two ways to do so:
-
-- **Automatic connection (available in Chrome 144)**: best for sharing state between manual and agent-driven testing.
-- **Manual connection via remote debugging port**: best when running inside a sandboxed environment.
-
-#### Automatically connecting to a running Chrome instance
-
-**Step 1:** Set up remote debugging in Chrome
-
-In Chrome (\&gt;= M144), do the following to set up remote debugging:
-
-1.  Navigate to `chrome://inspect/#remote-debugging` to enable remote debugging.
-2.  Follow the dialog UI to allow or disallow incoming debugging connections.
-
-**Step 2:** Configure Chrome DevTools MCP server to automatically connect to a running Chrome Instance
-
-To connect the `chrome-devtools-mcp` server to the running Chrome instance, use
-`--autoConnect` command line argument for the MCP server.
-
-The following code snippet is an example configuration for gemini-cli:
-
-```json
-{
-  &quot;mcpServers&quot;: {
-    &quot;chrome-devtools&quot;: {
-      &quot;command&quot;: &quot;npx&quot;,
-      &quot;args&quot;: [&quot;chrome-devtools-mcp@latest&quot;, &quot;--autoConnect&quot;, &quot;--channel=beta&quot;]
-    }
-  }
-}
-```
-
-Note: you have to specify `--channel=beta` until Chrome M144 has reached the
-stable channel.
-
-**Step 3:** Test your setup
-
-Make sure your browser is running. Open gemini-cli and run the following prompt:
-
-```none
-Check the performance of https://developers.chrome.com
-```
-
-&gt; [!NOTE]  
-&gt; The &lt;code&gt;autoConnect&lt;/code&gt; option requires the user to start Chrome. If the user has multiple active profiles, the MCP server will connect to the default profile (as determined by Chrome). The MCP server has access to all open windows for the selected profile.
-
-The Chrome DevTools MCP server will try to connect to your running Chrome
-instance. It shows a dialog asking for user permission.
-
-Clicking **Allow** results in the Chrome DevTools MCP server opening
-[developers.chrome.com](http://developers.chrome.com) and taking a performance
-trace.
-
-#### Manual connection using port forwarding
-
-You can connect to a running Chrome instance by using the `--browser-url` option. This is useful if you are running the MCP server in a sandbo
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[maplibre/maplibre-gl-js]]></title>
-            <link>https://github.com/maplibre/maplibre-gl-js</link>
-            <guid>https://github.com/maplibre/maplibre-gl-js</guid>
-            <pubDate>Sun, 21 Dec 2025 00:05:24 GMT</pubDate>
-            <description><![CDATA[MapLibre GL JS - Interactive vector tile maps in the browser]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/maplibre/maplibre-gl-js">maplibre/maplibre-gl-js</a></h1>
-            <p>MapLibre GL JS - Interactive vector tile maps in the browser</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 8,781</p>
-            <p>Forks: 945</p>
-            <p>Stars today: 10 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://maplibre.org/img/maplibre-logos/maplibre-logo-for-dark-bg.svg&quot;&gt;
-    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://maplibre.org/img/maplibre-logos/maplibre-logo-for-light-bg.svg&quot;&gt;
-    &lt;img alt=&quot;MapLibre Logo&quot; src=&quot;https://maplibre.org/img/maplibre-logos/maplibre-logo-for-light-bg.svg&quot; width=&quot;200&quot;&gt;
-  &lt;/picture&gt;
-&lt;/p&gt;
-
-# MapLibre GL JS
-
-[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg?style=flat)](LICENSE.txt) [![Version](https://img.shields.io/npm/v/maplibre-gl?style=flat)](https://www.npmjs.com/package/maplibre-gl) [![CI](https://github.com/maplibre/maplibre-gl-js/actions/workflows/test-all.yml/badge.svg)](https://github.com/maplibre/maplibre-gl-js/actions/workflows/test-all.yml) [![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](https://opensource.org/licenses/BSD-3-Clause) [![codecov](https://codecov.io/gh/maplibre/maplibre-gl-js/branch/main/graph/badge.svg)](https://codecov.io/gh/maplibre/maplibre-gl-js)
-
-**[MapLibre GL JS](https://maplibre.org/maplibre-gl-js/docs/API/)** is an open-source library for publishing maps on your websites or webview based apps. Fast displaying of maps is possible thanks to GPU-accelerated vector tile rendering.
-
-It originated as an open-source fork of [mapbox-gl-js](https://github.com/mapbox/mapbox-gl-js), before their switch to a non-OSS license in December 2020. The library&#039;s initial versions (1.x) were intended to be a drop-in replacement for the Mapbox’s OSS version (1.x) with additional functionality, but have evolved a lot since then.
-
-## Getting Started
-
-Include the JavaScript and CSS files in the `&lt;head&gt;` of your HTML file.
-
-```html
-&lt;script src=&#039;https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js&#039;&gt;&lt;/script&gt;
-&lt;link href=&#039;https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css&#039; rel=&#039;stylesheet&#039; /&gt;
-```
-
-Include the following code in the `&lt;body&gt;` of your HTML file.
-
-```html
-&lt;div id=&#039;map&#039; style=&#039;width: 400px; height: 300px;&#039;&gt;&lt;/div&gt;
-&lt;script&gt;
-var map = new maplibregl.Map({
-  container: &#039;map&#039;,
-  style: &#039;https://demotiles.maplibre.org/style.json&#039;, // stylesheet location
-  center: [-74.5, 40], // starting position [lng, lat]
-  zoom: 9 // starting zoom
-});
-&lt;/script&gt;
-```
-
-Enjoy the map!
-
-&lt;br /&gt;
-
-## Documentation
-
-Full documentation for this library [is available here](https://maplibre.org/maplibre-gl-js/docs/API/).
-
-Check out the features through [examples](https://maplibre.org/maplibre-gl-js/docs/examples/).
-
-| Showcases                                                                                                              |                                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| ![Display a map](https://maplibre.org/maplibre-gl-js/docs/assets/examples/display-a-map.png)                           | ![Third party vector tile source](https://maplibre.org/maplibre-gl-js/docs/assets/examples/3d-terrain.png)                 |
-| ![Animate a series of images](https://maplibre.org/maplibre-gl-js/docs/assets/examples/animate-a-series-of-images.png) | ![Create a heatmap layer](https://maplibre.org/maplibre-gl-js/docs/assets/examples/create-a-heatmap-layer.png)             |
-| ![3D buildings](https://maplibre.org/maplibre-gl-js/docs/assets/examples/display-buildings-in-3d.png)                  | ![Visualize population density](https://maplibre.org/maplibre-gl-js/docs/assets/examples/visualize-population-density.png) |
-
-&lt;br /&gt;
-
-Want an example? Have a look at the official [MapLibre GL JS Documentation](https://maplibre.org/maplibre-gl-js/docs/examples/).
-
-Use MapLibre GL JS bindings for [React](https://visgl.github.io/react-map-gl/docs/get-started) and [Angular](https://github.com/maplibre/ngx-maplibre-gl). Find more at [awesome-maplibre](https://github.com/maplibre/awesome-maplibre).
-
-&lt;br /&gt;
-
-## Contribution
-
-### Getting Involved
-
-Join the #maplibre slack channel at OSMUS: get an invite at https://slack.openstreetmap.us/
-Read the [CONTRIBUTING.md](CONTRIBUTING.md) guide in order to get familiar with how we do things around here.
-
-### Avoid Fragmentation
-
-If you depend on a free software alternative to `mapbox-gl-js`, please consider joining our effort! Anyone with a stake in a healthy community-led fork is welcome to help us figure out our next steps. We welcome contributors and leaders! MapLibre GL JS already represents the combined efforts of a few early fork efforts, and we all benefit from &quot;one project&quot; rather than &quot;our way&quot;. If you know of other forks, please reach out to them and direct them here.
-
-&gt; **MapLibre GL JS** is developed following [Semantic Versioning (2.0.0)](https://semver.org/spec/v2.0.0.html).
-
-### Bounties
-
-We offer Bounties for some tasks in the MapLibre GL JS repo. Read more about the Bounties in our step-by-step guide:
-
-https://maplibre.org/roadmap/step-by-step-bounties-guide/
-
-And find all currently published Bounties in MapLibre GL JS [here](https://github.com/maplibre/maplibre-gl-js/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%92%B0+bounty+L%22%2C%22%F0%9F%92%B0+bounty+S%22%2C%22%F0%9F%92%B0+bounty+M%22%2C%22%F0%9F%92%B0+bounty+XL%22%2C%22%F0%9F%92%B0+bounty+XXL%22+).
-
-&lt;br /&gt;
-
-## Sponsors
-
-We thank everyone who supported us financially in the past and special thanks to the people and organizations who support us with recurring donations!
-
-Read more about the MapLibre Sponsorship Program at [https://maplibre.org/sponsors/](https://maplibre.org/sponsors/).
-
-Gold:
-
-&lt;a href=&quot;https://www.microsoft.com/&quot;&gt;&lt;img src=&quot;https://maplibre.org/img/msft-logo.svg&quot; alt=&quot;Logo MSFT&quot; width=&quot;25%&quot;/&gt;&lt;/a&gt;
-
-Silver:
-
-&lt;a href=&quot;https://www.mierune.co.jp/?lang=en&quot;&gt;&lt;img src=&quot;https://maplibre.org/img/mierune-logo.svg&quot; alt=&quot;Logo MIERUNE&quot; width=&quot;25%&quot;/&gt;&lt;/a&gt;
-
-&lt;a href=&quot;https://komoot.com/&quot;&gt;&lt;img src=&quot;https://maplibre.org/img/komoot-logo.svg&quot; alt=&quot;Logo komoot&quot; width=&quot;25%&quot;/&gt;&lt;/a&gt;
-
-&lt;a href=&quot;https://www.jawg.io/&quot;&gt;&lt;img src=&quot;https://maplibre.org/img/jawgmaps-logo.svg&quot; alt=&quot;Logo JawgMaps&quot; width=&quot;25%&quot;/&gt;&lt;/a&gt;
-
-&lt;a href=&quot;https://www.radar.com/&quot;&gt;&lt;img src=&quot;https://maplibre.org/img/radar-logo.svg&quot; alt=&quot;Logo Radar&quot; width=&quot;25%&quot;/&gt;&lt;/a&gt;
-
-&lt;a href=&quot;https://www.mapme.com/&quot;&gt;&lt;img src=&quot;https://maplibre.org/img/mapme-logo.svg&quot; alt=&quot;Logo mapme&quot; width=&quot;25%&quot;/&gt;&lt;/a&gt;
-
-&lt;a href=&quot;https://www.maptiler.com/&quot;&gt;&lt;img src=&quot;https://maplibre.org/img/maptiler-logo.svg&quot; alt=&quot;Logo maptiler&quot; width=&quot;25%&quot;/&gt;&lt;/a&gt;
-
-&lt;a href=&quot;https://aws.amazon.com/location&quot;&gt;&lt;img src=&quot;https://maplibre.org/img/aws-logo.svg&quot; alt=&quot;Logo AWS&quot; width=&quot;25%&quot;/&gt;&lt;/a&gt;
-
-Backers and Supporters:
-
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/0/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/0/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/1/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/1/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/2/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/2/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/3/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/3/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/4/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/4/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/5/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/5/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/6/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/6/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/7/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/7/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/8/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/8/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/9/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/9/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/10/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/10/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/11/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/11/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/12/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/12/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/13/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/13/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/14/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/14/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/15/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/15/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/16/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/16/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/17/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/17/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/18/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/18/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/19/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/19/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/20/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/20/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/21/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/21/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/22/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/22/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/23/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/23/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/24/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/24/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/25/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/25/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/26/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/26/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/27/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/27/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/28/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/28/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/29/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/29/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://opencollective.com/maplibre/backer/30/website?requireActive=false&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://opencollective.com/maplibre/backer/30/avatar.svg?requireActive=false&quot;&gt;&lt;/a&gt;
-
-&lt;br /&gt;
-
-## Thank you Mapbox 🙏🏽
-
-We&#039;d like to acknowledge the amazing work Mapbox has contributed to open source. The open source community is sad to part ways with them, but we simultaneously feel grateful for everything they already contributed. `mapbox-gl-js` 1.x is an open source achievement that now lives on as `maplibre-gl`. We&#039;re proud to develop on the shoulders of giants, thank you Mapbox 🙇🏽‍♀️.
-
-Please keep in mind: Unauthorized backports are the biggest threat to the MapLibre project. It is unacceptable to backport code from mapbox-gl-js, which is not covered by the former BSD-3 license. If you are unsure about this issue, [please ask](https://github.com/maplibre/maplibre-gl-js/discussions)!
-
-&lt;br /&gt;
-
-## License
-
-**MapLibre GL JS** is licensed under the [3-Clause BSD license](./LICENSE.txt).
+&lt;/div&gt;
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[danny-avila/LibreChat]]></title>
-            <link>https://github.com/danny-avila/LibreChat</link>
-            <guid>https://github.com/danny-avila/LibreChat</guid>
-            <pubDate>Sun, 21 Dec 2025 00:05:23 GMT</pubDate>
-            <description><![CDATA[Enhanced ChatGPT Clone: Features Agents, MCP, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message search, Code Interpreter, langchain, DALL-E-3, OpenAPI Actions, Functions, Secure Multi-User Auth, Presets, open-source for self-hosting. Active.]]></description>
+            <title><![CDATA[wxt-dev/wxt]]></title>
+            <link>https://github.com/wxt-dev/wxt</link>
+            <guid>https://github.com/wxt-dev/wxt</guid>
+            <pubDate>Mon, 22 Dec 2025 00:04:52 GMT</pubDate>
+            <description><![CDATA[⚡ Next-gen Web Extension Framework]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/danny-avila/LibreChat">danny-avila/LibreChat</a></h1>
-            <p>Enhanced ChatGPT Clone: Features Agents, MCP, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message search, Code Interpreter, langchain, DALL-E-3, OpenAPI Actions, Functions, Secure Multi-User Auth, Presets, open-source for self-hosting. Active.</p>
+            <h1><a href="https://github.com/wxt-dev/wxt">wxt-dev/wxt</a></h1>
+            <p>⚡ Next-gen Web Extension Framework</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 32,552</p>
-            <p>Forks: 6,459</p>
-            <p>Stars today: 18 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://librechat.ai&quot;&gt;
-    &lt;img src=&quot;client/public/assets/logo.svg&quot; height=&quot;256&quot;&gt;
-  &lt;/a&gt;
-  &lt;h1 align=&quot;center&quot;&gt;
-    &lt;a href=&quot;https://librechat.ai&quot;&gt;LibreChat&lt;/a&gt;
-  &lt;/h1&gt;
-&lt;/p&gt;
+            <p>Stars: 8,805</p>
+            <p>Forks: 432</p>
+            <p>Stars today: 11 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://discord.librechat.ai&quot;&gt; 
-    &lt;img
-      src=&quot;https://img.shields.io/discord/1086345563026489514?label=&amp;logo=discord&amp;style=for-the-badge&amp;logoWidth=20&amp;logoColor=white&amp;labelColor=000000&amp;color=blueviolet&quot;&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://www.youtube.com/@LibreChat&quot;&gt; 
-    &lt;img
-      src=&quot;https://img.shields.io/badge/YOUTUBE-red.svg?style=for-the-badge&amp;logo=youtube&amp;logoColor=white&amp;labelColor=000000&amp;logoWidth=20&quot;&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://docs.librechat.ai&quot;&gt; 
-    &lt;img
-      src=&quot;https://img.shields.io/badge/DOCS-blue.svg?style=for-the-badge&amp;logo=read-the-docs&amp;logoColor=white&amp;labelColor=000000&amp;logoWidth=20&quot;&gt;
-  &lt;/a&gt;
-  &lt;a aria-label=&quot;Sponsors&quot; href=&quot;https://github.com/sponsors/danny-avila&quot;&gt;
-    &lt;img
-      src=&quot;https://img.shields.io/badge/SPONSORS-brightgreen.svg?style=for-the-badge&amp;logo=github-sponsors&amp;logoColor=white&amp;labelColor=000000&amp;logoWidth=20&quot;&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
+# &lt;img align=&quot;top&quot; width=&quot;44&quot; src=&quot;https://raw.githubusercontent.com/wxt-dev/wxt/HEAD/docs/public/hero-logo.svg&quot; alt=&quot;WXT Logo&quot;&gt; WXT
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;a href=&quot;https://railway.app/template/b5k2mn?referralCode=HI9hWz&quot;&gt;
-  &lt;img src=&quot;https://railway.app/button.svg&quot; alt=&quot;Deploy on Railway&quot; height=&quot;30&quot;&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://zeabur.com/templates/0X2ZY8&quot;&gt;
-  &lt;img src=&quot;https://zeabur.com/button.svg&quot; alt=&quot;Deploy on Zeabur&quot; height=&quot;30&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://template.cloud.sealos.io/deploy?templateName=librechat&quot;&gt;
-  &lt;img src=&quot;https://raw.githubusercontent.com/labring-actions/templates/main/Deploy-on-Sealos.svg&quot; alt=&quot;Deploy on Sealos&quot; height=&quot;30&quot;&gt;
-&lt;/a&gt;
-&lt;/p&gt;
+[![npm version](https://img.shields.io/npm/v/wxt?labelColor=black&amp;color=%234fa048)](https://www.npmjs.com/package/wxt)
+[![downloads](https://img.shields.io/npm/dm/wxt?labelColor=black&amp;color=%234fa048)](https://www.npmjs.com/package/wxt)
+[![license | MIT](https://img.shields.io/npm/l/wxt?labelColor=black&amp;color=%234fa048)](https://github.com/wxt-dev/wxt/blob/main/LICENSE)
+[![coverage](https://img.shields.io/codecov/c/github/wxt-dev/wxt?labelColor=black&amp;color=%234fa048)](https://codecov.io/github/wxt-dev/wxt)
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://www.librechat.ai/docs/translation&quot;&gt;
-    &lt;img 
-      src=&quot;https://img.shields.io/badge/dynamic/json.svg?style=for-the-badge&amp;color=2096F3&amp;label=locize&amp;query=%24.translatedPercentage&amp;url=https://api.locize.app/badgedata/4cb2598b-ed4d-469c-9b04-2ed531a8cb45&amp;suffix=%+translated&quot; 
-      alt=&quot;Translation Progress&quot;&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
+Next-gen framework for developing web extensions.&lt;br/&gt;⚡&lt;br/&gt;&lt;q&gt;&lt;i&gt;It&#039;s like Nuxt, but for Web Extensions&lt;/i&gt;&lt;/q&gt;
+
+[Get Started](https://wxt.dev/guide/installation.html) •
+[Configuration](https://wxt.dev/api/config.html) •
+[Examples](https://wxt.dev/examples.html) •
+[Changelog](https://github.com/wxt-dev/wxt/blob/main/packages/wxt/CHANGELOG.md) •
+[Discord](https://discord.gg/ZFsZqGery9)
+
+&lt;/div&gt;
+
+![Example CLI Output](https://raw.githubusercontent.com/wxt-dev/wxt/HEAD/docs/assets/cli-output.png)
+
+## Demo
+
+&lt;https://github.com/wxt-dev/wxt/assets/10101283/4d678939-1bdb-495c-9c36-3aa281d84c94&gt;
+
+## Quick Start
+
+Bootstrap a new project:
+
+```sh
+# npm
+npx wxt@latest init
+
+# pnpm
+pnpm dlx wxt@latest init
+
+# bun
+bunx wxt@latest init
+```
+
+Or see the [installation guide](https://wxt.dev/guide/installation.html) to get started with WXT.
+
+## Features
+
+- 🌐 Supports all browsers
+- ✅ Supports both MV2 and MV3
+- ⚡ Dev mode with HMR &amp; fast reload
+- 📂 File based entrypoints
+- 🚔 TypeScript
+- 🦾 Auto-imports
+- 🤖 Automated publishing
+- 🎨 Frontend framework agnostic: works with Vue, React, Svelte, etc
+- 📦 [Module system](https://wxt.dev/guide/essentials/wxt-modules.html#overview) for reusing code between extensions
+- 🖍️ Quickly bootstrap a new project
+- 📏 Bundle analysis
+- ⬇️ Download and bundle remote URL imports
+
+## Sponsors
+
+WXT is a [MIT-licensed](https://github.com/wxt-dev/wxt/blob/main/LICENSE) open source project with its ongoing development made possible entirely by the support of these awesome backers. If you&#039;d like to join them, please consider [sponsoring WXT&#039;s development](https://github.com/sponsors/wxt-dev).
+
+[![WXT Sponsors](https://raw.githubusercontent.com/wxt-dev/static/refs/heads/main/sponsorkit/sponsors.svg)](https://github.com/sponsors/wxt-dev)
+
+## Contributors
+
+Published under the [MIT](https://github.com/wxt-dev/wxt/blob/main/LICENSE) license.
+Made by [@aklinker1](https://github.com/aklinker1) and [community](https://github.com/wxt-dev/wxt/graphs/contributors) 💛
+
+[![WXT contributors](https://contrib.rocks/image?repo=wxt-dev/wxt)](https://github.com/wxt-dev/wxt/graphs/contributors)
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[Vendicated/Vencord]]></title>
+            <link>https://github.com/Vendicated/Vencord</link>
+            <guid>https://github.com/Vendicated/Vencord</guid>
+            <pubDate>Mon, 22 Dec 2025 00:04:51 GMT</pubDate>
+            <description><![CDATA[The cutest Discord modification]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/Vendicated/Vencord">Vendicated/Vencord</a></h1>
+            <p>The cutest Discord modification</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 12,272</p>
+            <p>Forks: 1,883</p>
+            <p>Stars today: 7 stars today</p>
+            <h2>README</h2><pre># Vencord
+
+![](https://img.shields.io/github/package-json/v/Vendicated/Vencord?style=for-the-badge&amp;logo=github&amp;logoColor=d3869b&amp;label=&amp;color=1d2021&amp;labelColor=282828)
+[![Codeberg Mirror](https://img.shields.io/static/v1?style=for-the-badge&amp;label=Codeberg%20Mirror&amp;message=codeberg.org/Vee/cord&amp;color=2185D0&amp;logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAKbUlEQVR4nNVae3AV5RX/nW/3Pva+b24e5HHzIICQKGoiYiW8NFBFgohaa6ctglpbFSujSGurzUinohWsOij/gGX6R2fqOK0d1FYTEZXaTrWCBbEikJCEyCvkeXNvkrunf+zdkJDkPnex/c3cmd29+53v/M6e73znnF2Cydj4Tntldzi6qrN/qKqzf2jy6b7BnL4B1dI7oMp9AyoRAIdVsNMqhlxWMZjtspzyK/Jhr036OMsm//bh2vzPzNSPzBD6xFutd7R0Dq758ky4orkjYuc05RCAkixbeEq2/UCJ1/LczxcX/c5IPfU5DMHmxpbCpu7o1k/b+xc1n43YjJI7EqV+W2RmvuPt0oDjB2vn5bQbITNjAzzdeKK8qTO0bU9T77zucNQUjzofHrvENWWu3aUBZfW6+ZOOZiIrbYXrmUXo9daX3v6i667O/iGRiRLpwqtIvKDc+0efJ3hb/UIaSkdGWgZ4sqGt9r2m3lc/P9HvSWe80ZiRp3TPL/UsX1+bvyvVsSkb4NE3WjbuPNj5SM8Fcvdk4bAKrqvwv7DxhuCPUxmXNIn6XSy3nWr6R8OhrqrU1btwqJ3m/bgwu/SqZJdEUgbYsuuka09b9/4Pm3tLMlPvwuAbpe6m+RcplfdcURBKdG9CA2zZddLV2Nx1+JO2vlxj1LswqCpynlxc6SxLZIS40bueWfy9vXvv/xt5APhXa1/u7v+EPqvfxXK8++IaoO2Vpn9+cLS33FjVLhw+bOotOX7q6N/i3TOhAX7y+rHN/+sBLxm8fah71k93tjw/0f/jGuDJxtZrdh7setA8tS4sdn7eef+v3mmfP95/Ywxw6x9Yev9I35/6Iubv83WVfl5a6Uu3VkoavZEo7TnS/Vo98xi+Yy6UKC3bDp7sd5ut1OWFDjyzNMib6oq5Oug0ezp8dqLfG3r92Nbzr48ywNONJ8obDnV/z2xlAk4ZW1aUqhaJIAvCb5YVqwFn3GBtCBoO9dz5TOPxUbnMKAM0dYa2d5lc2AgCNi8r5klui3aBgWynjE11QZbI3FV3NjQkjnYNbB+lj36wubGlcE9T71xTNQDw0Px8nlvmHl73GmfCrKCL19Tkmh4P9jT1LHz2vVP5+vmwAZq71a1m1/PXTPXwD68eS5KIEVUZd1yZwwumeEw1Qld/lJrPhF7Sz4cNsO+rUK2ZExd6rfj10iCPZ2GJCCoAZuCJxQUc9FvNVAX72kPX6ccC0Hp4zR0Ru1kT2mTCSzeXqn5l/EAniMAqoDLDYZWwqa5EVSzmhaKmsxHbLxvbbgdiBmjpHFxj2mwANlxXxBdPUib8nwgQgqAyEFUZxT4L1i/MN3UpHDsTWQvEDHDoTLjCrIluuyzAt8zMSkhGFhp5hrYUFk3z8IqZftOMcKRj4GIAEM80tFccM8n9Z+Qq+MXigqRIWCQCMzQvYIbKwH1X53FFnjkr88iZsLKpoXWa6BiIrjbDzF67hK23lKp2Obm1LAstPEZVjTwDkAio/2ZQ9dolw/VjAB0DfKfoCg9WGy2cADy1NMhBX2rR3CIRGICq8rAhAg4Jj9UWsDBhg+4MR6vF2VC0zGjB99fk8eJp3pQdyyrRMHF9KURVxswCB6+alWO4o3b2RyeLU32D2UYKnVPm5gfm5qWlrF0Wo4hzbCmoDNw0089XlboNNcLpvsFc0RtRDXuNle+x4Lkbi9PO6WWJIBFGEY+qjGjswtq5eVzosRilLnoiUavoH1INiTCyIDy/vETNcmRW1dl0L4gRVxmx3YFhlwnrry1QrZIxASE0yJIIDaiGSHt8UQFXF2Ve1zusYgzxkXGhyGvFvePUE+mgfyAqhGqAqKWVPv5udbYhSjmtkpYWq6OJqzFjqCpjTpmbl1Rk3klSGRBWmTISNC3Hjo1LgoYFJ0GA1aIVR+cTVxlQoS2Pb18a4PLszMKXzSJYuCySmq4Al03CiytKVYfBhYvLKk1IXE+XLRLhwZp81WlNf26HTFHhd0jhdAYTgKduCPLkgPHfQjitYkLiAIEZBDBlu2R6aF7euCV2Mgg45bDw2qWOdAavnp3D109PPdlJBvpTnYg4kVY3MDMuylVw62WJi63x4LHLZ0TAIR9OdWBVodPUclUQwWmT4hLXfgCIUDfDi6oiR8rzBJzyl8LnkD9KZVCOU8aLN5eoshnJ+Qh4bFJC4gztmEjgrtk5anaKnWWfXfpIuBTLjmSpSILw/E0laq7LuGxsIngVCYmIa96hLRG3TaZ1C/KTfjAEQLFIO8TPFk7aH/RZI8kMWrdgEs8udqXLKSUoMkEW4ETEQTRsoHyPlVZfmVw+Uuy3hR9bVHBQAMD0XPu/Ew24dqqH777K/La1DiKCxyYlRRzQymgG4+oyDxZOTdxZnp5r3wvEWmJ5btuL8W4uzbJh87LitLebdOFVpKSJx4IlwIzbL81CcYLO8iSX/IImGQCYae6Wg/2tXQNjNnW7LPDKyilqZd7ETU2zEBlifNTSS4i9PNFIx44x4jh2nZlBsUr0dN8QP/6XVhEaHJvnlfhtkXd/NF0BUextKRFXFznfGk+JDdcX8tdBHtDa6YpFsB4I9ac88omf8wbEgqa2XAIOme6bM35foqrQ+QZIKwGG80ifVbrXZZNGDfhOVYBvviS9JMMoaP3AEcQpPnHdOxiMGXkKbrx4dGfZY5c4T8H9+vmwAeqXFLXOKXW9r59fWuDA44sKv1byAOBzyCkTH+kdS2f4MLPgXJI0p9T17vrFxcf181GVxEUB+0qfIqt+RcKWFSWGNR4ygd4RTpW4HiCJgFWzstmnSPA7ZLU827pypPwxDB/687GXl1X6Vs6bbGz/LRN80hZCT+yLFZ0cgHED4egACeiXm89GsP9EePuzy4rvGil7jAGYmQDsBjDHUBYZ4GhHBMfORigd4rpnyIS9u6d4rqgnGrUtjCmmSYuOqwB0GcwjbWh9xviurpNnxnDA1IspMPe6bOL755MHJvhKjIgOA7jbJD4pw22Thj+kSIW47h2KRaydVezeP57sCdspRPQqgGeNJJIuBAE+ReJUiOv32mXaXjPZs21C2QnmXgdghyEsMoRfkVMiDgCywF/by9z3xJMb1wCxeHAPgDczZpAh/Iq+HSYmDjCsstgThmf5t4ii8eQm7CgS0SCA5QBezoRApnBaBSyCEhIHCLJEb4ZUd+2SqZSwzE+qpUpEQ9CC4qb01M8cRIQsh8zxiKsMtsn08nvlnrpkyAPj5AGJwMw3AtgGwJ/q2ExxvHsQB74KxfKBMblAyGmTHq4pc4/5GjQeUm6qE9FrAK4E8H6ie41GlkN/jTk6F5Ak2ueUpNmpkgfSMAAAENERAAsB3AHgZDoy0oFdFnBYpXPEBfU4beLRD6Z4qmumug+kIzPjaoeZfQDWAHgAQFam8hLh4MkwWjsHemyS2OF08IYrCjynzZ4zKTCzi5nXMvOnzBw16bevIxR95JOj7DNKb1PqXWa+HMDtAGoBXII0lxq0N2OfAmgA8Hsi2muMhudgesHPzNkA5gKoADADwFRoS8UHQO+x9wLoBNAB4AsAnwM4AOADIjLVxf8L9kdXUOE0IskAAAAASUVORK5CYII=)](https://codeberg.org/Vee/cord)
+
+The cutest Discord client mod
+
+![](https://github.com/user-attachments/assets/3fac98c0-c411-4d2a-97a3-13b7da8687a2)
+
+## Features
+
+-   Easy to install
+-   [100+ built in plugins](https://vencord.dev/plugins)
+-   Fairly lightweight despite the many inbuilt plugins
+-   Excellent Browser Support: Run Vencord in your Browser via extension or UserScript
+-   Works on any Discord branch: Stable, Canary or PTB all work
+-   Custom CSS and Themes: Inbuilt css editor with support to import any css files (including BetterDiscord themes)
+-   Privacy friendly: blocks Discord analytics &amp; crash reporting out of the box and has no telemetry
+-   Maintained very actively, broken plugins are usually fixed within 12 hours
+-   Settings sync: Keep your plugins and their settings synchronised between devices / apps (optional)
 
 
-# ✨ Features
+## Installing / Uninstalling
 
-- 🖥️ **UI &amp; Experience** inspired by ChatGPT with enhanced design and features
+Visit https://vencord.dev/download
 
-- 🤖 **AI Model Selection**:  
-  - Anthropic (Claude), AWS Bedrock, OpenAI, Azure OpenAI, Google, Vertex AI, OpenAI Responses API (incl. Azure)
-  - [Custom Endpoints](https://www.librechat.ai/docs/quick_start/custom_endpoints): Use any OpenAI-compatible API with LibreChat, no proxy required
-  - Compatible with [Local &amp; Remote AI Providers](https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints):
-    - Ollama, groq, Cohere, Mistral AI, Apple MLX, koboldcpp, together.ai,
-    - OpenRouter, Helicone, Perplexity, ShuttleAI, Deepseek, Qwen, and more
+## Join our Support/Community Server
 
-- 🔧 **[Code Interpreter API](https://www.librechat.ai/docs/features/code_interpreter)**: 
-  - Secure, Sandboxed Execution in Python, Node.js (JS/TS), Go, C/C++, Java, PHP, Rust, and Fortran
-  - Seamless File Handling: Upload, process, and download files directly
-  - No Privacy Concerns: Fully isolated and secure execution
+https://discord.gg/D9uwnFnqmd
 
-- 🔦 **Agents &amp; Tools Integration**:  
-  - **[LibreChat Agents](https://www.librechat.ai/docs/features/agents)**:
-    - No-Code Custom Assistants: Build specialized, AI-driven helpers
-    - Agent Marketplace: Discover and deploy community-built agents
-    - Collaborative Sharing: Share agents with specific users and groups
-    - Flexible &amp; Extensible: Use MCP Servers, tools, file search, code execution, and more
-    - Compatible with Custom Endpoints, OpenAI, Azure, Anthropic, AWS Bedrock, Google, Vertex AI, Responses API, and more
-    - [Model Context Protocol (MCP) Support](https://modelcontextprotocol.io/clients#librechat) for Tools
+## Sponsors
 
-- 🔍 **Web Search**:  
-  - Search the internet and retrieve relevant information to enhance your AI context
-  - Combines search providers, content scrapers, and result rerankers for optimal results
-  - **Customizable Jina Reranking**: Configure custom Jina API URLs for reranking services
-  - **[Learn More →](https://www.librechat.ai/docs/features/web_search)**
+|     **Thanks a lot to all Vencord [sponsors](https://github.com/sponsors/Vendicated)!!**     |
+| :------------------------------------------------------------------------------------------: |
+|   [![](https://meow.vendicated.dev/sponsors.png)](https://github.com/sponsors/Vendicated)    |
+| *generated using [github-sponsor-graph](https://github.com/Vendicated/github-sponsor-graph)* |
 
-- 🪄 **Generative UI with Code Artifacts**:  
-  - [Code Artifacts](https://youtu.be/GfTj7O4gmd0?si=WJbdnemZpJzBrJo3) allow creation of React, HTML, and Mermaid diagrams directly in chat
 
-- 🎨 **Image Generation &amp; Editing**
-  - Text-to-image and image-to-image with [GPT-Image-1](https://www.librechat.ai/docs/features/image_gen#1--openai-image-tools-recommended)
-  - Text-to-image with [DALL-E (3/2)](https://www.librechat.ai/docs/features/image_gen#2--dalle-legacy), [Stable Diffusion](https://www.librechat.ai/docs/features/image_gen#3--stable-diffusion-local), [Flux](https://www.librechat.ai/docs/features/image_gen#4--flux), or any [MCP server](https://www.librechat.ai/docs/features/image_gen#5--model-context-protocol-mcp)
-  - Produce stunning visuals from prompts or refine existing images with a single instruction
+## Star History
 
-- 💾 **Presets &amp; Context Management**:  
-  - Create, Save, &amp; Share Custom Presets  
-  - Switch between AI Endpoints and Presets mid-chat
-  - Edit, Resubmit, and Continue Messages with Conversation branching  
-  - Create and share prompts with specific users and groups
-  - [Fork Messages &amp; Conversations](https://www.librechat.ai/docs/features/fork) for Advanced Context control
-
-- 💬 **Multimodal &amp; File Interactions**:  
-  - Upload and analyze images with Claude 3, GPT-4.5, GPT-4o, o1, Llama-Vision, and Gemini 📸  
-  - Chat with Files using Custom Endpoints, OpenAI, Azure, Anthropic, AWS Bedrock, &amp; Google 🗃️
-
-- 🌎 **Multilingual UI**:
-  - English, 中文 (简体), 中文 (繁體), العربية, Deutsch, Español, Français, Italiano
-  - Polski, Português (PT), Português (BR), Русский, 日本語, Svenska, 한국어, Tiếng Việt
-  - Türkçe, Nederlands, עברית, Català, Čeština, Dansk, Eesti, فارسی
-  - Suomi, Magyar, Հայերեն, Bahasa Indonesia, ქართული, Latviešu, ไทย, ئۇيغۇرچە
-
-- 🧠 **Reasoning UI**:  
-  - Dynamic Reasoning UI for Chain-of-Thought/Reasoning AI models like DeepSeek-R1
-
-- 🎨 **Customizable Interface**:  
-  - Customizable Dropdown &amp; Interface that adapts to both power users and newcomers
-
-- 🗣️ **Speech &amp; Audio**:  
-  - Chat hands-free with Speech-to-Text and Text-to-Speech  
-  - Automatically send and play Audio  
-  - Supports OpenAI, Azure OpenAI, and Elevenlabs
-
-- 📥 **Import &amp; Export Conversations**:  
-  - Import Conversations from LibreChat, ChatGPT, Chatbot UI  
-  - Export conversations as screenshots, markdown, text, json
-
-- 🔍 **Search &amp; Discovery**:  
-  - Search all messages/conversations
-
-- 👥 **Multi-User &amp; Secure Access**:
-  - Multi-User, Secure Authentication with OAuth2, LDAP, &amp; Email Login Support
-  - Built-in Moderation, and Token spend tools
-
-- ⚙️ **Configuration &amp; Deployment**:  
-  - Configure Proxy, Reverse Proxy, Docker, &amp; many Deployment options  
-  - Use completely local or deploy on the cloud
-
-- 📖 **Open-Source &amp; Community**:  
-  - Completely Open-Source &amp; Built in Public  
-  - Community-driven development, support, and feedback
-
-[For a thorough review of our features, see our docs here](https://docs.librechat.ai/) 📚
-
-## 🪶 All-In-One AI Conversations with LibreChat
-
-LibreChat brings together the future of assistant AIs with the revolutionary technology of OpenAI&#039;s ChatGPT. Celebrating the original styling, LibreChat gives you the ability to integrate multiple AI models. It also integrates and enhances original client features such as conversation and message search, prompt templates and plugins.
-
-With LibreChat, you no longer need to opt for ChatGPT Plus and can instead use free or pay-per-call APIs. We welcome contributions, cloning, and forking to enhance the capabilities of this advanced chatbot platform.
-
-[![Watch the video](https://raw.githubusercontent.com/LibreChat-AI/librechat.ai/main/public/images/changelog/v0.7.6.gif)](https://www.youtube.com/watch?v=ilfwGQtJNlI)
-
-Click on the thumbnail to open the video☝️
-
----
-
-## 🌐 Resources
-
-**GitHub Repo:**
-  - **RAG API:** [github.com/danny-avila/rag_api](https://github.com/danny-avila/rag_api)
-  - **Website:** [github.com/LibreChat-AI/librechat.ai](https://github.com/LibreChat-AI/librechat.ai)
-
-**Other:**
-  - **Website:** [librechat.ai](https://librechat.ai)
-  - **Documentation:** [librechat.ai/docs](https://librechat.ai/docs)
-  - **Blog:** [librechat.ai/blog](https://librechat.ai/blog)
-
----
-
-## 📝 Changelog
-
-Keep up with the latest updates by visiting the releases page and notes:
-- [Releases](https://github.com/danny-avila/LibreChat/releases)
-- [Changelog](https://www.librechat.ai/changelog) 
-
-**⚠️ Please consult the [changelog](https://www.librechat.ai/changelog) for breaking changes before updating.**
-
----
-
-## ⭐ Star History
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://star-history.com/#danny-avila/LibreChat&amp;Date&quot;&gt;
-    &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/svg?repos=danny-avila/LibreChat&amp;type=Date&amp;theme=dark&quot; onerror=&quot;this.src=&#039;https://api.star-history.com/svg?repos=danny-avila/LibreChat&amp;type=Date&#039;&quot; /&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://trendshift.io/repositories/4685&quot; target=&quot;_blank&quot; style=&quot;padding: 10px;&quot;&gt;
-    &lt;img src=&quot;https://trendshift.io/api/badge/repositories/4685&quot; alt=&quot;danny-avila%2FLibreChat | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://runacap.com/ross-index/q1-24/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; style=&quot;margin-left: 20px;&quot;&gt;
-    &lt;img style=&quot;width: 260px; height: 56px&quot; src=&quot;https://runacap.com/wp-content/uploads/2024/04/ROSS_badge_white_Q1_2024.svg&quot; alt=&quot;ROSS Index - Fastest Growing Open-Source Startups in Q1 2024 | Runa Capital&quot; width=&quot;260&quot; height=&quot;56&quot;/&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-
----
-
-## ✨ Contributions
-
-Contributions, suggestions, bug reports and fixes are welcome!
-
-For new features, components, or extensions, please open an issue and discuss before sending a PR.
-
-If you&#039;d like to help translate LibreChat into your language, we&#039;d love your contribution! Improving our translations not only makes LibreChat more accessible to users around the world but also enhances the overall user experience. Please check out our [Translation Guide](https://www.librechat.ai/docs/translation).
-
----
-
-## 💖 This project exists in its current state thanks to all the people who contribute
-
-&lt;a href=&quot;https://github.com/danny-avila/LibreChat/graphs/contributors&quot;&gt;
-  &lt;img src=&quot;https://contrib.rocks/image?repo=danny-avila/LibreChat&quot; /&gt;
+&lt;a href=&quot;https://star-history.com/#Vendicated/Vencord&amp;Timeline&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/svg?repos=Vendicated/Vencord&amp;type=Timeline&amp;theme=dark&quot; /&gt;
+    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/svg?repos=Vendicated/Vencord&amp;type=Timeline&quot; /&gt;
+    &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/svg?repos=Vendicated/Vencord&amp;type=Timeline&quot; /&gt;
+  &lt;/picture&gt;
 &lt;/a&gt;
 
----
+## Disclaimer
 
-## 🎉 Special Thanks
+Discord is trademark of Discord Inc. and solely mentioned for the sake of descriptivity.
+Mention of it does not imply any affiliation with or endorsement by Discord Inc.
 
-We thank [Locize](https://locize.com) for their translation management tools that support multiple languages in LibreChat.
+&lt;details&gt;
+&lt;summary&gt;Using Vencord violates Discord&#039;s terms of service&lt;/summary&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://locize.com&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
-    &lt;img src=&quot;https://github.com/user-attachments/assets/d6b70894-6064-475e-bb65-92a9e23e0077&quot; alt=&quot;Locize Logo&quot; height=&quot;50&quot;&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
+Client modifications are against Discord’s Terms of Service.
+
+However, Discord is pretty indifferent about them and there are no known cases of users getting banned for using client mods! So you should generally be fine as long as you don’t use any plugins that implement abusive behaviour. But no worries, all inbuilt plugins are safe to use!
+
+Regardless, if your account is very important to you and it getting disabled would be a disaster for you, you should probably not use any client mods (not exclusive to Vencord), just to be safe
+
+Additionally, make sure not to post screenshots with Vencord in a server where you might get banned for it
+
+&lt;/details&gt;
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[google/adk-js]]></title>
+            <link>https://github.com/google/adk-js</link>
+            <guid>https://github.com/google/adk-js</guid>
+            <pubDate>Mon, 22 Dec 2025 00:04:50 GMT</pubDate>
+            <description><![CDATA[An open-source, code-first Typescript toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/google/adk-js">google/adk-js</a></h1>
+            <p>An open-source, code-first Typescript toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 498</p>
+            <p>Forks: 41</p>
+            <p>Stars today: 22 stars today</p>
+            <h2>README</h2><pre># Agent Development Kit (ADK) for TypeScript
+
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![NPM Version](https://img.shields.io/npm/v/@google/adk)](https://www.npmjs.com/package/@google/adk)
+[![r/agentdevelopmentkit](https://img.shields.io/badge/Reddit-r%2Fagentdevelopmentkit-FF4500?style=flat&amp;logo=reddit&amp;logoColor=white)](https://www.reddit.com/r/agentdevelopmentkit/)
+
+&lt;html&gt;
+    &lt;h2 align=&quot;center&quot;&gt;
+      &lt;img src=&quot;https://raw.githubusercontent.com/google/adk-python/main/assets/agent-development-kit.png&quot; width=&quot;256&quot;/&gt;
+    &lt;/h2&gt;
+    &lt;h3 align=&quot;center&quot;&gt;
+      An open-source, code-first TypeScript toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.
+    &lt;/h3&gt;
+    &lt;h3 align=&quot;center&quot;&gt;
+      Important Links:
+      &lt;a href=&quot;https://google.github.io/adk-docs/&quot;&gt;Docs&lt;/a&gt;,
+      &lt;a href=&quot;https://github.com/google/adk-samples&quot;&gt;Samples&lt;/a&gt;,
+      &lt;a href=&quot;https://github.com/google/adk-python&quot;&gt;Python ADK&lt;/a&gt;.
+      &lt;a href=&quot;https://github.com/google/adk-java&quot;&gt;Java ADK&lt;/a&gt;,
+      &lt;a href=&quot;https://github.com/google/adk-go&quot;&gt;Go ADK&lt;/a&gt; &amp;
+      &lt;a href=&quot;https://github.com/google/adk-web&quot;&gt;Web ADK&lt;/a&gt;.
+    &lt;/h3&gt;
+&lt;/html&gt;
+
+Agent Development Kit (ADK) is designed for developers seeking fine-grained
+control and flexibility when building advanced AI agents that are tightly
+integrated with services in Google Cloud. It allows you to define agent
+behavior, orchestration, and tool use directly in code, enabling robust
+debugging, versioning, and deployment anywhere – from your laptop to the cloud.
+
+--------------------------------------------------------------------------------
+
+## ✨ Key Features
+
+-   **Rich Tool Ecosystem**: Utilize pre-built tools, custom functions, OpenAPI
+    specs, or integrate existing tools to give agents diverse capabilities, all
+    for tight integration with the Google ecosystem.
+
+-   **Code-First Development**: Define agent logic, tools, and orchestration
+    directly in TypeScript for ultimate flexibility, testability, and versioning.
+
+-   **Modular Multi-Agent Systems**: Design scalable applications by composing
+    multiple specialized agents into flexible hierarchies.
+
+## 🚀 Installation
+
+If you&#039;re using npm, add the following to your dependencies:
+
+```bash
+npm install @google/adk
+```
+
+Or with yarn:
+
+```bash
+yarn add @google/adk
+```
+
+## 📚 Documentation
+
+For building, evaluating, and deploying agents by follow the TypeScript
+documentation &amp; samples:
+
+*   **[Documentation](https://google.github.io/adk-docs)**
+*   **[Samples](https://github.com/google/adk-samples)**
+
+## 🏁 Feature Highlight
+
+### Same Features &amp; Familiar Interface As Other ADKs:
+
+```typescript
+import { LlmAgent, GOOGLE_SEARCH } from &#039;@google/adk&#039;;
+
+const rootAgent = new LlmAgent({
+    name: &#039;search_assistant&#039;,
+    description: &#039;An assistant that can search the web.&#039;,
+    model: &#039;gemini-2.5-flash&#039;, // Or your preferred models
+    instruction: &#039;You are a helpful assistant. Answer user questions using Google Search when needed.&#039;,
+    tools: [GOOGLE_SEARCH],
+});
+```
+
+### Development UI
+
+Same as the Python Development UI.
+A built-in development UI to help you test, evaluate, debug, and showcase your agent(s).
+&lt;img src=&quot;https://raw.githubusercontent.com/google/adk-python/main/assets/adk-web-dev-ui-function-call.png&quot;/&gt;
+
+### Evaluate Agents
+
+Coming soon...
+
+## 🤖 A2A and ADK integration
+
+For remote agent-to-agent communication, ADK integrates with the
+[A2A protocol](https://github.com/google/A2A/).
+Examples coming soon...
+
+## 🏗️ Building the Project
+
+This project uses `esbuild` to compile and bundle the TypeScript source code.
+You can build the project using the following npm scripts:
+
+*   `npm run build`: Compiles the TypeScript code into CommonJS, ESM, and Web formats in the `dist` directory.
+*   `npm run build:bundle`: Creates bundled versions of the output for easier distribution or use in environments that don&#039;t support tree-shaking well.
+*   `npm run build:watch`: Watches for changes in the source files and automatically rebuilds the project for ESM format only.
+
+## 🤝 Contributing
+
+We welcome contributions from the community! Whether it&#039;s bug reports, feature requests, documentation improvements, or code contributions, please see our
+- [General contribution guideline and flow](https://google.github.io/adk-docs/contributing-guide/).
+- Then if you want to contribute code, please read [Code Contributing Guidelines](./CONTRIBUTING.md) to get started.
+
+## 📄 License
+
+This project is licensed under the Apache 2.0 License - see the
+[LICENSE](LICENSE) file for details.
+
+## Preview
+
+This feature is subject to the &quot;Pre-GA Offerings Terms&quot; in the General Service
+Terms section of the
+[Service Specific Terms](https://cloud.google.com/terms/service-terms#1). Pre-GA
+features are available &quot;as is&quot; and might have limited support. For more
+information, see the
+[launch stage descriptions](https://cloud.google.com/products?hl=en#product-launch-stages).
+
+--------------------------------------------------------------------------------
+
+*Happy Agent Building!*
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
