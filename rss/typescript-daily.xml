@@ -4,24 +4,983 @@
         <title>GitHub Trending Today for typescript - TypeScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for typescript.</description>
-        <lastBuildDate>Wed, 14 Jan 2026 00:05:07 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 15 Jan 2026 00:05:29 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2026, GitHub</copyright>
         <item>
+            <title><![CDATA[iOfficeAI/AionUi]]></title>
+            <link>https://github.com/iOfficeAI/AionUi</link>
+            <guid>https://github.com/iOfficeAI/AionUi</guid>
+            <pubDate>Thu, 15 Jan 2026 00:05:29 GMT</pubDate>
+            <description><![CDATA[Free, local, open-source Cowork for Gemini CLI, Claude Code, Codex, Qwen Code, Goose Cli, Auggie, and more | 🌟 Star if you like it!]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/iOfficeAI/AionUi">iOfficeAI/AionUi</a></h1>
+            <p>Free, local, open-source Cowork for Gemini CLI, Claude Code, Codex, Qwen Code, Goose Cli, Auggie, and more | 🌟 Star if you like it!</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 3,585</p>
+            <p>Forks: 297</p>
+            <p>Stars today: 75 stars today</p>
+            <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[badlogic/pi-mono]]></title>
+            <link>https://github.com/badlogic/pi-mono</link>
+            <guid>https://github.com/badlogic/pi-mono</guid>
+            <pubDate>Thu, 15 Jan 2026 00:05:28 GMT</pubDate>
+            <description><![CDATA[AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/badlogic/pi-mono">badlogic/pi-mono</a></h1>
+            <p>AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 1,737</p>
+            <p>Forks: 224</p>
+            <p>Stars today: 84 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://shittycodingagent.ai&quot;&gt;
+    &lt;img src=&quot;https://shittycodingagent.ai/logo.svg&quot; alt=&quot;pi logo&quot; width=&quot;128&quot;&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://discord.com/invite/nKXTsAcmbT&quot;&gt;&lt;img alt=&quot;Discord&quot; src=&quot;https://img.shields.io/badge/discord-community-5865F2?style=flat-square&amp;logo=discord&amp;logoColor=white&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/badlogic/pi-mono/actions/workflows/ci.yml&quot;&gt;&lt;img alt=&quot;Build status&quot; src=&quot;https://img.shields.io/github/actions/workflow/status/badlogic/pi-mono/ci.yml?style=flat-square&amp;branch=main&quot; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+# Pi Monorepo
+
+&gt; **Looking for the pi coding agent?** See **[packages/coding-agent](packages/coding-agent)** for installation and usage.
+
+Tools for building AI agents and managing LLM deployments.
+
+## Packages
+
+| Package | Description |
+|---------|-------------|
+| **[@mariozechner/pi-ai](packages/ai)** | Unified multi-provider LLM API (OpenAI, Anthropic, Google, etc.) |
+| **[@mariozechner/pi-agent-core](packages/agent)** | Agent runtime with tool calling and state management |
+| **[@mariozechner/pi-coding-agent](packages/coding-agent)** | Interactive coding agent CLI |
+| **[@mariozechner/pi-mom](packages/mom)** | Slack bot that delegates messages to the pi coding agent |
+| **[@mariozechner/pi-tui](packages/tui)** | Terminal UI library with differential rendering |
+| **[@mariozechner/pi-web-ui](packages/web-ui)** | Web components for AI chat interfaces |
+| **[@mariozechner/pi-pods](packages/pods)** | CLI for managing vLLM deployments on GPU pods |
+
+## Development
+
+### Setup
+
+```bash
+npm install          # Install all dependencies
+npm run build        # Build all packages
+npm run check        # Lint, format, and type check
+```
+
+&gt; **Note:** `npm run check` requires `npm run build` to be run first. The web-ui package uses `tsc` which needs compiled `.d.ts` files from dependencies.
+
+### CI
+
+GitHub Actions runs on push to `main` and on pull requests. The workflow runs `npm run check` and `npm run test` for each package in parallel.
+
+**Do not add LLM API keys as secrets to this repository.** Tests that require LLM access use `describe.skipIf()` to skip when API keys are missing. This is intentional:
+
+- PRs from external contributors would have access to secrets in the CI environment
+- Malicious PR code could exfiltrate API keys
+- Tests that need LLM calls are skipped on CI and run locally by developers who have keys configured
+
+If you need to run LLM-dependent tests, run them locally with your own API keys.
+
+### Development
+
+Start watch builds for all packages:
+```bash
+npm run dev
+```
+
+Then run with tsx:
+```bash
+cd packages/coding-agent &amp;&amp; npx tsx src/cli.ts
+cd packages/pods &amp;&amp; npx tsx src/cli.ts
+```
+
+To run tests that don&#039;t require an LLM endpoint:
+```bash
+./test.sh
+```
+
+### Versioning (Lockstep)
+
+**All packages MUST always have the same version number.** Use these commands to bump versions:
+
+```bash
+npm run version:patch    # 0.7.5 -&gt; 0.7.6
+npm run version:minor    # 0.7.5 -&gt; 0.8.0
+npm run version:major    # 0.7.5 -&gt; 1.0.0
+```
+
+These commands:
+1. Update all package versions to the same number
+2. Update inter-package dependency versions (e.g., `pi-agent` depends on `pi-ai@^0.7.7`)
+3. Update `package-lock.json`
+
+**Never manually edit version numbers.** The lockstep system ensures consistency across the monorepo.
+
+### Publishing
+
+```bash
+npm run release:patch    # Bug fixes
+npm run release:minor    # New features
+npm run release:major    # Breaking changes
+```
+
+This handles version bump, CHANGELOG updates, commit, tag, publish, and push.
+
+**NPM Token Setup**: Requires a granular access token with &quot;Bypass 2FA on publish&quot; enabled.
+- Go to https://www.npmjs.com/settings/badlogic/tokens/
+- Create a new &quot;Granular Access Token&quot; with &quot;Bypass 2FA on publish&quot;
+- Set the token: `npm config set //registry.npmjs.org/:_authToken=YOUR_TOKEN`
+
+## License
+
+MIT</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[anomalyco/opencode]]></title>
+            <link>https://github.com/anomalyco/opencode</link>
+            <guid>https://github.com/anomalyco/opencode</guid>
+            <pubDate>Thu, 15 Jan 2026 00:05:27 GMT</pubDate>
+            <description><![CDATA[The open source coding agent.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></h1>
+            <p>The open source coding agent.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 69,250</p>
+            <p>Forks: 6,011</p>
+            <p>Stars today: 2,396 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://opencode.ai&quot;&gt;
+    &lt;picture&gt;
+      &lt;source srcset=&quot;packages/console/app/src/asset/logo-ornate-dark.svg&quot; media=&quot;(prefers-color-scheme: dark)&quot;&gt;
+      &lt;source srcset=&quot;packages/console/app/src/asset/logo-ornate-light.svg&quot; media=&quot;(prefers-color-scheme: light)&quot;&gt;
+      &lt;img src=&quot;packages/console/app/src/asset/logo-ornate-light.svg&quot; alt=&quot;OpenCode logo&quot;&gt;
+    &lt;/picture&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;The open source AI coding agent.&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://opencode.ai/discord&quot;&gt;&lt;img alt=&quot;Discord&quot; src=&quot;https://img.shields.io/discord/1391832426048651334?style=flat-square&amp;label=discord&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://www.npmjs.com/package/opencode-ai&quot;&gt;&lt;img alt=&quot;npm&quot; src=&quot;https://img.shields.io/npm/v/opencode-ai?style=flat-square&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/anomalyco/opencode/actions/workflows/publish.yml&quot;&gt;&lt;img alt=&quot;Build status&quot; src=&quot;https://img.shields.io/github/actions/workflow/status/anomalyco/opencode/publish.yml?style=flat-square&amp;branch=dev&quot; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+[![OpenCode Terminal UI](packages/web/src/assets/lander/screenshot.png)](https://opencode.ai)
+
+---
+
+### Installation
+
+```bash
+# YOLO
+curl -fsSL https://opencode.ai/install | bash
+
+# Package managers
+npm i -g opencode-ai@latest        # or bun/pnpm/yarn
+scoop bucket add extras; scoop install extras/opencode  # Windows
+choco install opencode             # Windows
+brew install anomalyco/tap/opencode # macOS and Linux (recommended, always up to date)
+brew install opencode              # macOS and Linux (official brew formula, updated less)
+paru -S opencode-bin               # Arch Linux
+mise use -g opencode               # Any OS
+nix run nixpkgs#opencode           # or github:anomalyco/opencode for latest dev branch
+```
+
+&gt; [!TIP]
+&gt; Remove versions older than 0.1.x before installing.
+
+### Desktop App (BETA)
+
+OpenCode is also available as a desktop application. Download directly from the [releases page](https://github.com/anomalyco/opencode/releases) or [opencode.ai/download](https://opencode.ai/download).
+
+| Platform              | Download                              |
+| --------------------- | ------------------------------------- |
+| macOS (Apple Silicon) | `opencode-desktop-darwin-aarch64.dmg` |
+| macOS (Intel)         | `opencode-desktop-darwin-x64.dmg`     |
+| Windows               | `opencode-desktop-windows-x64.exe`    |
+| Linux                 | `.deb`, `.rpm`, or AppImage           |
+
+```bash
+# macOS (Homebrew)
+brew install --cask opencode-desktop
+```
+
+#### Installation Directory
+
+The install script respects the following priority order for the installation path:
+
+1. `$OPENCODE_INSTALL_DIR` - Custom installation directory
+2. `$XDG_BIN_DIR` - XDG Base Directory Specification compliant path
+3. `$HOME/bin` - Standard user binary directory (if exists or can be created)
+4. `$HOME/.opencode/bin` - Default fallback
+
+```bash
+# Examples
+OPENCODE_INSTALL_DIR=/usr/local/bin curl -fsSL https://opencode.ai/install | bash
+XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://opencode.ai/install | bash
+```
+
+### Agents
+
+OpenCode includes two built-in agents you can switch between with the `Tab` key.
+
+- **build** - Default, full access agent for development work
+- **plan** - Read-only agent for analysis and code exploration
+  - Denies file edits by default
+  - Asks permission before running bash commands
+  - Ideal for exploring unfamiliar codebases or planning changes
+
+Also, included is a **general** subagent for complex searches and multistep tasks.
+This is used internally and can be invoked using `@general` in messages.
+
+Learn more about [agents](https://opencode.ai/docs/agents).
+
+### Documentation
+
+For more info on how to configure OpenCode [**head over to our docs**](https://opencode.ai/docs).
+
+### Contributing
+
+If you&#039;re interested in contributing to OpenCode, please read our [contributing docs](./CONTRIBUTING.md) before submitting a pull request.
+
+### Building on OpenCode
+
+If you are working on a project that&#039;s related to OpenCode and is using &quot;opencode&quot; as a part of its name; for example, &quot;opencode-dashboard&quot; or &quot;opencode-mobile&quot;, please add a note to your README to clarify that it is not built by the OpenCode team and is not affiliated with us in any way.
+
+### FAQ
+
+#### How is this different from Claude Code?
+
+It&#039;s very similar to Claude Code in terms of capability. Here are the key differences:
+
+- 100% open source
+- Not coupled to any provider. Although we recommend the models we provide through [OpenCode Zen](https://opencode.ai/zen); OpenCode can be used with Claude, OpenAI, Google or even local models. As models evolve the gaps between them will close and pricing will drop so being provider-agnostic is important.
+- Out of the box LSP support
+- A focus on TUI. OpenCode is built by neovim users and the creators of [terminal.shop](https://terminal.shop); we are going to push the limits of what&#039;s possible in the terminal.
+- A client/server architecture. This for example can allow OpenCode to run on your computer, while you can drive it remotely from a mobile app. Meaning that the TUI frontend is just one of the possible clients.
+
+---
+
+**Join our community** [Discord](https://discord.gg/opencode) | [X.com](https://x.com/opencode)
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[stan-smith/FossFLOW]]></title>
+            <link>https://github.com/stan-smith/FossFLOW</link>
+            <guid>https://github.com/stan-smith/FossFLOW</guid>
+            <pubDate>Thu, 15 Jan 2026 00:05:26 GMT</pubDate>
+            <description><![CDATA[Make beautiful isometric infrastructure diagrams]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/stan-smith/FossFLOW">stan-smith/FossFLOW</a></h1>
+            <p>Make beautiful isometric infrastructure diagrams</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 16,311</p>
+            <p>Forks: 1,051</p>
+            <p>Stars today: 167 stars today</p>
+            <h2>README</h2><pre># FossFLOW - Isometric Diagramming Tool &lt;img width=&quot;30&quot; height=&quot;30&quot; alt=&quot;fossflow&quot; src=&quot;https://github.com/user-attachments/assets/56d78887-601c-4336-ab87-76f8ee4cde96&quot; /&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+ &lt;a href=&quot;README.md&quot;&gt;English&lt;/a&gt; | &lt;a href=&quot;docs/README.cn.md&quot;&gt;简体中文&lt;/a&gt; | &lt;a href=&quot;docs/README.es.md&quot;&gt;Español&lt;/a&gt; | &lt;a href=&quot;docs/README.pt.md&quot;&gt;Português&lt;/a&gt; | &lt;a href=&quot;docs/README.fr.md&quot;&gt;Français&lt;/a&gt; | &lt;a href=&quot;docs/README.hi.md&quot;&gt;हिन्दी&lt;/a&gt; | &lt;a href=&quot;docs/README.bn.md&quot;&gt;বাংলা&lt;/a&gt; | &lt;a href=&quot;docs/README.ru.md&quot;&gt;Русский&lt;/a&gt; | &lt;a href=&quot;docs/README.id.md&quot;&gt;Bahasa Indonesia&lt;/a&gt; | &lt;a href=&quot;docs/README.de.md&quot;&gt;Deutsch&lt;/a&gt;
+&lt;/p&gt;
+
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;a href=&quot;https://trendshift.io/repositories/15118&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/15118&quot; alt=&quot;stan-smith%2FFossFLOW | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;b&gt;Hey!&lt;/b&gt; Stan here, if you&#039;ve used FossFLOW and it&#039;s helped you, &lt;b&gt;I&#039;d really appreciate if you could donate something small :)&lt;/b&gt; I work full time, and finding the time to work on this project is challenging enough.
+If you&#039;ve had a feature that I&#039;ve implemented for you, or fixed a bug it&#039;d be great if you could :) if not, that&#039;s not a problem, this software will always remain free!
+
+
+&lt;b&gt;Also!&lt;/b&gt; If you haven&#039;t yet, please check out the underlying library this is built on by &lt;a href=&quot;https://github.com/markmanx/isoflow&quot;&gt;@markmanx&lt;/a&gt; I truly stand on the shoulders of a giant here 🫡
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P61KBXA3)
+
+&lt;a href=&quot;https://www.buymeacoffee.com/stan.smith&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://cdn.buymeacoffee.com/buttons/default-orange.png&quot; alt=&quot;Buy Me A Coffee&quot; height=&quot;41&quot; width=&quot;174&quot;&gt;&lt;/a&gt;
+
+Thanks,
+
+-Stan
+
+## Try it online
+&lt;p align=&quot;center&quot;&gt;
+Go to  &lt;b&gt; --&gt; https://stan-smith.github.io/FossFLOW/ &lt;-- &lt;/b&gt;
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+
+ &lt;a href=&quot;https://github.com/stan-smith/SlingShot&quot;&gt;
+  Check out my latest project: &lt;b&gt;SlingShot&lt;/b&gt; - Dead easy video streaming over QUIC
+ &lt;/a&gt;
+&lt;/p&gt;
+
+------------------------------------------------------------------------------------------------------------------------------
+FossFLOW is a powerful, open-source Progressive Web App (PWA) for creating beautiful isometric diagrams. Built with React and the &lt;a href=&quot;https://github.com/markmanx/isoflow&quot;&gt;Isoflow&lt;/a&gt; (Now forked and published to NPM as fossflow) library, it runs entirely in your browser with offline support.
+
+![Screenshot_20250630_160954](https://github.com/user-attachments/assets/e7f254ad-625f-4b8a-8efc-5293b5be9d55)
+
+- **📝 [FOSSFLOW_TODO.md](https://github.com/stan-smith/FossFLOW/blob/master/FOSSFLOW_TODO.md)** - Current issues and roadmap with codebase mappings, most gripes are with the isoflow library itself.
+- **🤝 [CONTRIBUTING.md](https://github.com/stan-smith/FossFLOW/blob/master/CONTRIBUTING.md)** - How to contribute to the project.
+
+### Performance updates
+ - **Reduced frame refresh delay, should look much smoother now**
+
+### Multilingual Support
+- **9 Languages Supported** - Full interface translation in English, Chinese (Simplified), Spanish, Portuguese (Brazilian), French, Hindi, Bengali, Russian, and Indonesian
+- **Language Selector** - Easy-to-use language switcher in the app header
+- **Complete Translation** - All menus, dialogs, settings, tooltips, and help content translated
+- **Locale-Aware** - Automatically detects and remembers your language preference
+
+### Improved Connector Tool
+- **Click-based Creation** - New default mode: click first node, then second node to connect
+- **Drag Mode Option** - Original drag-and-drop still available via settings
+- **Mode Selection** - Switch between click and drag modes in Settings → Connectors tab
+- **Better Reliability** - Click mode provides more predictable connection creation
+
+
+## 🐳 Quick Deploy with Docker
+
+```bash
+# Using Docker Compose (recommended - includes persistent storage)
+docker compose up
+
+# Or run directly from Docker Hub with persistent storage
+docker run -p 80:80 -v $(pwd)/diagrams:/data/diagrams stnsmith/fossflow:latest
+```
+
+Server storage is enabled by default in Docker. Your diagrams will be saved to `./diagrams` on the host.
+
+To disable server storage, set `ENABLE_SERVER_STORAGE=false`:
+```bash
+docker run -p 80:80 -e ENABLE_SERVER_STORAGE=false stnsmith/fossflow:latest
+```
+
+## Quick Start (Local Development)
+
+```bash
+# Clone the repository
+git clone https://github.com/stan-smith/FossFLOW
+cd FossFLOW
+
+# Install dependencies
+npm install
+
+# Build the library (required first time)
+npm run build:lib
+
+# Start development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Monorepo Structure
+
+This is a monorepo containing two packages:
+
+- `packages/fossflow-lib` - React component library for drawing network diagrams (built with Webpack)
+- `packages/fossflow-app` - Progressive Web App which wraps the lib and presents it (built with RSBuild)
+
+### Development Commands
+
+```bash
+# Development
+npm run dev          # Start app development server
+npm run dev:lib      # Watch mode for library development
+
+# Building
+npm run build        # Build both library and app
+npm run build:lib    # Build library only
+npm run build:app    # Build app only
+
+# Testing &amp; Linting
+npm test             # Run unit tests
+npm run lint         # Check for linting errors
+
+# E2E Tests (Selenium)
+cd e2e-tests
+./run-tests.sh       # Run end-to-end tests (requires Docker &amp; Python)
+
+# Publishing
+npm run publish:lib  # Publish library to npm
+```
+
+## How to Use
+
+### Creating Diagrams
+
+1. **Add Items**:
+   - Press the &quot;+&quot; button on the top right menu, the library of components will appear on the left
+   - Drag and drop components from the library onto the canvas
+   - Or right-click on the grid and select &quot;Add node&quot;
+
+2. **Connect Items**: 
+   - Select the Connector tool (press &#039;C&#039; or click connector icon)
+   - **Click mode** (default): Click first node, then click second node
+   - **Drag mode** (optional): Click and drag from first to second node
+   - Switch modes in Settings → Connectors tab
+
+3. **Save Your Work**:
+   - **Quick Save** - Saves to browser session
+   - **Export** - Download as JSON file
+   - **Import** - Load from JSON file
+
+### Storage Options
+
+- **Session Storage**: Temporary saves cleared when browser closes
+- **Export/Import**: Permanent storage as JSON files
+- **Auto-Save**: Automatically saves changes every 5 seconds to session
+
+## Contributing
+
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+## Documentation
+
+- [FOSSFLOW_ENCYCLOPEDIA.md](FOSSFLOW_ENCYCLOPEDIA.md) - Comprehensive guide to the codebase
+- [FOSSFLOW_TODO.md](FOSSFLOW_TODO.md) - Current issues and roadmap
+- [CONTRIBUTING.md](CONTRIBUTING.md) - Contributing guidelines
+
+## License
+
+MIT
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[open-metadata/OpenMetadata]]></title>
+            <link>https://github.com/open-metadata/OpenMetadata</link>
+            <guid>https://github.com/open-metadata/OpenMetadata</guid>
+            <pubDate>Thu, 15 Jan 2026 00:05:25 GMT</pubDate>
+            <description><![CDATA[OpenMetadata is a unified metadata platform for data discovery, data observability, and data governance powered by a central metadata repository, in-depth column level lineage, and seamless team collaboration.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/open-metadata/OpenMetadata">open-metadata/OpenMetadata</a></h1>
+            <p>OpenMetadata is a unified metadata platform for data discovery, data observability, and data governance powered by a central metadata repository, in-depth column level lineage, and seamless team collaboration.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 8,427</p>
+            <p>Forks: 1,591</p>
+            <p>Stars today: 10 stars today</p>
+            <h2>README</h2><pre>&lt;br /&gt;&lt;br /&gt;
+&lt;p align=&quot;center&quot;&gt;
+    &lt;a href=&quot;https://open-metadata.org&quot;&gt;
+        &lt;img alt=&quot;Logo&quot; src=&quot;https://github.com/open-metadata/OpenMetadata/assets/40225091/e794ced8-7220-4393-8efc-3faf93bfb503&quot; width=&quot;49%&quot;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;b&gt;Empower your Data Journey with OpenMetadata&lt;/b&gt;&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+    
+![Commit Activity](https://img.shields.io/github/commit-activity/m/open-metadata/OpenMetadata?style=for-the-badge)
+[![Release](https://img.shields.io/github/release/open-metadata/OpenMetadata/all.svg?style=for-the-badge)](https://github.com/open-metadata/OpenMetadata/releases)
+
+&lt;/div&gt;
+
+## What is OpenMetadata?
+[OpenMetadata](https://open-metadata.org/)  is a unified metadata platform for data discovery, data observability, and data governance powered by a central metadata repository, in-depth column-level lineage, and seamless team collaboration. It is one of the fastest-growing open-source projects with a vibrant community and adoption by a diverse set of companies in a variety of industry verticals. Based on Open Metadata Standards and APIs, supporting connectors to a wide range of data services, OpenMetadata enables end-to-end metadata management, giving you the freedom to unlock the value of your data assets.
+&lt;div align=&quot;center&quot;&gt;
+    &lt;img src=&quot;https://github.com/open-metadata/OpenMetadata/assets/40225091/ebfb4ec5-f0a2-4d58-8ce5-a082b5cf0f76&quot; width=800&gt;
+&lt;/div&gt;
+
+&lt;br /&gt;
+Contents:
+
+- [Features](#key-features-of-openmetadata)
+- [Try our Sandbox](#try-our-sandbox)
+- [Install &amp; Run](#install-and-run-openmetadata)
+- [Roadmap](https://docs.open-metadata.org/latest/roadmap)
+- [Documentation and Support](#documentation-and-support)
+- [Contributors](#contributors)
+
+OpenMetadata Consists of Four Main Components:
+- **Metadata Schemas**: These are the core definitions and vocabulary for metadata based on common abstractions and types. They also allow for custom extensions and properties to suit different use cases and domains.
+- **Metadata Store**: This is the central repository for storing and managing the metadata graph, which connects data assets, users, and tool-generated metadata in a unified way.
+- **Metadata APIs**: These are the interfaces for producing and consuming metadata, built on top of the metadata schemas. They enable seamless integration of user interfaces and tools, systems, and services with the metadata store.
+- **Ingestion Framework**: This is a pluggable framework for ingesting metadata from various sources and tools to the metadata store. It supports about 84+ connectors for data warehouses, databases, dashboard services, messaging services, pipeline services, and more.
+
+## Key Features of OpenMetadata
+**Data Discovery**: Find and explore all your data assets in a single place using various strategies, such as keyword search, data associations, and advanced queries. You can search across tables, topics, dashboards, pipelines, and services.
+
+![12](https://github.com/open-metadata/OpenMetadata/assets/40225091/0dbd2746-c93d-4a47-8d3e-ceb3ae01436f)
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**Data Collaboration**: Communicate, converse, and cooperate with other users and teams on data assets. You can get event notifications, send alerts, add announcements, create tasks, and use conversation threads.
+
+![11](https://github.com/open-metadata/OpenMetadata/assets/40225091/7df29e12-8a29-44b7-9466-42474823783f)
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**Data Quality and Profiler**: Measure and monitor the quality with **no-code** to build trust in your data. You can define and run data quality tests, group them into test suites, and view the results in an interactive dashboard. With powerful collaboration, make data quality a shared responsibility in your organization.
+
+![8](https://github.com/open-metadata/OpenMetadata/assets/40225091/6b330827-cc2d-4d06-abf0-a4d42ce532ba)
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**Data Governance**: Enforce data policies and standards across your organization. You can define data domains and data products, assign owners and stakeholders, and classify data assets using tags and terms. Use powerful automation features to auto-classify your data.
+
+![10](https://github.com/open-metadata/OpenMetadata/assets/40225091/f7384a71-6b58-44ad-983f-e302718ee3f1)
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**Data Insights and KPIs**: Use reports and platform analytics to understand how your organization&#039;s data is doing. Data Insights provides a single-pane view of all the key metrics to reflect the state of your data best. Define the Key Performance Indicators (KPIs) and set goals within OpenMetadata to work towards better documentation, ownership, and tiering. Alerts can be set against the KPIs to be received on a specified schedule.
+
+![9](https://github.com/open-metadata/OpenMetadata/assets/40225091/61fc2f65-2436-4fc9-9434-c27ee9b25183)
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**Data Lineage**: Track and visualize the origin and transformation of your data assets end-to-end. You can view column-level lineage, filter queries, and edit lineage manually using a no-code editor.
+  
+**Data Documentation**: Document your data assets and metadata entities using rich text, images, and links. You can also add comments and annotations and generate data dictionaries and data catalogs.
+  
+**Data Observability**: Monitor the health and performance of your data assets and pipelines. You can view metrics such as data freshness, data volume, data quality, and data latency. You can also set up alerts and notifications for any anomalies or failures.
+  
+**Data Security**: Secure your data and metadata using various authentication and authorization mechanisms. You can integrate with different identity providers for single sign-on and define roles and policies for access control.
+  
+**Webhooks**: Integrate with external applications and services using webhooks. You can register URLs to receive metadata event notifications and integrate with Slack, Microsoft Teams, and Google Chat.
+  
+**Connectors**: Ingest metadata from various sources and tools using connectors. OpenMetadata supports about 84+ connectors for data warehouses, databases, dashboard services, messaging services, pipeline services, and more.
+
+## Try our Sandbox
+
+Take a look and play with sample data at [http://sandbox.open-metadata.org](http://sandbox.open-metadata.org)
+
+## Install and Run OpenMetadata
+Get up and running in a few minutes. See the OpenMetadata documentation for [installation instructions](https://docs.open-metadata.org/quick-start/local-docker-deployment).
+
+## Documentation and Support
+
+We&#039;re here to help and make OpenMetadata even better! Check out [OpenMetadata documentation](https://docs.open-metadata.org/) for a complete description of OpenMetadata&#039;s features. Join our [Slack Community](https://slack.open-metadata.org/) to get in touch with us if you want to chat, need help, or discuss new feature requirements.
+
+
+## Contributors
+
+We ❤️ all contributions, big and small! Check out our [CONTRIBUTING](./CONTRIBUTING.md) guide to get started, and let us know how we can help.
+
+Don&#039;t want to miss anything? Give the project a ⭐ 🚀 
+
+A HUGE THANK YOU to all our supporters!
+
+&lt;a href=&quot;https://github.com/open-metadata/OpenMetadata/graphs/contributors&quot;&gt;
+  &lt;img src=&quot;https://contrib.rocks/image?repo=open-metadata/OpenMetadata&amp;max=4000&amp;columns=30&quot; /&gt;
+&lt;/a&gt;
+
+## Stargazers
+
+[![Stargazers of @open-metadata/OpenMetadata repo](http://reporoster.com/stars/open-metadata/OpenMetadata)](https://github.com/open-metadata/OpenMetadata/stargazers)
+
+## License
+OpenMetadata is released under [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[moeru-ai/airi]]></title>
+            <link>https://github.com/moeru-ai/airi</link>
+            <guid>https://github.com/moeru-ai/airi</guid>
+            <pubDate>Thu, 15 Jan 2026 00:05:24 GMT</pubDate>
+            <description><![CDATA[💖🧸 Self hosted, you owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraft, Factorio playing. Web / macOS / Windows supported.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/moeru-ai/airi">moeru-ai/airi</a></h1>
+            <p>💖🧸 Self hosted, you owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraft, Factorio playing. Web / macOS / Windows supported.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 16,828</p>
+            <p>Forks: 1,596</p>
+            <p>Stars today: 32 stars today</p>
+            <h2>README</h2><pre>&lt;picture&gt;
+  &lt;source
+    width=&quot;100%&quot;
+    srcset=&quot;./docs/content/public/banner-dark-1280x640.avif&quot;
+    media=&quot;(prefers-color-scheme: dark)&quot;
+  /&gt;
+  &lt;source
+    width=&quot;100%&quot;
+    srcset=&quot;./docs/content/public/banner-light-1280x640.avif&quot;
+    media=&quot;(prefers-color-scheme: light), (prefers-color-scheme: no-preference)&quot;
+  /&gt;
+  &lt;img width=&quot;250&quot; src=&quot;./docs/content/public/banner-light-1280x640.avif&quot; /&gt;
+&lt;/picture&gt;
+
+&lt;h1 align=&quot;center&quot;&gt;Project AIRI&lt;/h1&gt;
+
+&lt;p align=&quot;center&quot;&gt;Re-creating Neuro-sama, a soul container of AI waifu / virtual characters to bring them into our world.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  [&lt;a href=&quot;https://discord.gg/TgQ3Cu2F7A&quot;&gt;Join Discord Server&lt;/a&gt;] [&lt;a href=&quot;https://airi.moeru.ai&quot;&gt;Try it&lt;/a&gt;] [&lt;a href=&quot;https://github.com/moeru-ai/airi/blob/main/docs/README.zh-CN.md&quot;&gt;简体中文&lt;/a&gt;] [&lt;a href=&quot;https://github.com/moeru-ai/airi/blob/main/docs/README.ja-JP.md&quot;&gt;日本語&lt;/a&gt;] [&lt;a href=&quot;https://github.com/moeru-ai/airi/blob/main/docs/README.ru-RU.md&quot;&gt;Русский&lt;/a&gt;] [&lt;a href=&quot;https://github.com/moeru-ai/airi/blob/main/docs/README.vi.md&quot;&gt;Tiếng Việt&lt;/a&gt;] [&lt;a href=&quot;https://github.com/moeru-ai/airi/blob/main/docs/README.fr.md&quot;&gt;Français&lt;/a&gt;]
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://deepwiki.com/moeru-ai/airi&quot;&gt;&lt;img src=&quot;https://deepwiki.com/badge.svg&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/moeru-ai/airi/blob/main/LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/license/moeru-ai/airi.svg?style=flat&amp;colorA=080f12&amp;colorB=1fa669&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://discord.gg/TgQ3Cu2F7A&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscord.com%2Fapi%2Finvites%2FTgQ3Cu2F7A%3Fwith_counts%3Dtrue&amp;query=%24.approximate_member_count&amp;suffix=%20members&amp;logo=discord&amp;logoColor=white&amp;label=%20&amp;color=7389D8&amp;labelColor=6A7EC2&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://x.com/proj_airi&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/%40proj__airi-black?style=flat&amp;logo=x&amp;labelColor=%23101419&amp;color=%232d2e30&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://t.me/+7M_ZKO3zUHFlOThh&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Telegram-%235AA9E6?logo=telegram&amp;labelColor=FFFFFF&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;./docs/wechat.md&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/WeChat-%2307C160?logo=wechat&amp;logoColor=%2307C160&amp;labelColor=FFFFFF&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://qun.qq.com/universal-share/share?ac=1&amp;authKey=9g00d%2BZS7nORzcJugNNddJ7rCghZTIR7fhXabGwch2S%2BG%2BKGIKwlN1N2nIqkh2jg&amp;busi_data=eyJncm91cENvZGUiOiIxMDU4MTU2Njk3IiwidG9rZW4iOiJmcnkra1hWNFIxNytEcG0zcHRUdVJIaldlRDFxN0dzK080QWtvTEdOQjJkNEY2eUFta1g1clNpbkxSMS9FQWFYIiwidWluIjoiMTI2MDkwNzMzNSJ9&amp;data=b1eJrwn3GVOUh7YIxZ7l9vHQo99HPmRxKPpMKlDCmfzx8Y57IXb2EZCMaOC9rVTd2U558qpNjwUYUWlPHxVHvg&amp;svctype=4&amp;tempid=h5_group_info&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/QQ-%2312B7F5?logo=qq&amp;labelColor=FFFFFF&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://www.producthunt.com/products/airi?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_source=badge-airi&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=993524&amp;theme=neutral&amp;t=1752696535380&quot; alt=&quot;AIRI - A&amp;#0032;container&amp;#0032;of&amp;#0032;cyber&amp;#0032;living&amp;#0032;souls&amp;#0044;&amp;#0032;re&amp;#0045;creation&amp;#0032;of&amp;#0032;Neuro&amp;#0045;sama | Product Hunt&quot; style=&quot;width: 250px; height: 54px;&quot; width=&quot;250&quot; height=&quot;54&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://trendshift.io/repositories/14636&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/14636&quot; alt=&quot;moeru-ai%2Fairi | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&gt; Heavily inspired by [Neuro-sama](https://www.youtube.com/@Neurosama)
+
+&gt; [!WARNING]
+&gt; **Attention:** We **do not** have any officially minted cryptocurrency or token associated with this project. Please check the information and proceed with caution.
+
+&gt; [!NOTE]
+&gt;
+&gt; We&#039;ve got a whole dedicated organization [@proj-airi](https://github.com/proj-airi) for all the sub-projects born from Project AIRI. Check it out!
+&gt;
+&gt; RAG, memory system, embedded database, icons, Live2D utilities, and more!
+
+&gt; [!TIP]
+&gt; We have a translation project on [Crowdin](https://crowdin.com/project/proj-airi). If you find any inaccurate translations, feel free to contribute improvements there.
+&gt; &lt;a href=&quot;https://crowdin.com/project/proj-airi&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;&lt;img style=&quot;width: 140px; height: 40px;&quot; src=&quot;https://badges.crowdin.net/badge/light/crowdin-on-dark.png&quot; srcset=&quot;https://badges.crowdin.net/badge/light/crowdin-on-dark.png 1x, https://badges.crowdin.net/badge/light/crowdin-on-dark@2x.png 2x&quot; alt=&quot;Crowdin | Agile localization for tech companies&quot; width=&quot;140&quot; height=&quot;40&quot; /&gt;&lt;/a&gt;
+
+Have you dreamed about having a cyber living being (cyber waifu, digital pet) or digital companion that could play with and talk to you?
+
+With the power of modern large language models like [ChatGPT](https://chatgpt.com) and famous [Claude](https://claude.ai), asking a virtual being to roleplay and chat with us is already easy enough for everyone. Platforms like [Character.ai (a.k.a. c.ai)](https://character.ai) and [JanitorAI](https://janitorai.com/) as well as local playgrounds like [SillyTavern](https://github.com/SillyTavern/SillyTavern) are already good-enough solutions for a chat based or visual adventure game like experience.
+
+&gt; But, what about the abilities to play games? And see what you are coding at? Chatting while playing games, watching videos, and is capable of doing many other things.
+
+Perhaps you know [Neuro-sama](https://www.youtube.com/@Neurosama) already. She is currently the best virtual streamer capable of playing games, chatting, and interacting with you and the participants. Some also call this kind of being &quot;digital human.&quot; **Sadly, as it&#039;s not open sourced, you cannot interact with her after her live streams go offline**.
+
+Therefore, this project, AIRI, offers another possibility here: **let you own your digital life, cyber living, easily, anywhere, anytime**.
+
+## DevLogs We Posted &amp; Recent Updates
+
+- [DevLog @ 2026.01.01](https://airi.moeru.ai/docs/en/blog/DevLog-2026.01.01/) on January 1, 2026
+- [DevLog @ 2025.10.20](https://airi.moeru.ai/docs/en/blog/DevLog-2025.10.20/) on October 20, 2025
+- [DevLog @ 2025.08.05](https://airi.moeru.ai/docs/en/blog/DevLog-2025.08.05/) on August 5, 2025
+- [DevLog @ 2025.08.01](https://airi.moeru.ai/docs/en/blog/DevLog-2025.08.01/) on August 1, 2025
+- [DevLog @ 2025.07.18](https://airi.moeru.ai/docs/en/blog/DevLog-2025.07.18/) on July 18, 2025
+- [DreamLog 0x1](https://airi.moeru.ai/docs/en/blog/dreamlog-0x1/) on June 16, 2025
+- ...more on [documentation site](https://airi.moeru.ai/docs/en/)
+
+## What&#039;s So Special About This Project?
+
+Unlike the other AI driven VTuber open source projects, アイリ was built with support of many Web technologies such as [WebGPU](https://www.w3.org/TR/webgpu/), [WebAudio](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API), [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), [WebAssembly](https://webassembly.org/), [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket), etc. from the first day.
+
+&gt; [!TIP]
+&gt; Worrying about the performance drop since we are using Web related technologies?
+&gt;
+&gt; Don&#039;t worry, while Web browser version is meant to give an insight about how much we can push and do inside browsers, and webviews, we will never fully rely on this, the desktop version of AIRI is capable of using native [NVIDIA CUDA](https://developer.nvidia.com/cuda-toolkit) and [Apple Metal](https://developer.apple.com/metal/) by default (thanks to HuggingFace &amp; beloved [candle](https://github.com/huggingface/candle) project), without any complex dependency managements, considering the tradeoff, it was partially powered by Web technologies for graphics, layouts, animations, and the WIP plugin systems for everyone to integrate things.
+
+This means that **アイリ is capable of running on modern browsers and devices** and even on mobile devices (already done with PWA support). This brings a lot of possibilities for us (the developers) to build and extend the power of アイリ VTuber to the next level, while still leaving the flexibilities for users to enable features that requires TCP connections or other non-Web technologies such as connecting to a Discord voice channel or playing Minecraft and Factorio with friends.
+
+&gt; [!NOTE]
+&gt;
+&gt; We are still in the early stage of development where we are seeking out talented developers to join us and help us to make アイリ a reality.
+&gt;
+&gt; It&#039;s ok if you are not familiar with Vue.js, TypeScript, and devtools required for this project, you can join us as an artist, designer, or even help us to launch our first live stream.
+&gt;
+&gt; Even if you are a big fan of React, Svelte or even Solid, we welcome you. You can open a sub-directory to add features that you want to see in アイリ, or would like to experiment with.
+&gt;
+&gt; Fields (and related projects) that we are looking for:
+&gt;
+&gt; - Live2D modeller
+&gt; - VRM modeller
+&gt; - VRChat avatar designer
+&gt; - Computer Vision
+&gt; - Reinforcement Learning
+&gt; - Speech Recognition
+&gt; - Speech Synthesis
+&gt; - ONNX Runtime
+&gt; - Transformers.js
+&gt; - vLLM
+&gt; - WebGPU
+&gt; - Three.js
+&gt; - WebXR ([checkout the another project](https://github.com/moeru-ai/chat) we have under the @moeru-ai organization)
+&gt;
+&gt; **If you are interested, why not introduce yourself here? [Would like to join part of us to build AIRI?](https://github.com/moeru-ai/airi/discussions/33)**
+
+## Current Progress
+
+Capable of
+
+- [x] Brain
+  - [x] Play [Minecraft](https://www.minecraft.net)
+  - [x] Play [Factorio](https://www.factorio.com) (WIP, but [PoC and demo available](https://github.com/moeru-ai/airi-factorio))
+  - [x] Chat in [Telegram](https://telegram.org)
+  - [x] Chat in [Discord](https://discord.com)
+  - [ ] Memory
+    - [x] Pure in-browser database support (DuckDB WASM | `pglite`)
+    - [ ] Memory Alaya (WIP)
+  - [ ] Pure in-browser local (WebGPU) inference
+- [x] Ears
+  - [x] Audio input from browser
+  - [x] Audio input from [Discord](https://discord.com)
+  - [x] Client side speech recognition
+  - [x] Client side talking detection
+- [x] Mouth
+  - [x] [ElevenLabs](https://elevenlabs.io/) voice synthesis
+- [x] Body
+  - [x] VRM support
+    - [x] Control VRM model
+  - [x] VRM model animations
+    - [x] Auto blink
+    - [x] Auto look at
+    - [x] Idle eye movement
+  - [x] Live2D support
+    - [x] Control Live2D model
+  - [x] Live2D model animations
+    - [x] Auto blink
+    - [x] Auto look at
+    - [x] Idle eye movement
+
+## Development
+
+&gt; For detailed instructions to develop this project, follow [CONTRIBUTING.md](./.github/CONTRIBUTING.md)
+
+&gt; [!NOTE]
+&gt; By default, `pnpm dev` will start the development server for the Stage Web (browser version). If you would
+&gt; like to try developing the desktop version, please make sure you read [CONTRIBUTING.md](./.github/CONTRIBUTING.md)
+&gt; to setup the environment correctly.
+
+```shell
+pnpm i
+pnpm dev
+```
+
+### Stage Web (Browser Version at [airi.moeru.ai](https://airi.moeru.ai))
+
+```shell
+pnpm dev
+```
+
+### Stage Tamagotchi (Desktop Version)
+
+```shell
+pnpm dev:tamagotchi
+```
+
+A Nix package for Tamagotchi is included. To run airi with Nix, first make sure to enable flakes, then run:
+
+```shell
+nix run github:moeru-ai/airi
+```
+
+### Stage Capacitor (Mobile Version)
+
+Start the development server for the capacitor web version:
+
+```shell
+pnpm dev:capacitor
+```
+
+Check your IP address in the output of the command above:
+
+```shell
+  ROLLDOWN-VITE v7.3.0  ready in 1073 ms
+
+  ➜  Local:   https://localhost:5273/
+  ➜  Network: https://&lt;ip-will-be-here&gt;:5273/
+  ➜  Vue DevTools: Open https://localhost:5273/__devtools__/ as a separate window
+  ➜  Vue DevTools: Press Option(⌥)+Shift(⇧)+D in App to toggle the Vue DevTools
+  ➜  UnoCSS Inspector: https://localhost:5273/__unocss/
+```
+
+Open the Xcode project:
+
+```shell
+CAPACITOR_DEV_SERVER_URL=https://&lt;your-ip-address&gt;:5273 pnpm open:ios
+```
+
+Then Xcode will open and you can click the &quot;Run&quot; button to run the app on your iPhone.
+
+### Documentation Site
+
+```shell
+pnpm dev:docs
+```
+
+### Publish
+
+Please update the version in `Cargo.toml` after running `bumpp`:
+
+```shell
+npx bumpp --no-commit --no-tag
+```
+
+## Support of LLM API Providers (powered by [xsai](https://github.com/moeru-ai/xsai))
+
+- [x] [302.AI (sponsored)](https://share.302.ai/514k2v)
+- [x] [OpenRouter](https://openrouter.ai/)
+- [x] [vLLM](https://github.com/vllm-project/vllm)
+- [x] [SGLang](https://github.com/sgl-project/sglang)
+- [x] [Ollama](https://github.com/ollama/ollama)
+- [x] [Google Gemini](https://developers.generativeai.google)
+- [x] [OpenAI](https://platform.openai.com/docs/guides/gpt/chat-completions-api)
+  - [ ] [Azure OpenAI API](https://learn.microsoft.com/en-us/azure/ai-services/openai/reference) (PR welcome)
+- [x] [Anthropic Claude](https://anthropic.com)
+  - [ ] [AWS Claude](https://docs.anthropic.com/en/api/claude-on-amazon-bedrock) (PR welcome)
+- [x] [DeepSeek](https://www.deepseek.com/)
+- [x] [Qwen](https://help.aliyun.com/document_detail/2400395.html)
+- [x] [xAI](https://x.ai/)
+- [x] [Groq](https://wow.groq.com/)
+- [x] [Mistral](https://mistral.ai/)
+- [x] [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/)
+- [x] [Together.ai](https://www.together.ai/)
+- [x] [Fireworks.ai](https://www.together.ai/)
+- [x] [Novita](https://www.novita.ai/)
+- [x] [Zhipu](https://bigmodel.cn)
+- [x] [SiliconFlow](https://cloud.siliconflow.cn/i/rKXmRobW)
+- [x] [Stepfun](https://platform.stepfun.com/)
+- [x] [Baichuan](https://platform.baichuan-ai.com)
+- [x] [Minimax](https://api.minimax.chat/)
+- [x] [Moonshot AI](https://platform.moonshot.cn/)
+- [x] [ModelScope](https://modelscope.cn/docs/model-service/API-Inference/intro)
+- [x] [Player2](https://player2.game/)
+- [x] [Tencent Cloud](https://cloud.tencent.com/document/product/1729)
+- [ ] [Sparks](https://www.xfyun.cn/doc/spark/Web.html) (PR welcome)
+- [ ] [Volcano Engine](https://www.volcengine.com/experience/ark?utm_term=202502dsinvite&amp;ac=DSASUQY5&amp;rc=2QXCA1VI) (PR welcome)
+
+## Sub-projects Born from This Project
+
+- [Awesome AI VTuber](https://github.com/proj-airi/awesome-ai-vtuber): A curated list of AI VTubers and related projects
+- [`unspeech`](https://github.com/moeru-ai/unspeech): Universal endpoint proxy server for `/audio/transcriptions` and `/audio/speech`, like LiteLLM but for any ASR and TTS
+- [`hfup`](https://github.com/moeru-ai/hfup): tools to help on deploying, bundling to HuggingFace Spaces
+- [`xsai-transformers`](https://github.com/moeru-ai/xsai-transformers): Experimental [🤗 Transformers.js](https://github.com/huggingface/transformers.js) provider for [xsAI](https://github.com/moeru-ai/xsai).
+- [WebAI: Realtime Voice Chat](https://github.com/proj-airi/webai-realtime-voice-chat): Full example of implementing ChatGPT&#039;s realtime voice from scratch with VAD + STT + LLM + TTS.
+- [`@proj-airi/drizzle-duckdb-wasm`](https://github.com/moeru-ai/airi/tree/main/packages/drizzle-duckdb-wasm/README.md): Drizzle ORM driver for DuckDB WASM
+- [`@proj-airi/duckdb-wasm`](https://github.com/moeru-ai/airi/tree/main/packages/duckdb-wasm/README.md): Easy to use wrapper for `@duckdb/duckdb-wasm`
+- [`tauri-plugin-mcp`](https://github.com/moeru-ai/airi/blob/main/crates/tauri-plugin-mcp/README.md): A Tauri plugin for interacting with MCP servers.
+- [AIRI Factorio](https://github.com/moeru-ai/airi-factorio): Allow AIRI to play Factorio
+- [Factorio RCON API](https://github.com/nekomeowww/factorio-rcon-api): RESTful API wrapper for Factorio headless server console
+- [`autorio`](https://github.com/moeru-ai/airi-factorio/tree/main/packages/autorio): Factorio automation library
+- [`tstl-plugin-reload-factorio-mod`](https://github.com/moeru-ai/airi-factorio/tree/main/packages/tstl-plugin-reload-factorio-mod): Reload Factorio mod when developing
+- [Velin](https://github.com/luoling8192/velin): Use Vue SFC and Markdown to write easy to manage stateful prompts for LLM
+- [`demodel`](https://github.com/moeru-ai/demodel): Easily boost the speed of pulling your models and datasets from various of inference runtimes.
+- [`inventory`](https://github.com/moeru-ai/inventory): Centralized model catalog and default provider configurations backend service
+- [MCP Launcher](https://github.com/moeru-ai/mcp-launcher): Easy to use MCP builder &amp; launcher for all possible MCP servers, just like Ollama for models!
+- [🥺 SAD](https://github.com/moeru-ai/sad): Documentation and notes for self-host and browser running LLMs.
+
+```mermaid
+%%{ init: { &#039;flowchart&#039;: { &#039;curve&#039;: &#039;catmullRom&#039; } } }%%
+
+flowchart TD
+  Core(&quot;Core&quot;)
+  Unspeech(&quot;unspeech&quot;)
+  DBDriver(&quot;@proj-airi/drizzle-duckdb-wasm&quot;)
+  MemoryDriver(&quot;[WIP] Memory Alaya&quot;)
+  DB1(&quot;@proj-airi/duckdb-wasm&quot;)
+  SVRT(&quot;@proj-airi/server-runtime&quot;)
+  Memory(&quot;Memory&quot;)
+  STT(&quot;STT&quot;)
+  Stage(&quot;Stage&quot;)
+  StageUI(&quot;@proj-airi/stage-ui&quot;)
+  UI(&quot;@proj-airi/ui&quot;)
+
+  subgraph AIRI
+    DB1 --&gt; DBDriver --&gt; MemoryDriver --&gt; Memory --&gt; Core
+    UI --&gt; StageUI --&gt; Stage --&gt; Core
+    Core --&gt; STT
+    Core --&gt; SVRT
+  end
+
+  subgraph UI_Components
+    UI --&gt; StageUI
+    UITransitions(&quot;@proj-airi/ui-transitions&quot;) --&gt; StageUI
+    UILoadingScreens(&quot;@proj-airi/ui-loading-screens&quot;) --&gt; StageUI
+    FontCJK(&quot;@proj-airi/font-cjkfonts-allseto&quot;) --&gt; StageUI
+    FontXiaolai(&quot;@proj-airi/font-xiaolai&quot;) --&gt; StageUI
+  end
+
+  subgraph Apps
+    Stage --&gt; StageWeb(&quot;@proj-airi/stage-web&quot;)
+    Stage --&gt; StageTamagotchi(&quot;@proj-airi/stage-tamagotchi&quot;)
+    Core --&gt; RealtimeAudio(&quot;@proj-airi/realtime-audio&quot;)
+    Core --&gt; PromptEngineering(&quot;@proj-airi/playground-prompt-engineering&quot;)
+  end
+
+  subgraph Server_Components
+    Core --&gt; ServerSDK(&quot;@proj-airi/server-sdk&quot;)
+    ServerShared(&quot;@proj-airi/server-shared&quot;) --&gt; SVRT
+    ServerShared --&gt; ServerSDK
+  end
+
+  STT --&gt;|Speaking| Unspeech
+  SVRT --&gt;|Playing Factorio| F_AGENT
+  SVRT --&gt;|Playing Minecraft| MC_AGENT
+
+  subgraph Factorio_Agent
+    F_AGENT(&quot;Factorio Agent&quot;)
+    F_API(&quot;Factorio RCON API&quot;)
+    factorio-server(&quot;factorio-server&quot;)
+    F_MOD1(&quot;autorio&quot;)
+
+    F_AGENT --&gt; F_API -.-&gt; factorio-server
+    F_MOD1 -.-&gt; factorio-server
+  end
+
+  subgraph Minecraft_Agent
+    MC_AGENT(&quot;Minecraft Agent&quot;)
+    Mineflayer(&quot;Mineflayer&quot;)
+    minecraft-server(&quot;minecraft-server&quot;)
+
+    MC_AGENT --&gt; Mineflayer -.-&gt; minecraft-server
+  end
+
+  XSAI(&quot;xsAI&quot;) --&gt; Core
+  XSAI --&gt; F_AGENT
+  XSAI --&gt; MC_AGENT
+
+  Core --&gt; TauriMCP(&quot;@proj-airi/tauri-plugin-mcp&quot;)
+  Memory_PGVector(&quot;@proj-airi/memory-pgvector&quot;) --&gt; Memory
+
+  style Core fill:#f9d4d4,stroke:#333,stroke-width:1px
+  style AIRI fill:#fcf7f7,stroke:#333,stroke-width:1px
+  style UI fill:#d4f9d4,stroke:#333,stroke-width:1px
+  style Stage fill:#d4f9d4,stroke:#333,stroke-width:1px
+  style UI_Components fill:#d4f9d4,stroke:#333,stroke-width:1px
+  style Server_Components fill:#d4e6f9,stroke:#333,stroke-width:1px
+  style Apps fill:#d4d4f9,stroke:#333,stroke-width:1px
+  style Factorio_Agent fill:#f9d4f2,stroke:#333,stroke-width:1px
+  style Minecraft_Agent fill:#f9d4f2,stroke:#333,stroke-width:1px
+
+  style DBDriver fill:#f9f9d4,stroke:#333,stroke-width:1px
+  style MemoryDriver fill:#f9f9d4,stroke:#333,stroke-width:1px
+  style DB1 fill:#f9f9d4,stroke:#333,stroke-width:1px
+  style Memory fill:#f9f9d4,stroke:#333,stroke-width:1px
+  style Memory_PGVector fill:#f9f9d4,stroke:#333,stroke-width:1px
+```
+
+## Similar Projects
+
+### Open sourced ones
+
+- [kimjammer/Neuro: A recreation of Neuro-Sama originally created in 7 days.](https://github.com/kimjammer/Neuro): very well completed implementation.
+- [SugarcaneDefender/z-waif](https://github.com/SugarcaneDefender/z-waif): Great at gaming, autonomous, and prompt engineering
+- [semperai/amica](https://github.com/semperai/amica/): Great at VRM, WebXR
+- [elizaOS/eliza](https://github.com/elizaOS/eliza): Great examples and software engineering on how to integrate agent into various of systems and APIs
+- [ardha27/AI-Waifu-Vtuber](https://github.com/ardha27/AI-Waifu-Vtuber): Great about Twitch API integrations
+- [InsanityLabs/AIVTuber](https://github.com/InsanityLabs/AIVTuber): Nice UI and UX
+- [IRedDragonICY/vixevia](https://github.com/IRedDragonICY/vixevia)
+- [t41372/Open-LLM-VTuber](https://github.com/t41372/O
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
             <title><![CDATA[blakeblackshear/frigate]]></title>
             <link>https://github.com/blakeblackshear/frigate</link>
             <guid>https://github.com/blakeblackshear/frigate</guid>
-            <pubDate>Wed, 14 Jan 2026 00:05:07 GMT</pubDate>
+            <pubDate>Thu, 15 Jan 2026 00:05:23 GMT</pubDate>
             <description><![CDATA[NVR with realtime local object detection for IP cameras]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/blakeblackshear/frigate">blakeblackshear/frigate</a></h1>
             <p>NVR with realtime local object detection for IP cameras</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 28,943</p>
-            <p>Forks: 2,706</p>
-            <p>Stars today: 51 stars today</p>
+            <p>Stars: 29,189</p>
+            <p>Forks: 2,723</p>
+            <p>Stars today: 340 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
   &lt;img align=&quot;center&quot; alt=&quot;logo&quot; src=&quot;docs/static/img/frigate.png&quot;&gt;
 &lt;/p&gt;
@@ -95,18 +1054,211 @@ We use [Weblate](https://hosted.weblate.org/projects/frigate-nvr/) to support la
             <category>TypeScript</category>
         </item>
         <item>
+            <title><![CDATA[GitbookIO/gitbook]]></title>
+            <link>https://github.com/GitbookIO/gitbook</link>
+            <guid>https://github.com/GitbookIO/gitbook</guid>
+            <pubDate>Thu, 15 Jan 2026 00:05:22 GMT</pubDate>
+            <description><![CDATA[The open source frontend for GitBook doc sites]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/GitbookIO/gitbook">GitbookIO/gitbook</a></h1>
+            <p>The open source frontend for GitBook doc sites</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 28,560</p>
+            <p>Forks: 4,021</p>
+            <p>Stars today: 8 stars today</p>
+            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;GitBook&lt;/h1&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://gitbook.com/docs/&quot;&gt;Docs&lt;/a&gt; - &lt;a href=&quot;https://github.com/GitbookIO/community&quot;&gt;Community&lt;/a&gt; - &lt;a href=&quot;https://developer.gitbook.com/&quot;&gt;Developer Docs&lt;/a&gt; - &lt;a href=&quot;https://changelog.gitbook.com/&quot;&gt;Changelog&lt;/a&gt; - &lt;a href=&quot;https://github.com/GitbookIO/gitbook/issues/new?assignees=&amp;labels=bug&amp;template=bug_report.md&quot;&gt;Bug reports&lt;/a&gt; - &lt;a href=&quot;https://github.com/orgs/GitbookIO/discussions/categories/feature-requests&quot;&gt;Feature requests&lt;/a&gt; 
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://gitbook.com&quot;&gt;&lt;img src=&quot;https://img.shields.io/static/v1?message=Documented%20on%20GitBook&amp;logo=gitbook&amp;logoColor=ffffff&amp;label=%20&amp;labelColor=5c5c5c&amp;color=3F89A1&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Open_Source-❤️-FDA599?&quot;/&gt;&lt;/a&gt;
+  &lt;a href=&quot;/LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/License-GNU_GPLv3-F4E28D&quot;/&gt;&lt;/a&gt;
+  &lt;a href=&quot;/.github/CONTRIBUTING.md&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/contributors/gitbookIO/gitbook&quot;/&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/gitbookIO/gitbook/issues&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/issues/gitbookIO/gitbook&quot;/&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;Welcome to GitBook, the platform for managing technical knowledge for teams.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;This repository contains the open source code used to render GitBook&#039;s published content.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img alt=&quot;GitBook Open Published Site&quot; src=&quot;./assets/published-site.png&quot;&gt;
+&lt;/p&gt;
+
+## Table of Contents
+
+-   [Getting Started](#getting-started)
+-   [Contributing](#contributing)
+    -   [Types of contributions](#types-of-contributions)
+-   [Licensing](#license)
+-   [Acknowledgements](#acknowledgements)
+-   [Legacy GitBook](#legacy-gitbook-deprecated)
+
+## Getting Started
+
+To run a local version of this project, please follow these simple steps.
+
+### Prerequisites
+
+- Node.js (Version: &gt;= 22.3)
+    - Use nvm for easy Node management
+- [Bun](https://bun.sh/) (Version: &gt;=1.2.15)
+  - We use a text-based lockfile which isn&#039;t supported below 1.2.15
+
+### Set up
+
+1. Clone the repo into a **public** GitHub repository. If you plan to distribute the code, keep the source code public to comply with GNU GPLv3. To clone in a private repository, acquire a [commercial license](https://www.gitbook.com/pricing).
+
+```
+git clone https://github.com/gitbookIO/gitbook.git
+```
+
+2. Ensure you are using the project&#039;s version of `node`. Running `nvm use` will change your local version to the correct one.
+
+3. Install the project&#039;s dependencies through Bun.
+
+```
+bun install
+```
+
+4. Start your local development server.
+
+```
+bun dev
+```
+
+6. Open a published GitBook space in your web browser, prefixing it with `http://localhost:3000/url`.
+
+examples:
+
+-   http://localhost:3000/url/gitbook.com/docs
+-   http://localhost:3000/url/open-source.gitbook.io/midjourney
+
+Any published GitBook site can be accessed through your local development instance, and any updates you make to the codebase will be reflected in your browser.
+
+### CI and testing
+
+All pull-requests will be tested against both visual and performances testing to prevent regressions.
+
+## Fonts and Icons
+
+GitBook Open uses fontawesome. During development, your local environment will use the free version. However, only the pro version will be accepted by CI. If you see the following error:
+
+```
+The GitBook icon is missing. It indicates that the dependencies were installed without the correct font-awesome package. These changes have probably been persisted in the Bun lockfile. Read the README for more information.
+```
+
+It means that you&#039;ve changed the GBO dependencies and bundled in the free version. Only GitBook staff can help with this - if you&#039;re not on the GitBook team, please ping us in the PR and we&#039;ll help get things moving.
+
+If you are GitBook staff, you&#039;ll need our NPM token in your local environment.
+
+```
+.env.local
+
+BUN_NPM_TOKEN=xxx
+```
+
+and then reinstall dependencies.
+
+## Contributing
+
+GitBook&#039;s rendering engine is fully open source and built on top of [Next.js](https://nextjs.org/). Head to our [contributing guide](https://github.com/GitbookIO/gitbook/blob/main/.github/CONTRIBUTING.md) to learn more about the workflow on adding your first Pull Request.
+
+### Types of contributions
+
+We encourage you to contribute to GitBook to help us build the best tool for documenting technical knowledge. If you&#039;re looking for some quick ways to contribute, continue reading to learn more about popular contributions.
+
+#### Translations
+
+The GitBook UI is rendered using a set of translation files found in [`packages/gitbook/src/intl/translations`](/packages/gitbook/src/intl/translations/). We welcome all additional translations for the UI.
+
+#### Bugs
+
+Encounter a bug or find an issue you&#039;d like to fix? Helping us fix issues related to GitBook greatly improves the experience for everyone. Head to the issues section of this repository to learn more about the types of bugs you can already help out with.
+
+## Deployment
+
+&gt; [!WARNING]  
+&gt; While it is possible to self-host this project, we do not recommend this unless you are certain this option fits your need.
+&gt;
+&gt; _Looking to add a specific feature in GitBook? Head to our [contributing guide](https://github.com/GitbookIO/gitbook/blob/main/.github/CONTRIBUTING.md) to get started._
+&gt;
+&gt; Self-hosting this project puts the responsibility of maintaining and merging future updates on **you**. We cannot guarantee support, maintenance, or updates to forked and self-hosted instances of this project.
+&gt;
+&gt; We want to make it as easy as possible for our community to collaborate and push the future of GitBook, which is why we encourage you to contribute to our product directly instead of creating your own version.
+
+This project allows you to self-host the rendering portion of your GitBook published content. Self-hosting has pros and cons.
+
+On the pro side, you can customize the look and feel of your content, and better embed your documentation in your application.
+
+On the con side, you become responsible for the reliability of your published site, and keeping the renderer up-to-date with the changes made to the GitBook platform.
+
+## License
+
+Distributed under the [GNU GPLv3 License](https://github.com/GitBookIO/gitbook/blob/main/LICENSE).
+
+If you plan to distribute the code, you must make the source code public to comply with the GNU GPLv3. To clone in a private repository, acquire a [commercial license](https://www.gitbook.com/pricing).
+
+See `LICENSE` for more information.
+
+## Badges
+
+&lt;p align=&quot;left&quot;&gt;
+  &lt;a href=&quot;https://gitbook.com&quot;&gt;&lt;img src=&quot;https://img.shields.io/static/v1?message=Documented%20on%20GitBook&amp;logo=gitbook&amp;logoColor=ffffff&amp;label=%20&amp;labelColor=5c5c5c&amp;color=3F89A1&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://gitbook.com&quot;&gt;&lt;img src=&quot;https://img.shields.io/static/v1?message=Documented%20on%20GitBook&amp;logo=gitbook&amp;logoColor=ffffff&amp;label=%20&amp;labelColor=5c5c5c&amp;color=F4E28D&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://gitbook.com&quot;&gt;&lt;img src=&quot;https://img.shields.io/static/v1?message=Documented%20on%20GitBook&amp;logo=gitbook&amp;logoColor=ffffff&amp;label=%20&amp;labelColor=5c5c5c&amp;color=FDA599&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+```md
+[![GitBook](https://img.shields.io/static/v1?message=Documented%20on%20GitBook&amp;logo=gitbook&amp;logoColor=ffffff&amp;label=%20&amp;labelColor=5c5c5c&amp;color=3F89A1)](https://www.gitbook.com/preview?utm_source=gitbook_readme_badge&amp;utm_medium=organic&amp;utm_campaign=preview_documentation&amp;utm_content=link)
+```
+
+```html
+&lt;a href=&quot;https://www.gitbook.com/preview?utm_source=gitbook_readme_badge&amp;utm_medium=organic&amp;utm_campaign=preview_documentation&amp;utm_content=link&quot;&gt;
+    &lt;img
+        src=&quot;https://img.shields.io/static/v1?message=Documented%20on%20GitBook&amp;logo=gitbook&amp;logoColor=ffffff&amp;label=%20&amp;labelColor=5c5c5c&amp;color=3F89A1&quot;
+    /&gt;
+&lt;/a&gt;
+```
+
+## Acknowledgements
+
+GitBook wouldn&#039;t be possible without these projects:
+
+-   [Next.js](https://nextjs.org/)
+-   [Bun](https://bun.sh/)
+-   [Tailwind CSS](https://tailwindcss.com/)
+-   [Framer Motion](https://www.npmjs.com/package/framer-motion)
+
+## Contributors
+
+&lt;a href=&quot;https://github.com/gitbookIO/gitbook/graphs/contributors&quot;&gt;
+  &lt;img src=&quot;https://contrib.rocks/image?repo=gitbookIO/gitbook&quot; /&gt;
+&lt;/a&gt;
+
+## Legacy GitBook (Deprecated)
+
+Our previous version of GitBook and it&#039;s CLI tool are now deprecated. You can still view the old repository and it&#039;s commits on this [branch](https://github.com/GitbookIO/gitbook/tree/legacy).
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
             <title><![CDATA[onlook-dev/onlook]]></title>
             <link>https://github.com/onlook-dev/onlook</link>
             <guid>https://github.com/onlook-dev/onlook</guid>
-            <pubDate>Wed, 14 Jan 2026 00:05:06 GMT</pubDate>
+            <pubDate>Thu, 15 Jan 2026 00:05:21 GMT</pubDate>
             <description><![CDATA[The Cursor for Designers • An Open-Source AI-First Design tool • Visually build, style, and edit your React App with AI]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/onlook-dev/onlook">onlook-dev/onlook</a></h1>
             <p>The Cursor for Designers • An Open-Source AI-First Design tool • Visually build, style, and edit your React App with AI</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 24,083</p>
-            <p>Forks: 1,779</p>
-            <p>Stars today: 54 stars today</p>
+            <p>Stars: 24,353</p>
+            <p>Forks: 1,792</p>
+            <p>Stars today: 366 stars today</p>
             <h2>README</h2><pre>&lt;!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 --&gt;
 
 &lt;div align=&quot;center&quot;&gt;
@@ -375,2076 +1527,80 @@ information.
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[swark-io/swark]]></title>
-            <link>https://github.com/swark-io/swark</link>
-            <guid>https://github.com/swark-io/swark</guid>
-            <pubDate>Wed, 14 Jan 2026 00:05:05 GMT</pubDate>
-            <description><![CDATA[Create architecture diagrams from code automatically using large language models (LLMs).]]></description>
+            <title><![CDATA[docmost/docmost]]></title>
+            <link>https://github.com/docmost/docmost</link>
+            <guid>https://github.com/docmost/docmost</guid>
+            <pubDate>Thu, 15 Jan 2026 00:05:20 GMT</pubDate>
+            <description><![CDATA[Docmost is an open-source collaborative wiki and documentation software. It is an open-source alternative to Confluence and Notion.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/swark-io/swark">swark-io/swark</a></h1>
-            <p>Create architecture diagrams from code automatically using large language models (LLMs).</p>
+            <h1><a href="https://github.com/docmost/docmost">docmost/docmost</a></h1>
+            <p>Docmost is an open-source collaborative wiki and documentation software. It is an open-source alternative to Confluence and Notion.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 1,404</p>
-            <p>Forks: 95</p>
-            <p>Stars today: 33 stars today</p>
-            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://swark.io&quot;&gt;
-    &lt;picture&gt;
-      &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;assets/logo/swark-logo-dark-mode.png&quot;&gt;
-      &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;assets/logo/swark-logo-light-mode.png&quot;&gt;
-      &lt;img alt=&quot;Swark logo&quot; src=&quot;assets/logo/swark-logo-light-mode.png&quot; width=&quot;30%&quot;&gt;
-    &lt;/picture&gt;
-  &lt;/a&gt;
-&lt;/h1&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;b&gt;Automatic Architecture Diagrams from Code&lt;/b&gt;&lt;br /&gt;
-  Free • Open Source • Powered by LLMs
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=swark.swark&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/visual-studio-marketplace/v/swark.swark?label=Visual%20Studio%20Marketplace&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/swark-io/swark/issues&quot;&gt;
-    &lt;img alt=&quot;GitHub Issues&quot; src=&quot;https://img.shields.io/github/issues/swark-io/swark&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/swark-io/swark/blob/main/CONTRIBUTING.md&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/PRs-Welcome-brightgreen&quot; alt=&quot;PRs welcome!&quot; /&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-
-## Swark
-
-Swark is a VS Code extension that allows creating architecture diagrams from code automatically using large language models (LLMs).\
-Swark is **directly integrated with GitHub Copilot**, and requires no authentication or API key.
-
-&lt;h1 align=&quot;center&quot;&gt;
-    &lt;img src=&quot;./assets/demo.png&quot; width=&quot;85%&quot;/&gt;
-&lt;/h1&gt;
-
-### Why Swark?
-
--   🌟 **Free and Open Source**: All you need is GitHub Copilot, which is now available for free. You can review Swark’s code to understand how it works, and contribute to make it better.
--   🌍 **Universal Language Support**: Classic code visualization solutions are deterministic and require to incrementally add support in new languages or frameworks. With Swark, all the “logic” is encapsulated within the LLM, and therefore it natively support all languages.
--   🔑 **Seamless Integration**: Swark integrates directly with GitHub Copilot. No additional setup, authentication, or API keys required.
--   🛡️ **Privacy First**: Your source code is shared only with GitHub Copilot — no other external APIs or providers involved.
--   🧜‍♀️ **Mermaid.js**: Swark generates diagrams in Mermaid.js, a popular diagram-as-code framework. You can edit and refine the diagrams as needed.
-
-### Use Cases
-
--   🔎 **Learn a New Codebase**: Instantly generate architecture diagrams to gain a high-level understanding of unfamiliar repositories. Ideal for onboarding and tackling new projects.
--   🤖 **Review AI-Generated Code**: As AI-generated projects become more common, Swark helps you quickly visualize their structure and ensure they meet your standards.
--   📕 **Improve Documentation**: Keep your documentation fresh and detailed with up-to-date architecture diagrams that take minutes to create.
--   🕰️ **Understand Legacy Code**: Quickly visualize and comprehend the structure of legacy codebases, making it easier to maintain and refactor.
--   🧩 **Spot Design Flaws**: Visualize your repo’s dependency graph to identify unwanted dependencies or areas for optimization.
--   ✅ **Test Coverage Insights**: Include test files in Swark’s input to see test coverage at a glance and address gaps.
-
-## Requirements
-
--   **GitHub Copilot**: Swark is integrated with GitHub Copilot to invoke LLM queries. Install it via [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot). Notice that **GitHub Copilot now offers a free tier**.
--   **[Optional] Mermaid Markdown Preview**: To preview the diagram in VS Code you can install the [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid) extension. Alternatively, you can use the provided links to open it in Mermaid Live Editor.
-
-## Installation
-
-Simply install Swark via the [VS Code Extension Marketplace](https://marketplace.visualstudio.com/items?itemName=swark.swark).
-
-## How to Use
-
-1. In VS Code, open the [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) and run: **Swark: Create Architecture Diagram**.\
-   Alternatively, you can use Swark&#039;s default keybindings: `cmd+shift+r` (Mac) or `ctrl+shift+r` (Windows).
-2. Select a folder to use in Swark&#039;s file search.
-3. Within a few seconds, a tab will open displaying your architecture diagram.
-
-&lt;h1 align=&quot;center&quot;&gt;
-    &lt;a href=&quot;https://github.com/user-attachments/assets/5b885430-d958-47a0-9daa-f64542844fba&quot;&gt;&lt;img src=&quot;https://github.com/swark-io/swark/raw/main/assets/demo.gif&quot; width=&quot;85%&quot; alt=&quot;Swark Demo&quot;/&gt;&lt;/a&gt;
-&lt;/h1&gt;
-
-### Output
-
-Swark saves its output in `swark-output` folder under your workspace root folder.\
-On each run, Swark creates two output files:
-
--   **Diagram file**: Contains the diagram&#039;s Mermaid code. This file is presented when you run Swark.\
-    Filename: `&lt;date&gt;__&lt;time&gt;__diagram.md`
--   **Log file**: Contains information about the run, configuration, and files used to create the diagram. Can be used for debugging and issue reporting.\
-    Filename: `&lt;date&gt;__&lt;time&gt;__log.md`
-
-For example:
-
-```bash
-workspace-root
-└── swark-output
-    ├── 2025-01-09__20-18-38__diagram.md
-    └── 2025-01-09__20-18-38__log.md
-```
-
-## How it Works
-
-1. **File Retrieval**: Swark retrieves code files within the chosen folder. Swark automatically adjusts the number of retrieved files to match the LLM max token limit.
-2. **Prompt Building**: Based on the retrieved files, Swark builds a prompt to generate an architecture diagram. The code files are included in the prompt, together with instructions on how to build the diagram.
-3. **LLM Request**: Swark invokes LLM request to GitHub Copilot via VS Code [Language Model API](https://code.visualstudio.com/api/extension-guides/language-model).
-4. **Diagram Preview**: Upon a successful response, the diagram is presented. This is done by creating a markdown file that includes the diagram in [Mermaid](https://mermaid.js.org/) syntax and previewing it.
-
-### Code Access and File Sharing
-
-It&#039;s important to note that source code is **only shared with GitHub Copilot**, and with no other external APIs or providers.
-
-## Extension Settings
-
-This extension contributes the following settings:
-
-| Setting                  | Description                                                                                                                              |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `swark.maxFiles`         | Max number of files to read.&lt;br&gt;The number of files read is also affected by the LLM max token limit.                                    |
-| `swark.fileExtensions`   | List of file extensions to include in search.                                                                                            |
-| `swark.excludePatterns`  | List of glob patterns to exclude from file search.&lt;br&gt;Defaults include: `**/.*` for hidden files, `**/node_modules/**` for node modules. |
-| `swark.languageModel`    | Language model to use for diagram generation.                                                                                            |
-| `swark.fixMermaidCycles` | Automatically fix cycles in the generated Mermaid diagram to prevent rendering failures.                                                 |
-
-## Release Notes
-
-See [CHANGELOG.md](CHANGELOG.md).
-
-## Contributing
-
-Swark welcomes community contributions.
-Please see our [Contribution Guide](CONTRIBUTING.md) for details on how to contribute.
-
-## Privacy Notice
-
-This extension collects telemetry data to help improve the product experience. The data collected includes:
-
--   Extension activation and usage events
--   Selected model information
--   Number of files processed and prompt length
--   LLM response time
--   Error events
-
-No source code, file contents, or personal information is ever included in the telemetry data.
-
-We use [@vscode/extension-telemetry](https://github.com/microsoft/vscode-extension-telemetry) module to collect this data. The data is sent to Azure Application Insights and is used solely to improve Swark&#039;s functionality and user experience.
-
-You can disable telemetry collection by setting `&quot;telemetry.telemetryLevel&quot;: &quot;off&quot;` in your VS Code settings.
-
-## License
-
-Swark is licensed under the [GNU Affero General Public License v3.0](https://github.com/swark-io/swark/blob/main/LICENSE)
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[makeplane/plane]]></title>
-            <link>https://github.com/makeplane/plane</link>
-            <guid>https://github.com/makeplane/plane</guid>
-            <pubDate>Wed, 14 Jan 2026 00:05:04 GMT</pubDate>
-            <description><![CDATA[🔥🔥🔥 Open-source Jira, Linear, Monday, and ClickUp alternative. Plane is a modern project management platform to manage tasks, sprints, docs, and triage.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/makeplane/plane">makeplane/plane</a></h1>
-            <p>🔥🔥🔥 Open-source Jira, Linear, Monday, and ClickUp alternative. Plane is a modern project management platform to manage tasks, sprints, docs, and triage.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 44,008</p>
-            <p>Forks: 3,313</p>
-            <p>Stars today: 166 stars today</p>
-            <h2>README</h2><pre>&lt;br /&gt;&lt;br /&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-&lt;a href=&quot;https://plane.so&quot;&gt;
-  &lt;img src=&quot;https://media.docs.plane.so/logo/plane_github_readme.png&quot; alt=&quot;Plane Logo&quot; width=&quot;400&quot;&gt;
-&lt;/a&gt;
-&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;b&gt;Modern project management for all teams&lt;/b&gt;&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-&lt;a href=&quot;https://discord.com/invite/A92xrEGCge&quot;&gt;
-&lt;img alt=&quot;Discord online members&quot; src=&quot;https://img.shields.io/discord/1031547764020084846?color=5865F2&amp;label=Discord&amp;style=for-the-badge&quot; /&gt;
-&lt;/a&gt;
-&lt;img alt=&quot;Commit activity per month&quot; src=&quot;https://img.shields.io/github/commit-activity/m/makeplane/plane?style=for-the-badge&quot; /&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-    &lt;a href=&quot;https://plane.so/&quot;&gt;&lt;b&gt;Website&lt;/b&gt;&lt;/a&gt; •
-    &lt;a href=&quot;https://github.com/makeplane/plane/releases&quot;&gt;&lt;b&gt;Releases&lt;/b&gt;&lt;/a&gt; •
-    &lt;a href=&quot;https://twitter.com/planepowers&quot;&gt;&lt;b&gt;Twitter&lt;/b&gt;&lt;/a&gt; •
-    &lt;a href=&quot;https://docs.plane.so/&quot;&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-    &lt;a href=&quot;https://app.plane.so/#gh-light-mode-only&quot; target=&quot;_blank&quot;&gt;
-      &lt;img
-        src=&quot;https://media.docs.plane.so/GitHub-readme/github-top.webp&quot;
-        alt=&quot;Plane Screens&quot;
-        width=&quot;100%&quot;
-      /&gt;
-    &lt;/a&gt;
-&lt;/p&gt;
-
-Meet [Plane](https://plane.so/), an open-source project management tool to track issues, run ~sprints~ cycles, and manage product roadmaps without the chaos of managing the tool itself. 🧘‍♀️
-
-&gt; Plane is evolving every day. Your suggestions, ideas, and reported bugs help us immensely. Do not hesitate to join in the conversation on [Discord](https://discord.com/invite/A92xrEGCge) or raise a GitHub issue. We read everything and respond to most.
-
-## 🚀 Installation
-
-Getting started with Plane is simple. Choose the setup that works best for you:
-
-- **Plane Cloud**
-  Sign up for a free account on [Plane Cloud](https://app.plane.so)—it&#039;s the fastest way to get up and running without worrying about infrastructure.
-
-- **Self-host Plane**
-  Prefer full control over your data and infrastructure? Install and run Plane on your own servers. Follow our detailed [deployment guides](https://developers.plane.so/self-hosting/overview) to get started.
-
-| Installation methods | Docs link                                                                                                                                                                               |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Docker               | [![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&amp;logo=docker&amp;logoColor=white)](https://developers.plane.so/self-hosting/methods/docker-compose)         |
-| Kubernetes           | [![Kubernetes](https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&amp;logo=kubernetes&amp;logoColor=white)](https://developers.plane.so/self-hosting/methods/kubernetes) |
-
-`Instance admins` can configure instance settings with [God mode](https://developers.plane.so/self-hosting/govern/instance-admin).
-
-## 🌟 Features
-
-- **Issues**
-  Efficiently create and manage tasks with a robust rich text editor that supports file uploads. Enhance organization and tracking by adding sub-properties and referencing related issues.
-
-- **Cycles**
-  Maintain your team’s momentum with Cycles. Track progress effortlessly using burn-down charts and other insightful tools.
-
-- **Modules**
-  Simplify complex projects by dividing them into smaller, manageable modules.
-
-- **Views**
-  Customize your workflow by creating filters to display only the most relevant issues. Save and share these views with ease.
-
-- **Pages**
-  Capture and organize ideas using Plane Pages, complete with AI capabilities and a rich text editor. Format text, insert images, add hyperlinks, or convert your notes into actionable items.
-
-- **Analytics**
-  Access real-time insights across all your Plane data. Visualize trends, remove blockers, and keep your projects moving forward.
-
-- **Drive** (_coming soon_): The drive helps you share documents, images, videos, or any other files that make sense to you or your team and align on the problem/solution.
-
-## 🛠️ Local development
-
-See [CONTRIBUTING](./CONTRIBUTING.md)
-
-## ⚙️ Built with
-
-[![Next JS](https://img.shields.io/badge/next.js-000000?style=for-the-badge&amp;logo=nextdotjs&amp;logoColor=white)](https://nextjs.org/)
-[![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&amp;logo=django&amp;logoColor=green)](https://www.djangoproject.com/)
-[![Node JS](https://img.shields.io/badge/node.js-339933?style=for-the-badge&amp;logo=Node.js&amp;logoColor=white)](https://nodejs.org/en)
-
-## 📸 Screenshots
-
-  &lt;p&gt;
-    &lt;a href=&quot;https://plane.so&quot; target=&quot;_blank&quot;&gt;
-      &lt;img
-        src=&quot;https://media.docs.plane.so/GitHub-readme/github-work-items.webp&quot;
-        alt=&quot;Plane Views&quot;
-        width=&quot;100%&quot;
-      /&gt;
-    &lt;/a&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-    &lt;a href=&quot;https://plane.so&quot; target=&quot;_blank&quot;&gt;
-      &lt;img
-        src=&quot;https://media.docs.plane.so/GitHub-readme/github-cycles.webp&quot;
-        width=&quot;100%&quot;
-      /&gt;
-    &lt;/a&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-    &lt;a href=&quot;https://plane.so&quot; target=&quot;_blank&quot;&gt;
-      &lt;img
-        src=&quot;https://media.docs.plane.so/GitHub-readme/github-modules.webp&quot;
-        alt=&quot;Plane Cycles and Modules&quot;
-        width=&quot;100%&quot;
-      /&gt;
-    &lt;/a&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-    &lt;a href=&quot;https://plane.so&quot; target=&quot;_blank&quot;&gt;
-      &lt;img
-        src=&quot;https://media.docs.plane.so/GitHub-readme/github-views.webp&quot;
-        alt=&quot;Plane Analytics&quot;
-        width=&quot;100%&quot;
-      /&gt;
-    &lt;/a&gt;
-  &lt;/p&gt;
-   &lt;p&gt;
-    &lt;a href=&quot;https://plane.so&quot; target=&quot;_blank&quot;&gt;
-      &lt;img
-        src=&quot;https://media.docs.plane.so/GitHub-readme/github-analytics.webp&quot;
-        alt=&quot;Plane Pages&quot;
-        width=&quot;100%&quot;
-      /&gt;
-    &lt;/a&gt;
-  &lt;/p&gt;
-&lt;/p&gt;
-
-## 📝 Documentation
-
-Explore Plane&#039;s [product documentation](https://docs.plane.so/) and [developer documentation](https://developers.plane.so/) to learn about features, setup, and usage.
-
-## ❤️ Community
-
-Join the Plane community on [GitHub Discussions](https://github.com/orgs/makeplane/discussions) and our [Discord server](https://discord.com/invite/A92xrEGCge). We follow a [Code of conduct](https://github.com/makeplane/plane/blob/master/CODE_OF_CONDUCT.md) in all our community channels.
-
-Feel free to ask questions, report bugs, participate in discussions, share ideas, request features, or showcase your projects. We’d love to hear from you!
-
-## 🛡️ Security
-
-If you discover a security vulnerability in Plane, please report it responsibly instead of opening a public issue. We take all legitimate reports seriously and will investigate them promptly. See [Security policy](https://github.com/makeplane/plane/blob/master/SECURITY.md) for more info.
-
-To disclose any security issues, please email us at security@plane.so.
-
-## 🤝 Contributing
-
-There are many ways you can contribute to Plane:
-
-- Report [bugs](https://github.com/makeplane/plane/issues/new?assignees=srinivaspendem%2Cpushya22&amp;labels=%F0%9F%90%9Bbug&amp;projects=&amp;template=--bug-report.yaml&amp;title=%5Bbug%5D%3A+) or submit [feature requests](https://github.com/makeplane/plane/issues/new?assignees=srinivaspendem%2Cpushya22&amp;labels=%E2%9C%A8feature&amp;projects=&amp;template=--feature-request.yaml&amp;title=%5Bfeature%5D%3A+).
-- Review the [documentation](https://docs.plane.so/) and submit [pull requests](https://github.com/makeplane/docs) to improve it—whether it&#039;s fixing typos or adding new content.
-- Talk or write about Plane or any other ecosystem integration and [let us know](https://discord.com/invite/A92xrEGCge)!
-- Show your support by upvoting [popular feature requests](https://github.com/makeplane/plane/issues).
-
-Please read [CONTRIBUTING.md](https://github.com/makeplane/plane/blob/master/CONTRIBUTING.md) for details on the process for submitting pull requests to us.
-
-### Repo activity
-
-![Plane Repo Activity](https://repobeats.axiom.co/api/embed/2523c6ed2f77c082b7908c33e2ab208981d76c39.svg &quot;Repobeats analytics image&quot;)
-
-### We couldn&#039;t have done this without you.
-
-&lt;a href=&quot;https://github.com/makeplane/plane/graphs/contributors&quot;&gt;
-  &lt;img src=&quot;https://contrib.rocks/image?repo=makeplane/plane&quot; /&gt;
-&lt;/a&gt;
-
-## License
-
-This project is licensed under the [GNU Affero General Public License v3.0](https://github.com/makeplane/plane/blob/master/LICENSE.txt).
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[anomalyco/opencode]]></title>
-            <link>https://github.com/anomalyco/opencode</link>
-            <guid>https://github.com/anomalyco/opencode</guid>
-            <pubDate>Wed, 14 Jan 2026 00:05:03 GMT</pubDate>
-            <description><![CDATA[The open source coding agent.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></h1>
-            <p>The open source coding agent.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 67,094</p>
-            <p>Forks: 5,799</p>
-            <p>Stars today: 2,222 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://opencode.ai&quot;&gt;
-    &lt;picture&gt;
-      &lt;source srcset=&quot;packages/console/app/src/asset/logo-ornate-dark.svg&quot; media=&quot;(prefers-color-scheme: dark)&quot;&gt;
-      &lt;source srcset=&quot;packages/console/app/src/asset/logo-ornate-light.svg&quot; media=&quot;(prefers-color-scheme: light)&quot;&gt;
-      &lt;img src=&quot;packages/console/app/src/asset/logo-ornate-light.svg&quot; alt=&quot;OpenCode logo&quot;&gt;
-    &lt;/picture&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;The open source AI coding agent.&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://opencode.ai/discord&quot;&gt;&lt;img alt=&quot;Discord&quot; src=&quot;https://img.shields.io/discord/1391832426048651334?style=flat-square&amp;label=discord&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://www.npmjs.com/package/opencode-ai&quot;&gt;&lt;img alt=&quot;npm&quot; src=&quot;https://img.shields.io/npm/v/opencode-ai?style=flat-square&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/anomalyco/opencode/actions/workflows/publish.yml&quot;&gt;&lt;img alt=&quot;Build status&quot; src=&quot;https://img.shields.io/github/actions/workflow/status/anomalyco/opencode/publish.yml?style=flat-square&amp;branch=dev&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-[![OpenCode Terminal UI](packages/web/src/assets/lander/screenshot.png)](https://opencode.ai)
-
----
-
-### Installation
-
-```bash
-# YOLO
-curl -fsSL https://opencode.ai/install | bash
-
-# Package managers
-npm i -g opencode-ai@latest        # or bun/pnpm/yarn
-scoop bucket add extras; scoop install extras/opencode  # Windows
-choco install opencode             # Windows
-brew install anomalyco/tap/opencode # macOS and Linux (recommended, always up to date)
-brew install opencode              # macOS and Linux (official brew formula, updated less)
-paru -S opencode-bin               # Arch Linux
-mise use -g opencode               # Any OS
-nix run nixpkgs#opencode           # or github:anomalyco/opencode for latest dev branch
-```
-
-&gt; [!TIP]
-&gt; Remove versions older than 0.1.x before installing.
-
-### Desktop App (BETA)
-
-OpenCode is also available as a desktop application. Download directly from the [releases page](https://github.com/anomalyco/opencode/releases) or [opencode.ai/download](https://opencode.ai/download).
-
-| Platform              | Download                              |
-| --------------------- | ------------------------------------- |
-| macOS (Apple Silicon) | `opencode-desktop-darwin-aarch64.dmg` |
-| macOS (Intel)         | `opencode-desktop-darwin-x64.dmg`     |
-| Windows               | `opencode-desktop-windows-x64.exe`    |
-| Linux                 | `.deb`, `.rpm`, or AppImage           |
-
-```bash
-# macOS (Homebrew)
-brew install --cask opencode-desktop
-```
-
-#### Installation Directory
-
-The install script respects the following priority order for the installation path:
-
-1. `$OPENCODE_INSTALL_DIR` - Custom installation directory
-2. `$XDG_BIN_DIR` - XDG Base Directory Specification compliant path
-3. `$HOME/bin` - Standard user binary directory (if exists or can be created)
-4. `$HOME/.opencode/bin` - Default fallback
-
-```bash
-# Examples
-OPENCODE_INSTALL_DIR=/usr/local/bin curl -fsSL https://opencode.ai/install | bash
-XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://opencode.ai/install | bash
-```
-
-### Agents
-
-OpenCode includes two built-in agents you can switch between with the `Tab` key.
-
-- **build** - Default, full access agent for development work
-- **plan** - Read-only agent for analysis and code exploration
-  - Denies file edits by default
-  - Asks permission before running bash commands
-  - Ideal for exploring unfamiliar codebases or planning changes
-
-Also, included is a **general** subagent for complex searches and multistep tasks.
-This is used internally and can be invoked using `@general` in messages.
-
-Learn more about [agents](https://opencode.ai/docs/agents).
-
-### Documentation
-
-For more info on how to configure OpenCode [**head over to our docs**](https://opencode.ai/docs).
-
-### Contributing
-
-If you&#039;re interested in contributing to OpenCode, please read our [contributing docs](./CONTRIBUTING.md) before submitting a pull request.
-
-### Building on OpenCode
-
-If you are working on a project that&#039;s related to OpenCode and is using &quot;opencode&quot; as a part of its name; for example, &quot;opencode-dashboard&quot; or &quot;opencode-mobile&quot;, please add a note to your README to clarify that it is not built by the OpenCode team and is not affiliated with us in any way.
-
-### FAQ
-
-#### How is this different from Claude Code?
-
-It&#039;s very similar to Claude Code in terms of capability. Here are the key differences:
-
-- 100% open source
-- Not coupled to any provider. Although we recommend the models we provide through [OpenCode Zen](https://opencode.ai/zen); OpenCode can be used with Claude, OpenAI, Google or even local models. As models evolve the gaps between them will close and pricing will drop so being provider-agnostic is important.
-- Out of the box LSP support
-- A focus on TUI. OpenCode is built by neovim users and the creators of [terminal.shop](https://terminal.shop); we are going to push the limits of what&#039;s possible in the terminal.
-- A client/server architecture. This for example can allow OpenCode to run on your computer, while you can drive it remotely from a mobile app. Meaning that the TUI frontend is just one of the possible clients.
-
----
-
-**Join our community** [Discord](https://discord.gg/opencode) | [X.com](https://x.com/opencode)
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[siddharthvaddem/openscreen]]></title>
-            <link>https://github.com/siddharthvaddem/openscreen</link>
-            <guid>https://github.com/siddharthvaddem/openscreen</guid>
-            <pubDate>Wed, 14 Jan 2026 00:05:02 GMT</pubDate>
-            <description><![CDATA[Create stunning screen recordings for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/siddharthvaddem/openscreen">siddharthvaddem/openscreen</a></h1>
-            <p>Create stunning screen recordings for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 5,746</p>
-            <p>Forks: 352</p>
-            <p>Stars today: 167 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;openscreen.png&quot; alt=&quot;OpenScreen Logo&quot; width=&quot;64&quot; /&gt;
-  &lt;br /&gt;
-	  &lt;br /&gt;
-  &lt;a href=&quot;https://deepwiki.com/siddharthvaddem/openscreen&quot;&gt;
-    &lt;img src=&quot;https://deepwiki.com/badge.svg&quot; alt=&quot;Ask DeepWiki&quot; /&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-
-# &lt;p align=&quot;center&quot;&gt;OpenScreen&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;strong&gt;OpenScreen is your free, open-source alternative to Screen Studio (sort of).&lt;/strong&gt;&lt;/p&gt;
-
-
-
-If you don&#039;t want to pay $29/month for Screen Studio but want a much simpler version that does what most people seem to need, making beautiful product demos and walkthroughs, here&#039;s a free-to-use app for you. OpenScreen does not offer all Screen Studio features, but covers the basics well!
-
-Screen Studio is an awesome product and this is definitely not a 1:1 clone. OpenScreen is a much simpler take, just the basics for folks who want control and don&#039;t want to pay. If you need all the fancy features, your best bet is to support Screen Studio (they really do a great job, haha). But if you just want something free (no gotchas) and open, this project does the job!
-
-OpenScreen is 100% free for personal and commercial use. Use it, modify it, distribute it. (Just be cool 😁 and give a shoutout if you feel like it !)
-
-
-
-**⚠️ DISCLAIMER: This is very much in beta and might be buggy here and there (but hope you have a good experience!).**
-
-&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;
-	&lt;img src=&quot;preview.png&quot; alt=&quot;OpenScreen App Preview&quot; style=&quot;height: 320px; margin-right: 12px;&quot; /&gt;
-	&lt;img src=&quot;preview2.png&quot; alt=&quot;OpenScreen App Preview 2&quot; style=&quot;height: 320px; margin-right: 12px;&quot; /&gt;
-	&lt;img src=&quot;preview3.png&quot; alt=&quot;OpenScreen App Preview 3&quot; style=&quot;height: 320px; margin-right: 12px;&quot; /&gt;
-	&lt;img src=&quot;preview4.png&quot; alt=&quot;OpenScreen App Preview 4&quot; style=&quot;height: 320px; margin-right: 12px;&quot; /&gt;
-	
-&lt;/p&gt;
-&lt;/p&gt;
-
-## Core Features
-- Record your whole screen or specific apps
-- Add manual zooms (customizable depth levels)
-- Customize the duration and position of zooms however you please
-- Crop video recordings to hide parts
-- Choose between wallpapers, solid colors, gradients or your own picture for your background
-- Motion blur for smoother pan and zoom effects
-- Add annotations (text, arrows, images)
-- Trim sections of the clip
-- Export in different aspect ratios and resolutions
-
-## Installation
-
-Download the latest installer for your platform from the [GitHub Releases](https://github.com/siddharthvaddem/openscreen/releases) page.
-
-### macOS
-
-If you encounter issues with macOS Gatekeeper blocking the app (since it does not come with a developer certificate), you can bypass this by running the following command in your terminal after installation:
-
-```bash
-xattr -rd com.apple.quarantine /Applications/Openscreen.app
-```
-
-After running this command, proceed to **System Preferences &gt; Security &amp; Privacy** to grant the necessary permissions for &quot;screen recording&quot; and &quot;accessibility&quot;. Once permissions are granted, you can launch the app.
-
-### Linux
-
-Download the `.AppImage` file from the releases page. Make it executable and run:
-
-```bash
-chmod +x Openscreen-Linux-*.AppImage
-./Openscreen-Linux-*.AppImage
-```
-
-You may need to grant screen recording permissions depending on your desktop environment.
-
-## Built with
-- Electron
-- React
-- TypeScript
-- Vite
-- PixiJS
-- dnd-timeline
-
----
-
-
-_I&#039;m new to open source, idk what I&#039;m doing lol. If something is wrong please raise an issue 🙏_
-
-## Contributing
-
-Contributions are welcome! If you’d like to help out or see what’s currently being worked on, take a look at the open issues and the [project roadmap](https://github.com/users/siddharthvaddem/projects/3) to understand the current direction of the project and find ways to contribute.
-
-
-## License
-
-
-This project is licensed under the [MIT License](./LICENSE). By using this software, you agree that the authors are not liable for any issues, damages, or claims arising from its use.
-
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[C4illin/ConvertX]]></title>
-            <link>https://github.com/C4illin/ConvertX</link>
-            <guid>https://github.com/C4illin/ConvertX</guid>
-            <pubDate>Wed, 14 Jan 2026 00:05:01 GMT</pubDate>
-            <description><![CDATA[💾 Self-hosted online file converter. Supports 1000+ formats ⚙️]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/C4illin/ConvertX">C4illin/ConvertX</a></h1>
-            <p>💾 Self-hosted online file converter. Supports 1000+ formats ⚙️</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 14,910</p>
-            <p>Forks: 797</p>
-            <p>Stars today: 80 stars today</p>
-            <h2>README</h2><pre>![ConvertX](images/logo.png)
-
-# ConvertX
-
-[![Docker](https://github.com/C4illin/ConvertX/actions/workflows/docker-publish.yml/badge.svg?branch=main)](https://github.com/C4illin/ConvertX/actions/workflows/docker-publish.yml)
-[![ghcr.io Pulls](https://img.shields.io/badge/dynamic/json?logo=github&amp;url=https%3A%2F%2Fipitio.github.io%2Fbackage%2FC4illin%2FConvertX%2Fconvertx.json&amp;query=%24.downloads&amp;label=ghcr.io%20pulls&amp;cacheSeconds=14400)](https://github.com/C4illin/ConvertX/pkgs/container/ConvertX)
-[![Docker Pulls](https://img.shields.io/docker/pulls/c4illin/convertx?style=flat&amp;logo=docker&amp;label=dockerhub%20pulls&amp;link=https%3A%2F%2Fhub.docker.com%2Frepository%2Fdocker%2Fc4illin%2Fconvertx%2Fgeneral)](https://hub.docker.com/r/c4illin/convertx)
-[![GitHub Release](https://img.shields.io/github/v/release/C4illin/ConvertX)](https://github.com/C4illin/ConvertX/pkgs/container/convertx)
-![GitHub commits since latest release](https://img.shields.io/github/commits-since/C4illin/ConvertX/latest)
-![GitHub repo size](https://img.shields.io/github/repo-size/C4illin/ConvertX)
-![Docker container size](https://ghcr-badge.egpl.dev/c4illin/convertx/size?color=%230375b6&amp;tag=latest&amp;label=image+size&amp;trim=)
-
-&lt;a href=&quot;https://trendshift.io/repositories/13818&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/13818&quot; alt=&quot;C4illin%2FConvertX | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
-
-&lt;!-- ![Dev image size](https://ghcr-badge.egpl.dev/c4illin/convertx/size?color=%230375b6&amp;tag=main&amp;label=dev+image&amp;trim=) --&gt;
-
-A self-hosted online file converter. Supports over a thousand different formats. Written with TypeScript, Bun and Elysia.
+            <p>Stars: 18,588</p>
+            <p>Forks: 1,067</p>
+            <p>Stars today: 27 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+    &lt;h1&gt;&lt;b&gt;Docmost&lt;/b&gt;&lt;/h1&gt;
+    &lt;p&gt;
+        Open-source collaborative wiki and documentation software.
+        &lt;br /&gt;
+        &lt;a href=&quot;https://docmost.com&quot;&gt;&lt;strong&gt;Website&lt;/strong&gt;&lt;/a&gt; | 
+        &lt;a href=&quot;https://docmost.com/docs&quot;&gt;&lt;strong&gt;Documentation&lt;/strong&gt;&lt;/a&gt; |
+        &lt;a href=&quot;https://twitter.com/DocmostHQ&quot;&gt;&lt;strong&gt;Twitter / X&lt;/strong&gt;&lt;/a&gt;
+    &lt;/p&gt;
+&lt;/div&gt;
+&lt;br /&gt;
+
+## Getting started
+
+To get started with Docmost, please refer to our [documentation](https://docmost.com/docs) or try our [cloud version](https://docmost.com/pricing) .
 
 ## Features
 
-- Convert files to different formats
-- Process multiple files at once
-- Password protection
-- Multiple accounts
-
-## Converters supported
-
-| Converter                                                       | Use case         | Converts from | Converts to |
-| --------------------------------------------------------------- | ---------------- | ------------- | ----------- |
-| [Inkscape](https://inkscape.org/)                               | Vector images    | 7             | 17          |
-| [libjxl](https://github.com/libjxl/libjxl)                      | JPEG XL          | 11            | 11          |
-| [resvg](https://github.com/RazrFalcon/resvg)                    | SVG              | 1             | 1           |
-| [Vips](https://github.com/libvips/libvips)                      | Images           | 45            | 23          |
-| [libheif](https://github.com/strukturag/libheif)                | HEIF             | 2             | 4           |
-| [XeLaTeX](https://tug.org/xetex/)                               | LaTeX            | 1             | 1           |
-| [Calibre](https://calibre-ebook.com/)                           | E-books          | 26            | 19          |
-| [LibreOffice](https://www.libreoffice.org/)                     | Documents        | 41            | 22          |
-| [Dasel](https://github.com/TomWright/dasel)                     | Data Files       | 5             | 4           |
-| [Pandoc](https://pandoc.org/)                                   | Documents        | 43            | 65          |
-| [msgconvert](https://github.com/mvz/email-outlook-message-perl) | Outlook          | 1             | 1           |
-| VCF to CSV                                                      | Contacts         | 1             | 1           |
-| [dvisvgm](https://dvisvgm.de/)                                  | Vector images    | 4             | 2           |
-| [ImageMagick](https://imagemagick.org/)                         | Images           | 245           | 183         |
-| [GraphicsMagick](http://www.graphicsmagick.org/)                | Images           | 167           | 130         |
-| [Assimp](https://github.com/assimp/assimp)                      | 3D Assets        | 77            | 23          |
-| [FFmpeg](https://ffmpeg.org/)                                   | Video            | ~472          | ~199        |
-| [Potrace](https://potrace.sourceforge.net/)                     | Raster to vector | 4             | 11          |
-| [VTracer](https://github.com/visioncortex/vtracer)              | Raster to vector | 8             | 1           |
-| [Markitdown](https://github.com/microsoft/markitdown)           | Documents        | 6             | 1           |
-
-&lt;!-- many ffmpeg fileformats are duplicates --&gt;
-
-Any missing converter? Open an issue or pull request!
-
-## Deployment
-
-&gt; [!WARNING]
-&gt; If you can&#039;t login, make sure you are accessing the service over localhost or https otherwise set HTTP_ALLOWED=true
-
-```yml
-# docker-compose.yml
-services:
-  convertx:
-    image: ghcr.io/c4illin/convertx
-    container_name: convertx
-    restart: unless-stopped
-    ports:
-      - &quot;3000:3000&quot;
-    environment:
-      - JWT_SECRET=aLongAndSecretStringUsedToSignTheJSONWebToken1234 # will use randomUUID() if unset
-      # - HTTP_ALLOWED=true # uncomment this if accessing it over a non-https connection
-    volumes:
-      - ./data:/app/data
-```
-
-or
-
-```bash
-docker run -p 3000:3000 -v ./data:/app/data ghcr.io/c4illin/convertx
-```
-
-Then visit `http://localhost:3000` in your browser and create your account. Don&#039;t leave it unconfigured and open, as anyone can register the first account.
-
-If you get unable to open database file run `chown -R $USER:$USER path` on the path you choose.
-
-### Environment variables
-
-All are optional, JWT_SECRET is recommended to be set.
-
-| Name                         | Default                                            | Description                                                                                                                                                   |
-| ---------------------------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| JWT_SECRET                   | when unset it will use the value from randomUUID() | A long and secret string used to sign the JSON Web Token                                                                                                      |
-| ACCOUNT_REGISTRATION         | false                                              | Allow users to register accounts                                                                                                                              |
-| HTTP_ALLOWED                 | false                                              | Allow HTTP connections, only set this to true locally                                                                                                         |
-| ALLOW_UNAUTHENTICATED        | false                                              | Allow unauthenticated users to use the service, only set this to true locally                                                                                 |
-| AUTO_DELETE_EVERY_N_HOURS    | 24                                                 | Checks every n hours for files older then n hours and deletes them, set to 0 to disable                                                                       |
-| WEBROOT                      |                                                    | The address to the root path setting this to &quot;/convert&quot; will serve the website on &quot;example.com/convert/&quot;                                                      |
-| FFMPEG_ARGS                  |                                                    | Arguments to pass to the input file of ffmpeg, e.g. `-hwaccel vaapi`. See https://github.com/C4illin/ConvertX/issues/190 for more info about hw-acceleration. |
-| FFMPEG_OUTPUT_ARGS           |                                                    | Arguments to pass to the output of ffmpeg, e.g. `-preset veryfast`                                                                                            |
-| HIDE_HISTORY                 | false                                              | Hide the history page                                                                                                                                         |
-| LANGUAGE                     | en                                                 | Language to format date strings in, specified as a [BCP 47 language tag](https://en.wikipedia.org/wiki/IETF_language_tag)                                     |
-| UNAUTHENTICATED_USER_SHARING | false                                              | Shares conversion history between all unauthenticated users                                                                                                   |
-| MAX_CONVERT_PROCESS          | 0                                                  | Maximum number of concurrent conversion processes allowed. Set to 0 for unlimited.                                                                            |
-
-### Docker images
-
-There is a `:latest` tag that is updated with every release and a `:main` tag that is updated with every push to the main branch. `:latest` is recommended for normal use.
-
-The image is available on [GitHub Container Registry](https://github.com/C4illin/ConvertX/pkgs/container/ConvertX) and [Docker Hub](https://hub.docker.com/r/c4illin/convertx).
-
-| Image                                  | What it is                       |
-| -------------------------------------- | -------------------------------- |
-| `image: ghcr.io/c4illin/convertx`      | The latest release on ghcr       |
-| `image: ghcr.io/c4illin/convertx:main` | The latest commit on ghcr        |
-| `image: c4illin/convertx`              | The latest release on docker hub |
-| `image: c4illin/convertx:main`         | The latest commit on docker hub  |
-
-![Release image size](https://ghcr-badge.egpl.dev/c4illin/convertx/size?color=%230375b6&amp;tag=latest&amp;label=release+image&amp;trim=)
-![Dev image size](https://ghcr-badge.egpl.dev/c4illin/convertx/size?color=%230375b6&amp;tag=main&amp;label=dev+image&amp;trim=)
-
-&lt;!-- Dockerhub was introduced in 0.9.0 and older releases --&gt;
-
-### Tutorial
-
-&gt; [!NOTE]
-&gt; These are written by other people, and may be outdated, incorrect or wrong.
-
-Tutorial in french: &lt;https://belginux.com/installer-convertx-avec-docker/&gt;
-
-Tutorial in chinese: &lt;https://xzllll.com/24092901/&gt;
-
-Tutorial in polish: &lt;https://www.kreatywnyprogramista.pl/convertx-lokalny-konwerter-plikow&gt;
-
-## Screenshots
-
-![ConvertX Preview](images/preview.png)
-
-## Development
-
-0. Install [Bun](https://bun.sh/) and Git
-1. Clone the repository
-2. `bun install`
-3. `bun run dev`
-
-Pull requests are welcome! See open issues for the list of todos. The ones tagged with &quot;converter request&quot; are quite easy. Help with docs and cleaning up in issues are also very welcome!
-
-Use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) for commit messages.
-
-## Contributors
-
-&lt;a href=&quot;https://github.com/C4illin/ConvertX/graphs/contributors&quot;&gt;
-  &lt;img src=&quot;https://contrib.rocks/image?repo=C4illin/ConvertX&quot; alt=&quot;Image with all contributors&quot;/&gt;
-&lt;/a&gt;
-
-![Alt](https://repobeats.axiom.co/api/embed/dcdabd0564fcdcccbf5680c1bdc2efad54a3d4d9.svg &quot;Repobeats analytics image&quot;)
-
-## Star History
-
-&lt;a href=&quot;https://github.com/C4illin/ConvertX/stargazers&quot;&gt;
- &lt;picture&gt;
-   &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/svg?repos=C4illin/ConvertX&amp;type=Date&amp;theme=dark&quot; /&gt;
-   &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/svg?repos=C4illin/ConvertX&amp;type=Date&quot; /&gt;
-   &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/svg?repos=C4illin/ConvertX&amp;type=Date&quot; /&gt;
- &lt;/picture&gt;
-&lt;/a&gt;
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[reconurge/flowsint]]></title>
-            <link>https://github.com/reconurge/flowsint</link>
-            <guid>https://github.com/reconurge/flowsint</guid>
-            <pubDate>Wed, 14 Jan 2026 00:05:00 GMT</pubDate>
-            <description><![CDATA[A modern platform for visual, flexible, and extensible graph-based investigations. For cybersecurity analysts and investigators.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/reconurge/flowsint">reconurge/flowsint</a></h1>
-            <p>A modern platform for visual, flexible, and extensible graph-based investigations. For cybersecurity analysts and investigators.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 1,580</p>
-            <p>Forks: 198</p>
-            <p>Stars today: 24 stars today</p>
-            <h2>README</h2><pre># Flowsint
-
-[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](./LICENSE)
-[![Ethical Software](https://img.shields.io/badge/ethical-use-blue.svg)](./ETHICS.md)
-
-Flowsint is an open-source OSINT graph exploration tool designed for ethical investigation, transparency, and verification.
-
-**Ethics:** Please read [ETHICS.md](./ETHICS.md) for responsible use guidelines.
-
-&lt;img width=&quot;1439&quot; height=&quot;899&quot; alt=&quot;hero-dark&quot; src=&quot;https://github.com/user-attachments/assets/01eb128e-bef4-486e-9276-c4da58f829ae&quot; /&gt;
-&lt;img width=&quot;1511&quot; height=&quot;946&quot; alt=&quot;Capture d’écran 2026-01-13 à 09 15 58&quot; src=&quot;https://github.com/user-attachments/assets/d1a9eca6-9ec4-4402-93f4-303c3dc30de1&quot; /&gt;
-&lt;img width=&quot;1511&quot; height=&quot;948&quot; alt=&quot;Capture d’écran 2026-01-13 à 09 19 45&quot; src=&quot;https://github.com/user-attachments/assets/6d9e9e6d-d8c7-4ed2-8b8c-53a945b28d05&quot; /&gt;
-
-## Contributing
-
-Flowsint is still in early development and definetly needs the help of the community! Feel free to raise issues, propose features, etc.
-
-## Get started
-
-Don&#039;t want to read ? Got it. Here&#039;s your install instructions:
-
-#### 1. Install pre-requisites
-
-- Docker
-- Make
-
-#### 2. Run install command
-
-```bash
-git clone https://github.com/reconurge/flowsint.git
-cd flowsint
-make prod
-```
-
-Then go to [http://localhost:5173/register](http://localhost:5173/register) and create an account. There are no credentials or account by default.
-
-
-&gt; ✅ OSINT investigations need a high level of privacy. Everything is stored on your machine.
-
-
-## What is it?
-
-Flowsint is a graph-based investigation tool focused on reconnaissance and OSINT (Open Source Intelligence). It allows you to explore relationships between entities through a visual graph interface and automated enrichers.
-
-### Available Enrichers
-
-**Domain Enrichers**
-- Reverse DNS Resolution - Find domains pointing to an IP
-- DNS Resolution - Resolve domain to IP addresses
-- Subdomain Discovery - Enumerate subdomains
-- WHOIS Lookup - Get domain registration information
-- Domain to Website - Convert domain to website entity
-- Domain to Root Domain - Extract root domain
-- Domain to ASN - Find ASN associated with domain
-- Domain History - Retrieve historical domain data
-
-**IP Enrichers**
-- IP Information - Get geolocation and network details
-- IP to ASN - Find ASN for IP address
-
-**ASN Enrichers**
-- ASN to CIDRs - Get IP ranges for an ASN
-
-**CIDR Enrichers**
-- CIDR to IPs - Enumerate IPs in a range
-
-**Social Media Enrichers**
-- Maigret - Username search across social platforms
-
-**Organization Enrichers**
-- Organization to ASN - Find ASNs owned by organization
-- Organization Information - Get company details
-- Organization to Domains - Find domains owned by organization
-
-**Cryptocurrency Enrichers**
-- Wallet to Transactions - Get transaction history
-- Wallet to NFTs - Find NFTs owned by wallet
-
-**Website Enrichers**
-- Website Crawler - Crawl and map website structure
-- Website to Links - Extract all links
-- Website to Domain - Extract domain from URL
-- Website to Webtrackers - Identify tracking scripts
-- Website to Text - Extract text content
-
-**Email Enrichers**
-- Email to Gravatar - Find Gravatar profile
-- Email to Breaches - Check data breach databases
-- Email to Domains - Find associated domains
-
-**Phone Enrichers**
-- Phone to Breaches - Check phone number in breaches
-
-**Individual Enrichers**
-- Individual to Organization - Find organizational affiliations
-- Individual to Domains - Find domains associated with person
-
-**Integration Enrichers**
-- N8n Connector - Connect to N8n workflows
-
-## Project structure
-
-The project is organized into autonomous modules:
-
-### Core modules
-
-- **flowsint-core**: Core utilities, orchestrator, vault, celery tasks, and base classes
-- **flowsint-types**: Pydantic models and type definitions
-- **flowsint-enrichers**: Enricher modules, scanning logic, and tools
-- **flowsint-api**: FastAPI server, API routes, and schemas only
-- **flowsint-app**: Frontend application
-
-### Module dependencies
-
-```
-flowsint-app (frontend)
-    ↓
-flowsint-api (API server)
-    ↓
-flowsint-core (orchestrator, tasks, vault)
-    ↓
-flowsint-enrichers (enrichers &amp; tools)
-    ↓
-flowsint-types (types)
-```
-
-## Development setup
-
-### Prerequisites
-
-- Docker
-
-### Run
-
-Make sure you have **Make** installed.
-
-```bash
-make dev
-```
-
-### Development
-
-The app is accessible at [http://localhost:5173](http://localhost:5173).
-
-## Module details
-
-### flowsint-core
-
-Core utilities and base classes used by all other modules:
-
-- Database connections (PostgreSQL, Neo4j)
-- Authentication and authorization
-- Logging and event handling
-- Configuration management
-- Base classes for enrichers and tools
-- Utility functions
-
-### flowsint-types
-
-Pydantic models for all data types:
-
-- Domain, IP, ASN, CIDR
-- Individual, Organization, Email, Phone
-- Website, Social profiles, Credentials
-- Crypto wallets, Transactions, NFTs
-- And many more...
-
-### flowsint-enrichers
-
-Enricher modules that process data:
-
-- Domain enrichers (subdomains, WHOIS, resolution)
-- IP enrichers (geolocation, ASN lookup)
-- Social media enrichers (Maigret, Sherlock)
-- Email enrichers (breaches, Gravatar)
-- Crypto enrichers (transactions, NFTs)
-- And many more...
-
-### flowsint-api
-
-FastAPI server providing:
-
-- REST API endpoints
-- Authentication and user management
-- Graph database integration
-- Real-time event streaming
-
-### flowsint-app
-
-Frontend application.
-
-- Modern and UI friendly interface
-- Built for performance (no lag even on thousands of nodes)
-
-## Development workflow
-
-1. **Adding new types**: Add to `flowsint-types` module
-2. **Adding new enrichers**: Add to `flowsint-enrichers` module
-3. **Adding new API endpoints**: Add to `flowsint-api` module
-4. **Adding new utilities**: Add to `flowsint-core` module
-
-## Testing
-
-Each module has its own (incomplete) test suite:
-
-```bash
-# Test core module
-cd flowsint-core
-poetry run pytest
-
-# Test types module
-cd ../flowsint-types
-poetry run pytest
-
-# Test enrichers module
-cd ../flowsint-enrichers
-poetry run pytest
-
-# Test API module
-cd ../flowsint-api
-poetry run pytest
-```
-
-## Contributing
-
-1. Follow the modular structure
-2. Use Poetry for dependency management
-3. Write tests for new functionality
-4. Update documentation as needed
-
-
----
-
-## ⚖️ Legal &amp; Ethical Use
-
-**Ethics:** Please read [ETHICS.md](./ETHICS.md) for responsible use guidelines.
-
-Flowsint is designed **strictly for lawful, ethical investigation and research purposes**.
-
-It was created to assist:
-- Cybersecurity researchers and analysts
-- Journalists and OSINT investigators
-- Law enforcement or fraud investigation teams
-- Organizations conducting internal threat intelligence or digital risk analysis
-
-**Flowsint must not be used for:**
-- Unauthorized intrusion, surveillance, or data collection
-- Harassment, doxxing, or targeting of individuals
-- Political manipulation, misinformation, or violation of privacy laws
-
-Any misuse of this software is strictly prohibited and goes against the ethical principles defined in [ETHICS.md](./ETHICS.md).
-
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[ItzCrazyKns/Perplexica]]></title>
-            <link>https://github.com/ItzCrazyKns/Perplexica</link>
-            <guid>https://github.com/ItzCrazyKns/Perplexica</guid>
-            <pubDate>Wed, 14 Jan 2026 00:04:59 GMT</pubDate>
-            <description><![CDATA[Perplexica is an AI-powered answering engine. It is an Open source alternative to Perplexity AI]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/ItzCrazyKns/Perplexica">ItzCrazyKns/Perplexica</a></h1>
-            <p>Perplexica is an AI-powered answering engine. It is an Open source alternative to Perplexity AI</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 28,174</p>
-            <p>Forks: 2,965</p>
-            <p>Stars today: 51 stars today</p>
-            <h2>README</h2><pre># Perplexica 🔍
-
-[![GitHub Repo stars](https://img.shields.io/github/stars/ItzCrazyKns/Perplexica?style=social)](https://github.com/ItzCrazyKns/Perplexica/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/ItzCrazyKns/Perplexica?style=social)](https://github.com/ItzCrazyKns/Perplexica/network/members)
-[![GitHub watchers](https://img.shields.io/github/watchers/ItzCrazyKns/Perplexica?style=social)](https://github.com/ItzCrazyKns/Perplexica/watchers)
-[![Docker Pulls](https://img.shields.io/docker/pulls/itzcrazykns1337/perplexica?color=blue)](https://hub.docker.com/r/itzcrazykns1337/perplexica)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ItzCrazyKns/Perplexica/blob/master/LICENSE)
-[![GitHub last commit](https://img.shields.io/github/last-commit/ItzCrazyKns/Perplexica?color=green)](https://github.com/ItzCrazyKns/Perplexica/commits/master)
-[![Discord](https://dcbadge.limes.pink/api/server/26aArMy8tT?style=flat)](https://discord.gg/26aArMy8tT)
-
-Perplexica is a **privacy-focused AI answering engine** that runs entirely on your own hardware. It combines knowledge from the vast internet with support for **local LLMs** (Ollama) and cloud providers (OpenAI, Claude, Groq), delivering accurate answers with **cited sources** while keeping your searches completely private.
-
-![preview](.assets/perplexica-screenshot.png)
-
-Want to know more about its architecture and how it works? You can read it [here](https://github.com/ItzCrazyKns/Perplexica/tree/master/docs/architecture/README.md).
-
-## ✨ Features
-
-🤖 **Support for all major AI providers** - Use local LLMs through Ollama or connect to OpenAI, Anthropic Claude, Google Gemini, Groq, and more. Mix and match models based on your needs.
-
-⚡ **Smart search modes** - Choose Speed Mode when you need quick answers, Balanced Mode for everyday searches, or Quality Mode for deep research.
-
-🧭 **Pick your sources** - Search the web, discussions, or academic papers. More sources and integrations are in progress.
-
-🧩 **Widgets** - Helpful UI cards that show up when relevant, like weather, calculations, stock prices, and other quick lookups.
-
-🔍 **Web search powered by SearxNG** - Access multiple search engines while keeping your identity private. Support for Tavily and Exa coming soon for even better results.
-
-📷 **Image and video search** - Find visual content alongside text results. Search isn&#039;t limited to just articles anymore.
-
-📄 **File uploads** - Upload documents and ask questions about them. PDFs, text files, images - Perplexica understands them all.
-
-🌐 **Search specific domains** - Limit your search to specific websites when you know where to look. Perfect for technical documentation or research papers.
-
-💡 **Smart suggestions** - Get intelligent search suggestions as you type, helping you formulate better queries.
-
-📚 **Discover** - Browse interesting articles and trending content throughout the day. Stay informed without even searching.
-
-🕒 **Search history** - Every search is saved locally so you can revisit your discoveries anytime. Your research is never lost.
-
-✨ **More coming soon** - We&#039;re actively developing new features based on community feedback. Join our Discord to help shape Perplexica&#039;s future!
-
-## Sponsors
-
-Perplexica&#039;s development is powered by the generous support of our sponsors. Their contributions help keep this project free, open-source, and accessible to everyone.
-
-&lt;div align=&quot;center&quot;&gt;
-  
-  
-&lt;a href=&quot;https://www.warp.dev/perplexica&quot;&gt;
-  &lt;img alt=&quot;Warp Terminal&quot; src=&quot;.assets/sponsers/warp.png&quot; width=&quot;100%&quot;&gt;
-&lt;/a&gt;
-
-### **✨ [Try Warp - The AI-Powered Terminal →](https://www.warp.dev/perplexica)**
-
-Warp is revolutionizing development workflows with AI-powered features, modern UX, and blazing-fast performance. Used by developers at top companies worldwide.
-
-&lt;/div&gt;
-
----
-
-We&#039;d also like to thank the following partners for their generous support:
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td width=&quot;100&quot; align=&quot;center&quot;&gt;
-      &lt;a href=&quot;https://dashboard.exa.ai&quot; target=&quot;_blank&quot;&gt;
-        &lt;img src=&quot;.assets/sponsers/exa.png&quot; alt=&quot;Exa&quot; width=&quot;80&quot; height=&quot;80&quot; style=&quot;border-radius: .75rem;&quot; /&gt;
-      &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-      &lt;a href=&quot;https://dashboard.exa.ai&quot;&gt;Exa&lt;/a&gt; • The Perfect Web Search API for LLMs - web search, crawling, deep research, and answer APIs
-    &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
-
-## Installation
-
-There are mainly 2 ways of installing Perplexica - With Docker, Without Docker. Using Docker is highly recommended.
-
-### Getting Started with Docker (Recommended)
-
-Perplexica can be easily run using Docker. Simply run the following command:
-
-```bash
-docker run -d -p 3000:3000 -v perplexica-data:/home/perplexica/data --name perplexica itzcrazykns1337/perplexica:latest
-```
-
-This will pull and start the Perplexica container with the bundled SearxNG search engine. Once running, open your browser and navigate to http://localhost:3000. You can then configure your settings (API keys, models, etc.) directly in the setup screen.
-
-**Note**: The image includes both Perplexica and SearxNG, so no additional setup is required. The `-v` flags create persistent volumes for your data and uploaded files.
-
-#### Using Perplexica with Your Own SearxNG Instance
-
-If you already have SearxNG running, you can use the slim version of Perplexica:
-
-```bash
-docker run -d -p 3000:3000 -e SEARXNG_API_URL=http://your-searxng-url:8080 -v perplexica-data:/home/perplexica/data --name perplexica itzcrazykns1337/perplexica:slim-latest
-```
-
-**Important**: Make sure your SearxNG instance has:
-
-- JSON format enabled in the settings
-- Wolfram Alpha search engine enabled
-
-Replace `http://your-searxng-url:8080` with your actual SearxNG URL. Then configure your AI provider settings in the setup screen at http://localhost:3000.
-
-#### Advanced Setup (Building from Source)
-
-If you prefer to build from source or need more control:
-
-1. Ensure Docker is installed and running on your system.
-2. Clone the Perplexica repository:
-
-   ```bash
-   git clone https://github.com/ItzCrazyKns/Perplexica.git
-   ```
-
-3. After cloning, navigate to the directory containing the project files.
-
-4. Build and run using Docker:
-
-   ```bash
-   docker build -t perplexica .
-   docker run -d -p 3000:3000 -v perplexica-data:/home/perplexica/data --name perplexica perplexica
-   ```
-
-5. Access Perplexica at http://localhost:3000 and configure your settings in the setup screen.
-
-**Note**: After the containers are built, you can start Perplexica directly from Docker without having to open a terminal.
-
-### Non-Docker Installation
-
-1. Install SearXNG and allow `JSON` format in the SearXNG settings. Make sure Wolfram Alpha search engine is also enabled.
-2. Clone the repository:
-
-   ```bash
-   git clone https://github.com/ItzCrazyKns/Perplexica.git
-   cd Perplexica
-   ```
-
-3. Install dependencies:
-
-   ```bash
-   npm i
-   ```
-
-4. Build the application:
-
-   ```bash
-   npm run build
-   ```
-
-5. Start the application:
-
-   ```bash
-   npm run start
-   ```
-
-6. Open your browser and navigate to http://localhost:3000 to complete the setup and configure your settings (API keys, models, SearxNG URL, etc.) in the setup screen.
-
-**Note**: Using Docker is recommended as it simplifies the setup process, especially for managing environment variables and dependencies.
-
-See the [installation documentation](https://github.com/ItzCrazyKns/Perplexica/tree/master/docs/installation) for more information like updating, etc.
-
-### Troubleshooting
-
-#### Local OpenAI-API-Compliant Servers
-
-If Perplexica tells you that you haven&#039;t configured any chat model providers, ensure that:
-
-1. Your server is running on `0.0.0.0` (not `127.0.0.1`) and on the same port you put in the API URL.
-2. You have specified the correct model name loaded by your local LLM server.
-3. You have specified the correct API key, or if one is not defined, you have put _something_ in the API key field and not left it empty.
-
-#### Ollama Connection Errors
-
-If you&#039;re encountering an Ollama connection error, it is likely due to the backend being unable to connect to Ollama&#039;s API. To fix this issue you can:
-
-1. **Check your Ollama API URL:** Ensure that the API URL is correctly set in the settings menu.
-2. **Update API URL Based on OS:**
-
-   - **Windows:** Use `http://host.docker.internal:11434`
-   - **Mac:** Use `http://host.docker.internal:11434`
-   - **Linux:** Use `http://&lt;private_ip_of_host&gt;:11434`
-
-   Adjust the port number if you&#039;re using a different one.
-
-3. **Linux Users - Expose Ollama to Network:**
-
-   - Inside `/etc/systemd/system/ollama.service`, you need to add `Environment=&quot;OLLAMA_HOST=0.0.0.0:11434&quot;`. (Change the port number if you are using a different one.) Then reload the systemd manager configuration with `systemctl daemon-reload`, and restart Ollama by `systemctl restart ollama`. For more information see [Ollama docs](https://github.com/ollama/ollama/blob/main/docs/faq.md#setting-environment-variables-on-linux)
-
-   - Ensure that the port (default is 11434) is not blocked by your firewall.
-
-#### Lemonade Connection Errors
-
-If you&#039;re encountering a Lemonade connection error, it is likely due to the backend being unable to connect to Lemonade&#039;s API. To fix this issue you can:
-
-1. **Check your Lemonade API URL:** Ensure that the API URL is correctly set in the settings menu.
-2. **Update API URL Based on OS:**
-
-   - **Windows:** Use `http://host.docker.internal:8000`
-   - **Mac:** Use `http://host.docker.internal:8000`
-   - **Linux:** Use `http://&lt;private_ip_of_host&gt;:8000`
-
-   Adjust the port number if you&#039;re using a different one.
-
-3. **Ensure Lemonade Server is Running:**
-
-   - Make sure your Lemonade server is running and accessible on the configured port (default is 8000).
-   - Verify that Lemonade is configured to accept connections from all interfaces (`0.0.0.0`), not just localhost (`127.0.0.1`).
-   - Ensure that the port (default is 8000) is not blocked by your firewall.
-
-## Using as a Search Engine
-
-If you wish to use Perplexica as an alternative to traditional search engines like Google or Bing, or if you want to add a shortcut for quick access from your browser&#039;s search bar, follow these steps:
-
-1. Open your browser&#039;s settings.
-2. Navigate to the &#039;Search Engines&#039; section.
-3. Add a new site search with the following URL: `http://localhost:3000/?q=%s`. Replace `localhost` with your IP address or domain name, and `3000` with the port number if Perplexica is not hosted locally.
-4. Click the add button. Now, you can use Perplexica directly from your browser&#039;s search bar.
-
-## Using Perplexica&#039;s API
-
-Perplexica also provides an API for developers looking to integrate its powerful search engine into their own applications. You can run searches, use multiple models and get answers to your queries.
-
-For more details, check out the full documentation [here](https://github.com/ItzCrazyKns/Perplexica/tree/master/docs/API/SEARCH.md).
-
-## Expose Perplexica to network
-
-Perplexica runs on Next.js and handles all API requests. It works right away on the same network and stays accessible even with port forwarding.
-
-## One-Click Deployment
-
-[![Deploy to Sealos](https://raw.githubusercontent.com/labring-actions/templates/main/Deploy-on-Sealos.svg)](https://usw.sealos.io/?openapp=system-template%3FtemplateName%3Dperplexica)
-[![Deploy to RepoCloud](https://d16t0pc4846x52.cloudfront.net/deploylobe.svg)](https://repocloud.io/details/?app_id=267)
-[![Run on ClawCloud](https://raw.githubusercontent.com/ClawCloud/Run-Template/refs/heads/main/Run-on-ClawCloud.svg)](https://template.run.claw.cloud/?referralCode=U11MRQ8U9RM4&amp;openapp=system-fastdeploy%3FtemplateName%3Dperplexica)
-[![Deploy on Hostinger](https://assets.hostinger.com/vps/deploy.svg)](https://www.hostinger.com/vps/docker-hosting?compose_url=https://raw.githubusercontent.com/ItzCrazyKns/Perplexica/refs/heads/master/docker-compose.yaml)
-
-## Upcoming Features
-
-- [ ] Adding more widgets, integrations, search sources
-- [ ] Adding ability to create custom agents (name T.B.D.)
-- [ ] Adding authentication
-
-## Support Us
-
-If you find Perplexica useful, consider giving us a star on GitHub. This helps more people discover Perplexica and supports the development of new features. Your support is greatly appreciated.
-
-### Donations
-
-We also accept donations to help sustain our project. If you would like to contribute, you can use the following options to donate. Thank you for your support!
-
-| Ethereum                                              |
-| ----------------------------------------------------- |
-| Address: `0xB025a84b2F269570Eb8D4b05DEdaA41D8525B6DD` |
-
-## Contribution
-
-Perplexica is built on the idea that AI and large language models should be easy for everyone to use. If you find bugs or have ideas, please share them in via GitHub Issues. For more information on contributing to Perplexica you can read the [CONTRIBUTING.md](CONTRIBUTING.md) file to learn more about Perplexica and how you can contribute to it.
-
-## Help and Support
-
-If you have any questions or feedback, please feel free to reach out to us. You can create an issue on GitHub or join our Discord server. There, you can connect with other users, share your experiences and reviews, and receive more personalized help. [Click here](https://discord.gg/EFwsmQDgAu) to join the Discord server. To discuss matters outside of regular support, feel free to contact me on Discord at `itzcrazykns`.
-
-Thank you for exploring Perplexica, the AI-powered search engine designed to enhance your search experience. We are constantly working to improve Perplexica and expand its capabilities. We value your feedback and contributions which help us make Perplexica even better. Don&#039;t forget to check back for updates and new features!
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[CherryHQ/cherry-studio]]></title>
-            <link>https://github.com/CherryHQ/cherry-studio</link>
-            <guid>https://github.com/CherryHQ/cherry-studio</guid>
-            <pubDate>Wed, 14 Jan 2026 00:04:58 GMT</pubDate>
-            <description><![CDATA[AI Agent + Coding Agent + 300+ assistants: agentic AI desktop with autonomous coding, intelligent automation, and unified access to frontier LLMs.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/CherryHQ/cherry-studio">CherryHQ/cherry-studio</a></h1>
-            <p>AI Agent + Coding Agent + 300+ assistants: agentic AI desktop with autonomous coding, intelligent automation, and unified access to frontier LLMs.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 37,717</p>
-            <p>Forks: 3,479</p>
-            <p>Stars today: 62 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;right&quot; &gt;
-  &lt;details&gt;
-    &lt;summary &gt;🌐 Language&lt;/summary&gt;
-    &lt;div&gt;
-      &lt;div align=&quot;right&quot;&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=en&quot;&gt;English&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=zh-CN&quot;&gt;简体中文&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=zh-TW&quot;&gt;繁體中文&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=ja&quot;&gt;日本語&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=ko&quot;&gt;한국어&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=hi&quot;&gt;हिन्दी&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=th&quot;&gt;ไทย&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=fr&quot;&gt;Français&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=de&quot;&gt;Deutsch&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=es&quot;&gt;Español&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=it&quot;&gt;Italiano&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=ru&quot;&gt;Русский&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=pt&quot;&gt;Português&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=nl&quot;&gt;Nederlands&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=pl&quot;&gt;Polski&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=ar&quot;&gt;العربية&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=fa&quot;&gt;فارسی&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=tr&quot;&gt;Türkçe&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=vi&quot;&gt;Tiếng Việt&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=id&quot;&gt;Bahasa Indonesia&lt;/a&gt;&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/details&gt;
-&lt;/div&gt;
-
-&lt;h1 align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/CherryHQ/cherry-studio/releases&quot;&gt;
-    &lt;img src=&quot;https://github.com/CherryHQ/cherry-studio/blob/main/build/icon.png?raw=true&quot; width=&quot;150&quot; height=&quot;150&quot; alt=&quot;banner&quot; /&gt;&lt;br&gt;
-  &lt;/a&gt;
-&lt;/h1&gt;
-
-&lt;p align=&quot;center&quot;&gt;English | &lt;a href=&quot;./docs/zh/README.md&quot;&gt;中文&lt;/a&gt; | &lt;a href=&quot;https://cherry-ai.com&quot;&gt;Official Site&lt;/a&gt; | &lt;a href=&quot;https://docs.cherry-ai.com/docs/en-us&quot;&gt;Documents&lt;/a&gt; | &lt;a href=&quot;./docs/en/guides/development.md&quot;&gt;Development&lt;/a&gt; | &lt;a href=&quot;https://github.com/CherryHQ/cherry-studio/issues&quot;&gt;Feedback&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-
-[![][deepwiki-shield]][deepwiki-link]
-[![][twitter-shield]][twitter-link]
-[![][discord-shield]][discord-link]
-[![][telegram-shield]][telegram-link]
-
-&lt;/div&gt;
-&lt;div align=&quot;center&quot;&gt;
-
-[![][github-release-shield]][github-release-link]
-[![][github-nightly-shield]][github-nightly-link]
-[![][github-contributors-shield]][github-contributors-link]
-[![][license-shield]][license-link]
-[![][commercial-shield]][commercial-link]
-[![][sponsor-shield]][sponsor-link]
-
-&lt;/div&gt;
-
-&lt;div align=&quot;center&quot;&gt;
- &lt;a href=&quot;https://hellogithub.com/repository/1605492e1e2a4df3be07abfa4578dd37&quot; target=&quot;_blank&quot; style=&quot;text-decoration: none&quot;&gt;&lt;img src=&quot;https://api.hellogithub.com/v1/widgets/recommend.svg?rid=1605492e1e2a4df3be07abfa4578dd37&quot; alt=&quot;Featured｜HelloGitHub&quot;  width=&quot;220&quot; height=&quot;55&quot; /&gt;&lt;/a&gt;
- &lt;a href=&quot;https://trendshift.io/repositories/14318&quot; target=&quot;_blank&quot; style=&quot;text-decoration: none&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/14318&quot; alt=&quot;CherryHQ%2Fcherry-studio | Trendshift&quot; width=&quot;220&quot; height=&quot;55&quot; /&gt;&lt;/a&gt;
- &lt;a href=&quot;https://www.producthunt.com/posts/cherry-studio?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_souce=badge-cherry&amp;#0045;studio&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=496640&amp;theme=light&quot; alt=&quot;Cherry&amp;#0032;Studio - AI&amp;#0032;Chatbots&amp;#0044;&amp;#0032;AI&amp;#0032;Desktop&amp;#0032;Client | Product Hunt&quot; width=&quot;220&quot; height=&quot;55&quot; /&gt;&lt;/a&gt;
-&lt;/div&gt;
-
-# 🍒 Cherry Studio
-
-Cherry Studio is a desktop client that supports multiple LLM providers, available on Windows, Mac and Linux.
-
-👏 Join [Telegram Group](https://t.me/CherryStudioAI)｜[Discord](https://discord.gg/wez8HtpxqQ) | [QQ Group(575014769)](https://qm.qq.com/q/lo0D4qVZKi)
-
-❤️ Like Cherry Studio? Give it a star 🌟 or [Sponsor](docs/zh/guides/sponsor.md) to support the development!
-
-# 🌠 Screenshot
-
-![](https://github.com/user-attachments/assets/36dddb2c-e0fb-4a5f-9411-91447bab6e18)
-
-![](https://github.com/user-attachments/assets/f549e8a0-2385-40b4-b52b-2039e39f2930)
-
-![](https://github.com/user-attachments/assets/58e0237c-4d36-40de-b428-53051d982026)
-
-# 🌟 Key Features
-
-1. **Diverse LLM Provider Support**:
-
-- ☁️ Major LLM Cloud Services: OpenAI, Gemini, Anthropic, and more
-- 🔗 AI Web Service Integration: Claude, Perplexity, [Poe](https://poe.com/), and others
-- 💻 Local Model Support with Ollama, LM Studio
-
-2. **AI Assistants &amp; Conversations**:
-
-- 📚 300+ Pre-configured AI Assistants
-- 🤖 Custom Assistant Creation
-- 💬 Multi-model Simultaneous Conversations
-
-3. **Document &amp; Data Processing**:
-
-- 📄 Supports Text, Images, Office, PDF, and more
-- ☁️ WebDAV File Management and Backup
-- 📊 Mermaid Chart Visualization
-- 💻 Code Syntax Highlighting
-
-4. **Practical Tools Integration**:
-
-- 🔍 Global Search Functionality
-- 📝 Topic Management System
-- 🔤 AI-powered Translation
-- 🎯 Drag-and-drop Sorting
-- 🔌 Mini Program Support
-- ⚙️ MCP(Model Context Protocol) Server
-
-5. **Enhanced User Experience**:
-
-- 🖥️ Cross-platform Support for Windows, Mac, and Linux
-- 📦 Ready to Use - No Environment Setup Required
-- 🎨 Light/Dark Themes and Transparent Window
-- 📝 Complete Markdown Rendering
-- 🤲 Easy Content Sharing
-
-# 📝 Roadmap
-
-We&#039;re actively working on the following features and improvements:
-
-1. 🎯 **Core Features**
-
-- Selection Assistant with smart content selection enhancement
-- Deep Research with advanced research capabilities
-- Memory System with global context awareness
-- Document Preprocessing with improved document handling
-- MCP Marketplace for Model Context Protocol ecosystem
-
-2. 🗂 **Knowledge Management**
-
-- Notes and Collections
-- Dynamic Canvas visualization
-- OCR capabilities
-- TTS (Text-to-Speech) support
-
-3. 📱 **Platform Support**
-
-- HarmonyOS Edition (PC)
-- Android App (Phase 1)
-- iOS App (Phase 1)
-- Multi-Window support
-- Window Pinning functionality
-- Intel AI PC (Core Ultra) Support
-
-4. 🔌 **Advanced Features**
-
-- Plugin System
-- ASR (Automatic Speech Recognition)
-- Assistant and Topic Interaction Refactoring
-
-Track our progress and contribute on our [project board](https://github.com/orgs/CherryHQ/projects/7).
-
-Want to influence our roadmap? Join our [GitHub Discussions](https://github.com/CherryHQ/cherry-studio/discussions) to share your ideas and feedback!
-
-# 🌈 Theme
-
-- Theme Gallery: &lt;https://cherrycss.com&gt;
-- Aero Theme: &lt;https://github.com/hakadao/CherryStudio-Aero&gt;
-- PaperMaterial Theme: &lt;https://github.com/rainoffallingstar/CherryStudio-PaperMaterial&gt;
-- Claude dynamic-style: &lt;https://github.com/bjl101501/CherryStudio-Claudestyle-dynamic&gt;
-- Maple Neon Theme: &lt;https://github.com/BoningtonChen/CherryStudio_themes&gt;
-
-Welcome PR for more themes
-
-# 🤝 Contributing
-
-We welcome contributions to Cherry Studio! Here are some ways you can contribute:
-
-1. **Contribute Code**: Develop new features or optimize existing code.
-2. **Fix Bugs**: Submit fixes for any bugs you find.
-3. **Maintain Issues**: Help manage GitHub issues.
-4. **Product Design**: Participate in design discussions.
-5. **Write Documentation**: Improve user manuals and guides.
-6. **Community Engagement**: Join discussions and help users.
-7. **Promote Usage**: Spread the word about Cherry Studio.
-
-Refer to the [Branching Strategy](docs/en/guides/branching-strategy.md) for contribution guidelines
-
-## Getting Started
-
-1. **Fork the Repository**: Fork and clone it to your local machine.
-2. **Create a Branch**: For your changes.
-3. **Submit Changes**: Commit and push your changes.
-4. **Open a Pull Request**: Describe your changes and reasons.
-
-For more detailed guidelines, please refer to our [Contributing Guide](CONTRIBUTING.md).
-
-Thank you for your support and contributions!
-
-# 🔧 Developer Co-creation Program
-
-We are launching the Cherry Studio Developer Co-creation Program to foster a healthy and positive-feedback loop within the open-source ecosystem. We believe that great software is built collaboratively, and every merged pull request breathes new life into the project.
-
-We sincerely invite you to join our ranks of contributors and shape the future of Cherry Studio with us.
-
-## Contributor Rewards Program
-
-To give back to our core contributors and create a virtuous cycle, we have established the following long-term incentive plan.
-
-**The inaugural tracking period for this program will be Q3 2025 (July, August, September). Rewards for this cycle will be distributed on October 1st.**
-
-Within any tracking period (e.g., July 1st to September 30th for the first cycle), any developer who contributes more than **30 meaningful commits** to any of Cherry Studio&#039;s open-source projects on GitHub will be eligible for the following benefits:
-
-- **Cursor Subscription Sponsorship**: Receive a **$70 USD** credit or reimbursement for your [Cursor](https://cursor.sh/) subscription, making AI your most efficient coding partner.
-- **Unlimited Model Access**: Get **unlimited** API calls for the **DeepSeek** and **Qwen** models.
-- **Cutting-Edge Tech Access**: Enjoy occasional perks, including API access to models like **Claude**, **Gemini**, and **OpenAI**, keeping you at the forefront of technology.
-
-## Growing Together &amp; Future Plans
-
-A vibrant community is the driving force behind any sustainable open-source project. As Cherry Studio grows, so will our rewards program. We are committed to continuously aligning our benefits with the best-in-class tools and resources in the industry. This ensures our core contributors receive meaningful support, creating a positive cycle where developers, the community, and the project grow together.
-
-**Moving forward, the project will also embrace an increasingly open stance to give back to the entire open-source community.**
-
-## How to Get Started?
-
-We look forward to your first Pull Request!
-
-You can start by exploring our repositories, picking up a `good first issue`, or proposing your own enhancements. Every commit is a testament to the spirit of open source.
-
-Thank you for your interest and contributions.
-
-Let&#039;s build together.
-
-# 🏢 Enterprise Edition
-
-Building on the Community Edition, we are proud to introduce **Cherry Studio Enterprise Edition**—a privately-deployable AI productivity and management platform designed for modern teams and enterprises.
-
-The Enterprise Edition addresses core challenges in team collaboration by centralizing the management of AI resources, knowledge, and data. It empowers organizations to enhance efficiency, foster innovation, and ensure compliance, all while maintaining 100% control over their data in a secure environment.
-
-## Core Advantages
-
-- **Unified Model Management**: Centrally integrate and manage various cloud-based LLMs (e.g., OpenAI, Anthropic, Google Gemini) and locally deployed private models. Employees can use them out-of-the-box without individual configuration.
-- **Enterprise-Grade Knowledge Base**: Build, manage, and share team-wide knowledge bases. Ensures knowledge retention and consistency, enabling team members to interact with AI based on unified and accurate information.
-- **Fine-Grained Access Control**: Easily manage employee accounts and assign role-based permissions for different models, knowledge bases, and features through a unified admin backend.
-- **Fully Private Deployment**: Deploy the entire backend service on your on-premises servers or private cloud, ensuring your data remains 100% private and under your control to meet the strictest security and compliance standards.
-- **Reliable Backend Services**: Provides stable API services and enterprise-grade data backup and recovery mechanisms to ensure business continuity.
-
-## ✨ Online Demo
-
-**🔗 [Cherry Studio Enterprise](https://www.cherry-ai.com/enterprise)**
-
-## Version Comparison
-
-| Feature           | Community Edition                                                                    | Enterprise Edition                                                                                                                      |
-| :---------------- | :----------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------- |
-| **Open Source**   | ✅ Yes                                                                               | ⭕️ Partially released to customers                                                                                                      |
-| **Cost**          | [AGPL-3.0 License](https://github.com/CherryHQ/cherry-studio?tab=AGPL-3.0-1-ov-file) | Buyout / Subscription Fee                                                                                                               |
-| **Admin Backend** | —                                                                                    | ● Centralized **Model** Access&lt;br&gt;● **Employee** Management&lt;br&gt;● Shared **Knowledge Base**&lt;br&gt;● **Access** Control&lt;br&gt;● **Data** Backup |
-| **Server**        | —                                                                                    | ✅ Dedicated Private Deployment                                                                                                         |
-
-## Get the Enterprise Edition
-
-We believe the Enterprise Edition will become your team&#039;s AI productivity engine. If you are interested in Cherry Studio Enterprise Edition and would like to learn more, request a quote, or schedule a demo, please feel free to contact us.
-
-- **For Business Inquiries &amp; Purchasing**:
-  **📧 [bd@cherry-ai.com](mailto:bd@cherry-ai.com)**
-
-# 🔗 Related Projects
-
-- [new-api](https://github.com/QuantumNous/new-api): The next-generation LLM gateway and AI asset management system supports multiple languages.
-
-- [one-api](https://github.com/songquanpeng/one-api): LLM API management and distribution system supporting mainstream models like OpenAI, Azure, and Anthropic. Features a unified API interface, suitable for key management and secondary distribution.
-
-- [Poe](https://poe.com/): Poe gives you access to the best AI, all in one place. Explore GPT-5, Claude Opus 4.1, DeepSeek-R1, Veo 3, ElevenLabs, and millions of others.
-
-- [ublacklist](https://github.com/iorate/ublacklist): Blocks specific sites from appearing in Google search results
-
-# 🚀 Contributors
-
-&lt;a href=&quot;https://github.com/CherryHQ/cherry-studio/graphs/contributors&quot;&gt;
-  &lt;img src=&quot;https://contrib.rocks/image?repo=CherryHQ/cherry-studio&quot; /&gt;
-&lt;/a&gt;
-&lt;br /&gt;&lt;br /&gt;
-
-# 📊 GitHub Stats
-
-![Stats](https://repobeats.axiom.co/api/embed/a693f2e5f773eed620f70031e974552156c7f397.svg &quot;Repobeats analytics image&quot;)
-
-# ⭐️ Star History
-
-&lt;a href=&quot;https://www.star-history.com/#CherryHQ/cherry-studio&amp;Date&quot;&gt;
- &lt;picture&gt;
-   &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/svg?repos=CherryHQ/cherry-studio&amp;type=Date&amp;theme=dark&quot; /&gt;
-   &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/svg?repos=CherryHQ/cherry-studio&amp;type=Date&quot; /&gt;
-   &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/svg?repos=CherryHQ/cherry-studio&amp;type=Date&quot; /&gt;
- &lt;/picture&gt;
-&lt;/a&gt;
-
-# 📜 License
-
-The Cherry Studio Community Edition is governed by the standard GNU Affero General Public License v3.0 (AGPL-3.0), available at https://www.gnu.org/licenses/agpl-3.0.html.
-
-Use of the Cherry Studio Community Edition for commercial purposes is permitted, subject to full compliance with the terms and conditions of the AGPL-3.0 license.
-
-Should you require a commercial license that provides an exemption from the AGPL-3.0 requirements, please contact us at bd@cherry-ai.com.
-
-&lt;!-- Links &amp; Images --&gt;
-
-[deepwiki-shield]: https://img.shields.io/badge/Deepwiki-CherryHQ-0088CC?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNy45MyAzMiI+PHBhdGggZD0iTTE5LjMzIDE0LjEyYy42Ny0uMzkgMS41LS4zOSAyLjE4IDBsMS43NCAxYy4wNi4wMy4xMS4wNi4xOC4wN2guMDRjLjA2LjAzLjEyLjAzLjE4LjAzaC4wMmMuMDYgMCAuMTEgMCAuMTctLjAyaC4wM2MuMDYtLjAyLjEyLS4wNS4xNy0uMDhoLjAybDMuNDgtMi4wMWMuMjUtLjE0LjQtLjQxLjQtLjdWOC40YS44MS44MSAwIDAgMC0uNC0uN2wtMy40OC0yLjAxYS44My44MyAwIDAgMC0uODEgMEwxOS43NyA3LjdoLS4wMWwtLjE1LjEyLS4wMi4wMnMtLjA3LjA5LS4xLjE0VjhhLjQuNCAwIDAgMC0uMDguMTd2LjA0Yy0uMDMuMDYtLjAzLjEyLS4wMy4xOXYyLjAxYzAgLjc4LS40MSAxLjQ5LTEuMDkgMS44OC0uNjcuMzktMS41LjM5LTIuMTggMGwtMS43NC0xYS42LjYgMCAwIDAtLjIxLS4wOGMtLjA2LS4wMS0uMTItLjAyLS4xOC0uMDJoLS4wM2MtLjA2IDAtLjExLjAxLS4xNy4wMmgtLjAzYy0uMDYuMDItLjEyLjA0LS4xNy4wN2gtLjAybC0zLjQ3IDIuMDFjLS4yNS4xNC0uNC40MS0uNC43VjE4YzAgLjI5LjE1LjU1LjQuN2wzLjQ4IDIuMDFoLjAyYy4wNi4wNC4xMS4wNi4xNy4wOGguMDNjLjA1LjAyLjExLjAzLjE3LjAzaC4wMmMuMDYgMCAuMTIgMCAuMTgtLjAyaC4wNGMuMDYtLjAzLjEyLS4wNS4xOC0uMDhsMS43NC0xYy42Ny0uMzkgMS41LS4zOSAyLjE3IDBzMS4wOSAxLjExIDEuMDkgMS44OHYyLjAxYzAgLjA3IDAgLjEzLjAyLjE5di4wNGMuMDMuMDYuMDUuMTIuMDguMTd2LjAycy4wOC4wOS4xMi4xM2wuMDIuMDJzLjA5LjA4LjE1LjExYzAgMCAuMDEgMCAuMDEuMDFsMy40OCAyLjAxYy4yNS4xNC41Ni4xNC44MSAwbDMuNDgtMi4wMWMuMjUtLjE0LjQtLjQxLjQtLjd2LTQuMDFhLjgxLjgxIDAgMCAwLS40LS43bC0zLjQ4LTIuMDFoLS4wMmMtLjA1LS4wNC0uMTEtLjA2LS4xNy0uMDhoLS4wM2EuNS41IDAgMCAwLS4xNy0uMDNoLS4wM2MtLjA2IDAtLjEyIDAtLjE4LjAyLS4wNy4wMi0uMTUuMDUtLjIxLjA4bC0xLjc0IDFjLS42Ny4zOS0xLjUuMzktMi4xNyAwYTIuMTkgMi4xOSAwIDAgMS0xLjA5LTEuODhjMC0uNzguNDItMS40OSAxLjA5LTEuODhaIiBzdHlsZT0iZmlsbDojNWRiZjlkIi8+PHBhdGggZD0ibS40IDEzLjExIDMuNDcgMi4wMWMuMjUuMTQuNTYuMTQuOCAwbDMuNDctMi4wMWguMDFsLjE1LS4xMi4wMi0uMDJzLjA3LS4wOS4xLS4xNGwuMDItLjAyYy4wMy0uMDUuMDUtLjExLjA3LS4xN3YtLjA0Yy4wMy0uMDYuMDMtLjEyLjAzLS4xOVYxMC40YzAtLjc4LjQyLTEuNDkgMS4wOS0xLjg4czEuNS0uMzkgMi4xOCAwbDEuNzQgMWMuMDcuMDQuMTQuMDcuMjEuMDguMDYuMDEuMTIuMDIuMTguMDJoLjAzYy4wNiAwIC4xMS0uMDEuMTctLjAyaC4wM2MuMDYtLjAyLjEyLS4wNC4xNy0uMDdoLjAybDMuNDctMi4wMmMuMjUtLjE0LjQtLjQxLjQtLjd2LTRhLjgxLjgxIDAgMCAwLS40LS43bC0zLjQ2LTJhLjgzLjgzIDAgMCAwLS44MSAwbC0zLjQ4IDIuMDFoLS4wMWwtLjE1LjEyLS4wMi4wMi0uMS4xMy0uMDIuMDJjLS4wMy4wNS0uMDUuMTEtLjA3LjE3di4wNGMtLjAzLjA2LS4wMy4xMi0uMDMuMTl2Mi4wMWMwIC43OC0uNDIgMS40OS0xLjA5IDEuODhzLTEuNS4zOS0yLjE4IDBsLTEuNzQtMWEuNi42IDAgMCAwLS4yMS0uMDhjLS4wNi0uMDEtLjEyLS4wMi0uMTgtLjAyaC0uMDNjLS4wNiAwLS4xMS4wMS0uMTcuMDJoLS4wM2MtLjA2LjAyLS4xMi4wNS0uMTcuMDhoLS4wMkwuNCA3LjcxYy0uMjUuMTQtLjQuNDEtLjQuNjl2NC4wMWMwIC4yOS4xNS41Ni40LjciIHN0eWxlPSJmaWxsOiM0NDY4YzQiLz48cGF0aCBkPSJtMTcuODQgMjQuNDgtMy40OC0yLjAxaC0uMDJjLS4wNS0uMDQtLjExLS4wNi0uMTctLjA4aC0uMDNhLjUuNSAwIDAgMC0uMTctLjAzaC0uMDNjLS4wNiAwLS4xMiAwLS4xOC4wMmgtLjA0Yy0uMDYuMDMtLjEyLjA1LS4xOC4wOGwtMS43NCAxYy0uNjcuMzktMS41LjM5LTIuMTggMGEyLjE5IDIuMTkgMCAwIDEtMS4wOS0xLjg4di0yLjAxYzAtLjA2IDAtLjEzLS4wMi0uMTl2LS4wNGMtLjAzLS4wNi0uMDUtLjExLS4wOC0uMTdsLS4wMi0uMDJzLS4wNi0uMDktLjEtLjEzTDguMjkgMTlzLS4wOS0uMDgtLjE1LS4xMWgtLjAxbC0zLjQ3LTIuMDJhLjgzLjgzIDAgMCAwLS44MSAwTC4zNyAxOC44OGEuODcuODcgMCAwIDAtLjM3LjcxdjQuMDFjMCAuMjkuMTUuNTUuNC43bDMuNDcgMi4wMWguMDJjLjA1LjA0LjExLjA2LjE3LjA4aC4wM2MuMDUuMDIuMTEuMDMuMTYuMDNoLjAzYy4wNiAwIC4xMiAwIC4xOC0uMDJoLjA0Yy4wNi0uMDMuMTItLjA1LjE4LS4wOGwxLjc0LTFjLjY3LS4zOSAxLjUtLjM5IDIuMTcgMHMxLjA5IDEuMTEgMS4wOSAxLjg4djIuMDFjMCAuMDcgMCAuMTMuMDIuMTl2LjA0Yy4wMy4wNi4wNS4xMS4wOC4xN2wuMDIuMDJz
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[coze-dev/coze-studio]]></title>
-            <link>https://github.com/coze-dev/coze-studio</link>
-            <guid>https://github.com/coze-dev/coze-studio</guid>
-            <pubDate>Wed, 14 Jan 2026 00:04:57 GMT</pubDate>
-            <description><![CDATA[An AI agent development platform with all-in-one visual tools, simplifying agent creation, debugging, and deployment like never before. Coze your way to AI Agent creation.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/coze-dev/coze-studio">coze-dev/coze-studio</a></h1>
-            <p>An AI agent development platform with all-in-one visual tools, simplifying agent creation, debugging, and deployment like never before. Coze your way to AI Agent creation.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 19,440</p>
-            <p>Forks: 2,763</p>
-            <p>Stars today: 23 stars today</p>
-            <h2>README</h2><pre>![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/943f576df3424fa98580c2ad18946719~tplv-goo7wpa0wc-image.image)
-
-&lt;div align=&quot;center&quot;&gt;&lt;p&gt;
-&lt;a href=&quot;#what-is-coze-studio&quot;&gt;Coze Studio&lt;/a&gt; •
-&lt;a href=&quot;#feature-list&quot;&gt;Feature list&lt;/a&gt; •
-&lt;a href=&quot;#quickstart&quot;&gt;Quickstart&lt;/a&gt; •
-&lt;a href=&quot;#developer-guide&quot;&gt;Developer Guide&lt;/a&gt;
-&lt;/p&gt;
-&lt;p&gt;
-  &lt;img alt=&quot;License&quot; src=&quot;https://img.shields.io/badge/license-apache2.0-blue.svg&quot;&gt;
-  &lt;img alt=&quot;Go Version&quot; src=&quot;https://img.shields.io/badge/go-%3E%3D%201.23.4-blue&quot;&gt;
-&lt;/p&gt;
-
-English | [中文](README.zh_CN.md)
-
-&lt;/div&gt;
-
-## What is Coze Studio?
-
-[Coze Studio](https://www.coze.cn/home) is an all-in-one AI agent development tool. Providing the latest large models and tools, various development modes and frameworks, Coze Studio offers the most convenient AI agent development environment, from development to deployment. 
-
-* **Provides all core technologies needed for AI agent development**: prompt, RAG, plugin, workflow, enabling developers to focus on creating the core value of AI.
-* **Ready to use for professional AI agent development at the lowest cost**: Coze Studio provides developers with complete app templates and build frameworks, allowing you to quickly construct various AI agents and turn creative ideas into reality.
-
-Coze Studio, derived from the &quot;Coze Development Platform&quot; which has served tens of thousands of enterprises and millions of developers, we have made its core engine completely open. It is a one-stop visual development tool for AI Agents that makes creating, debugging, and deploying AI Agents unprecedentedly simple. Through Coze Studio&#039;s visual design and build tools, developers can quickly create and debug agents, apps, and workflows using no-code or low-code approaches, enabling powerful AI app development and more customized business logic. It&#039;s an ideal choice for building low-code AI products tailored . Coze Studio aims to lower the threshold for AI agent development and application, encouraging community co-construction and sharing for deeper exploration and practice in the AI field.
-
-The backend of Coze Studio is developed using Golang, the frontend uses React + TypeScript, and the overall architecture is based on microservices and built following domain-driven design (DDD) principles. Provide developers with a high-performance, highly scalable, and easy-to-customize underlying framework to help them address complex business needs.
-## Feature list
-| **Module** | **Feature** |
-| --- | --- |
-| Model service | Manage the model list, integrate services such as OpenAI and Volcengine |
-| Build agent | * Build, publish, and manage agent &lt;br&gt; * Support configuring workflows, knowledge bases, and other resources |
-| Build apps | * Create and publish apps &lt;br&gt; * Build business logic through workflows |
-| Build a workflow | Create, modify, publish, and delete workflows |
-| Develop resources | Support creating and managing the following resources: &lt;br&gt; * Plugins &lt;br&gt; * Knowledge bases &lt;br&gt; * Databases &lt;br&gt; * Prompts |
-| API and SDK | * Create conversations, initiate chats, and other OpenAPI &lt;br&gt; * Integrate agents or apps into your own app through Chat SDK |
-
-## Quickstart
-Learn how to obtain and deploy the open-source version of Coze Studio, quickly build projects, and experience Coze Studio&#039;s open-source version.
-
-Environment requirements:
-
-* Before installing Coze Studio, please ensure that your machine meets the following minimum system requirements: 2 Core、4 GB
-* Pre-install Docker and Docker Compose, and start the Docker service.
-
-Deployment steps:
-
-1. Retrieve the source code.
-   ```Bash
-   # Clone code
-   git clone https://github.com/coze-dev/coze-studio.git
-   ```
-2. Deploy and start the service. When deploying and starting Coze Studio for the first time, it may take a while to retrieve images and build local images. Please be patient. If you see the message &quot;Container coze-server Started,&quot; it means the Coze Studio service has started successfully.
-
-   ```Bash
-   cd coze-studio
-   # start service
-   # for macOS or Linux
-   make web  
-   # for windows
-   cp .env.example .env
-   docker compose -f ./docker/docker-compose.yml up
-   ```
-
-   For common startup failure issues, **please refer to the [FAQ](https://github.com/coze-dev/coze-studio/wiki/9.-FAQ)**.
-3.	Register an account by visiting `http://localhost:8888/sign`, entering your username and password, and clicking the Register button.
-4.	Configure the model at `http://localhost:8888/admin/#model-management` by adding a new model. (The image version must be greater than or equal to 0.5.0.)
-5.	Visit Coze Studio at `http://localhost:8888/`.
-
-&gt; [!WARNING]
-&gt; If you want to deploy Coze Studio in a public network environment, it is recommended to assess security risks before you begin, and take corresponding protection measures. Possible security risks include account registration functions, Python execution environments in workflow code nodes, Coze Server listening address configurations, SSRF (Server - Side Request Forgery), and some horizontal privilege escalations in APIs.  For more details, refer to [Quickstart](https://github.com/coze-dev/coze-studio/wiki/2.-Quickstart#security-risks-in-public-networks).
-
-## Developer Guide
-
-* **Project Configuration**:
-   * [Model Configuration](https://github.com/coze-dev/coze-studio/wiki/3.-Model-configuration): Before deploying the open-source version of Coze Studio, you must configure the model service. Otherwise, you cannot select models when building agents, workflows, and apps.
-   * [Plugin Configuration](https://github.com/coze-dev/coze-studio/wiki/4.-Plugin-Configuration): To use official plugins from the plugin store, you must first configure the plugins and add the authentication keys for third-party services.
-   * [Basic Component Configuration](https://github.com/coze-dev/coze-studio/wiki/5.-Basic-component-configuration): Learn how to configure components such as image uploaders to use functions like image uploading in Coze Studio .
-* [API Reference](https://github.com/coze-dev/coze-studio/wiki/6.-API-Reference): The Coze Studio Community Edition API and Chat SDK are authenticated using Personal Access Token, providing APIs for conversations and workflows.
-* [Development Guidelines](https://github.com/coze-dev/coze-studio/wiki/7.-Development-Standards):
-   * [Project Architecture](https://github.com/coze-dev/coze-studio/wiki/7.-Development-Standards#project-architecture): Learn about the technical architecture and core components of the open-source version of Coze Studio.
-   * [Code Development and Testing](https://github.com/coze-dev/coze-studio/wiki/7.-Development-Standards#code-development-and-testing): Learn how to perform secondary development and testing based on the open-source version of Coze Studio.
-   * [Troubleshooting](https://github.com/coze-dev/coze-studio/wiki/7.-Development-Standards#troubleshooting): Learn how to view container states and system logs.
-
-## Using the open-source version of Coze Studio
-&gt; Regarding how to use Coze Studio, refer to the [Coze Development Platform Official Documentation Center](https://www.coze.cn/open/docs) for more information. Please note that certain features, such as tone customization, are limited to the commercial version. Differences between the open-source and commercial versions can be found in the **Feature List**.
-
-
-* [Quick Start](https://www.coze.cn/open/docs/guides/quickstart): Quickly build an AI assistant agent with Coze Studio.
-* [Developing Agents](https://www.coze.cn/open/docs/guides/agent_overview): Learn how to create, build, publish, and manage agents. You can use functions such as knowledge, plugins, etc., to resolve model hallucination and lack of expertise in professional fields. In addition, Coze Studio provides rich memory features that enable agents to generate more accurate responses based on a personal user&#039;s historical conversations during interactions.
-* [Develop workflows](https://www.coze.cn/open/docs/guides/workflow): A workflow is a set of executable instructions used to implement business logic or complete specific tasks. It structures data flow and task processing for apps or agents. Coze Studio provides a visual canvas where you can quickly build workflows by dragging and dropping nodes.
-* [Resources such as plugins](https://www.coze.cn/open/docs/guides/plugin): In Coze Studio, workflows, plugins, databases, knowledge bases, and variables are collectively referred to as resources.
-* **API &amp; SDK**: Coze Studio supports [API related to chat and workflows](https://github.com/coze-dev/coze-studio/wiki/6.-API-Reference), and you can also integrate agents or apps with local business systems through [Chat SDK](https://www.coze.cn/open/docs/developer_guides/web_sdk_overview).
-* [Tutorials for practice](https://www.coze.cn/open/docs/tutorial/chat_sdk_web_online_customer_service): Learn how to use Coze Studio to implement various AI scenarios, such as building web-based online customer service using Chat SDK.
-
-## License
-This project uses the Apache 2.0 license. For details, please refer to the [LICENSE](https://github.com/coze-dev/coze-studio/blob/main/LICENSE-APACHE) file.
-## Community contributions
-We welcome community contributions. For contribution guidelines, please refer to [CONTRIBUTING](https://github.com/coze-dev/coze-studio/blob/main/CONTRIBUTING.md) and [Code of conduct](https://github.com/coze-dev/coze-studio/blob/main/CODE_OF_CONDUCT.md). We look forward to your contributions!
-## Security and privacy
-If you discover potential security issues in the project, or believe you may have found a security issue, please notify the ByteDance security team through our [security center](https://security.bytedance.com/src) or [vulnerability reporting email](mailto:sec@bytedance.com).
-Please **do not** create public GitHub Issues.
-## Join Community
-
-We are committed to building an open and friendly developer community. All developers interested in AI Agent development are welcome to join us!
-
-### 🐛 Issue Reports &amp; Feature Requests
-To efficiently track and resolve issues while ensuring transparency and collaboration, we recommend participating through:
-- **GitHub Issues**: [Submit bug reports or feature requests](https://github.com/coze-dev/coze-studio/issues)
-- **Pull Requests**: [Contribute code or documentation improvements](https://github.com/coze-dev/coze-studio/pulls)
-
-### 💬 Technical Discussion &amp; Communication
-Join our technical discussion groups to share experiences with other developers and stay updated with the latest project developments:
-
-**Feishu Group Chat**  
-Scan the QR code below with Feishu mobile app to join:
-
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/0a49081e8f3743e8bf3dcdded4bb571a~tplv-goo7wpa0wc-image.image)
-
-**Discord Server**  
-Click to join: [Coze Community](https://discord.gg/sTVN9EVS4B)
-
-**Telegram Group**  
-Click to join: Telegram Group [Coze](https://t.me/+pP9CkPnomDA0Mjgx)
-
-## Acknowledgments
-Thank you to all the developers and community members who have contributed to the Coze Studio project. Special thanks:
-
-* The [Eino](https://github.com/cloudwego/eino) framework team - providing powerful support for Coze Studio&#039;s agent and workflow runtime engines, model abstractions and implementations, and knowledge base indexing and retrieval
-* The [FlowGram](https://github.com/bytedance/flowgram.ai) team - providing a high-quality workflow building engine for Coze Studio&#039;s frontend workflow canvas editor
-* The [Hertz](https://github.com/cloudwego/hertz) team - Go HTTP framework with high-performance and strong-extensibility for building micro-services
-* All users who participated in testing and feedback</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[remix-run/react-router]]></title>
-            <link>https://github.com/remix-run/react-router</link>
-            <guid>https://github.com/remix-run/react-router</guid>
-            <pubDate>Wed, 14 Jan 2026 00:04:56 GMT</pubDate>
-            <description><![CDATA[Declarative routing for React]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/remix-run/react-router">remix-run/react-router</a></h1>
-            <p>Declarative routing for React</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 56,112</p>
-            <p>Forks: 10,813</p>
-            <p>Stars today: 5 stars today</p>
-            <h2>README</h2><pre>[![npm package][npm-badge]][npm] [![build][build-badge]][build]
-
-[npm-badge]: https://img.shields.io/npm/v/react-router-dom.svg
-[npm]: https://www.npmjs.org/package/react-router-dom
-[build-badge]: https://img.shields.io/github/actions/workflow/status/remix-run/react-router/test.yml?branch=dev&amp;style=square
-[build]: https://github.com/remix-run/react-router/actions/workflows/test.yml
-
-React Router is a multi-strategy router for React bridging the gap from React 18 to React 19. You can use it maximally as a React framework or minimally as a library with your own architecture.
-
-- [Getting Started - Framework](https://reactrouter.com/start/framework/installation)
-- [Getting Started - Library](https://reactrouter.com/start/library/installation)
-- [Upgrade from v6](https://reactrouter.com/upgrading/v6)
-- [Upgrade from Remix](https://reactrouter.com/upgrading/remix)
-- [Changelog](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md)
-
-## Packages
-
-- [`react-router`](./packages/react-router)
-- [`@react-router/dev`](./packages/react-router-dev)
-- [`@react-router/node`](./packages/react-router-node)
-- [`@react-router/cloudflare`](./packages/react-router-cloudflare)
-- [`@react-router/serve`](./packages/react-router-serve)
-- [`@react-router/fs-routes`](./packages/react-router-fs-routes)
-
-## Previous Versions
-
-- [v6](https://reactrouter.com/v6)
-- [v5](https://v5.reactrouter.com/)
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[simstudioai/sim]]></title>
-            <link>https://github.com/simstudioai/sim</link>
-            <guid>https://github.com/simstudioai/sim</guid>
-            <pubDate>Wed, 14 Jan 2026 00:04:55 GMT</pubDate>
-            <description><![CDATA[Open-source platform to build and deploy AI agent workflows.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/simstudioai/sim">simstudioai/sim</a></h1>
-            <p>Open-source platform to build and deploy AI agent workflows.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 25,654</p>
-            <p>Forks: 3,191</p>
-            <p>Stars today: 106 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://sim.ai&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
-    &lt;img src=&quot;apps/sim/public/logo/reverse/text/large.png&quot; alt=&quot;Sim Logo&quot; width=&quot;500&quot;/&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;Build and deploy AI agent workflows in minutes.&lt;/p&gt;
+- Real-time collaboration
+- Diagrams (Draw.io, Excalidraw and Mermaid)
+- Spaces
+- Permissions management
+- Groups
+- Comments
+- Page history
+- Search
+- File attachments
+- Embeds (Airtable, Loom, Miro and more)
+- Translations (10+ languages)
+
+### Screenshots
 
 &lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://sim.ai&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/sim.ai-6F3DFA&quot; alt=&quot;Sim.ai&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://discord.gg/Hr4UWYEcTT&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Discord-Join%20Server-5865F2?logo=discord&amp;logoColor=white&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://x.com/simdotai&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://img.shields.io/twitter/follow/simstudioai?style=social&quot; alt=&quot;Twitter&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://docs.sim.ai&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Docs-6F3DFA.svg&quot; alt=&quot;Documentation&quot;&gt;&lt;/a&gt;
+&lt;img alt=&quot;home&quot; src=&quot;https://docmost.com/screenshots/home.png&quot; width=&quot;70%&quot;&gt;
+&lt;img alt=&quot;editor&quot; src=&quot;https://docmost.com/screenshots/editor.png&quot; width=&quot;70%&quot;&gt;
 &lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://cursor.com/link/prompt?text=Help%20me%20set%20up%20Sim%20Studio%20locally.%20Follow%20these%20steps%3A%0A%0A1.%20First%2C%20verify%20Docker%20is%20installed%20and%20running%3A%0A%20%20%20docker%20--version%0A%20%20%20docker%20info%0A%0A2.%20Clone%20the%20repository%3A%0A%20%20%20git%20clone%20https%3A%2F%2Fgithub.com%2Fsimstudioai%2Fsim.git%0A%20%20%20cd%20sim%0A%0A3.%20Start%20the%20services%20with%20Docker%20Compose%3A%0A%20%20%20docker%20compose%20-f%20docker-compose.prod.yml%20up%20-d%0A%0A4.%20Wait%20for%20all%20containers%20to%20be%20healthy%20(this%20may%20take%201-2%20minutes)%3A%0A%20%20%20docker%20compose%20-f%20docker-compose.prod.yml%20ps%0A%0A5.%20Verify%20the%20app%20is%20accessible%20at%20http%3A%2F%2Flocalhost%3A3000%0A%0AIf%20there%20are%20any%20errors%2C%20help%20me%20troubleshoot%20them.%20Common%20issues%3A%0A-%20Port%203000%2C%203002%2C%20or%205432%20already%20in%20use%0A-%20Docker%20not%20running%0A-%20Insufficient%20memory%20(needs%2012GB%2B%20RAM)%0A%0AFor%20local%20AI%20models%20with%20Ollama%2C%20use%20this%20instead%20of%20step%203%3A%0A%20%20%20docker%20compose%20-f%20docker-compose.ollama.yml%20--profile%20setup%20up%20-d&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Set%20Up%20with-Cursor-000000?logo=cursor&amp;logoColor=white&quot; alt=&quot;Set Up with Cursor&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
+### License
+Docmost core is licensed under the open-source AGPL 3.0 license.  
+Enterprise features are available under an enterprise license (Enterprise Edition).  
 
-### Build Workflows with Ease
-Design agent workflows visually on a canvas—connect agents, tools, and blocks, then run them instantly.
+All files in the following directories are licensed under the Docmost Enterprise license defined in `packages/ee/License`.
+  - apps/server/src/ee
+  - apps/client/src/ee
+  - packages/ee
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;apps/sim/public/static/workflow.gif&quot; alt=&quot;Workflow Builder Demo&quot; width=&quot;800&quot;/&gt;
-&lt;/p&gt;
+### Contributing
 
-### Supercharge with Copilot
-Leverage Copilot to generate nodes, fix errors, and iterate on flows directly from natural language.
+See the [development documentation](https://docmost.com/docs/self-hosting/development)
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;apps/sim/public/static/copilot.gif&quot; alt=&quot;Copilot Demo&quot; width=&quot;800&quot;/&gt;
-&lt;/p&gt;
+## Thanks
+Special thanks to;
 
-### Integrate Vector Databases
-Upload documents to a vector store and let agents answer questions grounded in your specific content.
+&lt;img width=&quot;100&quot; alt=&quot;Crowdin&quot; src=&quot;https://github.com/user-attachments/assets/a6c3d352-e41b-448d-b6cd-3fbca3109f07&quot; /&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;apps/sim/public/static/knowledge.gif&quot; alt=&quot;Knowledge Uploads and Retrieval Demo&quot; width=&quot;800&quot;/&gt;
-&lt;/p&gt;
+[Crowdin](https://crowdin.com/) for providing access to their localization platform.
 
-## Quickstart
 
-### Cloud-hosted: [sim.ai](https://sim.ai)
+&lt;img width=&quot;48&quot; alt=&quot;Algolia-mark-square-white&quot; src=&quot;https://github.com/user-attachments/assets/6ccad04a-9589-4965-b6a1-d5cb1f4f9e94&quot; /&gt;
 
-&lt;a href=&quot;https://sim.ai&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/sim.ai-6F3DFA?logo=data:image/svg%2bxml;base64,PHN2ZyB3aWR0aD0iNjE2IiBoZWlnaHQ9IjYxNiIgdmlld0JveD0iMCAwIDYxNiA2MTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF8xMTU5XzMxMykiPgo8cGF0aCBkPSJNNjE2IDBIMFY2MTZINjE2VjBaIiBmaWxsPSIjNkYzREZBIi8+CjxwYXRoIGQ9Ik04MyAzNjUuNTY3SDExM0MxMTMgMzczLjgwNSAxMTYgMzgwLjM3MyAxMjIgMzg1LjI3MkMxMjggMzg5Ljk0OCAxMzYuMTExIDM5Mi4yODUgMTQ2LjMzMyAzOTIuMjg1QzE1Ny40NDQgMzkyLjI4NSAxNjYgMzkwLjE3MSAxNzIgMzg1LjkzOUMxNzcuOTk5IDM4MS40ODcgMTgxIDM3NS41ODYgMTgxIDM2OC4yMzlDMTgxIDM2Mi44OTUgMTc5LjMzMyAzNTguNDQyIDE3NiAzNTQuODhDMTcyLjg4OSAzNTEuMzE4IDE2Ny4xMTEgMzQ4LjQyMiAxNTguNjY3IDM0Ni4xOTZMMTMwIDMzOS41MTdDMTE1LjU1NSAzMzUuOTU1IDEwNC43NzggMzMwLjQ5OSA5Ny42NjY1IDMyMy4xNTFDOTAuNzc3NSAzMTUuODA0IDg3LjMzMzQgMzA2LjExOSA4Ny4zMzM0IDI5NC4wOTZDODcuMzMzNCAyODQuMDc2IDg5Ljg4OSAyNzUuMzkyIDk0Ljk5OTYgMjY4LjA0NUMxMDAuMzMzIDI2MC42OTcgMTA3LjU1NSAyNTUuMDIgMTE2LjY2NiAyNTEuMDEyQzEyNiAyNDcuMDA0IDEzNi42NjcgMjQ1IDE0OC42NjYgMjQ1QzE2MC42NjcgMjQ1IDE3MSAyNDcuMTE2IDE3OS42NjcgMjUxLjM0NkMxODguNTU1IDI1NS41NzYgMTk1LjQ0NCAyNjEuNDc3IDIwMC4zMzMgMjY5LjA0N0MyMDUuNDQ0IDI3Ni42MTcgMjA4LjExMSAyODUuNjM0IDIwOC4zMzMgMjk2LjA5OUgxNzguMzMzQzE3OC4xMTEgMjg3LjYzOCAxNzUuMzMzIDI4MS4wNyAxNjkuOTk5IDI3Ni4zOTRDMTY0LjY2NiAyNzEuNzE5IDE1Ny4yMjIgMjY5LjM4MSAxNDcuNjY3IDI2OS4zODFDMTM3Ljg4OSAyNjkuMzgxIDEzMC4zMzMgMjcxLjQ5NiAxMjUgMjc1LjcyNkMxMTkuNjY2IDI3OS45NTcgMTE3IDI4NS43NDYgMTE3IDI5My4wOTNDMTE3IDMwNC4wMDMgMTI1IDMxMS40NjIgMTQxIDMxNS40N0wxNjkuNjY3IDMyMi40ODNDMTgzLjQ0NSAzMjUuNiAxOTMuNzc4IDMzMC43MjIgMjAwLjY2NyAzMzcuODQ3QzIwNy41NTUgMzQ0Ljc0OSAyMTEgMzU0LjIxMiAyMTEgMzY2LjIzNUMyMTEgMzc2LjQ3NyAyMDguMjIyIDM4NS40OTQgMjAyLjY2NiAzOTMuMjg3QzE5Ny4xMTEgNDAwLjg1NyAxODkuNDQ0IDQwNi43NTggMTc5LjY2NyA0MTAuOTg5QzE3MC4xMTEgNDE0Ljk5NiAxNTguNzc4IDQxNyAxNDUuNjY3IDQxN0MxMjYuNTU1IDQxNyAxMTEuMzMzIDQxMi4zMjUgOTkuOTk5NyA0MDIuOTczQzg4LjY2NjggMzkzLjYyMSA4MyAzODEuMTUzIDgzIDM2NS41NjdaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjMyLjI5MSA0MTNWMjUwLjA4MkMyNDQuNjg0IDI1NC42MTQgMjUwLjE0OCAyNTQuNjE0IDI2My4zNzEgMjUwLjA4MlY0MTNIMjMyLjI5MVpNMjQ3LjUgMjM5LjMxM0MyNDEuOTkgMjM5LjMxMyAyMzcuMTQgMjM3LjMxMyAyMzIuOTUyIDIzMy4zMTZDMjI4Ljk4NCAyMjkuMDk1IDIyNyAyMjQuMjA5IDIyNyAyMTguNjU2QzIyNyAyMTIuODgyIDIyOC45ODQgMjA3Ljk5NSAyMzIuOTUyIDIwMy45OTdDMjM3LjE0IDE5OS45OTkgMjQxLjk5IDE5OCAyNDcuNSAxOThDMjUzLjIzMSAxOTggMjU4LjA4IDE5OS45OTkgMjYyLjA0OSAyMDMuOTk3QzI2Ni4wMTYgMjA3Ljk5NSAyNjggMjEyLjg4MiAyNjggMjE4LjY1NkMyNjggMjI0LjIwOSAyNjYuMDE2IDIyOS4wOTUgMjYyLjA0OSAyMzMuMzE2QzI1OC4wOCAyMzcuMzEzIDI1My4yMzEgMjM5LjMxMyAyNDcuNSAyMzkuMzEzWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTMxOS4zMzMgNDEzSDI4OFYyNDkuNjc2SDMxNlYyNzcuMjMzQzMxOS4zMzMgMjY4LjEwNCAzMjUuNzc4IDI2MC4zNjQgMzM0LjY2NyAyNTQuMzUyQzM0My43NzggMjQ4LjExNyAzNTQuNzc4IDI0NSAzNjcuNjY3IDI0NUMzODIuMTExIDI0NSAzOTQuMTEyIDI0OC44OTcgNDAzLjY2NyAyNTYuNjlDNDEzLjIyMiAyNjQuNDg0IDQxOS40NDQgMjc0LjgzNyA0MjIuMzM0IDI4Ny43NTJINDE2LjY2N0M0MTguODg5IDI3NC44MzcgNDI1IDI2NC40ODQgNDM1IDI1Ni42OUM0NDUgMjQ4Ljg5NyA0NTcuMzM0IDI0NSA0NzIgMjQ1QzQ5MC42NjYgMjQ1IDUwNS4zMzQgMjUwLjQ1NSA1MTYgMjYxLjM2NkM1MjYuNjY3IDI3Mi4yNzYgNTMyIDI4Ny4xOTUgNTMyIDMwNi4xMjFWNDEzSDUwMS4zMzNWMzEzLjgwNEM1MDEuMzMzIDMwMC44ODkgNDk4IDI5MC45ODEgNDkxLjMzMyAyODQuMDc4QzQ4NC44ODkgMjc2Ljk1MiA0NzYuMTExIDI3My4zOSA0NjUgMjczLjM5QzQ1Ny4yMjIgMjczLjM5IDQ1MC4zMzMgMjc1LjE3MSA0NDQuMzM0IDI3OC43MzRDNDM4LjU1NiAyODIuMDc0IDQzNCAyODYuOTcyIDQzMC42NjcgMjkzLjQzQzQyNy4zMzMgMjk5Ljg4NyA0MjUuNjY3IDMwNy40NTcgNDI1LjY2NyAzMTYuMTQxVjQxM0gzOTQuNjY3VjMxMy40NjlDMzk0LjY2NyAzMDAuNTU1IDM5MS40NDUgMjkwLjc1OCAzODUgMjg0LjA3OEMzNzguNTU2IDI3Ny4xNzUgMzY5Ljc3OCAyNzMuNzI0IDM1OC42NjcgMjczLjcyNEMzNTAuODg5IDI3My43MjQgMzQ0IDI3NS41MDUgMzM4IDI3OS4wNjhDMzMyLjIyMiAyODIuNDA4IDMyNy42NjcgMjg3LjMwNyAzMjQuMzMzIDI5My43NjNDMzIxIDI5OS45OTggMzE5LjMzMyAzMDcuNDU3IDMxOS4zMzMgMzE2LjE0MVY0MTNaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzExNTlfMzEzIj4KPHJlY3Qgd2lkdGg9IjYxNiIgaGVpZ2h0PSI2MTYiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==&amp;logoColor=white&quot; alt=&quot;Sim.ai&quot;&gt;&lt;/a&gt;
+[Algolia](https://www.algolia.com/) for providing full-text search to the docs.
 
-### Self-hosted: NPM Package
-
-```bash
-npx simstudio
-```
-→ http://localhost:3000
-
-#### Note
-Docker must be installed and running on your machine.
-
-#### Options
-
-| Flag | Description |
-|------|-------------|
-| `-p, --port &lt;port&gt;` | Port to run Sim on (default `3000`) |
-| `--no-pull` | Skip pulling latest Docker images |
-
-### Self-hosted: Docker Compose
-
-```bash
-git clone https://github.com/simstudioai/sim.git &amp;&amp; cd sim
-docker compose -f docker-compose.prod.yml up -d
-```
-
-Open [http://localhost:3000](http://localhost:3000)
-
-#### Using Local Models with Ollama
-
-Run Sim with local AI models using [Ollama](https://ollama.ai) - no external APIs required:
-
-```bash
-# Start with GPU support (automatically downloads gemma3:4b model)
-docker compose -f docker-compose.ollama.yml --profile setup up -d
-
-# For CPU-only systems:
-docker compose -f docker-compose.ollama.yml --profile cpu --profile setup up -d
-```
-
-Wait for the model to download, then visit [http://localhost:3000](http://localhost:3000). Add more models with:
-```bash
-docker compose -f docker-compose.ollama.yml exec ollama ollama pull llama3.1:8b
-```
-
-#### Using an External Ollama Instance
-
-If Ollama is running on your host machine, use `host.docker.internal` instead of `localhost`:
-
-```bash
-OLLAMA_URL=http://host.docker.internal:11434 docker compose -f docker-compose.prod.yml up -d
-```
-
-On Linux, use your host&#039;s IP address or add `extra_hosts: [&quot;host.docker.internal:host-gateway&quot;]` to the compose file.
-
-#### Using vLLM
-
-Sim supports [vLLM](https://docs.vllm.ai/) for self-hosted models. Set `VLLM_BASE_URL` and optionally `VLLM_API_KEY` in your environment.
-
-### Self-hosted: Dev Containers
-
-1. Open VS Code with the [Remote - Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-2. Open the project and click &quot;Reopen in Container&quot; when prompted
-3. Run `bun run dev:full` in the terminal or use the `sim-start` alias
-   - This starts both the main application and the realtime socket server
-
-### Self-hosted: Manual Setup
-
-**Requirements:** [Bun](https://bun.sh/), [Node.js](https://nodejs.org/) v20+, PostgreSQL 12+ with [pgvector](https://github.com/pgvector/pgvector)
-
-1. Clone and install:
-
-```bash
-git clone https://github.com/simstudioai/sim.git
-cd sim
-bun install
-```
-
-2. Set up PostgreSQL with pgvector:
-
-```bash
-docker run --name simstudio-db -e POSTGRES_PASSWORD=your_password -e POSTGRES_DB=simstudio -p 5432:5432 -d pgvector/pgvector:pg17
-```
-
-Or install manually via the [pgvector guide](https://github.com/pgvector/pgvector#installation).
-
-3. Configure environment:
-
-```bash
-cp apps/sim/.env.example apps/sim/.env
-cp packages/db/.env.example packages/db/.env
-# Edit both .env files to set DATABASE_URL=&quot;postgresql://postgres:your_password@localhost:5432/simstudio&quot;
-```
-
-4. Run migrations:
-
-```bash
-cd packages/db &amp;&amp; bunx drizzle-kit migrate --config=./drizzle.config.ts
-```
-
-5. Start development servers:
-
-```bash
-bun run dev:full  # Starts both Next.js app and realtime socket server
-```
-
-Or run separately: `bun run dev` (Next.js) and `cd apps/sim &amp;&amp; bun run dev:sockets` (realtime).
-
-## Copilot API Keys
-
-Copilot is a Sim-managed service. To use Copilot on a self-hosted instance:
-
-- Go to https://sim.ai → Settings → Copilot and generate a Copilot API key
-- Set `COPILOT_API_KEY` environment variable in your self-hosted apps/sim/.env file to that value
-
-## Environment Variables
-
-Key environment variables for self-hosted deployments. See [`.env.example`](apps/sim/.env.example) for defaults or [`env.ts`](apps/sim/lib/core/config/env.ts) for the full list.
-
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `DATABASE_URL` | Yes | PostgreSQL connection string with pgvector |
-| `BETTER_AUTH_SECRET` | Yes | Auth secret (`openssl rand -hex 32`) |
-| `BETTER_AUTH_URL` | Yes | Your app URL (e.g., `http://localhost:3000`) |
-| `NEXT_PUBLIC_APP_URL` | Yes | Public app URL (same as above) |
-| `ENCRYPTION_KEY` | Yes | Encrypts environment variables (`openssl rand -hex 32`) |
-| `INTERNAL_API_SECRET` | Yes | Encrypts internal API routes (`openssl rand -hex 32`) |
-| `API_ENCRYPTION_KEY` | Yes | Encrypts API keys (`openssl rand -hex 32`) |
-| `COPILOT_API_KEY` | No | API key from sim.ai for Copilot features |
-
-## Troubleshooting
-
-### Ollama models not showing in dropdown (Docker)
-
-If you&#039;re running Ollama on your host machine and Sim in Docker, change `OLLAMA_URL` from `localhost` to `host.docker.internal`:
-
-```bash
-OLLAMA_URL=http://host.docker.internal:11434 docker compose -f docker-compose.prod.yml up -d
-```
-
-See [Using an External Ollama Instance](#using-an-external-ollama-instance) for details.
-
-### Database connection issues
-
-Ensure PostgreSQL has the pgvector extension installed. When using Docker, wait for the database to be healthy before running migrations.
-
-### Port conflicts
-
-If ports 3000, 3002, or 5432 are in use, configure alternatives:
-
-```bash
-# Custom ports
-NEXT_PUBLIC_APP_URL=http://localhost:3100 POSTGRES_PORT=5433 docker compose up -d
-```
-
-## Tech Stack
-
-- **Framework**: [Next.js](https://nextjs.org/) (App Router)
-- **Runtime**: [Bun](https://bun.sh/)
-- **Database**: PostgreSQL with [Drizzle ORM](https://orm.drizzle.team)
-- **Authentication**: [Better Auth](https://better-auth.com)
-- **UI**: [Shadcn](https://ui.shadcn.com/), [Tailwind CSS](https://tailwindcss.com)
-- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
-- **Flow Editor**: [ReactFlow](https://reactflow.dev/)
-- **Docs**: [Fumadocs](https://fumadocs.vercel.app/)
-- **Monorepo**: [Turborepo](https://turborepo.org/)
-- **Realtime**: [Socket.io](https://socket.io/)
-- **Background Jobs**: [Trigger.dev](https://trigger.dev/)
-- **Remote Code Execution**: [E2B](https://www.e2b.dev/)
-
-## Contributing
-
-We welcome contributions! Please see our [Contributing Guide](.github/CONTRIBUTING.md) for details.
-
-## License
-
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
-
-&lt;p align=&quot;center&quot;&gt;Made with ❤️ by the Sim Team&lt;/p&gt;
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
