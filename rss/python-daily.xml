@@ -4,7 +4,7 @@
         <title>GitHub Trending Today for python - Python Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for python.</description>
-        <lastBuildDate>Fri, 30 Jan 2026 00:06:23 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 31 Jan 2026 00:06:19 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
@@ -13,15 +13,15 @@
             <title><![CDATA[MoonshotAI/kimi-cli]]></title>
             <link>https://github.com/MoonshotAI/kimi-cli</link>
             <guid>https://github.com/MoonshotAI/kimi-cli</guid>
-            <pubDate>Fri, 30 Jan 2026 00:06:23 GMT</pubDate>
+            <pubDate>Sat, 31 Jan 2026 00:06:19 GMT</pubDate>
             <description><![CDATA[Kimi Code CLI is your next CLI agent.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/MoonshotAI/kimi-cli">MoonshotAI/kimi-cli</a></h1>
             <p>Kimi Code CLI is your next CLI agent.</p>
             <p>Language: Python</p>
-            <p>Stars: 4,937</p>
-            <p>Forks: 469</p>
-            <p>Stars today: 492 stars today</p>
+            <p>Stars: 5,285</p>
+            <p>Forks: 494</p>
+            <p>Stars today: 377 stars today</p>
             <h2>README</h2><pre># Kimi Code CLI
 
 [![Commit Activity](https://img.shields.io/github/commit-activity/w/MoonshotAI/kimi-cli)](https://github.com/MoonshotAI/kimi-cli/graphs/commit-activity)
@@ -48,6 +48,12 @@ Kimi Code CLI is not only a coding agent, but also a shell. You can switch the s
 
 &gt; [!NOTE]
 &gt; Built-in shell commands like `cd` are not supported yet.
+
+### VS Code extension
+
+Kimi Code CLI can be integrated with [Visual Studio Code](https://code.visualstudio.com/) via the [Kimi Code VS Code Extension](https://marketplace.visualstudio.com/items?itemName=moonshot-ai.kimi-code).
+
+![VS Code Extension](./docs/media/vscode.png)
 
 ### IDE integration via ACP
 
@@ -189,10 +195,6 @@ make help  # show all make targets
 ```
 
 Note: `make build` and `make build-bin` automatically run `make build-web` to embed the web UI.
-
-## Contributing
-
-We welcome contributions to Kimi Code CLI! Please refer to [CONTRIBUTING.md](./CONTRIBUTING.md) for more information.
 </pre>
           ]]></content:encoded>
             <category>Python</category>
@@ -201,22 +203,22 @@ We welcome contributions to Kimi Code CLI! Please refer to [CONTRIBUTING.md](./C
             <title><![CDATA[NevaMind-AI/memU]]></title>
             <link>https://github.com/NevaMind-AI/memU</link>
             <guid>https://github.com/NevaMind-AI/memU</guid>
-            <pubDate>Fri, 30 Jan 2026 00:06:22 GMT</pubDate>
-            <description><![CDATA[Memory for 24/7 proactive agents like moltbot (clawdbot).]]></description>
+            <pubDate>Sat, 31 Jan 2026 00:06:18 GMT</pubDate>
+            <description><![CDATA[Memory for 24/7 proactive agents like openclaw (moltbot, clawdbot).]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/NevaMind-AI/memU">NevaMind-AI/memU</a></h1>
-            <p>Memory for 24/7 proactive agents like moltbot (clawdbot).</p>
+            <p>Memory for 24/7 proactive agents like openclaw (moltbot, clawdbot).</p>
             <p>Language: Python</p>
-            <p>Stars: 6,024</p>
-            <p>Forks: 423</p>
-            <p>Stars today: 604 stars today</p>
+            <p>Stars: 6,453</p>
+            <p>Forks: 443</p>
+            <p>Stars today: 465 stars today</p>
             <h2>README</h2><pre>![MemU Banner](assets/banner.png)
 
 &lt;div align=&quot;center&quot;&gt;
 
 # memU
 
-### Always-On Proactive Memory for AI Agents
+### 24/7 Always-On Proactive Memory for AI Agents
 
 [![PyPI version](https://badge.fury.io/py/memu-py.svg)](https://badge.fury.io/py/memu-py)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
@@ -238,13 +240,13 @@ memU **continuously captures and understands user intent**. Even without a comma
 
 ---
 
-## 🤖 [memU bot](https://memu.bot)
+## 🤖 [OpenClaw (Moltbot, Clawdbot) Alternative](https://memu.bot)
 
 &lt;img width=&quot;100%&quot; src=&quot;https://github.com/NevaMind-AI/memU/blob/main/assets/memUbot.png&quot; /&gt;
 
 - **Download-and-use and simple** to get started.
 - Builds long-term memory to **understand user intent** and act proactively.
-- **Cuts LLM token cost** with smaller context.  
+- **Cuts LLM token cost** with smaller context.
 
 Try now: [memU bot](https://memu.bot)
 
@@ -280,35 +282,53 @@ python proactive.py
 
 ### Proactive Memory Lifecycle
 ```
-┌─────────────────────────────────────────────────┐
-│  1. USER INITIAL QUERY                          │
-│  └─ User input, context, or any trigger event   │
-│     Conversation starts here                    │
-└─────────────────────────────────────────────────┘
-                      ↓
-    ┌─────────────────────────────────────────────────┐
-    │  2. AGENT PLANNING / ACTIONS                    │
-    │  └─ Analyze request, execute tasks              │
-    │     Retrieve relevant memories for context      │
-    └─────────────────────────────────────────────────┘
-                          ↓
-    ┌─────────────────────────────────────────────────┐
-    │  3. MEMORIZE &amp; UPDATE TODOLIST                  │
-    │  └─ Store new insights, facts, preferences      │
-    │     Modify task list based on progress          │
-    └─────────────────────────────────────────────────┘
-                          ↓
-    ┌─────────────────────────────────────────────────┐
-    │  4. PREDICT USER INTENT                         │
-    │  └─ Anticipate next steps and needs             │
-    │     Proactively prepare relevant context        │
-    └─────────────────────────────────────────────────┘
-                          ↓
-    ┌─────────────────────────────────────────────────┐
-    │  5. LOOP (2 → 4)                                │
-    │  └─ Continuous iteration until task complete    │
-    │     Agent-driven proactive workflow             │
-    └─────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                         USER QUERY                                               │
+└──────────────────────────────────────────────────────────────────────────────────────────────────┘
+                 │                                                           │
+                 ▼                                                           ▼
+┌────────────────────────────────────────┐         ┌────────────────────────────────────────────────┐
+│         🤖 MAIN AGENT                  │         │              🧠 MEMU BOT                       │
+│                                        │         │                                                │
+│  Handle user queries &amp; execute tasks   │  ◄───►  │  Monitor, memorize &amp; proactive intelligence   │
+├────────────────────────────────────────┤         ├────────────────────────────────────────────────┤
+│                                        │         │                                                │
+│  ┌──────────────────────────────────┐  │         │  ┌──────────────────────────────────────────┐  │
+│  │  1. RECEIVE USER INPUT           │  │         │  │  1. MONITOR INPUT/OUTPUT                 │  │
+│  │     Parse query, understand      │  │   ───►  │  │     Observe agent interactions           │  │
+│  │     context and intent           │  │         │  │     Track conversation flow              │  │
+│  └──────────────────────────────────┘  │         │  └──────────────────────────────────────────┘  │
+│                 │                      │         │                    │                           │
+│                 ▼                      │         │                    ▼                           │
+│  ┌──────────────────────────────────┐  │         │  ┌──────────────────────────────────────────┐  │
+│  │  2. PLAN &amp; EXECUTE               │  │         │  │  2. MEMORIZE &amp; EXTRACT                   │  │
+│  │     Break down tasks             │  │   ◄───  │  │     Store insights, facts, preferences   │  │
+│  │     Call tools, retrieve data    │  │  inject │  │     Extract skills &amp; knowledge           │  │
+│  │     Generate responses           │  │  memory │  │     Update user profile                  │  │
+│  └──────────────────────────────────┘  │         │  └──────────────────────────────────────────┘  │
+│                 │                      │         │                    │                           │
+│                 ▼                      │         │                    ▼                           │
+│  ┌──────────────────────────────────┐  │         │  ┌──────────────────────────────────────────┐  │
+│  │  3. RESPOND TO USER              │  │         │  │  3. PREDICT USER INTENT                  │  │
+│  │     Deliver answer/result        │  │   ───►  │  │     Anticipate next steps                │  │
+│  │     Continue conversation        │  │         │  │     Identify upcoming needs              │  │
+│  └──────────────────────────────────┘  │         │  └──────────────────────────────────────────┘  │
+│                 │                      │         │                    │                           │
+│                 ▼                      │         │                    ▼                           │
+│  ┌──────────────────────────────────┐  │         │  ┌──────────────────────────────────────────┐  │
+│  │  4. LOOP                         │  │         │  │  4. RUN PROACTIVE TASKS                  │  │
+│  │     Wait for next user input     │  │   ◄───  │  │     Pre-fetch relevant context           │  │
+│  │     or proactive suggestions     │  │  suggest│  │     Prepare recommendations              │  │
+│  └──────────────────────────────────┘  │         │  │     Update todolist autonomously         │  │
+│                                        │         │  └──────────────────────────────────────────┘  │
+└────────────────────────────────────────┘         └────────────────────────────────────────────────┘
+                 │                                                           │
+                 └───────────────────────────┬───────────────────────────────┘
+                                             ▼
+                              ┌──────────────────────────────┐
+                              │     CONTINUOUS SYNC LOOP     │
+                              │  Agent ◄──► MemU Bot ◄──► DB │
+                              └──────────────────────────────┘
 ```
 
 ---
@@ -564,6 +584,7 @@ See [`examples/example_4_openrouter_memory.py`](examples/example_4_openrouter_me
 Processes inputs in real-time and immediately updates memory:
 
 &lt;img width=&quot;100%&quot; alt=&quot;memorize&quot; src=&quot;assets/memorize.png&quot; /&gt;
+
 ```python
 result = await service.memorize(
     resource_url=&quot;path/to/file.json&quot;,  # File path or URL
@@ -716,83 +737,7 @@ View detailed experimental data: [memU-experiment](https://github.com/NevaMind-A
 | Repository | Description | Proactive Features |
 |------------|-------------|-------------------|
 | **[memU](https://github.com/NevaMind-AI/memU)** | Core proactive memory engine | 7×24 learning pipeline, auto-categorization |
-| **[memU-server](https://github.com/NevaMind-AI/memU-server)** | Backend with continuous sync | Real-time memory updates, webhook triggers |
-| **[memU-ui](https://github.com/NevaMind-AI/memU-ui)** | Visual memory dashboard | Live memory evolution monitoring |
-
-**Quick Links:**
-- 🚀 [Try MemU Cloud](https://app.memu.so/quick-start)
-- 📚 [API Documentation](https://memu.pro/docs)
-- 💬 [Discord Community](https://discord.gg/memu)
-
----
-
-## 🤝 Partners
-
-&lt;div align=&quot;center&quot;&gt;
-
-&lt;a href=&quot;https://github.com/TEN-framework/ten-framework&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/113095513?s=200&amp;v=4&quot; alt=&quot;Ten&quot; height=&quot;40&quot; style=&quot;margin: 10px;&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://openagents.org&quot;&gt;&lt;img src=&quot;assets/partners/openagents.png&quot; alt=&quot;OpenAgents&quot; height=&quot;40&quot; style=&quot;margin: 10px;&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/milvus-io/milvus&quot;&gt;&lt;img src=&quot;https://miro.medium.com/v2/resize:fit:2400/1*-VEGyAgcIBD62XtZWavy8w.png&quot; alt=&quot;Milvus&quot; height=&quot;40&quot; style=&quot;margin: 10px;&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://xroute.ai/&quot;&gt;&lt;img src=&quot;assets/partners/xroute.png&quot; alt=&quot;xRoute&quot; height=&quot;40&quot; style=&quot;margin: 10px;&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://jaaz.app/&quot;&gt;&lt;img src=&quot;assets/partners/jazz.png&quot; alt=&quot;Jazz&quot; height=&quot;40&quot; style=&quot;margin: 10px;&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/Buddie-AI/Buddie&quot;&gt;&lt;img src=&quot;assets/partners/buddie.png&quot; alt=&quot;Buddie&quot; height=&quot;40&quot; style=&quot;margin: 10px;&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/bytebase/bytebase&quot;&gt;&lt;img src=&quot;assets/partners/bytebase.png&quot; alt=&quot;Bytebase&quot; height=&quot;40&quot; style=&quot;margin: 10px;&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/LazyAGI/LazyLLM&quot;&gt;&lt;img src=&quot;assets/partners/LazyLLM.png&quot; alt=&quot;LazyLLM&quot; height=&quot;40&quot; style=&quot;margin: 10px;&quot;&gt;&lt;/a&gt;
-
-&lt;/div&gt;
-
----
-
-## 🤝 How to Contribute
-
-We welcome contributions from the community! Whether you&#039;re fixing bugs, adding features, or improving documentation, your help is appreciated.
-
-### Getting Started
-
-To start contributing to MemU, you&#039;ll need to set up your development environment:
-
-#### Prerequisites
-- Python 3.13+
-- [uv](https://github.com/astral-sh/uv) (Python package manager)
-- Git
-
-#### Setup Development Environment
-```bash
-# 1. Fork and clone the repository
-git clone https://github.com/YOUR_USERNAME/memU.git
-cd memU
-
-# 2. Install development dependencies
-make install
-```
-
-The `make install` command will:
-- Create a virtual environment using `uv`
-- Install all project dependencies
-- Set up pre-commit hooks for code quality checks
-
-#### Running Quality Checks
-
-Before submitting your contribution, ensure your code passes all quality checks:
-```bash
-make check
-```
-
-The `make check` command runs:
-- **Lock file verification**: Ensures `pyproject.toml` consistency
-- **Pre-commit hooks**: Lints code with Ruff, formats with Black
-- **Type checking**: Runs `mypy` for static type analysis
-- **Dependency analysis**: Uses `deptry` to find obsolete dependencies
-
-### Contributing Guidelines
-
-For detailed contribution guidelines, code standards, and development practices, please see [CONTRIBUTING.md](CONTRIBUTING.md).
-
-**Quick tips:**
-- Create a new branch for each feature or bug fix
-- Write clear commit messages
-- Add tests for new functionality
-- Update documentation 
+| **[memU-server](https://github.com/NevaMind-AI/memU-server)** | 
 
 ... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
@@ -802,15 +747,15 @@ For detailed contribution guidelines, code standards, and development practices,
             <title><![CDATA[Shubhamsaboo/awesome-llm-apps]]></title>
             <link>https://github.com/Shubhamsaboo/awesome-llm-apps</link>
             <guid>https://github.com/Shubhamsaboo/awesome-llm-apps</guid>
-            <pubDate>Fri, 30 Jan 2026 00:06:21 GMT</pubDate>
+            <pubDate>Sat, 31 Jan 2026 00:06:17 GMT</pubDate>
             <description><![CDATA[Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/Shubhamsaboo/awesome-llm-apps">Shubhamsaboo/awesome-llm-apps</a></h1>
             <p>Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.</p>
             <p>Language: Python</p>
-            <p>Stars: 90,881</p>
-            <p>Forks: 13,124</p>
-            <p>Stars today: 208 stars today</p>
+            <p>Stars: 91,209</p>
+            <p>Forks: 13,162</p>
+            <p>Stars today: 365 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
   &lt;a href=&quot;http://www.theunwindai.com&quot;&gt;
     &lt;img src=&quot;docs/banner/unwind_black.png&quot; width=&quot;900px&quot; alt=&quot;Unwind AI&quot;&gt;
@@ -1076,15 +1021,15 @@ A curated collection of **Awesome LLM apps built with RAG, AI Agents, Multi-agen
             <title><![CDATA[OpenPipe/ART]]></title>
             <link>https://github.com/OpenPipe/ART</link>
             <guid>https://github.com/OpenPipe/ART</guid>
-            <pubDate>Fri, 30 Jan 2026 00:06:20 GMT</pubDate>
+            <pubDate>Sat, 31 Jan 2026 00:06:16 GMT</pubDate>
             <description><![CDATA[Agent Reinforcement Trainer: train multi-step agents for real-world tasks using GRPO. Give your agents on-the-job training. Reinforcement learning for Qwen2.5, Qwen3, Llama, and more!]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/OpenPipe/ART">OpenPipe/ART</a></h1>
             <p>Agent Reinforcement Trainer: train multi-step agents for real-world tasks using GRPO. Give your agents on-the-job training. Reinforcement learning for Qwen2.5, Qwen3, Llama, and more!</p>
             <p>Language: Python</p>
-            <p>Stars: 8,456</p>
-            <p>Forks: 696</p>
-            <p>Stars today: 85 stars today</p>
+            <p>Stars: 8,472</p>
+            <p>Forks: 699</p>
+            <p>Stars today: 25 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
 
 &lt;a href=&quot;https://art.openpipe.ai&quot;&gt;&lt;picture&gt;
@@ -1244,7 +1189,6 @@ ART stands on the shoulders of giants. While we owe many of the ideas and early 
 - [vLLM](https://github.com/vllm-project/vllm)
 - [trl](https://github.com/huggingface/trl)
 - [torchtune](https://github.com/pytorch/torchtune)
-- [SkyPilot](https://github.com/skypilot-org/skypilot)
 
 Finally, thank you to our partners who&#039;ve helped us test ART in the wild! We&#039;re excited to see what you all build with it.
 
@@ -1259,15 +1203,15 @@ Finally, thank you to our partners who&#039;ve helped us test ART in the wild! W
             <title><![CDATA[ostris/ai-toolkit]]></title>
             <link>https://github.com/ostris/ai-toolkit</link>
             <guid>https://github.com/ostris/ai-toolkit</guid>
-            <pubDate>Fri, 30 Jan 2026 00:06:19 GMT</pubDate>
+            <pubDate>Sat, 31 Jan 2026 00:06:15 GMT</pubDate>
             <description><![CDATA[The ultimate training toolkit for finetuning diffusion models]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/ostris/ai-toolkit">ostris/ai-toolkit</a></h1>
             <p>The ultimate training toolkit for finetuning diffusion models</p>
             <p>Language: Python</p>
-            <p>Stars: 9,231</p>
-            <p>Forks: 1,075</p>
-            <p>Stars today: 36 stars today</p>
+            <p>Stars: 9,253</p>
+            <p>Forks: 1,081</p>
+            <p>Stars today: 26 stars today</p>
             <h2>README</h2><pre># AI Toolkit by Ostris
 
 AI Toolkit is an all in one training suite for diffusion models. I try to support all the latest models on consumer grade hardware. Image and video models. It can be run as a GUI or CLI. It is designed to be easy to use but still have every feature imaginable.
@@ -1380,15 +1324,15 @@ _Last updated: 2025-12-17 22:19 UTC_
             <title><![CDATA[GetStream/Vision-Agents]]></title>
             <link>https://github.com/GetStream/Vision-Agents</link>
             <guid>https://github.com/GetStream/Vision-Agents</guid>
-            <pubDate>Fri, 30 Jan 2026 00:06:18 GMT</pubDate>
+            <pubDate>Sat, 31 Jan 2026 00:06:14 GMT</pubDate>
             <description><![CDATA[Open Vision Agents by Stream. Build Vision Agents quickly with any model or video provider. Uses Stream's edge network for ultra-low latency.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/GetStream/Vision-Agents">GetStream/Vision-Agents</a></h1>
             <p>Open Vision Agents by Stream. Build Vision Agents quickly with any model or video provider. Uses Stream's edge network for ultra-low latency.</p>
             <p>Language: Python</p>
-            <p>Stars: 4,546</p>
-            <p>Forks: 392</p>
-            <p>Stars today: 533 stars today</p>
+            <p>Stars: 4,654</p>
+            <p>Forks: 406</p>
+            <p>Stars today: 162 stars today</p>
             <h2>README</h2><pre>&lt;img width=&quot;1280&quot; height=&quot;360&quot; alt=&quot;Readme&quot; src=&quot;assets/repo_image.png&quot; /&gt;
 
 # Open Vision Agents by Stream
@@ -1594,15 +1538,15 @@ Check out our getting started guide at [VisionAgents.ai](https://visionagents.ai
             <title><![CDATA[exo-explore/exo]]></title>
             <link>https://github.com/exo-explore/exo</link>
             <guid>https://github.com/exo-explore/exo</guid>
-            <pubDate>Fri, 30 Jan 2026 00:06:17 GMT</pubDate>
+            <pubDate>Sat, 31 Jan 2026 00:06:13 GMT</pubDate>
             <description><![CDATA[Run frontier AI locally.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/exo-explore/exo">exo-explore/exo</a></h1>
             <p>Run frontier AI locally.</p>
             <p>Language: Python</p>
-            <p>Stars: 40,783</p>
-            <p>Forks: 2,751</p>
-            <p>Stars today: 138 stars today</p>
+            <p>Stars: 40,828</p>
+            <p>Forks: 2,754</p>
+            <p>Stars today: 50 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
 
 &lt;picture&gt;
@@ -2031,15 +1975,15 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to ex
             <title><![CDATA[Epodonios/v2ray-configs]]></title>
             <link>https://github.com/Epodonios/v2ray-configs</link>
             <guid>https://github.com/Epodonios/v2ray-configs</guid>
-            <pubDate>Fri, 30 Jan 2026 00:06:16 GMT</pubDate>
+            <pubDate>Sat, 31 Jan 2026 00:06:12 GMT</pubDate>
             <description><![CDATA[Free vless-vmess-shadowsocks-trojan-xray-V2ray Configs Updating Every 5 minutes]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/Epodonios/v2ray-configs">Epodonios/v2ray-configs</a></h1>
             <p>Free vless-vmess-shadowsocks-trojan-xray-V2ray Configs Updating Every 5 minutes</p>
             <p>Language: Python</p>
-            <p>Stars: 2,387</p>
-            <p>Forks: 339</p>
-            <p>Stars today: 16 stars today</p>
+            <p>Stars: 2,399</p>
+            <p>Forks: 341</p>
+            <p>Stars today: 17 stars today</p>
             <h2>README</h2><pre>![GitHub last commit](https://img.shields.io/github/last-commit/barry-far/V2ray-Configs.svg) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)  [![Update Configs](https://github.com/barry-far/V2ray-Configs/actions/workflows/main.yml/badge.svg)](https://github.com/Epodonios/V2ray-Configs/actions/workflows/main.yml) ![GitHub repo size](https://img.shields.io/github/repo-size/Epodonios/V2ray-Configs)  
 
 &lt;a href=&quot;https://t.me/+IOG0nSifAV03ZmY0&quot; target=&quot;_blank&quot;&gt;
@@ -2313,15 +2257,15 @@ ur friend,EPODONIOS
             <title><![CDATA[datalab-to/chandra]]></title>
             <link>https://github.com/datalab-to/chandra</link>
             <guid>https://github.com/datalab-to/chandra</guid>
-            <pubDate>Fri, 30 Jan 2026 00:06:15 GMT</pubDate>
+            <pubDate>Sat, 31 Jan 2026 00:06:11 GMT</pubDate>
             <description><![CDATA[OCR model that handles complex tables, forms, handwriting with full layout.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/datalab-to/chandra">datalab-to/chandra</a></h1>
             <p>OCR model that handles complex tables, forms, handwriting with full layout.</p>
             <p>Language: Python</p>
-            <p>Stars: 4,664</p>
-            <p>Forks: 526</p>
-            <p>Stars today: 26 stars today</p>
+            <p>Stars: 4,689</p>
+            <p>Forks: 529</p>
+            <p>Stars today: 29 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
   &lt;img src=&quot;assets/datalab-logo.png&quot; alt=&quot;Datalab Logo&quot; width=&quot;150&quot;/&gt;
 &lt;/p&gt;
@@ -2522,15 +2466,15 @@ If you find this repository helpful, please consider giving it a star ⭐
             <title><![CDATA[huggingface/lerobot]]></title>
             <link>https://github.com/huggingface/lerobot</link>
             <guid>https://github.com/huggingface/lerobot</guid>
-            <pubDate>Fri, 30 Jan 2026 00:06:14 GMT</pubDate>
+            <pubDate>Sat, 31 Jan 2026 00:06:10 GMT</pubDate>
             <description><![CDATA[🤗 LeRobot: Making AI for Robotics more accessible with end-to-end learning]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/huggingface/lerobot">huggingface/lerobot</a></h1>
             <p>🤗 LeRobot: Making AI for Robotics more accessible with end-to-end learning</p>
             <p>Language: Python</p>
-            <p>Stars: 21,283</p>
-            <p>Forks: 3,624</p>
-            <p>Stars today: 24 stars today</p>
+            <p>Stars: 21,304</p>
+            <p>Forks: 3,636</p>
+            <p>Stars today: 25 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
   &lt;img alt=&quot;LeRobot, Hugging Face Robotics Library&quot; src=&quot;./media/readme/lerobot-logo-thumbnail.png&quot; width=&quot;100%&quot;&gt;
 &lt;/p&gt;
@@ -2698,15 +2642,15 @@ We welcome contributions from everyone in the community! To get started, please 
             <title><![CDATA[Tencent-Hunyuan/HunyuanImage-3.0]]></title>
             <link>https://github.com/Tencent-Hunyuan/HunyuanImage-3.0</link>
             <guid>https://github.com/Tencent-Hunyuan/HunyuanImage-3.0</guid>
-            <pubDate>Fri, 30 Jan 2026 00:06:13 GMT</pubDate>
+            <pubDate>Sat, 31 Jan 2026 00:06:09 GMT</pubDate>
             <description><![CDATA[HunyuanImage-3.0: A Powerful Native Multimodal Model for Image Generation]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/Tencent-Hunyuan/HunyuanImage-3.0">Tencent-Hunyuan/HunyuanImage-3.0</a></h1>
             <p>HunyuanImage-3.0: A Powerful Native Multimodal Model for Image Generation</p>
             <p>Language: Python</p>
-            <p>Stars: 2,746</p>
-            <p>Forks: 135</p>
-            <p>Stars today: 27 stars today</p>
+            <p>Stars: 2,755</p>
+            <p>Forks: 137</p>
+            <p>Stars today: 9 stars today</p>
             <h2>README</h2><pre>[中文文档](./README_zh_CN.md)
 
 &lt;div align=&quot;center&quot;&gt;
@@ -3157,15 +3101,15 @@ We adopted the GSB (Good/Same/Bad) evaluation method commonly used to assess the
             <title><![CDATA[trailofbits/publications]]></title>
             <link>https://github.com/trailofbits/publications</link>
             <guid>https://github.com/trailofbits/publications</guid>
-            <pubDate>Fri, 30 Jan 2026 00:06:12 GMT</pubDate>
+            <pubDate>Sat, 31 Jan 2026 00:06:08 GMT</pubDate>
             <description><![CDATA[Publications from Trail of Bits]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/trailofbits/publications">trailofbits/publications</a></h1>
             <p>Publications from Trail of Bits</p>
             <p>Language: Python</p>
-            <p>Stars: 1,726</p>
-            <p>Forks: 216</p>
-            <p>Stars today: 4 stars today</p>
+            <p>Stars: 1,737</p>
+            <p>Forks: 218</p>
+            <p>Stars today: 11 stars today</p>
             <h2>README</h2><pre># Publications from Trail of Bits
 
 - [Publications from Trail of Bits](#publications-from-trail-of-bits)
@@ -3368,15 +3312,15 @@ We adopted the GSB (Good/Same/Bad) evaluation method commonly used to assess the
             <title><![CDATA[kvcache-ai/ktransformers]]></title>
             <link>https://github.com/kvcache-ai/ktransformers</link>
             <guid>https://github.com/kvcache-ai/ktransformers</guid>
-            <pubDate>Fri, 30 Jan 2026 00:06:11 GMT</pubDate>
+            <pubDate>Sat, 31 Jan 2026 00:06:07 GMT</pubDate>
             <description><![CDATA[A Flexible Framework for Experiencing Heterogeneous LLM Inference/Fine-tune Optimizations]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/kvcache-ai/ktransformers">kvcache-ai/ktransformers</a></h1>
             <p>A Flexible Framework for Experiencing Heterogeneous LLM Inference/Fine-tune Optimizations</p>
             <p>Language: Python</p>
-            <p>Stars: 16,417</p>
+            <p>Stars: 16,424</p>
             <p>Forks: 1,204</p>
-            <p>Stars today: 7 stars today</p>
+            <p>Stars today: 9 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
   &lt;p align=&quot;center&quot;&gt;
 
@@ -3537,15 +3481,15 @@ For the original documentation with full quick-start guides and examples, see:
             <title><![CDATA[frappe/hrms]]></title>
             <link>https://github.com/frappe/hrms</link>
             <guid>https://github.com/frappe/hrms</guid>
-            <pubDate>Fri, 30 Jan 2026 00:06:10 GMT</pubDate>
+            <pubDate>Sat, 31 Jan 2026 00:06:06 GMT</pubDate>
             <description><![CDATA[Open Source HR and Payroll Software]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/frappe/hrms">frappe/hrms</a></h1>
             <p>Open Source HR and Payroll Software</p>
             <p>Language: Python</p>
-            <p>Stars: 7,241</p>
-            <p>Forks: 1,988</p>
-            <p>Stars today: 30 stars today</p>
+            <p>Stars: 7,345</p>
+            <p>Forks: 2,020</p>
+            <p>Stars today: 103 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
 	&lt;a href=&quot;https://frappe.io/hr&quot;&gt;
 		&lt;img src=&quot;.github/frappe-hr-logo.png&quot; height=&quot;80px&quot; width=&quot;80px&quot; alt=&quot;Frappe HR Logo&quot;&gt;
@@ -3585,7 +3529,7 @@ Initially, it was a set of modules within ERPNext but version 14 onwards, as the
 - **Leave and Attendance**: Configure leave policies, pull regional holidays with a click, check-in and check-out with geolocation capturing, track leave balances and attendance with reports.
 - **Expense Claims and Advances**: Manage employee advances, claim expenses, configure multi-level approval workflows, all this with seamless integration with ERPNext accounting.
 - **Performance Management**: Track goals, align goals with key result areas (KRAs), enable employees to evaluate themselves, make managing appraisal cycles easy.
-- **Payroll &amp; Taxation**: Create salary structures, configure income tax slabs, run standard payroll, accomodate additional salaries and off cycle payments, view income breakup on salary slips and so much more.
+- **Payroll &amp; Taxation**: Create salary structures, configure income tax slabs, run standard payroll, accommodate additional salaries and off cycle payments, view income breakup on salary slips and so much more.
 - **Frappe HR Mobile App**: Apply for and approve leaves on the go, check-in and check-out, access employee profile right from the mobile app.
 
 &lt;details open&gt;
@@ -3646,13 +3590,13 @@ Use the following credentials to log in:
 	```
 2. In a separate terminal window, run the following commands
 	```sh
-	$ bench new-site hrms.local
+	$ bench new-site hrms.localhost
 	$ bench get-app erpnext
 	$ bench get-app hrms
-	$ bench --site hrms.local install-app hrms
-	$ bench --site hrms.local add-to-hosts
+	$ bench --site hrms.localhost install-app hrms
+	$ bench --site hrms.localhost add-to-hosts
 	```
-3. You can access the site at `http://hrms.local:8080`
+3. You can access the site at `http://hrms.localhost:8080`
 
 ## Learning and Community
 
@@ -3692,15 +3636,15 @@ Please read our [Logo and Trademark Policy](TRADEMARK_POLICY.md).
             <title><![CDATA[keephq/keep]]></title>
             <link>https://github.com/keephq/keep</link>
             <guid>https://github.com/keephq/keep</guid>
-            <pubDate>Fri, 30 Jan 2026 00:06:09 GMT</pubDate>
+            <pubDate>Sat, 31 Jan 2026 00:06:05 GMT</pubDate>
             <description><![CDATA[The open-source AIOps and alert management platform]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/keephq/keep">keephq/keep</a></h1>
             <p>The open-source AIOps and alert management platform</p>
             <p>Language: Python</p>
-            <p>Stars: 11,313</p>
-            <p>Forks: 1,161</p>
-            <p>Stars today: 12 stars today</p>
+            <p>Stars: 11,333</p>
+            <p>Forks: 1,164</p>
+            <p>Stars today: 25 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
     &lt;img src=&quot;/assets/keep.png?raw=true&quot; width=&quot;86&quot;&gt;
 &lt;/div&gt;
@@ -4194,15 +4138,15 @@ Please read our [Logo and Trademark Policy](TRADEMARK_POLICY.md).
             <title><![CDATA[PaddlePaddle/PaddleOCR]]></title>
             <link>https://github.com/PaddlePaddle/PaddleOCR</link>
             <guid>https://github.com/PaddlePaddle/PaddleOCR</guid>
-            <pubDate>Fri, 30 Jan 2026 00:06:08 GMT</pubDate>
+            <pubDate>Sat, 31 Jan 2026 00:06:04 GMT</pubDate>
             <description><![CDATA[Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 100+ languages.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/PaddlePaddle/PaddleOCR">PaddlePaddle/PaddleOCR</a></h1>
             <p>Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 100+ languages.</p>
             <p>Language: Python</p>
-            <p>Stars: 69,060</p>
-            <p>Forks: 9,714</p>
-            <p>Stars today: 88 stars today</p>
+            <p>Stars: 69,325</p>
+            <p>Forks: 9,739</p>
+            <p>Stars today: 298 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
   &lt;p&gt;
       &lt;img width=&quot;100%&quot; src=&quot;./docs/images/Banner.png&quot; alt=&quot;PaddleOCR Banner&quot;&gt;
