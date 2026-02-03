@@ -4,197 +4,315 @@
         <title>GitHub Trending Today for javascript - JavaScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for javascript.</description>
-        <lastBuildDate>Mon, 02 Feb 2026 00:06:51 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 03 Feb 2026 00:08:13 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2026, GitHub</copyright>
         <item>
+            <title><![CDATA[databricks-industry-solutions/pixels]]></title>
+            <link>https://github.com/databricks-industry-solutions/pixels</link>
+            <guid>https://github.com/databricks-industry-solutions/pixels</guid>
+            <pubDate>Tue, 03 Feb 2026 00:08:13 GMT</pubDate>
+            <description><![CDATA[Facilitates simple large scale processing of HLS Medical images, documents, zip files. OHIF Viewer, 2 segmentation models and interactive learning.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/databricks-industry-solutions/pixels">databricks-industry-solutions/pixels</a></h1>
+            <p>Facilitates simple large scale processing of HLS Medical images, documents, zip files. OHIF Viewer, 2 segmentation models and interactive learning.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 282</p>
+            <p>Forks: 93</p>
+            <p>Stars today: 29 stars today</p>
+            <h2>README</h2><pre>&lt;div bgcolor=&quot;white&quot;&gt;
+  &lt;img src=https://hls-eng-data-public.s3.amazonaws.com/img/Databricks_HLS.png width=&quot;380px&quot; align=&quot;right&quot;&gt;
+&lt;/div&gt;
+
+# `pixels` Solution Accelerator
+✅  Ingest and index DICOM image metadata (.dcm and from zip archives)
+&lt;/br&gt; ✅  Analyze DICOM image metadata with SQL and Machine Learning.
+&lt;/br&gt; ✅  View, segment, label DICOM Images with OHIF viewer integrated into Lakehouse Apps and Databricks security model. 
+&lt;/br&gt; ✅  One button push to launch model training from OHIF viewer.
+&lt;/br&gt; ✅  NVIDIA&#039;s [MONAI](https://docs.nvidia.com/monai/index.html) Integration, AI to automatically segment medical images and train custom models.
+&lt;/br&gt; ✅  Leverage Databricks&#039; [Model Serving](https://docs.databricks.com/en/machine-learning/model-serving/index.html) with serverless GPU enabled clusters for real-time segmentation.
+
+---
+## Secure Lakehouse integrated DICOM Viewer powered by OHIF
+&lt;img src=&quot;https://github.com/databricks-industry-solutions/pixels/blob/main/images/LHA_AUTOSEG.gif?raw=true&quot; alt=&quot;MONAI_AUTOSEG&quot;/&gt;&lt;/br&gt;
+
+---
+## Run SQL queries over DICOM metadata
+![Analyze](https://github.com/databricks-industry-solutions/pixels/blob/main/images/DICOM-analyze-with-SQL.png?raw=true)
+
+---
+## Build Dashboards over DICOM metadata
+add any features extracted too!
+![Dashboard](images/pixels-dashboard.png)
+
+---
+## DICOM data ingestion is easy
+
+```python
+# import Pixels Catalog (indexer) and DICOM transformers &amp; utilities
+from dbx.pixels import Catalog                              # 01
+from dbx.pixels.dicom import *                              # 02
+
+# catalog all your files
+catalog = Catalog(spark)                                    # 03
+catalog_df = catalog.catalog(&lt;path&gt;)                        # 04
+
+# extract the DICOM metadata
+meta_df = DicomMetaExtractor(catalog).transform(catalog_df) # 05
+
+# save your work for SQL access
+catalog.save(meta_df)                                       # 06
+```
+You&#039;ll find this example in [01-dcm-demo](https://github.com/databricks-industry-solutions/pixels/blob/main/01-dcm-demo.py) which does:
+
+---
+## Architecture
+![image](https://github.com/user-attachments/assets/75decf47-3a37-446a-a672-d497d155f464)
+
+The image depicts the **Pixels Reference Solution Architecture**, which outlines a data processing and analytics framework designed for healthcare or imaging applications. Here&#039;s a breakdown of its components:
+
+### **Key Functional Areas**
+1. **AI/BI Analytics**: Supports cohort building and natural language-based analysis.
+   
+2. **Lakehouse Apps**: Includes an OHIF Viewer for labeling and customer-specific applications.
+
+3. **Deep Learning**: Facilitates active learning and customer model training.
+
+4. **Realtime Inferencing**: Implements MONAI (Medical Open Network for AI) for segmentation integration with the OHIF viewer. Customer provided proprietary models can be easily plugged in.
+
+### **Data Flow: Batch, Incremental, Streaming Lakeflow**
+The architecture processes data in stages:
+1. **Acquire**: from data in ADLS, S3, GCS cloud storage as governed by Unity Catalog (UC) Volumes.  Based on customer demand, due to the composible nature of the solution accelerator, sources VNA, PACS, CIFS, AWS HealthImaging can be added as needed.
+   
+2. **Ingest**:  Ultimately all the DICOM files are ingested. Ingesting and producing Nifti file formats are currently on the roadmap.
+
+3. **Extract &amp; Index**: Unzips files, storing the extracted DICOM files into a UC volume. All of the DICOM metadata tags are extracted and stored in Databricks Data Intelligence Platform tables.
+
+4. **Protect – Metadata**: Applies PHI (Protected Health Information) redaction via format preserving encryption to all necessary tags.
+
+5. **Protect – Image**: Ensures PHI redaction for pixel-level data. This is under active integration based on work Databricks has done in previous solution accelerators.
+
+6. **Inferencing**: Utilizes industry-standard models pre-trained MONAI open source models sponsored by NVIDIA. Similarly, customers can fine tune the MONAI models or bring their own segmentation or featurization models.
+
+### **Supporting Layers**
+- **Governance Layer**: Unity Catalog provides data access controls, automatic capture of data lineage (including models)
+  
+- **Customer’s Cloud Storage**: Stores object indexes, folders, and ML models in open formats in customer&#039;s account.
+  
+- **Open Access**: Provides APIs, SQL connections, Spark integration, and credential vending via Delta Sharing.
+
+This architecture is designed to handle healthcare imaging data securely while enabling advanced analytics and AI-driven insights.
+
+
+---
+## Getting started
+
+1. To run this accelerator, [clone](https://docs.databricks.com/aws/en/repos/git-operations-with-repos) this repo into a Databricks workspace. 
+
+2. Attach a notebook to Serverless Compute or a cluster (&gt;=DBR 14.3 LTS)
+3. Run [`config/setup.py`]($./config/setup) from the notebook. This will install the pixels package onto your workspace
+
+
+## Run pipeline as a job
+1. Attach the [`RUNME`]($./RUNME) notebook to Serverless Compute or a cluster (&gt;=DBR 14.3 LTS). 2. Execute the notebook via Run-All. You can configure the notebook tasks run by the job in `job_json`
+A multi-step-job describing the accelerator pipeline will be created, and the link will be provided. The cost associated with running the accelerator is the user&#039;s responsibility.
+
+## Incremental processing
+Pixels allows you to ingest DICOM files in a streaming fashion using [autoloader](https://docs.databricks.com/en/ingestion/auto-loader/unity-catalog.html) capability.
+To enable incremental processing you need to set `streaming` and `streamCheckpointBasePath` as follows:
+```python
+catalog_df = catalog.catalog(path, streaming=True, streamCheckpointBasePath=&lt;checkpointPath&gt;)
+```
+
+## Built-in unzip
+Automatically extracts zip files in the defined volume path.
+If extractZip is not enabled then zip files will be ignored.
+To enable unzip capability you need to set `extractZip`. The parameter `extractZipBasePath` is optional and the default path will be volume + /unzipped/
+```python
+catalog_df = catalog.catalog(path, extractZip=True, extractZipBasePath=&lt;unzipPath&gt;)
+```
+
+## Metadata Anonymization
+Pixels provides a feature to anonymize DICOM metadata to ensure patient privacy and compliance with regulations. This feature can be enabled during the cataloging process. An example can be explored in the [03-Metadata-DeIdentification](https://github.com/databricks-industry-solutions/pixels/blob/main/03-Metadata-DeIdentification.py) notebook.
+
+To enable metadata anonymization, you can use the following extractor:
+```python
+metadata_df = DicomMetaAnonymizerExtractor(
+   catalog,
+   anonym_mode=&quot;METADATA&quot;,
+   fp_key=&lt;fp_key&gt;, #ONLY HEX STRING ALLOWED - 128, 192 or 256 bits
+   fp_tweak=&lt;fp_tweak&gt;,   #ONLY HEX STRING ALLOWED - 64 bits
+   anonymization_base_path=&lt;anonym_path&gt;
+).transform(catalog_df)
+```
+`fp_key` is the format preserving encryption key used to ensure that the anonymization process is consistent across different runs. This key is used to generate pseudonyms for sensitive data fields, ensuring that the same input value always maps to the same pseudonym. This is useful for maintaining the ability to link records across datasets without revealing the original sensitive information.
+
+`fp_tweak` is an optional parameter that can be used to add an additional layer of randomness to the pseudonymization process. This can be useful for further enhancing privacy.
+
+By setting the `anonym_mode` parameter to `&quot;METADATA&quot;`, the DICOM metadata will be anonymized during the ingestion process. This ensures that sensitive patient information is not stored in the catalog.
+The default configuration will save the anonymized DICOM files under `anonymization_base_path` property&#039;s path.
+
+---
+## OHIF Viewer
+Inside `dbx.pixels` resources folder, a pre-built version of [OHIF Viewer](https://github.com/OHIF/Viewers) with Databricks and [Unity Catalog Volumes](https://docs.databricks.com/en/sql/language-manual/sql-ref-volumes.html) extension is provided. 
+
+All the catalog entries will be available in an easy to use study list.
+![Catalog](https://github.com/databricks-industry-solutions/pixels/blob/main/images/ohif_catalog_view.png?raw=true)
+Fast and multiple-layer visualization capability.
+![CT_View](https://github.com/databricks-industry-solutions/pixels/blob/main/images/ohif_mr_view.png?raw=true)
+
+To start the OHIF Viewer web app you need to:
+ - Execute the [06-OHIF-Viewer](https://github.com/databricks-industry-solutions/pixels/blob/main/06-OHIF-Viewer.py) inside a Databricks workspace.
+ - Set the `table` parameter to the full name of your Pixels catalog table. Ex: `main.pixels_solacc.object_catalog`
+ - Set the `sqlWarehouseID`parameter to execute the queries required to collect the records. It&#039;s the final section of the `HTTP path` in the `Connection details` tab. Use [Serverless](https://docs.databricks.com/en/admin/sql/warehouse-types.html#sql-warehouse-types) for best performance.
+
+    &lt;img src=&quot;https://github.com/databricks-industry-solutions/pixels/blob/main/images/sqlWarehouseID.png?raw=true&quot; alt=&quot;sqlWarehouseID&quot;/&gt;
+
+ - Use the link generated in the last notebook to access the OHIF viewer page.
+
+## Save measurements and segmentations
+The OHIF Viewer allows you to save back to Databricks the measurements and the segmentations created in the viewer.
+The metadata will be stored in the object_catalog, and the generated dicom files in the volume under the path `/ohif/exports/`.
+
+&lt;img src=&quot;https://github.com/databricks-industry-solutions/pixels/blob/main/images/ohif_save_segm.png?raw=true&quot; alt=&quot;OHIF_SAVE_SEG&quot; height=&quot;300&quot;/&gt;
+&lt;img src=&quot;https://github.com/databricks-industry-solutions/pixels/blob/main/images/ohif_save_meas.png?raw=true&quot; alt=&quot;OHIF_SAVE_MEAS&quot; height=&quot;300&quot;/&gt;
+&lt;img src=&quot;https://github.com/databricks-industry-solutions/pixels/blob/main/images/ohif_save_result.png?raw=true&quot; alt=&quot;OHIF_SAVED&quot; height=&quot;300&quot;/&gt;
+
+
+## MONAILabel Integration
+
+[MONAILabel](https://monai.io/label.html) is an open-source tool designed for interactive medical image labeling. It supports various annotation tasks such as segmentation and classification, providing a seamless experience when integrated with viewers like OHIF that is already available in this solution accelerator.
+
+![MONAI_BTN](https://github.com/databricks-industry-solutions/pixels/blob/main/images/monailabel_result.png?raw=true)
+Once the server is running, you can use the OHIF Viewer to interact with your medical images. This integration allows you to leverage advanced annotation capabilities directly within your Databricks environment.
+
+### Key Features
+ - Interactive Annotation: Use AI-assisted tools for efficient labeling.
+ - Seamless Integration: Work directly within Databricks using a web-based viewer.
+ - Customizable Workflows: Tailor the annotation process to fit specific research needs.
+
+### MONAILabel Setup Instructions
+To execute the MONAILabel server it is mandatory to use a cluster with Databricks Runtime Version of `14.3 LTS ML`. For the best performance use a [GPU-Enabled compute](https://docs.databricks.com/en/compute/gpu.html#gpu-enabled-compute).
+#### Start the MONAILabel server
+ - Execute the [05-MONAILabel](https://github.com/databricks-industry-solutions/pixels/blob/main/05-MONAILabel.py) inside a Databricks workspace.
+ - Set the `table` parameter to the full name of your Pixels catalog table. Ex: `main.pixels_solacc.object_catalog`
+ - Set the `sqlWarehouseID`parameter to the DBSQL Warehouse ID, needed to run queries required to collect the records. Use [Serverless](https://docs.databricks.com/en/admin/sql/warehouse-types.html#sql-warehouse-types) for best performance.
+    &lt;img src=&quot;https://github.com/databricks-industry-solutions/pixels/blob/main/images/sqlWarehouseID.png?raw=true&quot; alt=&quot;sqlWarehouseID&quot;&gt;
+#### Open the OHIF Viewer
+ - Execute the notebook [06-OHIF-Viewer](https://github.com/databricks-industry-solutions/pixels/blob/main/06-OHIF-Viewer.py) to start the OHIF Viewer with the MONAILabel extension and open the generated link.
+ - Select the preferred CT scan study and press the `MONAI Label` button.
+
+    &lt;img src=&quot;https://github.com/databricks-industry-solutions/pixels/blob/main/images/monailabel_btn.png?raw=true&quot; alt=&quot;MONAI_BTN&quot; height=&quot;250&quot;/&gt;&lt;/br&gt;
+#### Connect, execute and save
+ - Connect the MONAILabel server using the refresh button.
+
+    &lt;img src=&quot;https://github.com/databricks-industry-solutions/pixels/blob/main/images/monailabel_server.png?raw=true&quot; alt=&quot;MONAI_SERVER&quot; height=&quot;200&quot;/&gt;&lt;/br&gt;
+ - Execute an auto-segmentation task using the Run button and wait for the results to be displayed.
+
+    &lt;img src=&quot;https://github.com/databricks-industry-solutions/pixels/blob/main/images/monailabel_autosegm.png?raw=true&quot; alt=&quot;MONAI_AUTOSEG&quot; height=&quot;650&quot;/&gt;&lt;/br&gt;
+ - Save the final result metadata in the catalog and the generated dicom file in the volume under the path `/ohif/exports/` using the button `Export DICOM SEG`.
+
+This setup enhances your medical image analysis workflow by combining Databricks&#039; computing power with MONAILabel&#039;s sophisticated annotation tools.
+
+### Model Serving Instructions
+
+To deploy the MONAILabel server in a Model Serving endpoint we prepared [ModelServing](https://github.com/databricks-industry-solutions/pixels/blob/main/monailabel_model/ModelServing.py), a Databricks notebook designed to initialize the Databricks customized version of the **MONAILabel server** that wraps the server in an **MLflow Python custom model** and registers it for use in a **serving endpoint**.
+
+#### Key Features
+
+- **Model Creation**: Utilizes the MONAILabel auto segmentation model on CT AXIAL images.
+- **Unity Catalog Integration**: Adds the model to the Unity Catalog for organized management.
+- **Serving Endpoint Deployment**: Deploys the model in a serving endpoint for real-time inference.
+
+#### Auto Segmentation with Lakehouse App and Serving Endpoint
+
+https://github.com/user-attachments/assets/8cf62378-ab39-4a89-86ad-c2f231b7a524
+
+#### Active Learning
+
+https://github.com/user-attachments/assets/17142752-d9b9-434b-b893-b6bc05080f54
+
+
+## Working with Unity Catalog
+Unity Catalog (UC) [volumes](https://docs.databricks.com/en/data-governance/unity-catalog/create-volumes.html) are the recommended approach for providing access to and governing non-tabular data assets in a cloud object storage locations, including DICOM files. Volumes are accessed by using the following format for the path that is passed to the pixels `Catalog` object - 
+```
+/Volumes/&lt;catalog&gt;/&lt;schema&gt;/&lt;volume&gt;/&lt;path-level-1&gt;/...
+```
+where `&lt;catalog&gt;`, `&lt;schema&gt;` and `&lt;volume&gt;` reflect the three-level namespace of Unity Catalog. The path field returned by the `Catalog` object reflects the volume file path listed above and subsequent metadata and thumbnail extraction operations will use volumes for accessing files.
+
+DICOM file Ingestion works with Shared, Dedicated and Serverless Compute types.
+
+---
+## Contributors
+- Douglas Moore @ Databricks
+- Emanuele Rinaldi @ Databricks
+- Nicole Jingting Lu @ Databricks
+- Krishanu Nandy @ Databricks
+- May Merkle-Tan @ Databricks
+- Cal Reynolds @ Databricks
+- Guanyu Chen @ Databricks
+- Yen Low @ Databricks
+- Ben Russoniello @ Prominence Advisors
+
+
+## About `dbx.pixels`
+Relibly turn millions of image files into SQL accessible metadata, thumbnails; Enable Deep Learning, AI/BI Dashboarding, Genie Spaces.
+
+- tags: 
+dicom, dcm, pre-processing, visualization, repos, sql, python, spark, pyspark, package, image catalog, mamograms, dcm file
+---
+
+## About DICOM
+![DICOM Image processing](https://dicom.offis.uni-oldenburg.de/images/dicomlogo.gif)
+[Per OFFIS computer science institute](https://dicom.offis.uni-oldenburg.de/en/general/dicom-introduction/) 
+
+DICOM® — Digital Imaging and Communications in Medicine — is the international standard for medical images and related information. It defines the formats for medical images that can be exchanged with the data and quality necessary for clinical use.
+
+DICOM® is implemented in almost every radiology, cardiology imaging, and radiotherapy device (X-ray, CT, MRI, ultrasound, etc.), and increasingly in devices in other medical domains such as ophthalmology and dentistry. With hundreds of thousands of medical imaging devices in use, DICOM® is one of the most widely deployed healthcare messaging Standards in the world. There are literally billions of DICOM® images currently in use for clinical care.
+
+Since its first publication in 1993, DICOM® has revolutionized the practice of radiology, allowing the replacement of X-ray film with a fully digital workflow. Much as the Internet has become the platform for new consumer information applications, DICOM® has enabled advanced medical imaging applications that have “changed the face of clinical medicine”. From the emergency department, to cardiac stress testing, to breast cancer detection, DICOM® is the standard that makes medical imaging work — for doctors and for patients.
+
+DICOM® is recognized by the International Organization for Standardization as the ISO 12052 standard.
+
+## Licensing
+
+&amp;copy; 2024 Databricks, Inc. All rights reserved. The source in this notebook is provided subject to the Databricks License [https://databricks.com/db-license-source].  All included or referenced third party libraries are subject to the licenses set forth below.
+
+| library              | purpose                             | license                       | source                                                  |
+|----------------------|-------------------------------------|-------------------------------|---------------------------------------------------------|
+| dbx.pixels           | Scale out image processing library  | Databricks                    | https://github.com/databricks-industry-solutions/pixels |
+| pydicom              | Python api for DICOM files          | MIT                           | https://github.com/pydicom/pydicom                      |
+| python-gdcm          | Install gdcm C++ libraries          | Apache Software License (BSD) | https://github.com/tfmoraes/python-gdcm                 |
+| gdcm                 | Parse DICOM files                   | BSD                           | https://sourceforge.net/projects/gdcm                   |
+| s3fs                 | Resolve s3:// paths                 | BSD 3-Clause                  | https://github.com/fsspec/s3fs                          |
+| pandas               | Pandas UDFs                         | BSD License (BSD-3-Clause)    | https://github.com/pandas-dev/pandas                    |
+| OHIF Viewer          | Medical image viewer                | MIT                           | https://github.com/OHIF/Viewers                         |
+| MONAILabel           | Intelligent open source image labeling and learning tool | Apache-2.0 license  | https://github.com/Project-MONAI/MONAILabel |
+| DICOGNITO            | A library and command line tool for anonymizing DICOM files | MIT  | https://github.com/blairconrad/dicognito |
+| FF3                  | FPE - Format Preserving Encryption with FF3 in Python | Apache-2.0 license  | https://github.com/mysto/python-fpe |
+| Vista3D              | MONAI Versatile Imaging SegmenTation and Annotation model | Apache-2.0 license (code) - NCLS v1 (model weight) | https://github.com/Project-MONAI/VISTA/tree/main/vista3d |
+
+
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
             <title><![CDATA[anuraghazra/github-readme-stats]]></title>
             <link>https://github.com/anuraghazra/github-readme-stats</link>
             <guid>https://github.com/anuraghazra/github-readme-stats</guid>
-            <pubDate>Mon, 02 Feb 2026 00:06:51 GMT</pubDate>
+            <pubDate>Tue, 03 Feb 2026 00:08:12 GMT</pubDate>
             <description><![CDATA[⚡ Dynamically generated stats for your github readmes]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/anuraghazra/github-readme-stats">anuraghazra/github-readme-stats</a></h1>
             <p>⚡ Dynamically generated stats for your github readmes</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 78,178</p>
-            <p>Forks: 29,923</p>
-            <p>Stars today: 21 stars today</p>
+            <p>Stars: 78,189</p>
+            <p>Forks: 29,976</p>
+            <p>Stars today: 19 stars today</p>
             <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[pedroslopez/whatsapp-web.js]]></title>
-            <link>https://github.com/pedroslopez/whatsapp-web.js</link>
-            <guid>https://github.com/pedroslopez/whatsapp-web.js</guid>
-            <pubDate>Mon, 02 Feb 2026 00:06:50 GMT</pubDate>
-            <description><![CDATA[A WhatsApp client library for NodeJS that connects through the WhatsApp Web browser app]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/pedroslopez/whatsapp-web.js">pedroslopez/whatsapp-web.js</a></h1>
-            <p>A WhatsApp client library for NodeJS that connects through the WhatsApp Web browser app</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 21,057</p>
-            <p>Forks: 4,834</p>
-            <p>Stars today: 97 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-    &lt;br /&gt;
-    &lt;p&gt;
-        &lt;a href=&quot;https://wwebjs.dev&quot;&gt;&lt;img src=&quot;https://github.com/wwebjs/assets/blob/main/Collection/GitHub/wwebjs.png?raw=true&quot; title=&quot;whatsapp-web.js&quot; alt=&quot;WWebJS Website&quot; width=&quot;500&quot; /&gt;&lt;/a&gt;
-    &lt;/p&gt;
-    &lt;br /&gt;
-    &lt;p&gt;
-		&lt;a href=&quot;https://www.npmjs.com/package/whatsapp-web.js&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/v/whatsapp-web.js.svg&quot; alt=&quot;npm&quot; /&gt;&lt;/a&gt;
-        &lt;a href=&quot;https://depfu.com/github/pedroslopez/whatsapp-web.js?project_id=9765&quot;&gt;&lt;img src=&quot;https://badges.depfu.com/badges/4a65a0de96ece65fdf39e294e0c8dcba/overview.svg&quot; alt=&quot;Depfu&quot; /&gt;&lt;/a&gt;
-        &lt;img src=&quot;https://img.shields.io/badge/WhatsApp_Web-2.3000.1017054665-brightgreen.svg&quot; alt=&quot;WhatsApp_Web 2.2346.52&quot; /&gt;
-        &lt;a href=&quot;https://discord.gg/H7DqQs4&quot;&gt;&lt;img src=&quot;https://img.shields.io/discord/698610475432411196.svg?logo=discord&quot; alt=&quot;Discord server&quot; /&gt;&lt;/a&gt;
-	&lt;/p&gt;
-    &lt;br /&gt;
-&lt;/div&gt;
-
-## About
-**A WhatsApp API client that operates via the WhatsApp Web browser.**
-
-The library launches the WhatsApp Web browser app via Puppeteer, accessing its internal functions and creating a managed instance to reduce the risk of being blocked. This gives the API client nearly all WhatsApp Web features for dynamic use in a Node.js application.
-
-&gt; [!IMPORTANT]
-&gt; **It is not guaranteed you will not be blocked by using this method. WhatsApp does not allow bots or unofficial clients on their platform, so this shouldn&#039;t be considered totally safe.**
-
-## Links
-
-* [GitHub][gitHub]
-* [Guide][guide] ([source][guide-source])
-* [Documentation][documentation] ([source][documentation-source])
-* [Discord Server][discord]
-* [npm][npm]
-
-## Installation
-
-The module is available on [npm][npm] via `npm i whatsapp-web.js`!
-
-&gt; [!NOTE]
-&gt; **Node ``v18`` or higher, is required.**  
-&gt; See the [Guide][guide] for quick upgrade instructions.
-
-## Example usage
-
-```js
-const { Client } = require(&#039;whatsapp-web.js&#039;);
-
-const client = new Client();
-
-client.on(&#039;qr&#039;, (qr) =&gt; {
-    // Generate and scan this code with your phone
-    console.log(&#039;QR RECEIVED&#039;, qr);
-});
-
-client.on(&#039;ready&#039;, () =&gt; {
-    console.log(&#039;Client is ready!&#039;);
-});
-
-client.on(&#039;message&#039;, msg =&gt; {
-    if (msg.body == &#039;!ping&#039;) {
-        msg.reply(&#039;pong&#039;);
-    }
-});
-
-client.initialize();
-```
-
-Take a look at [example.js][examples] for another examples with additional use cases.  
-For further details on saving and restoring sessions, explore the provided [Authentication Strategies][auth-strategies].
-
-
-## Supported features
-
-| Feature  | Status |
-| ------------- | ------------- |
-| Multi Device  | ✅  |
-| Send messages  | ✅  |
-| Receive messages  | ✅  |
-| Send media (images/audio/documents)  | ✅  |
-| Send media (video)  | ✅ [(requires Google Chrome)][google-chrome]  |
-| Send stickers | ✅ |
-| Receive media (images/audio/video/documents)  | ✅  |
-| Send contact cards | ✅ |
-| Send location | ✅ |
-| Send buttons | ❌  [(DEPRECATED)][deprecated-video] |
-| Send lists | ❌  [(DEPRECATED)][deprecated-video] |
-| Receive location | ✅ | 
-| Message replies | ✅ |
-| Join groups by invite  | ✅ |
-| Get invite for group  | ✅ |
-| Modify group info (subject, description)  | ✅  |
-| Modify group settings (send messages, edit info)  | ✅  |
-| Add group participants  | ✅  |
-| Kick group participants  | ✅  |
-| Promote/demote group participants | ✅ |
-| Mention users | ✅ |
-| Mention groups | ✅ |
-| Mute/unmute chats | ✅ |
-| Block/unblock contacts | ✅ |
-| Get contact info | ✅ |
-| Get profile pictures | ✅ |
-| Set user status message | ✅ |
-| React to messages | ✅ |
-| Create polls | ✅ |
-| Channels | ✅ |
-| Vote in polls | 🔜 |
-| Communities | 🔜 |
-
-Something missing? Make an issue and let us know!
-
-## Contributing
-
-Feel free to open pull requests; we welcome contributions! However, for significant changes, it&#039;s best to open an issue beforehand. Make sure to review our [contribution guidelines][contributing] before creating a pull request. Before creating your own issue or pull request, always check to see if one already exists!
-
-## Supporting the project
-
-You can support the maintainer of this project through the links below
-
-- [Support via GitHub Sponsors][gitHub-sponsors]
-- [Support via PayPal][support-payPal]
-- [Sign up for DigitalOcean][digitalocean] and get $200 in credit when you sign up (Referral)
-
-## Disclaimer
-
-This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected with WhatsApp or any of its subsidiaries or its affiliates. The official WhatsApp website can be found at [whatsapp.com][whatsapp]. &quot;WhatsApp&quot; as well as related names, marks, emblems and images are registered trademarks of their respective owners. Also it is not guaranteed you will not be blocked by using this method. WhatsApp does not allow bots or unofficial clients on their platform, so this shouldn&#039;t be considered totally safe.
-
-## License
-
-Copyright 2019 Pedro S Lopez  
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);  
-you may not use this project except in compliance with the License.  
-You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  
-
-Unless required by applicable law or agreed to in writing, software  
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,  
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  
-See the License for the specific language governing permissions and  
-limitations under the License.  
-
-
-[guide]: https://guide.wwebjs.dev/guide
-[guide-source]: https://github.com/wwebjs/wwebjs.dev/tree/main
-[documentation]: https://docs.wwebjs.dev/
-[documentation-source]: https://github.com/pedroslopez/whatsapp-web.js/tree/main/docs
-[discord]: https://discord.gg/H7DqQs4
-[gitHub]: https://github.com/pedroslopez/whatsapp-web.js
-[npm]: https://npmjs.org/package/whatsapp-web.js
-[nodejs]: https://nodejs.org/en/download/
-[examples]: https://github.com/pedroslopez/whatsapp-web.js/blob/master/example.js
-[auth-strategies]: https://wwebjs.dev/guide/creating-your-bot/authentication.html
-[google-chrome]: https://wwebjs.dev/guide/creating-your-bot/handling-attachments.html#caveat-for-sending-videos-and-gifs
-[deprecated-video]: https://www.youtube.com/watch?v=hv1R1rLeVVE
-[gitHub-sponsors]: https://github.com/sponsors/pedroslopez
-[support-payPal]: https://www.paypal.me/psla/
-[digitalocean]: https://m.do.co/c/73f906a36ed4
-[contributing]: https://github.com/pedroslopez/whatsapp-web.js/blob/main/CODE_OF_CONDUCT.md
-[whatsapp]: https://whatsapp.com
-</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
@@ -202,15 +320,15 @@ limitations under the License.
             <title><![CDATA[GitSquared/edex-ui]]></title>
             <link>https://github.com/GitSquared/edex-ui</link>
             <guid>https://github.com/GitSquared/edex-ui</guid>
-            <pubDate>Mon, 02 Feb 2026 00:06:49 GMT</pubDate>
+            <pubDate>Tue, 03 Feb 2026 00:08:11 GMT</pubDate>
             <description><![CDATA[A cross-platform, customizable science fiction terminal emulator with advanced monitoring & touchscreen support.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/GitSquared/edex-ui">GitSquared/edex-ui</a></h1>
             <p>A cross-platform, customizable science fiction terminal emulator with advanced monitoring & touchscreen support.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 44,025</p>
-            <p>Forks: 2,963</p>
-            <p>Stars today: 24 stars today</p>
+            <p>Stars: 44,044</p>
+            <p>Forks: 2,968</p>
+            <p>Stars today: 21 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
   &lt;br&gt;
   &lt;img alt=&quot;Logo&quot; src=&quot;media/logo.png&quot;&gt;
@@ -382,1147 +500,961 @@ Licensed under the [GPLv3.0](https://github.com/GitSquared/edex-ui/blob/master/L
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[SillyTavern/SillyTavern]]></title>
-            <link>https://github.com/SillyTavern/SillyTavern</link>
-            <guid>https://github.com/SillyTavern/SillyTavern</guid>
-            <pubDate>Mon, 02 Feb 2026 00:06:48 GMT</pubDate>
-            <description><![CDATA[LLM Frontend for Power Users.]]></description>
+            <title><![CDATA[mediacms-io/mediacms]]></title>
+            <link>https://github.com/mediacms-io/mediacms</link>
+            <guid>https://github.com/mediacms-io/mediacms</guid>
+            <pubDate>Tue, 03 Feb 2026 00:08:10 GMT</pubDate>
+            <description><![CDATA[MediaCMS is a modern, fully featured open source video and media CMS, written in Python/Django and React, featuring a REST API.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/SillyTavern/SillyTavern">SillyTavern/SillyTavern</a></h1>
-            <p>LLM Frontend for Power Users.</p>
+            <h1><a href="https://github.com/mediacms-io/mediacms">mediacms-io/mediacms</a></h1>
+            <p>MediaCMS is a modern, fully featured open source video and media CMS, written in Python/Django and React, featuring a REST API.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 22,698</p>
-            <p>Forks: 4,671</p>
-            <p>Stars today: 36 stars today</p>
-            <h2>README</h2><pre># SillyTavern
+            <p>Stars: 4,684</p>
+            <p>Forks: 868</p>
+            <p>Stars today: 26 stars today</p>
+            <h2>README</h2><pre># MediaCMS
 
-LLM Frontend for Power Users
+[![GitHub license](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://raw.githubusercontent.com/mediacms-io/mediacms/main/LICENSE.txt)
+[![Releases](https://img.shields.io/github/v/release/mediacms-io/mediacms?color=green)](https://github.com/mediacms-io/mediacms/releases/)
+[![DockerHub](https://img.shields.io/docker/pulls/mediacms/mediacms)](https://hub.docker.com/r/mediacms/mediacms)
 
-## Resources
 
-- GitHub: &lt;https://github.com/SillyTavern/SillyTavern&gt;
-- Docs: &lt;https://docs.sillytavern.app/&gt;
-- Discord: &lt;https://discord.gg/sillytavern&gt;
-- Reddit: &lt;https://reddit.com/r/SillyTavernAI&gt;
+
+MediaCMS is a modern, fully featured open source video and media CMS. It is developed to meet the needs of modern web platforms for viewing and sharing media. It can be used to build a small to medium video and media portal within minutes.
+
+It is built mostly using the modern stack Django + React and includes a REST API.
+
+A demo is available at https://demo.mediacms.io
+
+
+## Screenshots
+
+&lt;p align=&quot;center&quot;&gt;
+    &lt;img src=&quot;https://raw.githubusercontent.com/mediacms-io/mediacms/main/docs/images/index.jpg&quot; width=&quot;340&quot;&gt;
+    &lt;img src=&quot;https://raw.githubusercontent.com/mediacms-io/mediacms/main/docs/images/video.jpg&quot; width=&quot;340&quot;&gt;
+    &lt;img src=&quot;https://raw.githubusercontent.com/mediacms-io/mediacms/main/docs/images/embed.jpg&quot; width=&quot;340&quot;&gt;
+&lt;/p&gt;
+
+## Features
+- **Complete control over your data**: host it yourself!
+- **Modern technologies**: Django/Python/Celery, React.
+- **Support for multiple publishing workflows**: public, private, unlisted and custom
+- **Role-Based Access Control (RBAC)**: create RBAC categories and connect users to groups with view/edit access on their media
+- **Automatic transcription**: through integration with Whisper running locally
+- **Multiple media types support**: video, audio,  image, pdf
+- **Multiple media classification options**: categories, tags and custom
+- **Multiple media sharing options**: social media share, videos embed code generation
+- **Video Trimmer**: trim video, replace, save as new or create segments
+- **SAML support**: with ability to add mappings to system roles and groups
+- **Easy media searching**: enriched with live search functionality
+- **Playlists for audio and video content**: create playlists, add and reorder content
+- **Responsive design**: including light and dark themes
+- **Advanced users management**: allow self registration, invite only, closed.
+- **Configurable actions**: allow download, add comments, add likes, dislikes, report media
+- **Configuration options**: change logos, fonts, styling, add more pages
+- **Enhanced video player**: customized video.js player with multiple resolution and playback speed options
+- **Multiple transcoding profiles**: sane defaults for multiple dimensions (144p, 240p, 360p, 480p, 720p, 1080p) and multiple profiles (h264, h265, vp9)
+- **Adaptive video streaming**: possible through HLS protocol
+- **Subtitles/CC**: support for multilingual subtitle files
+- **Scalable transcoding**: transcoding through priorities. Experimental support for remote workers
+- **Chunked file uploads**: for pausable/resumable upload of content
+- **REST API**: Documented through Swagger
+- **Translation**: Most of the CMS is translated to a number of languages
+
+## Example cases
+
+- **Universities, schools, education.** Administrators and editors keep what content will be published, students are not distracted with advertisements and irrelevant content, plus they have the ability to select either to stream or download content.
+- **Organization sensitive content.** In cases where content is sensitive and cannot be uploaded to external sites.
+- **Build a great community.** MediaCMS can be customized (URLs, logos, fonts, aesthetics) so that you create a highly customized video portal for your community!
+- **Personal portal.** Organize, categorize and host your content the way you prefer.
+
+
+## Philosophy
+
+We believe there&#039;s a need for quality open source web applications that can be used to build community portals and support collaboration.
+We have three goals for MediaCMS: a) deliver all functionality one would expect from a modern system, b) allow for easy installation and maintenance, c) allow easy customization and addition of features.
+
 
 ## License
 
-AGPL-3.0
+MediaCMS is released under [GNU Affero General Public License v3.0 license](LICENSE.txt).
+Copyright Markos Gogoulos.
+
+
+## Support and paid services
+
+We provide custom installations, development of extra functionality, migration from existing systems, integrations with legacy systems, training and support. Checkout our [services page](https://mediacms.io/#services/) for more information.
+
+### Commercial Hostings
+**Elestio**
+
+You can deploy MediaCMS on Elestio using one-click deployment. Elestio supports MediaCMS by providing revenue share so go ahead and click below to deploy and use MediaCMS.
+
+[![Deploy on Elestio](https://elest.io/images/logos/deploy-to-elestio-btn.png)](https://elest.io/open-source/mediacms)
+
+## Hardware considerations
+
+For a small to medium installation, with a few hours of video uploaded daily, and a few hundreds of active daily users viewing content, 4GB Ram / 2-4 CPUs as minimum is ok. For a larger installation with many hours of video uploaded daily, consider adding more CPUs and more Ram.
+
+In terms of disk space, think of what the needs will be. A general rule is to multiply by three the size of the expected uploaded videos (since the system keeps original versions, encoded versions plus HLS), so if you receive 1G of videos daily and maintain all of them, you should consider a 1T disk across a year (1G * 3 * 365).
+
+In order to support automatic transcriptions through Whisper, consider more CPUs.
+
+## Installation / Maintanance
+
+There are two ways to run MediaCMS, through Docker Compose and through installing it on a server via an automation script that installs and configures all needed services. Find the related pages:
+
+- [Single Server](docs/admins_docs.md#2-server-installation) page
+- [Docker Compose](docs/admins_docs.md#3-docker-installation) page
+
+  A complete guide can be found on the blog post [How to self-host and share your videos in 2021](https://medium.com/@MediaCMS.io/how-to-self-host-and-share-your-videos-in-2021-14067e3b291b).
+
+## Documentation
+
+* [Users documentation](docs/user_docs.md) page
+* [Administrators documentation](docs/admins_docs.md) page
+* [Developers documentation](docs/developers_docs.md) page
+* [Configuration](docs/admins_docs.md#5-configuration) page
+* [Transcoding](docs/transcoding.md) page
+* [Developer Experience](docs/dev_exp.md) page
+* [Media Permissions](docs/media_permissions.md) page
+
+
+## Technology
+
+This software uses the following list of awesome technologies: Python, Django, Django Rest Framework, Celery, PostgreSQL, Redis, Nginx, uWSGI, React, Fine Uploader, video.js, FFMPEG, Bento4
+
+
+## Who is using it
+- **Multiple Universities** for hosting educational videos
+- **Cinemata** non-profit media, technology and culture organization - https://cinemata.org
+- **Critical Commons** public media archive and fair use advocacy network - https://criticalcommons.org
+- **American Association of Gynecologic Laparoscopists** - https://surgeryu.org/
+
+
+## How to contribute
+
+If you like the project, here&#039;s a few things you can do
+- Hire us, for custom installations, training, support, maintenance work
+- Suggest us to others that are interested to hire us
+- Write a blog post/article about MediaCMS
+- Share on social media about the project
+- Open issues, participate on [discussions](https://github.com/mediacms-io/mediacms/discussions), report bugs, suggest ideas
+- [Show and tell](https://github.com/mediacms-io/mediacms/discussions/categories/show-and-tell) how you are using the project
+- Star the project
+- Add functionality, work on a PR, fix an issue!
+
+
+## Contact
+
+info@mediacms.io
 </pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[mindcraft-bots/mindcraft]]></title>
-            <link>https://github.com/mindcraft-bots/mindcraft</link>
-            <guid>https://github.com/mindcraft-bots/mindcraft</guid>
-            <pubDate>Mon, 02 Feb 2026 00:06:47 GMT</pubDate>
-            <description><![CDATA[Minecraft AI with LLMs+Mineflayer]]></description>
+            <title><![CDATA[4ian/GDevelop]]></title>
+            <link>https://github.com/4ian/GDevelop</link>
+            <guid>https://github.com/4ian/GDevelop</guid>
+            <pubDate>Tue, 03 Feb 2026 00:08:09 GMT</pubDate>
+            <description><![CDATA[🎮 Open-source, cross-platform 2D/3D/multiplayer game engine designed for everyone.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/mindcraft-bots/mindcraft">mindcraft-bots/mindcraft</a></h1>
-            <p>Minecraft AI with LLMs+Mineflayer</p>
+            <h1><a href="https://github.com/4ian/GDevelop">4ian/GDevelop</a></h1>
+            <p>🎮 Open-source, cross-platform 2D/3D/multiplayer game engine designed for everyone.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 4,686</p>
-            <p>Forks: 668</p>
-            <p>Stars today: 4 stars today</p>
-            <h2>README</h2><pre># Mindcraft 🧠⛏️
+            <p>Stars: 20,010</p>
+            <p>Forks: 1,241</p>
+            <p>Stars today: 37 stars today</p>
+            <h2>README</h2><pre>![GDevelop logo](https://raw.githubusercontent.com/4ian/GDevelop/master/newIDE/GDevelop%20banner.png &quot;GDevelop logo&quot;)
 
-Crafting minds for Minecraft with LLMs and [Mineflayer!](https://prismarinejs.github.io/mineflayer/#/)
+GDevelop is a **full-featured, no-code, open-source** game development software. You can build **2D, 3D and multiplayer games** for mobile (iOS, Android), desktop and the web. GDevelop is designed to be fast and incredibly intuitive: make games using an easy-to-understand yet powerful event-based system and modular behaviors. Create with AI that assists or builds alongside you.
 
-[FAQ](https://github.com/mindcraft-bots/mindcraft/blob/main/FAQ.md) | [Discord Support](https://discord.gg/mp73p35dzC) | [Video Tutorial](https://www.youtube.com/watch?v=gRotoL8P8D8) | [Blog Post](https://kolbynottingham.com/mindcraft/) | [Contributor TODO](https://github.com/users/kolbytn/projects/1) | [Paper Website](https://mindcraft-minecollab.github.io/index.html) | [MineCollab](https://github.com/mindcraft-bots/mindcraft/blob/main/minecollab.md) 
+![The GDevelop editor when editing a game level](https://raw.githubusercontent.com/4ian/GDevelop/master/newIDE/GDevelop%20screenshot.png &quot;The GDevelop editor when editing a 3D game level&quot;)
 
+![The GDevelop editor when editing a game level](./newIDE/GDevelop%202D%20screenshot.png &quot;The GDevelop editor when editing a 2D game level&quot;)
 
-&gt; [!Caution]
-Do not connect this bot to public servers with coding enabled. This project allows an LLM to write/execute code on your computer. The code is sandboxed, but still vulnerable to injection attacks. Code writing is disabled by default, you can enable it by setting `allow_insecure_coding` to `true` in `settings.js`. Ye be warned.
+## Getting started
 
-## Requirements
+| ❔ I want to...                                   | 🚀 What to do                                                                                                                                                     |
+| ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🎮 Use GDevelop to make games                     | Go to [GDevelop homepage](https://gdevelop.io) to download the app!                                                                                               |
+| ⚙️ Create/improve an extension                    | Read about [creating an extension](https://wiki.gdevelop.io/gdevelop5/extensions/create), with no-code or code.                                                   |
+| 🧑‍💻 Contribute to the editor or game engine        | Follow this [README](newIDE/README.md).                                                                                                                           |
+| 👾 Create or sell a game template                 | Submit a [free example or a paid template on the Asset Store](https://wiki.gdevelop.io/gdevelop5/community/guide-for-submitting-an-example/).                     |
+| 🎨 Share or sell an asset pack                    | Submit a [free or paid asset pack on the Asset Store](https://wiki.gdevelop.io/gdevelop5/community/sell-asset-pack-store).                                        |
+| 🌐 Help translate GDevelop                        | Go on the [GDevelop project on Crowdin](https://crowdin.com/project/gdevelop) or translate [in-app tutorials](https://github.com/GDevelopApp/GDevelop-tutorials). |
+| 👥 Get online game services or commercial support | See offers for [professionals, teams or individual creators](https://gdevelop.io/pricing).                                                                        |
 
-- [Minecraft Java Edition](https://www.minecraft.net/en-us/store/minecraft-java-bedrock-edition-pc) (up to v1.21.6, recommend v1.21.1)
-- [Node.js Installed](https://nodejs.org/) (at least v18)
-- One of these: [OpenAI API Key](https://openai.com/blog/openai-api) | [Gemini API Key](https://aistudio.google.com/app/apikey) | [Anthropic API Key](https://docs.anthropic.com/claude/docs/getting-access-to-claude) | [Replicate API Key](https://replicate.com/) | [Hugging Face API Key](https://huggingface.co/) | [Groq API Key](https://console.groq.com/keys) | [Ollama Installed](https://ollama.com/download). | [Mistral API Key](https://docs.mistral.ai/getting-started/models/models_overview/) | [Qwen API Key [Intl.]](https://www.alibabacloud.com/help/en/model-studio/developer-reference/get-api-key)/[[cn]](https://help.aliyun.com/zh/model-studio/getting-started/first-api-call-to-qwen?) | [Novita AI API Key](https://novita.ai/settings?utm_source=github_mindcraft&amp;utm_medium=github_readme&amp;utm_campaign=link#key-management) | [Cerebras API Key](https://cloud.cerebras.ai) | [Mercury API](https://platform.inceptionlabs.ai/docs)
+&gt; Are you interested in contributing to GDevelop for the first time? Take a look at the list of **[good first issues](https://github.com/4ian/GDevelop/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%91%8Cgood+first+issue%22)**, **[good first contributions](https://github.com/4ian/GDevelop/discussions/categories/good-first-contribution)** or the **[&quot;🏐 not too hard&quot; cards](https://trello.com/b/qf0lM7k8/gdevelop-roadmap?menu=filter&amp;filter=label:Not%20too%20hard%20%E2%9A%BD%EF%B8%8F)** on the Roadmap.
 
-## Install and Run
+## Games made with GDevelop
 
-1. Make sure you have the requirements above.
+- Find GDevelop games on [gd.games](https://gd.games), the gaming platform for games powered by GDevelop.
+- See the [showcase of games](https://gdevelop.io/games) created with GDevelop and published on Steam, iOS (App Store), Android (Google Play), Itch.io, Newgrounds, CrazyGames, Poki...
+  - Suggest your game to be [added to the showcase here](https://docs.google.com/forms/d/e/1FAIpQLSfjiOnkbODuPifSGuzxYY61vB5kyMWdTZSSqkJsv3H6ePRTQA/viewform).
 
-2. Clone or download this repository (big green button) &#039;git clone https://github.com/mindcraft-bots/mindcraft.git&#039;
+[![Some games made with GDevelop](https://raw.githubusercontent.com/4ian/GDevelop/master/newIDE/GDevelop%20games.png &quot;Some games made with GDevelop&quot;)](https://gdevelop.io/games)
 
-3. Rename `keys.example.json` to `keys.json` and fill in your API keys (you only need one). The desired model is set in `andy.json` or other profiles. For other models refer to the table below.
+## Technical architecture
 
-4. In terminal/command prompt, run `npm install` from the installed directory
+GDevelop is composed of an **editor**, a **game engine**, an **ecosystem** of extensions as well as **online services** and commercial support.
 
-5. Start a minecraft world and open it to LAN on localhost port `55916`
+| Directory     | ℹ️ Description                                                                                                                                                                                                                                                                                           |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Core`        | Core classes, describing the structure of a game and tools to implement the IDE and work with GDevelop games.                                                                                                                                                                                            |
+| `GDJS`        | The game engine, written in TypeScript, using PixiJS and Three.js for 2D and 3D rendering (WebGL), powering all GDevelop games.                                                                                                                                                                          |
+| `GDevelop.js` | Bindings of `Core`, `GDJS` and `Extensions` to JavaScript (with WebAssembly), used by the IDE.                                                                                                                                                                                                           |
+| `newIDE`      | The game editor, written in JavaScript with React, Electron, PixiJS and Three.js.                                                                                                                                                                                                                        |
+| `Extensions`  | Built-in extensions for the game engine, providing objects, behaviors and new features. For example, this includes the physics engines running in WebAssembly (Box2D or Jolt Physics for 3D). All the [official and experimental extensions are on this repository](https://github.com/GDevelopApp/GDevelop-extensions). [Community extensions are available here](https://github.com/GDevelopApp/GDevelop-community-list). |
 
-6. Run `node main.js` from the installed directory
+To learn more about GDevelop Architecture, read the [architecture overview here](Core/GDevelop-Architecture-Overview.md).
 
-If you encounter issues, check the [FAQ](https://github.com/mindcraft-bots/mindcraft/blob/main/FAQ.md) or find support on [discord](https://discord.gg/mp73p35dzC). We are currently not very responsive to github issues. To run tasks please refer to [Minecollab Instructions](minecollab.md#installation)
+Pre-generated documentation of the game engine is [available here](https://docs.gdevelop.io).
 
-## Tasks
+Status of the tests and builds: [![macOS and Linux build status](https://circleci.com/gh/4ian/GDevelop.svg?style=shield)](https://app.circleci.com/pipelines/github/4ian/GDevelop) [![Fast tests status](https://gdevelop.semaphoreci.com/badges/GDevelop/branches/master.svg?style=shields)](https://gdevelop.semaphoreci.com/projects/GDevelop) [![Windows Build status](https://ci.appveyor.com/api/projects/status/84uhtdox47xp422x/branch/master?svg=true)](https://ci.appveyor.com/project/4ian/gdevelop/branch/master) [![https://good-labs.github.io/greater-good-affirmation/assets/images/badge.svg](https://good-labs.github.io/greater-good-affirmation/assets/images/badge.svg)](https://good-labs.github.io/greater-good-affirmation)
 
-Bot performance can be roughly evaluated with Tasks. Tasks automatically intialize bots with a goal to aquire specific items or construct predefined buildings, and remove the bot once the goal is achieved.
+## Links
 
-To run tasks, you need python, pip, and optionally conda. You can then install dependencies with `pip install -r requirements.txt`. 
+### Community
 
-Tasks are defined in json files in the `tasks` folder, and can be run with: `python tasks/run_task_file.py --task_path=tasks/example_tasks.json`
+- [GDevelop forums](https://forum.gdevelop.io) and [Discord chat](https://discord.gg/gdevelop).
+- [GDevelop homepage](https://gdevelop.io).
+- [GDevelop wiki (documentation)](https://wiki.gdevelop.io/gdevelop5/start).
+- Help translate GDevelop in your language: [GDevelop project on Crowdin](https://crowdin.com/project/gdevelop).
+- Open-source [extensions (official or experimental)](https://github.com/GDevelopApp/GDevelop-extensions), [community extensions](https://github.com/GDevelopApp/GDevelop-community-list), [examples](https://github.com/GDevelopApp/GDevelop-examples), [tutorials](https://github.com/GDevelopApp/GDevelop-tutorials) are on GitHub.
 
-For full evaluations, you will need to [download and install the task suite. Full instructions.](minecollab.md#installation)
+### Development Roadmap
 
-## Model Customization
+- [GDevelop Roadmap on Trello.com](https://trello.com/b/qf0lM7k8/gdevelop-roadmap), for a global view of the features that could be added. Please vote and comment here for new features/requests.
+- [GitHub issue page](https://github.com/4ian/GDevelop/issues), for technical issues and bugs.
+- [Github discussions](https://github.com/4ian/GDevelop/discussions) to talk about new features and ideas.
 
-You can configure project details in `settings.js`. [See file.](settings.js)
+## License
 
-You can configure the agent&#039;s name, model, and prompts in their profile like `andy.json` with the `model` field. For comprehensive details, see [Model Specifications](#model-specifications).
+- The Core library, the native and HTML5 game engines, the IDE, and all extensions (respectively `Core`, `GDJS`, `newIDE` and `Extensions` folders) are under the **MIT license**.
+- The name, GDevelop, and its logo are the exclusive property of Florian Rival.
 
-| API | Config Variable | Example Model name | Docs |
-|------|------|------|------|
-| `openai` | `OPENAI_API_KEY` | `gpt-4o-mini` | [docs](https://platform.openai.com/docs/models) |
-| `google` | `GEMINI_API_KEY` | `gemini-2.0-flash` | [docs](https://ai.google.dev/gemini-api/docs/models/gemini) |
-| `anthropic` | `ANTHROPIC_API_KEY` | `claude-3-haiku-20240307` | [docs](https://docs.anthropic.com/claude/docs/models-overview) |
-| `xai` | `XAI_API_KEY` | `grok-2-1212` | [docs](https://docs.x.ai/docs) |
-| `deepseek` | `DEEPSEEK_API_KEY` | `deepseek-chat` | [docs](https://api-docs.deepseek.com/) |
-| `ollama` (local) | n/a | `ollama/sweaterdog/andy-4:micro-q8_0` | [docs](https://ollama.com/library) |
-| `qwen` | `QWEN_API_KEY` | `qwen-max` | [Intl.](https://www.alibabacloud.com/help/en/model-studio/developer-reference/use-qwen-by-calling-api)/[cn](https://help.aliyun.com/zh/model-studio/getting-started/models) |
-| `mistral` | `MISTRAL_API_KEY` | `mistral-large-latest` | [docs](https://docs.mistral.ai/getting-started/models/models_overview/) |
-| `replicate` | `REPLICATE_API_KEY` | `replicate/meta/meta-llama-3-70b-instruct` | [docs](https://replicate.com/collections/language-models) |
-| `groq` (not grok) | `GROQCLOUD_API_KEY` | `groq/mixtral-8x7b-32768` | [docs](https://console.groq.com/docs/models) |
-| `huggingface` | `HUGGINGFACE_API_KEY` | `huggingface/mistralai/Mistral-Nemo-Instruct-2407` | [docs](https://huggingface.co/models) |
-| `novita` | `NOVITA_API_KEY` | `novita/deepseek/deepseek-r1` | [docs](https://novita.ai/model-api/product/llm-api?utm_source=github_mindcraft&amp;utm_medium=github_readme&amp;utm_campaign=link) |
-| `openrouter` | `OPENROUTER_API_KEY` | `openrouter/anthropic/claude-3.5-sonnet` | [docs](https://openrouter.ai/models) |
-| `glhf.chat` | `GHLF_API_KEY` | `glhf/hf:meta-llama/Llama-3.1-405B-Instruct` | [docs](https://glhf.chat/user-settings/api) |
-| `hyperbolic` | `HYPERBOLIC_API_KEY` | `hyperbolic/deepseek-ai/DeepSeek-V3` | [docs](https://docs.hyperbolic.xyz/docs/getting-started) |
-| `vllm` | n/a | `vllm/llama3` | n/a |
-| `cerebras` | `CEREBRAS_API_KEY` | `cerebras/llama-3.3-70b` | [docs](https://inference-docs.cerebras.ai/introduction) |
-| `mercury` | `MERCURY_API_KEY` | `mercury-coder-small` | [docs](https://www.inceptionlabs.ai/) |
+Games exported with GDevelop are based on the GDevelop game engine (see `Core` and `GDJS` folders): this engine is distributed under the MIT license so that you can **distribute, sell or do anything** with the games you created with GDevelop. In particular, you are not forced to make your game open-source.
 
-If you use Ollama, to install the models used by default (generation and embedding), execute the following terminal command:
-`ollama pull sweaterdog/andy-4:micro-q8_0 &amp;&amp; ollama pull embeddinggemma`
+[node.js]: https://nodejs.org
 
-To use Azure, you can reuse the `OPENAI_API_KEY` environment variable. You can get the key from the Azure portal. See [azure.json](profiles/azure.json) for an example.
+## Star History
 
-### Online Servers
-To connect to online servers your bot will need an official Microsoft/Minecraft account. You can use your own personal one, but will need another account if you want to connect too and play with it. To connect, change these lines in `settings.js`:
-```javascript
-&quot;host&quot;: &quot;111.222.333.444&quot;,
-&quot;port&quot;: 55920,
-&quot;auth&quot;: &quot;microsoft&quot;,
+Help us spread the word about GDevelop by starring the repository on GitHub!
 
-// rest is same...
-```
-&gt; [!Important]
-&gt; The bot&#039;s name in the profile.json must exactly match the Minecraft profile name! Otherwise the bot will spam talk to itself.
-
-To use different accounts, Mindcraft will connect with the account that the Minecraft launcher is currently using. You can switch accounts in the launcer, then run `node main.js`, then switch to your main account after the bot has connected.
-
-### Docker Container
-
-If you intend to `allow_insecure_coding`, it is a good idea to run the app in a docker container to reduce risks of running unknown code. This is strongly recommended before connecting to remote servers.
-
-```bash
-docker run -i -t --rm -v $(pwd):/app -w /app -p 3000-3003:3000-3003 node:latest node main.js
-```
-or simply
-```bash
-docker-compose up
-```
-
-When running in docker, if you want the bot to join your local minecraft server, you have to use a special host address `host.docker.internal` to call your localhost from inside your docker container. Put this into your [settings.js](settings.js):
-
-```javascript
-&quot;host&quot;: &quot;host.docker.internal&quot;, // instead of &quot;localhost&quot;, to join your local minecraft from inside the docker container
-```
-
-To connect to an unsupported minecraft version, you can try to use [viaproxy](services/viaproxy/README.md)
-
-# Bot Profiles
-
-Bot profiles are json files (such as `andy.json`) that define:
-
-1. Bot backend LLMs to use for talking, coding, and embedding.
-2. Prompts used to influence the bot&#039;s behavior.
-3. Examples help the bot perform tasks.
-
-## Model Specifications
-
-LLM models can be specified simply as `&quot;model&quot;: &quot;gpt-4o&quot;`. However, you can use different models for chat, coding, and embeddings. 
-You can pass a string or an object for these fields. A model object must specify an `api`, and optionally a `model`, `url`, and additional `params`.
-
-```json
-&quot;model&quot;: {
-  &quot;api&quot;: &quot;openai&quot;,
-  &quot;model&quot;: &quot;gpt-4o&quot;,
-  &quot;url&quot;: &quot;https://api.openai.com/v1/&quot;,
-  &quot;params&quot;: {
-    &quot;max_tokens&quot;: 1000,
-    &quot;temperature&quot;: 1
-  }
-},
-&quot;code_model&quot;: {
-  &quot;api&quot;: &quot;openai&quot;,
-  &quot;model&quot;: &quot;gpt-4&quot;,
-  &quot;url&quot;: &quot;https://api.openai.com/v1/&quot;
-},
-&quot;vision_model&quot;: {
-  &quot;api&quot;: &quot;openai&quot;,
-  &quot;model&quot;: &quot;gpt-4o&quot;,
-  &quot;url&quot;: &quot;https://api.openai.com/v1/&quot;
-},
-&quot;embedding&quot;: {
-  &quot;api&quot;: &quot;openai&quot;,
-  &quot;url&quot;: &quot;https://api.openai.com/v1/&quot;,
-  &quot;model&quot;: &quot;text-embedding-ada-002&quot;
-},
-&quot;speak_model&quot;: {
-  &quot;api&quot;: &quot;openai&quot;,
-  &quot;url&quot;: &quot;https://api.openai.com/v1/&quot;,
-  &quot;model&quot;: &quot;tts-1&quot;,
-  &quot;voice&quot;: &quot;echo&quot;
-}
-
-```
-
-`model` is used for chat, `code_model` is used for newAction coding, `vision_model` is used for image interpretation, and `embedding` is used to embed text for example selection. If `code_model` or `vision_model` is not specified, `model` will be used by default. Not all APIs support embeddings or vision.
-
-All apis have default models and urls, so those fields are optional. The `params` field is optional and can be used to specify additional parameters for the model. It accepts any key-value pairs supported by the api. Is not supported for embedding models.
-
-## Embedding Models
-
-Embedding models are used to embed and efficiently select relevant examples for conversation and coding.
-
-Supported Embedding APIs: `openai`, `google`, `replicate`, `huggingface`, `novita`
-
-If you try to use an unsupported model, then it will default to a simple word-overlap method. Expect reduced performance, recommend mixing APIs to ensure embedding support.
-
-## Specifying Profiles via Command Line
-
-By default, the program will use the profiles specified in `settings.js`. You can specify one or more agent profiles using the `--profiles` argument: `node main.js --profiles ./profiles/andy.json ./profiles/jill.json`
-
-## Patches
-
-Some of the node modules that we depend on have bugs in them. To add a patch, change your local node module file and run `npx patch-package [package-name]`
-
-## Citation:
-
-```
-@article{mindcraft2025,
-  title = {Collaborating Action by Action: A Multi-agent LLM Framework for Embodied Reasoning},
-  author = {White*, Isadora and Nottingham*, Kolby and Maniar, Ayush and Robinson, Max and Lillemark, Hansen and Maheshwari, Mehul and Qin, Lianhui and Ammanabrolu, Prithviraj},
-  journal = {arXiv preprint arXiv:2504.17950},
-  year = {2025},
-  url = {https://arxiv.org/abs/2504.17950},
-}
-```
-
-
+[![Star History Chart](https://api.star-history.com/svg?repos=4ian/gdevelop&amp;type=Date)](https://star-history.com/#4ian/gdevelop&amp;Date)
 </pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[crocodilestick/Calibre-Web-Automated]]></title>
-            <link>https://github.com/crocodilestick/Calibre-Web-Automated</link>
-            <guid>https://github.com/crocodilestick/Calibre-Web-Automated</guid>
-            <pubDate>Mon, 02 Feb 2026 00:06:46 GMT</pubDate>
-            <description><![CDATA[Calibre-Web but Automated and with tons of New Features! Fully automate and simplify your eBook set up!]]></description>
+            <title><![CDATA[simple-icons/simple-icons]]></title>
+            <link>https://github.com/simple-icons/simple-icons</link>
+            <guid>https://github.com/simple-icons/simple-icons</guid>
+            <pubDate>Tue, 03 Feb 2026 00:08:08 GMT</pubDate>
+            <description><![CDATA[SVG icons for popular brands]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/crocodilestick/Calibre-Web-Automated">crocodilestick/Calibre-Web-Automated</a></h1>
-            <p>Calibre-Web but Automated and with tons of New Features! Fully automate and simplify your eBook set up!</p>
+            <h1><a href="https://github.com/simple-icons/simple-icons">simple-icons/simple-icons</a></h1>
+            <p>SVG icons for popular brands</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 4,687</p>
-            <p>Forks: 311</p>
-            <p>Stars today: 17 stars today</p>
-            <h2>README</h2><pre># Calibre-Web Automated _(formerly Calibre-Web Automator)_
+            <p>Stars: 24,353</p>
+            <p>Forks: 3,038</p>
+            <p>Stars today: 16 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://cdn.simpleicons.org/simpleicons/000/fff&quot; alt=&quot;Simple Icons&quot; width=70&gt;
+&lt;h3 align=&quot;center&quot;&gt;Simple Icons&lt;/h3&gt;
+&lt;p align=&quot;center&quot;&gt;
+Over 3300 SVG icons for popular brands. See them all on one page at &lt;a href=&quot;https://simpleicons.org&quot;&gt;SimpleIcons.org&lt;/a&gt;. Contributions, corrections &amp; requests can be made on GitHub.&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;a href=&quot;https://simpleicons.org&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/dynamic/json?color=informational&amp;label=icons&amp;prefix=%20&amp;logo=simpleicons&amp;query=%24.length&amp;url=https%3A%2F%2Fraw.githubusercontent.com%2Fsimple-icons%2Fsimple-icons%2Fdevelop%2Fdata%2Fsimple-icons.json&quot; alt=&quot;Number of icons currently in the library&quot;/&gt;&lt;/a&gt;
+&lt;a href=&quot;https://www.npmjs.com/package/simple-icons&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/v/simple-icons.svg?logo=npm&quot; alt=&quot;NPM version&quot;/&gt;&lt;/a&gt;
+&lt;a href=&quot;https://packagist.org/packages/simple-icons/simple-icons&quot;&gt;&lt;img src=&quot;https://img.shields.io/packagist/v/simple-icons/simple-icons?logo=packagist&amp;logoColor=white&quot; alt=&quot;Build status&quot;/&gt;&lt;/a&gt;
+&lt;br/&gt;
+&lt;a href=&quot;https://github.com/simple-icons/simple-icons/actions?query=workflow%3AVerify+branch%3Adevelop&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/actions/workflow/status/simple-icons/simple-icons/verify.yml?branch=develop&amp;logo=github&amp;label=tests&quot; alt=&quot;Build status&quot;/&gt;&lt;/a&gt;
+&lt;a href=&quot;https://discord.gg/vUXFa7t5xJ&quot;&gt;&lt;img src=&quot;https://img.shields.io/discord/1142044630909726760?logo=discord&amp;logoColor=white&amp;label=discord&quot; alt=&quot;Number of users active in our Discord server&quot;/&gt;&lt;/a&gt;
+&lt;a href=&quot;https://opencollective.com/simple-icons&quot;&gt;&lt;img src=&quot;https://img.shields.io/opencollective/all/simple-icons?logo=opencollective&quot; alt=&quot;Backers and sponsors on Open Collective&quot;/&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+## Usage
+
+&gt; [!IMPORTANT]\
+&gt; We ask that all users read our [legal disclaimer](https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md) before using icons from Simple Icons.
+
+### General Usage
+
+Icons can be downloaded as SVGs directly from [simpleicons.org](https://simpleicons.org) - simply click the download button of the icon you want, and the download will start automatically.
+
+### CDN Usage
+
+Icons can be served from a CDN such as [jsDelivr](https://www.jsdelivr.com/package/npm/simple-icons) or [unpkg](https://unpkg.com/browse/simple-icons/). Simply use the `simple-icons` npm package and specify a version in the URL like the following:
+
+```html
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/[ICON SLUG].svg&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://unpkg.com/simple-icons@v16/icons/[ICON SLUG].svg&quot; /&gt;
+```
+
+Where `[ICON SLUG]` is replaced by the [slug] of the icon you want to use, for example:
+
+```html
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/simpleicons.svg&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://unpkg.com/simple-icons@v16/icons/simpleicons.svg&quot; /&gt;
+```
 
-![Calibre-Web Automated](README_images/CWA-banner.png &quot;Calibre-Web Automated&quot;)
+These examples use the latest major version. This means you won&#039;t receive any updates following the next major release. You can use `@latest` instead to receive updates indefinitely. However, this will result in a `404` error if the icon is removed.
+
+#### CDN with colors
 
-## Making Calibre-Web your _dream_, all-in-one self-hosted digital library solution.
+We also provide a CDN service which allows you to use colors.
 
-![Docker Pulls](https://img.shields.io/docker/pulls/crocodilestick/calibre-web-automated)
-![GitHub Release](https://img.shields.io/github/v/release/crocodilestick/calibre-web-automated)
-![GitHub commits since latest release](https://img.shields.io/github/commits-since/crocodilestick/calibre-web-automated/latest)
-![OAuth 2.0 + OIDC](https://img.shields.io/badge/OAuth-2.0%20%2B%20OIDC-blue?style=flat&amp;logo=oauth)
+```html
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/[ICON SLUG]&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/[ICON SLUG]/[COLOR]&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/[ICON SLUG]/[COLOR]/[DARK_MODE_COLOR]&quot; /&gt;
+```
 
-# Supporting the Project ❤️
+Where `[COLOR]` is optional, and can be replaced by the [hex colors](https://developer.mozilla.org/en-US/docs/Web/CSS/hex-color) or [CSS keywords](https://www.w3.org/wiki/CSS/Properties/color/keywords) of the icon you want to use. The color is defaulted to the HEX color of the icon shown in [simpleicons.org website](https://simpleicons.org). `[DARK_MODE_COLOR]` is used for dark mode. The [CSS prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) will be used when a value is specified. For example:
 
-CWA is and always will be free and open source. If it makes your library life easier and you&#039;re able to support development, contributions go directly to:
-- Testing hardware (ereader devices &amp; tablets ect.)
-- Development tools and infrastructure
-- Coffee ☕ (lots of coffee)
+```html
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/simpleicons&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/simpleicons/gray&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/simpleicons/hotpink&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/simpleicons/0cf&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/simpleicons/0cf9&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/simpleicons/00ccff&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/simpleicons/00ccff99&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/simpleicons/orange/pink&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/simpleicons/_/eee&quot; /&gt;
+&lt;img height=&quot;32&quot; width=&quot;32&quot; src=&quot;https://cdn.simpleicons.org/simpleicons/eee/_&quot; /&gt;
+```
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/crocodilestick)
+You can use a `viewbox=auto` parameter to get an auto-sized viewbox. This is useful if you want all icons rendered with consistent size:
 
-## _Quick Access_
+```html
+&lt;img height=&quot;20&quot; src=&quot;https://cdn.simpleicons.org/github?viewbox=auto&quot; /&gt;
+&lt;img height=&quot;20&quot; src=&quot;https://cdn.simpleicons.org/simpleicons?viewbox=auto&quot; /&gt;
+&lt;img height=&quot;20&quot; src=&quot;https://cdn.simpleicons.org/awesomelists?viewbox=auto&quot; /&gt;
+```
 
-- [Features](#features) 🪄
-- [Releases](https://github.com/crocodilestick/Calibre-Web-Automated/releases) 🆕
-- [Roadmap](#features-currently-under-active-development-and-on-our-roadmap-️️) 🛣️
-- [How to Install](#how-to-install-): 📖
-  - [Quick Install](#quick-install-) 🚀
-  - [Docker-Compose](#using-docker-compose-recommended) 🐋⭐(Recommended)
-  - [Users Migrating from stock Calibre Web](#users-migrating-from-stock-calibre-web) 🔄
-  - [Post-Install Tasks](#post-install-tasks) 🏁
-    - [Default Login Credentials 🔑](#default-admin-login)
-- [Usage](#usage-) 🔧
-  - [Adding Books to Your Library](#adding-books-to-your-library)
-  - [KOReader Syncing (KOSync)](#koreader-syncing-kosync-) 📖⚡
-  - [OAuth Authentication Setup](#enhanced-oauth-20oidc-authentication-) 🔐
-- [For Developers](#for-developers---building-custom-docker-image) 🚀
-- [Further Development](#further-development-️) 🏗️
+### Node Usage &lt;img src=&quot;https://cdn.simpleicons.org/nodedotjs/000/fff&quot; alt=&quot;Node&quot; align=left width=24&gt;
+
+The icons are also available through our npm package. To install, simply run:
+
+```shell
+npm install simple-icons
+```
 
-## Why does it exist? 🔓
+All icons are imported from a single file, where `[ICON SLUG]` is replaced by a capitalized [slug]. We highly recommend using a bundler that can tree shake such as [webpack](https://webpack.js.org/) to remove the unused icon code:
 
-Calibre, while a fantastic tool for its age, has several problems when containerised, including its reliance on a KasmVNC server instance for the UI, which is near impossible to use on mobile and is relatively resource-heavy if you&#039;re running a small, lower power server like I am.
+```javascript
+// Import a specific icon by its slug as:
+// import { si[ICON SLUG] } from &#039;simple-icons&#039;
 
-For many, Calibre-Web has really swooped in to save the day, offering an alternative to a containerised Calibre instance that&#039;s resource-light and with a much more modern UI to boot.
-
-However, when compared to full-fat Calibre, it unfortunately lacks a few core features leading many to run both services in parallel, each serving to fill in where the other lacks, resulting in an often clunky, imperfect solution.
-
-## Goal of the Project 🎯
-
-Calibre-Web Automated aims to be an all-in-one solution, combining the modern lightweight web UI from Calibre-Web with the robust, versatile feature set of Calibre, with a slew of extra features and automations thrown in on top.
-
-![Calibre-Web Automated Example Homepage](https://github.com/crocodilestick/Calibre-Web-Automated/blob/main/README_images/CWA-Homepage.png?raw=true)
-![Calibre-Web Automated Example Book Page](https://github.com/crocodilestick/Calibre-Web-Automated/blob/main/README_images/new-book-details-page.png?raw=true)
-&lt;p style=&quot;text-align:center;&quot;&gt;&lt;i&gt;CWA allows you to keep your ebook library accessible &amp; organised and looks good while doing it&lt;/i&gt; 😎🦚&lt;/p&gt;
-
-## _Affiliated Projects_ 👬
-
-### Shelfmark: Book Downloader
-
-- An intuitive web interface for searching and requesting book downloads, designed to work seamlessly with Calibre-Web-Automated. This project streamlines the process of downloading books and preparing them for integration into your Calibre library
-
-&gt; [!IMPORTANT]  
-&gt; CWA does not approve of or support piracy of copyrighted materials and is not responsible for user behaviour
-
-[&lt;img src=&quot;https://raw.githubusercontent.com/vadret/android/master/assets/get-github.png&quot; alt=&quot;Get it on GitHub&quot; height=&quot;80&quot;&gt;](https://github.com/calibrain/shelfmark)
-
-___
-
-### Calibre-Web Companion
-
-- Built with **Flutter** and using **Material You**, [**Calibre Web Companion**](https://github.com/doen1el/calibre-web-companion) is an **unofficial companion application** for **Calibre Web** &amp; **Calibre Web Automated** that allows you to browse your book collection and download books directly on your device, providing a much **more modern, mobile-friendly UX** than either service can currently provide on its own
-
-&lt;br&gt;
-
-[![Calibre Web Companion Preview](README_images/cw-companion-screenshots.png)](https://github.com/doen1el/calibre-web-companion)
-
-[&lt;img src=&quot;README_images/google-play.png&quot; alt=&quot;Get it on Google Play&quot; height=&quot;80&quot;&gt;](https://play.google.com/store/apps/details?id=de.doen1el.calibreWebCompanion)
-[&lt;img src=&quot;https://fdroid.gitlab.io/artwork/badge/get-it-on.png&quot; alt=&quot;Get it on F-Droid&quot; height=&quot;80&quot;&gt;](https://f-droid.org/en/packages/de.doen1el.calibreWebCompanion/)
-[&lt;img src=&quot;https://raw.githubusercontent.com/vadret/android/master/assets/get-github.png&quot; alt=&quot;Get it on GitHub&quot; height=&quot;80&quot;&gt;](https://github.com/doen1el/calibre-web-companion)
-
-## Join our Community! ❤️
-
-- I want to say a **big thanks** 🙏 to all the members of this community that have taken the time to participate in the testing and development of this project and we encourage anyone who would like to to contribute in some way. Anyone of any level is welcome and every little helps!
-- **For anyone that wish to contribute to this project in some way**, please reach out on our Discord Server and see how you can best get involved:\
-    \
-    [![](https://dcbadge.limes.pink/api/server/https://discord.gg/EjgSeek94R)](https://discord.gg/EjgSeek94R)
-
-- Or alternatively make your own companion project, come hang out and or come get help if you&#039;re facing issues :)
-
-## 🚨 Deploying on Network Shares (NFS/SMB) 🚨
-
-- CWA now supports network-share deployments via `NETWORK_SHARE_MODE=true`
-  - This disables SQLite WAL on `metadata.db` and `app.db` to prevent locking issues
-  - Skips recursive ownership changes that often fail on NFS/SMB
-  - Switches ingest/metadata watchers to a polling-based watcher for reliability
-- Network shares are still slower than local disks, but are now fully supported with this mode enabled
-
-### Network shares and SQLite WAL mode
-
-- CWA optimizes SQLite concurrency by enabling Write-Ahead Logging (WAL) on local disks.
-- Some network filesystems (NFS/SMB) do not fully support WAL or reliable file locking, which can cause intermittent &quot;database is locked&quot; errors or corruption risks.
-- If you are deploying on a network share, set the following environment variable to disable WAL:
-
-  - `NETWORK_SHARE_MODE=true`
-
-This tells CWA to avoid enabling WAL on the Calibre `metadata.db` and the `app.db` settings database. It also disables recursive ownership changes (`chown`) performed by init/maintenance scripts to avoid permission issues on network filesystems. Default is `false` (WAL enabled) for better performance on local disks.
-
-#### File watching on network shares
-
-- By default, CWA uses Linux `inotify` (via `inotifywait`) to detect new files in the ingest folder with minimal latency and overhead.
-- On network shares (NFS/SMB), filesystem events can be unreliable or unavailable. When `NETWORK_SHARE_MODE=true` is set, CWA switches the ingest and metadata watcher services to a polling-based watcher that periodically scans for changes. This improves reliability on NAS/network mounts at the cost of slightly higher I/O and up to a few seconds of latency.
-- On Docker Desktop (Windows/macOS), the container runs on a LinuxKit/WSL2 VM and host-mounted paths may not propagate `inotify` events reliably. CWA auto-detects Docker Desktop at startup and prefers the same polling watcher for reliability.
-- Advanced: You can also force polling regardless of share mode by setting `CWA_WATCH_MODE=poll`.
-
-### Running behind multiple proxies (Cloudflare Tunnel, reverse proxy)
-
-- CWA uses Werkzeug&#039;s ProxyFix middleware to properly handle `X-Forwarded-For`, `X-Forwarded-Proto`, and other proxy headers.
-- By default, it trusts **1 proxy** in the chain. If you have multiple proxies (e.g., Cloudflare Tunnel → nginx → CWA), set:
-
-  - `TRUSTED_PROXY_COUNT=2` (or the total number of proxies in your chain)
-
-- **Why this matters**: Session protection validates requests based on the client&#039;s IP address. If ProxyFix doesn&#039;t trust enough proxies, it may see different IPs between requests, causing &quot;Session protection triggered&quot; warnings and forcing re-login.
-- **Troubleshooting**: If you see frequent session protection warnings in logs, check your proxy chain depth and adjust this variable accordingly.
-
-## **_Features:_**
-
-### CWA supports all Stock CW Features:
-| | | |
-|     :---:    |     :---:      |     :---:     |
-| Modern &amp; responsive Bootstrap 3 HTML5 interface | Comprehensive user management with per-user permissions | OPDS feed for ereader apps |
-| eBook metadata editing and deletion support | Metadata download from various sources (extensible via plugins) | eBook download restriction to logged-in users |
-| Public user registration support | Send eBooks to E-Readers with a single click | Sync Kobo devices with your Calibre library |
-| In-browser eBook reading support for multiple formats | Content hiding based on categories and Custom Column content per user | &quot;Magic Link&quot; login for easy access on eReaders |
-| Enhanced OAuth 2.0/OIDC authentication with auto-discovery | Advanced search and filtering options | Multilingual user interface supporting 20+ [languages](https://github.com/janeczku/calibre-web/wiki/Translation-Status) |
-
-## Plus these _**CWA Specific Features**_ on top:
-
-#### Click a feature below to read about it in more detail:
-
-| | | |
-|     :---:    |     :---:      |     :---:     |
-| [Automatic Ingest Service ✨](#automatic-ingest-service-) | [Automatic Conversion Service 🔃](#automatic-conversion-service-) | [Automatic Enforcement of Covers &amp; Metadata 👀📔](#automatic-enforcement-of-changes-made-to-covers--metadata-through-the-calibre-web-ui-) |
-| [Batch Editing &amp; Deletion 🗂️](#batch-editing--deletion-️️) | [Automated Back Up Service 🔒](#automated-back-up-service-) | [Automated Setup Experience for New Users 🦮](#library-auto-detect-️) |
-| [Automatic EPUB Fixer Service 🔨](#automatic-epub-fixer-service-) | [Multi-Format Conversion Service 🌌](#simple-to-use-multi-format-conversion-service-) | [Library Auto-Detect 📚🕵️](#library-auto-detect-️) |
-| [Smart Duplicate Detection &amp; Management 🔍](#smart-duplicate-detection--management-) | [Magic Shelves 🪄📚](#magic-shelves-) | [Auto-Send to eReader 📧⚡](#auto-send-to-ereader-) |
-| [Automatic Metadata Fetch on Ingest 🏷️🤖](#automatic-metadata-fetch-on-ingest-) | [Deep Stats &amp; Analytics 📊✨](#deep-stats--analytics-) | [Easy Dark/ Light Mode Switching ☀️🌙](#easy-dark-light-mode-switching-️) |
-| [Internal Update Notification System 🛎️](#internal-update-notification-system-️) | [Auto-Compression of Backed Up Files 🤐](#auto-compression-of-backed-up-files-) | [Additional Metadata Providers 🗃️](#additional-metadata-providers-️) |
-| [KOReader Syncing (KOSync) 📖⚡](#koreader-syncing-kosync-) | [Enhanced OAuth 2.0/OIDC Authentication 🔐](#enhanced-oauth-20oidc-authentication-) | [EPUB Fixer 2.0 📧✅](#epub-fixer-20-) |
-| [Automatic Hardcover ID Fetch 💜🤖](#automatic-hardcover-id-fetch-) | [Server Stats Tracking Page 📍](#server-stats-tracking-page-) | [Enhanced Send-to-eReader Modal ✉️](#enhanced-send-to-ereader-modal-) |
-
-#### **Automatic Ingest Service** ✨
-- CWA currently supports automatic ingest of 27 different popular ebook formats
-- Users can configure the services behavior to ignore and/or have certain formats automatically converted to other formats in the Admin Panel
-
-#### **Automatic Conversion Service** 🔃
-- On by default though can be toggled off in the CWA Settings page, with EPUB as the default target format
-  - _Available target formats include:_ **EPUB**, **MOBI**, **AZW3**, **KEPUB** &amp; **PDF**
-- Upon detecting new files in the Ingest Directory, if any of the files are in formats the user has configured CWA to auto-convert to the current target format,
-- The following **28 file types are currently supported:**
-  - _.acsm, .azw, .azw3, .azw4, .mobi, .cbz, .cbr, .cb7, .cbc, .chm, .djvu, .docx, .epub, .fb2, .fbz, .html, .htmlz, .lit, .lrf, .odt, .pdf, .prc, .pdb, .pml, .rb, .rtf, .snb, .tcr, .txtz_
-  - _Note: .acsm requires an additional Calibre plugin_
-
-#### **Automatic Enforcement of Changes made to Covers &amp; Metadata through the Calibre-Web UI!** 👀📔
-- In stock Calibre-Web, any changes made to a book&#039;s **Cover and/or Metadata** are only applied to how the book appears in the Calibre-Web UI, changing nothing in the ebook&#039;s files like you would expect
-- This results in a frustrating situation for many CW users who utilise CW&#039;s Send-To-Kindle function, and are disappointed to find that the High-Quality Covers they picked out and carefully chosen Metadata they sourced are completely absent on all their other devices! UGH!
-- CWA&#039;s **Automatic Cover &amp; Metadata Enforcement Feature** makes it so that **WHATEVER** you changes you make to **YOUR** books, **_are made to the books themselves_**, as well as in the Web UI, **making what you see, what you get.**
-
-#### **Automated Back Up Service** 🔒
-- Worried what will happen if something goes wrong during one of CWA&#039;s automated functions? Don&#039;t be!
-- By default, the originals all files processed by CWA are stored in `/config/processed_books` though this can be toggled in the CWA Settings panel
-
-#### **Smart Duplicate Detection System &amp; Management** 🔍
-- Hybrid SQL + fuzzy matching detects duplicates missed by traditional scans
-- Post-ingest checks and scheduled incremental scans
-- One-click merge, batch operations, and optional auto-resolution
-- Configurable matching rules, thresholds, and format awareness
-
-![](https://github.com/crocodilestick/Calibre-Web-Automated/blob/main/README_images/duplicate-detection-system.gif?raw=true)
-
-#### **Magic Shelves** 🪄📚
-- Dynamic, rules-based shelves with rich filters and AND/OR logic
-- Pre-built templates (Recent, Highly Rated, No Cover, Incomplete Series, etc.)
-- Real-time updates with cached counts and tooltips
-- Kobo sync support and optional tag-based syncing
-
-![](https://github.com/crocodilestick/Calibre-Web-Automated/blob/main/README_images/magic-shelf-showcase.gif?raw=true)
-
-#### **Auto-Send to eReader** 📧⚡
-- Automatically email new books after ingest
-- Configurable delay to allow metadata/enforcement/EPUB fixes first
-- Format selection and multi-recipient sending
-- Works with per-user settings and optional custom email subjects
-
-#### **Automatic Metadata Fetch on Ingest** 🏷️🤖
-- Optionally fetch and apply metadata automatically during ingest
-- Provider hierarchy is respected with smart fallback
-- Choose whether to overwrite existing fields or only fill missing data
-- Works seamlessly with Auto-Send and EPUB Fixer workflows
-
-#### **Deep Stats &amp; Analytics** 📊✨
-- Full analytics center with user activity, library, API usage, and time-based insights
-- Export sections to CSV for offline analysis
-- User-specific filtering and custom date ranges
-- Interactive charts with dark-mode styling
-
-![](https://github.com/crocodilestick/Calibre-Web-Automated/blob/main/README_images/cwa-stats-showcse.gif?raw=true)
-
-#### **Enhanced Send-to-eReader Modal** ✉️
-- Send to multiple devices at once
-- Ad-hoc email addresses supported for sharing with friends, family or even temporary devices
-
-![](https://github.com/crocodilestick/Calibre-Web-Automated/blob/main/README_images/new-send-to-ereader-modal.png?raw=true)
-
-#### **Automatic EPUB Fixer Service** 📧✅
-- Ever had it where you&#039;re super excited to start reading your next book but for some reason, Amazon&#039;s Send-to-Kindle service just keeps rejecting it? Well no more!
-
-- Originally developed by [innocenat](https://github.com/innocenat/kindle-epub-fix), this tool corrects the following potential issues for every EPUB processed by CWA:
-  - Fixes UTF-8 encoding problem by adding UTF-8 declaration if no encoding is specified
-  - Fixes hyperlink problem (result in Amazon rejecting the EPUB) when NCX table of content link to `&lt;body&gt;` with ID hash.
-  - Detect invalid and/or missing language tag in metadata, and prompt user to select new language.
-  - Remove stray `&lt;img&gt;` tags with no source field.
-  - Resolves several EPUB compatibility issues, such as UTF-8 encoding, hyperlink problems, invalid/missing language tags, and stray image tags.
-  - Repairs malformed language tags, XML declarations, and UTF-8 headers
-  - Cleans invalid NCX links, broken CSS/fonts, and stray image tags
-- This **ensures maximum comparability** for each EPUB file with the Amazon **Send-to-Kindle** service and for those who don&#039;t use Amazon devices, has the side benefit of cleaning up your lower quality files!
-- Enabled by default, with per-run backups in `/config/processed_books`
-- Bulk processing of whole library with progress tracking available in the Admin Panel
-
-![CWA EPUB Fixer Service Web UI](https://github.com/crocodilestick/Calibre-Web-Automated/blob/main/README_images/CWA-new-process-ui.gif?raw=true)
-
-#### **Simple to use Multi-Format Conversion Service** 🌌
-- This utility gives the user the option to either keep a copy of the original of all converted files in `/config/processed_books` or to trust the process and have CWA simply convert and replace those files (not recommended)
-- Full usage details can be found [here](#the-convert-library-tool)
-
-#### **Additional Metadata Providers** 🗃️
-- Users can now make use of [isbndb.com](https://isbndb.com/)&#039;s huge database when fetching metadata for the books in their library!
-- Access is being provided via [ibdb.dev](https://ibdb.dev/) thanks to a generous donation to the community by [@chad3814](https://www.github.com/chad3814)
-- [Hardcover](https://hardcover.app/) and Kobo metadata providers are supported, alongside new LitRes support
-
-#### **KOReader Syncing (KOSync)** 📖⚡
-Built-in KOReader progress sync with automatic book identification:
-- **Book Identification:** Auto-generates KOReader-compatible partial MD5 checksums for all books
-- **Unified Progress:** Syncs KOReader → CWA reading status → Kobo devices
-- **Zero Config:** Checksums generated on startup and import, no manual setup
-- **Modern Auth:** RFC 7617 HTTP Basic Auth with existing CWA accounts
-- **Plugin Available:** Download from `/kosync` endpoint on your CWA instance
-
-#### **Enhanced OAuth 2.0/OIDC Authentication** 🔐
-- **Auto-Discovery:** Automatic endpoint configuration via OIDC metadata URLs for seamless setup with providers like Keycloak, Authentik, Google, and Azure AD
-- **Manual Override:** Full manual control over OAuth endpoints when auto-discovery isn&#039;t available
-- **Field Mapping:** Configurable JWT field extraction for usernames and emails to work with any provider&#039;s token structure
-- **Group-Based Roles:** Automatic admin role assignment based on OAuth provider groups
-- **Testing Tools:** Built-in connection testing and validation to ensure your configuration works before going live
-- **Enterprise Ready:** Support for custom scopes, multiple authentication methods, and comprehensive troubleshooting
-- **📖 [Full OAuth Configuration Guide](https://github.com/crocodilestick/Calibre-Web-Automated/wiki/OAuth-Configuration)** for detailed setup instructions
-
-#### **Automatic Hardcover ID Fetch** 💜🤖
-- Background task auto-populates missing Hardcover IDs
-- Configurable scheduling with progress tracking in Tasks
-- Graceful handling of invalid tokens
-
-#### **Library Auto-Detect** 📚🕵️
-  - Made to **MASSIVELY** simplify the setup process for both **new and existing users** alike
-  - **New Users without existing Libraries:** 🆕
-    - **No library? No problem!**
-    - New users without existing Calibre Libraries no longer need to copy and paste `metadata.db` files and point to their location in the Web UI, CWA will now automatically detect the lack of
+// For example:
+// use import/esm to allow tree shaking
+import {siSimpleicons} from &#039;simple-icons&#039;;
+// or with require/cjs
+const {siSimpleicons} = require(&#039;simple-icons&#039;);
+```
+
+It will return an icon object:
+
+```javascript
+console.log(siSimpleicons);
+
+/*
+{
+    title: &#039;Simple Icons&#039;,
+    slug: &#039;simpleicons&#039;,
+    hex: &#039;111111&#039;,
+    source: &#039;https://simpleicons.org/&#039;,
+    svg: &#039;&lt;svg role=&quot;img&quot; viewBox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;...&lt;/svg&gt;&#039;,
+    path: &#039;M12 12v-1.5c-2.484 ...&#039;,
+    guidelines: &#039;https://simpleicons.org/styleguide&#039;,
+    license: {
+        type: &#039;...&#039;,
+        url: &#039;https://example.com/&#039;
+    }
+}
+
+NOTE: the `guidelines` entry will be `undefined` if we do not yet have guidelines for the icon.
+NOTE: the `license` entry will be `undefined` if we do not yet have license data for the icon.
+*/
+```
+
+If you need to iterate over all icons, use:
+
+```javascript
+import * as icons from &#039;simple-icons&#039;;
+```
+
+#### TypeScript Usage &lt;img src=&quot;https://cdn.simpleicons.org/typescript/000/fff&quot; alt=&quot;TypeScript&quot; align=left width=19 height=19&gt;
+
+Type definitions are bundled with the package.
+
+```typescript
+import type {SimpleIcon} from &#039;simple-icons&#039;;
+```
+
+### PHP Usage &lt;img src=&quot;https://cdn.simpleicons.org/php/000/fff&quot; alt=&quot;Php&quot; align=left width=24 height=24&gt;
+
+The icons are also available through [our Packagist package](https://packagist.org/packages/simple-icons/simple-icons). To install, simply run:
+
+```shell
+composer require simple-icons/simple-icons
+```
+
+The package can then be used as follows, where `[ICON SLUG]` is replaced by a [slug]:
+
+```php
+&lt;?php
+// Import a specific icon by its slug as:
+echo file_get_contents(&#039;path/to/package/icons/[ICON SLUG].svg&#039;);
+
+// For example:
+echo file_get_contents(&#039;path/to/package/icons/simpleicons.svg&#039;);
+
+// &lt;svg role=&quot;img&quot; viewBox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;...&lt;/svg&gt;
+?&gt;
+```
+
+### Font Usage
+
+See [simple-icons-font](https://github.com/simple-icons/simple-icons-font) to learn how to use our font distribution.
+
+## Third-Party Extensions
+
+The below are known extensions to third-party tools.
+
+| Extension | Author |
+| :-- | :-- |
+| &lt;a href=&quot;https://github.com/mondeja/simple-icons-blender&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/blender/000/fff&quot; alt=&quot;Blender&quot; align=left width=24 height=24&gt;Blender add-on&lt;/a&gt; | [@mondeja](https://github.com/mondeja) |
+| &lt;a href=&quot;https://boxy-svg.com/ideas/298/simple-icons-library-provider&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/boxysvg/000/fff&quot; alt=&quot;Boxy SVG&quot; align=left width=24 height=24&gt;Boxy SVG library&lt;/a&gt; | [@Jarek](https://boxy-svg.com/profiles/0000000000/jarek) |
+| &lt;a href=&quot;https://github.com/mondeja/simple-icons-drawio&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/diagramsdotnet/000/fff&quot; alt=&quot;Drawio&quot; align=left width=24 height=24&gt;Drawio library&lt;/a&gt; | [@mondeja](https://github.com/mondeja) |
+| &lt;a href=&quot;https://www.figma.com/community/plugin/1149614463603005908&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/figma/000/fff&quot; alt=&quot;Figma&quot; align=left width=24 height=24&gt;Figma plugin&lt;/a&gt; | [@LitoMore](https://github.com/LitoMore) |
+| &lt;a href=&quot;https://github.com/pirafrank/jekyll-simple-icons&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/jekyll/000/fff&quot; alt=&quot;Jekyll&quot; align=left width=24 height=24&gt;Jekyll plugin&lt;/a&gt; | [@pirafrank](https://github.com/pirafrank) |
+| &lt;a href=&quot;https://kando.menu/icon-themes#built-in-icon-themes&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/kando/000/fff&quot; alt=&quot;Kando&quot; align=left width=24 height=24&gt;Kando icon theme&lt;/a&gt; | [@Schneegans](https://github.com/Schneegans) |
+| &lt;a href=&quot;https://miro.com/marketplace/brand-icons/&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/miro/000/fff&quot; alt=&quot;Miro&quot; align=left width=24 height=24&gt;Miro app&lt;/a&gt; | [@LitoMore](https://github.com/LitoMore) |
+| &lt;a href=&quot;https://www.raycast.com/litomore/simple-icons&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/raycast/000/fff&quot; alt=&quot;Raycast&quot; align=left width=24 height=24&gt;Raycast extension&lt;/a&gt; | [@LitoMore](https://github.com/LitoMore) |
+| &lt;a href=&quot;https://github.com/mackenly/simple-icons-stream-deck&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/elgato/000/fff&quot; alt=&quot;Stream Deck&quot; align=left width=24 height=24&gt;Stream Deck icon pack&lt;/a&gt; | [@mackenly](https://github.com/mackenly) |
+| &lt;a href=&quot;https://typst.app/universe/package/sicons&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/typst/000/fff&quot; alt=&quot;Typst&quot; align=left width=24 height=24&gt;Typst package&lt;/a&gt; | [@cscnk52](https://github.com/cscnk52) |
+| &lt;a href=&quot;https://webflow.com/apps/detail/simple-icons&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/webflow/000/fff&quot; alt=&quot;Webflow&quot; align=left width=24 height=24&gt;Webflow app&lt;/a&gt; | [@diegoliv](https://github.com/diegoliv) |
+
+Maintain an extension? [Submit a PR][open-pr] to include it in the list above.
+
+## Third-Party Libraries
+
+The below are known third-party libraries for use in your own projects. We only keep items in the list that are at least up to date with our previous major version.
+
+| Library | Author | License | Simple Icons |
+| :-- | :-- | :-: | :-: |
+| &lt;a href=&quot;https://github.com/gridatek/semantic-icons/tree/main/libs/simple-icons&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/angular/000/fff&quot; alt=&quot;Angular&quot; align=left width=24 height=24&gt;Angular package&lt;/a&gt; | [@gridatek](https://github.com/gridatek) | ![License](https://img.shields.io/github/license/gridatek/semantic-icons?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fgridatek%2Fsemantic-icons%2Fmain%2Fpackage.json&amp;query=%24..devDependencies%5B&#039;simple-icons&#039;%5D&amp;label=) |
+| &lt;a href=&quot;https://github.com/dzeiocom/simple-icons-astro&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/astro/000/fff&quot; alt=&quot;Astro&quot; align=left width=24 height=24&gt;Astro package&lt;/a&gt; | [@Aviortheking](https://github.com/aviortheking) | ![License](https://img.shields.io/github/license/dzeiocom/simple-icons-astro?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdzeiocom%2Fsimple-icons-astro%2Fmaster%2Fpackage.json&amp;query=%24.version&amp;label=) |
+| &lt;a href=&quot;https://github.com/TimeWarpEngineering/timewarp-simple-icons&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/blazor/000/fff&quot; alt=&quot;Blazor&quot; align=left width=24 height=24&gt;Blazor Nuget package&lt;/a&gt; | [@TimeWarpEngineering](https://github.com/TimeWarpEngineering) | ![License](https://img.shields.io/github/license/TimeWarpEngineering/timewarp-simple-icons?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/xml?url=https%3A%2F%2Fraw.githubusercontent.com%2FTimeWarpEngineering%2Ftimewarp-simple-icons%2Fmain%2Fsource%2Ftimewarp-simple-icons%2Ftimewarp-simple-icons.csproj&amp;query=%2FProject%2FPropertyGroup%2FVersion&amp;label=) |
+| &lt;a href=&quot;https://github.com/jlnrrg/simple_icons&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/flutter/000/fff&quot; alt=&quot;Flutter&quot; align=left width=24 height=24&gt;Flutter package&lt;/a&gt; | [@jlnrrg](https://github.com/jlnrrg) | ![License](https://img.shields.io/github/license/jlnrrg/simple_icons?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjlnrrg%2Fsimple_icons%2Fmaster%2Fpubspec.yaml&amp;query=%24.version&amp;logoColor=white&amp;label=) |
+| &lt;a href=&quot;https://github.com/LitoMore/simple-icons-framer&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/framer/000/fff&quot; alt=&quot;Framer&quot; align=left width=24 height=24&gt;Framer component&lt;/a&gt; | [@LitoMore](https://github.com/LitoMore) | ![License](https://img.shields.io/github/license/LitoMore/simple-icons-framer?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsimple-icons%2Fsimple-icons%2Fmaster%2Fpackage.json&amp;query=%24.version&amp;label=) |
+| &lt;a href=&quot;https://github.com/foo-dogsquared/hugo-mod-simple-icons&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/hugo/000/fff&quot; alt=&quot;Hugo&quot; align=left width=24 height=24&gt;Hugo module&lt;/a&gt; | [@foo-dogsquared](https://github.com/foo-dogsquared) | ![License](https://img.shields.io/github/license/foo-dogsquared/hugo-mod-simple-icons?label=) | ![Simple Icons version](https://img.shields.io/github/v/tag/foo-dogsquared/hugo-mod-simple-icons?label=) |
+| &lt;a href=&quot;https://github.com/silentsoft/simpleicons4j&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/openjdk/000/fff&quot; alt=&quot;Java&quot; align=left width=24 height=24&gt;Java library&lt;/a&gt; | [@silentsoft](https://github.com/silentsoft) | ![License](https://img.shields.io/github/license/silentsoft/simpleicons4j?label=) | ![Simple Icons version](https://img.shields.io/maven-central/v/org.silentsoft/simpleicons4j?label=) |
+| &lt;a href=&quot;https://github.com/runxel/kirby3-simpleicons&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/kirby/000/fff&quot; alt=&quot;Kirby&quot; align=left width=24 height=24&gt;Kirby plugin&lt;/a&gt; | [@runxel](https://github.com/runxel) | ![License](https://img.shields.io/github/license/runxel/kirby3-simpleicons?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Frunxel%2Fkirby3-simpleicons%2Fmaster%2Fcomposer.json&amp;query=%24..%5B&#039;simple-icons%2Fsimple-icons&#039;%5D&amp;label=) |
+| &lt;a href=&quot;https://github.com/ineshbose/simple-icons-latex&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/latex/000/fff&quot; alt=&quot;LaTeX&quot; align=left width=24 height=24&gt;LaTeX package&lt;/a&gt; | [@ineshbose](https://github.com/ineshbose) | ![License](https://img.shields.io/github/license/ineshbose/simple-icons-latex?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fineshbose%2Fsimple-icons-latex%2Fdevelop%2Fpackage.json&amp;query=%24..%5B&#039;simple-icons-font&#039;%5D&amp;label=) |
+| &lt;a href=&quot;https://github.com/ublabs/blade-simple-icons&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/laravel/000/fff&quot; alt=&quot;Laravel&quot; align=left width=24 height=24&gt;Laravel package&lt;/a&gt; | [@adrian-ub](https://github.com/adrian-ub) | ![License](https://img.shields.io/github/license/ublabs/blade-simple-icons?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsimple-icons%2Fsimple-icons%2Fmaster%2Fpackage.json&amp;query=%24.version&amp;label=) |
+| &lt;a href=&quot;https://github.com/carstencodes/simplepycons&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/python/000/fff&quot; alt=&quot;Python&quot; align=left width=24 height=24&gt;Python wheel&lt;/a&gt; | [@carstencodes](https://github.com/carstencodes) | ![License](https://img.shields.io/github/license/carstencodes/simplepycons?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2Fcarstencodes%2Fsimplepycons%2Frefs%2Fheads%2Fmain%2F.gitmodules&amp;search=%5C%5Bsubmodule%20%22vendor%5C%2Fsimple-icons%22%5C%5D%5B%5E%5C%5B%5D%2Bbranch%5Cs*%3D%5Cs*%28%3F%3Cversion%3E%5Cd%2B%5C.%5Cd%2B%5C.%5Cd%2B%3F%29&amp;replace=%24%3Cversion%3E&amp;flags=ims&amp;label=) |
+| &lt;a href=&quot;https://github.com/icons-pack/react-simple-icons&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/react/000/fff&quot; alt=&quot;React&quot; align=left width=24 height=24&gt;React package&lt;/a&gt; | [@wootsbot](https://github.com/wootsbot) | ![License](https://img.shields.io/github/license/icons-pack/react-simple-icons?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Ficons-pack%2Freact-simple-icons%2Fmain%2Fpackage.json&amp;query=%24..%5B&#039;simple-icons&#039;%5D&amp;label=) |
+| &lt;a href=&quot;https://rubygems.org/gems/simple-icons-rails&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/rubygems/000/fff&quot; alt=&quot;Ruby&quot; align=left width=24 height=24&gt;Ruby gem&lt;/a&gt; | [@thepew](https://github.com/the-pew-inc) | ![License](https://img.shields.io/github/license/the-pew-inc/simple-icons-rails?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsimple-icons%2Fsimple-icons%2Fmaster%2Fpackage.json&amp;query=%24.version&amp;label=) |
+| &lt;a href=&quot;https://crates.io/crates/simpleicons-rs&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/rust/000/fff&quot; alt=&quot;Rust&quot; align=left width=24 height=24&gt;Rust crate&lt;/a&gt; | [@cscnk52](https://github.com/cscnk52) | ![License](https://img.shields.io/github/license/cscnk52/simpleicons-rs?label=) | ![Simple Icons version](https://img.shields.io/crates/v/simpleicons-rs?color=blue&amp;label=) |
+| &lt;a href=&quot;https://github.com/icons-pack/svelte-simple-icons&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/svelte/000/fff&quot; alt=&quot;Svelte&quot; align=left width=24 height=24&gt;Svelte package&lt;/a&gt; | [@wootsbot](https://github.com/wootsbot) | ![License](https://img.shields.io/github/license/icons-pack/svelte-simple-icons?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Ficons-pack%2Fsvelte-simple-icons%2Fmain%2Fpackage.json&amp;query=%24..%5B&#039;simple-icons&#039;%5D&amp;label=) |
+| &lt;a href=&quot;https://github.com/wyatt-herkamp/vue3-simple-icons&quot;&gt;&lt;img src=&quot;https://cdn.simpleicons.org/vuedotjs/000/fff&quot; alt=&quot;Vue&quot; align=left width=24 height=24&gt;Vue 3 package&lt;/a&gt; | [@wyatt-herkamp](https://github.com/wyatt-herkamp) | ![License](https://img.shields.io/github/license/wyatt-herkamp/vue3-simple-icons?label=) | ![Simple Icons version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fwyatt-herkamp%2Fvue3-simple-icons%2Fmain%2Fsimple-icons.json&amp;query=simpleIconsVersion&amp;label=) |
+
+Maintain a library? [Submit a PR][open-pr] to include it in the list above.
+
+## Contribute
+
+[![Good first issues](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fsearch%2Fissues%3Fq%3Drepo%3Asimple-icons%2Fsimple-icons%2520label%3A%2522good%2520first%2520issue%2522%2520is%3Aopen%2520-linked%3Apr&amp;query=%24.total_count&amp;suffix=%20open&amp;logo=github&amp;label=good%20first%20issues&amp;color=228f6c&amp;labelColor=228f6c&amp;logoColor=white&amp;style=flat-square)](https://github.com/simple-icons/simple-icons/issues?q=is%3Aopen+label%3A%22good+first+issue%22+-linked%3Apr) [![Icon issues](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fsearch%2Fissues%3Fq%3Drepo%3Asimple-icons%2Fsimple-icons%2520label%3A%2522update%2520icon%2Fdata%2522%2C%2522new%2520icon%2522%2520is%3Aopen%2520-linked%3Apr&amp;query=%24.total_count&amp;suffix=%20open&amp;logo=svg&amp;logoColor=333&amp;label=icon%20issues&amp;labelColor=FFB13B&amp;color=FFB13B&amp;style=flat-square)](https://github.com/simple-icons/simple-icons/issues?q=is%3
 
 ... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[jgraph/drawio]]></title>
-            <link>https://github.com/jgraph/drawio</link>
-            <guid>https://github.com/jgraph/drawio</guid>
-            <pubDate>Mon, 02 Feb 2026 00:06:45 GMT</pubDate>
-            <description><![CDATA[draw.io is a JavaScript, client-side editor for general diagramming.]]></description>
+            <title><![CDATA[gorhill/uBlock]]></title>
+            <link>https://github.com/gorhill/uBlock</link>
+            <guid>https://github.com/gorhill/uBlock</guid>
+            <pubDate>Tue, 03 Feb 2026 00:08:07 GMT</pubDate>
+            <description><![CDATA[uBlock Origin - An efficient blocker for Chromium and Firefox. Fast and lean.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/jgraph/drawio">jgraph/drawio</a></h1>
-            <p>draw.io is a JavaScript, client-side editor for general diagramming.</p>
+            <h1><a href="https://github.com/gorhill/uBlock">gorhill/uBlock</a></h1>
+            <p>uBlock Origin - An efficient blocker for Chromium and Firefox. Fast and lean.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 3,439</p>
-            <p>Forks: 626</p>
-            <p>Stars today: 8 stars today</p>
-            <h2>README</h2><pre># draw.io
+            <p>Stars: 61,300</p>
+            <p>Forks: 3,926</p>
+            <p>Stars today: 26 stars today</p>
+            <h2>README</h2><pre>[![Badge Commits]][Commit Rate]
+[![Badge Issues]][Issues]
+[![Badge Localization]][Crowdin]
+[![Badge License]][License]
+[![Badge NPM]][NPM]
+[![Badge Mozilla]][Mozilla]
+[![Badge Chrome]][Chrome]
+[![Badge Edge]][Edge]
+
+***
+
+&lt;h1 align=&quot;center&quot;&gt;
+&lt;sub&gt;
+&lt;img src=&quot;https://github.com/gorhill/uBlock/blob/master/src/img/ublock.svg&quot; height=&quot;38&quot; width=&quot;38&quot;&gt;
+&lt;/sub&gt;
+uBlock Origin (uBO)
+&lt;/h1&gt;
+
+| Browser   | Install from ... | Status |
+| :-------: | ---------------- | ------ |
+| &lt;img src=&quot;https://github.com/user-attachments/assets/b0136512-56a5-4856-8c50-4971c957a24f&quot; alt=&quot;Get uBlock Origin for Firefox&quot;&gt; | &lt;a href=&quot;https://addons.mozilla.org/addon/ublock-origin/&quot;&gt;Firefox Add-ons&lt;/a&gt; | [uBO works best on Firefox](https://github.com/gorhill/uBlock/wiki/uBlock-Origin-works-best-on-Firefox) |
+| &lt;img src=&quot;https://github.com/user-attachments/assets/3a7569f8-688b-4eb1-a643-8d0fe173aefe&quot; alt=&quot;Get uBlock Origin for Microsoft Edge&quot;&gt; | &lt;a href=&quot;https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak&quot;&gt;Edge Add-ons&lt;/a&gt; |
+| &lt;img src=&quot;https://github.com/user-attachments/assets/938f080c-fe64-4e48-8b89-4bfceabb56e6&quot; alt=&quot;Get uBlock Origin for Opera&quot;&gt; | &lt;a href=&quot;https://addons.opera.com/extensions/details/ublock/&quot;&gt;Opera Add-ons&lt;/a&gt; |
+| &lt;img src=&quot;https://github.com/user-attachments/assets/5463ef88-873b-4516-8514-5277664cfde7&quot; alt=&quot;Get uBlock Origin for Chromium&quot;&gt; | &lt;a href=&quot;https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm&quot;&gt;Chrome Web Store&lt;/a&gt; | &lt;a href=&quot;https://github.com/uBlockOrigin/uBlock-issues/wiki/About-Google-Chrome&#039;s-%22This-extension-may-soon-no-longer-be-supported%22&quot;&gt;About Google Chrome&#039;s &quot;This extension may soon no longer be supported&quot;&lt;/a&gt;&lt;br&gt;End of support on Chrome 139 |
+| &lt;img src=&quot;https://github.com/user-attachments/assets/2e9037c4-836d-44c1-a716-ba96e89daaff&quot; alt=&quot;Get uBlock Origin for Thunderbird&quot;&gt; | &lt;a href=&quot;https://addons.thunderbird.net/thunderbird/addon/ublock-origin/&quot;&gt;Thunderbird Add-ons&lt;/a&gt; | [No longer updated and stuck at 1.49.2.](https://github.com/uBlockOrigin/uBlock-issues/issues/2928) Later versions require &quot;GitHub - Releases&quot;. |
+| &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg&quot; height=&quot;50&quot; alt=&quot;Get uBlock Origin through GitHub&quot;&gt; | &lt;a href=&quot;https://github.com/gorhill/uBlock/releases&quot;&gt;GitHub - Releases&lt;/a&gt; | Stable and development versions on Firefox, Chromium MV2, and Thunderbird. Must be placed manually into web browsers; the Chromium and Thunderbird versions usually won&#039;t auto-update.
+
+***
+
+uBlock Origin (uBO) is a CPU and memory-efficient [wide-spectrum content blocker][Blocking] for Chromium and Firefox. It blocks ads, trackers, coin miners, popups, annoying anti-blockers, malware sites, etc., by default using [EasyList][EasyList], [EasyPrivacy][EasyPrivacy], [Peter Lowe&#039;s Blocklist][Peter Lowe&#039;s Blocklist], [Online Malicious URL Blocklist][Malicious Blocklist], and uBO [filter lists][uBO Filters]. There are many other lists available to block even more. Hosts files are also supported. uBO uses the EasyList filter syntax and [extends][Extended Syntax] the syntax to work with custom rules and filters.
+
+You may easily unselect any preselected filter lists if you think uBO blocks too much. For reference, Adblock Plus installs with only EasyList, ABP filters, and Acceptable Ads enabled by default.
+
+It is important to note that using a blocker is **NOT** [theft]. Do not fall for this creepy idea. The _ultimate_ logical consequence of `blocking = theft` is the criminalization of the inalienable right to privacy.
+
+Ads, &quot;unintrusive&quot; or not, are just the visible portion of the privacy-invading means entering your browser when you visit most sites. **uBO&#039;s primary goal is to help users neutralize these privacy-invading methods** in a way that welcomes those users who do not wish to use more technical means.
+
+***
+
+* [Documentation](#documentation)
+* [Installation](#installation)
+  * [Firefox](#firefox)
+  * [Thunderbird](#thunderbird)
+  * [Chromium](#chromium)
+  * [All Programs](#all-programs)
+  * [Enterprise Deployment](#enterprise-deployment)
+* [Release History](#release-history)
+* [Translations](#translations)
+* [About](#about)
+
+## Documentation
+
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Basic Mode&lt;/th&gt;
+            &lt;th&gt;Advanced Mode&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;The &lt;a href=&quot;https://github.com/gorhill/uBlock/wiki/Quick-guide:-popup-user-interface&quot;&gt;simple popup user interface&lt;/a&gt; for an install-it-and-forget-it type of installation that is configured optimally by default.&lt;/td&gt;
+            &lt;td&gt;The &lt;a href=&quot;https://github.com/gorhill/uBlock/wiki/Dynamic-filtering:-quick-guide&quot;&gt;advanced popup user interface&lt;/a&gt; includes a point-and-click firewall that is configurable on a per-site basis.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td align=&quot;center&quot; valign=&quot;top&quot;&gt;&lt;a href=&quot;https://github.com/gorhill/uBlock/wiki/Quick-guide:-popup-user-interface&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/585534/232531044-c4ac4dd5-0b60-4c1e-aabb-914be04b846c.png&quot;/&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td align=&quot;center&quot; valign=&quot;top&quot;&gt;&lt;a href=&quot;https://github.com/gorhill/uBlock/wiki/Dynamic-filtering:-quick-guide&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/585534/232531439-a8f81cc3-6622-45c4-8b32-7348cecf6e98.png&quot;/&gt;&lt;/a&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+Visit the [Wiki][Wiki] for documentation.
+
+For support, questions, or help, visit [/r/uBlockOrigin][Reddit].
+
+## Installation
+
+[Required Permissions][Permissions]
+
+#### Firefox
+
+[Firefox Add-ons][Mozilla]
+
+[Development Builds][Beta]
+
+uBO [works best][Works Best] on Firefox and is available for desktop and Android versions.
+
+#### Thunderbird
+
+[Thunderbird Add-ons][Thunderbird]
+
+In Thunderbird, uBlock Origin does not affect emails, just feeds.
+
+#### Chromium
+
+[Chrome Web Store][Chrome]
+
+[Microsoft Edge Add-ons][Edge] (Published by [Nicole Rolls][Nicole Rolls] until version 1.62. Ownership transfer at version 1.64.)
+
+[Opera Add-ons][Opera]
+
+[Development Builds][Chrome Dev]
+
+uBO should be compatible with any Chromium-based browser.
+
+#### All Programs
+
+Do **NOT** use uBO with any other content blocker. uBO [performs][Performance] as well as or better than most popular blockers. Other blockers can prevent uBO&#039;s privacy or anti-blocker-defusing features from working correctly.
+
+[Manual Installation][Manual Installation]
+
+#### Enterprise Deployment
+
+[Deploying uBO][Deployment]
+
+## Release History
+
+[Releases Page][Releases]
+
+## Translations
+
+Help translate uBO via [Crowdin][Crowdin].
 
 ## About
 
-draw.io is a configurable diagramming and whiteboarding application, jointly owned and developed by draw.io Ltd (previously named JGraph) and draw.io AG. We also run a production deployment at https://app.diagrams.net.
+[Manifesto][Manifesto]
 
-## License
+[Privacy Policy][Privacy Policy]
 
-The source code in this repository is licensed under the [Apache License 2.0](LICENSE).
+[GPLv3 License][License]
 
-The icon sets, stencil libraries, and diagram templates are provided under the following terms:
+Free. Open-source. For users by users. No donations sought.
 
-&gt; The icon sets and stencil libraries included in this software, and any derivatives thereof (including conversions to other formats, traced reproductions, substantially similar visual representations, or AI-generated images created using these icons as reference or training input), may not be used as software assets in, distributed for use with, or incorporated into Atlassian products or products distributed through the Atlassian marketplace or plugin ecosystem, without explicit written permission.
-&gt;
-&gt; This restriction does not apply to end-user diagram output (such as exported images or documents) created using this software.
+If you ever want to contribute something, think about the people working hard to maintain the filter lists you are using, which are available to use by all for free.
 
-Some icons are originally defined by third-party copyright holders; we have verified that all original licenses permit use in this project. Additional third-party JavaScript libraries are included, all with licenses compatible with Apache 2.0 (no GPL or AGPL).
 
-We make no copyright claim on diagrams you create with this software.
+&lt;!-----------------------------------------------------------------------------&gt;
 
-## Contributions
+[Peter Lowe&#039;s Blocklist]: https://pgl.yoyo.org/adservers/
+[Malicious Blocklist]: https://gitlab.com/malware-filter/urlhaus-filter#malicious-url-blocklist
+[Performance]: https://www.debugbear.com/blog/chrome-extensions-website-performance#the-impact-of-ad-blocking-on-website-performance
+[EasyPrivacy]: https://easylist.to/#easyprivacy
+[Thunderbird]: https://addons.thunderbird.net/thunderbird/addon/ublock-origin/
+[Chrome Dev]: https://chromewebstore.google.com/detail/ublock-origin-development/cgbcahbpdhpcegmbfconppldiemgcoii
+[EasyList]: https://easylist.to/#easylist
+[Mozilla]: https://addons.mozilla.org/addon/ublock-origin/
+[Crowdin]: https://crowdin.com/project/ublock
+[Chrome]: https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm
+[Reddit]: https://www.reddit.com/r/uBlockOrigin/
+[Theft]: https://x.com/LeaVerou/status/518154828166725632
+[Opera]: https://addons.opera.com/extensions/details/ublock/
+[Edge]: https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak
+[NPM]: https://www.npmjs.com/package/@gorhill/ubo-core
 
-We do not accept pull requests. The project is developed entirely by the core team. The entire draw.io editor is human written by the core, full-time development team, no AI generation. 
+[Manifesto]: MANIFESTO.md
+[License]: LICENSE.txt
 
-## Scope
+[Nicole Rolls]: https://github.com/nicole-ashley
 
-draw.io is a diagramming and whiteboarding application. It is not an SVG editor. SVG export is intended for embedding in web pages, not for editing in other tools.
+&lt;!---------------------------------[ Internal ]--------------------------------&gt;
 
-Note that draw.io does not support real-time collaborative editing in this version, currently.
+[Manual Installation]: https://github.com/gorhill/uBlock/tree/master/dist#install
+[Extended Syntax]: https://github.com/gorhill/uBlock/wiki/Static-filter-syntax#extended-syntax
+[Privacy Policy]: https://github.com/gorhill/uBlock/wiki/Privacy-policy
+[uBO Filters]: https://github.com/uBlockOrigin/uAssets/tree/master/filters
+[Permissions]: https://github.com/gorhill/uBlock/wiki/Permissions
+[Commit Rate]: https://github.com/gorhill/uBlock/commits/master
+[Works Best]: https://github.com/gorhill/uBlock/wiki/uBlock-Origin-works-best-on-Firefox
+[Deployment]: https://github.com/gorhill/uBlock/wiki/Deploying-uBlock-Origin
+[Blocking]: https://github.com/gorhill/uBlock/wiki/Blocking-mode
+[Releases]: https://github.com/gorhill/uBlock/releases
+[Issues]: https://github.com/uBlockOrigin/uBlock-issues/issues
+[Beta]: https://github.com/gorhill/uBlock/blob/master/dist/README.md#for-beta-version
+[Wiki]: https://github.com/gorhill/uBlock/wiki
 
-For issues or questions about the editor in any draw.io product, the issue tracker and discussions here are a good starting point.
+&lt;!----------------------------------[ Badges ]---------------------------------&gt;
 
-## Running
-
-Options for running draw.io:
-
-- Fork this repository and [publish to GitHub Pages](https://help.github.com/categories/github-pages-basics/) for a [fully functional editor](https://jgraph.github.io/drawio/src/main/webapp/index.html) (without integrations)
-- Use the [official Docker image](https://github.com/jgraph/docker-drawio)
-- Download [draw.io Desktop](https://get.diagrams.net)
-
-Packaged .war files are available on the [releases page](https://github.com/jgraph/draw.io/releases).
-
-## Supported Browsers
-
-Chrome 123+, Firefox 120+, Safari 17.5+, Opera 109+, Edge 123+, WebView Android 137+, Safari iOS 18.5+.
-
-## Trademark
-
-draw.io is a registered EU trademark (#018062448).
-
-Do not use the draw.io name or logo in ways that suggest affiliation with, endorsement by, or sponsorship by draw.io. Do not use draw.io logos for your own business, product, project, domain, or social media presence. Do not modify the draw.io logos. Use of draw.io trademarks requires prior written permission.</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[jellyfin/jellyfin-web]]></title>
-            <link>https://github.com/jellyfin/jellyfin-web</link>
-            <guid>https://github.com/jellyfin/jellyfin-web</guid>
-            <pubDate>Mon, 02 Feb 2026 00:06:44 GMT</pubDate>
-            <description><![CDATA[The Free Software Media System - Official Web Client]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/jellyfin/jellyfin-web">jellyfin/jellyfin-web</a></h1>
-            <p>The Free Software Media System - Official Web Client</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 3,346</p>
-            <p>Forks: 1,790</p>
-            <p>Stars today: 2 stars today</p>
-            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;Jellyfin Web&lt;/h1&gt;
-&lt;h3 align=&quot;center&quot;&gt;Part of the &lt;a href=&quot;https://jellyfin.org&quot;&gt;Jellyfin Project&lt;/a&gt;&lt;/h3&gt;
-
----
-
-&lt;p align=&quot;center&quot;&gt;
-&lt;img alt=&quot;Logo Banner&quot; src=&quot;https://raw.githubusercontent.com/jellyfin/jellyfin-ux/master/branding/SVG/banner-logo-solid.svg?sanitize=true&quot;/&gt;
-&lt;br/&gt;
-&lt;br/&gt;
-&lt;a href=&quot;https://github.com/jellyfin/jellyfin-web&quot;&gt;
-&lt;img alt=&quot;GPL 2.0 License&quot; src=&quot;https://img.shields.io/github/license/jellyfin/jellyfin-web.svg&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/jellyfin/jellyfin-web/releases&quot;&gt;
-&lt;img alt=&quot;Current Release&quot; src=&quot;https://img.shields.io/github/release/jellyfin/jellyfin-web.svg&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://translate.jellyfin.org/projects/jellyfin/jellyfin-web/?utm_source=widget&quot;&gt;
-&lt;img src=&quot;https://translate.jellyfin.org/widgets/jellyfin/-/jellyfin-web/svg-badge.svg&quot; alt=&quot;Translation Status&quot;/&gt;
-&lt;/a&gt;
-&lt;br/&gt;
-&lt;a href=&quot;https://opencollective.com/jellyfin&quot;&gt;
-&lt;img alt=&quot;Donate&quot; src=&quot;https://img.shields.io/opencollective/all/jellyfin.svg?label=backers&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://features.jellyfin.org&quot;&gt;
-&lt;img alt=&quot;Feature Requests&quot; src=&quot;https://img.shields.io/badge/fider-vote%20on%20features-success.svg&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://matrix.to/#/+jellyfin:matrix.org&quot;&gt;
-&lt;img alt=&quot;Chat on Matrix&quot; src=&quot;https://img.shields.io/matrix/jellyfin:matrix.org.svg?logo=matrix&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://www.reddit.com/r/jellyfin&quot;&gt;
-&lt;img alt=&quot;Join our Subreddit&quot; src=&quot;https://img.shields.io/badge/reddit-r%2Fjellyfin-%23FF5700.svg&quot;/&gt;
-&lt;/a&gt;
-&lt;/p&gt;
-
-Jellyfin Web is the frontend used for most of the clients available for end users, such as desktop browsers, Android, and iOS. We welcome all contributions and pull requests! If you have a larger feature in mind please open an issue so we can discuss the implementation before you start. Translations can be improved very easily from our &lt;a href=&quot;https://translate.jellyfin.org/projects/jellyfin/jellyfin-web&quot;&gt;Weblate&lt;/a&gt; instance. Look through the following graphic to see if your native language could use some work!
-
-&lt;a href=&quot;https://translate.jellyfin.org/engage/jellyfin/?utm_source=widget&quot;&gt;
-&lt;img src=&quot;https://translate.jellyfin.org/widgets/jellyfin/-/jellyfin-web/multi-auto.svg&quot; alt=&quot;Detailed Translation Status&quot;/&gt;
-&lt;/a&gt;
-
-## Build Process
-
-### Dependencies
-
-- [Node.js](https://nodejs.org/en/download)
-- npm (included in Node.js)
-
-### Getting Started
-
-1. Clone or download this repository.
-
-   ```sh
-   git clone https://github.com/jellyfin/jellyfin-web.git
-   cd jellyfin-web
-   ```
-
-2. Install build dependencies in the project directory.
-
-   ```sh
-   npm install
-   ```
-
-3. Run the web client with webpack for local development.
-
-   ```sh
-   npm start
-   ```
-
-4. Build the client with sourcemaps available.
-
-   ```sh
-   npm run build:development
-   ```
-
-## Directory Structure
-
-&gt; [!NOTE]
-&gt; We are in the process of refactoring to a [new structure](https://forum.jellyfin.org/t-proposed-update-to-the-structure-of-jellyfin-web) based on [Bulletproof React](https://github.com/alan2207/bulletproof-react/blob/master/docs/project-structure.md) architecture guidelines.
-&gt; Most new code should be organized under the appropriate app directory unless it is common/shared.
-
-```
-.
-└── src
-    ├── apps
-    │   ├── dashboard           # Admin dashboard app
-    │   ├── experimental        # New experimental app
-    │   ├── stable              # Classic (stable) app
-    │   └── wizard              # Startup wizard app
-    ├── assets                  # Static assets
-    ├── components              # Higher order visual components and React components
-    ├── constants               # Common constant values
-    ├── controllers             # Legacy page views and controllers 🧹 ❌
-    ├── elements                # Basic webcomponents and React equivalents 🧹
-    ├── hooks                   # Custom React hooks
-    ├── lib                     # Reusable libraries
-    │   ├── globalize           # Custom localization library
-    │   ├── jellyfin-apiclient  # Supporting code for the deprecated apiclient package
-    │   ├── legacy              # Polyfills for legacy browsers
-    │   ├── navdrawer           # Navigation drawer library for classic layout
-    │   └── scroller            # Content scrolling library
-    ├── plugins                 # Client plugins (features dynamically loaded at runtime)
-    ├── scripts                 # Random assortment of visual components and utilities 🐉 ❌
-    ├── strings                 # Translation files (only commit changes to en-us.json)
-    ├── styles                  # Common app Sass stylesheets
-    ├── themes                  # Sass and MUI themes
-    ├── types                   # Common TypeScript interfaces/types
-    └── utils                   # Utility functions
-```
-
-- ❌ &amp;mdash; Deprecated, do **not** create new files here
-- 🧹 &amp;mdash; Needs cleanup
-- 🐉 &amp;mdash; Serious mess (Here be dragons)
+[Badge Localization]: https://d322cqt584bo4o.cloudfront.net/ublock/localized.svg
+[Badge Commits]: https://img.shields.io/github/commit-activity/m/gorhill/ublock?label=Commits
+[Badge Mozilla]: https://img.shields.io/amo/rating/ublock-origin?label=Firefox
+[Badge License]: https://img.shields.io/badge/License-GPLv3-blue.svg
+[Badge Chrome]: https://img.shields.io/chrome-web-store/rating/cjpalhdlnbpafiamejdnhcphjbkeiagm?label=Chrome
+[Badge Edge]: https://img.shields.io/badge/dynamic/json?label=Edge&amp;color=brightgreen&amp;query=%24.averageRating&amp;suffix=%2F%35&amp;url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fodfafepnkmbhccpbejgmiehpchacaeak
+[Badge Issues]: https://img.shields.io/github/issues/uBlockOrigin/uBlock-issues
+[Badge NPM]: https://img.shields.io/npm/v/@gorhill/ubo-core
 </pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[eyaltoledano/claude-task-master]]></title>
-            <link>https://github.com/eyaltoledano/claude-task-master</link>
-            <guid>https://github.com/eyaltoledano/claude-task-master</guid>
-            <pubDate>Mon, 02 Feb 2026 00:06:43 GMT</pubDate>
-            <description><![CDATA[An AI-powered task-management system you can drop into Cursor, Lovable, Windsurf, Roo, and others.]]></description>
+            <title><![CDATA[Neet-Nestor/Telegram-Media-Downloader]]></title>
+            <link>https://github.com/Neet-Nestor/Telegram-Media-Downloader</link>
+            <guid>https://github.com/Neet-Nestor/Telegram-Media-Downloader</guid>
+            <pubDate>Tue, 03 Feb 2026 00:08:06 GMT</pubDate>
+            <description><![CDATA[A script allowing you to download images and videos from Telegram web even if the group restricts downloading.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/eyaltoledano/claude-task-master">eyaltoledano/claude-task-master</a></h1>
-            <p>An AI-powered task-management system you can drop into Cursor, Lovable, Windsurf, Roo, and others.</p>
+            <h1><a href="https://github.com/Neet-Nestor/Telegram-Media-Downloader">Neet-Nestor/Telegram-Media-Downloader</a></h1>
+            <p>A script allowing you to download images and videos from Telegram web even if the group restricts downloading.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 25,208</p>
-            <p>Forks: 2,410</p>
-            <p>Stars today: 14 stars today</p>
-            <h2>README</h2><pre>&lt;a name=&quot;readme-top&quot;&gt;&lt;/a&gt;
+            <p>Stars: 3,457</p>
+            <p>Forks: 326</p>
+            <p>Stars today: 6 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
 
-&lt;div align=&#039;center&#039;&gt;
-&lt;a href=&quot;https://trendshift.io/repositories/13971&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/13971&quot; alt=&quot;eyaltoledano%2Fclaude-task-master | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+# Telegram Video Downloader / Telegram Media Downloader
+
+**Unlock Telegram: Download Anything You Like.**
+
+[![GitHub License](https://img.shields.io/github/license/Neet-Nestor/Telegram-Media-Downloader)](./LICENSE)
+[![Greasy Fork Version](https://img.shields.io/greasyfork/v/446342-telegram-media-downloader)](https://greasyfork.org/scripts/446342-telegram-media-downloader)
+[![Greasy Fork Downloads](https://img.shields.io/greasyfork/dt/446342-telegram-media-downloader)](https://greasyfork.org/scripts/446342-telegram-media-downloader)
+
 &lt;/div&gt;
 
+## Overview
+This user script unlocks and enables download of images, GIFs, audios, and videos in Telegram webapps from chats, stories, and even private channels where downloading is disabled or restricted.
+
+(Note: some features are only available for specific Telegram webapp version. e.g. Audio message download is only available for the K webapp version.)
+
+### What are user scripts?
+User scripts put you in control of your  browsing experience. Once installed, they automatically make the sites you visit better by adding features, making them easier to use, or taking out the annoying bits. The user scripts on Greasy Fork were written by other users and posted to share with the world. They&#039;re free to install and easy to use.
+
+## Installation
+### Greasy Fork
+1. install a user script manager
+
+    To use user scripts you need to first install a user script manager. Which user script manager you can use depends on which browser you use.
+
+    - Chrome: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag)
+    - Firefox: [Greasemonkey](https://addons.mozilla.org/firefox/addon/greasemonkey/), [Tampermonkey](https://addons.mozilla.org/firefox/addon/tampermonkey/), or [Violentmonkey](https://addons.mozilla.org/firefox/addon/violentmonkey/)
+    - Safari: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or [Userscripts](https://apps.apple.com/app/userscripts/id1463298887)
+    - Microsoft Edge: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag)
+    - Opera: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag)
+    - Maxthon: [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag)
+
+    (Note, If you are using Tampermonkey extension in a Chrome-based browser, following [instructions](https://www.tampermonkey.net/faq.php#Q209) to enable Developer Mode.)
+
+2. Install this script by visiting Greasy Fork:
+    https://greasyfork.org/scripts/446342-telegram-media-downloader
+
+### Manual Installation
+1. install a user script manager
+
+    To use user scripts you need to first install a user script manager. Which user script manager you can use depends on which browser you use.
+
+    - Chrome: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag)
+    - Firefox: [Greasemonkey](https://addons.mozilla.org/firefox/addon/greasemonkey/), [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), or [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag)
+    - Safari: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or [Userscripts](https://apps.apple.com/app/userscripts/id1463298887)
+    - Microsoft Edge: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag)
+    - Opera: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag)
+    - Maxthon: [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag)
+
+    (Note, If you are using Tampermonkey extension in a Chrome-based browser, following [instructions](https://www.tampermonkey.net/faq.php#Q209) to enable Developer Mode.)
+    
+2. Open Tampermonkey Dashboard, drag &amp; drop src/tel_download.js into it and clicks the &quot;install&quot; button
+
+## How to Use
+This script only works on Telegram Webapp.
+
+For channels and chats that allow saving content, this script will have no effect. Please just use the official download button provided by the telegram webapp instead.
+
+For channels and chats that disable downloading and restrict saving content, this script will add the download button back for images, GIFs and videos.
+
+![Image Download](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2VjNmU2ZDM0YTFlOWY4YTMzZDZmNjVlMDE2ODQ4OGY4N2E3MDFkNSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/lqCVcw0pCd2VA3zqoE/giphy.gif)
+![GIF Download](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzYwMzM3ZTMzYmI1MzA4M2EyYmY0NTFlOTg4OWFhNjhjNDk5YTkzYiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/wnYzW4vwpPdeuo62nQ/giphy.gif)
+![Video Download](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXcxYnJxaXMxcW05YW5rZ2YzZzE0bTU4aTBwYXI1N3pmdnVzbDFrdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EEPbblwmSpteAmwLls/giphy.gif)
+![Story Download](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3Z5Y2VzM2QzbW1xc3ZwNTQ2N3Q0a3lnanpxdW55c2Qzajl5NXZsaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xJFjBGi8isHPR5cuHl/giphy.gif)
+
+For videos, a progress bar will show on the bottom-right corder after you started downloading. For images and audios, there won&#039;t be a progress bar.
+
+### Supported Webapp Versions
+There are 2 different versions of telegram webapps:
+- https://webk.telegram.org / https://web.telegram.org/k/ (**Recommended**)
+- https://webz.telegram.org / https://web.telegram.org/a/
+
+This script should work on both versions of webapp, but some features are only available in the /k/ version (such as voice message downloads). If certain features are not working, switching to the /k/ version is recommended.
+
+### Check Downloading Progress
+A progress bar will show on the bottom-right of the screen for videos. You can also check [DevTools console](https://developer.chrome.com/docs/devtools/open/) for logs.
+
+## Contributing
+
+We welcome contributions from the community! If you’d like to contribute to Telegram Media Downloader, follow these steps:
+
+### Reporting Issues
+If you find a bug, compatibility issue, or have a feature request, please:
+
+1. Check if the issue has already been reported in the Issues tab.
+2. If not, create a new issue with a clear title and description. Attach screenshots or logs if applicable.
+
+### Submitting Pull Requests
+
+1. **Fork the repository**: Click on the &quot;Fork&quot; button in the top-right of the repo.
+
+2. **Clone your fork**:
+
+    ```bash
+    git clone https://github.com/YOUR-USERNAME/Telegram-Media-Downloader.git
+    cd Telegram-Media-Downloader
+    ```
+
+3. **Create a new branch** for your feature or bugfix:
+
+    ```bash
+    git checkout -b feature-or-bugfix-name
+    ```
+
+    Make your changes and ensure the script still works correctly on supported Telegram webapps.
+
+4. **Make your changes** and ensure the script still works correctly on supported Telegram webapps.
+
+5. **Commit your changes** with a descriptive message:
+
+    ```bash
+    git commit -m &quot;Add feature/fix issue: Brief description&quot;
+    ```
+
+6. **Push to your fork:**
+
+    ```bash
+    git push origin feature-or-bugfix-name
+    ```
+
+7. **Submit a Pull Request (PR):**
+
+    - Go to the original repository: [Neet-Nestor/Telegram-Media-Downloader](https://github.com/Neet-Nestor/Telegram-Media-Downloader).
+
+    - Click &quot;New Pull Request&quot; and select your branch.
+
+    - Add a description of your changes and submit.
+
+### Development Guidelines
+- Keep your code clean and well-documented.
+- Follow the existing coding style.
+- Test your changes on both Telegram WebK and WebZ versions.
+- Ensure compatibility with major user script managers like Tampermonkey and Violentmonkey.
+
+### Help with Translations
+We want Telegram Media Downloader to be accessible to users worldwide! If you’d like to help translate the script’s Greasy Fork page, follow these steps:
+
+#### How to Contribute a Translation
+
+Check for existing translations in the [`docs/greasyfork`](/docs/greasyfork/) folder of the repository.
+
+Add a new file in docs/&lt;language-code&gt;.md, using the appropriate language code (e.g., docs/fr-FR.md for French, docs/de-DE.md for German).
+
+Translate the content from [`docs/greasyfork/en-US.md`](/docs/greasyfork/en-US.md) into your language while keeping the formatting intact. Submit a Pull Request following the steps in the [Submitting Pull Requests](#submitting-pull-requests) section above.
+
+#### Language Codes
+Use standard IETF Language Tag (e.g., `es-ES` for Spanish, `ja-JP` for Japanese). You can find a full list of codes [here](https://docs.dyspatch.io/localization/supported_languages/).
+
+## Support Author
+If you like this script, you can support me via [Venmo](https://venmo.com/u/NeetNestor) or [buy me a coffee](https://ko-fi.com/neetnestor) :)
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[is-a-dev/register]]></title>
+            <link>https://github.com/is-a-dev/register</link>
+            <guid>https://github.com/is-a-dev/register</guid>
+            <pubDate>Tue, 03 Feb 2026 00:08:05 GMT</pubDate>
+            <description><![CDATA[Grab your own sweet-looking '.is-a.dev' subdomain.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/is-a-dev/register">is-a-dev/register</a></h1>
+            <p>Grab your own sweet-looking '.is-a.dev' subdomain.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 9,491</p>
+            <p>Forks: 17,851</p>
+            <p>Stars today: 9 stars today</p>
+            <h2>README</h2><pre>&lt;!-- &lt;p align=&quot;center&quot;&gt;
+   &lt;img alt=&quot;is-a.dev Banner&quot; src=&quot;https://raw.githubusercontent.com/is-a-dev/register/main/media/banner.png&quot;&gt;
+&lt;/p&gt; --&gt;
+
 &lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://task-master.dev&quot;&gt;&lt;img src=&quot;./images/logo.png?raw=true&quot; alt=&quot;Taskmaster logo&quot;&gt;&lt;/a&gt;
+   &lt;img height=&quot;350&quot; alt=&quot;is-a.dev Octoverse 2025 Banner&quot; src=&quot;https://raw.githubusercontent.com/is-a-dev/register/main/media/octoverse-2025/is-a-dev_register_1200x630.jpg&quot;&gt;
 &lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
-&lt;b&gt;Taskmaster&lt;/b&gt;: A task management system for AI-driven development, designed to work seamlessly with any AI chat.
+   &lt;img alt=&quot;Domains&quot; src=&quot;https://img.shields.io/github/directory-file-count/is-a-dev/register/domains?color=5c46eb&amp;label=domains&amp;style=for-the-badge&quot;&gt;
+   &lt;img alt=&quot;Open Pull Requests&quot; src=&quot;https://img.shields.io/github/issues-raw/is-a-dev/register?color=5c46eb&amp;label=issues&amp;style=for-the-badge&quot;&gt;
+   &lt;img alt=&quot;Open Issues&quot; src=&quot;https://img.shields.io/github/issues-pr-raw/is-a-dev/register?color=5c46eb&amp;label=pull%20requests&amp;style=for-the-badge&quot;&gt;
+   &lt;br&gt;
 &lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://discord.gg/taskmasterai&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://dcbadge.limes.pink/api/server/https://discord.gg/taskmasterai?style=flat&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt; |
-  &lt;a href=&quot;https://docs.task-master.dev&quot; target=&quot;_blank&quot;&gt;Docs&lt;/a&gt;
-&lt;/p&gt;
+&lt;h1 align=&quot;center&quot;&gt;is-a.dev&lt;/h1&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/eyaltoledano/claude-task-master/actions/workflows/ci.yml&quot;&gt;&lt;img src=&quot;https://github.com/eyaltoledano/claude-task-master/actions/workflows/ci.yml/badge.svg&quot; alt=&quot;CI&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/eyaltoledano/claude-task-master/stargazers&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/stars/eyaltoledano/claude-task-master?style=social&quot; alt=&quot;GitHub stars&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://badge.fury.io/js/task-master-ai&quot;&gt;&lt;img src=&quot;https://badge.fury.io/js/task-master-ai.svg&quot; alt=&quot;npm version&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/license-MIT%20with%20Commons%20Clause-blue.svg&quot; alt=&quot;License&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;strong&gt;is-a.dev&lt;/strong&gt; is a service that allows developers to get a sweet-looking &lt;code&gt;.is-a.dev&lt;/code&gt; subdomain for their personal websites.&lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://www.npmjs.com/package/task-master-ai&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/d18m/task-master-ai?style=flat&quot; alt=&quot;NPM Downloads&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://www.npmjs.com/package/task-master-ai&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/dm/task-master-ai?style=flat&quot; alt=&quot;NPM Downloads&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://www.npmjs.com/package/task-master-ai&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/dw/task-master-ai?style=flat&quot; alt=&quot;NPM Downloads&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
+---
 
-## By [@eyaltoledano](https://x.com/eyaltoledano) &amp; [@RalphEcom](https://x.com/RalphEcom)
+## Announcements
+Please join our [Discord server](https://discord.gg/is-a-dev-830872854677422150) for announcements, service updates, and downtime notifications regarding the service.
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/eyaltoledano)](https://x.com/eyaltoledano)
-[![Twitter Follow](https://img.shields.io/twitter/follow/RalphEcom)](https://x.com/RalphEcom)
+Not all announcements are posted on GitHub[^1], however they will always be posted in our Discord server.
 
-A task management system for AI-driven development with Claude, designed to work seamlessly with Cursor AI.
+[^1]: We only post announcements on GitHub in the case of a serious incident, which you&#039;ll see at the top of this README.
 
-## Documentation
+# Register
+&gt; If you want a visual guide, check out [this blog post](https://blog.wharrison.com.au/2024/07/is-a-dev/).
 
-📚 **[View Full Documentation](https://docs.task-master.dev)**
+- [Fork](https://github.com/is-a-dev/register/fork) the repository.
+- Follow the instructions on our [documentation](https://docs.is-a.dev).
+- Once you open your pull request (PR), it will be reviewed. *Keep an eye on it in case changes are needed!*
+   - If changes have been requested, please make the specified changes otherwise **you will be rejected**.
+- Once your PR is merged, your DNS records should be published with-in a few minutes.
+- Enjoy your new `.is-a.dev` subdomain! Please consider leaving a star ⭐️ to help support us!
 
-For detailed guides, API references, and comprehensive examples, visit our documentation site.
+## Report Abuse
+If you find any subdomains being abused or breaking our TOS, please report them by [creating an issue](https://github.com/is-a-dev/register/issues/new?assignees=&amp;labels=report-abuse&amp;projects=&amp;template=report-abuse.md&amp;title=Report+abuse) with relevant evidence.
 
-### Quick Reference
+---
 
-The following documentation is also available in the `docs` directory:
+We are supported by Cloudflare&#039;s [Project Alexandria](https://www.cloudflare.com/lp/project-alexandria) sponsorship program, we would not be able to operate without their help!
 
-- [Configuration Guide](docs/configuration.md) - Set up environment variables and customize Task Master
-- [Tutorial](docs/tutorial.md) - Step-by-step guide to getting started with Task Master
-- [Command Reference](docs/command-reference.md) - Complete list of all available commands
-- [Task Structure](docs/task-structure.md) - Understanding the task format and features
-- [Example Interactions](docs/examples.md) - Common Cursor AI interaction examples
-- [Migration Guide](docs/migration-guide.md) - Guide to migrating to the new project structure
-
-#### Quick Install for Cursor 1.0+ (One-Click)
-
-[![Add task-master-ai MCP server to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en/install-mcp?name=task-master-ai&amp;config=eyJjb21tYW5kIjoibnB4IC15IC0tcGFja2FnZT10YXNrLW1hc3Rlci1haSB0YXNrLW1hc3Rlci1haSIsImVudiI6eyJBTlRIUk9QSUNfQVBJX0tFWSI6IllPVVJfQU5USFJPUElDX0FQSV9LRVlfSEVSRSIsIlBFUlBMRVhJVFlfQVBJX0tFWSI6IllPVVJfUEVSUExFWElUWV9BUElfS0VZX0hFUkUiLCJPUEVOQUlfQVBJX0tFWSI6IllPVVJfT1BFTkFJX0tFWV9IRVJFIiwiR09PR0xFX0FQSV9LRVkiOiJZT1VSX0dPT0dMRV9LRVlfSEVSRSIsIk1JU1RSQUxfQVBJX0tFWSI6IllPVVJfTUlTVFJBTF9LRVlfSEVSRSIsIkdST1FfQVBJX0tFWSI6IllPVVJfR1JPUV9LRVlfSEVSRSIsIk9QRU5ST1VURVJfQVBJX0tFWSI6IllPVVJfT1BFTlJPVVRFUl9LRVlfSEVSRSIsIlhBSV9BUElfS0VZIjoiWU9VUl9YQUlfS0VZX0hFUkUiLCJBWlVSRV9PUEVOQUlfQVBJX0tFWSI6IllPVVJfQVpVUkVfS0VZX0hFUkUiLCJPTExBTUFfQVBJX0tFWSI6IllPVVJfT0xMQU1BX0FQSV9LRVlfSEVSRSJ9fQ%3D%3D)
-
-&gt; **Note:** After clicking the link, you&#039;ll still need to add your API keys to the configuration. The link installs the MCP server with placeholder keys that you&#039;ll need to replace with your actual API keys.
-
-#### Claude Code Quick Install
-
-For Claude Code users:
-
-```bash
-claude mcp add taskmaster-ai -- npx -y task-master-ai
-```
-
-Don&#039;t forget to add your API keys to the configuration:
-- in the root .env of your Project
-- in the &quot;env&quot; section of your mcp config for taskmaster-ai
-
-
-## Requirements
-
-Taskmaster utilizes AI across several commands, and those require a separate API key. You can use a variety of models from different AI providers provided you add your API keys. For example, if you want to use Claude 3.7, you&#039;ll need an Anthropic API key.
-
-You can define 3 types of models to be used: the main model, the research model, and the fallback model (in case either the main or research fail). Whatever model you use, its provider API key must be present in either mcp.json or .env.
-
-At least one (1) of the following is required:
-
-- Anthropic API key (Claude API)
-- OpenAI API key
-- Google Gemini API key
-- Perplexity API key (for research model)
-- xAI API Key (for research or main model)
-- OpenRouter API Key (for research or main model)
-- Claude Code (no API key required - requires Claude Code CLI)
-- Codex CLI (OAuth via ChatGPT subscription - requires Codex CLI)
-
-Using the research model is optional but highly recommended. You will need at least ONE API key (unless using Claude Code or Codex CLI with OAuth). Adding all API keys enables you to seamlessly switch between model providers at will.
-
-## Quick Start
-
-### Option 1: MCP (Recommended)
-
-MCP (Model Control Protocol) lets you run Task Master directly from your editor.
-
-#### 1. Add your MCP config at the following path depending on your editor
-
-| Editor       | Scope   | Linux/macOS Path                      | Windows Path                                      | Key          |
-| ------------ | ------- | ------------------------------------- | ------------------------------------------------- | ------------ |
-| **Cursor**   | Global  | `~/.cursor/mcp.json`                  | `%USERPROFILE%\.cursor\mcp.json`                  | `mcpServers` |
-|              | Project | `&lt;project_folder&gt;/.cursor/mcp.json`   | `&lt;project_folder&gt;\.cursor\mcp.json`               | `mcpServers` |
-| **Windsurf** | Global  | `~/.codeium/windsurf/mcp_config.json` | `%USERPROFILE%\.codeium\windsurf\mcp_config.json` | `mcpServers` |
-| **VS Code**  | Project | `&lt;project_folder&gt;/.vscode/mcp.json`   | `&lt;project_folder&gt;\.vscode\mcp.json`               | `servers`    |
-| **Q CLI**    | Global  | `~/.aws/amazonq/mcp.json`             |                                                   | `mcpServers` |
-
-##### Manual Configuration
-
-###### Cursor &amp; Windsurf &amp; Q Developer CLI (`mcpServers`)
-
-```json
-{
-  &quot;mcpServers&quot;: {
-    &quot;task-master-ai&quot;: {
-      &quot;command&quot;: &quot;npx&quot;,
-      &quot;args&quot;: [&quot;-y&quot;, &quot;task-master-ai&quot;],
-      &quot;env&quot;: {
-        // &quot;TASK_MASTER_TOOLS&quot;: &quot;all&quot;, // Options: &quot;all&quot;, &quot;standard&quot;, &quot;core&quot;, or comma-separated list of tools
-        &quot;ANTHROPIC_API_KEY&quot;: &quot;YOUR_ANTHROPIC_API_KEY_HERE&quot;,
-        &quot;PERPLEXITY_API_KEY&quot;: &quot;YOUR_PERPLEXITY_API_KEY_HERE&quot;,
-        &quot;OPENAI_API_KEY&quot;: &quot;YOUR_OPENAI_KEY_HERE&quot;,
-        &quot;GOOGLE_API_KEY&quot;: &quot;YOUR_GOOGLE_KEY_HERE&quot;,
-        &quot;MISTRAL_API_KEY&quot;: &quot;YOUR_MISTRAL_KEY_HERE&quot;,
-        &quot;GROQ_API_KEY&quot;: &quot;YOUR_GROQ_KEY_HERE&quot;,
-        &quot;OPENROUTER_API_KEY&quot;: &quot;YOUR_OPENROUTER_KEY_HERE&quot;,
-        &quot;XAI_API_KEY&quot;: &quot;YOUR_XAI_KEY_HERE&quot;,
-        &quot;AZURE_OPENAI_API_KEY&quot;: &quot;YOUR_AZURE_KEY_HERE&quot;,
-        &quot;OLLAMA_API_KEY&quot;: &quot;YOUR_OLLAMA_API_KEY_HERE&quot;
-      }
-    }
-  }
-}
-```
-
-&gt; 🔑 Replace `YOUR_…_KEY_HERE` with your real API keys. You can remove keys you don&#039;t use.
-
-&gt; **Note**: If you see `0 tools enabled` in the MCP settings, restart your editor and check that your API keys are correctly configured.
-
-###### VS Code (`servers` + `type`)
-
-```json
-{
-  &quot;servers&quot;: {
-    &quot;task-master-ai&quot;: {
-      &quot;command&quot;: &quot;npx&quot;,
-      &quot;args&quot;: [&quot;-y&quot;, &quot;task-master-ai&quot;],
-      &quot;env&quot;: {
-        // &quot;TASK_MASTER_TOOLS&quot;: &quot;all&quot;, // Options: &quot;all&quot;, &quot;standard&quot;, &quot;core&quot;, or comma-separated list of tools
-        &quot;ANTHROPIC_API_KEY&quot;: &quot;YOUR_ANTHROPIC_API_KEY_HERE&quot;,
-        &quot;PERPLEXITY_API_KEY&quot;: &quot;YOUR_PERPLEXITY_API_KEY_HERE&quot;,
-        &quot;OPENAI_API_KEY&quot;: &quot;YOUR_OPENAI_KEY_HERE&quot;,
-        &quot;GOOGLE_API_KEY&quot;: &quot;YOUR_GOOGLE_KEY_HERE&quot;,
-        &quot;MISTRAL_API_KEY&quot;: &quot;YOUR_MISTRAL_KEY_HERE&quot;,
-        &quot;GROQ_API_KEY&quot;: &quot;YOUR_GROQ_KEY_HERE&quot;,
-        &quot;OPENROUTER_API_KEY&quot;: &quot;YOUR_OPENROUTER_KEY_HERE&quot;,
-        &quot;XAI_API_KEY&quot;: &quot;YOUR_XAI_KEY_HERE&quot;,
-        &quot;AZURE_OPENAI_API_KEY&quot;: &quot;YOUR_AZURE_KEY_HERE&quot;,
-        &quot;OLLAMA_API_KEY&quot;: &quot;YOUR_OLLAMA_API_KEY_HERE&quot;
-      },
-      &quot;type&quot;: &quot;stdio&quot;
-    }
-  }
-}
-```
-
-&gt; 🔑 Replace `YOUR_…_KEY_HERE` with your real API keys. You can remove keys you don&#039;t use.
-
-#### 2. (Cursor-only) Enable Taskmaster MCP
-
-Open Cursor Settings (Ctrl+Shift+J) ➡ Click on MCP tab on the left ➡ Enable task-master-ai with the toggle
-
-#### 3. (Optional) Configure the models you want to use
-
-In your editor&#039;s AI chat pane, say:
-
-```txt
-Change the main, research and fallback models to &lt;model_name&gt;, &lt;model_name&gt; and &lt;model_name&gt; respectively.
-```
-
-For example, to use Claude Code (no API key required):
-```txt
-Change the main model to claude-code/sonnet
-```
-
-[Table of available models](docs/models.md) | [Claude Code setup](docs/examples/claude-code-usage.md)
-
-#### 4. Initialize Task Master
-
-In your editor&#039;s AI chat pane, say:
-
-```txt
-Initialize taskmaster-ai in my project
-```
-
-#### 5. Make sure you have a PRD (Recommended)
-
-For **new projects**: Create your PRD at `.taskmaster/docs/prd.txt`.
-For **existing projects**: You can use `scripts/prd.txt` or migrate with `task-master migrate`
-
-An example PRD template is available after initialization in `.taskmaster/templates/example_prd.txt`.
-
-&gt; [!NOTE]
-&gt; While a PRD is recommended for complex projects, you can always create individual tasks by asking &quot;Can you help me implement [description of what you want to do]?&quot; in chat.
-
-**Always start with a detailed PRD.**
-
-The more detailed your PRD, the better the generated tasks will be.
-
-#### 6. Common Commands
-
-Use your AI assistant to:
-
-- Parse requirements: `Can you parse my PRD at scripts/prd.txt?`
-- Plan next step: `What&#039;s the next task I should work on?`
-- Implement a task: `Can you help me implement task 3?`
-- View multiple tasks: `Can you show me tasks 1, 3, and 5?`
-- Expand a task: `Can you help me expand task 4?`
-- **Research fresh information**: `Research the latest best practices for implementing JWT authentication with Node.js`
-- **Research with context**: `Research React Query v5 migration strategies for our current API implementation in src/api.js`
-
-[More examples on how to use Task Master in chat](docs/examples.md)
-
-### Option 2: Using Command Line
-
-#### Installation
-
-```bash
-# Install globally
-npm install -g task-master-ai
-
-# OR install locally within your project
-npm install task-master-ai
-```
-
-#### Initialize a new project
-
-```bash
-# If installed globally
-task-master init
-
-# If installed locally
-npx task-master init
-
-# Initialize project with specific rules
-task-master init --rules cursor,windsurf,vscode
-```
-
-This will prompt you for project details and set up a new project with the necessary files and structure.
-
-#### Common Commands
-
-```bash
-# Initialize a new project
-task-master init
-
-# Parse a PRD and generate tasks
-task-master parse-prd your-prd.txt
-
-# List all tasks
-task-master list
-
-# Show the next task to work on
-task-master next
-
-# Show specific task(s) - supports comma-separated IDs
-task-master show 1,3,5
-
-# Research fresh information with project context
-task-master research &quot;What are the latest best practices for JWT authentication?&quot;
-
-# Move tasks between tags (cross-tag movement)
-task-master move --from=5 --from-tag=backlog --to-tag=in-progress
-task-master move --from=5,6,7 --from-tag=backlog --to-tag=done --with-dependencies
-task-master move --from=5 --from-tag=backlog --to-tag=in-progress --ignore-dependencies
-
-# Add rules after initialization
-task-master rules add windsurf,roo,vscode
-```
-
-## Tool Loading Configuration
-
-### Optimizing MCP Tool Loading
-
-Task Master&#039;s MCP server supports selective tool loading to reduce context window usage. By default, all 36 tools are loaded (~21,000 tokens) to maintain backward compatibility with existing installations.
-
-You can optimize performance by configuring the `TASK_MASTER_TOOLS` environment variable:
-
-### Available Modes
-
-| Mode | Tools | Context Usage | Use Case |
-|------|-------|--------------|----------|
-| `all` (default) | 36 | ~21,000 tokens | Complete feature set - all tools available |
-| `standard` | 15 | ~10,000 tokens | Common task management operations |
-| `core` (or `lean`) | 7 | ~5,000 tokens | Essential daily development workflow |
-| `custom` | Variable | Variable | Comma-separated list of specific tools |
-
-### Configuration Methods
-
-#### Method 1: Environment Variable in MCP Configuration
-
-Add `TASK_MASTER_TOOLS` to your MCP configuration file&#039;s `env` section:
-
-```jsonc
-{
-  &quot;mcpServers&quot;: {  // or &quot;servers&quot; for VS Code
-    &quot;task-master-ai&quot;: {
-      &quot;command&quot;: &quot;npx&quot;,
-      &quot;args&quot;: [&quot;-y&quot;, &quot;task-master-ai&quot;],
-      &quot;env&quot;: {
-        &quot;TASK_MASTER_TOOLS&quot;: &quot;standard&quot;,  // Options: &quot;all&quot;, &quot;standard&quot;, &quot;core&quot;, &quot;lean&quot;, or comma-separated list
-        &quot;ANTHROPIC_API_KEY&quot;: &quot;your-key-here&quot;,
-        // ... other API keys
-      }
-    }
-  }
-}
-```
-
-#### Method 2: Claude Code CLI (One-Time Setup)
-
-For Claude Code users, you can set the mode during installation:
-
-```bash
-# Core mode example (~70% token reduction)
-claude mcp add task-master-ai --scope user \
-  --env TASK_MASTER_TOOLS=&quot;core&quot; \
-  -- npx -y task-master-ai@latest
-
-# Custom tools example
-claude mcp add task-master-ai --scope user \
-  --env TASK_MASTER_TOOLS=&quot;get_tasks,next_task,set_task_status&quot; \
-  -- npx -y task-master-ai@latest
-```
-
-### Tool Sets Details
-
-**Core Tools (7):** `get_tasks`, `next_task`, `get_task`, `set_task_status`, `update_subtask`, `parse_prd`, `expand_task`
-
-**Standard Tools (15):** All core tools plus `initialize_project`, `analyze_project_complexity`, `expand_all`, `add_subtask`, `remove_task`, `generate`, `add_task`, `complexity_report`
-
-**All Tools (36):** Complete set including project setup, task management, analysis, dependencies, tags, research, and more
-
-### Recommendations
-
-- **New users**: Start with `&quot;standard&quot;` mode for a good balance
-- **Large projects**: Use `&quot;core&quot;` mode to minimize token usage
-- **Complex workflows**: Use `&quot;all&quot;` mode or custom selection
-- **Backward compatibility**: If not specified, defaults to `&quot;all&quot;` mode
-
-## Claude Code Support
-
-Task Master now supports Claude models through the Claude Code CLI, which requires no API key:
-
-- **Models**: `claude-code/opus` and `claude-code/sonnet`
-- **Requirements**: Claude Code CLI installed
-- **Benefits**: No API key needed, uses your local Claude instance
-
-[Learn more about Claude Code setup](docs/examples/claude-code-usage.md)
-
-## Troubleshooting
-
-### If `task-master init` doesn&#039;t respond
-
-Try running it with Node directly:
-
-```bash
-node node_modules/claude-task-master/scripts/init.js
-```
-
-Or clone the repository and run:
-
-```bash
-git clone https://github.com/eyaltoledano/claude-task-master.git
-cd claude-task-master
-node scripts/init.js
-```
-
-## Join Our Team
-
-&lt;a href=&quot;https://tryhamster.com&quot; target=&quot;_blank&quot;&gt;
-  &lt;img src=&quot;./images/hamster-hiring.png&quot; alt=&quot;Join Hamster&#039;s founding team&quot; /&gt;
+&lt;a href=&quot;https://www.cloudflare.com&quot;&gt;
+   &lt;img alt=&quot;Cloudflare Logo&quot; src=&quot;https://raw.githubusercontent.com/is-a-dev/register/main/media/cloudflare.png&quot; height=&quot;48&quot;&gt;
 &lt;/a&gt;
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[CodeWithHarry/Sigma-Web-Dev-Course]]></title>
+            <link>https://github.com/CodeWithHarry/Sigma-Web-Dev-Course</link>
+            <guid>https://github.com/CodeWithHarry/Sigma-Web-Dev-Course</guid>
+            <pubDate>Tue, 03 Feb 2026 00:08:04 GMT</pubDate>
+            <description><![CDATA[Source Code for Sigma Web Development Course]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/CodeWithHarry/Sigma-Web-Dev-Course">CodeWithHarry/Sigma-Web-Dev-Course</a></h1>
+            <p>Source Code for Sigma Web Development Course</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 10,963</p>
+            <p>Forks: 3,053</p>
+            <p>Stars today: 6 stars today</p>
+            <h2>README</h2><pre># Welcome to Sigma&#039;s Web Development Course - Hindi Web Development Tutorials! 🚀
 
-## Contributors
+## What&#039;s Inside:
 
-&lt;a href=&quot;https://github.com/eyaltoledano/claude-task-master/graphs/contributors&quot;&gt;
-  &lt;img src=&quot;https://contrib.rocks/image?repo=eyaltoledano/claude-task-master&quot; alt=&quot;Task Master project contributors&quot; /&gt;
-&lt;/a&gt;
+If you&#039;ve been itching to dive into the world of web development but feel lost in a sea of English tutorials, you&#039;re in the right place! Our course is exclusively in Hindi and is crafted to guide you from being an absolute beginner to a seasoned pro, one step at a time.
 
-## Star History
+## Who Can Benefit?
 
-[![Star History Chart](https://api.star-history.com/svg?repos=eyaltoledano/claude-task-master&amp;type=Timeline)](https://www.star-history.com/#eyaltoledano/claude-task-master&amp;Timeline)
+### This course is a perfect fit for:
 
-## Licensing
+1. Beginners eager to start their web development journey
+2. Intermediate developers looking to refine their skills
+3. Individuals who prefer learning in Hindi
 
-Task Master is licensed under the MIT License with Commons Clause. This means you can:
+## What You&#039;ll Master:
 
-✅ **Allowed**:
+### During this course, you&#039;ll delve into:
 
-- Use Task Master for any purpose (personal, commercial, academic)
-- Modify the code
-- Distribute copies
-- Create and sell products built using Task Master
+1. The fundamentals of HTML, CSS, and JavaScript
+2. Both front-end and back-end development
+3. How to seamlessly integrate databases
+4. Real-world project implementation
+5. And a whole lot more!
 
-❌ **Not Allowed**:
+## The Schedule:
 
-- Sell Task Master itself
-- Offer Task Master as a hosted service
-- Create competing products based on Task Master
+We&#039;re committed to your growth. Expect fresh source code additions nearly every day. Keep up the pace with our schedule and watch your skills soar! 📅
 
-See the [LICENSE](LICENSE) file for the complete license text and [licensing details](docs/licensing.md) for more information.
+Get ready to embark on an exciting coding journey! 👨‍💻🌟
+
+Ready to start? [Click here](https://www.youtube.com/playlist?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w) to access the complete YouTube playlist.
 </pre>
           ]]></content:encoded>
             <category>JavaScript</category>
@@ -1531,15 +1463,15 @@ See the [LICENSE](LICENSE) file for the complete license text and [licensing det
             <title><![CDATA[Acode-Foundation/Acode]]></title>
             <link>https://github.com/Acode-Foundation/Acode</link>
             <guid>https://github.com/Acode-Foundation/Acode</guid>
-            <pubDate>Mon, 02 Feb 2026 00:06:42 GMT</pubDate>
+            <pubDate>Tue, 03 Feb 2026 00:08:03 GMT</pubDate>
             <description><![CDATA[Acode - powerful text/code editor for android]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/Acode-Foundation/Acode">Acode-Foundation/Acode</a></h1>
             <p>Acode - powerful text/code editor for android</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 4,414</p>
-            <p>Forks: 777</p>
-            <p>Stars today: 13 stars today</p>
+            <p>Stars: 4,421</p>
+            <p>Forks: 778</p>
+            <p>Stars today: 10 stars today</p>
             <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
