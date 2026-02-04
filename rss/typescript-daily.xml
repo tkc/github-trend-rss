@@ -4,7 +4,7 @@
         <title>GitHub Trending Today for typescript - TypeScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for typescript.</description>
-        <lastBuildDate>Tue, 03 Feb 2026 00:08:22 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 04 Feb 2026 00:06:28 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
@@ -13,15 +13,15 @@
             <title><![CDATA[thedotmack/claude-mem]]></title>
             <link>https://github.com/thedotmack/claude-mem</link>
             <guid>https://github.com/thedotmack/claude-mem</guid>
-            <pubDate>Tue, 03 Feb 2026 00:08:22 GMT</pubDate>
+            <pubDate>Wed, 04 Feb 2026 00:06:28 GMT</pubDate>
             <description><![CDATA[A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a></h1>
             <p>A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 18,067</p>
-            <p>Forks: 1,247</p>
-            <p>Stars today: 1,474 stars today</p>
+            <p>Stars: 20,193</p>
+            <p>Forks: 1,360</p>
+            <p>Stars today: 1,730 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
   Official $CMEM Links: 
   &lt;a href=&quot;https://bags.fm/2TsmuYUrsctE57VLckZBYEEzdokUF8j8e1GavekWBAGS&quot;&gt;Bags.fm&lt;/a&gt; •
@@ -343,18 +343,197 @@ See the [LICENSE](LICENSE) file for full details.
             <category>TypeScript</category>
         </item>
         <item>
+            <title><![CDATA[virattt/dexter]]></title>
+            <link>https://github.com/virattt/dexter</link>
+            <guid>https://github.com/virattt/dexter</guid>
+            <pubDate>Wed, 04 Feb 2026 00:06:27 GMT</pubDate>
+            <description><![CDATA[An autonomous agent for deep financial research]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/virattt/dexter">virattt/dexter</a></h1>
+            <p>An autonomous agent for deep financial research</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 10,064</p>
+            <p>Forks: 1,223</p>
+            <p>Stars today: 222 stars today</p>
+            <h2>README</h2><pre># Dexter 🤖
+
+Dexter is an autonomous financial research agent that thinks, plans, and learns as it works. It performs analysis using task planning, self-reflection, and real-time market data. Think Claude Code, but built specifically for financial research.
+
+&lt;img width=&quot;1098&quot; height=&quot;659&quot; alt=&quot;Screenshot 2026-01-21 at 5 25 10 PM&quot; src=&quot;https://github.com/user-attachments/assets/3bcc3a7f-b68a-4f5e-8735-9d22196ff76e&quot; /&gt;
+
+## Table of Contents
+
+- [👋 Overview](#-overview)
+- [✅ Prerequisites](#-prerequisites)
+- [💻 How to Install](#-how-to-install)
+- [🚀 How to Run](#-how-to-run)
+- [📊 How to Evaluate](#-how-to-evaluate)
+- [🐛 How to Debug](#-how-to-debug)
+- [🤝 How to Contribute](#-how-to-contribute)
+- [📄 License](#-license)
+
+
+## 👋 Overview
+
+Dexter takes complex financial questions and turns them into clear, step-by-step research plans. It runs those tasks using live market data, checks its own work, and refines the results until it has a confident, data-backed answer.  
+
+**Key Capabilities:**
+- **Intelligent Task Planning**: Automatically decomposes complex queries into structured research steps
+- **Autonomous Execution**: Selects and executes the right tools to gather financial data
+- **Self-Validation**: Checks its own work and iterates until tasks are complete
+- **Real-Time Financial Data**: Access to income statements, balance sheets, and cash flow statements
+- **Safety Features**: Built-in loop detection and step limits to prevent runaway execution
+
+[![Twitter Follow](https://img.shields.io/twitter/follow/virattt?style=social)](https://twitter.com/virattt)
+
+&lt;img width=&quot;875&quot; height=&quot;558&quot; alt=&quot;Screenshot 2026-01-21 at 5 22 19 PM&quot; src=&quot;https://github.com/user-attachments/assets/72d28363-69ea-4c74-a297-dfa60aa347f7&quot; /&gt;
+
+
+## ✅ Prerequisites
+
+- [Bun](https://bun.com) runtime (v1.0 or higher)
+- OpenAI API key (get [here](https://platform.openai.com/api-keys))
+- Financial Datasets API key (get [here](https://financialdatasets.ai))
+- Exa API key (get [here](https://exa.ai)) - optional, for web search
+
+#### Installing Bun
+
+If you don&#039;t have Bun installed, you can install it using curl:
+
+**macOS/Linux:**
+```bash
+curl -fsSL https://bun.com/install | bash
+```
+
+**Windows:**
+```bash
+powershell -c &quot;irm bun.sh/install.ps1|iex&quot;
+```
+
+After installation, restart your terminal and verify Bun is installed:
+```bash
+bun --version
+```
+
+## 💻 How to Install
+
+1. Clone the repository:
+```bash
+git clone https://github.com/virattt/dexter.git
+cd dexter
+```
+
+2. Install dependencies with Bun:
+```bash
+bun install
+```
+
+3. Set up your environment variables:
+```bash
+# Copy the example environment file
+cp env.example .env
+
+# Edit .env and add your API keys (if using cloud providers)
+# OPENAI_API_KEY=your-openai-api-key
+# ANTHROPIC_API_KEY=your-anthropic-api-key (optional)
+# GOOGLE_API_KEY=your-google-api-key (optional)
+# XAI_API_KEY=your-xai-api-key (optional)
+# OPENROUTER_API_KEY=your-openrouter-api-key (optional)
+
+# (Optional) If using Ollama locally
+# OLLAMA_BASE_URL=http://127.0.0.1:11434
+
+# Other required keys
+# FINANCIAL_DATASETS_API_KEY=your-financial-datasets-api-key
+
+# Web Search (Exa preferred, Tavily fallback)
+# EXASEARCH_API_KEY=your-exa-api-key
+# TAVILY_API_KEY=your-tavily-api-key
+```
+
+## 🚀 How to Run
+
+Run Dexter in interactive mode:
+```bash
+bun start
+```
+
+Or with watch mode for development:
+```bash
+bun dev
+```
+
+## 📊 How to Evaluate
+
+Dexter includes an evaluation suite that tests the agent against a dataset of financial questions. Evals use LangSmith for tracking and an LLM-as-judge approach for scoring correctness.
+
+**Run on all questions:**
+```bash
+bun run src/evals/run.ts
+```
+
+**Run on a random sample of data:**
+```bash
+bun run src/evals/run.ts --sample 10
+```
+
+The eval runner displays a real-time UI showing progress, current question, and running accuracy statistics. Results are logged to LangSmith for analysis.
+
+## 🐛 How to Debug
+
+Dexter logs all tool calls to a scratchpad file for debugging and history tracking. Each query creates a new JSONL file in `.dexter/scratchpad/`.
+
+**Scratchpad location:**
+```
+.dexter/scratchpad/
+├── 2026-01-30-111400_9a8f10723f79.jsonl
+├── 2026-01-30-143022_a1b2c3d4e5f6.jsonl
+└── ...
+```
+
+Each file contains newline-delimited JSON entries tracking:
+- **init**: The original query
+- **tool_result**: Each tool call with arguments, raw result, and LLM summary
+- **thinking**: Agent reasoning steps
+
+**Example scratchpad entry:**
+```json
+{&quot;type&quot;:&quot;tool_result&quot;,&quot;timestamp&quot;:&quot;2026-01-30T11:14:05.123Z&quot;,&quot;toolName&quot;:&quot;get_income_statements&quot;,&quot;args&quot;:{&quot;ticker&quot;:&quot;AAPL&quot;,&quot;period&quot;:&quot;annual&quot;,&quot;limit&quot;:5},&quot;result&quot;:{...},&quot;llmSummary&quot;:&quot;Retrieved 5 years of Apple annual income statements showing revenue growth from $274B to $394B&quot;}
+```
+
+This makes it easy to inspect exactly what data the agent gathered and how it interpreted results.
+
+## 🤝 How to Contribute
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+**Important**: Please keep your pull requests small and focused.  This will make it easier to review and merge.
+
+
+## 📄 License
+
+This project is licensed under the MIT License.
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
             <title><![CDATA[pedramamini/Maestro]]></title>
             <link>https://github.com/pedramamini/Maestro</link>
             <guid>https://github.com/pedramamini/Maestro</guid>
-            <pubDate>Tue, 03 Feb 2026 00:08:21 GMT</pubDate>
+            <pubDate>Wed, 04 Feb 2026 00:06:26 GMT</pubDate>
             <description><![CDATA[Agent Orchestration Command Center]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/pedramamini/Maestro">pedramamini/Maestro</a></h1>
             <p>Agent Orchestration Command Center</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 1,272</p>
-            <p>Forks: 141</p>
-            <p>Stars today: 336 stars today</p>
+            <p>Stars: 1,489</p>
+            <p>Forks: 157</p>
+            <p>Stars today: 269 stars today</p>
             <h2>README</h2><pre># Maestro
 
 [![Made with Maestro](docs/assets/made-with-maestro.svg)](https://github.com/pedramamini/Maestro)
@@ -367,7 +546,7 @@ Maestro is a cross-platform desktop app for orchestrating your fleet of AI agent
 
 Collaborate with AI to create detailed specification documents, then let Auto Run execute them automatically, each task in a fresh session with clean context. Allowing for long-running unattended sessions, my current record is nearly 24 hours of continuous runtime.
 
-Run multiple agents in parallel with a Linear/Superhuman-level responsive interface. Currently supporting **Claude Code**, **OpenAI Codex**, and **OpenCode** with plans for additional agentic coding tools (Aider, Gemini CLI, Qwen3 Coder) based on user demand.
+Run multiple agents in parallel with a Linear/Superhuman-level responsive interface. Currently supporting **Claude Code**, **OpenAI Codex**, **OpenCode**, and **Factory Droid** with plans for additional agentic coding tools (Gemini CLI, Qwen3 Coder) based on user demand.
 
 &lt;div align=&quot;center&quot;&gt;
   &lt;a href=&quot;https://youtu.be/fmwwTOg7cyA?si=dJ89K54tGflKa5G4&quot;&gt;
@@ -436,7 +615,7 @@ Run multiple agents in parallel with a Linear/Superhuman-level responsive interf
 
 Additional interactions: Drag nodes to reposition, scroll to zoom, use mini-map for overview.
 
-&gt; **Note**: Maestro supports Claude Code, OpenAI Codex, and OpenCode. Support for additional agents (Aider, Gemini CLI, Qwen3 Coder) may be added in future releases based on community demand.
+&gt; **Note**: Maestro supports Claude Code, OpenAI Codex, OpenCode, and Factory Droid. Support for additional agents (Gemini CLI, Qwen3 Coder) may be added in future releases based on community demand.
 
 ## Quick Start
 
@@ -523,8 +702,13 @@ Full documentation and usage guide available at **[docs.runmaestro.ai](https://d
 - **Discord**: [Join Us](https://runmaestro.ai/discord)
 - **GitHub Issues**: [Report bugs &amp; request features](https://github.com/pedramamini/Maestro/issues)
 
-## Contributing
+## Contributors
 
+- [@pedramamini](https://github.com/pedramamini) - Creator and Benevolent Dictator
+- [@mattjay](https://github.com/mattjay) - Contributor and tester
+- [@chr1syy](https://github.com/chr1syy) - Windows Contributor and tester
+
+### Contributing
 See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, architecture details, and contribution guidelines.
 
 ## License
@@ -535,850 +719,1035 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, architecture detai
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[badlogic/pi-mono]]></title>
-            <link>https://github.com/badlogic/pi-mono</link>
-            <guid>https://github.com/badlogic/pi-mono</guid>
-            <pubDate>Tue, 03 Feb 2026 00:08:20 GMT</pubDate>
-            <description><![CDATA[AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods]]></description>
+            <title><![CDATA[vm0-ai/vm0]]></title>
+            <link>https://github.com/vm0-ai/vm0</link>
+            <guid>https://github.com/vm0-ai/vm0</guid>
+            <pubDate>Wed, 04 Feb 2026 00:06:25 GMT</pubDate>
+            <description><![CDATA[the easiest way to run natural language-described workflows automatically]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/badlogic/pi-mono">badlogic/pi-mono</a></h1>
-            <p>AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods</p>
+            <h1><a href="https://github.com/vm0-ai/vm0">vm0-ai/vm0</a></h1>
+            <p>the easiest way to run natural language-described workflows automatically</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 5,564</p>
-            <p>Forks: 581</p>
-            <p>Stars today: 878 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://shittycodingagent.ai&quot;&gt;
-    &lt;img src=&quot;https://shittycodingagent.ai/logo.svg&quot; alt=&quot;pi logo&quot; width=&quot;128&quot;&gt;
+            <p>Stars: 689</p>
+            <p>Forks: 23</p>
+            <p>Stars today: 62 stars today</p>
+            <h2>README</h2><pre>&lt;h2 align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://vm0.ai&quot;&gt;&lt;img src=&quot;https://github.com/vm0-ai/vm0/blob/main/turbo/apps/web/public/assets/Logo_VM0_combo_black_bg.svg&quot; alt=&quot;VM0 Logo&quot; width=&quot;500&quot;&gt;&lt;/a&gt;
+  &lt;br&gt;
+  &lt;br&gt;
+  Natural language Agent, 24/7 in cloud sandbox
+  &lt;br&gt;
+  &lt;br&gt;
+  &lt;p&gt;
+    &lt;a href=&quot;https://deepwiki.com/vm0-ai/vm0&quot;&gt;&lt;img src=&quot;https://deepwiki.com/badge.svg&quot; alt=&quot;Ask DeepWiki&quot; /&gt;&lt;/a&gt;
+    &lt;img src=&quot;https://img.shields.io/npm/types/@vm0/cli&quot; alt=&quot;NPM Type Definitions&quot; /&gt;
+    &lt;img src=&quot;https://img.shields.io/npm/v/@vm0/cli&quot; alt=&quot;NPM Version&quot; /&gt;
+    &lt;img src=&quot;https://img.shields.io/bundlejs/size/@vm0/cli&quot; alt=&quot;Bundle Size&quot; /&gt;
+    &lt;a href=&quot;https://github.com/vm0-ai/vm0/actions/workflows/turbo.yml?query=event%3Apush+branch%3Amain&quot;&gt;&lt;img src=&quot;https://github.com/vm0-ai/vm0/actions/workflows/turbo.yml/badge.svg?event=push&quot;
+    alt=&quot;CI&quot; /&gt;&lt;/a&gt;
+  &lt;/p&gt;
+&lt;/h2&gt;
+
+[Documentation](https://docs.vm0.ai) / [Website](https://www.vm0.ai) / [Discord](https://discord.gg/WMpAmHFfp6)
+
+`VM0` runs natural language-described workflows automatically on schedule in remote sandbox environments.
+
+⭐ Star us on GitHub, it motivates us a lot! ⭐
+
+---
+
+## 🔥 What you GET
+
+- **Cloud sandbox**, run Claude Code in isolated claude sandbox 24/7
+- **Skill Native**, Compatible with 35,738+ skills in [skills.sh](https://skills.sh), and 70+ high quality SaaS integration skill like GitHub, Slack, Notion, Firecrawl, and [more](https://github.com/vm0-ai/vm0-skills), 
+- **Persistence**, continue chat, resume, fork, and version your workflow sessions
+- **Observability**, logs, metrics, and network visibility for every run
+
+## 🚀 [Quick Start](https://docs.vm0.ai/docs/quick-start)
+
+From zero to workflow agent in 5 minutes
+
+```bash
+npm install -g @vm0/cli &amp;&amp; vm0 onboard
+```
+
+## 📕 Showcase
+
+&lt;img src=&quot;https://raw.githubusercontent.com/vm0-ai/vm0-cookbooks/main/tapes/welcome/welcome.gif&quot; alt=&quot;VM0 CLI Quickstart Demo&quot; width=&quot;500&quot;&gt;
+
+## 📚 Architecture
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;./docs/architecture.md&quot;&gt;
+    &lt;img src=&quot;./docs/arch.svg&quot; alt=&quot;VM0 Architecture Diagram&quot; width=&quot;800&quot;&gt;
   &lt;/a&gt;
 &lt;/p&gt;
+
+- **[Architecture Documentation](./docs/architecture.md)** - Comprehensive technical reference covering sandbox technologies (E2B, Firecracker), infrastructure components and network architecture
+
+For user-facing guides and tutorials, visit [docs.vm0.ai](https://docs.vm0.ai).
+
+## 🤝 Contribute
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/vm0-ai/vm0/blob/main/CONTRIBUTING.md&quot;&gt;
+  &lt;img src=&quot;https://contrib.rocks/image?repo=vm0-ai/vm0&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+![Alt](https://repobeats.axiom.co/api/embed/ef46db5e11f5146fcc8af07077a79d789efdfbe5.svg &quot;Repobeats analytics image&quot;)
+
+## ⭐ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=vm0-ai/vm0&amp;type=date&amp;legend=top-left)](https://www.star-history.com/#vm0-ai/vm0&amp;type=date&amp;legend=top-left)
+
+## 📃 License
+
+See [LICENSE](./LICENSE) for details.
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[stan-smith/FossFLOW]]></title>
+            <link>https://github.com/stan-smith/FossFLOW</link>
+            <guid>https://github.com/stan-smith/FossFLOW</guid>
+            <pubDate>Wed, 04 Feb 2026 00:06:24 GMT</pubDate>
+            <description><![CDATA[Make beautiful isometric infrastructure diagrams]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/stan-smith/FossFLOW">stan-smith/FossFLOW</a></h1>
+            <p>Make beautiful isometric infrastructure diagrams</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 17,217</p>
+            <p>Forks: 1,108</p>
+            <p>Stars today: 57 stars today</p>
+            <h2>README</h2><pre># FossFLOW - Isometric Diagramming Tool &lt;img width=&quot;30&quot; height=&quot;30&quot; alt=&quot;fossflow&quot; src=&quot;https://github.com/user-attachments/assets/56d78887-601c-4336-ab87-76f8ee4cde96&quot; /&gt;
+
 &lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://discord.com/invite/3cU7Bz4UPx&quot;&gt;&lt;img alt=&quot;Discord&quot; src=&quot;https://img.shields.io/badge/discord-community-5865F2?style=flat-square&amp;logo=discord&amp;logoColor=white&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/badlogic/pi-mono/actions/workflows/ci.yml&quot;&gt;&lt;img alt=&quot;Build status&quot; src=&quot;https://img.shields.io/github/actions/workflow/status/badlogic/pi-mono/ci.yml?style=flat-square&amp;branch=main&quot; /&gt;&lt;/a&gt;
+ &lt;a href=&quot;README.md&quot;&gt;English&lt;/a&gt; | &lt;a href=&quot;docs/README.cn.md&quot;&gt;简体中文&lt;/a&gt; | &lt;a href=&quot;docs/README.es.md&quot;&gt;Español&lt;/a&gt; | &lt;a href=&quot;docs/README.pt.md&quot;&gt;Português&lt;/a&gt; | &lt;a href=&quot;docs/README.fr.md&quot;&gt;Français&lt;/a&gt; | &lt;a href=&quot;docs/README.hi.md&quot;&gt;हिन्दी&lt;/a&gt; | &lt;a href=&quot;docs/README.bn.md&quot;&gt;বাংলা&lt;/a&gt; | &lt;a href=&quot;docs/README.ru.md&quot;&gt;Русский&lt;/a&gt; | &lt;a href=&quot;docs/README.id.md&quot;&gt;Bahasa Indonesia&lt;/a&gt; | &lt;a href=&quot;docs/README.de.md&quot;&gt;Deutsch&lt;/a&gt;
 &lt;/p&gt;
 
-# Pi Monorepo
 
-&gt; **Looking for the pi coding agent?** See **[packages/coding-agent](packages/coding-agent)** for installation and usage.
+&lt;p align=&quot;center&quot;&gt;
+&lt;a href=&quot;https://trendshift.io/repositories/15118&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/15118&quot; alt=&quot;stan-smith%2FFossFLOW | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+&lt;/p&gt;
 
-Tools for building AI agents and managing LLM deployments.
+&lt;b&gt;Hey!&lt;/b&gt; Stan here, if you&#039;ve used FossFLOW and it&#039;s helped you, &lt;b&gt;I&#039;d really appreciate if you could donate something small :)&lt;/b&gt; I work full time, and finding the time to work on this project is challenging enough.
+If you&#039;ve had a feature that I&#039;ve implemented for you, or fixed a bug it&#039;d be great if you could :) if not, that&#039;s not a problem, this software will always remain free!
 
-## Packages
 
-| Package | Description |
-|---------|-------------|
-| **[@mariozechner/pi-ai](packages/ai)** | Unified multi-provider LLM API (OpenAI, Anthropic, Google, etc.) |
-| **[@mariozechner/pi-agent-core](packages/agent)** | Agent runtime with tool calling and state management |
-| **[@mariozechner/pi-coding-agent](packages/coding-agent)** | Interactive coding agent CLI |
-| **[@mariozechner/pi-mom](packages/mom)** | Slack bot that delegates messages to the pi coding agent |
-| **[@mariozechner/pi-tui](packages/tui)** | Terminal UI library with differential rendering |
-| **[@mariozechner/pi-web-ui](packages/web-ui)** | Web components for AI chat interfaces |
-| **[@mariozechner/pi-pods](packages/pods)** | CLI for managing vLLM deployments on GPU pods |
+&lt;b&gt;Also!&lt;/b&gt; If you haven&#039;t yet, please check out the underlying library this is built on by &lt;a href=&quot;https://github.com/markmanx/isoflow&quot;&gt;@markmanx&lt;/a&gt; I truly stand on the shoulders of a giant here 🫡
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P61KBXA3)
+
+&lt;a href=&quot;https://www.buymeacoffee.com/stan.smith&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://cdn.buymeacoffee.com/buttons/default-orange.png&quot; alt=&quot;Buy Me A Coffee&quot; height=&quot;41&quot; width=&quot;174&quot;&gt;&lt;/a&gt;
+
+Thanks,
+
+-Stan
+
+## Try it online
+&lt;p align=&quot;center&quot;&gt;
+Go to  &lt;b&gt; --&gt; https://stan-smith.github.io/FossFLOW/ &lt;-- &lt;/b&gt;
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+
+ &lt;a href=&quot;https://github.com/stan-smith/SlingShot&quot;&gt;
+  Check out my latest project: &lt;b&gt;SlingShot&lt;/b&gt; - Dead easy video streaming over QUIC
+ &lt;/a&gt;
+&lt;/p&gt;
+
+------------------------------------------------------------------------------------------------------------------------------
+FossFLOW is a powerful, open-source Progressive Web App (PWA) for creating beautiful isometric diagrams. Built with React and the &lt;a href=&quot;https://github.com/markmanx/isoflow&quot;&gt;Isoflow&lt;/a&gt; (Now forked and published to NPM as fossflow) library, it runs entirely in your browser with offline support.
+
+![Screenshot_20250630_160954](https://github.com/user-attachments/assets/e7f254ad-625f-4b8a-8efc-5293b5be9d55)
+
+- **🤝 [CONTRIBUTING.md](https://github.com/stan-smith/FossFLOW/blob/master/CONTRIBUTING.md)** - How to contribute to the project.
+
+## 🐳 Quick Deploy with Docker
+
+```bash
+# Using Docker Compose (recommended - includes persistent storage)
+docker compose up
+
+# Or run directly from Docker Hub with persistent storage
+docker run -p 80:80 -v $(pwd)/diagrams:/data/diagrams stnsmith/fossflow:latest
+```
+
+Server storage is enabled by default in Docker. Your diagrams will be saved to `./diagrams` on the host.
+
+To disable server storage, set `ENABLE_SERVER_STORAGE=false`:
+```bash
+docker run -p 80:80 -e ENABLE_SERVER_STORAGE=false stnsmith/fossflow:latest
+```
+
+## Quick Start (Local Development)
+
+```bash
+# Clone the repository
+git clone https://github.com/stan-smith/FossFLOW
+cd FossFLOW
+
+# Install dependencies
+npm install
+
+# Build the library (required first time)
+npm run build:lib
+
+# Start development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Monorepo Structure
+
+This is a monorepo containing two packages:
+
+- `packages/fossflow-lib` - React component library for drawing network diagrams (built with Webpack)
+- `packages/fossflow-app` - Progressive Web App which wraps the lib and presents it (built with RSBuild)
+
+### Development Commands
+
+```bash
+# Development
+npm run dev          # Start app development server
+npm run dev:lib      # Watch mode for library development
+
+# Building
+npm run build        # Build both library and app
+npm run build:lib    # Build library only
+npm run build:app    # Build app only
+
+# Testing &amp; Linting
+npm test             # Run unit tests
+npm run lint         # Check for linting errors
+
+# E2E Tests (Selenium)
+cd e2e-tests
+./run-tests.sh       # Run end-to-end tests (requires Docker &amp; Python)
+
+# Publishing
+npm run publish:lib  # Publish library to npm
+```
+
+## How to Use
+
+### Creating Diagrams
+
+1. **Add Items**:
+   - Press the &quot;+&quot; button on the top right menu, the library of components will appear on the left
+   - Drag and drop components from the library onto the canvas
+   - Or right-click on the grid and select &quot;Add node&quot;
+
+2. **Connect Items**: 
+   - Select the Connector tool (press &#039;C&#039; or click connector icon)
+   - **Click mode** (default): Click first node, then click second node
+   - **Drag mode** (optional): Click and drag from first to second node
+   - Switch modes in Settings → Connectors tab
+
+3. **Save Your Work**:
+   - **Quick Save** - Saves to browser session
+   - **Export** - Download as JSON file
+   - **Import** - Load from JSON file
+
+### Storage Options
+
+- **Session Storage**: Temporary saves cleared when browser closes
+- **Export/Import**: Permanent storage as JSON files
+- **Auto-Save**: Automatically saves changes every 5 seconds to session
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines and [AGENTS.md](AGENTS.md) for project-specific rules (for both humans and agents).
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-## Development
+## Documentation
 
-```bash
-npm install          # Install all dependencies
-npm run build        # Build all packages
-npm run check        # Lint, format, and type check
-./test.sh            # Run tests (skips LLM-dependent tests without API keys)
-./pi-test.sh         # Run pi from sources (must be run from repo root)
-```
-
-&gt; **Note:** `npm run check` requires `npm run build` to be run first. The web-ui package uses `tsc` which needs compiled `.d.ts` files from dependencies.
+- [FOSSFLOW_ENCYCLOPEDIA.md](FOSSFLOW_ENCYCLOPEDIA.md) - Comprehensive guide to the codebase
+- [CONTRIBUTING.md](CONTRIBUTING.md) - Contributing guidelines
 
 ## License
 
-MIT</pre>
+MIT
+</pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[langchain-ai/social-media-agent]]></title>
-            <link>https://github.com/langchain-ai/social-media-agent</link>
-            <guid>https://github.com/langchain-ai/social-media-agent</guid>
-            <pubDate>Tue, 03 Feb 2026 00:08:19 GMT</pubDate>
-            <description><![CDATA[📲 An agent for sourcing, curating, and scheduling social media posts with human-in-the-loop.]]></description>
+            <title><![CDATA[Canner/WrenAI]]></title>
+            <link>https://github.com/Canner/WrenAI</link>
+            <guid>https://github.com/Canner/WrenAI</guid>
+            <pubDate>Wed, 04 Feb 2026 00:06:23 GMT</pubDate>
+            <description><![CDATA[⚡️ GenBI (Generative BI) queries any database in natural language, generates accurate SQL (Text-to-SQL), charts (Text-to-Chart), and AI-powered business intelligence in seconds.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/langchain-ai/social-media-agent">langchain-ai/social-media-agent</a></h1>
-            <p>📲 An agent for sourcing, curating, and scheduling social media posts with human-in-the-loop.</p>
+            <h1><a href="https://github.com/Canner/WrenAI">Canner/WrenAI</a></h1>
+            <p>⚡️ GenBI (Generative BI) queries any database in natural language, generates accurate SQL (Text-to-SQL), charts (Text-to-Chart), and AI-powered business intelligence in seconds.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 2,147</p>
-            <p>Forks: 397</p>
-            <p>Stars today: 47 stars today</p>
-            <h2>README</h2><pre># Social Media Agent
-
-This repository contains an &#039;agent&#039; which can take in a URL, and generate a Twitter &amp; LinkedIn post based on the content of the URL. It uses a human-in-the-loop (HITL) flow to handle authentication with different social media platforms, and to allow the user to make changes, or accept/reject the generated post.
-
-![Screenshot of the social media agent flow](./static/agent_flow.png)
-
-## Table of contents
-
-- [Quickstart](#quickstart)
-  - [Environment variables](#set-environment-variables)
-  - [LangGraph Server](#start-the-langgraph-server)
-- [Full setup](#advanced-setup)
-  - [Environment variables](#set-environment-variables-1)
-  - [Authentication](#setup-authentication)
-  - [Supabase](#setup-supabase)
-  - [Slack](#setup-slack)
-  - [GitHub](#setup-github)
-- [Usage](#usage)
-  - [Generate Post](#generate-post)
-  - [Setup Crons](#setup-crons)
-  - [Prebuilt Scripts](#prebuilt-scripts)
-- [Setup Agent Inbox](#setup-agent-inbox)
-  - [Using the deployed inbox](#using-the-deployed-inbox)
-  - [Using the local inbox](#using-the-local-inbox)
-- [Customization](#customization)
-  - [Prompts](#prompts)
-  - [Post Style](#post-style)
-
-# Quickstart
-
-&gt; [!TIP]
-&gt; 🎥 For a visual guide, check out our [step-by-step video tutorial](https://youtu.be/TmTl5FMgkCQ) that walks you through the account setup process and project configuration.
-
-This quickstart covers how to setup the Social Media Agent in a basic setup mode. This is the quickest way to get up and running, however it will lack some of the features of the full setup mode. See [here](#advanced-setup) for the full setup guide.
-
-&lt;details&gt;
-&lt;summary&gt;Running in basic setup mode will lack the following features:&lt;/summary&gt;
-
-- Parsing content from GitHub, Twitter or YouTube URLs
-- Ingesting data from Slack, or sending updates to Slack
-- Image selection &amp; uploads
-
-&lt;/details&gt;
-
-To get started, you&#039;ll need the following API keys/software:
-
-- [Anthropic API](https://console.anthropic.com/) - General LLM
-- [LangSmith](https://smith.langchain.com/) - LangSmith API key required to run the LangGraph server locally (free)
-- [FireCrawl API](https://www.firecrawl.dev/) - Web scraping. New users get 500 credits for free
-- [Arcade](https://www.arcade.dev/) - Easy authentication for reading &amp; writing to social media platforms
-
-## Setup Instructions
-
-### Clone the repository:
-
-```bash
-git clone https://github.com/langchain-ai/social-media-agent.git
-```
-
-```bash
-cd social-media-agent
-```
-
-### Install dependencies:
-
-```bash
-yarn install
-```
-
-### Set environment variables.
-
-Copy the values of the quickstart `.env.quickstart.example` to `.env`, then add the values:
-
-```bash
-cp .env.quickstart.example .env
-```
-
-Once done, ensure you have the following environment variables set:
-
-```bash
-# For LangSmith tracing (optional)
-LANGSMITH_API_KEY=
-LANGSMITH_TRACING_V2=true
-
-# For LLM generations
-ANTHROPIC_API_KEY=
-
-# For web scraping
-FIRECRAWL_API_KEY=
-
-# Arcade API key - used for fetching Tweets, and scheduling LinkedIn/Twitter posts
-ARCADE_API_KEY=
-```
-
-If you plan to post to LinkedIn as an organization (rather than as yourself), you&#039;ll also need to set:
-
-```bash
-# Get the organization ID from the URL of the company page when you&#039;re logged in as an admin.
-# For example, if the URL is `https://www.linkedin.com/company/12345678/admin/dashboard/`, the organization ID would be `12345678`.
-POST_TO_LINKEDIN_ORGANIZATION=true
-LINKEDIN_ORGANIZATION_ID=
-```
-
-### Install LangGraph CLI
-
-```bash
-pip install langgraph-cli
-```
-
-Then run the following command to check the CLI is installed:
-
-```bash
-langgraph --version
-```
-
-Click [here](https://langchain-ai.github.io/langgraph/cloud/reference/cli/) to read the full download instructions for the LangGraph CLI.
-
-### Start the LangGraph server:
-
-To start the LangGraph server, run this script:
-
-```bash
-yarn langgraph:in_mem:up
-```
-
-Under the hood, this will execute the following command:
-
-```bash
-npx @langchain/langgraph-cli dev --port 54367
-```
-
-&gt; [!NOTE]
-&gt; The first time running this command (or if a new version of `@langchain/langgraph-cli` has been released), it will ask you to accept an install for the CLI. Enter `y` to accept.
-
-Once the server is ready, you can execute the following command to generate a post:
-
-```bash
-yarn generate_post
-```
-
-You may also modify this script to pass different URLs to generate posts for other content.
-
-This will kick off a new run to generate a post on a [LangChain blog post](https://blog.langchain.dev/customers-appfolio/).
-
-To view the output, either inspect it in LangSmith, or use Agent Inbox.
-
-&gt; [!TIP]
-&gt; Follow these steps to setup &amp; configure the Agent Inbox: [Setup Agent Inbox Guide](#setup-agent-inbox)
-
-# Advanced Setup
-
-![Screenshot of the social media agent graph](./static/graph_screenshot.png)
-
-To use all of the features of the Social Media Agent, you&#039;ll need the following:
-
-- [Anthropic API](https://console.anthropic.com/) - General LLM
-- [Google Vertex AI](https://cloud.google.com/vertex-ai) - For dealing with YouTube video content
-- [LangSmith](https://smith.langchain.com/) - LangSmith API key required to run the LangGraph server locally (free)
-- [FireCrawl API](https://www.firecrawl.dev/) - Web scraping
-- [Arcade](https://www.arcade.dev) - Social media authentication and scheduling
-- [Twitter Developer Account](https://developer.twitter.com/en/portal/dashboard) - For uploading media to Twitter
-- [LinkedIn Developer Account](https://developer.linkedin.com/) - Posting to LinkedIn
-- [GitHub API](https://github.com/settings/personal-access-tokens) - Reading GitHub content
-- [Supabase](https://supabase.com/) - Storing images
-- [Slack Developer Account](https://api.slack.com/apps) (optional) - ingesting data from a Slack channel
-
-## Setup Instructions
-
-### Clone the repository:
-
-```bash
-git clone https://github.com/langchain-ai/social-media-agent.git
-```
-
-```bash
-cd social-media-agent
-```
-
-### Install dependencies:
-
-```bash
-yarn install
-```
-
-### Set environment variables.
-
-Copy the values of the full env example file `.env.full.example` to `.env`, then update the values as needed.
-
-```bash
-cp .env.full.example .env
-```
-
-### Setup authentication
-
-The agent needs your authorization to read and write to social media platforms. There are two ways to authorize the agent:
-
-1. Use Arcade (quickest to set up)
-2. Use your own Twitter and LinkedIn developer accounts
-
-You can use either method, but not both.
-
-#### Arcade setup
-
-Create an Arcade account [here](https://www.arcade.dev). After you register, [get an Arcade API key](https://docs.arcade.dev/home/quickstart?lang=typescript). Set this value as `ARCADE_API_KEY` in your `.env` file.
-
-Then, you will need to set these environment variables in your `.env` file:
-
-- `TWITTER_USER_ID` - The ID/email of the Twitter account you want to use to post to Twitter.
-- `LINKEDIN_USER_ID` - The ID/email of the LinkedIn account you want to use to post to LinkedIn.
-
-Make sure you have the `USE_ARCADE_AUTH` environment variable set to `true` to have the graph use Arcade authentication.
-
-If you plan to post to LinkedIn as an organization (rather than as yourself), you&#039;ll also need to set:
-
-```bash
-# Get the organization ID from the URL of the company page when you&#039;re logged in as an admin.
-# For example, if the URL is `https://www.linkedin.com/company/12345678/admin/dashboard/`, the organization ID would be `12345678`.
-LINKEDIN_ORGANIZATION_ID=
-POST_TO_LINKEDIN_ORGANIZATION=true
-```
-
-&gt; [!NOTE]
-&gt; If you want to upload media to Twitter, you will still need to set up your own Twitter developer account (below) in addition to using Arcade.
-&gt;
-&gt; If you are only planning to read/write text posts on Twitter, you can use Arcade without any additional setup.
-
-#### Twitter app setup
-
-You&#039;ll need to follow these instructions if you plan on uploading media to Twitter, and/or you are not using Arcade for authorization.
-
-1. Create a Twitter developer account
-2. Create a new app and give it a name.
-3. Copy the `API Key`, `API Key Secret` and `Bearer Token` and set them as `TWITTER_API_KEY`, `TWITTER_API_KEY_SECRET`, and `TWITTER_BEARER_TOKEN` in your `.env` file.
-4. After saving, visit the App Dashboard. Find the `User authentication settings` section, and click the `Set up` button. This is how you will authorize users to use the Twitter API on their behalf.
-5. Set the following fields:
-
-- `App permissions`: `Read and write`
-- `Type of App`: `Web App, Automated App or Bot`
-- `App info`:
-  - `Callback URI/Redirect URL`: `http://localhost:3000/auth/twitter/callback`
-  - `Website URL`: Your website URL
-
-6. Save. You&#039;ll then be given a `Client ID` and `Client Secret`. Set these as `TWITTER_CLIENT_ID` and `TWITTER_CLIENT_SECRET` in your `.env` file.
-
-Once done, run the `yarn start:auth` command to run the Twitter OAuth server. Open [http://localhost:3000](http://localhost:3000) in your browser, and click `Login with Twitter`.
-
-After authorizing your account with the app, navigate to your terminal where you&#039;ll see a JSON object logged. Copy the `token` and `tokenSecret` values and set them as `TWITTER_USER_TOKEN` and `TWITTER_USER_TOKEN_SECRET` in your `.env` file.
-
-#### LinkedIn app setup
-
-You&#039;ll need to follow these instructions if you plan on posting to LinkedIn and are not using Arcade for authorization.
-
-1. Create a new LinkedIn developer account, and app [here](https://developer.linkedin.com/)
-2. After creating your app, navigate to the `Auth` tab, and add a new authorized redirect URL for OAuth 2.0. Set it to `http://localhost:3000/auth/linkedin/callback`
-3. Go to the `Products` tab and enable the `Share on LinkedIn` and `Sign In with LinkedIn using OpenID Connect` products.
-
-&lt;details&gt;
-&lt;summary&gt;If you plan on posting from company pages, you&#039;ll need to do the following:&lt;/summary&gt;
-
-1. If you plan on posting from company pages, you&#039;ll also need to enable the `Advertising API` product. Furthermore, ensure your personal account has at least one one of the following roles with the company page:
-
-- `ADMINISTRATOR`
-- `DIRECT_SPONSORED_CONTENT_POSTER`
-- `RECRUITING_POSTER`
-
-2. Next, ensure your company page has verified the app. You can create a verification link on the `Settings` tab of your app, then click the `Verify` button on the company page card.
-3. Once requesting access, you&#039;ll need to fill out a form for verification. Once submitted, you should receive an email stating you&#039;ve been granted developer access which will give you the proper permission to test out the API until it&#039;s been approved.
-4. Inside the [authorization server file (./src/clients/auth-server.ts)](./src/clients/auth-server.ts), ensure the `w_organization_social` scope is enabled inside the scopes string in the `/auth/linkedin` route. Once done, the scopes string should look like this: `openid profile email w_member_social w_organization_social`
-5. Get the organization ID from the URL of the company page when you&#039;re logged in as an admin and set it as the `LINKEDIN_ORGANIZATION_ID` environment variable. For example, if the URL is `https://www.linkedin.com/company/12345678/admin/dashboard/`, the organization ID would be `12345678`.
-
-&gt; [!NOTE]
-&gt; If you plan on only posting from the company account, you can set the `POST_TO_LINKEDIN_ORGANIZATION` to `&quot;true&quot;` in your `.env` file. If you want to choose dynamically, you can set this to `true`/`false` in the configurable fields (`postToLinkedInOrganization`) when invoking the `generate_post` graph.
-&gt;
-&gt; This value will take precedence over the `POST_TO_LINKEDIN_ORGANIZATION` environment variable.
-
-&lt;/details&gt;
-
-4. Save the following environment variables in your `.env` file:
-
-- `LINKEDIN_CLIENT_ID`
-- `LINKEDIN_CLIENT_SECRET`
-
-5. Run the `yarn start:auth` command to run the LinkedIn OAuth server. Open [http://localhost:3000](http://localhost:3000) in your browser, and click `Login with LinkedIn`.
-6. After logging in, copy the `access_token` and `sub` values from the objects logged to the terminal. Set these values as `LINKEDIN_ACCESS_TOKEN` (`access_token`) and `LINKEDIN_PERSON_URN` (`sub`) in your `.env` file.
-
-&lt;/details&gt;
-
-### Setup Supabase
-
-Supabase is required for storing images found/generated by the agent. This step is not required for running the agent in basic setup mode.
-
-To setup Supabase, create an account and a new project.
-
-Set the `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` environment variables to the values provided by Supabase.
-
-Create a new storage bucket called `images`. Make sure the bucket is set to public to the image URLs are accessible. Also ensure the max upload size is set to at least 5MB inside the global project settings, and the bucket specific settings.
-
-### Setup Slack
-
-Slack integration is optional, but recommended if you intend on using the `ingest_data` agent, or having updates sent to Slack.
-
-This agent can be used in a cron job to fetch messages from a Slack channel, and call the `generate_post` graph for each message. We use this flow internally at LangChain to enable having a single Slack channel for submitting relevant URLs to the agent, which are then turned into posts once daily.
-
-To configure the Slack integration, create a new Slack app and install it into your desired Slack workspace.
-
-Once installed, ensure it has access to the channel you want to ingest messages from. Additionally, if you want it to send update messages to Slack, it will need write permissions to the workspace.
-
-Finally, make sure the `SLACK_BOT_TOKEN` environment variable is set in your `.env` file. Then, when you create a cron (see the [Setup Crons](#setup-crons) section), you&#039;ll only have to pass in the channel ID to ingest messages from.
-
-To enable sending updates to Slack, add a `SLACK_CHANNEL_ID` environment variable to your `.env` file with the channel ID you want to send updates to (at LangChain, we have one channel for sending content links, and a separate one for sending update messages).
-
-### Setup GitHub
-
-The GitHub API token is required to fetch details about GitHub repository URLs submitted to the agent. This is not required if you do not plan on sending GitHub URLs to the agent.
-
-To get a GitHub API token, create a new fine grained token with the `Public Repositories (read-only)` scope at a minimum. If you intend on using this agent for private GitHub repositories, you&#039;ll need to give the token access to those repositories as well.
-
-Ensure this is set as `GITHUB_TOKEN` in your `.env` file.
-
-# Usage
-
-## Generate Post
-
-Once all the setup steps have been completed, start your graph server by running:
-
-```bash
-yarn langgraph:in_mem:up
-```
-
-&gt; [!NOTE]
-&gt; The first time running this command (or if a new version of `@langchain/langgraph-cli` has been released), it will ask you to accept an install for the CLI. Enter `y` to accept.
-
-Once the server is ready, you can execute the following command to generate a post:
-
-(before doing this, you should edit the file so that the text only mode is set to false: `[TEXT_ONLY_MODE]: false` if using advanced setup mode)
-
-```bash
-yarn generate_post
-```
-
-This will kick off a new run to generate a post on a [LangChain blog post](https://blog.langchain.dev/customers-appfolio/).
-
-To view the output, either inspect it in LangSmith, or use [the Agent Inbox](#setup-agent-inbox).
-
-You may also modify this script to pass different URLs to generate posts for other content.
-
-## Setup Crons
-
-The Agent Inbox is most powerful when used with cron jobs. Doing this allows you to send links to generate posts on to a Slack channel, and have the cron job check for these links asynchronously. With this setup, you can send links to Slack, and have the inbox handle the rest while you sleep.
-
-We have a series of scripts to help with this, which you can find in the [`scripts/crons`](./scripts/crons) directory. In this section, we&#039;ll explain how to quickly create a cron for ingesting links to your graph from Slack.
-
-### Slack Setup
-
-Before we get started, ensure you have the proper Slack integration setup, as described in the [Setup Slack](#setup-slack) section. Then, edit the [`create-cron.ts`](./scripts/crons/create-cron.ts) file, and set the `slackChannelId` field to the channel ID of the channel you want to ingest links from.
-
-After editing, run the following command to create the cron:
-
-```bash
-yarn cron:create
-```
-
-This will create a new cron job that will ingest links from Slack into your graph, once daily.
-
-## Prebuilt Scripts
-
-For more information on all of the prebuilt scripts, see the [`scripts/README.md`](./scripts/README.md) file.
-
-# Setup Agent Inbox
-
-The Agent Inbox is the easiest way to view interrupted events, and manage accepting, responding, or other allowed actions. To view your events in the inbox, you can either add your graph to the deployed version of the Agent Inbox, or clone &amp; run the Agent Inbox locally.
-
-## Using the deployed inbox
-
-The Agent Inbox is setup in a way that allows for any graph --local or deployed-- to be added &amp; accessed via the UI.
-
-To add your local graph to the inbox, visit the deployed site here: [dev.agentinbox.ai](https://dev.agentinbox.ai/).
-
-If it&#039;s your first time vising the site, you&#039;ll immediately be prompted to add a new graph. Fill out the form with the following values:
-
-- Graph ID: `generate_post`
-- Graph API URL: `http://localhost:54367`
-- Name: (optional) `Generate Post (local)`
-
-After saving, you should be able to view your graph in the inbox. If you do this after invoking your graph (and waiting for the thread to interrupt), it will automatically fetch the interrupted event.
-
-## Using the local inbox
-
-To run the Agent Inbox locally, follow the setup instructions [here](https://github.com/langchain-ai/agent-inbox/blob/main/README.md).
-
-Once the web server is running, open your browser and visit [http://localhost:3000](http://localhost:3000). This will then prompt you to add your graph to the inbox.
-
-Fill out the form with the following values:
-
-- Graph ID: `generate_post`
-- Graph API URL: `http://localhost:54367`
-- Name: (optional) `Generate Post (local)`
-
-## Using the Agent Inbox with a graph deployed on LangGraph Platform
-
-The Agent Inbox can also be used with graph&#039;s deployed in production on LangGraph Platform. To use these graphs, the setup steps are the exact same, with the only difference being the graph API URL should be the URL of the deployed graph, and you&#039;re required to set a LangSmith API key. This is required to fetch &amp; invoke the deployed graph. LangSmith API keys are stored in your browser&#039;s local storage, and never stored on the server.
-
-# Customization
-
-## Prompts
-
-This agent is setup to generate posts for LangChain, using LangChain products as context. To use the agent for your own use case, you should update the following prompts/prompt sections inside the [`prompts`](./src/agents/generate-post/prompts/index.ts) folder:
-
-- `BUSINESS_CONTEXT` - Context to be used when checking whether or not content is relevant to your business/use case.
-- `TWEET_EXAMPLES` ([`prompts/examples.ts`](./src/agents/generate-post/prompts/examples.ts)) - A list of examples of posts you&#039;d like the agent to use as a guide when generating the final post.
-- `POST_STRUCTURE_INSTRUCTIONS` - A set of structure instructions for the agent to follow when generating the final post.
-- `POST_CONTENT_RULES` - A set of general writing style/content guidelines for the agent to follow when generating a post.
-
-The prompt for the marketing report is located in the [`generate-post/nodes/generate-report/prompts.ts`](./src/agents/generate-post/nodes/generate-report/prompts.ts) file. You likely don&#039;t need to update this, as it&#039;s already structured to be general.
-
-## Post Style
-
-There are two main prompts to modify to change the style of the posts.
-
-1. Post structure instructions (`POST_STRUCTURE_INSTRUCTIONS`). These are the instructions the LLM will follow for how to structure the post generations. This should _not_ be where you specify tone, or writing style. This prompt is used to set the structure each post should follow. By default, it&#039;s pr
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[openclaw/openclaw]]></title>
-            <link>https://github.com/openclaw/openclaw</link>
-            <guid>https://github.com/openclaw/openclaw</guid>
-            <pubDate>Tue, 03 Feb 2026 00:08:18 GMT</pubDate>
-            <description><![CDATA[Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/openclaw/openclaw">openclaw/openclaw</a></h1>
-            <p>Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 151,349</p>
-            <p>Forks: 23,001</p>
-            <p>Stars today: 10,726 stars today</p>
-            <h2>README</h2><pre># 🦞 OpenClaw — Personal AI Assistant
-
-&lt;p align=&quot;center&quot;&gt;
+            <p>Stars: 13,783</p>
+            <p>Forks: 1,498</p>
+            <p>Stars today: 100 stars today</p>
+            <h2>README</h2><pre>
+&lt;p align=&quot;center&quot; id=&quot;top&quot;&gt;
+  &lt;a href=&quot;https://getwren.ai/?utm_source=github&amp;utm_medium=title&amp;utm_campaign=readme&quot;&gt;
     &lt;picture&gt;
-        &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/openclaw-logo-text-dark.png&quot;&gt;
-        &lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/openclaw-logo-text.png&quot; alt=&quot;OpenClaw&quot; width=&quot;500&quot;&gt;
+      &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;./misc/wrenai_logo.png&quot;&gt;
+      &lt;img src=&quot;./misc/wrenai_logo_white.png&quot; width=&quot;300px&quot;&gt;
     &lt;/picture&gt;
+    &lt;h1 align=&quot;center&quot;&gt;Wren AI - Open-Source GenBI Agent&lt;/h1&gt;
+  &lt;/a&gt;
 &lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
-  &lt;strong&gt;EXFOLIATE! EXFOLIATE!&lt;/strong&gt;
+  &lt;a aria-label=&quot;Follow us on X&quot; href=&quot;https://x.com/getwrenai&quot;&gt;
+    &lt;img alt=&quot;&quot; src=&quot;https://img.shields.io/badge/-@getwrenai-blue?style=for-the-badge&amp;logo=x&amp;logoColor=white&amp;labelColor=gray&amp;logoWidth=20&quot;&gt;
+  &lt;/a&gt;
+  &lt;a aria-label=&quot;Releases&quot; href=&quot;https://github.com/canner/WrenAI/releases&quot;&gt;
+    &lt;img alt=&quot;&quot; src=&quot;https://img.shields.io/github/v/release/canner/WrenAI?logo=github&amp;label=GitHub%20Release&amp;color=blue&amp;style=for-the-badge&quot;&gt;
+  &lt;/a&gt;
+  &lt;a aria-label=&quot;License&quot; href=&quot;https://github.com/Canner/WrenAI/blob/main/LICENSE&quot;&gt;
+    &lt;img alt=&quot;&quot; src=&quot;https://img.shields.io/github/license/canner/WrenAI?color=blue&amp;style=for-the-badge&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://docs.getwren.ai&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/docs-online-brightgreen?style=for-the-badge&quot; alt=&quot;Docs&quot;&gt;
+  &lt;/a&gt;
+  &lt;a aria-label=&quot;Join the community on GitHub&quot; href=&quot;https://discord.gg/5DvshJqG8Z&quot;&gt;
+    &lt;img alt=&quot;&quot; src=&quot;https://img.shields.io/badge/-JOIN%20THE%20COMMUNITY-blue?style=for-the-badge&amp;logo=discord&amp;logoColor=white&amp;labelColor=grey&amp;logoWidth=20&quot;&gt;
+  &lt;/a&gt;
+  &lt;a aria-label=&quot;Canner&quot; href=&quot;https://cannerdata.com/?utm_source=github&amp;utm_medium=badge&amp;utm_campaign=readme&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/%F0%9F%A7%A1-Made%20by%20Canner-blue?style=for-the-badge&quot;&gt;
+  &lt;/a&gt;
 &lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/openclaw/openclaw/actions/workflows/ci.yml?branch=main&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/actions/workflow/status/openclaw/openclaw/ci.yml?branch=main&amp;style=for-the-badge&quot; alt=&quot;CI status&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/openclaw/openclaw/releases&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/v/release/openclaw/openclaw?include_prereleases&amp;style=for-the-badge&quot; alt=&quot;GitHub release&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://discord.gg/clawd&quot;&gt;&lt;img src=&quot;https://img.shields.io/discord/1456350064065904867?label=Discord&amp;logo=discord&amp;logoColor=white&amp;color=5865F2&amp;style=for-the-badge&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge&quot; alt=&quot;MIT License&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://trendshift.io/repositories/9263&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/9263&quot; alt=&quot;Canner%2FWrenAI | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
 &lt;/p&gt;
 
-**OpenClaw** is a _personal AI assistant_ you run on your own devices.
-It answers you on the channels you already use (WhatsApp, Telegram, Slack, Discord, Google Chat, Signal, iMessage, Microsoft Teams, WebChat), plus extension channels like BlueBubbles, Matrix, Zalo, and Zalo Personal. It can speak and listen on macOS/iOS/Android, and can render a live Canvas you control. The Gateway is just the control plane — the product is the assistant.
+&gt; ⚡ GenBI (Generative BI) queries any database in natural language, generates accurate SQL (Text-to-SQL), charts (Text-to-Chart), and AI-powered business intelligence in seconds. ️
 
-If you want a personal, single-user assistant that feels local, fast, and always-on, this is it.
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img width=&quot;1920&quot; height=&quot;1080&quot; alt=&quot;1&quot; src=&quot;https://github.com/user-attachments/assets/bba9d37a-33e3-49ab-b7cb-32fd6dddc8d1&quot; /&gt;
+&lt;/p&gt;
+ 
+## 😍 Demos
 
-[Website](https://openclaw.ai) · [Docs](https://docs.openclaw.ai) · [DeepWiki](https://deepwiki.com/openclaw/openclaw) · [Getting Started](https://docs.openclaw.ai/start/getting-started) · [Updating](https://docs.openclaw.ai/install/updating) · [Showcase](https://docs.openclaw.ai/start/showcase) · [FAQ](https://docs.openclaw.ai/start/faq) · [Wizard](https://docs.openclaw.ai/start/wizard) · [Nix](https://github.com/openclaw/nix-clawdbot) · [Docker](https://docs.openclaw.ai/install/docker) · [Discord](https://discord.gg/clawd)
+https://github.com/user-attachments/assets/f9c1cb34-5a95-4580-8890-ec9644da4160
 
-Preferred setup: run the onboarding wizard (`openclaw onboard`). It walks through gateway, workspace, channels, and skills. The CLI wizard is the recommended path and works on **macOS, Linux, and Windows (via WSL2; strongly recommended)**.
-Works with npm, pnpm, or bun.
-New install? Start here: [Getting started](https://docs.openclaw.ai/start/getting-started)
+[Watch GenBI Demo](https://github.com/user-attachments/assets/90ad1d35-bb1e-490b-9676-b29863ff090b)
 
-**Subscriptions (OAuth):**
+## 🤖 Features
 
-- **[Anthropic](https://www.anthropic.com/)** (Claude Pro/Max)
-- **[OpenAI](https://openai.com/)** (ChatGPT/Codex)
+|                    | What you get | Why it matters |
+|--------------------|--------------|----------------|
+| **Talk to Your Data** | Ask in any language → precise SQL &amp; answers | Slash the SQL learning curve﻿ |
+| **GenBI Insights** | AI-written summaries, charts &amp; reports | Decision-ready context in one click﻿ |
+| **Semantic Layer** | MDL models encode schema, metrics, joins | Keeps LLM outputs accurate &amp; governed﻿ |
+| **Embed via API**  | Generate queries &amp; charts inside your apps ([API Docs](https://wrenai.readme.io/reference/cloud-getting-started)) | Build custom agents, SaaS features, chatbots﻿ ([Streamlit Live Demo](https://huggingface.co/spaces/getWrenAI/wrenai-cloud-api-demo)) |
 
-Model note: while any model is supported, I strongly recommend **Anthropic Pro/Max (100/200) + Opus 4.5** for long‑context strength and better prompt‑injection resistance. See [Onboarding](https://docs.openclaw.ai/start/onboarding).
+🤩 [Learn more about GenBI](https://getwren.ai/genbi?utm_source=github&amp;utm_medium=content&amp;utm_campaign=readme)
 
-## Models (selection + auth)
+## 🚀 Getting Started
 
-- Models config + CLI: [Models](https://docs.openclaw.ai/concepts/models)
-- Auth profile rotation (OAuth vs API keys) + fallbacks: [Model failover](https://docs.openclaw.ai/concepts/model-failover)
+Using Wren AI is super simple, you can set it up within 3 minutes, and start to interact with your data!
 
-## Install (recommended)
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img width=&quot;1920&quot; height=&quot;1080&quot; alt=&quot;2&quot; src=&quot;https://github.com/user-attachments/assets/6555f539-9ef2-485d-9135-0071741fda96&quot; /&gt;
+&lt;/p&gt;
 
-Runtime: **Node ≥22**.
+- Visit our [Install in your local environment](http://docs.getwren.ai/oss/installation?utm_source=github&amp;utm_medium=content&amp;utm_campaign=readme).
+- Visit the [Usage Guides](https://docs.getwren.ai/oss/guide/connect/overview?utm_source=github&amp;utm_medium=content&amp;utm_campaign=readme) to learn more about how to use Wren AI.
+- Or just start with [Wren AI Cloud](https://getwren.ai/?utm_source=github&amp;utm_medium=content&amp;utm_campaign=readme) our Managed Cloud Service. ([OSS vs. Commercial Plans](https://docs.getwren.ai/oss/overview/cloud_vs_self_host)).
+
+## 🏗️ Architecture
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img width=&quot;1011&quot; height=&quot;682&quot; alt=&quot;wrenai-architecture&quot; src=&quot;https://github.com/user-attachments/assets/e99b999f-9912-4fa7-921a-9c86b6b83354&quot; /&gt;
+&lt;/p&gt;
+
+👉 [Learn more about our Design](https://getwren.ai/post/how-we-design-our-semantic-engine-for-llms-the-backbone-of-the-semantic-layer-for-llm-architecture?utm_source=github&amp;utm_medium=content&amp;utm_campaign=readme)
+
+
+
+## 🔌 Data Sources
+
+If your data source is not listed here, vote for it in our [GitHub discussion thread](https://github.com/Canner/WrenAI/discussions/327). It will be a valuable input for us to decide on the next supported data sources.
+- Athena (Trino)
+- Redshift
+- BigQuery
+- DuckDB
+- Databricks
+- PostgreSQL
+- MySQL
+- Microsoft SQL Server
+- ClickHouse
+- Oracle
+- Trino
+- Snowflake
+
+## 🤖 LLM Models
+
+Wren AI supports integration with various Large Language Models (LLMs), including but not limited to:
+- OpenAI Models
+- Azure OpenAI Models
+- DeepSeek Models
+- Google AI Studio – Gemini Models
+- Vertex AI Models (Gemini + Anthropic)
+- Bedrock Models
+- Anthropic API Models
+- Groq Models
+- Ollama Models
+- Databricks Models
+
+Check [configuration examples here](https://github.com/Canner/WrenAI/tree/main/wren-ai-service/docs/config_examples)!
+
+&gt; [!CAUTION]
+&gt; The performance of Wren AI depends significantly on the capabilities of the LLM you choose. We strongly recommend using the most powerful model available for optimal results. Using less capable models may lead to reduced performance, slower response times, or inaccurate outputs.
+
+## 📚 Documentation
+
+Visit [Wren AI documentation](https://docs.getwren.ai/oss/overview/introduction?utm_source=github&amp;utm_medium=content&amp;utm_campaign=readme) to view the full documentation.
+
+## 📪 Keep Posted?
+
+[Subscribe our blog](https://www.getwren.ai/blog/?utm_source=github&amp;utm_medium=content&amp;utm_campaign=readme) and [Follow our LinkedIn](https://www.linkedin.com/company/wrenai)
+
+## 🛠️ Contribution
+
+1.	Star ⭐ the repo to show support (it really helps).
+2.	Open an issue for bugs, ideas, or discussions.
+3.	Read [Contribution Guidelines](https://github.com/Canner/WrenAI/blob/main/CONTRIBUTING.md) for setup &amp; PR guidelines.
+
+## ⭐️ Community
+
+- Join 1.3k+ developers in our [Discord](https://discord.gg/5DvshJqG8Z) for real-time help and roadmap previews.
+- If there are any issues, please visit [GitHub Issues](https://github.com/Canner/WrenAI/issues).
+- Explore our [public roadmap](https://wrenai.notion.site/) to stay updated on upcoming features and improvements!
+
+Please note that our [Code of Conduct](./CODE_OF_CONDUCT.md) applies to all Wren AI community channels. Users are **highly encouraged** to read and adhere to them to avoid repercussions.
+
+## 🎉 Our Contributors
+&lt;a href=&quot;https://github.com/canner/wrenAI/graphs/contributors&quot;&gt;
+  &lt;img src=&quot;https://contrib.rocks/image?repo=Canner/WrenAI&quot; /&gt;
+&lt;/a&gt;
+
+&lt;p align=&quot;right&quot;&gt;
+  &lt;a href=&quot;#top&quot;&gt;⬆️ Back to Top&lt;/a&gt;
+&lt;/p&gt;
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[KuekHaoYang/KVideo]]></title>
+            <link>https://github.com/KuekHaoYang/KVideo</link>
+            <guid>https://github.com/KuekHaoYang/KVideo</guid>
+            <pubDate>Wed, 04 Feb 2026 00:06:22 GMT</pubDate>
+            <description><![CDATA[一个基于 Next.js 16 构建的现代化视频聚合播放平台。采用独特的 "Liquid Glass" 设计语言，提供流畅的视觉体验和强大的视频搜索功能。]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/KuekHaoYang/KVideo">KuekHaoYang/KVideo</a></h1>
+            <p>一个基于 Next.js 16 构建的现代化视频聚合播放平台。采用独特的 "Liquid Glass" 设计语言，提供流畅的视觉体验和强大的视频搜索功能。</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 1,474</p>
+            <p>Forks: 1,601</p>
+            <p>Stars today: 212 stars today</p>
+            <h2>README</h2><pre># 视频聚合平台 (KVideo)
+
+![KVideo Banner](public/icon.png)
+
+&gt; 一个基于 Next.js 16 构建的现代化视频聚合播放平台。采用独特的 &quot;Liquid Glass&quot; 设计语言，提供流畅的视觉体验和强大的视频搜索功能。
+
+**🌐 在线体验：[https://kvideo.pages.dev/](https://kvideo.pages.dev/)**
+
+[![Next.js](https://img.shields.io/badge/Next.js-16.0-black?style=for-the-badge&amp;logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.2-blue?style=for-the-badge&amp;logo=react)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38B2AC?style=for-the-badge&amp;logo=tailwind-css)](https://tailwindcss.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&amp;logo=typescript)](https://www.typescriptlang.org/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+
+## 📖 项目简介
+
+**KVideo** 是一个高性能、现代化的视频聚合与播放应用，专注于提供极致的用户体验和视觉设计。本项目利用 Next.js 16 的最新特性，结合 React 19 和 Tailwind CSS v4，打造了一个既美观又强大的视频浏览平台。
+
+### 核心设计理念：Liquid Glass（液态玻璃）
+
+项目的视觉设计基于 **&quot;Liquid Glass&quot;** 设计系统，这是一套融合了以下特性的现代化 UI 设计语言：
+
+- **玻璃拟态效果**：通过 `backdrop-filter` 实现的磨砂半透明效果，让 UI 元素如同真实的玻璃材质
+- **通用柔和度**：统一使用 `rounded-2xl` 和 `rounded-full` 两种圆角半径，创造和谐的视觉体验
+- **光影交互**：悬停和聚焦状态下的内发光效果，模拟光线被&quot;捕获&quot;的物理现象
+- **流畅动画**：基于物理的 `cubic-bezier` 曲线，实现自然的加速和减速过渡
+- **深度层级**：清晰的 z-axis 层次结构，增强空间感和交互反馈
+
+## ✨ 核心功能
+
+### 🎥 智能视频播放
+
+- **HLS 流媒体支持**：原生支持 HLS (.m3u8) 格式，提供流畅的视频播放体验
+- **智能缓存机制**：Service Worker 驱动的智能缓存系统，自动预加载和缓存视频片段
+- **后台下载**：利用观看历史，在后台自动下载历史视频，确保离线也能观看
+- **播放控制**：完整的播放控制功能，包括进度条、音量控制、播放速度调节、全屏模式等
+- **移动端优化**：专门为移动设备优化的播放器界面和手势控制
+
+### 🔍 多源并行搜索
+
+- **聚合搜索引擎**：同时在多个视频源中并行搜索，大幅提升搜索速度
+- **自定义视频源**：支持添加、编辑和管理自定义视频源
+- **智能解析**：统一的解析器系统，自动处理不同源的数据格式
+- **搜索历史**：自动保存搜索历史，支持快速重新搜索
+- **结果排序**：支持按评分、时间、相关性等多种方式排序搜索结果
+
+### 🎬 豆瓣集成
+
+- **电影 &amp; 电视剧分类**：支持在电影和电视剧之间无缝切换，方便查找不同类型的影视资源
+- **详细影视信息**：自动获取豆瓣评分、演员阵容、剧情简介等详细信息
+- **推荐系统**：基于豆瓣数据的相关推荐
+- **专业评价**：展示豆瓣用户评价和专业影评
+
+### 💾 观看历史管理
+
+- **自动记录**：自动记录观看进度和历史
+- **断点续播**：从上次观看位置继续播放
+- **历史管理**：支持删除单条历史或清空全部历史
+- **隐私保护**：所有数据存储在本地，不上传到服务器
+
+### 📱 响应式设计
+
+- **全端适配**：完美支持桌面、平板和移动设备
+- **移动优先**：专门的移动端组件和交互设计
+- **触摸优化**：针对触摸屏优化的手势和交互
+
+### 🌙 主题系统
+
+- **深色/浅色模式**：支持系统级主题切换
+- **动态主题**：基于 CSS Variables 的动态主题系统
+- **无缝过渡**：主题切换时的平滑过渡动画
+
+### ⌨️ 无障碍设计
+
+- **键盘导航**：完整的键盘快捷键支持
+- **ARIA 标签**：符合 WCAG 2.2 标准的无障碍实现
+- **语义化 HTML**：使用语义化标签提升可访问性
+- **高对比度**：确保 4.5:1 的文字对比度
+
+### 💎 高级模式
+
+- **独立入口**：在浏览器地址栏直接输入 `/premium` 即可进入独立的高级视频专区
+- **内容隔离**：高级内容与普通内容完全物理隔离，互不干扰
+- **专属设置**：拥有独立的内容源管理和功能设置
+
+### 🛡️ 广告过滤
+- **多模式选择**：支持关闭、关键词过滤、智能启发式过滤(Beta)和激进模式。
+- **UI 集成**：在播放器设置菜单中直接切换模式，实时生效。
+- **自定义关键词**：支持通过环境变量扩展过滤关键词。
+- **高性能**：基于流式处理，对播放加载速度几乎无影响。
+
+## 🔐 隐私保护
+
+本应用注重用户隐私：
+
+- **本地存储**：所有数据存储在本地浏览器中
+- **无服务器数据**：不收集或上传任何用户数据
+- **自定义源**：用户可自行配置视频源
+
+## 🔒 密码访问控制
+
+KVideo 支持两种密码保护方式：
+
+### 方式一：本地保存密码
+
+在设置页面中启用密码访问，并添加密码：
+
+- **设备独立**：仅在当前浏览器/设备有效
+- **可管理**：可随时添加或删除
+- **多密码支持**：可设置多个有效密码
+
+### 方式二：环境变量密码（推荐用于部署）
+
+通过 `ACCESS_PASSWORD` 环境变量设置全局密码：
+
+**Docker 部署：**
 
 ```bash
-npm install -g openclaw@latest
-# or: pnpm add -g openclaw@latest
-
-openclaw onboard --install-daemon
+docker run -d -p 3000:3000 -e ACCESS_PASSWORD=your_premium_password --name kvideo kuekhaoyang/kvideo:latest
 ```
 
-The wizard installs the Gateway daemon (launchd/systemd user service) so it stays running.
+**Vercel 部署：**
 
-## Quick start (TL;DR)
+在 Vercel 项目设置中添加环境变量：
+- 变量名：`ACCESS_PASSWORD`
+- 变量值：你的密码
 
-Runtime: **Node ≥22**.
+**特点：**
+- **全局生效**：所有用户都需要此密码才能访问
+- **无法在界面删除**：只能通过修改环境变量更改
+- **与本地密码兼容**：两种密码都可以解锁应用
+- **密码持久化**：支持通过 `PERSIST_PASSWORD` 环境变量控制是否在当前设备上记住密码。
 
-Full beginner guide (auth, pairing, channels): [Getting started](https://docs.openclaw.ai/start/getting-started)
+### 方式三：密码持久化设置（ENV）
+
+通过 `PERSIST_PASSWORD` 环境变量，你可以控制用户在输入正确密码后，是否需要在下次打开时重新输入。
+
+| 变量名 | 选项 | 说明 | 默认值 |
+|--------|------|------|--------|
+| `PERSIST_PASSWORD` | `true` / `false` | 是否在本地浏览器持久化保存解锁状态。设置为 `true` 时，用户只需输入一次密码，后续访问无需再次输入。 | `true` |
+
+&gt; [!NOTE]
+&gt; 此功能仅在设置了 `ACCESS_PASSWORD` 时才会生效。如果没有设置环境密码，此选项将被忽略。
+
+## 🎨 站点名称自定义配置
+
+通过环境变量可以自定义站点名称、标题和描述，无需修改源代码。
+
+### 可用环境变量：
+
+| 变量名 | 说明 | 默认值 |
+|--------|------|--------|
+| `NEXT_PUBLIC_SITE_TITLE` | 浏览器标签页标题 | `视频聚合平台 - KVideo` |
+| `NEXT_PUBLIC_SITE_DESCRIPTION` | 站点描述 | `专属视频聚合播放平台，具备美观的 Liquid Glass UI` |
+| `NEXT_PUBLIC_SITE_NAME` | 站点头部名称 | `视频聚合平台` |
+| `PERSIST_PASSWORD` | 密码持久化 | `true` |
+
+### 配置示例：
+
+**Vercel 部署：**
+在 Vercel 项目设置中添加环境变量：
+
+- 变量名：`NEXT_PUBLIC_SITE_NAME`
+- 变量值：`我的视频平台`
+
+**Cloudflare Pages 部署：**
+在 Cloudflare Pages 项目设置中添加环境变量：
+- 变量名：`NEXT_PUBLIC_SITE_NAME`
+- 变量值：`我的视频平台`
+
+**Docker 部署：**
+```bash
+docker run -d -p 3000:3000 \
+  -e NEXT_PUBLIC_SITE_NAME=&quot;我的视频平台&quot; \
+  -e NEXT_PUBLIC_SITE_TITLE=&quot;我的视频 - 聚合播放平台&quot; \
+  -e NEXT_PUBLIC_SITE_DESCRIPTION=&quot;专属视频聚合播放平台&quot; \
+  --name kvideo kuekhaoyang/kvideo:latest
+```
+
+**本地开发：**
+在项目根目录创建 `.env.local` 文件：
+```env
+NEXT_PUBLIC_SITE_NAME=我的视频平台
+NEXT_PUBLIC_SITE_TITLE=我的视频 - 聚合播放平台
+NEXT_PUBLIC_SITE_DESCRIPTION=专属视频聚合播放平台
+```
+
+## 📦 自动订阅源配置
+
+可以通过环境变量 `NEXT_PUBLIC_SUBSCRIPTION_SOURCES` 自动配置订阅源，应用启动时会自动加载并设置为自动更新。
+
+**格式：** JSON 数组字符串，包含 `name` 和 `url` 字段。
+
+**示例：**
 
 ```bash
-openclaw onboard --install-daemon
-
-openclaw gateway --port 18789 --verbose
-
-# Send a message
-openclaw message send --to +1234567890 --message &quot;Hello from OpenClaw&quot;
-
-# Talk to the assistant (optionally deliver back to any connected channel: WhatsApp/Telegram/Slack/Discord/Google Chat/Signal/iMessage/BlueBubbles/Microsoft Teams/Matrix/Zalo/Zalo Personal/WebChat)
-openclaw agent --message &quot;Ship checklist&quot; --thinking high
+NEXT_PUBLIC_SUBSCRIPTION_SOURCES=&#039;[{&quot;name&quot;:&quot;每日更新源&quot;,&quot;url&quot;:&quot;https://example.com/api.json&quot;},{&quot;name&quot;:&quot;备用源&quot;,&quot;url&quot;:&quot;https://backup.com/api.json&quot;}]&#039;
 ```
 
-Upgrading? [Updating guide](https://docs.openclaw.ai/install/updating) (and run `openclaw doctor`).
-
-## Development channels
-
-- **stable**: tagged releases (`vYYYY.M.D` or `vYYYY.M.D-&lt;patch&gt;`), npm dist-tag `latest`.
-- **beta**: prerelease tags (`vYYYY.M.D-beta.N`), npm dist-tag `beta` (macOS app may be missing).
-- **dev**: moving head of `main`, npm dist-tag `dev` (when published).
-
-Switch channels (git + npm): `openclaw update --channel stable|beta|dev`.
-Details: [Development channels](https://docs.openclaw.ai/install/development-channels).
-
-## From source (development)
-
-Prefer `pnpm` for builds from source. Bun is optional for running TypeScript directly.
+**Docker 部署：**
 
 ```bash
-git clone https://github.com/openclaw/openclaw.git
-cd openclaw
-
-pnpm install
-pnpm ui:build # auto-installs UI deps on first run
-pnpm build
-
-pnpm openclaw onboard --install-daemon
-
-# Dev loop (auto-reload on TS changes)
-pnpm gateway:watch
+docker run -d -p 3000:3000 -e NEXT_PUBLIC_SUBSCRIPTION_SOURCES=&#039;[{&quot;name&quot;:&quot;MySource&quot;,&quot;url&quot;:&quot;...&quot;}]&#039; --name kvideo kuekhaoyang/kvideo:latest
 ```
 
-Note: `pnpm openclaw ...` runs TypeScript directly (via `tsx`). `pnpm build` produces `dist/` for running via Node / the packaged `openclaw` binary.
+**Vercel 部署：**
 
-## Security defaults (DM access)
+在 Vercel 项目设置中添加环境变量：
+- 变量名：`NEXT_PUBLIC_SUBSCRIPTION_SOURCES`
+- 变量值：`[{&quot;name&quot;:&quot;...&quot;,&quot;url&quot;:&quot;...&quot;}]`
 
-OpenClaw connects to real messaging surfaces. Treat inbound DMs as **untrusted input**.
+**Cloudflare Pages 部署：**
 
-Full security guide: [Security](https://docs.openclaw.ai/gateway/security)
+在 Cloudflare Pages 项目设置中添加环境变量：
+- 变量名：`NEXT_PUBLIC_SUBSCRIPTION_SOURCES`
+- 变量值：`[{&quot;name&quot;:&quot;...&quot;,&quot;url&quot;:&quot;...&quot;}]`
 
-Default behavior on Telegram/WhatsApp/Signal/iMessage/Microsoft Teams/Discord/Google Chat/Slack:
+## 📝 自定义源 JSON 格式
 
-- **DM pairing** (`dmPolicy=&quot;pairing&quot;` / `channels.discord.dm.policy=&quot;pairing&quot;` / `channels.slack.dm.policy=&quot;pairing&quot;`): unknown senders receive a short pairing code and the bot does not process their message.
-- Approve with: `openclaw pairing approve &lt;channel&gt; &lt;code&gt;` (then the sender is added to a local allowlist store).
-- Public inbound DMs require an explicit opt-in: set `dmPolicy=&quot;open&quot;` and include `&quot;*&quot;` in the channel allowlist (`allowFrom` / `channels.discord.dm.allowFrom` / `channels.slack.dm.allowFrom`).
+如果你想创建自己的订阅源或批量导入源，可以使用以下 JSON 格式。
 
-Run `openclaw doctor` to surface risky/misconfigured DM policies.
+**基本结构：**
 
-## Highlights
+可以是单个对象数组，也可以是包含 `sources` 或 `list` 字段的对象。
 
-- **[Local-first Gateway](https://docs.openclaw.ai/gateway)** — single control plane for sessions, channels, tools, and events.
-- **[Multi-channel inbox](https://docs.openclaw.ai/channels)** — WhatsApp, Telegram, Slack, Discord, Google Chat, Signal, iMessage, BlueBubbles, Microsoft Teams, Matrix, Zalo, Zalo Personal, WebChat, macOS, iOS/Android.
-- **[Multi-agent routing](https://docs.openclaw.ai/gateway/configuration)** — route inbound channels/accounts/peers to isolated agents (workspaces + per-agent sessions).
-- **[Voice Wake](https://docs.openclaw.ai/nodes/voicewake) + [Talk Mode](https://docs.openclaw.ai/nodes/talk)** — always-on speech for macOS/iOS/Android with ElevenLabs.
-- **[Live Canvas](https://docs.openclaw.ai/platforms/mac/canvas)** — agent-driven visual workspace with [A2UI](https://docs.openclaw.ai/platforms/mac/canvas#canvas-a2ui).
-- **[First-class tools](https://docs.openclaw.ai/tools)** — browser, canvas, nodes, cron, sessions, and Discord/Slack actions.
-- **[Companion apps](https://docs.openclaw.ai/platforms/macos)** — macOS menu bar app + iOS/Android [nodes](https://docs.openclaw.ai/nodes).
-- **[Onboarding](https://docs.openclaw.ai/start/wizard) + [skills](https://docs.openclaw.ai/tools/skills)** — wizard-driven setup with bundled/managed/workspace skills.
+**源对象字段说明：**
+
+| 字段 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `id` | string | 是 | 唯一标识符，建议使用英文 |
+| `name` | string | 是 | 显示名称 |
+| `baseUrl` | string | 是 | API 地址 (例如: `https://example.com/api.php/provide/vod`) |
+| `group` | string | 否 | 分组，可选值: `&quot;normal&quot;` (默认) 或 `&quot;premium&quot;` |
+| `enabled` | boolean | 否 | 是否启用，默认为 `true` |
+| `priority` | number | 否 | 优先级，数字越小优先级越高，默认为 1 |
+
+**示例 JSON：**
+
+```json
+[
+  {
+    &quot;id&quot;: &quot;my_source_1&quot;,
+    &quot;name&quot;: &quot;我的精选源&quot;,
+    &quot;baseUrl&quot;: &quot;https://api.example.com/vod&quot;,
+    &quot;group&quot;: &quot;normal&quot;,
+    &quot;priority&quot;: 1
+  },
+  {
+    &quot;id&quot;: &quot;premium_source_1&quot;,
+    &quot;name&quot;: &quot;特殊资源&quot;,
+    &quot;baseUrl&quot;: &quot;https://api.premium-source.com/vod&quot;,
+    &quot;group&quot;: &quot;premium&quot;,
+    &quot;enabled&quot;: true
+  }
+]
+```
+
+### ⚠️ 重要的区别说明：订阅源 vs 视频源
+
+**这是一个常见的误区，请仔细阅读：**
+
+- **视频源 (Source)**：
+  - 指向单个 CMS/App API 接口
+  - 例如：`https://api.example.com/vod`
+  - 这种链接**不能**直接作为&quot;订阅&quot;添加
+  - 只能在&quot;自定义源管理&quot;中作为单个源添加
+
+- **订阅源 (Subscription)**：
+  - 指向一个 **JSON 文件**（如上面的示例）的 URL
+  - 这个 JSON 文件里包含了一个或多个视频源的列表
+  - 例如：`https://mysite.com/kvideo-sources.json`
+  - 这是一个**配置文件**的链接，不是视频 API 的链接
+  - 只有这种返回 JSON 列表的链接才能在&quot;订阅管理&quot;中添加
+
+&gt; **简单来说**：如果你只有一个 m3u8 或 API 接口地址，请去&quot;自定义源&quot;添加。如果你有一个包含多个源的 JSON 文件链接，请去&quot;订阅管理&quot;添加。
+
+## 🛠 技术栈
+
+### 前端核心
+
+| 技术 | 版本 | 用途 |
+|------|------|------|
+| **[Next.js](https://nextjs.org/)** | 16.0.3 | React 框架，使用 App Router |
+| **[React](https://react.dev/)** | 19.2.0 | UI 组件库 |
+| **[TypeScript](https://www.typescriptlang.org/)** | 5.x | 类型安全的 JavaScript |
+| **[Tailwind CSS](https://tailwindcss.com/)** | 4.x | 实用优先的 CSS 框架 |
+| **[Zustand](https://github.com/pmndrs/zustand)** | 5.0.2 | 轻量级状态管理 |
+
+### 开发工具
+
+- **ESLint 9**：代码质量检查
+- **PostCSS 8**：CSS 处理器
+- **Vercel Analytics**：性能监控和分析
+
+### 架构特点
+
+- **App Router**：Next.js 13+ 的新路由系统，支持服务端组件和流式渲染
+- **API Routes**：内置 API 端点，处理豆瓣数据和视频源代理
+- **Service Worker**：离线缓存和智能预加载
+- **Server Components**：优化首屏加载性能
+- **Client Components**：复杂交互和状态管理
+
+## 🚀 快速部署
+
+### 在线体验
+
+访问 **[https://kvideo.vercel.app/](https://kvideo.vercel.app/)** 立即体验，无需安装！
+
+### 部署到自己的服务器
+
+
+
+
+
+#### 选项 1：Vercel 一键部署（推荐）
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/KuekHaoYang/KVideo)
+
+1. 点击上方按钮
+2. 连接你的 GitHub 账号
+3. Vercel 会自动检测 Next.js 项目并部署
+4. 几分钟后即可访问你自己的 KVideo 实例
+
+#### 选项 2：Cloudflare Pages 部署 (推荐)
+
+此方法完全免费且速度极快，是部署本项目的最佳选择。
+
+1. **Fork 本仓库**：首先将项目 Fork 到你的 GitHub 账户。
+
+2. **创建项目**：
+   - 点击访问 [**Cloudflare Pages - Connect Git**](https://dash.cloudflare.com/?to=/:account/pages/new/provider/github)。
+   - 如果未连接 GitHub，请点击 **Connect GitHub**；若已连接，直接选择你刚刚 Fork 的 `KVideo` 项目并点击 **Begin setup**。
+
+3. **配置构建参数**：
+   - **Project name**: 默认为 `kvideo` (建议保持不变，后续链接基于此名称)
+   - **Framework Preset**: 选择 `Next.js`
+   - **Build command**: 输入 `npm run pages:build`
+   - **Build output directory**: 输入 `.vercel/output/static`
+   - 点击 **Save and Deploy**。
+
+4. **⚠️ 关键步骤：修复运行时环境**
+   &gt; *注意：此时部署虽然显示&quot;Success&quot;，但你会发现访问网页会报错。这是因为缺少必要的兼容性配置。请按以下步骤修复：*
+
+   - 进入 **[项目设置页面](https://dash.cloudflare.com/?to=/:account/pages/view/kvideo/settings/production)** (如果你的项目名不是 kvideo，请在控制台手动查找 Settings -&gt; Functions)。
+   - 拉到页面底部找到 **Compatibility flags** 部分。
+   - 添加标志：`nodejs_compat`
+
+5. **重试部署 (生效配置)**：
+   - 回到 **[项目概览页面](https://dash.cloudflare.com/?to=/:account/pages/view/kvideo)**。
+   - 在 **Deployments** 列表中，找到最新的那次部署。
+   - 点击右侧的三个点 `...` 菜单，选择 **Retry deployment**。
+   - 等待新的部署完成后，你的 KVideo 就部署成功了！
+
+#### 选项 3：Docker 部署
+
+**从 Docker Hub 拉取（最简单）：**
+
+```bash
+# 拉取最新版本
+docker pull kuekhaoyang/kvideo:latest
+docker run -d -p 3000:3000 --name kvideo kuekhaoyang/kvideo:latest
+```
+
+应用将在 `http://localhost:3000` 启动。
+
+&gt; **✨ 多架构支持**：镜像支持 2 种主流平台架构：
+&gt; - `linux/amd64` - Intel/AMD 64位（大多数服务器、PC、Intel Mac）
+&gt; - `linux/arm64` - ARM 64位（Apple Silicon Mac、AWS Graviton、树莓派 4/5）
+
+**自己构建镜像：**
+
+```bash
+git clone https://github.com/KuekHaoYang/KVideo.git
+cd KVideo
+docker build -t kvideo .
+docker run -d -p 3000:3000 --name kvideo kvideo
+```
+
+**使用 Docker Compose：**
+
+```bash
+docker-compose up -d
+```
+
+#### 选项 4：传统 Node.js 部署
+
+```bash
+# 1. 克隆仓库
+git clone https://github.com/KuekHaoYang/KVideo.git
+cd KVideo
+
+# 2. 安装依赖
+npm install
+
+# 3. 构建项目
+npm run build
+
+# 4. 启动生产服务器
+npm start
+```
+
+应用将在 `http://localhost:3000` 启动。
+
+## 🔄 如何更新
+
+### Vercel 部署
+
+Vercel 会自动检测 GitHub 仓库的更新并重新部署，无需手动操作。
+
+### Docker 部署
+
+当有新版本发布时：
+
+```bash
+# 停止并删除旧容器
+docker stop kvideo
+docker rm kvideo
+
+# 拉取最新镜像
+docker pull kuekhaoyang/kvideo:latest
+
+# 运行新容器
+docker run -d -p 3000:3000 --name kvideo kuekhaoyang/kvideo:latest
+```
+
+### Node.js 部署
+
+```bash
+cd KVideo
+git pull origin main
+npm install
+npm run build
+npm start
+```
+
+&gt; **🔄 自动化部署**：本项目使用 GitHub Actions 自动构建和发布 Docker 镜像。每次代码推送到 main 分支时，会自动构建多架构镜像并推送到 Docker Hub。
+
+## 🤝 贡献代码
+
+我们非常欢迎各种形式的贡献！无论是报告 Bug、提出新功能建议、改进文档，还是提交代码，你的每一份贡献都让这个项目变得更好。
+
+**想要参与开发？请查看 [贡献指南](CONTRIBUTING.md) 了解详细的开发规范和流程。**
+
+快速开始：
+1. **报告 Bug**：[提交 Issue](https://github.com/KuekHaoYang/KVideo/issues)
+2. **功能建议**：在 Issues 中提出你的想法
+3. **代码贡献**：Fork → Branch → PR
+4. **文档改进**：直接提交 PR
+
+## 📄 许可证
+
+本项目基于 [MIT 许可证](LICENSE) 开源。
+
+## 🙏 致谢
+
+感谢以下开源项目：
+
+- [Next.js](https://nextjs.org/) - React 框架
+- [Tailwind CSS](https://tailwindcss.com/) - CSS 框架
+- [Zustand](https://github.com/pmndrs/zustand) - 状态管理
+- [React](https://react.dev/) - UI 库
+
+## 📞 联系方式
+
+- **作者**：[KuekHaoYang](https://github.com/KuekHaoYang)
+- **项目主页**：[https://github.com/KuekHaoYang/KVideo](https://github.com/KuekHaoYang/KVideo)
+- **问题反馈**：[GitHub Issues](https://github.com/KuekHaoYang/KVideo/issues)
+
+
+
+
+
+---
+
+&lt;div align=&quot;center&quot;&gt;
+  Made with ❤️ by &lt;a href=&quot;https://github.com/KuekHaoYang&quot;&gt;KuekHaoYang&lt;/a&gt;
+  &lt;br&gt;
+  如果这个项目对你有帮助，请考虑给一个 ⭐️
+&lt;/div&gt;
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=openclaw/openclaw&amp;type=date&amp;legend=top-left)](https://www.star-history.com/#openclaw/openclaw&amp;type=date&amp;legend=top-left)
+[![Star History Chart](https://api.star-history.com/svg?repos=KuekHaoYang/KVideo&amp;type=date&amp;legend=top-left)](https://www.star-history.com/#KuekHaoYang/KVideo&amp;type=date&amp;legend=top-left)</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[open-metadata/OpenMetadata]]></title>
+            <link>https://github.com/open-metadata/OpenMetadata</link>
+            <guid>https://github.com/open-metadata/OpenMetadata</guid>
+            <pubDate>Wed, 04 Feb 2026 00:06:21 GMT</pubDate>
+            <description><![CDATA[OpenMetadata is a unified metadata platform for data discovery, data observability, and data governance powered by a central metadata repository, in-depth column level lineage, and seamless team collaboration.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/open-metadata/OpenMetadata">open-metadata/OpenMetadata</a></h1>
+            <p>OpenMetadata is a unified metadata platform for data discovery, data observability, and data governance powered by a central metadata repository, in-depth column level lineage, and seamless team collaboration.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 8,607</p>
+            <p>Forks: 1,612</p>
+            <p>Stars today: 10 stars today</p>
+            <h2>README</h2><pre>&lt;br /&gt;&lt;br /&gt;
+&lt;p align=&quot;center&quot;&gt;
+    &lt;a href=&quot;https://open-metadata.org&quot;&gt;
+        &lt;img alt=&quot;Logo&quot; src=&quot;https://github.com/open-metadata/OpenMetadata/assets/40225091/e794ced8-7220-4393-8efc-3faf93bfb503&quot; width=&quot;49%&quot;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
 
-## Everything we built so far
+&lt;p align=&quot;center&quot;&gt;&lt;b&gt;Empower your Data Journey with OpenMetadata&lt;/b&gt;&lt;/p&gt;
 
-### Core platform
+&lt;div align=&quot;center&quot;&gt;
+    
+![Commit Activity](https://img.shields.io/github/commit-activity/m/open-metadata/OpenMetadata?style=for-the-badge)
+[![Release](https://img.shields.io/github/release/open-metadata/OpenMetadata/all.svg?style=for-the-badge)](https://github.com/open-metadata/OpenMetadata/releases)
 
-- [Gateway WS control plane](https://docs.openclaw.ai/gateway) with sessions, presence, config, cron, webhooks, [Control UI](https://docs.openclaw.ai/web), and [Canvas host](https://docs.openclaw.ai/platforms/mac/canvas#canvas-a2ui).
-- [CLI surface](https://docs.openclaw.ai/tools/agent-send): gateway, agent, send, [wizard](https://docs.openclaw.ai/start/wizard), and [doctor](https://docs.openclaw.ai/gateway/doctor).
-- [Pi agent runtime](https://docs.openclaw.ai/concepts/agent) in RPC mode with tool streaming and block streaming.
-- [Session model](https://docs.openclaw.ai/concepts/session): `main` for direct chats, group isolation, activation modes, queue modes, reply-back. Group rules: [Groups](https://docs.openclaw.ai/concepts/groups).
-- [Media pipeline](https://docs.openclaw.ai/nodes/images): images/audio/video, transcription hooks, size caps, temp file lifecycle. Audio details: [Audio](https://docs.openclaw.ai/nodes/audio).
+&lt;/div&gt;
 
-### Channels
+## What is OpenMetadata?
+[OpenMetadata](https://open-metadata.org/)  is a unified metadata platform for data discovery, data observability, and data governance powered by a central metadata repository, in-depth column-level lineage, and seamless team collaboration. It is one of the fastest-growing open-source projects with a vibrant community and adoption by a diverse set of companies in a variety of industry verticals. Based on Open Metadata Standards and APIs, supporting connectors to a wide range of data services, OpenMetadata enables end-to-end metadata management, giving you the freedom to unlock the value of your data assets.
+&lt;div align=&quot;center&quot;&gt;
+    &lt;img src=&quot;https://github.com/open-metadata/OpenMetadata/assets/40225091/ebfb4ec5-f0a2-4d58-8ce5-a082b5cf0f76&quot; width=800&gt;
+&lt;/div&gt;
 
-- [Channels](https://docs.openclaw.ai/channels): [WhatsApp](https://docs.openclaw.ai/channels/whatsapp) (Baileys), [Telegram](https://docs.openclaw.ai/channels/telegram) (grammY), [Slack](https://docs.openclaw.ai/channels/slack) (Bolt), [Discord](https://docs.openclaw.ai/channels/discord) (discord.js), [Google Chat](https://docs.openclaw.ai/channels/googlechat) (Chat API), [Signal](https://docs.openclaw.ai/channels/signal) (signal-cli), [iMessage](https://docs.openclaw.ai/channels/imessage) (imsg), [BlueBubbles](https://docs.openclaw.ai/channels/bluebubbles) (extension), [Microsoft Teams](https://docs.openclaw.ai/channels/msteams) (extension), [Matrix](https://docs.openclaw.ai/channels/matrix) (extension), [Zalo](https://docs.openclaw.ai/channels/zalo) (extension), [Zalo Personal](https://docs.openclaw.ai/channels/zalouser) (extension), [WebChat](https://docs.openclaw.ai/web/webchat).
-- [Group routing](https://docs.openclaw.ai/concepts/group-messages): mention gating, reply tags, per-channel chunking and routing. Channel rules: [Channels](https://docs.openclaw.ai/channels).
+&lt;br /&gt;
+Contents:
 
-### Apps + nodes
+- [Features](#key-features-of-openmetadata)
+- [Try our Sandbox](#try-our-sandbox)
+- [Install &amp; Run](#install-and-run-openmetadata)
+- [Roadmap](https://docs.open-metadata.org/latest/roadmap)
+- [Documentation and Support](#documentation-and-support)
+- [Contributors](#contributors)
 
-- [macOS app](https://docs.openclaw.ai/platforms/macos): menu bar control plane, [Voice Wake](https://docs.openclaw.ai/nodes/voicewake)/PTT, [Talk Mode](https://docs.openclaw.ai/nodes/talk) overlay, [WebChat](https://docs.openclaw.ai/web/webchat), debug tools, [remote gateway](https://docs.openclaw.ai/gateway/remote) control.
-- [iOS node](https://docs.openclaw.ai/platforms/ios): [Canvas](https://docs.openclaw.ai/platforms/mac/canvas), [Voice Wake](https://docs.openclaw.ai/nodes/voicewake), [Talk Mode](https://docs.openclaw.ai/nodes/talk), camera, screen recording, Bonjour pairing.
-- [Android node](https://docs.openclaw.ai/platforms/android): [Canvas](https://docs.openclaw.ai/platforms/mac/canvas), [Talk Mode](https://docs.openclaw.ai/nodes/talk), camera, screen recording, optional SMS.
-- [macOS node mode](https://docs.openclaw.ai/nodes): system.run/notify + canvas/camera exposure.
+OpenMetadata Consists of Four Main Components:
+- **Metadata Schemas**: These are the core definitions and vocabulary for metadata based on common abstractions and types. They also allow for custom extensions and properties to suit different use cases and domains.
+- **Metadata Store**: This is the central repository for storing and managing the metadata graph, which connects data assets, users, and tool-generated metadata in a unified way.
+- **Metadata APIs**: These are the interfaces for producing and consuming metadata, built on top of the metadata schemas. They enable seamless integration of user interfaces and tools, systems, and services with the metadata store.
+- **Ingestion Framework**: This is a pluggable framework for ingesting metadata from various sources and tools to the metadata store. It supports about 84+ connectors for data warehouses, databases, dashboard services, messaging services, pipeline services, and more.
 
-### Tools + automation
+## Key Features of OpenMetadata
+**Data Discovery**: Find and explore all your data assets in a single place using various strategies, such as keyword search, data associations, and advanced queries. You can search across tables, topics, dashboards, pipelines, and services.
 
-- [Browser control](https://docs.openclaw.ai/tools/browser): dedicated openclaw Chrome/Chromium, snapshots, actions, uploads, profiles.
-- [Canvas](https://docs.openclaw.ai/platforms/mac/canvas): [A2UI](https://docs.openclaw.ai/platforms/mac/canvas#canvas-a2ui) push/reset, eval, snapshot.
-- [Nodes](https://docs.openclaw.ai/nodes): camera snap/clip, screen record, [location.get](https://docs.openclaw.ai/nodes/location-command), notifications.
-- [Cron + wakeups](https://docs.openclaw.ai/automation/cron-jobs); [webhooks](https://docs.openclaw.ai/automation/webhook); [Gmail Pub/Sub](https://docs.openclaw.ai/automation/gmail-pubsub).
-- [Skills platform](https://docs.openclaw.ai/tools/skills): bundled, managed, and workspace skills with install gating + UI.
+![12](https://github.com/open-metadata/OpenMetadata/assets/40225091/0dbd2746-c93d-4a47-8d3e-ceb3ae01436f)
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**Data Collaboration**: Communicate, converse, and cooperate with other users and teams on data assets. You can get event notifications, send alerts, add announcements, create tasks, and use conversation threads.
 
-### Runtime + safety
+![11](https://github.com/open-metadata/OpenMetadata/assets/40225091/7df29e12-8a29-44b7-9466-42474823783f)
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**Data Quality and Profiler**: Measure and monitor the quality with **no-code** to build trust in your data. You can define and run data quality tests, group them into test suites, and view the results in an interactive dashboard. With powerful collaboration, make data quality a shared responsibility in your organization.
 
-- [Channel routing](https://docs.openclaw.ai/concepts/channel-routing), [retry policy](https://docs.openclaw.ai/concepts/retry), and [streaming/chunking](https://docs.openclaw.ai/concepts/streaming).
-- [Presence](https://docs.openclaw.ai/concepts/presence), [typing indicators](https://docs.openclaw.ai/concepts/typing-indicators), and [usage tracking](https://docs.openclaw.ai/concepts/usage-tracking).
-- [Models](https://docs.openclaw.ai/concepts/models), [model failover](https://docs.openclaw.ai/concepts/model-failover), and [session pruning](https://docs.openclaw.ai/concepts/session-pruning).
-- [Security](https://docs.openclaw.ai/gateway/security) and [troubleshooting](https://docs.openclaw.ai/channels/troubleshooting).
+![8](https://github.com/open-metadata/OpenMetadata/assets/40225091/6b330827-cc2d-4d06-abf0-a4d42ce532ba)
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**Data Governance**: Enforce data policies and standards across your organization. You can define data domains and data products, assign owners and stakeholders, and classify data assets using tags and terms. Use powerful automation features to auto-classify your data.
 
-### Ops + packaging
+![10](https://github.com/open-metadata/OpenMetadata/assets/40225091/f7384a71-6b58-44ad-983f-e302718ee3f1)
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**Data Insights and KPIs**: Use reports and platform analytics to understand how your organization&#039;s data is doing. Data Insights provides a single-pane view of all the key metrics to reflect the state of your data best. Define the Key Performance Indicators (KPIs) and set goals within OpenMetadata to work towards better documentation, ownership, and tiering. Alerts can be set against the KPIs to be received on a specified schedule.
 
-- [Control UI](https://docs.openclaw.ai/web) + [WebChat](https://docs.openclaw.ai/web/webchat) served directly from the Gateway.
-- [Tailscale Serve/Funnel](https://docs.openclaw.ai/gateway/tailscale) or [SSH tunnels](https://docs.openclaw.ai/gateway/remote) with token/password auth.
-- [Nix mode](https://docs.openclaw.ai/install/nix) for declarative config; [Docker](https://docs.openclaw.ai/install/docker)-based installs.
-- [Doctor](https://docs.openclaw.ai/gateway/doctor) migrations, [logging](https://docs.openclaw.ai/logging).
+![9](https://github.com/open-metadata/OpenMetadata/assets/40225091/61fc2f65-2436-4fc9-9434-c27ee9b25183)
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**Data Lineage**: Track and visualize the origin and transformation of your data assets end-to-end. You can view column-level lineage, filter queries, and edit lineage manually using a no-code editor.
+  
+**Data Documentation**: Document your data assets and metadata entities using rich text, images, and links. You can also add comments and annotations and generate data dictionaries and data catalogs.
+  
+**Data Observability**: Monitor the health and performance of your data assets and pipelines. You can view metrics such as data freshness, data volume, data quality, and data latency. You can also set up alerts and notifications for any anomalies or failures.
+  
+**Data Security**: Secure your data and metadata using various authentication and authorization mechanisms. You can integrate with different identity providers for single sign-on and define roles and policies for access control.
+  
+**Webhooks**: Integrate with external applications and services using webhooks. You can register URLs to receive metadata event notifications and integrate with Slack, Microsoft Teams, and Google Chat.
+  
+**Connectors**: Ingest metadata from various sources and tools using connectors. OpenMetadata supports about 84+ connectors for data warehouses, databases, dashboard services, messaging services, pipeline services, and more.
 
-## How it works (short)
+## Try our Sandbox
 
-```
-WhatsApp / Telegram / Slack / Discord / Google Chat / Signal / iMessage / BlueBubbles / Microsoft Teams / Matrix / Zalo / Zalo Personal / WebChat
-               │
-               ▼
-┌───────────────────────────────┐
-│            Gateway            │
-│       (control plane)         │
-│     ws://127.0.0.1:18789      │
-└──────────────┬────────────────┘
-               │
-               ├─ Pi agent (RPC)
-               ├─ CLI (openclaw …)
-               ├─ WebChat UI
-               ├─ macOS app
-               └─ iOS / Android nodes
-```
+Take a look and play with sample data at [http://sandbox.open-metadata.org](http://sandbox.open-metadata.org)
 
-## Key subsystems
+## Install and Run OpenMetadata
+Get up and running in a few minutes. See the OpenMetadata documentation for [installation instructions](https://docs.open-metadata.org/quick-start/local-docker-deployment).
 
-- **[Gateway WebSocket network](https://docs.openclaw.ai/concepts/architecture)** — single WS control plane for clients, tools, and events (plus ops: [Gateway runbook](https://docs.openclaw.ai/gateway)).
-- **[Tailscale exposure](https://docs.openclaw.ai/gateway/tailscale)** — Serve/Funnel for the Gateway dashboard + WS (remote access: [Remote](https://docs.openclaw.ai/gateway/remote)).
-- **[Browser control](https://docs.openclaw.ai/tools/browser)** — openclaw‑managed Chrome/Chromium with CDP control.
-- **[Canvas + A2UI](https://docs.openclaw.ai/platforms/mac/canvas)** — agent‑driven visual workspace (A2UI host: [Canvas/A2UI](https://docs.openclaw.ai/platforms/mac/canvas#canvas-a2ui)).
-- **[Voice Wake](https://docs.openclaw.ai/nodes/voicewake) + [Talk Mode](https://docs.openclaw.ai/nodes/talk)** — always‑on speech and continuous conversation.
-- **[Nodes](https://docs.openclaw.ai/nodes)** — Canvas, camera snap/clip, screen record, `location.get`, notifications, plus macOS‑only `system.run`/`system.notify`.
+## Documentation and Support
 
-## Tailscale access (Gateway dashboard)
+We&#039;re here to help and make OpenMetadata even better! Check out [OpenMetadata documentation](https://docs.open-metadata.org/) for a complete description of OpenMetadata&#039;s features. Join our [Slack Community](https://slack.open-metadata.org/) to get in touch with us if you want to chat, need help, or discuss new feature requirements.
 
-OpenClaw can auto-configure Tailscale **Serve** (tailnet-only) or **Funnel** (public) while the Gateway stays bound to loopback. Configure `gateway.tailscale.mode`:
 
-- `off`: no Tailscale automation (default).
-- `serve`: tailnet-only HTTPS via `tailscale serve` (uses Tailscale identity headers by default).
-- `funnel`: public HTTPS via `tailscale funnel` (requires shared password auth).
+## Contributors
 
-Notes:
+We ❤️ all contributions, big and small! Check out our [CONTRIBUTING](./CONTRIBUTING.md) guide to get started, and let us know how we can help.
 
-- `gateway.bind` must stay `loopback` when Serve/Funnel is enabled (OpenClaw enforces this).
-- Serve can be forced to require a password by setting `gateway.auth.mode: &quot;password&quot;` or `gateway.auth.allowTailscale: false`.
-- Funnel refuses to start unless `gateway.auth.mode: &quot;password&quot;` is set.
-- Optional: `gateway.tailscale.resetOnExit` to undo Serve/Funnel on shutdown.
+Don&#039;t want to miss anything? Give the project a ⭐ 🚀 
 
-Details: [Tailscale guide](https://docs.openclaw.ai/gateway/tailscale) · [Web surfaces](https://docs.openclaw.ai/web)
+A HUGE THANK YOU to all our supporters!
 
-## Remote Gateway (Linux is great)
+&lt;a href=&quot;https://github.com/open-metadata/OpenMetadata/graphs/contributors&quot;&gt;
+  &lt;img src=&quot;https://contrib.rocks/image?repo=open-metadata/OpenMetadata&amp;max=4000&amp;columns=30&quot; /&gt;
+&lt;/a&gt;
 
-It’s perfectly fine to run the Gateway on a small Linux instance. Clients (macOS app, CLI, WebChat) can connect over **Tailscale Serve/Funnel** or **SSH tunnels**, and you can still pair device nodes (macOS/iOS/Android) to execute device‑local actions when needed.
+## Stargazers
 
-- **Gateway host** runs the exec tool and channel connections by default.
-- **Device nodes** run device‑local actions (`system.run`, camera, screen recording, notifications) via `node.invoke`.
-  In short: exec runs where the Gateway lives; device actions run where the device lives.
+[![Stargazers of @open-metadata/OpenMetadata repo](http://reporoster.com/stars/open-metadata/OpenMetadata)](https://github.com/open-metadata/OpenMetadata/stargazers)
 
-Details: [Remote access](https://docs.openclaw.ai/gateway/remote) · [Nodes](https://docs.openclaw.ai/nodes) · [Security](https://docs.openclaw.ai/gateway/security)
-
-## macOS permissions via the Gateway protocol
-
-The macOS app can run in **node mode** and advertises its capabilities + permission map over the Gateway WebSocket (`node.list` / `node.describe`). Clients can then execute local actions via `node.invoke`:
-
-- `system.run` runs a local command and returns stdout/stderr/exit code; set `needsScreenRecording: true` to require screen-recording permission (otherwise you’ll get `PERMISSION_MISSING`).
-- `system.notify` posts a user notification and fails if notifications are denied.
-- `canvas.*`, `camera.*`, `screen.record`, and `location.get` are also routed via `node.invoke` and follow TCC permission status.
-
-Elevated bash (host permissions) is separate from macOS TCC:
-
-- Use `/elevated on|off` to toggle per‑session elevated access when enabled + allowlisted.
-- Gateway persists the per‑session toggle via `sessions.patch` (WS method) alongside `thinkingLevel`, `verboseLevel`, `model`, `sendPolicy`, and `groupActivation`.
-
-Details: [Nodes](https://docs.openclaw.ai/nodes) · [macOS app](https://docs.openclaw.ai/platforms/macos) · [Gateway protocol](https://docs.openclaw.ai/concepts/architecture)
-
-## Agent to Agent (sessions\_\* tools)
-
-- Use these to coordinate work across sessions without jumping between chat surfaces.
-- `sessions_list` — discover active sessions (agents) and their metadata.
-- `sessions_history` — fetch transcript logs for a session.
-- `sessions_send` — message another session; optional reply‑back ping‑pong + announce step (`REPLY_SKIP`, `ANNOUNCE_SKIP`).
-
-Details: [Session tools](https://docs.openclaw.ai/concepts/session-tool)
-
-## Skills registry (ClawHub)
-
-ClawHub is a minimal skill registry. With ClawHub enabled, the agent can search for skills automatically and pull in new ones as needed.
-
-[ClawHub](https://clawhub.com)
-
-## Chat commands
-
-Send these in WhatsApp/Telegram/Slack/Google Chat/Microsoft Teams/WebChat (group commands are owner-only):
-
-- `/status` — compact session status (model + tokens, cost when available)
-- `/new` or `/reset` — reset the session
-- `/compact` — compact session context (summary)
-- `/think &lt;level&gt;` — off|minimal|low|medium|high|xhigh (GPT-5.2 + Codex models only)
-- `/verbose on|off`
-- `/usage off|tokens|full` — per-response usage footer
-- `/restart` — restart the gateway (owner-only in groups)
-- `/activation mention|always` — group activation toggle (groups only)
-
-## Apps (optional)
-
-The Gateway alone delivers a great experience. All apps are optional and add extra features.
-
-If you plan to build/run companion apps, follow the platform runbooks below.
-
-### macOS (OpenClaw.app) (optional)
-
-- Menu bar control for the Gateway and health.
-- Voice Wake + push-to-talk overlay.
-- WebChat + debug tools.
-- Remote gateway control over SSH.
-
-Note: signed builds required for macOS permissions to stick across rebuilds (see `docs/mac/permissions.md`).
-
-### iOS node (optional)
-
-- Pairs as a node via the Bridge.
-- Voice trigger forwarding + Canvas surface.
-- Controlled via `openclaw nodes …`.
-
-Runbook: [iOS connect](https://docs.openclaw.ai/platforms/ios).
-
-### Android node (optional)
-
-- Pairs via the same Bridge + pairing flow as iOS.
-- Exposes Canvas, Camera, and Screen capture commands.
-- Runbook: [Android connect](https://docs.openclaw.ai/platforms/android).
-
-## Agent workspace + skills
-
-- Workspace root: `~/.openclaw/workspace` (configurable via `agents.defaults.workspace`).
-- Injected prompt files: `AGENTS.md`, `SOUL.md`, `TOOLS.md`.
-- Skills: `~/.openclaw/workspace/skills/&lt;skill&gt;/SKILL.md`.
-
-## Configuration
-
-Minimal `~/.openclaw/openclaw.json` (model + defaults):
-
-```json5
-{
-  agent: {
-    model: &quot;anthropic/claude-opus-4-5&quot;,
-  },
-}
-```
-
-[Full configuration reference (all keys + examples).](https://docs.openclaw.ai/gateway/configuration)
-
-## Security model (important)
-
-- **Default:** tools run on the host for the **main** session, so the agent has full access when it’s just you.
-- **Group/channel safety:** set `agents.defaults.sandbox.mode: &quot;non-main&quot;` to run **non‑main 
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+## License
+OpenMetadata is released under [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+</pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
@@ -1386,15 +1755,15 @@ Minimal `~/.openclaw/openclaw.json` (model + defaults):
             <title><![CDATA[amantus-ai/vibetunnel]]></title>
             <link>https://github.com/amantus-ai/vibetunnel</link>
             <guid>https://github.com/amantus-ai/vibetunnel</guid>
-            <pubDate>Tue, 03 Feb 2026 00:08:17 GMT</pubDate>
+            <pubDate>Wed, 04 Feb 2026 00:06:20 GMT</pubDate>
             <description><![CDATA[Turn any browser into your terminal & command your agents on the go.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/amantus-ai/vibetunnel">amantus-ai/vibetunnel</a></h1>
             <p>Turn any browser into your terminal & command your agents on the go.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 3,714</p>
-            <p>Forks: 242</p>
-            <p>Stars today: 297 stars today</p>
+            <p>Stars: 3,743</p>
+            <p>Forks: 246</p>
+            <p>Stars today: 41 stars today</p>
             <h2>README</h2><pre># VibeTunnel 🚇 - Turn any browser into your terminal; command agents from the road (vt.sh)
 
 &lt;!-- Generated: 2025-07-28 12:35:00 UTC --&gt;
@@ -1845,571 +2214,392 @@ The macOS menu bar app supports these authentication modes:
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[agentsmd/agents.md]]></title>
-            <link>https://github.com/agentsmd/agents.md</link>
-            <guid>https://github.com/agentsmd/agents.md</guid>
-            <pubDate>Tue, 03 Feb 2026 00:08:16 GMT</pubDate>
-            <description><![CDATA[AGENTS.md — a simple, open format for guiding coding agents]]></description>
+            <title><![CDATA[activepieces/activepieces]]></title>
+            <link>https://github.com/activepieces/activepieces</link>
+            <guid>https://github.com/activepieces/activepieces</guid>
+            <pubDate>Wed, 04 Feb 2026 00:06:19 GMT</pubDate>
+            <description><![CDATA[AI Agents & MCPs & AI Workflow Automation • (~400 MCP servers for AI agents) • AI Automation / AI Agent with MCPs • AI Workflows & AI Agents • MCPs for AI Agents]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/agentsmd/agents.md">agentsmd/agents.md</a></h1>
-            <p>AGENTS.md — a simple, open format for guiding coding agents</p>
+            <h1><a href="https://github.com/activepieces/activepieces">activepieces/activepieces</a></h1>
+            <p>AI Agents & MCPs & AI Workflow Automation • (~400 MCP servers for AI agents) • AI Automation / AI Agent with MCPs • AI Workflows & AI Agents • MCPs for AI Agents</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 16,711</p>
-            <p>Forks: 1,173</p>
-            <p>Stars today: 187 stars today</p>
-            <h2>README</h2><pre># AGENTS.md
+            <p>Stars: 20,678</p>
+            <p>Forks: 3,238</p>
+            <p>Stars today: 38 stars today</p>
+            <h2>README</h2><pre>
+&lt;h1 align=&quot;center&quot;&gt;
+  &lt;a
+    target=&quot;_blank&quot;
+    href=&quot;https://activepieces.com&quot;
+  &gt;
+    &lt;img
+      align=&quot;center&quot;
+      alt=&quot;Activepieces&quot;
+src=&quot;https://github.com/activepieces/activepieces/assets/1812998/76c97441-c285-4480-bc75-30a0c73ed340&quot;
+      style=&quot;width:100%;&quot;
+    /&gt;
+    
+  &lt;/a&gt;
+&lt;/h1&gt;
 
-![AGENTS.md logo](./public/og.png)
 
-[AGENTS.md](https://agents.md) is a simple, open format for guiding coding agents.
+&lt;p align=&quot;center&quot;&gt;
+&lt;a href=&quot;/LICENSE&quot; target=&quot;_blank&quot;&gt;&lt;img src=&#039;https://img.shields.io/badge/license-MIT-green?style=for-the-badge&#039; /&gt;&lt;/a&gt;&amp;nbsp;&lt;img src=&#039;https://img.shields.io/github/commit-activity/w/activepieces/activepieces/main?style=for-the-badge&#039; /&gt;&amp;nbsp;&lt;a href=&#039;https://discord.gg/2jUXBKDdP8&#039;&gt;&lt;img src=&#039;https://img.shields.io/discord/966798490984382485?style=for-the-badge&#039; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+   An open source replacement for Zapier
+&lt;/p&gt;
 
-Think of AGENTS.md as a README for agents: a dedicated, predictable place
-to provide context and instructions to help AI coding agents work on your project.
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a
+    href=&quot;https://www.activepieces.com/docs&quot;
+    target=&quot;_blank&quot;
+  &gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;🌪️&amp;nbsp;&amp;nbsp;&amp;nbsp;
+   &lt;a
+    href=&quot;https://www.activepieces.com/docs/developers/building-pieces/overview&quot;
+    target=&quot;_blank&quot;
+  &gt;&lt;b&gt;Create a Piece&lt;/b&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;🖉&amp;nbsp;&amp;nbsp;&amp;nbsp;
+  &lt;a
+    href=&quot;https://www.activepieces.com/docs/install/overview&quot;
+    target=&quot;_blank&quot;
+  &gt;&lt;b&gt;Deploy&lt;/b&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;🔥&amp;nbsp;&amp;nbsp;&amp;nbsp;
+  &lt;a
+    href=&quot;https://discord.gg/yvxF5k5AUb&quot;
+    target=&quot;_blank&quot;
+  &gt;
+    &lt;b&gt;Join Discord&lt;/b&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
 
-Below is a minimal example of an AGENTS.md file:
+&lt;br&gt;
+&lt;br&gt;
 
-```markdown
-# Sample AGENTS.md file
+# 🤯 Welcome to Activepieces
 
-## Dev environment tips
-- Use `pnpm dlx turbo run where &lt;project_name&gt;` to jump to a package instead of scanning with `ls`.
-- Run `pnpm install --filter &lt;project_name&gt;` to add the package to your workspace so Vite, ESLint, and TypeScript can see it.
-- Use `pnpm create vite@latest &lt;project_name&gt; -- --template react-ts` to spin up a new React + Vite package with TypeScript checks ready.
-- Check the name field inside each package&#039;s package.json to confirm the right name—skip the top-level one.
+All-in-one AI automation designed to be **extensible** through a **type-safe** pieces framework written in **TypeScript**.
+When you contribute pieces to Activepieces they become automatically available as MCP servers that you can use with LLMs through Claude Desktop, Cursor or Windsurf!
 
-## Testing instructions
-- Find the CI plan in the .github/workflows folder.
-- Run `pnpm turbo run test --filter &lt;project_name&gt;` to run every check defined for that package.
-- From the package root you can just call `pnpm test`. The commit should pass all tests before you merge.
-- To focus on one step, add the Vitest pattern: `pnpm vitest run -t &quot;&lt;test name&gt;&quot;`.
-- Fix any test or type errors until the whole suite is green.
-- After moving files or changing imports, run `pnpm lint --filter &lt;project_name&gt;` to be sure ESLint and TypeScript rules still pass.
-- Add or update tests for the code you change, even if nobody asked.
+&lt;br&gt;
+&lt;br&gt;
 
-## PR instructions
-- Title format: [&lt;project_name&gt;] &lt;Title&gt;
-- Always run `pnpm lint` and `pnpm test` before committing.
-```
+## 🔥 Why Activepieces is Different:
 
-## Website
+- **💖 Loved by Everyone**: Intuitive interface and great experience for both technical and non-technical users with a quick learning curve.
 
-This repository also includes a basic Next.js website hosted at https://agents.md/
-that explains the project’s goals in a simple way, and featuring some examples.
+&lt;img src=&quot;/docs/resources/templates.gif&quot;&gt;
 
-### Running the app locally
-1. Install dependencies:
-   ```bash
-   pnpm install
-   ```
-2. Start the development server:
-   ```bash
-   pnpm run dev
-   ```
-3. Open your browser and go to http://localhost:3000
-</pre>
+- **🌐 Open Ecosystem:** All pieces are open source and available on npmjs.com, **60% of the pieces are contributed by the community**.
+
+- **🛠️ Largest open source MCP toolkit**: All our pieces (280+) are available as MCP that you can use with LLMs on Claude Desktop, Cursor or Windsurf.
+
+- **🛠️  Pieces are written in Typescript**: Pieces are npm packages in TypeScript, offering full customization with the best developer experience, including **hot reloading** for **local** piece development on your machine. 😎
+
+&lt;img src=&quot;/docs/resources/create-action.png&quot; alt=&quot;&quot;&gt;
+
+- **🤖 AI-First**: Native AI pieces let you experiment with various providers, or create your own agents using our AI SDK to help you build flows inside the builder.
+
+- **🏢 Enterprise-Ready**: Developers set up the tools, and anyone in the organization can use the no-code builder. Full customization from branding to control.
+
+- **🔒 Secure by Design**: Self-hosted and network-gapped for maximum security and control over your data.
+
+- **🧠 Human in the Loop**: Delay execution for a period of time or require approval. These are just pieces built on top of the piece framework, and you can build many pieces like that. 🎨
+
+- **💻 Human Input Interfaces**: Built-in support for human input triggers like &quot;Chat Interface&quot; 💬 and &quot;Form Interface&quot; 📝
+
+
+
+## 🛠️  Builder Features:
+
+- [x] Loops
+- [x] Branches
+- [x] Auto Retries
+- [x] HTTP
+- [x] Code with **NPM**
+- [x] ASK AI in Code Piece (Non technical user can clean data without knowing to code)
+- [x] Flows are fully versioned.
+- [x] Languages Translations
+- [x] Customizable Templates
+- [X] 200+ Pieces, check https://www.activepieces.com/pieces
+
+**We release updates frequently. Check the product changelog for the latest features.**
+
+
+## 🔌 Create Your Own Piece
+
+Activepieces supports integrations with Google Sheets, OpenAI, Discord, RSS, and over 200 other services. [Check out the full list of supported integrations](https://www.activepieces.com/pieces), which is constantly expanding thanks to our community&#039;s contributions.
+
+As an **open ecosystem**, all integration source code is accessible in our repository. These integrations are versioned and [published](https://www.npmjs.com/search?q=%40activepieces) directly to npmjs.com upon contribution.
+
+You can easily create your own integration using our TypeScript framework. For detailed instructions, please refer to our [Contributor&#039;s Guide](https://www.activepieces.com/docs/build-pieces/building-pieces/overview).
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+
+# License
+
+Activepieces&#039; Community Edition is released as open source under the [MIT license](https://github.com/activepieces/activepieces/blob/main/LICENSE) and enterprise features are released under [Commercial License](https://github.com/activepieces/activepieces/blob/main/packages/ee/LICENSE)
+
+
+Read more about the feature comparison here https://www.activepieces.com/docs/about/editions
+&lt;br&gt;
+&lt;br&gt;
+
+
+# 💭 Join Our Community
+
+&lt;a href=&quot;https://discord.gg/2jUXBKDdP8&quot; target=&quot;_blank&quot;&gt;
+&lt;img src=&quot;https://discordapp.com/api/guilds/966798490984382485/widget.png?style=banner3&quot; alt=&quot;&quot;&gt;
+&lt;/a&gt;
+
+&lt;br&gt;
+&lt;br&gt;
+
+# 🌐 Contributions
+
+We welcome contributions big or small and in different directions. The best way to do this is to check this [document](https://www.activepieces.com/docs/build-pieces/building-pieces/create-action) and we are always up to talk on [our Discord Server](https://discord.gg/2jUXBKDdP8).
+
+## 📚 Translations
+
+Not into coding but still interested in contributing? Come join our [Discord](https://discord.gg/2jUXBKDdP8) and visit https://www.activepieces.com/docs/about/i18n for more information.
+
+![fr translation](https://img.shields.io/badge/dynamic/json?color=blue&amp;label=fr&amp;style=for-the-badge&amp;logo=crowdin&amp;query=%24.progress[?(@.data.languageId==%27fr%27)].data.translationProgress&amp;url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-16093902-626364-update.json)
+
+![it translation](https://img.shields.io/badge/dynamic/json?color=blue&amp;label=it&amp;style=for-the-badge&amp;logo=crowdin&amp;query=%24.progress[?(@.data.languageId==%27it%27)].data.translationProgress&amp;url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-16093902-626364-update.json)
+
+![de translation](https://img.shields.io/badge/dynamic/json?color=blue&amp;label=de&amp;style=for-the-badge&amp;logo=crowdin&amp;query=%24.progress[?(@.data.languageId==%27de%27)].data.translationProgress&amp;url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-16093902-626364-update.json)
+
+![ja translation](https://img.shields.io/badge/dynamic/json?color=blue&amp;label=ja&amp;style=for-the-badge&amp;logo=crowdin&amp;query=%24.progress[?(@.data.languageId==%27ja%27)].data.translationProgress&amp;url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-16093902-626364-update.json)
+
+
+![pt-BR translation](https://img.shields.io/badge/dynamic/json?color=blue&amp;label=pt-BR&amp;style=for-the-badge&amp;logo=crowdin&amp;query=%24.progress[?(@.data.languageId==%27pt-BR%27)].data.translationProgress&amp;url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-16093902-626364-update.json)
+
+
+## 🦫 Contributors
+
+&lt;!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section --&gt;
+&lt;!-- prettier-ignore-start --&gt;
+&lt;!-- markdownlint-disable --&gt;
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/ShahedAlMashni&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/41443850?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;ShahedAlMashni&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;ShahedAlMashni&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#plugin-ShahedAlMashni&quot; title=&quot;Plugin/utility libraries&quot;&gt;🔌&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/AbdulTheActivePiecer&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/106555838?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;AbdulTheActivePiecer&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;AbdulTheActivePiecer&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#maintenance-AbdulTheActivePiecer&quot; title=&quot;Maintenance&quot;&gt;🚧&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/khaledmashaly&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/61781545?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Khaled Mashaly&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Khaled Mashaly&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#maintenance-khaledmashaly&quot; title=&quot;Maintenance&quot;&gt;🚧&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/abuaboud&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/1812998?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Mohammed Abu Aboud&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Mohammed Abu Aboud&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#maintenance-abuaboud&quot; title=&quot;Maintenance&quot;&gt;🚧&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://aboudzein.github.io&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/12976630?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Abdulrahman Zeineddin&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Abdulrahman Zeineddin&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#plugin-aboudzein&quot; title=&quot;Plugin/utility libraries&quot;&gt;🔌&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/creed983&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/62152944?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;ahmad jaber&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;ahmad jaber&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#plugin-creed983&quot; title=&quot;Plugin/utility libraries&quot;&gt;🔌&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/ashrafsamhouri&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/97393596?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;ashrafsamhouri&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;ashrafsamhouri&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#plugin-ashrafsamhouri&quot; title=&quot;Plugin/utility libraries&quot;&gt;🔌&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://steercampaign.com&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/12627658?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Mohammad Abu Musa&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Mohammad Abu Musa&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#projectManagement-mabumusa1&quot; title=&quot;Project Management&quot;&gt;📆&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/kanarelo&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/393261?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Mukewa Wekalao&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Mukewa Wekalao&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#plugin-kanarelo&quot; title=&quot;Plugin/utility libraries&quot;&gt;🔌&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://osamahaikal.me/&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/72370395?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Osama Abdallah Essa Haikal&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Osama Abdallah Essa Haikal&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#plugin-OsamaHaikal&quot; title=&quot;Plugin/utility libraries&quot;&gt;🔌&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/M-Arman&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/54455592?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Arman&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Arman&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#security-M-Arman&quot; title=&quot;Security&quot;&gt;🛡️&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/oskarkraemer&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/42745862?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Oskar Krämer&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Oskar Krämer&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;https://github.com/activepieces/activepieces/commits?author=oskarkraemer&quot; title=&quot;Documentation&quot;&gt;📖&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://thibpat.com&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/494686?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Thibaut Patel&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Thibaut Patel&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#ideas-tpatel&quot; title=&quot;Ideas, Planning, &amp; Feedback&quot;&gt;🤔&lt;/a&gt; &lt;a href=&quot;#plugin-tpatel&quot; title=&quot;Plugin/utility libraries&quot;&gt;🔌&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/Applesaucesomer&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/18318905?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Applesaucesomer&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Applesaucesomer&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#ideas-Applesaucesomer&quot; title=&quot;Ideas, Planning, &amp; Feedback&quot;&gt;🤔&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/crazyTweek&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/6828237?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;crazyTweek&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;crazyTweek&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#ideas-crazyTweek&quot; title=&quot;Ideas, Planning, &amp; Feedback&quot;&gt;🤔&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://linkedin.com/in/muhammad-tabaza&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/23503983?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Muhammad Tabaza&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Muhammad Tabaza&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#plugin-m-tabaza&quot; title=&quot;Plugin/utility libraries&quot;&gt;🔌&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://shaypunter.co.uk&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/18310437?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Shay Punter&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Shay Punter&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;https://github.com/activepieces/activepieces/commits?author=ShayPunter&quot; title=&quot;Documentation&quot;&gt;📖&lt;/a&gt; &lt;a href=&quot;#plugin-ShayPunter&quot; title=&quot;Plugin/utility libraries&quot;&gt;🔌&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/abaza738&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/50132270?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;abaza738&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;abaza738&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#plugin-abaza738&quot; title=&quot;Plugin/utility libraries&quot;&gt;🔌&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/jonaboe&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/51358680?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Jona Boeddinghaus&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Jona Boeddinghaus&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#plugin-jonaboe&quot; title=&quot;Plugin/utility libraries&quot;&gt;🔌&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/fomojola&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/264253?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;fomojola&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;fomojola&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;https://github.com/activepieces/activepieces/commits?author=fomojola&quot; title=&quot;Code&quot;&gt;💻&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/astorozhevsky&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/11055414?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Alexander Storozhevsky&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Alexander Storozhevsky&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;https://github.com/activepieces/activepieces/commits?author=astorozhevsky&quot; title=&quot;Code&quot;&gt;💻&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/J0LGER&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/54769522?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;J0LGER&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;J0LGER&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#security-J0LGER&quot; title=&quot;Security&quot;&gt;🛡️&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://about.me/veverkap&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/22348?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Patrick Veverka&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Patrick Veverka&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;https://github.com/activepieces/activepieces/issues?q=author%3Aveverkap&quot; title=&quot;Bug reports&quot;&gt;🐛&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;http://berksmbl.com&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/10000339?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Berk Sümbül&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Berk Sümbül&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;https://github.com/activepieces/activepieces/commits?author=berksmbl&quot; title=&quot;Documentation&quot;&gt;📖&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/Willianwg&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/51550522?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Willian Guedes&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Willian Guedes&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#plugin-Willianwg&quot; title=&quot;Plugin/utility libraries&quot;&gt;🔌&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/abdullahranginwala&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/19731056?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Abdullah Ranginwala&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Abdullah Ranginwala&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;https://github.com/activepieces/activepieces/commits?author=abdullahranginwala&quot; title=&quot;Code&quot;&gt;💻&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/dentych&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/2256372?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Dennis Tychsen&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Dennis Tychsen&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#plugin-dentych&quot; title=&quot;Plugin/utility libraries&quot;&gt;🔌&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/MyWay&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/1765284?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;MyWay&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;MyWay&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#plugin-MyWay&quot; title=&quot;Plugin/utility libraries&quot;&gt;🔌&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/bibhuty-did-this&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/28416188?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Bibhuti Bhusan Panda&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Bibhuti Bhusan Panda&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#plugin-bibhuty-did-this&quot; title=&quot;Plugin/utility libraries&quot;&gt;🔌&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/tarunsamanta2k20&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/55488549?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Tarun Samanta&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Tarun Samanta&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;https://github.com/activepieces/activepieces/issues?q=author%3Atarunsamanta2k20&quot; title=&quot;Bug reports&quot;&gt;🐛&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://www.linkedin.com/in/herman-kudria-10868b207/&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/9007211?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Herman Kudria&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Herman Kudria&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#plugin-HKudria&quot; title=&quot;Plugin/utility libraries&quot;&gt;🔌&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;http://nulldev.imagefoo.com/&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/66683380?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;[NULL] Dev&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;[NULL] Dev&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#plugin-Abdallah-Alwarawreh&quot; title=&quot;Plugin/utility libraries&quot;&gt;🔌&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/JanHolger&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/25184957?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Jan Bebendorf&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Jan Bebendorf&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#plugin-JanHolger&quot; title=&quot;Plugin/utility libraries&quot;&gt;🔌&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://blog.nileshtrivedi.com&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/19304?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Nilesh&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Nilesh&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#plugin-nileshtrivedi&quot; title=&quot;Plugin/utility libraries&quot;&gt;🔌&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://certopus.com&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/40790016?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Vraj Gohil&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Vraj Gohil&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#plugin-VrajGohil&quot; title=&quot;Plugin/utility libraries&quot;&gt;🔌&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://github.com/BastienMe&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/71411115?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;BastienMe&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;BastienMe&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#plugin-BastienMe&quot; title=&quot;Plugin/utility libraries&quot;&gt;🔌&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;http://blog.fosketts.net&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/8627862?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Stephen Foskett&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Stephen Foskett&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;https://github.com/activepieces/activepieces/commits?author=SFoskett&quot; title=&quot;Documentation&quot;&gt;📖&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;http://ganapati.fr&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/15729117?v=4?s=100&quot; width=&quot;100px;&quot; alt=&quot;Nathan&quot;/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Nathan&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;https://github.com/activepieces/activepieces/commits?author=asuri0n&quot; title=&quot;Documentation&quot;&gt;📖&lt;/a&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;top&quot; width=&quot;14.28%&quot;&gt;&lt;a href=&quot;https://www.n-soft.pl&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/4056319?v=4?s=100&quot; width=&quot;10
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[reconurge/flowsint]]></title>
-            <link>https://github.com/reconurge/flowsint</link>
-            <guid>https://github.com/reconurge/flowsint</guid>
-            <pubDate>Tue, 03 Feb 2026 00:08:15 GMT</pubDate>
-            <description><![CDATA[A modern platform for visual, flexible, and extensible graph-based investigations. For cybersecurity analysts and investigators.]]></description>
+            <title><![CDATA[gemini-cli-extensions/security]]></title>
+            <link>https://github.com/gemini-cli-extensions/security</link>
+            <guid>https://github.com/gemini-cli-extensions/security</guid>
+            <pubDate>Wed, 04 Feb 2026 00:06:18 GMT</pubDate>
+            <description><![CDATA[Google's Security extension for the Gemini CLI that finds vulnerabilities in your code changes and pull requests.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/reconurge/flowsint">reconurge/flowsint</a></h1>
-            <p>A modern platform for visual, flexible, and extensible graph-based investigations. For cybersecurity analysts and investigators.</p>
+            <h1><a href="https://github.com/gemini-cli-extensions/security">gemini-cli-extensions/security</a></h1>
+            <p>Google's Security extension for the Gemini CLI that finds vulnerabilities in your code changes and pull requests.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 2,428</p>
-            <p>Forks: 286</p>
-            <p>Stars today: 116 stars today</p>
-            <h2>README</h2><pre># Flowsint
+            <p>Stars: 548</p>
+            <p>Forks: 39</p>
+            <p>Stars today: 55 stars today</p>
+            <h2>README</h2><pre># Gemini CLI Security Extension
 
-[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](./LICENSE)
-[![Ethical Software](https://img.shields.io/badge/ethical-use-blue.svg)](./ETHICS.md)
+The Security extension is an open-source Gemini CLI extension, built to enhance your repository&#039;s security posture. The extension adds a new command to Gemini CLI that analyzes code changes to identify a variety of security risks and vulnerabilities.
 
-Flowsint is an open-source OSINT graph exploration tool designed for ethical investigation, transparency, and verification.
+![Security Extension Workflow](./assets/gemini-cli-security-extension-workflow.gif)
 
-**Ethics:** Please read [ETHICS.md](./ETHICS.md) for responsible use guidelines.
+## Features
 
-&lt;img width=&quot;1439&quot; height=&quot;899&quot; alt=&quot;hero-dark&quot; src=&quot;https://github.com/user-attachments/assets/01eb128e-bef4-486e-9276-c4da58f829ae&quot; /&gt;
-&lt;img width=&quot;1511&quot; height=&quot;946&quot; alt=&quot;Capture d’écran 2026-01-13 à 09 15 58&quot; src=&quot;https://github.com/user-attachments/assets/d1a9eca6-9ec4-4402-93f4-303c3dc30de1&quot; /&gt;
-&lt;img width=&quot;1511&quot; height=&quot;948&quot; alt=&quot;Capture d’écran 2026-01-13 à 09 19 45&quot; src=&quot;https://github.com/user-attachments/assets/6d9e9e6d-d8c7-4ed2-8b8c-53a945b28d05&quot; /&gt;
+- **AI-powered security analysis**: Leverages Gemini&#039;s advanced capabilities to provide intelligent and context-aware security analysis.
+- **Focused analysis**: Specifically designed to analyze code changes within pull requests, helping to identify and address vulnerabilities early in the development process.
+- **Open source**: The extension is open source and distributed under the Apache 2.0 license.
+- **Integrated with Gemini CLI**: As a Google-developed extension, it integrates seamlessly into the Gemini CLI environment, making security an accessible part of your workflow.
+- **Expandable scope**: The extension is designed with an extensible architecture, allowing for future expansion of detected security risks and more advanced analysis techniques.
+- **Dependency scans**: Identifies known vulnerabilities affecting your project&#039;s dependencies using [OSV-Scanner](https://github.com/google/osv-scanner).
 
-## Contributing
+## Installation
 
-Flowsint is still in early development and definetly needs the help of the community! Feel free to raise issues, propose features, etc.
-
-## Get started
-
-Don&#039;t want to read ? Got it. Here&#039;s your install instructions:
-
-#### 1. Install pre-requisites
-
-- Docker
-- Make
-
-#### 2. Run install command
+Install the Security extension by running the following command from your terminal *(requires Gemini CLI v0.4.0 or newer)*:
 
 ```bash
-git clone https://github.com/reconurge/flowsint.git
-cd flowsint
-make prod
+gemini extensions install https://github.com/gemini-cli-extensions/security
 ```
 
-Then go to [http://localhost:5173/register](http://localhost:5173/register) and create an account. There are no credentials or account by default.
+## Use the extension
 
+The Security extension adds the `/security:analyze` command to Gemini CLI which analyzes code changes on your current branch for common security vulnerabilities and provides an intelligent, Gemini-powered security report to improve the repository&#039;s security posture.
 
-&gt; ✅ OSINT investigations need a high level of privacy. Everything is stored on your machine.
+Important: This report is a first-pass analysis, not a complete security audit. Use in combination with other tools and manual review.
 
+Note: The /security:analyze command is currently designed for interactive use. Support for non-interactive sessions is planned for a future release (tracked in [issue #20](https://github.com/gemini-cli-extensions/security/issues/20)).
 
-## What is it?
+### Customize the `/security:analyze` command
 
-Flowsint is a graph-based investigation tool focused on reconnaissance and OSINT (Open Source Intelligence). It allows you to explore relationships between entities through a visual graph interface and automated enrichers.
-
-### Available Enrichers
-
-**Domain Enrichers**
-- Reverse DNS Resolution - Find domains pointing to an IP
-- DNS Resolution - Resolve domain to IP addresses
-- Subdomain Discovery - Enumerate subdomains
-- WHOIS Lookup - Get domain registration information
-- Domain to Website - Convert domain to website entity
-- Domain to Root Domain - Extract root domain
-- Domain to ASN - Find ASN associated with domain
-- Domain History - Retrieve historical domain data
-
-**IP Enrichers**
-- IP Information - Get geolocation and network details
-- IP to ASN - Find ASN for IP address
-
-**ASN Enrichers**
-- ASN to CIDRs - Get IP ranges for an ASN
-
-**CIDR Enrichers**
-- CIDR to IPs - Enumerate IPs in a range
-
-**Social Media Enrichers**
-- Maigret - Username search across social platforms
-
-**Organization Enrichers**
-- Organization to ASN - Find ASNs owned by organization
-- Organization Information - Get company details
-- Organization to Domains - Find domains owned by organization
-
-**Cryptocurrency Enrichers**
-- Wallet to Transactions - Get transaction history
-- Wallet to NFTs - Find NFTs owned by wallet
-
-**Website Enrichers**
-- Website Crawler - Crawl and map website structure
-- Website to Links - Extract all links
-- Website to Domain - Extract domain from URL
-- Website to Webtrackers - Identify tracking scripts
-- Website to Text - Extract text content
-
-**Email Enrichers**
-- Email to Gravatar - Find Gravatar profile
-- Email to Breaches - Check data breach databases
-- Email to Domains - Find associated domains
-
-**Phone Enrichers**
-- Phone to Breaches - Check phone number in breaches
-
-**Individual Enrichers**
-- Individual to Organization - Find organizational affiliations
-- Individual to Domains - Find domains associated with person
-
-**Integration Enrichers**
-- N8n Connector - Connect to N8n workflows
-
-## Project structure
-
-The project is organized into autonomous modules:
-
-### Core modules
-
-- **flowsint-core**: Core utilities, orchestrator, vault, celery tasks, and base classes
-- **flowsint-types**: Pydantic models and type definitions
-- **flowsint-enrichers**: Enricher modules, scanning logic, and tools
-- **flowsint-api**: FastAPI server, API routes, and schemas only
-- **flowsint-app**: Frontend application
-
-### Module dependencies
-
-```
-flowsint-app (frontend)
-    ↓
-flowsint-api (API server)
-    ↓
-flowsint-core (orchestrator, tasks, vault)
-    ↓
-flowsint-enrichers (enrichers &amp; tools)
-    ↓
-flowsint-types (types)
-```
-
-## Development setup
-
-### Prerequisites
-
-- Docker
-
-### Run
-
-Make sure you have **Make** installed.
-
+By default, the `/security:analyze` command determines the scope of the analysis using `git diff --merge-base origin/HEAD`. However, to customize the scope, you can add instructions to the command using natural language. For example, to analyze all files in `scripts` folder, you can run the command as
 ```bash
-make dev
+/security:analyze Analyze all the source code under the script folder. Skip the docs, config files and package files.
 ```
 
-### Development
+![Customize analysis command](./assets/customize_command.gif)
 
-The app is accessible at [http://localhost:5173](http://localhost:5173).
+### Scan for vulnerable dependencies
 
-## Module details
+Modern software is built on open-source dependencies, but this can introduce security risks if a dependency contains vulnerabilities.
 
-### flowsint-core
+Regularly running a dependency scan is a critical step in securing your software supply chain and protecting your project from well-known attack vectors.
 
-Core utilities and base classes used by all other modules:
+The `/security:scan-deps` command automates this process by integrating [OSV-Scanner](https://github.com/google/osv-scanner), a tool that cross-references your project&#039;s dependencies with [OSV.dev](https://osv.dev/), a Google-maintained, open-source vulnerability database. OSV.dev provides precise vulnerability data by aggregating information from a wide range of open-source ecosystems, ensuring comprehensive and reliable security advisories.
 
-- Database connections (PostgreSQL, Neo4j)
-- Authentication and authorization
-- Logging and event handling
-- Configuration management
-- Base classes for enrichers and tools
-- Utility functions
-
-### flowsint-types
-
-Pydantic models for all data types:
-
-- Domain, IP, ASN, CIDR
-- Individual, Organization, Email, Phone
-- Website, Social profiles, Credentials
-- Crypto wallets, Transactions, NFTs
-- And many more...
-
-### flowsint-enrichers
-
-Enricher modules that process data:
-
-- Domain enrichers (subdomains, WHOIS, resolution)
-- IP enrichers (geolocation, ASN lookup)
-- Social media enrichers (Maigret, Sherlock)
-- Email enrichers (breaches, Gravatar)
-- Crypto enrichers (transactions, NFTs)
-- And many more...
-
-### flowsint-api
-
-FastAPI server providing:
-
-- REST API endpoints
-- Authentication and user management
-- Graph database integration
-- Real-time event streaming
-
-### flowsint-app
-
-Frontend application.
-
-- Modern and UI friendly interface
-- Built for performance (no lag even on thousands of nodes)
-
-## Development workflow
-
-1. **Adding new types**: Add to `flowsint-types` module
-2. **Adding new enrichers**: Add to `flowsint-enrichers` module
-3. **Adding new API endpoints**: Add to `flowsint-api` module
-4. **Adding new utilities**: Add to `flowsint-core` module
-
-## Testing
-
-Each module has its own (incomplete) test suite:
-
+To run a dependency scan, use the following command:
 ```bash
-# Test core module
-cd flowsint-core
-poetry run pytest
-
-# Test types module
-cd ../flowsint-types
-poetry run pytest
-
-# Test enrichers module
-cd ../flowsint-enrichers
-poetry run pytest
-
-# Test API module
-cd ../flowsint-api
-poetry run pytest
+/security:scan-deps
 ```
 
-## Contributing
-
-1. Follow the modular structure
-2. Use Poetry for dependency management
-3. Write tests for new functionality
-4. Update documentation as needed
-
-
----
-
-## ⚖️ Legal &amp; Ethical Use
-
-**Ethics:** Please read [ETHICS.md](./ETHICS.md) for responsible use guidelines.
-
-Flowsint is designed **strictly for lawful, ethical investigation and research purposes**.
-
-It was created to assist:
-- Cybersecurity researchers and analysts
-- Journalists and OSINT investigators
-- Law enforcement or fraud investigation teams
-- Organizations conducting internal threat intelligence or digital risk analysis
-
-**Flowsint must not be used for:**
-- Unauthorized intrusion, surveillance, or data collection
-- Harassment, doxxing, or targeting of individuals
-- Political manipulation, misinformation, or violation of privacy laws
+After running the command, you will receive a report listing:
+- **Which dependencies are vulnerable.**
+- **Details about the specific vulnerabilities**, including their severity and identifiers.
+- **Guidance on how to remediate the issues**, such as which version to upgrade to.
 
-Any misuse of this software is strictly prohibited and goes against the ethical principles defined in [ETHICS.md](./ETHICS.md).
+## GitHub Integration
 
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[Koenkk/zigbee2mqtt]]></title>
-            <link>https://github.com/Koenkk/zigbee2mqtt</link>
-            <guid>https://github.com/Koenkk/zigbee2mqtt</guid>
-            <pubDate>Tue, 03 Feb 2026 00:08:14 GMT</pubDate>
-            <description><![CDATA[Zigbee 🐝 to MQTT bridge 🌉, get rid of your proprietary Zigbee bridges 🔨]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/Koenkk/zigbee2mqtt">Koenkk/zigbee2mqtt</a></h1>
-            <p>Zigbee 🐝 to MQTT bridge 🌉, get rid of your proprietary Zigbee bridges 🔨</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 14,719</p>
-            <p>Forks: 1,897</p>
-            <p>Stars today: 20 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-    &lt;a href=&quot;https://github.com/koenkk/zigbee2mqtt&quot;&gt;
-        &lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;images/logo.png&quot;&gt;
-    &lt;/a&gt;
-    &lt;br&gt;
-    &lt;br&gt;
-    &lt;div style=&quot;display: flex;&quot;&gt;
-        &lt;a href=&quot;https://github.com/Koenkk/zigbee2mqtt/releases&quot;&gt;
-            &lt;img src=&quot;https://img.shields.io/github/release/koenkk/zigbee2mqtt.svg&quot;&gt;
-        &lt;/a&gt;
-        &lt;a href=&quot;https://www.npmjs.com/package/zigbee2mqtt&quot;&gt;
-            &lt;img src=&quot;https://img.shields.io/npm/v/zigbee2mqtt&quot;&gt;
-        &lt;/a&gt;
-        &lt;a href=&quot;https://github.com/Koenkk/zigbee2mqtt/actions/workflows/ci.yml&quot;&gt;
-            &lt;img src=&quot;https://github.com/Koenkk/zigbee2mqtt/actions/workflows/ci.yml/badge.svg&quot;&gt;
-        &lt;/a&gt;
-        &lt;a href=&quot;https://github.com/Koenkk/zigbee2mqtt/actions/workflows/github-code-scanning/codeql&quot;&gt;
-            &lt;img src=&quot;https://github.com/Koenkk/zigbee2mqtt/actions/workflows/github-code-scanning/codeql/badge.svg&quot;&gt;
-        &lt;/a&gt;
-        &lt;a href=&quot;https://discord.gg/dadfWYE&quot;&gt;
-            &lt;img src=&quot;https://img.shields.io/discord/556563650429583360.svg&quot;&gt;
-        &lt;/a&gt;
-        &lt;a href=&quot;https://github.com/Koenkk/zigbee2mqtt/stargazers&quot;&gt;
-            &lt;img src=&quot;https://img.shields.io/github/stars/koenkk/zigbee2mqtt.svg&quot;&gt;
-        &lt;/a&gt;
-        &lt;a href=&quot;https://www.paypal.me/koenkk&quot;&gt;
-            &lt;img src=&quot;https://img.shields.io/badge/donate-PayPal-blue.svg&quot;&gt;
-        &lt;/a&gt;
-    &lt;/div&gt;
-    &lt;h1&gt;Zigbee2MQTT  🌉 🐝&lt;/h1&gt;
-    &lt;p&gt;
-        Allows you to use your Zigbee devices &lt;b&gt;without&lt;/b&gt; the vendor&#039;s bridge or gateway.
-    &lt;/p&gt;
-    &lt;p&gt;
-        It bridges events and allows you to control your Zigbee devices via MQTT. In this way you can integrate your Zigbee devices with whatever smart home infrastructure you are using.
-    &lt;/p&gt;
-&lt;/div&gt;
+### I already use [run-gemini-cli](https://github.com/google-github-actions/run-gemini-cli) workflows in my repository:
 
-## [Getting started](https://www.zigbee2mqtt.io/guide/getting-started)
+* Replace your existing `gemini-review.yml` with this [updated workflow](https://github.com/gemini-cli-extensions/security/blob/main/.github/workflows/gemini-review.yml), which includes the new Security Analysis step.
 
-The [documentation](https://www.zigbee2mqtt.io/) provides you all the information needed to get up and running! Make sure you don&#039;t skip sections if this is your first visit, as there might be important details in there for you.
+### I don&#039;t use [run-gemini-cli](https://github.com/google-github-actions/run-gemini-cli) workflows in my repository yet:
 
-If you aren&#039;t familiar with **Zigbee** terminology make sure you [read this](https://www.zigbee2mqtt.io/advanced/zigbee/01_zigbee_network.html) to help you out.
+1. Integrate the Gemini CLI Security Extension into your GitHub workflow to analyze incoming code:
 
-## [Integrations](https://www.zigbee2mqtt.io/guide/usage/integrations.html)
+2. Follow Steps 1-3 in this [Quick Start](https://github.com/google-github-actions/run-gemini-cli?tab=readme-ov-file#quick-start).
 
-Zigbee2MQTT integrates well with (almost) every home automation solution because it uses MQTT. However the following integrations are worth mentioning:
+3. Create a `.github/workflows` directory in your repository&#039;s root (if it doesn&#039;t already exist).
 
-### [Home Assistant](https://www.home-assistant.io/)
+4. Copy this [Example Workflow](https://github.com/gemini-cli-extensions/security/blob/main/.github/workflows/gemini-review.yml) into the `.github/workflows` directory. See the run-gemini-cli [configuration](https://github.com/google-github-actions/run-gemini-cli?tab=readme-ov-file#configuration) to make changes to the workflow.
 
-&lt;img align=&quot;left&quot; height=&quot;75px&quot; width=&quot;75px&quot; src=&quot;https://user-images.githubusercontent.com/7738048/40914297-49e6e560-6800-11e8-8904-36cce896e5a8.png&quot;&gt;
+5. Ensure the new workflow file is committed and pushed to GitHub.
 
-&lt;br clear=&quot;right&quot;&gt;
+6. Open a new pull request, or comment `@gemini-cli /review` on an existing PR, to run the Gemini CLI Code Review along with Security Analysis.
 
-[Home Assistant OS](https://www.home-assistant.io/installation/) using [the official addon](https://github.com/zigbee2mqtt/hassio-zigbee2mqtt) ([other installations](https://www.zigbee2mqtt.io/guide/usage/integrations/home_assistant.html))
+## Benchmark
 
-&lt;br clear=&quot;both&quot;&gt;
+To evaluate the quality and effectiveness of our security analysis, we benchmarked the extension against a real-world dataset of known vulnerabilities.
 
-### [Homey](https://homey.app/)
+### Methodology
 
-&lt;img align=&quot;left&quot; height=&quot;75px&quot; width=&quot;75px&quot; src=&quot;https://etc.athom.com/logo/white/256.png&quot;&gt;
+Our evaluation process is designed to test the extension&#039;s ability to identify vulnerabilities in code changes.
 
-&lt;br clear=&quot;right&quot;&gt;
+1. **Dataset**: We used the [OpenSSF CVE Benchmark](https://github.com/ossf-cve-benchmark/ossf-cve-benchmark), a dataset containing GitHub repositories of real applications in TypeScript / JavaScript. For each vulnerability, the dataset provides the commit containing the vulnerable code (`prePatch`) and the commit where the vulnerability was fixed (`postPatch`).
+2. **Analysis Target**: For each CVE, we set up the repository, found the introducing patch with the help of [archeogit](https://github.com/samaritan/archeogit), and added that patch to our local environment.
+3. **Report Generation**: We ran the `/security:analyze` command on this diff to generate a security report.
+4. **Validation**: Since the dataset has a small number of repositories, we manually reviewed all the generated security reports and compared with the ground truth to calculate the final precision and recall numbers.
 
-Integration implemented in the [Homey App](https://homey.app/nl-nl/app/com.gruijter.zigbee2mqtt/) ([documentation &amp; support](https://community.homey.app/t/83214))
+We are now actively working to automate the evaluation framework and enrich our datasets by adding new classes of vulnerabilities.
 
-&lt;br clear=&quot;both&quot;&gt;
+### Results
 
-### [Domoticz](https://www.domoticz.com/)
+Our evaluation on this dataset yielded a precision of **90%** and a recall of **93%**.
 
-&lt;img align=&quot;left&quot; height=&quot;75px&quot; width=&quot;75px&quot; src=&quot;https://user-images.githubusercontent.com/2734836/47615848-b8dd8700-dabd-11e8-9d77-175002dd8987.png&quot;&gt;
+* **Precision (90%)** measures the accuracy of our detections. Of all the potential vulnerabilities the extension identified, 90% were actual security risks.
+* **Recall (93%)** measures the completeness of our coverage. The extension successfully identified 93% of all the known vulnerabilities present in the dataset.
 
-&lt;br clear=&quot;right&quot;&gt;
+## Types of vulnerabilities
 
-Integration implemented in Domoticz ([documentation](https://www.domoticz.com/wiki/Zigbee2MQTT)).
+The Security extension scans files for the following vulnerabilities:
 
-&lt;br clear=&quot;both&quot;&gt;
+### Secrets management
 
-### [Gladys Assistant](https://gladysassistant.com/)
+- **Hardcoded secrets**: Credentials such as API keys, private keys, passwords and connection strings, and symmetric encryption keys embedded directly in the source code
 
-&lt;img align=&quot;left&quot; height=&quot;75px&quot; width=&quot;75px&quot; src=&quot;./images/gladys-assistant-logo.jpg&quot;&gt;
+### Insecure data handling
 
-&lt;br clear=&quot;right&quot;&gt;
+- **Weak cryptographic algorithms**: Weak or outdated cryptographic algorithms, including any instances of DES, Triple DES, RC4, or ECB mode in block ciphers
+- **Logging of sensitive information**: Logging statements that might write passwords, PII, API keys, or session tokens to application or system logs
+- **Personally identifiable information (PII) handling violations**: Improper storage, insecure transmission, or any use of PII that may violate data privacy regulations
+- **Insecure deserialization**: Code that deserializes data from untrusted sources without proper validation, which could allow an attacker to execute arbitrary code
 
-Integration implemented natively in Gladys Assistant ([documentation](https://gladysassistant.com/docs/integrations/zigbee2mqtt/)).
+### Injection vulnerabilities
 
-&lt;br clear=&quot;both&quot;&gt;
+- **Cross-site scripting (XSS)**: Instances where unsanitized or improperly escaped user input is rendered directly into HTML, which could allow for script execution in a user&#039;s browser
+- **SQL injection (SQLi)**: Database queries that are constructed by concatenating strings with raw, un-parameterized user input
+- **Command injection**: Code that executes system commands or cloud functions using user-provided input without proper sanitization
+- **Server-side request forgery (SSRF)**: Code that makes network requests to URLs provided by users without validation, which could allow an attacker to probe internal networks or services
+- **Server-side template injection (SSTI)**:  Instances where user input is directly embedded into a server-side template before it is rendered
 
-### [IoBroker](https://www.iobroker.net/)
+### Authentication
 
-&lt;img align=&quot;left&quot; height=&quot;75px&quot; width=&quot;75px&quot; src=&quot;https://forum.iobroker.net/assets/uploads/system/site-logo.png&quot;&gt;
+- **Authentication bypass**: Improper session validation, insecure &quot;remember me&quot; functionality, or custom authentication endpoints that lack brute-force protection
+- **Weak or predictable session tokens**: Tokens that are predictable, lack sufficient entropy, or are generated from user-controllable data
+- **Insecure password reset**: Predictable reset tokens, leakage of tokens in logs or URLs, and insecure confirmation of a user&#039;s identity
 
-&lt;br clear=&quot;right&quot;&gt;
-
-Integration implemented in IoBroker ([documentation](https://github.com/o0shojo0o/ioBroker.zigbee2mqtt)).
-
-&lt;br clear=&quot;both&quot;&gt;
-
-## Architecture
-
-![Architecture](images/architecture-new.png)
-
-### Internal Architecture
-
-Zigbee2MQTT is made up of three modules, each developed in its own Github project. Starting from the hardware (adapter) and moving up; [zigbee-herdsman](https://github.com/koenkk/zigbee-herdsman) connects to your adapter to handle Zigbee communication and makes an API available to the higher levels of the stack. For e.g. Texas Instruments hardware, zigbee-herdsman uses the [TI zStack monitoring and test API](https://github.com/Koenkk/zigbee-herdsman/wiki/References#texas-instruments-zstack) to communicate with the adapter. The module [zigbee-herdsman-converters](https://github.com/koenkk/zigbee-herdsman-converters) handles the mapping from individual device models to the Zigbee clusters they support. [Zigbee clusters](https://github.com/Koenkk/zigbee-herdsman/wiki/References#csa-zigbee-alliance-spec) are the layers of the Zigbee protocol on top of the base protocol that define things like how lights, sensors and switches talk to each other over the Zigbee network. Finally, the Zigbee2MQTT module drives zigbee-herdsman and maps the zigbee messages to MQTT messages. Zigbee2MQTT also keeps track of the state of the system. It uses a `database.db` file to store this state; a text file with a JSON database of connected devices and their capabilities. Zigbee2MQTT provides several web-based interfaces ([zigbee2mqtt-frontend](https://github.com/nurikk/zigbee2mqtt-frontend), [zigbee2mqtt-windfront](https://github.com/Nerivec/zigbee2mqtt-windfront)) that allows monitoring and configuration.
-
-### Developing
-
-Zigbee2MQTT uses TypeScript. Therefore after making changes to files in the `lib/` directory you need to recompile Zigbee2MQTT. This can be done by executing `pnpm run build`. For faster development instead of running `pnpm run build` you can run `pnpm run build:watch` in another terminal session, this will recompile as you change files.
-
-Before running any of the commands, you&#039;ll first need to run `pnpm install --include=dev`.
-Before submitting changes run `pnpm run check:w` then `pnpm run test:coverage`.
-
-## Supported devices
-
-See [Supported devices](https://www.zigbee2mqtt.io/supported-devices) to check whether your device is supported. There is quite an extensive list, including devices from vendors like [Xiaomi](https://www.zigbee2mqtt.io/supported-devices/#v=Xiaomi), [Ikea](https://www.zigbee2mqtt.io/supported-devices/#v=IKEA), [Philips](https://www.zigbee2mqtt.io/supported-devices/#v=Philips), [OSRAM](https://www.zigbee2mqtt.io/supported-devices/#v=OSRAM) and more.
-
-If it&#039;s not listed in [Supported devices](https://www.zigbee2mqtt.io/supported-devices), support can be added (fairly) easily, see [How to support new devices](https://www.zigbee2mqtt.io/advanced/support-new-devices/01_support_new_devices.html).
-
-## Support &amp; help
-
-If you need assistance you can check [opened issues](https://github.com/Koenkk/zigbee2mqtt/issues). Feel free to help with Pull Requests when you were able to fix things or add new devices or just share the love on social media.
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[iptv-org/iptv]]></title>
-            <link>https://github.com/iptv-org/iptv</link>
-            <guid>https://github.com/iptv-org/iptv</guid>
-            <pubDate>Tue, 03 Feb 2026 00:08:13 GMT</pubDate>
-            <description><![CDATA[Collection of publicly available IPTV channels from all over the world]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/iptv-org/iptv">iptv-org/iptv</a></h1>
-            <p>Collection of publicly available IPTV channels from all over the world</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 110,949</p>
-            <p>Forks: 5,518</p>
-            <p>Stars today: 73 stars today</p>
-            <h2>README</h2><pre># IPTV [![update](https://github.com/iptv-org/iptv/actions/workflows/update.yml/badge.svg)](https://github.com/iptv-org/iptv/actions/workflows/update.yml)
-
-Collection of publicly available IPTV (Internet Protocol television) channels from all over the world.
-
-## Table of contents
-
-- 🚀 [How to use?](#how-to-use)
-- 📺 [Playlists](#playlists)
-- 🗓 [EPG](#epg)
-- 🗄 [Database](#database)
-- 👨‍💻 [API](#api)
-- 📚 [Resources](#resources)
-- 💬 [Discussions](#discussions)
-- ❓ [FAQ](#faq)
-- 🛠 [Contribution](#contribution)
-- ⚖ [Legal](#legal)
-- © [License](#license)
-
-## How to use?
-
-Simply paste the link to one of the playlists into [any video player](https://github.com/iptv-org/awesome-iptv#apps) that supports live streaming and press _Open_.
-
-![VLC Network Panel](https://github.com/iptv-org/iptv/raw/master/.readme/preview.png)
-
-## Playlists
-
-The main playlist containing all channels available in the repository can be found at:
-
-```
-https://iptv-org.github.io/iptv/index.m3u
-```
-
-Links to other playlists can be found in the [PLAYLISTS.md](PLAYLISTS.md) file.
-
-## EPG
-
-[Electronic Program Guide](https://en.wikipedia.org/wiki/Electronic_program_guide) for most of the channels can be downloaded using utilities published in the [iptv-org/epg](https://github.com/iptv-org/epg) repository.
-
-## Database
-
-All channel data is taken from the [iptv-org/database](https://github.com/iptv-org/database) repository. If you find any errors please open a new [issue](https://github.com/iptv-org/database/issues) there.
-
-## API
-
-The API documentation can be found in the [iptv-org/api](https://github.com/iptv-org/api) repository.
+## LLM Safety
+- **Insecure Prompt Handling (Prompt Injection)**: Analyzes how prompts are constructed to identify risks from untrusted user data, which could lead to prompt injection attacks. This can also include embedding sensitive information (API Keys, credentials, PII) directly within the code used to generate the prompt or the prompt itself.
+- **Improper Output Handling**: Detects when LLM-generated content is used unsafely, leading to vulnerabilities like Cross-Site Scripting (XSS), SQL Injection (SQLi), or the remote execution of code via functions like `eval()`. Also flags code where security-sensitive decisions are based on unvalidated LLM output.
+- **Insecure Plugin and Tool Usage**: Scans for vulnerabilities in how the LLM interacts with external tools, flagging overly permissive tools or unsafe data flows that could be exploited by malicious output.
 
 ## Resources
 
-Links to other useful IPTV-related resources can be found in the [iptv-org/awesome-iptv](https://github.com/iptv-org/awesome-iptv) repository.
-
-## Discussions
-
-If you have a question or idea, welcome to the [Discussions](https://github.com/orgs/iptv-org/discussions).
-
-## FAQ
-
-The answers to the most popular questions can be found in the [FAQ.md](FAQ.md) file.
-
-## Contribution
-
-Please make sure to read the [Contributing Guide](CONTRIBUTING.md) before sending an issue or making a pull request.
-
-And thank you to everyone who has already contributed!
-
-### Backers
-
-&lt;a href=&quot;https://opencollective.com/iptv-org&quot;&gt;&lt;img src=&quot;https://opencollective.com/iptv-org/backers.svg?width=890&quot; /&gt;&lt;/a&gt;
-
-### Contributors
-
-&lt;a href=&quot;https://github.com/iptv-org/iptv/graphs/contributors&quot;&gt;&lt;img src=&quot;https://opencollective.com/iptv-org/contributors.svg?width=890&quot; /&gt;&lt;/a&gt;
+- [Gemini CLI extensions](https://github.com/google-gemini/gemini-cli/blob/main/docs/extensions/index.md): Documentation about using extensions in Gemini CLI
+- Blog post (coming soon!): More information about the Security extension
+- [GitHub issues](https://github.com/gemini-cli-extensions/security/issues): Report bugs or request features
 
 ## Legal
 
-No video files are stored in this repository. The repository simply contains user-submitted links to publicly available video stream URLs, which to the best of our knowledge have been intentionally made publicly by the copyright holders. If any links in these playlists infringe on your rights as a copyright holder, they may be removed by sending a [pull request](https://github.com/iptv-org/iptv/pulls) or opening an [issue](https://github.com/iptv-org/iptv/issues/new?assignees=freearhey&amp;labels=removal+request&amp;template=--removal-request.yml&amp;title=Remove%3A+). However, note that we have **no control** over the destination of the link, and just removing the link from the playlist will not remove its contents from the web. Note that linking does not directly infringe copyright because no copy is made on the site providing the link, and thus this is **not** a valid reason to send a DMCA notice to GitHub. To remove this content from the web, you should contact the web host that&#039;s actually hosting the content (**not** GitHub, nor the maintainers of this repository).
+- License: [Apache License 2.0](https://github.com/gemini-cli-extensions/security/blob/main/LICENSE)
+- Security: [Security Policy](https://github.com/gemini-cli-extensions/security/blob/main/SECURITY.md)
 
-## License
+## Star history
 
-[![CC0](http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](LICENSE)
+[![Star History Chart](https://api.star-history.com/svg?repos=gemini-cli-extensions/security&amp;type=Date)](https://www.star-history.com/#gemini-cli-extensions/security&amp;Date)
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
@@ -2418,15 +2608,15 @@ No video files are stored in this repository. The repository simply contains use
             <title><![CDATA[saurabhnemade/will-you-be-my-valentine]]></title>
             <link>https://github.com/saurabhnemade/will-you-be-my-valentine</link>
             <guid>https://github.com/saurabhnemade/will-you-be-my-valentine</guid>
-            <pubDate>Tue, 03 Feb 2026 00:08:12 GMT</pubDate>
+            <pubDate>Wed, 04 Feb 2026 00:06:17 GMT</pubDate>
             <description><![CDATA[A simple application to impress your loved ones on valentines day!!]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/saurabhnemade/will-you-be-my-valentine">saurabhnemade/will-you-be-my-valentine</a></h1>
             <p>A simple application to impress your loved ones on valentines day!!</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 358</p>
-            <p>Forks: 460</p>
-            <p>Stars today: 12 stars today</p>
+            <p>Stars: 370</p>
+            <p>Forks: 490</p>
+            <p>Stars today: 11 stars today</p>
             <h2>README</h2><pre># Will you be my valentine?
 
 **Valentine Page Creator**: https://i143.xyz/create
