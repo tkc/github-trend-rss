@@ -4,7 +4,7 @@
         <title>GitHub Trending Today for javascript - JavaScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for javascript.</description>
-        <lastBuildDate>Mon, 16 Feb 2026 00:07:51 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 17 Feb 2026 00:08:13 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
@@ -13,15 +13,15 @@
             <title><![CDATA[SynkraAI/aios-core]]></title>
             <link>https://github.com/SynkraAI/aios-core</link>
             <guid>https://github.com/SynkraAI/aios-core</guid>
-            <pubDate>Mon, 16 Feb 2026 00:07:51 GMT</pubDate>
+            <pubDate>Tue, 17 Feb 2026 00:08:13 GMT</pubDate>
             <description><![CDATA[Synkra AIOS: AI-Orchestrated System for Full Stack Development - Core Framework v4.0]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/SynkraAI/aios-core">SynkraAI/aios-core</a></h1>
             <p>Synkra AIOS: AI-Orchestrated System for Full Stack Development - Core Framework v4.0</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 789</p>
-            <p>Forks: 285</p>
-            <p>Stars today: 163 stars today</p>
+            <p>Stars: 982</p>
+            <p>Forks: 347</p>
+            <p>Stars today: 205 stars today</p>
             <h2>README</h2><pre># Synkra AIOS: Framework Universal de Agentes IA 🚀
 
 [![Versão NPM](https://img.shields.io/npm/v/aios-core.svg)](https://www.npmjs.com/package/aios-core)
@@ -35,6 +35,55 @@
 [![Code of Conduct](https://img.shields.io/badge/code%20of%20conduct-Contributor%20Covenant-blue.svg)](CODE_OF_CONDUCT.md)
 
 Framework de Desenvolvimento Auto-Modificável Alimentado por IA. Fundado em Desenvolvimento Ágil Dirigido por Agentes, oferecendo capacidades revolucionárias para desenvolvimento dirigido por IA e muito mais. Transforme qualquer domínio com expertise especializada de IA: desenvolvimento de software, entretenimento, escrita criativa, estratégia de negócios, bem-estar pessoal e muito mais.
+
+## Comece Aqui (10 Min)
+
+Se é sua primeira vez no AIOS, siga este caminho linear:
+
+1. Instale em um projeto novo ou existente:
+```bash
+# novo projeto
+npx aios-core init meu-projeto
+
+# projeto existente
+cd seu-projeto
+npx aios-core install
+```
+2. Escolha sua IDE/CLI e o caminho de ativação:
+- Claude Code: `/agent-name`
+- Gemini CLI: `/aios-menu` → `/aios-&lt;agent&gt;`
+- Codex CLI: `/skills` → `aios-&lt;agent-id&gt;`
+- Cursor/Copilot/AntiGravity: siga os limites e workarounds em `docs/ide-integration.md`
+3. Ative 1 agente e confirme o greeting.
+4. Rode 1 comando inicial (`*help` ou equivalente) para validar first-value.
+
+Definição de first-value (binária): ativação de agente + greeting válido + comando inicial com output útil em &lt;= 10 minutos.
+
+
+## Compatibilidade de Hooks por IDE (Realidade AIOS 4.2)
+
+Muitos recursos avançados do AIOS dependem de eventos de ciclo de vida (hooks). A tabela abaixo mostra a paridade real entre IDEs/plataformas:
+
+| IDE/CLI | Paridade de Hooks vs Claude | Impacto Prático |
+| --- | --- | --- |
+| Claude Code | Completa (referência) | Automação máxima de contexto, guardrails e auditoria |
+| Gemini CLI | Alta (eventos nativos) | Cobertura forte de automações pre/post tool e sessão |
+| Codex CLI | Parcial/limitada | Parte das automações depende de `AGENTS.md`, `/skills`, MCP e fluxo operacional |
+| Cursor | Sem lifecycle hooks equivalentes | Menor automação de pre/post tool; foco em regras, MCP e fluxo do agente |
+| GitHub Copilot | Sem lifecycle hooks equivalentes | Menor automação de sessão/tooling; foco em instruções de repositório + MCP no VS Code |
+| AntiGravity | Workflow-based (não hook-based) | Integração por workflows, não por eventos de hook equivalentes ao Claude |
+
+Impactos e mitigação detalhados: `docs/ide-integration.md`.
+
+## Acknowledgments &amp; Attribution
+
+Synkra AIOS was originally derived from the [BMad Method](https://github.com/bmad-code-org/BMAD-METHOD), created by [Brian Madison](https://github.com/bmadcode) (BMad Code, LLC). We gratefully acknowledge the BMad Method for providing the foundation from which this project began.
+
+**Important:** This project is **NOT affiliated with, endorsed by, or sanctioned by** the BMad Method or BMad Code, LLC. Contributors appearing in the git history from the original BMad Method repository do not imply active participation in or endorsement of Synkra AIOS.
+
+Since its origin, AIOS has evolved significantly with its own architecture, terminology, and features (v4.x+), and does not depend on BMad for current operation. The BMad Method remains an excellent framework in its own right — please visit the [official BMad Method repository](https://github.com/bmad-code-org/BMAD-METHOD) to learn more.
+
+BMad, BMad Method, and BMad Core are trademarks of BMad Code, LLC. See [TRADEMARK.md](https://github.com/bmad-code-org/BMAD-METHOD/blob/main/TRADEMARK.md) for usage guidelines.
 
 ## Visão Geral
 
@@ -107,7 +156,7 @@ Esta abordagem de duas fases elimina tanto a **inconsistência de planejamento**
 - **[Criar meus próprios agentes IA](#criando-seu-próprio-squad)** → Construir agentes para seu domínio
 - **[Navegar Squads prontos](docs/guides/squads-overview.md)** → Veja como criar e usar equipes de agentes IA
 - **[Entender a arquitetura](docs/architecture/ARCHITECTURE-INDEX.md)** → Mergulho técnico profundo
-- **[Juntar-se à comunidade](https://discord.gg/gk8jAdXWmj)** → Obter ajuda e compartilhar ideias
+- **[Reportar problemas](https://github.com/SynkraAI/aios-core/issues)** → Bug reports e feature requests
 
 ## Importante: Mantenha Sua Instalação AIOS Atualizada
 
@@ -163,7 +212,7 @@ O Synkra AIOS agora inclui uma experiência de instalação interativa de últim
 
 - ✅ Download da versão mais recente do NPM
 - ✅ Assistente de instalação interativo moderno
-- ✅ Configuração automática do IDE (Codex CLI, Windsurf, Cursor ou Claude Code)
+- ✅ Configuração automática do IDE (Codex CLI, Cursor ou Claude Code)
 - ✅ Configuração de todos os agentes e fluxos de trabalho AIOS
 - ✅ Criação dos arquivos de configuração necessários
 - ✅ Inicialização do sistema de meta-agentes
@@ -187,23 +236,37 @@ npx aios-core@latest install
 
 O Synkra AIOS inclui regras pré-configuradas para IDE para melhorar sua experiência de desenvolvimento:
 
-#### Para Windsurf ou Cursor:
+#### Para Cursor:
 
-1. Abra as configurações do seu IDE
-2. Navegue até **Global Rules** (Windsurf) ou **User Rules** (Cursor)
-3. Copie o conteúdo de `.windsurf/global-rules.md` ou `.cursor/global-rules.md`
+1. Abra as configurações do Cursor
+2. Navegue até **User Rules**
+3. Copie o conteúdo de `.cursor/global-rules.md`
 4. Cole na seção de regras e salve
 
 #### Para Claude Code:
 
 - ✅ Já configurado! O arquivo `.claude/CLAUDE.md` é carregado automaticamente
+- Sync dedicado de agentes: `npm run sync:ide:claude`
+- Validacao dedicada: `npm run validate:claude-sync &amp;&amp; npm run validate:claude-integration`
 
 #### Para Codex CLI:
 
+- ✅ Integração de primeira classe no AIOS 4.2 (pipeline de ativação e greeting compartilhado)
 - ✅ Já configurado! O arquivo `AGENTS.md` na raiz é carregado automaticamente
 - Opcional: sincronize agentes auxiliares com `npm run sync:ide:codex`
 - Recomendado neste repositório: gerar e versionar skills locais com `npm run sync:skills:codex`
 - Use `npm run sync:skills:codex:global` apenas fora deste projeto (para evitar duplicidade no `/skills`)
+- Validacao dedicada: `npm run validate:codex-sync &amp;&amp; npm run validate:codex-integration`
+- Guardrails de skills/paths: `npm run validate:codex-skills &amp;&amp; npm run validate:paths`
+
+#### Para Gemini CLI:
+
+- ✅ Regras e agentes sincronizaveis com `npm run sync:ide:gemini`
+- Arquivos gerados em `.gemini/rules.md`, `.gemini/rules/AIOS/agents/` e `.gemini/commands/*.toml`
+- ✅ Hooks e settings locais no fluxo de instalacao (`.gemini/hooks/` + `.gemini/settings.json`)
+- ✅ Ativacao rapida por slash commands (`/aios-menu`, `/aios-dev`, `/aios-architect`, etc.)
+- Validacao dedicada: `npm run validate:gemini-sync &amp;&amp; npm run validate:gemini-integration`
+- Paridade multi-IDE em um comando: `npm run validate:parity`
 
 Estas regras fornecem:
 
@@ -216,7 +279,7 @@ Estas regras fornecem:
 ### Início Mais Rápido com Interface Web (2 minutos)
 
 1. **Instale o AIOS**: Execute `npx aios-core init meu-projeto`
-2. **Configure seu IDE**: Siga as instruções de configuração para Codex CLI, Windsurf, Cursor ou Claude Code
+2. **Configure seu IDE**: Siga as instruções de configuração para Codex CLI, Cursor ou Claude Code
 3. **Comece a Planejar**: Ative um agente como `@analyst` para começar a criar seu briefing
 4. **Use comandos AIOS**: Digite `*help` para ver comandos disponíveis
 5. **Siga o fluxo**: Veja o [Guia do usuário](docs/guides/user-guide.md) para mais detalhes
@@ -337,7 +400,7 @@ $ npx aios-core doctor
 ✔ npm version: 10.2.3
 ✔ Git installed: version 2.43.0
 ✔ GitHub CLI: gh 2.40.1
-✔ Synkra AIOS: v1.0.0
+✔ Synkra AIOS: v4.2.11
 
 Configuration:
 ✔ .aios-core/ directory exists
@@ -423,280 +486,9 @@ O Synkra AIOS vem com 11 agentes especializados:
 
 ### Agentes de Planejamento (Interface Web)
 
-- **analyst** - Especialista em análise de negócios e criação de PRD
-- **pm** (Product Manager) - Gerente de produto e priorização
-- **architect** - Arquiteto de sistema e design técnico
-- **ux-expert** - Design de experiência do usuário e usabilidade
-
-### Agentes de Desenvolvimento (IDE)
-
-- **sm** (Scrum Master) - Gerenciamento de sprint e criação de histórias
-- **dev** - Desenvolvedor e implementação
-- **qa** - Garantia de qualidade e testes
-- **po** (Product Owner) - Gerenciamento de backlog e histórias
-
-## Documentação e Recursos
-
-### Guias Essenciais
-
-- 📖 **[Guia do Usuário](docs/guides/user-guide.md)** - Passo a passo completo desde a concepção até a conclusão do projeto
-- 🏗️ **[Arquitetura Principal](docs/architecture/ARCHITECTURE-INDEX.md)** - Mergulho técnico profundo e design do sistema
-- 🚀 **[Guia de Squads](docs/guides/squads-guide.md)** - Estenda o AIOS para qualquer domínio além do desenvolvimento de software
-
-### Documentação Adicional
-
-- 🤖 **[Guia de Squads](docs/guides/squads-guide.md)** - Crie e publique equipes de agentes IA
-- 📋 **[Primeiros Passos](docs/getting-started.md)** - Tutorial passo a passo para iniciantes
-- 🔧 **[Solução de Problemas](docs/troubleshooting.md)** - Soluções para problemas comuns
-- 🎯 **[Princípios Orientadores](docs/GUIDING-PRINCIPLES.md)** - Filosofia e melhores práticas do AIOS
-- 🏛️ **[Visão Geral da Arquitetura](docs/architecture/ARCHITECTURE-INDEX.md)** - Visão detalhada da arquitetura do sistema
-- ⚙️ **[Guia de Ajuste de Performance](docs/performance-tuning-guide.md)** - Otimize seu fluxo de trabalho AIOS
-- 🔒 **[Melhores Práticas de Segurança](docs/security-best-practices.md)** - Segurança e proteção de dados
-- 🔄 **[Guia de Migração](docs/migration-guide.md)** - Migração de versões anteriores
-- 📦 **[Versionamento e Releases](docs/versioning-and-releases.md)** - Política de versões
-
-## 🤖 AIOS Autonomous Development Engine (ADE)
-
-O Synkra AIOS v1.0.0 introduz o **Autonomous Development Engine (ADE)** - um sistema completo para desenvolvimento autônomo que transforma requisitos em código funcional.
-
-### 🎯 O Que é o ADE?
-
-O ADE é um conjunto de **7 Epics** que habilitam execução autônoma de desenvolvimento:
-
-| Epic  | Nome             | Descrição                                  |
-| ----- | ---------------- | ------------------------------------------ |
-| **1** | Worktree Manager | Isolamento de branches via Git worktrees   |
-| **2** | Migration V2→V3  | Migração para formato autoClaude V3        |
-| **3** | Spec Pipeline    | Transforma requisitos em specs executáveis |
-| **4** | Execution Engine | Executa specs com 13 steps + self-critique |
-| **5** | Recovery System  | Recuperação automática de falhas           |
-| **6** | QA Evolution     | Review estruturado em 10 fases             |
-| **7** | Memory Layer     | Memória persistente de padrões e insights  |
-
-### 🔄 Fluxo Principal
-
-```
-User Request → Spec Pipeline → Execution Engine → QA Review → Working Code
-                                      ↓
-                              Recovery System
-                                      ↓
-                               Memory Layer
-```
-
-### ⚡ Quick Start ADE
-
-```bash
-# 1. Criar spec a partir de requisito
-@pm *gather-requirements
-@architect *assess-complexity
-@analyst *research-deps
-@pm *write-spec
-@qa *critique-spec
-
-# 2. Executar spec aprovada
-@architect *create-plan
-@architect *create-context
-@dev *execute-subtask 1.1
-
-# 3. QA Review
-@qa *review-build STORY-42
-```
-
-### 📖 Documentação ADE
-
-- **[Guia Completo do ADE](docs/guides/ade-guide.md)** - Tutorial passo a passo
-- **[Alterações nos Agentes](docs/architecture/ADE-AGENT-CHANGES.md)** - Comandos e capabilities por agente
-- **[Epic 1 - Worktree Manager](docs/architecture/ADE-EPIC1-HANDOFF.md)**
-- **[Epic 2 - Migrati
+- **analyst** - Especialista em análise de negócios 
 
 ... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[pshenok/server-survival]]></title>
-            <link>https://github.com/pshenok/server-survival</link>
-            <guid>https://github.com/pshenok/server-survival</guid>
-            <pubDate>Mon, 16 Feb 2026 00:07:50 GMT</pubDate>
-            <description><![CDATA[Tower defense game that teaches cloud architecture. Build infrastructure, survive traffic, learn scaling.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/pshenok/server-survival">pshenok/server-survival</a></h1>
-            <p>Tower defense game that teaches cloud architecture. Build infrastructure, survive traffic, learn scaling.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 5,109</p>
-            <p>Forks: 588</p>
-            <p>Stars today: 211 stars today</p>
-            <h2>README</h2><pre># Server Survival
-
-![Gameplay Demo](assets/gameplay.gif)
-
-**Server Survival** is an interactive 3D simulation game where you play as a **Cloud Architect**. Your mission is to build and scale a resilient cloud infrastructure to handle increasing traffic loads while fighting off DDoS attacks, managing your budget, and keeping your services healthy.
-
-Learn cloud by playing:
-
-[![PLAY NOW](https://img.shields.io/badge/PLAY_NOW-Server_Survival-2ea44f?style=for-the-badge)](https://pshenok.github.io/server-survival/)
-
-## How to Play
-
-### Objective
-
-Survive as long as possible! Manage your **Budget ($)**, **Reputation (%)**, and **Service Health**.
-
-- **Earn Money** by successfully processing legitimate traffic requests.
-- **Lose Reputation** if requests fail or if malicious traffic slips through.
-- **Maintain Health** - Services degrade under load and need repairs.
-- **Game Over** if Reputation hits 0% or you go bankrupt ($-1000).
-
-### Traffic Types
-
-| Traffic       | Color  | Destination        | Reward | Description                            |
-| :------------ | :----- | :----------------- | :----- | :------------------------------------- |
-| **STATIC**    | Green  | CDN / Storage      | $0.50  | Static file requests (images, CSS, JS) |
-| **READ**      | Blue   | NoSQL / SQL DB     | $0.80  | Database read operations               |
-| **WRITE**     | Orange | NoSQL / SQL DB     | $1.20  | Database write operations              |
-| **UPLOAD**    | Yellow | Storage            | $1.50  | File uploads                           |
-| **SEARCH**    | Cyan   | SQL DB only        | $0.80  | Search queries (NoSQL cannot handle)   |
-| **MALICIOUS** | Red    | Blocked by Firewall| $0     | DDoS attacks — block with Firewall!    |
-
-### Infrastructure &amp; Services
-
-Build your architecture using the toolbar. Each service has a cost, capacity, and upkeep:
-
-| Service          | Cost | Capacity  | Upkeep    | Function                                                              |
-| :--------------- | :--- | :-------- | :-------- | :-------------------------------------------------------------------- |
-| **Firewall**     | $40  | 30        | Low       | **Security.** First line of defense. Blocks malicious traffic.        |
-| **API Gateway**  | $70  | 40        | Medium    | **Rate Limiting.** Throttles excess traffic (soft-fail). **Upgradeable T1→T3.** |
-| **Queue**        | $45  | Queue:200 | Low       | **Buffer.** Buffers requests during spikes. Prevents drops.           |
-| **Load Balancer**| $50  | 20        | Medium    | **Distribution.** Distributes traffic to multiple instances.          |
-| **Compute**      | $60  | 4         | High      | **Processing.** Processes requests. **Upgradeable T1→T3.**            |
-| **CDN**          | $60  | 50        | Low       | **Delivery.** Caches STATIC content at edge (95% hit rate).           |
-| **SQL DB**       | $150 | 8         | Very High | **Database.** Handles READ/WRITE/SEARCH. **Upgradeable T1→T3.**      |
-| **NoSQL DB**     | $80  | 15        | High      | **Fast Database.** Handles READ/WRITE only (no SEARCH). **Upgradeable T1→T3.** |
-| **Cache**        | $60  | 30        | Medium    | **Caching.** Caches responses to reduce DB load. **Upgradeable T1→T3.** |
-| **Storage**      | $25  | 25        | Low       | **File System.** Destination for STATIC/UPLOAD traffic.               |
-
-### Scoring &amp; Economy
-
-| Action         | Money  | Score | Reputation |
-| :------------- | :----- | :---- | :--------- |
-| Static Request | +$0.50 | +3    | +0.1       |
-| DB Read        | +$0.80 | +5    | +0.1       |
-| DB Write       | +$1.20 | +8    | +0.1       |
-| File Upload    | +$1.50 | +10   | +0.1       |
-| Search Query   | +$0.80 | +5    | +0.1       |
-| Attack Blocked | +$0.50 | +10   | -          |
-| Request Failed | -      | -half | -1         |
-| Req. Throttled | -      | -     | -0.2       |
-| Attack Leaked  | -      | -     | -5         |
-
-### Upkeep &amp; Cost Scaling
-
-- **Base Upkeep:** Each service has per-minute upkeep costs
-- **Upkeep Scaling:** Costs increase 1x to 2x over 10 minutes
-- **Repair Costs:** 15% of service cost to manually repair
-- **Auto-Repair:** +10% upkeep overhead when enabled
-
-### Game Modes
-
-#### Survival Mode
-
-The core experience - survive as long as possible against escalating traffic with constant intervention required:
-
-**Dynamic Challenges:**
-
-- **RPS Acceleration** - Traffic multiplies at time milestones (×1.3 at 1min → ×4.0 at 10min)
-- **Random Events** - Cost spikes, capacity drops, traffic bursts every 15-45 seconds
-- **Traffic Shifts** - Traffic patterns change every 40 seconds
-- **DDoS Spikes** - 50% malicious traffic waves every 45 seconds
-- **Service Degradation** - Services lose health under load, require repairs
-
-**New UI Features:**
-
-- **Health bars on all services**
-- **Active event indicator bar at top**
-- **Detailed finances panel (income/expenses breakdown)**
-- **Service health panel with repair costs**
-- **Auto-repair toggle**
-- **Game over analysis with tips**
-
-#### Sandbox Mode
-
-A fully customizable testing environment for experimenting with any architecture:
-
-| Control           | Description                                                       |
-| :---------------- | :---------------------------------------------------------------- |
-| **Budget**        | Set any starting budget (slider 0-10K, or type any amount)        |
-| **RPS**           | Control traffic rate (0 = stopped, or type 100+ for stress tests) |
-| **Traffic Mix**   | Adjust all 6 traffic type percentages independently               |
-| **Burst**         | Spawn instant bursts of specific traffic types                    |
-| **Upkeep Toggle** | Enable/disable service costs                                      |
-| **Clear All**     | Reset all services and restore budget                             |
-
-**No game over in Sandbox** - experiment freely!
-
-### Recent Features (v2.1)
-
-- **API Gateway** - Rate limits traffic with soft-fail throttling (-0.2 rep instead of -1.0). Upgradeable (Tiers 1-3: 20/40/80 RPS)
-- **NoSQL Database** - Fast alternative to SQL for READ/WRITE traffic (150ms vs 300ms). Cannot handle SEARCH. Upgradeable (Tiers 1-3)
-- **Constant Intervention Mechanics** - Game requires active management throughout
-- **Service Health System** - Visual health bars, manual/auto repair options
-- **RPS Milestones** - Traffic surge warnings with multiplier display
-- **Active Event Bar** - Shows current random event with countdown timer
-- **Detailed Finances** - Income by request type, expenses by service with counts
-- **Game Over Analysis** - Failure reason, description, and contextual tips
-- **Retry Same Setup** - Restart with same architecture after game over
-- **Interactive Tutorial** - Guided walkthrough for new players
-
-### Controls
-
-- **Left Click:** Select tools, place services, and connect nodes.
-- **Right Click + Drag:** Pan the camera.
-- **Scroll:** Zoom in and out.
-- **WASD / Arrows:** Move camera (pan) when zoomed in.
-- **ESC:** Open main menu and pause game. Press again or click Resume to close menu (stays paused).
-- **Camera Reset:** Press `R` to reset the camera position.
-- **Birds-Eye View:** Press `T` to switch between isometric and top-down view.
-- **Hide HUD:** Press `H` to toggle UI panels.
-- **Connect Tool:** Click two nodes to create a connection (flow direction matters!).
-  - _Valid Flows:_ Internet -&gt; (Firewall/CDN/API Gateway) -&gt; Load Balancer -&gt; Queue -&gt; Compute -&gt; Cache -&gt; (SQL DB/NoSQL DB/Storage)
-- **Delete Tool:** Remove services to recover 50% of the cost.
-- **Time Controls:** Pause, Play (1x), and Fast Forward (3x).
-
-## Strategy Tips
-
-1.  **Block Attacks First:** Always place a Firewall immediately connected to the Internet. Malicious leaks destroy reputation fast (-5 per leak).
-2.  **Use CDN for Static Content:** Connect Internet -&gt; CDN -&gt; Storage. The CDN handles 95% of static traffic cheaply!
-3.  **Watch Service Health:** Damaged services have reduced capacity. Click to repair or enable Auto-Repair.
-4.  **Scale for Traffic Surges:** RPS multiplies at milestones - prepare before ×2.0 at 3 minutes!
-5.  **Balance Income vs Upkeep:** Start lean, scale as income grows. Over-provisioning leads to bankruptcy.
-6.  **Use Cache Wisely:** Reduces database load significantly for READ requests.
-7.  **Buffer with Queue:** Queue helps survive traffic burst events without dropping requests.
-8.  **React to Events:** Watch the event bar - cost spikes mean hold off on purchases, traffic bursts mean ensure capacity.
-9.  **API Gateway for Graceful Degradation:** Throttled requests only lose -0.2 reputation (vs -1.0 for failures). Great for surviving traffic spikes!
-10. **Split DB Traffic with NoSQL:** Route READ/WRITE to NoSQL (faster, cheaper) and keep SQL DB for SEARCH queries only.
-
-## Tech Stack
-
-- **Core:** Vanilla JavaScript (ES6+)
-- **Rendering:** [Three.js](https://threejs.org/) for 3D visualization.
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/) for the glassmorphism UI.
-- **Build:** No build step required! Just standard HTML/CSS/JS.
-
-## Getting Started
-
-1.  Clone the repository.
-2.  Open `index.html` in your modern web browser.
-3.  Start building your cloud empire!
-
-## Community
-
-Join our Discord server to discuss strategies and share your high scores:
-[Join Discord](https://discord.gg/f38NgHDwnK)
-
----
-
-_Built with code and chaos._
-</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
@@ -704,15 +496,15 @@ _Built with code and chaos._
             <title><![CDATA[gsd-build/get-shit-done]]></title>
             <link>https://github.com/gsd-build/get-shit-done</link>
             <guid>https://github.com/gsd-build/get-shit-done</guid>
-            <pubDate>Mon, 16 Feb 2026 00:07:49 GMT</pubDate>
+            <pubDate>Tue, 17 Feb 2026 00:08:12 GMT</pubDate>
             <description><![CDATA[A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code and OpenCode.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/gsd-build/get-shit-done">gsd-build/get-shit-done</a></h1>
             <p>A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code and OpenCode.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 14,435</p>
-            <p>Forks: 1,361</p>
-            <p>Stars today: 368 stars today</p>
+            <p>Stars: 14,889</p>
+            <p>Forks: 1,386</p>
+            <p>Stars today: 436 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
 
 # GET SHIT DONE
@@ -1262,18 +1054,1220 @@ Or configure via `/gsd:settings`.
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[dler-io/Rules]]></title>
-            <link>https://github.com/dler-io/Rules</link>
-            <guid>https://github.com/dler-io/Rules</guid>
-            <pubDate>Mon, 16 Feb 2026 00:07:48 GMT</pubDate>
+            <title><![CDATA[pshenok/server-survival]]></title>
+            <link>https://github.com/pshenok/server-survival</link>
+            <guid>https://github.com/pshenok/server-survival</guid>
+            <pubDate>Tue, 17 Feb 2026 00:08:11 GMT</pubDate>
+            <description><![CDATA[Tower defense game that teaches cloud architecture. Build infrastructure, survive traffic, learn scaling.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/dler-io/Rules">dler-io/Rules</a></h1>
-            <p></p>
+            <h1><a href="https://github.com/pshenok/server-survival">pshenok/server-survival</a></h1>
+            <p>Tower defense game that teaches cloud architecture. Build infrastructure, survive traffic, learn scaling.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 1,359</p>
-            <p>Forks: 353</p>
-            <p>Stars today: 4 stars today</p>
+            <p>Stars: 5,158</p>
+            <p>Forks: 592</p>
+            <p>Stars today: 64 stars today</p>
+            <h2>README</h2><pre># Server Survival
+
+![Gameplay Demo](assets/gameplay.gif)
+
+**Server Survival** is an interactive 3D simulation game where you play as a **Cloud Architect**. Your mission is to build and scale a resilient cloud infrastructure to handle increasing traffic loads while fighting off DDoS attacks, managing your budget, and keeping your services healthy.
+
+Learn cloud by playing:
+
+[![PLAY NOW](https://img.shields.io/badge/PLAY_NOW-Server_Survival-2ea44f?style=for-the-badge)](https://pshenok.github.io/server-survival/)
+
+## How to Play
+
+### Objective
+
+Survive as long as possible! Manage your **Budget ($)**, **Reputation (%)**, and **Service Health**.
+
+- **Earn Money** by successfully processing legitimate traffic requests.
+- **Lose Reputation** if requests fail or if malicious traffic slips through.
+- **Maintain Health** - Services degrade under load and need repairs.
+- **Game Over** if Reputation hits 0% or you go bankrupt ($-1000).
+
+### Traffic Types
+
+| Traffic       | Color  | Destination        | Reward | Description                            |
+| :------------ | :----- | :----------------- | :----- | :------------------------------------- |
+| **STATIC**    | Green  | CDN / Storage      | $0.50  | Static file requests (images, CSS, JS) |
+| **READ**      | Blue   | NoSQL / SQL DB     | $0.80  | Database read operations               |
+| **WRITE**     | Orange | NoSQL / SQL DB     | $1.20  | Database write operations              |
+| **UPLOAD**    | Yellow | Storage            | $1.50  | File uploads                           |
+| **SEARCH**    | Cyan   | SQL DB only        | $0.80  | Search queries (NoSQL cannot handle)   |
+| **MALICIOUS** | Red    | Blocked by Firewall| $0     | DDoS attacks — block with Firewall!    |
+
+### Infrastructure &amp; Services
+
+Build your architecture using the toolbar. Each service has a cost, capacity, and upkeep:
+
+| Service          | Cost | Capacity  | Upkeep    | Function                                                              |
+| :--------------- | :--- | :-------- | :-------- | :-------------------------------------------------------------------- |
+| **Firewall**     | $40  | 30        | Low       | **Security.** First line of defense. Blocks malicious traffic.        |
+| **API Gateway**  | $70  | 40        | Medium    | **Rate Limiting.** Throttles excess traffic (soft-fail). **Upgradeable T1→T3.** |
+| **Queue**        | $45  | Queue:200 | Low       | **Buffer.** Buffers requests during spikes. Prevents drops.           |
+| **Load Balancer**| $50  | 20        | Medium    | **Distribution.** Distributes traffic to multiple instances.          |
+| **Compute**      | $60  | 4         | High      | **Processing.** Processes requests. **Upgradeable T1→T3.**            |
+| **CDN**          | $60  | 50        | Low       | **Delivery.** Caches STATIC content at edge (95% hit rate).           |
+| **SQL DB**       | $150 | 8         | Very High | **Database.** Handles READ/WRITE/SEARCH. **Upgradeable T1→T3.**      |
+| **NoSQL DB**     | $80  | 15        | High      | **Fast Database.** Handles READ/WRITE only (no SEARCH). **Upgradeable T1→T3.** |
+| **Cache**        | $60  | 30        | Medium    | **Caching.** Caches responses to reduce DB load. **Upgradeable T1→T3.** |
+| **Storage**      | $25  | 25        | Low       | **File System.** Destination for STATIC/UPLOAD traffic.               |
+
+### Scoring &amp; Economy
+
+| Action         | Money  | Score | Reputation |
+| :------------- | :----- | :---- | :--------- |
+| Static Request | +$0.50 | +3    | +0.1       |
+| DB Read        | +$0.80 | +5    | +0.1       |
+| DB Write       | +$1.20 | +8    | +0.1       |
+| File Upload    | +$1.50 | +10   | +0.1       |
+| Search Query   | +$0.80 | +5    | +0.1       |
+| Attack Blocked | +$0.50 | +10   | -          |
+| Request Failed | -      | -half | -1         |
+| Req. Throttled | -      | -     | -0.2       |
+| Attack Leaked  | -      | -     | -5         |
+
+### Upkeep &amp; Cost Scaling
+
+- **Base Upkeep:** Each service has per-minute upkeep costs
+- **Upkeep Scaling:** Costs increase 1x to 2x over 10 minutes
+- **Repair Costs:** 15% of service cost to manually repair
+- **Auto-Repair:** +10% upkeep overhead when enabled
+
+### Game Modes
+
+#### Survival Mode
+
+The core experience - survive as long as possible against escalating traffic with constant intervention required:
+
+**Dynamic Challenges:**
+
+- **RPS Acceleration** - Traffic multiplies at time milestones (×1.3 at 1min → ×4.0 at 10min)
+- **Random Events** - Cost spikes, capacity drops, traffic bursts every 15-45 seconds
+- **Traffic Shifts** - Traffic patterns change every 40 seconds
+- **DDoS Spikes** - 50% malicious traffic waves every 45 seconds
+- **Service Degradation** - Services lose health under load, require repairs
+
+**New UI Features:**
+
+- **Health bars on all services**
+- **Active event indicator bar at top**
+- **Detailed finances panel (income/expenses breakdown)**
+- **Service health panel with repair costs**
+- **Auto-repair toggle**
+- **Game over analysis with tips**
+
+#### Sandbox Mode
+
+A fully customizable testing environment for experimenting with any architecture:
+
+| Control           | Description                                                       |
+| :---------------- | :---------------------------------------------------------------- |
+| **Budget**        | Set any starting budget (slider 0-10K, or type any amount)        |
+| **RPS**           | Control traffic rate (0 = stopped, or type 100+ for stress tests) |
+| **Traffic Mix**   | Adjust all 6 traffic type percentages independently               |
+| **Burst**         | Spawn instant bursts of specific traffic types                    |
+| **Upkeep Toggle** | Enable/disable service costs                                      |
+| **Clear All**     | Reset all services and restore budget                             |
+
+**No game over in Sandbox** - experiment freely!
+
+### Recent Features (v2.1)
+
+- **API Gateway** - Rate limits traffic with soft-fail throttling (-0.2 rep instead of -1.0). Upgradeable (Tiers 1-3: 20/40/80 RPS)
+- **NoSQL Database** - Fast alternative to SQL for READ/WRITE traffic (150ms vs 300ms). Cannot handle SEARCH. Upgradeable (Tiers 1-3)
+- **Constant Intervention Mechanics** - Game requires active management throughout
+- **Service Health System** - Visual health bars, manual/auto repair options
+- **RPS Milestones** - Traffic surge warnings with multiplier display
+- **Active Event Bar** - Shows current random event with countdown timer
+- **Detailed Finances** - Income by request type, expenses by service with counts
+- **Game Over Analysis** - Failure reason, description, and contextual tips
+- **Retry Same Setup** - Restart with same architecture after game over
+- **Interactive Tutorial** - Guided walkthrough for new players
+
+### Controls
+
+- **Left Click:** Select tools, place services, and connect nodes.
+- **Right Click + Drag:** Pan the camera.
+- **Scroll:** Zoom in and out.
+- **WASD / Arrows:** Move camera (pan) when zoomed in.
+- **ESC:** Open main menu and pause game. Press again or click Resume to close menu (stays paused).
+- **Camera Reset:** Press `R` to reset the camera position.
+- **Birds-Eye View:** Press `T` to switch between isometric and top-down view.
+- **Hide HUD:** Press `H` to toggle UI panels.
+- **Connect Tool:** Click two nodes to create a connection (flow direction matters!).
+  - _Valid Flows:_ Internet -&gt; (Firewall/CDN/API Gateway) -&gt; Load Balancer -&gt; Queue -&gt; Compute -&gt; Cache -&gt; (SQL DB/NoSQL DB/Storage)
+- **Delete Tool:** Remove services to recover 50% of the cost.
+- **Time Controls:** Pause, Play (1x), and Fast Forward (3x).
+
+## Strategy Tips
+
+1.  **Block Attacks First:** Always place a Firewall immediately connected to the Internet. Malicious leaks destroy reputation fast (-5 per leak).
+2.  **Use CDN for Static Content:** Connect Internet -&gt; CDN -&gt; Storage. The CDN handles 95% of static traffic cheaply!
+3.  **Watch Service Health:** Damaged services have reduced capacity. Click to repair or enable Auto-Repair.
+4.  **Scale for Traffic Surges:** RPS multiplies at milestones - prepare before ×2.0 at 3 minutes!
+5.  **Balance Income vs Upkeep:** Start lean, scale as income grows. Over-provisioning leads to bankruptcy.
+6.  **Use Cache Wisely:** Reduces database load significantly for READ requests.
+7.  **Buffer with Queue:** Queue helps survive traffic burst events without dropping requests.
+8.  **React to Events:** Watch the event bar - cost spikes mean hold off on purchases, traffic bursts mean ensure capacity.
+9.  **API Gateway for Graceful Degradation:** Throttled requests only lose -0.2 reputation (vs -1.0 for failures). Great for surviving traffic spikes!
+10. **Split DB Traffic with NoSQL:** Route READ/WRITE to NoSQL (faster, cheaper) and keep SQL DB for SEARCH queries only.
+
+## Tech Stack
+
+- **Core:** Vanilla JavaScript (ES6+)
+- **Rendering:** [Three.js](https://threejs.org/) for 3D visualization.
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) for the glassmorphism UI.
+- **Build:** No build step required! Just standard HTML/CSS/JS.
+
+## Getting Started
+
+1.  Clone the repository.
+2.  Open `index.html` in your modern web browser.
+3.  Start building your cloud empire!
+
+## Community
+
+Join our Discord server to discuss strategies and share your high scores:
+[Join Discord](https://discord.gg/f38NgHDwnK)
+
+---
+
+_Built with code and chaos._
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[denysdovhan/wtfjs]]></title>
+            <link>https://github.com/denysdovhan/wtfjs</link>
+            <guid>https://github.com/denysdovhan/wtfjs</guid>
+            <pubDate>Tue, 17 Feb 2026 00:08:10 GMT</pubDate>
+            <description><![CDATA[🤪 A list of funny and tricky JavaScript examples]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/denysdovhan/wtfjs">denysdovhan/wtfjs</a></h1>
+            <p>🤪 A list of funny and tricky JavaScript examples</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 37,701</p>
+            <p>Forks: 2,680</p>
+            <p>Stars today: 17 stars today</p>
+            <h2>README</h2><pre>[![SWUbanner](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct-single.svg)](https://stand-with-ukraine.pp.ua/)
+
+# What the f\*ck JavaScript?
+
+[![WTFPL 2.0][license-image]][license-url]
+[![NPM version][npm-image]][npm-url]
+[![Patreon][patreon-image]][patreon-url]
+[![Buy Me A Coffee][bmc-image]][bmc-url]
+
+&gt; A list of funny and tricky JavaScript examples
+
+JavaScript is a great language. It has a simple syntax, large ecosystem and, what is most important, a great community.
+
+At the same time, we all know that JavaScript is quite a funny language with tricky parts. Some of them can quickly turn our everyday job into hell, and some of them can make us laugh out loud.
+
+The original idea for WTFJS belongs to [Brian Leroux](https://twitter.com/brianleroux). This list is highly inspired by his talk [**“WTFJS”** at dotJS 2012](https://www.youtube.com/watch?v=et8xNAc2ic8):
+
+[![dotJS 2012 - Brian Leroux - WTFJS](https://img.youtube.com/vi/et8xNAc2ic8/0.jpg)](https://www.youtube.com/watch?v=et8xNAc2ic8)
+
+# Node Packaged Manuscript
+
+You can install this handbook using `npm`. Just run:
+
+```
+$ npm install -g wtfjs
+```
+
+You should be able to run `wtfjs` at the command line now. This will open the manual in your selected `$PAGER`. Otherwise, you may continue reading on here.
+
+The source is available here: &lt;https://github.com/denysdovhan/wtfjs&gt;
+
+# Translations
+
+Currently, there are these translations of **wtfjs**:
+
+- [中文](./README-zh-cn.md)
+- [हिंदी](./README-hi.md)
+- [Français](./README-fr-fr.md)
+- [Português do Brasil](./README-pt-br.md)
+- [Polski](./README-pl-pl.md)
+- [Italiano](./README-it-it.md)
+- [한국어](./README-kr.md)
+
+[**Help translating to your language**][tr-request]
+
+[tr-request]: https://github.com/denysdovhan/wtfjs/blob/master/CONTRIBUTING.md#translations
+
+**Note:** Translations are maintained by their translators. They may not contain every example, and existing examples may be outdated.
+
+&lt;!-- prettier-ignore-start --&gt;
+&lt;!-- START doctoc generated TOC please keep comment here to allow auto update --&gt;
+&lt;!-- DON&#039;T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE --&gt;
+# Table of Contents
+
+- [💪🏻 Motivation](#-motivation)
+- [✍🏻 Notation](#-notation)
+- [👀 Examples](#-examples)
+  - [`[]` is equal `![]`](#-is-equal-)
+  - [`true` is not equal `![]`, but not equal `[]` too](#true-is-not-equal--but-not-equal--too)
+  - [true is false](#true-is-false)
+  - [baNaNa](#banana)
+  - [`NaN` is not a `NaN`](#nan-is-not-a-nan)
+  - [`Object.is()` and `===` weird cases](#objectis-and--weird-cases)
+  - [It&#039;s a fail](#its-a-fail)
+  - [`[]` is truthy, but not `true`](#-is-truthy-but-not-true)
+  - [`null` is falsy, but not `false`](#null-is-falsy-but-not-false)
+  - [`document.all` is an object, but it is undefined](#documentall-is-an-object-but-it-is-undefined)
+  - [Minimal value is greater than zero](#minimal-value-is-greater-than-zero)
+  - [function is not a function](#function-is-not-a-function)
+  - [Adding arrays](#adding-arrays)
+  - [Trailing commas in array](#trailing-commas-in-array)
+  - [Array equality is a monster](#array-equality-is-a-monster)
+  - [`undefined` and `Number`](#undefined-and-number)
+  - [`parseInt` is a bad guy](#parseint-is-a-bad-guy)
+  - [Math with `true` and `false`](#math-with-true-and-false)
+  - [HTML comments are valid in JavaScript](#html-comments-are-valid-in-javascript)
+  - [`NaN` is ~~not~~ a number](#nan-is-not-a-number)
+  - [`[]` and `null` are objects](#-and-null-are-objects)
+  - [Magically increasing numbers](#magically-increasing-numbers)
+  - [Precision of `0.1 + 0.2`](#precision-of-01--02)
+  - [Patching numbers](#patching-numbers)
+  - [Comparison of three numbers](#comparison-of-three-numbers)
+  - [Funny math](#funny-math)
+  - [Addition of RegExps](#addition-of-regexps)
+  - [Strings aren&#039;t instances of `String`](#strings-arent-instances-of-string)
+  - [Calling functions with backticks](#calling-functions-with-backticks)
+  - [Call call call](#call-call-call)
+  - [A `constructor` property](#a-constructor-property)
+  - [Object as a key of object&#039;s property](#object-as-a-key-of-objects-property)
+  - [Accessing prototypes with `__proto__`](#accessing-prototypes-with-__proto__)
+  - [`` `${{Object}}` ``](#-object-)
+  - [Destructuring with default values](#destructuring-with-default-values)
+  - [Dots and spreading](#dots-and-spreading)
+  - [Labels](#labels)
+  - [Nested labels](#nested-labels)
+  - [Insidious `try..catch`](#insidious-trycatch)
+  - [Is this multiple inheritance?](#is-this-multiple-inheritance)
+  - [A generator which yields itself](#a-generator-which-yields-itself)
+  - [A class of class](#a-class-of-class)
+  - [Non-coercible objects](#non-coercible-objects)
+  - [Tricky arrow functions](#tricky-arrow-functions)
+  - [Arrow functions can not be a constructor](#arrow-functions-can-not-be-a-constructor)
+  - [`arguments` and arrow functions](#arguments-and-arrow-functions)
+  - [Tricky return](#tricky-return)
+  - [Chaining assignments on object](#chaining-assignments-on-object)
+  - [Accessing object properties with arrays](#accessing-object-properties-with-arrays)
+  - [`Number.toFixed()` display different numbers](#numbertofixed-display-different-numbers)
+  - [`Math.max()` less than `Math.min()`](#mathmax-less-than-mathmin)
+  - [Comparing `null` to `0`](#comparing-null-to-0)
+  - [Same variable redeclaration](#same-variable-redeclaration)
+  - [Default behavior Array.prototype.sort()](#default-behavior-arrayprototypesort)
+  - [resolve() won&#039;t return Promise instance](#resolve-wont-return-promise-instance)
+  - [`{}{}` is undefined](#-is-undefined)
+  - [`arguments` binding](#arguments-binding)
+  - [An `alert` from hell](#an-alert-from-hell)
+  - [An infinite timeout](#an-infinite-timeout)
+  - [A `setTimeout` object](#a-settimeout-object)
+  - [Double dot](#double-dot)
+  - [Extra Newness](#extra-newness)
+  - [Why you should use semicolons](#why-you-should-use-semicolons)
+  - [Split a string by a space](#split-a-string-by-a-space)
+  - [A stringified string](#a-stringified-string)
+  - [Non-strict comparison of a number to `true`](#non-strict-comparison-of-a-number-to-true)
+- [📚 Other resources](#-other-resources)
+- [🤝 Supporting](#-supporting)
+- [🎓 License](#-license)
+
+&lt;!-- END doctoc generated TOC please keep comment here to allow auto update --&gt;
+&lt;!-- prettier-ignore-end --&gt;
+
+# 💪🏻 Motivation
+
+&gt; Just for fun
+&gt;
+&gt; &amp;mdash; _[**“Just for Fun: The Story of an Accidental Revolutionary”**](https://en.wikipedia.org/wiki/Just_for_Fun), Linus Torvalds_
+
+The primary goal of this list is to collect some crazy examples and explain how they work, if possible. Just because it&#039;s fun to learn something that we didn&#039;t know before.
+
+If you are a beginner, you can use these notes to get a deeper dive into JavaScript. I hope these notes will motivate you to spend more time reading the specification.
+
+If you are a professional developer, you can consider these examples as a great reference for all of the quirks and unexpected edges of our beloved JavaScript.
+
+In any case, just read this. You&#039;re probably going to find something new.
+
+&gt; **⚠️ Note:** If you enjoy reading this document, please, [consider supporting the author of this collection](#-supporting).
+
+# ✍🏻 Notation
+
+**`// -&gt;`** is used to show the result of an expression. For example:
+
+```js
+1 + 1; // -&gt; 2
+```
+
+**`// &gt;`** means the result of `console.log` or another output. For example:
+
+```js
+console.log(&quot;hello, world!&quot;); // &gt; hello, world!
+```
+
+**`//`** is just a comment used for explanations. Example:
+
+```js
+// Assigning a function to foo constant
+const foo = function() {};
+```
+
+# 👀 Examples
+
+## `[]` is equal `![]`
+
+Array is equal not array:
+
+```js
+[] == ![]; // -&gt; true
+```
+
+### 💡 Explanation:
+
+The abstract equality operator converts both sides to numbers to compare them, and both sides become the number `0` for different reasons. Arrays are truthy, so on the right, the opposite of a truthy value is `false`, which is then coerced to `0`. On the left, however, an empty array is coerced to a number without becoming a boolean first, and empty arrays are coerced to `0`, despite being truthy.
+
+Here is how this expression simplifies:
+
+```js
++[] == +![];
+0 == +false;
+0 == 0;
+true;
+```
+
+See also [`[]` is truthy, but not `true`](#-is-truthy-but-not-true).
+
+- [**12.5.9** Logical NOT Operator (`!`)](https://www.ecma-international.org/ecma-262/#sec-logical-not-operator)
+- [**7.2.15** Abstract Equality Comparison](https://262.ecma-international.org/11.0/index.html#sec-abstract-equality-comparison)
+
+## `true` is not equal `![]`, but not equal `[]` too
+
+Array is not equal `true`, but not Array is not equal `true` too;
+Array is equal `false`, not Array is equal `false` too:
+
+```js
+true == []; // -&gt; false
+true == ![]; // -&gt; false
+
+false == []; // -&gt; true
+false == ![]; // -&gt; true
+```
+
+### 💡 Explanation:
+
+```js
+true == []; // -&gt; false
+true == ![]; // -&gt; false
+
+// According to the specification
+
+true == []; // -&gt; false
+
+toNumber(true); // -&gt; 1
+toNumber([]); // -&gt; 0
+
+1 == 0; // -&gt; false
+
+true == ![]; // -&gt; false
+
+![]; // -&gt; false
+
+true == false; // -&gt; false
+```
+
+```js
+false == []; // -&gt; true
+false == ![]; // -&gt; true
+
+// According to the specification
+
+false == []; // -&gt; true
+
+toNumber(false); // -&gt; 0
+toNumber([]); // -&gt; 0
+
+0 == 0; // -&gt; true
+
+false == ![]; // -&gt; true
+
+![]; // -&gt; false
+
+false == false; // -&gt; true
+```
+
+- [**7.2.15** Abstract Equality Comparison](https://262.ecma-international.org/11.0/index.html#sec-abstract-equality-comparison)
+
+## true is false
+
+```js
+!!&quot;false&quot; == !!&quot;true&quot;; // -&gt; true
+!!&quot;false&quot; === !!&quot;true&quot;; // -&gt; true
+```
+
+### 💡 Explanation:
+
+Consider this step-by-step:
+
+```js
+// true is &#039;truthy&#039; and represented by value 1 (number), &#039;true&#039; in string form is NaN.
+true == &quot;true&quot;; // -&gt; false
+false == &quot;false&quot;; // -&gt; false
+
+// &#039;false&#039; is not the empty string, so it&#039;s a truthy value
+!!&quot;false&quot;; // -&gt; true
+!!&quot;true&quot;; // -&gt; true
+```
+
+- [**7.2.15** Abstract Equality Comparison](https://262.ecma-international.org/11.0/index.html#sec-abstract-equality-comparison)
+
+## baNaNa
+
+```js
+&quot;b&quot; + &quot;a&quot; + +&quot;a&quot; + &quot;a&quot;; // -&gt; &#039;baNaNa&#039;
+```
+
+This is an old-school joke in JavaScript, but remastered. Here&#039;s the original one:
+
+```js
+&quot;foo&quot; + +&quot;bar&quot;; // -&gt; &#039;fooNaN&#039;
+```
+
+### 💡 Explanation:
+
+The expression is evaluated as `&#039;foo&#039; + (+&#039;bar&#039;)`, which converts `&#039;bar&#039;` to not a number.
+
+- [**12.8.3** The Addition Operator (`+`)](https://www.ecma-international.org/ecma-262/#sec-addition-operator-plus)
+- [12.5.6 Unary + Operator](https://www.ecma-international.org/ecma-262/#sec-unary-plus-operator)
+
+## `NaN` is not a `NaN`
+
+```js
+NaN === NaN; // -&gt; false
+```
+
+### 💡 Explanation:
+
+The specification strictly defines the logic behind this behavior:
+
+&gt; 1. If `Type(x)` is different from `Type(y)`, return **false**.
+&gt; 2. If `Type(x)` is Number, then
+&gt;    1. If `x` is **NaN**, return **false**.
+&gt;    2. If `y` is **NaN**, return **false**.
+&gt;    3. … … …
+&gt;
+&gt; &amp;mdash; [**7.2.14** Strict Equality Comparison](https://www.ecma-international.org/ecma-262/#sec-strict-equality-comparison)
+
+Following the definition of `NaN` from the IEEE:
+
+&gt; Four mutually exclusive relations are possible: less than, equal, greater than, and unordered. The last case arises when at least one operand is NaN. Every NaN shall compare unordered with everything, including itself.
+&gt;
+&gt; &amp;mdash; [“What is the rationale for all comparisons returning false for IEEE754 NaN values?”](https://stackoverflow.com/questions/1565164/1573715#1573715) at StackOverflow
+
+## `Object.is()` and `===` weird cases
+
+`Object.is()` determines if two values have the same value or not. It works similar to the `===` operator but there are a few weird cases:
+
+```javascript
+Object.is(NaN, NaN); // -&gt; true
+NaN === NaN; // -&gt; false
+
+Object.is(-0, 0); // -&gt; false
+-0 === 0; // -&gt; true
+
+Object.is(NaN, 0 / 0); // -&gt; true
+NaN === 0 / 0; // -&gt; false
+```
+
+### 💡 Explanation:
+
+In JavaScript lingo, `NaN` and `NaN` are the same value but they&#039;re not strictly equal. `NaN === NaN` being false is apparently due to historical reasons so it would probably be better to accept it as it is.
+
+Similarly, `-0` and `0` are strictly equal, but they&#039;re not the same value.
+
+For more details about `NaN === NaN`, see the above case.
+
+- [Here are the TC39 specs about Object.is](https://tc39.es/ecma262/#sec-object.is)
+- [Equality comparisons and sameness](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness) on MDN
+
+## It&#039;s a fail
+
+You would not believe, but …
+
+```js
+(![] + [])[+[]] +
+  (![] + [])[+!+[]] +
+  ([![]] + [][[]])[+!+[] + [+[]]] +
+  (![] + [])[!+[] + !+[]];
+// -&gt; &#039;fail&#039;
+```
+
+### 💡 Explanation:
+
+By breaking that mass of symbols into pieces, we notice that the following pattern occurs often:
+
+```js
+![] + []; // -&gt; &#039;false&#039;
+![]; // -&gt; false
+```
+
+So we try adding `[]` to `false`. But due to a number of internal function calls (`binary + Operator` -&gt; `ToPrimitive` -&gt; `[[DefaultValue]]`) we end up converting the right operand to a string:
+
+```js
+![] + [].toString(); // &#039;false&#039;
+```
+
+Thinking of a string as an array we can access its first character via `[0]`:
+
+```js
+&quot;false&quot;[0]; // -&gt; &#039;f&#039;
+```
+
+The rest is obvious, but the `i` is tricky. The `i` in `fail` is grabbed by generating the string `&#039;falseundefined&#039;` and grabbing the element on index `[&#039;10&#039;]`.
+
+More examples:
+
+```js
++![]          // -&gt; 0
++!![]         // -&gt; 1
+!![]          // -&gt; true
+![]           // -&gt; false
+[][[]]        // -&gt; undefined
++!![] / +![]  // -&gt; Infinity
+[] + {}       // -&gt; &quot;[object Object]&quot;
++{}           // -&gt; NaN
+```
+
+- [Brainfuck beware: JavaScript is after you!](http://patriciopalladino.com/blog/2012/08/09/non-alphanumeric-javascript.html)
+- [Writing a sentence without using the Alphabet](https://bluewings.github.io/en/writing-a-sentence-without-using-the-alphabet/#weird-javascript-generator) — generate any phrase using JavaScript
+
+## `[]` is truthy, but not `true`
+
+An array is a truthy value, however, it&#039;s not equal to `true`.
+
+```js
+!![]       // -&gt; true
+[] == true // -&gt; false
+```
+
+### 💡 Explanation:
+
+Here are links to the corresponding sections in the ECMA-262 specification:
+
+- [**12.5.9** Logical NOT Operator (`!`)](https://www.ecma-international.org/ecma-262/#sec-logical-not-operator)
+- [**7.2.15** Abstract Equality Comparison](https://262.ecma-international.org/11.0/index.html#sec-abstract-equality-comparison)
+
+## `null` is falsy, but not `false`
+
+Despite the fact that `null` is a falsy value, it&#039;s not equal to `false`.
+
+```js
+!!null; // -&gt; false
+null == false; // -&gt; false
+```
+
+At the same time, other falsy values, like `0` or `&#039;&#039;` are equal to `false`.
+
+```js
+0 == false; // -&gt; true
+&quot;&quot; == false; // -&gt; true
+```
+
+### 💡 Explanation:
+
+The explanation is the same as for previous example. Here&#039;s the corresponding link:
+
+- [**7.2.15** Abstract Equality Comparison](https://262.ecma-international.org/11.0/index.html#sec-abstract-equality-comparison)
+
+## `document.all` is an object, but it is undefined
+
+&gt; ⚠️ This is part of the Browser API and won&#039;t work in a Node.js environment ⚠️
+
+Despite the fact that `document.all` is an array-like object and it gives access to the DOM nodes in the page, it responds to the `typeof` function as `undefined`.
+
+```js
+document.all instanceof Object; // -&gt; true
+typeof document.all; // -&gt; &#039;undefined&#039;
+```
+
+At the same time, `document.all` is not equal to `undefined`.
+
+```js
+document.all === undefined; // -&gt; false
+document.all === null; // -&gt; false
+```
+
+But at the same time:
+
+```js
+document.all == null; // -&gt; true
+```
+
+### 💡 Explanation:
+
+&gt; `document.all` used to be a way to access DOM elements, in particular with old versions of IE. While it has never been a standard it was broadly used in the old age JS code. When the standard progressed with new APIs (such as `document.getElementById`) this API call became obsolete and the standard committee had to decide what to do with it. Because of its broad use they decided to keep the API but introduce a willful violation of the JavaScript specification.
+&gt; The reason why it responds to `false` when using the [Strict Equality Comparison](https://www.ecma-international.org/ecma-262/#sec-strict-equality-comparison) with `undefined` while `true` when using the [Abstract Equality Comparison](https://262.ecma-international.org/11.0/index.html#sec-abstract-equality-comparison) is due to the willful violation of the specification that explicitly allows that.
+&gt;
+&gt; &amp;mdash; [“Obsolete features - document.all”](https://html.spec.whatwg.org/multipage/obsolete.html#dom-document-all) at WhatWG - HTML spec
+&gt; &amp;mdash; [“Chapter 4 - ToBoolean - Falsy values”](https://github.com/getify/You-Dont-Know-JS/blob/0d79079b61dad953bbfde817a5893a49f7e889fb/types%20%26%20grammar/ch4.md#falsy-objects) at YDKJS - Types &amp; Grammar
+
+## Minimal value is greater than zero
+
+`Number.MIN_VALUE` is the smallest number, which is greater than zero:
+
+```js
+Number.MIN_VALUE &gt; 0; // -&gt; true
+```
+
+### 💡 Explanation:
+
+&gt; `Number.MIN_VALUE` is `5e-324`, i.e. the smallest positive number that can be represented within float precision, i.e. that&#039;s as close as you can get to zero. It defines the best resolution that floats can give you.
+&gt;
+&gt; Now the overall smallest value is `Number.NEGATIVE_INFINITY` although it&#039;s not really numeric in a strict sense.
+&gt;
+&gt; &amp;mdash; [“Why is `0` less than `Number.MIN_VALUE` in JavaScript?”](https://stackoverflow.com/questions/26614728/why-is-0-less-than-number-min-value-in-javascript) at StackOverflow
+
+- [**20.1.2.9** Number.MIN_VALUE](https://www.ecma-international.org/ecma-262/#sec-number.min_value)
+
+## function is not a function
+
+&gt; ⚠️ A bug present in V8 v5.5 or lower (Node.js &lt;=7) ⚠️
+
+All of you know about the annoying _undefined is not a function_, but what about this?
+
+```js
+// Declare a class which extends null
+class Foo extends null {}
+// -&gt; [Function: Foo]
+
+new Foo() instanceof null;
+// &gt; TypeError: function is not a function
+// &gt;     at … … …
+```
+
+### 💡 Explanation:
+
+This is not a part of the specification. It&#039;s just a bug that has now been fixed, so there shouldn&#039;t be a problem with it in the future.
+
+### Super constructor null of Foo is not a constructor
+
+It&#039;s continuation of story with previous bug in modern environment (tested with Chrome 71 and Node.js v11.8.0).
+
+```js
+class Foo extends null {}
+new Foo() instanceof null;
+// &gt; TypeError: Super constructor null of Foo is not a constructor
+```
+
+### 💡 Explanation:
+
+This is not a bug because:
+
+```js
+Object.getPrototypeOf(Foo.prototype); // -&gt; null
+```
+
+If the class has no constructor the call from prototype chain. But in the parent has no constructor. Just in case, I’ll clarify that `null` is an object:
+
+```js
+typeof null === &quot;object&quot;;
+```
+
+Therefore, you can inherit from it (although in the world of the OOP for such terms would have beaten me). So you can&#039;t call the null constructor. If you change this code:
+
+```js
+class Foo extends null {
+  constructor() {
+    console.log(&quot;something&quot;);
+  }
+}
+```
+
+You see the error:
+
+```
+ReferenceError: Must call super constructor in derived class before accessing &#039;this&#039; or returning from derived constructor
+```
+
+And if you add `super`:
+
+```js
+class Foo extends null {
+  constructor() {
+    console.log(111);
+    super();
+  }
+}
+```
+
+JS throws an error:
+
+```
+TypeError: Super constructor null of Foo is not a constructor
+```
+
+- [An explanation of this issue](https://github.com/denysdovhan/wtfjs/pull/102#discussion_r259143582) by [@geekjob](https://github.com/geekjob)
+
+## Adding arrays
+
+What if you try to add two arrays?
+
+```js
+[1, 2, 3] + [4, 5, 6]; // -&gt; &#039;1,2,34,5,6&#039;
+```
+
+### 💡 Explanation:
+
+The concatenation happens. Step-by-step, it looks like this:
+
+```js
+[1, 2, 3] +
+  [4, 5, 6][
+    // call toString()
+    (1, 2, 3)
+  ].toString() +
+  [4, 5, 6].toString();
+// concatenation
+&quot;1,2,3&quot; + &quot;4,5,6&quot;;
+// -&gt;
+(&quot;1,2,34,5,6&quot;);
+```
+
+## Trailing commas in array
+
+You&#039;ve created an array with 4 empty elements. Despite all, you&#039;ll get an array with three elements, because of trailing commas:
+
+```js
+let a = [, , ,];
+a.length; // -&gt; 3
+a.toString()
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[CodeWithHarry/Sigma-Web-Dev-Course]]></title>
+            <link>https://github.com/CodeWithHarry/Sigma-Web-Dev-Course</link>
+            <guid>https://github.com/CodeWithHarry/Sigma-Web-Dev-Course</guid>
+            <pubDate>Tue, 17 Feb 2026 00:08:09 GMT</pubDate>
+            <description><![CDATA[Source Code for Sigma Web Development Course]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/CodeWithHarry/Sigma-Web-Dev-Course">CodeWithHarry/Sigma-Web-Dev-Course</a></h1>
+            <p>Source Code for Sigma Web Development Course</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 11,010</p>
+            <p>Forks: 3,061</p>
+            <p>Stars today: 5 stars today</p>
+            <h2>README</h2><pre># Welcome to Sigma&#039;s Web Development Course - Hindi Web Development Tutorials! 🚀
+
+## What&#039;s Inside:
+
+If you&#039;ve been itching to dive into the world of web development but feel lost in a sea of English tutorials, you&#039;re in the right place! Our course is exclusively in Hindi and is crafted to guide you from being an absolute beginner to a seasoned pro, one step at a time.
+
+## Who Can Benefit?
+
+### This course is a perfect fit for:
+
+1. Beginners eager to start their web development journey
+2. Intermediate developers looking to refine their skills
+3. Individuals who prefer learning in Hindi
+
+## What You&#039;ll Master:
+
+### During this course, you&#039;ll delve into:
+
+1. The fundamentals of HTML, CSS, and JavaScript
+2. Both front-end and back-end development
+3. How to seamlessly integrate databases
+4. Real-world project implementation
+5. And a whole lot more!
+
+## The Schedule:
+
+We&#039;re committed to your growth. Expect fresh source code additions nearly every day. Keep up the pace with our schedule and watch your skills soar! 📅
+
+Get ready to embark on an exciting coding journey! 👨‍💻🌟
+
+Ready to start? [Click here](https://www.youtube.com/playlist?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w) to access the complete YouTube playlist.
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[SillyTavern/SillyTavern]]></title>
+            <link>https://github.com/SillyTavern/SillyTavern</link>
+            <guid>https://github.com/SillyTavern/SillyTavern</guid>
+            <pubDate>Tue, 17 Feb 2026 00:08:08 GMT</pubDate>
+            <description><![CDATA[LLM Frontend for Power Users.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/SillyTavern/SillyTavern">SillyTavern/SillyTavern</a></h1>
+            <p>LLM Frontend for Power Users.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 23,153</p>
+            <p>Forks: 4,737</p>
+            <p>Stars today: 33 stars today</p>
+            <h2>README</h2><pre># SillyTavern
+
+LLM Frontend for Power Users
+
+## Resources
+
+- GitHub: &lt;https://github.com/SillyTavern/SillyTavern&gt;
+- Docs: &lt;https://docs.sillytavern.app/&gt;
+- Discord: &lt;https://discord.gg/sillytavern&gt;
+- Reddit: &lt;https://reddit.com/r/SillyTavernAI&gt;
+
+## License
+
+AGPL-3.0
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[mailcow/mailcow-dockerized]]></title>
+            <link>https://github.com/mailcow/mailcow-dockerized</link>
+            <guid>https://github.com/mailcow/mailcow-dockerized</guid>
+            <pubDate>Tue, 17 Feb 2026 00:08:07 GMT</pubDate>
+            <description><![CDATA[mailcow: dockerized - 🐮 + 🐋 = 💕]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/mailcow/mailcow-dockerized">mailcow/mailcow-dockerized</a></h1>
+            <p>mailcow: dockerized - 🐮 + 🐋 = 💕</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 12,161</p>
+            <p>Forks: 1,610</p>
+            <p>Stars today: 13 stars today</p>
+            <h2>README</h2><pre># mailcow: dockerized - 🐮 + 🐋 = 💕
+
+[![Translation status](https://translate.mailcow.email/widgets/mailcow-dockerized/-/translation/svg-badge.svg)](https://translate.mailcow.email/engage/mailcow-dockerized/)
+[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/mailcow_email.svg?style=social&amp;label=Follow%20%40mailcow_email)](https://twitter.com/mailcow_email)
+![Mastodon Follow](https://img.shields.io/mastodon/follow/109388212176073348?domain=https%3A%2F%2Fmailcow.social&amp;label=Follow%20%40doncow%40mailcow.social&amp;link=https%3A%2F%2Fmailcow.social%2F%40doncow)
+
+
+## Want to support mailcow?
+
+Please [consider a support contract with Servercow](https://www.servercow.de/mailcow?lang=en#support) to support further development. _We_ support _you_ while _you_ support _us_. :)
+
+You can also [get a SAL](https://www.servercow.de/mailcow?lang=en#sal) which is a one-time payment with no liabilities or returning fees.
+
+Or just spread the word: moo.
+
+## Many thanks to our GitHub Sponsors ❤️
+A big thank you to everyone supporting us on GitHub Sponsors—your contributions mean the world to us! Special thanks to the following amazing supporters:
+
+### 100$/Month Sponsors
+  &lt;a href=&quot;https://www.colba.net/&quot; target=_blank&gt;&lt;img
+    src=&quot;https://avatars.githubusercontent.com/u/204464723&quot; height=&quot;58&quot;
+  /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://www.maehdros.com/&quot; target=_blank&gt;&lt;img
+    src=&quot;https://avatars.githubusercontent.com/u/173894712&quot; height=&quot;58&quot;
+  /&gt;&lt;/a&gt;
+
+### 50$/Month Sponsors
+  &lt;a href=&quot;https://github.com/vnukhr&quot; target=_blank&gt;&lt;img
+    src=&quot;https://avatars.githubusercontent.com/u/7805987?s=52&amp;v=4&quot; height=&quot;58&quot;
+  /&gt;&lt;/a&gt;
+
+## Info, documentation and support
+
+Please see [the official documentation](https://docs.mailcow.email/) for installation and support instructions. 🐄
+
+🐛 **If you found a critical security issue, please mail us to [info at servercow.de](mailto:info@servercow.de).**
+
+## Cowmunity
+
+[mailcow community](https://community.mailcow.email)
+
+[Telegram mailcow channel](https://telegram.me/mailcow)
+
+[Telegram mailcow Off-Topic channel](https://t.me/mailcowOfftopic)
+
+[Official 𝕏 (Twitter) Account](https://twitter.com/mailcow_email)
+
+[Official Mastodon Account](https://mailcow.social/@doncow)
+
+Telegram desktop clients are available for [multiple platforms](https://desktop.telegram.org). You can search the groups history for keywords.
+
+## Misc
+
+**Important**: mailcow makes use of various open-source software. Please assure you agree with their license before using mailcow.
+Any part of mailcow itself is released under **GNU General Public License, Version 3**.
+
+mailcow is a registered word mark of The Infrastructure Company GmbH, Parkstr. 42, 47877 Willich, Germany.
+
+The project is managed and maintained by The Infrastructure Company GmbH.
+
+Originated from @andryyy (André)
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[fanmingming/live]]></title>
+            <link>https://github.com/fanmingming/live</link>
+            <guid>https://github.com/fanmingming/live</guid>
+            <pubDate>Tue, 17 Feb 2026 00:08:06 GMT</pubDate>
+            <description><![CDATA[✯ 可直连访问的电视/广播图标库与相关工具项目 ✯ 🔕 永久免费 直连访问 完整开源 不断完善的台标 支持IPv4/IPv6双栈访问 🔕]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/fanmingming/live">fanmingming/live</a></h1>
+            <p>✯ 可直连访问的电视/广播图标库与相关工具项目 ✯ 🔕 永久免费 直连访问 完整开源 不断完善的台标 支持IPv4/IPv6双栈访问 🔕</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 27,632</p>
+            <p>Forks: 4,163</p>
+            <p>Stars today: 21 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;&lt;img alt=&quot;live.fanmingming.com&quot; src=&quot;https://live.fanmingming.com/logo.png&quot;&gt;&lt;/p&gt;
+&lt;h1 align=&quot;center&quot;&gt; ✯ 一个可直连访问的电视/广播图标库与相关工具项目 ✯ &lt;/h1&gt;
+&lt;h3 align=&quot;center&quot;&gt;🔕 永久免费 直连访问 完整开源 不断完善的台标 支持IPv4/IPv6双栈访问 🔕&lt;/h3&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img alt=&quot;GitHub Repo stars&quot; src=&quot;https://img.shields.io/github/stars/fanmingming/live?style=flat-square&quot;&gt;
+&lt;img alt=&quot;GitHub forks&quot; src=&quot;https://img.shields.io/github/forks/fanmingming/live?style=flat-square&quot;&gt;
+&lt;img alt=&quot;GitHub issues&quot; src=&quot;https://img.shields.io/github/issues/fanmingming/live?style=flat-square&quot;&gt;
+&lt;img alt=&quot;GitHub watchers&quot; src=&quot;https://img.shields.io/github/watchers/fanmingming/live?style=flat-square&quot;&gt;
+&lt;img alt=&quot;GitHub contributors&quot; src=&quot;https://img.shields.io/github/contributors/fanmingming/live?style=flat-square&quot;&gt;
+&lt;img alt=&quot;GitHub&quot; src=&quot;https://img.shields.io/github/license/fanmingming/live?style=flat-square&quot;&gt;
+&lt;/p&gt;
+
+---
+
+## 🤹‍♂️使用方法:
+
+### 🌇电视/广播图标库：
+
+| 类 别  | 调用路径                                       | 最后更新   |
+|-------|------------------------------------------------|------------|
+| 📺电视  | [https://live.fanmingming.cn/tv/{name}.png](https://github.com/fanmingming/live/tree/main/tv) | 2025.04.01    |
+| 📻广播  | [https://live.fanmingming.cn/radio/{name}.png](https://github.com/fanmingming/live/tree/main/radio) | 2024.8.29   |
+
+### ⛓️创建您的m3u订阅链接：
+ - 下载 `demo.m3u` 空白示例文件并使用文本编辑软件打开。
+   - [https://live.fanmingming.cn/tv/m3u/demo.m3u](https://live.fanmingming.cn/tv/m3u/demo.m3u)
+
+ - 参考下方示例代码将`可用的CCTV1节目源`替换为您当地可用的直播源链接，依此类推逐个替换。
+
+```
+#EXTM3U x-tvg-url=&quot;https://live.fanmingming.cn/e.xml&quot;
+#EXTINF:-1 tvg-name=&quot;CCTV1&quot; tvg-logo=&quot;https://live.fanmingming.cn/tv/CCTV1.png&quot; group-title=&quot;央视&quot;,CCTV-1 综合
+可用的CCTV1节目源
+此处省略...
+```
+
+ - 将编辑完成的m3u文件上传到您的Github仓库。
+ - 为您的Github仓库开启Pages。
+ - 通过播放器订阅您的m3u链接。
+
+&gt; 关于Github Pages：[https://docs.github.com/en/enterprise-cloud@latest/pages/quickstart](https://docs.github.com/en/enterprise-cloud@latest/pages/quickstart)
+
+## 🛠️工具
+- 📆**EPG接口地址**：
+  -  [https://live.fanmingming.cn/e.xml](https://live.fanmingming.cn/e.xml)
+- 🏞️**Bing每日图片**：
+  -  [https://fanmingming.com/bing](https://fanmingming.com/bing)
+- 🎞️**m3u8在线下载**：
+  -  [https://live.fanmingming.cn/m3u8](https://live.fanmingming.cn/m3u8)
+- 🆕**TXT转M3U格式**：
+  - [https://live.fanmingming.cn/txt2m3u](https://live.fanmingming.cn/txt2m3u)
+- 📄**在线M3U转TXT**：
+  - Demo🔗 [https://fanmingming.com/txt?url=https://live.fanmingming.com/tv/m3u/ipv6.m3u](https://fanmingming.com/txt?url=https://live.fanmingming.cn/tv/m3u/ipv6.m3u)
+- 🌐**M3U8 Web Player**:
+  - Demo🔗 [https://live.fanmingming.cn/player/?vurl=https://0472.org/hls/cgtn.m3u8](https://live.fanmingming.cn/player/?vurl=https://0472.org/hls/cgtn.m3u8)
+
+## 📖说明
+- 项目EPG接口为112114.xyz站点分发，本项目无法确保其准确性。
+- 通过M3U8 Web Player测试直播源需使用https协议的直播源链接。
+- 在线M3U转TXT工具构建在Vercel，不会记录您的访问日志请放心使用。
+- TXT转M3U工具为前端网页转换，无需上传文件，粘贴即转换，安全不偷源。
+- 本项目不存储任何的流媒体内容，所有的法律责任与后果应由使用者自行承担。
+- 项目`/tv/m3u/`和`/radio/m3u/`目录下的内容收集于互联网，仅供测试研究使用，本项目无法保证其有效性。
+- 主域名【`live.fanmingming.com`】的WEB访问通过Github Pages自动构建，由CloudFlare提供CDN和安全防护。
+- 镜像域名【`live.fanmingming.cn`】提供完整的资源WEB访问，通过Github Actions自动构建在CloudFlare Pages。
+- 项目所有文件均托管在[GitHub](https://github.com/fanmingming/live)且自动构建，由项目发起人公益维护，欢迎Star本项目或点击[Issues](https://github.com/fanmingming/live/issues/new/choose)反馈您的问题。
+- 您可以Frok本项目到您的Github账户，将缺失的频道Logo上传到`tv`或`radio`目录下并发起拉取请求，收到请求后我们会对您提交的内容进行验证，审核通过后会自动为您署名并发布。
+
+## 📱联系
+- Telegram: [@AirfoneBot](https://t.me/AirfoneBot)
+  - 如遇资源访问问题请通过Telegram反馈。
+
+## 📔更新
+- 2025.04.01
+  - 新增北京卫视4K台标。
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[PrismarineJS/mineflayer]]></title>
+            <link>https://github.com/PrismarineJS/mineflayer</link>
+            <guid>https://github.com/PrismarineJS/mineflayer</guid>
+            <pubDate>Tue, 17 Feb 2026 00:08:05 GMT</pubDate>
+            <description><![CDATA[Create Minecraft bots with a powerful, stable, and high level JavaScript API.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/PrismarineJS/mineflayer">PrismarineJS/mineflayer</a></h1>
+            <p>Create Minecraft bots with a powerful, stable, and high level JavaScript API.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 6,622</p>
+            <p>Forks: 1,190</p>
+            <p>Stars today: 5 stars today</p>
             <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[schlagmichdoch/PairDrop]]></title>
+            <link>https://github.com/schlagmichdoch/PairDrop</link>
+            <guid>https://github.com/schlagmichdoch/PairDrop</guid>
+            <pubDate>Tue, 17 Feb 2026 00:08:04 GMT</pubDate>
+            <description><![CDATA[PairDrop: Transfer Files Cross-Platform. No Setup, No Signup.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/schlagmichdoch/PairDrop">schlagmichdoch/PairDrop</a></h1>
+            <p>PairDrop: Transfer Files Cross-Platform. No Setup, No Signup.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 9,770</p>
+            <p>Forks: 586</p>
+            <p>Stars today: 9 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://github.com/schlagmichdoch/PairDrop&quot;&gt;
+    &lt;img src=&quot;public/images/android-chrome-512x512.png&quot; alt=&quot;Logo&quot;  width=&quot;150&quot; height=&quot;150&quot;&gt;
+  &lt;/a&gt;
+ 
+  # _Send it_, with [PairDrop](https://pairdrop.net)
+
+  &lt;p&gt;
+    Local file sharing &lt;a href=&quot;https://pairdrop.net&quot;&gt;&lt;strong&gt;in your web browser&lt;/strong&gt;&lt;/a&gt;. 
+    &lt;br&gt;
+    Inspired by Apple&#039;s AirDrop.
+    &lt;br&gt; 
+    Fork of Snapdrop.
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;a href=&quot;https://github.com/schlagmichdoch/PairDrop/issues&quot;&gt;Report a bug&lt;/a&gt;
+    &lt;br /&gt;
+    &lt;a href=&quot;https://github.com/schlagmichdoch/PairDrop/issues&quot;&gt;Request feature&lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+&lt;br&gt;
+
+## Features
+File sharing on your local network that works on all platforms.
+
+- A multi-platform AirDrop-like solution that works.
+  - Send images, documents or text via peer-to-peer connection to devices on the same local network.
+- Internet transfers
+  - Join temporary public rooms to transfer files easily over the Internet.
+- Web-app 
+  - Works on all devices with a modern web-browser.
+ 
+Send a file from your phone to your laptop?
+&lt;br&gt;Share photos in original quality with friends using Android and iOS?
+&lt;br&gt;Share private files peer-to-peer between Linux systems?
+
+&lt;img src=&quot;docs/pairdrop_screenshot_mobile.gif&quot; alt=&quot;Screenshot GIF showing PairDrop in use&quot; style=&quot;width: 300px&quot;&gt;
+
+## Differences to the [Snapdrop](https://github.com/RobinLinus/snapdrop) it is based on
+&lt;details&gt;&lt;summary&gt;View all differences&lt;/summary&gt;
+
+### Paired Devices and Public Rooms — Internet Transfer
+* Transfer files over the Internet between paired devices or by entering temporary public rooms.
+* Connect to devices in complex network environments (public Wi-Fi, company network, iCloud Private Relay, VPN, etc.).
+* Connect to devices on your mobile hotspot.
+* Devices outside of your local network that are behind a NAT are auto-connected via the PairDrop TURN server.
+* Devices from the local network, in the same public room, or previously paired are shown.
+
+#### Persistent Device Pairing
+
+Always connect to known devices
+
+* Pair devices via a 6-digit code or a QR-Code.
+* Paired devices always find each other via shared secrets independently of their local network. 
+* Pairing is persistent. You find your devices even after reopening PairDrop.
+* You can edit and unpair devices easily.
+
+#### Temporary Public Rooms
+
+Connect to others in complex network situations, or over the Internet.
+
+* Enter a public room via a 5-letter code or a QR-code.
+* Enter a public room to temporarily connect to devices outside your local network.
+* All devices in the same public room see each other.
+* Public rooms are temporary. Closing PairDrop  leaves all rooms.
+
+### [Improved UI for Sending/Receiving Files](https://github.com/RobinLinus/snapdrop/issues/560)
+* Files are transferred after a request is accepted. Files are auto-downloaded upon completing a transfer, if possible.
+* Multiple files are downloaded as a ZIP file
+* Download, share or save to gallery via the &quot;Share&quot; menu on Android and iOS.
+* Multiple files are transferred at once with an overall progress indicator.
+
+### Send Files or Text Directly From Share Menu, Context Menu or CLI
+* [Send files directly from context menu on Ubuntu (using Nautilus)](docs/how-to.md#send-multiple-files-and-directories-directly-from-context-menu-on-ubuntu-using-nautilus)
+* [Send files directly from the context menu on Windows](docs/how-to.md#send-files-directly-from-context-menu-on-windows)
+* [Send directly from the &quot;Share&quot; menu on iOS](docs/how-to.md#send-directly-from-share-menu-on-ios)
+* [Send directly from the &quot;Share&quot; menu on Android](docs/how-to.md#send-directly-from-share-menu-on-android)
+* [Send directly via the command-line interface](docs/how-to.md#send-directly-via-command-line-interface)
+
+### Other Changes
+* Change your display name to easily differentiate your devices.
+* [Paste files/text and choose the recipient afterwards ](https://github.com/RobinLinus/snapdrop/pull/534)
+* [Prevent devices from sleeping on file transfer](https://github.com/RobinLinus/snapdrop/pull/413)
+* Warn user before PairDrop is closed on file transfer
+* Open PairDrop on multiple tabs simultaneously (Thanks [@willstott101](https://github.com/willstott101))
+* [Video and audio preview](https://github.com/RobinLinus/snapdrop/pull/455) (Thanks [@victorwads](https://github.com/victorwads))
+* Switch theme back to auto/system after dark or light mode is on
+* Node-only implementation (Thanks [@Bellisario](https://github.com/Bellisario))
+* Auto-restart on error (Thanks [@KaKi87](https://github.com/KaKi87))
+* Lots of stability fixes (Thanks [@MWY001](https://github.com/MWY001) [@skiby7](https://github.com/skiby7) and [@willstott101](https://github.com/willstott101))
+* To host PairDrop on your local network (e.g. on Raspberry Pi): [All peers connected with private IPs are discoverable by each other](https://github.com/RobinLinus/snapdrop/pull/558)
+* When hosting PairDrop yourself, you can [set your own STUN/TURN servers](docs/host-your-own.md#specify-stunturn-servers)
+* Translations.
+
+&lt;/details&gt;
+
+## Translate PairDrop on [Hosted Weblate](https://hosted.weblate.org/engage/pairdrop/)
+&lt;a href=&quot;https://hosted.weblate.org/engage/pairdrop/&quot;&gt;
+&lt;img src=&quot;https://hosted.weblate.org/widget/pairdrop/horizontal-blue.svg&quot; alt=&quot;Translation status&quot; style=&quot;width: 300px&quot; /&gt;
+&lt;/a&gt;
+
+## Built with the following awesome technologies:
+* Vanilla HTML5 / JS ES6 / CSS 3 frontend
+* [WebRTC](http://webrtc.org/) / WebSockets
+* [Node.js](https://nodejs.org/en/) backend
+* [Progressive web app (PWA)](https://en.wikipedia.org/wiki/Progressive_web_app) unified functionality
+* [IndexedDB API](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) storage handling
+* [zip.js](https://gildas-lormeau.github.io/zip.js/) library
+* [cyrb53](https://github.com/bryc/code/blob/master/jshash/experimental/cyrb53.js) super-fast hash function
+* [NoSleep](https://github.com/richtr/NoSleep.js) display sleep, add wake lock ([MIT](licenses/MIT-NoSleep))
+* [heic2any](https://github.com/alexcorvi/heic2any) HEIC/HEIF to PNG/GIF/JPEG ([MIT](licenses/MIT-heic2any))
+* [Weblate](https://weblate.org/) web-based localization tool
+* [BrowserStack](https://www.browserstack.com/) This project is tested with BrowserStack
+
+[FAQ](docs/faq.md)
+
+[Host your own instance with Docker or Node.js](docs/host-your-own.md).
+
+## Support
+&lt;a href=&quot;https://www.buymeacoffee.com/pairdrop&quot; target=&quot;_blank&quot;&gt;
+&lt;img src=&quot;https://cdn.buymeacoffee.com/buttons/v2/default-blue.png&quot; alt=&quot;Buy me a coffee&quot; style=&quot;height: 60px !important;width: 217px !important;&quot; &gt;
+&lt;/a&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+
+PairDrop is libre, and always will be. \
+If you find it useful and want to support free and open-source software, please consider donating using the button above. \
+I footed the bill for the domain and the server, and you can help create and maintain great software by supporting me. \
+Thank you very much for your contribution!
+
+## Contributing
+Feel free to [open an issue](https://github.com/schlagmichdoch/pairdrop/issues/new/choose) or a
+[pull request](https://github.com/schlagmichdoch/pairdrop/pulls), following the
+[Contributing Guidelines](CONTRIBUTING.md).
+</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
@@ -1281,15 +2275,15 @@ Or configure via `/gsd:settings`.
             <title><![CDATA[processing/p5.js]]></title>
             <link>https://github.com/processing/p5.js</link>
             <guid>https://github.com/processing/p5.js</guid>
-            <pubDate>Mon, 16 Feb 2026 00:07:47 GMT</pubDate>
+            <pubDate>Tue, 17 Feb 2026 00:08:03 GMT</pubDate>
             <description><![CDATA[p5.js is a client-side JS platform that empowers artists, designers, students, and anyone to learn to code and express themselves creatively on the web. It is based on the core principles of Processing. Looking for p5.js 2.0? http://beta.p5js.org]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/processing/p5.js">processing/p5.js</a></h1>
             <p>p5.js is a client-side JS platform that empowers artists, designers, students, and anyone to learn to code and express themselves creatively on the web. It is based on the core principles of Processing. Looking for p5.js 2.0? http://beta.p5js.org</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 23,436</p>
-            <p>Forks: 3,710</p>
-            <p>Stars today: 8 stars today</p>
+            <p>Stars: 23,443</p>
+            <p>Forks: 3,709</p>
+            <p>Stars today: 9 stars today</p>
             <h2>README</h2><pre>[![npm version](https://badge.fury.io/js/p5.svg)](https://www.npmjs.com/package/p5)
 [![All Contributors](https://img.shields.io/github/all-contributors/processing/p5.js?color=ee8449)](#contributors)
 [![Total Downloads](https://img.shields.io/npm/dt/p5)](https://www.npmjs.com/package/p5)
@@ -1420,1085 +2414,188 @@ Thanks to all the wonderful contributors! 💓
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[jellyfin/jellyfin-web]]></title>
-            <link>https://github.com/jellyfin/jellyfin-web</link>
-            <guid>https://github.com/jellyfin/jellyfin-web</guid>
-            <pubDate>Mon, 16 Feb 2026 00:07:46 GMT</pubDate>
-            <description><![CDATA[The Free Software Media System - Official Web Client]]></description>
+            <title><![CDATA[qist/tvbox]]></title>
+            <link>https://github.com/qist/tvbox</link>
+            <guid>https://github.com/qist/tvbox</guid>
+            <pubDate>Tue, 17 Feb 2026 00:08:02 GMT</pubDate>
+            <description><![CDATA[OK影视、tvbox配置文件，如果喜欢，请Fork自用。使用前请仔细阅读仓库说明，一旦使用将被视为你已了解。]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/jellyfin/jellyfin-web">jellyfin/jellyfin-web</a></h1>
-            <p>The Free Software Media System - Official Web Client</p>
+            <h1><a href="https://github.com/qist/tvbox">qist/tvbox</a></h1>
+            <p>OK影视、tvbox配置文件，如果喜欢，请Fork自用。使用前请仔细阅读仓库说明，一旦使用将被视为你已了解。</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 3,373</p>
-            <p>Forks: 1,812</p>
-            <p>Stars today: 3 stars today</p>
-            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;Jellyfin Web&lt;/h1&gt;
-&lt;h3 align=&quot;center&quot;&gt;Part of the &lt;a href=&quot;https://jellyfin.org&quot;&gt;Jellyfin Project&lt;/a&gt;&lt;/h3&gt;
-
----
-
-&lt;p align=&quot;center&quot;&gt;
-&lt;img alt=&quot;Logo Banner&quot; src=&quot;https://raw.githubusercontent.com/jellyfin/jellyfin-ux/master/branding/SVG/banner-logo-solid.svg?sanitize=true&quot;/&gt;
-&lt;br/&gt;
-&lt;br/&gt;
-&lt;a href=&quot;https://github.com/jellyfin/jellyfin-web&quot;&gt;
-&lt;img alt=&quot;GPL 2.0 License&quot; src=&quot;https://img.shields.io/github/license/jellyfin/jellyfin-web.svg&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/jellyfin/jellyfin-web/releases&quot;&gt;
-&lt;img alt=&quot;Current Release&quot; src=&quot;https://img.shields.io/github/release/jellyfin/jellyfin-web.svg&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://translate.jellyfin.org/projects/jellyfin/jellyfin-web/?utm_source=widget&quot;&gt;
-&lt;img src=&quot;https://translate.jellyfin.org/widgets/jellyfin/-/jellyfin-web/svg-badge.svg&quot; alt=&quot;Translation Status&quot;/&gt;
-&lt;/a&gt;
-&lt;br/&gt;
-&lt;a href=&quot;https://opencollective.com/jellyfin&quot;&gt;
-&lt;img alt=&quot;Donate&quot; src=&quot;https://img.shields.io/opencollective/all/jellyfin.svg?label=backers&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://features.jellyfin.org&quot;&gt;
-&lt;img alt=&quot;Feature Requests&quot; src=&quot;https://img.shields.io/badge/fider-vote%20on%20features-success.svg&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://matrix.to/#/+jellyfin:matrix.org&quot;&gt;
-&lt;img alt=&quot;Chat on Matrix&quot; src=&quot;https://img.shields.io/matrix/jellyfin:matrix.org.svg?logo=matrix&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://www.reddit.com/r/jellyfin&quot;&gt;
-&lt;img alt=&quot;Join our Subreddit&quot; src=&quot;https://img.shields.io/badge/reddit-r%2Fjellyfin-%23FF5700.svg&quot;/&gt;
-&lt;/a&gt;
-&lt;/p&gt;
-
-Jellyfin Web is the frontend used for most of the clients available for end users, such as desktop browsers, Android, and iOS. We welcome all contributions and pull requests! If you have a larger feature in mind please open an issue so we can discuss the implementation before you start. Translations can be improved very easily from our &lt;a href=&quot;https://translate.jellyfin.org/projects/jellyfin/jellyfin-web&quot;&gt;Weblate&lt;/a&gt; instance. Look through the following graphic to see if your native language could use some work!
-
-&lt;a href=&quot;https://translate.jellyfin.org/engage/jellyfin/?utm_source=widget&quot;&gt;
-&lt;img src=&quot;https://translate.jellyfin.org/widgets/jellyfin/-/jellyfin-web/multi-auto.svg&quot; alt=&quot;Detailed Translation Status&quot;/&gt;
-&lt;/a&gt;
-
-## Build Process
-
-### Dependencies
-
-- [Node.js](https://nodejs.org/en/download)
-- npm (included in Node.js)
-
-### Getting Started
-
-1. Clone or download this repository.
-
-   ```sh
-   git clone https://github.com/jellyfin/jellyfin-web.git
-   cd jellyfin-web
-   ```
-
-2. Install build dependencies in the project directory.
-
-   ```sh
-   npm install
-   ```
-
-3. Run the web client with webpack for local development.
-
-   ```sh
-   npm start
-   ```
-
-4. Build the client with sourcemaps available.
-
-   ```sh
-   npm run build:development
-   ```
-
-## Directory Structure
-
-&gt; [!NOTE]
-&gt; We are in the process of refactoring to a [new structure](https://forum.jellyfin.org/t-proposed-update-to-the-structure-of-jellyfin-web) based on [Bulletproof React](https://github.com/alan2207/bulletproof-react/blob/master/docs/project-structure.md) architecture guidelines.
-&gt; Most new code should be organized under the appropriate app directory unless it is common/shared.
-
-```
-.
-└── src
-    ├── apps
-    │   ├── dashboard           # Admin dashboard app
-    │   ├── experimental        # New experimental app
-    │   ├── stable              # Classic (stable) app
-    │   └── wizard              # Startup wizard app
-    ├── assets                  # Static assets
-    ├── components              # Higher order visual components and React components
-    ├── constants               # Common constant values
-    ├── controllers             # Legacy page views and controllers 🧹 ❌
-    ├── elements                # Basic webcomponents and React equivalents 🧹
-    ├── hooks                   # Custom React hooks
-    ├── lib                     # Reusable libraries
-    │   ├── globalize           # Custom localization library
-    │   ├── jellyfin-apiclient  # Supporting code for the deprecated apiclient package
-    │   ├── legacy              # Polyfills for legacy browsers
-    │   ├── navdrawer           # Navigation drawer library for classic layout
-    │   └── scroller            # Content scrolling library
-    ├── plugins                 # Client plugins (features dynamically loaded at runtime)
-    ├── scripts                 # Random assortment of visual components and utilities 🐉 ❌
-    ├── strings                 # Translation files (only commit changes to en-us.json)
-    ├── styles                  # Common app Sass stylesheets
-    ├── themes                  # Sass and MUI themes
-    ├── types                   # Common TypeScript interfaces/types
-    └── utils                   # Utility functions
-```
-
-- ❌ &amp;mdash; Deprecated, do **not** create new files here
-- 🧹 &amp;mdash; Needs cleanup
-- 🐉 &amp;mdash; Serious mess (Here be dragons)
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[gorhill/uBlock]]></title>
-            <link>https://github.com/gorhill/uBlock</link>
-            <guid>https://github.com/gorhill/uBlock</guid>
-            <pubDate>Mon, 16 Feb 2026 00:07:45 GMT</pubDate>
-            <description><![CDATA[uBlock Origin - An efficient blocker for Chromium and Firefox. Fast and lean.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/gorhill/uBlock">gorhill/uBlock</a></h1>
-            <p>uBlock Origin - An efficient blocker for Chromium and Firefox. Fast and lean.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 61,561</p>
-            <p>Forks: 3,942</p>
-            <p>Stars today: 26 stars today</p>
-            <h2>README</h2><pre>[![Badge Commits]][Commit Rate]
-[![Badge Issues]][Issues]
-[![Badge Localization]][Crowdin]
-[![Badge License]][License]
-[![Badge NPM]][NPM]
-[![Badge Mozilla]][Mozilla]
-[![Badge Chrome]][Chrome]
-[![Badge Edge]][Edge]
-
-***
-
-&lt;h1 align=&quot;center&quot;&gt;
-&lt;sub&gt;
-&lt;img src=&quot;https://github.com/gorhill/uBlock/blob/master/src/img/ublock.svg&quot; height=&quot;38&quot; width=&quot;38&quot;&gt;
-&lt;/sub&gt;
-uBlock Origin (uBO)
-&lt;/h1&gt;
+            <p>Stars: 8,101</p>
+            <p>Forks: 3,008</p>
+            <p>Stars today: 28 stars today</p>
+            <h2>README</h2><pre>OK影视、TVBox、猫影视配置文件。所有资源均来自于各路大神无私分享，如有侵权，请联系删除。
 
-| Browser   | Install from ... | Status |
-| :-------: | ---------------- | ------ |
-| &lt;img src=&quot;https://github.com/user-attachments/assets/b0136512-56a5-4856-8c50-4971c957a24f&quot; alt=&quot;Get uBlock Origin for Firefox&quot;&gt; | &lt;a href=&quot;https://addons.mozilla.org/addon/ublock-origin/&quot;&gt;Firefox Add-ons&lt;/a&gt; | [uBO works best on Firefox](https://github.com/gorhill/uBlock/wiki/uBlock-Origin-works-best-on-Firefox) |
-| &lt;img src=&quot;https://github.com/user-attachments/assets/3a7569f8-688b-4eb1-a643-8d0fe173aefe&quot; alt=&quot;Get uBlock Origin for Microsoft Edge&quot;&gt; | &lt;a href=&quot;https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak&quot;&gt;Edge Add-ons&lt;/a&gt; |
-| &lt;img src=&quot;https://github.com/user-attachments/assets/938f080c-fe64-4e48-8b89-4bfceabb56e6&quot; alt=&quot;Get uBlock Origin for Opera&quot;&gt; | &lt;a href=&quot;https://addons.opera.com/extensions/details/ublock/&quot;&gt;Opera Add-ons&lt;/a&gt; |
-| &lt;img src=&quot;https://github.com/user-attachments/assets/5463ef88-873b-4516-8514-5277664cfde7&quot; alt=&quot;Get uBlock Origin for Chromium&quot;&gt; | &lt;a href=&quot;https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm&quot;&gt;Chrome Web Store&lt;/a&gt; | &lt;a href=&quot;https://github.com/uBlockOrigin/uBlock-issues/wiki/About-Google-Chrome&#039;s-%22This-extension-may-soon-no-longer-be-supported%22&quot;&gt;About Google Chrome&#039;s &quot;This extension may soon no longer be supported&quot;&lt;/a&gt;&lt;br&gt;End of support on Chrome 139 |
-| &lt;img src=&quot;https://github.com/user-attachments/assets/2e9037c4-836d-44c1-a716-ba96e89daaff&quot; alt=&quot;Get uBlock Origin for Thunderbird&quot;&gt; | &lt;a href=&quot;https://addons.thunderbird.net/thunderbird/addon/ublock-origin/&quot;&gt;Thunderbird Add-ons&lt;/a&gt; | [No longer updated and stuck at 1.49.2.](https://github.com/uBlockOrigin/uBlock-issues/issues/2928) Later versions require &quot;GitHub - Releases&quot;. |
-| &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg&quot; height=&quot;50&quot; alt=&quot;Get uBlock Origin through GitHub&quot;&gt; | &lt;a href=&quot;https://github.com/gorhill/uBlock/releases&quot;&gt;GitHub - Releases&lt;/a&gt; | Stable and development versions on Firefox, Chromium MV2, and Thunderbird. Must be placed manually into web browsers; the Chromium and Thunderbird versions usually won&#039;t auto-update.
+所有以任何方式查看本仓库内容的人、或直接或间接使用本仓库内容的使用者都应仔细阅读此声明。本仓库管理者保留随时更改或补充此免责声明的权利。一旦使用、复制、修改了本仓库内容，则视为您已接受此免责声明。
 
-***
+本仓库管理者不能保证本仓库内容的合法性、准确性、完整性和有效性，请根据情况自行判断。本仓库内容，仅用于测试和学习研究，禁止用于商业用途，不得将其用于违反国家、地区、组织等的法律法规或相关规定的其他用途，禁止任何公众号、自媒体进行任何形式的转载、发布，请不要在中华人民共和国境内使用本仓库内容，否则后果自负。
 
-uBlock Origin (uBO) is a CPU and memory-efficient [wide-spectrum content blocker][Blocking] for Chromium and Firefox. It blocks ads, trackers, coin miners, popups, annoying anti-blockers, malware sites, etc., by default using [EasyList][EasyList], [EasyPrivacy][EasyPrivacy], [Peter Lowe&#039;s Blocklist][Peter Lowe&#039;s Blocklist], [Online Malicious URL Blocklist][Malicious Blocklist], and uBO [filter lists][uBO Filters]. There are many other lists available to block even more. Hosts files are also supported. uBO uses the EasyList filter syntax and [extends][Extended Syntax] the syntax to work with custom rules and filters.
+本仓库内容中涉及的第三方硬件、软件等，与本仓库内容没有任何直接或间接的关系。本仓库内容仅对部署和使用过程进行客观描述，不代表支持使用任何第三方硬件、软件。使用任何第三方硬件、软件，所造成的一切后果由使用的个人或组织承担，与本仓库内容无关。
 
-You may easily unselect any preselected filter lists if you think uBO blocks too much. For reference, Adblock Plus installs with only EasyList, ABP filters, and Acceptable Ads enabled by default.
+所有直接或间接使用本仓库内容的个人和组织，应 24 小时内完成学习和研究，并及时删除本仓库内容。如对本仓库内容的功能有需求，应自行开发相关功能。所有基于本仓库内容的源代码，进行的任何修改，为其他个人或组织的自发行为，与本仓库内容没有任何直接或间接的关系，所造成的一切后果亦与本仓库内容和本仓库管理者无关。
 
-It is important to note that using a blocker is **NOT** [theft]. Do not fall for this creepy idea. The _ultimate_ logical consequence of `blocking = theft` is the criminalization of the inalienable right to privacy.
+1. tvbox配置：
 
-Ads, &quot;unintrusive&quot; or not, are just the visible portion of the privacy-invading means entering your browser when you visit most sites. **uBO&#039;s primary goal is to help users neutralize these privacy-invading methods** in a way that welcomes those users who do not wish to use more technical means.
+（1）0707.json  OK影视多线配置接口,仅适用于Fengmi影视；
 
-***
+（2）0821.json  大而全的配置，在饭太硬配置的基础上添加了若干优质点播源、直播线路和解析；
 
-* [Documentation](#documentation)
-* [Installation](#installation)
-  * [Firefox](#firefox)
-  * [Thunderbird](#thunderbird)
-  * [Chromium](#chromium)
-  * [All Programs](#all-programs)
-  * [Enterprise Deployment](#enterprise-deployment)
-* [Release History](#release-history)
-* [Translations](#translations)
-* [About](#about)
+（3）0822.json  极简配置，OK大佬的jar，还包括几条路飞、俊于的源。
 
-## Documentation
+（4）0825.json  小而精的配置，jar包来源于Panda Groove的go包，其中泥巴、星星等，需要替换成自己的代理url；
 
-&lt;table&gt;
-    &lt;thead&gt;
-        &lt;tr&gt;
-            &lt;th&gt;Basic Mode&lt;/th&gt;
-            &lt;th&gt;Advanced Mode&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td&gt;The &lt;a href=&quot;https://github.com/gorhill/uBlock/wiki/Quick-guide:-popup-user-interface&quot;&gt;simple popup user interface&lt;/a&gt; for an install-it-and-forget-it type of installation that is configured optimally by default.&lt;/td&gt;
-            &lt;td&gt;The &lt;a href=&quot;https://github.com/gorhill/uBlock/wiki/Dynamic-filtering:-quick-guide&quot;&gt;advanced popup user interface&lt;/a&gt; includes a point-and-click firewall that is configurable on a per-site basis.&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td align=&quot;center&quot; valign=&quot;top&quot;&gt;&lt;a href=&quot;https://github.com/gorhill/uBlock/wiki/Quick-guide:-popup-user-interface&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/585534/232531044-c4ac4dd5-0b60-4c1e-aabb-914be04b846c.png&quot;/&gt;&lt;/a&gt;&lt;/td&gt;
-            &lt;td align=&quot;center&quot; valign=&quot;top&quot;&gt;&lt;a href=&quot;https://github.com/gorhill/uBlock/wiki/Dynamic-filtering:-quick-guide&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/585534/232531439-a8f81cc3-6622-45c4-8b32-7348cecf6e98.png&quot;/&gt;&lt;/a&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;
+（5）0826.json  完全来源于饭太硬的jar包和配置；
 
-Visit the [Wiki][Wiki] for documentation.
+（6）0827.json  jar包和配置来源于fongmi；
 
-For support, questions, or help, visit [/r/uBlockOrigin][Reddit].
+（7）0828.json  jar包和配置来源于唐三；
 
-## Installation
+（8）js.json  jar包来源于Panda Groove的go包，资源来源于道长drpy(js)仓库 添加 YouTube 直播；
 
-[Required Permissions][Permissions]
+（9）XBPQ.json  XBPQ源，jar包和配置来源于小米小爆脾气；
 
-#### Firefox
+（10）XYQ.json  XYQ源，jar包和配置来源于香雅情；
 
-[Firefox Add-ons][Mozilla]
+（11）cat.json  cat源，资源来源于网络各路大佬。/cat/js配合猫影视可直接食用；
 
-[Development Builds][Beta]
+（12） jsm.json 来自js.json + 0826.json 合集 家庭电视可用 删除YouTube 直播，OK影视 可用 电视建议使用OK影视 https://github.com/FongMi/Release 支持多直播选择。
+ 
 
-uBO [works best][Works Best] on Firefox and is available for desktop and Android versions.
-
-#### Thunderbird
-
-[Thunderbird Add-ons][Thunderbird]
-
-In Thunderbird, uBlock Origin does not affect emails, just feeds.
-
-#### Chromium
-
-[Chrome Web Store][Chrome]
-
-[Microsoft Edge Add-ons][Edge] (Published by [Nicole Rolls][Nicole Rolls] until version 1.62. Ownership transfer at version 1.64.)
-
-[Opera Add-ons][Opera]
-
-[Development Builds][Chrome Dev]
-
-uBO should be compatible with any Chromium-based browser.
-
-#### All Programs
-
-Do **NOT** use uBO with any other content blocker. uBO [performs][Performance] as well as or better than most popular blockers. Other blockers can prevent uBO&#039;s privacy or anti-blocker-defusing features from working correctly.
-
-[Manual Installation][Manual Installation]
-
-#### Enterprise Deployment
-
-[Deploying uBO][Deployment]
-
-## Release History
-
-[Releases Page][Releases]
-
-## Translations
-
-Help translate uBO via [Crowdin][Crowdin].
-
-## About
+猫影视使用github 配置
 
-[Manifesto][Manifesto]
+ 配置教程：&lt;https://omii.top/1296.html&gt;
 
-[Privacy Policy][Privacy Policy]
+`注意使用Gitee或Github导入，并设置为私有仓库，CatVodOpen仅支持私有仓库跟dav`
 
-[GPLv3 License][License]
+V1.1.3版本以上
 
-Free. Open-source. For users by users. No donations sought.
+`github://Token@github.com/xxxxx/tvbox/dist/index.js.md5`
 
-If you ever want to contribute something, think about the people working hard to maintain the filter lists you are using, which are available to use by all for free.
+改动
 
+* quickjs改为nodejs，proxy设置修改
+* 在ios上无法使用local，使用db替换local所有方法
+* nodejs 的优势在于更加灵活
 
-&lt;!-----------------------------------------------------------------------------&gt;
+V1.1.2版本以下
 
-[Peter Lowe&#039;s Blocklist]: https://pgl.yoyo.org/adservers/
-[Malicious Blocklist]: https://gitlab.com/malware-filter/urlhaus-filter#malicious-url-blocklist
-[Performance]: https://www.debugbear.com/blog/chrome-extensions-website-performance#the-impact-of-ad-blocking-on-website-performance
-[EasyPrivacy]: https://easylist.to/#easyprivacy
-[Thunderbird]: https://addons.thunderbird.net/thunderbird/addon/ublock-origin/
-[Chrome Dev]: https://chromewebstore.google.com/detail/ublock-origin-development/cgbcahbpdhpcegmbfconppldiemgcoii
-[EasyList]: https://easylist.to/#easylist
-[Mozilla]: https://addons.mozilla.org/addon/ublock-origin/
-[Crowdin]: https://crowdin.com/project/ublock
-[Chrome]: https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm
-[Reddit]: https://www.reddit.com/r/uBlockOrigin/
-[Theft]: https://x.com/LeaVerou/status/518154828166725632
-[Opera]: https://addons.opera.com/extensions/details/ublock/
-[Edge]: https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak
-[NPM]: https://www.npmjs.com/package/@gorhill/ubo-core
+`github://Token@gitee.com/xxxxx/tvbox/js/open_config.json`
 
-[Manifesto]: MANIFESTO.md
-[License]: LICENSE.txt
+1. APP推荐:
 
-[Nicole Rolls]: https://github.com/nicole-ashley
+（1）OK影视版本  项目地址：&lt;https://github.com/FongMi/TV&gt; 支持直播多线路、自动换源、直播倍速，手机投屏；
 
-&lt;!---------------------------------[ Internal ]--------------------------------&gt;
+（2）q215613905版本  项目地址：&lt;https://github.com/q215613905/TVBoxOS&gt; 支持直播回放；
 
-[Manual Installation]: https://github.com/gorhill/uBlock/tree/master/dist#install
-[Extended Syntax]: https://github.com/gorhill/uBlock/wiki/Static-filter-syntax#extended-syntax
-[Privacy Policy]: https://github.com/gorhill/uBlock/wiki/Privacy-policy
-[uBO Filters]: https://github.com/uBlockOrigin/uAssets/tree/master/filters
-[Permissions]: https://github.com/gorhill/uBlock/wiki/Permissions
-[Commit Rate]: https://github.com/gorhill/uBlock/commits/master
-[Works Best]: https://github.com/gorhill/uBlock/wiki/uBlock-Origin-works-best-on-Firefox
-[Deployment]: https://github.com/gorhill/uBlock/wiki/Deploying-uBlock-Origin
-[Blocking]: https://github.com/gorhill/uBlock/wiki/Blocking-mode
-[Releases]: https://github.com/gorhill/uBlock/releases
-[Issues]: https://github.com/uBlockOrigin/uBlock-issues/issues
-[Beta]: https://github.com/gorhill/uBlock/blob/master/dist/README.md#for-beta-version
-[Wiki]: https://github.com/gorhill/uBlock/wiki
+（3）takagen99版本  项目地址：&lt;https://github.com/takagen99/Box&gt; 支持直播回放，界面美观；
 
-&lt;!----------------------------------[ Badges ]---------------------------------&gt;
+（4）皮皮虾版本  发布频道：&lt;https://t.me/pipixiawerun&gt; 支持直播回放，支持弹幕；
 
-[Badge Localization]: https://d322cqt584bo4o.cloudfront.net/ublock/localized.svg
-[Badge Commits]: https://img.shields.io/github/commit-activity/m/gorhill/ublock?label=Commits
-[Badge Mozilla]: https://img.shields.io/amo/rating/ublock-origin?label=Firefox
-[Badge License]: https://img.shields.io/badge/License-GPLv3-blue.svg
-[Badge Chrome]: https://img.shields.io/chrome-web-store/rating/cjpalhdlnbpafiamejdnhcphjbkeiagm?label=Chrome
-[Badge Edge]: https://img.shields.io/badge/dynamic/json?label=Edge&amp;color=brightgreen&amp;query=%24.averageRating&amp;suffix=%2F%35&amp;url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fodfafepnkmbhccpbejgmiehpchacaeak
-[Badge Issues]: https://img.shields.io/github/issues/uBlockOrigin/uBlock-issues
-[Badge NPM]: https://img.shields.io/npm/v/@gorhill/ubo-core
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[mindcraft-bots/mindcraft]]></title>
-            <link>https://github.com/mindcraft-bots/mindcraft</link>
-            <guid>https://github.com/mindcraft-bots/mindcraft</guid>
-            <pubDate>Mon, 16 Feb 2026 00:07:44 GMT</pubDate>
-            <description><![CDATA[Minecraft AI with LLMs+Mineflayer]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/mindcraft-bots/mindcraft">mindcraft-bots/mindcraft</a></h1>
-            <p>Minecraft AI with LLMs+Mineflayer</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 4,737</p>
-            <p>Forks: 677</p>
-            <p>Stars today: 6 stars today</p>
-            <h2>README</h2><pre># Mindcraft 🧠⛏️
+（5）新版猫影视   项目地址：&lt;https://github.com/catvod/CatVodOpen&gt; 界面简洁，支持多平台。
 
-Crafting minds for Minecraft with LLMs and [Mineflayer!](https://prismarinejs.github.io/mineflayer/#/)
+（6）手机版本  项目地址：&lt;https://github.com/XiaoRanLiu3119/TVBoxOS-Mobile&gt; 竖屏
 
-[FAQ](https://github.com/mindcraft-bots/mindcraft/blob/main/FAQ.md) | [Discord Support](https://discord.gg/mp73p35dzC) | [Video Tutorial](https://www.youtube.com/watch?v=gRotoL8P8D8) | [Blog Post](https://kolbynottingham.com/mindcraft/) | [Contributor TODO](https://github.com/users/kolbytn/projects/1) | [Paper Website](https://mindcraft-minecollab.github.io/index.html) | [MineCollab](https://github.com/mindcraft-bots/mindcraft/blob/main/minecollab.md) 
+（7）q215613905 takagen99 编译apk 项目地址：https://github.com/o0HalfLife0o/TVBoxOSC
 
+3. TVBox各路大佬配置（排名不分先后）：
 
-&gt; [!Caution]
-Do not connect this bot to public servers with coding enabled. This project allows an LLM to write/execute code on your computer. The code is sandboxed, but still vulnerable to injection attacks. Code writing is disabled by default, you can enable it by setting `allow_insecure_coding` to `true` in `settings.js`. Ye be warned.
+（1）饭太硬：http://www.饭太硬.top/tv/
 
-## Requirements
+（2）okjack：https://jihulab.com/okcaptain/kko/raw/main/ok.txt
 
-- [Minecraft Java Edition](https://www.minecraft.net/en-us/store/minecraft-java-bedrock-edition-pc) (up to v1.21.6, recommend v1.21.1)
-- [Node.js Installed](https://nodejs.org/) (at least v18)
-- One of these: [OpenAI API Key](https://openai.com/blog/openai-api) | [Gemini API Key](https://aistudio.google.com/app/apikey) | [Anthropic API Key](https://docs.anthropic.com/claude/docs/getting-access-to-claude) | [Replicate API Key](https://replicate.com/) | [Hugging Face API Key](https://huggingface.co/) | [Groq API Key](https://console.groq.com/keys) | [Ollama Installed](https://ollama.com/download). | [Mistral API Key](https://docs.mistral.ai/getting-started/models/models_overview/) | [Qwen API Key [Intl.]](https://www.alibabacloud.com/help/en/model-studio/developer-reference/get-api-key)/[[cn]](https://help.aliyun.com/zh/model-studio/getting-started/first-api-call-to-qwen?) | [Novita AI API Key](https://novita.ai/settings?utm_source=github_mindcraft&amp;utm_medium=github_readme&amp;utm_campaign=link#key-management) | [Cerebras API Key](https://cloud.cerebras.ai) | [Mercury API](https://platform.inceptionlabs.ai/docs)
+（3）王二小放牛娃：http://tvbox.王二小放牛娃.xyz
 
-## Install and Run
+（4）摸鱼儿：http://我不是.摸鱼儿.top
 
-1. Make sure you have the requirements above.
+（5）霜辉月明py：https://raw.githubusercontent.com/lm317379829/PyramidStore/pyramid/py.json
 
-2. Clone or download this repository (big green button) &#039;git clone https://github.com/mindcraft-bots/mindcraft.git&#039;
+（6）小米小爆脾气：http://xhww.fun/小米/DEMO.json
 
-3. Rename `keys.example.json` to `keys.json` and fill in your API keys (you only need one). The desired model is set in `andy.json` or other profiles. For other models refer to the table below.
+（7）南风：https://agit.ai/Yoursmile7/TVBox/raw/branch/master/XC.json
 
-4. In terminal/command prompt, run `npm install` from the installed directory
+（8）神器：https://神器每日推送.tk/pz.json
 
-5. Start a minecraft world and open it to LAN on localhost port `55916`
+（9）巧技：http://pandown.pro/tvbox/tvbox.json
 
-6. Run `node main.js` from the installed directory
+（10）Ray：https://100km.top/0
 
-If you encounter issues, check the [FAQ](https://github.com/mindcraft-bots/mindcraft/blob/main/FAQ.md) or find support on [discord](https://discord.gg/mp73p35dzC). We are currently not very responsive to github issues. To run tasks please refer to [Minecollab Instructions](minecollab.md#installation)
+（11）俊于：http://home.jundie.top:81/top98.json
 
-## Tasks
+（12）橘子柚：https://raw.githubusercontent.com/hackyjso/box/main/jzy.txt
 
-Bot performance can be roughly evaluated with Tasks. Tasks automatically intialize bots with a goal to aquire specific items or construct predefined buildings, and remove the bot once the goal is achieved.
+（13）电视（自用）： &lt;https://raw.githubusercontent.com/qist/tvbox/master/jsm.json&gt;
 
-To run tasks, you need python, pip, and optionally conda. You can then install dependencies with `pip install -r requirements.txt`. 
+（14）github代理地址： `https://github.moeyy.xyz https://mirror.ghproxy.com/ https://gh-proxy.com https://ghproxy.net` 选择一个速度快使用
 
-Tasks are defined in json files in the `tasks` folder, and can be run with: `python tasks/run_task_file.py --task_path=tasks/example_tasks.json`
+（15） 还可以使用域名: `https://qist.wyfc.qzz.io/jsm.json` cloudflare Pages 构建
+ 
+（16） 添加潇洒 接口： https://raw.githubusercontent.com/qist/tvbox/master/xiaosa/api.json 或者 https://qist.wyfc.qzz.io/xiaosa/api.json
+ 
+（17）添加饭太硬 接口 https://raw.githubusercontent.com/qist/tvbox/master/fty.json 或者 https://qist.wyfc.qzz.io/fty.json
 
-For full evaluations, you will need to [download and install the task suite. Full instructions.](minecollab.md#installation)
+1. token.json格式说明：
 
-## Model Customization
+模板文件json/tokentemplate.json
 
-You can configure project details in `settings.js`. [See file.](settings.js)
+特别警告：据传阿里要求使用者不得使用多线程加速方式使用阿里云盘资源，若并发连接数超过10有可能导致被限制访问或封禁帐号的处理，所以下方线程限制设置超过10所需承担的风险请使用者自行斟酌。
 
-You can configure the agent&#039;s name, model, and prompts in their profile like `andy.json` with the `model` field. For comprehensive details, see [Model Specifications](#model-specifications).
+特别警告2：迅雷云盘限制极为严格，不要尝试单token多用户异地使用，或多线程使用，随时可能封号。
 
-| API | Config Variable | Example Model name | Docs |
-|------|------|------|------|
-| `openai` | `OPENAI_API_KEY` | `gpt-4o-mini` | [docs](https://platform.openai.com/docs/models) |
-| `google` | `GEMINI_API_KEY` | `gemini-2.0-flash` | [docs](https://ai.google.dev/gemini-api/docs/models/gemini) |
-| `anthropic` | `ANTHROPIC_API_KEY` | `claude-3-haiku-20240307` | [docs](https://docs.anthropic.com/claude/docs/models-overview) |
-| `xai` | `XAI_API_KEY` | `grok-2-1212` | [docs](https://docs.x.ai/docs) |
-| `deepseek` | `DEEPSEEK_API_KEY` | `deepseek-chat` | [docs](https://api-docs.deepseek.com/) |
-| `ollama` (local) | n/a | `ollama/sweaterdog/andy-4:micro-q8_0` | [docs](https://ollama.com/library) |
-| `qwen` | `QWEN_API_KEY` | `qwen-max` | [Intl.](https://www.alibabacloud.com/help/en/model-studio/developer-reference/use-qwen-by-calling-api)/[cn](https://help.aliyun.com/zh/model-studio/getting-started/models) |
-| `mistral` | `MISTRAL_API_KEY` | `mistral-large-latest` | [docs](https://docs.mistral.ai/getting-started/models/models_overview/) |
-| `replicate` | `REPLICATE_API_KEY` | `replicate/meta/meta-llama-3-70b-instruct` | [docs](https://replicate.com/collections/language-models) |
-| `groq` (not grok) | `GROQCLOUD_API_KEY` | `groq/mixtral-8x7b-32768` | [docs](https://console.groq.com/docs/models) |
-| `huggingface` | `HUGGINGFACE_API_KEY` | `huggingface/mistralai/Mistral-Nemo-Instruct-2407` | [docs](https://huggingface.co/models) |
-| `novita` | `NOVITA_API_KEY` | `novita/deepseek/deepseek-r1` | [docs](https://novita.ai/model-api/product/llm-api?utm_source=github_mindcraft&amp;utm_medium=github_readme&amp;utm_campaign=link) |
-| `openrouter` | `OPENROUTER_API_KEY` | `openrouter/anthropic/claude-3.5-sonnet` | [docs](https://openrouter.ai/models) |
-| `glhf.chat` | `GHLF_API_KEY` | `glhf/hf:meta-llama/Llama-3.1-405B-Instruct` | [docs](https://glhf.chat/user-settings/api) |
-| `hyperbolic` | `HYPERBOLIC_API_KEY` | `hyperbolic/deepseek-ai/DeepSeek-V3` | [docs](https://docs.hyperbolic.xyz/docs/getting-started) |
-| `vllm` | n/a | `vllm/llama3` | n/a |
-| `cerebras` | `CEREBRAS_API_KEY` | `cerebras/llama-3.3-70b` | [docs](https://inference-docs.cerebras.ai/introduction) |
-| `mercury` | `MERCURY_API_KEY` | `mercury-coder-small` | [docs](https://www.inceptionlabs.ai/) |
+可以透过配置中的“网盘及弹幕配置”的视频源来实现快捷方便的获取32位token及opentoken的功能。在“网盘及弹幕配置”中扫过任何一个OpenToken后，会自动激活“转存原画”功能
 
-If you use Ollama, to install the models used by default (generation and embedding), execute the following terminal command:
-`ollama pull sweaterdog/andy-4:micro-q8_0 &amp;&amp; ollama pull embeddinggemma`
+提示：如果遇到极速GO原画反复快速报错，不一定是被封号，可尝试杀掉播放器重启，或重启整个播放设备解决。
 
-To use Azure, you can reuse the `OPENAI_API_KEY` environment variable. You can get the key from the Azure portal. See [azure.json](profiles/azure.json) for an example.
+提示2：如果遇到“转存原画”速度被限制在2M左右，那麽请尝试在阿里云盘APP里退出登录，然后重新登录，然后删除播放设备SD卡的TV目
 
-### Online Servers
-To connect to online servers your bot will need an official Microsoft/Minecraft account. You can use your own personal one, but will need another account if you want to connect too and play with it. To connect, change these lines in `settings.js`:
-```javascript
-&quot;host&quot;: &quot;111.222.333.444&quot;,
-&quot;port&quot;: 55920,
-&quot;auth&quot;: &quot;microsoft&quot;,
-
-// rest is same...
-```
-&gt; [!Important]
-&gt; The bot&#039;s name in the profile.json must exactly match the Minecraft profile name! Otherwise the bot will spam talk to itself.
-
-To use different accounts, Mindcraft will connect with the account that the Minecraft launcher is currently using. You can switch accounts in the launcer, then run `node main.js`, then switch to your main account after the bot has connected.
-
-### Docker Container
-
-If you intend to `allow_insecure_coding`, it is a good idea to run the app in a docker container to reduce risks of running unknown code. This is strongly recommended before connecting to remote servers.
-
-```bash
-docker run -i -t --rm -v $(pwd):/app -w /app -p 3000-3003:3000-3003 node:latest node main.js
-```
-or simply
-```bash
-docker-compose up
-```
-
-When running in docker, if you want the bot to join your local minecraft server, you have to use a special host address `host.docker.internal` to call your localhost from inside your docker container. Put this into your [settings.js](settings.js):
-
-```javascript
-&quot;host&quot;: &quot;host.docker.internal&quot;, // instead of &quot;localhost&quot;, to join your local minecraft from inside the docker container
-```
-
-To connect to an unsupported minecraft version, you can try to use [viaproxy](services/viaproxy/README.md)
-
-# Bot Profiles
-
-Bot profiles are json files (such as `andy.json`) that define:
-
-1. Bot backend LLMs to use for talking, coding, and embedding.
-2. Prompts used to influence the bot&#039;s behavior.
-3. Examples help the bot perform tasks.
-
-## Model Specifications
-
-LLM models can be specified simply as `&quot;model&quot;: &quot;gpt-4o&quot;`. However, you can use different models for chat, coding, and embeddings. 
-You can pass a string or an object for these fields. A model object must specify an `api`, and optionally a `model`, `url`, and additional `params`.
 
 ```json
-&quot;model&quot;: {
-  &quot;api&quot;: &quot;openai&quot;,
-  &quot;model&quot;: &quot;gpt-4o&quot;,
-  &quot;url&quot;: &quot;https://api.openai.com/v1/&quot;,
-  &quot;params&quot;: {
-    &quot;max_tokens&quot;: 1000,
-    &quot;temperature&quot;: 1
-  }
-},
-&quot;code_model&quot;: {
-  &quot;api&quot;: &quot;openai&quot;,
-  &quot;model&quot;: &quot;gpt-4&quot;,
-  &quot;url&quot;: &quot;https://api.openai.com/v1/&quot;
-},
-&quot;vision_model&quot;: {
-  &quot;api&quot;: &quot;openai&quot;,
-  &quot;model&quot;: &quot;gpt-4o&quot;,
-  &quot;url&quot;: &quot;https://api.openai.com/v1/&quot;
-},
-&quot;embedding&quot;: {
-  &quot;api&quot;: &quot;openai&quot;,
-  &quot;url&quot;: &quot;https://api.openai.com/v1/&quot;,
-  &quot;model&quot;: &quot;text-embedding-ada-002&quot;
-},
-&quot;speak_model&quot;: {
-  &quot;api&quot;: &quot;openai&quot;,
-  &quot;url&quot;: &quot;https://api.openai.com/v1/&quot;,
-  &quot;model&quot;: &quot;tts-1&quot;,
-  &quot;voice&quot;: &quot;echo&quot;
-}
-
-```
-
-`model` is used for chat, `code_model` is used for newAction coding, `vision_model` is used for image interpretation, and `embedding` is used to embed text for example selection. If `code_model` or `vision_model` is not specified, `model` will be used by default. Not all APIs support embeddings or vision.
-
-All apis have default models and urls, so those fields are optional. The `params` field is optional and can be used to specify additional parameters for the model. It accepts any key-value pairs supported by the api. Is not supported for embedding models.
-
-## Embedding Models
-
-Embedding models are used to embed and efficiently select relevant examples for conversation and coding.
-
-Supported Embedding APIs: `openai`, `google`, `replicate`, `huggingface`, `novita`
-
-If you try to use an unsupported model, then it will default to a simple word-overlap method. Expect reduced performance, recommend mixing APIs to ensure embedding support.
-
-## Specifying Profiles via Command Line
-
-By default, the program will use the profiles specified in `settings.js`. You can specify one or more agent profiles using the `--profiles` argument: `node main.js --profiles ./profiles/andy.json ./profiles/jill.json`
-
-## Patches
-
-Some of the node modules that we depend on have bugs in them. To add a patch, change your local node module file and run `npx patch-package [package-name]`
-
-## Citation:
-
-```
-@article{mindcraft2025,
-  title = {Collaborating Action by Action: A Multi-agent LLM Framework for Embodied Reasoning},
-  author = {White*, Isadora and Nottingham*, Kolby and Maniar, Ayush and Robinson, Max and Lillemark, Hansen and Maheshwari, Mehul and Qin, Lianhui and Ammanabrolu, Prithviraj},
-  journal = {arXiv preprint arXiv:2504.17950},
-  year = {2025},
-  url = {https://arxiv.org/abs/2504.17950},
+{
+&quot;token&quot;:&quot;这里填写阿里云盘的32位token,也可以不填写,在播放阿里云盘属性时会弹出窗口,点击QrCode,用阿里云盘app扫码&quot;,
+&quot;open_token&quot;:&quot;这里填写通过alist或其他openapi提供方申请的280位aliyun openapi token,也可以不写,会自动隐藏转存原画&quot;,
+&quot;thread_limit&quot;:32,//这里是阿里云盘的GO代理的并发协程数或java代理的并发线程数,若遇到账号被限制并发数,请将此数值改为10
+&quot;is_vip&quot;:true,//是否是阿里云盘的VIP用户,设置为true后,使用vip_thread_limit设置的数值来并发加速。如本设置项目不是true,则自动隐藏&quot;转存原画&quot;
+&quot;vip_thread_limit&quot;:10,//这里是阿里云盘的转存原画（OpenToken）并发线程数,若遇到账号被限制并发数,请将此数值改为10
+&quot;quark_thread_limit&quot;:32,//这里是夸克网盘GO代理的并发协程数或java代理的并发线程数,若遇到账号被限制并发数,请将此数值改为10
+&quot;quark_vip_thread_limit&quot;:16,//这里是夸克网盘设置quark_is_vip:true之后的并发线程数,若遇到账号被限制并发数,请将此数值改为10
+&quot;quark_is_vip&quot;:false,//是否是夸克网盘的VIP用户,设置为true后,线程数受quark_vip_thread_limit控制
+&quot;vod_flags&quot;:&quot;4k|4kz|auto&quot;,//这里是播放阿里云的画质选项,4k代表不转存原画（GO原画）,4kz代表转存原画,其他都代表预览画质,可选的预览画质包括qhd,fhd,hd,sd,ld,
+&quot;quark_flags&quot;:&quot;4kz|auto&quot;,//这里是播放夸克网盘的画质选项,4kz代表转存原画（GO原画）,其他都代表转码画质,可选的预览画质包括4k,2k,super,high,low,normal
+&quot;uc_thread_limit&quot;:0,
+&quot;uc_is_vip&quot;:false,
+&quot;uc_flags&quot;:&quot;4kz|auto&quot;,
+&quot;uc_vip_thread_limit&quot;:0,
+&quot;thunder_thread_limit&quot;:0,
+&quot;thunder_is_vip&quot;:false,
+&quot;thunder_vip_thread_limit&quot;:0,
+&quot;thunder_flags&quot;:&quot;4k|4kz|auto&quot;,
+&quot;aliproxy&quot;:&quot;这里填写外部的加速代理,用于在盒子性能不够的情况下,使用外部的加速代理来加速播放,可以不填写&quot;,
+&quot;proxy&quot;:&quot;这里填写用于科学上网的地址,连接openapi或某些资源站可能会需要用到,可以不填写&quot;,
+&quot;open_api_url&quot;:&quot;https://api.xhofe.top/alist/ali_open/token&quot;,//这是alist的openapi接口地址,也可使用其他openapi提供商的地址。
+&quot;danmu&quot;:true,//是否全局开启阿里云盘所有csp的弹幕支持,聚合类CSP仍需单独设置,例如Wogg,Wobg
+&quot;quark_danmu&quot;:true,//是否全局开启夸克网盘的所有csp的弹幕支持,聚合类CSP仍需单独设置,例如Wogg,Wobg
+&quot;quark_cookie&quot;:&quot;这里填写通过https://pan.quark.cn网站获取到的cookie,会很长,全数填入即可。&quot;,
+&quot;uc_cookie&quot;:&quot;这里填写通过https://drive.uc.cn网站登录获取的cookie&quot;,
+&quot;thunder_username&quot;:&quot;这里填入用户名或手机号,如果是手机号,记得是类似&#039;+86 139123457&#039;这样的格式,+86后有空格才对&quot;,
+&quot;thunder_password&quot;:&quot;密码&quot;,
+&quot;thunder_captchatoken&quot;:&quot;首次使用迅雷网盘时,需要使用app弹出的登陆地址去接码登录,并获取captchaToken,具体方法参考alist网站的文档:https://alist.nn.ci/zh/guide/drivers/thunder.html&quot;,
+&quot;pikpak_username&quot;:&quot;PikPak网盘的用户名&quot;,
+&quot;pikpak_password&quot;:&quot;PikPak网盘的密码&quot;,
+&quot;pikpak_flags&quot;:&quot;4k|auto&quot;,
+&quot;pikpak_thread_limit&quot;:2,
+&quot;pikpak_vip_thread_limit&quot;:2,
+&quot;pikpak_proxy&quot;:&quot;用于科学上网连接PikPak网盘的代理服务器地址&quot;
 }
 ```
 
+自用仓库，如果喜欢，请Fork自用，谢谢！
 
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[TryGhost/Ghost]]></title>
-            <link>https://github.com/TryGhost/Ghost</link>
-            <guid>https://github.com/TryGhost/Ghost</guid>
-            <pubDate>Mon, 16 Feb 2026 00:07:43 GMT</pubDate>
-            <description><![CDATA[Independent technology for modern publishing, memberships, subscriptions and newsletters.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/TryGhost/Ghost">TryGhost/Ghost</a></h1>
-            <p>Independent technology for modern publishing, memberships, subscriptions and newsletters.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 51,820</p>
-            <p>Forks: 11,325</p>
-            <p>Stars today: 9 stars today</p>
-            <h2>README</h2><pre>&amp;nbsp;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://ghost.org/#gh-light-mode-only&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;https://user-images.githubusercontent.com/65487235/157884383-1b75feb1-45d8-4430-b636-3f7e06577347.png&quot; alt=&quot;Ghost&quot; width=&quot;200px&quot;&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://ghost.org/#gh-dark-mode-only&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;https://user-images.githubusercontent.com/65487235/157849205-aa24152c-4610-4d7d-b752-3a8c4f9319e6.png&quot; alt=&quot;Ghost&quot; width=&quot;200px&quot;&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-&amp;nbsp;
+尽自己所能更新，不保证配置的有效性和时效性。
 
-&lt;p align=&quot;center&quot;&gt;
-    &lt;a href=&quot;https://ghost.org/&quot;&gt;Ghost.org&lt;/a&gt; •
-    &lt;a href=&quot;https://forum.ghost.org&quot;&gt;Forum&lt;/a&gt; •
-    &lt;a href=&quot;https://ghost.org/docs/&quot;&gt;Docs&lt;/a&gt; •
-    &lt;a href=&quot;https://github.com/TryGhost/Ghost/blob/main/.github/CONTRIBUTING.md&quot;&gt;Contributing&lt;/a&gt; •
-    &lt;a href=&quot;https://twitter.com/ghost&quot;&gt;Twitter&lt;/a&gt;
-    &lt;br /&gt;&lt;br /&gt;
-    &lt;a href=&quot;https://ghost.org/&quot;&gt;
-        &lt;img src=&quot;https://img.shields.io/badge/downloads-100M+-brightgreen.svg&quot; alt=&quot;Downloads&quot; /&gt;
-    &lt;/a&gt;
-    &lt;a href=&quot;https://github.com/TryGhost/Ghost/releases/&quot;&gt;
-        &lt;img src=&quot;https://img.shields.io/github/release/TryGhost/Ghost.svg&quot; alt=&quot;Latest release&quot; /&gt;
-    &lt;/a&gt;
-    &lt;a href=&quot;https://github.com/TryGhost/Ghost/actions&quot;&gt;
-        &lt;img src=&quot;https://github.com/TryGhost/Ghost/workflows/CI/badge.svg?branch=main&quot; alt=&quot;Build status&quot; /&gt;
-    &lt;/a&gt;
-    &lt;a href=&quot;https://github.com/TryGhost/Ghost/contributors/&quot;&gt;
-        &lt;img src=&quot;https://img.shields.io/github/contributors/TryGhost/Ghost.svg&quot; alt=&quot;Contributors&quot; /&gt;
-    &lt;/a&gt;
-&lt;/p&gt;
+### Star
 
-&amp;nbsp;
-
-&gt; [!NOTE]
-&gt; Love open source? We&#039;re hiring! Ghost is looking staff engineers to [join the team](https://careers.ghost.org) and work with us full-time
-
-&lt;a href=&quot;https://ghost.org/&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/353959/169805900-66be5b89-0859-4816-8da9-528ed7534704.png&quot; alt=&quot;Fiercely independent, professional publishing. Ghost is the most popular open source, headless Node.js CMS which already works with all the tools you know and love.&quot; /&gt;&lt;/a&gt;
-
-&amp;nbsp;
-
-&lt;a href=&quot;https://ghost.org/pricing/#gh-light-mode-only&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/65487235/157849437-9b8fcc48-1920-4b26-a1e8-5806db0e6bb9.png&quot; alt=&quot;Ghost(Pro)&quot; width=&quot;165px&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://ghost.org/pricing/#gh-dark-mode-only&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/65487235/157849438-79889b04-b7b6-4ba7-8de6-4c1e4b4e16a5.png&quot; alt=&quot;Ghost(Pro)&quot; width=&quot;165px&quot; /&gt;&lt;/a&gt;
-
-The easiest way to get a production instance deployed is with our official **[Ghost(Pro)](https://ghost.org/pricing/)** managed service. It takes about 2 minutes to launch a new site with worldwide CDN, backups, security and maintenance all done for you.
-
-For most people this ends up being the best value option because of [how much time it saves](https://ghost.org/docs/hosting/) — and 100% of revenue goes to the Ghost Foundation; funding the maintenance and further development of the project itself. So you’ll be supporting open source software *and* getting a great service!
-
-&amp;nbsp;
-
-# Quickstart install
-
-If you want to run your own instance of Ghost, in most cases the best way is to use our **CLI tool**
-
-```
-npm install ghost-cli -g
-```
-
-&amp;nbsp;
-
-Then, if installing locally add the `local` flag to get up and running in under a minute - [Local install docs](https://ghost.org/docs/install/local/)
-
-```
-ghost install local
-```
-
-&amp;nbsp;
-
-or on a server run the full install, including automatic SSL setup using LetsEncrypt - [Production install docs](https://ghost.org/docs/install/ubuntu/)
-
-```
-ghost install
-```
-
-&amp;nbsp;
-
-Check out our [official documentation](https://ghost.org/docs/) for more information about our [recommended hosting stack](https://ghost.org/docs/hosting/) &amp; properly [upgrading Ghost](https://ghost.org/docs/update/), plus everything you need to develop your own Ghost [themes](https://ghost.org/docs/themes/) or work with [our API](https://ghost.org/docs/content-api/).
-
-### Contributors &amp; advanced developers
-
-For anyone wishing to contribute to Ghost or to hack/customize core files we recommend following our full development setup guides: [Contributor guide](https://ghost.org/docs/contributing/) • [Developer setup](https://ghost.org/docs/install/source/)
-
-&amp;nbsp;
-
-# Ghost sponsors
-
-A big thanks to our sponsors and partners who make Ghost possible. If you&#039;re interested in sponsoring Ghost and supporting the project, please check out our profile on [GitHub sponsors](https://github.com/sponsors/TryGhost) :heart:
-
-**[DigitalOcean](https://m.do.co/c/9ff29836d717)** • **[Fastly](https://www.fastly.com/)** • **[Tinybird](https://tbrd.co/ghost)**
-
-&amp;nbsp;
-
-# Getting help
-
-Everyone can get help and support from a large community of developers over on the [Ghost forum](https://forum.ghost.org/). **Ghost(Pro)** customers have access to 24/7 email support.
-
-To stay up to date with all the latest news and product updates, make sure you [subscribe to our changelog newsletter](https://ghost.org/changelog/) — or follow us [on Twitter](https://twitter.com/Ghost), if you prefer your updates bite-sized and facetious. :saxophone::turtle:
-
-&amp;nbsp;
-
-# License &amp; trademark
-
-Copyright (c) 2013-2026 Ghost Foundation - Released under the [MIT license](LICENSE).
-Ghost and the Ghost Logo are trademarks of Ghost Foundation Ltd. Please see our [trademark policy](https://ghost.org/trademark/) for info on acceptable usage.
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[expressjs/express]]></title>
-            <link>https://github.com/expressjs/express</link>
-            <guid>https://github.com/expressjs/express</guid>
-            <pubDate>Mon, 16 Feb 2026 00:07:42 GMT</pubDate>
-            <description><![CDATA[Fast, unopinionated, minimalist web framework for node.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/expressjs/express">expressjs/express</a></h1>
-            <p>Fast, unopinionated, minimalist web framework for node.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 68,703</p>
-            <p>Forks: 22,532</p>
-            <p>Stars today: 9 stars today</p>
-            <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[lowlighter/metrics]]></title>
-            <link>https://github.com/lowlighter/metrics</link>
-            <guid>https://github.com/lowlighter/metrics</guid>
-            <pubDate>Mon, 16 Feb 2026 00:07:41 GMT</pubDate>
-            <description><![CDATA[📊 An infographics generator with 30+ plugins and 300+ options to display stats about your GitHub account and render them as SVG, Markdown, PDF or JSON!]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/lowlighter/metrics">lowlighter/metrics</a></h1>
-            <p>📊 An infographics generator with 30+ plugins and 300+ options to display stats about your GitHub account and render them as SVG, Markdown, PDF or JSON!</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 16,139</p>
-            <p>Forks: 2,134</p>
-            <p>Stars today: 7 stars today</p>
-            <h2>README</h2><pre># 📊 Metrics [&lt;img src=&quot;https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=280144&amp;theme=dark&quot; alt=&quot;&quot; align=&quot;right&quot; width=&quot;190&quot; height=&quot;41&quot;&gt;](https://www.producthunt.com/posts/github-metrics?utm_source=badge-featured&amp;utm_medium=badge&amp;utm_source=badge-github-metrics)
-
-[![Continuous integration](https://github.com/lowlighter/metrics/actions/workflows/ci.yml/badge.svg)](https://github.com/lowlighter/metrics/actions/workflows/ci.yml)
-
-Generate metrics that can be embedded everywhere, including your GitHub profile readme! Supports users, organizations, and even repositories!
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;th align=&quot;center&quot;&gt;For user accounts&lt;/th&gt;
-    &lt;th align=&quot;center&quot;&gt;For organization accounts&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td align=&quot;center&quot;&gt;
-&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.classic.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;
-&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;
-&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.organization.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;
-&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th colspan=&quot;2&quot; align=&quot;center&quot;&gt;
-      &lt;h3&gt;&lt;a href=&quot;/README.md#-plugins&quot;&gt;🧩 Customizable with 47 plugins and 335 options!&lt;/a&gt;&lt;/h3&gt;
-    &lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/isocalendar/README.md&quot;&gt;📅 Isometric commit calendar&lt;/a&gt;&lt;/th&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/languages/README.md&quot;&gt;🈷️ Languages activity&lt;/a&gt;&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;Full year calendar&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.isocalendar.fullyear.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details&gt;&lt;summary&gt;Half year calendar&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.isocalendar.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;Indepth analysis (clone and analyze repositories)&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.languages.indepth.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details open&gt;&lt;summary&gt;Recently used (analyze recent activity events)&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.languages.recent.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details&gt;&lt;summary&gt;Default algorithm&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.languages.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details&gt;&lt;summary&gt;Default algorithm (with details)&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.languages.details.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/stargazers/README.md&quot;&gt;✨ Stargazers&lt;/a&gt;&lt;/th&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/lines/README.md&quot;&gt;👨‍💻 Lines of code changed&lt;/a&gt;&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;Classic charts&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.stargazers.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details&gt;&lt;summary&gt;Graph charts&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.stargazers.graph.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details open&gt;&lt;summary&gt;Worldmap&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.stargazers.worldmap.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;Repositories and diff history&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.lines.history.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details&gt;&lt;summary&gt;Compact display in base plugin&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.lines.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/topics/README.md&quot;&gt;📌 Starred topics&lt;/a&gt;&lt;/th&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/stars/README.md&quot;&gt;🌟 Recently starred repositories&lt;/a&gt;&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;With icons&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.topics.icons.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details open&gt;&lt;summary&gt;With labels&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.topics.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.stars.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/licenses/README.md&quot;&gt;📜 Repository licenses&lt;/a&gt;&lt;/th&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/habits/README.md&quot;&gt;💡 Coding habits and activity&lt;/a&gt;&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;Permissions, limitations and conditions&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.licenses.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details open&gt;&lt;summary&gt;Licenses overview&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.licenses.ratio.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;Recent activity charts&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.habits.charts.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details open&gt;&lt;summary&gt;Mildly interesting facts&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.habits.facts.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/contributors/README.md&quot;&gt;🏅 Repository contributors&lt;/a&gt;&lt;/th&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/followup/README.md&quot;&gt;🎟️ Follow-up of issues and pull requests&lt;/a&gt;&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;By contribution types&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.contributors.categories.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details&gt;&lt;summary&gt;By number of contributions&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.contributors.contributions.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;Indepth analysis&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.followup.indepth.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details&gt;&lt;summary&gt;Created on a user&#039;s repositories&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.followup.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details&gt;&lt;summary&gt;Created by a user&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.followup.user.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/reactions/README.md&quot;&gt;🎭 Comment reactions&lt;/a&gt;&lt;/th&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/people/README.md&quot;&gt;🧑‍🤝‍🧑 People&lt;/a&gt;&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.reactions.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;Related to a user&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.people.followers.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details&gt;&lt;summary&gt;Related to a repository&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.people.repository.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/sponsorships/README.md&quot;&gt;💝 GitHub Sponsorships&lt;/a&gt;&lt;/th&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/sponsors/README.md&quot;&gt;💕 GitHub Sponsors&lt;/a&gt;&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.sponsorships.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;GitHub sponsors card&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.sponsors.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details&gt;&lt;summary&gt;GitHub sponsors full introduction&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.sponsors.full.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/repositories/README.md&quot;&gt;📓 Featured repositories&lt;/a&gt;&lt;/th&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/discussions/README.md&quot;&gt;💬 Discussions&lt;/a&gt;&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;Featured&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.repositories.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details&gt;&lt;summary&gt;Pinned&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.repositories.pinned.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.discussions.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/starlists/README.md&quot;&gt;💫 Star lists&lt;/a&gt;&lt;/th&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/calendar/README.md&quot;&gt;📆 Commit calendar&lt;/a&gt;&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;Repositories from star lists&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.starlists.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details open&gt;&lt;summary&gt;Languages from star lists&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.starlists.languages.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details&gt;&lt;summary&gt;Current year&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.calendar.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details open&gt;&lt;summary&gt;Full history&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.calendar.full.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/achievements/README.md&quot;&gt;🏆 Achievements&lt;/a&gt;&lt;/th&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/notable/README.md&quot;&gt;🎩 Notable contributions&lt;/a&gt;&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;Compact display&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.achievements.compact.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details&gt;&lt;summary&gt;Detailed display&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.achievements.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;Indepth analysis&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.notable.indepth.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details&gt;&lt;summary&gt;Contributions in organizations only&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.notable.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/activity/README.md&quot;&gt;📰 Recent activity&lt;/a&gt;&lt;/th&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/traffic/README.md&quot;&gt;🧮 Repositories traffic&lt;/a&gt;&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.activity.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.traffic.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/code/README.md&quot;&gt;♐ Random code snippet&lt;/a&gt;&lt;/th&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/gists/README.md&quot;&gt;🎫 Gists&lt;/a&gt;&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.code.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.gists.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/projects/README.md&quot;&gt;🗂️ GitHub projects&lt;/a&gt;&lt;/th&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/introduction/README.md&quot;&gt;🙋 Introduction&lt;/a&gt;&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.projects.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;For a user or an organization&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.introduction.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details&gt;&lt;summary&gt;For a repository&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.introduction.repository.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/skyline/README.md&quot;&gt;🌇 GitHub Skyline&lt;/a&gt;&lt;/th&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/pagespeed/README.md&quot;&gt;⏱️ Google PageSpeed&lt;/a&gt;&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;GitHub Skyline&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.skyline.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details&gt;&lt;summary&gt;GitHub City&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.skyline.city.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;PageSpeed scores&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.pagespeed.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details&gt;&lt;summary&gt;PageSpeed scores with detailed report&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.pagespeed.detailed.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details&gt;&lt;summary&gt;PageSpeed scores with a website screenshot&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.pagespeed.screenshot.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/stackoverflow/README.md&quot;&gt;🗨️ Stack Overflow&lt;/a&gt;&lt;/th&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/anilist/README.md&quot;&gt;🌸 Anilist watch list and reading list&lt;/a&gt;&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.stackoverflow.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;For anime watchers&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.anilist.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details&gt;&lt;summary&gt;For manga readers&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.anilist.manga.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details open&gt;&lt;summary&gt;For waifus simp&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.anilist.characters.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/music/README.md&quot;&gt;🎼 Music activity and suggestions&lt;/a&gt;&lt;/th&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/posts/README.md&quot;&gt;✒️ Recent posts&lt;/a&gt;&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;Random tracks from a playlist&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.music.playlist.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details open&gt;&lt;summary&gt;Recently listened&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.music.recent.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;Latest posts width description and cover image&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.posts.full.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details&gt;&lt;summary&gt;Latest posts&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.posts.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/rss/README.md&quot;&gt;🗼 Rss feed&lt;/a&gt;&lt;/th&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/wakatime/README.md&quot;&gt;⏰ WakaTime&lt;/a&gt;&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.rss.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.wakatime.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/leetcode/README.md&quot;&gt;🗳️ Leetcode&lt;/a&gt;&lt;/th&gt;
-    &lt;th&gt;&lt;a href=&quot;source/plugins/steam/README.md&quot;&gt;🕹️ Steam&lt;/a&gt;&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.leetcode.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-        &lt;td  align=&quot;center&quot;&gt;
-        &lt;details open&gt;&lt;summary&gt;Recently played games&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.steam.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;details&gt;&lt;summary&gt;Profile and detailed game history&lt;/summary&gt;&lt;img alt=&quot;&quot; width=&quot;400&quot; src=&quot;https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.steam.full.svg&quot; alt=&quot;&quot;&gt;&lt;/img&gt;&lt;/details&gt;
-        &lt;img width=&quot;900&quot; height=&quot;1&quot; alt=&quot;&quot;&gt;
-      &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th colspan=&quot;2&quot; align=&quot;center&quot;&gt;
-      &lt;a href=&quot;/source/plugins/community/README.md&quot;&gt;🎲 See also community plugins&lt;/a&gt;
-
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[reisxd/TizenBrew]]></title>
-            <link>https://github.com/reisxd/TizenBrew</link>
-            <guid>https://github.com/reisxd/TizenBrew</guid>
-            <pubDate>Mon, 16 Feb 2026 00:07:40 GMT</pubDate>
-            <description><![CDATA[A way to experience modded websites and you can install newer apps without fighting with Tizen Studio]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/reisxd/TizenBrew">reisxd/TizenBrew</a></h1>
-            <p>A way to experience modded websites and you can install newer apps without fighting with Tizen Studio</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 1,201</p>
-            <p>Forks: 88</p>
-            <p>Stars today: 5 stars today</p>
-            <h2>README</h2><pre># 🍺 TizenBrew
-
-&lt;p align=&quot;center&quot;&gt;
-    &lt;img width=&quot;700px&quot; src=&quot;./.github/assets/TizenBrew_Official_Banner.png&quot;&gt;
-    &lt;br&gt;
-    &lt;sub&gt; TizenBrew logo, banner and README by &lt;a href=&quot;https://github.com/Zyborg777&quot;&gt;@Zyborg777&lt;/a&gt; &lt;/sub&gt;
-&lt;/p&gt;
-
-### Experience your favorite custom apps (such as [TizenTube](https://github.com/reisxd/TizenTube)) in a whole new way!
-Thanks to TizenBrew, you can install newer apps without having to deal with Tizen Studio multiple times. Just one click
-and you&#039;re done 🎊
-
-&lt;p align=&quot;center&quot;&gt;
-    &lt;a href=&quot;https://discord.gg/m2P7v8Y2qR&quot;&gt;
-        &lt;picture&gt;
-            &lt;source height=&quot;24px&quot; media=&quot;(prefers-color-scheme: dark)&quot;
-                srcset=&quot;https://user-images.githubusercontent.com/13122796/178032563-d4e084b7-244e-4358-af50-26bde6dd4996.png&quot; /&gt;
-            &lt;img height=&quot;24px&quot;
-                src=&quot;https://user-images.githubusercontent.com/13122796/178032563-d4e084b7-244e-4358-af50-26bde6dd4996.png&quot; /&gt;
-        &lt;/picture&gt;
-    &lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;
-    &lt;a href=&quot;https://t.me/tizenbrew&quot;&gt;
-        &lt;picture&gt;
-            &lt;source height=&quot;24px&quot; media=&quot;(prefers-color-scheme: dark)&quot;
-                srcset=&quot;https://user-images.githubusercontent.com/13122796/178032213-faf25ab8-0bc3-4a94-a730-b524c96df124.png&quot; /&gt;
-            &lt;img height=&quot;24px&quot;
-                src=&quot;https://user-images.githubusercontent.com/13122796/178032213-faf25ab8-0bc3-4a94-a730-b524c96df124.png&quot; /&gt;
-        &lt;/picture&gt;
-    &lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;
-    &lt;a href=&quot;https://reddit.com/r/TizenTube&quot;&gt;
-        &lt;picture&gt;
-            &lt;source height=&quot;24px&quot; media=&quot;(prefers-color-scheme: dark)&quot;
-                srcset=&quot;https://user-images.githubusercontent.com/13122796/178032351-9d9d5619-8ef7-470a-9eec-2744ece54553.png&quot; /&gt;
-            &lt;img height=&quot;24px&quot;
-                src=&quot;https://user-images.githubusercontent.com/13122796/178032351-9d9d5619-8ef7-470a-9eec-2744ece54553.png&quot; /&gt;
-        &lt;/picture&gt;
-    &lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;
-    &lt;a href=&quot;https://www.youtube.com/@tizenbrew&quot;&gt;
-        &lt;picture&gt;
-            &lt;source height=&quot;24px&quot; media=&quot;(prefers-color-scheme: dark)&quot;
-                srcset=&quot;https://user-images.githubusercontent.com/13122796/178032714-c51c7492-0666-44ac-99c2-f003a695ab50.png&quot; /&gt;
-            &lt;img height=&quot;24px&quot;
-                src=&quot;https://user-images.githubusercontent.com/13122796/178032714-c51c7492-0666-44ac-99c2-f003a695ab50.png&quot; /&gt;
-        &lt;/picture&gt;
-    &lt;/a&gt;
-&lt;/p&gt;
-
-
-# 🙌 Getting started
-
-### You can read the [guide](./docs/README.md) down below to get started with TizenBrew ⬇️
-&lt;p align=&quot;left&quot;&gt;
-    &lt;a href=&quot;./docs/README.md&quot;&gt;
-        &lt;picture&gt;
-            &lt;source height=&quot;50px&quot; srcset=&quot;./.github/assets/TizenBrew_Guide_Button.png&quot; /&gt;
-            &lt;img height=&quot;50px&quot; src=&quot;./.github/assets/TizenBrew_Guide_Button.png&quot; /&gt;
-        &lt;/picture&gt;
-    &lt;/a&gt;
-&lt;/p&gt;
-
-# 💻 Making a module
-
-You can read the [guide](./docs/MODULES.md) to make a module for TizenBrew.
-
-# 💬 Translations
-
-You can read the [guide](./docs/TRANSLATION.md) to translate TizenBrew into your native language.</pre>
+[![Star History Chart](https://api.star-history.com/svg?repos=qist/tvbox&amp;type=Date)](https://www.star-history.com/#qist/tvbox&amp;Date)</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
