@@ -4,24 +4,720 @@
         <title>GitHub Trending Today for javascript - JavaScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for javascript.</description>
-        <lastBuildDate>Wed, 11 Mar 2026 00:04:56 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 12 Mar 2026 00:07:01 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2026, GitHub</copyright>
         <item>
+            <title><![CDATA[ToolJet/ToolJet]]></title>
+            <link>https://github.com/ToolJet/ToolJet</link>
+            <guid>https://github.com/ToolJet/ToolJet</guid>
+            <pubDate>Thu, 12 Mar 2026 00:07:01 GMT</pubDate>
+            <description><![CDATA[ToolJet is the open-source foundation of ToolJet AI - the AI-native platform for building internal tools, dashboard, business applications, workflows and AI agents 🚀]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/ToolJet/ToolJet">ToolJet/ToolJet</a></h1>
+            <p>ToolJet is the open-source foundation of ToolJet AI - the AI-native platform for building internal tools, dashboard, business applications, workflows and AI agents 🚀</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 37,591</p>
+            <p>Forks: 4,973</p>
+            <p>Stars today: 17 stars today</p>
+            <h2>README</h2><pre>ToolJet is an **open-source low-code framework** to build and deploy internal tools with minimal engineering effort. ToolJet&#039;s drag-and-drop frontend builder allows you to create complex, responsive frontends within minutes. Additionally, you can integrate various data sources, including databases like PostgreSQL, MongoDB, and Elasticsearch; API endpoints with OpenAPI spec and OAuth2 support; SaaS tools such as Stripe, Slack, Google Sheets, Airtable, and Notion; as well as object storage services like S3, GCS, and Minio, to fetch and write data.
+
+ :star: If you find ToolJet useful, please consider giving us a star on GitHub! Your support helps us continue to innovate and deliver exciting features.
+
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/tooljet/tooljet-ce)
+![Number of GitHub contributors](https://img.shields.io/github/contributors/tooljet/tooljet)
+[![Number of GitHub issues that are open](https://img.shields.io/github/issues/ToolJet/ToolJet)](https://github.com/ToolJet/ToolJet/issues)
+[![Number of GitHub stars](https://img.shields.io/github/stars/ToolJet/ToolJet)](https://github.com/ToolJet/ToolJet/stargazers)
+![Number of GitHub closed issues](https://img.shields.io/github/issues-closed/tooljet/tooljet)
+![Number of GitHub pull requests that are open](https://img.shields.io/github/issues-pr-raw/tooljet/tooljet)
+![GitHub release; latest by date](https://img.shields.io/github/v/release/tooljet/tooljet)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/tooljet/tooljet)
+[![GitHub license which is AGPL license](https://img.shields.io/github/license/ToolJet/ToolJet)](https://github.com/ToolJet/ToolJet)
+[![Follow us on X, formerly Twitter](https://img.shields.io/twitter/follow/ToolJet?style=social)](https://twitter.com/ToolJet)
+
+&lt;p align=&quot;center&quot;&gt;
+    &lt;img src=&quot;https://user-images.githubusercontent.com/7828962/211444352-4d6d2e4a-13c9-4980-9e16-4aed4af9811b.png&quot; alt=&quot;Tooljet dashboard showing inventory and orders&quot;/&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+    &lt;img src=&quot;https://github.com/ToolJet/ToolJet/assets/25361949/0e711f3a-edb7-496b-8833-107de3826933&quot;/&gt;
+&lt;/p&gt;
+
+## All features
+
+- **Visual App Builder:** 45+ built-in responsive components, including Tables, Charts, Lists, Forms, and Progress Bars.
+- **ToolJet Database:** Built-in no-code database.
+- **Multi-Page:** Build an application with multiple pages.
+- **Multiplayer editing:** Allows simultaneous app building by multiple developers.
+- **50+ data sources:** Integrate with external databases, cloud storage, and APIs.
+- **Desktop &amp; mobile:** Customize layout widths to fit various screen sizes.
+- **Self-host:** Supports Docker, Kubernetes, AWS EC2, Google Cloud Run, and more.
+- **Collaborate:** Add comments anywhere on the canvas and tag your team members.
+- **Extend with plugins:** Use our [command-line tool](https://www.npmjs.com/package/@tooljet/cli) to easily bootstrap new connectors.
+- **Version control:** Manage multiple application versions with a structured release cycle.
+- **Run JS &amp; Python code:** Execute custom JavaScript and Python snippets.
+- **Granular access control:** Set permissions at both group and app levels.
+- **Low-code:** Use JS code almost anywhere within the builder, such as setting text color based on status with 
+`status === &#039;success&#039; ? &#039;green&#039; : &#039;red&#039;`.
+- **No-code query editors:** Query Editors are available for all supported data sources.
+- **Join and transform data:** Transform query results using JavaScript or Python code.
+- **Secure:** All the credentials are securely encrypted using `aes-256-gcm`.
+- **Data Privacy:** ToolJet serves solely as a proxy and does not store data.
+- **SSO:** Supports multiple Single Sign-On providers.
+
+&lt;hr&gt;
+
+## Quickstart
+The easiest way to get started with ToolJet is by creating a [ToolJet Cloud](https://tooljet.com) account. ToolJet Cloud offers a hosted solution of ToolJet. If you want to self-host ToolJet, kindly proceed to [deployment documentation](https://docs.tooljet.com/docs/setup/).
+
+### Try using Docker
+Want to give ToolJet a quick spin on your local machine? You can run the following command from your terminal to have ToolJet up and running right away.
+
+
+```bash
+docker run \
+  --name tooljet \
+  --restart unless-stopped \
+  -p 80:80 \
+  --platform linux/amd64 \
+  -v tooljet_data:/var/lib/postgresql/13/main \
+  tooljet/try:ee-lts-latest
+```
+
+*For users upgrading their ToolJet version, we recommend choosing the LTS version over the latest version. The LTS version ensures stability with production bug fixes, security patches, and performance enhancements.*
+
+## Tutorials and examples
+
+[Time Tracker Application](https://docs.tooljet.com/docs/#quickstart-guide)&lt;br&gt;
+[Build your own CMS using low-code](https://blog.tooljet.com/build-cms-using-lowcode-and-mongodb/)&lt;br&gt;
+[AWS S3 Browser](https://blog.tooljet.com/build-an-aws-s3-broswer-with-tooljet/)&lt;br&gt;
+
+## Documentation
+Documentation is available at https://docs.tooljet.com.
+
+- [Getting Started](https://docs.tooljet.com)&lt;br&gt;
+- [Data source Reference](https://docs.tooljet.com/docs/data-sources/airtable/)&lt;br&gt;
+- [Component Reference](https://docs.tooljet.com/docs/widgets/button)
+
+## Self-hosted
+You can use ToolJet Cloud for a fully managed solution. If you want to self-host ToolJet, we have guides on deploying ToolJet on Kubernetes, AWS EC2, Docker, and more.
+
+| Provider  | Documentation |
+| :------------- | :------------- |
+| Digital Ocean | [Link](https://docs.tooljet.com/docs/setup/digitalocean)  |
+| Docker  | [Link](https://docs.tooljet.com/docs/setup/docker)   |
+| AWS EC2 | [Link](https://docs.tooljet.com/docs/setup/ec2)  |
+| AWS ECS | [Link](https://docs.tooljet.com/docs/setup/ecs)   |
+| OpenShift | [Link](https://docs.tooljet.com/docs/setup/openshift)   |
+| Helm | [Link](https://docs.tooljet.com/docs/setup/helm)   |
+| AWS EKS (Kubernetes) | [Link](https://docs.tooljet.com/docs/setup/kubernetes)   |
+| GCP GKE (Kubernetes) | [Link](https://docs.tooljet.com/docs/setup/kubernetes-gke)   |
+| Azure AKS (Kubernetes) | [Link](https://docs.tooljet.com/docs/setup/kubernetes-aks)   |
+| Azure Container | [Link](https://docs.tooljet.com/docs/setup/azure-container)   |
+| Google Cloud Run  | [Link](https://docs.tooljet.com/docs/setup/google-cloud-run)   |
+| Deploying ToolJet client  | [Link](https://docs.tooljet.com/docs/setup/client)   |
+| Deploying ToolJet on a Subpath  | [Link](https://docs.tooljet.com/docs/setup/tooljet-subpath/)   |
+
+## Marketplace 
+ToolJet can now be found on both AWS and Azure Marketplaces, making it simpler than ever to access and deploy our app-building platform.
+
+Find ToolJet on AWS Marketplace [here](https://aws.amazon.com/marketplace/pp/prodview-fxjto27jkpqfg?sr=0-1&amp;ref_=beagle&amp;applicationId=AWSMPContessa) and explore seamless integration on Azure Marketplace [here](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/tooljetsolutioninc1679496832216.tooljet?tab=Overview).
+
+## Community support
+For general help using ToolJet, please refer to the official [documentation](https://docs.tooljet.com/docs/). For additional help, you can use one of these channels to ask a question:
+
+- [Slack](https://tooljet.com/slack) - Discussions with the community and the team.
+- [GitHub](https://github.com/ToolJet/ToolJet/issues) - For bug reports and feature requests.
+- [𝕏 (Twitter)](https://twitter.com/ToolJet) - Get the product updates quickly.
+
+## Roadmap
+Check out our [roadmap](https://github.com/orgs/ToolJet/projects/15) to stay updated on recently released features and learn about what&#039;s coming next.
+
+## Branching model
+We use the git-flow branching model. The base branch is `develop`. If you are looking for a stable version, please use the main branch or tags labeled as v1.x.x.
+
+## Contributing
+Kindly read our [Contributing Guide](CONTRIBUTING.md) to familiarize yourself with ToolJet&#039;s development process, how to suggest bug fixes and improvements, and the steps for building and testing your changes. &lt;br&gt;
+
+## Contributors
+&lt;a href=&quot;https://github.com/tooljet/tooljet/graphs/contributors&quot;&gt;
+  &lt;img src=&quot;https://contrib.rocks/image?repo=tooljet/tooljet&amp;max=400&amp;columns=20&quot; /&gt;
+  &lt;img src=&quot;https://us-central1-tooljet-hub.cloudfunctions.net/github&quot; width=&quot;0&quot; height=&quot;0&quot; /&gt;
+&lt;/a&gt;
+
+## License
+ToolJet © 2023, ToolJet Solutions Inc - Released under the GNU Affero General Public License v3.0.
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[projectdiscovery/nuclei-templates]]></title>
+            <link>https://github.com/projectdiscovery/nuclei-templates</link>
+            <guid>https://github.com/projectdiscovery/nuclei-templates</guid>
+            <pubDate>Thu, 12 Mar 2026 00:07:00 GMT</pubDate>
+            <description><![CDATA[Community curated list of templates for the nuclei engine to find security vulnerabilities.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/projectdiscovery/nuclei-templates">projectdiscovery/nuclei-templates</a></h1>
+            <p>Community curated list of templates for the nuclei engine to find security vulnerabilities.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 12,041</p>
+            <p>Forks: 3,381</p>
+            <p>Stars today: 5 stars today</p>
+            <h2>README</h2><pre>
+
+&lt;h1 align=&quot;center&quot;&gt;
+Nuclei Templates
+&lt;/h1&gt;
+&lt;h4 align=&quot;center&quot;&gt;Community curated list of templates for the nuclei engine to find security vulnerabilities in applications.&lt;/h4&gt;
+
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;a href=&quot;https://github.com/projectdiscovery/nuclei-templates/issues&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/projectdiscovery/nuclei-templates/releases&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/release/projectdiscovery/nuclei-templates&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;https://twitter.com/pdnuclei&quot;&gt;&lt;img src=&quot;https://img.shields.io/twitter/follow/pdnuclei.svg?logo=twitter&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;https://discord.gg/projectdiscovery&quot;&gt;&lt;img src=&quot;https://img.shields.io/discord/695645237418131507.svg?logo=discord&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+      
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://docs.projectdiscovery.io/templates/introduction&quot;&gt;Documentation&lt;/a&gt; •
+  &lt;a href=&quot;#-contributions&quot;&gt;Contributions&lt;/a&gt; •
+  &lt;a href=&quot;#-discussion&quot;&gt;Discussion&lt;/a&gt; •
+  &lt;a href=&quot;#-community&quot;&gt;Community&lt;/a&gt; •
+  &lt;a href=&quot;https://docs.projectdiscovery.io/templates/faq&quot;&gt;FAQs&lt;/a&gt; •
+  &lt;a href=&quot;https://discord.gg/projectdiscovery&quot;&gt;Join Discord&lt;/a&gt;
+&lt;/p&gt;
+
+----
+
+Templates are the core of the [nuclei scanner](https://github.com/projectdiscovery/nuclei) which powers the actual scanning engine.
+This repository stores and houses various templates for the scanner provided by our team, as well as contributed by the community.
+We hope that you also contribute by sending templates via **pull requests** or [Github issues](https://github.com/projectdiscovery/nuclei-templates/issues/new?assignees=&amp;labels=&amp;template=submit-template.md&amp;title=%5Bnuclei-template%5D+) to grow the list.
+
+
+## Nuclei Templates overview
+
+
+An overview of the nuclei template project, including statistics on unique tags, author, directory, severity, and type of templates. The table below contains the top ten statistics for each matrix; an expanded version of this is [available here](TEMPLATES-STATS.md), and also available in [JSON](TEMPLATES-STATS.json) format for integration.
+
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;
+
+### 🚨 Known Exploited Vulnerabilities (KEV) Coverage
+
+Nuclei templates provide coverage for vulnerabilities actively exploited in the wild:
+
+| **KEV Source** | **Templates** | **Description** |
+|----------------|---------------|-----------------|
+| 🔴 **CISA KEV** | **454** | [CISA Known Exploited Vulnerabilities Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) |
+| 🟠 **VulnCheck KEV** | **1449** | [VulnCheck KEV](https://vulncheck.com/kev) - Enhanced vulnerability intelligence |
+| 🟢 **Both Sources** | **407** | Templates covering vulnerabilities in both catalogs |
+
+&gt; 💡 **Total unique KEV templates: 1496** - Use `nuclei -tags kev,vkev` to scan for actively exploited vulnerabilities
+
+---
+
+## Nuclei Templates Top 10 statistics
+
+|    TAG    | COUNT |    AUTHOR     | COUNT | DIRECTORY  | COUNT | SEVERITY | COUNT | TYPE | COUNT |
+|-----------|-------|---------------|-------|------------|-------|----------|-------|------|-------|
+| vuln      |  6468 | dhiyaneshdk   |  1894 | http       |  9281 | info     |  4353 | file |   436 |
+| cve       |  3587 | daffainfo     |   905 | cloud      |   659 | high     |  2552 | dns  |    26 |
+| discovery |  3265 | princechaddha |   854 | file       |   436 | medium   |  2457 |      |       |
+| vkev      |  1394 | dwisiswant0   |   805 | network    |   259 | critical |  1555 |      |       |
+| panel     |  1365 | ritikchaddha  |   678 | code       |   251 | low      |   330 |      |       |
+| xss       |  1269 | pussycat0x    |   675 | dast       |   240 | unknown  |    54 |      |       |
+| wordpress |  1261 | pikpikcu      |   353 | workflows  |   205 |          |       |      |       |
+| exposure  |  1141 | pdteam        |   314 | javascript |    92 |          |       |      |       |
+| wp-plugin |  1103 | pdresearch    |   275 | ssl        |    38 |          |       |      |       |
+| osint     |   848 | iamnoooob     |   263 | dns        |    23 |          |       |      |       |
+
+**873 directories, 11997 files**.
+
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+📖 Documentation
+-----
+
+Please navigate to https://nuclei.projectdiscovery.io for detailed documentation to **build** new or your own **custom** templates.
+We have also added a set of templates to help you understand how things work.
+
+💪 Contributions
+-----
+
+Nuclei-templates is powered by major contributions from the community.
+[Template contributions ](https://github.com/projectdiscovery/nuclei-templates/issues/new?assignees=&amp;labels=&amp;template=submit-template.md&amp;title=%5Bnuclei-template%5D+), [Feature Requests](https://github.com/projectdiscovery/nuclei-templates/issues/new?assignees=&amp;labels=&amp;template=feature_request.md&amp;title=%5BFeature%5D+) and [Bug Reports](https://github.com/projectdiscovery/nuclei-templates/issues/new?assignees=&amp;labels=&amp;template=bug_report.md&amp;title=%5BBug%5D+) are more than welcome.
+
+![Alt](https://repobeats.axiom.co/api/embed/55ee65543bb9a0f9c797626c4e66d472a517d17c.svg &quot;Repobeats analytics image&quot;)
+
+💬 Discussion
+-----
+
+Have questions / doubts / ideas to discuss?
+Feel free to open a discussion on [Github discussions](https://github.com/projectdiscovery/nuclei-templates/discussions) board.
+
+👨‍💻 Community
+-----
+
+You are welcome to join the active [Discord Community](https://discord.gg/projectdiscovery) to discuss directly with project maintainers and share things with others around security and automation.
+Additionally, you may follow us on [Twitter](https://twitter.com/pdnuclei) to be updated on all the things about Nuclei.
+
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;a href=&quot;https://github.com/projectdiscovery/nuclei-templates/graphs/contributors&quot;&gt;
+  &lt;img src=&quot;https://contrib.rocks/image?repo=projectdiscovery/nuclei-templates&amp;max=300&quot;&gt;
+&lt;/a&gt;
+&lt;/p&gt;
+
+
+Thanks again for your contribution and keeping this community vibrant. :heart:
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[mailcow/mailcow-dockerized]]></title>
+            <link>https://github.com/mailcow/mailcow-dockerized</link>
+            <guid>https://github.com/mailcow/mailcow-dockerized</guid>
+            <pubDate>Thu, 12 Mar 2026 00:06:59 GMT</pubDate>
+            <description><![CDATA[mailcow: dockerized - 🐮 + 🐋 = 💕]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/mailcow/mailcow-dockerized">mailcow/mailcow-dockerized</a></h1>
+            <p>mailcow: dockerized - 🐮 + 🐋 = 💕</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 12,327</p>
+            <p>Forks: 1,628</p>
+            <p>Stars today: 10 stars today</p>
+            <h2>README</h2><pre># mailcow: dockerized - 🐮 + 🐋 = 💕
+
+[![Translation status](https://translate.mailcow.email/widgets/mailcow-dockerized/-/translation/svg-badge.svg)](https://translate.mailcow.email/engage/mailcow-dockerized/)
+[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/mailcow_email.svg?style=social&amp;label=Follow%20%40mailcow_email)](https://twitter.com/mailcow_email)
+![Mastodon Follow](https://img.shields.io/mastodon/follow/109388212176073348?domain=https%3A%2F%2Fmailcow.social&amp;label=Follow%20%40doncow%40mailcow.social&amp;link=https%3A%2F%2Fmailcow.social%2F%40doncow)
+
+
+## Want to support mailcow?
+
+Please [consider a support contract with Servercow](https://www.servercow.de/mailcow?lang=en#support) to support further development. _We_ support _you_ while _you_ support _us_. :)
+
+You can also [get a SAL](https://www.servercow.de/mailcow?lang=en#sal) which is a one-time payment with no liabilities or returning fees.
+
+Or just spread the word: moo.
+
+## Many thanks to our GitHub Sponsors ❤️
+A big thank you to everyone supporting us on GitHub Sponsors—your contributions mean the world to us! Special thanks to the following amazing supporters:
+
+### 100$/Month Sponsors
+  &lt;a href=&quot;https://www.colba.net/&quot; target=_blank&gt;&lt;img
+    src=&quot;https://avatars.githubusercontent.com/u/204464723&quot; height=&quot;58&quot;
+  /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://www.maehdros.com/&quot; target=_blank&gt;&lt;img
+    src=&quot;https://avatars.githubusercontent.com/u/173894712&quot; height=&quot;58&quot;
+  /&gt;&lt;/a&gt;
+
+### 50$/Month Sponsors
+  &lt;a href=&quot;https://github.com/vnukhr&quot; target=_blank&gt;&lt;img
+    src=&quot;https://avatars.githubusercontent.com/u/7805987?s=52&amp;v=4&quot; height=&quot;58&quot;
+  /&gt;&lt;/a&gt;
+
+## Info, documentation and support
+
+Please see [the official documentation](https://docs.mailcow.email/) for installation and support instructions. 🐄
+
+🐛 **If you found a critical security issue, please mail us to [info at servercow.de](mailto:info@servercow.de).**
+
+## Cowmunity
+
+[mailcow community](https://community.mailcow.email)
+
+[Telegram mailcow channel](https://telegram.me/mailcow)
+
+[Telegram mailcow Off-Topic channel](https://t.me/mailcowOfftopic)
+
+[Official 𝕏 (Twitter) Account](https://twitter.com/mailcow_email)
+
+[Official Mastodon Account](https://mailcow.social/@doncow)
+
+Telegram desktop clients are available for [multiple platforms](https://desktop.telegram.org). You can search the groups history for keywords.
+
+## Misc
+
+**Important**: mailcow makes use of various open-source software. Please assure you agree with their license before using mailcow.
+Any part of mailcow itself is released under **GNU General Public License, Version 3**.
+
+mailcow is a registered word mark of The Infrastructure Company GmbH, Parkstr. 42, 47877 Willich, Germany.
+
+The project is managed and maintained by The Infrastructure Company GmbH.
+
+Originated from @andryyy (André)
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[zhaoolee/ChromeAppHeroes]]></title>
+            <link>https://github.com/zhaoolee/ChromeAppHeroes</link>
+            <guid>https://github.com/zhaoolee/ChromeAppHeroes</guid>
+            <pubDate>Thu, 12 Mar 2026 00:06:58 GMT</pubDate>
+            <description><![CDATA[🌈谷粒-Chrome插件英雄榜, 为优秀的Chrome插件写一本中文说明书, 让Chrome插件英雄们造福人类~ ChromePluginHeroes, Write a Chinese manual for the excellent Chrome plugin, let the Chrome plugin heroes benefit the human~ 公众号「0加1」同步更新]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/zhaoolee/ChromeAppHeroes">zhaoolee/ChromeAppHeroes</a></h1>
+            <p>🌈谷粒-Chrome插件英雄榜, 为优秀的Chrome插件写一本中文说明书, 让Chrome插件英雄们造福人类~ ChromePluginHeroes, Write a Chinese manual for the excellent Chrome plugin, let the Chrome plugin heroes benefit the human~ 公众号「0加1」同步更新</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 25,276</p>
+            <p>Forks: 2,607</p>
+            <p>Stars today: 126 stars today</p>
+            <h2>README</h2><pre>![谷粒-Chrome插件英雄榜](https://raw.githubusercontent.com/zhaoolee/ChromeAppHeroes/master/README/1710676801228PCyiDZRQ.jpeg)
+
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE) [![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu) ![https://img.shields.io/github/issues/zhaoolee/ChromeAppHeroes.svg?style=popout-square](https://img.shields.io/github/issues/zhaoolee/ChromeAppHeroes.svg?style=popout-square) ![https://v2fy.com/asset/README/ChromeAppHeroes.svg?style=popout-square](https://img.shields.io/github/stars/zhaoolee/ChromeAppHeroes.svg?style=popout-square)
+
+# 谷粒-Chrome插件英雄榜
+
+🌈谷粒-Chrome插件英雄榜, 为优秀的Chrome插件写一本中文说明书, 让Chrome插件英雄们造福人类~
+ChromeAppHeroes, Write a Chinese manual for the excellent Chrome plugin, let the Chrome plugin heroes benefit the human~
+
+![谷粒VI设计.png](https://raw.githubusercontent.com/zhaoolee/ChromeAppHeroes/master/README/17106763830728faCQ0DR.png)
+
+**感谢[老罗巴扎嘿](https://github.com/LuoJiangYong)为本项目设计的新的Logo | [谷粒文化(老罗巴扎嘿语录)](https://zhaoolee.com/ChromeAppHeroes/#/meaning_of_gu_li)**
+
+谷粒-Chrome插件英雄榜使用**开源魔法文档工具[docsify](https://github.com/docsifyjs/docsify/)构建**, 托管在Github Pages, 完全开源!
+
+**付费VPN科学上网工具推荐**:  通用网络加速器, 为科技工作者创造价值, 如果你想获得稳定高速的科学上网体验,zhaoolee推荐一家小众但非常稳定的VPN供应商GLaDOS(提供vmess方式)看Youtube1080P不卡,注册登录后, 后台提供iOS端美区APP的下载账号, [点击链接](https://glados.rocks/landing/OFQTF-AA9NU-I0JVK-11AY8) 可以获得的高速VPN体验 [http://i.v2fy.com/vpn](http://i.v2fy.com/vpn)
+
+## 目录(点击以下标题, 可以进入文章页~)
+
+- [132《Gemini NanoBanana Watermark Remover》提升AI生图幸福感！油猴脚本自动移除NanaBanana水印](https://zhaoolee.com/ChromeAppHeroes/#/132-gemini-nano-banana-watermark-remover.md)
+
+- [131《uBlock Origin Lite》自动屏蔽油管贴脸广告😅，Chrome扩展工具进入MV3时代的去广告神器](https://zhaoolee.com/ChromeAppHeroes/#/131-ublock-origin-lite.md)
+
+- [130《Get cookies.txt LOCALLY》 获取油管cookies，自动化下载油管视频](https://zhaoolee.com/ChromeAppHeroes/#/130-get-cookiestxt-locally.md)
+
+- [129《YouTube Subtitle Downloader》下载Youtube视频的字幕，支持中英对照](https://zhaoolee.com/ChromeAppHeroes/#/129-youtube-subtitle-downloader.md)
+
+- [128《Wayback Machine》优雅查看任意网页的历史记录](https://zhaoolee.com/ChromeAppHeroes/#/128-wayback-machine.md)
+
+- [127《Z-Library Finder》优雅进入全球最大的Z-Library自由免费Free图书馆](https://zhaoolee.com/ChromeAppHeroes/#/127-z-library-finder.md)
+
+- [126《File Management - WebDav》优雅使用浏览器通过WebDav上传下载管理自建网盘的文件](https://zhaoolee.com/ChromeAppHeroes/#/126-file-management-webdav.md)
+
+- [125《Redirect Path》查看一个页面是如何跳转过来的](https://zhaoolee.com/ChromeAppHeroes/#/125-redirect-path.md)
+
+- [124《HackerNews New Tab》自动使用新标签页打开Hacker News内容](https://zhaoolee.com/ChromeAppHeroes/#/124-hackernews-new-tab.md)
+
+- [123《Language Learning with Netflix &amp; YouTube-AFL》听原汁原味的读音，用奈飞Youtube双字幕学英语](https://zhaoolee.com/ChromeAppHeroes/#/123-language-learning-with-netflix-2024-03-16)
+
+
+- [122《Video Screenshot》为奈飞Netflix精彩画面截图，壁纸爱好者必备神器](https://zhaoolee.com/ChromeAppHeroes/#/122-video-screenshot-2024-03-16)
+
+- [121《Console Importer》在Chrome直接使用npm军火库, 在控制台动态展示一张猫猫图](https://zhaoolee.com/ChromeAppHeroes/#/121-console-importer-2023-12-20)
+
+- [120《Wikiwand》提升维基百科的使用体验](https://zhaoolee.com/ChromeAppHeroes/#/120-wikiwand-2023-10-12)
+
+- [119《InsPop》用英语经典语录原音学英语](https://zhaoolee.com/ChromeAppHeroes/#/119-inspop-2023-10-12)
+
+- [118《Immersive Translate》沉浸式阅读英语的免费工具，模糊中文愉悦阅读英语文章](https://zhaoolee.com/ChromeAppHeroes/#/118-immersive-translate-2023-05-12)
+
+- [117《ChatGPT HeartBeat》让ChatGPT Web服务保持连接，避免反复刷新ChatGPT Web版页面](https://zhaoolee.com/ChromeAppHeroes/#/117-chatgpt-heartbeat-2023-04-21)
+
+- [116《EXIF Viewer Classic》查看网页中摄影图片的拍摄时间光圈快门等Exif参数信息](https://zhaoolee.com/ChromeAppHeroes/#/116-exif-viewer-classic-2022-10-22)
+
+- [115《Linkclump》在网页画个长方形，打开长方形内所有超链接](https://zhaoolee.com/ChromeAppHeroes/#/115-linkclump-2022-10-22)
+
+- [114《WordPress SideBar》为WordPress网站添加类似GitBook的侧边栏目录](https://zhaoolee.com/ChromeAppHeroes/#/114-wordpress-sidebar-2022-07-10)
+
+- [113《SVG Export》将SVG矢量图导出为任意尺寸的PNG图片](https://zhaoolee.com/ChromeAppHeroes/#/113-svg-exprot-2022-05-05)
+
+- [112《Smart TOC》节约滚动网页时间, 为任意网页自动添加索引，生成浮动智能小目录](https://zhaoolee.com/ChromeAppHeroes/#/112-smart-toc-2021-09-09)
+
+- [111《Unsplash For Chrome》查找免费无版权超清图并直接插入任意在线编辑器](https://zhaoolee.com/ChromeAppHeroes/#/111-unsplash-for-chrome-2021-07-22)
+
+- [110《微信公众号同步助手》快速将微信文章同步到知乎B站等创作平台](https://zhaoolee.com/ChromeAppHeroes/#/110-wechatsync-2021-06-13)
+
+- [109《GLaDOS》一款快捷签到领魔法上网天数的小工具文章作者](https://zhaoolee.com/ChromeAppHeroes/#/109-glados-2021-06-09)
+
+- [108《Grabox》打通Chrome，Edge，FireFox，360，2345，QQ，搜狗等浏览器们的书签目录](https://zhaoolee.com/ChromeAppHeroes/#/108-grabox-2021-06-08)
+
+- [107《I don&#039;t care about cookies》屏蔽所有网站询问Cookies授权的弹窗](https://zhaoolee.com/ChromeAppHeroes/#/107-i-dont-care-about-cookies-2021-06-05)
+
+- [106《Browser Desktop》一款MacOS风格的浏览器桌面](https://zhaoolee.com/ChromeAppHeroes/#/106-browser-desktop-2021-06-05)
+
+- [105《潮汐》极简番茄钟与白噪音,和大自然一起，平静身心](https://zhaoolee.com/ChromeAppHeroes/#/105-tide-2021-05-29)
+
+- [104《特别篇：星愿浏览器》下载一切可下载的视频](https://zhaoolee.com/ChromeAppHeroes/#/104-twinkstar-2021-05-17)
+
+- [103《Marinara 番茄工作法（Pomodoro®）助理》奇妙番茄钟, 提醒打工人及时休息](https://zhaoolee.com/ChromeAppHeroes/#/103-marinara-2021-05-14)
+
+- [102《特别篇：手机如何使用Chrome插件》手机端如何屏蔽知乎广告](https://zhaoolee.com/ChromeAppHeroes/#/102-mobile-2021-05-13)
+
+- [101《Scroll To Top Button》一键滚动到页面顶部或底部](https://zhaoolee.com/ChromeAppHeroes/#/101-scroll-to-top-button-2021-05-13)
+
+- [100《Volume master》完美控制每个网页的音量](https://zhaoolee.com/ChromeAppHeroes/#/100-volume-master-2021-03-25)
+
+- [099《Get Favicon》一键获取网站的超清图标](https://zhaoolee.com/ChromeAppHeroes/#/099-get-favicon-2021-03-22)
+
+- [098《RSSHub Radar》可以帮助你快速发现和订阅当前网站RSS的浏览器扩展](https://zhaoolee.com/ChromeAppHeroes/#/098-rsshub-radar-2021-03-02)
+
+- [097《假装水墨屏》让网页内容变成水墨屏效果](https://zhaoolee.com/ChromeAppHeroes/#/097-fake-ink-screen-2021-02-27)
+
+- [096《Feedbro》在Chrome中订阅RSS信息流](https://zhaoolee.com/ChromeAppHeroes/#/096-feedbro-2021-02-27)
+
+- [095《JsonFormatter》轻量化Json开源格式化工具查看一言api接口字段数据结构](https://zhaoolee.com/ChromeAppHeroes/#/095-json-formatter-2021-02-18)
+
+- [094《SmoothScroll》让网页滚动如奶油般顺滑的奇妙小工具](https://zhaoolee.com/ChromeAppHeroes/#/094-smoothscroll-2021-02-14)
+
+- [093《Search to Play the Song》在浏览器中随时听我想听的歌~(周杰伦的也行)](https://zhaoolee.com/ChromeAppHeroes/#/093-sps-2021-02-09)
+
+- [092《Copyfish 🐟 Free OCR Software》自动截图识别网页中的文字](https://zhaoolee.com/ChromeAppHeroes/#/092-copyfish-ocr-2021-02-08)
+
+- [091《FasterChrome》鼠标悬停预加载链接让你的Chrome起飞](https://zhaoolee.com/ChromeAppHeroes/#/091-faster-chrome-2020-12-28)
+
+- [090《拒绝二维码登录》让淘宝、京东、阿里云等网站默认使用账号密码登录](https://zhaoolee.com/ChromeAppHeroes/#/090-no-qr-login-2020-12-21)
+
+- [089《本地YouTube下载器》实现被Google禁止的功能](https://zhaoolee.com/ChromeAppHeroes/#/089-youtube-2020-12-20)
+
+- [088《知乎网页助手》让网页版知乎更好用](https://zhaoolee.com/ChromeAppHeroes/#/088-zhihu-2020-12-19)
+
+- [087《豆瓣资源下载大师》1秒搞定豆瓣电影|音乐|图书下载](https://zhaoolee.com/ChromeAppHeroes/#/087-douban-2020-12-19)
+
+- [086《CSDN开发助手》CSDN官方合法免广告工具,内含大量实用开发工具](https://zhaoolee.com/ChromeAppHeroes/#/086-csdn-2020-12-18)
+
+- [085《nonstop》无感跳转到知乎，微博，简书，qq 邮箱等无法直接跳转的外链](https://zhaoolee.com/ChromeAppHeroes/#/085-nonstop-2020-12-15)
+
+- [084《Web for TikTok》用Chrome刷海外版抖音TikTok，下载Tiktok短视频](https://zhaoolee.com/ChromeAppHeroes/#/084-tiktok-2020-11-07)
+
+- [083《APK Downloader for Google Play Store》从谷歌商店获取apk安装包](https://zhaoolee.com/ChromeAppHeroes/#/083-apk-downloader-for-google-2020-11-02)
+
+- [082《iGG谷歌访问助手》如何从Chrome商店下载扩展工具？](https://zhaoolee.com/ChromeAppHeroes/#/082-iguge-2020-11-02)
+
+- [081《GitHub加速》提高中国开发者访问GitHub的速度](https://zhaoolee.com/ChromeAppHeroes/#/081-fast-github-2020-10-20)
+
+- [080《小码短链接》免费为相同url生成多个永久短链接](https://zhaoolee.com/ChromeAppHeroes/#/080-xiaomark)
+
+- [079《Search the current site(站内搜索)》超实用的站内搜索工具](https://zhaoolee.com/ChromeAppHeroes/#/079-search-the-current-site)
+
+- [078《Bookmarks clean up》高效清理重复和损坏的书签](https://zhaoolee.com/ChromeAppHeroes/#/078-bookmarks-clean-up)
+
+- [077《Sourcegraph》阮一峰大佬推荐的github仓库关键词搜索工具](https://zhaoolee.com/ChromeAppHeroes/#/077-sourcegraph)
+
+- [076《Listen1》Chrome听付费歌曲工具！免费听周杰伦的歌，网易云音乐,QQ音乐,虾米音乐,酷狗,酷我,哔哩哔哩,咪咕,一个扩展全搞定](https://zhaoolee.com/ChromeAppHeroes/#/076-listen1)
+
+- [075《Link to Text Fragment》这款谷歌发布的分享工具，让3万新媒体人直呼绝活儿…](https://zhaoolee.com/ChromeAppHeroes/#/075-link-to-text-fragment)
+
+- [074《破解右键锁》如何自由复制百度文库网页内容?](https://zhaoolee.com/ChromeAppHeroes/#/074-enable-right-click)
+
+- [073《Chrome Better History》如何让Chrome查找历史记录更方便?](https://zhaoolee.com/ChromeAppHeroes/#/073_chrome_better_history)
+
+- [072《OneNote Web Clipper》微软免费跨平台笔记OneNote扩展程序](https://zhaoolee.com/ChromeAppHeroes/#/072_one_note_web_clipper)
+- [071《Color Tab》色彩猎人优质配色提升你的审美](https://zhaoolee.com/ChromeAppHeroes/#/071_color_tab)
+- [070《网盘助手》网盘万能钥匙,自定义提取码,获取文件下载直链](https://zhaoolee.com/ChromeAppHeroes/#/070_pan_zhushou)
+- [069《ublock origin》免除优酷，腾讯，爱奇艺，YouTube视频广告](https://zhaoolee.com/ChromeAppHeroes/#/069_ublock_origin)
+- [068《pakku 哔哩哔哩弹幕过滤器》提升你的哔哩哔哩弹幕体验](https://zhaoolee.com/ChromeAppHeroes/#/068_pakku)
+- [067 《bilibili哔哩哔哩B站下载助手》下载在B站可以观看的视频](https://zhaoolee.com/ChromeAppHeroes/#/067_bilibili_downloader)
+- [066 《PowerfulPixivDownloader》福利工具! Pixiv图片批量下载器](https://zhaoolee.com/ChromeAppHeroes/#/066_powerful_pixiv_downloader)
+- [065 《HTML5视频截图器》精确截取每一帧视频,让蔡徐坤动起来](https://zhaoolee.com/ChromeAppHeroes/#/065_html5_jietu)
+- [064《浮图秀》优雅查看B站视频封面](https://zhaoolee.com/ChromeAppHeroes/#/064_photoshow)
+- [063《Picviewer CE+》功能丰富的网页看图神器](https://zhaoolee.com/ChromeAppHeroes/#/063_picviewer-ce)
+- [062《彩云小译》一键实现网页中英文对照的翻译工具](https://zhaoolee.com/ChromeAppHeroes/#/062_caiyun)
+- [061《ImageAssistant》图片助手批量图片下载器](https://zhaoolee.com/ChromeAppHeroes/#/061-image-assistant)
+- [060《Tabagotchi》为减缓全球变暖做出贡献](https://zhaoolee.com/ChromeAppHeroes/#/060_tabagotchi)
+- [059《PageSpeed Insight and CheckList》为网页优化提供建议和量化指标](https://zhaoolee.com/ChromeAppHeroes/#/059_page_speed_insight_and_check_list)
+- [058《IP-Address》快速查看当前设备IP](https://zhaoolee.com/ChromeAppHeroes/#/058_ip_address) 
+- [057《图片另存为JPG/PNG/WebP》让WebP图片下载为PNG格式](https://zhaoolee.com/ChromeAppHeroes/#/057_webp_save_as_png)
+- [056《Search》为Chrome设置搜索引擎关键词](https://zhaoolee.com/ChromeAppHeroes/#/056_search)
+- [055《Keylines》为网页元素添加随机描边颜色](https://zhaoolee.com/ChromeAppHeroes/#/055_keylines)
+- [054《二箱 以图搜图》让你在搜图方面随心所欲（为所欲为）](https://zhaoolee.com/ChromeAppHeroes/#/054_er_xiang_yi_tu_sou_tu)
+- [053《鼠标点击特效 (๑•́ ∀ •̀๑)》为鼠标点击添加有趣的特效](https://zhaoolee.com/ChromeAppHeroes/#/053_shu_biao_dian_ji_te_xiao)
+- [052《Site Palette》自动提取网站配色](https://zhaoolee.com/ChromeAppHeroes/#/052_site_palette)
+
+
+- [051《Custom Cursor for Chrome™》为Chrome换上可爱初音光标](https://zhaoolee.com/ChromeAppHeroes/#/051_custom_cursor_for_chrome)
+
+- [050《Google Results Previewer》无点击查看谷歌搜索结果](https://zhaoolee.com/ChromeAppHeroes/#/050_google_results_previewer)
+
+- [049《Web Server for Chrome》搭建本地Web服务器, 实现局域网共享文件夹](https://zhaoolee.com/ChromeAppHeroes/#/049_web_server_for_chrome)
+
+- [048《Words Discoverer》高亮标注单词,提升你的词汇量](https://zhaoolee.com/ChromeAppHeroes/#/048_words_discoverer)
+
+- [047《Go to Tab》快速跳转到打开的网页](https://zhaoolee.com/ChromeAppHeroes/#/047_go_to_tab)
+
+- [046《WhatFont》字体爱好者优雅查看网页字体](https://zhaoolee.com/ChromeAppHeroes/#/046_whatfont)
+
+- [045《Restlet Client》优秀的Api测试工具](https://zhaoolee.com/ChromeAppHeroes/#/045_restlet_client)
+
+- [044《谷歌访问助手》访问Chrome商店 Gmail 谷歌搜索](https://zhaoolee.com/ChromeAppHeroes/#/044_gu_ge_fang_wen_zhu_shou)
+
+- [043《Dream Afar New Tab》探索世界的新方式](https://zhaoolee.com/ChromeAppHeroes/#/043_dream_afar_new_tab)
+
+- [042 在Edge中安装Chrome扩展程序](https://zhaoolee.com/ChromeAppHeroes/#/042_edge)
+
+- [041《Copy All Urls》优雅地保存-开启多个标签页](https://zhaoolee.com/ChromeAppHeroes/#/041_copy_all_urls)
+
+- [040《GitZip for github》从Github批量下载表情包](https://zhaoolee.com/ChromeAppHeroes/#/040_gitzip_for_github)
+
+- [039《Simplify Gmail》让网页版Gmail更清爽](https://zhaoolee.com/ChromeAppHeroes/#/039_simplify_gmail)
+
+- [038《Alexa Traffic Rank》一键查看网站全球排名](https://zhaoolee.com/ChromeAppHeroes/#/038_alexa_traffic_rank)
+
+- [037《Saladict》谷歌!有道!我全都要! 聚合词典, 并行翻译](https://zhaoolee.com/ChromeAppHeroes/#/037_saladict)
+
+- [036《Screen Shader》把网页调成暖色，你的眼睛会感谢你🙏](https://zhaoolee.com/ChromeAppHeroes/#/036_screen_shader)
+
+- [035《Print Friendly &amp; PDF》让你拥有最佳的打印阅读体验](https://zhaoolee.com/ChromeAppHeroes/#/035_print_friendly_and_pdf)
+
+- [034《Astro Bot》用新标签页刷编程题](https://zhaoolee.com/ChromeAppHeroes/#/034_astro_bot)
+
+- [033《一叶》在任意网页开启实时弹幕 聊天窗口 留言板](https://zhaoolee.com/ChromeAppHeroes/#/033_yi_ye)
+
+- [032《Smallpdf》简单好用的线上PDF工具](https://zhaoolee.com/ChromeAppHeroes/#/032_smallpdf)
+
+- [031《OneTab》把多个Tab转换为一个列表](https://zhaoolee.com/ChromeAppHeroes/#/031_onetab)
+
+- [030《掘金》相信优质技术内容的力量](https://zhaoolee.com/ChromeAppHeroes/#/030_jue_jin)
+
+- [029 《SimpRead》为任意网页开启阅读模式](https://zhaoolee.com/ChromeAppHeroes/#/029_simread)
+
+- [028《AdBlock》Adblock自定义屏蔽简书广告](https://zhaoolee.com/ChromeAppHeroes/#/028_adblock)
+
+- [027《Text》来自Chrome实验室的跨平台记事本](https://zhaoolee.com/ChromeAppHeroes/#/027_text)
+
+- [026《Quickey Launcher》打开网站只需一键](https://zhaoolee.com/ChromeAppHeroes/#/026_quickey_launcher)
+
+- [025《Console》Chrome自带好用的计算器](https://zhaoolee.com/ChromeAppHeroes/#/025_console)
+
+- [024《Dark Reader》为任意网站启用夜间模式](https://zhaoolee.com/ChromeAppHeroes/#/024_dark_reader)
+
+* [023《FireShot》一键滚动截屏整个网页](https://zhaoolee.com/ChromeAppHeroes/#/023_fireshot)
+
+* [022《扩展管理器》管理你的Chrome扩展](https://zhaoolee.com/ChromeAppHeroes/#/022kuo_zhan_guan_li_qi)
+
+* [021《哔哩哔哩助手》助你快速成为B站老司机](https://zhaoolee.com/ChromeAppHeroes/#/021_bi_li_bi_li_zhu_shou)
+
+* [020《Boxel Rebound》“嗨到中毒”的弹跳小方块(附自制赛道分享方法)](https://zhaoolee.com/ChromeAppHeroes/#/020_boxel_rebound)
+
+* [019《MEGA》网盘可以良心到什么程度? 试试MEGA吧!](https://zhaoolee.com/ChromeAppHeroes/#/019_mega)
+
+* [018《Enhanced Github》从“冰柜”到“冰棍儿”,下载Github单个文件](https://zhaoolee.com/ChromeAppHeroes/#/018_enhanced_github)
+
+* [017《新浪微博图床》本地Markdown编写更流畅, 新浪微博图床来帮忙](https://zhaoolee.com/ChromeAppHeroes/#/017_xin_lang_wei_bo_tu_chuang)
+
+
+* [016《解除B站区域限制》查看进击的巨人第三季](https://zhaoolee.com/ChromeAppHeroes/#/016_jie_chu_b_zhan_qu_yu_xian_zhi)
+
+* [015 《XPath Helper》完成Bing每日壁纸的小爬虫](https://zhaoolee.com/ChromeAppHeroes/#/015_xpath_helper)
+
+* [014《超级马里奥游戏》Chrome变身小霸王](https://zhaoolee.com/ChromeAppHeroes/#/014_chao_ji_ma_li_ao_you_xi)
+
+* [013《Quick QR》用二维码实现云粘贴](https://zhaoolee.com/ChromeAppHeroes/#/013_quick_qr)
+
+* [012《OurStickys》Chrome特色网页便签纸](https://zhaoolee.com/ChromeAppHeroes/#/012_ourstickys)
+
+* [011 《whatruns》一键分析网站技术栈](https://zhaoolee.com/ChromeAppHeroes/#/011_whatruns)
+
+* [010《speedtest》网络测速插件speedtest](https://zhaoolee.com/ChromeAppHeroes/#/010_speedtest)
+
+* [009《vimium》Chrome与vim双神器融合](https://zhaoolee.com/ChromeAppHeroes/#/009_vimium)
+
+* [008《Chrome Cleaner Pro》为Chrome加速](https://zhaoolee.com/ChromeAppHeroes/#/008_chrome_cleaner_pro)
+
+* [007《loom》 Chrome翻录网页视频神器](https://zhaoolee.com/ChromeAppHeroes/#/007_loom)
+
+* [006《SimilarSites》 一键查找姊妹网站 SimilarSites](https://zhaoolee.com/ChromeAppHeroes/#/006_similarsites)
+
+* [005《Video Speed Controller》 刷课（刷剧）神器！给网页视频加个速(最快可达16倍!)](https://zhaoolee.com/ChromeAppHeroes/#/005_video_speed_controller)
+
+* [004《Tampermonkey》 油猴子! 给浏览器开个挂](https://zhaoolee.com/ChromeAppHeroes/#/004_tampermonkey)
+
+* [003《Secure Shell App》 Chrome中开启ssh一种什么体验](https://zhaoolee.com/ChromeAppHeroes/#/003_secure_shell_app)
+
+* [002《chrono》 让Chrome下载资源更容易](https://zhaoolee.com/ChromeAppHeroes/#/002_chrono)
+
+* [001《markdown-here》 Markdown一键转换到&quot;富文本格式&quot;](https://zhaoolee.com/ChromeAppHeroes/#/001_markdown_here)
+
+
+## 开源插件推广(作者自荐)
+
+| 名称 | 作者主页 | 开源信息 | 简介 |
+| -- | -- | -- | -- |
+| [Make Zero](https://chrome.google.com/webstore/detail/make-zero-%E6%96%87%E5%AD%97%E5%8A%A0%E5%AF%86%E5%99%A8/ihpcojcdiclghnggnlkcinbmfpomefcc?hl=zh-CN) | [sheepzh](https://github.com/sheepzh) |  [Github仓库地址](https://github.com/sheepzh/make-zero) | 加解密文本 |
+| [网费很贵](https://chrome.google.com/webstore/detail/%E7%BD%91%E8%B4%B9%E5%BE%88%E8%B4%B5-%E4%B8%8A%E7%BD%91%E6%97%B6%E9%97%B4%E7%BB%9F%E8%AE%A1/dkdhhcbjijekmneelocdllcldcpmekmm)  | [sheepzh](https://github.com/sheepzh) | [Github仓库地址](https://github.com/sheepzh/timer) | 统计网页的运行时间、用户的浏览时间和用户打开网站的次数 |
+| [The Fucking Github](https://chrome.google.com/webstore/detail/the-fucking-github/agajobpbaphiohkbkjigcalebbfmofdo)| [lvxianchao](https://github.com/lvxianchao) | [Github仓库地址](https://github.com/lvxianchao/the-fucking-github) | 很方便地查看、整理、搜索你已经 Star 过的项目和搜索 Github 上的项目。 |
+| [HitUP](https://chrome.google.com/webstore/detail/hitup/eiokaohkigpbonodjcbjpecbnccijkjb)| [wonderbeyond](https://github.com/wonderbeyond) | [Github仓库地址](https://github.com/wonderbeyond/HitUP) | 利用 New Tab “空白页” 助您保持对流行技术趋势的跟进，附带其它福利。 |
+| [Gitako - Github file tree](https://chrome.google.com/webstore/detail/gitako-github-file-tree/giljefjcheohhamkjphiebfjnlphnokk)| [EnixCoda](https://github.com/EnixCoda) | [Github仓库地址](https://github.com/EnixCoda/Gitako) | 功能上类似于大名鼎鼎的 Octotree ，但是用了更现代化的前端工具，性能好很多。 |
+| [GITHUBER](https://chrome.google.com/webstore/detail/githuber/janmcneaglgklfljjcpihkkomeghljnf)| [zhuowenli](https://github.com/zhuowenli) | [Github仓库地址](https://github.com/zhuowenli/githuber) | 这是一个帮助 GitHub 开发者每日发现优质内容的 Chrome 主页拓展。 |
+| [GLaDOS](https://chrome.google.com/webstore/detail/glados/dhjjibbeddglobeoapgppnlnmijajfbb) | [glados-network](https://github.com/glados-network) | [Github 仓库地址](https://github.com/glados-network/GLaDOS) | GLaDOS is trustable networking manager, a system to master your network. |
+
+
+![造福人类.png](https://raw.githubusercontent.com/zhaoolee/ChromeAppHeroes/master/README/1710679297967C1J1dW7b.png)
+
+### [132《Gemini NanoBanana Watermark Remover》提升AI生图幸福感！油猴脚本自动移除NanaBanana水印](https://zhaoolee.com/ChromeAppHeroes/#/132-gemini-nano-banana-watermark-remover.md)
+
+![](./docs/132-gemini-nano-banana-watermark-remover.assets/a6d2a9799da8d7033a092e1dafd71e793542db2f58c229f8e1b7e641fd2f22da.gif)
+
+Gemini NanoBanana Watermark Remover 能帮我们无感移除水印，为我们省去去水印的时间，确实是能提高幸福感的小软件
+
+### [131《uBlock Origin Lite》自动屏蔽油管贴脸广告😅，Chrome扩展工具进入MV3时代的去广告神器](https://zhaoolee.com/ChromeAppHeroes/#/131-ublock-origin-lite.md)
+
+![](./docs/131-ublock-origin-lite.assets/53936fe4048ddb677da70826d18618ec11d4a21b8dcce8b4a6a63c92940eaa42.gif)
+
+MV3 (新模式)： 谷歌为了“性能”和“隐私”理由（官方说法），引入了 declarativeNetRequest API。现在扩展程序不能实时拦截请求，必须预先向浏览器提交一份“静态过滤规则表”，由浏览器代为执行。这种改变剥夺了扩展程序的决策权，使得 uBO 标志性的“高级动态过滤”和实时脚本注入功能受到极大限制。如果你需要继续获得强大的广告拦截体验，安装 uBlock Origin Lite (uBOL)，这是原作者 Raymond Hill (gorhill) 专门为 MV3 架构开发的精简版。 符合 Chrome 新标准，无需特殊配置。
+
+#### [130《Get cookies.txt LOCALLY》 获取油管cookies，自动化下载油管视频](https://zhaoolee.com/ChromeAppHeroes/#/130-get-cookiestxt-locally.md)
+
+![Get cookies.txt LOCALLY](https://raw.githubusercontent.com/zhaoolee/ChromeAppHeroes/master/README/17616313074085BiMnXxi.gif)
+
+Cookies，是互联网时代最小的记忆单元。在上世纪九十年代，工程师 Lou Montulli 发明 Cookie，只为解决一个朴素的问题——让网页“记住”你是谁。
+
+我们用《Get cookies.txt LOCALLY》导出油管 Cookie，只是为了让 youtube 能识别出我们的身份，这一刻，我们既在借助技术的力量突破下载的壁垒，也在复刻互联网最初的浪漫：在无状态的世界中，让程序认得你。
+
+#### [129《YouTube Subtitle Downloader》下载Youtube视频的字幕，支持中英对照](https://zhaoolee.com/ChromeAppHeroes/#/129-youtube-subtitle-downloader.md)
+
+![YouTube Subtitle Downloader](https://raw.githubusercontent.com/zhaoolee/ChromeAppHeroes/master/README/1757225908885NWGMxraD.gif)
+
+Youtube 的精彩视频是极好的英语教材，里面包含了英语母语创作者最地道的表达，本文推荐一个可以快速下载纯英语字幕，以及中英对照字幕的插件，为英语学习者提供生动有趣的学习教材。
+
+#### [128《Wayback Machine》优雅查看任意网页的历史记录](https://zhaoolee.com/ChromeAppHeroes/#/128-wayback-machine.md)
+
+![Wayback Machine](https://raw.githubusercontent.com/zhaoolee/ChromeAppHeroes/master/README/1753606084381J4ywJ3f4.gif)
+
+#### [127《Z-Library Finder》优雅进入全球最大的Z-Library自由免费Free图书馆](https://zhaoolee.com/ChromeAppHeroes/#/127-z-library-finder.md)
+
+![Z-Library Finder](https://raw.githubusercontent.com/zhaoolee/ChromeAppHeroes/master/README/1745653529726SDeiZM4J.gif)
+
+查找下载过程中，没有任何弹窗，点击即可下载，除了下载有点慢，没什么缺点，下载后的epub格式，可以被各类主流电子书软件打开，我个人比较喜欢Apple的Books，可以通过iCloud同步阅读进度。
+
+#### [126《File Management - WebDav》优雅使用浏览器通过WebDav上传下载管理自建网盘的文件](https://zhaoolee.com/ChromeAppHeroes/#/126-file-management-webdav.md)
+
+
+![File Management - WebDav](https://raw.githubusercontent.com/zhaoolee/ChromeAppHeroes/master/README/17335591577897PxbtfiP.gif)
+
+
+webdav与smb协议一样流行，在各大操作系统中被广泛支持，webdav基于http, 在不稳定的网络环境下表现更好，因为http协议本身就设计用于处理这种情况。在中国各类局域网的环境下，它可以轻松穿透防火墙，因为大多数防火墙默认允许HTTP/HTTPS流量。
+
+
+
+#### [125《Redirect Path》查看一个页面是如何跳转过来的](https://zhaoolee.com/
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
             <title><![CDATA[pbakaus/impeccable]]></title>
             <link>https://github.com/pbakaus/impeccable</link>
             <guid>https://github.com/pbakaus/impeccable</guid>
-            <pubDate>Wed, 11 Mar 2026 00:04:56 GMT</pubDate>
+            <pubDate>Thu, 12 Mar 2026 00:06:57 GMT</pubDate>
             <description><![CDATA[The design language that makes your AI harness better at design.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a></h1>
             <p>The design language that makes your AI harness better at design.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 3,634</p>
-            <p>Forks: 133</p>
-            <p>Stars today: 939 stars today</p>
+            <p>Stars: 4,032</p>
+            <p>Forks: 152</p>
+            <p>Stars today: 403 stars today</p>
             <h2>README</h2><pre># Impeccable
 
 The vocabulary you didn&#039;t know you needed. 1 skill, 17 commands, and curated anti-patterns for impeccable frontend design.
@@ -181,939 +877,1416 @@ Created by [Paul Bakaus](https://www.paulbakaus.com)
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[facebook/react]]></title>
-            <link>https://github.com/facebook/react</link>
-            <guid>https://github.com/facebook/react</guid>
-            <pubDate>Wed, 11 Mar 2026 00:04:55 GMT</pubDate>
-            <description><![CDATA[The library for web and native user interfaces.]]></description>
+            <title><![CDATA[Foundry376/Mailspring]]></title>
+            <link>https://github.com/Foundry376/Mailspring</link>
+            <guid>https://github.com/Foundry376/Mailspring</guid>
+            <pubDate>Thu, 12 Mar 2026 00:06:56 GMT</pubDate>
+            <description><![CDATA[💌 A beautiful, fast and fully open source mail client for Mac, Windows and Linux.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/facebook/react">facebook/react</a></h1>
-            <p>The library for web and native user interfaces.</p>
+            <h1><a href="https://github.com/Foundry376/Mailspring">Foundry376/Mailspring</a></h1>
+            <p>💌 A beautiful, fast and fully open source mail client for Mac, Windows and Linux.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 243,875</p>
-            <p>Forks: 50,714</p>
-            <p>Stars today: 118 stars today</p>
-            <h2>README</h2><pre># [React](https://react.dev/) &amp;middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![(Runtime) Build and Test](https://github.com/facebook/react/actions/workflows/runtime_build_and_test.yml/badge.svg)](https://github.com/facebook/react/actions/workflows/runtime_build_and_test.yml) [![(Compiler) TypeScript](https://github.com/facebook/react/actions/workflows/compiler_typescript.yml/badge.svg?branch=main)](https://github.com/facebook/react/actions/workflows/compiler_typescript.yml) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://legacy.reactjs.org/docs/how-to-contribute.html#your-first-pull-request)
+            <p>Stars: 17,292</p>
+            <p>Forks: 977</p>
+            <p>Stars today: 8 stars today</p>
+            <h2>README</h2><pre># 💌 Mailspring
 
-React is a JavaScript library for building user interfaces.
+**Mailspring is a new version of Nylas Mail maintained by one of the original authors. It&#039;s faster, leaner, and shipping today!** It replaces the JavaScript sync code in Nylas Mail with a new C++ sync engine based on [Mailcore2](https://github.com/MailCore/mailcore2). It uses roughly half the RAM and CPU of Nylas Mail and idles with almost zero &quot;CPU Wakes&quot;, which translates to great battery life. It also has an entirely revamped composer and other great new features.
 
-* **Declarative:** React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes. Declarative views make your code more predictable, simpler to understand, and easier to debug.
-* **Component-Based:** Build encapsulated components that manage their own state, then compose them to make complex UIs. Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep the state out of the DOM.
-* **Learn Once, Write Anywhere:** We don&#039;t make assumptions about the rest of your technology stack, so you can develop new features in React without rewriting existing code. React can also render on the server using [Node](https://nodejs.org/en) and power mobile apps using [React Native](https://reactnative.dev/).
+Mailspring&#039;s UI is open source (GPLv3) and written in TypeScript with [Electron](https://github.com/atom/electron) and [React](https://facebook.github.io/react/) - it&#039;s built on a plugin architecture and was designed to be easy to extend. Check out [CONTRIBUTING.md](https://github.com/Foundry376/Mailspring/blob/master/CONTRIBUTING.md) to get started!
 
-[Learn how to use React in your project](https://react.dev/learn).
+Mailspring&#039;s sync engine is spawned by the Electron application and runs locally on your computer. [It is open source (GPLv3) and written in C++ and C.](https://github.com/Foundry376/Mailspring-Sync) For convenience, however, when you set up your development environment, Mailspring uses the latest version of the sync engine we&#039;ve shipped for your platform so you don&#039;t need to pull sources or install its compile-time dependencies.
 
-## Installation
+![Mailspring Screenshot](https://github.com/Foundry376/Mailspring/raw/master/screenshots/hero_graphic_mac%402x.png)
 
-React has been designed for gradual adoption from the start, and **you can use as little or as much React as you need**:
+## Features
 
-* Use [Quick Start](https://react.dev/learn) to get a taste of React.
-* [Add React to an Existing Project](https://react.dev/learn/add-react-to-an-existing-project) to use as little or as much React as you need.
-* [Create a New React App](https://react.dev/learn/start-a-new-react-project) if you&#039;re looking for a powerful JavaScript toolchain.
+Mailspring comes packed with powerful features like Unified Inbox, Snooze, Send
+Later, Mail Rules, Templates and more. Mailspring Pro, which you can unlock
+with a monthly subscription, adds even more features for people who send a ton
+of email: link tracking, read receipts, mailbox analytics, contact and company
+profiles. **All of these features run in the client - Mailspring does not send
+your email credentials to the cloud.** For a full list of features, check out
+[getmailspring.com](https://getmailspring.com/).
 
-## Documentation
+## Download Mailspring
 
-You can find the React documentation [on the website](https://react.dev/).
+You can download compiled versions of Mailspring for Windows, Mac OS X, and
+Linux (deb, rpm and snap) from
+[https://getmailspring.com/download](https://getmailspring.com/download).
 
-Check out the [Getting Started](https://react.dev/learn) page for a quick overview.
+## Getting Help
 
-The documentation is divided into several sections:
-
-* [Quick Start](https://react.dev/learn)
-* [Tutorial](https://react.dev/learn/tutorial-tic-tac-toe)
-* [Thinking in React](https://react.dev/learn/thinking-in-react)
-* [Installation](https://react.dev/learn/installation)
-* [Describing the UI](https://react.dev/learn/describing-the-ui)
-* [Adding Interactivity](https://react.dev/learn/adding-interactivity)
-* [Managing State](https://react.dev/learn/managing-state)
-* [Advanced Guides](https://react.dev/learn/escape-hatches)
-* [API Reference](https://react.dev/reference/react)
-* [Where to Get Support](https://react.dev/community)
-* [Contributing Guide](https://legacy.reactjs.org/docs/how-to-contribute.html)
-
-You can improve it by sending pull requests to [this repository](https://github.com/reactjs/react.dev).
-
-## Examples
-
-We have several examples [on the website](https://react.dev/). Here is the first one to get you started:
-
-```jsx
-import { createRoot } from &#039;react-dom/client&#039;;
-
-function HelloMessage({ name }) {
-  return &lt;div&gt;Hello {name}&lt;/div&gt;;
-}
-
-const root = createRoot(document.getElementById(&#039;container&#039;));
-root.render(&lt;HelloMessage name=&quot;Taylor&quot; /&gt;);
-```
-
-This example will render &quot;Hello Taylor&quot; into a container on the page.
-
-You&#039;ll notice that we used an HTML-like syntax; [we call it JSX](https://react.dev/learn#writing-markup-with-jsx). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML.
+You can find community-based help and discussion with other Mailspring users on our
+[Discourse community](https://community.getmailspring.com/).
 
 ## Contributing
 
-The main purpose of this repository is to continue evolving React core, making it faster and easier to use. Development of React happens in the open on GitHub, and we are grateful to the community for contributing bugfixes and improvements. Read below to learn how you can take part in improving React.
+Mailspring is entirely open-source. Pull requests and contributions are
+welcome! There are three ways to contribute: building a plugin, building a
+theme, and submitting pull requests to the project itself. When you&#039;re getting
+started, you may want to join our
+[Discourse](https://community.getmailspring.com/) so you can ask questions and
+learn from other people doing development.
 
-### [Code of Conduct](https://code.fb.com/codeofconduct)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
-Facebook has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://code.fb.com/codeofconduct) so that you can understand what actions will and will not be tolerated.
+### Running Mailspring from Source
 
-### [Contributing Guide](https://legacy.reactjs.org/docs/how-to-contribute.html)
-
-Read our [contributing guide](https://legacy.reactjs.org/docs/how-to-contribute.html) to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to React.
-
-### [Good First Issues](https://github.com/facebook/react/labels/good%20first%20issue)
-
-To help you get your feet wet and get you familiar with our contribution process, we have a list of [good first issues](https://github.com/facebook/react/labels/good%20first%20issue) that contain bugs that have a relatively limited scope. This is a great place to get started.
-
-### License
-
-React is [MIT licensed](./LICENSE).
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[is-a-dev/register]]></title>
-            <link>https://github.com/is-a-dev/register</link>
-            <guid>https://github.com/is-a-dev/register</guid>
-            <pubDate>Wed, 11 Mar 2026 00:04:54 GMT</pubDate>
-            <description><![CDATA[Grab your own sweet-looking '.is-a.dev' subdomain.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/is-a-dev/register">is-a-dev/register</a></h1>
-            <p>Grab your own sweet-looking '.is-a.dev' subdomain.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 9,932</p>
-            <p>Forks: 18,920</p>
-            <p>Stars today: 11 stars today</p>
-            <h2>README</h2><pre>&lt;!-- &lt;p align=&quot;center&quot;&gt;
-   &lt;img alt=&quot;is-a.dev Banner&quot; src=&quot;https://raw.githubusercontent.com/is-a-dev/register/main/media/banner.png&quot;&gt;
-&lt;/p&gt; --&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-   &lt;img height=&quot;350&quot; alt=&quot;is-a.dev Octoverse 2025 Banner&quot; src=&quot;https://raw.githubusercontent.com/is-a-dev/register/main/media/octoverse-2025/is-a-dev_register_1200x630.jpg&quot;&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-   &lt;img alt=&quot;Domains&quot; src=&quot;https://img.shields.io/github/directory-file-count/is-a-dev/register/domains?color=5c46eb&amp;label=domains&amp;style=for-the-badge&quot;&gt;
-   &lt;img alt=&quot;Open Pull Requests&quot; src=&quot;https://img.shields.io/github/issues-raw/is-a-dev/register?color=5c46eb&amp;label=issues&amp;style=for-the-badge&quot;&gt;
-   &lt;img alt=&quot;Open Issues&quot; src=&quot;https://img.shields.io/github/issues-pr-raw/is-a-dev/register?color=5c46eb&amp;label=pull%20requests&amp;style=for-the-badge&quot;&gt;
-   &lt;br&gt;
-&lt;/p&gt;
-
-&lt;h1 align=&quot;center&quot;&gt;is-a.dev&lt;/h1&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;strong&gt;is-a.dev&lt;/strong&gt; is a service that allows developers to get a sweet-looking &lt;code&gt;.is-a.dev&lt;/code&gt; subdomain for their personal websites.&lt;/p&gt;
-
----
-
-## Announcements
-Please join our [Discord server](https://discord.gg/is-a-dev-830872854677422150) for announcements, service updates, and downtime notifications regarding the service.
-
-Not all announcements are posted on GitHub[^1], however they will always be posted in our Discord server.
-
-[^1]: We only post announcements on GitHub in the case of a serious incident, which you&#039;ll see at the top of this README.
-
-# Register
-&gt; If you want a visual guide, check out [this blog post](https://blog.wharrison.com.au/2024/07/is-a-dev/).
-
-- [Fork](https://github.com/is-a-dev/register/fork) the repository.
-- Follow the instructions on our [documentation](https://docs.is-a.dev).
-- Once you open your pull request (PR), it will be reviewed. *Keep an eye on it in case changes are needed!*
-   - If changes have been requested, please make the specified changes otherwise **you will be rejected**.
-- Once your PR is merged, your DNS records should be published with-in a few minutes.
-- Enjoy your new `.is-a.dev` subdomain! Please consider leaving a star ⭐️ to help support us!
-
-## Report Abuse
-If you find any subdomains being abused or breaking our TOS, please report them by [creating an issue](https://github.com/is-a-dev/register/issues/new?assignees=&amp;labels=report-abuse&amp;projects=&amp;template=report-abuse.md&amp;title=Report+abuse) with relevant evidence.
-
----
-
-We are supported by Cloudflare&#039;s [Project Alexandria](https://www.cloudflare.com/lp/project-alexandria) sponsorship program, we would not be able to operate without their help!
-
-&lt;a href=&quot;https://www.cloudflare.com&quot;&gt;
-   &lt;img alt=&quot;Cloudflare Logo&quot; src=&quot;https://raw.githubusercontent.com/is-a-dev/register/main/media/cloudflare.png&quot; height=&quot;48&quot;&gt;
-&lt;/a&gt;
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[xinnan-tech/xiaozhi-esp32-server]]></title>
-            <link>https://github.com/xinnan-tech/xiaozhi-esp32-server</link>
-            <guid>https://github.com/xinnan-tech/xiaozhi-esp32-server</guid>
-            <pubDate>Wed, 11 Mar 2026 00:04:53 GMT</pubDate>
-            <description><![CDATA[本项目为xiaozhi-esp32提供后端服务，帮助您快速搭建ESP32设备控制服务器。Backend service for xiaozhi-esp32, helps you quickly build an ESP32 device control server.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/xinnan-tech/xiaozhi-esp32-server">xinnan-tech/xiaozhi-esp32-server</a></h1>
-            <p>本项目为xiaozhi-esp32提供后端服务，帮助您快速搭建ESP32设备控制服务器。Backend service for xiaozhi-esp32, helps you quickly build an ESP32 device control server.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 8,834</p>
-            <p>Forks: 3,007</p>
-            <p>Stars today: 18 stars today</p>
-            <h2>README</h2><pre>[![Banners](docs/images/banner1.png)](https://github.com/xinnan-tech/xiaozhi-esp32-server)
-
-&lt;h1 align=&quot;center&quot;&gt;小智后端服务xiaozhi-esp32-server&lt;/h1&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-本项目基于人机共生智能理论和技术研发智能终端软硬件体系&lt;br/&gt;为开源智能硬件项目
-&lt;a href=&quot;https://github.com/78/xiaozhi-esp32&quot;&gt;xiaozhi-esp32&lt;/a&gt;提供后端服务&lt;br/&gt;
-根据&lt;a href=&quot;https://ccnphfhqs21z.feishu.cn/wiki/M0XiwldO9iJwHikpXD5cEx71nKh&quot;&gt;小智通信协议&lt;/a&gt;使用Python、Java、Vue实现&lt;br/&gt;
-支持MQTT+UDP协议、Websocket协议、MCP接入点、声纹识别、知识库
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-&lt;a href=&quot;./docs/FAQ.md&quot;&gt;常见问题&lt;/a&gt;
-· &lt;a href=&quot;https://github.com/xinnan-tech/xiaozhi-esp32-server/issues&quot;&gt;反馈问题&lt;/a&gt;
-· &lt;a href=&quot;./README.md#%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3&quot;&gt;部署文档&lt;/a&gt;
-· &lt;a href=&quot;https://github.com/xinnan-tech/xiaozhi-esp32-server/releases&quot;&gt;更新日志&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;./README.md&quot;&gt;&lt;img alt=&quot;简体中文版自述文件&quot; src=&quot;https://img.shields.io/badge/简体中文-DBEDFA&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;./README_en.md&quot;&gt;&lt;img alt=&quot;README in English&quot; src=&quot;https://img.shields.io/badge/English-DFE0E5&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;./README_vi.md&quot;&gt;&lt;img alt=&quot;Tiếng Việt&quot; src=&quot;https://img.shields.io/badge/Tiếng Việt-DFE0E5&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;./README_de.md&quot;&gt;&lt;img alt=&quot;Deutsch&quot; src=&quot;https://img.shields.io/badge/Deutsch-DFE0E5&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;./README_pt_BR.md&quot;&gt;&lt;img alt=&quot;Português (Brasil)&quot; src=&quot;https://img.shields.io/badge/Português (Brasil)-DFE0E5&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/xinnan-tech/xiaozhi-esp32-server/releases&quot;&gt;
-    &lt;img alt=&quot;GitHub Contributors&quot; src=&quot;https://img.shields.io/github/v/release/xinnan-tech/xiaozhi-esp32-server?logo=docker&quot; /&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://github.com/xinnan-tech/xiaozhi-esp32-server/blob/main/LICENSE&quot;&gt;
-    &lt;img alt=&quot;GitHub pull requests&quot; src=&quot;https://img.shields.io/badge/license-MIT-white?labelColor=black&quot; /&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://github.com/xinnan-tech/xiaozhi-esp32-server&quot;&gt;
-    &lt;img alt=&quot;stars&quot; src=&quot;https://img.shields.io/github/stars/xinnan-tech/xiaozhi-esp32-server?color=ffcb47&amp;labelColor=black&quot; /&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-Spearheaded by Professor Siyuan Liu&#039;s Team (South China University of Technology)
-&lt;/br&gt;
-刘思源教授团队主导研发（华南理工大学）
-&lt;/br&gt;
-&lt;img src=&quot;./docs/images/hnlg.jpg&quot; alt=&quot;华南理工大学&quot; width=&quot;50%&quot;&gt;
-&lt;/p&gt;
-
----
-
-## 适用人群 👥
-
-本项目需要配合 ESP32 硬件设备使用。如果您已经购买了 ESP32 相关硬件，且成功对接过虾哥部署的后端服务，并希望独立搭建自己的
-`xiaozhi-esp32` 后端服务，那么本项目非常适合您。
-
-想看使用效果？请猛戳视频 🎥
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-        &lt;a href=&quot;https://www.bilibili.com/video/BV1FMFyejExX&quot; target=&quot;_blank&quot;&gt;
-         &lt;picture&gt;
-           &lt;img alt=&quot;响应速度感受&quot; src=&quot;docs/images/demo9.png&quot; /&gt;
-         &lt;/picture&gt;
-        &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-        &lt;a href=&quot;https://www.bilibili.com/video/BV1vchQzaEse&quot; target=&quot;_blank&quot;&gt;
-         &lt;picture&gt;
-           &lt;img alt=&quot;速度优化秘诀&quot; src=&quot;docs/images/demo6.png&quot; /&gt;
-         &lt;/picture&gt;
-        &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-        &lt;a href=&quot;https://www.bilibili.com/video/BV1C1tCzUEZh&quot; target=&quot;_blank&quot;&gt;
-         &lt;picture&gt;
-           &lt;img alt=&quot;复杂医疗场景&quot; src=&quot;docs/images/demo1.png&quot; /&gt;
-         &lt;/picture&gt;
-        &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-        &lt;a href=&quot;https://www.bilibili.com/video/BV1zUW5zJEkq&quot; target=&quot;_blank&quot;&gt;
-         &lt;picture&gt;
-           &lt;img alt=&quot;MQTT指令下发&quot; src=&quot;docs/images/demo4.png&quot; /&gt;
-         &lt;/picture&gt;
-        &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-        &lt;a href=&quot;https://www.bilibili.com/video/BV1Exu3zqEDe&quot; target=&quot;_blank&quot;&gt;
-         &lt;picture&gt;
-           &lt;img alt=&quot;声纹识别&quot; src=&quot;docs/images/demo14.png&quot; /&gt;
-         &lt;/picture&gt;
-        &lt;/a&gt;
-    &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-        &lt;a href=&quot;https://www.bilibili.com/video/BV1pNXWYGEx1&quot; target=&quot;_blank&quot;&gt;
-         &lt;picture&gt;
-           &lt;img alt=&quot;控制家电开关&quot; src=&quot;docs/images/demo5.png&quot; /&gt;
-         &lt;/picture&gt;
-        &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-        &lt;a href=&quot;https://www.bilibili.com/video/BV1ZQKUzYExM&quot; target=&quot;_blank&quot;&gt;
-         &lt;picture&gt;
-           &lt;img alt=&quot;MCP接入点&quot; src=&quot;docs/images/demo13.png&quot; /&gt;
-         &lt;/picture&gt;
-        &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-      &lt;a href=&quot;https://www.bilibili.com/video/BV1TJ7WzzEo6&quot; target=&quot;_blank&quot;&gt;
-         &lt;picture&gt;
-           &lt;img alt=&quot;多指令任务&quot; src=&quot;docs/images/demo11.png&quot; /&gt;
-         &lt;/picture&gt;
-        &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-        &lt;a href=&quot;https://www.bilibili.com/video/BV1VC96Y5EMH&quot; target=&quot;_blank&quot;&gt;
-         &lt;picture&gt;
-           &lt;img alt=&quot;播放音乐&quot; src=&quot;docs/images/demo7.png&quot; /&gt;
-         &lt;/picture&gt;
-        &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-        &lt;a href=&quot;https://www.bilibili.com/video/BV1Z8XuYZEAS&quot; target=&quot;_blank&quot;&gt;
-         &lt;picture&gt;
-           &lt;img alt=&quot;天气插件&quot; src=&quot;docs/images/demo8.png&quot; /&gt;
-         &lt;/picture&gt;
-        &lt;/a&gt;
-    &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-      &lt;a href=&quot;https://www.bilibili.com/video/BV12J7WzBEaH&quot; target=&quot;_blank&quot;&gt;
-         &lt;picture&gt;
-           &lt;img alt=&quot;实时打断&quot; src=&quot;docs/images/demo10.png&quot; /&gt;
-         &lt;/picture&gt;
-        &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-      &lt;a href=&quot;https://www.bilibili.com/video/BV1Co76z7EvK&quot; target=&quot;_blank&quot;&gt;
-         &lt;picture&gt;
-           &lt;img alt=&quot;拍照识物品&quot; src=&quot;docs/images/demo12.png&quot; /&gt;
-         &lt;/picture&gt;
-        &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-        &lt;a href=&quot;https://www.bilibili.com/video/BV1CDKWemEU6&quot; target=&quot;_blank&quot;&gt;
-         &lt;picture&gt;
-           &lt;img alt=&quot;自定义音色&quot; src=&quot;docs/images/demo2.png&quot; /&gt;
-         &lt;/picture&gt;
-        &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-        &lt;a href=&quot;https://www.bilibili.com/video/BV12yA2egEaC&quot; target=&quot;_blank&quot;&gt;
-         &lt;picture&gt;
-           &lt;img alt=&quot;使用粤语交流&quot; src=&quot;docs/images/demo3.png&quot; /&gt;
-         &lt;/picture&gt;
-        &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-        &lt;a href=&quot;https://www.bilibili.com/video/BV17LXWYvENb&quot; target=&quot;_blank&quot;&gt;
-         &lt;picture&gt;
-           &lt;img alt=&quot;播报新闻&quot; src=&quot;docs/images/demo0.png&quot; /&gt;
-         &lt;/picture&gt;
-        &lt;/a&gt;
-    &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
-
----
-
-## 警告 ⚠️
-
-1、本项目为开源软件，本软件与对接的任何第三方API服务商（包括但不限于语音识别、大模型、语音合成等平台）均不存在商业合作关系，不为其服务质量及资金安全提供任何形式的担保。
-建议使用者优先选择持有相关业务牌照的服务商，并仔细阅读其服务协议及隐私政策。本软件不托管任何账户密钥、不参与资金流转、不承担充值资金损失风险。
-
-2、本项目功能未完善，且未通过网络安全测评，请勿在生产环境中使用。 如果您在公网环境中部署学习本项目，请务必做好必要的防护。
-
----
-
-## 部署文档
-
-![Banners](docs/images/banner2.png)
-
-本项目提供两种部署方式，请根据您的具体需求选择：
-
-#### 🚀 部署方式选择
-| 部署方式 | 特点 | 适用场景 | 部署文档 | 配置要求 | 视频教程 | 
-|---------|------|---------|---------|---------|---------|
-| **最简化安装** | 智能对话、单智能体管理 | 低配置环境，数据存储在配置文件，无需数据库 | [①Docker版](./docs/Deployment.md#%E6%96%B9%E5%BC%8F%E4%B8%80docker%E5%8F%AA%E8%BF%90%E8%A1%8Cserver) / [②源码部署](./docs/Deployment.md#%E6%96%B9%E5%BC%8F%E4%BA%8C%E6%9C%AC%E5%9C%B0%E6%BA%90%E7%A0%81%E5%8F%AA%E8%BF%90%E8%A1%8Cserver)| 如果使用`FunASR`要2核4G，如果全API，要2核2G | - | 
-| **全模块安装** | 智能对话、多用户管理、多智能体管理、智控台界面操作 | 完整功能体验，数据存储在数据库 |[①Docker版](./docs/Deployment_all.md#%E6%96%B9%E5%BC%8F%E4%B8%80docker%E8%BF%90%E8%A1%8C%E5%85%A8%E6%A8%A1%E5%9D%97) / [②源码部署](./docs/Deployment_all.md#%E6%96%B9%E5%BC%8F%E4%BA%8C%E6%9C%AC%E5%9C%B0%E6%BA%90%E7%A0%81%E8%BF%90%E8%A1%8C%E5%85%A8%E6%A8%A1%E5%9D%97) / [③源码部署自动更新教程](./docs/dev-ops-integration.md) | 如果使用`FunASR`要4核8G，如果全API，要2核4G| [本地源码启动视频教程](https://www.bilibili.com/video/BV1wBJhz4Ewe) | 
-
-常见问题及相关教程，可参考[这个链接](./docs/FAQ.md)
-
-&gt; 💡 提示：以下是按最新代码部署后的测试平台，有需要可烧录测试，并发为6个，每天会清空数据，
+To install all dependencies and run Mailspring from its source code,
+run the following commands from the root directory of the Mailspring repository:
 
 ```
-智控台地址: https://2662r3426b.vicp.fun
-智控台(h5版): https://2662r3426b.vicp.fun/h5/index.html
-
-服务测试工具： https://2662r3426b.vicp.fun/test/
-OTA接口地址: https://2662r3426b.vicp.fun/xiaozhi/ota/
-Websocket接口地址: wss://2662r3426b.vicp.fun/xiaozhi/v1/
-```
-
-#### 🚩 配置说明和推荐
-&gt; [!Note]
-&gt; 本项目提供两种配置方案：
-&gt; 
-&gt; 1. `入门全免费`配置：适合个人家庭使用，所有组件均采用免费方案，无需额外付费。
-&gt; 
-&gt; 2. `流式配置`：适合演示、培训、超过2个并发等场景，采用流式处理技术，响应速度更快，体验更佳。
-&gt; 
-&gt; 自`0.5.2`版本起，项目支持流式配置，相比早期版本，响应速度提升约`2.5秒`，显著改善用户体验。
-
-| 模块名称 | 入门全免费设置 | 流式配置 |
-|:---:|:---:|:---:|
-| ASR(语音识别) | FunASR(本地) | 👍XunfeiStreamASR(讯飞流式) |
-| LLM(大模型) | glm-4-flash(智谱) | 👍qwen-flash(阿里百炼) |
-| VLLM(视觉大模型) | glm-4v-flash(智谱) | 👍qwen2.5-vl-3b-instructh(阿里百炼) |
-| TTS(语音合成) | ✅LinkeraiTTS(灵犀流式) | 👍HuoshanDoubleStreamTTS(火山流式) |
-| Intent(意图识别) | function_call(函数调用) | function_call(函数调用) |
-| Memory(记忆功能) | mem_local_short(本地短期记忆） | mem_local_short（本地短期记忆） |
-
-如果您关心各组件的耗时，请查阅[小智各组件性能测试报告](https://github.com/xinnan-tech/xiaozhi-performance-research)，可按报告中的测试方法在您的环境中实际测试。
-
-#### 🔧 测试工具
-本项目提供以下测试工具，帮助您验证系统和选择合适的模型：
-
-| 工具名称 | 位置 | 使用方法 | 功能说明 |
-|:---:|:---|:---:|:---:|
-| 音频交互测试工具 | main》xiaozhi-server》test》test_page.html | 使用谷歌浏览器直接打开 | 测试音频播放和接收功能，验证Python端音频处理是否正常 |
-| 模型响应测试工具 | main》xiaozhi-server》performance_tester.py | 执行 `python performance_tester.py` | 测试ASR(语音识别)、LLM(大模型)、VLLM(视觉模型)、TTS(语音合成)三个核心模块的响应速度 |
-
-&gt; 💡 提示：测试模型速度时，只会测试配置了密钥的模型。
-
----
-## 功能清单 ✨
-### 已实现 ✅
-![请参考-全模块安装架构图](docs/images/deploy2.png)
-| 功能模块 | 描述 |
-|:---:|:---|
-| 核心架构 | 基于[MQTT+UDP网关](https://github.com/xinnan-tech/xiaozhi-esp32-server/blob/main/docs/mqtt-gateway-integration.md)、WebSocket、HTTP服务器，提供完整的控制台管理和认证系统 |
-| 语音交互 | 支持流式ASR(语音识别)、流式TTS(语音合成)、VAD(语音活动检测)，支持多语言识别和语音处理 |
-| 声纹识别 | 支持多用户声纹注册、管理和识别，与ASR并行处理，实时识别说话人身份并传递给LLM进行个性化回应 |
-| 智能对话 | 支持多种LLM(大语言模型)，实现智能对话 |
-| 视觉感知 | 支持多种VLLM(视觉大模型)，实现多模态交互 |
-| 意图识别 | 支持外挂的大模型意图识别、大模型自主函数调用，提供插件化意图处理机制 |
-| 记忆系统 | 支持本地短期记忆、mem0ai接口记忆、PowerMem智能记忆，具备记忆总结功能 |
-| 知识库 | 支持RAGFlow知识库，让大模型判断需要调度知识库后再回答 |
-| 工具调用 | 支持客户端IOT协议、客户MCP协议、服务端MCP协议、MCP接入点协议、自定义工具函数 |
-| 指令下发 | 依托MQTT协议，支持从智控台将MCP指令下发到ESP32设备 |
-| 管理后台 | 提供Web管理界面，支持用户管理、系统配置和设备管理；界面支持中文简体、中文繁体、英文显示 |
-| 测试工具 | 提供性能测试工具、视觉模型测试工具和音频交互测试工具 |
-| 部署支持 | 支持Docker部署和本地部署，提供完整的配置文件管理 |
-| 插件系统 | 支持功能插件扩展、自定义插件开发和插件热加载 |
-
-### 正在开发 🚧
-
-想了解具体开发计划进度，[请点击这里](https://github.com/users/xinnan-tech/projects/3)。常见问题及相关教程，可参考[这个链接](./docs/FAQ.md)
-
-如果你是一名软件开发者，这里有一份[《致开发者的公开信》](docs/contributor_open_letter.md)，欢迎加入！
-
----
-
-## 产品生态 👬
-小智是一个生态，当你使用这个产品时，也可以看看其他在这个生态圈的[优秀项目](https://github.com/78/xiaozhi-esp32/blob/main/README_zh.md#%E7%9B%B8%E5%85%B3%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE)
-
----
-
-## 本项目支持的平台/组件列表 📋
-### LLM 语言模型
-
-| 使用方式 | 支持平台 | 免费平台 |
-|:---:|:---:|:---:|
-| openai 接口调用 | 阿里百炼、火山引擎、DeepSeek、智谱、Gemini、科大讯飞 | 智谱、Gemini |
-| ollama 接口调用 | Ollama | - |
-| dify 接口调用 | Dify | - |
-| fastgpt 接口调用 | Fastgpt | - |
-| coze 接口调用 | Coze | - |
-| xinference 接口调用 | Xinference | - |
-| homeassistant 接口调用 | HomeAssistant | - |
-
-实际上，任何支持 openai 接口调用的 LLM 均可接入使用。
-
----
-
-### VLLM 视觉模型
-
-| 使用方式 | 支持平台 | 免费平台 |
-|:---:|:---:|:---:|
-| openai 接口调用 | 阿里百炼、智谱ChatGLMVLLM | 智谱ChatGLMVLLM |
-
-实际上，任何支持 openai 接口调用的 VLLM 均可接入使用。
-
----
-
-### TTS 语音合成
-
-| 使用方式 | 支持平台 | 免费平台 |
-|:---:|:---:|:---:|
-| 接口调用 | EdgeTTS、科大讯飞、火山引擎、腾讯云、阿里云及百炼、CosyVoiceSiliconflow、TTS302AI、CozeCnTTS、GizwitsTTS、ACGNTTS、OpenAITTS、灵犀流式TTS、MinimaxTTS | 灵犀流式TTS、EdgeTTS、CosyVoiceSiliconflow(部分) |
-| 本地服务 | FishSpeech、GPT_SOVITS_V2、GPT_SOVITS_V3、Index-TTS、PaddleSpeech | Index-TTS、PaddleSpeech、FishSpeech、GPT_SOVITS_V2、GPT_SOVITS_V3 |
-
----
-
-### VAD 语音活动检测
-
-| 类型  |   平台名称    | 使用方式 | 收费模式 | 备注 |
-|:---:|:---------:|:----:|:----:|:--:|
-| VAD | SileroVAD | 本地使用 |  免费  |    |
-
----
-
-### ASR 语音识别
-
-| 使用方式 | 支持平台 | 免费平台 |
-|:---:|:---:|:---:|
-| 本地使用 | FunASR、SherpaASR | FunASR、SherpaASR |
-| 接口调用 | FunASRServer、火山引擎、科大讯飞、腾讯云、阿里云、百度云、OpenAI ASR | FunASRServer |
-
----
-
-### Voiceprint 声纹识别
-
-| 使用方式 | 支持平台 | 免费平台 |
-|:---:|:---:|:---:|
-| 本地使用 | 3D-Speaker | 3D-Speaker |
-
----
-
-### Memory 记忆存储
-
-|   类型   |      平台名称       | 使用方式 |   收费模式    | 备注 |
-|:------:|:---------------:|:----:|:---------:|:--:|
-| Memory |     mem0ai      | 接口调用 | 1000次/月额度 |    |
-| Memory |     [powermem](./docs/powermem-integration.md)    | 本地总结 | 取决于LLM和DB |  OceanBase开源，支持智能检索  |
-| Memory | mem_local_short | 本地总结 |    免费     |    |
-| Memory |     nomem       | 无记忆模式 |    免费     |    |
-
----
-
-### Intent 意图识别
-
-|   类型   |     平台名称      | 使用方式 |  收费模式   |          备注           |
-|:------:|:-------------:|:----:|:-------:|:---------------------:|
-| Intent |  intent_llm   | 接口调用 | 根据LLM收费 |    通过大模型识别意图，通用性强     |
-| Intent | function_call | 接口调用 | 根据LLM收费 | 通过大模型函数调用完成意图，速度快，效果好 |
-| Intent |    nointent   | 无意图模式 |    免费     |    不进行意图识别，直接返回对话结果     |
-
----
-
-### Rag 检索增强生成
-
-|   类型   |     平台名称      | 使用方式 |  收费模式   |          备注           |
-|:------:|:-------------:|:----:|:-------:|:---------------------:|
-| Rag |  ragflow   | 接口调用 | 根据切片、分词消耗的token收费 |    借助RagFlow的检索增强生成功能，提供更准确的对话回复     |
-
----
-
-## 鸣谢 🙏
-
-| Logo | 项目/公司 | 说明 |
-|:---:|:---:|:---|
-| &lt;img src=&quot;./docs/images/logo_bailing.png&quot; width=&quot;160&quot;&gt; | [百聆语音对话机器人](https://github.com/wwbin2017/bailing) | 本项目受[百聆语音对话机器人](https://github.com/wwbin2017/bailing)启发，并在其基础上实现 |
-| &lt;img src=&quot;./docs/images/logo_tenclass.png&quot; width=&quot;160&quot;&gt; | [十方融海](https://www.tenclass.com/) | 感谢[十方融海](https://www.tenclass.com/)为小智生态制定了标准的通讯协议、多设备兼容性方案及高并发场景实践示范；为本项目提供了全链路技术文档支持 |
-| &lt;img src=&quot;./docs/images/logo_xuanfeng.png&quot; width=&quot;160&quot;&gt; | [玄凤科技](https://github.com/Eric0308) | 感谢[玄凤科技](https://github.com/Eric0308)贡献函数调用框架、MCP通信协议及插件化调用机制的实现代码，通过标准化的指令调度体系与动态扩展能力，显著提升了前端设备(IoT)的交互效率和功能延展性 |
-| &lt;img src=&quot;./docs/images/logo_junsen.png&quot; width=&quot;160&quot;&gt; | [huangjunsen](https://github.com/huangjunsen0406) | 感谢[huangjunsen](https://github.com/huangjunsen0406) 贡献`智控台移动端`模块，实现了跨平台移动设备的高效控制与实时交互，大幅提升了系统在移动场景下的操作便捷性和管理效率 |
-| &lt;img src=&quot;./docs/images/logo_huiyuan.png&quot; width=&quot;160&quot;&gt; | [汇远设计](http://ui.kwd988.net/) | 感谢[汇远设计](http://ui.kwd988.net/)为本项目提供专业视觉解决方案，用其服务超千家企业的设计实战经验，赋能本项目产品用户体验 |
-| &lt;img src=&quot;./docs/images/logo_qinren.png&quot; width=&quot;160&quot;&gt; | [西安勤人信息科技](https://www.029app.com/) | 感谢[西安勤人信息科技](https://www.029app.com/)深化本项目视觉体系，确保整体设计风格在多场景应用中的一致性和扩展性 |
-| &lt;img src=&quot;./docs/images/logo_contributors.png&quot; width=&quot;160&quot;&gt; | [代码贡献者](https://github.com/xinnan-tech/xiaozhi-esp32-server/graphs/contributors) | 感谢[所有代码贡献者](https://github.com/xinnan-tech/xiaozhi-esp32-server/graphs/contributors)贡献者，你们的付出让项目更加健壮和强大。 |
-
-
-&lt;a href=&quot;https://star-history.com/#xinnan-tech/xiaozhi-esp32-server&amp;Date&quot;&gt;
-
- &lt;picture&gt;
-   &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/svg?repos=xinnan-tech/xiaozhi-esp32-server&amp;type=Date&amp;theme=dark&quot; /&gt;
-   &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/svg?repos=xinnan-tech/xiaozhi-esp32-server&amp;type=Date&quot; /&gt;
-   &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/svg?repos=xinnan-tech/xiaozhi-esp32-server&amp;type=Date&quot; /&gt;
- &lt;/picture&gt;
-&lt;/a&gt;</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[trekhleb/javascript-algorithms]]></title>
-            <link>https://github.com/trekhleb/javascript-algorithms</link>
-            <guid>https://github.com/trekhleb/javascript-algorithms</guid>
-            <pubDate>Wed, 11 Mar 2026 00:04:52 GMT</pubDate>
-            <description><![CDATA[📝 Algorithms and data structures implemented in JavaScript with explanations and links to further readings]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/trekhleb/javascript-algorithms">trekhleb/javascript-algorithms</a></h1>
-            <p>📝 Algorithms and data structures implemented in JavaScript with explanations and links to further readings</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 195,823</p>
-            <p>Forks: 31,111</p>
-            <p>Stars today: 84 stars today</p>
-            <h2>README</h2><pre># JavaScript Algorithms and Data Structures
-
-&gt; 🇺🇦 UKRAINE [IS BEING ATTACKED](https://war.ukraine.ua/) BY RUSSIAN ARMY. CIVILIANS ARE GETTING KILLED. RESIDENTIAL AREAS ARE GETTING BOMBED.
-&gt; - Help Ukraine via:
-&gt;   - [Serhiy Prytula Charity Foundation](https://prytulafoundation.org/en/)
-&gt;   - [Come Back Alive Charity Foundation](https://savelife.in.ua/en/donate-en/)
-&gt;   - [National Bank of Ukraine](https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi)
-&gt; - More info on [war.ukraine.ua](https://war.ukraine.ua/) and [MFA of Ukraine](https://twitter.com/MFA_Ukraine)
-
-&lt;hr/&gt;
-
-[![CI](https://github.com/trekhleb/javascript-algorithms/workflows/CI/badge.svg)](https://github.com/trekhleb/javascript-algorithms/actions?query=workflow%3ACI+branch%3Amaster)
-[![codecov](https://codecov.io/gh/trekhleb/javascript-algorithms/branch/master/graph/badge.svg)](https://codecov.io/gh/trekhleb/javascript-algorithms)
-![repo size](https://img.shields.io/github/repo-size/trekhleb/javascript-algorithms.svg)
-
-This repository contains JavaScript based examples of many
-popular algorithms and data structures.
-
-Each algorithm and data structure has its own separate README
-with related explanations and links for further reading (including ones
-to YouTube videos).
-
-_Read this in other languages:_
-[_简体中文_](README.zh-CN.md),
-[_繁體中文_](README.zh-TW.md),
-[_한국어_](README.ko-KR.md),
-[_日本語_](README.ja-JP.md),
-[_Polski_](README.pl-PL.md),
-[_Français_](README.fr-FR.md),
-[_Español_](README.es-ES.md),
-[_Português_](README.pt-BR.md),
-[_Русский_](README.ru-RU.md),
-[_Türkçe_](README.tr-TR.md),
-[_Italiano_](README.it-IT.md),
-[_Bahasa Indonesia_](README.id-ID.md),
-[_Українська_](README.uk-UA.md),
-[_Arabic_](README.ar-AR.md),
-[_Tiếng Việt_](README.vi-VN.md),
-[_Deutsch_](README.de-DE.md),
-[_Uzbek_](README.uz-UZ.md),
-[_עברית_](README.he-IL.md)
-
-## Data Structures
-
-A data structure is a particular way of organizing and storing data in a computer so that it can
-be accessed and modified efficiently. More precisely, a data structure is a collection of data
-values, the relationships among them, and the functions or operations that can be applied to
-the data.
-
-Remember that each data has its own trade-offs. And you need to pay attention more to why you&#039;re choosing a certain data structure than to how to implement it.
-
-`B` - Beginner, `A` - Advanced
-
-* `B` [Linked List](src/data-structures/linked-list)
-* `B` [Doubly Linked List](src/data-structures/doubly-linked-list)
-* `B` [Queue](src/data-structures/queue)
-* `B` [Stack](src/data-structures/stack)
-* `B` [Hash Table](src/data-structures/hash-table)
-* `B` [Heap](src/data-structures/heap) - max and min heap versions
-* `B` [Priority Queue](src/data-structures/priority-queue)
-* `A` [Trie](src/data-structures/trie)
-* `A` [Tree](src/data-structures/tree)
-  * `A` [Binary Search Tree](src/data-structures/tree/binary-search-tree)
-  * `A` [AVL Tree](src/data-structures/tree/avl-tree)
-  * `A` [Red-Black Tree](src/data-structures/tree/red-black-tree)
-  * `A` [Segment Tree](src/data-structures/tree/segment-tree) - with min/max/sum range queries examples
-  * `A` [Fenwick Tree](src/data-structures/tree/fenwick-tree) (Binary Indexed Tree)
-* `A` [Graph](src/data-structures/graph) (both directed and undirected)
-* `A` [Disjoint Set](src/data-structures/disjoint-set) - a union–find data structure or merge–find set
-* `A` [Bloom Filter](src/data-structures/bloom-filter)
-* `A` [LRU Cache](src/data-structures/lru-cache/) - Least Recently Used (LRU) cache
-
-## Algorithms
-
-An algorithm is an unambiguous specification of how to solve a class of problems. It is
-a set of rules that precisely define a sequence of operations.
-
-`B` - Beginner, `A` - Advanced
-
-### Algorithms by Topic
-
-* **Math**
-  * `B` [Bit Manipulation](src/algorithms/math/bits) - set/get/update/clear bits, multiplication/division by two, make negative etc.
-  * `B` [Binary Floating Point](src/algorithms/math/binary-floating-point) - binary representation of the floating-point numbers.
-  * `B` [Factorial](src/algorithms/math/factorial)
-  * `B` [Fibonacci Number](src/algorithms/math/fibonacci) - classic and closed-form versions
-  * `B` [Prime Factors](src/algorithms/math/prime-factors) - finding prime factors and counting them using Hardy-Ramanujan&#039;s theorem
-  * `B` [Primality Test](src/algorithms/math/primality-test) (trial division method)
-  * `B` [Euclidean Algorithm](src/algorithms/math/euclidean-algorithm) - calculate the Greatest Common Divisor (GCD)
-  * `B` [Least Common Multiple](src/algorithms/math/least-common-multiple) (LCM)
-  * `B` [Sieve of Eratosthenes](src/algorithms/math/sieve-of-eratosthenes) - finding all prime numbers up to any given limit
-  * `B` [Is Power of Two](src/algorithms/math/is-power-of-two) - check if the number is power of two (naive and bitwise algorithms)
-  * `B` [Pascal&#039;s Triangle](src/algorithms/math/pascal-triangle)
-  * `B` [Complex Number](src/algorithms/math/complex-number) - complex numbers and basic operations with them
-  * `B` [Radian &amp; Degree](src/algorithms/math/radian) - radians to degree and backwards conversion
-  * `B` [Fast Powering](src/algorithms/math/fast-powering)
-  * `B` [Horner&#039;s method](src/algorithms/math/horner-method) - polynomial evaluation
-  * `B` [Matrices](src/algorithms/math/matrix) - matrices and basic matrix operations (multiplication, transposition, etc.)
-  * `B` [Euclidean Distance](src/algorithms/math/euclidean-distance) - distance between two points/vectors/matrices
-  * `A` [Integer Partition](src/algorithms/math/integer-partition)
-  * `A` [Square Root](src/algorithms/math/square-root) - Newton&#039;s method
-  * `A` [Liu Hui π Algorithm](src/algorithms/math/liu-hui) - approximate π calculations based on N-gons
-  * `A` [Discrete Fourier Transform](src/algorithms/math/fourier-transform) - decompose a function of time (a signal) into the frequencies that make it up
-* **Sets**
-  * `B` [Cartesian Product](src/algorithms/sets/cartesian-product) - product of multiple sets
-  * `B` [Fisher–Yates Shuffle](src/algorithms/sets/fisher-yates) - random permutation of a finite sequence
-  * `A` [Power Set](src/algorithms/sets/power-set) - all subsets of a set (bitwise, backtracking, and cascading solutions)
-  * `A` [Permutations](src/algorithms/sets/permutations) (with and without repetitions)
-  * `A` [Combinations](src/algorithms/sets/combinations) (with and without repetitions)
-  * `A` [Longest Common Subsequence](src/algorithms/sets/longest-common-subsequence) (LCS)
-  * `A` [Longest Increasing Subsequence](src/algorithms/sets/longest-increasing-subsequence)
-  * `A` [Shortest Common Supersequence](src/algorithms/sets/shortest-common-supersequence) (SCS)
-  * `A` [Knapsack Problem](src/algorithms/sets/knapsack-problem) - &quot;0/1&quot; and &quot;Unbound&quot; ones
-  * `A` [Maximum Subarray](src/algorithms/sets/maximum-subarray) - &quot;Brute Force&quot; and &quot;Dynamic Programming&quot; (Kadane&#039;s) versions
-  * `A` [Combination Sum](src/algorithms/sets/combination-sum) - find all combinations that form specific sum
-* **Strings**
-  * `B` [Hamming Distance](src/algorithms/string/hamming-distance) - number of positions at which the symbols are different
-  * `B` [Palindrome](src/algorithms/string/palindrome) - check if the string is the same in reverse
-  * `A` [Levenshtein Distance](src/algorithms/string/levenshtein-distance) - minimum edit distance between two sequences
-  * `A` [Knuth–Morris–Pratt Algorithm](src/algorithms/string/knuth-morris-pratt) (KMP Algorithm) - substring search (pattern matching)
-  * `A` [Z Algorithm](src/algorithms/string/z-algorithm) - substring search (pattern matching)
-  * `A` [Rabin Karp Algorithm](src/algorithms/string/rabin-karp) - substring search
-  * `A` [Longest Common Substring](src/algorithms/string/longest-common-substring)
-  * `A` [Regular Expression Matching](src/algorithms/string/regular-expression-matching)
-* **Searches**
-  * `B` [Linear Search](src/algorithms/search/linear-search)
-  * `B` [Jump Search](src/algorithms/search/jump-search) (or Block Search) - search in sorted array
-  * `B` [Binary Search](src/algorithms/search/binary-search) - search in sorted array
-  * `B` [Interpolation Search](src/algorithms/search/interpolation-search) - search in uniformly distributed sorted array
-* **Sorting**
-  * `B` [Bubble Sort](src/algorithms/sorting/bubble-sort)
-  * `B` [Selection Sort](src/algorithms/sorting/selection-sort)
-  * `B` [Insertion Sort](src/algorithms/sorting/insertion-sort)
-  * `B` [Heap Sort](src/algorithms/sorting/heap-sort)
-  * `B` [Merge Sort](src/algorithms/sorting/merge-sort)
-  * `B` [Quicksort](src/algorithms/sorting/quick-sort) - in-place and non-in-place implementations
-  * `B` [Shellsort](src/algorithms/sorting/shell-sort)
-  * `B` [Counting Sort](src/algorithms/sorting/counting-sort)
-  * `B` [Radix Sort](src/algorithms/sorting/radix-sort)
-  * `B` [Bucket Sort](src/algorithms/sorting/bucket-sort)
-* **Linked Lists**
-  * `B` [Straight Traversal](src/algorithms/linked-list/traversal)
-  * `B` [Reverse Traversal](src/algorithms/linked-list/reverse-traversal)
-* **Trees**
-  * `B` [Depth-First Search](src/algorithms/tree/depth-first-search) (DFS)
-  * `B` [Breadth-First Search](src/algorithms/tree/breadth-first-search) (BFS)
-* **Graphs**
-  * `B` [Depth-First Search](src/algorithms/graph/depth-first-search) (DFS)
-  * `B` [Breadth-First Search](src/algorithms/graph/breadth-first-search) (BFS)
-  * `B` [Kruskal’s Algorithm](src/algorithms/graph/kruskal) - finding Minimum Spanning Tree (MST) for weighted undirected graph
-  * `A` [Dijkstra Algorithm](src/algorithms/graph/dijkstra) - finding the shortest paths to all graph vertices from single vertex
-  * `A` [Bellman-Ford Algorithm](src/algorithms/graph/bellman-ford) - finding the shortest paths to all graph vertices from single vertex
-  * `A` [Floyd-Warshall Algorithm](src/algorithms/graph/floyd-warshall) - find the shortest paths between all pairs of vertices
-  * `A` [Detect Cycle](src/algorithms/graph/detect-cycle) - for both directed and undirected graphs (DFS and Disjoint Set based versions)
-  * `A` [Prim’s Algorithm](src/algorithms/graph/prim) - finding Minimum Spanning Tree (MST) for weighted undirected graph
-  * `A` [Topological Sorting](src/algorithms/graph/topological-sorting) - DFS method
-  * `A` [Articulation Points](src/algorithms/graph/articulation-points) - Tarjan&#039;s algorithm (DFS based)
-  * `A` [Bridges](src/algorithms/graph/bridges) - DFS based algorithm
-  * `A` [Eulerian Path and Eulerian Circuit](src/algorithms/graph/eulerian-path) - Fleury&#039;s algorithm - Visit every edge exactly once
-  * `A` [Hamiltonian Cycle](src/algorithms/graph/hamiltonian-cycle) - Visit every vertex exactly once
-  * `A` [Strongly Connected Components](src/algorithms/graph/strongly-connected-components) - Kosaraju&#039;s algorithm
-  * `A` [Travelling Salesman Problem](src/algorithms/graph/travelling-salesman) - shortest possible route that visits each city and returns to the origin city
-* **Cryptography**
-  * `B` [Polynomial Hash](src/algorithms/cryptography/polynomial-hash) - rolling hash function based on polynomial
-  * `B` [Rail Fence Cipher](src/algorithms/cryptography/rail-fence-cipher) - a transposition cipher algorithm for encoding messages
-  * `B` [Caesar Cipher](src/algorithms/cryptography/caesar-cipher) - simple substitution cipher
-  * `B` [Hill Cipher](src/algorithms/cryptography/hill-cipher) - substitution cipher based on linear algebra
-* **Machine Learning**
-  * `B` [NanoNeuron](https://github.com/trekhleb/nano-neuron) - 7 simple JS functions that illustrate how machines can actually learn (forward/backward propagation)
-  * `B` [k-NN](src/algorithms/ml/knn) - k-nearest neighbors classification algorithm
-  * `B` [k-Means](src/algorithms/ml/k-means) - k-Means clustering algorithm
-* **Image Processing**
-  * `B` [Seam Carving](src/algorithms/image-processing/seam-carving) - content-aware image resizing algorithm
-* **Statistics**
-  * `B` [Weighted Random](src/algorithms/statistics/weighted-random) - select the random item from the list based on items&#039; weights
-* **Evolutionary algorithms**
-  * `A` [Genetic algorithm](https://github.com/trekhleb/self-parking-car-evolution) - example of how the genetic algorithm may be applied for training the self-parking cars
-* **Uncategorized**
-  * `B` [Tower of Hanoi](src/algorithms/uncategorized/hanoi-tower)
-  * `B` [Square Matrix Rotation](src/algorithms/uncategorized/square-matrix-rotation) - in-place algorithm
-  * `B` [Jump Game](src/algorithms/uncategorized/jump-game) - backtracking, dynamic programming (top-down + bottom-up) and greedy examples
-  * `B` [Unique Paths](src/algorithms/uncategorized/unique-paths) - backtracking, dynamic programming and Pascal&#039;s Triangle based examples
-  * `B` [Rain Terraces](src/algorithms/uncategorized/rain-terraces) - trapping rain water problem (dynamic programming and brute force versions)
-  * `B` [Recursive Staircase](src/algorithms/uncategorized/recursive-staircase) - count the number of ways to reach to the top (4 solutions)
-  * `B` [Best Time To Buy Sell Stocks](src/algorithms/uncategorized/best-time-to-buy-sell-stocks) - divide and conquer and one-pass examples
-  * `B` [Valid Parentheses](src/algorithms/stack/valid-parentheses) - check if a string has valid parentheses (using stack)
-  * `A` [N-Queens Problem](src/algorithms/uncategorized/n-queens)
-  * `A` [Knight&#039;s Tour](src/algorithms/uncategorized/knight-tour)
-
-### Algorithms by Paradigm
-
-An algorithmic paradigm is a generic method or approach which underlies the design of a class
-of algorithms. It is an abstraction higher than the notion of an algorithm, just as an
-algorithm is an abstraction higher than a computer program.
-
-* **Brute Force** - look at all the possibilities and selects the best solution
-  * `B` [Linear Search](src/algorithms/search/linear-search)
-  * `B` [Rain Terraces](src/algorithms/uncategorized/rain-terraces) - trapping rain water problem
-  * `B` [Recursive Staircase](src/algorithms/uncategorized/recursive-staircase) - count the number of ways to reach the top
-  * `A` [Maximum Subarray](src/algorithms/sets/maximum-subarray)
-  * `A` [Travelling Salesman Problem](src/algorithms/graph/travelling-salesman) - shortest possible route that visits each city and returns to the origin city
-  * `A` [Discrete Fourier Transform](src/algorithms/math/fourier-transform) - decompose a function of time (a signal) into the frequencies that make it up
-* **Greedy** - choose the best option at the current time, without any consideration for the future
-  * `B` [Jump Game](src/algorithms/uncategorized/jump-game)
-  * `A` [Unbound Knapsack Problem](src/algorithms/sets/knapsack-problem)
-  * `A` [Dijkstra Algorithm](src/algorithms/graph/dijkstra) - finding the shortest path to all graph vertices
-  * `A` [Prim’s Algorithm](src/algorithms/graph/prim) - finding Minimum Spanning Tree (MST) for weighted undirected graph
-  * `A` [Kruskal’s Algorithm](src/algorithms/graph/kruskal) - finding Minimum Spanning Tree (MST) for weighted undirected graph
-* **Divide and Conquer** - divide the problem into smaller parts and then solve those parts
-  * `B` [Binary Search](src/algorithms/search/binary-search)
-  * `B` [Tower of Hanoi](src/algorithms/uncategorized/hanoi-tower)
-  * `B` [Pascal&#039;s Triangle](src/algorithms/math/pascal-triangle)
-  * `B` [Euclidean Algorithm](src/algorithms/math/euclidean-algorithm) - calculate the Greatest Common Divisor (GCD)
-  * `B` [Merge Sort](src/algorithms/sorting/merge-sort)
-  * `B` [Quicksort](src/algorithms/sorting/quick-sort)
-  * `B` [Tree Depth-First Search](src/algorithms/tree/depth-first-search) (DFS)
-  * `B` [Graph Depth-First Search](src/algorithms/graph/depth-first-search) (DFS)
-  * `B` [Matrices](src/algorithms/math/matrix) - generating and traversing the matrices of different shapes
-  * `B` [Jump Game](src/algorithms/uncategorized/jump-game)
-  * `B` [Fast Powering](src/algorithms/math/fast-powering)
-  * `B` [Best Time To Buy Sell Stocks](src/algorithms/uncategorized/best-time-to-buy-sell-stocks) - divide and conquer and one-pass examples
-  * `A` [Permutations](src/algorithms/sets/permutations) (with and without repetitions)
-  * `A` [Combinations](src/algorithms/sets/combinations) (with and without repetitions)
-  * `A` [Maximum Subarray](src/algorithms/sets/maximum-subarray)
-* **Dynamic Programming** - build up a solution using previously found sub-solutions
-  * `B` [Fibonacci Number](src/algorithms/math/fibonacci)
-  * `B` [Jump Game](src/algorithms/uncategorized/jump-game)
-  * `B` [Unique Paths](src/algorithms/uncategorized/unique-paths)
-  * `B` [Rain Terraces](src/algorithms/uncategorized/rain-terraces) - trapping rain water problem
-  * `B` [Recursive Staircase](src/algorithms/uncategorized/recursive-staircase) - count the number of ways to reach the top
-  * `B` [Seam Carving](src/algorithms/image-processing/seam-carving) - content-aware image resizing algorithm
-  * `A` [Levenshtein Distance](src/algorithms/string/levenshtein-distance) - minimum edit distance between two sequences
-  * `A` [Longest Common Subsequence](src/algorithms/sets/longest-common-subsequence) (LCS)
-  * `A` [Longest Common Substring](src/algorithms/string/longest-common-substring)
-  * `A` [Longest Increasing Subsequence](src/algorithms/sets/longest-increasing-subsequence)
-  * `A` [Shortest Common Supersequence](src/algorithms/sets/shortest-common-supersequence)
-  * `A` [0/1 Knapsack Problem](src/algorithms/sets/knapsack-problem)
-  * `A` [Integer Partition](src/algorithms/math/integer-partition)
-  * `A` [Maximum Subarray](src/algorithms/sets/maximum-subarray)
-  * `A` [Bellman-Ford Algorithm](src/algorithms/graph/bellman-ford) - finding the shortest path to all graph vertices
-  * `A` [Floyd-Warshall Algorithm](src/algorithms/graph/floyd-warshall) - find the shortest paths between all pairs of vertices
-  * `A` [Regular Expression Matching](src/algorithms/string/regular-expression-matching)
-* **Backtracking** - similarly to brute force, try to generate all possible solutions, but each time you generate the next solution, you test
-if it satisfies all conditions and only then continue generating subsequent solutions. Otherwise, backtrack and go on a
-different path to finding a solution. Normally the DFS traversal of state-space is being used.
-  * `B` [Jump Game](src/algorithms/uncategorized/jump-game)
-  * `B` [Unique Paths](src/algorithms/uncategorized/unique-paths)
-  * `B` [Power Set](src/algorithms/sets/power-set) - all subsets of a set
-  * `A` [Hamiltonian Cycle](src/algorithms/graph/hamiltonian-cycle) - Visit every vertex exactly once
-  * `A` [N-Queens Problem](src/algorithms/uncategorized/n-queens)
-  * `A` [Knight&#039;s Tour](src/algorithms/uncategorized/knight-tour)
-  * `A` [Combination Sum](src/algorithms/sets/combination-sum) - find all combinations that form specific sum
-* **Branch &amp; Bound** - remember the lowest-cost solution found at each stage of the backtracking
-search, and use the cost of the lowest-cost solution found so far as a lower bound on the cost of
-a least-cost solution to the problem in order to discard partial solutions with costs larger than the
-lowest-cost solution found so far. Normally, BFS traversal in combination with DFS traversal of state-space
-tree is being used.
-
-## How to use this repository
-
-**Install all dependencies**
-
-```
+export npm_config_arch=x64 # If you are on an M1 / Apple Silicon Mac
 npm install
+npm start
 ```
 
-**Run ESLint**
-
-You may want to run it to check code quality.
+You can attach command line parameters by separating them using a double hyphen:
 
 ```
-npm run lint
+npm start -- --help
 ```
 
-**Run all tests**
+### Building Mailspring
+
+To build Mailspring, you need to run the following command from the root directory
+of the Mailspring repository:
 
 ```
-npm test
+npm run-script build
 ```
 
-**Run tests by name**
+### Building A Plugin
+
+Plugins lie at the heart of Mailspring and give it its powerful features.
+Building your own plugins allows you to integrate the app with other tools,
+experiment with new workflows, and more. Follow the [Getting Started
+guide](https://Foundry376.github.io/Mailspring/) to write your first plugin in
+five minutes.
+
+- To create your own theme, check out the
+  [Mailspring-Theme-Starter](https://github.com/Foundry376/Mailspring-Theme-Starter).
+
+- To create your own plugin, check out the
+  [Mailspring-Plugin-Starter](https://github.com/Foundry376/Mailspring-Plugin-Starter).
+
+A plugin &quot;store&quot; like the Chrome Web Store is coming soon, and will make it
+easy for other users to discover plugins you create. (Right now, users need to
+&quot;sideload&quot; the plugins into the app by downloading them and copying them into
+place.)
+
+You can share and browse Mailspring Plugins, and discuss plugin development
+with other developers, on our
+[Discourse](https://community.getmailspring.com/).
+
+### Building a Theme
+
+The Mailspring user interface is styled using CSS, which means it&#039;s easy to
+modify and extend. Mailspring comes stock with a few beautiful themes, and
+there are many more which have been built by community developers. To start
+creating a theme, [clone the theme starter](https://github.com/Foundry376/Mailspring-Theme-Starter)!
+
+If you are updating an existing Nylas theme for Mailspring here is a
+[step by step tutorial](https://community.getmailspring.com/t/updating-an-n1-nylas-mail-theme-for-mailspring/195).
+Notice: as part of the update process you will probably need to [import mailspring base variables](https://github.com/Foundry376/Mailspring/issues/326#issuecomment-343757775).
+
+You can share and browse Mailspring Themes, and discuss theme development with other developers, on our [Discourse](https://community.getmailspring.com/).
+
+### Localizing / Translating
+
+Mailspring (1.5.0 and above) supports localization. If you&#039;re a fluent speaker of
+another language, we&#039;d love your help improving translations. Check out the
+[LOCALIZATION](https://github.com/Foundry376/Mailspring/blob/master/LOCALIZATION.md)
+guide for more information. You can discuss localization and translation with
+other developers on our [Discourse](https://community.getmailspring.com/).
+
+### Contributing to Mailspring Core
+
+Pull requests are always welcome - check out
+[CONTRIBUTING](https://github.com/Foundry376/Mailspring/blob/master/CONTRIBUTING.md)
+for more information about setting up the development environment, running
+tests locally, and submitting pull requests.
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[gsd-build/get-shit-done]]></title>
+            <link>https://github.com/gsd-build/get-shit-done</link>
+            <guid>https://github.com/gsd-build/get-shit-done</guid>
+            <pubDate>Thu, 12 Mar 2026 00:06:55 GMT</pubDate>
+            <description><![CDATA[A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/gsd-build/get-shit-done">gsd-build/get-shit-done</a></h1>
+            <p>A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 28,169</p>
+            <p>Forks: 2,380</p>
+            <p>Stars today: 545 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+
+# GET SHIT DONE
+
+**A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code, OpenCode, Gemini CLI, and Codex.**
+
+**Solves context rot — the quality degradation that happens as Claude fills its context window.**
+
+[![npm version](https://img.shields.io/npm/v/get-shit-done-cc?style=for-the-badge&amp;logo=npm&amp;logoColor=white&amp;color=CB3837)](https://www.npmjs.com/package/get-shit-done-cc)
+[![npm downloads](https://img.shields.io/npm/dm/get-shit-done-cc?style=for-the-badge&amp;logo=npm&amp;logoColor=white&amp;color=CB3837)](https://www.npmjs.com/package/get-shit-done-cc)
+[![Tests](https://img.shields.io/github/actions/workflow/status/glittercowboy/get-shit-done/test.yml?branch=main&amp;style=for-the-badge&amp;logo=github&amp;label=Tests)](https://github.com/glittercowboy/get-shit-done/actions/workflows/test.yml)
+[![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=for-the-badge&amp;logo=discord&amp;logoColor=white)](https://discord.gg/gsd)
+[![X (Twitter)](https://img.shields.io/badge/X-@gsd__foundation-000000?style=for-the-badge&amp;logo=x&amp;logoColor=white)](https://x.com/gsd_foundation)
+[![$GSD Token](https://img.shields.io/badge/$GSD-Dexscreener-1C1C1C?style=for-the-badge&amp;logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIgZmlsbD0iIzAwRkYwMCIvPjwvc3ZnPg==&amp;logoColor=00FF00)](https://dexscreener.com/solana/dwudwjvan7bzkw9zwlbyv6kspdlvhwzrqy6ebk8xzxkv)
+[![GitHub stars](https://img.shields.io/github/stars/glittercowboy/get-shit-done?style=for-the-badge&amp;logo=github&amp;color=181717)](https://github.com/glittercowboy/get-shit-done)
+[![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
+
+&lt;br&gt;
+
+```bash
+npx get-shit-done-cc@latest
+```
+
+**Works on Mac, Windows, and Linux.**
+
+&lt;br&gt;
+
+![GSD Install](assets/terminal.svg)
+
+&lt;br&gt;
+
+*&quot;If you know clearly what you want, this WILL build it for you. No bs.&quot;*
+
+*&quot;I&#039;ve done SpecKit, OpenSpec and Taskmaster — this has produced the best results for me.&quot;*
+
+*&quot;By far the most powerful addition to my Claude Code. Nothing over-engineered. Literally just gets shit done.&quot;*
+
+&lt;br&gt;
+
+**Trusted by engineers at Amazon, Google, Shopify, and Webflow.**
+
+[Why I Built This](#why-i-built-this) · [How It Works](#how-it-works) · [Commands](#commands) · [Why It Works](#why-it-works) · [User Guide](docs/USER-GUIDE.md)
+
+&lt;/div&gt;
+
+---
+
+## Why I Built This
+
+I&#039;m a solo developer. I don&#039;t write code — Claude Code does.
+
+Other spec-driven development tools exist; BMAD, Speckit... But they all seem to make things way more complicated than they need to be (sprint ceremonies, story points, stakeholder syncs, retrospectives, Jira workflows) or lack real big picture understanding of what you&#039;re building. I&#039;m not a 50-person software company. I don&#039;t want to play enterprise theater. I&#039;m just a creative person trying to build great things that work.
+
+So I built GSD. The complexity is in the system, not in your workflow. Behind the scenes: context engineering, XML prompt formatting, subagent orchestration, state management. What you see: a few commands that just work.
+
+The system gives Claude everything it needs to do the work *and* verify it. I trust the workflow. It just does a good job.
+
+That&#039;s what this is. No enterprise roleplay bullshit. Just an incredibly effective system for building cool stuff consistently using Claude Code.
+
+— **TÂCHES**
+
+---
+
+Vibecoding has a bad reputation. You describe what you want, AI generates code, and you get inconsistent garbage that falls apart at scale.
+
+GSD fixes that. It&#039;s the context engineering layer that makes Claude Code reliable. Describe your idea, let the system extract everything it needs to know, and let Claude Code get to work.
+
+---
+
+## Who This Is For
+
+People who want to describe what they want and have it built correctly — without pretending they&#039;re running a 50-person engineering org.
+
+---
+
+## Getting Started
+
+```bash
+npx get-shit-done-cc@latest
+```
+
+The installer prompts you to choose:
+1. **Runtime** — Claude Code, OpenCode, Gemini, Codex, or all
+2. **Location** — Global (all projects) or local (current project only)
+
+Verify with:
+- Claude Code / Gemini: `/gsd:help`
+- OpenCode: `/gsd-help`
+- Codex: `$gsd-help`
+
+&gt; [!NOTE]
+&gt; Codex installation uses skills (`skills/gsd-*/SKILL.md`) rather than custom prompts.
+
+### Staying Updated
+
+GSD evolves fast. Update periodically:
+
+```bash
+npx get-shit-done-cc@latest
+```
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Non-interactive Install (Docker, CI, Scripts)&lt;/strong&gt;&lt;/summary&gt;
+
+```bash
+# Claude Code
+npx get-shit-done-cc --claude --global   # Install to ~/.claude/
+npx get-shit-done-cc --claude --local    # Install to ./.claude/
+
+# OpenCode (open source, free models)
+npx get-shit-done-cc --opencode --global # Install to ~/.config/opencode/
+
+# Gemini CLI
+npx get-shit-done-cc --gemini --global   # Install to ~/.gemini/
+
+# Codex (skills-first)
+npx get-shit-done-cc --codex --global    # Install to ~/.codex/
+npx get-shit-done-cc --codex --local     # Install to ./.codex/
+
+# All runtimes
+npx get-shit-done-cc --all --global      # Install to all directories
+```
+
+Use `--global` (`-g`) or `--local` (`-l`) to skip the location prompt.
+Use `--claude`, `--opencode`, `--gemini`, `--codex`, or `--all` to skip the runtime prompt.
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Development Installation&lt;/strong&gt;&lt;/summary&gt;
+
+Clone the repository and run the installer locally:
+
+```bash
+git clone https://github.com/glittercowboy/get-shit-done.git
+cd get-shit-done
+node bin/install.js --claude --local
+```
+
+Installs to `./.claude/` for testing modifications before contributing.
+
+&lt;/details&gt;
+
+### Recommended: Skip Permissions Mode
+
+GSD is designed for frictionless automation. Run Claude Code with:
+
+```bash
+claude --dangerously-skip-permissions
+```
+
+&gt; [!TIP]
+&gt; This is how GSD is intended to be used — stopping to approve `date` and `git commit` 50 times defeats the purpose.
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Alternative: Granular Permissions&lt;/strong&gt;&lt;/summary&gt;
+
+If you prefer not to use that flag, add this to your project&#039;s `.claude/settings.json`:
+
+```json
+{
+  &quot;permissions&quot;: {
+    &quot;allow&quot;: [
+      &quot;Bash(date:*)&quot;,
+      &quot;Bash(echo:*)&quot;,
+      &quot;Bash(cat:*)&quot;,
+      &quot;Bash(ls:*)&quot;,
+      &quot;Bash(mkdir:*)&quot;,
+      &quot;Bash(wc:*)&quot;,
+      &quot;Bash(head:*)&quot;,
+      &quot;Bash(tail:*)&quot;,
+      &quot;Bash(sort:*)&quot;,
+      &quot;Bash(grep:*)&quot;,
+      &quot;Bash(tr:*)&quot;,
+      &quot;Bash(git add:*)&quot;,
+      &quot;Bash(git commit:*)&quot;,
+      &quot;Bash(git status:*)&quot;,
+      &quot;Bash(git log:*)&quot;,
+      &quot;Bash(git diff:*)&quot;,
+      &quot;Bash(git tag:*)&quot;
+    ]
+  }
+}
+```
+
+&lt;/details&gt;
+
+---
+
+## How It Works
+
+&gt; **Already have code?** Run `/gsd:map-codebase` first. It spawns parallel agents to analyze your stack, architecture, conventions, and concerns. Then `/gsd:new-project` knows your codebase — questions focus on what you&#039;re adding, and planning automatically loads your patterns.
+
+### 1. Initialize Project
 
 ```
-npm test -- &#039;LinkedList&#039;
+/gsd:new-project
 ```
 
-**Troubleshooting**
+One command, one flow. The system:
 
-If linting or testing is failing, try to delete the `node_modules` folder and re-install npm packages:
+1. **Questions** — Asks until it understands your idea completely (goals, constraints, tech preferences, edge cases)
+2. **Research** — Spawns parallel agents to investigate the domain (optional but recommended)
+3. **Requirements** — Extracts what&#039;s v1, v2, and out of scope
+4. **Roadmap** — Creates phases mapped to requirements
+
+You approve the roadmap. Now you&#039;re ready to build.
+
+**Creates:** `PROJECT.md`, `REQUIREMENTS.md`, `ROADMAP.md`, `STATE.md`, `.planning/research/`
+
+---
+
+### 2. Discuss Phase
 
 ```
-rm -rf ./node_modules
-npm i
+/gsd:discuss-phase 1
 ```
 
-Also, make sure that you&#039;re using the correct Node version (`&gt;=16`). If you&#039;re using [nvm](https://github.com/nvm-sh/nvm) for Node version management you may run `nvm use` from the root folder of the project and the correct version will be picked up.
+**This is where you shape the implementation.**
 
-**Playground**
+Your roadmap has a sentence or two per phase. That&#039;s not enough context to build something the way *you* imagine it. This step captures your preferences before anything gets researched or planned.
 
-You may play with data-structures and algorithms in `./src/playgro
+The system analyzes the phase and identifies gray areas based on what&#039;s being built:
+
+- **Visual features** → Layout, density, interactions, empty states
+- **APIs/CLIs** → Response format, flags, error handling, verbosity
+- **Content systems** → Structure, tone, depth, flow
+- **Organization tasks** → Grouping criteria, naming, duplicates, exceptions
+
+For each area you select, it asks until you&#039;re satisfied. The output — `CONTEXT.md` — feeds directly into the next two steps:
+
+1. **Researcher reads it** — Knows what patterns to investigate (&quot;user wants card layout&quot; → research card component libraries)
+2. **Planner reads it** — Knows what decisions are locked (&quot;infinite scroll decided&quot; → plan includes scroll handling)
+
+The deeper you go here, the more the system builds what you actually want. Skip it and you get reasonable defaults. Use it and you get *your* vision.
+
+**Creates:** `{phase_num}-CONTEXT.md`
+
+---
+
+### 3. Plan Phase
+
+```
+/gsd:plan-phase 1
+```
+
+The system:
+
+1. **Researches** — Investigates how to implement this phase, guided by your CONTEXT.md decisions
+2. **Plans** — Creates 2-3 atomic task plans with XML structure
+3. **Verifies** — Checks plans against requirements, loops until they pass
+
+Each plan is small enough to execute in a fresh context window. No degradation, no &quot;I&#039;ll be more concise now.&quot;
+
+**Creates:** `{phase_num}-RESEARCH.md`, `{phase_num}-{N}-PLAN.md`
+
+---
+
+### 4. Execute Phase
+
+```
+/gsd:execute-phase 1
+```
+
+The system:
+
+1. **Runs plans in waves** — Parallel where possible, sequential when dependent
+2. **Fresh context per plan** — 200k tokens purely for implementation, zero accumulated garbage
+3. **Commits per task** — Every task gets its own atomic commit
+4. **Verifies against goals** — Checks the codebase delivers what the phase promised
+
+Walk away, come back to completed work with clean git history.
+
+**How Wave Execution Works:**
+
+Plans are grouped into &quot;waves&quot; based on dependencies. Within each wave, plans run in parallel. Waves run sequentially.
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│  PHASE EXECUTION                                                     │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  WAVE 1 (parallel)          WAVE 2 (parallel)          WAVE 3       │
+│  ┌─────────┐ ┌─────────┐    ┌─────────┐ ┌─────────┐    ┌─────────┐ │
+│  │ Plan 01 │ │ Plan 02 │ →  │ Plan 03 │ │ Plan 04 │ →  │ Plan 05 │ │
+│  │         │ │         │    │         │ │         │    │         │ │
+│  │ User    │ │ Product │    │ Orders  │ │ Cart    │    │ Checkout│ │
+│  │ Model   │ │ Model   │    │ API     │ │ API     │    │ UI      │ │
+│  └─────────┘ └─────────┘    └─────────┘ └─────────┘    └─────────┘ │
+│       │           │              ↑           ↑              ↑       │
+│       └───────────┴──────────────┴───────────┘              │       │
+│              Dependencies: Plan 03 needs Plan 01            │       │
+│                          Plan 04 needs Plan 02              │       │
+│                          Plan 05 needs Plans 03 + 04        │       │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+**Why waves matter:**
+- Independent plans → Same wave → Run in parallel
+- Dependent plans → Later wave → Wait for dependencies
+- File conflicts → Sequential plans or same plan
+
+This is why &quot;vertical slices&quot; (Plan 01: User feature end-to-end) parallelize better than &quot;horizontal layers&quot; (Plan 01: All models, Plan 02: All APIs).
+
+**Creates:** `{phase_num}-{N}-SUMMARY.md`, `{phase_num}-VERIFICATION.md`
+
+---
+
+### 5. Verify Work
+
+```
+/gsd:verify-work 1
+```
+
+**This is where you confirm it actually works.**
+
+Automated verification checks that code exists and tests pass. But does the feature *work* the way you expected? This is your chance to use it.
+
+The system:
+
+1. **Extracts testable deliverables** — What you should be able to do now
+2. **Walks you through one at a time** — &quot;Can you log in with email?&quot; Yes/no, or describe what&#039;s wrong
+3. **Diagnoses failures automatically** — Spawns debug agents to find root causes
+4. **Creates verified fix plans** — Ready for immediate re-execution
+
+If everything passes, you move on. If something&#039;s broken, you don&#039;t manually debug — you just run `/gsd:execute-phase` again with the fix plans it created.
+
+**Creates:** `{phase_num}-UAT.md`, fix plans if issues found
+
+---
+
+### 6. Repeat → Complete → Next Milestone
+
+```
+/gsd:discuss-phase 2
+/gsd:plan-phase 2
+/gsd:execute-phase 2
+/gsd:verify-work 2
+...
+/gsd:complete-milestone
+/gsd:new-milestone
+```
+
+Loop **discuss → plan → execute → verify** until milestone complete.
+
+Each phase gets your input (discuss), proper research (plan), clean execution (execute), and human verification (verify). Context stays fresh. Quality stays high.
+
+When all phases are done, `/gsd:complete-milestone` archives the milestone and tags the release.
+
+Then `/gsd:new-milestone` starts the next version — same flow as `new-project` but for your existing codebase. You describe what you want to build next, the system researches the domain, you scope requirements, and it creates a fresh roadmap. Each milestone is a clean cycle: define → build → ship.
+
+---
+
+### Quick Mode
+
+```
+/gsd:quick
+```
+
+**For ad-hoc tasks that don&#039;t need full planning.**
+
+Quick mode gives you GSD guarantees (atomic commits, state tracking) with a faster path:
+
+- **Same agents** — Planner + executor, same quality
+- **Skips optional steps** — No research, no plan checker, no verifier
+- **Separate tracking** — Lives in `.planning/quick/`, not phases
+
+Use for: bug fixes, small features, config changes, one-off tasks.
+
+```
+/gsd:quick
+&gt; What do you want to do? &quot;Add dark mode toggle to settings&quot;
+```
+
+**Creates:** `.planning/quick/001-add-dark-mode-toggle/PLAN.md`, `SUMMARY.md`
+
+---
+
+## Why It Works
+
+### Context Engineering
+
+Claude Code is incredibly powerful *if* you give it the context it needs. Most people don&#039;t.
+
+GSD handles it for you:
+
+| File | What it does |
+|------|--------------|
+| `PROJECT.md` | Project vision, always loaded |
+| `research/` | Ecosystem knowledge (stack, features, architecture, pitfalls) |
+| `REQUIREMENTS.md` | Scoped v1/v2 requirements with phase traceability |
+| `ROADMAP.md` | Where you&#039;re going, what&#039;s done |
+| `STATE.md` | Decisions, blockers, position — memory across sessions |
+| `PLAN.md` | Atomic task with XML structure, verification steps |
+| `SUMMARY.md` | What happened, what changed, committed to history |
+| `todos/` | Captured ideas and tasks for later work |
+
+Size limits based on where Claude&#039;s quality degrades. Stay under, get consistent excellence.
+
+### XML Prompt Formatting
+
+Every plan is structured XML optimized for Claude:
+
+```xml
+&lt;task type=&quot;auto&quot;&gt;
+  &lt;name&gt;Create login endpoint&lt;/name&gt;
+  &lt;files&gt;src/app/api/auth/login/route.ts&lt;/files&gt;
+  &lt;action&gt;
+    Use jose for JWT (not jsonwebtoken - CommonJS issues).
+    Validate credentials against users table.
+    Return httpOnly cookie on success.
+  &lt;/action&gt;
+  &lt;verify&gt;curl -X POST localhost:3000/api/auth/login returns 200 + Set-Cookie&lt;/verify&gt;
+  &lt;done&gt;Valid credentials return cookie, invalid return 401&lt;/done&gt;
+&lt;/task&gt;
+```
+
+Precise instructions. No guessing. Verification built in.
+
+### Multi-Agent Orchestration
+
+Every stage uses the same pattern: a thin orchestrator spawns specialized agents, collects results, and routes to the next step.
+
+| Stage | Orchestrator does | Agents do |
+|-------|------------------|-----------|
+| Research | Coordinates, presents findings | 4 parallel researchers investigate stack, features, architecture, pitfalls |
+| Planning | Validates, manages iteration | Planner creates plans, checker verifies, loop until pass |
+| Execution | Groups into waves, tracks progress | Executors implement in parallel, each with fresh 200k context |
+| Verification | Presents results, routes next | Verifier checks codebase against goals, debuggers diagnose failures |
+
+The orchestrator never does heavy lifting. It spawns agents, waits, integrates results.
+
+**The result:** You can run an entire phase — deep research, multiple plans created and verified, thousands of lines of code written across parallel executors, automated verification against goals — and your main context window stays at 30-40%. The work happens in fresh subagent contexts. Your session stays fast and responsive.
+
+### Atomic Git Commits
+
+Each task gets its own commit immediately after completion:
+
+```bash
+abc123f docs(08-02): complete user registration plan
+def456g feat(08-02): add email confirmation flow
+hij789k feat(08-02): implement password hashing
+lmn012o feat(08-02): create registration endpoint
+```
+
+&gt; [!NOTE]
+&gt; **Benefits:** Git bisect finds exact failing task. Each task independently revertable. Clear history for Claude in future sessions. Better observability in AI-automated workflow.
+
+Every commit is surgical, traceable, and meaningful.
+
+### Modular by Design
+
+- Add phases to current milestone
+- Insert urgent work between phases
+- Complete milestones and start fresh
+- Adjust plans without rebuilding everything
+
+You&#039;re never locked in. The system adapts.
+
+---
+
+## Commands
+
+### Core Workflow
+
+| Command | What it does |
+|---------|--------------|
+| `/gsd:new-project [--auto]` | Full initialization: questions → research → requirements → roadmap |
+| `/gsd:discuss-phase [N] [--auto]` | Capture implementation decisions before planning |
+| `/gsd:plan-phase [N] [--auto]` | Research + plan + verify for a phase |
+| `/gsd:execute-phase &lt;N&gt;` | Execute all plans in parallel waves, verify when complete |
+| `/gsd:verify-work [N]` | Manual user acceptance testing ¹ |
+| `/gsd:audit-milestone` | Verify milestone achieved its definition of done |
+| `/gsd:complete-milestone` | Archive milestone, tag release |
+| `/gsd:new-milestone [name]` | Start next version: questions → research → requirements → roadmap |
+
+### Navigation
+
+| Command | What it does |
+|---------|--------------|
+| `/gsd:progress` | Where am I? What&#039;s next? |
+| `/gsd:help` | Show all commands and usage guide |
+| `/gsd:update` | Update GSD with changelog preview |
+| `/gsd:join-discord` | Join the GSD Discord community |
+
+### Brownfield
+
+| Command | What it does |
+|---------|--------------|
+| `/gsd:map-codebase` | Analyze existing codebase before new-project |
+
+### Phase Management
+
+| Command | What it does |
+|---------|--------------|
+| `/gsd:add-phase` | Append phase to roadmap |
+| `/gsd:insert-phase [N]` | Insert urgent work between phases |
+| `/gsd:remove-phase [N]` | Remove future phase, renumber |
+| `/gsd:list-phase-assumptions [N]` | See Claude&#039;s intended approach before planning |
+| `/gsd:plan-milestone-gaps` | Create phases to close gaps from audit |
+
+### Session
+
+| Command | What it does |
+|---------|--------------|
+| `/gsd:pause-work` | Create handoff when stopping mid-phase |
+| `/gsd:resume-work` | Restore from last session |
+
+### Utilities
+
+| Command | What it does |
+|---------|--------------|
+| `/gsd:settings` | Configure model profile and workflow agents |
+| `/gsd:set-profile &lt;profile&gt;` | Switch model profile (quality/balanced/budget) |
+| `/gsd:add-todo [desc]` | Capture idea for later |
+| `/gsd:check-todos` | List pending todos |
+| `/gsd:debug [desc]` | Systematic debugging with persistent state |
+| `/gsd:quick [--full] [--discuss]` | Execute ad-hoc task with GSD guarantees (`--full` adds plan-checking and verification, `--discuss` gathers context first) |
+| `/gsd:health [--repair]` | Validate `.planning/` directory integrity, auto-repair with `--repair` |
+
+&lt;sup&gt;¹ Contributed by reddit user OracleGreyBeard&lt;/sup&gt;
+
+---
+
+## Configuration
+
+GSD stores project settings in `.planning/config.json`. Configure during `/gsd:new-project` or update later with `/gsd:settings`. For the full config schema, workflow toggles, git branching options, and per-agent model breakdown, see the [User Guide](docs/USER-GUIDE.md#configuration-reference).
+
+### Core Settings
+
+| Setting | Options | Default | What it controls |
+|---------|---------|---------|------------------|
+| `mode` | `yolo
 
 ... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[Stremio/stremio-web]]></title>
-            <link>https://github.com/Stremio/stremio-web</link>
-            <guid>https://github.com/Stremio/stremio-web</guid>
-            <pubDate>Wed, 11 Mar 2026 00:04:51 GMT</pubDate>
-            <description><![CDATA[Stremio - Freedom to Stream]]></description>
+            <title><![CDATA[atlassian/atlassian-mcp-server]]></title>
+            <link>https://github.com/atlassian/atlassian-mcp-server</link>
+            <guid>https://github.com/atlassian/atlassian-mcp-server</guid>
+            <pubDate>Thu, 12 Mar 2026 00:06:54 GMT</pubDate>
+            <description><![CDATA[Remote MCP Server that securely connects Jira and Confluence with your LLM, IDE, or agent platform of choice.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/Stremio/stremio-web">Stremio/stremio-web</a></h1>
-            <p>Stremio - Freedom to Stream</p>
+            <h1><a href="https://github.com/atlassian/atlassian-mcp-server">atlassian/atlassian-mcp-server</a></h1>
+            <p>Remote MCP Server that securely connects Jira and Confluence with your LLM, IDE, or agent platform of choice.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 10,411</p>
-            <p>Forks: 1,111</p>
-            <p>Stars today: 25 stars today</p>
-            <h2>README</h2><pre># Stremio - Freedom to Stream
+            <p>Stars: 423</p>
+            <p>Forks: 43</p>
+            <p>Stars today: 3 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;images/atlassian_logo_brand_RGB.svg&quot;&gt;
+&lt;/p&gt;
 
-![Build](https://github.com/stremio/stremio-web/workflows/Build/badge.svg?branch=development)
-[![Netlify](https://api.netlify.com/api/v1/badges/ac26d7ae-d08b-4cc4-a14d-a83ba7c3e8ca/deploy-status)](https://stremio-development.netlify.app)
+# Atlassian MCP Server
 
-Stremio is a modern media center that&#039;s a one-stop solution for your video entertainment. You discover, watch and organize video content from easy to install addons.
+The Atlassian Rovo MCP Server is a cloud-based bridge between your Atlassian Cloud site and compatible external tools. Once configured, it enables those tools to interact with Jira, Compass, and Confluence data in real-time. This functionality is powered by secure authentication using **OAuth 2.1** or **API tokens**, which ensures all actions respect the user&#039;s existing access controls.
 
-## Build
+With the Atlassian Rovo MCP Server, you can:
+
+* **Summarize and search** Jira, Compass, and Confluence content without switching tools.
+* **Create and update** issues or pages based on natural language commands.
+* **Automate repetitive work**, like generating tickets from meeting notes or specs.
+
+It&#039;s designed developers, content creators, and project teams who use IDEs or AI platforms and want to work with Atlassian data without constantly context switching.
+
+---
+
+## Supported clients
+
+The Atlassian Rovo MCP Server supports several clients, including:
+
+* [OpenAI ChatGPT](https://platform.openai.com/docs/guides/tools-connectors-mcp)
+* [Claude](https://code.claude.com/docs/en/mcp)
+* [GitHub Copilot CLI](https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli)
+* [Gemini CLI](https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md)
+* [Amazon Quick Suite](https://docs.aws.amazon.com/quicksuite/latest/userguide/mcp-integration.html)
+* [Visual Studio Code](https://code.visualstudio.com/)
+
+The Atlassian Rovo MCP Server also supports any **local MCP-compatible client** that can run on `localhost` and connect to the server via the `mcp-remote` proxy. This enables custom or third-party integrations that follow the MCP specification.
+
+For detailed setup instructions, refer to your client&#039;s own MCP documentation or built-in assistant.
+
+---
+
+## Before you start
+
+Ensure your environment meets the necessary requirements to successfully set up the Atlassian Rovo MCP Server. This section outlines the technical prerequisites and key access considerations.
 
 ### Prerequisites
 
-* Node.js 12 or higher
-* npm 6 or higher
+Before connecting to the Atlassian Rovo MCP Server, review the setup requirements for your environment:
 
-### Install dependencies
+#### For supported clients
 
-```bash
-npm install
+* An **Atlassian Cloud site** with Jira, Compass, and/or Confluence
+* Access to **the client of choice**
+* A modern browser to complete the OAuth 2.1 authorization flow, or API token credentials for headless authentication
+
+#### For IDEs or local clients (Desktop setup)
+
+* An **Atlassian Cloud site** with Jira, Compass, and/or Confluence
+* A supported IDE (for example, **Claude desktop, VS Code, or Cursor**) or a custom MCP-compatible client
+* **Node.js v18+** installed to run the local MCP proxy (`mcp-remote`)
+* A modern browser for completing OAuth login, or API token credentials for headless authentication
+
+---
+
+## Data and security
+
+Security is a core focus of the Atlassian Rovo MCP Server:
+
+* All traffic is encrypted via HTTPS using TLS 1.2 or later.
+* OAuth 2.1 and API token authentication provide secure access control.
+* Data access respects Jira, Compass, and Confluence user permissions.
+* If your organization uses IP allowlisting for Atlassian Cloud products, tool calls made through the Atlassian Rovo MCP Server also honor those IP rules.
+
+For a deeper overview of the security model and admin controls, see:
+
+* [Understand Atlassian Rovo MCP Server](https://support.atlassian.com/security-and-access-policies/docs/understand-atlassian-rovo-mcp-server/)
+* [Control Atlassian Rovo MCP Server settings](https://support.atlassian.com/security-and-access-policies/docs/control-atlassian-rovo-mcp-server-settings/)
+
+---
+
+## How it works
+
+### Architecture and communication
+
+1. A supported client connects to the server endpoint:
+```
+https://mcp.atlassian.com/v1/mcp
+```
+2. Depending on your setup, a secure browser-based OAuth 2.1 flow is triggered, or API token authentication is used.
+3. Once authorized, the client streams contextual data and receives real-time responses from Jira, Compass, or Confluence.
+
+&gt; [!NOTE]
+&gt; While `/sse` as a server endpoint are supported, we recommend updating any custom clients configured to use `/sse` so they now point to `/mcp`.
+
+### Permission management
+
+Access is granted only to data that the user already has permission to view in Atlassian Cloud. All actions respect existing project or space-level roles. OAuth and API token authentication both honor configured scopes and Atlassian permissions.
+
+### API token authentication (headless)
+
+API token authentication is available for headless or long-running client setups.
+
+* **Admin enablement required:** An organization admin must enable API token authentication for Rovo MCP Server.
+* **Scoped token required:** Use a Rovo MCP scoped API token for the required tools and data access.
+* **Configuration guide:** [Configure authentication via API token](https://support.atlassian.com/atlassian-rovo-mcp-server/docs/configuring-authentication-via-api-token/)
+* **Admin setting reference:** [Control Atlassian Rovo MCP Server settings - Configure authentication](https://support.atlassian.com/security-and-access-policies/docs/control-atlassian-rovo-mcp-server-settings/#Configure-authentication)
+
+---
+
+## Example workflows
+
+Once connected, you can perform a variety of useful tasks from within your supported client.
+
+### Jira workflows
+
+* **Search**: &quot;Find all open bugs in Project Alpha.&quot;
+* **Create/update**: &quot;Create a story titled &#039;Redesign onboarding&#039;.&quot;
+* **Bulk create**: &quot;Make five Jira issues from these notes.&quot;
+
+### Confluence workflows
+
+* **Summarize**: &quot;Summarize the Q2 planning page.&quot;
+* **Create**: &quot;Create a page titled &#039;Team Goals Q3&#039;.&quot;
+* **Navigate**: &quot;What spaces do I have access to?&quot;
+
+### Compass workflows
+
+* **Create**: &quot;Create a service component based on the current repository.&quot;
+* **Bulk create**: &quot;Import components and custom fields from this CSV/JSON&quot;
+* **Query**: &quot;What depends on the `api-gateway` service?&quot;
+
+### Combined tasks
+
+* **Link content**: &quot;Link these three Jira tickets to the &#039;Release Plan&#039; page.&quot;
+* **Find documentation**: &quot;Fetch the Confluence documentation page linked to this Compass component.&quot;
+
+&gt; [!NOTE]
+&gt; Actual capabilities vary, depending on your permission level and client platform.
+
+---
+
+## Tips and tricks
+
+### Set default CloudId, Jira project, and Confluence space
+
+Update your [AGENTS.md](https://agents.md/) with the Markdown below to reduce discovery tool calls, save time and tokens, and set maximum search results.
+
+``` MD
+## Atlassian Rovo MCP
+
+When connected to atlassian-rovo-mcp:
+- **MUST** use Jira project key = YOURPROJ
+- **MUST** use Confluence spaceId = &quot;123456&quot;
+- **MUST** use cloudId = &quot;https://yoursite.atlassian.net&quot; (do NOT call getAccessibleAtlassianResources)
+- **MUST** use `maxResults: 10` or `limit: 10` for ALL Jira JQL and Confluence CQL search operations.
 ```
 
-### Start development server
+### Use skills
 
-```bash
-npm start
+If you&#039;re using a desktop client like Claude, you can create or reuse skills for repeated tasks. [See the default Rovo MCP skills](https://github.com/atlassian/atlassian-mcp-server/tree/main/skills)
+
+For [Cursor](https://cursor.com/marketplace/atlassian), skills are part of the marketplace plugin.
+
+---
+
+## Admin notes: Managing access
+
+If you&#039;re an admin preparing your organization to use the Atlassian Rovo MCP Server, review these key considerations. For more detailed admin guidance, see:
+
+* [Understand Atlassian Rovo MCP server](https://support.atlassian.com/security-and-access-policies/docs/understand-atlassian-rovo-mcp-server/)
+* [Control Atlassian Rovo MCP server settings](https://support.atlassian.com/security-and-access-policies/docs/control-atlassian-rovo-mcp-server-settings/)
+* [Manage Atlassian Rovo MCP server](https://support.atlassian.com/security-and-access-policies/docs/manage-atlassian-rovo-mcp-server/)
+* [Monitor Atlassian Rovo MCP server activity](https://support.atlassian.com/security-and-access-policies/docs/monitor-atlassian-rovo-mcp-server-activity/)
+
+### Installation and access
+
+* **Not a Marketplace App:**  
+The Atlassian Rovo MCP Server is _not_ installed via the Atlassian Marketplace or the **Manage apps** screen. Instead, it is installed automatically the first time a user completes the OAuth 2.1 (3LO) consent flow (just-in-time or &quot;lazy loading&quot; installation).
+* **First-time installation requirements:**  
+The first user to complete the 3LO consent flow for your site must have access to the Atlassian apps requested by the MCP scopes (for example, Jira and/or Confluence). This ensures the MCP app is registered with the correct permissions for your site.
+* **Subsequent user access:**  
+After the initial install, users with access to only one Atlassian app (for example, just Jira or just Confluence) can also complete the 3LO flow to access that Atlassian app through MCP.
+
+### Manage, monitor, and revoke access
+
+* **Admin controls:**  
+Site and organization admins can manage, review, or revoke the MCP app&#039;s access from [Manage your organization&#039;s Marketplace and third-party apps](https://support.atlassian.com/security-and-access-policies/docs/manage-your-users-third-party-apps/). The app appears in your site&#039;s **Connected apps** list after the first successful 3LO consent.
+* **End-user controls:**  
+Individual users can revoke their own app authorizations from their profile settings.
+* **Domain and IP controls:**  
+Use the **Rovo MCP server** settings page in Atlassian Administration to control which external AI tools and domains are allowed to connect. For details, see [Available Atlassian Rovo MCP server domains](https://support.atlassian.com/security-and-access-policies/docs/available-atlassian-rovo-mcp-server-domains/). If your organization uses IP allowlisting for Atlassian Cloud apps, requests made through the Atlassian Rovo MCP Server must originate from an IP address that is allowed by your organization&#039;s IP allowlist for the relevant Atlassian app. For configuration details, see [Specify IP addresses for app access](https://support.atlassian.com/security-and-access-policies/docs/specify-ip-addresses-for-product-access/).
+* **Audit logging:** To support monitoring and compliance, key actions performed via the Atlassian Rovo MCP Server are logged in your organization&#039;s audit log. Admins can review these logs in Atlassian Administration. For more information, see [Monitor Atlassian Rovo MCP server activity](https://support.atlassian.com/security-and-access-policies/docs/monitor-atlassian-rovo-mcp-server-activity/).
+
+### Troubleshooting common issues
+
+* **&quot;Your site admin must authorize this app&quot; error:**  
+A site admin must complete the 3LO consent flow before anyone else can use the MCP app. See [&quot;Your site admin must authorize this app&quot;](https://support.atlassian.com/atlassian-cloud/kb/your-site-admin-must-authorize-this-app-error-in-atlassian-cloud-apps/) error in Atlassian Cloud apps for more details.
+* **&quot;You don&#039;t have permission to connect from this IP address. Please ask your admin for access.&quot;**  
+This usually indicates that IP allowlisting is enabled and the user&#039;s current IP address isn&#039;t allowed to access Jira, Confluence, Compass, or Rovo via the Atlassian Rovo MCP Server. Ask your site or organization admin to review the IP allowlist configuration and add the relevant network or VPN IP ranges if appropriate.
+* **App not appearing in Connected apps:**  
+Ensure the user is using the correct Atlassian account and site, and confirm the app is requesting the correct Atlassian app scopes (for example, Jira scopes). If issues persist, check [Manage your organization&#039;s Marketplace and third-party apps](https://support.atlassian.com/security-and-access-policies/docs/manage-your-users-third-party-apps/) or contact Atlassian Support. Also verify the user&#039;s Jira, Confluence, or Compass permissions in Atlassian Administration.
+
+## Security
+Model Context Protocol (MCP) lets AI agents connect to tools and Atlassian data using your account’s permissions, which creates powerful workflows but also structural risks. Any MCP client or server you enable (e.g., IDE plugins, desktop apps, hosted MCP servers, “one-click” integrations) can cause an AI agent to perform actions on your behalf.
+
+Large Language models (LLMs) are vulnerable to [prompt injection](https://owasp.org/www-community/attacks/PromptInjection) and related attacks (such as [indirect prompt injection](https://owasp.org/www-community/attacks/PromptInjection) and [tool poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)). These attacks can instruct the agent to exfiltrate data or make unintended changes without explicit requests.
+
+To reduce risk, only use trusted MCP clients and servers, carefully review which tools and data each agent can access, and apply least privilege (scoped tokens, minimal project/workspace access). For any high‑impact or destructive action, require human confirmation and monitor audit logs for unusual activity. We strongly recommend reviewing Atlassian’s guidance on MCP risks at [MCP Clients: Understanding the potential security risks](https://www.atlassian.com/blog/artificial-intelligence/mcp-risk-awareness)
+
+## Support and feedback
+Your feedback plays a crucial role in shaping the Atlassian Rovo MCP Server. If you encounter bugs, limitations, or have suggestions:
+- Visit the [Atlassian Support Portal](https://support.atlassian.com/) Portal to report issues and feature requests.
+- Share your experiences and questions on the [Atlassian Community](https://community.atlassian.com/) and developer-related asks on the [Developer&#039;s one](https://developer.atlassian.com/).
+- Go to our [Ecosystem Developer Portal](https://ecosystem.atlassian.net/servicedesk/customer/portal/14/user/login?destination=portal%2F14) if you are building an app and found a bug/issue or have suggestions.
+
+## Disclaimer
+
+MCP clients can perform actions in Jira, Confluence, and Compass with your existing permissions. Use least privilege, review high‑impact changes before confirming, and monitor audit logs for unusual activity.
+
+Learn more: MCP Clients - (Understanding the potential security risks)[https://www.atlassian.com/blog/artificial-intelligence/mcp-risk-awareness]
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[songquanpeng/one-api]]></title>
+            <link>https://github.com/songquanpeng/one-api</link>
+            <guid>https://github.com/songquanpeng/one-api</guid>
+            <pubDate>Thu, 12 Mar 2026 00:06:53 GMT</pubDate>
+            <description><![CDATA[LLM API 管理 & 分发系统，支持 OpenAI、Azure、Anthropic Claude、Google Gemini、DeepSeek、字节豆包、ChatGLM、文心一言、讯飞星火、通义千问、360 智脑、腾讯混元等主流模型，统一 API 适配，可用于 key 管理与二次分发。单可执行文件，提供 Docker 镜像，一键部署，开箱即用。LLM API management & key redistribution system, unifying multiple providers under a single API. Single binary, Docker-ready, with an English UI.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/songquanpeng/one-api">songquanpeng/one-api</a></h1>
+            <p>LLM API 管理 & 分发系统，支持 OpenAI、Azure、Anthropic Claude、Google Gemini、DeepSeek、字节豆包、ChatGLM、文心一言、讯飞星火、通义千问、360 智脑、腾讯混元等主流模型，统一 API 适配，可用于 key 管理与二次分发。单可执行文件，提供 Docker 镜像，一键部署，开箱即用。LLM API management & key redistribution system, unifying multiple providers under a single API. Single binary, Docker-ready, with an English UI.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 30,370</p>
+            <p>Forks: 5,798</p>
+            <p>Stars today: 47 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;right&quot;&gt;
+   &lt;strong&gt;中文&lt;/strong&gt; | &lt;a href=&quot;./README.en.md&quot;&gt;English&lt;/a&gt; | &lt;a href=&quot;./README.ja.md&quot;&gt;日本語&lt;/a&gt;
+&lt;/p&gt;
+
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://github.com/songquanpeng/one-api&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/songquanpeng/one-api/main/web/default/public/logo.png&quot; width=&quot;150&quot; height=&quot;150&quot; alt=&quot;one-api logo&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+
+# One API
+
+_✨ 通过标准的 OpenAI API 格式访问所有的大模型，开箱即用 ✨_
+
+&lt;/div&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://raw.githubusercontent.com/songquanpeng/one-api/main/LICENSE&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/github/license/songquanpeng/one-api?color=brightgreen&quot; alt=&quot;license&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://github.com/songquanpeng/one-api/releases/latest&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/github/v/release/songquanpeng/one-api?color=brightgreen&amp;include_prereleases&quot; alt=&quot;release&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://hub.docker.com/repository/docker/justsong/one-api&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/docker/pulls/justsong/one-api?color=brightgreen&quot; alt=&quot;docker pull&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://github.com/songquanpeng/one-api/releases/latest&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/github/downloads/songquanpeng/one-api/total?color=brightgreen&amp;include_prereleases&quot; alt=&quot;release&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://goreportcard.com/report/github.com/songquanpeng/one-api&quot;&gt;
+    &lt;img src=&quot;https://goreportcard.com/badge/github.com/songquanpeng/one-api&quot; alt=&quot;GoReportCard&quot;&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://github.com/songquanpeng/one-api#部署&quot;&gt;部署教程&lt;/a&gt;
+  ·
+  &lt;a href=&quot;https://github.com/songquanpeng/one-api#使用方法&quot;&gt;使用方法&lt;/a&gt;
+  ·
+  &lt;a href=&quot;https://github.com/songquanpeng/one-api/issues&quot;&gt;意见反馈&lt;/a&gt;
+  ·
+  &lt;a href=&quot;https://github.com/songquanpeng/one-api#截图展示&quot;&gt;截图展示&lt;/a&gt;
+  ·
+  &lt;a href=&quot;https://openai.justsong.cn/&quot;&gt;在线演示&lt;/a&gt;
+  ·
+  &lt;a href=&quot;https://github.com/songquanpeng/one-api#常见问题&quot;&gt;常见问题&lt;/a&gt;
+  ·
+  &lt;a href=&quot;https://github.com/songquanpeng/one-api#相关项目&quot;&gt;相关项目&lt;/a&gt;
+  ·
+  &lt;a href=&quot;https://iamazing.cn/page/reward&quot;&gt;赞赏支持&lt;/a&gt;
+&lt;/p&gt;
+
+&gt; [!NOTE]
+&gt; 本项目为开源项目，使用者必须在遵循 OpenAI 的[使用条款](https://openai.com/policies/terms-of-use)以及**法律法规**的情况下使用，不得用于非法用途。
+&gt;
+&gt; 根据[《生成式人工智能服务管理暂行办法》](http://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm)的要求，请勿对中国地区公众提供一切未经备案的生成式人工智能服务。
+
+&gt; [!NOTE]
+&gt; 稳定版 / 预览版镜像地址：[justsong/one-api](https://hub.docker.com/repository/docker/justsong/one-api)
+&gt; 或者 [ghcr.io/songquanpeng/one-api](https://github.com/songquanpeng/one-api/pkgs/container/one-api)
+&gt;
+&gt; alpha 版镜像地址：[justsong/one-api-alpha](https://hub.docker.com/repository/docker/justsong/one-api-alpha)
+&gt; 或者 [ghcr.io/songquanpeng/one-api-alpha](https://github.com/songquanpeng/one-api/pkgs/container/one-api-alpha)
+
+&gt; [!WARNING]
+&gt; 使用 root 用户初次登录系统后，务必修改默认密码 `123456`！
+
+## 功能
+1. 支持多种大模型：
+   + [x] [OpenAI ChatGPT 系列模型](https://platform.openai.com/docs/guides/gpt/chat-completions-api)（支持 [Azure OpenAI API](https://learn.microsoft.com/en-us/azure/ai-services/openai/reference)）
+   + [x] [Anthropic Claude 系列模型](https://anthropic.com) (支持 AWS Claude)
+   + [x] [Google PaLM2/Gemini 系列模型](https://developers.generativeai.google)
+   + [x] [Mistral 系列模型](https://mistral.ai/)
+   + [x] [字节跳动豆包大模型（火山引擎）](https://www.volcengine.com/experience/ark?utm_term=202502dsinvite&amp;ac=DSASUQY5&amp;rc=2QXCA1VI)
+   + [x] [百度文心一言系列模型](https://cloud.baidu.com/doc/WENXINWORKSHOP/index.html)
+   + [x] [阿里通义千问系列模型](https://help.aliyun.com/document_detail/2400395.html)
+   + [x] [讯飞星火认知大模型](https://www.xfyun.cn/doc/spark/Web.html)
+   + [x] [智谱 ChatGLM 系列模型](https://bigmodel.cn)
+   + [x] [360 智脑](https://ai.360.cn)
+   + [x] [腾讯混元大模型](https://cloud.tencent.com/document/product/1729)
+   + [x] [Moonshot AI](https://platform.moonshot.cn/)
+   + [x] [百川大模型](https://platform.baichuan-ai.com)
+   + [x] [MINIMAX](https://api.minimax.chat/)
+   + [x] [Groq](https://wow.groq.com/)
+   + [x] [Ollama](https://github.com/ollama/ollama)
+   + [x] [零一万物](https://platform.lingyiwanwu.com/)
+   + [x] [阶跃星辰](https://platform.stepfun.com/)
+   + [x] [Coze](https://www.coze.com/)
+   + [x] [Cohere](https://cohere.com/)
+   + [x] [DeepSeek](https://www.deepseek.com/)
+   + [x] [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/)
+   + [x] [DeepL](https://www.deepl.com/)
+   + [x] [together.ai](https://www.together.ai/)
+   + [x] [novita.ai](https://www.novita.ai/)
+   + [x] [硅基流动 SiliconCloud](https://cloud.siliconflow.cn/i/rKXmRobW)
+   + [x] [xAI](https://x.ai/)
+2. 支持配置镜像以及众多[第三方代理服务](https://iamazing.cn/page/openai-api-third-party-services)。
+3. 支持通过**负载均衡**的方式访问多个渠道。
+4. 支持 **stream 模式**，可以通过流式传输实现打字机效果。
+5. 支持**多机部署**，[详见此处](#多机部署)。
+6. 支持**令牌管理**，设置令牌的过期时间、额度、允许的 IP 范围以及允许的模型访问。
+7. 支持**兑换码管理**，支持批量生成和导出兑换码，可使用兑换码为账户进行充值。
+8. 支持**渠道管理**，批量创建渠道。
+9. 支持**用户分组**以及**渠道分组**，支持为不同分组设置不同的倍率。
+10. 支持渠道**设置模型列表**。
+11. 支持**查看额度明细**。
+12. 支持**用户邀请奖励**。
+13. 支持以美元为单位显示额度。
+14. 支持发布公告，设置充值链接，设置新用户初始额度。
+15. 支持模型映射，重定向用户的请求模型，如无必要请不要设置，设置之后会导致请求体被重新构造而非直接透传，会导致部分还未正式支持的字段无法传递成功。
+16. 支持失败自动重试。
+17. 支持绘图接口。
+18. 支持 [Cloudflare AI Gateway](https://developers.cloudflare.com/ai-gateway/providers/openai/)，渠道设置的代理部分填写 `https://gateway.ai.cloudflare.com/v1/ACCOUNT_TAG/GATEWAY/openai` 即可。
+19. 支持丰富的**自定义**设置，
+    1. 支持自定义系统名称，logo 以及页脚。
+    2. 支持自定义首页和关于页面，可以选择使用 HTML &amp; Markdown 代码进行自定义，或者使用一个单独的网页通过 iframe 嵌入。
+20. 支持通过系统访问令牌调用管理 API，进而**在无需二开的情况下扩展和自定义** One API 的功能，详情请参考此处 [API 文档](./docs/API.md)。
+21. 支持 Cloudflare Turnstile 用户校验。
+22. 支持用户管理，支持**多种用户登录注册方式**：
+    + 邮箱登录注册（支持注册邮箱白名单）以及通过邮箱进行密码重置。
+    + 支持[飞书授权登录](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/authen-v1/authorize/get)（[这里有 One API 的实现细节阐述供参考](https://iamazing.cn/page/feishu-oauth-login)）。
+    + 支持 [GitHub 授权登录](https://github.com/settings/applications/new)。
+    + 微信公众号授权（需要额外部署 [WeChat Server](https://github.com/songquanpeng/wechat-server)）。
+23. 支持主题切换，设置环境变量 `THEME` 即可，默认为 `default`，欢迎 PR 更多主题，具体参考[此处](./web/README.md)。
+24. 配合 [Message Pusher](https://github.com/songquanpeng/message-pusher) 可将报警信息推送到多种 App 上。
+
+## 部署
+### 基于 Docker 进行部署
+```shell
+# 使用 SQLite 的部署命令：
+docker run --name one-api -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/one-api:/data justsong/one-api
+# 使用 MySQL 的部署命令，在上面的基础上添加 `-e SQL_DSN=&quot;root:123456@tcp(localhost:3306)/oneapi&quot;`，请自行修改数据库连接参数，不清楚如何修改请参见下面环境变量一节。
+# 例如：
+docker run --name one-api -d --restart always -p 3000:3000 -e SQL_DSN=&quot;root:123456@tcp(localhost:3306)/oneapi&quot; -e TZ=Asia/Shanghai -v /home/ubuntu/data/one-api:/data justsong/one-api
 ```
 
-### Production build
+其中，`-p 3000:3000` 中的第一个 `3000` 是宿主机的端口，可以根据需要进行修改。
 
-```bash
-npm run build
+数据和日志将会保存在宿主机的 `/home/ubuntu/data/one-api` 目录，请确保该目录存在且具有写入权限，或者更改为合适的目录。
+
+如果启动失败，请添加 `--privileged=true`，具体参考 https://github.com/songquanpeng/one-api/issues/482 。
+
+如果上面的镜像无法拉取，可以尝试使用 GitHub 的 Docker 镜像，将上面的 `justsong/one-api` 替换为 `ghcr.io/songquanpeng/one-api` 即可。
+
+如果你的并发量较大，**务必**设置 `SQL_DSN`，详见下面[环境变量](#环境变量)一节。
+
+更新命令：`docker run --rm -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower -cR`
+
+Nginx 的参考配置：
+```
+server{
+   server_name openai.justsong.cn;  # 请根据实际情况修改你的域名
+
+   location / {
+          client_max_body_size  64m;
+          proxy_http_version 1.1;
+          proxy_pass http://localhost:3000;  # 请根据实际情况修改你的端口
+          proxy_set_header Host $host;
+          proxy_set_header X-Forwarded-For $remote_addr;
+          proxy_cache_bypass $http_upgrade;
+          proxy_set_header Accept-Encoding gzip;
+          proxy_read_timeout 300s;  # GPT-4 需要较长的超时时间，请自行调整
+   }
+}
 ```
 
-## Screenshots
+之后使用 Let&#039;s Encrypt 的 certbot 配置 HTTPS：
+```bash
+# Ubuntu 安装 certbot：
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+# 生成证书 &amp; 修改 Nginx 配置
+sudo certbot --nginx
+# 根据指示进行操作
+# 重启 Nginx
+sudo service nginx restart
+```
 
-### Board
+初始账号用户名为 `root`，密码为 `123456`。
 
-![Board](/screenshots/board.png)
+### 通过宝塔面板进行一键部署
+1. 安装宝塔面板9.2.0及以上版本，前往 [宝塔面板](https://www.bt.cn/new/download.html?r=dk_oneapi) 官网，选择正式版的脚本下载安装；
+2. 安装后登录宝塔面板，在左侧菜单栏中点击 `Docker`，首次进入会提示安装 `Docker` 服务，点击立即安装，按提示完成安装；
+3. 安装完成后在应用商店中搜索 `One-API`，点击安装，配置域名等基本信息即可完成安装；
 
-### Discover
+### 基于 Docker Compose 进行部署
 
-![Discover](/screenshots/discover.png)
+&gt; 仅启动方式不同，参数设置不变，请参考基于 Docker 部署部分
 
-### Meta Details
+```shell
+# 目前支持 MySQL 启动，数据存储在 ./data/mysql 文件夹内
+docker-compose up -d
 
-![Meta Details](/screenshots/metadetails.png)
+# 查看部署状态
+docker-compose ps
+```
 
-## License
+### 手动部署
+1. 从 [GitHub Releases](https://github.com/songquanpeng/one-api/releases/latest) 下载可执行文件或者从源码编译：
+   ```shell
+   git clone https://github.com/songquanpeng/one-api.git
 
-Stremio is copyright 2017-2022 Smart code and available under GPLv2 license. See the [LICENSE](/LICENSE.md) file in the project for more information.
+   # 构建前端
+   cd one-api/web/default
+   npm install
+   npm run build
+
+   # 构建后端
+   cd ../..
+   go mod download
+   go build -ldflags &quot;-s -w&quot; -o one-api
+   ````
+2. 运行：
+   ```shell
+   chmod u+x one-api
+   ./one-api --port 3000 --log-dir ./logs
+   ```
+3. 访问 [http://localhost:3000/](http://localhost:3000/) 并登录。初始账号用户名为 `root`，密码为 `123456`。
+
+更加详细的部署教程[参见此处](https://iamazing.cn/page/how-to-deploy-a-website)。
+
+### 多机部署
+1. 所有服务器 `SESSION_SECRET` 设置一样的值。
+2. 必须设置 `SQL_DSN`，使用 MySQL 数据库而非 SQLite，所有服务器连接同一个数据库。
+3. 所有从服务器必须设置 `NODE_TYPE` 为 `slave`，不设置则默认为主服务器。
+4. 设置 `SYNC_FREQUENCY` 后服务器将定期从数据库同步配置，在使用远程数据库的情况下，推荐设置该项并启用 Redis，无论主从。
+5. 从服务器可以选择设置 `FRONTEND_BASE_URL`，以重定向页面请求到主服务器。
+6. 从服务器上**分别**装好 Redis，设置好 `REDIS_CONN_STRING`，这样可以做到在缓存未过期的情况下数据库零访问，可以减少延迟（Redis 集群或者哨兵模式的支持请参考环境变量说明）。
+7. 如果主服务器访问数据库延迟也比较高，则也需要启用 Redis，并设置 `SYNC_FREQUENCY`，以定期从数据库同步配置。
+
+环境变量的具体使用方法详见[此处](#环境变量)。
+
+### 宝塔部署教程
+
+详见 [#175](https://github.com/songquanpeng/one-api/issues/175)。
+
+如果部署后访问出现空白页面，详见 [#97](https://github.com/songquanpeng/one-api/issues/97)。
+
+### 部署第三方服务配合 One API 使用
+&gt; 欢迎 PR 添加更多示例。
+
+#### ChatGPT Next Web
+项目主页：https://github.com/Yidadaa/ChatGPT-Next-Web
+
+```bash
+docker run --name chat-next-web -d -p 3001:3000 yidadaa/chatgpt-next-web
+```
+
+注意修改端口号，之后在页面上设置接口地址（例如：https://openai.justsong.cn/ ）和 API Key 即可。
+
+#### ChatGPT Web
+项目主页：https://github.com/Chanzhaoyu/chatgpt-web
+
+```bash
+docker run --name chatgpt-web -d -p 3002:3002 -e OPENAI_API_BASE_URL=https://openai.justsong.cn -e OPENAI_API_KEY=sk-xxx chenzhaoyu94/chatgpt-web
+```
+
+注意修改端口号、`OPENAI_API_BASE_URL` 和 `OPENAI_API_KEY`。
+
+#### QChatGPT - QQ机器人
+项目主页：https://github.com/RockChinQ/QChatGPT
+
+根据[文档](https://qchatgpt.rockchin.top)完成部署后，在 `data/provider.json`设置`requester.openai-chat-completions.base-url`为 One API 实例地址，并填写 API Key 到 `keys.openai` 组中，设置 `model` 为要使用的模型名称。
+
+运行期间可以通过`!model`命令查看、切换可用模型。
+
+### 部署到第三方平台
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;部署到 Sealos &lt;/strong&gt;&lt;/summary&gt;
+&lt;div&gt;
+
+&gt; Sealos 的服务器在国外，不需要额外处理网络问题，支持高并发 &amp; 动态伸缩。
+
+点击以下按钮一键部署（部署后访问出现 404 请等待 3~5 分钟）：
+
+[![Deploy-on-Sealos.svg](https://raw.githubusercontent.com/labring-actions/templates/main/Deploy-on-Sealos.svg)](https://cloud.sealos.io/?openapp=system-fastdeploy?templateName=one-api)
+
+&lt;/div&gt;
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;部署到 Zeabur&lt;/strong&gt;&lt;/summary&gt;
+&lt;div&gt;
+
+&gt; Zeabur 的服务器在国外，自动解决了网络的问题，同时免费的额度也足够个人使用
+
+[![Deploy on Zeabur](https://zeabur.com/button.svg)](https://zeabur.com/templates/7Q0KO3)
+
+1. 首先 fork 一份代码。
+2. 进入 [Zeabur](https://zeabur.com?referralCode=songquanpeng)，登录，进入控制台。
+3. 新建一个 Project，在 Service -&gt; Add Service 选择 Marketplace，选择 MySQL，并记下连接参数（用户名、密码、地址、端口）。
+4. 复制链接参数，运行 ```create database `one-api` ``` 创建数据库。
+5. 然后在 Service -&gt; Add Service，选择 Git（第一次使用需要先授权），选择你 fork 的仓库。
+6. Deploy 会自动开始，先取消。进入下方 Variable，添加一个 `PORT`，值为 `3000`，再添加一个 `SQL_DSN`，值为 `&lt;username&gt;:&lt;password&gt;@tcp(&lt;addr&gt;:&lt;port&gt;)/one-api` ，然后保存。 注意如果不填写 `SQL_DSN`，数据将无法持久化，重新部署后数据会丢失。
+7. 选择 Redeploy。
+8. 进入下方 Domains，选择一个合适的域名前缀，如 &quot;my-one-api&quot;，最终域名为 &quot;my-one-api.zeabur.app&quot;，也可以 CNAME 自己的域名。
+9. 等待部署完成，点击生成的域名进入 One API。
+
+&lt;/div&gt;
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;部署到 Render&lt;/strong&gt;&lt;/summary&gt;
+&lt;div&gt;
+
+&gt; Render 提供免费额度，绑卡后可以进一步提升额度
+
+Render 可以直接部署 docker 镜像，不需要 fork 仓库：https://dashboard.render.com
+
+&lt;/div&gt;
+&lt;/details&gt;
+
+## 配置
+系统本身开箱即用。
+
+你可以通过设置环境变量或者命令行参数进行配置。
+
+等到系统启动后，使用 `root` 用户登录系统并做进一步的配置。
+
+**Note**：如果你不知道某个配置项的含义，可以临时删掉值以看到进一步的提示文字。
+
+## 使用方法
+在`渠道`页面中添加你的 API Key，之后在`令牌`页面中新增访问令牌。
+
+之后就可以使用你的令牌访问 One API 了，使用方式与 [OpenAI API](https://platform.openai.com/docs/api-reference/introduction) 一致。
+
+你需要在各种用到 OpenAI API 的地方设置 API Base 为你的 One API 的部署地址，例如：`https://openai.justsong.cn`，API Key 则为你在 One API 中生成的令牌。
+
+注意，具体的 API Base 的格式取决于你所使用的客户端。
+
+例如对于 OpenAI 的官方库：
+```bash
+OPENAI_API_KEY=&quot;sk-xxxxxx&quot;
+OPENAI_API_BASE=&quot;https://&lt;HOST&gt;:&lt;PORT&gt;/v1&quot;
+```
+
+```mermaid
+graph LR
+    A(用户)
+    A ---&gt;|使用 One API 分发的 key 进行请求| B(One API)
+    B --&gt;|中继请求| C(OpenAI)
+    B --&gt;|中继请求| D(Azure)
+    B --&gt;|中继请求| E(其他 OpenAI API 格式下游渠道)
+    B --&gt;|中继并修改请求体和返回体| F(非 OpenAI API 格式下游渠道)
+```
+
+可以通过在令牌后面添加渠道 ID 的方式指定使用哪一个渠道处理本次请求，例如：`Authorization: Bearer ONE_API_KEY-CHANNEL_ID`。
+注意，需要是管理员用户创建的令牌才能指定渠道 ID。
+
+不加的话将会使用负载均衡的方式使用多个渠道。
+
+### 环境变量
+&gt; One API 支持从 `.env` 文件中读取环境变量，请参照 `.env.example` 文件，使用时请将其重命名为 `.env`。
+1. `REDIS_CONN_STRING`：设置之后将使用 Redis 作为缓存使用。
+   + 例子：`REDIS_CONN_STRING=redis://default:redispw@localhost:49153`
+   + 如果数据库访问延迟很低，没有必要启用 Redis，启用后反而会出现数据滞后的问题。
+   + 如果需要使用哨兵或者集群模式：
+     + 则需要把该环境变量设置为节点列表，例如：`localhost:49153,localhost:49154,localhost:49155`。
+     + 除此之外还需要设置以下环境变量：
+       + `REDIS_PASSWORD`：Redis 集群或者哨兵模式下的密码设置。
+       + `REDIS_MASTER_NAME`：Redis 哨兵模式下主节点的名称。
+2. `SESSION_SECRET`：设置之后将使用固定的会话密钥，这样系统重新启动后已登录用户的 cookie 将依旧有效。
+   + 例子：`SESSION_SECRET=random_string`
+3. `SQL_DSN`：设置之后将使用指定数据库而非 SQLite，请使用 MySQL 或 PostgreSQL。
+   + 例子：
+     + MySQL：`SQL_DSN=root:123456@tcp(localhost:3306)/oneapi`
+     + PostgreSQL：`SQL_DSN=postgres://postgres:123456@localhost:5432/oneapi`（适配中，欢迎反馈）
+   + 注意需要提前建立数据库 `oneapi`，无需手动建表，程序将自动建表。
+   + 如果使用本地数据库：部署命令可添加 `--network=&quot;host&quot;` 以使得容器内的程序可以访问到宿主机上的 MySQL。
+   + 如果使用云数据库：如果云服务器需要验证身份，需要在连接参数中添加 `?tls=skip-verify`。
+   + 请根据你的数据库配置修改下列参数（或者保持默认值）：
+     + `SQL_MAX_IDLE_CONNS`：最大空闲连接数，默认为 `100`。
+     + `SQL_MAX_OPEN_CONNS`：最大打开连接数，默认为 `1000`。
+       + 如果报错 `Error 1040: Too many connections`，请适当减小该值。
+     + `SQL_CONN_MAX_LIFETIME`：连接的最大生命周期，默认为 `60`，单位分钟。
+4. `LOG_SQL_DSN`：设置之后将为 `logs` 表使用独立的数据库，请使用 MySQL 或 PostgreSQL。
+5. `FRONTEND_BASE_URL`：设置之后将重定向页面请求到指定的地址，仅限从服务器设置。
+   + 例子：`FRONTEND_BASE_URL=https://openai.justsong.cn`
+6. `MEMORY_CACHE_ENABLED`：启用内存缓存，会导致用户额度的更新存在一定的延迟，可选值为 `true` 和 `false`，未设置则默认为 `false`。
+   + 例子：`MEMORY_CACHE_ENABLED=true`
+7. `SYNC_FREQUENCY`：在启用缓存的情况下与数据库同步配置的频率，单位为秒，默认为 `600` 秒。
+   + 例子：`SYNC_FREQUENCY=60`
+8. `NODE_TYPE`：设置之后将指定节点类型，可选值为 `master` 和 `slave`，未设置则默认为 `master`。
+   + 例子：`NODE_TYPE=slave`
+9. `CHANNEL_UPDATE_FREQUENCY`：设置之后将定期更新渠道余额，单位为分钟，未设置则不进行更新。
+   + 例子：`CHANNEL_UPDATE_FREQUENCY=1440`
+10. `CHANNEL_TEST_FREQUENCY`：设置之后将定期检查渠道，单位为分钟，未设置则不进行检查。 
+   +例子：`CHANNEL_TEST_FREQUENCY=1440`
+11. `POLLING_INTERVAL`：批量更新渠道余额以及测试可用性时的请求间隔，单位为秒，默认无间隔。
+    + 例子：`POLLING_INTERVAL=5`
+12. `BATCH_UPDATE_ENABLED`：启用数据库批量更新聚合，会导致用户额度的更新存在一定的延迟可选值为 `true` 和 `false`，未设置则默认为 `false`。
+    + 例子：`BATCH_UPDATE_ENABLED=true`
+    + 如果你遇到了数据库连接数过多的问题，可以尝试启用该选项。
+13. `BATCH_UPDATE_INTERVAL=5`：批量更新聚合的时间间隔，单位为秒，默认为 `5`。
+    + 例子：`BATCH_UPDATE_INTERVAL=5`
+14. 请求频率限制：
+    + `GLOBAL_API_RATE_LIMIT`：全局 API 速率限制（除中继请求外），单 ip 三分钟内的最大请求数，默认为 `180`。
+    + `GLOBAL_WEB_RATE_LIMIT`：全局 Web 速率限制，单 ip 三分钟内的最大请求数，默认为 `60`。
+15. 编码器缓存设置：
+    + `TIKTOKEN_CACHE_DIR`：默认程序启动时会联网下载一些通用的词元的编码，如：`gpt-3.5-turbo`，在一些网络环境不稳定，或者离线情况，可能会导致启动有问题，可以配置此目录缓存数据，可迁移到离线环境。
+    + `DATA_GYM_CACHE_DIR`：目前该配置作用与 `TIKTOKEN_CACHE_DIR` 一致，但是优先级没有它高。
+16. `RELAY_TIMEOUT`：中继超时设置，单位为秒，默认不设置超时时间。
+17. `RELAY_PROXY`：设置后使用该代理来请求 API。
+18. `USER_CONTENT_REQUEST_TIMEOUT`：用户上传内容下载超时时间，单位为秒。
+19. `USER_CONTENT_REQUEST_PROXY`：设置后使用该代理来请求用户上传的内容，例如图片。
+20. `SQLITE_BUSY_TIMEOUT`：SQLite 锁等待超时设置，单位为毫秒，默认 `3000`。
+21. `GEMINI_SAFETY_SETTING`：Gemini 的安全设置，默认 `BLOCK_NONE`。
+22. `GEMINI_VERSION`：One API 所使用的 Gemini 版本，默认为 `v1`。
+23. `THEME`：系统的主题设置，默认为 `default`，具体可选值参考[此处](./web/README.md)。
+24. `ENABLE_METRIC`：是否根据请求成功率禁用渠道，默认不开启，可选值为 `true` 和 `false`。
+25. `METRIC_QUEUE_SIZE`：请求成功率统计队列大小，默认为 `10`。
+26. `METRIC_SUCCESS_RATE_THRESHOLD`：请求成功率阈值，默认为 `0.8`。
+27. `INITIAL_ROOT_TOKEN`：如果设置了该值，则在系统首次启动时会自动创建一个值为该环境变量值的 root 用户令牌。
+28. `INITIAL_ROOT_ACCESS_TOKEN`：如果设置了该值，则在系统首次启动时会自动创建一个值为该环境变量的 root 用户创建系统管理令牌。
+29. `ENFORCE_INCLUDE_USAGE`：是否强制在 stream 模型下返回 usage，默认不开启，可选值为 `true` 和 `false`。
+30. `TEST_PROMPT`：测试模型时的用户 prompt，默认为 `Print your model name exactly and do not output without any other text.`。
+
+### 命令行参数
+1. `--port &lt;port_number&gt;`: 指定服务器监听的端口号，默认为 `3000`。
+   + 例子：`--port 3000`
+2. `--log-dir &lt;log_dir&gt;`: 指定日志文件夹，如果没有设置，默认保存至工作目录的 `logs` 文件夹下。
+   + 例子：`--log-dir ./logs`
+3. `--version`: 打印系统版本号并退出。
+4. `--help`: 查看命令的使用帮助和参数说明。
+
+## 演示
+### 在线演示
+注意，该演示站不提供对外服务：
+https://openai.justsong.cn
+
+### 截图展示
+![channel](https://user-images.githubusercontent.com/39998050/233837954-ae6683aa-5c4f-429f-a949-6645a83c9490.png)
+![token](https://user-images.githubusercontent.com/39998050/233837971-dab488b7-6d96-43af-b640-a168e8d1c9bf.png)
+
+## 常见问题
+1. 额度是什么？怎么计算的？One API 的额度计算有问题？
+   + 额度 = 分组倍率 * 模型倍率 * （提示 token 数 + 补全 token 数 * 补全倍率）
+   + 其中补全倍率对于 GPT3.5 固定为 1.33，GPT4 为 2，与官方保持一致。
+   + 如果是非流模式，官方接口会返回消耗的总 token，但是你要注意提示和补全的消耗倍率不一样。
+   + 注意，One API 的默认倍率就是官方倍率，是已经调整过的。
+2. 账户额度足够为什么提示额度不足？
+   + 请检查你的令牌额度是否足够，这个和账户额度是分开的。
+   + 令牌额度仅供用户设置最大使用量，用户可自由设置。
+3. 提示无可用渠道？
+   + 请检查的用户分组和渠道分组设置。
+   + 以及渠道的模型设置。
+4. 渠道测试报错：`invalid character &#039;&lt;&#039; looking for beginning of value`
+   + 这是因为返回值不是合法的 JSON，而是一个 HTML 页面。
+   + 大概率是你的部署站的 IP 或代理的节点被 CloudFlare 封禁了。
+5. ChatGPT Next Web 报错：`Failed to fetch`
+   + 部署的时候不要设置 `BASE_URL`。
+   + 检查你的接口地址和 API Key 有没有填对。
+   + 检查是否启用了 HTTPS，浏览器会拦截 HTTPS 域名下的 HTTP 请求。
+6. 报错：`当前分组负载已饱和，请稍后再试`
+   + 上游渠道 429 了。
+7. 升级之后我的数据会丢失吗？
+   + 如果使用 MySQL，不会。
+   + 如果使用 SQLite，需要按照我所给的部署命令挂载 volume 持久化 one-api.db 数据库文件，否则容器重启后数据会丢失。
+8. 升级之前数据库需要做变更吗？
+   + 一般情况下不需要，系统将在初始化的时候自动调整。
+   + 如果需要的话，我会在更新日志中说明，并给出脚本。
+9. 手动修改数据库后报错：`数据库一致性已被破坏，请联系管理员`？
+   + 这是检测到 ability 表里有些记录的渠道 id 是不存在的，这大概率是因为你删了 channel 表里的记录但是没有同步在 ability 表里清理无效的渠道。
+   + 对于每一个渠道，其所支持的模型都需要有一个专门的 ability 表的记录，表示该渠道支持该模型。
+
+## 相关项目
+* [FastGPT](https://github.com/labring/FastGPT): 基于 LLM 大语言模型的知识库问答系统
+* [ChatGPT Next Web](https://github.com/Yidadaa/ChatGPT-Next-Web):  一键拥有你自己的跨平台 ChatGPT 应用
+* [VChart](https://github.com/VisActor/VChart):  不只是开箱即用的多端图表库，更是生动灵活的数据故事讲述者。
+* [VMind](https://github.com/VisActor/VMind):  不仅自动，还很智能。开源智能可视化解决方案。
+* [CherryStudio](https://github.com/CherryHQ/cherry-studio):  全平台支持的AI客户端, 多服务商集成管理、本地知识库支持。
+
+## 注意
+
+本项目使用 MIT 协议进行开源，**在此基础上**，必须在页面底部保留署名以及指向本项目的链接。如果不想保留署名，必须首先获得授权。
+
+同样适用于基于本项目的二开项目。
+
+依据 MIT 协议，使用者需自行承担使用本项目的风险与责任，本开源项目开发者与此无关。
 </pre>
           ]]></content:encoded>
             <category>JavaScript</category>
@@ -1122,15 +2295,15 @@ Stremio is copyright 2017-2022 Smart code and available under GPLv2 license. See
             <title><![CDATA[decolua/9router]]></title>
             <link>https://github.com/decolua/9router</link>
             <guid>https://github.com/decolua/9router</guid>
-            <pubDate>Wed, 11 Mar 2026 00:04:50 GMT</pubDate>
-            <description><![CDATA[Universal AI Proxy for Claude Code, Codex, Cursor | OpenAI, Claude, Gemini, Copilot]]></description>
+            <pubDate>Thu, 12 Mar 2026 00:06:52 GMT</pubDate>
+            <description><![CDATA[Connect All AI Code Tools (Claude Code, Cursor, Antigravity, Copilot, Codex, Gemini, OpenCode, Cline, OpenClaw...) to 40+ AI Providers & 100+ Models]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/decolua/9router">decolua/9router</a></h1>
-            <p>Universal AI Proxy for Claude Code, Codex, Cursor | OpenAI, Claude, Gemini, Copilot</p>
+            <p>Connect All AI Code Tools (Claude Code, Cursor, Antigravity, Copilot, Codex, Gemini, OpenCode, Cline, OpenClaw...) to 40+ AI Providers & 100+ Models</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 800</p>
-            <p>Forks: 223</p>
-            <p>Stars today: 58 stars today</p>
+            <p>Stars: 831</p>
+            <p>Forks: 234</p>
+            <p>Stars today: 29 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
   &lt;img src=&quot;./images/9router.png?1&quot; alt=&quot;9Router Dashboard&quot; width=&quot;800&quot;/&gt;
   
@@ -1138,11 +2311,7 @@ Stremio is copyright 2017-2022 Smart code and available under GPLv2 license. See
   
   **Never stop coding. Auto-route to FREE &amp; cheap AI models with smart fallback.**
   
-  **Free AI Provider for OpenClaw.**
-  
-  &lt;p align=&quot;center&quot;&gt;
-    &lt;img src=&quot;./public/providers/openclaw.png&quot; alt=&quot;OpenClaw&quot; width=&quot;80&quot;/&gt;
-  &lt;/p&gt;
+  **Connect All AI Code Tools (Claude Code, Cursor, Antigravity, Copilot, Codex, Gemini, OpenCode, Cline, OpenClaw...) to 40+ AI Providers &amp; 100+ Models.**
   
   [![npm](https://img.shields.io/npm/v/9router.svg)](https://www.npmjs.com/package/9router)
   [![Downloads](https://img.shields.io/npm/dm/9router.svg)](https://www.npmjs.com/package/9router)
@@ -1746,561 +2915,7 @@ The cost display is a &quot;savings tracker&quot; to help you understand your us
 
 9Router is a local proxy/router. It doesn&#039;t have your credit card, can&#039;t send invoices, and has no billing system. It&#039;s completely free software.
 
-&lt;/details&gt;
-
-&lt;de
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[gsd-build/get-shit-done]]></title>
-            <link>https://github.com/gsd-build/get-shit-done</link>
-            <guid>https://github.com/gsd-build/get-shit-done</guid>
-            <pubDate>Wed, 11 Mar 2026 00:04:49 GMT</pubDate>
-            <description><![CDATA[A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/gsd-build/get-shit-done">gsd-build/get-shit-done</a></h1>
-            <p>A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 27,637</p>
-            <p>Forks: 2,342</p>
-            <p>Stars today: 605 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-
-# GET SHIT DONE
-
-**A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code, OpenCode, Gemini CLI, and Codex.**
-
-**Solves context rot — the quality degradation that happens as Claude fills its context window.**
-
-[![npm version](https://img.shields.io/npm/v/get-shit-done-cc?style=for-the-badge&amp;logo=npm&amp;logoColor=white&amp;color=CB3837)](https://www.npmjs.com/package/get-shit-done-cc)
-[![npm downloads](https://img.shields.io/npm/dm/get-shit-done-cc?style=for-the-badge&amp;logo=npm&amp;logoColor=white&amp;color=CB3837)](https://www.npmjs.com/package/get-shit-done-cc)
-[![Tests](https://img.shields.io/github/actions/workflow/status/glittercowboy/get-shit-done/test.yml?branch=main&amp;style=for-the-badge&amp;logo=github&amp;label=Tests)](https://github.com/glittercowboy/get-shit-done/actions/workflows/test.yml)
-[![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=for-the-badge&amp;logo=discord&amp;logoColor=white)](https://discord.gg/gsd)
-[![X (Twitter)](https://img.shields.io/badge/X-@gsd__foundation-000000?style=for-the-badge&amp;logo=x&amp;logoColor=white)](https://x.com/gsd_foundation)
-[![$GSD Token](https://img.shields.io/badge/$GSD-Dexscreener-1C1C1C?style=for-the-badge&amp;logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIgZmlsbD0iIzAwRkYwMCIvPjwvc3ZnPg==&amp;logoColor=00FF00)](https://dexscreener.com/solana/dwudwjvan7bzkw9zwlbyv6kspdlvhwzrqy6ebk8xzxkv)
-[![GitHub stars](https://img.shields.io/github/stars/glittercowboy/get-shit-done?style=for-the-badge&amp;logo=github&amp;color=181717)](https://github.com/glittercowboy/get-shit-done)
-[![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
-
-&lt;br&gt;
-
-```bash
-npx get-shit-done-cc@latest
-```
-
-**Works on Mac, Windows, and Linux.**
-
-&lt;br&gt;
-
-![GSD Install](assets/terminal.svg)
-
-&lt;br&gt;
-
-*&quot;If you know clearly what you want, this WILL build it for you. No bs.&quot;*
-
-*&quot;I&#039;ve done SpecKit, OpenSpec and Taskmaster — this has produced the best results for me.&quot;*
-
-*&quot;By far the most powerful addition to my Claude Code. Nothing over-engineered. Literally just gets shit done.&quot;*
-
-&lt;br&gt;
-
-**Trusted by engineers at Amazon, Google, Shopify, and Webflow.**
-
-[Why I Built This](#why-i-built-this) · [How It Works](#how-it-works) · [Commands](#commands) · [Why It Works](#why-it-works) · [User Guide](docs/USER-GUIDE.md)
-
-&lt;/div&gt;
-
----
-
-## Why I Built This
-
-I&#039;m a solo developer. I don&#039;t write code — Claude Code does.
-
-Other spec-driven development tools exist; BMAD, Speckit... But they all seem to make things way more complicated than they need to be (sprint ceremonies, story points, stakeholder syncs, retrospectives, Jira workflows) or lack real big picture understanding of what you&#039;re building. I&#039;m not a 50-person software company. I don&#039;t want to play enterprise theater. I&#039;m just a creative person trying to build great things that work.
-
-So I built GSD. The complexity is in the system, not in your workflow. Behind the scenes: context engineering, XML prompt formatting, subagent orchestration, state management. What you see: a few commands that just work.
-
-The system gives Claude everything it needs to do the work *and* verify it. I trust the workflow. It just does a good job.
-
-That&#039;s what this is. No enterprise roleplay bullshit. Just an incredibly effective system for building cool stuff consistently using Claude Code.
-
-— **TÂCHES**
-
----
-
-Vibecoding has a bad reputation. You describe what you want, AI generates code, and you get inconsistent garbage that falls apart at scale.
-
-GSD fixes that. It&#039;s the context engineering layer that makes Claude Code reliable. Describe your idea, let the system extract everything it needs to know, and let Claude Code get to work.
-
----
-
-## Who This Is For
-
-People who want to describe what they want and have it built correctly — without pretending they&#039;re running a 50-person engineering org.
-
----
-
-## Getting Started
-
-```bash
-npx get-shit-done-cc@latest
-```
-
-The installer prompts you to choose:
-1. **Runtime** — Claude Code, OpenCode, Gemini, Codex, or all
-2. **Location** — Global (all projects) or local (current project only)
-
-Verify with:
-- Claude Code / Gemini: `/gsd:help`
-- OpenCode: `/gsd-help`
-- Codex: `$gsd-help`
-
-&gt; [!NOTE]
-&gt; Codex installation uses skills (`skills/gsd-*/SKILL.md`) rather than custom prompts.
-
-### Staying Updated
-
-GSD evolves fast. Update periodically:
-
-```bash
-npx get-shit-done-cc@latest
-```
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Non-interactive Install (Docker, CI, Scripts)&lt;/strong&gt;&lt;/summary&gt;
-
-```bash
-# Claude Code
-npx get-shit-done-cc --claude --global   # Install to ~/.claude/
-npx get-shit-done-cc --claude --local    # Install to ./.claude/
-
-# OpenCode (open source, free models)
-npx get-shit-done-cc --opencode --global # Install to ~/.config/opencode/
-
-# Gemini CLI
-npx get-shit-done-cc --gemini --global   # Install to ~/.gemini/
-
-# Codex (skills-first)
-npx get-shit-done-cc --codex --global    # Install to ~/.codex/
-npx get-shit-done-cc --codex --local     # Install to ./.codex/
-
-# All runtimes
-npx get-shit-done-cc --all --global      # Install to all directories
-```
-
-Use `--global` (`-g`) or `--local` (`-l`) to skip the location prompt.
-Use `--claude`, `--opencode`, `--gemini`, `--codex`, or `--all` to skip the runtime prompt.
-
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Development Installation&lt;/strong&gt;&lt;/summary&gt;
-
-Clone the repository and run the installer locally:
-
-```bash
-git clone https://github.com/glittercowboy/get-shit-done.git
-cd get-shit-done
-node bin/install.js --claude --local
-```
-
-Installs to `./.claude/` for testing modifications before contributing.
-
-&lt;/details&gt;
-
-### Recommended: Skip Permissions Mode
-
-GSD is designed for frictionless automation. Run Claude Code with:
-
-```bash
-claude --dangerously-skip-permissions
-```
-
-&gt; [!TIP]
-&gt; This is how GSD is intended to be used — stopping to approve `date` and `git commit` 50 times defeats the purpose.
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Alternative: Granular Permissions&lt;/strong&gt;&lt;/summary&gt;
-
-If you prefer not to use that flag, add this to your project&#039;s `.claude/settings.json`:
-
-```json
-{
-  &quot;permissions&quot;: {
-    &quot;allow&quot;: [
-      &quot;Bash(date:*)&quot;,
-      &quot;Bash(echo:*)&quot;,
-      &quot;Bash(cat:*)&quot;,
-      &quot;Bash(ls:*)&quot;,
-      &quot;Bash(mkdir:*)&quot;,
-      &quot;Bash(wc:*)&quot;,
-      &quot;Bash(head:*)&quot;,
-      &quot;Bash(tail:*)&quot;,
-      &quot;Bash(sort:*)&quot;,
-      &quot;Bash(grep:*)&quot;,
-      &quot;Bash(tr:*)&quot;,
-      &quot;Bash(git add:*)&quot;,
-      &quot;Bash(git commit:*)&quot;,
-      &quot;Bash(git status:*)&quot;,
-      &quot;Bash(git log:*)&quot;,
-      &quot;Bash(git diff:*)&quot;,
-      &quot;Bash(git tag:*)&quot;
-    ]
-  }
-}
-```
-
-&lt;/details&gt;
-
----
-
-## How It Works
-
-&gt; **Already have code?** Run `/gsd:map-codebase` first. It spawns parallel agents to analyze your stack, architecture, conventions, and concerns. Then `/gsd:new-project` knows your codebase — questions focus on what you&#039;re adding, and planning automatically loads your patterns.
-
-### 1. Initialize Project
-
-```
-/gsd:new-project
-```
-
-One command, one flow. The system:
-
-1. **Questions** — Asks until it understands your idea completely (goals, constraints, tech preferences, edge cases)
-2. **Research** — Spawns parallel agents to investigate the domain (optional but recommended)
-3. **Requirements** — Extracts what&#039;s v1, v2, and out of scope
-4. **Roadmap** — Creates phases mapped to requirements
-
-You approve the roadmap. Now you&#039;re ready to build.
-
-**Creates:** `PROJECT.md`, `REQUIREMENTS.md`, `ROADMAP.md`, `STATE.md`, `.planning/research/`
-
----
-
-### 2. Discuss Phase
-
-```
-/gsd:discuss-phase 1
-```
-
-**This is where you shape the implementation.**
-
-Your roadmap has a sentence or two per phase. That&#039;s not enough context to build something the way *you* imagine it. This step captures your preferences before anything gets researched or planned.
-
-The system analyzes the phase and identifies gray areas based on what&#039;s being built:
-
-- **Visual features** → Layout, density, interactions, empty states
-- **APIs/CLIs** → Response format, flags, error handling, verbosity
-- **Content systems** → Structure, tone, depth, flow
-- **Organization tasks** → Grouping criteria, naming, duplicates, exceptions
-
-For each area you select, it asks until you&#039;re satisfied. The output — `CONTEXT.md` — feeds directly into the next two steps:
-
-1. **Researcher reads it** — Knows what patterns to investigate (&quot;user wants card layout&quot; → research card component libraries)
-2. **Planner reads it** — Knows what decisions are locked (&quot;infinite scroll decided&quot; → plan includes scroll handling)
-
-The deeper you go here, the more the system builds what you actually want. Skip it and you get reasonable defaults. Use it and you get *your* vision.
-
-**Creates:** `{phase_num}-CONTEXT.md`
-
----
-
-### 3. Plan Phase
-
-```
-/gsd:plan-phase 1
-```
-
-The system:
-
-1. **Researches** — Investigates how to implement this phase, guided by your CONTEXT.md decisions
-2. **Plans** — Creates 2-3 atomic task plans with XML structure
-3. **Verifies** — Checks plans against requirements, loops until they pass
-
-Each plan is small enough to execute in a fresh context window. No degradation, no &quot;I&#039;ll be more concise now.&quot;
-
-**Creates:** `{phase_num}-RESEARCH.md`, `{phase_num}-{N}-PLAN.md`
-
----
-
-### 4. Execute Phase
-
-```
-/gsd:execute-phase 1
-```
-
-The system:
-
-1. **Runs plans in waves** — Parallel where possible, sequential when dependent
-2. **Fresh context per plan** — 200k tokens purely for implementation, zero accumulated garbage
-3. **Commits per task** — Every task gets its own atomic commit
-4. **Verifies against goals** — Checks the codebase delivers what the phase promised
-
-Walk away, come back to completed work with clean git history.
-
-**How Wave Execution Works:**
-
-Plans are grouped into &quot;waves&quot; based on dependencies. Within each wave, plans run in parallel. Waves run sequentially.
-
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│  PHASE EXECUTION                                                     │
-├─────────────────────────────────────────────────────────────────────┤
-│                                                                      │
-│  WAVE 1 (parallel)          WAVE 2 (parallel)          WAVE 3       │
-│  ┌─────────┐ ┌─────────┐    ┌─────────┐ ┌─────────┐    ┌─────────┐ │
-│  │ Plan 01 │ │ Plan 02 │ →  │ Plan 03 │ │ Plan 04 │ →  │ Plan 05 │ │
-│  │         │ │         │    │         │ │         │    │         │ │
-│  │ User    │ │ Product │    │ Orders  │ │ Cart    │    │ Checkout│ │
-│  │ Model   │ │ Model   │    │ API     │ │ API     │    │ UI      │ │
-│  └─────────┘ └─────────┘    └─────────┘ └─────────┘    └─────────┘ │
-│       │           │              ↑           ↑              ↑       │
-│       └───────────┴──────────────┴───────────┘              │       │
-│              Dependencies: Plan 03 needs Plan 01            │       │
-│                          Plan 04 needs Plan 02              │       │
-│                          Plan 05 needs Plans 03 + 04        │       │
-│                                                                      │
-└─────────────────────────────────────────────────────────────────────┘
-```
-
-**Why waves matter:**
-- Independent plans → Same wave → Run in parallel
-- Dependent plans → Later wave → Wait for dependencies
-- File conflicts → Sequential plans or same plan
-
-This is why &quot;vertical slices&quot; (Plan 01: User feature end-to-end) parallelize better than &quot;horizontal layers&quot; (Plan 01: All models, Plan 02: All APIs).
-
-**Creates:** `{phase_num}-{N}-SUMMARY.md`, `{phase_num}-VERIFICATION.md`
-
----
-
-### 5. Verify Work
-
-```
-/gsd:verify-work 1
-```
-
-**This is where you confirm it actually works.**
-
-Automated verification checks that code exists and tests pass. But does the feature *work* the way you expected? This is your chance to use it.
-
-The system:
-
-1. **Extracts testable deliverables** — What you should be able to do now
-2. **Walks you through one at a time** — &quot;Can you log in with email?&quot; Yes/no, or describe what&#039;s wrong
-3. **Diagnoses failures automatically** — Spawns debug agents to find root causes
-4. **Creates verified fix plans** — Ready for immediate re-execution
-
-If everything passes, you move on. If something&#039;s broken, you don&#039;t manually debug — you just run `/gsd:execute-phase` again with the fix plans it created.
-
-**Creates:** `{phase_num}-UAT.md`, fix plans if issues found
-
----
-
-### 6. Repeat → Complete → Next Milestone
-
-```
-/gsd:discuss-phase 2
-/gsd:plan-phase 2
-/gsd:execute-phase 2
-/gsd:verify-work 2
-...
-/gsd:complete-milestone
-/gsd:new-milestone
-```
-
-Loop **discuss → plan → execute → verify** until milestone complete.
-
-Each phase gets your input (discuss), proper research (plan), clean execution (execute), and human verification (verify). Context stays fresh. Quality stays high.
-
-When all phases are done, `/gsd:complete-milestone` archives the milestone and tags the release.
-
-Then `/gsd:new-milestone` starts the next version — same flow as `new-project` but for your existing codebase. You describe what you want to build next, the system researches the domain, you scope requirements, and it creates a fresh roadmap. Each milestone is a clean cycle: define → build → ship.
-
----
-
-### Quick Mode
-
-```
-/gsd:quick
-```
-
-**For ad-hoc tasks that don&#039;t need full planning.**
-
-Quick mode gives you GSD guarantees (atomic commits, state tracking) with a faster path:
-
-- **Same agents** — Planner + executor, same quality
-- **Skips optional steps** — No research, no plan checker, no verifier
-- **Separate tracking** — Lives in `.planning/quick/`, not phases
-
-Use for: bug fixes, small features, config changes, one-off tasks.
-
-```
-/gsd:quick
-&gt; What do you want to do? &quot;Add dark mode toggle to settings&quot;
-```
-
-**Creates:** `.planning/quick/001-add-dark-mode-toggle/PLAN.md`, `SUMMARY.md`
-
----
-
-## Why It Works
-
-### Context Engineering
-
-Claude Code is incredibly powerful *if* you give it the context it needs. Most people don&#039;t.
-
-GSD handles it for you:
-
-| File | What it does |
-|------|--------------|
-| `PROJECT.md` | Project vision, always loaded |
-| `research/` | Ecosystem knowledge (stack, features, architecture, pitfalls) |
-| `REQUIREMENTS.md` | Scoped v1/v2 requirements with phase traceability |
-| `ROADMAP.md` | Where you&#039;re going, what&#039;s done |
-| `STATE.md` | Decisions, blockers, position — memory across sessions |
-| `PLAN.md` | Atomic task with XML structure, verification steps |
-| `SUMMARY.md` | What happened, what changed, committed to history |
-| `todos/` | Captured ideas and tasks for later work |
-
-Size limits based on where Claude&#039;s quality degrades. Stay under, get consistent excellence.
-
-### XML Prompt Formatting
-
-Every plan is structured XML optimized for Claude:
-
-```xml
-&lt;task type=&quot;auto&quot;&gt;
-  &lt;name&gt;Create login endpoint&lt;/name&gt;
-  &lt;files&gt;src/app/api/auth/login/route.ts&lt;/files&gt;
-  &lt;action&gt;
-    Use jose for JWT (not jsonwebtoken - CommonJS issues).
-    Validate credentials against users table.
-    Return httpOnly cookie on success.
-  &lt;/action&gt;
-  &lt;verify&gt;curl -X POST localhost:3000/api/auth/login returns 200 + Set-Cookie&lt;/verify&gt;
-  &lt;done&gt;Valid credentials return cookie, invalid return 401&lt;/done&gt;
-&lt;/task&gt;
-```
-
-Precise instructions. No guessing. Verification built in.
-
-### Multi-Agent Orchestration
-
-Every stage uses the same pattern: a thin orchestrator spawns specialized agents, collects results, and routes to the next step.
-
-| Stage | Orchestrator does | Agents do |
-|-------|------------------|-----------|
-| Research | Coordinates, presents findings | 4 parallel researchers investigate stack, features, architecture, pitfalls |
-| Planning | Validates, manages iteration | Planner creates plans, checker verifies, loop until pass |
-| Execution | Groups into waves, tracks progress | Executors implement in parallel, each with fresh 200k context |
-| Verification | Presents results, routes next | Verifier checks codebase against goals, debuggers diagnose failures |
-
-The orchestrator never does heavy lifting. It spawns agents, waits, integrates results.
-
-**The result:** You can run an entire phase — deep research, multiple plans created and verified, thousands of lines of code written across parallel executors, automated verification against goals — and your main context window stays at 30-40%. The work happens in fresh subagent contexts. Your session stays fast and responsive.
-
-### Atomic Git Commits
-
-Each task gets its own commit immediately after completion:
-
-```bash
-abc123f docs(08-02): complete user registration plan
-def456g feat(08-02): add email confirmation flow
-hij789k feat(08-02): implement password hashing
-lmn012o feat(08-02): create registration endpoint
-```
-
-&gt; [!NOTE]
-&gt; **Benefits:** Git bisect finds exact failing task. Each task independently revertable. Clear history for Claude in future sessions. Better observability in AI-automated workflow.
-
-Every commit is surgical, traceable, and meaningful.
-
-### Modular by Design
-
-- Add phases to current milestone
-- Insert urgent work between phases
-- Complete milestones and start fresh
-- Adjust plans without rebuilding everything
-
-You&#039;re never locked in. The system adapts.
-
----
-
-## Commands
-
-### Core Workflow
-
-| Command | What it does |
-|---------|--------------|
-| `/gsd:new-project [--auto]` | Full initialization: questions → research → requirements → roadmap |
-| `/gsd:discuss-phase [N] [--auto]` | Capture implementation decisions before planning |
-| `/gsd:plan-phase [N] [--auto]` | Research + plan + verify for a phase |
-| `/gsd:execute-phase &lt;N&gt;` | Execute all plans in parallel waves, verify when complete |
-| `/gsd:verify-work [N]` | Manual user acceptance testing ¹ |
-| `/gsd:audit-milestone` | Verify milestone achieved its definition of done |
-| `/gsd:complete-milestone` | Archive milestone, tag release |
-| `/gsd:new-milestone [name]` | Start next version: questions → research → requirements → roadmap |
-
-### Navigation
-
-| Command | What it does |
-|---------|--------------|
-| `/gsd:progress` | Where am I? What&#039;s next? |
-| `/gsd:help` | Show all commands and usage guide |
-| `/gsd:update` | Update GSD with changelog preview |
-| `/gsd:join-discord` | Join the GSD Discord community |
-
-### Brownfield
-
-| Command | What it does |
-|---------|--------------|
-| `/gsd:map-codebase` | Analyze existing codebase before new-project |
-
-### Phase Management
-
-| Command | What it does |
-|---------|--------------|
-| `/gsd:add-phase` | Append phase to roadmap |
-| `/gsd:insert-phase [N]` | Insert urgent work between phases |
-| `/gsd:remove-phase [N]` | Remove future phase, renumber |
-| `/gsd:list-phase-assumptions [N]` | See Claude&#039;s intended approach before planning |
-| `/gsd:plan-milestone-gaps` | Create phases to close gaps from audit |
-
-### Session
-
-| Command | What it does |
-|---------|--------------|
-| `/gsd:pause-work` | Create handoff when stopping mid-phase |
-| `/gsd:resume-work` | Restore from last session |
-
-### Utilities
-
-| Command | What it does |
-|---------|--------------|
-| `/gsd:settings` | Configure model profile and workflow agents |
-| `/gsd:set-profile &lt;profile&gt;` | Switch model profile (quality/balanced/budget) |
-| `/gsd:add-todo [desc]` | Capture idea for later |
-| `/gsd:check-todos` | List pending todos |
-| `/gsd:debug [desc]` | Systematic debugging with persistent state |
-| `/gsd:quick [--full] [--discuss]` | Execute ad-hoc task with GSD guarantees (`--full` adds plan-checking and verification, `--discuss` gathers context first) |
-| `/gsd:health [--repair]` | Validate `.planning/` directory integrity, auto-repair with `--repair` |
-
-&lt;sup&gt;¹ Contributed by reddit user OracleGreyBeard&lt;/sup&gt;
-
----
-
-## Configuration
-
-GSD stores project settings in `.planning/config.json`. Configure during `/gsd:new-project` or update later with `/gsd:settings`. For the full config schema, workflow toggles, git branching options, and per-agent model breakdown, see the [User Guide](docs/USER-GUIDE.md#configuration-reference).
-
-### Core Settings
-
-| Setting | Options | Default | What it controls |
-|---------|---------|---------|------------------|
-| `mode` | `yolo
+&lt;/
 
 ... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
