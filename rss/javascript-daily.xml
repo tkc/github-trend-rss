@@ -4,23 +4,753 @@
         <title>GitHub Trending Today for javascript - JavaScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for javascript.</description>
-        <lastBuildDate>Mon, 30 Mar 2026 00:10:13 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 31 Mar 2026 00:10:37 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2026, GitHub</copyright>
         <item>
+            <title><![CDATA[ToolJet/ToolJet]]></title>
+            <link>https://github.com/ToolJet/ToolJet</link>
+            <guid>https://github.com/ToolJet/ToolJet</guid>
+            <pubDate>Tue, 31 Mar 2026 00:10:37 GMT</pubDate>
+            <description><![CDATA[ToolJet is the open-source foundation of ToolJet AI - the AI-native platform for building internal tools, dashboard, business applications, workflows and AI agents 🚀]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/ToolJet/ToolJet">ToolJet/ToolJet</a></h1>
+            <p>ToolJet is the open-source foundation of ToolJet AI - the AI-native platform for building internal tools, dashboard, business applications, workflows and AI agents 🚀</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 37,692</p>
+            <p>Forks: 4,986</p>
+            <p>Stars today: 11 stars today</p>
+            <h2>README</h2><pre>ToolJet is an **open-source low-code framework** to build and deploy internal tools with minimal engineering effort. ToolJet&#039;s drag-and-drop frontend builder allows you to create complex, responsive frontends within minutes. Additionally, you can integrate various data sources, including databases like PostgreSQL, MongoDB, and Elasticsearch; API endpoints with OpenAPI spec and OAuth2 support; SaaS tools such as Stripe, Slack, Google Sheets, Airtable, and Notion; as well as object storage services like S3, GCS, and Minio, to fetch and write data.
+
+ :star: If you find ToolJet useful, please consider giving us a star on GitHub! Your support helps us continue to innovate and deliver exciting features.
+
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/tooljet/tooljet-ce)
+![Number of GitHub contributors](https://img.shields.io/github/contributors/tooljet/tooljet)
+[![Number of GitHub issues that are open](https://img.shields.io/github/issues/ToolJet/ToolJet)](https://github.com/ToolJet/ToolJet/issues)
+[![Number of GitHub stars](https://img.shields.io/github/stars/ToolJet/ToolJet)](https://github.com/ToolJet/ToolJet/stargazers)
+![Number of GitHub closed issues](https://img.shields.io/github/issues-closed/tooljet/tooljet)
+![Number of GitHub pull requests that are open](https://img.shields.io/github/issues-pr-raw/tooljet/tooljet)
+![GitHub release; latest by date](https://img.shields.io/github/v/release/tooljet/tooljet)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/tooljet/tooljet)
+[![GitHub license which is AGPL license](https://img.shields.io/github/license/ToolJet/ToolJet)](https://github.com/ToolJet/ToolJet)
+[![Follow us on X, formerly Twitter](https://img.shields.io/twitter/follow/ToolJet?style=social)](https://twitter.com/ToolJet)
+
+&lt;p align=&quot;center&quot;&gt;
+    &lt;img src=&quot;https://user-images.githubusercontent.com/7828962/211444352-4d6d2e4a-13c9-4980-9e16-4aed4af9811b.png&quot; alt=&quot;Tooljet dashboard showing inventory and orders&quot;/&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+    &lt;img src=&quot;https://github.com/ToolJet/ToolJet/assets/25361949/0e711f3a-edb7-496b-8833-107de3826933&quot;/&gt;
+&lt;/p&gt;
+
+## All features
+
+- **Visual App Builder:** 45+ built-in responsive components, including Tables, Charts, Lists, Forms, and Progress Bars.
+- **ToolJet Database:** Built-in no-code database.
+- **Multi-Page:** Build an application with multiple pages.
+- **Multiplayer editing:** Allows simultaneous app building by multiple developers.
+- **50+ data sources:** Integrate with external databases, cloud storage, and APIs.
+- **Desktop &amp; mobile:** Customize layout widths to fit various screen sizes.
+- **Self-host:** Supports Docker, Kubernetes, AWS EC2, Google Cloud Run, and more.
+- **Collaborate:** Add comments anywhere on the canvas and tag your team members.
+- **Extend with plugins:** Use our [command-line tool](https://www.npmjs.com/package/@tooljet/cli) to easily bootstrap new connectors.
+- **Version control:** Manage multiple application versions with a structured release cycle.
+- **Run JS &amp; Python code:** Execute custom JavaScript and Python snippets.
+- **Granular access control:** Set permissions at both group and app levels.
+- **Low-code:** Use JS code almost anywhere within the builder, such as setting text color based on status with 
+`status === &#039;success&#039; ? &#039;green&#039; : &#039;red&#039;`.
+- **No-code query editors:** Query Editors are available for all supported data sources.
+- **Join and transform data:** Transform query results using JavaScript or Python code.
+- **Secure:** All the credentials are securely encrypted using `aes-256-gcm`.
+- **Data Privacy:** ToolJet serves solely as a proxy and does not store data.
+- **SSO:** Supports multiple Single Sign-On providers.
+
+&lt;hr&gt;
+
+## Quickstart
+The easiest way to get started with ToolJet is by creating a [ToolJet Cloud](https://tooljet.com) account. ToolJet Cloud offers a hosted solution of ToolJet. If you want to self-host ToolJet, kindly proceed to [deployment documentation](https://docs.tooljet.com/docs/setup/).
+
+### Try using Docker
+Want to give ToolJet a quick spin on your local machine? You can run the following command from your terminal to have ToolJet up and running right away.
+
+
+```bash
+docker run \
+  --name tooljet \
+  --restart unless-stopped \
+  -p 80:80 \
+  --platform linux/amd64 \
+  -v tooljet_data:/var/lib/postgresql/13/main \
+  tooljet/try:ee-lts-latest
+```
+
+*For users upgrading their ToolJet version, we recommend choosing the LTS version over the latest version. The LTS version ensures stability with production bug fixes, security patches, and performance enhancements.*
+
+## Tutorials and examples
+
+[Time Tracker Application](https://docs.tooljet.com/docs/#quickstart-guide)&lt;br&gt;
+[Build your own CMS using low-code](https://blog.tooljet.com/build-cms-using-lowcode-and-mongodb/)&lt;br&gt;
+[AWS S3 Browser](https://blog.tooljet.com/build-an-aws-s3-broswer-with-tooljet/)&lt;br&gt;
+
+## Documentation
+Documentation is available at https://docs.tooljet.com.
+
+- [Getting Started](https://docs.tooljet.com)&lt;br&gt;
+- [Data source Reference](https://docs.tooljet.com/docs/data-sources/airtable/)&lt;br&gt;
+- [Component Reference](https://docs.tooljet.com/docs/widgets/button)
+
+## Self-hosted
+You can use ToolJet Cloud for a fully managed solution. If you want to self-host ToolJet, we have guides on deploying ToolJet on Kubernetes, AWS EC2, Docker, and more.
+
+| Provider  | Documentation |
+| :------------- | :------------- |
+| Digital Ocean | [Link](https://docs.tooljet.com/docs/setup/digitalocean)  |
+| Docker  | [Link](https://docs.tooljet.com/docs/setup/docker)   |
+| AWS EC2 | [Link](https://docs.tooljet.com/docs/setup/ec2)  |
+| AWS ECS | [Link](https://docs.tooljet.com/docs/setup/ecs)   |
+| OpenShift | [Link](https://docs.tooljet.com/docs/setup/openshift)   |
+| Helm | [Link](https://docs.tooljet.com/docs/setup/helm)   |
+| AWS EKS (Kubernetes) | [Link](https://docs.tooljet.com/docs/setup/kubernetes)   |
+| GCP GKE (Kubernetes) | [Link](https://docs.tooljet.com/docs/setup/kubernetes-gke)   |
+| Azure AKS (Kubernetes) | [Link](https://docs.tooljet.com/docs/setup/kubernetes-aks)   |
+| Azure Container | [Link](https://docs.tooljet.com/docs/setup/azure-container)   |
+| Google Cloud Run  | [Link](https://docs.tooljet.com/docs/setup/google-cloud-run)   |
+| Deploying ToolJet client  | [Link](https://docs.tooljet.com/docs/setup/client)   |
+| Deploying ToolJet on a Subpath  | [Link](https://docs.tooljet.com/docs/setup/tooljet-subpath/)   |
+
+## Marketplace 
+ToolJet can now be found on both AWS and Azure Marketplaces, making it simpler than ever to access and deploy our app-building platform.
+
+Find ToolJet on AWS Marketplace [here](https://aws.amazon.com/marketplace/pp/prodview-fxjto27jkpqfg?sr=0-1&amp;ref_=beagle&amp;applicationId=AWSMPContessa) and explore seamless integration on Azure Marketplace [here](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/tooljetsolutioninc1679496832216.tooljet?tab=Overview).
+
+## Community support
+For general help using ToolJet, please refer to the official [documentation](https://docs.tooljet.com/docs/). For additional help, you can use one of these channels to ask a question:
+
+- [Slack](https://tooljet.com/slack) - Discussions with the community and the team.
+- [GitHub](https://github.com/ToolJet/ToolJet/issues) - For bug reports and feature requests.
+- [𝕏 (Twitter)](https://twitter.com/ToolJet) - Get the product updates quickly.
+
+## Roadmap
+Check out our [roadmap](https://github.com/orgs/ToolJet/projects/15) to stay updated on recently released features and learn about what&#039;s coming next.
+
+## Branching model
+We use the git-flow branching model. The base branch is `develop`. If you are looking for a stable version, please use the main branch or tags labeled as v1.x.x.
+
+## Contributing
+Kindly read our [Contributing Guide](CONTRIBUTING.md) to familiarize yourself with ToolJet&#039;s development process, how to suggest bug fixes and improvements, and the steps for building and testing your changes. &lt;br&gt;
+
+## Contributors
+&lt;a href=&quot;https://github.com/tooljet/tooljet/graphs/contributors&quot;&gt;
+  &lt;img src=&quot;https://contrib.rocks/image?repo=tooljet/tooljet&amp;max=400&amp;columns=20&quot; /&gt;
+  &lt;img src=&quot;https://us-central1-tooljet-hub.cloudfunctions.net/github&quot; width=&quot;0&quot; height=&quot;0&quot; /&gt;
+&lt;/a&gt;
+
+## License
+ToolJet © 2023, ToolJet Solutions Inc - Released under the GNU Affero General Public License v3.0.
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[TryGhost/Ghost]]></title>
+            <link>https://github.com/TryGhost/Ghost</link>
+            <guid>https://github.com/TryGhost/Ghost</guid>
+            <pubDate>Tue, 31 Mar 2026 00:10:36 GMT</pubDate>
+            <description><![CDATA[Independent technology for modern publishing, memberships, subscriptions and newsletters.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/TryGhost/Ghost">TryGhost/Ghost</a></h1>
+            <p>Independent technology for modern publishing, memberships, subscriptions and newsletters.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 52,250</p>
+            <p>Forks: 11,406</p>
+            <p>Stars today: 39 stars today</p>
+            <h2>README</h2><pre>&amp;nbsp;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://ghost.org/#gh-light-mode-only&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;https://user-images.githubusercontent.com/65487235/157884383-1b75feb1-45d8-4430-b636-3f7e06577347.png&quot; alt=&quot;Ghost&quot; width=&quot;200px&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://ghost.org/#gh-dark-mode-only&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;https://user-images.githubusercontent.com/65487235/157849205-aa24152c-4610-4d7d-b752-3a8c4f9319e6.png&quot; alt=&quot;Ghost&quot; width=&quot;200px&quot;&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+&amp;nbsp;
+
+&lt;p align=&quot;center&quot;&gt;
+    &lt;a href=&quot;https://ghost.org/&quot;&gt;Ghost.org&lt;/a&gt; •
+    &lt;a href=&quot;https://forum.ghost.org&quot;&gt;Forum&lt;/a&gt; •
+    &lt;a href=&quot;https://ghost.org/docs/&quot;&gt;Docs&lt;/a&gt; •
+    &lt;a href=&quot;https://github.com/TryGhost/Ghost/blob/main/.github/CONTRIBUTING.md&quot;&gt;Contributing&lt;/a&gt; •
+    &lt;a href=&quot;https://twitter.com/ghost&quot;&gt;Twitter&lt;/a&gt;
+    &lt;br /&gt;&lt;br /&gt;
+    &lt;a href=&quot;https://ghost.org/&quot;&gt;
+        &lt;img src=&quot;https://img.shields.io/badge/downloads-100M+-brightgreen.svg&quot; alt=&quot;Downloads&quot; /&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;https://github.com/TryGhost/Ghost/releases/&quot;&gt;
+        &lt;img src=&quot;https://img.shields.io/github/release/TryGhost/Ghost.svg&quot; alt=&quot;Latest release&quot; /&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;https://github.com/TryGhost/Ghost/actions&quot;&gt;
+        &lt;img src=&quot;https://github.com/TryGhost/Ghost/workflows/CI/badge.svg?branch=main&quot; alt=&quot;Build status&quot; /&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;https://github.com/TryGhost/Ghost/contributors/&quot;&gt;
+        &lt;img src=&quot;https://img.shields.io/github/contributors/TryGhost/Ghost.svg&quot; alt=&quot;Contributors&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&amp;nbsp;
+
+&gt; [!NOTE]
+&gt; Love open source? We&#039;re hiring! Ghost is looking staff engineers to [join the team](https://careers.ghost.org) and work with us full-time
+
+&lt;a href=&quot;https://ghost.org/&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/353959/169805900-66be5b89-0859-4816-8da9-528ed7534704.png&quot; alt=&quot;Fiercely independent, professional publishing. Ghost is the most popular open source, headless Node.js CMS which already works with all the tools you know and love.&quot; /&gt;&lt;/a&gt;
+
+&amp;nbsp;
+
+&lt;a href=&quot;https://ghost.org/pricing/#gh-light-mode-only&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/65487235/157849437-9b8fcc48-1920-4b26-a1e8-5806db0e6bb9.png&quot; alt=&quot;Ghost(Pro)&quot; width=&quot;165px&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://ghost.org/pricing/#gh-dark-mode-only&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/65487235/157849438-79889b04-b7b6-4ba7-8de6-4c1e4b4e16a5.png&quot; alt=&quot;Ghost(Pro)&quot; width=&quot;165px&quot; /&gt;&lt;/a&gt;
+
+The easiest way to get a production instance deployed is with our official **[Ghost(Pro)](https://ghost.org/pricing/)** managed service. It takes about 2 minutes to launch a new site with worldwide CDN, backups, security and maintenance all done for you.
+
+For most people this ends up being the best value option because of [how much time it saves](https://ghost.org/docs/hosting/) — and 100% of revenue goes to the Ghost Foundation; funding the maintenance and further development of the project itself. So you’ll be supporting open source software *and* getting a great service!
+
+&amp;nbsp;
+
+# Quickstart install
+
+If you want to run your own instance of Ghost, in most cases the best way is to use our **CLI tool**
+
+```
+npm install ghost-cli -g
+```
+
+&amp;nbsp;
+
+Then, if installing locally add the `local` flag to get up and running in under a minute - [Local install docs](https://ghost.org/docs/install/local/)
+
+```
+ghost install local
+```
+
+&amp;nbsp;
+
+or on a server run the full install, including automatic SSL setup using LetsEncrypt - [Production install docs](https://ghost.org/docs/install/ubuntu/)
+
+```
+ghost install
+```
+
+&amp;nbsp;
+
+Check out our [official documentation](https://ghost.org/docs/) for more information about our [recommended hosting stack](https://ghost.org/docs/hosting/) &amp; properly [upgrading Ghost](https://ghost.org/docs/update/), plus everything you need to develop your own Ghost [themes](https://ghost.org/docs/themes/) or work with [our API](https://ghost.org/docs/content-api/).
+
+### Contributors &amp; advanced developers
+
+For anyone wishing to contribute to Ghost or to hack/customize core files we recommend following our full development setup guides: [Contributor guide](https://ghost.org/docs/contributing/) • [Developer setup](https://ghost.org/docs/install/source/)
+
+&amp;nbsp;
+
+# Ghost sponsors
+
+A big thanks to our sponsors and partners who make Ghost possible. If you&#039;re interested in sponsoring Ghost and supporting the project, please check out our profile on [GitHub sponsors](https://github.com/sponsors/TryGhost) :heart:
+
+**[DigitalOcean](https://m.do.co/c/9ff29836d717)** • **[Fastly](https://www.fastly.com/)** • **[Tinybird](https://tbrd.co/ghost)** • **[BairesDev](https://www.bairesdev.com)** • **[Hostinger](https://www.hostinger.com/)**
+
+&amp;nbsp;
+
+# Getting help
+
+Everyone can get help and support from a large community of developers over on the [Ghost forum](https://forum.ghost.org/). **Ghost(Pro)** customers have access to 24/7 email support.
+
+To stay up to date with all the latest news and product updates, make sure you [subscribe to our changelog newsletter](https://ghost.org/changelog/) — or follow us [on Twitter](https://twitter.com/Ghost), if you prefer your updates bite-sized and facetious. :saxophone::turtle:
+
+&amp;nbsp;
+
+# License &amp; trademark
+
+Copyright (c) 2013-2026 Ghost Foundation - Released under the [MIT license](LICENSE).
+Ghost and the Ghost Logo are trademarks of Ghost Foundation Ltd. Please see our [trademark policy](https://ghost.org/trademark/) for info on acceptable usage.
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[nodejs/node]]></title>
+            <link>https://github.com/nodejs/node</link>
+            <guid>https://github.com/nodejs/node</guid>
+            <pubDate>Tue, 31 Mar 2026 00:10:35 GMT</pubDate>
+            <description><![CDATA[Node.js JavaScript runtime ✨🐢🚀✨]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/nodejs/node">nodejs/node</a></h1>
+            <p>Node.js JavaScript runtime ✨🐢🚀✨</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 116,469</p>
+            <p>Forks: 35,221</p>
+            <p>Stars today: 29 stars today</p>
+            <h2>README</h2><pre># Node.js
+
+Node.js is an open-source, cross-platform JavaScript runtime environment.
+
+For information on using Node.js, see the [Node.js website][].
+
+The Node.js project uses an [open governance model](./GOVERNANCE.md). The
+[OpenJS Foundation][] provides support for the project.
+
+Contributors are expected to act in a collaborative manner to move
+the project forward. We encourage the constructive exchange of contrary
+opinions and compromise. The [TSC](./GOVERNANCE.md#technical-steering-committee)
+reserves the right to limit or block contributors who repeatedly act in ways
+that discourage, exhaust, or otherwise negatively affect other participants.
+
+**This project has a [Code of Conduct][].**
+
+## Table of contents
+
+* [Support](#support)
+* [Release types](#release-types)
+  * [Download](#download)
+    * [Current and LTS releases](#current-and-lts-releases)
+    * [Nightly releases](#nightly-releases)
+    * [API documentation](#api-documentation)
+  * [Verifying binaries](#verifying-binaries)
+* [Building Node.js](#building-nodejs)
+* [Security](#security)
+* [Contributing to Node.js](#contributing-to-nodejs)
+* [Current project team members](#current-project-team-members)
+  * [TSC (Technical Steering Committee)](#tsc-technical-steering-committee)
+  * [Collaborators](#collaborators)
+  * [Triagers](#triagers)
+  * [Release keys](#release-keys)
+* [License](#license)
+
+## Support
+
+Looking for help? Check out the
+[instructions for getting support](.github/SUPPORT.md).
+
+## Release types
+
+* **Current**: Under active development. Code for the Current release is in the
+  branch for its major version number (for example,
+  [v22.x](https://github.com/nodejs/node/tree/v22.x)). Node.js releases a new
+  major version every 6 months, allowing for breaking changes. This happens in
+  April and October every year. Releases appearing each October have a support
+  life of 8 months. Releases appearing each April convert to LTS (see below)
+  each October.
+* **LTS**: Releases that receive Long Term Support, with a focus on stability
+  and security. Every even-numbered major version will become an LTS release.
+  LTS releases receive 12 months of _Active LTS_ support and a further 18 months
+  of _Maintenance_. LTS release lines have alphabetically-ordered code names,
+  beginning with v4 Argon. There are no breaking changes or feature additions,
+  except in some special circumstances.
+* **Nightly**: Code from the Current branch built every 24-hours when there are
+  changes. Use with caution.
+
+Current and LTS releases follow [semantic versioning](https://semver.org). A
+member of the Release Team [signs](#release-keys) each Current and LTS release.
+For more information, see the
+[Release README](https://github.com/nodejs/Release#readme).
+
+### Download
+
+Binaries, installers, and source tarballs are available at
+&lt;https://nodejs.org/en/download/&gt;.
+
+#### Current and LTS releases
+
+&lt;https://nodejs.org/download/release/&gt;
+
+The [latest](https://nodejs.org/download/release/latest/) directory is an
+alias for the latest Current release. The latest-_codename_ directory is an
+alias for the latest release from an LTS line. For example, the
+[latest-hydrogen](https://nodejs.org/download/release/latest-hydrogen/)
+directory contains the latest Hydrogen (Node.js 18) release.
+
+#### Nightly releases
+
+&lt;https://nodejs.org/download/nightly/&gt;
+
+Each directory and filename includes the version (e.g., `v22.0.0`),
+followed by the UTC date (e.g., `20240424` for April 24, 2024),
+and the short commit SHA of the HEAD of the release (e.g., `ddd0a9e494`).
+For instance, a full directory name might look like `v22.0.0-nightly20240424ddd0a9e494`.
+
+#### API documentation
+
+Documentation for the latest Current release is at &lt;https://nodejs.org/api/&gt;.
+Version-specific documentation is available in each release directory in the
+_docs_ subdirectory. Version-specific documentation is also at
+&lt;https://nodejs.org/download/docs/&gt;.
+
+### Verifying binaries
+
+Download directories contain a `SHASUMS256.txt.asc` file with SHA checksums for the
+files and the releaser PGP signature.
+
+You can get a trusted keyring from nodejs/release-keys, e.g. using `curl`:
+
+```bash
+curl -fsLo &quot;/path/to/nodejs-keyring.kbx&quot; &quot;https://github.com/nodejs/release-keys/raw/HEAD/gpg/pubring.kbx&quot;
+```
+
+Alternatively, you can import the releaser keys in your default keyring, see
+[Release keys](#release-keys) for commands on how to do that.
+
+Then, you can verify the files you&#039;ve downloaded locally
+(if you&#039;re using your default keyring, pass `--keyring=&quot;${GNUPGHOME:-~/.gnupg}/pubring.kbx&quot;`):
+
+```bash
+curl -fsO &quot;https://nodejs.org/dist/${VERSION}/SHASUMS256.txt.asc&quot; \
+&amp;&amp; gpgv --keyring=&quot;/path/to/nodejs-keyring.kbx&quot; --output SHASUMS256.txt &lt; SHASUMS256.txt.asc \
+&amp;&amp; shasum --check SHASUMS256.txt --ignore-missing
+```
+
+## Building Node.js
+
+See [BUILDING.md](BUILDING.md) for instructions on how to build Node.js from
+source and a list of supported platforms.
+
+## Security
+
+For information on reporting security vulnerabilities in Node.js, see
+[SECURITY.md](./SECURITY.md).
+
+## Contributing to Node.js
+
+* [Contributing to the project][]
+* [Working Groups][]
+* [Strategic initiatives][]
+* [Technical values and prioritization][]
+
+## Current project team members
+
+For information about the governance of the Node.js project, see
+[GOVERNANCE.md](./GOVERNANCE.md).
+
+&lt;!-- node-core-utils and find-inactive-tsc.mjs depend on the format of the TSC
+     list. If the format changes, those utilities need to be tested and
+     updated. --&gt;
+
+### TSC (Technical Steering Committee)
+
+#### TSC voting members
+
+&lt;!--lint disable prohibited-strings--&gt;
+
+* [aduh95](https://github.com/aduh95) -
+  **Antoine du Hamel** &lt;&lt;duhamelantoine1995@gmail.com&gt;&gt; (he/him)
+* [anonrig](https://github.com/anonrig) -
+  **Yagiz Nizipli** &lt;&lt;yagiz@nizipli.com&gt;&gt; (he/him)
+* [benjamingr](https://github.com/benjamingr) -
+  **Benjamin Gruenbaum** &lt;&lt;benjamingr@gmail.com&gt;&gt;
+* [BridgeAR](https://github.com/BridgeAR) -
+  **Ruben Bridgewater** &lt;&lt;ruben@bridgewater.de&gt;&gt; (he/him)
+* [gireeshpunathil](https://github.com/gireeshpunathil) -
+  **Gireesh Punathil** &lt;&lt;gpunathi@in.ibm.com&gt;&gt; (he/him)
+* [jasnell](https://github.com/jasnell) -
+  **James M Snell** &lt;&lt;jasnell@gmail.com&gt;&gt; (he/him)
+* [joyeecheung](https://github.com/joyeecheung) -
+  **Joyee Cheung** &lt;&lt;joyeec9h3@gmail.com&gt;&gt; (she/her)
+* [legendecas](https://github.com/legendecas) -
+  **Chengzhong Wu** &lt;&lt;legendecas@gmail.com&gt;&gt; (he/him)
+* [marco-ippolito](https://github.com/marco-ippolito) -
+  **Marco Ippolito** &lt;&lt;marcoippolito54@gmail.com&gt;&gt; (he/him)
+* [mcollina](https://github.com/mcollina) -
+  **Matteo Collina** &lt;&lt;matteo.collina@gmail.com&gt;&gt; (he/him)
+* [panva](https://github.com/panva) -
+  **Filip Skokan** &lt;&lt;panva.ip@gmail.com&gt;&gt; (he/him)
+* [RafaelGSS](https://github.com/RafaelGSS) -
+  **Rafael Gonzaga** &lt;&lt;rafael.nunu@hotmail.com&gt;&gt; (he/him)
+* [RaisinTen](https://github.com/RaisinTen) -
+  **Darshan Sen** &lt;&lt;raisinten@gmail.com&gt;&gt; (he/him)
+* [richardlau](https://github.com/richardlau) -
+  **Richard Lau** &lt;&lt;richard.lau@ibm.com&gt;&gt;
+* [ronag](https://github.com/ronag) -
+  **Robert Nagy** &lt;&lt;ronagy@icloud.com&gt;&gt;
+* [ruyadorno](https://github.com/ruyadorno) -
+  **Ruy Adorno** &lt;&lt;ruy@vlt.sh&gt;&gt; (he/him)
+* [ShogunPanda](https://github.com/ShogunPanda) -
+  **Paolo Insogna** &lt;&lt;paolo@cowtech.it&gt;&gt; (he/him)
+* [targos](https://github.com/targos) -
+  **Michaël Zasso** &lt;&lt;targos@protonmail.com&gt;&gt; (he/him)
+* [tniessen](https://github.com/tniessen) -
+  **Tobias Nießen** &lt;&lt;tniessen@tnie.de&gt;&gt; (he/him)
+
+#### TSC regular members
+
+* [BethGriggs](https://github.com/BethGriggs) -
+  **Beth Griggs** &lt;&lt;bethanyngriggs@gmail.com&gt;&gt; (she/her)
+* [bnoordhuis](https://github.com/bnoordhuis) -
+  **Ben Noordhuis** &lt;&lt;info@bnoordhuis.nl&gt;&gt;
+* [cjihrig](https://github.com/cjihrig) -
+  **Colin Ihrig** &lt;&lt;cjihrig@gmail.com&gt;&gt; (he/him)
+* [codebytere](https://github.com/codebytere) -
+  **Shelley Vohr** &lt;&lt;shelley.vohr@gmail.com&gt;&gt; (she/her)
+* [GeoffreyBooth](https://github.com/GeoffreyBooth) -
+  **Geoffrey Booth** &lt;&lt;webadmin@geoffreybooth.com&gt;&gt; (he/him)
+* [MoLow](https://github.com/MoLow) -
+  **Moshe Atlow** &lt;&lt;moshe@atlow.co.il&gt;&gt; (he/him)
+* [Trott](https://github.com/Trott) -
+  **Rich Trott** &lt;&lt;rtrott@gmail.com&gt;&gt; (he/him)
+
+&lt;details&gt;
+
+&lt;summary&gt;TSC emeriti members&lt;/summary&gt;
+
+#### TSC emeriti members
+
+* [addaleax](https://github.com/addaleax) -
+  **Anna Henningsen** &lt;&lt;anna@addaleax.net&gt;&gt; (she/her)
+* [apapirovski](https://github.com/apapirovski) -
+  **Anatoli Papirovski** &lt;&lt;apapirovski@mac.com&gt;&gt; (he/him)
+* [ChALkeR](https://github.com/ChALkeR) -
+  **Сковорода Никита Андреевич** &lt;&lt;chalkerx@gmail.com&gt;&gt; (he/him)
+* [chrisdickinson](https://github.com/chrisdickinson) -
+  **Chris Dickinson** &lt;&lt;christopher.s.dickinson@gmail.com&gt;&gt;
+* [danbev](https://github.com/danbev) -
+  **Daniel Bevenius** &lt;&lt;daniel.bevenius@gmail.com&gt;&gt; (he/him)
+* [danielleadams](https://github.com/danielleadams) -
+  **Danielle Adams** &lt;&lt;adamzdanielle@gmail.com&gt;&gt; (she/her)
+* [evanlucas](https://github.com/evanlucas) -
+  **Evan Lucas** &lt;&lt;evanlucas@me.com&gt;&gt; (he/him)
+* [fhinkel](https://github.com/fhinkel) -
+  **Franziska Hinkelmann** &lt;&lt;franziska.hinkelmann@gmail.com&gt;&gt; (she/her)
+* [Fishrock123](https://github.com/Fishrock123) -
+  **Jeremiah Senkpiel** &lt;&lt;fishrock123@rocketmail.com&gt;&gt; (he/they)
+* [gabrielschulhof](https://github.com/gabrielschulhof) -
+  **Gabriel Schulhof** &lt;&lt;gabrielschulhof@gmail.com&gt;&gt;
+* [gibfahn](https://github.com/gibfahn) -
+  **Gibson Fahnestock** &lt;&lt;gibfahn@gmail.com&gt;&gt; (he/him)
+* [indutny](https://github.com/indutny) -
+  **Fedor Indutny** &lt;&lt;fedor@indutny.com&gt;&gt;
+* [isaacs](https://github.com/isaacs) -
+  **Isaac Z. Schlueter** &lt;&lt;i@izs.me&gt;&gt;
+* [joshgav](https://github.com/joshgav) -
+  **Josh Gavant** &lt;&lt;josh.gavant@outlook.com&gt;&gt;
+* [mhdawson](https://github.com/mhdawson) -
+  **Michael Dawson** &lt;&lt;midawson@redhat.com&gt;&gt; (he/him)
+* [mmarchini](https://github.com/mmarchini) -
+  **Mary Marchini** &lt;&lt;oss@mmarchini.me&gt;&gt; (she/her)
+* [mscdex](https://github.com/mscdex) -
+  **Brian White** &lt;&lt;mscdex@mscdex.net&gt;&gt;
+* [MylesBorins](https://github.com/MylesBorins) -
+  **Myles Borins** &lt;&lt;myles.borins@gmail.com&gt;&gt; (he/him)
+* [nebrius](https://github.com/nebrius) -
+  **Bryan Hughes** &lt;&lt;bryan@nebri.us&gt;&gt;
+* [ofrobots](https://github.com/ofrobots) -
+  **Ali Ijaz Sheikh** &lt;&lt;ofrobots@google.com&gt;&gt; (he/him)
+* [orangemocha](https://github.com/orangemocha) -
+  **Alexis Campailla** &lt;&lt;orangemocha@nodejs.org&gt;&gt;
+* [piscisaureus](https://github.com/piscisaureus) -
+  **Bert Belder** &lt;&lt;bertbelder@gmail.com&gt;&gt;
+* [rvagg](https://github.com/rvagg) -
+  **Rod Vagg** &lt;&lt;r@va.gg&gt;&gt;
+* [sam-github](https://github.com/sam-github) -
+  **Sam Roberts** &lt;&lt;vieuxtech@gmail.com&gt;&gt;
+* [shigeki](https://github.com/shigeki) -
+  **Shigeki Ohtsu** &lt;&lt;ohtsu@ohtsu.org&gt;&gt; (he/him)
+* [thefourtheye](https://github.com/thefourtheye) -
+  **Sakthipriyan Vairamani** &lt;&lt;thechargingvolcano@gmail.com&gt;&gt; (he/him)
+* [TimothyGu](https://github.com/TimothyGu) -
+  **Tiancheng &quot;Timothy&quot; Gu** &lt;&lt;timothygu99@gmail.com&gt;&gt; (he/him)
+* [trevnorris](https://github.com/trevnorris) -
+  **Trevor Norris** &lt;&lt;trev.norris@gmail.com&gt;&gt;
+
+&lt;/details&gt;
+
+&lt;!-- node-core-utils and find-inactive-collaborators.mjs depend on the format
+     of the collaborator list. If the format changes, those utilities need to be
+     tested and updated. --&gt;
+
+### Collaborators
+
+* [abmusse](https://github.com/abmusse) -
+  **Abdirahim Musse** &lt;&lt;abdirahim.musse@ibm.com&gt;&gt;
+* [addaleax](https://github.com/addaleax) -
+  **Anna Henningsen** &lt;&lt;anna@addaleax.net&gt;&gt; (she/her)
+* [Aditi-1400](https://github.com/Aditi-1400) -
+  **Aditi Singh** &lt;&lt;aditisingh1400@gmail.com&gt;&gt; (she/her)
+* [aduh95](https://github.com/aduh95) -
+  **Antoine du Hamel** &lt;&lt;duhamelantoine1995@gmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/aduh95)
+* [anonrig](https://github.com/anonrig) -
+  **Yagiz Nizipli** &lt;&lt;yagiz@nizipli.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/anonrig)
+* [atlowChemi](https://github.com/atlowChemi) -
+  **Chemi Atlow** &lt;&lt;chemi@atlow.co.il&gt;&gt; (he/him)
+* [avivkeller](https://github.com/avivkeller) -
+  **Aviv Keller** &lt;&lt;me@aviv.sh&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/avivkeller)
+* [Ayase-252](https://github.com/Ayase-252) -
+  **Qingyu Deng** &lt;&lt;i@ayase-lab.com&gt;&gt;
+* [bengl](https://github.com/bengl) -
+  **Bryan English** &lt;&lt;bryan@bryanenglish.com&gt;&gt; (he/him)
+* [benjamingr](https://github.com/benjamingr) -
+  **Benjamin Gruenbaum** &lt;&lt;benjamingr@gmail.com&gt;&gt;
+* [BethGriggs](https://github.com/BethGriggs) -
+  **Beth Griggs** &lt;&lt;bethanyngriggs@gmail.com&gt;&gt; (she/her)
+* [bnb](https://github.com/bnb) -
+  **Tierney Cyren** &lt;&lt;hello@bnb.im&gt;&gt; (they/them)
+* [bnoordhuis](https://github.com/bnoordhuis) -
+  **Ben Noordhuis** &lt;&lt;info@bnoordhuis.nl&gt;&gt;
+* [BridgeAR](https://github.com/BridgeAR) -
+  **Ruben Bridgewater** &lt;&lt;ruben@bridgewater.de&gt;&gt; (he/him)
+* [cclauss](https://github.com/cclauss) -
+  **Christian Clauss** &lt;&lt;cclauss@me.com&gt;&gt; (he/him)
+* [ChALkeR](https://github.com/ChALkeR) -
+  **Сковорода Никита Андреевич** &lt;&lt;chalkerx@gmail.com&gt;&gt; (he/him)
+* [cjihrig](https://github.com/cjihrig) -
+  **Colin Ihrig** &lt;&lt;cjihrig@gmail.com&gt;&gt; (he/him)
+* [codebytere](https://github.com/codebytere) -
+  **Shelley Vohr** &lt;&lt;shelley.vohr@gmail.com&gt;&gt; (she/her)
+* [cola119](https://github.com/cola119) -
+  **Kohei Ueno** &lt;&lt;kohei.ueno119@gmail.com&gt;&gt; (he/him)
+* [daeyeon](https://github.com/daeyeon) -
+  **Daeyeon Jeong** &lt;&lt;daeyeon.dev@gmail.com&gt;&gt; (he/him)
+* [dario-piotrowicz](https://github.com/dario-piotrowicz) -
+  **Dario Piotrowicz** &lt;&lt;dario.piotrowicz@gmail.com&gt;&gt; (he/him)
+* [debadree25](https://github.com/debadree25) -
+  **Debadree Chatterjee** &lt;&lt;debadree333@gmail.com&gt;&gt; (he/him)
+* [deokjinkim](https://github.com/deokjinkim) -
+  **Deokjin Kim** &lt;&lt;deokjin81.kim@gmail.com&gt;&gt; (he/him)
+* [edsadr](https://github.com/edsadr) -
+  **Adrian Estrada** &lt;&lt;edsadr@gmail.com&gt;&gt; (he/him)
+* [ErickWendel](https://github.com/ErickWendel) -
+  **Erick Wendel** &lt;&lt;erick.workspace@gmail.com&gt;&gt; (he/him)
+* [Ethan-Arrowood](https://github.com/Ethan-Arrowood) -
+  **Ethan Arrowood** &lt;&lt;ethan@arrowood.dev&gt;&gt; (he/him)
+* [fhinkel](https://github.com/fhinkel) -
+  **Franziska Hinkelmann** &lt;&lt;franziska.hinkelmann@gmail.com&gt;&gt; (she/her)
+* [Flarna](https://github.com/Flarna) -
+  **Gerhard Stöbich** &lt;&lt;deb2001-github@yahoo.de&gt;&gt; (he/they)
+* [gabrielschulhof](https://github.com/gabrielschulhof) -
+  **Gabriel Schulhof** &lt;&lt;gabrielschulhof@gmail.com&gt;&gt;
+* [geeksilva97](https://github.com/geeksilva97) -
+  **Edy Silva** &lt;&lt;edigleyssonsilva@gmail.com&gt;&gt; (he/him)
+* [gengjiawen](https://github.com/gengjiawen) -
+  **Jiawen Geng** &lt;&lt;technicalcute@gmail.com&gt;&gt;
+* [GeoffreyBooth](https://github.com/GeoffreyBooth) -
+  **Geoffrey Booth** &lt;&lt;webadmin@geoffreybooth.com&gt;&gt; (he/him)
+* [gireeshpunathil](https://github.com/gireeshpunathil) -
+  **Gireesh Punathil** &lt;&lt;gpunathi@in.ibm.com&gt;&gt; (he/him)
+* [gurgunday](https://github.com/gurgunday) -
+  **Gürgün Dayıoğlu** &lt;&lt;hey@gurgun.day&gt;&gt; (he/him)
+* [guybedford](https://github.com/guybedford) -
+  **Guy Bedford** &lt;&lt;guybedford@gmail.com&gt;&gt; (he/him)
+* [H4ad](https://github.com/H4ad) -
+  **Vinícius Lourenço Claro Cardoso** &lt;&lt;contact@viniciusl.com.br&gt;&gt; (he/him)
+* [HarshithaKP](https://github.com/HarshithaKP) -
+  **Harshitha K P** &lt;&lt;harshitha014@gmail.com&gt;&gt; (she/her)
+* [himself65](https://github.com/himself65) -
+  **Zeyu &quot;Alex&quot; Yang** &lt;&lt;himself65@outlook.com&gt;&gt; (he/him)
+* [hybrist](https://github.com/hybrist) -
+  **Jan Martin** &lt;&lt;jan.krems@gmail.com&gt;&gt; (he/him)
+* [IlyasShabi](https://github.com/IlyasShabi) -
+  **Ilyas Shabi** &lt;&lt;ilyasshabi94@gmail.com&gt;&gt; (he/him)
+* [islandryu](https://github.com/islandryu) -
+  **Ryuhei Shima** &lt;&lt;shimaryuhei@gmail.com&gt;&gt; (he/him)
+* [jakecastelli](https://github.com/jakecastelli) -
+  **Jake Yuesong Li** &lt;&lt;jake.yuesong@gmail.com&gt;&gt; (he/him)
+* [JakobJingleheimer](https://github.com/JakobJingleheimer) -
+  **Jacob Smith** &lt;&lt;jacob@frende.me&gt;&gt; (he/him)
+* [jasnell](https://github.com/jasnell) -
+  **James M Snell** &lt;&lt;jasnell@gmail.com&gt;&gt; (he/him)
+* [jazelly](https://github.com/jazelly) -
+  **Jason Zhang** &lt;&lt;xzha4350@gmail.com&gt;&gt; (he/him)
+* [JonasBa](https://github.com/JonasBa) -
+  **Jonas Badalic** &lt;&lt;jonas.badalic@gmail.com&gt;&gt; (he/him)
+* [joyeecheung](https://github.com/joyeecheung) -
+  **Joyee Cheung** &lt;&lt;joyeec9h3@gmail.com&gt;&gt; (she/her)
+* [juanarbol](https://github.com/juanarbol) -
+  **Juan José Arboleda** &lt;&lt;soyjuanarbol@gmail.com&gt;&gt; (he/him)
+* [JungMinu](https://github.com/JungMinu) -
+  **Minwoo Jung** &lt;&lt;nodecorelab@gmail.com&gt;&gt; (he/him)
+* [KhafraDev](https://github.com/KhafraDev) -
+  **Matthew Aitken** &lt;&lt;maitken033380023@gmail.com&gt;&gt; (he/him)
+* [legendecas](https://github.com/legendecas) -
+  **Chengzhong Wu** &lt;&lt;legendecas@gmail.com&gt;&gt; (he/him)
+* [lemire](https://github.com/lemire) -
+  **Daniel Lemire** &lt;&lt;daniel@lemire.me&gt;&gt;
+* [LiviaMedeiros](https://github.com/LiviaMedeiros) -
+  **LiviaMedeiros** &lt;&lt;livia@cirno.name&gt;&gt;
+* [ljharb](https://github.com/ljharb) -
+  **Jordan Harband** &lt;&lt;ljharb@gmail.com&gt;&gt;
+* [lpinca](https://github.com/lpinca) -
+  **Luigi Pinca** &lt;&lt;luigipinca@gmail.com&gt;&gt; (he/him)
+* [Lxxyx](https://github.com/Lxxyx) -
+  **Zijian Liu** &lt;&lt;lxxyxzj@gmail.com&gt;&gt; (he/him)
+* [marco-ippolito](https://github.com/marco-ippolito) -
+  **Marco Ippolito** &lt;&lt;marcoippolito54@gmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/marco-ippolito)
+* [marsonya](https://github.com/marsonya) -
+  **Akhil Marsonya** &lt;&lt;akhil.marsonya27@gmail.com&gt;&gt; (he/him)
+* [MattiasBuelens](https://github.com/MattiasBuelens) -
+  **Mattias Buelens** &lt;&lt;mattias@buelens.com&gt;&gt; (he/him)
+* [mcollina](https://github.com/mcollina) -
+  **Matteo Collina** &lt;&lt;matteo.collina@gmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/mcollina)
+* [meixg](https://github.com/meixg) -
+  **Xuguang Mei** &lt;&lt;meixuguang@gmail.com&gt;&gt; (he/him)
+* [mhdawson](https://github.com/mhdawson) -
+  **Michael Dawson** &lt;&lt;midawson@redhat.com&gt;&gt; (he/him)
+* [MoLow](https://github.com/MoLow) -
+  **Moshe Atlow** &lt;&lt;moshe@atlow.co.il&gt;&gt; (he/him)
+* [MrJithil](https://github.com/MrJithil) -
+  **Jithil P Ponnan** &lt;&lt;jithil@outlook.com&gt;&gt; (he/him)
+* [ovflowd](https://github.com/ovflowd) -
+  **Claudio Wunder** &lt;&lt;cwunder@gnome.org&gt;&gt; (he/they)
+* [panva](https://github.com/panva) -
+  **Filip Skokan** &lt;&lt;panva.ip@gmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/panva)
+* [pimterry](https://github.com/pimterry) -
+  **Tim Perry** &lt;&lt;pimterry@gmail.com&gt;&gt; (he/him)
+* [pmarchini](https://github.com/pmarchini) -
+  **Pietro Marchini** &lt;&lt;pietro.marchini94@gmail.com&gt;&gt; (he/him)
+* [puskin](https://github.com/puskin) -
+  **Giovanni Bucci** &lt;&lt;github@puskin.it&gt;&gt; (he/him)
+* [Qard](https://github.com/Qard) -
+  **Stephen Belanger** &lt;&lt;admin@stephenbelanger.com&gt;&gt; (he/him)
+* [RafaelGSS](https://github.com/RafaelGSS) -
+  **Rafael Gonzaga** &lt;&lt;rafael.nunu@hotmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/RafaelGSS)
+* [RaisinTen](https://github.com/RaisinTen) -
+  **Darshan Sen** &lt;&lt;raisinten@gmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/RaisinTen)
+* [Renegade334](https://github.com/Renegade334) -
+  **René** &lt;&lt;contact.9a5d6388@renegade334.me.uk&gt;&gt;
+* [richardlau](https://github.com/richardlau) -
+  **Richard Lau** &lt;&lt;richard.lau@ibm.com&gt;&gt;
+* [rluvaton](https://github.com/rluvaton) -
+  **Raz Luvaton** &lt;&lt;rluvaton@gmail.com&gt;&gt; (he/him)
+* [ronag](https://github.com/ronag) -
+  **Robert Nagy** &lt;&lt;ronagy@icloud.com&gt;&gt;
+* [ruyadorno](https://github.com/ruyadorno) -
+  **Ruy Adorno** &lt;&lt;ruy@vlt.sh&gt;&gt; (he/him)
+* [santigimeno](https://github.com/santigimeno) -
+  **Santiago Gimeno** &lt;&lt;santiago.gimeno@gmail.com&gt;&gt;
+* [ShogunPanda](https://github.com/ShogunPanda) -
+  **Paolo Insogna** &lt;&lt;paolo@cowtech.it&gt;&gt; (he/him)
+* [srl295](https://github.com/srl295) -
+  **Steven R Loomis** &lt;&lt;srl295@gmail.com&gt;&gt;
+* [StefanStojanovic](https://github.com/StefanStojanovic) -
+  **Stefan Stojanovic** &lt;&lt;stefan.stojanovic@janeasystems.com&gt;&gt; (he/him)
+* [sxa](https://github.com/sxa) -
+  **Stewart X Addison** &lt;&lt;sxa@redhat.com&gt;&gt; (he/him)
+* [targos](https://github.com/targos) -
+  **Michaël Zasso** &lt;&lt;targos@protonmail.com&gt;&gt; (he/him)
+* [theanarkh](https://github.com/theanarkh) -
+  **theanarkh** &lt;&lt;theratliter@gmail.com&gt;&gt; (he/him)
+* [tniessen](https://github.com/tniessen) -
+
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
             <title><![CDATA[Mintplex-Labs/anything-llm]]></title>
             <link>https://github.com/Mintplex-Labs/anything-llm</link>
             <guid>https://github.com/Mintplex-Labs/anything-llm</guid>
-            <pubDate>Mon, 30 Mar 2026 00:10:13 GMT</pubDate>
+            <pubDate>Tue, 31 Mar 2026 00:10:34 GMT</pubDate>
             <description><![CDATA[The all-in-one AI productivity accelerator. On device and privacy first with no annoying setup or configuration.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/Mintplex-Labs/anything-llm">Mintplex-Labs/anything-llm</a></h1>
             <p>The all-in-one AI productivity accelerator. On device and privacy first with no annoying setup or configuration.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 57,094</p>
-            <p>Forks: 6,174</p>
+            <p>Stars: 57,185</p>
+            <p>Forks: 6,188</p>
             <p>Stars today: 117 stars today</p>
             <h2>README</h2><pre>&lt;a name=&quot;readme-top&quot;&gt;&lt;/a&gt;
 
@@ -269,1156 +999,1993 @@ We take privacy very seriously, and we hope you understand that we want to learn
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[TryGhost/Ghost]]></title>
-            <link>https://github.com/TryGhost/Ghost</link>
-            <guid>https://github.com/TryGhost/Ghost</guid>
-            <pubDate>Mon, 30 Mar 2026 00:10:12 GMT</pubDate>
-            <description><![CDATA[Independent technology for modern publishing, memberships, subscriptions and newsletters.]]></description>
+            <title><![CDATA[libaxuan/cursor2api-go]]></title>
+            <link>https://github.com/libaxuan/cursor2api-go</link>
+            <guid>https://github.com/libaxuan/cursor2api-go</guid>
+            <pubDate>Tue, 31 Mar 2026 00:10:33 GMT</pubDate>
+            <description><![CDATA[Free claude-sonnet-4.6 | cursor不倒我不倒🙏 ❌]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/TryGhost/Ghost">TryGhost/Ghost</a></h1>
-            <p>Independent technology for modern publishing, memberships, subscriptions and newsletters.</p>
+            <h1><a href="https://github.com/libaxuan/cursor2api-go">libaxuan/cursor2api-go</a></h1>
+            <p>Free claude-sonnet-4.6 | cursor不倒我不倒🙏 ❌</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 52,213</p>
-            <p>Forks: 11,403</p>
-            <p>Stars today: 36 stars today</p>
-            <h2>README</h2><pre>&amp;nbsp;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://ghost.org/#gh-light-mode-only&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;https://user-images.githubusercontent.com/65487235/157884383-1b75feb1-45d8-4430-b636-3f7e06577347.png&quot; alt=&quot;Ghost&quot; width=&quot;200px&quot;&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://ghost.org/#gh-dark-mode-only&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;https://user-images.githubusercontent.com/65487235/157849205-aa24152c-4610-4d7d-b752-3a8c4f9319e6.png&quot; alt=&quot;Ghost&quot; width=&quot;200px&quot;&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-&amp;nbsp;
+            <p>Stars: 1,057</p>
+            <p>Forks: 322</p>
+            <p>Stars today: 7 stars today</p>
+            <h2>README</h2><pre># Cursor2API
 
-&lt;p align=&quot;center&quot;&gt;
-    &lt;a href=&quot;https://ghost.org/&quot;&gt;Ghost.org&lt;/a&gt; •
-    &lt;a href=&quot;https://forum.ghost.org&quot;&gt;Forum&lt;/a&gt; •
-    &lt;a href=&quot;https://ghost.org/docs/&quot;&gt;Docs&lt;/a&gt; •
-    &lt;a href=&quot;https://github.com/TryGhost/Ghost/blob/main/.github/CONTRIBUTING.md&quot;&gt;Contributing&lt;/a&gt; •
-    &lt;a href=&quot;https://twitter.com/ghost&quot;&gt;Twitter&lt;/a&gt;
-    &lt;br /&gt;&lt;br /&gt;
-    &lt;a href=&quot;https://ghost.org/&quot;&gt;
-        &lt;img src=&quot;https://img.shields.io/badge/downloads-100M+-brightgreen.svg&quot; alt=&quot;Downloads&quot; /&gt;
-    &lt;/a&gt;
-    &lt;a href=&quot;https://github.com/TryGhost/Ghost/releases/&quot;&gt;
-        &lt;img src=&quot;https://img.shields.io/github/release/TryGhost/Ghost.svg&quot; alt=&quot;Latest release&quot; /&gt;
-    &lt;/a&gt;
-    &lt;a href=&quot;https://github.com/TryGhost/Ghost/actions&quot;&gt;
-        &lt;img src=&quot;https://github.com/TryGhost/Ghost/workflows/CI/badge.svg?branch=main&quot; alt=&quot;Build status&quot; /&gt;
-    &lt;/a&gt;
-    &lt;a href=&quot;https://github.com/TryGhost/Ghost/contributors/&quot;&gt;
-        &lt;img src=&quot;https://img.shields.io/github/contributors/TryGhost/Ghost.svg&quot; alt=&quot;Contributors&quot; /&gt;
-    &lt;/a&gt;
-&lt;/p&gt;
+[English](README_EN.md) | 简体中文
 
-&amp;nbsp;
+一个将 Cursor Web 转换为 OpenAI `chat/completions` 兼容 API 的 Go 服务。
 
-&gt; [!NOTE]
-&gt; Love open source? We&#039;re hiring! Ghost is looking staff engineers to [join the team](https://careers.ghost.org) and work with us full-time
+[![Go Version](https://img.shields.io/badge/Go-1.24+-blue.svg)](https://golang.org)
+[![License: PolyForm Noncommercial](https://img.shields.io/badge/License-PolyForm%20Noncommercial-orange.svg)](https://polyformproject.org/licenses/noncommercial/1.0.0/)
 
-&lt;a href=&quot;https://ghost.org/&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/353959/169805900-66be5b89-0859-4816-8da9-528ed7534704.png&quot; alt=&quot;Fiercely independent, professional publishing. Ghost is the most popular open source, headless Node.js CMS which already works with all the tools you know and love.&quot; /&gt;&lt;/a&gt;
+## ✨ 特性
 
-&amp;nbsp;
+- 🔄 **API 兼容**: 兼容 OpenAI `chat/completions` 接口
+- ⚡ **高性能**: 低延迟响应
+- 🔐 **安全认证**: 支持 API Key 认证
+- 🌐 **模型派生**: 自动暴露 `*-thinking` 模型
+- 🧰 **工具调用**: 支持 `tools` / `tool_choice` / `tool_calls`
+- 🛡️ **错误处理**: 完善的错误处理机制
+- 📊 **健康检查**: 内置健康检查接口
 
-&lt;a href=&quot;https://ghost.org/pricing/#gh-light-mode-only&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/65487235/157849437-9b8fcc48-1920-4b26-a1e8-5806db0e6bb9.png&quot; alt=&quot;Ghost(Pro)&quot; width=&quot;165px&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://ghost.org/pricing/#gh-dark-mode-only&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/65487235/157849438-79889b04-b7b6-4ba7-8de6-4c1e4b4e16a5.png&quot; alt=&quot;Ghost(Pro)&quot; width=&quot;165px&quot; /&gt;&lt;/a&gt;
+## 🖼️ 效果图
 
-The easiest way to get a production instance deployed is with our official **[Ghost(Pro)](https://ghost.org/pricing/)** managed service. It takes about 2 minutes to launch a new site with worldwide CDN, backups, security and maintenance all done for you.
+![首页预览](docs/images/home.png)
+![调用效果预览 1](docs/images/play1.png)
+![调用效果预览 2](docs/images/play2.png)
 
-For most people this ends up being the best value option because of [how much time it saves](https://ghost.org/docs/hosting/) — and 100% of revenue goes to the Ghost Foundation; funding the maintenance and further development of the project itself. So you’ll be supporting open source software *and* getting a great service!
+## 🤖 支持的模型
 
-&amp;nbsp;
+- **Anthropic Claude**: `claude-sonnet-4.6`
+- **自动派生 thinking 模型**: `claude-sonnet-4.6-thinking`
 
-# Quickstart install
+## 🚀 快速开始
 
-If you want to run your own instance of Ghost, in most cases the best way is to use our **CLI tool**
+### 环境要求
 
-```
-npm install ghost-cli -g
+- Go 1.24+
+- Node.js 18+ (用于 JavaScript 执行)
+
+### 本地运行方式
+
+#### 方法一：直接运行（推荐用于开发）
+
+**Linux/macOS**:
+```bash
+git clone https://github.com/libaxuan/cursor2api-go.git
+cd cursor2api-go
+chmod +x start.sh
+./start.sh
 ```
 
-&amp;nbsp;
+**Windows**:
+```batch
+# 双击运行或在 cmd 中执行
+start-go.bat
 
-Then, if installing locally add the `local` flag to get up and running in under a minute - [Local install docs](https://ghost.org/docs/install/local/)
-
-```
-ghost install local
-```
-
-&amp;nbsp;
-
-or on a server run the full install, including automatic SSL setup using LetsEncrypt - [Production install docs](https://ghost.org/docs/install/ubuntu/)
-
-```
-ghost install
+# 或在 Git Bash / Windows Terminal 中
+./start-go-utf8.bat
 ```
 
-&amp;nbsp;
+#### 方法二：手动编译运行
 
-Check out our [official documentation](https://ghost.org/docs/) for more information about our [recommended hosting stack](https://ghost.org/docs/hosting/) &amp; properly [upgrading Ghost](https://ghost.org/docs/update/), plus everything you need to develop your own Ghost [themes](https://ghost.org/docs/themes/) or work with [our API](https://ghost.org/docs/content-api/).
+```bash
+# 克隆项目
+git clone https://github.com/libaxuan/cursor2api-go.git
+cd cursor2api-go
 
-### Contributors &amp; advanced developers
+# 下载依赖
+go mod tidy
 
-For anyone wishing to contribute to Ghost or to hack/customize core files we recommend following our full development setup guides: [Contributor guide](https://ghost.org/docs/contributing/) • [Developer setup](https://ghost.org/docs/install/source/)
+# 编译
+go build -o cursor2api-go
 
-&amp;nbsp;
+# 运行
+./cursor2api-go
+```
 
-# Ghost sponsors
+#### 方法三：使用 go run
 
-A big thanks to our sponsors and partners who make Ghost possible. If you&#039;re interested in sponsoring Ghost and supporting the project, please check out our profile on [GitHub sponsors](https://github.com/sponsors/TryGhost) :heart:
+```bash
+git clone https://github.com/libaxuan/cursor2api-go.git
+cd cursor2api-go
+go run main.go
+```
 
-**[DigitalOcean](https://m.do.co/c/9ff29836d717)** • **[Fastly](https://www.fastly.com/)** • **[Tinybird](https://tbrd.co/ghost)** • **[BairesDev](https://www.bairesdev.com)** • **[Hostinger](https://www.hostinger.com/)**
+服务将在 `http://localhost:8002` 启动
 
-&amp;nbsp;
+## 🚀 服务器部署方式
 
-# Getting help
+### Docker 部署
 
-Everyone can get help and support from a large community of developers over on the [Ghost forum](https://forum.ghost.org/). **Ghost(Pro)** customers have access to 24/7 email support.
+1. **构建镜像**:
+```bash
+# 构建镜像
+docker build -t cursor2api-go .
+```
 
-To stay up to date with all the latest news and product updates, make sure you [subscribe to our changelog newsletter](https://ghost.org/changelog/) — or follow us [on Twitter](https://twitter.com/Ghost), if you prefer your updates bite-sized and facetious. :saxophone::turtle:
+2. **运行容器**:
+```bash
+# 运行容器（推荐）
+docker run -d \
+  --name cursor2api-go \
+  --restart unless-stopped \
+  -p 8002:8002 \
+  -e API_KEY=your-secret-key \
+  -e DEBUG=false \
+  cursor2api-go
 
-&amp;nbsp;
+# 或者使用默认配置运行
+docker run -d --name cursor2api-go --restart unless-stopped -p 8002:8002 cursor2api-go
+```
 
-# License &amp; trademark
+### Docker Compose 部署（推荐用于生产环境）
 
-Copyright (c) 2013-2026 Ghost Foundation - Released under the [MIT license](LICENSE).
-Ghost and the Ghost Logo are trademarks of Ghost Foundation Ltd. Please see our [trademark policy](https://ghost.org/trademark/) for info on acceptable usage.
+1. **使用 docker-compose.yml**:
+```bash
+# 启动服务
+docker-compose up -d
+
+# 停止服务
+docker-compose down
+
+# 查看日志
+docker-compose logs -f
+```
+
+2. **自定义配置**:
+修改 `docker-compose.yml` 文件中的环境变量以满足您的需求：
+- 修改 `API_KEY` 为安全的密钥
+- 根据需要调整 `MODELS`、`TIMEOUT` 等配置
+- 更改暴露的端口
+
+### 系统服务部署（Linux）
+
+1. **编译并移动二进制文件**:
+```bash
+go build -o cursor2api-go
+sudo mv cursor2api-go /usr/local/bin/
+sudo chmod +x /usr/local/bin/cursor2api-go
+```
+
+2. **创建系统服务文件** `/etc/systemd/system/cursor2api-go.service`:
+```ini
+[Unit]
+Description=Cursor2API Service
+After=network.target
+
+[Service]
+Type=simple
+User=your-user
+WorkingDirectory=/home/your-user/cursor2api-go
+ExecStart=/usr/local/bin/cursor2api-go
+Restart=always
+Environment=API_KEY=your-secret-key
+Environment=PORT=8002
+
+[Install]
+WantedBy=multi-user.target
+```
+
+3. **启动服务**:
+```bash
+# 重载 systemd 配置
+sudo systemctl daemon-reload
+
+# 启用开机自启
+sudo systemctl enable cursor2api-go
+
+# 启动服务
+sudo systemctl start cursor2api-go
+
+# 查看状态
+sudo systemctl status cursor2api-go
+```
+
+## 📡 API 使用
+
+### 获取模型列表
+
+```bash
+curl -H &quot;Authorization: Bearer 0000&quot; http://localhost:8002/v1/models
+```
+
+### 非流式聊天
+
+```bash
+curl -X POST http://localhost:8002/v1/chat/completions \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;Authorization: Bearer 0000&quot; \
+  -d &#039;{
+    &quot;model&quot;: &quot;claude-sonnet-4.6&quot;,
+    &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Hello!&quot;}],
+    &quot;stream&quot;: false
+  }&#039;
+```
+
+### 流式聊天
+
+```bash
+curl -X POST http://localhost:8002/v1/chat/completions \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;Authorization: Bearer 0000&quot; \
+  -d &#039;{
+    &quot;model&quot;: &quot;claude-sonnet-4.6&quot;,
+    &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Hello!&quot;}],
+    &quot;stream&quot;: true
+  }&#039;
+```
+
+### 带工具的请求
+
+```bash
+curl -X POST http://localhost:8002/v1/chat/completions \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;Authorization: Bearer 0000&quot; \
+  -d &#039;{
+    &quot;model&quot;: &quot;claude-sonnet-4.6&quot;,
+    &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;帮我查询北京天气&quot;}],
+    &quot;tools&quot;: [
+      {
+        &quot;type&quot;: &quot;function&quot;,
+        &quot;function&quot;: {
+          &quot;name&quot;: &quot;get_weather&quot;,
+          &quot;description&quot;: &quot;获取实时天气&quot;,
+          &quot;parameters&quot;: {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+              &quot;city&quot;: {&quot;type&quot;: &quot;string&quot;}
+            },
+            &quot;required&quot;: [&quot;city&quot;]
+          }
+        }
+      }
+    ]
+  }&#039;
+```
+
+### `-thinking` 模型
+
+```bash
+curl -X POST http://localhost:8002/v1/chat/completions \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;Authorization: Bearer 0000&quot; \
+  -d &#039;{
+    &quot;model&quot;: &quot;claude-sonnet-4.6-thinking&quot;,
+    &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;先思考再决定要不要用工具&quot;}],
+    &quot;tools&quot;: [
+      {
+        &quot;type&quot;: &quot;function&quot;,
+        &quot;function&quot;: {
+          &quot;name&quot;: &quot;lookup&quot;,
+          &quot;parameters&quot;: {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+              &quot;q&quot;: {&quot;type&quot;: &quot;string&quot;}
+            },
+            &quot;required&quot;: [&quot;q&quot;]
+          }
+        }
+      }
+    ],
+    &quot;stream&quot;: true
+  }&#039;
+```
+
+### 在第三方应用中使用
+
+在任何支持自定义 OpenAI API 的应用中（如 ChatGPT Next Web、Lobe Chat 等）：
+
+1. **API 地址**: `http://localhost:8002`
+2. **API 密钥**: `0000`（或自定义）
+3. **模型**: 选择支持的模型之一；基础模型会自动有对应的 `-thinking` 版本
+
+## ⚙️ 配置说明
+
+### 环境变量
+
+| 变量名 | 默认值 | 说明 |
+|--------|--------|------|
+| `PORT` | `8002` | 服务器端口 |
+| `DEBUG` | `false` | 调试模式（启用后显示详细日志和路由信息） |
+| `API_KEY` | `0000` | API 认证密钥 |
+| `MODELS` | `claude-sonnet-4.6` | 基础模型列表（逗号分隔），服务会自动追加对应的 `-thinking` 公开模型 |
+| `TIMEOUT` | `60` | 请求超时时间（秒） |
+| `KILO_TOOL_STRICT` | `false` | Kilo Code 兼容开关：当请求提供 `tools` 且 `tool_choice=auto` 时，将其提升为“必须至少调用一次工具” |
+
+### 调试模式
+
+默认情况下，服务以简洁模式运行。如需启用详细日志：
+
+**方式 1**: 修改 `.env` 文件
+```bash
+DEBUG=true
+```
+
+**方式 2**: 使用环境变量
+```bash
+DEBUG=true ./cursor2api-go
+```
+
+调试模式会显示：
+- 详细的 GIN 路由信息
+- 每个请求的详细日志
+- x-is-human token 信息
+- 浏览器指纹配置
+
+### 故障排除
+
+遇到问题？查看 **[故障排除指南](TROUBLESHOOTING.md)** 了解常见问题的解决方案，包括：
+- 403 Access Denied 错误
+- Token 获取失败
+- 连接超时
+- Cloudflare 拦截
+
+## 🧩 与 Kilo Code / Agent 编排器的兼容性
+
+部分编排器会在“提供了 tools”时强制模型必须产出工具调用，否则报类似 `MODEL_NO_TOOLS_USED` 的错误。为改善这一类兼容问题：
+
+- **建议**：在 `.env` 中启用 `KILO_TOOL_STRICT=true`
+- **非流式补救**：当请求提供 `tools` 且被判定为“必须用工具”（`tool_choice=required/指定函数`，或启用 `KILO_TOOL_STRICT`）时，如果本轮没有产出 `tool_calls`，服务会自动 **重试 1 次**（仅非流式；流式不重试）
+
+
+### Windows 启动脚本说明
+
+项目提供两个 Windows 启动脚本：
+
+- **`start-go.bat`** (推荐): GBK 编码，完美兼容 Windows cmd.exe
+- **`start-go-utf8.bat`**: UTF-8 编码，适用于 Git Bash、PowerShell、Windows Terminal
+
+两个脚本功能完全相同，仅显示样式不同。如遇乱码请使用 `start-go.bat`。
+
+## 🧪 开发
+
+### 运行测试
+
+```bash
+# 运行现有测试
+go test ./...
+```
+
+### 构建项目
+
+```bash
+# 构建可执行文件
+go build -o cursor2api-go
+
+# 交叉编译 (例如 Linux)
+GOOS=linux GOARCH=amd64 go build -o cursor2api-go-linux
+```
+
+## 📁 项目结构
+
+```
+cursor2api-go/
+├── main.go              # 主程序入口 (Go 版本)
+├── config/              # 配置管理 (Go 版本)
+├── handlers/            # HTTP 处理器 (Go 版本)
+├── services/            # 业务服务层 (Go 版本)
+├── models/              # 数据模型 (Go 版本)
+├── utils/               # 工具函数 (Go 版本)
+├── middleware/          # 中间件 (Go 版本)
+├── jscode/              # JavaScript 代码 (Go 版本)
+├── static/              # 静态文件 (Go 版本)
+├── start.sh             # Linux/macOS 启动脚本
+├── start-go.bat         # Windows 启动脚本 (GBK)
+├── start-go-utf8.bat    # Windows 启动脚本 (UTF-8)
+
+└── README.md            # 项目说明
+```
+
+## 🤝 贡献指南
+
+欢迎贡献代码！请遵循以下步骤：
+
+1. Fork 本仓库
+2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m &#039;feat: Add some AmazingFeature&#039;`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 开启 Pull Request
+
+### 代码规范
+
+- 遵循 [Go Code Review Comments](https://github.com/golang/go/wiki/CodeReviewComments)
+- 使用 `gofmt` 格式化代码
+- 使用 `go vet` 检查代码
+- 提交信息遵循 [Conventional Commits](https://conventionalcommits.org/) 规范
+
+## 📄 许可证
+
+本项目采用 [PolyForm Noncommercial 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0/) 许可证。
+禁止商业用途。查看 [LICENSE](LICENSE) 文件了解详情。
+
+## ⚠️ 免责声明
+
+使用本项目时请遵守相关服务的使用条款。
+
+---
+
+⭐ 如果这个项目对您有帮助，请给我们一个 Star！
 </pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[gorhill/uBlock]]></title>
-            <link>https://github.com/gorhill/uBlock</link>
-            <guid>https://github.com/gorhill/uBlock</guid>
-            <pubDate>Mon, 30 Mar 2026 00:10:11 GMT</pubDate>
-            <description><![CDATA[uBlock Origin - An efficient blocker for Chromium and Firefox. Fast and lean.]]></description>
+            <title><![CDATA[rgthree/rgthree-comfy]]></title>
+            <link>https://github.com/rgthree/rgthree-comfy</link>
+            <guid>https://github.com/rgthree/rgthree-comfy</guid>
+            <pubDate>Tue, 31 Mar 2026 00:10:32 GMT</pubDate>
+            <description><![CDATA[Making ComfyUI more comfortable!]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/gorhill/uBlock">gorhill/uBlock</a></h1>
-            <p>uBlock Origin - An efficient blocker for Chromium and Firefox. Fast and lean.</p>
+            <h1><a href="https://github.com/rgthree/rgthree-comfy">rgthree/rgthree-comfy</a></h1>
+            <p>Making ComfyUI more comfortable!</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 62,400</p>
-            <p>Forks: 3,990</p>
-            <p>Stars today: 21 stars today</p>
-            <h2>README</h2><pre>[![Badge Commits]][Commit Rate]
-[![Badge Issues]][Issues]
-[![Badge Localization]][Crowdin]
-[![Badge License]][License]
-[![Badge NPM]][NPM]
-[![Badge Mozilla]][Mozilla]
-[![Badge Chrome]][Chrome]
-[![Badge Edge]][Edge]
-
-***
-
-&lt;h1 align=&quot;center&quot;&gt;
-&lt;sub&gt;
-&lt;img src=&quot;https://github.com/gorhill/uBlock/blob/master/src/img/ublock.svg&quot; height=&quot;38&quot; width=&quot;38&quot;&gt;
-&lt;/sub&gt;
-uBlock Origin (uBO)
-&lt;/h1&gt;
-
-| Browser   | Install from ... | Status |
-| :-------: | ---------------- | ------ |
-| &lt;img src=&quot;https://github.com/user-attachments/assets/b0136512-56a5-4856-8c50-4971c957a24f&quot; alt=&quot;Get uBlock Origin for Firefox&quot;&gt; | &lt;a href=&quot;https://addons.mozilla.org/addon/ublock-origin/&quot;&gt;Firefox Add-ons&lt;/a&gt; | [uBO works best on Firefox](https://github.com/gorhill/uBlock/wiki/uBlock-Origin-works-best-on-Firefox) |
-| &lt;img src=&quot;https://github.com/user-attachments/assets/3a7569f8-688b-4eb1-a643-8d0fe173aefe&quot; alt=&quot;Get uBlock Origin for Microsoft Edge&quot;&gt; | &lt;a href=&quot;https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak&quot;&gt;Edge Add-ons&lt;/a&gt; |
-| &lt;img src=&quot;https://github.com/user-attachments/assets/938f080c-fe64-4e48-8b89-4bfceabb56e6&quot; alt=&quot;Get uBlock Origin for Opera&quot;&gt; | &lt;a href=&quot;https://addons.opera.com/extensions/details/ublock/&quot;&gt;Opera Add-ons&lt;/a&gt; |
-| &lt;img src=&quot;https://github.com/user-attachments/assets/5463ef88-873b-4516-8514-5277664cfde7&quot; alt=&quot;Get uBlock Origin for Chromium&quot;&gt; | &lt;a href=&quot;https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm&quot;&gt;Chrome Web Store&lt;/a&gt; | &lt;a href=&quot;https://github.com/uBlockOrigin/uBlock-issues/wiki/About-Google-Chrome&#039;s-%22This-extension-may-soon-no-longer-be-supported%22&quot;&gt;About Google Chrome&#039;s &quot;This extension may soon no longer be supported&quot;&lt;/a&gt;&lt;br&gt;End of support on Chrome 139 |
-| &lt;img src=&quot;https://github.com/user-attachments/assets/2e9037c4-836d-44c1-a716-ba96e89daaff&quot; alt=&quot;Get uBlock Origin for Thunderbird&quot;&gt; | &lt;a href=&quot;https://addons.thunderbird.net/thunderbird/addon/ublock-origin/&quot;&gt;Thunderbird Add-ons&lt;/a&gt; | [No longer updated and stuck at 1.49.2.](https://github.com/uBlockOrigin/uBlock-issues/issues/2928) Later versions require &quot;GitHub - Releases&quot;. |
-| &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg&quot; height=&quot;50&quot; alt=&quot;Get uBlock Origin through GitHub&quot;&gt; | &lt;a href=&quot;https://github.com/gorhill/uBlock/releases&quot;&gt;GitHub - Releases&lt;/a&gt; | Stable and development versions on Firefox, Chromium MV2, and Thunderbird. Must be placed manually into web browsers; the Chromium and Thunderbird versions usually won&#039;t auto-update.
-
-***
-
-uBlock Origin (uBO) is a CPU and memory-efficient [wide-spectrum content blocker][Blocking] for Chromium and Firefox. It blocks ads, trackers, coin miners, popups, annoying anti-blockers, malware sites, etc., by default using [EasyList][EasyList], [EasyPrivacy][EasyPrivacy], [Peter Lowe&#039;s Blocklist][Peter Lowe&#039;s Blocklist], [Online Malicious URL Blocklist][Malicious Blocklist], and uBO [filter lists][uBO Filters]. There are many other lists available to block even more. Hosts files are also supported. uBO uses the EasyList filter syntax and [extends][Extended Syntax] the syntax to work with custom rules and filters.
-
-You may easily unselect any preselected filter lists if you think uBO blocks too much. For reference, Adblock Plus installs with only EasyList, ABP filters, and Acceptable Ads enabled by default.
-
-It is important to note that using a blocker is **NOT** [theft]. Do not fall for this creepy idea. The _ultimate_ logical consequence of `blocking = theft` is the criminalization of the inalienable right to privacy.
-
-Ads, &quot;unintrusive&quot; or not, are just the visible portion of the privacy-invading means entering your browser when you visit most sites. **uBO&#039;s primary goal is to help users neutralize these privacy-invading methods** in a way that welcomes those users who do not wish to use more technical means.
-
-***
-
-* [Documentation](#documentation)
-* [Installation](#installation)
-  * [Firefox](#firefox)
-  * [Thunderbird](#thunderbird)
-  * [Chromium](#chromium)
-  * [All Programs](#all-programs)
-  * [Enterprise Deployment](#enterprise-deployment)
-* [Release History](#release-history)
-* [Translations](#translations)
-* [About](#about)
-
-## Documentation
-
-&lt;table&gt;
-    &lt;thead&gt;
-        &lt;tr&gt;
-            &lt;th&gt;Basic Mode&lt;/th&gt;
-            &lt;th&gt;Advanced Mode&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td&gt;The &lt;a href=&quot;https://github.com/gorhill/uBlock/wiki/Quick-guide:-popup-user-interface&quot;&gt;simple popup user interface&lt;/a&gt; for an install-it-and-forget-it type of installation that is configured optimally by default.&lt;/td&gt;
-            &lt;td&gt;The &lt;a href=&quot;https://github.com/gorhill/uBlock/wiki/Dynamic-filtering:-quick-guide&quot;&gt;advanced popup user interface&lt;/a&gt; includes a point-and-click firewall that is configurable on a per-site basis.&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td align=&quot;center&quot; valign=&quot;top&quot;&gt;&lt;a href=&quot;https://github.com/gorhill/uBlock/wiki/Quick-guide:-popup-user-interface&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/585534/232531044-c4ac4dd5-0b60-4c1e-aabb-914be04b846c.png&quot;/&gt;&lt;/a&gt;&lt;/td&gt;
-            &lt;td align=&quot;center&quot; valign=&quot;top&quot;&gt;&lt;a href=&quot;https://github.com/gorhill/uBlock/wiki/Dynamic-filtering:-quick-guide&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/585534/232531439-a8f81cc3-6622-45c4-8b32-7348cecf6e98.png&quot;/&gt;&lt;/a&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;
-
-Visit the [Wiki][Wiki] for documentation.
-
-For support, questions, or help, visit [/r/uBlockOrigin][Reddit].
-
-## Installation
-
-[Required Permissions][Permissions]
-
-#### Firefox
-
-[Firefox Add-ons][Mozilla]
-
-[Development Builds][Beta]
-
-uBO [works best][Works Best] on Firefox and is available for desktop and Android versions.
-
-#### Thunderbird
-
-[Thunderbird Add-ons][Thunderbird]
-
-In Thunderbird, uBlock Origin does not affect emails, just feeds.
-
-#### Chromium
-
-[Chrome Web Store][Chrome]
-
-[Microsoft Edge Add-ons][Edge] (Published by [Nicole Rolls][Nicole Rolls] until version 1.62. Ownership transfer at version 1.64.)
-
-[Opera Add-ons][Opera]
-
-[Development Builds][Chrome Dev]
-
-uBO should be compatible with any Chromium-based browser.
-
-#### All Programs
-
-Do **NOT** use uBO with any other content blocker. uBO [performs][Performance] as well as or better than most popular blockers. Other blockers can prevent uBO&#039;s privacy or anti-blocker-defusing features from working correctly.
-
-[Manual Installation][Manual Installation]
-
-#### Enterprise Deployment
-
-[Deploying uBO][Deployment]
-
-## Release History
-
-[Releases Page][Releases]
-
-## Translations
-
-Help translate uBO via [Crowdin][Crowdin].
-
-## About
-
-[Manifesto][Manifesto]
-
-[Privacy Policy][Privacy Policy]
-
-[GPLv3 License][License]
-
-Free. Open-source. For users by users. No donations sought.
-
-If you ever want to contribute something, think about the people working hard to maintain the filter lists you are using, which are available to use by all for free.
-
-
-&lt;!-----------------------------------------------------------------------------&gt;
-
-[Peter Lowe&#039;s Blocklist]: https://pgl.yoyo.org/adservers/
-[Malicious Blocklist]: https://gitlab.com/malware-filter/urlhaus-filter#malicious-url-blocklist
-[Performance]: https://www.debugbear.com/blog/chrome-extensions-website-performance#the-impact-of-ad-blocking-on-website-performance
-[EasyPrivacy]: https://easylist.to/#easyprivacy
-[Thunderbird]: https://addons.thunderbird.net/thunderbird/addon/ublock-origin/
-[Chrome Dev]: https://chromewebstore.google.com/detail/ublock-origin-development/cgbcahbpdhpcegmbfconppldiemgcoii
-[EasyList]: https://easylist.to/#easylist
-[Mozilla]: https://addons.mozilla.org/addon/ublock-origin/
-[Crowdin]: https://crowdin.com/project/ublock
-[Chrome]: https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm
-[Reddit]: https://www.reddit.com/r/uBlockOrigin/
-[Theft]: https://x.com/LeaVerou/status/518154828166725632
-[Opera]: https://addons.opera.com/extensions/details/ublock/
-[Edge]: https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak
-[NPM]: https://www.npmjs.com/package/@gorhill/ubo-core
-
-[Manifesto]: MANIFESTO.md
-[License]: LICENSE.txt
-
-[Nicole Rolls]: https://github.com/nicole-ashley
-
-&lt;!---------------------------------[ Internal ]--------------------------------&gt;
-
-[Manual Installation]: https://github.com/gorhill/uBlock/tree/master/dist#install
-[Extended Syntax]: https://github.com/gorhill/uBlock/wiki/Static-filter-syntax#extended-syntax
-[Privacy Policy]: https://github.com/gorhill/uBlock/wiki/Privacy-policy
-[uBO Filters]: https://github.com/uBlockOrigin/uAssets/tree/master/filters
-[Permissions]: https://github.com/gorhill/uBlock/wiki/Permissions
-[Commit Rate]: https://github.com/gorhill/uBlock/commits/master
-[Works Best]: https://github.com/gorhill/uBlock/wiki/uBlock-Origin-works-best-on-Firefox
-[Deployment]: https://github.com/gorhill/uBlock/wiki/Deploying-uBlock-Origin
-[Blocking]: https://github.com/gorhill/uBlock/wiki/Blocking-mode
-[Releases]: https://github.com/gorhill/uBlock/releases
-[Issues]: https://github.com/uBlockOrigin/uBlock-issues/issues
-[Beta]: https://github.com/gorhill/uBlock/blob/master/dist/README.md#for-beta-version
-[Wiki]: https://github.com/gorhill/uBlock/wiki
-
-&lt;!----------------------------------[ Badges ]---------------------------------&gt;
-
-[Badge Localization]: https://d322cqt584bo4o.cloudfront.net/ublock/localized.svg
-[Badge Commits]: https://img.shields.io/github/commit-activity/m/gorhill/ublock?label=Commits
-[Badge Mozilla]: https://img.shields.io/amo/rating/ublock-origin?label=Firefox
-[Badge License]: https://img.shields.io/badge/License-GPLv3-blue.svg
-[Badge Chrome]: https://img.shields.io/chrome-web-store/rating/cjpalhdlnbpafiamejdnhcphjbkeiagm?label=Chrome
-[Badge Edge]: https://img.shields.io/badge/dynamic/json?label=Edge&amp;color=brightgreen&amp;query=%24.averageRating&amp;suffix=%2F%35&amp;url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fodfafepnkmbhccpbejgmiehpchacaeak
-[Badge Issues]: https://img.shields.io/github/issues/uBlockOrigin/uBlock-issues
-[Badge NPM]: https://img.shields.io/npm/v/@gorhill/ubo-core
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[HabitRPG/habitica]]></title>
-            <link>https://github.com/HabitRPG/habitica</link>
-            <guid>https://github.com/HabitRPG/habitica</guid>
-            <pubDate>Mon, 30 Mar 2026 00:10:10 GMT</pubDate>
-            <description><![CDATA[A habit tracker app which treats your goals like a Role Playing Game.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/HabitRPG/habitica">HabitRPG/habitica</a></h1>
-            <p>A habit tracker app which treats your goals like a Role Playing Game.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 13,770</p>
-            <p>Forks: 4,399</p>
-            <p>Stars today: 2 stars today</p>
-            <h2>README</h2><pre>Habitica ![Build Status](https://github.com/HabitRPG/habitica/workflows/Test/badge.svg)
-===============
-
-[Habitica](https://habitica.com) is an open-source habit-building program that treats your life like a role-playing game. Level up as you succeed, lose HP as you fail, and earn Gold to buy weapons and armor!
-
-**Want to contribute code to Habitica?** We&#039;re always looking for assistance on any issues in our repo with the &quot;Help Wanted&quot; label. The wiki pages below and the additional linked pages will tell you how to start contributing code and where you can seek further help or ask questions:
-* [Guidance for Blacksmiths](https://habitica.fandom.com/wiki/Guidance_for_Blacksmiths) - an introduction to the technologies used and how the software is organized.
-* [Setting up Habitica Locally](https://github.com/HabitRPG/habitica/wiki/Setting-Up-Habitica-for-Local-Development) - how to set up a local install of Habitica for development and testing.
-
-**Interested in contributing to Habitica’s mobile apps?** Visit the links below for our mobile repositories.
-* **Android:** https://github.com/HabitRPG/habitica-android
-* **iOS:** https://github.com/HabitRPG/habitica-ios
-
-Habitica&#039;s code is licensed as described at https://github.com/HabitRPG/habitica/blob/develop/LICENSE
-
-**Found a bug?** Please report it to [admin email](mailto:admin@habitica.com) rather than create an issue (an admin will advise you if a new issue is necessary; usually it is not).
-
-**Creating a third-party tool?** Please review our [API Usage Guidelines](https://github.com/HabitRPG/habitica/wiki/API-Usage-Guidelines) to ensure that your tool is compliant and maintains the best experience for Habitica players.
-
-**Have any questions about Habitica or contributing?** See the links in the [Habitica](https://habitica.com) website&#039;s Help menu. There’s FAQ’s, guides, and the option to reach out to us with any further questions!
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[PrismarineJS/mineflayer]]></title>
-            <link>https://github.com/PrismarineJS/mineflayer</link>
-            <guid>https://github.com/PrismarineJS/mineflayer</guid>
-            <pubDate>Mon, 30 Mar 2026 00:10:09 GMT</pubDate>
-            <description><![CDATA[Create Minecraft bots with a powerful, stable, and high level JavaScript API.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/PrismarineJS/mineflayer">PrismarineJS/mineflayer</a></h1>
-            <p>Create Minecraft bots with a powerful, stable, and high level JavaScript API.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 6,795</p>
-            <p>Forks: 1,231</p>
+            <p>Stars: 2,938</p>
+            <p>Forks: 212</p>
             <p>Stars today: 5 stars today</p>
-            <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
+            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;
+    rgthree-comfy
+    &lt;br&gt;
+    &lt;sub&gt;&lt;sup&gt;&lt;i&gt;Making ComfyUI more comfortable!&lt;/i&gt;&lt;/sup&gt;&lt;/sub&gt;
+    &lt;br&gt;
+&lt;/h1&gt;
+&lt;p align=&quot;center&quot;&gt;
+    &lt;a href=&quot;#️-the-nodes&quot;&gt;The Nodes&lt;/a&gt; &amp;nbsp; | &amp;nbsp; &lt;a href=&quot;#-improvements--features&quot;&gt;Improvements &amp; Features&lt;/a&gt;  &amp;nbsp; | &amp;nbsp; &lt;a href=&quot;#-link-fixer&quot;&gt;Link Fixer&lt;/a&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+
+A collection of nodes and improvements created while messing around with ComfyUI. I made them for myself to make my workflow cleaner, easier, and faster. You&#039;re welcome to try them out. But remember, I made them for my own use cases :)
+
+![Context Node](./docs/rgthree_advanced.png)
+
+# Get Started
+
+## Install
+
+1. Install the great [ComfyUi](https://github.com/comfyanonymous/ComfyUI).
+2. Clone this repo into `custom_modules`:
+    ```
+    cd ComfyUI/custom_nodes
+    git clone https://github.com/rgthree/rgthree-comfy.git
+    ```
+3. Start up ComfyUI.
+
+## Settings
+
+You can configure certain aspect of rgthree-comfy. For instance, perhaps a future ComfyUI change breaks rgthree-comfy, or you already have another extension that does something similar and you want to turn it off for rgthree-comfy.
+
+You can get to rgthree-settings by right-clicking on the empty part of the graph, and selecting `rgthree-comfy &gt; Settings (rgthree-comfy)` or by clicking the `rgthree-comfy settings` in the ComfyUI settings dialog.
+
+_(Note, settings are stored in an `rgthree_config.json` in the `rgthree-comfy` directory. There are other advanced settings that can only be configured there; You can copy default settings from `rgthree_config.json.default` before `rgthree_config.json` before modifying)_.
+
+&lt;br&gt;
+
+# ✴️ The Nodes
+
+Note, you can right-click on a bunch of the rgthree-comfy nodes and select `🛟 Node Help` menu item for in-app help when available.
+
+## Seed
+&gt; An intuitive seed control node for ComfyUI that works very much like Automatic1111&#039;s seed control.
+&gt; &lt;details&gt;
+&gt;    &lt;summary&gt;ℹ️ &lt;i&gt;See More Information&lt;/i&gt;&lt;/summary&gt;
+&gt;
+&gt;    - Set the seed value to &quot;-1&quot; to use a random seed every time
+&gt;    - Set any other number in there to use as a static/fixed seed
+&gt;    - Quick actions to randomize, or (re-)use the last queued seed.
+&gt;    - Images metadata will store the seed value _(so dragging an image in, will have the seed field already fixed to its seed)_.
+&gt;    - _Secret Features_: You can manually set the seed value to &quot;-2&quot; or &quot;-3&quot; to increment or decrement the last seed value. If there was not last seed value, it will randomly use on first.
+&gt;
+&gt;    ![Router Node](./docs/rgthree_seed.png)
+&gt;    &lt;/details&gt;
+
+
+## Reroute
+&gt; Keep your workflow neat with this much improved Reroute node with, like, actual rerouting with multiple directions and sizes.
+&gt; &lt;details&gt;
+&gt;    &lt;summary&gt;ℹ️ &lt;i&gt;More Information&lt;/i&gt;&lt;/summary&gt;
+&gt;
+&gt;    - Use the right-click context menu to change the width, height and connection layout
+&gt;    - Also toggle resizability (min size is 40x43 if resizing though), and title/type display.
+&gt;
+&gt;    ![Router Node](./docs/rgthree_router.png)
+&gt;    &lt;/details&gt;
+
+## Bookmark (🔖)
+&gt; Place the bookmark node anywhere on screen to quickly navigate to that with a shortcut key.
+&gt; &lt;details&gt;
+&gt;    &lt;summary&gt;ℹ️ &lt;i&gt;See More Information&lt;/i&gt;&lt;/summary&gt;
+&gt;
+&gt;    - Define the `shortcut_key` to press to go right to that bookmark node, anchored in the top left.
+&gt;    - You can also define the zoom level as well!
+&gt;    - Pro tip: `shortcut_key` can be multiple keys. For instance &quot;alt + shift + !&quot; would require
+&gt;      pressing the alt key, the shift key, and the &quot;!&quot; (as in the &quot;1&quot; key, but with shift pressed)
+&gt;      in order to trigger.
+&gt;    &lt;/details&gt;
+
+
+## Context / Context Big
+&gt; Pass along in general flow properties, and merge in new data. Similar to some other node suites &quot;pipes&quot; but easier merging, is more easily interoperable with standard nodes by both combining and exploding all in a single node.
+&gt; &lt;details&gt;
+&gt;    &lt;summary&gt;ℹ️ &lt;i&gt;More Information&lt;/i&gt;&lt;/summary&gt;
+&gt;
+&gt;    - Context and Context Big are backwards compatible with each other. That is, an input connected to a Context Big will be passed through the CONTEXT outputs through normal Context nodes and available as an output on either (or, Context Big if the output is only on that node, like &quot;steps&quot;).
+&gt;    - Pro Tip: When dragging a Context output over a nother node, hold down &quot;ctrl&quot; and release to automatically connect the other Context outputs to the hovered node.
+&gt;    - Pro Tip: You can change between Context and Context Big nodes from the menu.
+&gt;
+&gt;    ![Context Node](./docs/rgthree_context.png)
+&gt;    &lt;/details&gt;
+
+## Image Comparer
+&gt; The Image Comparer node compares two images on top of each other.
+&gt; &lt;details&gt;
+&gt;    &lt;summary&gt;ℹ️ &lt;i&gt;More Information&lt;/i&gt;&lt;/summary&gt;
+&gt;
+&gt;    - **Note:** The right-click menu may show image options (Open Image, Save Image, etc.) which will correspond to the first image (image_a) if clicked on the left-half of the node, or the second image if on the right half of the node.
+&gt;    - **Inputs:**
+&gt;      - `image_a` _Required._ The first image to use to compare. If image_b is not supplied and image_a is a batch, the comparer will use the first two images of image_a.
+&gt;      - `image_b` _Optional._ The second image to use to compare. Optional only if image_a is a batch with two images.
+&gt;    - **Properties:** You can change the following properties (by right-clicking on the node, and select &quot;Properties&quot; or &quot;Properties Panel&quot; from the menu):
+&gt;      - `comparer_mode` - Choose between &quot;Slide&quot; and &quot;Click&quot;. Defaults to &quot;Slide&quot;.
+
+
+## Image Inset Crop
+&gt; The node that lets you crop an input image by either pixel value, or percentage value.
+
+
+## Display Any
+&gt; Displays most any piece of text data from the backend _after execution_.
+
+## Power Lora Loader
+&gt; A super-simply Lora Loader node that can load multiple Loras at once, and quick toggle each, all in an ultra-condensed node.
+&gt; &lt;details&gt;
+&gt;    &lt;summary&gt;ℹ️ &lt;i&gt;More Information&lt;/i&gt;&lt;/summary&gt;
+&gt;
+&gt;    - Add as many Lora&#039;s as you would like by clicking the &quot;+ Add Lora&quot; button. There&#039;s no real limit!
+&gt;    - Right-click on a Lora widget for special options to move the lora up or down
+&gt;      _(no affect on image, just presentation)_, toggle it on/off, or delete the row all together.
+&gt;    - from the properties, change the `Show Strengths` to choose between showing a single, simple
+&gt;      strength value (which will be used for both model and clip), or a more advanced view with
+&gt;      both model and clip strengths being modifiable.
+&gt;    &lt;/details&gt;
+
+
+## ~~Lora Loader Stack~~
+&gt; _**Deprecated.** Used the `Power Lora Loader` instead._
+&gt;
+&gt; A simplified Lora Loader stack. Much like other suites, but more interoperable with standard inputs/outputs.
+
+
+## Power Prompt
+&gt; Power up your prompt and get drop downs for adding your embeddings, loras, and even have saved prompt snippets.
+&gt; &lt;details&gt;
+&gt;    &lt;summary&gt;ℹ️ &lt;i&gt;More Information&lt;/i&gt;&lt;/summary&gt;
+&gt;
+&gt;    - At the core, you can use Power Prompt almost as a String Primitive node with additional features of dropdowns for choosing your embeddings, and even loras, with no further processing. This will output just the raw `TEXT` to another node for any lora processing, CLIP Encoding, etc.
+&gt;    - Connect a `CLIP` to the input to encode the text, with both the `CLIP` and `CONDITIONING` output right from the node.
+&gt;    - Connect a `MODEL` to the input to parse and load any `&lt;lora:...&gt;` tags in the text automatically, without
+&gt;      needing a separate Lora Loaders
+&gt;    &lt;/details&gt;
+
+## Power Prompt - Simple
+&gt; Same as Power Prompt above, but without LORA support; made for a slightly cleaner negative prompt _(since negative prompts do not support loras)_.
+
+## SDXL Power Prompt - Positive
+&gt; The SDXL sibling to the Power Prompt above. It contains the text_g and text_l as separate text inputs, as well a couple more input slots necessary to ensure proper clipe encoding. Combine with
+
+## SDXL Power Prompt - Simple
+&gt; Like the non-SDXL `Power Prompt - Simple` node, this one is essentially the same as the SDXL Power Prompt but without lora support for either non-lora positive prompts or SDXL negative prompts _(since negative prompts do not support loras)_.
+
+## SDXL Config
+&gt; Just some configuration fields for SDXL prompting. Honestly, could be used for non SDXL too.
+
+## Context Switch / Context Switch Big
+&gt; A powerful node to branch your workflow. Works by choosing the first Context input that is not null/empty.
+&gt; &lt;details&gt;
+&gt;    &lt;summary&gt;ℹ️ &lt;i&gt;More Information&lt;/i&gt;&lt;/summary&gt;
+&gt;
+&gt;    - Pass in several context nodes and the Context Switch will automatically choose the first non-null context to continue onward with.
+&gt;    - Wondering how to toggle contexts to null? Use in conjuction with the **Fast Muter** or **Fast Groups Muter**
+&gt;
+&gt;    &lt;/details&gt;
+
+## Any Switch
+&gt; A powerful node to similar to the Context Switch above, that chooses the first input that is not null/empty.
+&gt; &lt;details&gt;
+&gt;    &lt;summary&gt;ℹ️ &lt;i&gt;More Information&lt;/i&gt;&lt;/summary&gt;
+&gt;
+&gt;    - Pass in several inmputs of the same type and the Any Switch will automatically choose the first non-null value to continue onward with.
+&gt;    - Wondering how to toggle contexts to null? Use in conjuction with the **Fast Muter** or **Fast Groups Muter**
+&gt;
+&gt;    &lt;/details&gt;
+
+
+## Power Primitive
+&gt; A single node that can output primitives (STRING, INT, FLOAT, BOOLEAN). If connecting an input, it will cast/convert the primitive input to the desired output.
+&gt; &lt;details&gt;
+&gt;    &lt;summary&gt;ℹ️ &lt;i&gt;More Information&lt;/i&gt;&lt;/summary&gt;
+&gt;
+&gt;    - You can hide the type selector input from the right-click menu or properties.
+&gt;    - You can also fast-switch the output type from the right-click menu as well.
+&gt;
+&gt;    &lt;/details&gt;
+
+
+## Power Puter
+&gt; A  powerful and versatile node that opens the door for a wide range of utility by offering mult-line code parsing for output. This node can be used for simple string concatenation, or math operations; to an image dimension or a node&#039;s widgets with advanced list comprehension. If you want to output something in your workflow, this is the node to do it.
+&gt;
+&gt; Additional documentation available in the [wiki](https://github.com/rgthree/rgthree-comfy/wiki/Node:-Power-Puter)
+&gt; &lt;details&gt;
+&gt;    &lt;summary&gt;ℹ️ &lt;i&gt;More Information&lt;/i&gt;&lt;/summary&gt;
+&gt;
+&gt;    - Evaluate almost any kind of input and more, and choose your output from INT, FLOAT, STRING, or BOOLEAN.
+&gt;    - Connect some nodes and do simply math operations like `a + b` or `ceil(1 / 2)`.
+&gt;    - Or do more advanced things, like input an image, and get the width like `a.shape[2]`.
+&gt;    - Even more powerful, you can target nodes in the prompt that&#039;s sent to the backend. For instance; if you have a Power Lora Loader node at id #5, and want to get a comma-delimited list of the enabled loras, you could enter:
+&gt;
+&gt;      ```
+&gt;      loras = [v.lora for v in node(5).inputs.values() if &#039;lora&#039; in v and v.on]
+&gt;      &#039;, &#039;.join(loras)
+&gt;      ```
+&gt;
+&gt;    &lt;/details&gt;
+
+## Fast Groups Muter
+&gt; The Fast Groups Muter is an input-less node that automatically collects all groups in your current workflow and allows you to quickly mute and unmute all nodes within the group.
+&gt; &lt;details&gt;
+&gt;    &lt;summary&gt;ℹ️ &lt;i&gt;More Information&lt;/i&gt;&lt;/summary&gt;
+&gt;
+&gt;    - Groups will automatically be shown, though you can filter, sort and more from the **node Properties** _(by right-clicking on the node, and select &quot;Properties&quot; or &quot;Properties Panel&quot; from the menu)_. Properties include:
+&gt;    -  `matchColors` - Only add groups that match the provided colors. Can be ComfyUI colors (red, pale_blue) or hex codes (#a4d399). Multiple can be added, comma delimited.
+&gt;    -  `matchTitle` - Filter the list of toggles by title match (string match, or regular expression).
+&gt;    -  `showNav` - Add / remove a quick navigation arrow to take you to the group. (default: true)
+&gt;    -  `showAllGraphs` - Show groups from all [sub]graphs in the workflow. (default: true)
+&gt;    -  `sort` - Sort the toggles&#039; order by &quot;alphanumeric&quot;, graph &quot;position&quot;, or &quot;custom alphabet&quot;. (default: &quot;position&quot;)
+&gt;    -  `customSortAlphabet` - When the sort property is &quot;custom alphabet&quot; you can define the alphabet to use here, which will match the beginning of each group name and sort against it. If group titles do not match any custom alphabet entry, then they will be put after groups that do, ordered alphanumerically.
+&gt;
+&gt;        This can be a list of single characters, like &quot;zyxw...&quot; or comma delimited strings for more control, like &quot;sdxl,pro,sd,n,p&quot;.
+&gt;
+&gt;        Note, when two group title match the same custom alphabet entry, the normal alphanumeric alphabet breaks the tie. For instance, a custom alphabet of &quot;e,s,d&quot; will order groups names like &quot;SDXL, SEGS, Detailer&quot; eventhough the custom alphabet has an &quot;e&quot; before &quot;d&quot; (where one may expect &quot;SE&quot; to be before &quot;SD&quot;).
+&gt;
+&gt;        To have &quot;SEGS&quot; appear before &quot;SDXL&quot; you can use longer strings. For instance, the custom alphabet value of &quot;se,s,f&quot; would work here.
+&gt;    -  `toggleRestriction` - Optionally, attempt to restrict the number of widgets that can be enabled to a maximum of one, or always one.
+&gt;
+&gt;        _Note: If using &quot;max one&quot; or &quot;always one&quot; then this is only enforced when clicking a toggle on this node; if nodes within groups are changed outside of the initial toggle click, then these restriction will not be enforced, and could result in a state where more than one toggle is enabled. This could also happen if nodes are overlapped with multiple groups._
+&gt;    &lt;/details&gt;
+
+## Fast Groups Bypasser
+&gt; _Same as **Fast Groups Muter** above, but sets the connected nodes to &quot;Bypass&quot; instead of &quot;Mute&quot;_
+
+
+## Fast Muter
+&gt; A powerful &#039;control panel&#039; node to quickly toggle connected nodes allowing them to quickly be muted or enabled
+&gt; &lt;details&gt;
+&gt;    &lt;summary&gt;ℹ️ &lt;i&gt;More Information&lt;/i&gt;&lt;/summary&gt;
+&gt;
+&gt;    - Add a collection of all connected nodes allowing a single-spot as a &quot;dashboard&quot; to quickly enable and disable nodes. Two distinct nodes; one for &quot;Muting&quot; connected nodes, and one for &quot;Bypassing&quot; connected nodes.
+&gt;    &lt;/details&gt;
+
+
+## Fast Bypasser
+&gt; Same as Fast Muter but sets the connected nodes to &quot;Bypass&quot;
+
+## Fast Actions Button
+&gt; Oh boy, this node allows you to semi-automate connected nodes and/or ConfyUI.
+&gt; &lt;details&gt;
+&gt;    &lt;summary&gt;ℹ️ &lt;i&gt;More Information&lt;/i&gt;&lt;/summary&gt;
+&gt;
+&gt;    - Connect nodes and, at the least, mute, bypass or enable them when the button is pressed.
+&gt;    - Certain nodes expose additional actions. For instance, the `Seed` node you can set `Randomize Each Time` or `Use Last Queued Seed` when the button is pressed.
+&gt;    - Also, from the node properties, set a shortcut key to toggle the button actions, without needing a click!
+&gt;    &lt;/details&gt;
+
+
+## Node Collector
+&gt; Used to cleanup noodles, this will accept any number of input nodes and passes it along to another node.
+&gt;
+&gt; ⚠️ *Currently, this should really only be connected to **Fast Muter**, **Fast Bypasser**, or **Mute / Bypass Relay**.*
+
+
+## Mute / Bypass Repeater
+&gt; A powerful node that will dispatch its Mute/Bypass/Active mode to all connected input nodes or, if in a group w/o any connected inputs, will dispatch its Mute/Bypass/Active mode to all nodes in that group.
+&gt; &lt;details&gt;
+&gt;    &lt;summary&gt;ℹ️ &lt;i&gt;More Information&lt;/i&gt;&lt;/summary&gt;
+&gt;
+&gt;    - 💡 Pro Tip #1: Connect this node&#039;s output to a **Fast Muter** or **Fast Bypasser** to have a single toggle there that can mute/bypass/enable many nodes with one click.
+&gt;
+&gt;    - 💡 Pro Tip #2: Connect a **Mute / Bypass Relay** node to this node&#039;s inputs to have the relay automatically dispatch a mute/bypass/enable change to the repeater.
+&gt;    &lt;/details&gt;
+
+
+## Mute / Bypass Relay
+&gt; An advanced node that, when working with a **Mute / Bypass Repeater**, will relay its input nodes&#039;
+&gt; modes (Mute, Bypass, or Active) to a connected repeater (which would then repeat that mode change
+&gt; to all of its inputs).
+&gt; &lt;details&gt;
+&gt;    &lt;summary&gt;ℹ️ &lt;i&gt;More Information&lt;/i&gt;&lt;/summary&gt;
+&gt;
+&gt;    - When all connected input nodes are muted, the relay will set a connected repeater to mute (by
+&gt;      default).
+&gt;    - When all connected input nodes are bypassed, the relay will set a connected repeater to
+&gt;      bypass (by default).
+&gt;    - When _any_ connected input nodes are active, the relay will set a connected repeater to
+&gt;      active (by default).
+&gt;    - **Note:** If no inputs are connected, the relay will set a connected repeater to its mode
+&gt;      _when its own mode is changed_. **Note**, if any inputs are connected, then the above bullets
+&gt;      will occur and the Relay&#039;s mode does not matter.
+&gt;    - **Pro Tip:** You can change which signals get sent on the above in the `Properties`.
+&gt;       For instance, you could configure an inverse relay which will send a MUTE when any of its
+&gt;       inputs are active (instead of sending an ACTIVE signal), and send an ACTIVE signal when all
+&gt;       of its inputs are muted (instead of sending a MUTE signal), etc.
+&gt;    &lt;/details&gt;
+
+
+## Random Unmuter
+&gt; An advanced node used to unmute one of its inputs randomly when the graph is queued (and, immediately mute it back).
+&gt; &lt;details&gt;
+&gt;    &lt;summary&gt;ℹ️ &lt;i&gt;More Information&lt;/i&gt;&lt;/summary&gt;
+&gt;
+&gt;    - **Note:** All input nodes MUST be muted to start; if not this node will not randomly unmute another. (This is powerful, as the generated image can be dragged in and the chosen input will already by unmuted and work w/o any further action.)
+&gt;    - **Tip:** Connect a Repeater&#039;s output to this nodes input and place that Repeater on a group without any other inputs, and it will mute/unmute the entire group.
+&gt;    &lt;/details&gt;
+
+
+## Label
+&gt; A purely visual node, this allows you to add a floating label to your workflow.
+&gt; &lt;details&gt;
+&gt;    &lt;summary&gt;ℹ️ &lt;i&gt;More Information&lt;/i&gt;&lt;/summary&gt;
+&gt;
+&gt;    - The text shown is the &quot;Title&quot; of the node and you can adjust the the font size, font family,
+&gt;      font color, text alignment as well as a background color, padding, background border
+&gt;      radius, and angle (in degrees) from the node&#039;s properties. You can double-click the node to
+&gt;      open the properties panel.
+&gt;    - The Title also supports the literal sequence &quot;\\n&quot; to insert a newline when drawing the label.
+&gt;    - ~**Pro Tip #1:** You can add multiline text from the properties panel _(because ComfyUI let&#039;s
+&gt;      you shift + enter there, only)._~
+&gt;    - **Pro Tip #2:** You can use ComfyUI&#039;s native &quot;pin&quot; option in the right-click menu to make the
+&gt;      label stick to the workflow and clicks to &quot;go through&quot;. You can right-click at any time to
+&gt;      unpin.
+&gt;    - **Pro Tip #3:** Color values are hexidecimal strings, like &quot;#FFFFFF&quot; for white, or &quot;#660000&quot;
+&gt;      for dark red. You can supply a 7th &amp; 8th value (or 5th if using shorthand) to create a
+&gt;      transluscent color. For instance, &quot;#FFFFFF88&quot; is semi-transparent white.
+&gt;    &lt;/details&gt;
+
+
+# Advanced Techniques
+
+## First, a word on muting
+
+A lot of the power of these nodes comes from *Muting*. Muting is the basis of correctly implementing multiple paths for a workflow utlizing the Context Switch node.
+
+While other extensions may provide switches, they often get it wrong causing your workflow to do more work than is needed. While other switches may have a selector to choose which input to pass along, they don&#039;t stop the execution of the other inputs, which will result in wasted work. Instead, Context Switch works by choosing the first non-empty context to pass along and correctly Muting is one way to make a previous node empty, and causes no extra work to be done when set up correctly.
+
+### To understand muting, is to understand the graph flow
+
+Muting, and therefore using Switches, can often confuse people at first because it _feels_ like muting a node, or using a switch, should be able to stop or direct the _forward_ flow of the graph. However, this is not the case and, in fact, the graph actually starts working backwards
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[CodeWithHarry/Sigma-Web-Dev-Course]]></title>
-            <link>https://github.com/CodeWithHarry/Sigma-Web-Dev-Course</link>
-            <guid>https://github.com/CodeWithHarry/Sigma-Web-Dev-Course</guid>
-            <pubDate>Mon, 30 Mar 2026 00:10:08 GMT</pubDate>
-            <description><![CDATA[Source Code for Sigma Web Development Course]]></description>
+            <title><![CDATA[Stremio/stremio-web]]></title>
+            <link>https://github.com/Stremio/stremio-web</link>
+            <guid>https://github.com/Stremio/stremio-web</guid>
+            <pubDate>Tue, 31 Mar 2026 00:10:31 GMT</pubDate>
+            <description><![CDATA[Stremio - Freedom to Stream]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/CodeWithHarry/Sigma-Web-Dev-Course">CodeWithHarry/Sigma-Web-Dev-Course</a></h1>
-            <p>Source Code for Sigma Web Development Course</p>
+            <h1><a href="https://github.com/Stremio/stremio-web">Stremio/stremio-web</a></h1>
+            <p>Stremio - Freedom to Stream</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 11,130</p>
-            <p>Forks: 3,063</p>
-            <p>Stars today: 8 stars today</p>
-            <h2>README</h2><pre># Welcome to Sigma&#039;s Web Development Course - Hindi Web Development Tutorials! 🚀
-
-## What&#039;s Inside:
-
-If you&#039;ve been itching to dive into the world of web development but feel lost in a sea of English tutorials, you&#039;re in the right place! Our course is exclusively in Hindi and is crafted to guide you from being an absolute beginner to a seasoned pro, one step at a time.
-
-## Who Can Benefit?
-
-### This course is a perfect fit for:
-
-1. Beginners eager to start their web development journey
-2. Intermediate developers looking to refine their skills
-3. Individuals who prefer learning in Hindi
-
-## What You&#039;ll Master:
-
-### During this course, you&#039;ll delve into:
-
-1. The fundamentals of HTML, CSS, and JavaScript
-2. Both front-end and back-end development
-3. How to seamlessly integrate databases
-4. Real-world project implementation
-5. And a whole lot more!
-
-## The Schedule:
-
-We&#039;re committed to your growth. Expect fresh source code additions nearly every day. Keep up the pace with our schedule and watch your skills soar! 📅
-
-Get ready to embark on an exciting coding journey! 👨‍💻🌟
-
-Ready to start? [Click here](https://www.youtube.com/playlist?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w) to access the complete YouTube playlist.
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[expressjs/express]]></title>
-            <link>https://github.com/expressjs/express</link>
-            <guid>https://github.com/expressjs/express</guid>
-            <pubDate>Mon, 30 Mar 2026 00:10:07 GMT</pubDate>
-            <description><![CDATA[Fast, unopinionated, minimalist web framework for node.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/expressjs/express">expressjs/express</a></h1>
-            <p>Fast, unopinionated, minimalist web framework for node.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 68,873</p>
-            <p>Forks: 22,951</p>
-            <p>Stars today: 11 stars today</p>
-            <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[browsh-org/browsh]]></title>
-            <link>https://github.com/browsh-org/browsh</link>
-            <guid>https://github.com/browsh-org/browsh</guid>
-            <pubDate>Mon, 30 Mar 2026 00:10:06 GMT</pubDate>
-            <description><![CDATA[A fully-modern text-based browser, rendering to TTY and browsers]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/browsh-org/browsh">browsh-org/browsh</a></h1>
-            <p>A fully-modern text-based browser, rendering to TTY and browsers</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 18,695</p>
-            <p>Forks: 465</p>
+            <p>Stars: 10,542</p>
+            <p>Forks: 1,135</p>
             <p>Stars today: 10 stars today</p>
-            <h2>README</h2><pre>[![Follow @brow_sh](https://img.shields.io/twitter/follow/brow_sh.svg?style=social&amp;label=Follow)](https://twitter.com/intent/follow?screen_name=brow_sh)
+            <h2>README</h2><pre># Stremio - Freedom to Stream
 
-![Browsh Logo](https://www.brow.sh/assets/images/browsh-header.jpg)
+![Build](https://github.com/stremio/stremio-web/workflows/Build/badge.svg?branch=development)
+[![Netlify](https://api.netlify.com/api/v1/badges/ac26d7ae-d08b-4cc4-a14d-a83ba7c3e8ca/deploy-status)](https://stremio-development.netlify.app)
 
-**A fully interactive, real-time, and modern text-based browser rendered to TTYs and browsers**
+Stremio is a modern media center that&#039;s a one-stop solution for your video entertainment. You discover, watch and organize video content from easy to install addons.
 
-![Browsh GIF](https://media.giphy.com/media/bbsmVkYjPdOKHhMXOO/giphy.gif)
-
-## Why use Browsh?
-
-Not all the world has good Internet.
-
-If you only have a 3kbps internet connection tethered from a phone,
-then it&#039;s good to SSH into a server and browse the web through, say,
-[elinks](https://github.com/browsh-org/browsh/issues/17). That way the
-_server_ downloads the web pages and uses the limited bandwidth of an
-SSH connection to display the result. However, traditional text-based browsers
-lack JS and all other modern HTML5 support. Browsh is different
-in that it&#039;s backed by a real browser, namely headless Firefox,
-to create a purely text-based version of web pages and web apps. These can be easily
-rendered in a terminal or indeed, ironically, in another browser. Do note that currently the browser client doesn&#039;t have feature parity with the terminal client.
-
-Why not VNC? Well VNC is certainly one solution but it doesn&#039;t quite
-have the same ability to deal with extremely bad Internet. Terminal 
-Browsh can also use MoSH to further reduce bandwidth and increase stability
-of the connection. Mosh offers features like automatic
-reconnection of dropped or roamed connections and diff-only screen updates.
-Furthermore, other than SSH or MoSH, terminal Browsh doesn&#039;t require a client
-like VNC.
-
-One final reason to use terminal Browsh could be to offload the battery-drain of a modern
-browser from your laptop or low-powered device like a Raspberry Pi. If you&#039;re a CLI-native,
-then you could potentially get a few more hours of life if your CPU-hungry browser
-is running somewhere else on mains electricity.
-
-## Installation
-
-Download a binary from the [releases](https://github.com/browsh-org/browsh/releases) (~11MB).
-You will need to have [Firefox](https://www.mozilla.org/en-US/firefox/new/) already installed.
-
-Or download and run the Docker image (~230MB) with:
-    `docker run --rm -it browsh/browsh`
-
-## Usage
-Most keys and mouse gestures should work as you&#039;d expect on a desktop
-browser.
-
-For full documentation click [here](https://www.brow.sh/docs/introduction/).
-
-## Development
-
-### The Firefox Web Extension
-This is needed to run essential JS inside web pages so that they render in a way that Browsh can consume.
-
-You will need to install `nodejs`, usually available from your OS package manager. Though for development purposes the recommended method is with https://mise.jdx.dev. 
-
-Then in the `webext` directory
-* `npm install`
-* `npx webpack --watch`
-
-### The `browsh` Golang code
-You will need to install `go`, usually available from your OS package manager. Though for development purposes the recommended method is with https://mise.jdx.dev. 
-
-Then in the `interfacer` directory
-* `go run ./cmd/browsh --debug`
-
-Logs will be available in `interfacer/debug.log`
-
-## Tests
-
-For the webextension: in `webext/` folder, `npm test`    
-For CLI unit tests: in `/interfacer` run `go test src/browsh/*.go`    
-For CLI E2E tests: in `/interfacer` run `go test test/tty/*.go`    
-For HTTP Service tests: in `/interfacer` run `go test test/http-server/*.go`    
-
-## Special Thanks
-  * [@tobimensch](https://github.com/tobimensch) For essential early feedback and user testing.
-  * [@arasatasaygin](https://github.com/arasatasaygin) For the Browsh logo.
-
-## Donating
-Please consider donating: https://www.brow.sh/donate
-
-## License
-GNU Lesser General Public License v2.1
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[reactjs/react.dev]]></title>
-            <link>https://github.com/reactjs/react.dev</link>
-            <guid>https://github.com/reactjs/react.dev</guid>
-            <pubDate>Mon, 30 Mar 2026 00:10:05 GMT</pubDate>
-            <description><![CDATA[The React documentation website]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/reactjs/react.dev">reactjs/react.dev</a></h1>
-            <p>The React documentation website</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 11,711</p>
-            <p>Forks: 7,877</p>
-            <p>Stars today: 1 star today</p>
-            <h2>README</h2><pre># react.dev
-
-This repo contains the source code and documentation powering [react.dev](https://react.dev/).
-
-## Getting started
+## Build
 
 ### Prerequisites
 
-1. Git
-1. Node: any version starting with v16.8.0 or greater
-1. Yarn: See [Yarn website for installation instructions](https://yarnpkg.com/lang/en/docs/install/)
-1. A fork of the repo (for any contributions)
-1. A clone of the [react.dev repo](https://github.com/reactjs/react.dev) on your local machine
+* Node.js 12 or higher
+* npm 6 or higher
 
-### Installation
+### Install dependencies
 
-1. `cd react.dev` to go into the project root
-3. `yarn` to install the website&#039;s npm dependencies
+```bash
+npm install
+```
 
-### Running locally
+### Start development server
 
-1. `yarn dev` to start the development server (powered by [Next.js](https://nextjs.org/))
-1. `open http://localhost:3000` to open the site in your favorite browser
+```bash
+npm start
+```
 
-## Contributing
+### Production build
 
-### Guidelines
+```bash
+npm run build
+```
 
-The documentation is divided into several sections with a different tone and purpose. If you plan to write more than a few sentences, you might find it helpful to get familiar with the [contributing guidelines](https://github.com/reactjs/react.dev/blob/main/CONTRIBUTING.md#guidelines-for-text) for the appropriate sections.
+## Screenshots
 
-### Create a branch
+### Board
 
-1. `git checkout main` from any folder in your local `react.dev` repository
-1. `git pull origin main` to ensure you have the latest main code
-1. `git checkout -b the-name-of-my-branch` (replacing `the-name-of-my-branch` with a suitable name) to create a branch
+![Board](/screenshots/board.png)
 
-### Make the change
+### Discover
 
-1. Follow the [&quot;Running locally&quot;](#running-locally) instructions
-1. Save the files and check in the browser
-  1. Changes to React components in `src` will hot-reload
-  1. Changes to markdown files in `content` will hot-reload
-  1. If working with plugins, you may need to remove the `.cache` directory and restart the server
+![Discover](/screenshots/discover.png)
 
-### Test the change
+### Meta Details
 
-1. If possible, test any visual changes in all latest versions of common browsers, on both desktop and mobile.
-2. Run `yarn check-all`. (This will run Prettier, ESLint and validate types.)
-
-### Push it
-
-1. `git add -A &amp;&amp; git commit -m &quot;My message&quot;` (replacing `My message` with a commit message, such as `Fix header logo on Android`) to stage and commit your changes
-1. `git push my-fork-name the-name-of-my-branch`
-1. Go to the [react.dev repo](https://github.com/reactjs/react.dev) and you should see recently pushed branches.
-1. Follow GitHub&#039;s instructions.
-1. If possible, include screenshots of visual changes. A preview build is triggered after your changes are pushed to GitHub.
-
-## Translation
-
-If you are interested in translating `react.dev`, please see the current translation efforts [here](https://github.com/reactjs/react.dev/issues/4135).
+![Meta Details](/screenshots/metadetails.png)
 
 ## License
-Content submitted to [react.dev](https://react.dev/) is CC-BY-4.0 licensed, as found in the [LICENSE-DOCS.md](https://github.com/reactjs/react.dev/blob/main/LICENSE-DOCS.md) file.
+
+Stremio is copyright 2017-2022 Smart code and available under GPLv2 license. See the [LICENSE](/LICENSE.md) file in the project for more information.
 </pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[gsd-build/get-shit-done]]></title>
-            <link>https://github.com/gsd-build/get-shit-done</link>
-            <guid>https://github.com/gsd-build/get-shit-done</guid>
-            <pubDate>Mon, 30 Mar 2026 00:10:04 GMT</pubDate>
-            <description><![CDATA[A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.]]></description>
+            <title><![CDATA[decolua/9router]]></title>
+            <link>https://github.com/decolua/9router</link>
+            <guid>https://github.com/decolua/9router</guid>
+            <pubDate>Tue, 31 Mar 2026 00:10:30 GMT</pubDate>
+            <description><![CDATA[Connect All AI Code Tools (Claude Code, Cursor, Antigravity, Copilot, Codex, Gemini, OpenCode, Cline, OpenClaw...) to 40+ AI Providers & 100+ Models]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/gsd-build/get-shit-done">gsd-build/get-shit-done</a></h1>
-            <p>A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.</p>
+            <h1><a href="https://github.com/decolua/9router">decolua/9router</a></h1>
+            <p>Connect All AI Code Tools (Claude Code, Cursor, Antigravity, Copilot, Codex, Gemini, OpenCode, Cline, OpenClaw...) to 40+ AI Providers & 100+ Models</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 44,643</p>
-            <p>Forks: 3,615</p>
-            <p>Stars today: 658 stars today</p>
+            <p>Stars: 1,411</p>
+            <p>Forks: 378</p>
+            <p>Stars today: 29 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+  &lt;img src=&quot;./images/9router.png?1&quot; alt=&quot;9Router Dashboard&quot; width=&quot;800&quot;/&gt;
+  
+  # 9Router - Free AI Router
+  
+  **Never stop coding. Auto-route to FREE &amp; cheap AI models with smart fallback.**
+  
+  **Connect All AI Code Tools (Claude Code, Cursor, Antigravity, Copilot, Codex, Gemini, OpenCode, Cline, OpenClaw...) to 40+ AI Providers &amp; 100+ Models.**
+  
+  [![npm](https://img.shields.io/npm/v/9router.svg)](https://www.npmjs.com/package/9router)
+  [![Downloads](https://img.shields.io/npm/dm/9router.svg)](https://www.npmjs.com/package/9router)
+  [![License](https://img.shields.io/npm/l/9router.svg)](https://github.com/decolua/9router/blob/main/LICENSE)
+  
+  [🚀 Quick Start](#-quick-start) • [💡 Features](#-key-features) • [📖 Setup](#-setup-guide) • [🌐 Website](https://9router.com)
 
-# GET SHIT DONE
+  [🇻🇳 Tiếng Việt](./i18n/README.vi.md) • [🇨🇳 中文](./i18n/README.zh-CN.md) • [🇯🇵 日本語](./i18n/README.ja-JP.md)
+&lt;/div&gt;
 
-**English** · [Português](README.pt-BR.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja-JP.md) · [한국어](README.ko-KR.md)
+---
 
-**A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code, OpenCode, Gemini CLI, Codex, Copilot, Cursor, Windsurf, and Antigravity.**
+## 🤔 Why 9Router?
 
-**Solves context rot — the quality degradation that happens as Claude fills its context window.**
+**Stop wasting money and hitting limits:**
 
-[![npm version](https://img.shields.io/npm/v/get-shit-done-cc?style=for-the-badge&amp;logo=npm&amp;logoColor=white&amp;color=CB3837)](https://www.npmjs.com/package/get-shit-done-cc)
-[![npm downloads](https://img.shields.io/npm/dm/get-shit-done-cc?style=for-the-badge&amp;logo=npm&amp;logoColor=white&amp;color=CB3837)](https://www.npmjs.com/package/get-shit-done-cc)
-[![Tests](https://img.shields.io/github/actions/workflow/status/gsd-build/get-shit-done/test.yml?branch=main&amp;style=for-the-badge&amp;logo=github&amp;label=Tests)](https://github.com/gsd-build/get-shit-done/actions/workflows/test.yml)
-[![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=for-the-badge&amp;logo=discord&amp;logoColor=white)](https://discord.gg/gsd)
-[![X (Twitter)](https://img.shields.io/badge/X-@gsd__foundation-000000?style=for-the-badge&amp;logo=x&amp;logoColor=white)](https://x.com/gsd_foundation)
-[![$GSD Token](https://img.shields.io/badge/$GSD-Dexscreener-1C1C1C?style=for-the-badge&amp;logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIgZmlsbD0iIzAwRkYwMCIvPjwvc3ZnPg==&amp;logoColor=00FF00)](https://dexscreener.com/solana/dwudwjvan7bzkw9zwlbyv6kspdlvhwzrqy6ebk8xzxkv)
-[![GitHub stars](https://img.shields.io/github/stars/gsd-build/get-shit-done?style=for-the-badge&amp;logo=github&amp;color=181717)](https://github.com/gsd-build/get-shit-done)
-[![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
+- ❌ Subscription quota expires unused every month
+- ❌ Rate limits stop you mid-coding
+- ❌ Expensive APIs ($20-50/month per provider)
+- ❌ Manual switching between providers
 
-&lt;br&gt;
+**9Router solves this:**
 
-```bash
-npx get-shit-done-cc@latest
+- ✅ **Maximize subscriptions** - Track quota, use every bit before reset
+- ✅ **Auto fallback** - Subscription → Cheap → Free, zero downtime
+- ✅ **Multi-account** - Round-robin between accounts per provider
+- ✅ **Universal** - Works with Claude Code, Codex, Gemini CLI, Cursor, Cline, any CLI tool
+
+---
+
+## 🔄 How It Works
+
+```
+┌─────────────┐
+│  Your CLI   │  (Claude Code, Codex, Gemini CLI, OpenClaw, Cursor, Cline...)
+│   Tool      │
+└──────┬──────┘
+       │ http://localhost:20128/v1
+       ↓
+┌─────────────────────────────────────────┐
+│           9Router (Smart Router)        │
+│  • Format translation (OpenAI ↔ Claude) │
+│  • Quota tracking                       │
+│  • Auto token refresh                   │
+└──────┬──────────────────────────────────┘
+       │
+       ├─→ [Tier 1: SUBSCRIPTION] Claude Code, Codex, Gemini CLI
+       │   ↓ quota exhausted
+       ├─→ [Tier 2: CHEAP] GLM ($0.6/1M), MiniMax ($0.2/1M)
+       │   ↓ budget limit
+       └─→ [Tier 3: FREE] iFlow, Qwen, Kiro (unlimited)
+
+Result: Never stop coding, minimal cost
 ```
 
-**Works on Mac, Windows, and Linux.**
+---
 
-&lt;br&gt;
+## ⚡ Quick Start
 
-![GSD Install](assets/terminal.svg)
+**1. Install globally:**
 
-&lt;br&gt;
+```bash
+npm install -g 9router
+9router
+```
 
-*&quot;If you know clearly what you want, this WILL build it for you. No bs.&quot;*
+🎉 Dashboard opens at `http://localhost:20128`
 
-*&quot;I&#039;ve done SpecKit, OpenSpec and Taskmaster — this has produced the best results for me.&quot;*
+**2. Connect a FREE provider (no signup needed):**
 
-*&quot;By far the most powerful addition to my Claude Code. Nothing over-engineered. Literally just gets shit done.&quot;*
+Dashboard → Providers → Connect **Claude Code** or **Antigravity** → OAuth login → Done!
 
-&lt;br&gt;
+**3. Use in your CLI tool:**
 
-**Trusted by engineers at Amazon, Google, Shopify, and Webflow.**
+```
+Claude Code/Codex/Gemini CLI/OpenClaw/Cursor/Cline Settings:
+  Endpoint: http://localhost:20128/v1
+  API Key: [copy from dashboard]
+  Model: if/kimi-k2-thinking
+```
 
-[Why I Built This](#why-i-built-this) · [How It Works](#how-it-works) · [Commands](#commands) · [Why It Works](#why-it-works) · [User Guide](docs/USER-GUIDE.md)
+**That&#039;s it!** Start coding with FREE AI models.
+
+**Alternative: run from source (this repository):**
+
+This repository package is private (`9router-app`), so source/Docker execution is the expected local development path.
+
+```bash
+cp .env.example .env
+npm install
+PORT=20128 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run dev
+```
+
+Production mode:
+
+```bash
+npm run build
+PORT=20128 HOSTNAME=0.0.0.0 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run start
+```
+
+Default URLs:
+- Dashboard: `http://localhost:20128/dashboard`
+- OpenAI-compatible API: `http://localhost:20128/v1`
+
+---
+
+## 🎥 Video Tutorial
+
+&lt;div align=&quot;center&quot;&gt;
+  
+### 📺 Complete Setup Guide - 9Router + Claude Code FREE
+  
+[![9Router + Claude Code Setup](https://img.youtube.com/vi/raEyZPg5xE0/maxresdefault.jpg)](https://www.youtube.com/watch?v=raEyZPg5xE0)
+
+**🎬 Watch the complete step-by-step tutorial:**
+- ✅ 9Router installation &amp; setup
+- ✅ FREE Claude Sonnet 4.5 configuration
+- ✅ Claude Code integration
+- ✅ Live coding demonstration
+
+**⏱️ Duration:** 20 minutes | **👥 By:** Developer Community
+
+[▶️ Watch on YouTube](https://www.youtube.com/watch?v=o3qYCyjrFYg)
 
 &lt;/div&gt;
 
 ---
 
-## Why I Built This
+## 🛠️ Supported CLI Tools
 
-I&#039;m a solo developer. I don&#039;t write code — Claude Code does.
+9Router works seamlessly with all major AI coding tools:
 
-Other spec-driven development tools exist; BMAD, Speckit... But they all seem to make things way more complicated than they need to be (sprint ceremonies, story points, stakeholder syncs, retrospectives, Jira workflows) or lack real big picture understanding of what you&#039;re building. I&#039;m not a 50-person software company. I don&#039;t want to play enterprise theater. I&#039;m just a creative person trying to build great things that work.
-
-So I built GSD. The complexity is in the system, not in your workflow. Behind the scenes: context engineering, XML prompt formatting, subagent orchestration, state management. What you see: a few commands that just work.
-
-The system gives Claude everything it needs to do the work *and* verify it. I trust the workflow. It just does a good job.
-
-That&#039;s what this is. No enterprise roleplay bullshit. Just an incredibly effective system for building cool stuff consistently using Claude Code.
-
-— **TÂCHES**
+&lt;div align=&quot;center&quot;&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/claude.png&quot; width=&quot;60&quot; alt=&quot;Claude Code&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Claude-Code&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/openclaw.png&quot; width=&quot;60&quot; alt=&quot;OpenClaw&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;OpenClaw&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/codex.png&quot; width=&quot;60&quot; alt=&quot;Codex&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Codex&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/opencode.png&quot; width=&quot;60&quot; alt=&quot;OpenCode&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;OpenCode&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/cursor.png&quot; width=&quot;60&quot; alt=&quot;Cursor&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Cursor&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/antigravity.png&quot; width=&quot;60&quot; alt=&quot;Antigravity&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Antigravity&lt;/b&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/cline.png&quot; width=&quot;60&quot; alt=&quot;Cline&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Cline&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/continue.png&quot; width=&quot;60&quot; alt=&quot;Continue&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Continue&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/droid.png&quot; width=&quot;60&quot; alt=&quot;Droid&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Droid&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/roo.png&quot; width=&quot;60&quot; alt=&quot;Roo&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Roo&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/copilot.png&quot; width=&quot;60&quot; alt=&quot;Copilot&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Copilot&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/kilocode.png&quot; width=&quot;60&quot; alt=&quot;Kilo Code&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Kilo Code&lt;/b&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
 
 ---
 
-Vibecoding has a bad reputation. You describe what you want, AI generates code, and you get inconsistent garbage that falls apart at scale.
+## 🌐 Supported Providers
 
-GSD fixes that. It&#039;s the context engineering layer that makes Claude Code reliable. Describe your idea, let the system extract everything it needs to know, and let Claude Code get to work.
+### 🔐 OAuth Providers
+
+&lt;div align=&quot;center&quot;&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/claude.png&quot; width=&quot;60&quot; alt=&quot;Claude Code&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Claude-Code&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/antigravity.png&quot; width=&quot;60&quot; alt=&quot;Antigravity&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Antigravity&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/codex.png&quot; width=&quot;60&quot; alt=&quot;Codex&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Codex&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/github.png&quot; width=&quot;60&quot; alt=&quot;GitHub&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;GitHub&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/cursor.png&quot; width=&quot;60&quot; alt=&quot;Cursor&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Cursor&lt;/b&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+
+### 🆓 Free Providers
+
+&lt;div align=&quot;center&quot;&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; width=&quot;150&quot;&gt;
+        &lt;img src=&quot;./public/providers/iflow.png&quot; width=&quot;70&quot; alt=&quot;iFlow&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;iFlow AI&lt;/b&gt;&lt;br/&gt;
+        &lt;sub&gt;8+ models • Unlimited&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;150&quot;&gt;
+        &lt;img src=&quot;./public/providers/qwen.png&quot; width=&quot;70&quot; alt=&quot;Qwen&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Qwen Code&lt;/b&gt;&lt;br/&gt;
+        &lt;sub&gt;3+ models • Unlimited&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;150&quot;&gt;
+        &lt;img src=&quot;./public/providers/gemini-cli.png&quot; width=&quot;70&quot; alt=&quot;Gemini CLI&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Gemini CLI&lt;/b&gt;&lt;br/&gt;
+        &lt;sub&gt;180K/month FREE&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;150&quot;&gt;
+        &lt;img src=&quot;./public/providers/kiro.png&quot; width=&quot;70&quot; alt=&quot;Kiro&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Kiro AI&lt;/b&gt;&lt;br/&gt;
+        &lt;sub&gt;Claude • Unlimited&lt;/sub&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+
+### 🔑 API Key Providers (40+)
+
+&lt;div align=&quot;center&quot;&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/openrouter.png&quot; width=&quot;50&quot; alt=&quot;OpenRouter&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;OpenRouter&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/glm.png&quot; width=&quot;50&quot; alt=&quot;GLM&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;GLM&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/kimi.png&quot; width=&quot;50&quot; alt=&quot;Kimi&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;Kimi&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/minimax.png&quot; width=&quot;50&quot; alt=&quot;MiniMax&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;MiniMax&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/openai.png&quot; width=&quot;50&quot; alt=&quot;OpenAI&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;OpenAI&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/anthropic.png&quot; width=&quot;50&quot; alt=&quot;Anthropic&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;Anthropic&lt;/sub&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/gemini.png&quot; width=&quot;50&quot; alt=&quot;Gemini&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;Gemini&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/deepseek.png&quot; width=&quot;50&quot; alt=&quot;DeepSeek&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;DeepSeek&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/groq.png&quot; width=&quot;50&quot; alt=&quot;Groq&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;Groq&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/xai.png&quot; width=&quot;50&quot; alt=&quot;xAI&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;xAI&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/mistral.png&quot; width=&quot;50&quot; alt=&quot;Mistral&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;Mistral&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/perplexity.png&quot; width=&quot;50&quot; alt=&quot;Perplexity&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;Perplexity&lt;/sub&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/together.png&quot; width=&quot;50&quot; alt=&quot;Together&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;Together AI&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/fireworks.png&quot; width=&quot;50&quot; alt=&quot;Fireworks&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;Fireworks&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/cerebras.png&quot; width=&quot;50&quot; alt=&quot;Cerebras&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;Cerebras&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/cohere.png&quot; width=&quot;50&quot; alt=&quot;Cohere&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;Cohere&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/nvidia.png&quot; width=&quot;50&quot; alt=&quot;NVIDIA&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;NVIDIA&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/siliconflow.png&quot; width=&quot;50&quot; alt=&quot;SiliconFlow&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;SiliconFlow&lt;/sub&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;p&gt;&lt;i&gt;...and 20+ more providers including Nebius, Chutes, Hyperbolic, and custom OpenAI/Anthropic compatible endpoints&lt;/i&gt;&lt;/p&gt;
+&lt;/div&gt;
 
 ---
 
-## Who This Is For
+## 💡 Key Features
 
-People who want to describe what they want and have it built correctly — without pretending they&#039;re running a 50-person engineering org.
-
----
-
-## Getting Started
-
-```bash
-npx get-shit-done-cc@latest
-```
-
-The installer prompts you to choose:
-1. **Runtime** — Claude Code, OpenCode, Gemini, Codex, Copilot, Cursor, Windsurf, Antigravity, or all (interactive multi-select — pick multiple runtimes in a single install session)
-2. **Location** — Global (all projects) or local (current project only)
-
-Verify with:
-- Claude Code / Gemini: `/gsd:help`
-- OpenCode: `/gsd-help`
-- Codex: `$gsd-help`
-- Copilot: `/gsd:help`
-- Antigravity: `/gsd:help`
-
-&gt; [!NOTE]
-&gt; Codex installation uses skills (`skills/gsd-*/SKILL.md`) rather than custom prompts.
-
-### Staying Updated
-
-GSD evolves fast. Update periodically:
-
-```bash
-npx get-shit-done-cc@latest
-```
+| Feature | What It Does | Why It Matters |
+|---------|--------------|----------------|
+| 🎯 **Smart 3-Tier Fallback** | Auto-route: Subscription → Cheap → Free | Never stop coding, zero downtime |
+| 📊 **Real-Time Quota Tracking** | Live token count + reset countdown | Maximize subscription value |
+| 🔄 **Format Translation** | OpenAI ↔ Claude ↔ Gemini seamless | Works with any CLI tool |
+| 👥 **Multi-Account Support** | Multiple accounts per provider | Load balancing + redundancy |
+| 🔄 **Auto Token Refresh** | OAuth tokens refresh automatically | No manual re-login needed |
+| 🎨 **Custom Combos** | Create unlimited model combinations | Tailor fallback to your needs |
+| 📝 **Request Logging** | Debug mode with full request/response logs | Troubleshoot issues easily |
+| 💾 **Cloud Sync** | Sync config across devices | Same setup everywhere |
+| 📊 **Usage Analytics** | Track tokens, cost, trends over time | Optimize spending |
+| 🌐 **Deploy Anywhere** | Localhost, VPS, Docker, Cloudflare Workers | Flexible deployment options |
 
 &lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Non-interactive Install (Docker, CI, Scripts)&lt;/strong&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;b&gt;📖 Feature Details&lt;/b&gt;&lt;/summary&gt;
 
-```bash
-# Claude Code
-npx get-shit-done-cc --claude --global   # Install to ~/.claude/
-npx get-shit-done-cc --claude --local    # Install to ./.claude/
+### 🎯 Smart 3-Tier Fallback
 
-# OpenCode (open source, free models)
-npx get-shit-done-cc --opencode --global # Install to ~/.config/opencode/
+Create combos with automatic fallback:
 
-# Gemini CLI
-npx get-shit-done-cc --gemini --global   # Install to ~/.gemini/
+```
+Combo: &quot;my-coding-stack&quot;
+  1. cc/claude-opus-4-6        (your subscription)
+  2. glm/glm-4.7               (cheap backup, $0.6/1M)
+  3. if/kimi-k2-thinking       (free fallback)
 
-# Codex (skills-first)
-npx get-shit-done-cc --codex --global    # Install to ~/.codex/
-npx get-shit-done-cc --codex --local     # Install to ./.codex/
-
-# Copilot (GitHub Copilot CLI)
-npx get-shit-done-cc --copilot --global  # Install to ~/.github/
-npx get-shit-done-cc --copilot --local   # Install to ./.github/
-
-# Cursor CLI
-npx get-shit-done-cc --cursor --global      # Install to ~/.cursor/
-npx get-shit-done-cc --cursor --local       # Install to ./.cursor/
-
-# Windsurf (Codeium, VS Code-based)
-npx get-shit-done-cc --windsurf --global    # Install to ~/.windsurf/
-npx get-shit-done-cc --windsurf --local     # Install to ./.windsurf/
-
-# Antigravity (Google, skills-first, Gemini-based)
-npx get-shit-done-cc --antigravity --global # Install to ~/.gemini/antigravity/
-npx get-shit-done-cc --antigravity --local  # Install to ./.agent/
-
-# All runtimes
-npx get-shit-done-cc --all --global      # Install to all directories
+→ Auto switches when quota runs out or errors occur
 ```
 
-Use `--global` (`-g`) or `--local` (`-l`) to skip the location prompt.
-Use `--claude`, `--opencode`, `--gemini`, `--codex`, `--copilot`, `--cursor`, `--windsurf`, `--antigravity`, or `--all` to skip the runtime prompt.
-Use `--sdk` to also install the GSD SDK CLI (`gsd-sdk`) for headless autonomous execution.
+### 📊 Real-Time Quota Tracking
+
+- Token consumption per provider
+- Reset countdown (5-hour, daily, weekly)
+- Cost estimation for paid tiers
+- Monthly spending reports
+
+### 🔄 Format Translation
+
+Seamless translation between formats:
+- **OpenAI** ↔ **Claude** ↔ **Gemini** ↔ **OpenAI Responses**
+- Your CLI tool sends OpenAI format → 9Router translates → Provider receives native format
+- Works with any tool that supports custom OpenAI endpoints
+
+### 👥 Multi-Account Support
+
+- Add multiple accounts per provider
+- Auto round-robin or priority-based routing
+- Fallback to next account when one hits quota
+
+### 🔄 Auto Token Refresh
+
+- OAuth tokens automatically refresh before expiration
+- No manual re-authentication needed
+- Seamless experience across all providers
+
+### 🎨 Custom Combos
+
+- Create unlimited model combinations
+- Mix subscription, cheap, and free tiers
+- Name your combos for easy access
+- Share combos across devices with Cloud Sync
+
+### 📝 Request Logging
+
+- Enable debug mode for full request/response logs
+- Track API calls, headers, and payloads
+- Troubleshoot integration issues
+- Export logs for analysis
+
+### 💾 Cloud Sync
+
+- Sync providers, combos, and settings across devices
+- Automatic background sync
+- Secure encrypted storage
+- Access your setup from anywhere
+
+#### Cloud Runtime Notes
+
+- Prefer server-side cloud variables in production:
+  - `BASE_URL` (internal callback URL used by sync scheduler)
+  - `CLOUD_URL` (cloud sync endpoint base)
+- `NEXT_PUBLIC_BASE_URL` and `NEXT_PUBLIC_CLOUD_URL` are still supported for compatibility/UI, but server runtime now prioritizes `BASE_URL`/`CLOUD_URL`.
+- Cloud sync requests now use timeout + fail-fast behavior to avoid UI hanging when cloud DNS/network is unavailable.
+
+### 📊 Usage Analytics
+
+- Track token usage per provider and model
+- Cost estimation and spending trends
+- Monthly reports and insights
+- Optimize your AI spending
+
+&gt; **💡 IMPORTANT - Understanding Dashboard Costs:**
+&gt; 
+&gt; The &quot;cost&quot; displayed in Usage Analytics is **for tracking and comparison purposes only**. 
+&gt; 9Router itself **never charges** you anything. You only pay providers directly (if using paid services).
+&gt; 
+&gt; **Example:** If your dashboard shows &quot;$290 total cost&quot; while using iFlow models, this represents 
+&gt; what you would have paid using paid APIs directly. Your actual cost = **$0** (iFlow is free unlimited).
+&gt; 
+&gt; Think of it as a &quot;savings tracker&quot; showing how much you&#039;re saving by using free models or 
+&gt; routing through 9Router!
+
+### 🌐 Deploy Anywhere
+
+- 💻 **Localhost** - Default, works offline
+- ☁️ **VPS/Cloud** - Share across devices
+- 🐳 **Docker** - One-command deployment
+- 🚀 **Cloudflare Workers** - Global edge network
+
+&lt;/details&gt;
+
+---
+
+## 💰 Pricing at a Glance
+
+| Tier | Provider | Cost | Quota Reset | Best For |
+|------|----------|------|-------------|----------|
+| **💳 SUBSCRIPTION** | Claude Code (Pro) | $20/mo | 5h + weekly | Already subscribed |
+| | Codex (Plus/Pro) | $20-200/mo | 5h + weekly | OpenAI users |
+| | Gemini CLI | **FREE** | 180K/mo + 1K/day | Everyone! |
+| | GitHub Copilot | $10-19/mo | Monthly | GitHub users |
+| **💰 CHEAP** | GLM-4.7 | $0.6/1M | Daily 10AM | Budget backup |
+| | MiniMax M2.1 | $0.2/1M | 5-hour rolling | Cheapest option |
+| | Kimi K2 | $9/mo flat | 10M tokens/mo | Predictable cost |
+| **🆓 FREE** | iFlow | $0 | Unlimited | 8 models free |
+| | Qwen | $0 | Unlimited | 3 models free |
+| | Kiro | $0 | Unlimited | Claude free |
+
+**💡 Pro Tip:** Start with Gemini CLI (180K free/month) + iFlow (unlimited free) combo = $0 cost!
+
+---
+
+### 📊 Understanding 9Router Costs &amp; Billing
+
+**9Router Billing Reality:**
+
+✅ **9Router software = FREE forever** (open source, never charges)  
+✅ **Dashboard &quot;costs&quot; = Display/tracking only** (not actual bills)  
+✅ **You pay providers directly** (subscriptions or API fees)  
+✅ **FREE providers stay FREE** (iFlow, Kiro, Qwen = $0 unlimited)  
+❌ **9Router never sends invoices** or charges your card
+
+**How Cost Display Works:**
+
+The dashboard shows **estimated costs** as if you were using paid APIs directly. This is **not billing** - it&#039;s a comparison tool to show your savings.
+
+**Example Scenario:**
+```
+Dashboard Display:
+• Total Requests: 1,662
+• Total Tokens: 47M
+• Display Cost: $290
+
+Reality Check:
+• Provider: iFlow (FREE unlimited)
+• Actual Payment: $0.00
+• What $290 Means: Amount you SAVED by using free models!
+```
+
+**Payment Rules:**
+- **Subscription providers** (Claude Code, Codex): Pay them directly via their websites
+- **Cheap providers** (GLM, MiniMax): Pay them directly, 9Router just routes
+- **FREE providers** (iFlow, Kiro, Qwen): Genuinely free forever, no hidden charges
+- **9Router**: Never charges anything, ever
+
+---
+
+## 🎯 Use Cases
+
+### Case 1: &quot;I have Claude Pro subscription&quot;
+
+**Problem:** Quota expires unused, rate limits during heavy coding
+
+**Solution:**
+```
+Combo: &quot;maximize-claude&quot;
+  1. cc/claude-opus-4-6        (use subscription fully)
+  2. glm/glm-4.7               (cheap backup when quota out)
+  3. if/kimi-k2-thinking       (free emergency fallback)
+
+Monthly cost: $20 (subscription) + ~$5 (backup) = $25 total
+vs. $20 + hitting limits = frustration
+```
+
+### Case 2: &quot;I want zero cost&quot;
+
+**Problem:** Can&#039;t afford subscriptions, need reliable AI coding
+
+**Solution:**
+```
+Combo: &quot;free-forever&quot;
+  1. gc/gemini-3-flash         (180K free/month)
+  2. if/kimi-k2-thinking       (unlimited free)
+  3. qw/qwen3-coder-plus       (unlimited free)
+
+Monthly cost: $0
+Quality: Production-ready models
+```
+
+### Case 3: &quot;I need 24/7 coding, no interruptions&quot;
+
+**Problem:** Deadlines, can&#039;t afford downtime
+
+**Solution:**
+```
+Combo: &quot;always-on&quot;
+  1. cc/claude-opus-4-6        (best quality)
+  2. cx/gpt-5.2-codex          (second subscription)
+  3. glm/glm-4.7               (cheap, resets daily)
+  4. minimax/MiniMax-M2.1      (cheapest, 5h reset)
+  5. if/kimi-k2-thinking       (free unlimited)
+
+Result: 5 layers of fallback = zero downtime
+Monthly cost: $20-200 (subscriptions) + $10-20 (backup)
+```
+
+### Case 4: &quot;I want FREE AI in OpenClaw&quot;
+
+**Problem:** Need AI assistant in messaging apps (WhatsApp, Telegram, Slack...), completely free
+
+**Solution:**
+```
+Combo: &quot;openclaw-free&quot;
+  1. if/glm-4.7                (unlimited free)
+  2. if/minimax-m2.1           (unlimited free)
+  3. if/kimi-k2-thinking       (unlimited free)
+
+Monthly cost: $0
+Access via: WhatsApp, Telegram, Slack, Discord, iMessage, Signal...
+```
+
+---
+
+## ❓ Frequently Asked Questions
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;📊 Why does my dashboard show high costs?&lt;/b&gt;&lt;/summary&gt;
+
+The dashboard tracks your token usage and displays **estimated costs** as if you were using paid APIs directly. This is **not actual billing** - it&#039;s a reference to show how much you&#039;re saving by using free models or existing subscriptions through 9Router.
+
+**Example:**
+- **Dashboard shows:** &quot;$290 total cost&quot;
+- **Reality:** You&#039;re using iFlow (FREE unlimited)
+- **Your actual cost:** **$0.00**
+- **What $290 means:** Amount you **saved** by using free models instead of paid APIs!
+
+The cost display is a &quot;savings tracker&quot; to help you understand your usage patterns and optimization opportunities.
 
 &lt;/details&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Development Installation&lt;/strong&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;b&gt;💳 Will I be charged by 9Router?&lt;/b&gt;&lt;/summary&gt;
 
-Clone the repository and run the installer locally:
+**No.** 9Router is free, open-source software that runs on your own computer. It never charges you anything.
 
-```bash
-git clone https://github.com/gsd-build/get-shit-done.git
-cd get-shit-done
-node bin/install.js --claude --local
-```
+**You only pay:**
+- ✅ **Subscription providers** (Claude Code $20/mo, Codex $20-200/mo) → Pay them directly on their websites
+- ✅ **Cheap providers** (GLM, MiniMax) → Pay them directly, 9Router just routes your requests
+- ❌ **9Router itself** → **Never charges anything, ever**
 
-Installs to `./.claude/` for testing modifications before contributing.
-
-&lt;/details&gt;
-
-### Recommended: Skip Permissions Mode
-
-GSD is designed for frictionless automation. Run Claude Code with:
-
-```bash
-claude --dangerously-skip-permissions
-```
-
-&gt; [!TIP]
-&gt; This is how GSD is intended to be used — stopping to approve `date` and `git commit` 50 times defeats the purpose.
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Alternative: Granular Permissions&lt;/strong&gt;&lt;/summary&gt;
-
-If you prefer not to use that flag, add this to your project&#039;s `.claude/settings.json`:
-
-```json
-{
-  &quot;permissions&quot;: {
-    &quot;allow&quot;: [
-      &quot;Bash(date:*)&quot;,
-      &quot;Bash(echo:*)&quot;,
-      &quot;Bash(cat:*)&quot;,
-      &quot;Bash(ls:*)&quot;,
-      &quot;Bash(mkdir:*)&quot;,
-      &quot;Bash(wc:*)&quot;,
-      &quot;Bash(head:*)&quot;,
-      &quot;Bash(tail:*)&quot;,
-      &quot;Bash(sort:*)&quot;,
-      &quot;Bash(grep:*)&quot;,
-      &quot;Bash(tr:*)&quot;,
-      &quot;Bash(git add:*)&quot;,
-      &quot;Bash(git commit:*)&quot;,
-      &quot;Bash(git status:*)&quot;,
-      &quot;Bash(git log:*)&quot;,
-      &quot;Bash(git diff:*)&quot;,
-      &quot;Bash(git tag:*)&quot;
-    ]
-  }
-}
-```
-
-&lt;/details&gt;
-
----
-
-## How It Works
-
-&gt; **Already have code?** Run `/gsd:map-codebase` first. It spawns parallel agents to analyze your stack, architecture, conventions, and concerns. Then `/gsd:new-project` knows your codebase — questions focus on what you&#039;re adding, and planning automatically loads your patterns.
-
-### 1. Initialize Project
-
-```
-/gsd:new-project
-```
-
-One command, one flow. The system:
-
-1. **Questions** — Asks until it understands your idea completely (goals, constraints, tech preferences, edge cases)
-2. **Research** — Spawns parallel agents to investigate the domain (optional but recommended)
-3. **Requirements** — Extracts what&#039;s v1, v2, and out of scope
-4. **Roadmap** — Creates phases mapped to requirements
-
-You approve the roadmap. Now you&#039;re ready to build.
-
-**Creates:** `PROJECT.md`, `REQUIREMENTS.md`, `ROADMAP.md`, `STATE.md`, `.planning/research/`
-
----
-
-### 2. Discuss Phase
-
-```
-/gsd:discuss-phase 1
-```
-
-**This is where you shape the implementation.**
-
-Your roadmap has a sentence or two per phase. That&#039;s not enough context to build something the way *you* imagine it. This step captures your preferences before anything gets researched or planned.
-
-The system analyzes the phase and identifies gray areas based on what&#039;s being built:
-
-- **Visual features** → Layout, density, interactions, empty states
-- **APIs/CLIs** → Response format, flags, error handling, verbosity
-- **Content systems** → Structure, tone, depth, flow
-- **Organization tasks** → Grouping criteria, naming, duplicates, exceptions
-
-For each area you select, it asks until you&#039;re satisfied. The output — `CONTEXT.md` — feeds directly into the next two steps:
-
-1. **Researcher reads it** — Knows what patterns to investigate (&quot;user wants card layout&quot; → research card component libraries)
-2. **Planner reads it** — Knows what decisions are locked (&quot;infinite scroll decided&quot; → plan includes scroll handling)
-
-The deeper you go here, the more the system builds what you actually want. Skip it and you get reasonable defaults. Use it and you get *your* vision.
-
-**Creates:** `{phase_num}-CONTEXT.md`
-
-&gt; **Assumptions Mode:** Prefer codebase analysis over questions? Set `workflow.discuss_mode` to `assumptions` in `/gsd:settings`. The system reads your code, surfaces what it would do and why, and only asks you to correct what&#039;s wrong. See [Discuss Mode](docs/workflow-discuss-mode.md).
-
----
-
-### 3. Plan Phase
-
-```
-/gsd:plan-phase 1
-```
-
-The system:
-
-1. **Researches** — Investigates how to implement this phase, guided by your CONTEXT.md decisions
-2. **Plans** — Creates 2-3 atomic task plans with XML structure
-3. **Verifies** — Checks plans against requirements, loops until they pass
-
-Each plan is small enough to execute in a fresh context window. No degradation, no &quot;I&#039;ll be more concise now.&quot;
-
-**Creates:** `{phase_num}-RESEARCH.md`, `{phase_num}-{N}-PLAN.md`
-
----
-
-### 4. Execute Phase
-
-```
-/gsd:execute-phase 1
-```
-
-The system:
-
-1. **Runs plans in waves** — Parallel where possible, sequential when dependent
-2. **Fresh context per plan** — 200k tokens purely for implementation, zero accumulated garbage
-3. **Commits per task** — Every task gets its own atomic commit
-4. **Verifies against goals** — Checks the codebase delivers what the phase promised
-
-Walk away, come back to completed work with clean git history.
-
-**How Wave Execution Works:**
-
-Plans are grouped into &quot;waves&quot; based on dependencies. Within each wave, plans run in parallel. Waves run sequentially.
-
-```
-┌────────────────────────────────────────────────────────────────────┐
-│  PHASE EXECUTION                                                   │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                    │
-│  WAVE 1 (parallel)          WAVE 2 (parallel)          WAVE 3      │
-│  ┌─────────┐ ┌─────────┐    ┌─────────┐ ┌─────────┐    ┌─────────┐ │
-│  │ Plan 01 │ │ Plan 02 │ →  │ Plan 03 │ │ Plan 04 │ →  │ Plan 05 │ │
-│  │         │ │         │    │         │ │         │    │         │ │
-│  │ User    │ │ Product │    │ Orders  │ │ Cart    │    │ Checkout│ │
-│  │ Model   │ │ Model   │    │ API     │ │ API     │    │ UI      │ │
-│  └─────────┘ └─────────┘    └─────────┘ └─────────┘    └─────────┘ │
-│       │           │              ↑           ↑              ↑      │
-│       └───────────┴──────────────┴───────────┘              │      │
-│              Dependencies: Plan 03 needs Plan 01            │      │
-│                          Plan 04 needs Plan 02              │      │
-│                          Plan 05 needs Plans 03 + 04        │      │
-│                                                                    │
-└────────────────────────────────────────────────────────────────────┘
-```
-
-**Why waves matter:**
-- Independent plans → Same wave → Run in parallel
-- Dependent plans → Later wave → Wait for dependencies
-- File conflicts → Sequential plans or same plan
-
-This is why &quot;vertical slices&quot; (Plan 01: User feature end-to-end) parallelize better than &quot;horizontal layers&quot; (Plan 01: All models, Plan 02: All APIs).
-
-**Creates:** `{phase_num}-{N}-SUMMARY.md`, `{phase_num}-VERIFICATION.md`
-
----
-
-### 5. Verify Work
-
-```
-/gsd:verify-work 1
-```
-
-**This is where you confirm it actually works.**
-
-Automated verification checks that code exists and tests pass. But does the feature *work* the way you expected? This is your chance to use it.
-
-The system:
-
-1. **Extracts testable deliverables** — What you should be able to do now
-2. **Walks you through one at a time** — &quot;Can you log in with email?&quot; Yes/no, or describe what&#039;s wrong
-3. **Diagnoses failures automatically** — Spawns debug agents to find root causes
-4. **Creates verified fix plans** — Ready for immediate re-execution
-
-If everything passes, you move on. If something&#039;s broken, you don&#039;t manually debug — you just run `/gsd:execute-phase` again with the fix plans it created.
-
-**Creates:** `{phase_num}-UAT.md`, fix plans if issues found
-
----
-
-### 6. Repeat → Ship → Complete → Next Milestone
-
-```
-/gsd:discuss-phase 2
-/gsd:plan-phase 2
-/gsd:execute-phase 2
-/gsd:verify-work 2
-/gsd:ship 2                  # Create PR from verified work
-...
-/gsd:complete-milestone
-/gsd:new-milestone
-```
-
-Or let GSD figure out the next step automatically:
-
-```
-/gsd:next                    # Auto-detect and run next step
-```
-
-Loop **discuss → plan → execute → verify → ship** until milestone complete.
-
-If you want faster intake during discussion, use `/gsd:discuss-phase &lt;n&gt; --batch` to answer a small grouped set of questions at once instead of one-by-one.
-
-Each phase gets your input (discuss), proper research (plan), clean execution (execute), and human verification (verify). Context stays fresh. Quality stays high.
-
-When all phases are done, `/gsd:complete-milestone` archives the milestone and tags the release.
-
-Then `/gsd:new-milestone` starts the next version — same flow as `new-project` but for your existing codebase. You describe what you want to build next, the system researches the domain, you scope requirements, and it creates a fresh roadmap. Each milestone is a clean cycle: define → build → ship.
-
----
-
-### Quick Mode
-
-```
-/gsd:quick
-```
-
-**For ad-hoc tasks that don&#039;t need full planning.**
-
-Quick mode gives you GSD guarantees (atomic commits, state tracking) with a faster path:
-
-- **Same agents** — Planner + executor, same quality
-- **Skips optional steps** — No research, no plan checker, no verifier by default
-- **Separate tracking** — Lives in `.planning/quick/`, not phases
-
-**`--discuss` flag:** Lightweight discussion to surface gray areas before planning.
-
-**`--research` flag:** Spawns a focused researcher before planning. Investigates implementation approaches, library options, and pitfalls. Use when you&#039;re unsure how to approach a task.
-
-**`--full` flag:** Enables plan-checking (max 2 iterations) and post-execution verification.
-
-Flags are composable: `--discuss --research --full` gives discussion + research + plan-checking + verification.
-
-```
-/gsd:quick
-&gt; What do you want to do? &quot;Add dark mode toggle to settings&quot;
-```
-
-**Creates:** `.planning/quick/001-add-dark-mode-toggle/PLAN.md`, `SUMMARY.md`
-
----
-
-## Why It Works
-
-### Context Engineering
-
-Claude Code is incredibly powerful *if* you give it the context it needs. Most people don&#039;t.
-
-GSD handles it for you:
-
-| File | What it does |
-|------|--------------|
-| `PROJECT.md` | Project vision, always loaded |
-| `research/` | Ecosystem knowledge (stack, features, architecture, pitfalls) |
-| `REQUIREMENTS.md` | Scoped v1/v2 requirements with phase traceability |
-| `ROADMAP.md` | Where you&#039;re going, what&#039;s done |
-| `STATE.md` | Decisions, blockers, position — memory across sessions |
-| `PLAN.md` | Atomic task with XML structure, verification steps |
-| `SUMMARY.md` | What happened, what changed, committed to history |
-| `todos/` | Captured ideas and tasks for later work |
-| `threads/` | Persistent context threads for cross-session work |
-| `seeds/` | Forward-looking ideas that surface at the right milestone |
-
-Size limits based on where Claude&#039;s quality degrades. Stay under, get consistent excellence.
-
-### XML Prompt Formatting
-
-Every plan is structured XML optimized for Claude:
-
-```xml
-&lt;task type=&quot;auto&quot;&gt;
-  &lt;name&gt;Create login endpoint&lt;/name&gt;
-  &lt;files&gt;src/app/api/auth/login/route.ts&lt;/files&gt;
-  &lt;action&gt;
-    Use jose for JWT (not jsonwebtoken - CommonJS issues).
-    Validate credentials against users table.
-    Return httpOnly cookie on success.
-  &lt;/action&gt;
-  &lt;verify&gt;curl -X POST localhost:3000/api/auth/login returns 200 + Set-Cookie&lt;/verify&gt;
-  &lt;done&gt;Valid credentials return cookie, invalid return 401&lt;/done&gt;
-&lt;/task&gt;
-```
-
-Precise instructions. No guessing. Verification built in.
-
-### Multi-Agent Orchestration
-
-Every stage uses the same pattern: a thin orchestrator spawns specialized agents, collects results, and routes to the next step.
-
-| Stage | Orchestrator does | Agents do |
-|-------|------------------|-----------|
-| Research | Coordinates, presents findings | 4 parallel researchers investigate stack, features, architecture, pitfalls |
-| Planning | Validates, manages iteration | Planner creates plans, checker verifies, loop until pass |
-| Execution | Groups into waves, tracks progress | Executors implement in parallel, each with fresh 200k context |
-| Verification | Presents results, routes next | Verifier checks codebase against goals, debuggers diagnose failures |
-
-The orchestrator never does heavy lifting. It spawns agents, waits, integrates results.
-
-**The result:** You can run an entire phase — deep research, multiple plans created and verified, thousands of lines of code written across parallel executors, automated verification against goals — and your main context window stays at 30-40%. The work happens in fresh subagent contexts. Your session stays fast and responsive.
-
-### Atomic Git Commits
-
-Each task gets its own commit immediately after completion:
-
-```bash
-abc123f docs(08-02): complete user registration plan
-def456g feat(08-02): add email confirmation flow
-hij789k feat(08-02): implement password hashing
-lmn012o feat(08-02): create registration endpoint
-```
-
-&gt; [!NOTE]
-&gt; **Benefits:** Git bisect finds exact failing task. Each task independently revertable. Clear history for Claude in future sessions. Better observability in AI-automated workflow.
-
-Every commit is surgical, traceable, and meaningful.
-
-### Modular by Design
-
-- Add phases to current milestone
-- Insert urgent work between phases
-- Complete milestones and start fresh
-- Adjust plans without rebuilding everything
-
-You&#039;re never locked in. The system adapts.
-
----
-
-## Commands
-
-### Core Workflow
-
-| Command | What it does |
-|---------|--------------|
-| `/gsd:new-project [--auto]` | Full initialization: questions → research → requirements → roadmap |
-| `/gsd:discuss-phase [N] [--auto] [--analyze]` | Capture implementation decisions before planning (`--analyze` adds trade-off analysis) |
-| `/gsd:plan-phase [N] [--auto] [--reviews]` | Research + plan + verify for a phase (`--reviews` loads codebase review findings) |
-| `/gsd:execute-phase &lt;N&gt;` | Execute all plans in parallel waves, verify when complete |
-| `/gsd:verify-work [N]` | Manual use
+9Router is a local proxy/router. It doesn&#039;t have your credit card, can&#039;t send invoices, and has no billing syste
 
 ... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[maboloshi/github-chinese]]></title>
+            <link>https://github.com/maboloshi/github-chinese</link>
+            <guid>https://github.com/maboloshi/github-chinese</guid>
+            <pubDate>Tue, 31 Mar 2026 00:10:29 GMT</pubDate>
+            <description><![CDATA[GitHub 汉化插件，GitHub 中文化界面。 (GitHub Translation To Chinese)]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/maboloshi/github-chinese">maboloshi/github-chinese</a></h1>
+            <p>GitHub 汉化插件，GitHub 中文化界面。 (GitHub Translation To Chinese)</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 22,069</p>
+            <p>Forks: 1,214</p>
+            <p>Stars today: 38 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;&lt;a name=&quot;readme-top&quot;&gt;&lt;/a&gt;
+
+# [GitHub 中文化插件][github-project-link]
+
+&gt; 让 GitHub 界面全面中文化 | 源自 [52cik/github-hans](https://github.com/52cik/github-hans)
+
+**简体中文** · [繁體中文](./README_zh-TW.md) · [反馈问题][github-issues-link]
+
+&lt;!-- SHIELD GROUP --&gt;
+
+[![GitHub stars][github-stars-shield]][github-stars-link]
+[![GitHub forks][github-forks-shield]][github-forks-link]
+[![GitHub issues][github-issues-shield]][github-issues-link]
+[![license GPL-3.0][github-license-shield]][github-license-link]
+[![GreasyFork installs][greasyFork-shield]][greasyFork-link]
+
+&lt;a href=&quot;https://hellogithub.com/repository/738d0abae49543f18d887a7e29ec9e90&quot; target=&quot;_blank&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.hellogithub.com/v1/widgets/recommend.svg?rid=738d0abae49543f18d887a7e29ec9e90&amp;claim_uid=zepvSg6Vwl4EqMr&amp;theme=dark&quot; /&gt;
+    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.hellogithub.com/v1/widgets/recommend.svg?rid=738d0abae49543f18d887a7e29ec9e90&amp;claim_uid=zepvSg6Vwl4EqMr&amp;theme=neutral&quot; /&gt;
+    &lt;img alt=&quot;Featured｜HelloGitHub&quot; src=&quot;https://api.hellogithub.com/v1/widgets/recommend.svg?rid=738d0abae49543f18d887a7e29ec9e90&amp;claim_uid=zepvSg6Vwl4EqMr&amp;theme=neutral&quot; style=&quot;width: 250px; height: 54px;&quot; /&gt;
+  &lt;/picture&gt;
+&lt;/a&gt;
+
+&lt;/div&gt;
+
+&gt; [!warning]
+&gt; 本项目从未发布至 GitCode，如您发现请截图并保留证据
+
+&lt;details&gt;
+&lt;summary&gt;&lt;kbd&gt;目录树&lt;/kbd&gt;&lt;/summary&gt;
+
+#### TOC
+- [🌟 功能特性](#-功能特性)
+- [🌐 兼容环境](#-兼容环境)
+- [💻 安装指南](#-安装指南)
+- [🔧 本地调试](#-本地调试)
+- [🔄 更新日志](#-更新日志)
+- [📌 待办事项](#-待办事项)
+- [🤝 参与贡献](#-参与贡献)
+- [🖼️ 效果预览](#-效果预览)
+- [🙏 特别鸣谢](#-特别鸣谢)
+- [📈 项目统计](#-项目统计)
+- [🎁 欢迎打赏](#-欢迎打赏)
+&lt;/details&gt;
+
+## 🌟 功能特性
+
+- [x] 全面中文化 GitHub 界面元素（菜单栏、标题、按钮等）
+- [x] 智能正则匹配功能
+- [x] 支持项目描述的人机翻译
+- [x] 自动本地化时间元素
+- [x] 持续更新词库
+
+## 🌐 兼容环境
+
+浏览器类型           | 支持的脚本管理器
+:------------------: | :---------------:
+Chrome / Chromium 内核 | [Tampermonkey][Tampermonkey], [Violentmonkey][Violentmonkey]
+Safari（全平台）     | [Tampermonkey][Tampermonkey], [Macaque][Macaque], [Stay][Stay]
+Firefox / Gecko 内核   | [Tampermonkey][Tampermonkey], [Violentmonkey][Violentmonkey]
+Via（Android）       | 内置管理器
+
+## 💻 安装指南
+
+1. 安装用户脚本管理器：
+    - 推荐：[Tampermonkey][Tampermonkey]
+1. **基于 Chrome / Chromium 内核浏览器：**
+    1. 务必开启 “扩展程序” 管理中的 **“开发者模式”**[^1]
+    1. 务必开启 “扩展程序” 管理中脚本管理器扩展的 **“允许运行用户脚本”**
+    1. 具体可参考 [Tampermonkey 官方指引](https://www.tampermonkey.net/faq.php#Q209)
+1. 选择安装源：
+    - [GitHub 源【开发版】][main.user.js]
+    - [GreasyFork 源【稳定版】][main(greasyfork).user.js]
+1. 刷新页面后，插件即可生效
+1. 必要时，重启浏览器
+
+[^1]: [Chrome 切换到 Manifest V3后，使用问题](https://github.com/maboloshi/github-chinese/issues/234)
+
+&gt; [!NOTE]
+&gt; **版本说明**：
+&gt; - 🚀 开发版：实时更新，每周五自动更新词库
+&gt; - 🛡️ 稳定版：每周一同步开发版词库，更稳定
+
+## 🔧 本地调试
+
+1. 安装 [Tampermonkey][Tampermonkey]，并启用 “允许访问文件网址”。
+1. 下载词库文件到本地（如：`D:\github-chinese\locals.js`）
+1. 在脚本管理器中修改引用路径：
+   ```js
+   // 原始路径
+   // @require https://raw.githubusercontent.com/...
+   
+   // 修改为
+   // @require file:///D:/github-chinese/locals.js
+   ```
+1. 刷新页面生效
+
+&gt; [!IMPORTANT]
+&gt; **若无效：**
+&gt; 1. 进入 [Tampermonkey][Tampermonkey] 插件`设置页`
+&gt; 1. 将 `通用 - 配置模式` 设置为`高级`，进入高级设置模式
+&gt; 1. 找到 `安全 - 允许脚本访问本地文件` 并设置为 `外部(@require 和 @resource)`
+
+&gt; [!TIP]
+&gt; 💡 **温馨提示：** 您可以将词库文件拖拽至浏览器地址栏，复制路径直接使用。
+
+&lt;div align=&quot;right&quot;&gt;
+
+[![][back-to-top]](#readme-top)
+
+&lt;/div&gt;
+
+
+## 🔄 更新日志
+
+### 最新版本
+
+#### v1.9.3 (2024-08-18)
+
+1. 新增功能：通过设置中文环境，自动本地化时间元素，仅保留`on`开头的时间正则，并停用时间元素监视
+1. 优化突变翻译处理：
+   - 引入`characterDataPage`规则，对特定页面启用`筛选字符数据`的变更
+   - 引入`ignoreMutationSelectorPage`规则，忽略特定突变元素
+1. 合并`reIgnoreClass，reIgnoreItemprop，ignoreId，ignoreTag`为`ignoreSelectorPage`规则，处理全局及特定页面，忽略特定元素
+1. 引入全局缓存模式，减少重复构建包括不限于基于`page`变化的忽略规则、正则规则数组等
+1. 调整：更新讯飞听见翻译引擎v2.0
+1. 优化：梳理、优化脚本
+1. 调整：调整词库语言代码为`zh-CN`, 与环境语言设置一致
+
+&lt;details&gt;&lt;summary&gt;&lt;kbd&gt;查看更多历史版本&lt;/kbd&gt;&lt;/summary&gt;
+
+#### v1.9.2 (2024-06-14)
+
+1. 适配`www.githubstatus.com`
+1. 适配`skills.github.com`
+
+#### v1.9.1 (2024-05-23)
+
+1. 更新`切换正则功能按钮`
+
+#### v1.9.0 (2023-12-09)
+
+1. 重新定义版本号规则, 如`1.9.0-2023-12-09`。
+   - `1.9.0`: 主版本号（由项目所有者更新）
+   - `2023-12-09`：`词库`发布版本号（由 GitHub Action 自动更新）
+1. 加强: [GitHub 源【开发版】][main.user.js]每周一凌晨自动更新`词库`发布版本号
+1. 加强: [GreasyFork 源【稳定版】][main(greasyfork).user.js]每周五凌晨自动更新`词库`发布版本号, 词库内容同上一次[GitHub 源【开发版】][main.user.js]
+1. 加强：在 `README.md` 中自动更新贡献者头像
+1. 更新: 忽略规则, 词条等
+
+#### v1.8.5 (2023-08-31)
+
+1. 优化: `transDesc 函数`代码
+1. 修复: 重复添加`translate-me`翻译按钮
+1. 加强：`watchUpdate 函数`新增节点文本更新的情况
+1. 调整: `transBySelector和transDesc函数`延迟执行时间
+1. 更新: 忽略规则, 词条等
+
+#### v1.8.4 (2023-08-08)
+
+1. 修复: `Itemprop`过滤规则, 依然使用正则方式
+1. 修复: `tooltipped`样式提示, 依然使用正则方式
+
+#### v1.8.3 (2023-08-07)
+
+1. 梳理、优化脚本
+1. 更新: 忽略规则, 大量词条等
+
+#### v1.8.2 (2023-05-15)
+
+1. `greasyfork 托管`源切换到`按页面精细化词条模式`
+1. 调整词库格式
+1. 功能加强: 优化`元素筛选器`翻译逻辑
+1. 更新: 忽略规则, 大量词条等
+
+#### v1.8.1 (2023-01-22)
+
+1. 修复: #8 与 dark reader 扩展发生冲突，导致时间显示出现问题
+1. `GitHub`源开始切换到`按页面精细化词条模式(开发版)`, 词库未完全迁移适配
+1. 停止`greasyfork`源词库文件的同步更新
+
+#### v1.8.0 (2023-01-18)
+
+1. 删除: `TURBO-FRAME`框架处理代码. Github 已调整新动态加载模式, 直接检测`url`的变化就能获取对应的`page`信息
+1. 新增: 支持时间元素的`Shadow DOM`翻译, 并监听变化
+1. 新增: 启用并更新`时间元素翻译`专项正则词条
+1. 新增: 仅当`page`有效才翻译页面
+1. 修复: 原`简介翻译`引擎`GitHub中文社区`失效, 改为`讯飞`引擎(测试)
+1. 修复: 追加公共正则重复迭代的问题
+1. 修复: 正则标记变量`RegExp`与构造函数`new RegExp`冲突
+1. 更新: 忽略规则, 词条等
+
+预告, 下次将细化`page`匹配规则, 导致词库文件结构大调整, 词库文件会适当变大, 页面正则更精细效率会提升
+
+#### v1.7.9 (2022-07-17)
+
+GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/defunkt/jquery-pjax) 切换到 [hotwired/turbo](turbo.hotwired.dev), 导致已有的动态监测方式逐步失效
+
+目前, 通过以下修复:
+
+1. 新增 `BODY` 元素新增监视
+1. 解析 `TURBO-FRAME` 框架, 获取对应的 `page`
+1. 修复 github 新动态加载模式, 导致`翻译描述`返回值无法插入
+1. 修复 github 新动态加载模式, 导致`chrome`浏览器自带翻译功能卡死页面
+
+其他更新:
+
+1. 修复`rePagePath`,`rePagePathRepo`,`rePagePathOrg`匹配规则，限制路径匹配层次，排除干扰
+1. 直接使用网页URL`document.URL`变化触发`标题翻译`和`JS 筛选器`翻译
+1. 修复`关闭正则`无法生效, 需要刷新页面才生效
+1. 日常更新词库和忽略规则
+1. 更新`JS 筛选器`规则
+
+#### v1.7.8 (2022-06-29)
+
+1. 紧急修复: GitHub 变更了`document.body`和`title`更新机制, 导致原有的`监测更新`规则部分失效, 目前使用`document.documentElement`监视整个页面 DOM 的变更
+1. 跳过`&lt;HEAD&gt;`标签
+1. `标题翻译`和`JS 筛选器`翻译, 依据 URL变化更新
+
+#### v1.7.7 (2022-06-26)
+
+1. 新增`时间元素翻译`功能
+1. 重写`页面标题翻译`函数
+1. 梳理`遍历节点`函数逻辑
+1. 优化`transPage`函数，默认翻译公共部分
+1. 调整`getPage`函数, 使`ClassName匹配规则`优先
+1. 优化`translate`函数, 跳过`不存在英文字母和符号,.`, 保留首尾空白部分等
+1. 部分函数重命名，使用`es6`新语法
+1. 日常更新词库和忽略规则，修复一个`JS 选择器规则`
+
+#### v1.7.6 (2022-05-12)
+
+1. 日常更新词库和忽略规则
+1. 添加手动开启/禁用正则翻译，添加切换菜单
+1. 优化翻译文本函数：避免已翻译词汇二次匹配，提高效率；局部翻译优先于全局
+
+&lt;/details&gt;
+
+&lt;div align=&quot;right&quot;&gt;
+
+[![][back-to-top]](#readme-top)
+
+&lt;/div&gt;
+
+
+## 📌 待办事项
+
+1. 添加 GitHub 专用名词解释
+1. 整理 [Git](https://git-scm.com/) &amp; [GitHub](https://github.com/) 学习资料
+1. 完善文档翻译，需大家 PR 共同翻译
+
+## 🤝 参与贡献
+
+欢迎通过以下方式参与贡献：
+
+1. 完善词库翻译（编辑 `locals.js`）
+1. 提交议题报告，参与话题讨论
+1. 改进代码逻辑
+
+[![][pr-welcome-shield]][pr-welcome-link]
+
+### 翻译参考资源:
+
+1. [Pro Git 第二版 简体中文](https://git-scm.com/book/zh/v2)
+1. [Pro Git: 翻译约定](https://github.com/progit/progit2-zh/blob/master/TRANSLATION_NOTES.asc)
+1. [Git 官方软件包的简体中文翻译](https://github.com/git/git/blob/master/po/zh_CN.po)
+1. [GitHub 词汇表官方译本](https://docs.github.com/cn/get-started/quickstart/github-glossary)
+1. **[CSS 选择器](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference/Selectors) 用于编写忽略规则**
+
+&gt; [查看详细贡献指南](https://github.com/maboloshi/github-chinese/discussions/57)
+
+## 🖼️ 效果预览
+
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img1.png&quot;/&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img3.png&quot;/&gt;
+    &lt;img src=&quot;https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img1.png&quot; width=&quot;75%&quot; /&gt;
+  &lt;/picture&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img2.png&quot;/&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img4.png&quot;/&gt;
+    &lt;img src=&quot;https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img2.png&quot; width=&quot;75%&quot; /&gt;
+  &lt;/picture&gt;
+
+## 🙏 特别鸣谢
+
+### 核心团队
+
+- [maboloshi](https://github.com/maboloshi) - 项目作者
+- [wyc-26](https://github.com/wyc-26)，[陈生杂物房](https://github.com/TC999) - 项目协作者
+- [52cik](https://github.com/52cik) - 项目原作者
+
+### 贡献者墙
+
+一如既往，感谢我们出色的贡献者❤️！
+
+&lt;!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT--&gt;
+&lt;a href=&quot;https://github.com/maboloshi&quot; title=&quot;沙漠之子&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/7850715?v=4&quot; width=&quot;42;&quot; alt=&quot;沙漠之子&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/52cik&quot; title=&quot;楼教主&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/5033310?v=4&quot; width=&quot;42;&quot; alt=&quot;楼教主&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/TC999&quot; title=&quot;陈生杂物房&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/88823709?v=4&quot; width=&quot;42;&quot; alt=&quot;陈生杂物房&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/qznfbnj&quot; title=&quot;其智乃反不能及&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/100760086?v=4&quot; width=&quot;42;&quot; alt=&quot;其智乃反不能及&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/wyc-26&quot; title=&quot;wyc-26&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/154735436?v=4&quot; width=&quot;42;&quot; alt=&quot;wyc-26&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/LuYifei2011&quot; title=&quot;Lu Yifei&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/118034848?v=4&quot; width=&quot;42;&quot; alt=&quot;Lu Yifei&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/tangyuan0821&quot; title=&quot;Paper Moon&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/195516213?v=4&quot; width=&quot;42;&quot; alt=&quot;Paper Moon&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/pylover7&quot; title=&quot;大叶子&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/56282729?v=4&quot; width=&quot;42;&quot; alt=&quot;大叶子&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/cat-kun&quot; title=&quot;cat-kun&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/8529528?v=4&quot; width=&quot;42;&quot; alt=&quot;cat-kun&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/ChinaGodMan&quot; title=&quot;人民的勤务员&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/96548841?v=4&quot; width=&quot;42;&quot; alt=&quot;人民的勤务员&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/buiawpkgew1&quot; title=&quot;菾凴&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/71136405?v=4&quot; width=&quot;42;&quot; alt=&quot;菾凴&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/pecasha&quot; title=&quot;Pecasha&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/9607128?v=4&quot; width=&quot;42;&quot; alt=&quot;Pecasha&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/Kisechan&quot; title=&quot;Kise Platinyl&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/162338950?v=4&quot; width=&quot;42;&quot; alt=&quot;Kise Platinyl&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/yrljroli&quot; title=&quot;苓𥤚&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/169890386?v=4&quot; width=&quot;42;&quot; alt=&quot;苓𥤚&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/YiShengJunn&quot; title=&quot;益生君&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/134821571?v=4&quot; width=&quot;42;&quot; alt=&quot;益生君&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/3DMXM&quot; title=&quot;小莫&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/28587093?v=4&quot; width=&quot;42;&quot; alt=&quot;小莫&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/xuexb&quot; title=&quot;前端小武&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/3872051?v=4&quot; width=&quot;42;&quot; alt=&quot;前端小武&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/wang4yu6peng13&quot; title=&quot;wang4yu6peng13&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/10207042?v=4&quot; width=&quot;42;&quot; alt=&quot;wang4yu6peng13&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/pangshitong&quot; title=&quot;pangshitong&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/41714457?v=4&quot; width=&quot;42;&quot; alt=&quot;pangshitong&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/daydaygo&quot; title=&quot;dayday&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/3986303?v=4&quot; width=&quot;42;&quot; alt=&quot;dayday&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/heicks&quot; title=&quot;create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/12287943?v=4&quot; width=&quot;42;&quot; alt=&quot;create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/NyA1K0&quot; title=&quot;NyA!K0&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/177237971?v=4&quot; width=&quot;42;&quot; alt=&quot;NyA!K0&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/KS-OTO&quot; title=&quot;KS-OTO&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/6616413?v=4&quot; width=&quot;42;&quot; alt=&quot;KS-OTO&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/swsoyee&quot; title=&quot;InfinityLoop&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/20528423?v=4&quot; width=&quot;42;&quot; alt=&quot;InfinityLoop&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/ImgBotApp&quot; title=&quot;Imgbot&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/31427850?v=4&quot; width=&quot;42;&quot; alt=&quot;Imgbot&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/neveler&quot; title=&quot;neveler&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/55753029?v=4&quot; width=&quot;42;&quot; alt=&quot;neveler&quot;/&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/wang93wei&quot; title=&quot;AlanWang&quot;&gt;
+  &lt;img src=&quot;https://avatars.githubusercontent.com/u/6371053?v=4&quot; width=&quot;42;&quot; alt=&quot;AlanWang&quot;/&gt;
+&lt;/a&gt;
+&lt;!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END--&gt;
+
+&gt; 贡献者列表，由 [GitHub Action][update-contributors-images] 自动生成
+
+&lt;div align=&quot;right&quot;&gt;
+
+[![][back-to-top]](#readme-top)
+
+&lt;/div&gt;
+
+
+## 📈 项目统计
+
+&lt;a href=&quot;https://star-history.com/#maboloshi/github-chinese&amp;Timeline&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/svg?repos=maboloshi/github-chinese&amp;type=Timeline&amp;theme=dark&quot; /&gt;
+    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/svg?repos=maboloshi/github-chinese&amp;type=Timeline&quot; /&gt;
+    &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/svg?repos=maboloshi/github-chinese&amp;type=Timeline&quot; width=&quot;75%&quot; /&gt;
+  &lt;/picture&gt;
+&lt;/a&gt;
+
+![Alt](https://repobeats.axiom.co/api/embed/ae4c378f0e6ec317654ec5c4e8b01218c734cd53.svg &quot;Repobeats analytics image&quot;)
+
+&lt;div align=&quot;right&quot;&gt;
+
+[![][back-to-top]](#readme-top)
+
+&lt;/div&gt;
+
+## 🎁 欢迎打赏
+[赞赏列表](https://github.com/maboloshi/maboloshi/issues/1)
+|                                        微信赞赏                                        |                                       支付宝赞赏                                       |
+| :--------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: |
+| &lt;img src=&quot;https://cdn.jsdelivr.net/gh/maboloshi/maboloshi/img/wechat.png?raw=true&quot; alt=&quot;WeChat QRcode&quot; width=200&gt; &lt;br&gt;&lt;small&gt;☕喝点咖啡继续干☕&lt;/small&gt; | &lt;img src=&quot;https://cdn.jsdelivr.net/gh/maboloshi/maboloshi/img/alipay-1.jpg?raw=true&quot; alt=&quot;AliPay QRcode&quot; width=200&gt; &lt;br&gt;&lt;small&gt;🌶️来包辣条吧~🍪&lt;/small&gt; |
+
+
+&lt;!-- LINK GROUP --&gt;
+
+[back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square
+[github-project-link]: https://github.com/maboloshi/github-chinese &quot;GitHub 中文化插件&quot;
+[github-issues-link]: https://github.com/maboloshi/github-chinese/issues &quot;议题&quot;
+[github-issues-shield]: https://img.shields.io/github/issues/maboloshi/github-chinese?style=flat-square&amp;logo=github&amp;label=Issue
+[github-stars-link]: https://github.com/maboloshi/github-chinese/stargazers &quot;星标&quot;
+[github-stars-shield]: https://img.shields.io/github/stars/maboloshi/github-chinese?style=flat-square&amp;logo=github&amp;label=Star
+[github-forks-link]: https://github.com/maboloshi/github-chinese/network &quot;复刻&quot;
+[github-forks-shield]: https://img.shields.io/github/forks/maboloshi/github-chinese?style=flat-square&amp;logo=github&amp;label=Fork
+[github-license-link]: https://opensource.org/licenses/GPL-3.0  &quot;许可证&quot;
+[github-license-shield]: https://img.shields.io/github/license/maboloshi/github-chinese?style=flat-square&amp;logo=github&amp;label=License
+[greasyFork-link]: https://greasyfork.org/scripts/435208  &quot;GreasyFork 源 - GitHub 中文化插件&quot;
+[greasyFork-shield]: https://img.shields.io/greasyfork/dt/435208?style=flat-square&amp;logo=GreasyFork&amp;label=GreasyFork%20Installs
+[pr-welcome-link]: https://github.com/maboloshi/github-chinese/pulls
+[pr-welcome-shield]: https://img.shields.io/badge/🤯_pr_welcome-%E2%86%92-ffcb47?labelColor=black&amp;style=for-the-badge &quot;欢迎提交 PR&quot;
+[Tampermonkey]: http://tampermonkey.net/ &quot;篡改猴&quot;
+[Violentmonkey]: https://violentmonkey.github.io/ &quot;暴力猴&quot;
+[Macaque]: https://macaque.app/ &quot;猕猴&quot;
+[Stay]: https://apps.apple.com/cn/app/stay-for-safari-%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BC%B4%E4%BE%A3/id1591620171 &quot;Stay&quot;
+[main.user.js]: https://github.com/maboloshi/github-chinese/raw/gh-pages/main.user.js &quot;GitHub 中文化插件 - GitHub 源&quot;
+[main(greasyfork).user.js]: https://greasyfork.org/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6.user.js &quot;GitHub 中文化插件 - GreasyFork 源&quot;
+[update-contributors-images]: https://github.com/maboloshi/github-chinese/blob/gh-pages/.github/workflows/update_contributors_images.yml
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[is-a-dev/register]]></title>
+            <link>https://github.com/is-a-dev/register</link>
+            <guid>https://github.com/is-a-dev/register</guid>
+            <pubDate>Tue, 31 Mar 2026 00:10:28 GMT</pubDate>
+            <description><![CDATA[Grab your own sweet-looking '.is-a.dev' subdomain.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/is-a-dev/register">is-a-dev/register</a></h1>
+            <p>Grab your own sweet-looking '.is-a.dev' subdomain.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 10,035</p>
+            <p>Forks: 19,749</p>
+            <p>Stars today: 4 stars today</p>
+            <h2>README</h2><pre>&lt;!-- &lt;p align=&quot;center&quot;&gt;
+   &lt;img alt=&quot;is-a.dev Banner&quot; src=&quot;https://raw.githubusercontent.com/is-a-dev/register/main/media/banner.png&quot;&gt;
+&lt;/p&gt; --&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+   &lt;img height=&quot;350&quot; alt=&quot;is-a.dev Banner&quot; src=&quot;https://raw.githubusercontent.com/is-a-dev/register/main/media/banner.png&quot;&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+   &lt;img alt=&quot;Domains&quot; src=&quot;https://img.shields.io/github/directory-file-count/is-a-dev/register/domains?color=5c46eb&amp;label=domains&amp;style=for-the-badge&quot;&gt;
+   &lt;img alt=&quot;Open Pull Requests&quot; src=&quot;https://img.shields.io/github/issues-raw/is-a-dev/register?color=5c46eb&amp;label=issues&amp;style=for-the-badge&quot;&gt;
+   &lt;img alt=&quot;Open Issues&quot; src=&quot;https://img.shields.io/github/issues-pr-raw/is-a-dev/register?color=5c46eb&amp;label=pull%20requests&amp;style=for-the-badge&quot;&gt;
+   &lt;br&gt;
+&lt;/p&gt;
+
+&lt;h1 align=&quot;center&quot;&gt;is-a.dev&lt;/h1&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;strong&gt;is-a.dev&lt;/strong&gt; is a service that allows developers to get a sweet-looking &lt;code&gt;.is-a.dev&lt;/code&gt; subdomain for their personal websites.&lt;/p&gt;
+
+---
+
+## Announcements
+Please join our [Discord server](https://discord.gg/is-a-dev-830872854677422150) for announcements, service updates, and downtime notifications regarding the service.
+
+Not all announcements are posted on GitHub[^1], however they will always be posted in our Discord server.
+
+[^1]: We only post announcements on GitHub in the case of a serious incident, which you&#039;ll see at the top of this README.
+
+# Register
+&gt; If you want a visual guide, check out [this blog post](https://blog.wharrison.com.au/2024/07/is-a-dev/).
+
+- [Fork](https://github.com/is-a-dev/register/fork) the repository.
+- Follow the instructions on our [documentation](https://docs.is-a.dev).
+- Once you open your pull request (PR), it will be reviewed. *Keep an eye on it in case changes are needed!*
+   - If changes have been requested, please make the specified changes otherwise **you will be rejected**.
+- Once your PR is merged, your DNS records should be published with-in a few minutes.
+- Enjoy your new `.is-a.dev` subdomain! Please consider leaving a star ⭐️ to help support us!
+
+## Spam Pull Requests
+With the recent rising of invalid PRs, including PRs generated with AI, we reserve the right to:
+
+- Close these PRs without explanation.
+- Block or limit the author&#039;s ability to interact with is-a.dev&#039;s repositories and resources.
+- Remove any existing domains owned by the author if connected to TOS-violating content.
+
+## Report Abuse
+If you find any subdomains being abused or breaking our TOS, please report them by [creating an issue](https://github.com/is-a-dev/register/issues/new?assignees=&amp;labels=report-abuse&amp;projects=&amp;template=report-abuse.md&amp;title=Report+abuse) with relevant evidence.
+
+---
+
+We are supported by Cloudflare&#039;s [Project Alexandria](https://www.cloudflare.com/lp/project-alexandria) sponsorship program, we would not be able to operate without their help!
+
+&lt;a href=&quot;https://www.cloudflare.com&quot;&gt;
+   &lt;img alt=&quot;Cloudflare Logo&quot; src=&quot;https://raw.githubusercontent.com/is-a-dev/register/main/media/cloudflare.png&quot; height=&quot;48&quot;&gt;
+&lt;/a&gt;
+</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
