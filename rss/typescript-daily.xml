@@ -4,476 +4,24 @@
         <title>GitHub Trending Today for typescript - TypeScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for typescript.</description>
-        <lastBuildDate>Thu, 02 Apr 2026 00:09:26 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 03 Apr 2026 00:10:37 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2026, GitHub</copyright>
         <item>
-            <title><![CDATA[Yeachan-Heo/oh-my-claudecode]]></title>
-            <link>https://github.com/Yeachan-Heo/oh-my-claudecode</link>
-            <guid>https://github.com/Yeachan-Heo/oh-my-claudecode</guid>
-            <pubDate>Thu, 02 Apr 2026 00:09:26 GMT</pubDate>
-            <description><![CDATA[Teams-first Multi-agent orchestration for Claude Code]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/Yeachan-Heo/oh-my-claudecode">Yeachan-Heo/oh-my-claudecode</a></h1>
-            <p>Teams-first Multi-agent orchestration for Claude Code</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 20,853</p>
-            <p>Forks: 1,728</p>
-            <p>Stars today: 2,125 stars today</p>
-            <h2>README</h2><pre>English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](README.ja.md) | [Español](README.es.md) | [Tiếng Việt](README.vi.md) | [Português](README.pt.md)
-
-# oh-my-claudecode
-
-[![npm version](https://img.shields.io/npm/v/oh-my-claude-sisyphus?color=cb3837)](https://www.npmjs.com/package/oh-my-claude-sisyphus)
-[![npm downloads](https://img.shields.io/npm/dm/oh-my-claude-sisyphus?color=blue)](https://www.npmjs.com/package/oh-my-claude-sisyphus)
-[![GitHub stars](https://img.shields.io/github/stars/Yeachan-Heo/oh-my-claudecode?style=flat&amp;color=yellow)](https://github.com/Yeachan-Heo/oh-my-claudecode/stargazers)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Sponsor](https://img.shields.io/badge/Sponsor-❤️-red?style=flat&amp;logo=github)](https://github.com/sponsors/Yeachan-Heo)
-[![Discord](https://img.shields.io/discord/1452487457085063218?color=5865F2&amp;logo=discord&amp;logoColor=white&amp;label=Discord)](https://discord.gg/PUwSMR9XNk)
-
-&gt; **For Codex users:** Check out [oh-my-codex](https://github.com/Yeachan-Heo/oh-my-codex) — the same orchestration experience for OpenAI Codex CLI.
-
-**Multi-agent orchestration for Claude Code. Zero learning curve.**
-
-_Don&#039;t learn Claude Code. Just use OMC._
-
-[Get Started](#quick-start) • [Documentation](https://yeachan-heo.github.io/oh-my-claudecode-website) • [CLI Reference](https://yeachan-heo.github.io/oh-my-claudecode-website/docs.html#cli-reference) • [Workflows](https://yeachan-heo.github.io/oh-my-claudecode-website/docs.html#workflows) • [Migration Guide](docs/MIGRATION.md) • [Discord](https://discord.gg/PUwSMR9XNk)
-
----
-
-## Quick Start
-
-**Step 1: Install**
-
-Marketplace/plugin install (recommended for most Claude Code users):
-
-```bash
-/plugin marketplace add https://github.com/Yeachan-Heo/oh-my-claudecode
-/plugin install oh-my-claudecode
-```
-
-If you prefer the npm CLI/runtime path instead of the marketplace flow:
-
-```bash
-npm i -g oh-my-claude-sisyphus@latest
-```
-
-**Step 2: Setup**
-
-```bash
-/setup
-/omc-setup
-```
-
-**Step 3: Build something**
-
-```
-autopilot: build a REST API for managing tasks
-```
-
-That&#039;s it. Everything else is automatic.
-
-### Not Sure Where to Start?
-
-If you&#039;re uncertain about requirements, have a vague idea, or want to micromanage the design:
-
-```
-/deep-interview &quot;I want to build a task management app&quot;
-```
-
-The deep interview uses Socratic questioning to clarify your thinking before any code is written. It exposes hidden assumptions and measures clarity across weighted dimensions, ensuring you know exactly what to build before execution begins.
-
-## Team Mode (Recommended)
-
-Starting in **v4.1.7**, **Team** is the canonical orchestration surface in OMC. The legacy `swarm` keyword/skill has been removed; use `team` directly.
-
-```bash
-/team 3:executor &quot;fix all TypeScript errors&quot;
-```
-
-Team runs as a staged pipeline:
-
-`team-plan → team-prd → team-exec → team-verify → team-fix (loop)`
-
-Enable Claude Code native teams in `~/.claude/settings.json`:
-
-```json
-{
-  &quot;env&quot;: {
-    &quot;CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS&quot;: &quot;1&quot;
-  }
-}
-```
-
-&gt; If teams are disabled, OMC will warn you and fall back to non-team execution where possible.
-
-### tmux CLI Workers — Codex &amp; Gemini (v4.4.0+)
-
-**v4.4.0 removes the Codex/Gemini MCP servers** (`x`, `g` providers). Use the CLI-first Team runtime (`omc team ...`) to spawn real tmux worker panes:
-
-```bash
-omc team 2:codex &quot;review auth module for security issues&quot;
-omc team 2:gemini &quot;redesign UI components for accessibility&quot;
-omc team 1:claude &quot;implement the payment flow&quot;
-omc team status auth-review
-omc team shutdown auth-review
-```
-
-`/omc-teams` remains as a legacy compatibility skill and now routes to `omc team ...`.
-
-For mixed Codex + Gemini work in one command, use the **`/ccg`** skill (routes via `/ask codex` + `/ask gemini`, then Claude synthesizes):
-
-```bash
-/ccg Review this PR — architecture (Codex) and UI components (Gemini)
-```
-
-| Surface                   | Workers            | Best For                                     |
-| ------------------------- | ------------------ | -------------------------------------------- |
-| `omc team N:codex &quot;...&quot;`  | N Codex CLI panes  | Code review, security analysis, architecture |
-| `omc team N:gemini &quot;...&quot;` | N Gemini CLI panes | UI/UX design, docs, large-context tasks      |
-| `omc team N:claude &quot;...&quot;` | N Claude CLI panes | General tasks via Claude CLI in tmux         |
-| `/ccg`                    | /ask codex + /ask gemini | Tri-model advisor synthesis           |
-
-Workers spawn on-demand and die when their task completes — no idle resource usage. Requires `codex` / `gemini` CLIs installed and an active tmux session.
-
-&gt; **Note: Package naming** — The project is branded as **oh-my-claudecode** (repo, plugin, commands), but the npm package is published as [`oh-my-claude-sisyphus`](https://www.npmjs.com/package/oh-my-claude-sisyphus). If you install or upgrade the CLI tools via npm/bun, use `npm i -g oh-my-claude-sisyphus@latest`.
-
-### Updating
-
-If you installed OMC via npm, upgrade with the published package name:
-
-```bash
-npm i -g oh-my-claude-sisyphus@latest
-```
-
-&gt; **Package naming note:** the repo, plugin, and commands are branded **oh-my-claudecode**, but the published npm package name remains `oh-my-claude-sisyphus`.
-
-If you installed OMC via the Claude Code marketplace/plugin flow, update with:
-
-```bash
-# 1. Update the marketplace clone
-/plugin marketplace update omc
-
-# 2. Re-run setup to refresh configuration
-/setup
-```
-
-If you are developing from a local checkout or git worktree, update the checkout first, then re-run setup from that worktree so the active runtime matches the code you are testing.
-
-&gt; **Note:** If marketplace auto-update is not enabled, you must manually run `/plugin marketplace update omc` to sync the latest version before running setup.
-
-If you experience issues after updating, clear the old plugin cache:
-
-```bash
-/omc-doctor
-```
-
-&lt;h1 align=&quot;center&quot;&gt;Your Claude Just Have been Steroided.&lt;/h1&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;assets/omc-character.jpg&quot; alt=&quot;oh-my-claudecode&quot; width=&quot;400&quot; /&gt;
-&lt;/p&gt;
-
----
-
-## Why oh-my-claudecode?
-
-- **Zero configuration required** - Works out of the box with intelligent defaults
-- **Team-first orchestration** - Team is the canonical multi-agent surface
-- **Natural language interface** - No commands to memorize, just describe what you want
-- **Automatic parallelization** - Complex tasks distributed across specialized agents
-- **Persistent execution** - Won&#039;t give up until the job is verified complete
-- **Cost optimization** - Smart model routing saves 30-50% on tokens
-- **Learn from experience** - Automatically extracts and reuses problem-solving patterns
-- **Real-time visibility** - HUD statusline shows what&#039;s happening under the hood
-
----
-
-## Features
-
-### Orchestration Modes
-
-Multiple strategies for different use cases — from Team-backed orchestration to token-efficient refactoring. [Learn more →](https://yeachan-heo.github.io/oh-my-claudecode-website/docs.html#execution-modes)
-
-| Mode                    | What it is                                                                              | Use For                                                |
-| ----------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| **Team (recommended)**  | Canonical staged pipeline (`team-plan → team-prd → team-exec → team-verify → team-fix`) | Coordinated Claude agents on a shared task list        |
-| **omc team (CLI)**      | tmux CLI workers — real `claude`/`codex`/`gemini` processes in split-panes              | Codex/Gemini CLI tasks; on-demand spawn, die when done |
-| **ccg**                 | Tri-model advisors via `/ask codex` + `/ask gemini`, Claude synthesizes                   | Mixed backend+UI work needing both Codex and Gemini    |
-| **Autopilot**           | Autonomous execution (single lead agent)                                                | End-to-end feature work with minimal ceremony          |
-| **Ultrawork**           | Maximum parallelism (non-team)                                                          | Burst parallel fixes/refactors where Team isn&#039;t needed |
-| **Ralph**               | Persistent mode with verify/fix loops                                                   | Tasks that must complete fully (no silent partials)    |
-| **Pipeline**            | Sequential, staged processing                                                           | Multi-step transformations with strict ordering        |
-| **Ultrapilot (legacy)** | Deprecated compatibility mode (autopilot pipeline alias)                                | Existing workflows and older docs                      |
-
-### Intelligent Orchestration
-
-- **32 specialized agents** for architecture, research, design, testing, data science
-- **Smart model routing** - Haiku for simple tasks, Opus for complex reasoning
-- **Automatic delegation** - Right agent for the job, every time
-
-### Developer Experience
-
-- **Magic keywords** - `ralph`, `ulw`, `ralplan`; Team stays explicit via `/team`
-- **HUD statusline** - Real-time orchestration metrics in your status bar
-- **Skill learning** - Extract reusable patterns from your sessions
-- **Analytics &amp; cost tracking** - Understand token usage across all sessions
-
-### Custom Skills
-
-Learn once, reuse forever. OMC extracts hard-won debugging knowledge into portable skill files that auto-inject when relevant.
-
-| | Project Scope | User Scope |
-|---|---|---|
-| **Path** | `.omc/skills/` | `~/.omc/skills/` |
-| **Shared with** | Team (version-controlled) | All your projects |
-| **Priority** | Higher (overrides user) | Lower (fallback) |
-
-```yaml
-# .omc/skills/fix-proxy-crash.md
----
-name: Fix Proxy Crash
-description: aiohttp proxy crashes on ClientDisconnectedError
-triggers: [&quot;proxy&quot;, &quot;aiohttp&quot;, &quot;disconnected&quot;]
-source: extracted
----
-Wrap handler at server.py:42 in try/except ClientDisconnectedError...
-```
-
-**Manage skills:** `/skill list | add | remove | edit | search`
-**Auto-learn:** `/learner` extracts reusable patterns with strict quality gates
-**Auto-inject:** Matching skills load into context automatically — no manual recall needed
-
-[Full feature list →](docs/REFERENCE.md)
-
----
-
-## Magic Keywords
-
-Optional shortcuts for power users. Natural language works fine without them. Team mode is explicit: use `/team ...` or `omc team ...` rather than a keyword trigger.
-
-| Keyword                | Effect                                 | Example                                        |
-| ---------------------- | -------------------------------------- | ---------------------------------------------- |
-| `team`                 | Canonical Team orchestration           | `/team 3:executor &quot;fix all TypeScript errors&quot;` |
-| `omc team`             | tmux CLI workers (codex/gemini/claude) | `omc team 2:codex &quot;security review&quot;`           |
-| `ccg`                  | `/ask codex` + `/ask gemini` synthesis | `/ccg review this PR`                          |
-| `autopilot`            | Full autonomous execution              | `autopilot: build a todo app`                  |
-| `ralph`                | Persistence mode                       | `ralph: refactor auth`                         |
-| `ulw`                  | Maximum parallelism                    | `ulw fix all errors`                           |
-| `ralplan`              | Iterative planning consensus           | `ralplan this feature`                         |
-| `deep-interview`       | Socratic requirements clarification    | `deep-interview &quot;vague idea&quot;`                  |
-| `deepsearch`           | Codebase-focused search routing        | `deepsearch for auth middleware`               |
-| `ultrathink`           | Deep reasoning mode                    | `ultrathink about this architecture`           |
-| `cancelomc`, `stopomc` | Stop active OMC modes                  | `stopomc`                                      |
-
-**Notes:**
-
-- **ralph includes ultrawork**: when you activate ralph mode, it automatically includes ultrawork&#039;s parallel execution.
-- `swarm` compatibility alias has been removed; migrate existing prompts to `/team` syntax.
-- `plan this` / `plan the` keyword triggers were removed; use `ralplan` or explicit `/oh-my-claudecode:omc-plan`.
-
-## Utilities
-
-### Provider Advisor (`omc ask`)
-
-Run local provider CLIs and save a markdown artifact under `.omc/artifacts/ask/`:
-
-```bash
-omc ask claude &quot;review this migration plan&quot;
-omc ask codex --prompt &quot;identify architecture risks&quot;
-omc ask gemini --prompt &quot;propose UI polish ideas&quot;
-omc ask claude --agent-prompt executor --prompt &quot;draft implementation steps&quot;
-```
-
-Canonical env vars:
-
-- `OMC_ASK_ADVISOR_SCRIPT`
-- `OMC_ASK_ORIGINAL_TASK`
-
-Phase-1 aliases `OMX_ASK_ADVISOR_SCRIPT` and `OMX_ASK_ORIGINAL_TASK` are accepted with deprecation warnings.
-
-### Rate Limit Wait
-
-Auto-resume Claude Code sessions when rate limits reset.
-
-```bash
-omc wait          # Check status, get guidance
-omc wait --start  # Enable auto-resume daemon
-omc wait --stop   # Disable daemon
-```
-
-**Requires:** tmux (for session detection)
-
-### Monitoring &amp; Observability
-
-Use the HUD for live observability and the current session/replay artifacts for post-session inspection:
-
-- HUD preset: `/oh-my-claudecode:hud setup` then use a supported preset such as `&quot;omcHud&quot;: { &quot;preset&quot;: &quot;focused&quot; }`
-- Session summaries: `.omc/sessions/*.json`
-- Replay logs: `.omc/state/agent-replay-*.jsonl`
-- Live HUD rendering: `omc hud`
-
-### Notification Tags (Telegram/Discord/Slack)
-
-You can configure who gets tagged when stop callbacks send session summaries.
-
-```bash
-# Set/replace tag list
-omc config-stop-callback telegram --enable --token &lt;bot_token&gt; --chat &lt;chat_id&gt; --tag-list &quot;@alice,bob&quot;
-omc config-stop-callback discord --enable --webhook &lt;url&gt; --tag-list &quot;@here,123456789012345678,role:987654321098765432&quot;
-omc config-stop-callback slack --enable --webhook &lt;url&gt; --tag-list &quot;&lt;!here&gt;,&lt;@U1234567890&gt;&quot;
-
-# Incremental updates
-omc config-stop-callback telegram --add-tag charlie
-omc config-stop-callback discord --remove-tag @here
-omc config-stop-callback discord --clear-tags
-```
-
-Tag behavior:
-
-- Telegram: `alice` becomes `@alice`
-- Discord: supports `@here`, `@everyone`, numeric user IDs, and `role:&lt;id&gt;`
-- Slack: supports `&lt;@MEMBER_ID&gt;`, `&lt;!channel&gt;`, `&lt;!here&gt;`, `&lt;!everyone&gt;`, `&lt;!subteam^GROUP_ID&gt;`
-- `file` callbacks ignore tag options
-
-### OpenClaw Integration
-
-Forward Claude Code session events to an [OpenClaw](https://openclaw.ai/) gateway to enable automated responses and workflows via your OpenClaw agent.
-
-**Quick setup (recommended):**
-
-```bash
-/oh-my-claudecode:configure-notifications
-# → When prompted, type &quot;openclaw&quot; → choose &quot;OpenClaw Gateway&quot;
-```
-
-**Manual setup:** create `~/.claude/omc_config.openclaw.json`:
-
-```json
-{
-  &quot;enabled&quot;: true,
-  &quot;gateways&quot;: {
-    &quot;my-gateway&quot;: {
-      &quot;url&quot;: &quot;https://your-gateway.example.com/wake&quot;,
-      &quot;headers&quot;: { &quot;Authorization&quot;: &quot;Bearer YOUR_TOKEN&quot; },
-      &quot;method&quot;: &quot;POST&quot;,
-      &quot;timeout&quot;: 10000
-    }
-  },
-  &quot;hooks&quot;: {
-    &quot;session-start&quot;: { &quot;gateway&quot;: &quot;my-gateway&quot;, &quot;instruction&quot;: &quot;Session started for {{projectName}}&quot;, &quot;enabled&quot;: true },
-    &quot;stop&quot;:          { &quot;gateway&quot;: &quot;my-gateway&quot;, &quot;instruction&quot;: &quot;Session stopping for {{projectName}}&quot;, &quot;enabled&quot;: true }
-  }
-}
-```
-
-**Environment variables:**
-
-| Variable | Description |
-|----------|-------------|
-| `OMC_OPENCLAW=1` | Enable OpenClaw |
-| `OMC_OPENCLAW_DEBUG=1` | Enable debug logging |
-| `OMC_OPENCLAW_CONFIG=/path/to/config.json` | Override config file path |
-
-**Supported hook events (6 active in bridge.ts):**
-
-| Event | Trigger | Key template variables |
-|-------|---------|----------------------|
-| `session-start` | Session begins | `{{sessionId}}`, `{{projectName}}`, `{{projectPath}}` |
-| `stop` | Claude response completes | `{{sessionId}}`, `{{projectName}}` |
-| `keyword-detector` | Every prompt submission | `{{prompt}}`, `{{sessionId}}` |
-| `ask-user-question` | Claude requests user input | `{{question}}`, `{{sessionId}}` |
-| `pre-tool-use` | Before tool invocation (high frequency) | `{{toolName}}`, `{{sessionId}}` |
-| `post-tool-use` | After tool invocation (high frequency) | `{{toolName}}`, `{{sessionId}}` |
-
-**Reply channel environment variables:**
-
-| Variable | Description |
-|----------|-------------|
-| `OPENCLAW_REPLY_CHANNEL` | Reply channel (e.g. `discord`) |
-| `OPENCLAW_REPLY_TARGET` | Channel ID |
-| `OPENCLAW_REPLY_THREAD` | Thread ID |
-
-See `scripts/openclaw-gateway-demo.mjs` for a reference gateway that relays OpenClaw payloads to Discord via ClawdBot.
-
----
-
-## Documentation
-
-- **[Full Reference](docs/REFERENCE.md)** - Complete feature documentation
-- **[CLI Reference](https://yeachan-heo.github.io/oh-my-claudecode-website/docs.html#cli-reference)** - All `omc` commands, flags, and tools
-- **[Notifications Guide](https://yeachan-heo.github.io/oh-my-claudecode-website/docs.html#notifications)** - Discord, Telegram, Slack, and webhook setup
-- **[Recommended Workflows](https://yeachan-heo.github.io/oh-my-claudecode-website/docs.html#workflows)** - Battle-tested skill chains for common tasks
-- **[Release Notes](https://yeachan-heo.github.io/oh-my-claudecode-website/docs.html#release-notes)** - What&#039;s new in each version
-- **[Website](https://yeachan-heo.github.io/oh-my-claudecode-website)** - Interactive guides and examples
-- **[Migration Guide](docs/MIGRATION.md)** - Upgrade from v2.x
-- **[Architecture](docs/ARCHITECTURE.md)** - How it works under the hood
-- **[Performance Monitoring](docs/PERFORMANCE-MONITORING.md)** - Agent tracking, debugging, and optimization
-
----
-
-## Requirements
-
-- [Claude Code](https://docs.anthropic.com/claude-code) CLI
-- Claude Max/Pro subscription OR Anthropic API key
-
-### Platform &amp; tmux
-
-OMC features like `omc team` and rate-limit detection require **tmux**:
-
-| Platform       | tmux provider                                            | Install                |
-| -------------- | -------------------------------------------------------- | ---------------------- |
-| macOS          | [tmux](https://github.com/tmux/tmux)                    | `brew install tmux`    |
-| Ubuntu/Debian  | tmux                                                     | `sudo apt install tmux`|
-| Fedora         | tmux                                                     | `sudo dnf install tmux`|
-| Arch           | tmux                                                     | `sudo pacman -S tmux`  |
-| Windows        | [psmux](https://github.com/marlocarlo/psmux) (native)   | `winget install psmux` |
-| Windows (WSL2) | tmux (inside WSL)                                        | `sudo apt install tmux`|
-
-&gt; **Windows users:** [psmux](https://github.com/marlocarlo/psmux) provides a native `tmux` binary for Windows with 76 tmux-compatible commands. No WSL required.
-
-### Optional: Multi-AI Orchestration
-
-OMC can optionally orchestrate external AI providers for cross-validation and design consistency. These are **not required** — OMC works fully without them.
-
-| Provider                                                  | Install                             | What it enables                                  |
-| --------------------------------------------------------- | ----------------------------------- | ------------------------------------------------ |
-| [Gemini CLI](https://github.com/google-gemini/gemini-cli) | `npm install -g @google/gemini-cli` | Design review, UI consistency (1M token context) |
-| [Codex CLI](https://github.com/openai/codex)              | `npm install -g @openai/codex`      | Architecture validation, code review cross-check |
-
-**Cost:** 3 Pro plans (Claude + Gemini + ChatGPT) cover everything for ~$60/month.
-
----
-
-## License
-
-MIT
-
----
-
-&lt;div align=&quot;center&quot;&gt;
-
-**Inspired by:** [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode) • [claude-hud](https://github.com/ryanjoachim/claude-hud) • [Superpowers](https://github.com/obra/superpowers) • [eve
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
             <title><![CDATA[siddharthvaddem/openscreen]]></title>
             <link>https://github.com/siddharthvaddem/openscreen</link>
             <guid>https://github.com/siddharthvaddem/openscreen</guid>
-            <pubDate>Thu, 02 Apr 2026 00:09:25 GMT</pubDate>
+            <pubDate>Fri, 03 Apr 2026 00:10:37 GMT</pubDate>
             <description><![CDATA[Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/siddharthvaddem/openscreen">siddharthvaddem/openscreen</a></h1>
             <p>Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 13,319</p>
-            <p>Forks: 896</p>
-            <p>Stars today: 3,350 stars today</p>
+            <p>Stars: 15,785</p>
+            <p>Forks: 1,073</p>
+            <p>Stars today: 2,573 stars today</p>
             <h2>README</h2><pre>&gt; [!WARNING]
 &gt; This is very much in beta and might be buggy here and there (but hope you have a good experience!).
 
@@ -578,1419 +126,241 @@ This project is licensed under the [MIT License](./LICENSE). By using this softw
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[freeCodeCamp/freeCodeCamp]]></title>
-            <link>https://github.com/freeCodeCamp/freeCodeCamp</link>
-            <guid>https://github.com/freeCodeCamp/freeCodeCamp</guid>
-            <pubDate>Thu, 02 Apr 2026 00:09:24 GMT</pubDate>
-            <description><![CDATA[freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.]]></description>
+            <title><![CDATA[Yeachan-Heo/oh-my-codex]]></title>
+            <link>https://github.com/Yeachan-Heo/oh-my-codex</link>
+            <guid>https://github.com/Yeachan-Heo/oh-my-codex</guid>
+            <pubDate>Fri, 03 Apr 2026 00:10:36 GMT</pubDate>
+            <description><![CDATA[OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much more.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/freeCodeCamp/freeCodeCamp">freeCodeCamp/freeCodeCamp</a></h1>
-            <p>freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.</p>
+            <h1><a href="https://github.com/Yeachan-Heo/oh-my-codex">Yeachan-Heo/oh-my-codex</a></h1>
+            <p>OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much more.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 440,402</p>
-            <p>Forks: 43,947</p>
-            <p>Stars today: 236 stars today</p>
-            <h2>README</h2><pre>[![freeCodeCamp Social Banner](https://cdn.freecodecamp.org/platform/universal/fcc_banner_new.png)](https://www.freecodecamp.org/)
-
-[![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://www.firsttimersonly.com/)
-[![Discord](https://img.shields.io/discord/692816967895220344?logo=discord&amp;label=Discord&amp;color=5865F2)](https://discord.gg/PRyKn3Vbay)
-[![LFX Active Contributors](https://insights.linuxfoundation.org/api/badge/active-contributors?project=freecodecamp&amp;repos=https://github.com/freeCodeCamp/freeCodeCamp)](https://insights.linuxfoundation.org/project/freecodecamp/repository/freecodecamp-freecodecamp)
-
-## freeCodeCamp.org&#039;s open-source codebase and curriculum
-
-[freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) charity](https://www.freecodecamp.org/donate) to help millions of busy adults transition into tech. Our community has already helped more than 100,000 people get their first developer job.
-
-Our full-stack web development and machine learning curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
-
-## Table of Contents
-
-- [Certifications](#certifications)
-- [The Learning Platform](#the-learning-platform)
-- [Reporting Bugs and Issues](#reporting-bugs-and-issues)
-- [Reporting Security Issues and Responsible Disclosure](#reporting-security-issues-and-responsible-disclosure)
-- [Contributing](#contributing)
-- [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
-- [License](#license)
-
-### Certifications
-
-freeCodeCamp.org offers several free developer certifications that make up the [Full-Stack Developer Curriculum](https://www.freecodecamp.org/learn/full-stack-developer-v9/):
-
-- [Responsive Web Design](https://www.freecodecamp.org/learn/responsive-web-design-v9/)
-- [JavaScript](https://www.freecodecamp.org/learn/javascript-v9/)
-- [Front-End Development Libraries](https://www.freecodecamp.org/learn/front-end-development-libraries-v9/)
-- [Python](https://www.freecodecamp.org/learn/python-v9/)
-- [Relational Databases](https://www.freecodecamp.org/learn/relational-databases-v9/)
-- [Back-End Development and APIs](https://www.freecodecamp.org/learn/back-end-development-and-apis-v9/)
-
-Each of these certifications involves completing interactive lessons, workshops, labs, reviews, and quizzes. Throughout the certification, you&#039;ll need to complete 5 required projects to qualify for the exam. Once you pass the exam, then you can claim the certification.
-
-freeCodeCamp.org also offers free language certifications designed around internationally recognized proficiency levels:
-
-- [A2 English for Developers (Beta)](https://www.freecodecamp.org/learn/a2-english-for-developers/)
-- [B1 English for Developers (Beta)](https://www.freecodecamp.org/learn/b1-english-for-developers/)
-- [A1 Professional Spanish (Beta)](https://www.freecodecamp.org/learn/a1-professional-spanish/)
-- [A1 Professional Chinese (Beta)](https://www.freecodecamp.org/learn/a1-professional-chinese/)
-
-Each of these certifications is organized into modules, with sections for warm-ups, lessons, practice exercises, review pages, and quizzes to ensure you fully grasp the material before progressing to the next module. You&#039;ll need to complete all of the quizzes in order to qualify for the exam at the end of the certification.
-
-Once you&#039;ve earned a certification, you will always have it. You will always be able to link to it from your LinkedIn or resume. And when your prospective employers or freelance clients click that link, they&#039;ll see a verified certification specific to you.
-
-The one exception to this is if we discover violations of our [Academic Honesty Policy](https://www.freecodecamp.org/news/academic-honesty-policy/). When we catch people unambiguously plagiarizing (submitting other people&#039;s code or projects as their own without citation), we do what all rigorous institutions of learning should do - we revoke their certifications and ban those people.
-
-In addition, to help prepare for job interviews, freeCodeCamp.org includes The Odin Project (freeCodeCamp Remix), Coding Interview Prep, Project Euler, and Rosetta Code.
-
-A free, professional Foundational C# with Microsoft Certification is also available.
-
-### The Learning Platform
-
-This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
-
-Our community also has:
-
-- A [forum](https://forum.freecodecamp.org) where you can usually get programming help or project feedback within hours.
-- A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
-- A [technical publication](https://www.freecodecamp.org/news) with thousands of programming tutorials and articles about mathematics and computer science.
-- A [Discord server](https://discord.gg/Z7Fm39aNtZ) where you can hang out and talk with developers and people who are learning to code.
-
-&gt; #### [Join the community here](https://www.freecodecamp.org/signin).
-
-### Reporting Bugs and Issues
-
-If you think you&#039;ve found a bug, first read the [how to report a bug](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
-
-If you&#039;re confident it&#039;s a new bug and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
-
-### Reporting Security Issues and Responsible Disclosure
-
-We appreciate responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users.
-
-&gt; #### [Read our security policy and follow these steps to report a vulnerability](https://contribute.freecodecamp.org/#/security).
-
-### Contributing
-
-The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard.
-
-&gt; #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
-
-Recent Contributions:
-
-![Alt](https://repobeats.axiom.co/api/embed/89be0a1a1c8f641c54f9234a7423e7755352c746.svg &#039;Repobeats analytics image&#039;)
-
-### License
-
-Copyright © 2014 freeCodeCamp.org
-
-The content of this repository is bound by the following licenses:
-
-- The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
-- The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories therein are copyright © 2014 freeCodeCamp.org
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[vas3k/TaxHacker]]></title>
-            <link>https://github.com/vas3k/TaxHacker</link>
-            <guid>https://github.com/vas3k/TaxHacker</guid>
-            <pubDate>Thu, 02 Apr 2026 00:09:23 GMT</pubDate>
-            <description><![CDATA[Self-hosted AI accounting app. LLM analyzer for receipts, invoices, transactions with custom prompts and categories]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/vas3k/TaxHacker">vas3k/TaxHacker</a></h1>
-            <p>Self-hosted AI accounting app. LLM analyzer for receipts, invoices, transactions with custom prompts and categories</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 4,011</p>
-            <p>Forks: 625</p>
-            <p>Stars today: 421 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;&lt;a name=&quot;readme-top&quot;&gt;&lt;/a&gt;
-
-&lt;img src=&quot;public/logo/512.png&quot; alt=&quot;&quot; width=&quot;320&quot;&gt;
-
-&lt;br&gt;
-
-# TaxHacker — self-hosted AI accountant
-
-[![GitHub Stars](https://img.shields.io/github/stars/vas3k/TaxHacker?color=ffcb47&amp;labelColor=black&amp;style=flat-square)](https://github.com/vas3k/TaxHacker/stargazers)
-[![License](https://img.shields.io/badge/license-MIT-ffcb47?labelColor=black&amp;style=flat-square)](https://github.com/vas3k/TaxHacker/blob/main/LICENSE)
-[![GitHub Issues](https://img.shields.io/github/issues/vas3k/TaxHacker?color=ff80eb&amp;labelColor=black&amp;style=flat-square)](https://github.com/vas3k/TaxHacker/issues)
-[![Donate](https://img.shields.io/badge/-Donate-f04f88?logo=githubsponsors&amp;logoColor=white&amp;style=flat-square)](https://vas3k.com/donate/)
-
-&lt;/div&gt;
-
-&gt; 🙏 I&#039;m currently looking for a job! Here&#039;s [my CV](https://raw.githubusercontent.com/vas3k/vas3k/master/cv.pdf) and my [Github profile](https://github.com/vas3k).
-
-TaxHacker is a self-hosted accounting app designed for freelancers, indie hackers, and small businesses who want to save time and automate expense and income tracking using the power of modern AI.
-
-Upload photos of receipts, invoices, or PDFs, and TaxHacker will automatically recognize and extract all the important data you need for accounting: product names, amounts, items, dates, merchants, taxes, and save it into a structured Excel-like database. You can even create custom fields with your own AI prompts to extract any specific information you need.
-
-The app features automatic currency conversion (including crypto!) based on historical exchange rates from the transaction date. With built-in filtering, multi-project support, import/export capabilities, and custom categories, TaxHacker simplifies reporting and makes tax filing a bit easier.
-
-&gt; 🎥 [Watch demo video](https://taxhacker.app/landing/video.mp4)
-
-![Dashboard](public/landing/main-page.webp)
-
-&gt; \[!IMPORTANT]
-&gt;
-&gt; This project is still in early development. Use at your own risk! **Star us** to get notified about new features and bugfixes ⭐️
-
-## ✨ Features
-
-### `1` Analyze photos and invoices with AI
-
-![Currency Conversion](public/landing/ai-scanner-big.webp)
-
-Snap a photo of any receipt or upload an invoice PDF, and TaxHacker will automatically recognize, extract, categorize, and store all the information in a structured database.
-
-- **Upload and organize your docs**: Store multiple documents in &quot;unsorted&quot; until you&#039;re ready to process them manually or with AI assistance
-- **AI data extraction**: Use AI to automatically pull key information like dates, amounts, vendors, and line items
-- **Auto-categorization**: Transactions are automatically sorted into relevant categories based on their content
-- **Item splitting**: Extract individual items from invoices and split them into separate transactions when needed
-- **Structured storage**: Everything gets saved in an organized database for easy filtering and retrieval
-- **Customizable AI providers**: Choose from OpenAI, Google Gemini, or Mistral (local LLM support coming soon)
-
-TaxHacker works with a wide variety of documents, including store receipts, restaurant bills, invoices, bank statements, letters, even handwritten receipts. It handles any language and any currency with ease.
-
-### `2` Multi-currency support with automatic conversion (even crypto!)
-
-![Currency Conversion](public/landing/multi-currency.webp)
-
-TaxHacker automatically detects currencies in your documents and converts them to your base currency using historical exchange rates.
-
-- **Foreight currency detection**: Automatically identify the currency used in any document
-- **Historical rates**: Get conversion rates from the actual transaction date
-- **All-world coverage**: Support for 170+ world currencies and 14 popular cryptocurrencies (BTC, ETH, LTC, DOT, and more)
-- **Flexible input**: Manual entry is always available when you need more control
-
-### `3` Organize your transactions using fully customizable categories, projects and fields
-
-![Transactions Table](public/landing/transactions-big.webp)
-
-Adapt TaxHacker to your unique needs with unlimited customization options. Create custom fields, projects, and categories that better suit your specific needs, idustry standards or country.
-
-- **Custom categories and projecst**: Create your own categories and projects to group your transactions in any convenient way
-- **Custom fields**: You can create unlimited number of custom fields to extraxt more information from your invoices (it&#039;s like creating extra columns in Excel)
-- **Full-text search**: Search through the actual content of recognized documents
-- **Advanced filtering**: Find exactly what you need with search and filter options
-- **AI-powered extraction**: Write your own prompts to extract any custom information from documents
-- **Bulk operations**: Process multiple documents or transactions at once
-
-### `4` Customize any LLM prompt. Even system ones
-
-![Custom Categories](public/landing/custom-llm.webp)
-
-Take full control of how TaxHacker&#039;s AI processes your documents. Write custom AI prompts for fields, categories, and projects, or modify the built-in ones to match your specific needs.
-
-- **Customizable system prompts**: Modify the general prompt template in settings to suit your business
-- **Field or project-specific prompts**: Create custom extraction rules for your industry-specific documents
-- **Full control**: Adjust field extraction priorities and naming conventions to match your workflow
-- **Industry optimization**: Fine-tune the AI to understand your specific type of business documents
-- **Full transparency**: Every aspect of the AI extraction process is under your control and can be changed right in settings
-
-TaxHacker is 100% adaptable and tunable to your unique requirements — whether you need to extract emails, addresses, project codes, or any other custom information from your documents.
-
-### `5` Flexible data filtering and export
-
-![Data Export](public/landing/export.webp)
-
-Once your documents are processed, easily view, filter, and export your complete transaction history exactly how you need it.
-
-- **Advanced filtering**: Filter by date ranges, categories, projects, amounts, and any custom fields
-- **Flexible exports**: Export filtered transactions to CSV with all attached documents included
-- **Tax-ready reports**: Generate comprehensive reports for your accountant or tax advisor
-- **Data portability**: Download complete data archives to migrate to other services—your data stays yours
-
-### `6` Self-hosted mode for data privacy
-
-![Self-hosting](docs/screenshots/exported_archive.png)
-
-Keep complete control over your financial data with local storage and self-hosting options. TaxHacker respects your privacy and gives you full ownership of your information.
-
-- **Home server ready**: Host on your own infrastructure for maximum privacy and control
-- **Docker native**: Simple setup with provided Docker containers and compose files
-- **Data ownership**: Your financial documents never leaves your control
-- **No vendor lock-in**: Export everything and migrate whenever you want
-- **Transparent operations**: Full access to source code and complete operational transparency
-
-## 🛳 Deployment and Self-hosting
-
-TaxHacker can be easily self-hosted on your own infrastructure for complete control over your data and application environment. We provide a [Docker image](./Dockerfile) and [Docker Compose](./docker-compose.yml) setup that makes deployment simple:
+            <p>Stars: 11,618</p>
+            <p>Forks: 1,079</p>
+            <p>Stars today: 2,867 stars today</p>
+            <h2>README</h2><pre># oh-my-codex (OMX)
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://yeachan-heo.github.io/oh-my-codex-website/omx-character-nobg.png&quot; alt=&quot;oh-my-codex character&quot; width=&quot;280&quot;&gt;
+  &lt;br&gt;
+  &lt;em&gt;Start Codex stronger, then let OMX add better prompts, workflows, and runtime help when the work grows.&lt;/em&gt;
+&lt;/p&gt;
+
+[![npm version](https://img.shields.io/npm/v/oh-my-codex)](https://www.npmjs.com/package/oh-my-codex)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js](https://img.shields.io/badge/node-%3E%3D20-brightgreen)](https://nodejs.org)
+[![Discord](https://img.shields.io/discord/1452487457085063218?color=5865F2&amp;logo=discord&amp;logoColor=white&amp;label=Discord)](https://discord.gg/PUwSMR9XNk)
+
+**Website:** https://yeachan-heo.github.io/oh-my-codex-website/  
+**Docs:** [Getting Started](./docs/getting-started.html) · [Agents](./docs/agents.html) · [Skills](./docs/skills.html) · [Integrations](./docs/integrations.html) · [Demo](./DEMO.md) · [OpenClaw guide](./docs/openclaw-integration.md)
+
+OMX is a workflow layer for [OpenAI Codex CLI](https://github.com/openai/codex).
+
+It keeps Codex as the execution engine and makes it easier to:
+- start a stronger Codex session by default
+- run one consistent workflow from clarification to completion
+- invoke the canonical skills with `$deep-interview`, `$ralplan`, `$team`, and `$ralph`
+- keep project guidance, plans, logs, and state in `.omx/`
+
+## Recommended default flow
+
+If you want the default OMX experience, start here:
 
 ```bash
-curl -O https://raw.githubusercontent.com/vas3k/TaxHacker/main/docker-compose.yml
-
-docker compose up
+npm install -g @openai/codex oh-my-codex
+omx setup
+omx --madmax --high
 ```
 
-The Docker Compose setup includes:
-
-- TaxHacker application container
-- PostgreSQL 17 database (or connect to your existing database)
-- Automatic database migrations on startup
-- Volume mounts for persistent data storage
-- Production-ready configuration
-
-New Docker images are automatically built and published with every release. You can use specific version tags (e.g., `v1.0.0`) or `latest` for the most recent version.
-
-For advanced setups, you can customize the Docker Compose configuration to fit your infrastructure. The default configuration uses the pre-built image from GitHub Container Registry, but you can also build locally using the provided [Dockerfile](./Dockerfile).
-
-Example custom configuration:
-
-```yaml
-services:
-  app:
-    image: ghcr.io/vas3k/taxhacker:latest
-    ports:
-      - &quot;7331:7331&quot;
-    environment:
-      - SELF_HOSTED_MODE=true
-      - UPLOAD_PATH=/app/data/uploads
-      - DATABASE_URL=postgresql://postgres:postgres@localhost:5432/taxhacker
-    volumes:
-      - ./data:/app/data
-    restart: unless-stopped
-```
-
-### Environment Variables
-
-Configure TaxHacker for your specific needs with these environment variables:
-
-| Variable | Required | Description | Example |
-|----------|----------|-------------|---------|
-| `UPLOAD_PATH` | Yes | Local directory for file uploads and storage | `./data/uploads` |
-| `DATABASE_URL` | Yes | PostgreSQL connection string | `postgresql://user@localhost:5432/taxhacker` |
-| `PORT` | No | Port to run the application on | `7331` (default) |
-| `BASE_URL` | No | Base URL for the application | `http://localhost:7331` |
-| `SELF_HOSTED_MODE` | No | Set to &quot;true&quot; for self-hosting: enables auto-login, custom API keys, and additional features | `true` |
-| `DISABLE_SIGNUP` | No | Disable new user registration on your instance | `false` |
-| `BETTER_AUTH_SECRET` | Yes | Secret key for authentication (minimum 16 characters) | `your-secure-random-key` |
-
-You can also configure LLM provider settings in the application or via environment variables:
-
-- **OpenAI**: `OPENAI_MODEL_NAME` and `OPENAI_API_KEY`
-- **Google Gemini**: `GOOGLE_MODEL_NAME` and `GOOGLE_API_KEY`
-- **Mistral**: `MISTRAL_MODEL_NAME` and `MISTRAL_API_KEY`
-
-## ⌨️ Local Development
-
-We use:
-
-- **Next.js 15+** for the frontend and API
-- **Prisma** for database models and migrations
-- **PostgreSQL** as the database (PostgreSQL 17+ recommended)
-- **Ghostscript and GraphicsMagick** for PDF processing (install on macOS via `brew install gs graphicsmagick`)
-
-Set up your local development environment:
-
-```bash
-# Clone the repository
-git clone https://github.com/vas3k/TaxHacker.git
-cd TaxHacker
-
-# Install dependencies
-npm install
-
-# Set up environment variables
-cp .env.example .env
-
-# Edit .env with your configuration
-# Make sure to set DATABASE_URL to your PostgreSQL connection string
-# Example: postgresql://user@localhost:5432/taxhacker
-
-# Initialize the database
-npx prisma generate &amp;&amp; npx prisma migrate dev
-
-# Start the development server
-npm run dev
-```
-
-Visit `http://localhost:7331` to see your local TaxHacker instance in action.
-
-For a production build, instead of `npm run dev` use the following commands:
-
-```bash
-# Build the application
-npm run build
-
-# Start the production server
-npm run start
-```
-
-## 🤝 Contributing
-
-We welcome contributions to TaxHacker! Here&#039;s how you can help make it even better:
-
-- **🐛 Bug Reports**: File detailed issues when you encounter problems
-- **💡 Feature Requests**: Share your ideas for new features and improvements
-- **🔧 Code Contributions**: Submit pull requests to improve the application
-- **📚 Documentation**: Help improve documentation and guides
-- **🎥 Content Creation**: Videos, tutorials, and reviews help us reach more users!
-
-All development happens on GitHub through issues and pull requests. We appreciate any help.
-
-[![PRs Welcome](https://img.shields.io/badge/🤯_PRs-welcome-ffcb47?labelColor=black&amp;style=for-the-badge)](https://github.com/vas3k/TaxHacker/pulls)
-
-## ❤️ Support the Project
-
-If TaxHacker has helped you save time or manage your finances better, consider supporting its continued development! Your donations help us maintain the project, add new features, and keep it free and open source. Every contribution helps ensure we can keep improving and maintaining this tool for the community.
-
-[![Thank the TaxHacker devs](https://img.shields.io/badge/❤️-donate%20to%20Taxhacker%20devs-f08080?labelColor=black&amp;style=for-the-badge)](https://vas3k.com/donate/)
-
-## 📄 License
-
-TaxHacker is licensed under the [MIT License](LICENSE).
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[vadimdemedes/ink]]></title>
-            <link>https://github.com/vadimdemedes/ink</link>
-            <guid>https://github.com/vadimdemedes/ink</guid>
-            <pubDate>Thu, 02 Apr 2026 00:09:22 GMT</pubDate>
-            <description><![CDATA[🌈 React for interactive command-line apps]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/vadimdemedes/ink">vadimdemedes/ink</a></h1>
-            <p>🌈 React for interactive command-line apps</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 36,696</p>
-            <p>Forks: 916</p>
-            <p>Stars today: 561 stars today</p>
-            <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[EveryInc/compound-engineering-plugin]]></title>
-            <link>https://github.com/EveryInc/compound-engineering-plugin</link>
-            <guid>https://github.com/EveryInc/compound-engineering-plugin</guid>
-            <pubDate>Thu, 02 Apr 2026 00:09:21 GMT</pubDate>
-            <description><![CDATA[Office Compound Engineering plugin for Claude Code, Codex, and more]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/EveryInc/compound-engineering-plugin">EveryInc/compound-engineering-plugin</a></h1>
-            <p>Office Compound Engineering plugin for Claude Code, Codex, and more</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 12,439</p>
-            <p>Forks: 955</p>
-            <p>Stars today: 161 stars today</p>
-            <h2>README</h2><pre># Compound Engineering
-
-[![Build Status](https://github.com/EveryInc/compound-engineering-plugin/actions/workflows/ci.yml/badge.svg)](https://github.com/EveryInc/compound-engineering-plugin/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/@every-env/compound-plugin)](https://www.npmjs.com/package/@every-env/compound-plugin)
-
-A plugin marketplace featuring the [Compound Engineering plugin](plugins/compound-engineering/README.md) — AI skills and agents that make each unit of engineering work easier than the last.
-
-## Philosophy
-
-**Each unit of engineering work should make subsequent units easier—not harder.**
-
-Traditional development accumulates technical debt. Every feature adds complexity. The codebase becomes harder to work with over time.
-
-Compound engineering inverts this. 80% is in planning and review, 20% is in execution:
-- Plan thoroughly before writing code
-- Review to catch issues and capture learnings
-- Codify knowledge so it&#039;s reusable
-- Keep quality high so future changes are easy
-
-**Learn more**
-
-- [Full component reference](plugins/compound-engineering/README.md) - all agents, commands, skills
-- [Compound engineering: how Every codes with agents](https://every.to/chain-of-thought/compound-engineering-how-every-codes-with-agents)
-- [The story behind compounding engineering](https://every.to/source-code/my-ai-had-already-fixed-the-code-before-i-saw-it)
-
-## Workflow
-
-```
-Brainstorm -&gt; Plan -&gt; Work -&gt; Review -&gt; Compound -&gt; Repeat
-    ^
-  Ideate (optional -- when you need ideas)
-```
-
-| Command | Purpose |
-|---------|---------|
-| `/ce:ideate` | Discover high-impact project improvements through divergent ideation and adversarial filtering |
-| `/ce:brainstorm` | Explore requirements and approaches before planning |
-| `/ce:plan` | Turn feature ideas into detailed implementation plans |
-| `/ce:work` | Execute plans with worktrees and task tracking |
-| `/ce:review` | Multi-agent code review before merging |
-| `/ce:compound` | Document learnings to make future work easier |
-
-`/ce:brainstorm` is the main entry point -- it refines ideas into a requirements plan through interactive Q&amp;A, and short-circuits automatically when ceremony isn&#039;t needed. `/ce:plan` takes either a requirements doc from brainstorming or a detailed idea and distills it into a technical plan that agents (or humans) can work from.
-
-`/ce:ideate` is used less often but can be a force multiplier -- it proactively surfaces strong improvement ideas based on your codebase, with optional steering from you.
-
-Each cycle compounds: brainstorms sharpen plans, plans inform future plans, reviews catch more issues, patterns get documented.
-
----
-
-## Install
-
-### Claude Code
-
-```bash
-/plugin marketplace add EveryInc/compound-engineering-plugin
-/plugin install compound-engineering
-```
-
-### Cursor
+Then work normally inside Codex:
 
 ```text
-/add-plugin compound-engineering
+$deep-interview &quot;clarify the authentication change&quot;
+$ralplan &quot;approve the auth plan and review tradeoffs&quot;
+$ralph &quot;carry the approved plan to completion&quot;
+$team 3:executor &quot;execute the approved plan in parallel&quot;
 ```
 
-### OpenCode, Codex, Droid, Pi, Gemini, Copilot, Kiro, Windsurf, OpenClaw &amp; Qwen (experimental)
+That is the main path.
+Start OMX strongly, clarify first when needed, approve the plan, then choose `$team` for coordinated parallel execution or `$ralph` for the persistent completion loop.
 
-This repo includes a Bun/TypeScript CLI that converts Claude Code plugins to OpenCode, Codex, Factory Droid, Pi, Gemini CLI, GitHub Copilot, Kiro CLI, Windsurf, OpenClaw, and Qwen Code.
+## What OMX is for
+
+Use OMX if you already like Codex and want a better day-to-day runtime around it:
+- a standard workflow built around `$deep-interview`, `$ralplan`, `$team`, and `$ralph`
+- specialist roles and supporting skills when the task needs them
+- project guidance through scoped `AGENTS.md`
+- durable state under `.omx/` for plans, logs, memory, and mode tracking
+
+If you want plain Codex with no extra workflow layer, you probably do not need OMX.
+
+## Quick start
+
+### Requirements
+
+- Node.js 20+
+- Codex CLI installed: `npm install -g @openai/codex`
+- Codex auth configured
+- `tmux` on macOS/Linux if you later want the durable team runtime
+- `psmux` on native Windows if you later want Windows team mode
+
+### A good first session
+
+Launch OMX the recommended way:
 
 ```bash
-# convert the compound-engineering plugin into OpenCode format
-bunx @every-env/compound-plugin install compound-engineering --to opencode
-
-# convert to Codex format
-bunx @every-env/compound-plugin install compound-engineering --to codex
-
-# convert to Factory Droid format
-bunx @every-env/compound-plugin install compound-engineering --to droid
-
-# convert to Pi format
-bunx @every-env/compound-plugin install compound-engineering --to pi
-
-# convert to Gemini CLI format
-bunx @every-env/compound-plugin install compound-engineering --to gemini
-
-# convert to GitHub Copilot format
-bunx @every-env/compound-plugin install compound-engineering --to copilot
-
-# convert to Kiro CLI format
-bunx @every-env/compound-plugin install compound-engineering --to kiro
-
-# convert to OpenClaw format
-bunx @every-env/compound-plugin install compound-engineering --to openclaw
-
-# convert to Windsurf format (global scope by default)
-bunx @every-env/compound-plugin install compound-engineering --to windsurf
-
-# convert to Windsurf workspace scope
-bunx @every-env/compound-plugin install compound-engineering --to windsurf --scope workspace
-
-# convert to Qwen Code format
-bunx @every-env/compound-plugin install compound-engineering --to qwen
-
-# auto-detect installed tools and install to all
-bunx @every-env/compound-plugin install compound-engineering --to all
+omx --madmax --high
 ```
 
-&lt;details&gt;
-&lt;summary&gt;Output format details per target&lt;/summary&gt;
-
-| Target | Output path | Notes |
-|--------|------------|-------|
-| `opencode` | `~/.config/opencode/` | Commands as `.md` files; `opencode.json` MCP config deep-merged; backups made before overwriting |
-| `codex` | `~/.codex/prompts` + `~/.codex/skills` | Claude commands become prompt + skill pairs; canonical `ce:*` workflow skills also get prompt wrappers; deprecated `workflows:*` aliases are omitted |
-| `droid` | `~/.factory/` | Tool names mapped (`Bash`-&gt;`Execute`, `Write`-&gt;`Create`); namespace prefixes stripped |
-| `pi` | `~/.pi/agent/` | Prompts, skills, extensions, and `mcporter.json` for MCPorter interoperability |
-| `gemini` | `.gemini/` | Skills from agents; commands as `.toml`; namespaced commands become directories (`workflows:plan` -&gt; `commands/workflows/plan.toml`) |
-| `copilot` | `.github/` | Agents as `.agent.md` with Copilot frontmatter; MCP env vars prefixed with `COPILOT_MCP_` |
-| `kiro` | `.kiro/` | Agents as JSON configs + prompt `.md` files; only stdio MCP servers supported |
-| `openclaw` | `~/.openclaw/extensions/&lt;plugin&gt;/` | Entry-point TypeScript skill file; `openclaw-extension.json` for MCP servers |
-| `windsurf` | `~/.codeium/windsurf/` (global) or `.windsurf/` (workspace) | Agents become skills; commands become flat workflows; `mcp_config.json` merged |
-| `qwen` | `~/.qwen/extensions/&lt;plugin&gt;/` | Agents as `.yaml`; env vars with placeholders extracted as settings; colon separator for nested commands |
-
-All provider targets are experimental and may change as the formats evolve.
-
-&lt;/details&gt;
-
----
-
-## Local Development
-
-### From your local checkout
-
-For active development -- edits to the plugin source are reflected immediately.
-
-**Claude Code** -- add a shell alias so your local copy loads alongside your normal plugins:
-
-```bash
-alias cce=&#039;claude --plugin-dir ~/code/compound-engineering-plugin/plugins/compound-engineering&#039;
-```
-
-Run `cce` instead of `claude` to test your changes. Your production install stays untouched.
-
-**Codex and other targets** -- run the local CLI against your checkout:
-
-```bash
-# from the repo root
-bun run src/index.ts install ./plugins/compound-engineering --to codex
-
-# same pattern for other targets
-bun run src/index.ts install ./plugins/compound-engineering --to opencode
-```
-
-### From a pushed branch
-
-For testing someone else&#039;s branch or your own branch from a worktree, without switching checkouts. Uses `--branch` to clone the branch to a deterministic cache directory.
-
-&gt; **Unpushed local branches**: If the branch exists only in a local worktree and hasn&#039;t been pushed, point `--plugin-dir` directly at the worktree path instead (e.g. `claude --plugin-dir /path/to/worktree/plugins/compound-engineering`).
-
-**Claude Code** -- use `plugin-path` to get the cached clone path:
-
-```bash
-# from the repo root
-bun run src/index.ts plugin-path compound-engineering --branch feat/new-agents
-# Output:
-#   claude --plugin-dir ~/.cache/compound-engineering/branches/compound-engineering-feat~new-agents/plugins/compound-engineering
-```
-
-The cache path is deterministic (same branch always maps to the same directory). Re-running updates the checkout to the latest commit on that branch.
-
-**Codex, OpenCode, and other targets** -- pass `--branch` to `install`:
-
-```bash
-# from the repo root
-bun run src/index.ts install compound-engineering --to codex --branch feat/new-agents
-
-# works with any target
-bun run src/index.ts install compound-engineering --to opencode --branch feat/new-agents
-
-# combine with --also for multiple targets
-bun run src/index.ts install compound-engineering --to codex --also opencode --branch feat/new-agents
-```
-
-Both features use the `COMPOUND_PLUGIN_GITHUB_SOURCE` env var to resolve the repository, defaulting to `https://github.com/EveryInc/compound-engineering-plugin`.
-
-### Shell aliases
-
-Add to `~/.zshrc` or `~/.bashrc`. All aliases use the local CLI so there&#039;s no dependency on npm publishing. `plugin-path` prints just the path to stdout (progress goes to stderr), so it composes with `$()`.
-
-```bash
-CE_REPO=~/code/compound-engineering-plugin
-
-ce-cli() { bun run &quot;$CE_REPO/src/index.ts&quot; &quot;$@&quot;; }
-
-# --- Local checkout (active development) ---
-alias cce=&#039;claude --plugin-dir $CE_REPO/plugins/compound-engineering&#039;
-
-codex-ce() {
-  ce-cli install &quot;$CE_REPO/plugins/compound-engineering&quot; --to codex &quot;$@&quot;
-}
-
-# --- Pushed branch (testing PRs, worktree workflows) ---
-ccb() {
-  claude --plugin-dir &quot;$(ce-cli plugin-path compound-engineering --branch &quot;$1&quot;)&quot; &quot;${@:2}&quot;
-}
-
-codex-ceb() {
-  ce-cli install compound-engineering --to codex --branch &quot;$1&quot; &quot;${@:2}&quot;
-}
-```
-
-Usage:
-
-```bash
-cce                              # local checkout with Claude Code
-codex-ce                         # install local checkout to Codex
-ccb feat/new-agents              # test a pushed branch with Claude Code
-ccb feat/new-agents --verbose    # extra flags forwarded to claude
-codex-ceb feat/new-agents        # install a pushed branch to Codex
-```
-
----
-
-## Sync Personal Config
-
-Sync your personal Claude Code config (`~/.claude/`) to other AI coding tools. Omit `--target` to sync to all detected supported tools automatically:
-
-```bash
-# Sync to all detected tools (default)
-bunx @every-env/compound-plugin sync
-
-# Sync skills and MCP servers to OpenCode
-bunx @every-env/compound-plugin sync --target opencode
-
-# Sync to Codex
-bunx @every-env/compound-plugin sync --target codex
-
-# Sync to Pi
-bunx @every-env/compound-plugin sync --target pi
-
-# Sync to Droid
-bunx @every-env/compound-plugin sync --target droid
-
-# Sync to GitHub Copilot (skills + MCP servers)
-bunx @every-env/compound-plugin sync --target copilot
-
-# Sync to Gemini (skills + MCP servers)
-bunx @every-env/compound-plugin sync --target gemini
-
-# Sync to Windsurf
-bunx @every-env/compound-plugin sync --target windsurf
-
-# Sync to Kiro
-bunx @every-env/compound-plugin sync --target kiro
-
-# Sync to Qwen
-bunx @every-env/compound-plugin sync --target qwen
-
-# Sync to OpenClaw (skills only; MCP is validation-gated)
-bunx @every-env/compound-plugin sync --target openclaw
-
-# Sync to all detected tools
-bunx @every-env/compound-plugin sync --target all
-```
-
-This syncs:
-- Personal skills from `~/.claude/skills/` (as symlinks)
-- Personal slash commands from `~/.claude/commands/` (as provider-native prompts, workflows, or converted skills where supported)
-- MCP servers from `~/.claude/settings.json`
-
-Skills are symlinked (not copied) so changes in Claude Code are reflected immediately.
-
-Supported sync targets:
-- `opencode`
-- `codex`
-- `pi`
-- `droid`
-- `copilot`
-- `gemini`
-- `windsurf`
-- `kiro`
-- `qwen`
-- `openclaw`
-
-Notes:
-- Codex sync preserves non-managed `config.toml` content and now includes remote MCP servers.
-- Command sync reuses each provider&#039;s existing Claude command conversion, so some targets receive prompts or workflows while others receive converted skills.
-- Copilot sync writes personal skills to `~/.copilot/skills/` and MCP config to `~/.copilot/mcp-config.json`.
-- Gemini sync writes MCP config to `~/.gemini/` and avoids mirroring skills that Gemini already discovers from `~/.agents/skills`, which prevents duplicate-skill warnings.
-- Droid, Windsurf, Kiro, and Qwen sync merge MCP servers into the provider&#039;s documented user config.
-- OpenClaw currently syncs skills only. Personal command sync is skipped because this repo does not yet have a documented user-level OpenClaw command surface, and MCP sync is skipped because the current official OpenClaw docs do not clearly document an MCP server config contract.
-
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[dreamhunter2333/cloudflare_temp_email]]></title>
-            <link>https://github.com/dreamhunter2333/cloudflare_temp_email</link>
-            <guid>https://github.com/dreamhunter2333/cloudflare_temp_email</guid>
-            <pubDate>Thu, 02 Apr 2026 00:09:20 GMT</pubDate>
-            <description><![CDATA[CloudFlare free temp domain email 免费收发 临时域名邮箱 支持附件 IMAP SMTP TelegramBot]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/dreamhunter2333/cloudflare_temp_email">dreamhunter2333/cloudflare_temp_email</a></h1>
-            <p>CloudFlare free temp domain email 免费收发 临时域名邮箱 支持附件 IMAP SMTP TelegramBot</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 7,777</p>
-            <p>Forks: 4,421</p>
-            <p>Stars today: 109 stars today</p>
-            <h2>README</h2><pre>&lt;!-- markdownlint-disable-file MD033 MD045 --&gt;
-# Cloudflare 临时邮箱 - 免费搭建临时邮件服务
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://temp-mail-docs.awsl.uk&quot; target=&quot;_blank&quot;&gt;
-    &lt;img alt=&quot;docs&quot; src=&quot;https://img.shields.io/badge/docs-grey?logo=vitepress&quot;&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://github.com/dreamhunter2333/cloudflare_temp_email/releases/latest&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/github/v/release/dreamhunter2333/cloudflare_temp_email&quot;&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://github.com/dreamhunter2333/cloudflare_temp_email/blob/main/LICENSE&quot; target=&quot;_blank&quot;&gt;
-    &lt;img alt=&quot;MIT License&quot; src=&quot;https://img.shields.io/github/license/dreamhunter2333/cloudflare_temp_email&quot;&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://github.com/dreamhunter2333/cloudflare_temp_email/graphs/contributors&quot; target=&quot;_blank&quot;&gt;
-   &lt;img alt=&quot;GitHub contributors&quot; src=&quot;https://img.shields.io/github/contributors/dreamhunter2333/cloudflare_temp_email&quot;&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;&quot;&gt;
-    &lt;img alt=&quot;GitHub top language&quot; src=&quot;https://img.shields.io/github/languages/top/dreamhunter2333/cloudflare_temp_email&quot;&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/github/last-commit/dreamhunter2333/cloudflare_temp_email&quot;&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://hellogithub.com/repository/2ccc64bb1ba346b480625f584aa19eb1&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;https://abroad.hellogithub.com/v1/widgets/recommend.svg?rid=2ccc64bb1ba346b480625f584aa19eb1&amp;claim_uid=FxNypXK7UQ9OECT&quot; alt=&quot;Featured｜HelloGitHub&quot; height=&quot;30&quot;/&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;README.md&quot;&gt;中文文档&lt;/a&gt; |
-  &lt;a href=&quot;README_EN.md&quot;&gt;English Document&lt;/a&gt;
-&lt;/p&gt;
-
-&gt; 本项目仅供学习和个人用途，请勿将其用于任何违法行为，否则后果自负。
-
-**一个功能完整的临时邮箱服务！**
-
-- **完全免费** - 基于 Cloudflare 免费服务构建，零成本运行
-- **高性能** - Rust WASM 邮件解析，响应速度极快
-- **现代化界面** - 响应式设计，支持多语言，操作简便
-- **地址密码** - 支持为邮箱地址设置独立密码，增强安全性 (通过 `ENABLE_ADDRESS_PASSWORD` 启用)
-
-## 部署文档 - 快速开始
-
-[部署文档](https://temp-mail-docs.awsl.uk) | [Github Action 部署文档](https://temp-mail-docs.awsl.uk/zh/guide/actions/github-action.html)
-
-&lt;a href=&quot;https://temp-mail-docs.awsl.uk/zh/guide/actions/github-action.html&quot;&gt;
-  &lt;img src=&quot;https://deploy.workers.cloudflare.com/button&quot; alt=&quot;Deploy to Cloudflare Workers&quot; height=&quot;32&quot;&gt;
-&lt;/a&gt;
-
-## 更新日志
-
-查看 [CHANGELOG](CHANGELOG.md) 了解最新更新内容。
-
-## 在线体验
-
-立即体验 → [https://mail.awsl.uk/](https://mail.awsl.uk/)
-
-&lt;details&gt;
-&lt;summary&gt;服务状态监控（点击收缩/展开）&lt;/summary&gt;
-
-|                                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Backend](https://temp-email-api.awsl.uk/) | [![Deploy Backend Production](https://github.com/dreamhunter2333/cloudflare_temp_email/actions/workflows/backend_deploy.yaml/badge.svg)](https://github.com/dreamhunter2333/cloudflare_temp_email/actions/workflows/backend_deploy.yaml) ![](https://uptime.aks.awsl.icu/api/badge/10/status) ![](https://uptime.aks.awsl.icu/api/badge/10/uptime) ![](https://uptime.aks.awsl.icu/api/badge/10/ping) ![](https://uptime.aks.awsl.icu/api/badge/10/avg-response) ![](https://uptime.aks.awsl.icu/api/badge/10/cert-exp) ![](https://uptime.aks.awsl.icu/api/badge/10/response) |
-| [Frontend](https://mail.awsl.uk/)          | [![Deploy Frontend](https://github.com/dreamhunter2333/cloudflare_temp_email/actions/workflows/frontend_deploy.yaml/badge.svg)](https://github.com/dreamhunter2333/cloudflare_temp_email/actions/workflows/frontend_deploy.yaml) ![](https://uptime.aks.awsl.icu/api/badge/12/status) ![](https://uptime.aks.awsl.icu/api/badge/12/uptime) ![](https://uptime.aks.awsl.icu/api/badge/12/ping) ![](https://uptime.aks.awsl.icu/api/badge/12/avg-response) ![](https://uptime.aks.awsl.icu/api/badge/12/cert-exp) ![](https://uptime.aks.awsl.icu/api/badge/12/response)         |
-
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;Star History（点击收缩/展开）&lt;/summary&gt;
-
-&lt;picture&gt;
-  &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/svg?repos=dreamhunter2333/cloudflare_temp_email&amp;type=Date&amp;theme=dark&quot; /&gt;
-  &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/svg?repos=dreamhunter2333/cloudflare_temp_email&amp;type=Date&quot; /&gt;
-  &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/svg?repos=dreamhunter2333/cloudflare_temp_email&amp;type=Date&quot; /&gt;
-&lt;/picture&gt;
-
-&lt;/details&gt;
-
-&lt;details open&gt;
-&lt;summary&gt;目录（点击收缩/展开）&lt;/summary&gt;
-
-- [Cloudflare 临时邮箱 - 免费搭建临时邮件服务](#cloudflare-临时邮箱---免费搭建临时邮件服务)
-  - [部署文档 - 快速开始](#部署文档---快速开始)
-  - [更新日志](#更新日志)
-  - [在线体验](#在线体验)
-  - [核心功能](#核心功能)
-    - [邮件处理](#邮件处理)
-    - [用户管理](#用户管理)
-    - [管理功能](#管理功能)
-    - [多语言与界面](#多语言与界面)
-    - [集成与扩展](#集成与扩展)
-  - [技术架构](#技术架构)
-    - [系统架构](#系统架构)
-    - [技术栈](#技术栈)
-    - [主要组件](#主要组件)
-  - [加入社区](#加入社区)
-
-&lt;/details&gt;
-
-## 核心功能
-
-&lt;details open&gt;
-&lt;summary&gt;核心功能详情（点击收缩/展开）&lt;/summary&gt;
-
-### 邮件处理
-
-- [x] 使用 `rust wasm` 解析邮件，解析速度快，几乎所有邮件都能解析，node 的解析模块解析邮件失败的邮件，rust wasm 也能解析成功
-- [x] **AI 邮件识别** - 使用 Cloudflare Workers AI 自动提取邮件中的验证码、认证链接、服务链接等重要信息
-- [x] 支持发送邮件，支持 `DKIM` 验证
-- [x] 支持 `SMTP` 和 `Resend` 等多种发送方式 
-- [x] 增加查看 `附件` 功能，支持附件图片显示
-- [x] 支持 S3 附件存储和删除功能
-- [x] 垃圾邮件检测和黑白名单配置
-- [x] 邮件转发功能，支持全局转发地址
-
-### 用户管理
-
-- [x] 使用 `凭证` 重新登录之前的邮箱
-- [x] 添加完整的用户注册登录功能，可绑定邮箱地址，绑定后可自动获取邮箱JWT凭证切换不同邮箱
-- [x] 支持 `OAuth2` 第三方登录（Github、Authentik 等）
-- [x] 支持 `Passkey` 无密码登录
-- [x] 用户角色管理，支持多角色域名和前缀配置
-- [x] 用户收件箱查看，支持地址和关键词过滤
-
-### 管理功能
-
-- [x] 完整的 admin 控制台
-- [x] `admin` 后台创建无前缀邮箱
-- [x] admin 用户管理页面，增加用户地址查看功能
-- [x] 定时清理功能，支持多种清理策略
-- [x] 获取自定义名字的邮箱，`admin` 可配置黑名单
-- [x] 增加访问密码，可作为私人站点
-
-### 多语言与界面
-
-- [x] 前后台均支持多语言
-- [x] 现代化 UI 设计，支持响应式布局
-- [x] 支持 Google Ads 集成
-- [x] 使用 shadow DOM 防止样式污染
-- [x] 支持 URL JWT 参数自动登录
-
-### 集成与扩展
-
-- [x] 完整的 `Telegram Bot` 支持，以及 `Telegram` 推送，Telegram Bot 小程序
-- [x] 添加 `SMTP proxy server`，支持 `SMTP` 发送邮件，`IMAP` 查看邮件
-- [x] Webhook 支持，消息推送集成
-- [x] 支持 `CF Turnstile` 人机验证
-- [x] 限流配置，防止滥用
-
-&lt;/details&gt;
-
-## 技术架构
-
-&lt;details&gt;
-&lt;summary&gt;技术架构详情（点击收缩/展开）&lt;/summary&gt;
-
-### 系统架构
-
-- **数据库**: Cloudflare D1 作为主数据库
-- **前端部署**: 使用 Cloudflare Pages 部署前端
-- **后端部署**: 使用 Cloudflare Workers 部署后端
-- **邮件转发**: 使用 Cloudflare Email Routing
-
-### 技术栈
-
-- **前端**: Vue 3 + Vite + TypeScript
-- **后端**: TypeScript + Cloudflare Workers
-- **邮件解析**: Rust WASM (mail-parser-wasm)
-- **数据库**: Cloudflare D1 (SQLite)
-- **存储**: Cloudflare KV + R2 (可选 S3)
-- **代理服务**: Python SMTP/IMAP Proxy Server
-
-### 主要组件
-
-- **Worker**: 核心后端服务
-- **Frontend**: Vue 3 用户界面
-- **Mail Parser WASM**: Rust 邮件解析模块
-- **SMTP Proxy Server**: Python 邮件代理服务
-- **Pages Functions**: Cloudflare Pages 中间件
-- **Documentation**: VitePress 文档站点
-
-&lt;/details&gt;
-
-### 提醒
-
-- 在Resend添加域名记录时，如果您域名解析服务商正在托管您的3级域名a.b.com，请删除Resend生成的默认name中二级域名前缀b，否则将会添加a.b.b.com，导致验证失败。添加记录后，可通过
-```bash
-nslookup -qt=&quot;mx&quot; a.b.com 1.1.1.1
-```
-进行验证。 
-
-## 加入社区
-
-- [Telegram](https://t.me/cloudflare_temp_email)
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[shareAI-lab/Kode-Agent]]></title>
-            <link>https://github.com/shareAI-lab/Kode-Agent</link>
-            <guid>https://github.com/shareAI-lab/Kode-Agent</guid>
-            <pubDate>Thu, 02 Apr 2026 00:09:19 GMT</pubDate>
-            <description><![CDATA[Kode Agent — Design for post-human workflows. One unit agent for every human & computer task.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/shareAI-lab/Kode-Agent">shareAI-lab/Kode-Agent</a></h1>
-            <p>Kode Agent — Design for post-human workflows. One unit agent for every human & computer task.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 4,841</p>
-            <p>Forks: 730</p>
-            <p>Stars today: 23 stars today</p>
-            <h2>README</h2><pre># Kode - AI Coding
-&lt;img width=&quot;991&quot; height=&quot;479&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/c1751e92-94dc-4e4a-9558-8cd2d058c1a1&quot; /&gt;  &lt;br&gt; 
-[![npm version](https://badge.fury.io/js/@shareai-lab%2Fkode.svg)](https://www.npmjs.com/package/@shareai-lab/kode)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![AGENTS.md](https://img.shields.io/badge/AGENTS.md-Compatible-brightgreen)](https://agents.md)
-
-[中文文档](README.zh-CN.md) | [Contributing](CONTRIBUTING.md) | [Documentation](docs/README.md)
-
-&lt;img width=&quot;90%&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/fdce7017-8095-429d-b74e-07f43a6919e1&quot; /&gt;
-
-&lt;img width=&quot;90%&quot; alt=&quot;2c0ad8540f2872d197c7b17ae23d74f5&quot; src=&quot;https://github.com/user-attachments/assets/f220cc27-084d-468e-a3f4-d5bc44d84fac&quot; /&gt;
-
-&lt;img width=&quot;90%&quot; alt=&quot;f266d316d90ddd0db5a3d640c1126930&quot; src=&quot;https://github.com/user-attachments/assets/90ec7399-1349-4607-b689-96613b3dc3e2&quot; /&gt;
-
-
-&lt;img width=&quot;90%&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/b30696ce-5ab1-40a0-b741-c7ef3945dba0&quot; /&gt;
-
-
-## 📢 Update Log
-
-**2025-12-22**: Native-first distribution (Windows OOTB). Kode prefers a cached native binary and falls back to the Node.js runtime when needed. See `docs/binary-distribution.md`.
-
-
-## 🤝 AGENTS.md Standard Support
-
-Kode supports the [AGENTS.md standard](https://agents.md): a simple, open format for guiding coding agents, used by 60k+ open-source projects.
-
-### Full Compatibility with Multiple Standards
-
-- ✅ **AGENTS.md** - Native support for the OpenAI-initiated standard format
-- ✅ **Legacy `.claude` compatibility** - Reads `.claude` directories and `CLAUDE.md` when present (see `docs/compatibility.md`)
-- ✅ **Subagent System** - Advanced agent delegation and task orchestration
-- ✅ **Cross-platform** - Works with 20+ AI models and providers
-
-Use `# Your documentation request` to generate and maintain your AGENTS.md file automatically, while preserving compatibility with existing `.claude` workflows.
-
-### Instruction Discovery (Codex-compatible)
-
-- Kode reads project instructions by walking from the Git repo root → current working directory.
-- In each directory, it prefers `AGENTS.override.md` over `AGENTS.md` (at most one file per directory).
-- Discovered files are concatenated root → leaf (combined size capped at 32 KiB by default; override with `KODE_PROJECT_DOC_MAX_BYTES`).
-- If `CLAUDE.md` exists in the current directory, Kode also reads it as a legacy instruction file.
-
-## Overview
-
-Kode is a powerful AI assistant that lives in your terminal. It can understand your codebase, edit files, run commands, and handle entire workflows for you.
-
-&gt; **⚠️ Security Notice**: Kode runs in YOLO mode by default (equivalent to the `--dangerously-skip-permissions` flag), bypassing all permission checks for maximum productivity. YOLO mode is recommended only for trusted, secure environments when working on non-critical projects. If you&#039;re working with important files or using models of questionable capability, we strongly recommend using `kode --safe` to enable permission checks and manual approval for all operations.
-&gt; 
-&gt; **📊 Model Performance**: For optimal performance, we recommend using newer, more capable models designed for autonomous task completion. Avoid older Q&amp;A-focused models like GPT-4o or Gemini 2.5 Pro, which are optimized for answering questions rather than sustained independent task execution. Choose models specifically trained for agentic workflows and extended reasoning capabilities.
-
-## Network &amp; Privacy
-
-- Kode does not send product telemetry/analytics by default.
-- Network requests happen only when you explicitly use networked features:
-  - Model provider requests (Anthropic/OpenAI-compatible endpoints you configure)
-  - Web tools (`WebFetch`, `WebSearch`)
-  - Plugin marketplace downloads (GitHub/URL sources) and OAuth flows (when used)
-  - Optional update checks (opt-in via `autoUpdaterStatus: enabled`)
-
-&lt;img width=&quot;600&quot; height=&quot;577&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/8b46a39d-1ab6-4669-9391-14ccc6c5234c&quot; /&gt;
-
-## Features
-
-### Core Capabilities
-- 🤖 **AI-Powered Assistance** - Uses advanced AI models to understand and respond to your requests
-- 🔄 **Multi-Model Collaboration** - Flexibly switch and combine multiple AI models to leverage their unique strengths
-- 🦜 **Expert Model Consultation** - Use `@ask-model-name` to consult specific AI models for specialized analysis
-- 👤 **Intelligent Agent System** - Use `@run-agent-name` to delegate tasks to specialized subagents
-- 📝 **Code Editing** - Directly edit files with intelligent suggestions and improvements
-- 🔍 **Codebase Understanding** - Analyzes your project structure and code relationships
-- 🚀 **Command Execution** - Run shell commands and see results in real-time
-- 🛠️ **Workflow Automation** - Handle complex development tasks with simple prompts
-
-### Authoring Comfort
-- `Option+G` (Alt+G) opens your message in your preferred editor (respects `$EDITOR`/`$VISUAL`; falls back to code/nano/vim/notepad) and returns the text to the prompt when you close it.
-- `Option+Enter` inserts a newline inside the prompt without sending; plain Enter submits. `Option+M` cycles the active model.
-
-### 🎯 Advanced Intelligent Completion System
-Our state-of-the-art completion system provides unparalleled coding assistance:
-
-#### Smart Fuzzy Matching
-- **Hyphen-Aware Matching** - Type `dao` to match `run-agent-dao-qi-harmony-designer`
-- **Abbreviation Support** - `dq` matches `dao-qi`, `nde` matches `node`
-- **Numeric Suffix Handling** - `py3` intelligently matches `python3`
-- **Multi-Algorithm Fusion** - Combines 7+ matching algorithms for best results
-
-#### Intelligent Context Detection
-- **No @ Required** - Type `gp5` directly to match `@ask-gpt-5`
-- **Auto-Prefix Addition** - Tab/Enter automatically adds `@` for agents and models
-- **Mixed Completion** - Seamlessly switch between commands, files, agents, and models
-- **Smart Prioritization** - Results ranked by relevance and usage frequency
-
-#### Unix Command Optimization
-- **500+ Common Commands** - Curated database of frequently used Unix/Linux commands
-- **System Intersection** - Only shows commands that actually exist on your system
-- **Priority Scoring** - Common commands appear first (git, npm, docker, etc.)
-- **Real-time Loading** - Dynamic command discovery from system PATH
-
-### User Experience
-- 🎨 **Interactive UI** - Beautiful terminal interface with syntax highlighting
-- 🔌 **Tool System** - Extensible architecture with specialized tools for different tasks
-- 💾 **Context Management** - Smart context handling to maintain conversation continuity
-- 📋 **AGENTS.md Integration** - Use `# documentation requests` to auto-generate and maintain project documentation
-
-## Installation
-
-```bash
-npm install -g @shareai-lab/kode
-```
-
-&gt; **🇨🇳 For users in China**: If you encounter network issues, use a mirror registry:
-&gt; ```bash
-&gt; npm install -g @shareai-lab/kode --registry=https://registry.npmmirror.com
-&gt; ```
-
-Dev channel (latest features):
-
-```bash
-npm install -g @shareai-lab/kode@dev
-```
-
-After installation, you can use any of these commands:
-- `kode` - Primary command
-- `kwa` - Kode With Agent (alternative)
-- `kd` - Ultra-short alias
-
-### Native binaries (Windows OOTB)
-
-- No WSL/Git Bash required.
-- On `postinstall`, Kode will best-effort download a native binary from GitHub Releases into `${KODE_BIN_DIR:-~/.kode/bin}/&lt;version&gt;/&lt;platform&gt;-&lt;arch&gt;/kode(.exe)`.
-- The wrapper (`cli.js`) prefers the native binary and falls back to the Node.js runtime (`node dist/index.js`) when needed.
-
-Overrides:
-- Mirror downloads: `KODE_BINARY_BASE_URL`
-- Disable download: `KODE_SKIP_BINARY_DOWNLOAD=1`
-- Cache directory: `KODE_BIN_DIR`
-
-See `docs/binary-distribution.md`.
-
-### Configuration / API keys
-
-- Global config (models, pointers, theme, etc): `~/.kode.json` (or `&lt;KODE_CONFIG_DIR&gt;/config.json` when `KODE_CONFIG_DIR`/`CLAUDE_CONFIG_DIR` is set).
-- Project/local settings (output style, etc): `./.kode/settings.json` and `./.kode/settings.local.json` (legacy `.claude` is supported for some features).
-- Configure models via `/model` (UI) or `kode models import/export` (YAML). Details: `docs/develop/configuration.md`.
-
-## Usage
-
-### Interactive Mode
-Start an interactive session:
-```bash
-kode
-# or
-kwa
-# or
-kd
-```
-
-### Non-Interactive Mode
-Get a quick response:
-```bash
-kode -p &quot;explain this function&quot; path/to/file.js
-# or
-kwa -p &quot;explain this function&quot; path/to/file.js
-```
-
-### ACP (Agent Client Protocol)
-
-Run Kode as an ACP agent server (stdio JSON-RPC), for clients like Toad/Zed:
-
-```bash
-kode-acp
-# or
-kode --acp
-```
-
-Toad example:
-
-```bash
-toad acp &quot;kode-acp&quot;
-```
-
-More: `docs/acp.md`.
-
-### Using the @ Mention System
-
-Kode supports a powerful @ mention system for intelligent completions:
-
-#### 🦜 Expert Model Consultation
-```bash
-# Consult specific AI models for expert opinions
-@ask-claude-sonnet-4 How should I optimize this React component for performance?
-@ask-gpt-5 What are the security implications of this authentication method?
-@ask-o1-preview Analyze the complexity of this algorithm
-```
-
-#### 👤 Specialized Agent Delegation  
-```bash
-# Delegate tasks to specialized subagents
-@run-agent-simplicity-auditor Review this code for over-engineering
-@run-agent-architect Design a microservices architecture for this system
-@run-agent-test-writer Create comprehensive tests for these modules
-```
-
-#### 📁 Smart File References
-```bash
-# Reference files and directories with auto-completion
-@packages/core/src/query/index.ts
-@docs/README.md
-@.env.example
-```
-
-The @ mention system provides intelligent completions as you type, showing available models, agents, and files.
-
-### MCP Servers (Extensions)
-
-Kode can connect to MCP servers to extend tools and context.
-
-- Config files: `.mcp.json` (recommended) or `.mcprc` in your project root. See `docs/mcp.md`.
-- CLI:
-
-```bash
-kode mcp add
-kode mcp list
-kode mcp get &lt;name&gt;
-kode mcp remove &lt;name&gt;
-```
-
-Example `.mcprc`:
-
-```json
-{
-  &quot;my-sse-server&quot;: { &quot;type&quot;: &quot;sse&quot;, &quot;url&quot;: &quot;http://127.0.0.1:3333/sse&quot; }
-}
-```
-
-### Permissions &amp; Approvals
-
-- Default mode skips most prompts for speed.
-- Safe mode: `kode --safe` requires approval for Bash commands and file writes/edits.
-- Plan mode: the assistant may ask to enter plan mode to draft a plan file; while in plan mode, only read-only/planning tools (and the plan file) are allowed until you approve exiting plan mode.
-
-### Paste &amp; Images
-
-- Multi-line/large paste is inserted as a placeholder and expanded on submit.
-- Pasting multiple existing file paths inserts `@path` mentions automatically (quoted when needed).
-- Image paste (macOS): press `Ctrl+V` to attach clipboard images; you can paste multiple images before sending.
-
-### System Sandbox (Linux)
-
-- In safe mode (or with `KODE_SYSTEM_SANDBOX=1`), agent-triggered Bash tool calls try to run inside a `bwrap` sandbox when available.
-- Network is disabled by default; set `KODE_SYSTEM_SANDBOX_NETWORK=inherit` to allow network.
-- Set `KODE_SYSTEM_SANDBOX=required` to fail closed if sandbox cannot be started.
-- See `docs/system-sandbox.md` for details and platform notes.
-
-### Troubleshooting
-
-- Models: use `/model`, or `kode models import kode-models.yaml`, and ensure required API key env vars exist.
-- Windows: if the native binary download is blocked/offline, set `KODE_BINARY_BASE_URL` (mirror) or `KODE_SKIP_BINARY_DOWNLOAD=1` (skip download); the wrapper will fall back to the Node.js runtime (`dist/index.js`).
-- MCP: use `kode mcp list` to check server status; tune `MCP_CONNECTION_TIMEOUT_MS`, `MCP_SERVER_CONNECTION_BATCH_SIZE`, and `MCP_TOOL_TIMEOUT` if servers are slow.
-- Sandbox: install `bwrap` (bubblewrap) on Linux, or set `KODE_SYSTEM_SANDBOX=0` to disable.
-
-### AGENTS.md Documentation Mode
-
-Use the `#` prefix to generate and maintain your AGENTS.md documentation:
-
-```bash
-# Generate setup instructions
-# How do I set up the development environment?
-
-# Create testing documentation  
-# What are the testing procedures for this project?
-
-# Document deployment process
-# Explain the deployment pipeline and requirements
-```
-
-This mode automatically formats responses as structured documentation and appends them to your AGENTS.md file.
-
-### Docker Usage
-
-#### Alternative: Build from local source
-
-```bash
-# Clone the repository
-git clone https://github.com/shareAI-lab/Kode.git
-cd Kode
-
-# Build the image locally
-docker build --no-cache -t kode .
-
-# Run in your project directory
-cd your-project
-docker run -it --rm \
-  -v $(pwd):/workspace \
-  -v ~/.kode:/root/.kode \
-  -v ~/.kode.json:/root/.kode.json \
-  -w /workspace \
-  kode
-```
-
-#### Docker Configuration Details
-
-The Docker setup includes:
-
-- **Volume Mounts**:
-  - `$(pwd):/workspace` - Mounts your current project directory
-  - `~/.kode:/root/.kode` - Preserves your kode configuration directory between runs
-  - `~/.kode.json:/root/.kode.json` - Preserves your kode global configuration file between runs
-
-- **Working Directory**: Set to `/workspace` inside the container
-
-- **Interactive Mode**: Uses `-it` flags for interactive terminal access
-
-- **Cleanup**: `--rm` flag removes the container after exit
-
-**Note**: Kode uses both `~/.kode` directory for additional data (like memory files) and `~/.kode.json` file for global configuration.
-
-The first time you run the Docker command, it will build the image. Subsequent runs will use the cached image for faster startup.
-
-You can use the onboarding to set up the model, or `/model`.
-If you don&#039;t see the models you want on the list, you can manually set them in `/config`
-As long as you have an openai-like endpoint, it should work.
-
-### Commands
-
-- `/help` - Show available commands
-- `/model` - Change AI model settings
-- `/config` - Open configuration panel
-- `/agents` - Manage subagents
-- `/output-style` - Set the output style
-- `/statusline` - Configure a custom status line command
-- `/cost` - Show token usage and costs
-- `/clear` - Clear conversation history
-- `/init` - Initialize project context
-- `/plugin` - Manage plugins/marketplaces (skills, commands)
-
-## Agents / Subagents
-
-Kode supports subagents (agent templates) for delegation and task orchestration.
-
-- Agents are loaded from `.kode/agents` and `.claude/agents` (user + project), plus plugins/policy and `--agents`.
-- Manage in the UI: `/agents` (creates new agents under `./.claude/agents` / `~/.claude/agents` by default).
-- Run via mentions: `@run-agent-&lt;agentType&gt; ...`
-- Run via tooling: `Task(subagent_type: &quot;&lt;agentType&gt;&quot;, ...)`
-- CLI flags: `--agents &lt;json&gt;` (inject agents for this run), `--setting-sources user,project,local` (control which sources are loaded)
-
-Minimal agent file example (`./.kode/agents/reviewer.md`):
-
-```md
----
-name: reviewer
-description: &quot;Review diffs for correctness, security, and simplicity&quot;
-tools: [&quot;Read&quot;, &quot;Grep&quot;]
-model: inherit
----
-
-Be strict. Point out bugs and risky changes. Prefer small, targeted fixes.
-```
-
-Model field notes:
-- Compatibility aliases: `inherit`, `opus`, `sonnet`, `haiku` (mapped to model pointers)
-- Kode selectors (via `/model`): pointers (`main|task|compact|quick`), profile name, modelName, or `provider:modelName` (e.g. `openai:o3`)
-
-Validate agent templates:
-
-```bash
-kode agents validate
-```
-
-See `docs/agents-system.md`.
-
-## Skills &amp; Plugins
-
-Kode supports the [Agent Skills](https://agentskills.io) open format for extending agent capabilities:
-- **Agent Skills** format (`SKILL.md`) - see [specification](https://agentskills.io/specification)
-- **Marketplace compatibility** (`.kode-plugin/marketplace.json`, legacy `.claude-plugin/marketplace.json`)
-- **Install from any repository** using [`add-skill` CLI](https://github.com/vercel-labs/add-skill)
-
-### Quick install with add-skill
-
-Install skills from any git repository:
-
-```bash
-# Install from GitHub
-npx add-skill vercel-labs/agent-skills -a kode
-
-# Install to global directory
-npx add-skill vercel-labs/agent-skills -a kode -g
-
-# Install specific skills
-npx add-skill vercel-labs/agent-skills -a kode -s pdf -s xlsx
-```
-
-### Install skills from a marketplace
-
-```bash
-# Add a marketplace (local path, GitHub owner/repo, or URL)
-kode plugin marketplace add ./path/to/marketplace-repo
-kode plugin marketplace add owner/repo
-kode plugin marketplace list
-
-# Install a plugin pack (installs skills/commands)
-kode plugin install document-skills@anthropic-agent-skills --scope user
-
-# Project-scoped install (writes to ./.kode/...)
-kode plugin install document-skills@anthropic-agent-skills --scope project
-
-# Disable/enable an installed plugin
-kode plugin disable document-skills@anthropic-agent-skills --scope user
-kode plugin enable document-skills@anthropic-agent-skills --scope user
-```
-
-Interactive equivalents:
+Then try the canonical workflow:
 
 ```text
-/plugin marketplace add owner/repo
-/plugin install document-skills@anthropic-agent-skills --scope user
+$deep-interview &quot;clarify the authentication change&quot;
+$ralplan &quot;approve the safest implementation path&quot;
+$ralph &quot;carry the approved plan to completion&quot;
+$team 3:executor &quot;execute the approved plan in parallel&quot;
 ```
 
-### Use skills
+Use `$team` when the approved plan needs coordinated parallel work, or `$ralph` when one persistent owner should keep pushing to completion.
 
-- In interactive mode, run a skill as a slash command: `/pdf`, `/xlsx`, etc.
-- Kode can also invoke skills automatically via the `Skill` tool when relevant.
+## A simple mental model
 
-### Create a skill (Agent Skills)
+OMX does **not** replace Codex.
 
-Create `./.kode/skills/&lt;skill-name&gt;/SKILL.md` (project) or `~/.kode/skills/&lt;skill-name&gt;/SKILL.md` (user):
+It adds a better working layer around it:
+- **Codex** does the actual agent work
+- **OMX role keywords** make useful roles reusable
+- **OMX skills** make common workflows reusable
+- **`.omx/`** stores plans, logs, memory, and runtime state
 
-```md
----
-name: my-skill
-description: Describe what this skill does and when to use it.
-allowed-tools: Read Bash(git:*) Bash(jq:*)
----
+Most users should think of OMX as **better task routing + better workflow + better runtime**, not as a command surface to operate manually all day.
 
-# Skill instructions
-```
+## Start here if you are new
 
-Naming rules:
-- `name` must match the folder name
-- Lowercase letters/numbers/hyphens only, 1–64 chars
+1. Run `omx setup`
+2. Launch with `omx --madmax --high`
+3. Use `$deep-interview &quot;...&quot;` when the request or boundaries are still unclear
+4. Use `$ralplan &quot;...&quot;` to approve the plan and review tradeoffs
+5. Choose `$team` for coordinated parallel execution or `$ralph` for persistent completion loops
 
-Compatibility:
-- Kode also discovers `.claude/skills` and `.claude/commands` for legacy compatibility.
+## Recommended workflow
 
-### Distribute skills
+1. `$deep-interview` — clarify scope when the request or boundaries are still vague.
+2. `$ralplan` — turn that clarified scope into an approved architecture and implementation plan.
+3. `$team` or `$ralph` — use `$team` for coordinated parallel execution, or `$ralph` when you want a persistent completion loop with one owner.
 
-- Marketplace repo: publish a repo containing `.kode-plugin/marketplace.json` listing plugin packs and their `skills` directories (legacy `.claude-plugin/marketplace.json` is also supported).
-- Plugin repo: for full plugins (beyond skills), include `.kode-plugin/plugin.json` at the plugin root and keep all paths relative (`./...`).
+## Common in-session surfaces
 
-See `docs/skills.md` for a compact reference and examples.
+| Surface | Use it for |
+| --- | --- |
+| `$deep-interview &quot;...&quot;` | clarifying intent, boundaries, and non-goals |
+| `$ralplan &quot;...&quot;` | approving the implementation plan and tradeoffs |
+| `$ralph &quot;...&quot;` | persistent completion and verification loops |
+| `$team &quot;...&quot;` | coordinated parallel execution when the work is big enough |
+| `/skills` | browsing installed skills and supporting helpers |
 
-### Output styles
+## Advanced / operator surfaces
 
-Use output styles to switch system-prompt behavior.
+These are useful, but they are not the main onboarding path.
 
-- Select: `/output-style` (menu) or `/output-style &lt;style&gt;`
-- Built-ins: `default`, `Explanatory`, `Learning`
-- Stored per-project in `./.kode/settings.local.json` as `outputStyle` (legacy `.claude/settings.local.json` is supported)
-- Custom styles: Markdown files under `output-styles/` in `.claude`/`.kode` user + project locations
-- Plugins can provide styles under `output-styles/` (or manifest `outputStyles`); plugin styles are namespaced as `&lt;plugin&gt;:&lt;style&gt;`
+### Team runtime
 
-See `docs/output-styles.md`.
-
-## Multi-Model Intelligent Collaboration
-
-Unlike single-model CLIs, Kode implements **true multi-model collaboration**, allowing you to fully leverage the unique strengths of different AI models.
-
-### 🏗️ Core Technical Architecture
-
-#### 1. **ModelManager Multi-Model Manager**
-We designed a unified `ModelManager` system that supports:
-- **Model Profiles**: Each model has an independent configuration file containing API endpoints, authentication, context window size, cost parameters, etc.
-- **Model Pointers**: Users can configure default models for different purposes in the `/model` command:
-  - `main`: Default model for main Agent
-  - `task`: Default model for SubAgent
-  - `compact`: Model used for automatic context compression when nearing the context window
-  - `quick`: Fast model for simple operations and utilities
-- **Dynamic Model Switching**: Support runtime model switching without restarting sessions, maintaining context continuity
-
-#### 📦 Shareable Model Config (YAML)
-
-You can export/import model profiles + pointers as a team-shareable YAML file. By default, exports do **not** include plaintext API keys (use env vars instead).
+Use the team runtime when you specifically need durable tmux/worktree coordination, not as the default way to begin using OMX.
 
 ```bash
-# Export to a file (or omit --output to print to stdout)
-kode models export --output kode-models.yaml
+omx team 3:executor &quot;fix the failing tests with verification&quot;
+omx team status &lt;team-name&gt;
+omx team resume &lt;team-name&gt;
+omx team shutdown &lt;team-name&gt;
+```
 
-# Import (merge by default)
-kode models import kode-models.yaml
+### Setup, doctor, and HUD
 
-# Replace existing profiles instead of merging
-kode models import --replace kode-mod
+These are operator/support surfaces:
+- `omx setup` installs prompts, skills, config, and AGENTS scaffolding
+- `omx doctor` verifies the install when something seems wrong
+- `omx hud --watch` is a monitoring/status surface, not the primary user workflow
 
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+### Explore and sparkshell
+
+- `omx explore --prompt &quot;...&quot;` is for read-only repository lookup
+- `omx sparkshell &lt;command&gt;` is for shell-native inspection and bounded verification
+
+Examples:
+
+```bash
+omx explore --prompt &quot;find where team state is written&quot;
+omx sparkshell git status
+omx sparkshell --tmux-pane %12 --tail-lines 400
+```
+
+### Platform notes for team mode
+
+`omx team` needs a tmux-compatible backend:
+
+| Platform | Install |
+| --- | --- |
+| macOS | `brew install tmux` |
+| Ubuntu/Debian | `sudo apt install tmux` |
+| Fedora | `sudo dnf install tmux` |
+| Arch | `sudo pacman -S tmux` |
+| Windows | `winget install psmux` |
+| Windows (WSL2) | `sudo apt install tmux` |
+
+## Known issues
+
+### Intel Mac: high `syspolicyd` / `trustd` CPU during startup
+
+On some Intel Macs, OMX startup — especially with `--madmax --high` — can spike `syspolicyd` / `trustd` CPU usage while macOS Gatekeeper validates many concurrent process launches.
+
+If this happens, try:
+- `xattr -dr com.apple.quarantine $(which omx)`
+- adding your terminal app to the Developer Tools allowlist in macOS Security settings
+- using lower concurrency (for example, avoid `--madmax --high`)
+
+## Documentation
+
+- [Getting Started](./docs/getting-started.html)
+- [Demo guide](./DEMO.md)
+- [Agent catalog](./docs/agents.html)
+- [Skills reference](./docs/skills.html)
+- [Integrations](./docs/integrations.html)
+- [OpenClaw / notification gateway guide](./docs/openclaw-integration.md)
+- [Contributing](./CONTRIBUTING.md)
+- [Changelog](./CHANGELOG.md)
+
+## Languages
+
+- [English](./README.md)
+- [한국어](./README.ko.md)
+- [日本語](./README.ja.md)
+- [简体中文](./README.zh.md)
+- [繁體中文](./README.zh-TW.md)
+- [Tiếng Việt](./README.vi.md)
+- [Español](./README.es.md)
+- [Português](./README.pt.md)
+- [Русский](./README.ru.md)
+- [Türkçe](./README.tr.md)
+- [Deutsch](./README.de.md)
+- [Français](./README.fr.md)
+- [Italiano](./README.it.md)
+- [Ελληνικά](./README.el.md)
+- [Polski](./README.pl.md)
+
+## Contributors
+
+| Role | Name | GitHub |
+| --- | --- | --- |
+| Creator &amp; Lead | Yeachan Heo | [@Yeachan-Heo](https://github.com/Yeachan-Heo) |
+| Maintainer | HaD0Yun | [@HaD0Yun](https://github.com/HaD0Yun) |
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Yeachan-Heo/oh-my-codex&amp;type=date&amp;legend=top-left)](https://www.star-history.com/#Yeachan-Heo/oh-my-codex&amp;type=date&amp;legend=top-left)
+
+## License
+
+MIT</pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
