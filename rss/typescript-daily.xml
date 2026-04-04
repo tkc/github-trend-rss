@@ -4,140 +4,24 @@
         <title>GitHub Trending Today for typescript - TypeScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for typescript.</description>
-        <lastBuildDate>Fri, 03 Apr 2026 00:10:37 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 04 Apr 2026 00:09:47 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2026, GitHub</copyright>
         <item>
-            <title><![CDATA[siddharthvaddem/openscreen]]></title>
-            <link>https://github.com/siddharthvaddem/openscreen</link>
-            <guid>https://github.com/siddharthvaddem/openscreen</guid>
-            <pubDate>Fri, 03 Apr 2026 00:10:37 GMT</pubDate>
-            <description><![CDATA[Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/siddharthvaddem/openscreen">siddharthvaddem/openscreen</a></h1>
-            <p>Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 15,785</p>
-            <p>Forks: 1,073</p>
-            <p>Stars today: 2,573 stars today</p>
-            <h2>README</h2><pre>&gt; [!WARNING]
-&gt; This is very much in beta and might be buggy here and there (but hope you have a good experience!).
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;public/openscreen.png&quot; alt=&quot;OpenScreen Logo&quot; width=&quot;64&quot; /&gt;
-  &lt;br /&gt;
-  &lt;br /&gt;
-  &lt;a href=&quot;https://deepwiki.com/siddharthvaddem/openscreen&quot;&gt;
-    &lt;img src=&quot;https://deepwiki.com/badge.svg&quot; alt=&quot;Ask DeepWiki&quot; /&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-
-# &lt;p align=&quot;center&quot;&gt;OpenScreen&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;strong&gt;OpenScreen is your free, open-source alternative to Screen Studio (sort of).&lt;/strong&gt;&lt;/p&gt;
-
-If you don&#039;t want to pay $29/month for Screen Studio but want a much simpler version that does what most people seem to need, making beautiful product demos and walkthroughs, here&#039;s a free-to-use app for you. OpenScreen does not offer all Screen Studio features, but covers the basics well!
-
-Screen Studio is an awesome product and this is definitely not a 1:1 clone. OpenScreen is a much simpler take, just the basics for folks who want control and don&#039;t want to pay. If you need all the fancy features, your best bet is to support Screen Studio (they really do a great job, haha). But if you just want something free (no gotchas) and open, this project does the job!
-
-OpenScreen is 100% free for personal and commercial use. Use it, modify it, distribute it. (Just be cool 😁 and give a shoutout if you feel like it !)
-
-&lt;p align=&quot;center&quot;&gt;
-	&lt;img src=&quot;public/preview3.png&quot; alt=&quot;OpenScreen App Preview 3&quot; style=&quot;height: 320px; margin-right: 12px;&quot; /&gt;
-	&lt;img src=&quot;public/preview4.png&quot; alt=&quot;OpenScreen App Preview 4&quot; style=&quot;height: 320px; margin-right: 12px;&quot; /&gt;
-&lt;/p&gt;
-
-## Core Features
-- Record your whole screen or specific windows.
-- Add Automatic zooms or manual zooms (customizable depth levels).
-- Record microphone audio and system audio capture.
-- Customize the duration and position of zooms however you please.
-- Crop video recordings to hide parts.
-- Choose between wallpapers, solid colors, gradients or a custom background.
-- Motion blur for smoother pan and zoom effects.
-- Add annotations (text, arrows, images).
-- Trim sections of the clip.
-- Customize speed at different segments.
-- Export in different aspect ratios and resolutions.
-
-## Installation
-
-Download the latest installer for your platform from the [GitHub Releases](https://github.com/siddharthvaddem/openscreen/releases) page.
-
-### macOS
-
-If you encounter issues with macOS Gatekeeper blocking the app (since it does not come with a developer certificate), you can bypass this by running the following command in your terminal after installation:
-
-```bash
-xattr -rd com.apple.quarantine /Applications/Openscreen.app
-```
-
-Note: Give your terminal Full Disk Access in **System Settings &gt; Privacy &amp; Security** to grant you access and then run the above command.
-
-After running this command, proceed to **System Preferences &gt; Security &amp; Privacy** to grant the necessary permissions for &quot;screen recording&quot; and &quot;accessibility&quot;. Once permissions are granted, you can launch the app.
-
-### Linux
-
-Download the `.AppImage` file from the releases page. Make it executable and run:
-
-```bash
-chmod +x Openscreen-Linux-*.AppImage
-./Openscreen-Linux-*.AppImage
-```
-
-You may need to grant screen recording permissions depending on your desktop environment.
-
-**Note:** If the app fails to launch due to a &quot;sandbox&quot; error, run it with --no-sandbox:
-```bash
-./Openscreen-Linux-*.AppImage --no-sandbox
-```
-
-### Limitations
-
-System audio capture relies on Electron&#039;s [desktopCapturer](https://www.electronjs.org/docs/latest/api/desktop-capturer) and has some platform-specific quirks:
-
-- **macOS**: Requires macOS 13+. On macOS 14.2+ you&#039;ll be prompted to grant audio capture permission. macOS 12 and below does not support system audio (mic still work).
-- **Windows**: Works out of the box.
-- **Linux**: Needs PipeWire (default on Ubuntu 22.04+, Fedora 34+). Older PulseAudio-only setups may not support system audio (mic should still works).
-
-## Built with
-- Electron
-- React
-- TypeScript
-- Vite
-- PixiJS
-- dnd-timeline
-
----
-
-_I&#039;m new to open source, idk what I&#039;m doing lol. If something is wrong please raise an issue 🙏_
-
-## Contributing
-
-Contributions are welcome! If you’d like to help out or see what’s currently being worked on, take a look at the open issues and the [project roadmap](https://github.com/users/siddharthvaddem/projects/3) to understand the current direction of the project and find ways to contribute.
-
-## License
-
-This project is licensed under the [MIT License](./LICENSE). By using this software, you agree that the authors are not liable for any issues, damages, or claims arising from its use.
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
             <title><![CDATA[Yeachan-Heo/oh-my-codex]]></title>
             <link>https://github.com/Yeachan-Heo/oh-my-codex</link>
             <guid>https://github.com/Yeachan-Heo/oh-my-codex</guid>
-            <pubDate>Fri, 03 Apr 2026 00:10:36 GMT</pubDate>
+            <pubDate>Sat, 04 Apr 2026 00:09:47 GMT</pubDate>
             <description><![CDATA[OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much more.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/Yeachan-Heo/oh-my-codex">Yeachan-Heo/oh-my-codex</a></h1>
             <p>OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much more.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 11,618</p>
-            <p>Forks: 1,079</p>
-            <p>Stars today: 2,867 stars today</p>
+            <p>Stars: 14,084</p>
+            <p>Forks: 1,297</p>
+            <p>Stars today: 3,047 stars today</p>
             <h2>README</h2><pre># oh-my-codex (OMX)
 
 &lt;p align=&quot;center&quot;&gt;
@@ -161,6 +45,29 @@ It keeps Codex as the execution engine and makes it easier to:
 - run one consistent workflow from clarification to completion
 - invoke the canonical skills with `$deep-interview`, `$ralplan`, `$team`, and `$ralph`
 - keep project guidance, plans, logs, and state in `.omx/`
+
+## Core Maintainers
+
+| Role | Name | GitHub |
+| --- | --- | --- |
+| Creator &amp; Lead | Yeachan Heo | [@Yeachan-Heo](https://github.com/Yeachan-Heo) |
+| Maintainer | HaD0Yun | [@HaD0Yun](https://github.com/HaD0Yun) |
+
+## Ambassadors
+
+| Name | GitHub |
+| --- | --- |
+| Sigrid Jin | [@sigridjineth](https://github.com/sigridjineth) |
+
+## Top Collaborators
+
+| Name | GitHub |
+| --- | --- |
+| HaD0Yun | [@HaD0Yun](https://github.com/HaD0Yun) |
+| Junho Yeo | [@junhoyeo](https://github.com/junhoyeo) |
+| JiHongKim98 | [@JiHongKim98](https://github.com/JiHongKim98) |
+| Lor | — |
+| HyunjunJeon | [@HyunjunJeon](https://github.com/HyunjunJeon) |
 
 ## Recommended default flow
 
@@ -361,6 +268,975 @@ If this happens, try:
 ## License
 
 MIT</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[siddharthvaddem/openscreen]]></title>
+            <link>https://github.com/siddharthvaddem/openscreen</link>
+            <guid>https://github.com/siddharthvaddem/openscreen</guid>
+            <pubDate>Sat, 04 Apr 2026 00:09:46 GMT</pubDate>
+            <description><![CDATA[Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/siddharthvaddem/openscreen">siddharthvaddem/openscreen</a></h1>
+            <p>Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 18,149</p>
+            <p>Forks: 1,235</p>
+            <p>Stars today: 2,771 stars today</p>
+            <h2>README</h2><pre>&gt; [!WARNING]
+&gt; This is very much in beta and might be buggy here and there (but hope you have a good experience!).
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;public/openscreen.png&quot; alt=&quot;OpenScreen Logo&quot; width=&quot;64&quot; /&gt;
+  &lt;br /&gt;
+  &lt;br /&gt;
+  &lt;a href=&quot;https://deepwiki.com/siddharthvaddem/openscreen&quot;&gt;
+    &lt;img src=&quot;https://deepwiki.com/badge.svg&quot; alt=&quot;Ask DeepWiki&quot; /&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+# &lt;p align=&quot;center&quot;&gt;OpenScreen&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;strong&gt;OpenScreen is your free, open-source alternative to Screen Studio (sort of).&lt;/strong&gt;&lt;/p&gt;
+
+If you don&#039;t want to pay $29/month for Screen Studio but want a much simpler version that does what most people seem to need, making beautiful product demos and walkthroughs, here&#039;s a free-to-use app for you. OpenScreen does not offer all Screen Studio features, but covers the basics well!
+
+Screen Studio is an awesome product and this is definitely not a 1:1 clone. OpenScreen is a much simpler take, just the basics for folks who want control and don&#039;t want to pay. If you need all the fancy features, your best bet is to support Screen Studio (they really do a great job, haha). But if you just want something free (no gotchas) and open, this project does the job!
+
+OpenScreen is 100% free for personal and commercial use. Use it, modify it, distribute it. (Just be cool 😁 and give a shoutout if you feel like it !)
+
+&lt;p align=&quot;center&quot;&gt;
+	&lt;img src=&quot;public/preview3.png&quot; alt=&quot;OpenScreen App Preview 3&quot; style=&quot;height: 320px; margin-right: 12px;&quot; /&gt;
+	&lt;img src=&quot;public/preview4.png&quot; alt=&quot;OpenScreen App Preview 4&quot; style=&quot;height: 320px; margin-right: 12px;&quot; /&gt;
+&lt;/p&gt;
+
+## Core Features
+- Record your whole screen or specific windows.
+- Add Automatic zooms or manual zooms (customizable depth levels).
+- Record microphone audio and system audio capture.
+- Customize the duration and position of zooms however you please.
+- Crop video recordings to hide parts.
+- Choose between wallpapers, solid colors, gradients or a custom background.
+- Motion blur for smoother pan and zoom effects.
+- Add annotations (text, arrows, images).
+- Trim sections of the clip.
+- Customize speed at different segments.
+- Export in different aspect ratios and resolutions.
+
+## Installation
+
+Download the latest installer for your platform from the [GitHub Releases](https://github.com/siddharthvaddem/openscreen/releases) page.
+
+### macOS
+
+If you encounter issues with macOS Gatekeeper blocking the app (since it does not come with a developer certificate), you can bypass this by running the following command in your terminal after installation:
+
+```bash
+xattr -rd com.apple.quarantine /Applications/Openscreen.app
+```
+
+Note: Give your terminal Full Disk Access in **System Settings &gt; Privacy &amp; Security** to grant you access and then run the above command.
+
+After running this command, proceed to **System Preferences &gt; Security &amp; Privacy** to grant the necessary permissions for &quot;screen recording&quot; and &quot;accessibility&quot;. Once permissions are granted, you can launch the app.
+
+### Linux
+
+Download the `.AppImage` file from the releases page. Make it executable and run:
+
+```bash
+chmod +x Openscreen-Linux-*.AppImage
+./Openscreen-Linux-*.AppImage
+```
+
+You may need to grant screen recording permissions depending on your desktop environment.
+
+**Note:** If the app fails to launch due to a &quot;sandbox&quot; error, run it with --no-sandbox:
+```bash
+./Openscreen-Linux-*.AppImage --no-sandbox
+```
+
+### Limitations
+
+System audio capture relies on Electron&#039;s [desktopCapturer](https://www.electronjs.org/docs/latest/api/desktop-capturer) and has some platform-specific quirks:
+
+- **macOS**: Requires macOS 13+. On macOS 14.2+ you&#039;ll be prompted to grant audio capture permission. macOS 12 and below does not support system audio (mic still work).
+- **Windows**: Works out of the box.
+- **Linux**: Needs PipeWire (default on Ubuntu 22.04+, Fedora 34+). Older PulseAudio-only setups may not support system audio (mic should still works).
+
+## Built with
+- Electron
+- React
+- TypeScript
+- Vite
+- PixiJS
+- dnd-timeline
+
+---
+
+_I&#039;m new to open source, idk what I&#039;m doing lol. If something is wrong please raise an issue 🙏_
+
+## Contributing
+
+Contributions are welcome! If you’d like to help out or see what’s currently being worked on, take a look at the open issues and the [project roadmap](https://github.com/users/siddharthvaddem/projects/3) to understand the current direction of the project and find ways to contribute.
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE). By using this software, you agree that the authors are not liable for any issues, damages, or claims arising from its use.
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[multica-ai/multica]]></title>
+            <link>https://github.com/multica-ai/multica</link>
+            <guid>https://github.com/multica-ai/multica</guid>
+            <pubDate>Sat, 04 Apr 2026 00:09:45 GMT</pubDate>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/multica-ai/multica">multica-ai/multica</a></h1>
+            <p></p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 1,862</p>
+            <p>Forks: 191</p>
+            <p>Stars today: 295 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;docs/assets/banner.jpg&quot; alt=&quot;Multica — humans and agents, side by side&quot; width=&quot;100%&quot;&gt;
+&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+
+&lt;picture&gt;
+  &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;docs/assets/logo-dark.svg&quot;&gt;
+  &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;docs/assets/logo-light.svg&quot;&gt;
+  &lt;img alt=&quot;Multica&quot; src=&quot;docs/assets/logo-light.svg&quot; width=&quot;50&quot;&gt;
+&lt;/picture&gt;
+
+# Multica
+
+**Your next 10 hires won&#039;t be human.**
+
+Open-source platform that turns coding agents into real teammates.&lt;br/&gt;
+Assign tasks, track progress, compound skills — manage your human + agent workforce in one place.
+
+[![CI](https://github.com/multica-ai/multica/actions/workflows/ci.yml/badge.svg)](https://github.com/multica-ai/multica/actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![GitHub stars](https://img.shields.io/github/stars/multica-ai/multica?style=flat)](https://github.com/multica-ai/multica/stargazers)
+
+[Website](https://multica.ai) · [Cloud](https://multica.ai/app) · [Self-Hosting](SELF_HOSTING.md) · [Contributing](CONTRIBUTING.md)
+
+**English | [简体中文](README.zh-CN.md)**
+
+&lt;/div&gt;
+
+## What is Multica?
+
+Multica turns coding agents into real teammates. Assign issues to an agent like you&#039;d assign to a colleague — they&#039;ll pick up the work, write code, report blockers, and update statuses autonomously.
+
+No more copy-pasting prompts. No more babysitting runs. Your agents show up on the board, participate in conversations, and compound reusable skills over time. Works with **Claude Code** and **Codex**.
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;docs/assets/hero-screenshot.png&quot; alt=&quot;Multica board view&quot; width=&quot;800&quot;&gt;
+&lt;/p&gt;
+
+## Features
+
+- **Agents as Teammates** — assign to an agent like you&#039;d assign to a colleague. They have profiles, show up on the board, post comments, create issues, and report blockers proactively.
+- **Autonomous Execution** — set it and forget it. Full task lifecycle management (enqueue, claim, start, complete/fail) with real-time progress streaming via WebSocket.
+- **Reusable Skills** — every solution becomes a reusable skill for the whole team. Deployments, migrations, code reviews — skills compound your team&#039;s capabilities over time.
+- **Unified Runtimes** — one dashboard for all your compute. Local daemons and cloud runtimes, auto-detection of available CLIs, real-time monitoring.
+- **Multi-Workspace** — organize work across teams with workspace-level isolation. Each workspace has its own agents, issues, and settings.
+
+## Getting Started
+
+### Multica Cloud
+
+The fastest way to get started — no setup required: **[multica.ai](https://multica.ai)**
+
+### Self-Host with Docker
+
+```bash
+git clone https://github.com/multica-ai/multica.git
+cd multica
+cp .env.example .env
+# Edit .env — at minimum, change JWT_SECRET
+
+docker compose up -d                              # Start PostgreSQL
+cd server &amp;&amp; go run ./cmd/migrate up &amp;&amp; cd ..     # Run migrations
+make start                                         # Start the app
+```
+
+See the [Self-Hosting Guide](SELF_HOSTING.md) for full instructions.
+
+## CLI
+
+The `multica` CLI connects your local machine to Multica — authenticate, manage workspaces, and run the agent daemon.
+
+```bash
+# Install
+brew tap multica-ai/tap
+brew install multica
+
+# Authenticate and start
+multica login
+multica daemon start
+```
+
+The daemon auto-detects available agent CLIs (`claude`, `codex`) on your PATH. When an agent is assigned a task, the daemon creates an isolated environment, runs the agent, and reports results back.
+
+See the [CLI and Daemon Guide](CLI_AND_DAEMON.md) for the full command reference, daemon configuration, and advanced usage.
+
+## Quickstart
+
+Once you have the CLI installed (or signed up for [Multica Cloud](https://multica.ai)), follow these steps to assign your first task to an agent:
+
+### 1. Log in and start the daemon
+
+```bash
+multica login           # Authenticate with your Multica account
+multica daemon start    # Start the local agent runtime
+```
+
+The daemon runs in the background and keeps your machine connected to Multica. It auto-detects agent CLIs (`claude`, `codex`) available on your PATH.
+
+### 2. Verify your runtime
+
+Open your workspace in the Multica web app. Navigate to **Settings → Runtimes** — you should see your machine listed as an active **Runtime**.
+
+&gt; **What is a Runtime?** A Runtime is a compute environment that can execute agent tasks. It can be your local machine (via the daemon) or a cloud instance. Each runtime reports which agent CLIs are available, so Multica knows where to route work.
+
+### 3. Create an agent
+
+Go to **Settings → Agents** and click **New Agent**. Pick the runtime you just connected and choose a provider (Claude Code or Codex). Give your agent a name — this is how it will appear on the board, in comments, and in assignments.
+
+### 4. Assign your first task
+
+Create an issue from the board (or via `multica issue create`), then assign it to your new agent. The agent will automatically pick up the task, execute it on your runtime, and report progress — just like a human teammate.
+
+That&#039;s it! Your agent is now part of the team. 🎉
+
+## Architecture
+
+```
+┌──────────────┐     ┌──────────────┐     ┌──────────────────┐
+│   Next.js    │────&gt;│  Go Backend  │────&gt;│   PostgreSQL     │
+│   Frontend   │&lt;────│  (Chi + WS)  │&lt;────│   (pgvector)     │
+└──────────────┘     └──────┬───────┘     └──────────────────┘
+                            │
+                     ┌──────┴───────┐
+                     │ Agent Daemon │  (runs on your machine)
+                     │ Claude/Codex │
+                     └──────────────┘
+```
+
+| Layer | Stack |
+|-------|-------|
+| Frontend | Next.js 16 (App Router) |
+| Backend | Go (Chi router, sqlc, gorilla/websocket) |
+| Database | PostgreSQL 17 with pgvector |
+| Agent Runtime | Local daemon executing Claude Code or Codex |
+
+## Development
+
+For contributors working on the Multica codebase, see the [Contributing Guide](CONTRIBUTING.md).
+
+**Prerequisites:** [Node.js](https://nodejs.org/) v20+, [pnpm](https://pnpm.io/) v10.28+, [Go](https://go.dev/) v1.26+, [Docker](https://www.docker.com/)
+
+```bash
+pnpm install
+cp .env.example .env
+make setup
+make start
+```
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full development workflow, worktree support, testing, and troubleshooting.
+
+## License
+
+[Apache 2.0](LICENSE)
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[open-metadata/OpenMetadata]]></title>
+            <link>https://github.com/open-metadata/OpenMetadata</link>
+            <guid>https://github.com/open-metadata/OpenMetadata</guid>
+            <pubDate>Sat, 04 Apr 2026 00:09:44 GMT</pubDate>
+            <description><![CDATA[OpenMetadata is a unified metadata platform for data discovery, data observability, and data governance powered by a central metadata repository, in-depth column level lineage, and seamless team collaboration.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/open-metadata/OpenMetadata">open-metadata/OpenMetadata</a></h1>
+            <p>OpenMetadata is a unified metadata platform for data discovery, data observability, and data governance powered by a central metadata repository, in-depth column level lineage, and seamless team collaboration.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 9,597</p>
+            <p>Forks: 1,743</p>
+            <p>Stars today: 223 stars today</p>
+            <h2>README</h2><pre>&lt;br /&gt;&lt;br /&gt;
+&lt;p align=&quot;center&quot;&gt;
+    &lt;a href=&quot;https://open-metadata.org&quot;&gt;
+        &lt;img alt=&quot;Logo&quot; src=&quot;https://github.com/open-metadata/OpenMetadata/assets/40225091/e794ced8-7220-4393-8efc-3faf93bfb503&quot; width=&quot;49%&quot;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;b&gt;Empower your Data Journey with OpenMetadata&lt;/b&gt;&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+    
+![Commit Activity](https://img.shields.io/github/commit-activity/m/open-metadata/OpenMetadata?style=for-the-badge)
+[![Release](https://img.shields.io/github/release/open-metadata/OpenMetadata/all.svg?style=for-the-badge)](https://github.com/open-metadata/OpenMetadata/releases)
+
+&lt;/div&gt;
+
+## What is OpenMetadata?
+[OpenMetadata](https://open-metadata.org/)  is a unified metadata platform for data discovery, data observability, and data governance powered by a central metadata repository, in-depth column-level lineage, and seamless team collaboration. It is one of the fastest-growing open-source projects with a vibrant community and adoption by a diverse set of companies in a variety of industry verticals. Based on Open Metadata Standards and APIs, supporting connectors to a wide range of data services, OpenMetadata enables end-to-end metadata management, giving you the freedom to unlock the value of your data assets.
+&lt;div align=&quot;center&quot;&gt;
+    &lt;img src=&quot;https://github.com/open-metadata/OpenMetadata/assets/40225091/ebfb4ec5-f0a2-4d58-8ce5-a082b5cf0f76&quot; width=800&gt;
+&lt;/div&gt;
+
+&lt;br /&gt;
+Contents:
+
+- [Features](#key-features-of-openmetadata)
+- [Try our Sandbox](#try-our-sandbox)
+- [Install &amp; Run](#install-and-run-openmetadata)
+- [Roadmap](https://docs.open-metadata.org/latest/roadmap)
+- [Documentation and Support](#documentation-and-support)
+- [Contributors](#contributors)
+
+OpenMetadata Consists of Four Main Components:
+- **Metadata Schemas**: These are the core definitions and vocabulary for metadata based on common abstractions and types. They also allow for custom extensions and properties to suit different use cases and domains.
+- **Metadata Store**: This is the central repository for storing and managing the metadata graph, which connects data assets, users, and tool-generated metadata in a unified way.
+- **Metadata APIs**: These are the interfaces for producing and consuming metadata, built on top of the metadata schemas. They enable seamless integration of user interfaces and tools, systems, and services with the metadata store.
+- **Ingestion Framework**: This is a pluggable framework for ingesting metadata from various sources and tools to the metadata store. It supports about 84+ connectors for data warehouses, databases, dashboard services, messaging services, pipeline services, and more.
+
+## Key Features of OpenMetadata
+**Data Discovery**: Find and explore all your data assets in a single place using various strategies, such as keyword search, data associations, and advanced queries. You can search across tables, topics, dashboards, pipelines, and services.
+
+![12](https://github.com/open-metadata/OpenMetadata/assets/40225091/0dbd2746-c93d-4a47-8d3e-ceb3ae01436f)
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**Data Collaboration**: Communicate, converse, and cooperate with other users and teams on data assets. You can get event notifications, send alerts, add announcements, create tasks, and use conversation threads.
+
+![11](https://github.com/open-metadata/OpenMetadata/assets/40225091/7df29e12-8a29-44b7-9466-42474823783f)
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**Data Quality and Profiler**: Measure and monitor the quality with **no-code** to build trust in your data. You can define and run data quality tests, group them into test suites, and view the results in an interactive dashboard. With powerful collaboration, make data quality a shared responsibility in your organization.
+
+![8](https://github.com/open-metadata/OpenMetadata/assets/40225091/6b330827-cc2d-4d06-abf0-a4d42ce532ba)
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**Data Governance**: Enforce data policies and standards across your organization. You can define data domains and data products, assign owners and stakeholders, and classify data assets using tags and terms. Use powerful automation features to auto-classify your data.
+
+![10](https://github.com/open-metadata/OpenMetadata/assets/40225091/f7384a71-6b58-44ad-983f-e302718ee3f1)
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**Data Insights and KPIs**: Use reports and platform analytics to understand how your organization&#039;s data is doing. Data Insights provides a single-pane view of all the key metrics to reflect the state of your data best. Define the Key Performance Indicators (KPIs) and set goals within OpenMetadata to work towards better documentation, ownership, and tiering. Alerts can be set against the KPIs to be received on a specified schedule.
+
+![9](https://github.com/open-metadata/OpenMetadata/assets/40225091/61fc2f65-2436-4fc9-9434-c27ee9b25183)
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**Data Lineage**: Track and visualize the origin and transformation of your data assets end-to-end. You can view column-level lineage, filter queries, and edit lineage manually using a no-code editor.
+  
+**Data Documentation**: Document your data assets and metadata entities using rich text, images, and links. You can also add comments and annotations and generate data dictionaries and data catalogs.
+  
+**Data Observability**: Monitor the health and performance of your data assets and pipelines. You can view metrics such as data freshness, data volume, data quality, and data latency. You can also set up alerts and notifications for any anomalies or failures.
+  
+**Data Security**: Secure your data and metadata using various authentication and authorization mechanisms. You can integrate with different identity providers for single sign-on and define roles and policies for access control.
+  
+**Webhooks**: Integrate with external applications and services using webhooks. You can register URLs to receive metadata event notifications and integrate with Slack, Microsoft Teams, and Google Chat.
+  
+**Connectors**: Ingest metadata from various sources and tools using connectors. OpenMetadata supports about 84+ connectors for data warehouses, databases, dashboard services, messaging services, pipeline services, and more.
+
+## Try our Sandbox
+
+Take a look and play with sample data at [http://sandbox.open-metadata.org](http://sandbox.open-metadata.org)
+
+## Install and Run OpenMetadata
+Get up and running in a few minutes. See the OpenMetadata documentation for [installation instructions](https://docs.open-metadata.org/quick-start/local-docker-deployment).
+
+## Documentation and Support
+
+We&#039;re here to help and make OpenMetadata even better! Check out [OpenMetadata documentation](https://docs.open-metadata.org/) for a complete description of OpenMetadata&#039;s features. Join our [Slack Community](https://slack.open-metadata.org/) to get in touch with us if you want to chat, need help, or discuss new feature requirements.
+
+
+## Contributors
+
+We ❤️ all contributions, big and small! Check out our [CONTRIBUTING](./CONTRIBUTING.md) guide to get started, and let us know how we can help.
+
+Don&#039;t want to miss anything? Give the project a ⭐ 🚀 
+
+A HUGE THANK YOU to all our supporters!
+
+&lt;a href=&quot;https://github.com/open-metadata/OpenMetadata/graphs/contributors&quot;&gt;
+  &lt;img src=&quot;https://contrib.rocks/image?repo=open-metadata/OpenMetadata&amp;max=4000&amp;columns=30&quot; /&gt;
+&lt;/a&gt;
+
+## Stargazers
+
+[![Stargazers of @open-metadata/OpenMetadata repo](http://reporoster.com/stars/open-metadata/OpenMetadata)](https://github.com/open-metadata/OpenMetadata/stargazers)
+
+## License
+OpenMetadata is released under [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[simstudioai/sim]]></title>
+            <link>https://github.com/simstudioai/sim</link>
+            <guid>https://github.com/simstudioai/sim</guid>
+            <pubDate>Sat, 04 Apr 2026 00:09:43 GMT</pubDate>
+            <description><![CDATA[Build, deploy, and orchestrate AI agents. Sim is the central intelligence layer for your AI workforce.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/simstudioai/sim">simstudioai/sim</a></h1>
+            <p>Build, deploy, and orchestrate AI agents. Sim is the central intelligence layer for your AI workforce.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 27,495</p>
+            <p>Forks: 3,485</p>
+            <p>Stars today: 104 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://sim.ai&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+    &lt;picture&gt;
+      &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;apps/sim/public/logo/wordmark.svg&quot;&gt;
+      &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;apps/sim/public/logo/wordmark-dark.svg&quot;&gt;
+      &lt;img src=&quot;apps/sim/public/logo/wordmark-dark.svg&quot; alt=&quot;Sim Logo&quot; width=&quot;380&quot;/&gt;
+    &lt;/picture&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;The open-source platform to build AI agents and run your agentic workforce. Connect 1,000+ integrations and LLMs to orchestrate agentic workflows.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://sim.ai&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/sim.ai-33c482&quot; alt=&quot;Sim.ai&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://discord.gg/Hr4UWYEcTT&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Discord-Join%20Server-5865F2?logo=discord&amp;logoColor=white&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://x.com/simdotai&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://img.shields.io/twitter/follow/simdotai?style=social&quot; alt=&quot;Twitter&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://docs.sim.ai&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Docs-33c482.svg&quot; alt=&quot;Documentation&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://deepwiki.com/simstudioai/sim&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://deepwiki.com/badge.svg&quot; alt=&quot;Ask DeepWiki&quot;&gt;&lt;/a&gt;  &lt;a href=&quot;https://cursor.com/link/prompt?text=Help%20me%20set%20up%20Sim%20locally.%20Follow%20these%20steps%3A%0A%0A1.%20First%2C%20verify%20Docker%20is%20installed%20and%20running%3A%0A%20%20%20docker%20--version%0A%20%20%20docker%20info%0A%0A2.%20Clone%20the%20repository%3A%0A%20%20%20git%20clone%20https%3A%2F%2Fgithub.com%2Fsimstudioai%2Fsim.git%0A%20%20%20cd%20sim%0A%0A3.%20Start%20the%20services%20with%20Docker%20Compose%3A%0A%20%20%20docker%20compose%20-f%20docker-compose.prod.yml%20up%20-d%0A%0A4.%20Wait%20for%20all%20containers%20to%20be%20healthy%20(this%20may%20take%201-2%20minutes)%3A%0A%20%20%20docker%20compose%20-f%20docker-compose.prod.yml%20ps%0A%0A5.%20Verify%20the%20app%20is%20accessible%20at%20http%3A%2F%2Flocalhost%3A3000%0A%0AIf%20there%20are%20any%20errors%2C%20help%20me%20troubleshoot%20them.%20Common%20issues%3A%0A-%20Port%203000%2C%203002%2C%20or%205432%20already%20in%20use%0A-%20Docker%20not%20running%0A-%20Insufficient%20memory%20(needs%2012GB%2B%20RAM)%0A%0AFor%20local%20AI%20models%20with%20Ollama%2C%20use%20this%20instead%20of%20step%203%3A%0A%20%20%20docker%20compose%20-f%20docker-compose.ollama.yml%20--profile%20setup%20up%20-d&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Set%20Up%20with-Cursor-000000?logo=cursor&amp;logoColor=white&quot; alt=&quot;Set Up with Cursor&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+### Build Workflows with Ease
+Design agent workflows visually on a canvas—connect agents, tools, and blocks, then run them instantly.
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;apps/sim/public/static/workflow.gif&quot; alt=&quot;Workflow Builder Demo&quot; width=&quot;800&quot;/&gt;
+&lt;/p&gt;
+
+### Supercharge with Copilot
+Leverage Copilot to generate nodes, fix errors, and iterate on flows directly from natural language.
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;apps/sim/public/static/copilot.gif&quot; alt=&quot;Copilot Demo&quot; width=&quot;800&quot;/&gt;
+&lt;/p&gt;
+
+### Integrate Vector Databases
+Upload documents to a vector store and let agents answer questions grounded in your specific content.
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;apps/sim/public/static/knowledge.gif&quot; alt=&quot;Knowledge Uploads and Retrieval Demo&quot; width=&quot;800&quot;/&gt;
+&lt;/p&gt;
+
+## Quickstart
+
+### Cloud-hosted: [sim.ai](https://sim.ai)
+
+&lt;a href=&quot;https://sim.ai&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/sim.ai-33c482?logo=data:image/svg%2bxml;base64,PHN2ZyB3aWR0aD0iNjE2IiBoZWlnaHQ9IjYxNiIgdmlld0JveD0iMCAwIDYxNiA2MTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF8xMTU5XzMxMykiPgo8cGF0aCBkPSJNNjE2IDBIMFY2MTZINjE2VjBaIiBmaWxsPSIjMzNjNDgyIi8+CjxwYXRoIGQ9Ik04MyAzNjUuNTY3SDExM0MxMTMgMzczLjgwNSAxMTYgMzgwLjM3MyAxMjIgMzg1LjI3MkMxMjggMzg5Ljk0OCAxMzYuMTExIDM5Mi4yODUgMTQ2LjMzMyAzOTIuMjg1QzE1Ny40NDQgMzkyLjI4NSAxNjYgMzkwLjE3MSAxNzIgMzg1LjkzOUMxNzcuOTk5IDM4MS40ODcgMTgxIDM3NS41ODYgMTgxIDM2OC4yMzlDMTgxIDM2Mi44OTUgMTc5LjMzMyAzNTguNDQyIDE3NiAzNTQuODhDMTcyLjg4OSAzNTEuMzE4IDE2Ny4xMTEgMzQ4LjQyMiAxNTguNjY3IDM0Ni4xOTZMMTMwIDMzOS41MTdDMTE1LjU1NSAzMzUuOTU1IDEwNC43NzggMzMwLjQ5OSA5Ny42NjY1IDMyMy4xNTFDOTAuNzc3NSAzMTUuODA0IDg3LjMzMzQgMzA2LjExOSA4Ny4zMzM0IDI5NC4wOTZDODcuMzMzNCAyODQuMDc2IDg5Ljg4OSAyNzUuMzkyIDk0Ljk5OTYgMjY4LjA0NUMxMDAuMzMzIDI2MC42OTcgMTA3LjU1NSAyNTUuMDIgMTE2LjY2NiAyNTEuMDEyQzEyNiAyNDcuMDA0IDEzNi42NjcgMjQ1IDE0OC42NjYgMjQ1QzE2MC42NjcgMjQ1IDE3MSAyNDcuMTE2IDE3OS42NjcgMjUxLjM0NkMxODguNTU1IDI1NS41NzYgMTk1LjQ0NCAyNjEuNDc3IDIwMC4zMzMgMjY5LjA0N0MyMDUuNDQ0IDI3Ni42MTcgMjA4LjExMSAyODUuNjM0IDIwOC4zMzMgMjk2LjA5OUgxNzguMzMzQzE3OC4xMTEgMjg3LjYzOCAxNzUuMzMzIDI4MS4wNyAxNjkuOTk5IDI3Ni4zOTRDMTY0LjY2NiAyNzEuNzE5IDE1Ny4yMjIgMjY5LjM4MSAxNDcuNjY3IDI2OS4zODFDMTM3Ljg4OSAyNjkuMzgxIDEzMC4zMzMgMjcxLjQ5NiAxMjUgMjc1LjcyNkMxMTkuNjY2IDI3OS45NTcgMTE3IDI4NS43NDYgMTE3IDI5My4wOTNDMTE3IDMwNC4wMDMgMTI1IDMxMS40NjIgMTQxIDMxNS40N0wxNjkuNjY3IDMyMi40ODNDMTgzLjQ0NSAzMjUuNiAxOTMuNzc4IDMzMC43MjIgMjAwLjY2NyAzMzcuODQ3QzIwNy41NTUgMzQ0Ljc0OSAyMTEgMzU0LjIxMiAyMTEgMzY2LjIzNUMyMTEgMzc2LjQ3NyAyMDguMjIyIDM4NS40OTQgMjAyLjY2NiAzOTMuMjg3QzE5Ny4xMTEgNDAwLjg1NyAxODkuNDQ0IDQwNi43NTggMTc5LjY2NyA0MTAuOTg5QzE3MC4xMTEgNDE0Ljk5NiAxNTguNzc4IDQxNyAxNDUuNjY3IDQxN0MxMjYuNTU1IDQxNyAxMTEuMzMzIDQxMi4zMjUgOTkuOTk5NyA0MDIuOTczQzg4LjY2NjggMzkzLjYyMSA4MyAzODEuMTUzIDgzIDM2NS41NjdaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjMyLjI5MSA0MTNWMjUwLjA4MkMyNDQuNjg0IDI1NC42MTQgMjUwLjE0OCAyNTQuNjE0IDI2My4zNzEgMjUwLjA4MlY0MTNIMjMyLjI5MVpNMjQ3LjUgMjM5LjMxM0MyNDEuOTkgMjM5LjMxMyAyMzcuMTQgMjM3LjMxMyAyMzIuOTUyIDIzMy4zMTZDMjI4Ljk4NCAyMjkuMDk1IDIyNyAyMjQuMjA5IDIyNyAyMTguNjU2QzIyNyAyMTIuODgyIDIyOC45ODQgMjA3Ljk5NSAyMzIuOTUyIDIwMy45OTdDMjM3LjE0IDE5OS45OTkgMjQxLjk5IDE5OCAyNDcuNSAxOThDMjUzLjIzMSAxOTggMjU4LjA4IDE5OS45OTkgMjYyLjA0OSAyMDMuOTk3QzI2Ni4wMTYgMjA3Ljk5NSAyNjggMjEyLjg4MiAyNjggMjE4LjY1NkMyNjggMjI0LjIwOSAyNjYuMDE2IDIyOS4wOTUgMjYyLjA0OSAyMzMuMzE2QzI1OC4wOCAyMzcuMzEzIDI1My4yMzEgMjM5LjMxMyAyNDcuNSAyMzkuMzEzWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTMxOS4zMzMgNDEzSDI4OFYyNDkuNjc2SDMxNlYyNzcuMjMzQzMxOS4zMzMgMjY4LjEwNCAzMjUuNzc4IDI2MC4zNjQgMzM0LjY2NyAyNTQuMzUyQzM0My43NzggMjQ4LjExNyAzNTQuNzc4IDI0NSAzNjcuNjY3IDI0NUMzODIuMTExIDI0NSAzOTQuMTEyIDI0OC44OTcgNDAzLjY2NyAyNTYuNjlDNDEzLjIyMiAyNjQuNDg0IDQxOS40NDQgMjc0LjgzNyA0MjIuMzM0IDI4Ny43NTJINDE2LjY2N0M0MTguODg5IDI3NC44MzcgNDI1IDI2NC40ODQgNDM1IDI1Ni42OUM0NDUgMjQ4Ljg5NyA0NTcuMzM0IDI0NSA0NzIgMjQ1QzQ5MC42NjYgMjQ1IDUwNS4zMzQgMjUwLjQ1NSA1MTYgMjYxLjM2NkM1MjYuNjY3IDI3Mi4yNzYgNTMyIDI4Ny4xOTUgNTMyIDMwNi4xMjFWNDEzSDUwMS4zMzNWMzEzLjgwNEM1MDEuMzMzIDMwMC44ODkgNDk4IDI5MC45ODEgNDkxLjMzMyAyODQuMDc4QzQ4NC44ODkgMjc2Ljk1MiA0NzYuMTExIDI3My4zOSA0NjUgMjczLjM5QzQ1Ny4yMjIgMjczLjM5IDQ1MC4zMzMgMjc1LjE3MSA0NDQuMzM0IDI3OC43MzRDNDM4LjU1NiAyODIuMDc0IDQzNCAyODYuOTcyIDQzMC42NjcgMjkzLjQzQzQyNy4zMzMgMjk5Ljg4NyA0MjUuNjY3IDMwNy40NTcgNDI1LjY2NyAzMTYuMTQxVjQxM0gzOTQuNjY3VjMxMy40NjlDMzk0LjY2NyAzMDAuNTU1IDM5MS40NDUgMjkwLjc1OCAzODUgMjg0LjA3OEMzNzguNTU2IDI3Ny4xNzUgMzY5Ljc3OCAyNzMuNzI0IDM1OC42NjcgMjczLjcyNEMzNTAuODg5IDI3My43MjQgMzQ0IDI3NS41MDUgMzM4IDI3OS4wNjhDMzMyLjIyMiAyODIuNDA4IDMyNy42NjcgMjg3LjMwNyAzMjQuMzMzIDI5My43NjNDMzIxIDI5OS45OTggMzE5LjMzMyAzMDcuNDU3IDMxOS4zMzMgMzE2LjE0MVY0MTNaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzExNTlfMzEzIj4KPHJlY3Qgd2lkdGg9IjYxNiIgaGVpZ2h0PSI2MTYiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+&amp;logoColor=white&quot; alt=&quot;Sim.ai&quot;&gt;&lt;/a&gt;
+
+### Self-hosted: NPM Package
+
+```bash
+npx simstudio
+```
+→ http://localhost:3000
+
+#### Note
+Docker must be installed and running on your machine.
+
+#### Options
+
+| Flag | Description |
+|------|-------------|
+| `-p, --port &lt;port&gt;` | Port to run Sim on (default `3000`) |
+| `--no-pull` | Skip pulling latest Docker images |
+
+### Self-hosted: Docker Compose
+
+```bash
+git clone https://github.com/simstudioai/sim.git &amp;&amp; cd sim
+docker compose -f docker-compose.prod.yml up -d
+```
+
+Open [http://localhost:3000](http://localhost:3000)
+
+#### Background worker note
+
+The Docker Compose stack starts a dedicated worker container by default. If `REDIS_URL` is not configured, the worker will start, log that it is idle, and do no queue processing. This is expected. Queue-backed API, webhook, and schedule execution requires Redis; installs without Redis continue to use the inline execution path.
+
+Sim also supports local models via [Ollama](https://ollama.ai) and [vLLM](https://docs.vllm.ai/) — see the [Docker self-hosting docs](https://docs.sim.ai/self-hosting/docker) for setup details.
+
+### Self-hosted: Manual Setup
+
+**Requirements:** [Bun](https://bun.sh/), [Node.js](https://nodejs.org/) v20+, PostgreSQL 12+ with [pgvector](https://github.com/pgvector/pgvector)
+
+1. Clone and install:
+
+```bash
+git clone https://github.com/simstudioai/sim.git
+cd sim
+bun install
+```
+
+2. Set up PostgreSQL with pgvector:
+
+```bash
+docker run --name simstudio-db -e POSTGRES_PASSWORD=your_password -e POSTGRES_DB=simstudio -p 5432:5432 -d pgvector/pgvector:pg17
+```
+
+Or install manually via the [pgvector guide](https://github.com/pgvector/pgvector#installation).
+
+3. Configure environment:
+
+```bash
+cp apps/sim/.env.example apps/sim/.env
+cp packages/db/.env.example packages/db/.env
+# Edit both .env files to set DATABASE_URL=&quot;postgresql://postgres:your_password@localhost:5432/simstudio&quot;
+```
+
+4. Run migrations:
+
+```bash
+cd packages/db &amp;&amp; bunx drizzle-kit migrate --config=./drizzle.config.ts
+```
+
+5. Start development servers:
+
+```bash
+bun run dev:full  # Starts Next.js app, realtime socket server, and the BullMQ worker
+```
+
+If `REDIS_URL` is not configured, the worker will remain idle and execution continues inline.
+
+Or run separately: `bun run dev` (Next.js), `cd apps/sim &amp;&amp; bun run dev:sockets` (realtime), and `cd apps/sim &amp;&amp; bun run worker` (BullMQ worker).
+
+## Copilot API Keys
+
+Copilot is a Sim-managed service. To use Copilot on a self-hosted instance:
+
+- Go to https://sim.ai → Settings → Copilot and generate a Copilot API key
+- Set `COPILOT_API_KEY` environment variable in your self-hosted apps/sim/.env file to that value
+
+## Environment Variables
+
+See the [environment variables reference](https://docs.sim.ai/self-hosting/environment-variables) for the full list, or [`apps/sim/.env.example`](apps/sim/.env.example) for defaults.
+
+## Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Runtime**: [Bun](https://bun.sh/)
+- **Database**: PostgreSQL with [Drizzle ORM](https://orm.drizzle.team)
+- **Authentication**: [Better Auth](https://better-auth.com)
+- **UI**: [Shadcn](https://ui.shadcn.com/), [Tailwind CSS](https://tailwindcss.com)
+- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
+- **Flow Editor**: [ReactFlow](https://reactflow.dev/)
+- **Docs**: [Fumadocs](https://fumadocs.vercel.app/)
+- **Monorepo**: [Turborepo](https://turborepo.org/)
+- **Realtime**: [Socket.io](https://socket.io/)
+- **Background Jobs**: [Trigger.dev](https://trigger.dev/)
+- **Remote Code Execution**: [E2B](https://www.e2b.dev/)
+
+## Contributing
+
+We welcome contributions! Please see our [Contributing Guide](.github/CONTRIBUTING.md) for details.
+
+## License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+
+&lt;p align=&quot;center&quot;&gt;Made with ❤️ by the Sim Team&lt;/p&gt;
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[code-yeongyu/oh-my-openagent]]></title>
+            <link>https://github.com/code-yeongyu/oh-my-openagent</link>
+            <guid>https://github.com/code-yeongyu/oh-my-openagent</guid>
+            <pubDate>Sat, 04 Apr 2026 00:09:42 GMT</pubDate>
+            <description><![CDATA[omo; the best agent harness - previously oh-my-opencode]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/code-yeongyu/oh-my-openagent">code-yeongyu/oh-my-openagent</a></h1>
+            <p>omo; the best agent harness - previously oh-my-opencode</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 47,807</p>
+            <p>Forks: 3,703</p>
+            <p>Stars today: 724 stars today</p>
+            <h2>README</h2><pre>&gt; [!WARNING]
+&gt; **Security warning: impersonation site**
+&gt;
+&gt; **ohmyopencode.com is NOT affiliated with this project.** We do not operate or endorse that site.
+&gt;
+&gt; OhMyOpenCode is **free and open-source**. Do **not** download installers or enter payment details on third-party sites that claim to be &quot;official.&quot;
+&gt;
+&gt; Because the impersonation site is behind a paywall, we **cannot verify what it distributes**. Treat any downloads from it as **potentially unsafe**.
+&gt;
+&gt; ✅ Official downloads: https://github.com/code-yeongyu/oh-my-opencode/releases
+
+&gt; [!NOTE]
+&gt;
+&gt; [![Sisyphus Labs — Sisyphus is the agent that codes like your team.](./.github/assets/sisyphuslabs.png?v=2)](https://sisyphuslabs.ai)
+&gt; &gt; **We&#039;re building a fully productized version of Sisyphus to define the future of frontier agents. &lt;br /&gt;Join the waitlist [here](https://sisyphuslabs.ai).**
+
+&gt; [!TIP]
+&gt;
+&gt; [![Oh My OpenCode 3.0 is now stable!](./.github/assets/orchestrator-atlas.png?v=3)](https://github.com/code-yeongyu/oh-my-opencode/releases/tag/v3.0.0)
+&gt; &gt; **Oh My OpenCode 3.0 is now stable! Use `oh-my-opencode@latest` to install it.**
+&gt;
+&gt; Be with us!
+&gt;
+&gt; | [&lt;img alt=&quot;Discord link&quot; src=&quot;https://img.shields.io/discord/1452487457085063218?color=5865F2&amp;label=discord&amp;labelColor=black&amp;logo=discord&amp;logoColor=white&amp;style=flat-square&quot; width=&quot;156px&quot; /&gt;](https://discord.gg/PUwSMR9XNk) | Join our [Discord community](https://discord.gg/PUwSMR9XNk) to connect with contributors and fellow `oh-my-opencode` users. |
+&gt; | :-----| :----- |
+&gt; | [&lt;img alt=&quot;X link&quot; src=&quot;https://img.shields.io/badge/Follow-%40justsisyphus-00CED1?style=flat-square&amp;logo=x&amp;labelColor=black&quot; width=&quot;156px&quot; /&gt;](https://x.com/justsisyphus) | News and updates for `oh-my-opencode` used to be posted on my X account. &lt;br /&gt; Since it was suspended mistakenly, [@justsisyphus](https://x.com/justsisyphus) now posts updates on my behalf. |
+&gt; | [&lt;img alt=&quot;GitHub Follow&quot; src=&quot;https://img.shields.io/github/followers/code-yeongyu?style=flat-square&amp;logo=github&amp;labelColor=black&amp;color=24292f&quot; width=&quot;156px&quot; /&gt;](https://github.com/code-yeongyu) | Follow [@code-yeongyu](https://github.com/code-yeongyu) on GitHub for more projects. |
+
+&lt;!-- &lt;CENTERED SECTION FOR GITHUB DISPLAY&gt; --&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+
+[![Oh My OpenCode](./.github/assets/hero.jpg)](https://github.com/code-yeongyu/oh-my-opencode#oh-my-opencode)
+
+[![Preview](./.github/assets/omo.png)](https://github.com/code-yeongyu/oh-my-opencode#oh-my-opencode)
+
+
+&lt;/div&gt;
+
+&gt; This is coding on steroids—`oh-my-opencode` in action. Run background agents, call specialized agents like oracle, librarian, and frontend engineer. Use crafted LSP/AST tools, curated MCPs, and a full Claude Code compatibility layer.
+
+# Claude OAuth Access Notice
+
+## TL;DR
+
+&gt; Q. Can I use oh-my-opencode?
+
+Yes.
+
+&gt; Q. Can I use it with my Claude Code subscription?
+
+Yes, technically possible. But I cannot recommend using it.
+
+## FULL
+
+&gt; As of January 2026, Anthropic has restricted third-party OAuth access citing ToS violations.
+&gt;
+&gt; [**Anthropic has cited this project, oh-my-opencode as justification for blocking opencode.**](https://x.com/thdxr/status/2010149530486911014)
+&gt;
+&gt; Indeed, some plugins that spoof Claude Code&#039;s oauth request signatures exist in the community.
+&gt;
+&gt; These tools may work regardless of technical detectability, but users should be aware of ToS implications, and I personally cannot recommend to use those.
+&gt;
+&gt; This project is not responsible for any issues arising from the use of unofficial tools, and **we do not have any custom implementations of those oauth systems.**
+
+
+&lt;div align=&quot;center&quot;&gt;
+
+[![GitHub Release](https://img.shields.io/github/v/release/code-yeongyu/oh-my-opencode?color=369eff&amp;labelColor=black&amp;logo=github&amp;style=flat-square)](https://github.com/code-yeongyu/oh-my-opencode/releases)
+[![npm downloads](https://img.shields.io/npm/dt/oh-my-opencode?color=ff6b35&amp;labelColor=black&amp;style=flat-square)](https://www.npmjs.com/package/oh-my-opencode)
+[![GitHub Contributors](https://img.shields.io/github/contributors/code-yeongyu/oh-my-opencode?color=c4f042&amp;labelColor=black&amp;style=flat-square)](https://github.com/code-yeongyu/oh-my-opencode/graphs/contributors)
+[![GitHub Forks](https://img.shields.io/github/forks/code-yeongyu/oh-my-opencode?color=8ae8ff&amp;labelColor=black&amp;style=flat-square)](https://github.com/code-yeongyu/oh-my-opencode/network/members)
+[![GitHub Stars](https://img.shields.io/github/stars/code-yeongyu/oh-my-opencode?color=ffcb47&amp;labelColor=black&amp;style=flat-square)](https://github.com/code-yeongyu/oh-my-opencode/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/code-yeongyu/oh-my-opencode?color=ff80eb&amp;labelColor=black&amp;style=flat-square)](https://github.com/code-yeongyu/oh-my-opencode/issues)
+[![License](https://img.shields.io/badge/license-SUL--1.0-white?labelColor=black&amp;style=flat-square)](https://github.com/code-yeongyu/oh-my-opencode/blob/master/LICENSE.md)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/code-yeongyu/oh-my-opencode)
+
+[English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-cn.md)
+
+&lt;/div&gt;
+
+&lt;!-- &lt;/CENTERED SECTION FOR GITHUB DISPLAY&gt; --&gt;
+
+## Reviews
+
+&gt; &quot;It made me cancel my Cursor subscription. Unbelievable things are happening in the open source community.&quot; - [Arthur Guiot](https://x.com/arthur_guiot/status/2008736347092382053?s=20)
+
+&gt; &quot;If Claude Code does in 7 days what a human does in 3 months, Sisyphus does it in 1 hour. It just works until the task is done. It is a discipline agent.&quot; — B, Quant Researcher
+
+&gt; &quot;Knocked out 8000 eslint warnings with Oh My Opencode, just in a day&quot; — [Jacob Ferrari](https://x.com/jacobferrari_/status/2003258761952289061)
+
+&gt; &quot;I converted a 45k line tauri app into a SaaS web app overnight using Ohmyopencode and ralph loop. Started with interview me prompt, asked it for ratings and recommendations on the questions. It was amazing to watch it work and to wake up this morning to a mostly working website!&quot; - [James Hargis](https://x.com/hargabyte/status/2007299688261882202)
+
+&gt; &quot;use oh-my-opencode, you will never go back&quot; — [d0t3ch](https://x.com/d0t3ch/status/2001685618200580503)
+
+&gt; &quot;I haven&#039;t really been able to articulate exactly what makes it so great yet, but the development experience has reached a completely different dimension.&quot; - [
+苔硯:こけすずり](https://x.com/kokesuzuri/status/2008532913961529372?s=20)
+
+&gt; &quot;Experimenting with open code, oh my opencode and supermemory this weekend to build some minecraft/souls-like abomination.&quot;
+&gt; &quot;Asking it to add crouch animations while I go take my post-lunch walk. [Video]&quot; - [MagiMetal](https://x.com/MagiMetal/status/2005374704178373023)
+
+&gt; &quot;You guys should pull this into core and recruit him. Seriously. It&#039;s really, really, really good.&quot; — Henning Kilset
+
+&gt; &quot;Hire @yeon_gyu_kim if you can convince him, this dude has revolutionized opencode.&quot; — [mysticaltech](https://x.com/mysticaltech/status/2001858758608376079)
+
+&gt; &quot;Oh My OpenCode Is Actually Insane&quot; - [YouTube - Darren Builds AI](https://www.youtube.com/watch?v=G_Snfh2M41M)
+
+---
+
+## Contents
+
+- [Oh My OpenCode](#oh-my-opencode)
+  - [Just Skip Reading This Readme](#just-skip-reading-this-readme)
+    - [It&#039;s the Age of Agents](#its-the-age-of-agents)
+    - [🪄 The Magic Word: `ultrawork`](#-the-magic-word-ultrawork)
+    - [For Those Who Want to Read: Meet Sisyphus](#for-those-who-want-to-read-meet-sisyphus)
+      - [Just Install It.](#just-install-it)
+  - [Installation](#installation)
+    - [For Humans](#for-humans)
+    - [For LLM Agents](#for-llm-agents)
+  - [Uninstallation](#uninstallation)
+  - [Features](#features)
+   - [Configuration](#configuration)
+    - [JSONC Support](#jsonc-support)
+    - [Google Auth](#google-auth)
+    - [Agents](#agents)
+      - [Permission Options](#permission-options)
+    - [Built-in Skills](#built-in-skills)
+    - [Git Master](#git-master)
+    - [Sisyphus Agent](#sisyphus-agent)
+    - [Background Tasks](#background-tasks)
+    - [Categories](#categories)
+    - [Hooks](#hooks)
+    - [MCPs](#mcps)
+    - [LSP](#lsp)
+    - [Experimental](#experimental)
+    - [Environment Variables](#environment-variables)
+  - [Author&#039;s Note](#authors-note)
+  - [Warnings](#warnings)
+  - [Loved by professionals at](#loved-by-professionals-at)
+
+# Oh My OpenCode
+
+[Claude Code](https://www.claude.com/product/claude-code) is great.
+But if you&#039;re a hacker, you&#039;ll fall head over heels for [OpenCode](https://github.com/sst/opencode).
+**START WITH YOUR ChatGPT, Claude, Gemini SUBSCRIPTIONS. OPENCODE COVERS THEM ALL.**
+
+- Endlessly extensible. Endlessly customizable.
+- Zero screen flicker.
+- [LSP](https://opencode.ai/docs/lsp/), [linters, formatters](https://opencode.ai/docs/formatters/) activate automatically per file—and you can tweak everything.
+- Mix and match models. **Orchestrate them by purpose.**
+- Feature-rich. Beautiful. The terminal doesn&#039;t choke. High performance.
+
+Remember the first time you switched from Windows to Linux? That rush of configuring everything exactly how you wanted?
+In an age where that magic seems lost, OpenCode brings it back.
+If you love coding and computers, OpenCode is that Linux-after-Windows moment.
+
+**But here&#039;s the catch: there&#039;s a lot to learn, it&#039;s complex, and your time is expensive.**
+
+I&#039;ve fixed that.
+Even if you&#039;re not a hacker, invest a few minutes. Multiply your skills and productivity.
+Hand this doc to an agent and let them set it up.
+
+## Just Skip Reading This Readme
+
+### It&#039;s the Age of Agents
+- **Just paste this link into Claude Code / AmpCode / Factory Droid / Cursor and ask it to explain.**
+  - Ask why it&#039;s good, why it&#039;s not just another boilerplate setup, what actually gets better.
+  - If you&#039;re an LLM agent, explain to the user what becomes possible right now with this project.
+
+As following:
+
+```
+Hey please read this readme and tell me why it is different from other agent harness? why is this actually good? https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/refs/heads/dev/README.md
+```
+
+### 🪄 The Magic Word: `ultrawork`
+
+**Don&#039;t want to read all this? Just include `ultrawork` (or `ulw`) in your prompt.**
+
+That&#039;s it. All the features we provide will work like magic—parallel agents, background tasks, deep exploration, and relentless execution until completion. The agent figures out the rest automatically.
+
+### For Those Who Want to Read: Meet Sisyphus
+
+![Meet Sisyphus](.github/assets/sisyphus.png)
+
+In greek mythology, Sisyphus was condemned to roll a boulder up a hill for eternity as punishment for deceiving the gods. LLM Agents haven&#039;t really done anything wrong, yet they too roll their &quot;stones&quot;—their thoughts—every single day.
+My life is no different. Looking back, we are not so different from these agents.
+**Yes! LLM Agents are no different from us. They can write code as brilliant as ours and work just as excellently—if you give them great tools and solid teammates.**
+
+Meet our main agent: Sisyphus (Opus 4.5 High). Below are the tools Sisyphus uses to keep that boulder rolling.
+
+*Everything below is customizable. Take what you want. All features are enabled by default. You don&#039;t have to do anything. Battery Included, works out of the box.*
+
+- Sisyphus&#039;s Teammates (Curated Agents)
+  - Oracle: Design, debugging (GPT 5.2 Medium)
+  - Frontend UI/UX Engineer: Frontend development (Gemini 3 Pro)
+  - Librarian: Official docs, open source implementations, codebase exploration (Claude Sonnet 4.5)
+  - Explore: Blazing fast codebase exploration (Contextual Grep) (Grok Code)
+- Full LSP / AstGrep Support: Refactor decisively.
+- Todo Continuation Enforcer: Forces the agent to continue if it quits halfway. **This is what keeps Sisyphus rolling that boulder.**
+- Comment Checker: Prevents AI from adding excessive comments. Code generated by Sisyphus should be indistinguishable from human-written code.
+- Claude Code Compatibility: Command, Agent, Skill, MCP, Hook(PreToolUse, PostToolUse, UserPromptSubmit, Stop)
+- Curated MCPs:
+  - Exa (Web Search)
+  - Context7 (Official Documentation)
+  - Grep.app (GitHub Code Search)
+- Interactive Terminal Supported - Tmux Integration
+- Async Agents
+- ...
+
+#### Just Install This
+
+You can learn a lot from [overview page](docs/guide/overview.md), but following is like the example workflow.
+
+Just by installing this, you make your agents to work like:
+
+1. Sisyphus doesn&#039;t waste time hunting for files himself; he keeps the main agent&#039;s context lean. Instead, he fires off background tasks to faster, cheaper models in parallel to map the territory for him.
+1. Sisyphus leverages LSP for refactoring; it&#039;s more deterministic, safer, and surgical.
+1. When the heavy lifting requires a UI touch, Sisyphus delegates frontend tasks directly to Gemini 3 Pro.
+1. If Sisyphus gets stuck in a loop or hits a wall, he doesn&#039;t keep banging his head—he calls GPT 5.2 for high-IQ strategic backup.
+1. Working with a complex open-source framework? Sisyphus spawns subagents to digest the raw source code and documentation in real-time. He operates with total contextual awareness.
+1. When Sisyphus touches comments, he either justifies their existence or nukes them. He keeps your codebase clean.
+1. Sisyphus is bound by his TODO list. If he doesn&#039;t finish what he started, the system forces him back into &quot;bouldering&quot; mode. Your task gets done, period.
+1. Honestly, don&#039;t even bother reading the docs. Just write your prompt. Include the &#039;ultrawork&#039; keyword. Sisyphus will analyze the structure, gather the context, dig through external source code, and just keep bouldering until the job is 100% complete.
+1. Actually, typing &#039;ultrawork&#039; is too much effort. Just type &#039;ulw&#039;. Just ulw. Sip your coffee. Your work is done.
+
+Need to look something up? It scours official docs, your entire codebase history, and public GitHub implementations—using not just grep but built-in LSP tools and AST-Grep.
+3. Stop worrying about context management when delegating to LLMs. I&#039;ve got it covered.
+    - OhMyOpenCode aggressively leverages multiple agents to lighten the context load.
+    - **Your agent is now the dev team lead. You&#039;re the AI Manager.**
+4. It doesn&#039;t stop until the job is done.
+5. Don&#039;t want to dive deep into this project? No problem. Just type &#039;ultrathink&#039;.
+
+If you don&#039;t want all this, as mentioned, you can just pick and choose specific features.
+
+## Installation
+
+### For Humans
+
+Copy and paste this prompt to your LLM agent (Claude Code, AmpCode, Cursor, etc.):
+
+```
+Install and configure oh-my-opencode by following the instructions here:
+https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/refs/heads/master/docs/guide/installation.md
+```
+
+Or read the [Installation Guide](docs/guide/installation.md) directly—but **we strongly recommend letting an agent handle it. Humans make mistakes.**
+
+### For LLM Agents
+
+Fetch the installation guide and follow it:
+
+```bash
+curl -s https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/refs/heads/master/docs/guide/installation.md
+```
+
+## Uninstallation
+
+To remove oh-my-opencode:
+
+1. **Remove the plugin from your OpenCode config**
+
+   Edit `~/.config/opencode/opencode.json` (or `opencode.jsonc`) and remove `&quot;oh-my-opencode&quot;` from the `plugin` array:
+
+   ```bash
+   # Using jq
+   jq &#039;.plugin = [.plugin[] | select(. != &quot;oh-my-opencode&quot;)]&#039; \
+       ~/.config/opencode/opencode.json &gt; /tmp/oc.json &amp;&amp; \
+       mv /tmp/oc.json ~/.config/opencode/opencode.json
+   ```
+
+2. **Remove configuration files (optional)**
+
+   ```bash
+   # Remove user config
+   rm -f ~/.config/opencode/oh-my-opencode.json
+
+   # Remove project config (if exists)
+   rm -f .opencode/oh-my-opencode.json
+   ```
+
+3. **Verify removal**
+
+   ```bash
+   opencode --version
+   # Plugin should no longer be loaded
+   ```
+
+## Features
+
+We have lots of features that you&#039;ll think should obviously exist, and once you experience them, you&#039;ll never be able to go back to how things were before.
+See the full [Features Documentation](docs/features.md) for detailed information.
+
+**Quick Overview:**
+- **Agents**: Sisyphus (the main agent), Prometheus (planner), Oracle (architecture/debugging), Librarian (docs/code search), Explore (fast codebase grep), Multimodal Looker
+- **Background Agents**: Run multiple agents in parallel like a real dev team
+- **LSP &amp; AST Tools**: Refactoring, rename, diagnostics, AST-aware code search
+- **Context Injection**: Auto-inject AGENTS.md, README.md, conditional rules
+- **Claude Code Compatibility**: Full hook system, commands, skills, agents, MCPs
+- **Built-in MCPs**: websearch (Exa), context7 (docs), grep_app (GitHub search)
+- **Session Tools**: List, read, search, and analyze session history
+- **Productivity Features**: Ralph Loop, Todo Enforcer, Comment Checker, Think Mode, and more
+
+## Configuration
+
+Highly opinionated, but adjustable to taste.
+See the full [Configuration Documentation](docs/configurations.md) for detailed information.
+
+**Quick Overview:**
+- **Config Locations**: `.opencode/oh-my-opencode.json` (project) or `~/.config/opencode/oh-my-opencode.json` (user)
+- **JSONC Support**: Comments and trailing commas supported
+- **Agents**: Override models, temperatures, prompts, and permissions for any agent
+- **Built-in Skills**: `playwright` (browser automation), `git-master` (atomic commits)
+- **Sisyphus Agent**: Main orchestrator with Prometheus (Planner) and Metis (Plan Consultant)
+- **Background Tasks**: Configure concurrency limits per provider/model
+- **Categories**: Domain-specific task delegation (`visual`, `business-logic`, custom)
+- **Hooks**: 25+ built-in hooks, all configurable via `disabled_hooks`
+- **MCPs**: Built-in websearch (Exa), context7 (docs), grep_app (GitHub search)
+- **LSP**: Full LSP support with refactoring tools
+- **Experimental**: Aggressive truncation, auto-resume, and more
+
+
+## Author&#039;s Note
+
+**Curious about the philosophy behind this project?** Read the [Ultrawork Manifesto](docs/ultrawork-manifesto.md).
+
+Install Oh My OpenCode.
+
+I&#039;ve used LLMs worth $24,000 tokens purely for personal development.
+Tried every tool out there, configured them to death. OpenCode won.
+
+The answers to every problem I hit are baked into this plugin. Just install and go.
+If OpenCode is Debian/Arch, Oh My OpenCode is Ubuntu/[Omarchy](https://omarchy.org/).
+
+
+Heavily influenced by [AmpCode](https://ampcode.com) and [Claude Code](https://code.claude.com/docs/overview)—I&#039;ve ported their features here, often improved. And I&#039;m still building.
+It&#039;s **Open**Code, after all.
+
+Enjoy multi-model orchestration, stability, and rich features that other harnesses promise but can&#039;t deliver.
+I&#039;ll keep testing and updating. I&#039;m this project&#039;s most obsessive user.
+- Which model has the sharpest logic?
+- Who&#039;s the debugging god?
+- Who writes the best prose?
+- Who dominates frontend?
+- Who owns backend?
+- Which model is fastest for daily driving?
+- What new features are other harnesses shipping?
+
+This plugin is the distillation of that experience. Just take the best. Got a better idea? PRs are welcome.
+
+**Stop agonizing over agent harness choices.**
+**I&#039;ll do the research, borrow from the best, and ship updates here.**
+
+If this sounds arrogant and you have a better answer, please contribute. You&#039;re welcome.
+
+I have no affiliation with any project or model mentioned here. This is purely personal experimentation and preference.
+
+99% of this project was built using OpenCode. I tested for functionality—I don&#039;t really know how to write proper TypeScript. **But I personally reviewed and largely rewrote this doc, so read with confidence.**
+
+## Warnings
+
+- Productivity might spike too hard. Don&#039;t let your coworker notice.
+  - Actually, I&#039;ll spread the word. Let&#039;s see who wins.
+- If you&#039;re on [1.0.132](https://github.com/sst/opencode/releases/tag/v1.0.132) or older, an OpenCode bug may break config.
+  - [The fix](https://github.com/sst/opencode/pull/5040) was merged after 1.0.132—use a newer version.
+    - Fun fact: That PR was discovered and fixed thanks to OhMyOpenCode&#039;s Librarian, Explore, and Oracle setup.
+
+## Loved by professio
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
