@@ -4,24 +4,835 @@
         <title>GitHub Trending Today for python - Python Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for python.</description>
-        <lastBuildDate>Mon, 06 Apr 2026 00:10:16 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 07 Apr 2026 00:10:53 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2026, GitHub</copyright>
         <item>
+            <title><![CDATA[NousResearch/hermes-agent]]></title>
+            <link>https://github.com/NousResearch/hermes-agent</link>
+            <guid>https://github.com/NousResearch/hermes-agent</guid>
+            <pubDate>Tue, 07 Apr 2026 00:10:53 GMT</pubDate>
+            <description><![CDATA[The agent that grows with you]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></h1>
+            <p>The agent that grows with you</p>
+            <p>Language: Python</p>
+            <p>Stars: 28,045</p>
+            <p>Forks: 3,695</p>
+            <p>Stars today: 1,574 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/banner.png&quot; alt=&quot;Hermes Agent&quot; width=&quot;100%&quot;&gt;
+&lt;/p&gt;
+
+# Hermes Agent ☤
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://hermes-agent.nousresearch.com/docs/&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Docs-hermes--agent.nousresearch.com-FFD700?style=for-the-badge&quot; alt=&quot;Documentation&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://discord.gg/NousResearch&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&amp;logo=discord&amp;logoColor=white&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/NousResearch/hermes-agent/blob/main/LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/License-MIT-green?style=for-the-badge&quot; alt=&quot;License: MIT&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://nousresearch.com&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Built%20by-Nous%20Research-blueviolet?style=for-the-badge&quot; alt=&quot;Built by Nous Research&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+**The self-improving AI agent built by [Nous Research](https://nousresearch.com).** It&#039;s the only agent with a built-in learning loop — it creates skills from experience, improves them during use, nudges itself to persist knowledge, searches its own past conversations, and builds a deepening model of who you are across sessions. Run it on a $5 VPS, a GPU cluster, or serverless infrastructure that costs nearly nothing when idle. It&#039;s not tied to your laptop — talk to it from Telegram while it works on a cloud VM.
+
+Use any model you want — [Nous Portal](https://portal.nousresearch.com), [OpenRouter](https://openrouter.ai) (200+ models), [z.ai/GLM](https://z.ai), [Kimi/Moonshot](https://platform.moonshot.ai), [MiniMax](https://www.minimax.io), OpenAI, or your own endpoint. Switch with `hermes model` — no code changes, no lock-in.
+
+&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;A real terminal interface&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Full TUI with multiline editing, slash-command autocomplete, conversation history, interrupt-and-redirect, and streaming tool output.&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;Lives where you do&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Telegram, Discord, Slack, WhatsApp, Signal, and CLI — all from a single gateway process. Voice memo transcription, cross-platform conversation continuity.&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;A closed learning loop&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Agent-curated memory with periodic nudges. Autonomous skill creation after complex tasks. Skills self-improve during use. FTS5 session search with LLM summarization for cross-session recall. &lt;a href=&quot;https://github.com/plastic-labs/honcho&quot;&gt;Honcho&lt;/a&gt; dialectic user modeling. Compatible with the &lt;a href=&quot;https://agentskills.io&quot;&gt;agentskills.io&lt;/a&gt; open standard.&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;Scheduled automations&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Built-in cron scheduler with delivery to any platform. Daily reports, nightly backups, weekly audits — all in natural language, running unattended.&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;Delegates and parallelizes&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Spawn isolated subagents for parallel workstreams. Write Python scripts that call tools via RPC, collapsing multi-step pipelines into zero-context-cost turns.&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;Runs anywhere, not just your laptop&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Six terminal backends — local, Docker, SSH, Daytona, Singularity, and Modal. Daytona and Modal offer serverless persistence — your agent&#039;s environment hibernates when idle and wakes on demand, costing nearly nothing between sessions. Run it on a $5 VPS or a GPU cluster.&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;Research-ready&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Batch trajectory generation, Atropos RL environments, trajectory compression for training the next generation of tool-calling models.&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+---
+
+## Quick Install
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash
+```
+
+Works on Linux, macOS, and WSL2. The installer handles everything — Python, Node.js, dependencies, and the `hermes` command. No prerequisites except git.
+
+&gt; **Windows:** Native Windows is not supported. Please install [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) and run the command above.
+
+After installation:
+
+```bash
+source ~/.bashrc    # reload shell (or: source ~/.zshrc)
+hermes              # start chatting!
+```
+
+---
+
+## Getting Started
+
+```bash
+hermes              # Interactive CLI — start a conversation
+hermes model        # Choose your LLM provider and model
+hermes tools        # Configure which tools are enabled
+hermes config set   # Set individual config values
+hermes gateway      # Start the messaging gateway (Telegram, Discord, etc.)
+hermes setup        # Run the full setup wizard (configures everything at once)
+hermes claw migrate # Migrate from OpenClaw (if coming from OpenClaw)
+hermes update       # Update to the latest version
+hermes doctor       # Diagnose any issues
+```
+
+📖 **[Full documentation →](https://hermes-agent.nousresearch.com/docs/)**
+
+## CLI vs Messaging Quick Reference
+
+Hermes has two entry points: start the terminal UI with `hermes`, or run the gateway and talk to it from Telegram, Discord, Slack, WhatsApp, Signal, or Email. Once you&#039;re in a conversation, many slash commands are shared across both interfaces.
+
+| Action | CLI | Messaging platforms |
+|---------|-----|---------------------|
+| Start chatting | `hermes` | Run `hermes gateway setup` + `hermes gateway start`, then send the bot a message |
+| Start fresh conversation | `/new` or `/reset` | `/new` or `/reset` |
+| Change model | `/model [provider:model]` | `/model [provider:model]` |
+| Set a personality | `/personality [name]` | `/personality [name]` |
+| Retry or undo the last turn | `/retry`, `/undo` | `/retry`, `/undo` |
+| Compress context / check usage | `/compress`, `/usage`, `/insights [--days N]` | `/compress`, `/usage`, `/insights [days]` |
+| Browse skills | `/skills` or `/&lt;skill-name&gt;` | `/skills` or `/&lt;skill-name&gt;` |
+| Interrupt current work | `Ctrl+C` or send a new message | `/stop` or send a new message |
+| Platform-specific status | `/platforms` | `/status`, `/sethome` |
+
+For the full command lists, see the [CLI guide](https://hermes-agent.nousresearch.com/docs/user-guide/cli) and the [Messaging Gateway guide](https://hermes-agent.nousresearch.com/docs/user-guide/messaging).
+
+---
+
+## Documentation
+
+All documentation lives at **[hermes-agent.nousresearch.com/docs](https://hermes-agent.nousresearch.com/docs/)**:
+
+| Section | What&#039;s Covered |
+|---------|---------------|
+| [Quickstart](https://hermes-agent.nousresearch.com/docs/getting-started/quickstart) | Install → setup → first conversation in 2 minutes |
+| [CLI Usage](https://hermes-agent.nousresearch.com/docs/user-guide/cli) | Commands, keybindings, personalities, sessions |
+| [Configuration](https://hermes-agent.nousresearch.com/docs/user-guide/configuration) | Config file, providers, models, all options |
+| [Messaging Gateway](https://hermes-agent.nousresearch.com/docs/user-guide/messaging) | Telegram, Discord, Slack, WhatsApp, Signal, Home Assistant |
+| [Security](https://hermes-agent.nousresearch.com/docs/user-guide/security) | Command approval, DM pairing, container isolation |
+| [Tools &amp; Toolsets](https://hermes-agent.nousresearch.com/docs/user-guide/features/tools) | 40+ tools, toolset system, terminal backends |
+| [Skills System](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills) | Procedural memory, Skills Hub, creating skills |
+| [Memory](https://hermes-agent.nousresearch.com/docs/user-guide/features/memory) | Persistent memory, user profiles, best practices |
+| [MCP Integration](https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp) | Connect any MCP server for extended capabilities |
+| [Cron Scheduling](https://hermes-agent.nousresearch.com/docs/user-guide/features/cron) | Scheduled tasks with platform delivery |
+| [Context Files](https://hermes-agent.nousresearch.com/docs/user-guide/features/context-files) | Project context that shapes every conversation |
+| [Architecture](https://hermes-agent.nousresearch.com/docs/developer-guide/architecture) | Project structure, agent loop, key classes |
+| [Contributing](https://hermes-agent.nousresearch.com/docs/developer-guide/contributing) | Development setup, PR process, code style |
+| [CLI Reference](https://hermes-agent.nousresearch.com/docs/reference/cli-commands) | All commands and flags |
+| [Environment Variables](https://hermes-agent.nousresearch.com/docs/reference/environment-variables) | Complete env var reference |
+
+---
+
+## Migrating from OpenClaw
+
+If you&#039;re coming from OpenClaw, Hermes can automatically import your settings, memories, skills, and API keys.
+
+**During first-time setup:** The setup wizard (`hermes setup`) automatically detects `~/.openclaw` and offers to migrate before configuration begins.
+
+**Anytime after install:**
+
+```bash
+hermes claw migrate              # Interactive migration (full preset)
+hermes claw migrate --dry-run    # Preview what would be migrated
+hermes claw migrate --preset user-data   # Migrate without secrets
+hermes claw migrate --overwrite  # Overwrite existing conflicts
+```
+
+What gets imported:
+- **SOUL.md** — persona file
+- **Memories** — MEMORY.md and USER.md entries
+- **Skills** — user-created skills → `~/.hermes/skills/openclaw-imports/`
+- **Command allowlist** — approval patterns
+- **Messaging settings** — platform configs, allowed users, working directory
+- **API keys** — allowlisted secrets (Telegram, OpenRouter, OpenAI, Anthropic, ElevenLabs)
+- **TTS assets** — workspace audio files
+- **Workspace instructions** — AGENTS.md (with `--workspace-target`)
+
+See `hermes claw migrate --help` for all options, or use the `openclaw-migration` skill for an interactive agent-guided migration with dry-run previews.
+
+---
+
+## Contributing
+
+We welcome contributions! See the [Contributing Guide](https://hermes-agent.nousresearch.com/docs/developer-guide/contributing) for development setup, code style, and PR process.
+
+Quick start for contributors:
+
+```bash
+git clone https://github.com/NousResearch/hermes-agent.git
+cd hermes-agent
+curl -LsSf https://astral.sh/uv/install.sh | sh
+uv venv venv --python 3.11
+source venv/bin/activate
+uv pip install -e &quot;.[all,dev]&quot;
+python -m pytest tests/ -q
+```
+
+&gt; **RL Training (optional):** To work on the RL/Tinker-Atropos integration:
+&gt; ```bash
+&gt; git submodule update --init tinker-atropos
+&gt; uv pip install -e &quot;./tinker-atropos&quot;
+&gt; ```
+
+---
+
+## Community
+
+- 💬 [Discord](https://discord.gg/NousResearch)
+- 📚 [Skills Hub](https://agentskills.io)
+- 🐛 [Issues](https://github.com/NousResearch/hermes-agent/issues)
+- 💡 [Discussions](https://github.com/NousResearch/hermes-agent/discussions)
+
+---
+
+## License
+
+MIT — see [LICENSE](LICENSE).
+
+Built by [Nous Research](https://nousresearch.com).
+</pre>
+          ]]></content:encoded>
+            <category>Python</category>
+        </item>
+        <item>
+            <title><![CDATA[NVIDIA/personaplex]]></title>
+            <link>https://github.com/NVIDIA/personaplex</link>
+            <guid>https://github.com/NVIDIA/personaplex</guid>
+            <pubDate>Tue, 07 Apr 2026 00:10:52 GMT</pubDate>
+            <description><![CDATA[PersonaPlex code.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/NVIDIA/personaplex">NVIDIA/personaplex</a></h1>
+            <p>PersonaPlex code.</p>
+            <p>Language: Python</p>
+            <p>Stars: 7,341</p>
+            <p>Forks: 1,087</p>
+            <p>Stars today: 295 stars today</p>
+            <h2>README</h2><pre># PersonaPlex: Voice and Role Control for Full Duplex Conversational Speech Models
+
+[![Weights](https://img.shields.io/badge/🤗-Weights-yellow)](https://huggingface.co/nvidia/personaplex-7b-v1)
+[![Paper](https://img.shields.io/badge/📄-Paper-blue)](https://arxiv.org/abs/2602.06053)
+[![Demo](https://img.shields.io/badge/🎮-Demo-green)](https://research.nvidia.com/labs/adlr/personaplex/)
+[![Discord](https://img.shields.io/badge/Discord-Join-purple?logo=discord)](https://discord.gg/5jAXrrbwRb)
+
+PersonaPlex is a real-time, full-duplex speech-to-speech conversational model that enables persona control through text-based role prompts and audio-based voice conditioning. Trained on a combination of synthetic and real conversations, it produces natural, low-latency spoken interactions with a consistent persona. PersonaPlex is based on the [Moshi](https://arxiv.org/abs/2410.00037) architecture and weights.
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/architecture_diagram.png&quot; alt=&quot;PersonaPlex Model Architecture&quot;&gt;
+  &lt;br&gt;
+  &lt;em&gt;PersonaPlex Architecture&lt;/em&gt;
+&lt;/p&gt;
+
+## Usage
+
+### Prerequisites
+
+Install the [Opus audio codec](https://github.com/xiph/opus) development library:
+```bash
+# Ubuntu/Debian
+sudo apt install libopus-dev
+
+# Fedora/RHEL
+sudo dnf install opus-devel
+```
+
+### Installation
+
+Download this repository and install with:
+```bash
+pip install moshi/.
+```
+
+Extra step for Blackwell based GPUs as suggested in (See https://github.com/NVIDIA/personaplex/issues/2):
+```bash
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu130
+```
+
+
+### Accept Model License
+Log in to your Huggingface account and accept the PersonaPlex model license [here](https://huggingface.co/nvidia/personaplex-7b-v1). &lt;br&gt;
+Then set up your Huggingface authentication:
+```bash
+export HF_TOKEN=&lt;YOUR_HUGGINGFACE_TOKEN&gt;
+```
+
+### Launch Server
+
+Launch server for live interaction (temporary SSL certs for https):
+```bash
+SSL_DIR=$(mktemp -d); python -m moshi.server --ssl &quot;$SSL_DIR&quot;
+```
+
+**CPU Offload:** If your GPU has insufficient memory, use the `--cpu-offload` flag to offload model layers to CPU. This requires the `accelerate` package (`pip install accelerate`):
+```bash
+SSL_DIR=$(mktemp -d); python -m moshi.server --ssl &quot;$SSL_DIR&quot; --cpu-offload
+```
+
+Access the Web UI from a browser at `localhost:8998` if running locally, otherwise look for the access link printed by the script:
+```
+Access the Web UI directly at https://11.54.401.33:8998
+```
+
+### Offline Evaluation
+
+For offline evaluation use the offline script that streams in an input wav file and produces an output wav file from the captured output stream. The output file will be the same duration as the input file.
+
+Add `--cpu-offload` to any command below if your GPU has insufficient memory (requires `accelerate` package). Or install cpu-only PyTorch for offline evaluation on pure CPU.
+
+**Assistant example:**
+```bash
+HF_TOKEN=&lt;TOKEN&gt; \
+python -m moshi.offline \
+  --voice-prompt &quot;NATF2.pt&quot; \
+  --input-wav &quot;assets/test/input_assistant.wav&quot; \
+  --seed 42424242 \
+  --output-wav &quot;output.wav&quot; \
+  --output-text &quot;output.json&quot;
+```
+
+**Service example:**
+```bash
+HF_TOKEN=&lt;TOKEN&gt; \
+python -m moshi.offline \
+  --voice-prompt &quot;NATM1.pt&quot; \
+  --text-prompt &quot;$(cat assets/test/prompt_service.txt)&quot; \
+  --input-wav &quot;assets/test/input_service.wav&quot; \
+  --seed 42424242 \
+  --output-wav &quot;output.wav&quot; \
+  --output-text &quot;output.json&quot;
+```
+
+## Voices
+
+PersonaPlex supports a wide range of voices; we pre-package embeddings for voices that sound more natural and conversational (NAT) and others that are more varied (VAR). The fixed set of voices are labeled:
+```
+Natural(female): NATF0, NATF1, NATF2, NATF3
+Natural(male):   NATM0, NATM1, NATM2, NATM3
+Variety(female): VARF0, VARF1, VARF2, VARF3, VARF4
+Variety(male):   VARM0, VARM1, VARM2, VARM3, VARM4
+```
+
+## Prompting Guide
+
+The model is trained on synthetic conversations for a fixed assistant role and varying customer service roles.
+
+### Assistant Role
+
+The assistant role has the prompt:
+```
+You are a wise and friendly teacher. Answer questions or provide advice in a clear and engaging way.
+```
+
+Use this prompt for the QA assistant focused &quot;User Interruption&quot; evaluation category in [FullDuplexBench](https://arxiv.org/abs/2503.04721).
+
+### Customer Service Roles
+
+The customer service roles support a variety of prompts. Here are some examples for prompting style reference:
+```
+You work for CitySan Services which is a waste management and your name is Ayelen Lucero. Information: Verify customer name Omar Torres. Current schedule: every other week. Upcoming pickup: April 12th. Compost bin service available for $8/month add-on.
+```
+```
+You work for Jerusalem Shakshuka which is a restaurant and your name is Owen Foster. Information: There are two shakshuka options: Classic (poached eggs, $9.50) and Spicy (scrambled eggs with jalapenos, $10.25). Sides include warm pita ($2.50) and Israeli salad ($3). No combo offers. Available for drive-through until 9 PM.
+```
+```
+You work for AeroRentals Pro which is a drone rental company and your name is Tomaz Novak. Information: AeroRentals Pro has the following availability: PhoenixDrone X ($65/4 hours, $110/8 hours), and the premium SpectraDrone 9 ($95/4 hours, $160/8 hours). Deposit required: $150 for standard models, $300 for premium.
+```
+
+### Casual Conversations
+
+The model is also trained on real conversations from the [Fisher English Corpus](https://catalog.ldc.upenn.edu/LDC2004T19) with LLM-labeled prompts for open-ended conversations. Here are some example prompts for casual conversations:
+```
+You enjoy having a good conversation.
+```
+```
+You enjoy having a good conversation. Have a casual discussion about eating at home versus dining out.
+```
+```
+You enjoy having a good conversation. Have an empathetic discussion about the meaning of family amid uncertainty.
+```
+```
+You enjoy having a good conversation. Have a reflective conversation about career changes and feeling of home. You have lived in California for 21 years and consider San Francisco your home. You work as a teacher and have traveled a lot. You dislike meetings.
+```
+```
+You enjoy having a good conversation. Have a casual conversation about favorite foods and cooking experiences. You are David Green, a former baker now living in Boston. You enjoy cooking diverse international dishes and appreciate many ethnic restaurants.
+```
+
+Use the prompt `You enjoy having a good conversation.` for the &quot;Pause Handling&quot;, &quot;Backchannel&quot; and &quot;Smooth Turn Taking&quot; evaluation categories of FullDuplexBench.
+
+## Generalization
+
+Personaplex finetunes Moshi and benefits from the generalization capabilities of the underlying [Helium](https://kyutai.org/blog/2025-04-30-helium) LLM. Thanks to the broad training corpus of the backbone, we find that the model will respond plausibly to out-of-distribution prompts and lead to unexpected or fun conversations. We encourage experimentation with different prompts to test the model&#039;s emergent ability to handle scenarios outside its training distribution. As an inspiration we feature the following astronaut prompt in the WebUI:
+```
+You enjoy having a good conversation. Have a technical discussion about fixing a reactor core on a spaceship to Mars. You are an astronaut on a Mars mission. Your name is Alex. You are already dealing with a reactor core meltdown on a Mars mission. Several ship systems are failing, and continued instability will lead to catastrophic failure. You explain what is happening and you urgently ask for help thinking through how to stabilize the reactor.
+```
+
+## License
+
+The present code is provided under the MIT license. The weights for the models are released under the NVIDIA Open Model license.
+
+## Citation
+
+If you use PersonaPlex in your research, please cite our paper:
+```bibtex
+@misc{roy2026personaplexvoicerolecontrol,
+      title={PersonaPlex: Voice and Role Control for Full Duplex Conversational Speech Models}, 
+      author={Rajarshi Roy and Jonathan Raiman and Sang-gil Lee and Teodor-Dumitru Ene and Robert Kirby and Sungwon Kim and Jaehyeon Kim and Bryan Catanzaro},
+      year={2026},
+      eprint={2602.06053},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2602.06053}, 
+}
+```
+</pre>
+          ]]></content:encoded>
+            <category>Python</category>
+        </item>
+        <item>
+            <title><![CDATA[HKUDS/DeepTutor]]></title>
+            <link>https://github.com/HKUDS/DeepTutor</link>
+            <guid>https://github.com/HKUDS/DeepTutor</guid>
+            <pubDate>Tue, 07 Apr 2026 00:10:51 GMT</pubDate>
+            <description><![CDATA["DeepTutor: Agent-Native Personalized Learning Assistant"]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/HKUDS/DeepTutor">HKUDS/DeepTutor</a></h1>
+            <p>"DeepTutor: Agent-Native Personalized Learning Assistant"</p>
+            <p>Language: Python</p>
+            <p>Stars: 11,528</p>
+            <p>Forks: 1,593</p>
+            <p>Stars today: 164 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+
+&lt;img src=&quot;assets/logo-ver2.png&quot; alt=&quot;DeepTutor&quot; width=&quot;140&quot; style=&quot;border-radius: 15px;&quot;&gt;
+
+# DeepTutor: Agent-Native Personalized Tutoring
+
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&amp;logo=python&amp;logoColor=white)](https://www.python.org/downloads/)
+[![Next.js 16](https://img.shields.io/badge/Next.js-16-000000?style=flat-square&amp;logo=next.js&amp;logoColor=white)](https://nextjs.org/)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square)](LICENSE)
+[![GitHub release](https://img.shields.io/github/v/release/HKUDS/DeepTutor?style=flat-square&amp;color=brightgreen)](https://github.com/HKUDS/DeepTutor/releases)
+[![GitHub last commit](https://img.shields.io/github/last-commit/HKUDS/DeepTutor?style=flat-square)](https://github.com/HKUDS/DeepTutor/commits)
+[![arXiv](https://img.shields.io/badge/arXiv-Coming_Soon-b31b1b?style=flat-square&amp;logo=arxiv&amp;logoColor=white)](#)
+
+[![Discord](https://img.shields.io/badge/Discord-Community-5865F2?style=flat-square&amp;logo=discord&amp;logoColor=white)](https://discord.gg/eRsjPgMU4t)
+[![Feishu](https://img.shields.io/badge/Feishu-Group-00D4AA?style=flat-square&amp;logo=feishu&amp;logoColor=white)](./Communication.md)
+[![WeChat](https://img.shields.io/badge/WeChat-Group-07C160?style=flat-square&amp;logo=wechat&amp;logoColor=white)](https://github.com/HKUDS/DeepTutor/issues/78)
+
+[Features](#-key-features) · [Get Started](#-get-started) · [Explore](#-explore-deeptutor) · [TutorBot](#-tutorbot--persistent-autonomous-ai-tutors) · [CLI](#%EF%B8%8F-deeptutor-cli--agent-native-interface) · [Community](#-community--ecosystem)
+
+[🇨🇳 中文](assets/README/README_CN.md) · [🇯🇵 日本語](assets/README/README_JA.md) · [🇪🇸 Español](assets/README/README_ES.md) · [🇫🇷 Français](assets/README/README_FR.md) · [🇸🇦 العربية](assets/README/README_AR.md) · [🇷🇺 Русский](assets/README/README_RU.md) · [🇮🇳 हिन्दी](assets/README/README_HI.md) · [🇵🇹 Português](assets/README/README_PT.md)
+
+&lt;/div&gt;
+
+---
+### 📰 News
+
+&gt; **[2026.4.4]** Long time no see! ✨ DeepTutor v1.0.0-beta.1 is finally here — an agent-native evolution featuring a ground-up architecture rewrite, TutorBot, and flexible mode switching under the Apache-2.0 license. A new chapter begins, and our story continues! 
+
+&gt; **[2026.2.6]** 🚀 We&#039;ve reached 10k stars in just 39 days! A huge thank you to our incredible community for the support! 
+
+&gt; **[2026.1.1]** Happy New Year! Join our [Discord](https://discord.gg/eRsjPgMU4t), [WeChat](https://github.com/HKUDS/DeepTutor/issues/78), or [Discussions](https://github.com/HKUDS/DeepTutor/discussions) — let&#039;s shape the future of DeepTutor together!
+
+&gt; **[2025.12.29]** DeepTutor is officially released!
+
+### 📦 Releases
+
+&gt; **[2026.4.4]** [v1.0.0-beta.1](https://github.com/HKUDS/DeepTutor/releases/tag/v1.0.0-beta.1) — Agent-native architecture rewrite (DeepTutor 2.0) with two-layer plugin model (Tools + Capabilities), CLI &amp; SDK entry points, TutorBot multi-channel bot agent, Co-Writer, Guided Learning, and persistent memory.
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Past releases&lt;/b&gt;&lt;/summary&gt;
+
+&gt; **[2026.1.23]** [v0.6.0](https://github.com/HKUDS/DeepTutor/releases/tag/v0.6.0) — Session persistence, incremental document upload, flexible RAG pipeline import, and full Chinese localization.
+
+&gt; **[2026.1.18]** [v0.5.2](https://github.com/HKUDS/DeepTutor/releases/tag/v0.5.2) — Docling support for RAG-Anything, logging system optimization, and bug fixes.
+
+&gt; **[2026.1.15]** [v0.5.0](https://github.com/HKUDS/DeepTutor/releases/tag/v0.5.0) — Unified service configuration, RAG pipeline selection per knowledge base, question generation overhaul, and sidebar customization.
+
+&gt; **[2026.1.9]** [v0.4.0](https://github.com/HKUDS/DeepTutor/releases/tag/v0.4.0) — Multi-provider LLM &amp; embedding support, new home page, RAG module decoupling, and environment variable refactor.
+
+&gt; **[2026.1.5]** [v0.3.0](https://github.com/HKUDS/DeepTutor/releases/tag/v0.3.0) — Unified PromptManager architecture, GitHub Actions CI/CD, and pre-built Docker images on GHCR.
+
+&gt; **[2026.1.2]** [v0.2.0](https://github.com/HKUDS/DeepTutor/releases/tag/v0.2.0) — Docker deployment, Next.js 16 &amp; React 19 upgrade, WebSocket security hardening, and critical vulnerability fixes.
+
+&lt;/details&gt;
+
+## ✨ Key Features
+
+- **Unified Chat Workspace** — Five modes, one thread. Chat, Deep Solve, Quiz Generation, Deep Research, and Math Animator share the same context — start a conversation, escalate to multi-agent problem solving, generate quizzes, then deep-dive into research, all without losing a single message.
+- **Personal TutorBots** — Not chatbots — autonomous tutors. Each TutorBot lives in its own workspace with its own memory, personality, and skill set. They set reminders, learn new abilities, and evolve as you grow. Powered by [nanobot](https://github.com/HKUDS/nanobot).
+- **AI Co-Writer** — A Markdown editor where AI is a first-class collaborator. Select text, rewrite, expand, or summarize — drawing from your knowledge base and the web. Every piece feeds back into your learning ecosystem.
+- **Guided Learning** — Turn your materials into structured, visual learning journeys. DeepTutor designs multi-step plans, generates interactive pages for each knowledge point, and lets you discuss alongside each step.
+- **Knowledge Hub** — Upload PDFs, Markdown, and text files to build RAG-ready knowledge bases. Organize insights across sessions in color-coded notebooks. Your documents don&#039;t just sit there — they actively power every conversation.
+- **Persistent Memory** — DeepTutor builds a living profile of you: what you&#039;ve studied, how you learn, and where you&#039;re heading. Shared across all features and TutorBots, it gets sharper with every interaction.
+- **Agent-Native CLI** — Every capability, knowledge base, session, and TutorBot is one command away. Rich terminal output for humans, structured JSON for AI agents and pipelines. Hand DeepTutor a [`SKILL.md`](SKILL.md) and your agents can operate it autonomously.
+
+---
+
+## 🚀 Get Started
+
+### Option A — Setup Tour (Recommended)
+
+A **single interactive script** that walks you through everything: dependency installation, environment configuration, live connection testing, and launch. No manual `.env` editing needed.
+
+```bash
+git clone https://github.com/HKUDS/DeepTutor.git
+cd DeepTutor
+
+# Create a Python environment
+conda create -n deeptutor python=3.11 &amp;&amp; conda activate deeptutor
+# Or: python -m venv .venv &amp;&amp; source .venv/bin/activate
+
+# Launch the guided tour
+python scripts/start_tour.py
+```
+
+The tour asks how you&#039;d like to use DeepTutor:
+
+- **Web mode** (recommended) — Picks a dependency profile, installs everything (pip + npm), then spins up a temporary server and opens the **Settings** page in your browser. A four-step guided tour walks you through LLM, Embedding, and Search provider setup with live connection testing. Once complete, DeepTutor restarts automatically with your configuration.
+- **CLI mode** — A fully interactive terminal flow: choose a dependency profile, install dependencies, configure providers, verify connections, and apply — all without leaving the shell.
+
+Either way, you end up with a running DeepTutor at [http://localhost:3782](http://localhost:3782).
+
+### Option B — Manual Local Install
+
+If you prefer full control, install and configure everything yourself.
+
+**1. Install dependencies**
+
+```bash
+git clone https://github.com/HKUDS/DeepTutor.git
+cd DeepTutor
+
+conda create -n deeptutor python=3.11 &amp;&amp; conda activate deeptutor
+pip install -e &quot;.[server]&quot;
+
+# Frontend
+cd web &amp;&amp; npm install &amp;&amp; cd ..
+```
+
+**2. Configure environment**
+
+```bash
+cp .env.example .env
+```
+
+Edit `.env` and fill in at least the required fields:
+
+```dotenv
+# LLM (Required)
+LLM_BINDING=openai
+LLM_MODEL=gpt-4o-mini
+LLM_API_KEY=sk-xxx
+LLM_HOST=https://api.openai.com/v1
+
+# Embedding (Required for Knowledge Base)
+EMBEDDING_BINDING=openai
+EMBEDDING_MODEL=text-embedding-3-large
+EMBEDDING_API_KEY=sk-xxx
+EMBEDDING_HOST=https://api.openai.com/v1
+EMBEDDING_DIMENSION=3072
+```
+
+**3. Start services**
+
+```bash
+# Backend (FastAPI)
+python -m deeptutor.api.run_server
+
+# Frontend (Next.js) — in a separate terminal
+cd web &amp;&amp; npm run dev -- -p 3782
+```
+
+| Service | Default Port |
+|:---:|:---:|
+| Backend | `8001` |
+| Frontend | `3782` |
+
+Open [http://localhost:3782](http://localhost:3782) and you&#039;re ready to go.
+
+### Option C — Docker Deployment
+
+Docker wraps the backend and frontend into a single container — no local Python or Node.js required. Two options depending on your preference:
+
+**1. Configure environment variables** (required for both options)
+
+```bash
+git clone https://github.com/HKUDS/DeepTutor.git
+cd DeepTutor
+cp .env.example .env
+```
+
+Edit `.env` and fill in at least the required fields (same as [Option B](#option-b--manual-local-install) above).
+
+**2a. Pull official image (recommended)**
+
+Official images are published to [GitHub Container Registry](https://github.com/HKUDS/DeepTutor/pkgs/container/deeptutor) on every release, built for `linux/amd64` and `linux/arm64`.
+
+```bash
+docker compose -f docker-compose.ghcr.yml up -d
+```
+
+To pin a specific version, edit the image tag in `docker-compose.ghcr.yml`:
+
+```yaml
+image: ghcr.io/hkuds/deeptutor:1.0.0  # or :latest
+```
+
+**2b. Build from source**
+
+```bash
+docker compose up -d
+```
+
+This builds the image locally from `Dockerfile` and starts the container.
+
+**3. Verify &amp; manage**
+
+Open [http://localhost:3782](http://localhost:3782) once the container is healthy.
+
+```bash
+docker compose logs -f   # tail logs
+docker compose down       # stop and remove container
+```
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Cloud / remote server deployment&lt;/b&gt;&lt;/summary&gt;
+
+When deploying to a remote server, the browser needs to know the public URL of the backend API. Add one more variable to your `.env`:
+
+```dotenv
+# Set to the public URL where the backend is reachable
+NEXT_PUBLIC_API_BASE_EXTERNAL=https://your-server.com:8001
+```
+
+The frontend startup script applies this value at runtime — no rebuild needed.
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Development mode (hot-reload)&lt;/b&gt;&lt;/summary&gt;
+
+Layer the dev override to mount source code and enable hot-reload for both services:
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.dev.yml up
+```
+
+Changes to `deeptutor/`, `deeptutor_cli/`, `scripts/`, and `web/` are reflected immediately.
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Custom ports&lt;/b&gt;&lt;/summary&gt;
+
+Override the default ports in `.env`:
+
+```dotenv
+BACKEND_PORT=9001
+FRONTEND_PORT=4000
+```
+
+Then restart:
+
+```bash
+docker compose up -d     # or docker compose -f docker-compose.ghcr.yml up -d
+```
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Data persistence&lt;/b&gt;&lt;/summary&gt;
+
+User data and knowledge bases are persisted via Docker volumes mapped to local directories:
+
+| Container path | Host path | Content |
+|:---|:---|:---|
+| `/app/data/user` | `./data/user` | Settings, memory, workspace, sessions, logs |
+| `/app/data/knowledge_bases` | `./data/knowledge_bases` | Uploaded documents &amp; vector indices |
+
+These directories survive `docker compose down` and are reused on the next `docker compose up`.
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Environment variables reference&lt;/b&gt;&lt;/summary&gt;
+
+| Variable | Required | Description |
+|:---|:---:|:---|
+| `LLM_BINDING` | **Yes** | LLM provider (`openai`, `anthropic`, etc.) |
+| `LLM_MODEL` | **Yes** | Model name (e.g. `gpt-4o`) |
+| `LLM_API_KEY` | **Yes** | Your LLM API key |
+| `LLM_HOST` | **Yes** | API endpoint URL |
+| `EMBEDDING_BINDING` | **Yes** | Embedding provider |
+| `EMBEDDING_MODEL` | **Yes** | Embedding model name |
+| `EMBEDDING_API_KEY` | **Yes** | Embedding API key |
+| `EMBEDDING_HOST` | **Yes** | Embedding endpoint |
+| `EMBEDDING_DIMENSION` | **Yes** | Vector dimension |
+| `SEARCH_PROVIDER` | No | Search provider (`tavily`, `jina`, `serper`, `perplexity`, etc.) |
+| `SEARCH_API_KEY` | No | Search API key |
+| `BACKEND_PORT` | No | Backend port (default `8001`) |
+| `FRONTEND_PORT` | No | Frontend port (default `3782`) |
+| `NEXT_PUBLIC_API_BASE_EXTERNAL` | No | Public backend URL for cloud deployment |
+| `DISABLE_SSL_VERIFY` | No | Disable SSL verification (default `false`) |
+
+&lt;/details&gt;
+
+### Option D — CLI Only
+
+If you just want the CLI without the web frontend:
+
+```bash
+pip install -e &quot;.[cli]&quot;
+deeptutor chat                                   # Interactive REPL
+deeptutor run chat &quot;Explain Fourier transform&quot;   # One-shot capability
+deeptutor run deep_solve &quot;Solve x^2 = 4&quot;         # Multi-agent problem solving
+deeptutor kb create my-kb --doc textbook.pdf     # Build a knowledge base
+```
+
+&gt; See [DeepTutor CLI](#%EF%B8%8F-deeptutor-cli--agent-native-interface) for the full feature guide and command reference.
+
+---
+
+## 📖 Explore DeepTutor
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;assets/figs/deeptutor-architecture.png&quot; alt=&quot;DeepTutor Architecture&quot; width=&quot;800&quot;&gt;
+&lt;/div&gt;
+
+### 💬 Chat — Unified Intelligent Workspace
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;assets/figs/dt-chat.png&quot; alt=&quot;Chat Workspace&quot; width=&quot;800&quot;&gt;
+&lt;/div&gt;
+
+Five distinct modes coexist in a single workspace, bound by a **unified context management system**. Conversation history, knowledge bases, and references persist across modes — switch between them freely within the same topic, whenever the moment calls for it.
+
+| Mode | What It Does |
+|:---|:---|
+| **Chat** | Fluid, tool-augmented conversation. Choose from RAG retrieval, web search, code execution, deep reasoning, brainstorming, and paper search — mix and match as needed. |
+| **Deep Solve** | Multi-agent problem solving: plan, investigate, solve, and verify — with precise source citations at every step. |
+| **Quiz Generation** | Generate assessments grounded in your knowledge base, with built-in validation. |
+| **Deep Research** | Decompose a topic into subtopics, dispatch parallel research agents across RAG, web, and academic papers, and produce a fully cited report. |
+| **Math Animator** | Turn mathematical concepts into visual animations and storyboards powered by Manim. |
+
+Tools are **decoupled from workflows** — in every mode, you decide which tools to enable, how many to use, or whether to use any at all. The workflow orchestrates the reasoning; the tools are yours to compose.
+
+&gt; Start with a quick chat question, escalate to Deep Solve when it gets hard, generate quiz questions to test yourself, then launch a Deep Research to go deeper — all in one continuous thread.
+
+### ✍️ Co-Writer — AI Inside Your Editor
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;assets/figs/dt-cowriter.png&quot; alt=&quot;Co-Writer&quot; width=&quot;800&quot;&gt;
+&lt;/div&gt;
+
+Co-Writer brings the intelligence of Chat directly into a writing surface. It is a full-featured Markdown editor where AI is a first-class collaborator — not a sidebar, not an afterthought.
+
+Select any text and choose **Rewrite**, **Expand**, or **Shorten** — optionally drawing context from your knowledge base or the web. The editing flow is non-destructive with full undo/redo, and every piece you write can be saved straight to your notebooks, feeding back into your learning ecosystem.
+
+### 🎓 Guided Learning — Visual, Step-by-Step Mastery
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;assets/figs/dt-guide.png&quot; alt=&quot;Guided Learning&quot; width=&quot;800&quot;&gt;
+&lt;/div&gt;
+
+Guided Learning turns your personal materials into structured, multi-step learning journeys. Provide a topic, optionally link notebook records, and DeepTutor will:
+
+1. **Design a learning plan** — Identify 3–5 progressive knowledge points from your materials.
+2. **Generate interactive pages** — Each point becomes a rich visual HTML page with explanations, diagrams, and examples.
+3. **Enable contextual Q&amp;A** — Chat alongside each step for deeper exploration.
+4. **Summarize your progress** — Upon completion, receive a learning summary of everything you&#039;ve covered.
+
+Sessions are persistent — pause, resume, or revisit any step at any time.
+
+### 📚 Knowledge Management — Your Learning Infrastructure
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;assets/figs/dt-knowledge.png&quot; alt=&quot;Knowledge Management&quot; width=&quot;800&quot;&gt;
+&lt;/div&gt;
+
+Knowledge is where you build and manage the document collections that power everything else in DeepTutor.
+
+- **Knowledge Bases** — Upload PDF, TXT, or Markdown files to create searchable, RAG-ready collections. Add documents incrementally as your library grows.
+- **Notebooks** — Organize learning records across sessions. Save insights from Chat, Guided Learning, Co-Writer, or Deep Research into categorized, color-coded notebooks.
+
+Your knowledge base is not passive storage — it actively participates in every conversation, every research session, and every learning path you create.
+
+### 🧠 Memory — DeepTutor Learns As You Learn
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;assets/figs/dt-memory.png&quot; alt=&quot;Memory&quot; width=&quot;800&quot;&gt;
+&lt;/div&gt;
+
+DeepTutor maintains a persistent, evolving understanding of you through two complementary dimensions:
+
+- **Summary** — A running digest of your learning progress: what you&#039;ve studied, which topics you&#039;ve explored, and how your understanding has developed.
+- **Profile** — Your learner identity: preferences, knowledge level, goals, and communication style — automatically refined through every interaction.
+
+Memory is shared across all features and all your TutorBots. The more you use DeepTutor, the more personalized and effective it becomes.
+
+---
+
+### 🦞 TutorBot — Persistent, Autonomous AI Tutors
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;assets/figs/tutorbot-architecture.png&quot; alt=&quot;TutorBot Architecture&quot; width=&quot;800&quot;&gt;
+&lt;/div&gt;
+
+TutorBot is not a chatbot — it is a **persistent, multi-instance agent** built on [nanobot](https://github.com/HKUDS/nanobot). Each TutorBot runs its own agent loop with independent workspace, memory, and personality. Create a Socratic math tutor, a patient writing coach, and a rigorous research advisor — all running simultaneously, each evolving with you.
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;assets/figs/tb.png&quot; alt=&quot;TutorBot&quot; width=&quot;800&quot;&gt;
+&lt;/div&gt;
+
+- **Soul Templates** — Define your tutor&#039;s personality, tone, and teaching philosophy through editable Soul files. Choose from built-in archetypes (Socratic, encouraging, rigorous) or craft your own — the soul shapes every response.
+- **Independent Workspace** — Each bot has its own directory with separate memory, sessions, skills, and configuration — fully isolated yet able to access DeepTutor&#039;s shared knowledge layer.
+- **Proactive Heartbeat** — Bots don&#039;t just respond — they initiate. The built-in Heartbeat system enables recurring study check-ins, review reminders, and scheduled tasks. Your tutor shows up even when you don&#039;t.
+- **Full Tool Access** — Every bot reaches into DeepTutor&#039;s complete toolkit: RAG retrieval, code execution, web search, academic paper search, deep reasoning, and brainstorming.
+- **Skill Learning** — Teach your bot new abilities by adding skill files to its workspace. As your needs evolve, so does your tutor&#039;s capability.
+- **Multi-Channel Presence** — Connect bots to Telegram, Discord, Slack, Feishu, WeChat Work, DingTalk, Email, and more. Your tutor meets you wherever you are.
+- **Team &amp; Sub-Agents** — Spawn background sub-agents or orchestrate multi-agent teams within a single bot for complex, long-running tasks.
+
+```bash
+deeptutor bot create math-tutor --persona &quot;Socratic math teacher who uses probing questions&quot;
+deeptutor bot create writing-coach --persona &quot;Patient, detail-oriented writing mentor&quot;
+deeptutor bot list                  # See all your active tutors
+```
+
+---
+
+### ⌨️ DeepTutor CLI — Agent-Native Interface
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;assets/figs/cli-architecture.png&quot; alt=&quot;DeepTutor CLI Architecture&quot; width=&quot;800&quot;&gt;
+&lt;/div&gt;
+
+DeepTutor is fully CLI-native. Every capability, knowledge base, session, memory, and TutorBot is one command away — no browser required. The CLI serves both humans (with rich terminal rendering) and AI agents (with structured JSON output).
+
+Hand the [`SKILL.md`](SKILL.md) at the project root to any tool-using agent ([nanobot](https://github.com/HKUDS/nanobot), or any LLM with tool access), and it can configure and operate DeepTutor autono
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>Python</category>
+        </item>
+        <item>
             <title><![CDATA[Blaizzy/mlx-vlm]]></title>
             <link>https://github.com/Blaizzy/mlx-vlm</link>
             <guid>https://github.com/Blaizzy/mlx-vlm</guid>
-            <pubDate>Mon, 06 Apr 2026 00:10:16 GMT</pubDate>
+            <pubDate>Tue, 07 Apr 2026 00:10:50 GMT</pubDate>
             <description><![CDATA[MLX-VLM is a package for inference and fine-tuning of Vision Language Models (VLMs) on your Mac using MLX.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/Blaizzy/mlx-vlm">Blaizzy/mlx-vlm</a></h1>
             <p>MLX-VLM is a package for inference and fine-tuning of Vision Language Models (VLMs) on your Mac using MLX.</p>
             <p>Language: Python</p>
-            <p>Stars: 3,914</p>
-            <p>Forks: 420</p>
-            <p>Stars today: 416 stars today</p>
+            <p>Stars: 4,107</p>
+            <p>Forks: 436</p>
+            <p>Stars today: 277 stars today</p>
             <h2>README</h2><pre>[![Upload Python Package](https://github.com/Blaizzy/mlx-vlm/actions/workflows/python-publish.yml/badge.svg)](https://github.com/Blaizzy/mlx-vlm/actions/workflows/python-publish.yml)
 # MLX-VLM
 
@@ -637,18 +1448,730 @@ To learn more about LoRA, please refer to the [LoRA.md](./mlx_vlm/LORA.MD) file.
             <category>Python</category>
         </item>
         <item>
+            <title><![CDATA[teng-lin/notebooklm-py]]></title>
+            <link>https://github.com/teng-lin/notebooklm-py</link>
+            <guid>https://github.com/teng-lin/notebooklm-py</guid>
+            <pubDate>Tue, 07 Apr 2026 00:10:49 GMT</pubDate>
+            <description><![CDATA[Unofficial Python API and agentic skill for Google NotebookLM. Full programmatic access to NotebookLM's features—including capabilities the web UI doesn't expose—via Python, CLI, and AI agents like Claude Code, Codex, and OpenClaw.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/teng-lin/notebooklm-py">teng-lin/notebooklm-py</a></h1>
+            <p>Unofficial Python API and agentic skill for Google NotebookLM. Full programmatic access to NotebookLM's features—including capabilities the web UI doesn't expose—via Python, CLI, and AI agents like Claude Code, Codex, and OpenClaw.</p>
+            <p>Language: Python</p>
+            <p>Stars: 9,354</p>
+            <p>Forks: 1,219</p>
+            <p>Stars today: 131 stars today</p>
+            <h2>README</h2><pre># notebooklm-py
+&lt;p align=&quot;left&quot;&gt;
+  &lt;img src=&quot;https://raw.githubusercontent.com/teng-lin/notebooklm-py/main/notebooklm-py.png&quot; alt=&quot;notebooklm-py logo&quot; width=&quot;128&quot;&gt;
+&lt;/p&gt;
+
+**A Comprehensive NotebookLM Skill &amp; Unofficial Python API.** Full programmatic access to NotebookLM&#039;s features—including capabilities the web UI doesn&#039;t expose—via Python, CLI, and AI agents like Claude Code, Codex, and OpenClaw.
+
+[![PyPI version](https://img.shields.io/pypi/v/notebooklm-py.svg)](https://pypi.org/project/notebooklm-py/)
+[![Python Version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue)](https://pypi.org/project/notebooklm-py/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Tests](https://github.com/teng-lin/notebooklm-py/actions/workflows/test.yml/badge.svg)](https://github.com/teng-lin/notebooklm-py/actions/workflows/test.yml)
+&lt;p&gt;
+  &lt;a href=&quot;https://trendshift.io/repositories/19116&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/19116&quot; alt=&quot;teng-lin%2Fnotebooklm-py | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+**Source &amp; Development**: &lt;https://github.com/teng-lin/notebooklm-py&gt;
+
+&gt; **⚠️ Unofficial Library - Use at Your Own Risk**
+&gt;
+&gt; This library uses **undocumented Google APIs** that can change without notice.
+&gt;
+&gt; - **Not affiliated with Google** - This is a community project
+&gt; - **APIs may break** - Google can change internal endpoints anytime
+&gt; - **Rate limits apply** - Heavy usage may be throttled
+&gt;
+&gt; Best for prototypes, research, and personal projects. See [Troubleshooting](docs/troubleshooting.md) for debugging tips.
+
+## What You Can Build
+
+🤖 **AI Agent Tools** - Integrate NotebookLM into Claude Code, Codex, and other LLM agents. Ships with a root [NotebookLM skill](SKILL.md) for GitHub and `npx skills add` discovery, local `notebooklm skill install` support for Claude Code and `.agents` skill directories, and repo-level Codex guidance in [`AGENTS.md`](AGENTS.md).
+
+📚 **Research Automation** - Bulk-import sources (URLs, PDFs, YouTube, Google Drive), run web/Drive research queries with auto-import, and extract insights programmatically. Build repeatable research pipelines.
+
+🎙️ **Content Generation** - Generate Audio Overviews (podcasts), videos, slide decks, quizzes, flashcards, infographics, data tables, mind maps, and study guides. Full control over formats, styles, and output.
+
+📥 **Downloads &amp; Export** - Download all generated artifacts locally (MP3, MP4, PDF, PNG, CSV, JSON, Markdown). Export to Google Docs/Sheets. **Features the web UI doesn&#039;t offer**: batch downloads, quiz/flashcard export in multiple formats, mind map JSON extraction.
+
+## Three Ways to Use
+
+| Method | Best For |
+|--------|----------|
+| **Python API** | Application integration, async workflows, custom pipelines |
+| **CLI** | Shell scripts, quick tasks, CI/CD automation |
+| **Agent Integration** | Claude Code, Codex, LLM agents, natural language automation |
+
+## Features
+
+### Complete NotebookLM Coverage
+
+| Category | Capabilities |
+|----------|--------------|
+| **Notebooks** | Create, list, rename, delete |
+| **Sources** | URLs, YouTube, files (PDF, text, Markdown, Word, audio, video, images), Google Drive, pasted text; refresh, get guide/fulltext |
+| **Chat** | Questions, conversation history, custom personas |
+| **Research** | Web and Drive research agents (fast/deep modes) with auto-import |
+| **Sharing** | Public/private links, user permissions (viewer/editor), view level control |
+
+### Content Generation (All NotebookLM Studio Types)
+
+| Type | Options | Download Format |
+|------|---------|-----------------|
+| **Audio Overview** | 4 formats (deep-dive, brief, critique, debate), 3 lengths, 50+ languages | MP3/MP4 |
+| **Video Overview** | 3 formats (explainer, brief, cinematic), 9 visual styles, plus a dedicated `cinematic-video` CLI alias | MP4 |
+| **Slide Deck** | Detailed or presenter format, adjustable length; individual slide revision | PDF, PPTX |
+| **Infographic** | 3 orientations, 3 detail levels | PNG |
+| **Quiz** | Configurable quantity and difficulty | JSON, Markdown, HTML |
+| **Flashcards** | Configurable quantity and difficulty | JSON, Markdown, HTML |
+| **Report** | Briefing doc, study guide, blog post, or custom prompt | Markdown |
+| **Data Table** | Custom structure via natural language | CSV |
+| **Mind Map** | Interactive hierarchical visualization | JSON |
+
+### Beyond the Web UI
+
+These features are available via API/CLI but not exposed in NotebookLM&#039;s web interface:
+
+- **Batch downloads** - Download all artifacts of a type at once
+- **Quiz/Flashcard export** - Get structured JSON, Markdown, or HTML (web UI only shows interactive view)
+- **Mind map data extraction** - Export hierarchical JSON for visualization tools
+- **Data table CSV export** - Download structured tables as spreadsheets
+- **Slide deck as PPTX** - Download editable PowerPoint files (web UI only offers PDF)
+- **Slide revision** - Modify individual slides with natural-language prompts
+- **Report template customization** - Append extra instructions to built-in format templates
+- **Save chat to notes** - Save Q&amp;A answers or conversation history as notebook notes
+- **Source fulltext access** - Retrieve the indexed text content of any source
+- **Programmatic sharing** - Manage permissions without the UI
+
+## Installation
+
+```bash
+# Basic installation
+pip install notebooklm-py
+
+# With browser login support (required for first-time setup)
+pip install &quot;notebooklm-py[browser]&quot;
+playwright install chromium
+```
+
+If `playwright install chromium` fails with `TypeError: onExit is not a function`, see the Linux workaround in [Troubleshooting](docs/troubleshooting.md#linux).
+
+### Development Installation
+
+For contributors or testing unreleased features:
+
+```bash
+pip install git+https://github.com/teng-lin/notebooklm-py@main
+```
+
+⚠️ The main branch may contain unstable changes. Use PyPI releases for production.
+
+## Quick Start
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://asciinema.org/a/767284&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://asciinema.org/a/767284.svg&quot; width=&quot;600&quot; /&gt;&lt;/a&gt;
+  &lt;br&gt;
+  &lt;em&gt;16-minute session compressed to 30 seconds&lt;/em&gt;
+&lt;/p&gt;
+
+### CLI
+
+```bash
+# 1. Authenticate (opens browser)
+notebooklm login
+# Or use Microsoft Edge (for orgs that require Edge for SSO)
+# notebooklm login --browser msedge
+
+# 2. Create a notebook and add sources
+notebooklm create &quot;My Research&quot;
+notebooklm use &lt;notebook_id&gt;
+notebooklm source add &quot;https://en.wikipedia.org/wiki/Artificial_intelligence&quot;
+notebooklm source add &quot;./paper.pdf&quot;
+
+# 3. Chat with your sources
+notebooklm ask &quot;What are the key themes?&quot;
+
+# 4. Generate content
+notebooklm generate audio &quot;make it engaging&quot; --wait
+notebooklm generate video --style whiteboard --wait
+notebooklm generate cinematic-video &quot;documentary-style summary&quot; --wait
+notebooklm generate quiz --difficulty hard
+notebooklm generate flashcards --quantity more
+notebooklm generate slide-deck
+notebooklm generate infographic --orientation portrait
+notebooklm generate mind-map
+notebooklm generate data-table &quot;compare key concepts&quot;
+
+# 5. Download artifacts
+notebooklm download audio ./podcast.mp3
+notebooklm download video ./overview.mp4
+notebooklm download cinematic-video ./documentary.mp4
+notebooklm download quiz --format markdown ./quiz.md
+notebooklm download flashcards --format json ./cards.json
+notebooklm download slide-deck ./slides.pdf
+notebooklm download infographic ./infographic.png
+notebooklm download mind-map ./mindmap.json
+notebooklm download data-table ./data.csv
+```
+
+Other useful CLI commands:
+
+```bash
+notebooklm auth check --test         # Diagnose auth/cookie issues
+notebooklm agent show codex          # Print bundled Codex instructions
+notebooklm agent show claude         # Print bundled Claude Code skill template
+notebooklm language list             # List supported output languages
+notebooklm metadata --json           # Export notebook metadata and sources
+notebooklm share status              # Inspect sharing state
+notebooklm source add-research &quot;AI&quot;  # Start web research and import sources
+notebooklm skill status              # Check local agent skill installation
+```
+
+### Python API
+
+```python
+import asyncio
+from notebooklm import NotebookLMClient
+
+async def main():
+    async with await NotebookLMClient.from_storage() as client:
+        # Create notebook and add sources
+        nb = await client.notebooks.create(&quot;Research&quot;)
+        await client.sources.add_url(nb.id, &quot;https://example.com&quot;, wait=True)
+
+        # Chat with your sources
+        result = await client.chat.ask(nb.id, &quot;Summarize this&quot;)
+        print(result.answer)
+
+        # Generate content (podcast, video, quiz, etc.)
+        status = await client.artifacts.generate_audio(nb.id, instructions=&quot;make it fun&quot;)
+        await client.artifacts.wait_for_completion(nb.id, status.task_id)
+        await client.artifacts.download_audio(nb.id, &quot;podcast.mp3&quot;)
+
+        # Generate quiz and download as JSON
+        status = await client.artifacts.generate_quiz(nb.id)
+        await client.artifacts.wait_for_completion(nb.id, status.task_id)
+        await client.artifacts.download_quiz(nb.id, &quot;quiz.json&quot;, output_format=&quot;json&quot;)
+
+        # Generate mind map and export
+        result = await client.artifacts.generate_mind_map(nb.id)
+        await client.artifacts.download_mind_map(nb.id, &quot;mindmap.json&quot;)
+
+asyncio.run(main())
+```
+
+### Agent Setup
+
+**Option 1 — CLI install**:
+
+```bash
+notebooklm skill install
+```
+
+Installs the skill into `~/.claude/skills/notebooklm` and `~/.agents/skills/notebooklm`.
+
+**Option 2 — `npx` install** (via the open skills ecosystem):
+
+```bash
+npx skills add teng-lin/notebooklm-py
+```
+
+Fetches the canonical [SKILL.md](SKILL.md) directly from GitHub.
+
+
+## Documentation
+
+- **[CLI Reference](docs/cli-reference.md)** - Complete command documentation
+- **[Python API](docs/python-api.md)** - Full API reference
+- **[Configuration](docs/configuration.md)** - Storage and settings
+- **[Release Guide](docs/releasing.md)** - Release checklist and packaging verification
+- **[Troubleshooting](docs/troubleshooting.md)** - Common issues and solutions
+- **[API Stability](docs/stability.md)** - Versioning policy and stability guarantees
+
+### For Contributors
+
+- **[Development Guide](docs/development.md)** - Architecture, testing, and releasing
+- **[RPC Development](docs/rpc-development.md)** - Protocol capture and debugging
+- **[RPC Reference](docs/rpc-reference.md)** - Payload structures
+- **[Changelog](CHANGELOG.md)** - Version history and release notes
+- **[Security](SECURITY.md)** - Security policy and credential handling
+
+## Platform Support
+
+| Platform | Status | Notes |
+|----------|--------|-------|
+| **macOS** | ✅ Tested | Primary development platform |
+| **Linux** | ✅ Tested | Fully supported |
+| **Windows** | ✅ Tested | Tested in CI |
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/image?repos=teng-lin/notebooklm-py&amp;type=timeline&amp;legend=top-left)](https://www.star-history.com/?repos=teng-lin%2Fnotebooklm-py&amp;type=timeline&amp;legend=top-left)
+
+## License
+
+MIT License. See [LICENSE](LICENSE) for details.
+</pre>
+          ]]></content:encoded>
+            <category>Python</category>
+        </item>
+        <item>
+            <title><![CDATA[donnemartin/system-design-primer]]></title>
+            <link>https://github.com/donnemartin/system-design-primer</link>
+            <guid>https://github.com/donnemartin/system-design-primer</guid>
+            <pubDate>Tue, 07 Apr 2026 00:10:48 GMT</pubDate>
+            <description><![CDATA[Learn how to design large-scale systems. Prep for the system design interview. Includes Anki flashcards.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/donnemartin/system-design-primer">donnemartin/system-design-primer</a></h1>
+            <p>Learn how to design large-scale systems. Prep for the system design interview. Includes Anki flashcards.</p>
+            <p>Language: Python</p>
+            <p>Stars: 341,653</p>
+            <p>Forks: 55,233</p>
+            <p>Stars today: 175 stars today</p>
+            <h2>README</h2><pre>*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [العَرَبِيَّة‎](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [বাংলা](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Português do Brasil](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Deutsch](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [ελληνικά](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [עברית](https://github.com/donnemartin/system-design-primer/issues/272) ∙ [Italiano](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [한국어](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [فارسی](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polski](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [русский язык](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Español](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [ภาษาไทย](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Türkçe](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [tiếng Việt](https://github.com/donnemartin/system-design-primer/issues/127) ∙ [Français](https://github.com/donnemartin/system-design-primer/issues/250) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
+
+**Help [translate](TRANSLATIONS.md) this guide!**
+
+# The System Design Primer
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;images/jj3A5N8.png&quot;&gt;
+  &lt;br/&gt;
+&lt;/p&gt;
+
+## Motivation
+
+&gt; Learn how to design large-scale systems.
+&gt;
+&gt; Prep for the system design interview.
+
+### Learn how to design large-scale systems
+
+Learning how to design scalable systems will help you become a better engineer.
+
+System design is a broad topic.  There are a **vast number of resources scattered throughout the web** on system design principles.
+
+This repo is an **organized collection** of resources to help you learn how to build systems at scale.
+
+### Learn from the open source community
+
+This is a continually updated, open source project.
+
+[Contributions](#contributing) are welcome!
+
+### Prep for the system design interview
+
+In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
+
+**Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.
+
+Additional topics for interview prep:
+
+* [Study guide](#study-guide)
+* [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
+* [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
+* [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
+* [Additional system design interview questions](#additional-system-design-interview-questions)
+
+## Anki flashcards
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;images/zdCAkB3.png&quot;&gt;
+  &lt;br/&gt;
+&lt;/p&gt;
+
+The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
+
+* [System design deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
+* [System design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
+* [Object oriented design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
+
+Great for use while on-the-go.
+
+### Coding Resource: Interactive Coding Challenges
+
+Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;images/b4YtAEN.png&quot;&gt;
+  &lt;br/&gt;
+&lt;/p&gt;
+
+Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
+
+* [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+
+## Contributing
+
+&gt; Learn from the community.
+
+Feel free to submit pull requests to help:
+
+* Fix errors
+* Improve sections
+* Add new sections
+* [Translate](https://github.com/donnemartin/system-design-primer/issues/28)
+
+Content that needs some polishing is placed [under development](#under-development).
+
+Review the [Contributing Guidelines](CONTRIBUTING.md).
+
+## Index of system design topics
+
+&gt; Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
+&gt;
+&gt; Each section contains links to more in-depth resources.
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;images/jrUBAF7.png&quot;&gt;
+  &lt;br/&gt;
+&lt;/p&gt;
+
+* [System design topics: start here](#system-design-topics-start-here)
+    * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
+    * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
+    * [Next steps](#next-steps)
+* [Performance vs scalability](#performance-vs-scalability)
+* [Latency vs throughput](#latency-vs-throughput)
+* [Availability vs consistency](#availability-vs-consistency)
+    * [CAP theorem](#cap-theorem)
+        * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
+        * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
+* [Consistency patterns](#consistency-patterns)
+    * [Weak consistency](#weak-consistency)
+    * [Eventual consistency](#eventual-consistency)
+    * [Strong consistency](#strong-consistency)
+* [Availability patterns](#availability-patterns)
+    * [Fail-over](#fail-over)
+    * [Replication](#replication)
+    * [Availability in numbers](#availability-in-numbers)
+* [Domain name system](#domain-name-system)
+* [Content delivery network](#content-delivery-network)
+    * [Push CDNs](#push-cdns)
+    * [Pull CDNs](#pull-cdns)
+* [Load balancer](#load-balancer)
+    * [Active-passive](#active-passive)
+    * [Active-active](#active-active)
+    * [Layer 4 load balancing](#layer-4-load-balancing)
+    * [Layer 7 load balancing](#layer-7-load-balancing)
+    * [Horizontal scaling](#horizontal-scaling)
+* [Reverse proxy (web server)](#reverse-proxy-web-server)
+    * [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
+* [Application layer](#application-layer)
+    * [Microservices](#microservices)
+    * [Service discovery](#service-discovery)
+* [Database](#database)
+    * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
+        * [Master-slave replication](#master-slave-replication)
+        * [Master-master replication](#master-master-replication)
+        * [Federation](#federation)
+        * [Sharding](#sharding)
+        * [Denormalization](#denormalization)
+        * [SQL tuning](#sql-tuning)
+    * [NoSQL](#nosql)
+        * [Key-value store](#key-value-store)
+        * [Document store](#document-store)
+        * [Wide column store](#wide-column-store)
+        * [Graph Database](#graph-database)
+    * [SQL or NoSQL](#sql-or-nosql)
+* [Cache](#cache)
+    * [Client caching](#client-caching)
+    * [CDN caching](#cdn-caching)
+    * [Web server caching](#web-server-caching)
+    * [Database caching](#database-caching)
+    * [Application caching](#application-caching)
+    * [Caching at the database query level](#caching-at-the-database-query-level)
+    * [Caching at the object level](#caching-at-the-object-level)
+    * [When to update the cache](#when-to-update-the-cache)
+        * [Cache-aside](#cache-aside)
+        * [Write-through](#write-through)
+        * [Write-behind (write-back)](#write-behind-write-back)
+        * [Refresh-ahead](#refresh-ahead)
+* [Asynchronism](#asynchronism)
+    * [Message queues](#message-queues)
+    * [Task queues](#task-queues)
+    * [Back pressure](#back-pressure)
+* [Communication](#communication)
+    * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
+    * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
+    * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
+    * [Representational state transfer (REST)](#representational-state-transfer-rest)
+* [Security](#security)
+* [Appendix](#appendix)
+    * [Powers of two table](#powers-of-two-table)
+    * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+    * [Additional system design interview questions](#additional-system-design-interview-questions)
+    * [Real world architectures](#real-world-architectures)
+    * [Company architectures](#company-architectures)
+    * [Company engineering blogs](#company-engineering-blogs)
+* [Under development](#under-development)
+* [Credits](#credits)
+* [Contact info](#contact-info)
+* [License](#license)
+
+## Study guide
+
+&gt; Suggested topics to review based on your interview timeline (short, medium, long).
+
+![Imgur](images/OfVllex.png)
+
+**Q: For interviews, do I need to know everything here?**
+
+**A: No, you don&#039;t need to know everything here to prepare for the interview**.
+
+What you are asked in an interview depends on variables such as:
+
+* How much experience you have
+* What your technical background is
+* What positions you are interviewing for
+* Which companies you are interviewing with
+* Luck
+
+More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
+
+Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
+
+* **Short timeline** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
+* **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
+* **Long timeline** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
+
+| | Short | Medium | Long |
+|---|---|---|---|
+| Read through the [System design topics](#index-of-system-design-topics) to get a broad understanding of how systems work | :+1: | :+1: | :+1: |
+| Read through a few articles in the [Company engineering blogs](#company-engineering-blogs) for the companies you are interviewing with | :+1: | :+1: | :+1: |
+| Read through a few [Real world architectures](#real-world-architectures) | :+1: | :+1: | :+1: |
+| Review [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
+| Work through [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Some | Many | Most |
+| Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
+| Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
+
+## How to approach a system design interview question
+
+&gt; How to tackle a system design interview question.
+
+The system design interview is an **open-ended conversation**.  You are expected to lead it.
+
+You can use the following steps to guide the discussion.  To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
+
+### Step 1: Outline use cases, constraints, and assumptions
+
+Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
+
+* Who is going to use it?
+* How are they going to use it?
+* How many users are there?
+* What does the system do?
+* What are the inputs and outputs of the system?
+* How much data do we expect to handle?
+* How many requests per second do we expect?
+* What is the expected read to write ratio?
+
+### Step 2: Create a high level design
+
+Outline a high level design with all important components.
+
+* Sketch the main components and connections
+* Justify your ideas
+
+### Step 3: Design core components
+
+Dive into details for each core component.  For example, if you were asked to [design a url shortening service](solutions/system_design/pastebin/README.md), discuss:
+
+* Generating and storing a hash of the full url
+    * [MD5](solutions/system_design/pastebin/README.md) and [Base62](solutions/system_design/pastebin/README.md)
+    * Hash collisions
+    * SQL or NoSQL
+    * Database schema
+* Translating a hashed url to the full url
+    * Database lookup
+* API and object-oriented design
+
+### Step 4: Scale the design
+
+Identify and address bottlenecks, given the constraints.  For example, do you need the following to address scalability issues?
+
+* Load balancer
+* Horizontal scaling
+* Caching
+* Database sharding
+
+Discuss potential solutions and trade-offs.  Everything is a trade-off.  Address bottlenecks using [principles of scalable system design](#index-of-system-design-topics).
+
+### Back-of-the-envelope calculations
+
+You might be asked to do some estimates by hand.  Refer to the [Appendix](#appendix) for the following resources:
+
+* [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
+* [Powers of two table](#powers-of-two-table)
+* [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+
+### Source(s) and further reading
+
+Check out the following links to get a better idea of what to expect:
+
+* [How to ace a systems design interview](https://web.archive.org/web/20210505130322/https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
+* [The system design interview](http://www.hiredintech.com/system-design)
+* [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+* [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
+
+## System design interview questions with solutions
+
+&gt; Common system design interview questions with sample discussions, code, and diagrams.
+&gt;
+&gt; Solutions linked to content in the `solutions/` folder.
+
+| Question | |
+|---|---|
+| Design Pastebin.com (or Bit.ly) | [Solution](solutions/system_design/pastebin/README.md) |
+| Design the Twitter timeline and search (or Facebook feed and search) | [Solution](solutions/system_design/twitter/README.md) |
+| Design a web crawler | [Solution](solutions/system_design/web_crawler/README.md) |
+| Design Mint.com | [Solution](solutions/system_design/mint/README.md) |
+| Design the data structures for a social network | [Solution](solutions/system_design/social_graph/README.md) |
+| Design a key-value store for a search engine | [Solution](solutions/system_design/query_cache/README.md) |
+| Design Amazon&#039;s sales ranking by category feature | [Solution](solutions/system_design/sales_rank/README.md) |
+| Design a system that scales to millions of users on AWS | [Solution](solutions/system_design/scaling_aws/README.md) |
+| Add a system design question | [Contribute](#contributing) |
+
+### Design Pastebin.com (or Bit.ly)
+
+[View exercise and solution](solutions/system_design/pastebin/README.md)
+
+![Imgur](images/4edXG0T.png)
+
+### Design the Twitter timeline and search (or Facebook feed and search)
+
+[View exercise and solution](solutions/system_design/twitter/README.md)
+
+![Imgur](images/jrUBAF7.png)
+
+### Design a web crawler
+
+[View exercise and solution](solutions/system_design/web_crawler/README.md)
+
+![Imgur](images/bWxPtQA.png)
+
+### Design Mint.com
+
+[View exercise and solution](solutions/system_design/mint/README.md)
+
+![Imgur](images/V5q57vU.png)
+
+### Design the data structures for a social network
+
+[View exercise and solution](solutions/system_design/social_graph/README.md)
+
+![Imgur](images/cdCv5g7.png)
+
+### Design a key-value store for a search engine
+
+[View exercise and solution](solutions/system_design/query_cache/README.md)
+
+![Imgur](images/4j99mhe.png)
+
+### Design Amazon&#039;s sales ranking by category feature
+
+[View exercise and solution](solutions/system_design/sales_rank/README.md)
+
+![Imgur](images/MzExP06.png)
+
+### Design a system that scales to millions of users on AWS
+
+[View exercise and solution](solutions/system_design/scaling_aws/README.md)
+
+![Imgur](images/jj3A5N8.png)
+
+## Object-oriented design interview questions with solutions
+
+&gt; Common object-oriented design interview questions with sample discussions, code, and diagrams.
+&gt;
+&gt; Solutions linked to content in the `solutions/` folder.
+
+&gt;**Note: This section is under development**
+
+| Question | |
+|---|---|
+| Design a hash map | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
+| Design a least recently used cache | [Solution](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
+| Design a call center | [Solution](solutions/object_oriented_design/call_center/call_center.ipynb)  |
+| Design a deck of cards | [Solution](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
+| Design a parking lot | [Solution](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
+| Design a chat server | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
+| Design a circular array | [Contribute](#contributing)  |
+| Add an object-oriented design question | [Contribute](#contributing) |
+
+## System design topics: start here
+
+New to system design?
+
+First, you&#039;ll need a basic understanding of common principles, learning about what they are, how they are used, and their pros and cons.
+
+### Step 1: Review the scalability video lecture
+
+[Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
+
+* Topics covered:
+    * Vertical scaling
+    * Horizontal scaling
+    * Caching
+    * Load balancing
+    * Database replication
+    * Database partitioning
+
+### Step 2: Review the scalability article
+
+[Scalability](https://web.archive.org/web/20221030091841/http://www.lecloud.net/tagged/scalability/chrono)
+
+* Topics covered:
+    * [Clones](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+    * [Databases](https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+    * [Caches](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+    * [Asynchronism](https://web.archive.org/web/20220926171507/https://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+
+### Next steps
+
+Next, we&#039;ll look at high-level trade-offs:
+
+* **Performance** vs **scalability**
+* **Latency** vs **throughput**
+* **Availability** vs **consistency**
+
+Keep in mind that **everything is a trade-off**.
+
+Then we&#039;ll dive into more specific topics such as DNS, CDNs, and load balancers.
+
+## Performance vs scalability
+
+A service is **scalable** if it results in increased **performance** in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.&lt;sup&gt;&lt;a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html&gt;1&lt;/a&gt;&lt;/sup&gt;
+
+Another way to look at performance vs scalability:
+
+* If you have a **performance** problem, your system is slow for a single user.
+* If you have a **scalability** problem, your system is fast for a single user but slow under heavy load.
+
+### Source(s) and further reading
+
+* [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scala
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>Python</category>
+        </item>
+        <item>
             <title><![CDATA[onyx-dot-app/onyx]]></title>
             <link>https://github.com/onyx-dot-app/onyx</link>
             <guid>https://github.com/onyx-dot-app/onyx</guid>
-            <pubDate>Mon, 06 Apr 2026 00:10:15 GMT</pubDate>
+            <pubDate>Tue, 07 Apr 2026 00:10:47 GMT</pubDate>
             <description><![CDATA[Open Source AI Platform - AI Chat with advanced features that works with every LLM]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/onyx-dot-app/onyx">onyx-dot-app/onyx</a></h1>
             <p>Open Source AI Platform - AI Chat with advanced features that works with every LLM</p>
             <p>Language: Python</p>
-            <p>Stars: 25,010</p>
-            <p>Forks: 3,345</p>
-            <p>Stars today: 998 stars today</p>
+            <p>Stars: 25,452</p>
+            <p>Forks: 3,392</p>
+            <p>Stars today: 639 stars today</p>
             <h2>README</h2><pre>&lt;a name=&quot;readme-top&quot;&gt;&lt;/a&gt;
 
 &lt;h2 align=&quot;center&quot;&gt;
@@ -772,1269 +2295,143 @@ Looking to contribute? Please check out the [Contribution Guide](CONTRIBUTING.md
             <category>Python</category>
         </item>
         <item>
-            <title><![CDATA[microsoft/agent-framework]]></title>
-            <link>https://github.com/microsoft/agent-framework</link>
-            <guid>https://github.com/microsoft/agent-framework</guid>
-            <pubDate>Mon, 06 Apr 2026 00:10:14 GMT</pubDate>
-            <description><![CDATA[A framework for building, orchestrating and deploying AI agents and multi-agent workflows with support for Python and .NET.]]></description>
+            <title><![CDATA[Jeffallan/claude-skills]]></title>
+            <link>https://github.com/Jeffallan/claude-skills</link>
+            <guid>https://github.com/Jeffallan/claude-skills</guid>
+            <pubDate>Tue, 07 Apr 2026 00:10:46 GMT</pubDate>
+            <description><![CDATA[66 Specialized Skills for Full-Stack Developers. Transform Claude Code into your expert pair programmer.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/microsoft/agent-framework">microsoft/agent-framework</a></h1>
-            <p>A framework for building, orchestrating and deploying AI agents and multi-agent workflows with support for Python and .NET.</p>
+            <h1><a href="https://github.com/Jeffallan/claude-skills">Jeffallan/claude-skills</a></h1>
+            <p>66 Specialized Skills for Full-Stack Developers. Transform Claude Code into your expert pair programmer.</p>
             <p>Language: Python</p>
-            <p>Stars: 8,895</p>
-            <p>Forks: 1,453</p>
-            <p>Stars today: 278 stars today</p>
-            <h2>README</h2><pre>![Microsoft Agent Framework](docs/assets/readme-banner.png)
-
-# Welcome to Microsoft Agent Framework!
-
-[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/b5zjErwbQM?style=flat)](https://discord.gg/b5zjErwbQM)
-[![MS Learn Documentation](https://img.shields.io/badge/MS%20Learn-Documentation-blue)](https://learn.microsoft.com/en-us/agent-framework/)
-[![PyPI](https://img.shields.io/pypi/v/agent-framework)](https://pypi.org/project/agent-framework/)
-[![NuGet](https://img.shields.io/nuget/v/Microsoft.Agents.AI)](https://www.nuget.org/profiles/MicrosoftAgentFramework/)
-
-Welcome to Microsoft&#039;s comprehensive multi-language framework for building, orchestrating, and deploying AI agents with support for both .NET and Python implementations. This framework provides everything from simple chat agents to complex multi-agent workflows with graph-based orchestration.
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://www.youtube.com/watch?v=AAgdMhftj8w&quot; title=&quot;Watch the full Agent Framework introduction (30 min)&quot;&gt;
-    &lt;img src=&quot;https://img.youtube.com/vi/AAgdMhftj8w/hqdefault.jpg&quot;
-         alt=&quot;Watch the full Agent Framework introduction (30 min)&quot; width=&quot;480&quot;&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://www.youtube.com/watch?v=AAgdMhftj8w&quot;&gt;
-    Watch the full Agent Framework introduction (30 min)
-  &lt;/a&gt;
-&lt;/p&gt;
-
-## 📋 Getting Started
-
-### 📦 Installation
-
-Python
-
-```bash
-pip install agent-framework
-# This will install all sub-packages, see `python/packages` for individual packages.
-# It may take a minute on first install on Windows.
-```
-
-.NET
-
-```bash
-dotnet add package Microsoft.Agents.AI
-```
-
-### 📚 Documentation
-
-- **[Overview](https://learn.microsoft.com/agent-framework/overview/agent-framework-overview)** - High level overview of the framework
-- **[Quick Start](https://learn.microsoft.com/agent-framework/tutorials/quick-start)** - Get started with a simple agent
-- **[Tutorials](https://learn.microsoft.com/agent-framework/tutorials/overview)** - Step by step tutorials
-- **[User Guide](https://learn.microsoft.com/en-us/agent-framework/user-guide/overview)** - In-depth user guide for building agents and workflows
-- **[Migration from Semantic Kernel](https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-semantic-kernel)** - Guide to migrate from Semantic Kernel
-- **[Migration from AutoGen](https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen)** - Guide to migrate from AutoGen
-
-Still have questions? Join our [weekly office hours](./COMMUNITY.md#public-community-office-hours) or ask questions in our [Discord channel](https://discord.gg/b5zjErwbQM) to get help from the team and other users.
-
-### ✨ **Highlights**
-
-- **Graph-based Workflows**: Connect agents and deterministic functions using data flows with streaming, checkpointing, human-in-the-loop, and time-travel capabilities
-  - [Python workflows](./python/samples/03-workflows/) | [.NET workflows](./dotnet/samples/03-workflows/)
-- **AF Labs**: Experimental packages for cutting-edge features including benchmarking, reinforcement learning, and research initiatives
-  - [Labs directory](./python/packages/lab/)
-- **DevUI**: Interactive developer UI for agent development, testing, and debugging workflows
-  - [DevUI package](./python/packages/devui/)
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://www.youtube.com/watch?v=mOAaGY4WPvc&quot;&gt;
-    &lt;img src=&quot;https://img.youtube.com/vi/mOAaGY4WPvc/hqdefault.jpg&quot; alt=&quot;See the DevUI in action&quot; width=&quot;480&quot;&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://www.youtube.com/watch?v=mOAaGY4WPvc&quot;&gt;
-    See the DevUI in action (1 min)
-  &lt;/a&gt;
-&lt;/p&gt;
-
-- **Python and C#/.NET Support**: Full framework support for both Python and C#/.NET implementations with consistent APIs
-  - [Python packages](./python/packages/) | [.NET source](./dotnet/src/)
-- **Observability**: Built-in OpenTelemetry integration for distributed tracing, monitoring, and debugging
-  - [Python observability](./python/samples/02-agents/observability/) | [.NET telemetry](./dotnet/samples/02-agents/AgentOpenTelemetry/)
-- **Multiple Agent Provider Support**: Support for various LLM providers with more being added continuously
-  - [Python examples](./python/samples/02-agents/providers/) | [.NET examples](./dotnet/samples/02-agents/AgentProviders/)
-- **Middleware**: Flexible middleware system for request/response processing, exception handling, and custom pipelines
-  - [Python middleware](./python/samples/02-agents/middleware/) | [.NET middleware](./dotnet/samples/02-agents/Agents/Agent_Step11_Middleware/)
-
-### 💬 **We want your feedback!**
-
-- For bugs, please file a [GitHub issue](https://github.com/microsoft/agent-framework/issues).
-
-## Quickstart
-
-### Basic Agent - Python
-
-Create a simple Azure Responses Agent that writes a haiku about the Microsoft Agent Framework
-
-```python
-# pip install agent-framework
-# Use `az login` to authenticate with Azure CLI
-import os
-import asyncio
-from agent_framework import Agent
-from agent_framework.foundry import FoundryChatClient
-from azure.identity import AzureCliCredential
-
-
-async def main():
-    # Initialize a chat agent with Microsoft Foundry
-    # the endpoint, deployment name, and api version can be set via environment variables
-    # or they can be passed in directly to the FoundryChatClient constructor
-    agent = Agent(
-      client=FoundryChatClient(
-          credential=AzureCliCredential(),
-          # project_endpoint=os.environ[&quot;FOUNDRY_PROJECT_ENDPOINT&quot;],
-          # model=os.environ[&quot;FOUNDRY_MODEL_DEPLOYMENT_NAME&quot;],
-      ),
-      name=&quot;HaikuBot&quot;,
-      instructions=&quot;You are an upbeat assistant that writes beautifully.&quot;,
-    )
-
-    print(await agent.run(&quot;Write a haiku about Microsoft Agent Framework.&quot;))
-
-if __name__ == &quot;__main__&quot;:
-    asyncio.run(main())
-```
-
-### Basic Agent - .NET
-
-Create a simple Agent, using OpenAI Responses, that writes a haiku about the Microsoft Agent Framework
-
-```c#
-// dotnet add package Microsoft.Agents.AI.OpenAI --prerelease
-using Microsoft.Agents.AI;
-using OpenAI;
-using OpenAI.Responses;
-
-// Replace the &lt;apikey&gt; with your OpenAI API key.
-var agent = new OpenAIClient(&quot;&lt;apikey&gt;&quot;)
-    .GetResponsesClient(&quot;gpt-4o-mini&quot;)
-    .AsAIAgent(name: &quot;HaikuBot&quot;, instructions: &quot;You are an upbeat assistant that writes beautifully.&quot;);
-
-Console.WriteLine(await agent.RunAsync(&quot;Write a haiku about Microsoft Agent Framework.&quot;));
-```
-
-Create a simple Agent, using Microsoft Foundry with token-based auth, that writes a haiku about the Microsoft Agent Framework
-
-```c#
-// dotnet add package Microsoft.Agents.AI.AzureAI --prerelease
-// dotnet add package Azure.Identity
-// Use `az login` to authenticate with Azure CLI
-using Azure.AI.Projects;
-using Azure.Identity;
-using Microsoft.Agents.AI;
-
-var endpoint = Environment.GetEnvironmentVariable(&quot;AZURE_AI_PROJECT_ENDPOINT&quot;) ?? throw new InvalidOperationException(&quot;AZURE_AI_PROJECT_ENDPOINT is not set.&quot;);
-var deploymentName = Environment.GetEnvironmentVariable(&quot;AZURE_AI_MODEL_DEPLOYMENT_NAME&quot;) ?? &quot;gpt-4o-mini&quot;;
-
-var agent = new AIProjectClient(new Uri(endpoint), new DefaultAzureCredential())
-    .AsAIAgent(model: deploymentName, name: &quot;HaikuBot&quot;, instructions: &quot;You are an upbeat assistant that writes beautifully.&quot;);
-
-Console.WriteLine(await agent.RunAsync(&quot;Write a haiku about Microsoft Agent Framework.&quot;));
-```
-
-## More Examples &amp; Samples
-
-### Python
-
-- [Getting Started](./python/samples/01-get-started): progressive tutorial from hello-world to hosting
-- [Agent Concepts](./python/samples/02-agents): deep-dive samples by topic (tools, middleware, providers, etc.)
-- [Workflows](./python/samples/03-workflows): workflow creation and integration with agents
-- [Hosting](./python/samples/04-hosting): A2A, Azure Functions, Durable Task hosting
-- [End-to-End](./python/samples/05-end-to-end): full applications, evaluation, and demos
-
-### .NET
-
-- [Getting Started](./dotnet/samples/01-get-started): progressive tutorial from hello agent to hosting
-- [Agent Concepts](./dotnet/samples/02-agents/Agents): basic agent creation and tool usage
-- [Agent Providers](./dotnet/samples/02-agents/AgentProviders): samples showing different agent providers
-- [Workflows](./dotnet/samples/03-workflows): advanced multi-agent patterns and workflow orchestration
-- [Hosting](./dotnet/samples/04-hosting): A2A, Durable Agents, Durable Workflows
-- [End-to-End](./dotnet/samples/05-end-to-end): full applications and demos
-
-## Troubleshooting
-
-### Authentication
-
-| Problem | Cause | Fix |
-|---------|-------|-----|
-| Authentication errors when using Azure credentials | Not signed in to Azure CLI | Run `az login` before starting your app |
-| API key errors | Wrong or missing API key | Verify the key and ensure it&#039;s for the correct resource/provider |
-
-&gt; **Tip:** `DefaultAzureCredential` is convenient for development but in production, consider using a specific credential (e.g., `ManagedIdentityCredential`) to avoid latency issues, unintended credential probing, and potential security risks from fallback mechanisms.
-
-### Environment Variables
-
-The samples typically read configuration from environment variables. Common required variables:
-
-| Variable | Used by | Purpose |
-|----------|---------|---------|
-| `AZURE_OPENAI_ENDPOINT` | Azure OpenAI samples | Your Azure OpenAI resource URL |
-| `AZURE_OPENAI_DEPLOYMENT_NAME` | Azure OpenAI samples | Model deployment name (e.g. `gpt-4o-mini`) |
-| `AZURE_AI_PROJECT_ENDPOINT` | Microsoft Foundry samples | Your Microsoft Foundry project endpoint |
-| `AZURE_AI_MODEL_DEPLOYMENT_NAME` | Microsoft Foundry samples | Model deployment name |
-| `OPENAI_API_KEY` | OpenAI (non-Azure) samples | Your OpenAI platform API key |
-
-## Contributor Resources
-
-- [Contributing Guide](./CONTRIBUTING.md)
-- [Python Development Guide](./python/DEV_SETUP.md)
-- [Design Documents](./docs/design)
-- [Architectural Decision Records](./docs/decisions)
-
-## Important Notes
-
-If you use the Microsoft Agent Framework to build applications that operate with third-party servers or agents, you do so at your own risk. We recommend reviewing all data being shared with third-party servers or agents and being cognizant of third-party practices for retention and location of data. It is your responsibility to manage whether your data will flow outside of your organization&#039;s Azure compliance and geographic boundaries and any related implications.
-</pre>
-          ]]></content:encoded>
-            <category>Python</category>
-        </item>
-        <item>
-            <title><![CDATA[NousResearch/hermes-agent]]></title>
-            <link>https://github.com/NousResearch/hermes-agent</link>
-            <guid>https://github.com/NousResearch/hermes-agent</guid>
-            <pubDate>Mon, 06 Apr 2026 00:10:13 GMT</pubDate>
-            <description><![CDATA[The agent that grows with you]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></h1>
-            <p>The agent that grows with you</p>
-            <p>Language: Python</p>
-            <p>Stars: 26,288</p>
-            <p>Forks: 3,443</p>
-            <p>Stars today: 1,251 stars today</p>
+            <p>Stars: 7,915</p>
+            <p>Forks: 610</p>
+            <p>Stars today: 84 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;assets/banner.png&quot; alt=&quot;Hermes Agent&quot; width=&quot;100%&quot;&gt;
+  &lt;img src=&quot;https://capsule-render.vercel.app/api?type=waving&amp;color=gradient&amp;customColorList=12,14,25,27&amp;height=200&amp;section=header&amp;text=Claude%20Skills&amp;fontSize=80&amp;fontColor=ffffff&amp;animation=fadeIn&amp;fontAlignY=35&amp;desc=66%20Skills%20%E2%80%A2%209%20Workflows%20%E2%80%A2%20Built%20for%20Full-Stack%20Devs&amp;descSize=20&amp;descAlignY=55&quot; width=&quot;100%&quot;/&gt;
 &lt;/p&gt;
-
-# Hermes Agent ☤
 
 &lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://hermes-agent.nousresearch.com/docs/&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Docs-hermes--agent.nousresearch.com-FFD700?style=for-the-badge&quot; alt=&quot;Documentation&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://discord.gg/NousResearch&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&amp;logo=discord&amp;logoColor=white&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/NousResearch/hermes-agent/blob/main/LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/License-MIT-green?style=for-the-badge&quot; alt=&quot;License: MIT&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://nousresearch.com&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Built%20by-Nous%20Research-blueviolet?style=for-the-badge&quot; alt=&quot;Built by Nous Research&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;https://trendshift.io/repositories/20667&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/20667&quot; alt=&quot;Jeffallan%2Fclaude-skills | Trendshift&quot; style=&quot;width: 200px; height: 44px;&quot; width=&quot;200&quot; height=&quot;44&quot;/&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/hesreallyhim/awesome-claude-code&quot;&gt;&lt;img src=&quot;https://awesome.re/mentioned-badge.svg&quot; alt=&quot;Mentioned in Awesome Claude Code&quot; style=&quot;width: 200px; height: 44px;&quot; width=&quot;200&quot; height=&quot;44&quot;/&gt;&lt;/a&gt;
 &lt;/p&gt;
 
-**The self-improving AI agent built by [Nous Research](https://nousresearch.com).** It&#039;s the only agent with a built-in learning loop — it creates skills from experience, improves them during use, nudges itself to persist knowledge, searches its own past conversations, and builds a deepening model of who you are across sessions. Run it on a $5 VPS, a GPU cluster, or serverless infrastructure that costs nearly nothing when idle. It&#039;s not tied to your laptop — talk to it from Telegram while it works on a cloud VM.
-
-Use any model you want — [Nous Portal](https://portal.nousresearch.com), [OpenRouter](https://openrouter.ai) (200+ models), [z.ai/GLM](https://z.ai), [Kimi/Moonshot](https://platform.moonshot.ai), [MiniMax](https://www.minimax.io), OpenAI, or your own endpoint. Switch with `hermes model` — no code changes, no lock-in.
-
-&lt;table&gt;
-&lt;tr&gt;&lt;td&gt;&lt;b&gt;A real terminal interface&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Full TUI with multiline editing, slash-command autocomplete, conversation history, interrupt-and-redirect, and streaming tool output.&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;b&gt;Lives where you do&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Telegram, Discord, Slack, WhatsApp, Signal, and CLI — all from a single gateway process. Voice memo transcription, cross-platform conversation continuity.&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;b&gt;A closed learning loop&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Agent-curated memory with periodic nudges. Autonomous skill creation after complex tasks. Skills self-improve during use. FTS5 session search with LLM summarization for cross-session recall. &lt;a href=&quot;https://github.com/plastic-labs/honcho&quot;&gt;Honcho&lt;/a&gt; dialectic user modeling. Compatible with the &lt;a href=&quot;https://agentskills.io&quot;&gt;agentskills.io&lt;/a&gt; open standard.&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;b&gt;Scheduled automations&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Built-in cron scheduler with delivery to any platform. Daily reports, nightly backups, weekly audits — all in natural language, running unattended.&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;b&gt;Delegates and parallelizes&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Spawn isolated subagents for parallel workstreams. Write Python scripts that call tools via RPC, collapsing multi-step pipelines into zero-context-cost turns.&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;b&gt;Runs anywhere, not just your laptop&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Six terminal backends — local, Docker, SSH, Daytona, Singularity, and Modal. Daytona and Modal offer serverless persistence — your agent&#039;s environment hibernates when idle and wakes on demand, costing nearly nothing between sessions. Run it on a $5 VPS or a GPU cluster.&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;b&gt;Research-ready&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Batch trajectory generation, Atropos RL environments, trajectory compression for training the next generation of tool-calling models.&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://github.com/jeffallan/claude-skills&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/version-0.4.11-blue.svg?style=for-the-badge&quot; alt=&quot;Version&quot;/&gt;&lt;/a&gt;
+  &lt;a href=&quot;LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/license-MIT-green.svg?style=for-the-badge&quot; alt=&quot;License&quot;/&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/jeffallan/claude-skills&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Claude_Code-Plugin-purple.svg?style=for-the-badge&quot; alt=&quot;Claude Code&quot;/&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/jeffallan/claude-skills/stargazers&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/stars/jeffallan/claude-skills?style=for-the-badge&amp;color=yellow&quot; alt=&quot;Stars&quot;/&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/jeffallan/claude-skills/actions/workflows/ci.yml&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/actions/workflow/status/jeffallan/claude-skills/ci.yml?branch=main&amp;style=for-the-badge&amp;label=CI&quot; alt=&quot;CI&quot;/&gt;&lt;/a&gt;
+&lt;/p&gt;
 
 ---
 
-## Quick Install
+## Quick Start
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash
+/plugin marketplace add jeffallan/claude-skills
+```
+**Then, install the skills:**
+```bash
+/plugin install fullstack-dev-skills@jeffallan
 ```
 
-Works on Linux, macOS, and WSL2. The installer handles everything — Python, Node.js, dependencies, and the `hermes` command. No prerequisites except git.
+For all installation methods and first steps, see the [**Quick Start Guide**](QUICKSTART.md).
 
-&gt; **Windows:** Native Windows is not supported. Please install [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) and run the command above.
+**Full documentation:** [jeffallan.github.io/claude-skills](https://jeffallan.github.io/claude-skills)
 
-After installation:
+## Skills
+
+&lt;!-- SKILL_COUNT --&gt;66&lt;!-- /SKILL_COUNT --&gt; specialized skills across 12 categories covering languages, backend/frontend frameworks, infrastructure, APIs, testing, DevOps, security, data/ML, and platform specialists.
+
+See [**Skills Guide**](SKILLS_GUIDE.md) for the full list, decision trees, and workflow combinations.
+
+## Usage Patterns
+
+### Context-Aware Activation
+
+Skills activate automatically based on your request:
 
 ```bash
-source ~/.bashrc    # reload shell (or: source ~/.zshrc)
-hermes              # start chatting!
+# Backend Development
+&quot;Implement JWT authentication in my NestJS API&quot;
+→ Activates: NestJS Expert → Loads: references/authentication.md
+
+# Frontend Development
+&quot;Build a React component with Server Components&quot;
+→ Activates: React Expert → Loads: references/server-components.md
 ```
 
----
+### Multi-Skill Workflows
 
-## Getting Started
+Complex tasks combine multiple skills:
 
-```bash
-hermes              # Interactive CLI — start a conversation
-hermes model        # Choose your LLM provider and model
-hermes tools        # Configure which tools are enabled
-hermes config set   # Set individual config values
-hermes gateway      # Start the messaging gateway (Telegram, Discord, etc.)
-hermes setup        # Run the full setup wizard (configures everything at once)
-hermes claw migrate # Migrate from OpenClaw (if coming from OpenClaw)
-hermes update       # Update to the latest version
-hermes doctor       # Diagnose any issues
+```
+Feature Development: Feature Forge → Architecture Designer → Fullstack Guardian → Test Master → DevOps Engineer
+Bug Investigation:   Debugging Wizard → Framework Expert → Test Master → Code Reviewer
+Security Hardening:  Secure Code Guardian → Security Reviewer → Test Master
 ```
 
-📖 **[Full documentation →](https://hermes-agent.nousresearch.com/docs/)**
+## Context Engineering
 
-## CLI vs Messaging Quick Reference
+Surface and validate Claude&#039;s hidden assumptions about your project with `/common-ground`. See the [**Common Ground Guide**](docs/COMMON_GROUND.md) for full documentation.
 
-Hermes has two entry points: start the terminal UI with `hermes`, or run the gateway and talk to it from Telegram, Discord, Slack, WhatsApp, Signal, or Email. Once you&#039;re in a conversation, many slash commands are shared across both interfaces.
+## Project Workflow
 
-| Action | CLI | Messaging platforms |
-|---------|-----|---------------------|
-| Start chatting | `hermes` | Run `hermes gateway setup` + `hermes gateway start`, then send the bot a message |
-| Start fresh conversation | `/new` or `/reset` | `/new` or `/reset` |
-| Change model | `/model [provider:model]` | `/model [provider:model]` |
-| Set a personality | `/personality [name]` | `/personality [name]` |
-| Retry or undo the last turn | `/retry`, `/undo` | `/retry`, `/undo` |
-| Compress context / check usage | `/compress`, `/usage`, `/insights [--days N]` | `/compress`, `/usage`, `/insights [days]` |
-| Browse skills | `/skills` or `/&lt;skill-name&gt;` | `/skills` or `/&lt;skill-name&gt;` |
-| Interrupt current work | `Ctrl+C` or send a new message | `/stop` or send a new message |
-| Platform-specific status | `/platforms` | `/status`, `/sethome` |
+&lt;!-- WORKFLOW_COUNT --&gt;9&lt;!-- /WORKFLOW_COUNT --&gt; workflow commands manage epics from discovery through retrospectives, integrating with Jira and Confluence. See [**Workflow Commands Reference**](docs/WORKFLOW_COMMANDS.md) for the full command reference and lifecycle diagrams.
 
-For the full command lists, see the [CLI guide](https://hermes-agent.nousresearch.com/docs/user-guide/cli) and the [Messaging Gateway guide](https://hermes-agent.nousresearch.com/docs/user-guide/messaging).
-
----
+&gt; [!TIP]
+&gt; **Setup:** Workflow commands require an Atlassian MCP server. See the [**Atlassian MCP Setup Guide**](docs/ATLASSIAN_MCP_SETUP.md).
 
 ## Documentation
 
-All documentation lives at **[hermes-agent.nousresearch.com/docs](https://hermes-agent.nousresearch.com/docs/)**:
-
-| Section | What&#039;s Covered |
-|---------|---------------|
-| [Quickstart](https://hermes-agent.nousresearch.com/docs/getting-started/quickstart) | Install → setup → first conversation in 2 minutes |
-| [CLI Usage](https://hermes-agent.nousresearch.com/docs/user-guide/cli) | Commands, keybindings, personalities, sessions |
-| [Configuration](https://hermes-agent.nousresearch.com/docs/user-guide/configuration) | Config file, providers, models, all options |
-| [Messaging Gateway](https://hermes-agent.nousresearch.com/docs/user-guide/messaging) | Telegram, Discord, Slack, WhatsApp, Signal, Home Assistant |
-| [Security](https://hermes-agent.nousresearch.com/docs/user-guide/security) | Command approval, DM pairing, container isolation |
-| [Tools &amp; Toolsets](https://hermes-agent.nousresearch.com/docs/user-guide/features/tools) | 40+ tools, toolset system, terminal backends |
-| [Skills System](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills) | Procedural memory, Skills Hub, creating skills |
-| [Memory](https://hermes-agent.nousresearch.com/docs/user-guide/features/memory) | Persistent memory, user profiles, best practices |
-| [MCP Integration](https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp) | Connect any MCP server for extended capabilities |
-| [Cron Scheduling](https://hermes-agent.nousresearch.com/docs/user-guide/features/cron) | Scheduled tasks with platform delivery |
-| [Context Files](https://hermes-agent.nousresearch.com/docs/user-guide/features/context-files) | Project context that shapes every conversation |
-| [Architecture](https://hermes-agent.nousresearch.com/docs/developer-guide/architecture) | Project structure, agent loop, key classes |
-| [Contributing](https://hermes-agent.nousresearch.com/docs/developer-guide/contributing) | Development setup, PR process, code style |
-| [CLI Reference](https://hermes-agent.nousresearch.com/docs/reference/cli-commands) | All commands and flags |
-| [Environment Variables](https://hermes-agent.nousresearch.com/docs/reference/environment-variables) | Complete env var reference |
-
----
-
-## Migrating from OpenClaw
-
-If you&#039;re coming from OpenClaw, Hermes can automatically import your settings, memories, skills, and API keys.
-
-**During first-time setup:** The setup wizard (`hermes setup`) automatically detects `~/.openclaw` and offers to migrate before configuration begins.
-
-**Anytime after install:**
-
-```bash
-hermes claw migrate              # Interactive migration (full preset)
-hermes claw migrate --dry-run    # Preview what would be migrated
-hermes claw migrate --preset user-data   # Migrate without secrets
-hermes claw migrate --overwrite  # Overwrite existing conflicts
-```
-
-What gets imported:
-- **SOUL.md** — persona file
-- **Memories** — MEMORY.md and USER.md entries
-- **Skills** — user-created skills → `~/.hermes/skills/openclaw-imports/`
-- **Command allowlist** — approval patterns
-- **Messaging settings** — platform configs, allowed users, working directory
-- **API keys** — allowlisted secrets (Telegram, OpenRouter, OpenAI, Anthropic, ElevenLabs)
-- **TTS assets** — workspace audio files
-- **Workspace instructions** — AGENTS.md (with `--workspace-target`)
-
-See `hermes claw migrate --help` for all options, or use the `openclaw-migration` skill for an interactive agent-guided migration with dry-run previews.
-
----
+- [**Quick Start Guide**](QUICKSTART.md) - Installation and first steps
+- [**Skills Guide**](SKILLS_GUIDE.md) - Skill reference and decision trees
+- [**Common Ground**](docs/COMMON_GROUND.md) - Context engineering with `/common-ground`
+- [**Workflow Commands**](docs/WORKFLOW_COMMANDS.md) - Project workflow commands guide
+- [**Atlassian MCP Setup**](docs/ATLASSIAN_MCP_SETUP.md) - Atlassian MCP server setup
+- [**Local Development**](docs/local_skill_development.md) - Local skill development
+- [**Contributing**](CONTRIBUTING.md) - Contribution guidelines
+- **skills/\*/SKILL.md** - Individual skill documentation
+- **skills/\*/references/** - Deep-dive reference materials
 
 ## Contributing
 
-We welcome contributions! See the [Contributing Guide](https://hermes-agent.nousresearch.com/docs/developer-guide/contributing) for development setup, code style, and PR process.
+See [**Contributing**](CONTRIBUTING.md) for guidelines on adding skills, writing references, and submitting pull requests.
 
-Quick start for contributors:
+## Changelog
 
-```bash
-git clone https://github.com/NousResearch/hermes-agent.git
-cd hermes-agent
-curl -LsSf https://astral.sh/uv/install.sh | sh
-uv venv venv --python 3.11
-source venv/bin/activate
-uv pip install -e &quot;.[all,dev]&quot;
-python -m pytest tests/ -q
-```
-
-&gt; **RL Training (optional):** To work on the RL/Tinker-Atropos integration:
-&gt; ```bash
-&gt; git submodule update --init tinker-atropos
-&gt; uv pip install -e &quot;./tinker-atropos&quot;
-&gt; ```
-
----
-
-## Community
-
-- 💬 [Discord](https://discord.gg/NousResearch)
-- 📚 [Skills Hub](https://agentskills.io)
-- 🐛 [Issues](https://github.com/NousResearch/hermes-agent/issues)
-- 💡 [Discussions](https://github.com/NousResearch/hermes-agent/discussions)
-
----
+See [Changelog](CHANGELOG.md) for full version history and release notes.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT License - See [LICENSE](LICENSE) file for details.
 
-Built by [Nous Research](https://nousresearch.com).
-</pre>
-          ]]></content:encoded>
-            <category>Python</category>
-        </item>
-        <item>
-            <title><![CDATA[HKUDS/RAG-Anything]]></title>
-            <link>https://github.com/HKUDS/RAG-Anything</link>
-            <guid>https://github.com/HKUDS/RAG-Anything</guid>
-            <pubDate>Mon, 06 Apr 2026 00:10:12 GMT</pubDate>
-            <description><![CDATA["RAG-Anything: All-in-One RAG Framework"]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/HKUDS/RAG-Anything">HKUDS/RAG-Anything</a></h1>
-            <p>"RAG-Anything: All-in-One RAG Framework"</p>
-            <p>Language: Python</p>
-            <p>Stars: 15,218</p>
-            <p>Forks: 1,817</p>
-            <p>Stars today: 99 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+## Support
 
-&lt;div style=&quot;margin: 20px 0;&quot;&gt;
-  &lt;img src=&quot;./assets/logo.png&quot; width=&quot;120&quot; height=&quot;120&quot; alt=&quot;RAG-Anything Logo&quot; style=&quot;border-radius: 20px; box-shadow: 0 8px 32px rgba(0, 217, 255, 0.3);&quot;&gt;
-&lt;/div&gt;
+- **Issues:** [GitHub Issues](https://github.com/jeffallan/claude-skills/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/jeffallan/claude-skills/discussions)
+- **Repository:** [github.com/jeffallan/claude-skills](https://github.com/jeffallan/claude-skills)
 
-# 🚀 RAG-Anything: All-in-One RAG Framework
+## Author
 
-&lt;a href=&quot;https://trendshift.io/repositories/14959&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/14959&quot; alt=&quot;HKUDS%2FRAG-Anything | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+Built by [**jeffallan**](https://jeffallan.github.io) [&lt;img src=&quot;https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg&quot; width=&quot;16&quot; height=&quot;16&quot; alt=&quot;LinkedIn&quot;/&gt;](https://www.linkedin.com/in/jeff-smolinski/)
 
-&lt;div align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://readme-typing-svg.herokuapp.com?font=Orbitron&amp;size=24&amp;duration=3000&amp;pause=1000&amp;color=00D9FF&amp;center=true&amp;vCenter=true&amp;width=600&amp;lines=Welcome+to+RAG-Anything;Next-Gen+Multimodal+RAG+System;Powered+by+Advanced+AI+Technology&quot; alt=&quot;Typing Animation&quot; /&gt;
-&lt;/div&gt;
+**Principal Consultant** at [**Synergetic Solutions**](https://synergetic.solutions) [&lt;img src=&quot;https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg&quot; width=&quot;16&quot; height=&quot;16&quot; alt=&quot;LinkedIn&quot;/&gt;](https://www.linkedin.com/company/synergetic-holdings)
 
-&lt;div align=&quot;center&quot;&gt;
-  &lt;div style=&quot;background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; padding: 25px; text-align: center;&quot;&gt;
-    &lt;p&gt;
-      &lt;a href=&#039;https://github.com/HKUDS/RAG-Anything&#039;&gt;&lt;img src=&#039;https://img.shields.io/badge/🔥Project-Page-00d9ff?style=for-the-badge&amp;logo=github&amp;logoColor=white&amp;labelColor=1a1a2e&#039;&gt;&lt;/a&gt;
-      &lt;a href=&#039;https://arxiv.org/abs/2510.12323&#039;&gt;&lt;img src=&#039;https://img.shields.io/badge/📄arXiv-2510.12323-ff6b6b?style=for-the-badge&amp;logo=arxiv&amp;logoColor=white&amp;labelColor=1a1a2e&#039;&gt;&lt;/a&gt;
-      &lt;a href=&#039;https://github.com/HKUDS/LightRAG&#039;&gt;&lt;img src=&#039;https://img.shields.io/badge/⚡Based%20on-LightRAG-4ecdc4?style=for-the-badge&amp;logo=lightning&amp;logoColor=white&amp;labelColor=1a1a2e&#039;&gt;&lt;/a&gt;
-    &lt;/p&gt;
-    &lt;p&gt;
-      &lt;a href=&quot;https://github.com/HKUDS/RAG-Anything/stargazers&quot;&gt;&lt;img src=&#039;https://img.shields.io/github/stars/HKUDS/RAG-Anything?color=00d9ff&amp;style=for-the-badge&amp;logo=star&amp;logoColor=white&amp;labelColor=1a1a2e&#039; /&gt;&lt;/a&gt;
-      &lt;img src=&quot;https://img.shields.io/badge/🐍Python-3.10-4ecdc4?style=for-the-badge&amp;logo=python&amp;logoColor=white&amp;labelColor=1a1a2e&quot;&gt;
-      &lt;a href=&quot;https://pypi.org/project/raganything/&quot;&gt;&lt;img src=&quot;https://img.shields.io/pypi/v/raganything.svg?style=for-the-badge&amp;logo=pypi&amp;logoColor=white&amp;labelColor=1a1a2e&amp;color=ff6b6b&quot;&gt;&lt;/a&gt;
-      &lt;a href=&quot;https://github.com/astral-sh/uv&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/⚡uv-Ready-ff6b6b?style=for-the-badge&amp;logo=python&amp;logoColor=white&amp;labelColor=1a1a2e&quot;&gt;&lt;/a&gt;
-    &lt;/p&gt;
-    &lt;p&gt;
-      &lt;a href=&quot;https://discord.gg/yF2MmDJyGJ&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/💬Discord-Community-7289da?style=for-the-badge&amp;logo=discord&amp;logoColor=white&amp;labelColor=1a1a2e&quot;&gt;&lt;/a&gt;
-      &lt;a href=&quot;https://github.com/HKUDS/RAG-Anything/issues/7&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/💬WeChat-Group-07c160?style=for-the-badge&amp;logo=wechat&amp;logoColor=white&amp;labelColor=1a1a2e&quot;&gt;&lt;/a&gt;
-    &lt;/p&gt;
-    &lt;p&gt;
-      &lt;a href=&quot;README_zh.md&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/🇨🇳中文版-1a1a2e?style=for-the-badge&quot;&gt;&lt;/a&gt;
-      &lt;a href=&quot;README.md&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/🇺🇸English-1a1a2e?style=for-the-badge&quot;&gt;&lt;/a&gt;
-    &lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+Fullstack engineering, security engineering, compliance, and technical due diligence.
 
-&lt;/div&gt;
+## Community
 
-&lt;div align=&quot;center&quot;&gt;
-  &lt;div style=&quot;width: 100%; height: 2px; margin: 20px 0; background: linear-gradient(90deg, transparent, #00d9ff, transparent);&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
+[![Stargazers repo roster for @Jeffallan/claude-skills](https://reporoster.com/stars/Jeffallan/claude-skills)](https://github.com/Jeffallan/claude-skills/stargazers)
 
-&lt;div align=&quot;center&quot;&gt;
-  &lt;a href=&quot;#-quick-start&quot; style=&quot;text-decoration: none;&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/Quick%20Start-Get%20Started%20Now-00d9ff?style=for-the-badge&amp;logo=rocket&amp;logoColor=white&amp;labelColor=1a1a2e&quot;&gt;
-  &lt;/a&gt;
-&lt;/div&gt;
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Jeffallan/claude-skills&amp;type=date&amp;legend=top-left)](https://www.star-history.com/#Jeffallan/claude-skills&amp;type=date&amp;legend=top-left)
 
 ---
 
-&lt;div align=&quot;center&quot;&gt;
-  &lt;table&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;vertical-align: middle;&quot;&gt;
-        &lt;img src=&quot;./assets/LiteWrite.png&quot;
-             width=&quot;56&quot;
-             height=&quot;56&quot;
-             alt=&quot;LiteWrite&quot;
-             style=&quot;border-radius: 12px;&quot; /&gt;
-      &lt;/td&gt;
-      &lt;td style=&quot;vertical-align: middle; padding-left: 12px;&quot;&gt;
-        &lt;a href=&quot;https://litewrite.ai&quot;&gt;
-          &lt;img src=&quot;https://img.shields.io/badge/🚀%20LiteWrite-AI%20Native%20LaTeX%20Editor-ff6b6b?style=for-the-badge&amp;logoColor=white&amp;labelColor=1a1a2e&quot;&gt;
-        &lt;/a&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/table&gt;
-&lt;/div&gt;
-
----
-
-## 🎉 News
-- [X] [2025.10]🎯📢 🚀 We have released the technical report of [RAG-Anything](http://arxiv.org/abs/2510.12323). Access it now to explore our latest research findings.
-- [X] [2025.08]🎯📢 🔍 RAG-Anything now features **VLM-Enhanced Query** mode! When documents include images, the system seamlessly integrates them into VLM for advanced multimodal analysis, combining visual and textual context for deeper insights.
-- [X] [2025.07]🎯📢 RAG-Anything now features a [context configuration module](docs/context_aware_processing.md), enabling intelligent integration of relevant contextual information to enhance multimodal content processing.
-- [X] [2025.07]🎯📢 🚀 RAG-Anything now supports multimodal query capabilities, enabling enhanced RAG with seamless processing of text, images, tables, and equations.
-- [X] [2025.07]🎯📢 🎉 RAG-Anything has reached 1k🌟 stars on GitHub! Thank you for your incredible support and valuable contributions to the project.
-
----
-
-## 🌟 System Overview
-
-*Next-Generation Multimodal Intelligence*
-
-&lt;div style=&quot;background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); border-radius: 15px; padding: 25px; margin: 20px 0; border: 2px solid #00d9ff; box-shadow: 0 0 30px rgba(0, 217, 255, 0.3);&quot;&gt;
-
-Modern documents increasingly contain diverse multimodal content—text, images, tables, equations, charts, and multimedia—that traditional text-focused RAG systems cannot effectively process. **RAG-Anything** addresses this challenge as a comprehensive **All-in-One Multimodal Document Processing RAG system** built on [LightRAG](https://github.com/HKUDS/LightRAG).
-
-As a unified solution, RAG-Anything **eliminates the need for multiple specialized tools**. It provides **seamless processing and querying across all content modalities** within a single integrated framework. Unlike conventional RAG approaches that struggle with non-textual elements, our all-in-one system delivers **comprehensive multimodal retrieval capabilities**.
-
-Users can query documents containing **interleaved text**, **visual diagrams**, **structured tables**, and **mathematical formulations** through **one cohesive interface**. This consolidated approach makes RAG-Anything particularly valuable for academic research, technical documentation, financial reports, and enterprise knowledge management where rich, mixed-content documents demand a **unified processing framework**.
-
-&lt;img src=&quot;assets/rag_anything_framework.png&quot; alt=&quot;RAG-Anything&quot; /&gt;
-
-&lt;/div&gt;
-
-### 🎯 Key Features
-
-&lt;div style=&quot;background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 15px; padding: 25px; margin: 20px 0;&quot;&gt;
-
-- **🔄 End-to-End Multimodal Pipeline** - Complete workflow from document ingestion and parsing to intelligent multimodal query answering
-- **📄 Universal Document Support** - Seamless processing of PDFs, Office documents, images, and diverse file formats
-- **🧠 Specialized Content Analysis** - Dedicated processors for images, tables, mathematical equations, and heterogeneous content types
-- **🔗 Multimodal Knowledge Graph** - Automatic entity extraction and cross-modal relationship discovery for enhanced understanding
-- **⚡ Adaptive Processing Modes** - Flexible MinerU-based parsing or direct multimodal content injection workflows
-- **📋 Direct Content List Insertion** - Bypass document parsing by directly inserting pre-parsed content lists from external sources
-- **🎯 Hybrid Intelligent Retrieval** - Advanced search capabilities spanning textual and multimodal content with contextual understanding
-
-&lt;/div&gt;
-
----
-
-## 🏗️ Algorithm &amp; Architecture
-
-&lt;div style=&quot;background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%); border-radius: 15px; padding: 25px; margin: 20px 0; border-left: 5px solid #00d9ff;&quot;&gt;
-
-### Core Algorithm
-
-**RAG-Anything** implements an effective **multi-stage multimodal pipeline** that fundamentally extends traditional RAG architectures to seamlessly handle diverse content modalities through intelligent orchestration and cross-modal understanding.
-
-&lt;/div&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-  &lt;div style=&quot;width: 100%; max-width: 600px; margin: 20px auto; padding: 20px; background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(0, 217, 255, 0.05) 100%); border-radius: 15px; border: 1px solid rgba(0, 217, 255, 0.2);&quot;&gt;
-    &lt;div style=&quot;display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 20px;&quot;&gt;
-      &lt;div style=&quot;text-align: center;&quot;&gt;
-        &lt;div style=&quot;font-size: 24px; margin-bottom: 10px;&quot;&gt;📄&lt;/div&gt;
-        &lt;div style=&quot;font-size: 14px; color: #00d9ff;&quot;&gt;Document Parsing&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div style=&quot;font-size: 20px; color: #00d9ff;&quot;&gt;→&lt;/div&gt;
-      &lt;div style=&quot;text-align: center;&quot;&gt;
-        &lt;div style=&quot;font-size: 24px; margin-bottom: 10px;&quot;&gt;🧠&lt;/div&gt;
-        &lt;div style=&quot;font-size: 14px; color: #00d9ff;&quot;&gt;Content Analysis&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div style=&quot;font-size: 20px; color: #00d9ff;&quot;&gt;→&lt;/div&gt;
-      &lt;div style=&quot;text-align: center;&quot;&gt;
-        &lt;div style=&quot;font-size: 24px; margin-bottom: 10px;&quot;&gt;🔍&lt;/div&gt;
-        &lt;div style=&quot;font-size: 14px; color: #00d9ff;&quot;&gt;Knowledge Graph&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div style=&quot;font-size: 20px; color: #00d9ff;&quot;&gt;→&lt;/div&gt;
-      &lt;div style=&quot;text-align: center;&quot;&gt;
-        &lt;div style=&quot;font-size: 24px; margin-bottom: 10px;&quot;&gt;🎯&lt;/div&gt;
-        &lt;div style=&quot;font-size: 14px; color: #00d9ff;&quot;&gt;Intelligent Retrieval&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-### 1. Document Parsing Stage
-
-&lt;div style=&quot;background: linear-gradient(90deg, #1a1a2e 0%, #16213e 100%); border-radius: 10px; padding: 20px; margin: 15px 0; border-left: 4px solid #4ecdc4;&quot;&gt;
-
-The system provides high-fidelity document extraction through adaptive content decomposition. It intelligently segments heterogeneous elements while preserving contextual relationships. Universal format compatibility is achieved via specialized optimized parsers.
-
-**Key Components:**
-
-- **⚙️ MinerU Integration**: Leverages [MinerU](https://github.com/opendatalab/MinerU) for high-fidelity document structure extraction and semantic preservation across complex layouts.
-
-- **🧩 Adaptive Content Decomposition**: Automatically segments documents into coherent text blocks, visual elements, structured tables, mathematical equations, and specialized content types while preserving contextual relationships.
-
-- **📁 Universal Format Support**: Provides comprehensive handling of PDFs, Office documents (DOC/DOCX/PPT/PPTX/XLS/XLSX), images, and emerging formats through specialized parsers with format-specific optimization.
-
-&lt;/div&gt;
-
-### 2. Multi-Modal Content Understanding &amp; Processing
-
-&lt;div style=&quot;background: linear-gradient(90deg, #16213e 0%, #0f3460 100%); border-radius: 10px; padding: 20px; margin: 15px 0; border-left: 4px solid #ff6b6b;&quot;&gt;
-
-The system automatically categorizes and routes content through optimized channels. It uses concurrent pipelines for parallel text and multimodal processing. Document hierarchy and relationships are preserved during transformation.
-
-**Key Components:**
-
-- **🎯 Autonomous Content Categorization and Routing**: Automatically identify, categorize, and route different content types through optimized execution channels.
-
-- **⚡ Concurrent Multi-Pipeline Architecture**: Implements concurrent execution of textual and multimodal content through dedicated processing pipelines. This approach maximizes throughput efficiency while preserving content integrity.
-
-- **🏗️ Document Hierarchy Extraction**: Extracts and preserves original document hierarchy and inter-element relationships during content transformation.
-
-&lt;/div&gt;
-
-### 3. Multimodal Analysis Engine
-
-&lt;div style=&quot;background: linear-gradient(90deg, #0f3460 0%, #1a1a2e 100%); border-radius: 10px; padding: 20px; margin: 15px 0; border-left: 4px solid #00d9ff;&quot;&gt;
-
-The system deploys modality-aware processing units for heterogeneous data modalities:
-
-**Specialized Analyzers:**
-
-- **🔍 Visual Content Analyzer**:
-  - Integrate vision model for image analysis.
-  - Generates context-aware descriptive captions based on visual semantics.
-  - Extracts spatial relationships and hierarchical structures between visual elements.
-
-- **📊 Structured Data Interpreter**:
-  - Performs systematic interpretation of tabular and structured data formats.
-  - Implements statistical pattern recognition algorithms for data trend analysis.
-  - Identifies semantic relationships and dependencies across multiple tabular datasets.
-
-- **📐 Mathematical Expression Parser**:
-  - Parses complex mathematical expressions and formulas with high accuracy.
-  - Provides native LaTeX format support for seamless integration with academic workflows.
-  - Establishes conceptual mappings between mathematical equations and domain-specific knowledge bases.
-
-- **🔧 Extensible Modality Handler**:
-  - Provides configurable processing framework for custom and emerging content types.
-  - Enables dynamic integration of new modality processors through plugin architecture.
-  - Supports runtime configuration of processing pipelines for specialized use cases.
-
-&lt;/div&gt;
-
-### 4. Multimodal Knowledge Graph Index
-
-&lt;div style=&quot;background: linear-gradient(90deg, #1a1a2e 0%, #16213e 100%); border-radius: 10px; padding: 20px; margin: 15px 0; border-left: 4px solid #4ecdc4;&quot;&gt;
-
-The multi-modal knowledge graph construction module transforms document content into structured semantic representations. It extracts multimodal entities, establishes cross-modal relationships, and preserves hierarchical organization. The system applies weighted relevance scoring for optimized knowledge retrieval.
-
-**Core Functions:**
-
-- **🔍 Multi-Modal Entity Extraction**: Transforms significant multimodal elements into structured knowledge graph entities. The process includes semantic annotations and metadata preservation.
-
-- **🔗 Cross-Modal Relationship Mapping**: Establishes semantic connections and dependencies between textual entities and multimodal components. This is achieved through automated relationship inference algorithms.
-
-- **🏗️ Hierarchical Structure Preservation**: Maintains original document organization through &quot;belongs_to&quot; relationship chains. These chains preserve logical content hierarchy and sectional dependencies.
-
-- **⚖️ Weighted Relationship Scoring**: Assigns quantitative relevance scores to relationship types. Scoring is based on semantic proximity and contextual significance within the document structure.
-
-&lt;/div&gt;
-
-### 5. Modality-Aware Retrieval
-
-&lt;div style=&quot;background: linear-gradient(90deg, #16213e 0%, #0f3460 100%); border-radius: 10px; padding: 20px; margin: 15px 0; border-left: 4px solid #ff6b6b;&quot;&gt;
-
-The hybrid retrieval system combines vector similarity search with graph traversal algorithms for comprehensive content retrieval. It implements modality-aware ranking mechanisms and maintains relational coherence between retrieved elements to ensure contextually integrated information delivery.
-
-**Retrieval Mechanisms:**
-
-- **🔀 Vector-Graph Fusion**: Integrates vector similarity search with graph traversal algorithms. This approach leverages both semantic embeddings and structural relationships for comprehensive content retrieval.
-
-- **📊 Modality-Aware Ranking**: Implements adaptive scoring mechanisms that weight retrieval results based on content type relevance. The system adjusts rankings according to query-specific modality preferences.
-
-- **🔗 Relational Coherence Maintenance**: Maintains semantic and structural relationships between retrieved elements. This ensures coherent information delivery and contextual integrity.
-
-&lt;/div&gt;
-
----
-
-## 🚀 Quick Start
-
-*Initialize Your AI Journey*
-
-&lt;div align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://user-images.githubusercontent.com/74038190/212284158-e840e285-664b-44d7-b79b-e264b5e54825.gif&quot; width=&quot;400&quot;&gt;
-&lt;/div&gt;
-
-### Installation
-
-#### Option 1: Install from PyPI (Recommended)
-
-```bash
-# Basic installation
-pip install raganything
-
-# With optional dependencies for extended format support:
-pip install &#039;raganything[all]&#039;              # All optional features
-pip install &#039;raganything[image]&#039;            # Image format conversion (BMP, TIFF, GIF, WebP)
-pip install &#039;raganything[text]&#039;             # Text file processing (TXT, MD)
-pip install &#039;raganything[image,text]&#039;       # Multiple features
-```
-
-#### Option 2: Install from Source
-```bash
-# Install uv (if not already installed)
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# Clone and setup the project with uv
-git clone https://github.com/HKUDS/RAG-Anything.git
-cd RAG-Anything
-
-# Install the package and dependencies in a virtual environment
-uv sync
-
-# If you encounter network timeouts (especially for opencv packages):
-# UV_HTTP_TIMEOUT=120 uv sync
-
-# Run commands directly with uv (recommended approach)
-uv run python examples/raganything_example.py --help
-
-# Install with optional dependencies
-uv sync --extra image --extra text  # Specific extras
-uv sync --all-extras                 # All optional features
-```
-
-#### Optional Dependencies
-
-- **`[image]`** - Enables processing of BMP, TIFF, GIF, WebP image formats (requires Pillow)
-- **`[text]`** - Enables processing of TXT and MD files (requires ReportLab)
-- **`[all]`** - Includes all Python optional dependencies
-
-&gt; **⚠️ Office Document Processing Requirements:**
-&gt; - Office documents (.doc, .docx, .ppt, .pptx, .xls, .xlsx) require **LibreOffice** installation
-&gt; - Download from [LibreOffice official website](https://www.libreoffice.org/download/download/)
-&gt; - **Windows**: Download installer from official website
-&gt; - **macOS**: `brew install --cask libreoffice`
-&gt; - **Ubuntu/Debian**: `sudo apt-get install libreoffice`
-&gt; - **CentOS/RHEL**: `sudo yum install libreoffice`
-
-**Check MinerU installation:**
-
-```bash
-# Verify installation
-mineru --version
-
-# Check if properly configured
-python -c &quot;from raganything import RAGAnything; rag = RAGAnything(); print(&#039;✅ MinerU installed properly&#039; if rag.check_parser_installation() else &#039;❌ MinerU installation issue&#039;)&quot;
-```
-
-Models are downloaded automatically on first use. For manual download, refer to [MinerU Model Source Configuration](https://github.com/opendatalab/MinerU/blob/master/README.md#22-model-source-configuration).
-
-### Usage Examples
-
-#### 1. End-to-End Document Processing
-
-```python
-import asyncio
-from raganything import RAGAnything, RAGAnythingConfig
-from lightrag.llm.openai import openai_complete_if_cache, openai_embed
-from lightrag.utils import EmbeddingFunc
-
-async def main():
-    # Set up API configuration
-    api_key = &quot;your-api-key&quot;
-    base_url = &quot;your-base-url&quot;  # Optional
-
-    # Create RAGAnything configuration
-    config = RAGAnythingConfig(
-        working_dir=&quot;./rag_storage&quot;,
-        parser=&quot;mineru&quot;,  # Parser selection: mineru, docling, or paddleocr
-        parse_method=&quot;auto&quot;,  # Parse method: auto, ocr, or txt
-        enable_image_processing=True,
-        enable_table_processing=True,
-        enable_equation_processing=True,
-    )
-
-    # Define LLM model function
-    def llm_model_func(prompt, system_prompt=None, history_messages=[], **kwargs):
-        return openai_complete_if_cache(
-            &quot;gpt-4o-mini&quot;,
-            prompt,
-            system_prompt=system_prompt,
-            history_messages=history_messages,
-            api_key=api_key,
-            base_url=base_url,
-            **kwargs,
-        )
-
-    # Define vision model function for image processing
-    def vision_model_func(
-        prompt, system_prompt=None, history_messages=[], image_data=None, messages=None, **kwargs
-    ):
-        # If messages format is provided (for multimodal VLM enhanced query), use it directly
-        if messages:
-            return openai_complete_if_cache(
-                &quot;gpt-4o&quot;,
-                &quot;&quot;,
-                system_prompt=None,
-                history_messages=[],
-                messages=messages,
-                api_key=api_key,
-                base_url=base_url,
-                **kwargs,
-            )
-        # Traditional single image format
-        elif image_data:
-            return openai_complete_if_cache(
-                &quot;gpt-4o&quot;,
-                &quot;&quot;,
-                system_prompt
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>Python</category>
-        </item>
-        <item>
-            <title><![CDATA[google-deepmind/gemma]]></title>
-            <link>https://github.com/google-deepmind/gemma</link>
-            <guid>https://github.com/google-deepmind/gemma</guid>
-            <pubDate>Mon, 06 Apr 2026 00:10:11 GMT</pubDate>
-            <description><![CDATA[Gemma open-weight LLM library, from Google DeepMind]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/google-deepmind/gemma">google-deepmind/gemma</a></h1>
-            <p>Gemma open-weight LLM library, from Google DeepMind</p>
-            <p>Language: Python</p>
-            <p>Stars: 4,413</p>
-            <p>Forks: 763</p>
-            <p>Stars today: 50 stars today</p>
-            <h2>README</h2><pre># Gemma
-
-[![Unittests](https://github.com/google-deepmind/gemma/actions/workflows/pytest_and_autopublish.yml/badge.svg)](https://github.com/google-deepmind/gemma/actions/workflows/pytest_and_autopublish.yml)
-[![PyPI version](https://badge.fury.io/py/gemma.svg)](https://badge.fury.io/py/gemma)
-[![Documentation Status](https://readthedocs.org/projects/gemma-llm/badge/?version=latest)](https://gemma-llm.readthedocs.io/en/latest/?badge=latest)
-
-[Gemma](https://ai.google.dev/gemma) is a family of open-weights Large Language
-Model (LLM) by [Google DeepMind](https://deepmind.google/), based on Gemini
-research and technology.
-
-This repository contains the implementation of the
-[`gemma`](https://pypi.org/project/gemma/) PyPI package. A
-[JAX](https://github.com/jax-ml/jax) library to use and fine-tune Gemma.
-
-For examples and use cases, see our
-[documentation](https://gemma-llm.readthedocs.io/). Please
-report issues and feedback in
-[our GitHub](https://github.com/google-deepmind/gemma/issues).
-
-### Installation
-
-1.  Install JAX for CPU, GPU or TPU. Follow the instructions on
-    [the JAX website](https://jax.readthedocs.io/en/latest/installation.html).
-1.  Run
-
-    ```sh
-    pip install gemma
-    ```
-
-### Examples
-
-Here is a minimal example to have a multi-turn, multi-modal conversation with
-Gemma:
-
-```python
-from gemma import gm
-
-# Model and parameters
-model = gm.nn.Gemma3_4B()
-params = gm.ckpts.load_params(gm.ckpts.CheckpointPath.GEMMA3_4B_IT)
-
-# Example of multi-turn conversation
-sampler = gm.text.ChatSampler(
-    model=model,
-    params=params,
-    multi_turn=True,
-)
-
-prompt = &quot;&quot;&quot;Which of the two images do you prefer?
-
-Image 1: &lt;start_of_image&gt;
-Image 2: &lt;start_of_image&gt;
-
-Write your answer as a poem.&quot;&quot;&quot;
-out0 = sampler.chat(prompt, images=[image1, image2])
-
-out1 = sampler.chat(&#039;What about the other image ?&#039;)
-```
-
-Our documentation contains various Colabs and tutorials, including:
-
-* [Sampling](https://gemma-llm.readthedocs.io/en/latest/colab_sampling.html)
-* [Multi-modal](https://gemma-llm.readthedocs.io/en/latest/colab_multimodal.html)
-* [Fine-tuning](https://gemma-llm.readthedocs.io/en/latest/colab_finetuning.html)
-* [LoRA](https://gemma-llm.readthedocs.io/en/latest/colab_lora_sampling.html)
-* ...
-
-Additionally, our
-[examples/](https://github.com/google-deepmind/gemma/tree/main/examples) folder
-contain additional scripts to fine-tune and sample with Gemma.
-
-### Learn more about Gemma
-
-* To use this library: [Gemma documentation](https://gemma-llm.readthedocs.io/)
-* Technical reports for metrics and model capabilities:
-  * [Gemma 1](https://goo.gle/GemmaReport)
-  * [Gemma 2](https://goo.gle/gemma2report)
-  * [Gemma 3](https://storage.googleapis.com/deepmind-media/gemma/Gemma3Report.pdf)
-* Other Gemma implementations and doc on the
-  [Gemma ecosystem](https://ai.google.dev/gemma/docs)
-
-### Downloading the models
-
-To download the model weights. See
-[our documentation](https://gemma-llm.readthedocs.io/en/latest/checkpoints.html).
-
-### System Requirements
-
-Gemma can run on a CPU, GPU and TPU. For GPU, we recommend 8GB+ RAM on GPU for
-The 2B checkpoint and 24GB+ RAM on GPU are used for the 7B checkpoint.
-
-### Contributing
-
-We welcome contributions! Please read our [Contributing Guidelines](./CONTRIBUTING.md) before submitting a pull request.
-
-*This is not an official Google product.*
-</pre>
-          ]]></content:encoded>
-            <category>Python</category>
-        </item>
-        <item>
-            <title><![CDATA[atilaahmettaner/tradingview-mcp]]></title>
-            <link>https://github.com/atilaahmettaner/tradingview-mcp</link>
-            <guid>https://github.com/atilaahmettaner/tradingview-mcp</guid>
-            <pubDate>Mon, 06 Apr 2026 00:10:10 GMT</pubDate>
-            <description><![CDATA[Advanced TradingView MCP Server for AI-powered market analysis. Real-time crypto & stock screening, technical indicators, Bollinger Band intelligence, and candlestick patterns. Works with Claude Desktop & AI assistants. Multi-exchange support (Binance, KuCoin, Bybit+). Open source trading toolkit.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/atilaahmettaner/tradingview-mcp">atilaahmettaner/tradingview-mcp</a></h1>
-            <p>Advanced TradingView MCP Server for AI-powered market analysis. Real-time crypto & stock screening, technical indicators, Bollinger Band intelligence, and candlestick patterns. Works with Claude Desktop & AI assistants. Multi-exchange support (Binance, KuCoin, Bybit+). Open source trading toolkit.</p>
-            <p>Language: Python</p>
-            <p>Stars: 673</p>
-            <p>Forks: 179</p>
-            <p>Stars today: 39 stars today</p>
-            <h2>README</h2><pre># 📈 AI Trading Intelligence Framework — MCP Server
-
-**The most complete AI-powered trading toolkit for Claude and MCP clients.**
-Backtesting + Live Sentiment + Yahoo Finance + 30+ Technical Analysis Tools — all in one MCP server.
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![MCP Ready](https://img.shields.io/badge/MCP-Ready-brightgreen)](https://modelcontextprotocol.com/)
-[![OpenClaw Ready](https://img.shields.io/badge/OpenClaw-Ready-blueviolet)](https://openclaw.ai)
-[![Version](https://img.shields.io/badge/version-v0.7.0-blue)](https://github.com/atilaahmettaner/tradingview-mcp/releases)
-[![PyPI](https://img.shields.io/badge/PyPI-tradingview--mcp--server-orange)](https://pypi.org/project/tradingview-mcp-server/)
-[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-❤️-pink?logo=github-sponsors)](https://github.com/sponsors/atilaahmettaner)
-
-&gt; **⭐ If this tool improves your workflow, please star the repo and consider [sponsoring](https://github.com/sponsors/atilaahmettaner) — it keeps the project alive and growing!**
-
-&lt;a href=&quot;https://github.com/sponsors/atilaahmettaner&quot;&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/☕_Coffee_($5)-Sponsor-orange?style=for-the-badge&amp;logo=github-sponsors&quot; alt=&quot;Sponsor $5&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/sponsors/atilaahmettaner&quot;&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/🚀_Supporter_($15)-Sponsor-blueviolet?style=for-the-badge&amp;logo=github-sponsors&quot; alt=&quot;Sponsor $15&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/sponsors/atilaahmettaner&quot;&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/💎_Pro_($30)-Sponsor-gold?style=for-the-badge&amp;logo=github-sponsors&quot; alt=&quot;Sponsor $30&quot;/&gt;
-&lt;/a&gt;
-
----
-
-## 🎥 Framework Demo
-
-https://github-production-user-asset-6210df.s3.amazonaws.com/67838093/478689497-4a605d98-43e8-49a6-8d3a-559315f6c01d.mp4
-
----
-
-## 🏗️ Architecture
-
-![tradingview-mcp Architecture](assets/architecture.png)
-
----
-
-## ✨ Why tradingview-mcp?
-
-| Feature | `tradingview-mcp` | Traditional Setups | Bloomberg Terminal |
-|---------|-------------------|--------------------|--------------------|
-| **Setup Time** | 5 minutes | Hours (Docker, Conda...) | Weeks (Contracts) |
-| **Cost** | Free &amp; Open Source | Variable | $30k+/year |
-| **Backtesting** | ✅ 6 strategies + Sharpe | ❌ Manual scripting | ✅ Proprietary |
-| **Live Sentiment** | ✅ Reddit + RSS news | ❌ Separate setup | ✅ Terminal |
-| **Market Data** | ✅ Live / Real-Time | Historical / Delayed | Live |
-| **API Keys** | **None required** | Multiple (OpenAI, etc.) | N/A |
-
----
-
-## 🚀 Quick Start (5 Minutes)
-
-### Install via pip
-```bash
-pip install tradingview-mcp-server
-```
-
-### Claude Desktop Config (`claude_desktop_config.json`)
-```json
-{
-  &quot;mcpServers&quot;: {
-    &quot;tradingview&quot;: {
-      &quot;command&quot;: &quot;uvx&quot;,
-      &quot;args&quot;: [&quot;tradingview-mcp-server&quot;]
-    }
-  }
-}
-```
-
-### Or run from source
-```bash
-git clone https://github.com/atilaahmettaner/tradingview-mcp
-cd tradingview-mcp
-uv run tradingview-mcp
-```
-
----
-
-## 📱 Use via Telegram, WhatsApp &amp; More (OpenClaw)
-
-Connect this server to **Telegram, WhatsApp, Discord** and 20+ messaging platforms using [OpenClaw](https://openclaw.ai) — a self-hosted AI gateway. **Tested &amp; verified on Hetzner VPS (Ubuntu 24.04).**
-
-### How It Works
-
-&gt; OpenClaw routes Telegram messages to an AI agent. The agent uses `trading.py` — a thin Python wrapper — to call `tradingview-mcp` functions and return formatted results. **No MCP protocol needed between OpenClaw and the server; it&#039;s a direct Python import.**
-
-```
-Telegram → OpenClaw agent (AI model) → trading.py (bash) → tradingview-mcp → Yahoo Finance
-```
-
-### Quick Setup
-
-```bash
-# 1. Install UV and tradingview-mcp
-curl -LsSf https://astral.sh/uv/install.sh | sh &amp;&amp; source ~/.bashrc
-uv tool install tradingview-mcp-server
-
-# 2. Configure OpenClaw channels
-cat &gt; ~/.openclaw/openclaw.json &lt;&lt; &#039;EOF&#039;
-{
-  channels: {
-    telegram: {
-      botToken: &quot;YOUR_BOT_TOKEN_HERE&quot;,
-    },
-  },
-}
-EOF
-
-# 3. Configure gateway + agent
-openclaw config set gateway.mode local
-openclaw config set acp.defaultAgent main
-
-# 4. Set your AI model (choose ONE option below)
-openclaw configure --section model
-
-# 5. Install the skill + tool wrapper
-mkdir -p ~/.agents/skills/tradingview-mcp ~/.openclaw/tools
-curl -fsSL https://raw.githubusercontent.com/atilaahmettaner/tradingview-mcp/main/openclaw/SKILL.md \
-  -o ~/.agents/skills/tradingview-mcp/SKILL.md
-curl -fsSL https://raw.githubusercontent.com/atilaahmettaner/tradingview-mcp/main/openclaw/trading.py \
-  -o ~/.openclaw/tools/trading.py &amp;&amp; chmod +x ~/.openclaw/tools/trading.py
-
-# 6. Start the gateway
-openclaw gateway install
-systemctl --user start openclaw-gateway.service
-```
-
-### Choose Your AI Model
-
-OpenRouter is **not required** — use whichever provider you have a key for:
-
-| Provider | Model ID for OpenClaw | Get Key |
-|----------|----------------------|---------|
-| **OpenRouter** (aggregator — access to all models) | `openrouter/google/gemini-3-flash-preview` | [openrouter.ai/keys](https://openrouter.ai/keys) |
-| **Anthropic** (Claude direct) | `anthropic/claude-sonnet-4-5` | [console.anthropic.com](https://console.anthropic.com) |
-| **Google** (Gemini direct) | `google/gemini-2.5-flash` | [aistudio.google.com](https://aistudio.google.com) |
-| **OpenAI** (GPT direct) | `openai/gpt-4o-mini` | [platform.openai.com](https://platform.openai.com) |
-
-```bash
-# Examples — set your chosen model:
-openclaw config set agents.defaults.model &quot;openrouter/google/gemini-3-flash-preview&quot;  # via OpenRouter
-openclaw config set agents.defaults.model &quot;anthropic/claude-sonnet-4-5&quot;               # Anthropic direct
-openclaw config set agents.defaults.model &quot;google/gemini-2.5-flash&quot;                   # Google direct
-```
-
-&gt; ⚠️ **Important:** Prefix must match your provider. `google/...` needs a Google API key. `openrouter/...` needs an OpenRouter key.
-
-### ⚠️ Common Mistakes
-
-| Symptom | Cause | Fix |
-|---------|-------|-----|
-| `Unrecognized keys: mcpServers` | `mcpServers` not supported in this version | Remove from config, use bash wrapper |
-| `No API key for provider &quot;google&quot;` | Used `google/model` but only have OpenRouter key | Use `openrouter/google/model` instead |
-| `which agent?` loop | `acp.defaultAgent` not set | `openclaw config set acp.defaultAgent main` |
-| Gateway won&#039;t start | `gateway.mode` missing | `openclaw config set gateway.mode local` |
-
-### Test Your Bot
-
-Once running, send your Telegram bot:
-```
-market snapshot
-backtest RSI strategy for AAPL, 1 year
-compare all strategies for BTC-USD
-```
-
-👉 **[Full OpenClaw Setup Guide →](OPENCLAW.md)**
-
----
-
-
-
-
-
-Unlike basic screeners, this framework deploys **specialized AI agents** that debate findings in real-time:
-
-1. **🛠️ Technical Analyst** — Bollinger Bands (±3 proprietary rating), RSI, MACD
-2. **🌊 Sentiment &amp; Momentum Analyst** — Reddit community sentiment + price momentum
-3. **🛡️ Risk Manager** — Volatility, drawdown risk, mean-reversion signals
-
-*Output: `STRONG BUY` / `BUY` / `HOLD` / `SELL` / `STRONG SELL` with confidence score*
-
----
-
-## 🔧 All 30+ MCP Tools
-
-### 📊 Backtesting Engine *(New in v0.6.0)*
-
-| Tool | Description |
-|------|-------------|
-| `backtest_strategy` | Backtest 1 of 6 strategies with institutional metrics (Sharpe, Calmar, Expectancy) |
-| `compare_strategies` | Run all 6 strategies on same symbol and rank by performance |
-
-**6 Strategies to Test:**
-- `rsi` — RSI oversold/overbought mean reversion
-- `bollinger` — Bollinger Band mean reversion
-- `macd` — MACD golden/death cross
-- `ema_cross` — EMA 20/50 Golden/Death Cross
-- `supertrend` — ATR-based Supertrend trend following 🔥
-- `donchian` — Donchian Channel breakout (Turtle Trader style)
-
-**Metrics you get:** Win Rate, Total Return, Sharpe Ratio, Calmar Ratio, Max Drawdown, Profit Factor, Expectancy, Best/Worst Trade, vs Buy-and-Hold, with **realistic commission + slippage simulation**.
-
-```
-Example prompt: &quot;Compare all strategies on BTC-USD for 2 years&quot;
-→ #1 Supertrend: +31.5% | Sharpe: 2.1 | WR: 62%
-→ #2 Bollinger:  +18.3% | Sharpe: 3.4 | WR: 75%
-→ Buy &amp; Hold:    -5.0%
-```
-
----
-
-### 💰 Yahoo Finance — Real-Time Prices *(New in v0.6.0)*
-
-| Tool | Description |
-|------|-------------|
-| `yahoo_price` | Real-time quote: price, change %, 52w high/low, market state |
-| `market_snapshot` | Global overview: S&amp;P500, NASDAQ, VIX, BTC, ETH, EUR/USD, SPY, GLD |
-
-**Supports:** Stocks (AAPL, TSLA, NVDA), Crypto (BTC-USD, ETH-USD, SOL-USD), ETFs (SPY, QQQ, GLD), Indices (^GSPC, ^DJI, ^IXIC, ^VIX), FX (EURUSD=X), Turkish (THYAO.IS, SASA.IS)
-
----
-
-### 🧠 AI Sentiment &amp; Intelligence *(New in v0.5.0)*
-
-| Tool | Description |
-|------|-------------|
-| `market_sentiment` | Reddit sentiment across finance communities (bullish/bearish score, top posts) |
-| `financial_news` | Live RSS headlines from Reuters, CoinDesk, CoinTelegraph |
-| `combined_analysis` | **Power Tool**: TradingView technicals + Reddit sentiment + live news → confluence decision |
-
----
-
-### 📈 Technical Analysis Core
-
-| Tool | Description |
-|------|-------------|
-| `get_technical_analysis` | Full TA: RSI, MACD, Bollinger, 23 indicators with BUY/SELL/HOLD |
-| `get_multiple_analysis` | Bulk TA for multiple symbols at once |
-| `get_bollinger_band_analysis` | Proprietary ±3 BB rating system |
-| `get_stock_decision` | 3-layer decision engine (ranking + trade setup + quality score) |
-| `screen_stocks` | Multi-exchange screener with 20+ filter criteria |
-| `scan_by_signal` | Scan by signal type (oversold, trending, breakout...) |
-| `get_candlestick_patterns` | 15 candlestick pattern detector |
-| `get_multi_timeframe_analysis` | Weekly→Daily→4H→1H→15m alignment analysis |
-
----
-
-### 🌍 Multi-Exchange Support
-
-| Exchange | Tools |
-|----------|-------|
-| **Binance** | Crypto screener, all pairs |
-| **KuCoin / Bybit+** | Crypto screener |
-| **NASDAQ / NYSE** | US stocks (AAPL, TSLA, NVDA...) |
-| **EGX (Egypt)** | `egx_market_overview`, `egx_stock_screener`, `egx_trade_plan`, `egx_fibonacci_retracement` |
-| **Turkish (BIST)** | Via TradingView screener |
-
----
-
-## 💬 Example AI Conversations
-
-```
-You: &quot;Give me a full market snapshot right now&quot;
-AI: [market_snapshot] → S&amp;P500 -3.4%, BTC +0.1%, VIX 31 (+13%), EUR/USD 1.15
-
-You: &quot;What is Reddit saying about NVDA?&quot;
-AI: [market_sentiment] → Strongly Bullish (0.41) | 23 posts | 18 bullish
-
-You: &quot;Backtest RSI strategy on BTC-USD for 2 years&quot;
-AI: [backtest_strategy] → +31.5% return | 100% win rate | 2 trades | B&amp;H: -5%
-
-You: &quot;Which strategy worked best on AAPL in the last 2 years?&quot;
-AI: [compare_strategies] → Supertrend #1 (+14.6%, Sharpe 3.09), MACD last (-9.1%)
-
-You: &quot;Analyze TSLA with all signals: technical + sentiment + news&quot;
-AI: [combined_analysis] → BUY (Technical STRONG BUY + Bullish Reddit + Positive news)
-```
-
----
-
-## 💖 Support the Project
-
-This framework is **free and open source**, built in spare time. If it saves you hours of research or helps you make better decisions, please consider sponsoring:
-
-| Tier | Monthly | What You Get |
-|------|---------|--------------|
-| ☕ Coffee | $5 | Heartfelt gratitude + name in README |
-| 🚀 Supporter | $15 | Above + priority bug fixes |
-| 💎 Pro | $30 | Above + priority feature requests |
-
-&lt;a href=&quot;https://github.com/sponsors/atilaahmettaner&quot;&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/Become_a_Sponsor-pink?style=for-the-badge&amp;logo=github-sponsors&quot; alt=&quot;Sponsor&quot;/&gt;
-&lt;/a&gt;
-
-Every sponsor directly funds new features like Walk-Forward Backtesting, Twitter/X sentiment, and managed cloud hosting.
-
----
-
-## 📋 Roadmap
-
-- [x] TradingView technical analysis (30+ indicators)
-- [x] Multi-exchange screener (Binance, KuCoin, EGX, US stocks)
-- [x] Reddit sentiment analysis
-- [x] Live financial news (RSS)
-- [x] Yahoo Finance real-time prices
-- [x] Backtesting engine (6 strategies + Sharpe/Calmar/Expectancy)
-- [ ] Walk-forward backtesting (overfitting detection)
-- [ ] Twitter/X market sentiment
-- [ ] Paper trading simulation
-- [ ] Managed cloud hosting (no local setup)
-
----
-
-## 📄 License
-
-MIT License — see [LICENSE](LICENSE) for details.
-
----
-
-*Disclaimer: This tool is for educational and research purposes only. It does not constitute financial advice. Always do your own research before making investment decisions.*
+**Built for Claude Code** | **&lt;!-- WORKFLOW_COUNT --&gt;9&lt;!-- /WORKFLOW_COUNT --&gt; Workflows** | **&lt;!-- REFERENCE_COUNT --&gt;366&lt;!-- /REFERENCE_COUNT --&gt; Reference Files** | **&lt;!-- SKILL_COUNT --&gt;66&lt;!-- /SKILL_COUNT --&gt; Skills**
 </pre>
           ]]></content:encoded>
             <category>Python</category>

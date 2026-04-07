@@ -4,7 +4,7 @@
         <title>GitHub Trending Today for rust - Rust Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for rust.</description>
-        <lastBuildDate>Mon, 06 Apr 2026 00:11:12 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 07 Apr 2026 00:11:41 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
@@ -13,15 +13,15 @@
             <title><![CDATA[block/goose]]></title>
             <link>https://github.com/block/goose</link>
             <guid>https://github.com/block/goose</guid>
-            <pubDate>Mon, 06 Apr 2026 00:11:12 GMT</pubDate>
+            <pubDate>Tue, 07 Apr 2026 00:11:41 GMT</pubDate>
             <description><![CDATA[an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/block/goose">block/goose</a></h1>
             <p>an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM</p>
             <p>Language: Rust</p>
-            <p>Stars: 37,000</p>
-            <p>Forks: 3,538</p>
-            <p>Stars today: 882 stars today</p>
+            <p>Stars: 38,099</p>
+            <p>Forks: 3,683</p>
+            <p>Stars today: 1,523 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
 
 # goose
@@ -76,18 +76,630 @@ Designed for maximum flexibility, goose works with any LLM and supports multi-mo
             <category>Rust</category>
         </item>
         <item>
+            <title><![CDATA[mayocream/koharu]]></title>
+            <link>https://github.com/mayocream/koharu</link>
+            <guid>https://github.com/mayocream/koharu</guid>
+            <pubDate>Tue, 07 Apr 2026 00:11:40 GMT</pubDate>
+            <description><![CDATA[ML-powered manga translator, written in Rust.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/mayocream/koharu">mayocream/koharu</a></h1>
+            <p>ML-powered manga translator, written in Rust.</p>
+            <p>Language: Rust</p>
+            <p>Stars: 1,921</p>
+            <p>Forks: 99</p>
+            <p>Stars today: 123 stars today</p>
+            <h2>README</h2><pre># Koharu
+
+[Documentation](https://koharu.rs)
+
+ML-powered manga translator, written in **Rust**.
+
+Koharu introduces a local-first workflow for manga translation, utilizing the power of ML to automate the process. It combines the capabilities of object detection, OCR, inpainting, and LLMs to create a seamless translation experience.
+
+Under the hood, Koharu uses [candle](https://github.com/huggingface/candle) and [llama.cpp](https://github.com/ggml-org/llama.cpp) for high-performance inference, with [Tauri](https://github.com/tauri-apps/tauri) for the desktop app. All components are written in Rust, ensuring safety and speed.
+
+&gt; [!NOTE]
+&gt; Koharu runs its vision models and LLMs **locally** on your machine by default. Koharu itself does not collect any user data.
+
+---
+
+![screenshot](docs/en-US/assets/koharu-screenshot-en.png)
+
+&gt; [!NOTE]
+&gt; Support and discussion are available on the [Discord server](https://discord.gg/mHvHkxGnUY).
+
+## Features
+
+- Automatic detection of text regions, speech bubbles, and cleanup masks
+- OCR for manga dialogue, captions, and other page text
+- Inpainting to remove source lettering from the page
+- Translation with local or remote LLM backends
+- Vertical CJK layout and text rendering
+- Layered PSD export with editable text
+- Local HTTP API and MCP server for automation
+
+For installation and first-run guidance, see [Install Koharu](https://koharu.rs/how-to/install-koharu/) and [Translate Your First Page](https://koharu.rs/tutorials/translate-your-first-page/).
+
+## Usage
+
+### Hotkeys
+
+- &lt;kbd&gt;Ctrl&lt;/kbd&gt; + Mouse Wheel: Zoom in/out
+- &lt;kbd&gt;Ctrl&lt;/kbd&gt; + Drag: Pan the canvas
+- &lt;kbd&gt;Del&lt;/kbd&gt;: Delete selected text block
+
+### Export
+
+Koharu can export the current page either as a flattened rendered image or as a layered Photoshop PSD. PSD export preserves helper layers and writes translated text as editable text layers, which is useful for downstream cleanup and manual refinement.
+
+For export behavior, PSD contents, and file naming, see [Export Pages and Manage Projects](https://koharu.rs/how-to/export-and-manage-projects/).
+
+### MCP Server
+
+Koharu includes a built-in MCP server for local agent integrations. By default it listens on a random local port, but you can pin it with `--port`.
+
+```bash
+# macOS / Linux
+koharu --port 9999
+# Windows
+koharu.exe --port 9999
+```
+
+Then point your client at `http://localhost:9999/mcp`.
+
+For local setup and the available tools, see [Run GUI, Headless, and MCP Modes](https://koharu.rs/how-to/run-gui-headless-and-mcp/), [Configure MCP Clients](https://koharu.rs/how-to/configure-mcp-clients/), and [MCP Tools Reference](https://koharu.rs/reference/mcp-tools/).
+
+### Headless Mode
+
+Koharu can run without launching the desktop window.
+
+```bash
+# macOS / Linux
+koharu --port 4000 --headless
+# Windows
+koharu.exe --port 4000 --headless
+```
+
+You can then connect to the web client at `http://localhost:4000`.
+
+For runtime modes, ports, and local endpoints, see [Run GUI, Headless, and MCP Modes](https://koharu.rs/how-to/run-gui-headless-and-mcp/).
+
+### Runtime Configuration
+
+Koharu lets you configure the shared local data path plus HTTP connect timeout, read timeout, and retry count used by downloads and provider requests.
+
+Those values are loaded at startup, so changing them saves the config and restarts the app.
+
+### Google Fonts
+
+Koharu includes built-in Google Fonts support for translated text rendering, so you can use web fonts without managing font files by hand.
+
+Google Fonts are fetched on demand from a bundled catalog. Koharu caches downloaded files under the app data directory and reuses them for later renders, so you usually only need an internet connection the first time a family is used on that machine.
+
+The catalog includes a small set of comic-friendly recommended families. Once cached, a Google Font behaves like any other local render font.
+
+### Text Rendering
+
+Koharu uses a dedicated text renderer rather than browser or OS text primitives. The stack combines [HarfRust](https://crates.io/crates/harfrust) for [HarfBuzz](https://harfbuzz.github.io/)-style OpenType shaping, [ICU4X](https://github.com/unicode-org/icu4x) line segmentation, custom layout engine, real font metrics and glyph bounds from [`skrifa`](https://github.com/googlefonts/fontations/tree/main/skrifa), and [`tiny-skia`](https://github.com/linebender/tiny-skia) for rasterization.
+
+The renderer is tuned for manga lettering rather than generic UI text. It supports vertical CJK and horizontal Latin layout, script-aware normalization, font fallback, vertical punctuation centering, automatic size fitting against layout constraints, and manga-oriented stroke and effect passes before compositing text back onto the page.
+
+## GPU Acceleration
+
+Koharu supports CUDA, Metal, and Vulkan. CPU fallback is always available when the accelerated path is unavailable or not worth the setup cost on your system.
+
+### CUDA (NVIDIA GPUs on Windows)
+
+On Windows, Koharu ships with CUDA support so it can use NVIDIA GPUs for the full local pipeline.
+
+Koharu bundles CUDA Toolkit 13.1. The required DLLs are extracted to the application data directory on first run.
+
+&gt; [!NOTE]
+&gt; Make sure you have current NVIDIA drivers installed. You can update them through [NVIDIA App](https://www.nvidia.com/en-us/software/nvidia-app/).
+
+#### Supported NVIDIA GPUs
+
+Koharu supports NVIDIA GPUs with compute capability 7.5 or higher.
+
+For GPU compatibility references, see [CUDA GPU Compute Capability](https://developer.nvidia.com/cuda-gpus) and the [cuDNN Support Matrix](https://docs.nvidia.com/deeplearning/cudnn/backend/latest/reference/support-matrix.html).
+
+### Metal (Apple Silicon on macOS)
+
+Koharu supports Metal on Apple Silicon Macs. No extra runtime setup is required beyond a normal app install.
+
+### Vulkan (Windows and Linux)
+
+Koharu also supports Vulkan on Windows and Linux. This backend is currently used primarily for OCR and local LLM inference.
+
+Detection and inpainting still depend on CUDA or Metal, so Vulkan is useful but not a full replacement for the main accelerated path. AMD and Intel GPUs can still benefit from it, but the best all-around experience is still NVIDIA on Windows or Apple Silicon on macOS.
+
+### CPU Fallback
+
+You can always force Koharu to use CPU for inference:
+
+```bash
+# macOS / Linux
+koharu --cpu
+# Windows
+koharu.exe --cpu
+```
+
+For backend selection, fallback behavior, and model runtime support, see [Acceleration and Runtime](https://koharu.rs/explanation/acceleration-and-runtime/).
+
+## ML Models
+
+Koharu uses a staged stack of vision and language models instead of trying to solve the entire page with a single network.
+
+### Computer Vision Models
+
+Koharu uses multiple pretrained models, each tuned for a specific part of the page pipeline.
+
+#### Detection and Layout
+
+These models find text regions, speech bubbles, and page structure.
+
+- [comic-text-bubble-detector](https://huggingface.co/ogkalu/comic-text-and-bubble-detector) for joint text block and speech bubble detection
+- [comic-text-detector](https://huggingface.co/mayocream/comic-text-detector) for text segmentation masks
+- [PP-DocLayoutV3](https://huggingface.co/PaddlePaddle/PP-DocLayoutV3_safetensors) for document layout analysis
+- [speech-bubble-segmentation](https://huggingface.co/mayocream/speech-bubble-segmentation) for dedicated speech bubble detection
+
+#### OCR
+
+These models recognize source text after detection.
+
+- [PaddleOCR-VL-1.5](https://huggingface.co/PaddlePaddle/PaddleOCR-VL-1.5) for OCR text recognition
+- [Manga OCR](https://huggingface.co/mayocream/manga-ocr) for OCR
+- [MIT 48px OCR](https://huggingface.co/mayocream/mit48px-ocr) for OCR
+
+#### Inpainting
+
+These models remove source lettering before translated text is rendered back onto the page.
+
+- [aot-inpainting](https://huggingface.co/mayocream/aot-inpainting) for inpainting
+- [lama-manga](https://huggingface.co/mayocream/lama-manga) for inpainting
+
+#### Font Analysis
+
+This model helps infer source font and color characteristics for rendering.
+
+- [YuzuMarker.FontDetection](https://huggingface.co/fffonion/yuzumarker-font-detection) for font and color detection
+
+The required models are downloaded automatically on first use.
+
+Some models are consumed directly from upstream Hugging Face repos, while Rust-friendly `safetensors` conversions are hosted on [Hugging Face](https://huggingface.co/mayocream) when Koharu needs a converted bundle.
+
+For a closer look at the pipeline, see [Models and Providers](https://koharu.rs/explanation/models-and-providers/) and the [Technical Deep Dive](https://koharu.rs/explanation/technical-deep-dive/).
+
+### Large Language Models
+
+Koharu supports both local and remote LLM backends. Local models run through [llama.cpp](https://github.com/ggml-org/llama.cpp) and are downloaded on demand. Hosted and self-hosted APIs are also supported when you want to use a provider instead of a downloaded model. When possible, Koharu also tries to preselect sensible defaults based on your system locale.
+
+#### General-Purpose Local Models
+
+These are broad instruct models that work well when you want one local model for many translation tasks.
+
+- Gemma 4 instruct: [gemma4-e2b-it](https://huggingface.co/unsloth/gemma-4-E2B-it-GGUF), [gemma4-e4b-it](https://huggingface.co/unsloth/gemma-4-E4B-it-GGUF), [gemma4-26b-a4b-it](https://huggingface.co/unsloth/gemma-4-26B-A4B-it-GGUF), [gemma4-31b-it](https://huggingface.co/unsloth/gemma-4-31B-it-GGUF)
+- Qwen 3.5: [qwen3.5-0.8b](https://huggingface.co/unsloth/Qwen3.5-0.8B-GGUF), [qwen3.5-2b](https://huggingface.co/unsloth/Qwen3.5-2B-GGUF), [qwen3.5-4b](https://huggingface.co/unsloth/Qwen3.5-4B-GGUF), [qwen3.5-9b](https://huggingface.co/unsloth/Qwen3.5-9B-GGUF), [qwen3.5-27b](https://huggingface.co/unsloth/Qwen3.5-27B-GGUF), [qwen3.5-35b-a3b](https://huggingface.co/unsloth/Qwen3.5-35B-A3B-GGUF)
+
+#### NSFW-Capable Local Models
+
+These variants relax the safety tuning applied to the corresponding base instruct models.
+
+- Gemma 4 uncensored: [gemma4-e2b-uncensored](https://huggingface.co/HauhauCS/Gemma-4-E2B-Uncensored-HauhauCS-Aggressive), [gemma4-e4b-uncensored](https://huggingface.co/HauhauCS/Gemma-4-E4B-Uncensored-HauhauCS-Aggressive)
+- Qwen 3.5 uncensored: [qwen3.5-2b-uncensored](https://huggingface.co/HauhauCS/Qwen3.5-2B-Uncensored-HauhauCS-Aggressive), [qwen3.5-4b-uncensored](https://huggingface.co/HauhauCS/Qwen3.5-4B-Uncensored-HauhauCS-Aggressive), [qwen3.5-9b-uncensored](https://huggingface.co/HauhauCS/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive), [qwen3.5-27b-uncensored](https://huggingface.co/HauhauCS/Qwen3.5-27B-Uncensored-HauhauCS-Aggressive), [qwen3.5-35b-a3b-uncensored](https://huggingface.co/HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive)
+
+#### Fine-Tuned Translation Models
+
+These models are more specialized for translation quality, language coverage, or lower-resource setups.
+
+- [vntl-llama3-8b-v2](https://huggingface.co/lmg-anon/vntl-llama3-8b-v2-gguf): around 8.5 GB in Q8_0, best when translation quality matters more than speed or memory use
+- [lfm2.5-1.2b-instruct](https://huggingface.co/LiquidAI/LFM2.5-1.2B-Instruct-GGUF): a smaller multilingual instruct model that is easier to run on CPUs or low-memory GPUs
+- [sugoi-14b-ultra](https://huggingface.co/sugoitoolkit/Sugoi-14B-Ultra-GGUF) and [sugoi-32b-ultra](https://huggingface.co/sugoitoolkit/Sugoi-32B-Ultra-GGUF): larger translation-oriented options when you have more VRAM or RAM available
+- [sakura-galtransl-7b-v3.7](https://huggingface.co/SakuraLLM/Sakura-GalTransl-7B-v3.7): around 6.3 GB, a good balance of quality and speed on 8 GB GPUs
+- [sakura-1.5b-qwen2.5-v1.0](https://huggingface.co/shing3232/Sakura-1.5B-Qwen2.5-v1.0-GGUF-IMX): lighter and faster, useful on mid-range GPUs or CPU-only setups
+- [hunyuan-mt-7b](https://huggingface.co/Mungert/Hunyuan-MT-7B-GGUF): around 6.3 GB, with broad multilingual translation coverage
+
+LLMs are downloaded on demand when you activate a model. For constrained memory environments, start with a smaller model. When VRAM or RAM permits, 7B and 8B class models generally provide better translation quality.
+
+#### Cloud Providers
+
+Koharu supports hosted APIs from [OpenAI](https://platform.openai.com/), [Gemini](https://ai.google.dev/), [Claude](https://www.anthropic.com/api), and [DeepSeek](https://platform.deepseek.com/) instead of a local GGUF model.
+
+Built-in cloud defaults: OpenAI `gpt-5-mini`, Gemini `gemini-3.1-flash-lite-preview`, Claude `claude-haiku-4-5`, and DeepSeek `deepseek-chat`.
+
+#### OpenAI-Compatible Providers
+
+Koharu supports OpenAI-compatible endpoints such as LM Studio, OpenRouter, and other self-hosted or third-party APIs that expose `/v1/models` and `/v1/chat/completions`.
+
+Built-in OpenAI-compatible behavior: models are discovered from the configured endpoint.
+
+Cloud providers can be configured with API keys. OpenAI-compatible providers also need a custom base URL. API keys are stored securely in your system keychain instead of plain text config files. API keys are optional for local servers such as LM Studio, but are usually required for hosted services such as OpenRouter.
+
+Use a remote provider to avoid local model downloads, reduce VRAM or RAM requirements, or integrate with an existing hosted or self-hosted endpoint. Keep in mind that the OCR text selected for translation is sent to the provider you configured.
+
+For LM Studio, OpenRouter, and other OpenAI-style endpoints, see [Use OpenAI-Compatible APIs](https://koharu.rs/how-to/use-openai-compatible-api/). For provider configuration, see [Settings Reference](https://koharu.rs/reference/settings/).
+
+## Installation
+
+You can download the latest release of Koharu from the [releases page](https://github.com/mayocream/koharu/releases/latest).
+
+We provide prebuilt binaries for Windows, macOS, and Linux. For the standard install flow, see [Install Koharu](https://koharu.rs/how-to/install-koharu/). If something goes wrong, see [Troubleshooting](https://koharu.rs/how-to/troubleshooting/).
+
+## Development
+
+To build Koharu from source, follow the steps below.
+
+### Prerequisites
+
+- [Rust](https://www.rust-lang.org/tools/install) 1.92 or later
+- [Bun](https://bun.sh/) 1.0 or later
+
+### Install dependencies
+
+```bash
+bun install
+```
+
+### Build
+
+```bash
+bun run build
+```
+
+If you want more direct control over the Tauri build:
+
+```bash
+bun tauri build --release --no-bundle
+```
+
+The built binaries are written to `target/release`.
+
+For platform-specific build notes, see [Build From Source](https://koharu.rs/how-to/build-from-source/). For the local development workflow, see [Contributing](https://koharu.rs/how-to/contributing/).
+
+## Sponsorship
+
+If Koharu is useful in your workflow, consider sponsoring the project.
+
+- [GitHub Sponsors](https://github.com/sponsors/mayocream)
+- [Patreon](https://www.patreon.com/mayocream)
+
+## Contributors ❤️
+
+Thanks to all the contributors who have helped make Koharu better!
+
+&lt;a href=&quot;https://github.com/mayocream/koharu/graphs/contributors&quot;&gt;
+  &lt;img src=&quot;https://contrib.rocks/image?repo=mayocream/koharu&quot; /&gt;
+&lt;/a&gt;
+
+## License
+
+Koharu is licensed under the [GNU General Public License v3.0](LICENSE).
+</pre>
+          ]]></content:encoded>
+            <category>Rust</category>
+        </item>
+        <item>
+            <title><![CDATA[louis-e/arnis]]></title>
+            <link>https://github.com/louis-e/arnis</link>
+            <guid>https://github.com/louis-e/arnis</guid>
+            <pubDate>Tue, 07 Apr 2026 00:11:39 GMT</pubDate>
+            <description><![CDATA[Generate any location from the real world in Minecraft with a high level of detail.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/louis-e/arnis">louis-e/arnis</a></h1>
+            <p>Generate any location from the real world in Minecraft with a high level of detail.</p>
+            <p>Language: Rust</p>
+            <p>Stars: 14,466</p>
+            <p>Forks: 1,159</p>
+            <p>Stars today: 65 stars today</p>
+            <h2>README</h2><pre>&lt;img src=&quot;assets/git/banner.png&quot; width=&quot;100%&quot; alt=&quot;Banner&quot;&gt;
+
+# Arnis [![CI Build Status](https://github.com/louis-e/arnis/actions/workflows/ci-build.yml/badge.svg)](https://github.com/louis-e/arnis/actions) [&lt;img alt=&quot;GitHub Release&quot; src=&quot;https://img.shields.io/github/v/release/louis-e/arnis&quot; /&gt;](https://github.com/louis-e/arnis/releases) [&lt;img alt=&quot;GitHub Downloads (all assets, all releases&quot; src=&quot;https://img.shields.io/github/downloads/louis-e/arnis/total&quot; /&gt;](https://github.com/louis-e/arnis/releases) [![Download here](https://img.shields.io/badge/Download-here-green)](https://github.com/louis-e/arnis/releases) [![Discord](https://img.shields.io/discord/1326192999738249267?label=Discord&amp;color=%237289da)](https://discord.gg/mA2g69Fhxq)
+
+Arnis creates complex and accurate Minecraft Java Edition (1.17+) and Bedrock Edition worlds that reflect real-world geography, topography, and architecture.
+
+This free and open source project is designed to handle large-scale geographic data from the real world and generate detailed Minecraft worlds. The algorithm processes geospatial data from OpenStreetMap as well as elevation data to create an accurate Minecraft representation of terrain and architecture.
+Generate your hometown, big cities, and natural landscapes with ease!
+
+_**Want mobile generation or larger map sizes?** [MapSmith](https://arnismc.com/mapsmith/) generates worlds in your browser, no install required._
+
+![Minecraft Preview](assets/git/preview.jpg)
+&lt;i&gt;This GitHub page and [arnismc.com](https://arnismc.com) are the only official project websites. Do not download Arnis from any other website.&lt;/i&gt;
+
+## :keyboard: Usage
+&lt;img width=&quot;60%&quot; src=&quot;assets/git/gui.png&quot;&gt;&lt;br&gt;
+Download the [latest release](https://github.com/louis-e/arnis/releases/) or [compile](#trophy-open-source) the project on your own.
+
+Choose your area on the map using the rectangle tool and select your Minecraft world - then simply click on &lt;i&gt;Start Generation&lt;/i&gt;!
+Additionally, you can customize various generation settings, such as world scale, spawn point, or building interior generation.
+
+## 📚 Documentation
+
+&lt;img src=&quot;assets/git/documentation.png&quot; width=&quot;100%&quot; alt=&quot;Banner&quot;&gt;
+
+Full documentation is available in the [GitHub Wiki](https://github.com/louis-e/arnis/wiki/), covering topics such as technical explanations, FAQs, contribution guidelines and roadmaps.
+
+[backgroundvid.webm](https://github.com/user-attachments/assets/420acc19-a850-418e-8397-1a45b05582ab)
+
+## :trophy: Open Source
+#### Key objectives of this project
+- **Modularity**: Ensure that all components (e.g., data fetching, processing, and world generation) are cleanly separated into distinct modules for better maintainability and scalability.
+- **Performance Optimization**: We aim to maintain strong performance and fast world generation.
+- **Comprehensive Documentation**: Detailed in-code documentation for a clear structure and logic.
+- **User-Friendly Experience**: Focus on making the project easy to use for end users.
+- **Cross-Platform Support**: We want this project to run smoothly on Windows, macOS, and Linux.
+
+#### How to contribute
+This project is open source and welcomes contributions from everyone! Whether you&#039;re interested in fixing bugs, improving performance, adding new features, or enhancing documentation, your input is valuable. Simply fork the repository, make your changes, and submit a pull request. Please respect the above-mentioned key objectives. Contributions of all levels are appreciated, and your efforts help improve this tool for everyone.
+
+Command line Build: ```cargo run --no-default-features -- --terrain --path=&quot;C:/YOUR_PATH/.minecraft/saves/worldname&quot; --bbox=&quot;min_lat,min_lng,max_lat,max_lng&quot;```&lt;br&gt;
+GUI Build: ```cargo run```&lt;br&gt;
+
+After your pull request is merged, I will take care of regularly creating update releases which will include your changes.
+
+If you are using Nix, you can run the program directly with `nix run github:louis-e/arnis -- --terrain --path=YOUR_PATH/.minecraft/saves/worldname --bbox=&quot;min_lat,min_lng,max_lat,max_lng&quot;`
+
+## :star: Star History
+
+&lt;a href=&quot;https://star-history.com/#louis-e/arnis&amp;Date&quot;&gt;
+ &lt;picture&gt;
+   &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/svg?repos=louis-e/arnis&amp;Date&amp;theme=dark&quot; /&gt;
+   &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/svg?repos=louis-e/arnis&amp;Date&amp;type=Date&quot; /&gt;
+   &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/svg?repos=louis-e/arnis&amp;Date&amp;type=Date&quot; /&gt;
+ &lt;/picture&gt;
+&lt;/a&gt;
+
+## :newspaper: Academic &amp; Press Recognition
+
+&lt;img src=&quot;assets/git/recognition.png&quot; width=&quot;100%&quot; alt=&quot;Banner&quot;&gt;
+
+Arnis has been recognized in various academic and press publications after gaining more attention in December 2024.
+
+[Building realistic Minecraft worlds with Open Data on AWS: How Arnis uses elevation datasets at scale](https://aws.amazon.com/de/blogs/publicsector/building-realistic-minecraft-worlds-with-open-data-on-aws-how-arnis-uses-elevation-datasets-at-scale/)
+
+[Floodcraft: Game-based Interactive Learning Environment using Minecraft for Flood Mitigation and Preparedness for K-12 Education](https://www.researchgate.net/publication/384644535_Floodcraft_Game-based_Interactive_Learning_Environment_using_Minecraft_for_Flood_Mitigation_and_Preparedness_for_K-12_Education)
+
+[Hackaday: Bringing OpenStreetMap Data into Minecraft](https://hackaday.com/2024/12/30/bringing-openstreetmap-data-into-minecraft/)
+
+[TomsHardware: Minecraft Tool Lets You Create Scale Replicas of Real-World Locations](https://www.tomshardware.com/video-games/pc-gaming/minecraft-tool-lets-you-create-scale-replicas-of-real-world-locations-arnis-uses-geospatial-data-from-openstreetmap-to-generate-minecraft-maps)
+
+[XDA Developers: Hometown Minecraft Map: Arnis](https://www.xda-developers.com/hometown-minecraft-map-arnis/)
+
+Free to use press assets, including screenshots and logos, can be found [here](https://drive.google.com/file/d/1T1IsZSyT8oa6qAO_40hVF5KR8eEVCJjo/view?usp=sharing).
+
+## :copyright: License Information
+Copyright (c) 2022-2025 Louis Erbkamm (louis-e)
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.[^3]
+
+Download Arnis only from the official source https://arnismc.com or https://github.com/louis-e/arnis/. Every other website providing a download and claiming to be affiliated with the project is unofficial and may be malicious.
+
+The logo was made by @nxfx21.
+
+
+[^1]: https://en.wikipedia.org/wiki/OpenStreetMap
+
+[^2]: https://en.wikipedia.org/wiki/Arnis,_Germany
+
+[^3]: https://github.com/louis-e/arnis/blob/main/LICENSE
+</pre>
+          ]]></content:encoded>
+            <category>Rust</category>
+        </item>
+        <item>
+            <title><![CDATA[zhom/donutbrowser]]></title>
+            <link>https://github.com/zhom/donutbrowser</link>
+            <guid>https://github.com/zhom/donutbrowser</guid>
+            <pubDate>Tue, 07 Apr 2026 00:11:38 GMT</pubDate>
+            <description><![CDATA[Simple Yet Powerful Anti-Detect Browser 🍩]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/zhom/donutbrowser">zhom/donutbrowser</a></h1>
+            <p>Simple Yet Powerful Anti-Detect Browser 🍩</p>
+            <p>Language: Rust</p>
+            <p>Stars: 1,262</p>
+            <p>Forks: 90</p>
+            <p>Stars today: 41 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/logo.png&quot; alt=&quot;Donut Browser Logo&quot; width=&quot;150&quot;&gt;
+  &lt;h1&gt;Donut Browser&lt;/h1&gt;
+  &lt;strong&gt;Open Source Anti-Detect Browser&lt;/strong&gt;
+  &lt;br&gt;
+  &lt;a href=&quot;https://donutbrowser.com&quot;&gt;donutbrowser.com&lt;/a&gt;
+&lt;/div&gt;
+&lt;br&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a style=&quot;text-decoration: none;&quot; href=&quot;https://github.com/zhom/donutbrowser/releases/latest&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;GitHub release&quot; src=&quot;https://img.shields.io/github/v/release/zhom/donutbrowser&quot;&gt;
+  &lt;/a&gt;
+  &lt;a style=&quot;text-decoration: none;&quot; href=&quot;https://github.com/zhom/donutbrowser/issues&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat&quot; alt=&quot;PRs Welcome&quot;&gt;
+  &lt;/a&gt;
+  &lt;a style=&quot;text-decoration: none;&quot; href=&quot;https://github.com/zhom/donutbrowser/blob/main/LICENSE&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/license-AGPL--3.0-blue.svg&quot; alt=&quot;License&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://app.fossa.com/projects/git%2Bgithub.com%2Fzhom%2Fdonutbrowser?ref=badge_shield&amp;issueType=security&quot; alt=&quot;FOSSA Status&quot;&gt;
+    &lt;img src=&quot;https://app.fossa.com/api/projects/git%2Bgithub.com%2Fzhom%2Fdonutbrowser.svg?type=shield&amp;issueType=security&quot; alt=&quot;FOSSA Security Status&quot;/&gt;
+  &lt;/a&gt;
+  &lt;a style=&quot;text-decoration: none;&quot; href=&quot;https://github.com/zhom/donutbrowser/network/members&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/github/forks/zhom/donutbrowser?style=social&quot; alt=&quot;GitHub forks&quot;&gt;
+  &lt;/a&gt;
+  &lt;a style=&quot;text-decoration: none;&quot; href=&quot;https://github.com/zhom/donutbrowser/releases&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/github/downloads/zhom/donutbrowser/total&quot; alt=&quot;Downloads&quot;&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;img alt=&quot;Donut Browser Preview&quot; src=&quot;assets/donut-preview.png&quot; /&gt;
+
+## Features
+
+- **Unlimited browser profiles** — each fully isolated with its own fingerprint, cookies, extensions, and data
+- **Chromium &amp; Firefox engines** — Chromium powered by [Wayfern](https://wayfern.com), Firefox powered by [Camoufox](https://camoufox.com), both with advanced fingerprint spoofing
+- **Proxy support** — HTTP, HTTPS, SOCKS4, SOCKS5 per profile, with dynamic proxy URLs
+- **VPN support** — WireGuard and OpenVPN configs per profile
+- **Local API &amp; MCP** — REST API and [Model Context Protocol](https://modelcontextprotocol.io) server for integration with Claude, automation tools, and custom workflows
+- **Profile groups** — organize profiles and apply bulk settings
+- **Import profiles** — migrate from Chrome, Firefox, Edge, Brave, or other Chromium browsers
+- **Cookie &amp; extension management** — import/export cookies, manage extensions per profile
+- **Default browser** — set Donut as your default browser and choose which profile opens each link
+- **Cloud sync** — sync profiles, proxies, and groups across devices (self-hostable)
+- **E2E encryption** — optional end-to-end encrypted sync with a password only you know
+- **Zero telemetry** — no tracking or device fingerprinting
+
+## Install
+
+&lt;!-- install-links-start --&gt;
+### macOS
+
+| | Apple Silicon | Intel |
+|---|---|---|
+| **DMG** | [Download](https://github.com/zhom/donutbrowser/releases/download/v0.19.0/Donut_0.19.0_aarch64.dmg) | [Download](https://github.com/zhom/donutbrowser/releases/download/v0.19.0/Donut_0.19.0_x64.dmg) |
+
+Or install via Homebrew:
+
+```bash
+brew install --cask donut
+```
+
+### Windows
+
+[Download Windows Installer (x64)](https://github.com/zhom/donutbrowser/releases/download/v0.19.0/Donut_0.19.0_x64-setup.exe) · [Portable (x64)](https://github.com/zhom/donutbrowser/releases/download/v0.19.0/Donut_0.19.0_x64-portable.zip)
+
+### Linux
+
+| Format | x86_64 | ARM64 |
+|---|---|---|
+| **deb** | [Download](https://github.com/zhom/donutbrowser/releases/download/v0.19.0/Donut_0.19.0_amd64.deb) | [Download](https://github.com/zhom/donutbrowser/releases/download/v0.19.0/Donut_0.19.0_arm64.deb) |
+| **rpm** | [Download](https://github.com/zhom/donutbrowser/releases/download/v0.19.0/Donut-0.19.0-1.x86_64.rpm) | [Download](https://github.com/zhom/donutbrowser/releases/download/v0.19.0/Donut-0.19.0-1.aarch64.rpm) |
+| **AppImage** | [Download](https://github.com/zhom/donutbrowser/releases/download/v0.19.0/Donut_0.19.0_amd64.AppImage) | [Download](https://github.com/zhom/donutbrowser/releases/download/v0.19.0/Donut_0.19.0_aarch64.AppImage) |
+&lt;!-- install-links-end --&gt;
+
+Or install via package manager:
+
+```bash
+curl -fsSL https://donutbrowser.com/install.sh | sh
+```
+
+&lt;details&gt;
+&lt;summary&gt;Troubleshooting AppImage&lt;/summary&gt;
+
+If the AppImage segfaults on launch, install **libfuse2** (`sudo apt install libfuse2` / `yay -S libfuse2` / `sudo dnf install fuse-libs`), or bypass FUSE entirely:
+
+```bash
+APPIMAGE_EXTRACT_AND_RUN=1 ./Donut.Browser_x.x.x_amd64.AppImage
+```
+
+If that gives an EGL display error, try adding `WEBKIT_DISABLE_DMABUF_RENDERER=1` or `GDK_BACKEND=x11` to the command above. If issues persist, the **.deb** / **.rpm** packages are a more reliable alternative.
+
+&lt;/details&gt;
+
+### Nix
+
+```bash
+nix run github:zhom/donutbrowser#release-start
+```
+
+## Self-Hosting Sync
+
+Donut Browser supports syncing profiles, proxies, and groups across devices via a self-hosted sync server. See the [Self-Hosting Guide](docs/self-hosting-donut-sync.md) for Docker-based setup instructions.
+
+## Development
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Community
+
+- **Issues**: [GitHub Issues](https://github.com/zhom/donutbrowser/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/zhom/donutbrowser/discussions)
+
+## Star History
+
+&lt;a href=&quot;https://www.star-history.com/?repos=zhom%2Fdonutbrowser&amp;type=date&amp;legend=top-left&quot;&gt;
+ &lt;picture&gt;
+   &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/image?repos=zhom/donutbrowser&amp;type=date&amp;theme=dark&amp;legend=top-left&quot; /&gt;
+   &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/image?repos=zhom/donutbrowser&amp;type=date&amp;legend=top-left&quot; /&gt;
+   &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/image?repos=zhom/donutbrowser&amp;type=date&amp;legend=top-left&quot; /&gt;
+ &lt;/picture&gt;
+&lt;/a&gt;
+
+## Contributors
+
+&lt;!-- readme: collaborators,contributors -start --&gt;
+&lt;table&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+            &lt;td align=&quot;center&quot;&gt;
+                &lt;a href=&quot;https://github.com/zhom&quot;&gt;
+                    &lt;img src=&quot;https://avatars.githubusercontent.com/u/2717306?v=4&quot; width=&quot;100;&quot; alt=&quot;zhom&quot;/&gt;
+                    &lt;br /&gt;
+                    &lt;sub&gt;&lt;b&gt;zhom&lt;/b&gt;&lt;/sub&gt;
+                &lt;/a&gt;
+            &lt;/td&gt;
+            &lt;td align=&quot;center&quot;&gt;
+                &lt;a href=&quot;https://github.com/HassiyYT&quot;&gt;
+                    &lt;img src=&quot;https://avatars.githubusercontent.com/u/81773493?v=4&quot; width=&quot;100;&quot; alt=&quot;HassiyYT&quot;/&gt;
+                    &lt;br /&gt;
+                    &lt;sub&gt;&lt;b&gt;Hassiy&lt;/b&gt;&lt;/sub&gt;
+                &lt;/a&gt;
+            &lt;/td&gt;
+            &lt;td align=&quot;center&quot;&gt;
+                &lt;a href=&quot;https://github.com/yb403&quot;&gt;
+                    &lt;img src=&quot;https://avatars.githubusercontent.com/u/87396571?v=4&quot; width=&quot;100;&quot; alt=&quot;yb403&quot;/&gt;
+                    &lt;br /&gt;
+                    &lt;sub&gt;&lt;b&gt;yb403&lt;/b&gt;&lt;/sub&gt;
+                &lt;/a&gt;
+            &lt;/td&gt;
+            &lt;td align=&quot;center&quot;&gt;
+                &lt;a href=&quot;https://github.com/drunkod&quot;&gt;
+                    &lt;img src=&quot;https://avatars.githubusercontent.com/u/9677471?v=4&quot; width=&quot;100;&quot; alt=&quot;drunkod&quot;/&gt;
+                    &lt;br /&gt;
+                    &lt;sub&gt;&lt;b&gt;drunkod&lt;/b&gt;&lt;/sub&gt;
+                &lt;/a&gt;
+            &lt;/td&gt;
+            &lt;td align=&quot;center&quot;&gt;
+                &lt;a href=&quot;https://github.com/JorySeverijnse&quot;&gt;
+                    &lt;img src=&quot;https://avatars.githubusercontent.com/u/117462355?v=4&quot; width=&quot;100;&quot; alt=&quot;JorySeverijnse&quot;/&gt;
+                    &lt;br /&gt;
+                    &lt;sub&gt;&lt;b&gt;Jory Severijnse&lt;/b&gt;&lt;/sub&gt;
+                &lt;/a&gt;
+            &lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;tbody&gt;
+&lt;/table&gt;
+&lt;!-- readme: collaborators,contributors -end --&gt;
+
+## Contact
+
+Have an urgent question or want to report a security vulnerability? Send an email to [contact@donutbrowser.com](mailto:contact@donutbrowser.com).
+
+## License
+
+This project is licensed under the AGPL-3.0 License - see the [LICENSE](LICENSE) file for details.
+</pre>
+          ]]></content:encoded>
+            <category>Rust</category>
+        </item>
+        <item>
             <title><![CDATA[dmtrKovalenko/fff.nvim]]></title>
             <link>https://github.com/dmtrKovalenko/fff.nvim</link>
             <guid>https://github.com/dmtrKovalenko/fff.nvim</guid>
-            <pubDate>Mon, 06 Apr 2026 00:11:11 GMT</pubDate>
+            <pubDate>Tue, 07 Apr 2026 00:11:37 GMT</pubDate>
             <description><![CDATA[The fastest and the most accurate file search toolkit for AI agents, Neovim, Rust, C, and NodeJS]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/dmtrKovalenko/fff.nvim">dmtrKovalenko/fff.nvim</a></h1>
             <p>The fastest and the most accurate file search toolkit for AI agents, Neovim, Rust, C, and NodeJS</p>
             <p>Language: Rust</p>
-            <p>Stars: 3,687</p>
-            <p>Forks: 150</p>
-            <p>Stars today: 76 stars today</p>
+            <p>Stars: 3,783</p>
+            <p>Forks: 159</p>
+            <p>Stars today: 282 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
   &lt;h1 align=&quot;center&quot;&gt;FFF&lt;/h1&gt;
 &lt;/p&gt;
@@ -593,878 +1205,18 @@ Or manually open the log file at `~/.local/state/nvim/log/fff.log` (default loca
             <category>Rust</category>
         </item>
         <item>
-            <title><![CDATA[vercel-labs/agent-browser]]></title>
-            <link>https://github.com/vercel-labs/agent-browser</link>
-            <guid>https://github.com/vercel-labs/agent-browser</guid>
-            <pubDate>Mon, 06 Apr 2026 00:11:10 GMT</pubDate>
-            <description><![CDATA[Browser automation CLI for AI agents]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/vercel-labs/agent-browser">vercel-labs/agent-browser</a></h1>
-            <p>Browser automation CLI for AI agents</p>
-            <p>Language: Rust</p>
-            <p>Stars: 27,390</p>
-            <p>Forks: 1,654</p>
-            <p>Stars today: 381 stars today</p>
-            <h2>README</h2><pre># agent-browser
-
-Browser automation CLI for AI agents. Fast native Rust CLI.
-
-## Installation
-
-### Global Installation (recommended)
-
-Installs the native Rust binary:
-
-```bash
-npm install -g agent-browser
-agent-browser install  # Download Chrome from Chrome for Testing (first time only)
-```
-
-### Project Installation (local dependency)
-
-For projects that want to pin the version in `package.json`:
-
-```bash
-npm install agent-browser
-agent-browser install
-```
-
-Then use via `package.json` scripts or by invoking `agent-browser` directly.
-
-### Homebrew (macOS)
-
-```bash
-brew install agent-browser
-agent-browser install  # Download Chrome from Chrome for Testing (first time only)
-```
-
-### Cargo (Rust)
-
-```bash
-cargo install agent-browser
-agent-browser install  # Download Chrome from Chrome for Testing (first time only)
-```
-
-### From Source
-
-```bash
-git clone https://github.com/vercel-labs/agent-browser
-cd agent-browser
-pnpm install
-pnpm build
-pnpm build:native   # Requires Rust (https://rustup.rs)
-pnpm link --global  # Makes agent-browser available globally
-agent-browser install
-```
-
-### Linux Dependencies
-
-On Linux, install system dependencies:
-
-```bash
-agent-browser install --with-deps
-```
-
-### Updating
-
-Upgrade to the latest version:
-
-```bash
-agent-browser upgrade
-```
-
-Detects your installation method (npm, Homebrew, or Cargo) and runs the appropriate update command automatically.
-
-### Requirements
-
-- **Chrome** - Run `agent-browser install` to download Chrome from [Chrome for Testing](https://developer.chrome.com/blog/chrome-for-testing/) (Google&#039;s official automation channel). Existing Chrome, Brave, Playwright, and Puppeteer installations are detected automatically. No Playwright or Node.js required for the daemon.
-- **Rust** - Only needed when building from source (see From Source above).
-
-## Quick Start
-
-```bash
-agent-browser open example.com
-agent-browser snapshot                    # Get accessibility tree with refs
-agent-browser click @e2                   # Click by ref from snapshot
-agent-browser fill @e3 &quot;test@example.com&quot; # Fill by ref
-agent-browser get text @e1                # Get text by ref
-agent-browser screenshot page.png
-agent-browser close
-```
-
-### Traditional Selectors (also supported)
-
-```bash
-agent-browser click &quot;#submit&quot;
-agent-browser fill &quot;#email&quot; &quot;test@example.com&quot;
-agent-browser find role button click --name &quot;Submit&quot;
-```
-
-## Commands
-
-### Core Commands
-
-```bash
-agent-browser open &lt;url&gt;              # Navigate to URL (aliases: goto, navigate)
-agent-browser click &lt;sel&gt;             # Click element (--new-tab to open in new tab)
-agent-browser dblclick &lt;sel&gt;          # Double-click element
-agent-browser focus &lt;sel&gt;             # Focus element
-agent-browser type &lt;sel&gt; &lt;text&gt;       # Type into element
-agent-browser fill &lt;sel&gt; &lt;text&gt;       # Clear and fill
-agent-browser press &lt;key&gt;             # Press key (Enter, Tab, Control+a) (alias: key)
-agent-browser keyboard type &lt;text&gt;    # Type with real keystrokes (no selector, current focus)
-agent-browser keyboard inserttext &lt;text&gt;  # Insert text without key events (no selector)
-agent-browser keydown &lt;key&gt;           # Hold key down
-agent-browser keyup &lt;key&gt;             # Release key
-agent-browser hover &lt;sel&gt;             # Hover element
-agent-browser select &lt;sel&gt; &lt;val&gt;      # Select dropdown option
-agent-browser check &lt;sel&gt;             # Check checkbox
-agent-browser uncheck &lt;sel&gt;           # Uncheck checkbox
-agent-browser scroll &lt;dir&gt; [px]       # Scroll (up/down/left/right, --selector &lt;sel&gt;)
-agent-browser scrollintoview &lt;sel&gt;    # Scroll element into view (alias: scrollinto)
-agent-browser drag &lt;src&gt; &lt;tgt&gt;        # Drag and drop
-agent-browser upload &lt;sel&gt; &lt;files&gt;    # Upload files
-agent-browser screenshot [path]       # Take screenshot (--full for full page, saves to a temporary directory if no path)
-agent-browser screenshot --annotate   # Annotated screenshot with numbered element labels
-agent-browser screenshot --screenshot-dir ./shots    # Save to custom directory
-agent-browser screenshot --screenshot-format jpeg --screenshot-quality 80
-agent-browser pdf &lt;path&gt;              # Save as PDF
-agent-browser snapshot                # Accessibility tree with refs (best for AI)
-agent-browser eval &lt;js&gt;               # Run JavaScript (-b for base64, --stdin for piped input)
-agent-browser connect &lt;port&gt;          # Connect to browser via CDP
-agent-browser stream enable [--port &lt;port&gt;]  # Start runtime WebSocket streaming
-agent-browser stream status           # Show runtime streaming state and bound port
-agent-browser stream disable          # Stop runtime WebSocket streaming
-agent-browser close                   # Close browser (aliases: quit, exit)
-agent-browser close --all             # Close all active sessions
-```
-
-### Get Info
-
-```bash
-agent-browser get text &lt;sel&gt;          # Get text content
-agent-browser get html &lt;sel&gt;          # Get innerHTML
-agent-browser get value &lt;sel&gt;         # Get input value
-agent-browser get attr &lt;sel&gt; &lt;attr&gt;   # Get attribute
-agent-browser get title               # Get page title
-agent-browser get url                 # Get current URL
-agent-browser get cdp-url             # Get CDP WebSocket URL (for DevTools, debugging)
-agent-browser get count &lt;sel&gt;         # Count matching elements
-agent-browser get box &lt;sel&gt;           # Get bounding box
-agent-browser get styles &lt;sel&gt;        # Get computed styles
-```
-
-### Check State
-
-```bash
-agent-browser is visible &lt;sel&gt;        # Check if visible
-agent-browser is enabled &lt;sel&gt;        # Check if enabled
-agent-browser is checked &lt;sel&gt;        # Check if checked
-```
-
-### Find Elements (Semantic Locators)
-
-```bash
-agent-browser find role &lt;role&gt; &lt;action&gt; [value]       # By ARIA role
-agent-browser find text &lt;text&gt; &lt;action&gt;               # By text content
-agent-browser find label &lt;label&gt; &lt;action&gt; [value]     # By label
-agent-browser find placeholder &lt;ph&gt; &lt;action&gt; [value]  # By placeholder
-agent-browser find alt &lt;text&gt; &lt;action&gt;                # By alt text
-agent-browser find title &lt;text&gt; &lt;action&gt;              # By title attr
-agent-browser find testid &lt;id&gt; &lt;action&gt; [value]       # By data-testid
-agent-browser find first &lt;sel&gt; &lt;action&gt; [value]       # First match
-agent-browser find last &lt;sel&gt; &lt;action&gt; [value]        # Last match
-agent-browser find nth &lt;n&gt; &lt;sel&gt; &lt;action&gt; [value]     # Nth match
-```
-
-**Actions:** `click`, `fill`, `type`, `hover`, `focus`, `check`, `uncheck`, `text`
-
-**Options:** `--name &lt;name&gt;` (filter role by accessible name), `--exact` (require exact text match)
-
-**Examples:**
-
-```bash
-agent-browser find role button click --name &quot;Submit&quot;
-agent-browser find text &quot;Sign In&quot; click
-agent-browser find label &quot;Email&quot; fill &quot;test@test.com&quot;
-agent-browser find first &quot;.item&quot; click
-agent-browser find nth 2 &quot;a&quot; text
-```
-
-### Wait
-
-```bash
-agent-browser wait &lt;selector&gt;         # Wait for element to be visible
-agent-browser wait &lt;ms&gt;               # Wait for time (milliseconds)
-agent-browser wait --text &quot;Welcome&quot;   # Wait for text to appear (substring match)
-agent-browser wait --url &quot;**/dash&quot;    # Wait for URL pattern
-agent-browser wait --load networkidle # Wait for load state
-agent-browser wait --fn &quot;window.ready === true&quot;  # Wait for JS condition
-
-# Wait for text/element to disappear
-agent-browser wait --fn &quot;!document.body.innerText.includes(&#039;Loading...&#039;)&quot;
-agent-browser wait &quot;#spinner&quot; --state hidden
-```
-
-**Load states:** `load`, `domcontentloaded`, `networkidle`
-
-### Batch Execution
-
-Execute multiple commands in a single invocation by piping a JSON array of
-string arrays to `batch`. This avoids per-command process startup overhead
-when running multi-step workflows.
-
-```bash
-# Pipe commands as JSON
-echo &#039;[
-  [&quot;open&quot;, &quot;https://example.com&quot;],
-  [&quot;snapshot&quot;, &quot;-i&quot;],
-  [&quot;click&quot;, &quot;@e1&quot;],
-  [&quot;screenshot&quot;, &quot;result.png&quot;]
-]&#039; | agent-browser batch --json
-
-# Stop on first error
-agent-browser batch --bail &lt; commands.json
-```
-
-### Clipboard
-
-```bash
-agent-browser clipboard read                      # Read text from clipboard
-agent-browser clipboard write &quot;Hello, World!&quot;     # Write text to clipboard
-agent-browser clipboard copy                      # Copy current selection (Ctrl+C)
-agent-browser clipboard paste                     # Paste from clipboard (Ctrl+V)
-```
-
-### Mouse Control
-
-```bash
-agent-browser mouse move &lt;x&gt; &lt;y&gt;      # Move mouse
-agent-browser mouse down [button]     # Press button (left/right/middle)
-agent-browser mouse up [button]       # Release button
-agent-browser mouse wheel &lt;dy&gt; [dx]   # Scroll wheel
-```
-
-### Browser Settings
-
-```bash
-agent-browser set viewport &lt;w&gt; &lt;h&gt; [scale]  # Set viewport size (scale for retina, e.g. 2)
-agent-browser set device &lt;name&gt;       # Emulate device (&quot;iPhone 14&quot;)
-agent-browser set geo &lt;lat&gt; &lt;lng&gt;     # Set geolocation
-agent-browser set offline [on|off]    # Toggle offline mode
-agent-browser set headers &lt;json&gt;      # Extra HTTP headers
-agent-browser set credentials &lt;u&gt; &lt;p&gt; # HTTP basic auth
-agent-browser set media [dark|light]  # Emulate color scheme
-```
-
-### Cookies &amp; Storage
-
-```bash
-agent-browser cookies                 # Get all cookies
-agent-browser cookies set &lt;name&gt; &lt;val&gt; # Set cookie
-agent-browser cookies clear           # Clear cookies
-
-agent-browser storage local           # Get all localStorage
-agent-browser storage local &lt;key&gt;     # Get specific key
-agent-browser storage local set &lt;k&gt; &lt;v&gt;  # Set value
-agent-browser storage local clear     # Clear all
-
-agent-browser storage session         # Same for sessionStorage
-```
-
-### Network
-
-```bash
-agent-browser network route &lt;url&gt;              # Intercept requests
-agent-browser network route &lt;url&gt; --abort      # Block requests
-agent-browser network route &lt;url&gt; --body &lt;json&gt;  # Mock response
-agent-browser network unroute [url]            # Remove routes
-agent-browser network requests                 # View tracked requests
-agent-browser network requests --filter api    # Filter requests
-agent-browser network requests --type xhr,fetch  # Filter by resource type
-agent-browser network requests --method POST   # Filter by HTTP method
-agent-browser network requests --status 2xx    # Filter by status (200, 2xx, 400-499)
-agent-browser network request &lt;requestId&gt;      # View full request/response detail
-agent-browser network har start                # Start HAR recording
-agent-browser network har stop [output.har]    # Stop and save HAR (temp path if omitted)
-```
-
-### Tabs &amp; Windows
-
-```bash
-agent-browser tab                     # List tabs
-agent-browser tab new [url]           # New tab (optionally with URL)
-agent-browser tab &lt;n&gt;                 # Switch to tab n
-agent-browser tab close [n]           # Close tab
-agent-browser window new              # New window
-```
-
-### Frames
-
-```bash
-agent-browser frame &lt;sel&gt;             # Switch to iframe
-agent-browser frame main              # Back to main frame
-```
-
-### Dialogs
-
-```bash
-agent-browser dialog accept [text]    # Accept (with optional prompt text)
-agent-browser dialog dismiss          # Dismiss
-agent-browser dialog status           # Check if a dialog is currently open
-```
-
-By default, `alert` and `beforeunload` dialogs are automatically accepted so they never block the agent. `confirm` and `prompt` dialogs still require explicit handling. Use `--no-auto-dialog` (or `AGENT_BROWSER_NO_AUTO_DIALOG=1`) to disable automatic handling.
-
-When a JavaScript dialog is pending, all command responses include a `warning` field with the dialog type and message.
-
-### Diff
-
-```bash
-agent-browser diff snapshot                              # Compare current vs last snapshot
-agent-browser diff snapshot --baseline before.txt        # Compare current vs saved snapshot file
-agent-browser diff snapshot --selector &quot;#main&quot; --compact # Scoped snapshot diff
-agent-browser diff screenshot --baseline before.png      # Visual pixel diff against baseline
-agent-browser diff screenshot --baseline b.png -o d.png  # Save diff image to custom path
-agent-browser diff screenshot --baseline b.png -t 0.2    # Adjust color threshold (0-1)
-agent-browser diff url https://v1.com https://v2.com     # Compare two URLs (snapshot diff)
-agent-browser diff url https://v1.com https://v2.com --screenshot  # Also visual diff
-agent-browser diff url https://v1.com https://v2.com --wait-until networkidle  # Custom wait strategy
-agent-browser diff url https://v1.com https://v2.com --selector &quot;#main&quot;  # Scope to element
-```
-
-### Debug
-
-```bash
-agent-browser trace start [path]      # Start recording trace
-agent-browser trace stop [path]       # Stop and save trace
-agent-browser profiler start          # Start Chrome DevTools profiling
-agent-browser profiler stop [path]    # Stop and save profile (.json)
-agent-browser console                 # View console messages (log, error, warn, info)
-agent-browser console --json          # JSON output with raw CDP args for programmatic access
-agent-browser console --clear         # Clear console
-agent-browser errors                  # View page errors (uncaught JavaScript exceptions)
-agent-browser errors --clear          # Clear errors
-agent-browser highlight &lt;sel&gt;         # Highlight element
-agent-browser inspect                 # Open Chrome DevTools for the active page
-agent-browser state save &lt;path&gt;       # Save auth state
-agent-browser state load &lt;path&gt;       # Load auth state
-agent-browser state list              # List saved state files
-agent-browser state show &lt;file&gt;       # Show state summary
-agent-browser state rename &lt;old&gt; &lt;new&gt; # Rename state file
-agent-browser state clear [name]      # Clear states for session
-agent-browser state clear --all       # Clear all saved states
-agent-browser state clean --older-than &lt;days&gt;  # Delete old states
-```
-
-### Navigation
-
-```bash
-agent-browser back                    # Go back
-agent-browser forward                 # Go forward
-agent-browser reload                  # Reload page
-```
-
-### Setup
-
-```bash
-agent-browser install                 # Download Chrome from Chrome for Testing (Google&#039;s official automation channel)
-agent-browser install --with-deps     # Also install system deps (Linux)
-agent-browser upgrade                 # Upgrade agent-browser to the latest version
-```
-
-## Authentication
-
-agent-browser provides multiple ways to persist login sessions so you don&#039;t re-authenticate every run.
-
-### Quick summary
-
-| Approach | Best for | Flag / Env |
-|----------|----------|------------|
-| **Chrome profile reuse** | Reuse your existing Chrome login state (cookies, sessions) with zero setup | `--profile &lt;name&gt;` / `AGENT_BROWSER_PROFILE` |
-| **Persistent profile** | Full browser state (cookies, IndexedDB, service workers, cache) across restarts | `--profile &lt;path&gt;` / `AGENT_BROWSER_PROFILE` |
-| **Session persistence** | Auto-save/restore cookies + localStorage by name | `--session-name &lt;name&gt;` / `AGENT_BROWSER_SESSION_NAME` |
-| **Import from your browser** | Grab auth from a Chrome session you already logged into | `--auto-connect` + `state save` |
-| **State file** | Load a previously saved state JSON on launch | `--state &lt;path&gt;` / `AGENT_BROWSER_STATE` |
-| **Auth vault** | Store credentials locally (encrypted), login by name | `auth save` / `auth login` |
-
-### Import auth from your browser
-
-If you are already logged in to a site in Chrome, you can grab that auth state and reuse it:
-
-```bash
-# 1. Launch Chrome with remote debugging enabled
-#    macOS:
-&quot;/Applications/Google Chrome.app/Contents/MacOS/Google Chrome&quot; --remote-debugging-port=9222
-#    Or use --auto-connect to discover an already-running Chrome
-
-# 2. Connect and save the authenticated state
-agent-browser --auto-connect state save ./my-auth.json
-
-# 3. Use the saved auth in future sessions
-agent-browser --state ./my-auth.json open https://app.example.com/dashboard
-
-# 4. Or use --session-name for automatic persistence
-agent-browser --session-name myapp state load ./my-auth.json
-# From now on, --session-name myapp auto-saves/restores this state
-```
-
-&gt; **Security notes:**
-&gt; - `--remote-debugging-port` exposes full browser control on localhost. Any local process can connect. Only use on trusted machines and close Chrome when done.
-&gt; - State files contain session tokens in plaintext. Add them to `.gitignore` and delete when no longer needed. For encryption at rest, set `AGENT_BROWSER_ENCRYPTION_KEY` (see [State Encryption](#state-encryption)).
-
-For full details on login flows, OAuth, 2FA, cookie-based auth, and the auth vault, see the [Authentication](docs/src/app/sessions/page.mdx) docs.
-
-## Sessions
-
-Run multiple isolated browser instances:
-
-```bash
-# Different sessions
-agent-browser --session agent1 open site-a.com
-agent-browser --session agent2 open site-b.com
-
-# Or via environment variable
-AGENT_BROWSER_SESSION=agent1 agent-browser click &quot;#btn&quot;
-
-# List active sessions
-agent-browser session list
-# Output:
-# Active sessions:
-# -&gt; default
-#    agent1
-
-# Show current session
-agent-browser session
-```
-
-Each session has its own:
-
-- Browser instance
-- Cookies and storage
-- Navigation history
-- Authentication state
-
-## Chrome Profile Reuse
-
-The fastest way to use your existing login state: pass a Chrome profile name to `--profile`:
-
-```bash
-# List available Chrome profiles
-agent-browser profiles
-
-# Reuse your default Chrome profile&#039;s login state
-agent-browser --profile Default open https://gmail.com
-
-# Use a named profile (by display name or directory name)
-agent-browser --profile &quot;Work&quot; open https://app.example.com
-
-# Or via environment variable
-AGENT_BROWSER_PROFILE=Default agent-browser open https://gmail.com
-```
-
-This copies your Chrome profile to a temp directory (read-only snapshot, no changes to your original profile), so the browser launches with your existing cookies and sessions.
-
-&gt; **Note:** On Windows, close Chrome before using `--profile &lt;name&gt;` if Chrome is running, as some profile files may be locked.
-
-## Persistent Profiles
-
-For a persistent custom profile directory that stores state across browser restarts, pass a path to `--profile`:
-
-```bash
-# Use a persistent profile directory
-agent-browser --profile ~/.myapp-profile open myapp.com
-
-# Login once, then reuse the authenticated session
-agent-browser --profile ~/.myapp-profile open myapp.com/dashboard
-
-# Or via environment variable
-AGENT_BROWSER_PROFILE=~/.myapp-profile agent-browser open myapp.com
-```
-
-The profile directory stores:
-
-- Cookies and localStorage
-- IndexedDB data
-- Service workers
-- Browser cache
-- Login sessions
-
-**Tip**: Use different profile paths for different projects to keep their browser state isolated.
-
-## Session Persistence
-
-Alternatively, use `--session-name` to automatically save and restore cookies and localStorage across browser restarts:
-
-```bash
-# Auto-save/load state for &quot;twitter&quot; session
-agent-browser --session-name twitter open twitter.com
-
-# Login once, then state persists automatically
-# State files stored in ~/.agent-browser/sessions/
-
-# Or via environment variable
-export AGENT_BROWSER_SESSION_NAME=twitter
-agent-browser open twitter.com
-```
-
-### State Encryption
-
-Encrypt saved session data at rest with AES-256-GCM:
-
-```bash
-# Generate key: openssl rand -hex 32
-export AGENT_BROWSER_ENCRYPTION_KEY=&lt;64-char-hex-key&gt;
-
-# State files are now encrypted automatically
-agent-browser --session-name secure open example.com
-```
-
-| Variable                          | Description                                        |
-| --------------------------------- | -------------------------------------------------- |
-| `AGENT_BROWSER_SESSION_NAME`      | Auto-save/load state persistence name              |
-| `AGENT_BROWSER_ENCRYPTION_KEY`    | 64-char hex key for AES-256-GCM encryption         |
-| `AGENT_BROWSER_STATE_EXPIRE_DAYS` | Auto-delete states older than N days (default: 30) |
-
-## Security
-
-agent-browser includes security features for safe AI agent deployments. All features are opt-in -- existing workflows are unaffected until you explicitly enable a feature:
-
-- **Authentication Vault** -- Store credentials locally (always encrypted), reference by name. The LLM never sees passwords. `auth login` navigates with `l
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>Rust</category>
-        </item>
-        <item>
-            <title><![CDATA[rust-lang/rust]]></title>
-            <link>https://github.com/rust-lang/rust</link>
-            <guid>https://github.com/rust-lang/rust</guid>
-            <pubDate>Mon, 06 Apr 2026 00:11:09 GMT</pubDate>
-            <description><![CDATA[Empowering everyone to build reliable and efficient software.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/rust-lang/rust">rust-lang/rust</a></h1>
-            <p>Empowering everyone to build reliable and efficient software.</p>
-            <p>Language: Rust</p>
-            <p>Stars: 111,723</p>
-            <p>Forks: 14,778</p>
-            <p>Stars today: 37 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://raw.githubusercontent.com/rust-lang/www.rust-lang.org/master/static/images/rust-social-wide-dark.svg&quot;&gt;
-    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/rust-lang/www.rust-lang.org/master/static/images/rust-social-wide-light.svg&quot;&gt;
-    &lt;img alt=&quot;The Rust Programming Language: A language empowering everyone to build reliable and efficient software&quot;
-         src=&quot;https://raw.githubusercontent.com/rust-lang/www.rust-lang.org/master/static/images/rust-social-wide-light.svg&quot;
-         width=&quot;50%&quot;&gt;
-  &lt;/picture&gt;
-
-[Website][Rust] | [Getting started] | [Learn] | [Documentation] | [Contributing]
-&lt;/div&gt;
-
-This is the main source code repository for [Rust]. It contains the compiler,
-standard library, and documentation.
-
-[Rust]: https://www.rust-lang.org/
-[Getting Started]: https://www.rust-lang.org/learn/get-started
-[Learn]: https://www.rust-lang.org/learn
-[Documentation]: https://www.rust-lang.org/learn#learn-use
-[Contributing]: CONTRIBUTING.md
-
-## Why Rust?
-
-- **Performance:** Fast and memory-efficient, suitable for critical services, embedded devices, and easily integrated with other languages.
-
-- **Reliability:** Our rich type system and ownership model ensure memory and thread safety, reducing bugs at compile-time.
-
-- **Productivity:** Comprehensive documentation, a compiler committed to providing great diagnostics, and advanced tooling including package manager and build tool ([Cargo]), auto-formatter ([rustfmt]), linter ([Clippy]) and editor support ([rust-analyzer]).
-
-[Cargo]: https://github.com/rust-lang/cargo
-[rustfmt]: https://github.com/rust-lang/rustfmt
-[Clippy]: https://github.com/rust-lang/rust-clippy
-[rust-analyzer]: https://github.com/rust-lang/rust-analyzer
-
-## Quick Start
-
-Read [&quot;Installation&quot;] from [The Book].
-
-[&quot;Installation&quot;]: https://doc.rust-lang.org/book/ch01-01-installation.html
-[The Book]: https://doc.rust-lang.org/book/index.html
-
-## Installing from Source
-
-If you really want to install from source (though this is not recommended), see
-[INSTALL.md](INSTALL.md).
-
-## Getting Help
-
-See https://www.rust-lang.org/community for a list of chat platforms and forums.
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md).
-
-For a detailed explanation of the compiler&#039;s architecture and how to begin contributing, see the [rustc-dev-guide](https://rustc-dev-guide.rust-lang.org/).
-
-## License
-
-Rust is primarily distributed under the terms of both the MIT license and the
-Apache License (Version 2.0), with portions covered by various BSD-like
-licenses.
-
-See [LICENSE-APACHE](LICENSE-APACHE), [LICENSE-MIT](LICENSE-MIT), and
-[COPYRIGHT](COPYRIGHT) for details.
-
-## Trademark
-
-[The Rust Foundation][rust-foundation] owns and protects the Rust and Cargo
-trademarks and logos (the &quot;Rust Trademarks&quot;).
-
-If you want to use these names or brands, please read the
-[Rust language trademark policy][trademark-policy].
-
-Third-party logos may be subject to third-party copyrights and trademarks. See
-[Licenses][policies-licenses] for details.
-
-[rust-foundation]: https://rustfoundation.org/
-[trademark-policy]: https://rustfoundation.org/policy/rust-trademark-policy/
-[policies-licenses]: https://www.rust-lang.org/policies/licenses
-</pre>
-          ]]></content:encoded>
-            <category>Rust</category>
-        </item>
-        <item>
-            <title><![CDATA[tauri-apps/tauri]]></title>
-            <link>https://github.com/tauri-apps/tauri</link>
-            <guid>https://github.com/tauri-apps/tauri</guid>
-            <pubDate>Mon, 06 Apr 2026 00:11:08 GMT</pubDate>
-            <description><![CDATA[Build smaller, faster, and more secure desktop and mobile applications with a web frontend.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/tauri-apps/tauri">tauri-apps/tauri</a></h1>
-            <p>Build smaller, faster, and more secure desktop and mobile applications with a web frontend.</p>
-            <p>Language: Rust</p>
-            <p>Stars: 104,982</p>
-            <p>Forks: 3,493</p>
-            <p>Stars today: 45 stars today</p>
-            <h2>README</h2><pre>&lt;img src=&quot;.github/splash.png&quot; alt=&quot;Tauri&quot; /&gt;
-
-[![status](https://img.shields.io/badge/status-stable-blue.svg)](https://github.com/tauri-apps/tauri/tree/dev)
-[![License](https://img.shields.io/badge/License-MIT%20or%20Apache%202-green.svg)](https://opencollective.com/tauri)
-[![test core](https://img.shields.io/github/actions/workflow/status/tauri-apps/tauri/test-core.yml?label=test%20core&amp;logo=github)](https://github.com/tauri-apps/tauri/actions/workflows/test-core.yml)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftauri-apps%2Ftauri.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftauri-apps%2Ftauri?ref=badge_shield)
-[![Chat Server](https://img.shields.io/badge/chat-discord-7289da.svg)](https://discord.com/invite/tauri)
-[![website](https://img.shields.io/badge/website-tauri.app-purple.svg)](https://tauri.app)
-[![https://good-labs.github.io/greater-good-affirmation/assets/images/badge.svg](https://good-labs.github.io/greater-good-affirmation/assets/images/badge.svg)](https://good-labs.github.io/greater-good-affirmation)
-[![support](https://img.shields.io/badge/sponsor-Open%20Collective-blue.svg)](https://opencollective.com/tauri)
-
-## Introduction
-
-Tauri is a framework for building tiny, blazingly fast binaries for all major desktop platforms. Developers can integrate any front-end framework that compiles to HTML, JS and CSS for building their user interface. The backend of the application is a rust-sourced binary with an API that the front-end can interact with.
-
-The user interface in Tauri apps currently leverages [`tao`](https://docs.rs/tao) as a window handling library on macOS, Windows, Linux, Android and iOS. To render your application, Tauri uses [WRY](https://github.com/tauri-apps/wry), a library which provides a unified interface to the system webview, leveraging WKWebView on macOS &amp; iOS, WebView2 on Windows, WebKitGTK on Linux and Android System WebView on Android.
-
-To learn more about the details of how all of these pieces fit together, please consult this [ARCHITECTURE.md](https://github.com/tauri-apps/tauri/blob/dev/ARCHITECTURE.md) document.
-
-## Getting Started
-
-If you are interested in making a tauri app, please visit the [documentation website](https://tauri.app).
-
-The quickest way to get started is to install the [prerequisites](https://v2.tauri.app/start/prerequisites/) for your system and create a new project with [`create-tauri-app`](https://github.com/tauri-apps/create-tauri-app/#usage). For example with `npm`:
-
-```sh
-npm create tauri-app@latest
-```
-
-## Features
-
-The list of Tauri&#039;s features includes, but is not limited to:
-
-- Built-in app bundler to create app bundles in formats like `.app`, `.dmg`, `.deb`, `.rpm`, `.AppImage` and Windows installers like `.exe` (via NSIS) and `.msi` (via WiX).
-- Built-in self updater (desktop only)
-- System tray icons
-- Native notifications
-- Native WebView Protocol (tauri doesn&#039;t create a localhost http(s) server to serve the WebView contents)
-- GitHub action for streamlined CI
-- VS Code extension
-
-### Platforms
-
-Tauri currently supports development and distribution on the following platforms:
-
-| Platform   | Versions                                                                                                        |
-| :--------- | :-------------------------------------------------------------------------------------------------------------- |
-| Windows    | 7 and above                                                                                                     |
-| macOS      | 10.15 and above                                                                                                 |
-| Linux      | webkit2gtk 4.0 for Tauri v1 (for example Ubuntu 18.04). webkit2gtk 4.1 for Tauri v2 (for example Ubuntu 22.04). |
-| iOS/iPadOS | 9 and above                                                                                                     |
-| Android    | 7 and above (currently 8 and above)                                                                             |
-
-## Contributing
-
-Before you start working on something, it&#039;s best to check if there is an existing issue first. It&#039;s also a good idea to stop by the Discord server and confirm with the team if it makes sense or if someone else is already working on it.
-
-Please make sure to read the [Contributing Guide](./.github/CONTRIBUTING.md) before making a pull request.
-
-Thank you to everyone contributing to Tauri!
-
-### Documentation
-
-Documentation in a polyglot system is a tricky proposition. To this end, we prefer to use inline documentation in the Rust &amp; JS source code as much as possible. Check out the hosting repository for the documentation site for further information: &lt;https://github.com/tauri-apps/tauri-docs&gt;
-
-## Partners
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td align=&quot;center&quot; valign=&quot;middle&quot;&gt;
-        &lt;a href=&quot;https://crabnebula.dev&quot; target=&quot;_blank&quot;&gt;
-          &lt;img src=&quot;.github/sponsors/crabnebula.svg&quot; alt=&quot;CrabNebula&quot; width=&quot;283&quot;&gt;
-        &lt;/a&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-For the complete list of sponsors please visit our [website](https://tauri.app#sponsors) and [Open Collective](https://opencollective.com/tauri).
-
-## Organization
-
-Tauri aims to be a sustainable collective based on principles that guide sustainable free and open software communities. To this end it has become a Programme within the [Commons Conservancy](https://commonsconservancy.org/), and you can contribute financially via [Open Collective](https://opencollective.com/tauri).
-
-## Licenses
-
-Code: (c) 2015 - Present - The Tauri Programme within The Commons Conservancy.
-
-MIT or MIT/Apache 2.0 where applicable.
-
-Logo: CC-BY-NC-ND
-
-- Original Tauri Logo Designs by [Alve Larsson](https://alve.io/), [Daniel Thompson-Yvetot](https://github.com/nothingismagick) and [Guillaume Chau](https://github.com/akryum)
-
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftauri-apps%2Ftauri.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftauri-apps%2Ftauri?ref=badge_large)
-</pre>
-          ]]></content:encoded>
-            <category>Rust</category>
-        </item>
-        <item>
-            <title><![CDATA[servo/servo]]></title>
-            <link>https://github.com/servo/servo</link>
-            <guid>https://github.com/servo/servo</guid>
-            <pubDate>Mon, 06 Apr 2026 00:11:07 GMT</pubDate>
-            <description><![CDATA[Servo aims to empower developers with a lightweight, high-performance alternative for embedding web technologies in applications.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/servo/servo">servo/servo</a></h1>
-            <p>Servo aims to empower developers with a lightweight, high-performance alternative for embedding web technologies in applications.</p>
-            <p>Language: Rust</p>
-            <p>Stars: 36,199</p>
-            <p>Forks: 3,571</p>
-            <p>Stars today: 21 stars today</p>
-            <h2>README</h2><pre># The Servo Parallel Browser Engine Project
-
-Servo is a prototype web browser engine written in the
-[Rust](https://github.com/rust-lang/rust) language. It is currently developed on
-64-bit macOS, 64-bit Linux, 64-bit Windows, 64-bit OpenHarmony, and Android.
-
-Servo welcomes contribution from everyone. Check out:
-
-- The [Servo Book](https://book.servo.org) for documentation
-- [servo.org](https://servo.org/) for news and guides
-
-Coordination of Servo development happens:
-- Here in the Github Issues
-- On the [Servo Zulip](https://servo.zulipchat.com/)
-- In video calls advertised in the [Servo Project](https://github.com/servo/project/issues) repo.
-
-## Getting started
-
-For more detailed build instructions, see the Servo Book under [Getting the Code] and [Building Servo].
-
-[Getting the Code]: https://book.servo.org/building/getting-the-code.html
-[Building Servo]: https://book.servo.org/building/building.html
-
-### macOS
-
-- Download and install [Xcode](https://developer.apple.com/xcode/) and [`brew`](https://brew.sh/).
-- Install `uv`: `curl -LsSf https://astral.sh/uv/install.sh | sh` 
-- Install `rustup`: `curl --proto &#039;=https&#039; --tlsv1.2 -sSf https://sh.rustup.rs | sh`
-- Restart your shell to make sure `cargo` is available
-- Install the other dependencies: `./mach bootstrap`
-- Build servoshell: `./mach build`
-
-### Linux
-
-- Install `curl`:
-  - Arch: `sudo pacman -S --needed curl`
-  - Debian, Ubuntu: `sudo apt install curl`
-  - Fedora: `sudo dnf install curl`
-  - Gentoo: `sudo emerge net-misc/curl`
-- Install `uv`: `curl -LsSf https://astral.sh/uv/install.sh | sh` 
-- Install `rustup`: `curl --proto &#039;=https&#039; --tlsv1.2 -sSf https://sh.rustup.rs | sh`
-- Restart your shell to make sure `cargo` is available
-- Install the other dependencies: `./mach bootstrap`
-- Build servoshell: `./mach build`
-
-### Windows
-
-- Download [`uv`](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer), [`choco`](https://chocolatey.org/install#individual), and [`rustup`](https://win.rustup.rs/)
-  - Be sure to select *Quick install via the Visual Studio Community installer*
-- In the Visual Studio Installer, ensure the following components are installed:
-  - **Windows 10/11 SDK (anything &gt;= 10.0.19041.0)** (`Microsoft.VisualStudio.Component.Windows{10, 11}SDK.{&gt;=19041}`)
-  - **MSVC v143 - VS 2022 C++ x64/x86 build tools (Latest)** (`Microsoft.VisualStudio.Component.VC.Tools.x86.x64`)
-  - **C++ ATL for latest v143 build tools (x86 &amp; x64)** (`Microsoft.VisualStudio.Component.VC.ATL`)
-- Restart your shell to make sure `cargo` is available
-- Install the other dependencies: `.\mach bootstrap`
-- Build servoshell: `.\mach build`
-
-### Android
-
-- Ensure that the following environment variables are set:
-  - `ANDROID_SDK_ROOT`
-  - `ANDROID_NDK_ROOT`: `$ANDROID_SDK_ROOT/ndk/28.2.13676358/`
- `ANDROID_SDK_ROOT` can be any directory (such as `~/android-sdk`).
-  All of the Android build dependencies will be installed there.
-- Install the latest version of the [Android command-line
-  tools](https://developer.android.com/studio#command-tools) to
-  `$ANDROID_SDK_ROOT/cmdline-tools/latest`.
-- Run the following command to install the necessary components:
-  ```shell
-  sudo $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --install \
-   &quot;build-tools;34.0.0&quot; \
-   &quot;emulator&quot; \
-   &quot;ndk;28.2.13676358&quot; \
-   &quot;platform-tools&quot; \
-   &quot;platforms;android-33&quot; \
-   &quot;system-images;android-33;google_apis;x86_64&quot;
-  ```
-- Follow the instructions above for the platform you are building on
-
-### OpenHarmony
-
-- Follow the instructions above for the platform you are building on to prepare the environment.
-- Depending on the target distribution (e.g. `HarmonyOS NEXT` vs pure `OpenHarmony`) the build configuration will differ slightly.
-- Ensure that the following environment variables are set
-  - `DEVECO_SDK_HOME` (Required when targeting `HarmonyOS NEXT`)
-  - `OHOS_BASE_SDK_HOME` (Required when targeting `OpenHarmony`)
-  - `OHOS_SDK_NATIVE` (e.g. `${DEVECO_SDK_HOME}/default/openharmony/native` or `${OHOS_BASE_SDK_HOME}/${API_VERSION}/native`)
-  - `SERVO_OHOS_SIGNING_CONFIG`: Path to json file containing a valid signing configuration for the demo app.
-- Review the detailed instructions at [Building for OpenHarmony].
-- The target distribution can be modified by passing `--flavor=&lt;default|harmonyos&gt;` to `mach &lt;build|package|install&gt;`.
-</pre>
-          ]]></content:encoded>
-            <category>Rust</category>
-        </item>
-        <item>
             <title><![CDATA[memvid/memvid]]></title>
             <link>https://github.com/memvid/memvid</link>
             <guid>https://github.com/memvid/memvid</guid>
-            <pubDate>Mon, 06 Apr 2026 00:11:06 GMT</pubDate>
+            <pubDate>Tue, 07 Apr 2026 00:11:36 GMT</pubDate>
             <description><![CDATA[Memory layer for AI Agents. Replace complex RAG pipelines with a serverless, single-file memory layer. Give your agents instant retrieval and long-term memory.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/memvid/memvid">memvid/memvid</a></h1>
             <p>Memory layer for AI Agents. Replace complex RAG pipelines with a serverless, single-file memory layer. Give your agents instant retrieval and long-term memory.</p>
             <p>Language: Rust</p>
-            <p>Stars: 14,233</p>
-            <p>Forks: 1,208</p>
-            <p>Stars today: 376 stars today</p>
+            <p>Stars: 14,506</p>
+            <p>Forks: 1,255</p>
+            <p>Stars today: 351 stars today</p>
             <h2>README</h2><pre>&lt;!-- HEADER:START --&gt;
 &lt;img width=&quot;2000&quot; height=&quot;524&quot; alt=&quot;Social Cover (9)&quot;
      src=&quot;https://github.com/user-attachments/assets/cf66f045-c8be-494b-b696-b8d7e4fb709c&quot; /&gt;
@@ -1986,996 +1738,1827 @@ Apache License 2.0 — see the [LICENSE](LICENSE) file for details.
             <category>Rust</category>
         </item>
         <item>
-            <title><![CDATA[atuinsh/atuin]]></title>
-            <link>https://github.com/atuinsh/atuin</link>
-            <guid>https://github.com/atuinsh/atuin</guid>
-            <pubDate>Mon, 06 Apr 2026 00:11:05 GMT</pubDate>
-            <description><![CDATA[✨ Making your shell magical]]></description>
+            <title><![CDATA[vercel-labs/agent-browser]]></title>
+            <link>https://github.com/vercel-labs/agent-browser</link>
+            <guid>https://github.com/vercel-labs/agent-browser</guid>
+            <pubDate>Tue, 07 Apr 2026 00:11:35 GMT</pubDate>
+            <description><![CDATA[Browser automation CLI for AI agents]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/atuinsh/atuin">atuinsh/atuin</a></h1>
-            <p>✨ Making your shell magical</p>
+            <h1><a href="https://github.com/vercel-labs/agent-browser">vercel-labs/agent-browser</a></h1>
+            <p>Browser automation CLI for AI agents</p>
             <p>Language: Rust</p>
-            <p>Stars: 28,981</p>
-            <p>Forks: 819</p>
-            <p>Stars today: 8 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
- &lt;picture&gt;
-  &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://github.com/atuinsh/atuin/assets/53315310/13216a1d-1ac0-4c99-b0eb-d88290fe0efd&quot;&gt;
-  &lt;img alt=&quot;Text changing depending on mode. Light: &#039;So light!&#039; Dark: &#039;So dark!&#039;&quot; src=&quot;https://github.com/atuinsh/atuin/assets/53315310/08bc86d4-a781-4aaa-8d7e-478ae6bcd129&quot;&gt;
-&lt;/picture&gt;
-&lt;/p&gt;
+            <p>Stars: 27,735</p>
+            <p>Forks: 1,674</p>
+            <p>Stars today: 379 stars today</p>
+            <h2>README</h2><pre># agent-browser
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;em&gt;magical shell history&lt;/em&gt;
-&lt;/p&gt;
+Browser automation CLI for AI agents. Fast native Rust CLI.
 
-&lt;hr/&gt;
+## Installation
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/atuinsh/atuin/actions?query=workflow%3ARust&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/actions/workflow/status/atuinsh/atuin/rust.yml?style=flat-square&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://crates.io/crates/atuin&quot;&gt;&lt;img src=&quot;https://img.shields.io/crates/v/atuin.svg?style=flat-square&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://crates.io/crates/atuin&quot;&gt;&lt;img src=&quot;https://img.shields.io/crates/d/atuin.svg?style=flat-square&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/atuinsh/atuin/blob/main/LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/crates/l/atuin.svg?style=flat-square&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://discord.gg/Fq8bJSKPHh&quot;&gt;&lt;img src=&quot;https://img.shields.io/discord/954121165239115808&quot; /&gt;&lt;/a&gt;
-  &lt;a rel=&quot;me&quot; href=&quot;https://hachyderm.io/@atuin&quot;&gt;&lt;img src=&quot;https://img.shields.io/mastodon/follow/109944632283122560?domain=https%3A%2F%2Fhachyderm.io&amp;style=social&quot;/&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://twitter.com/atuinsh&quot;&gt;&lt;img src=&quot;https://img.shields.io/twitter/follow/atuinsh?style=social&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
+### Global Installation (recommended)
 
-[English] | [简体中文]
+Installs the native Rust binary:
 
-Atuin replaces your existing shell history with a SQLite database, and records
-additional context for your commands. Additionally, it provides optional and
-_fully encrypted_ synchronisation of your history between machines, via an Atuin
-server.
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;demo.gif&quot; alt=&quot;animated&quot; width=&quot;80%&quot; /&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-&lt;em&gt;exit code, duration, time and command shown&lt;/em&gt;
-&lt;/p&gt;
-
-As well as the search UI, it can do things like this:
-
-```
-# search for all successful `make` commands, recorded after 3pm yesterday
-atuin search --exit 0 --after &quot;yesterday 3pm&quot; make
+```bash
+npm install -g agent-browser
+agent-browser install  # Download Chrome from Chrome for Testing (first time only)
 ```
 
-You may use either the server I host, or host your own! Or just don&#039;t use sync
-at all. As all history sync is encrypted, I couldn&#039;t access your data even if
-I wanted to. And I **really** don&#039;t want to.
+### Project Installation (local dependency)
 
-## Features
+For projects that want to pin the version in `package.json`:
 
-- rebind `ctrl-r` and `up` (configurable) to a full screen history search UI
-- store shell history in a sqlite database
-- back up and sync **encrypted** shell history
-- the same history across terminals, across sessions, and across machines
-- log exit code, cwd, hostname, session, command duration, etc
-- calculate statistics such as &quot;most used command&quot;
-- old history file is not replaced
-- quick-jump to previous items with &lt;kbd&gt;Alt-\&lt;num\&gt;&lt;/kbd&gt;
-- switch filter modes via ctrl-r; search history just from the current session, directory, or globally
-- enter to execute a command, tab to edit
-
-## Documentation
-
-- [Quickstart](#quickstart)
-- [Install](https://docs.atuin.sh/guide/installation/)
-- [Setting up sync](https://docs.atuin.sh/guide/sync/)
-- [Import history](https://docs.atuin.sh/guide/import/)
-- [Basic usage](https://docs.atuin.sh/guide/basic-usage/)
-
-## Supported Shells
-
-- zsh
-- bash
-- fish
-- nushell
-- xonsh
-- powershell (tier 2 support)
-
-## Community
-
-### Forum
-
-Atuin has a community forum, please ask here for help and support: &lt;https://forum.atuin.sh/&gt;
-
-### IRC
-
-We&#039;re also available via #atuin on libera.chat
-
-### Discord
-
-Atuin also has a community Discord, available [here](https://discord.gg/jR3tfchVvW)
-
-# Quickstart
-
-This will sign you up for the Atuin Cloud sync server. Everything is end-to-end encrypted, so your secrets are safe!
-
-Read more in the [docs](https://docs.atuin.sh) for an offline setup, self hosted server, and more.
-
-```
-curl --proto &#039;=https&#039; --tlsv1.2 -LsSf https://setup.atuin.sh | sh
-
-atuin register -u &lt;USERNAME&gt; -e &lt;EMAIL&gt;
-atuin import auto
-atuin sync
+```bash
+npm install agent-browser
+agent-browser install
 ```
 
-Then restart your shell!
+Then use via `package.json` scripts or by invoking `agent-browser` directly.
 
-&gt; [!NOTE]
-&gt;
-&gt; **For Bash users**: The above sets up `bash-preexec` for necessary hooks, but
-&gt; `bash-preexec` has limitations. For details, please see the
-&gt; [Bash](https://docs.atuin.sh/guide/installation/#installing-the-shell-plugin)
-&gt; section of the shell plugin documentation.
+### Homebrew (macOS)
 
-# Security
+```bash
+brew install agent-browser
+agent-browser install  # Download Chrome from Chrome for Testing (first time only)
+```
 
-If you find any security issues, we&#039;d appreciate it if you could alert &lt;ellie@atuin.sh&gt;
+### Cargo (Rust)
 
-# Contributors
+```bash
+cargo install agent-browser
+agent-browser install  # Download Chrome from Chrome for Testing (first time only)
+```
 
-&lt;a href=&quot;https://github.com/atuinsh/atuin/graphs/contributors&quot;&gt;
-  &lt;img src=&quot;https://contrib.rocks/image?repo=atuinsh/atuin&amp;max=300&quot; /&gt;
-&lt;/a&gt;
+### From Source
 
-Made with [contrib.rocks](https://contrib.rocks).
+```bash
+git clone https://github.com/vercel-labs/agent-browser
+cd agent-browser
+pnpm install
+pnpm build
+pnpm build:native   # Requires Rust (https://rustup.rs)
+pnpm link --global  # Makes agent-browser available globally
+agent-browser install
+```
 
-[English]: ./README.md
-[简体中文]: ./docs-i18n/zh-CN/README.md
-</pre>
+### Linux Dependencies
+
+On Linux, install system dependencies:
+
+```bash
+agent-browser install --with-deps
+```
+
+### Updating
+
+Upgrade to the latest version:
+
+```bash
+agent-browser upgrade
+```
+
+Detects your installation method (npm, Homebrew, or Cargo) and runs the appropriate update command automatically.
+
+### Requirements
+
+- **Chrome** - Run `agent-browser install` to download Chrome from [Chrome for Testing](https://developer.chrome.com/blog/chrome-for-testing/) (Google&#039;s official automation channel). Existing Chrome, Brave, Playwright, and Puppeteer installations are detected automatically. No Playwright or Node.js required for the daemon.
+- **Rust** - Only needed when building from source (see From Source above).
+
+## Quick Start
+
+```bash
+agent-browser open example.com
+agent-browser snapshot                    # Get accessibility tree with refs
+agent-browser click @e2                   # Click by ref from snapshot
+agent-browser fill @e3 &quot;test@example.com&quot; # Fill by ref
+agent-browser get text @e1                # Get text by ref
+agent-browser screenshot page.png
+agent-browser close
+```
+
+### Traditional Selectors (also supported)
+
+```bash
+agent-browser click &quot;#submit&quot;
+agent-browser fill &quot;#email&quot; &quot;test@example.com&quot;
+agent-browser find role button click --name &quot;Submit&quot;
+```
+
+## Commands
+
+### Core Commands
+
+```bash
+agent-browser open &lt;url&gt;              # Navigate to URL (aliases: goto, navigate)
+agent-browser click &lt;sel&gt;             # Click element (--new-tab to open in new tab)
+agent-browser dblclick &lt;sel&gt;          # Double-click element
+agent-browser focus &lt;sel&gt;             # Focus element
+agent-browser type &lt;sel&gt; &lt;text&gt;       # Type into element
+agent-browser fill &lt;sel&gt; &lt;text&gt;       # Clear and fill
+agent-browser press &lt;key&gt;             # Press key (Enter, Tab, Control+a) (alias: key)
+agent-browser keyboard type &lt;text&gt;    # Type with real keystrokes (no selector, current focus)
+agent-browser keyboard inserttext &lt;text&gt;  # Insert text without key events (no selector)
+agent-browser keydown &lt;key&gt;           # Hold key down
+agent-browser keyup &lt;key&gt;             # Release key
+agent-browser hover &lt;sel&gt;             # Hover element
+agent-browser select &lt;sel&gt; &lt;val&gt;      # Select dropdown option
+agent-browser check &lt;sel&gt;             # Check checkbox
+agent-browser uncheck &lt;sel&gt;           # Uncheck checkbox
+agent-browser scroll &lt;dir&gt; [px]       # Scroll (up/down/left/right, --selector &lt;sel&gt;)
+agent-browser scrollintoview &lt;sel&gt;    # Scroll element into view (alias: scrollinto)
+agent-browser drag &lt;src&gt; &lt;tgt&gt;        # Drag and drop
+agent-browser upload &lt;sel&gt; &lt;files&gt;    # Upload files
+agent-browser screenshot [path]       # Take screenshot (--full for full page, saves to a temporary directory if no path)
+agent-browser screenshot --annotate   # Annotated screenshot with numbered element labels
+agent-browser screenshot --screenshot-dir ./shots    # Save to custom directory
+agent-browser screenshot --screenshot-format jpeg --screenshot-quality 80
+agent-browser pdf &lt;path&gt;              # Save as PDF
+agent-browser snapshot                # Accessibility tree with refs (best for AI)
+agent-browser eval &lt;js&gt;               # Run JavaScript (-b for base64, --stdin for piped input)
+agent-browser connect &lt;port&gt;          # Connect to browser via CDP
+agent-browser stream enable [--port &lt;port&gt;]  # Start runtime WebSocket streaming
+agent-browser stream status           # Show runtime streaming state and bound port
+agent-browser stream disable          # Stop runtime WebSocket streaming
+agent-browser close                   # Close browser (aliases: quit, exit)
+agent-browser close --all             # Close all active sessions
+agent-browser chat &quot;&lt;instruction&gt;&quot;    # AI chat: natural language browser control (single-shot)
+agent-browser chat                    # AI chat: interactive REPL mode
+```
+
+### Get Info
+
+```bash
+agent-browser get text &lt;sel&gt;          # Get text content
+agent-browser get html &lt;sel&gt;          # Get innerHTML
+agent-browser get value &lt;sel&gt;         # Get input value
+agent-browser get attr &lt;sel&gt; &lt;attr&gt;   # Get attribute
+agent-browser get title               # Get page title
+agent-browser get url                 # Get current URL
+agent-browser get cdp-url             # Get CDP WebSocket URL (for DevTools, debugging)
+agent-browser get count &lt;sel&gt;         # Count matching elements
+agent-browser get box &lt;sel&gt;           # Get bounding box
+agent-browser get styles &lt;sel&gt;        # Get computed styles
+```
+
+### Check State
+
+```bash
+agent-browser is visible &lt;sel&gt;        # Check if visible
+agent-browser is enabled &lt;sel&gt;        # Check if enabled
+agent-browser is checked &lt;sel&gt;        # Check if checked
+```
+
+### Find Elements (Semantic Locators)
+
+```bash
+agent-browser find role &lt;role&gt; &lt;action&gt; [value]       # By ARIA role
+agent-browser find text &lt;text&gt; &lt;action&gt;               # By text content
+agent-browser find label &lt;label&gt; &lt;action&gt; [value]     # By label
+agent-browser find placeholder &lt;ph&gt; &lt;action&gt; [value]  # By placeholder
+agent-browser find alt &lt;text&gt; &lt;action&gt;                # By alt text
+agent-browser find title &lt;text&gt; &lt;action&gt;              # By title attr
+agent-browser find testid &lt;id&gt; &lt;action&gt; [value]       # By data-testid
+agent-browser find first &lt;sel&gt; &lt;action&gt; [value]       # First match
+agent-browser find last &lt;sel&gt; &lt;action&gt; [value]        # Last match
+agent-browser find nth &lt;n&gt; &lt;sel&gt; &lt;action&gt; [value]     # Nth match
+```
+
+**Actions:** `click`, `fill`, `type`, `hover`, `focus`, `check`, `uncheck`, `text`
+
+**Options:** `--name &lt;name&gt;` (filter role by accessible name), `--exact` (require exact text match)
+
+**Examples:**
+
+```bash
+agent-browser find role button click --name &quot;Submit&quot;
+agent-browser find text &quot;Sign In&quot; click
+agent-browser find label &quot;Email&quot; fill &quot;test@test.com&quot;
+agent-browser find first &quot;.item&quot; click
+agent-browser find nth 2 &quot;a&quot; text
+```
+
+### Wait
+
+```bash
+agent-browser wait &lt;selector&gt;         # Wait for element to be visible
+agent-browser wait &lt;ms&gt;               # Wait for time (milliseconds)
+agent-browser wait --text &quot;Welcome&quot;   # Wait for text to appear (substring match)
+agent-browser wait --url &quot;**/dash&quot;    # Wait for URL pattern
+agent-browser wait --load networkidle # Wait for load state
+agent-browser wait --fn &quot;window.ready === true&quot;  # Wait for JS condition
+
+# Wait for text/element to disappear
+agent-browser wait --fn &quot;!document.body.innerText.includes(&#039;Loading...&#039;)&quot;
+agent-browser wait &quot;#spinner&quot; --state hidden
+```
+
+**Load states:** `load`, `domcontentloaded`, `networkidle`
+
+### Batch Execution
+
+Execute multiple commands in a single invocation. Commands can be passed as
+quoted arguments or piped as JSON via stdin. This avoids per-command process
+startup overhead when running multi-step workflows.
+
+```bash
+# Argument mode: each quoted argument is a full command
+agent-browser batch &quot;open https://example.com&quot; &quot;snapshot -i&quot; &quot;screenshot&quot;
+
+# With --bail to stop on first error
+agent-browser batch --bail &quot;open https://example.com&quot; &quot;click @e1&quot; &quot;screenshot&quot;
+
+# Stdin mode: pipe commands as JSON
+echo &#039;[
+  [&quot;open&quot;, &quot;https://example.com&quot;],
+  [&quot;snapshot&quot;, &quot;-i&quot;],
+  [&quot;click&quot;, &quot;@e1&quot;],
+  [&quot;screenshot&quot;, &quot;result.png&quot;]
+]&#039; | agent-browser batch --json
+```
+
+### Clipboard
+
+```bash
+agent-browser clipboard read                      # Read text from clipboard
+agent-browser clipboard write &quot;Hello, World!&quot;     # Write text to clipboard
+agent-browser clipboard copy                      # Copy current selection (Ctrl+C)
+agent-browser clipboard paste                     # Paste from clipboard (Ctrl+V)
+```
+
+### Mouse Control
+
+```bash
+agent-browser mouse move &lt;x&gt; &lt;y&gt;      # Move mouse
+agent-browser mouse down [button]     # Press button (left/right/middle)
+agent-browser mouse up [button]       # Release button
+agent-browser mouse wheel &lt;dy&gt; [dx]   # Scroll wheel
+```
+
+### Browser Settings
+
+```bash
+agent-browser set viewport &lt;w&gt; &lt;h&gt; [scale]  # Set viewport size (scale for retina, e.g. 2)
+agent-browser set device &lt;name&gt;       # Emulate device (&quot;iPhone 14&quot;)
+agent-browser set geo &lt;lat&gt; &lt;lng&gt;     # Set geolocation
+agent-browser set offline [on|off]    # Toggle offline mode
+agent-browser set headers &lt;json&gt;      # Extra HTTP headers
+agent-browser set credentials &lt;u&gt; &lt;p&gt; # HTTP basic auth
+agent-browser set media [dark|light]  # Emulate color scheme
+```
+
+### Cookies &amp; Storage
+
+```bash
+agent-browser cookies                 # Get all cookies
+agent-browser cookies set &lt;name&gt; &lt;val&gt; # Set cookie
+agent-browser cookies clear           # Clear cookies
+
+agent-browser storage local           # Get all localStorage
+agent-browser storage local &lt;key&gt;     # Get specific key
+agent-browser storage local set &lt;k&gt; &lt;v&gt;  # Set value
+agent-browser storage local clear     # Clear all
+
+agent-browser storage session         # Same for sessionStorage
+```
+
+### Network
+
+```bash
+agent-browser network route &lt;url&gt;              # Intercept requests
+agent-browser network route &lt;url&gt; --abort      # Block requests
+agent-browser network route &lt;url&gt; --body &lt;json&gt;  # Mock response
+agent-browser network unroute [url]            # Remove routes
+agent-browser network requests                 # View tracked requests
+agent-browser network requests --filter api    # Filter requests
+agent-browser network requests --type xhr,fetch  # Filter by resource type
+agent-browser network requests --method POST   # Filter by HTTP method
+agent-browser network requests --status 2xx    # Filter by status (200, 2xx, 400-499)
+agent-browser network request &lt;requestId&gt;      # View full request/response detail
+agent-browser network har start                # Start HAR recording
+agent-browser network har stop [output.har]    # Stop and save HAR (temp path if omitted)
+```
+
+### Tabs &amp; Windows
+
+```bash
+agent-browser tab                     # List tabs
+agent-browser tab new [url]           # New tab (optionally with URL)
+agent-browser tab &lt;n&gt;                 # Switch to tab n
+agent-browser tab close [n]           # Close tab
+agent-browser window new              # New window
+```
+
+### Frames
+
+```bash
+agent-browser frame &lt;sel&gt;             # Switch to iframe
+agent-browser frame main              # Back to main frame
+```
+
+### Dialogs
+
+```bash
+agent-browser dialog accept [text]    # Accept (with optional prompt text)
+agent-browser dialog dismiss          # Dismiss
+agent-browser dialog status           # Check if a dialog is currently open
+```
+
+By default, `alert` and `beforeunload` dialogs are automatically accepted so they never block the agent. `confirm` and `prompt` dialogs still require explicit handling. Use `--no-auto-dialog` (or `AGENT_BROWSER_NO_AUTO_DIALOG=1`) to disable automatic handling.
+
+When a JavaScript dialog is pending, all command responses include a `warning` field with the dialog type and message.
+
+### Diff
+
+```bash
+agent-browser diff snapshot                              # Compare current vs last snapshot
+agent-browser diff snapshot --baseline before.txt        # Compare current vs saved snapshot file
+agent-browser diff snapshot --selector &quot;#main&quot; --compact # Scoped snapshot diff
+agent-browser diff screenshot --baseline before.png      # Visual pixel diff against baseline
+agent-browser diff screenshot --baseline b.png -o d.png  # Save diff image to custom path
+agent-browser diff screenshot --baseline b.png -t 0.2    # Adjust color threshold (0-1)
+agent-browser diff url https://v1.com https://v2.com     # Compare two URLs (snapshot diff)
+agent-browser diff url https://v1.com https://v2.com --screenshot  # Also visual diff
+agent-browser diff url https://v1.com https://v2.com --wait-until networkidle  # Custom wait strategy
+agent-browser diff url https://v1.com https://v2.com --selector &quot;#main&quot;  # Scope to element
+```
+
+### Debug
+
+```bash
+agent-browser trace start [path]      # Start recording trace
+agent-browser trace stop [path]       # Stop and save trace
+agent-browser profiler start          # Start Chrome DevTools profiling
+agent-browser profiler stop [path]    # Stop and save profile (.json)
+agent-browser console                 # View console messages (log, error, warn, info)
+agent-browser console --json          # JSON output with raw CDP args for programmatic access
+agent-browser console --clear         # Clear console
+agent-browser errors                  # View page errors (uncaught JavaScript exceptions)
+agent-browser errors --clear          # Clear errors
+agent-browser highlight &lt;sel&gt;         # Highlight element
+agent-browser inspect                 # Open Chrome DevTools for the active page
+agent-browser state save &lt;path&gt;       # Save auth state
+agent-browser state load &lt;path&gt;       # Load auth state
+agent-browser state list              # List saved state files
+agent-browser state show &lt;file&gt;       # Show state summary
+agent-browser state rename &lt;old&gt; &lt;new&gt; # Rename state file
+agent-browser state clear [name]      # Clear states for session
+agent-browser state clear --all       # Clear all saved states
+agent-browser state clean --older-than &lt;days&gt;  # Delete old states
+```
+
+### Navigation
+
+```bash
+agent-browser back                    # Go back
+agent-browser forward                 # Go forward
+agent-browser reload                  # Reload page
+```
+
+### Setup
+
+```bash
+agent-browser install                 # Download Chrome from Chrome for Testing (Google&#039;s official automation channel)
+agent-browser install --with-deps     # Also install system deps (Linux)
+agent-browser upgrade                 # Upgrade agent-browser to the latest version
+```
+
+## Authentication
+
+agent-browser provides multiple ways to persist login sessions so you don&#039;t re-authenticate every run.
+
+### Quick summary
+
+| Approach | Best for | Flag / Env |
+|----------|----------|------------|
+| **Chrome profile reuse** | Reuse your existing Chrome login state (cookies, sessions) with zero setup | `--profile &lt;name&gt;` / `AGENT_BROWSER_PROFILE` |
+| **Persistent profile** | Full browser state (cookies, IndexedDB, service workers, cache) across restarts | `--profile &lt;path&gt;` / `AGENT_BROWSER_PROFILE` |
+| **Session persistence** | Auto-save/restore cookies + localStorage by name | `--session-name &lt;name&gt;` / `AGENT_BROWSER_SESSION_NAME` |
+| **Import from your browser** | Grab auth from a Chrome session you already logged into | `--auto-connect` + `state save` |
+| **State file** | Load a previously saved state JSON on launch | `--state &lt;path&gt;` / `AGENT_BROWSER_STATE` |
+| **Auth vault** | Store credentials locally (encrypted), login by name | `auth save` / `auth login` |
+
+### Import auth from your browser
+
+If you are already logged in to a site in Chrome, you can grab that auth state and reuse it:
+
+```bash
+# 1. Launch Chrome with remote debugging enabled
+#    macOS:
+&quot;/Applications/Google Chrome.app/Contents/MacOS/Google Chrome&quot; --remote-debugging-port=9222
+#    Or use --auto-connect to discover an already-running Chrome
+
+# 2. Connect and save the authenticated state
+agent-browser --auto-connect state save ./my-auth.json
+
+# 3. Use the saved auth in future sessions
+agent-browser --state ./my-auth.json open https://app.example.com/dashboard
+
+# 4. Or use --session-name for automatic persistence
+agent-browser --session-name myapp state load ./my-auth.json
+# From now on, --session-name myapp auto-saves/restores this state
+```
+
+&gt; **Security notes:**
+&gt; - `--remote-debugging-port` exposes full browser control on localhost. Any local process can connect. Only use on trusted machines and close Chrome when done.
+&gt; - State files contain session tokens in plaintext. Add them to `.gitignore` and delete when no longer needed. For encryption at rest, set `AGENT_BROWSER_ENCRYPTION_KEY` (see [State Encryption](#state-encryption)).
+
+For full details on login flows, OAuth, 2FA, cookie-based auth, and the auth vault, see the [Authentication](docs/src/app/sessions/page.mdx) docs.
+
+## Sessions
+
+Run multiple isolated browser instances:
+
+```bash
+# Different sessions
+agent-browser --session agent1 open site-a.com
+agent-browser --session agent2 open site-b.com
+
+# Or via environment variable
+AGENT_BROWSER_SESSION=agent1 agent-browser click &quot;#btn&quot;
+
+# List active sessions
+agent-browser session list
+# Output:
+# Active sessions:
+# -&gt; default
+#    agent1
+
+# Show current session
+agent-browser session
+```
+
+Each session has its own:
+
+- Browser instance
+- Cookies and storage
+- Navigation history
+- Authentication state
+
+## Chrome Profile Reuse
+
+The fastest way to use your existing login state: pass a Chrome profile name to `--profile`:
+
+```bash
+# List available Chrome profiles
+agent-browser profiles
+
+# Reuse your default Chrome profile&#039;s login state
+agent-browser --profile Default open https://gmail.com
+
+# Use a named profile (by display name or directory name)
+agent-browser --profile &quot;Work&quot; open https://app.example.com
+
+# Or via environment variable
+AGENT_BROWSER_PROFILE=Default agent-browser open https://gmail.com
+```
+
+This copies your Chrome profile to a temp directory (read-only snapshot, no changes to your original profile), so the browser launches with your existing cookies and sessions.
+
+&gt; **Note:** On Windows, close Chrome before using `--profile &lt;name&gt;` if Chrome is running, as some profile files may be locked.
+
+## Persistent Profiles
+
+For a persistent custom profile directory that stores state across browser restarts, pass a path to `--profile`:
+
+```bash
+# Use a persistent profile directory
+agent-browser --profile ~/.myapp-profile open myapp.com
+
+# Login once, then reuse the authenticated session
+agent-browser --profile ~/.myapp-profile open myapp.com/dashboard
+
+# Or via environment variable
+AGENT_BROWSER_PROFILE=~/.myapp-profile agent-browser open myapp.com
+```
+
+The profile directory stores:
+
+- Cookies and localStorage
+- IndexedDB data
+- Service workers
+- Browser cache
+- Login sessions
+
+**Tip**: Use different profile paths for different projects to keep their browser state isolated.
+
+## Session Persistence
+
+Alternatively, use `--session-name` to automatically save and restore cookies and localStorage across browser restarts:
+
+```bash
+# Auto-save/load state for &quot;twitter&quot; session
+agent-browser --session-name twitter open twitter.com
+
+# Login once, then state persists automatically
+# State files stored in ~/.agent-browser/sessions/
+
+# Or via environment variable
+export AGENT_BROWSER_SESSION_NAME=twitter
+agent-browser open twitter.com
+```
+
+### State Encryption
+
+Encrypt saved session data at rest with AES-256-GCM:
+
+```bash
+# Generate key: openssl rand -hex 32
+export AGENT_BROWSER_ENCRYPTION_KEY=&lt;64-char-hex-key&gt;
+
+# State files are now encrypted automatically
+agent-browser --session-name secure open example.com
+```
+
+| Variable                          | Description                                        |
+| --------------------------------- | -------------------------------------------------- |
+| `AGENT_BROWSER_SESSION_NAME`      | Auto-save/load state persistence name              |
+| `AGENT_BROWSER_ENCRYPTION_KEY`    | 64-char hex key for AES-256-GCM encryption         |
+| `AGENT_BROWSER_STATE_EXPIRE_DAYS` | Auto-delete st
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
             <category>Rust</category>
         </item>
         <item>
-            <title><![CDATA[tree-sitter/tree-sitter]]></title>
-            <link>https://github.com/tree-sitter/tree-sitter</link>
-            <guid>https://github.com/tree-sitter/tree-sitter</guid>
-            <pubDate>Mon, 06 Apr 2026 00:11:04 GMT</pubDate>
-            <description><![CDATA[An incremental parsing system for programming tools]]></description>
+            <title><![CDATA[cocoindex-io/cocoindex]]></title>
+            <link>https://github.com/cocoindex-io/cocoindex</link>
+            <guid>https://github.com/cocoindex-io/cocoindex</guid>
+            <pubDate>Tue, 07 Apr 2026 00:11:34 GMT</pubDate>
+            <description><![CDATA[Data transformation framework for AI. Ultra performant, with incremental processing. 🌟 Star if you like it!]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/tree-sitter/tree-sitter">tree-sitter/tree-sitter</a></h1>
-            <p>An incremental parsing system for programming tools</p>
+            <h1><a href="https://github.com/cocoindex-io/cocoindex">cocoindex-io/cocoindex</a></h1>
+            <p>Data transformation framework for AI. Ultra performant, with incremental processing. 🌟 Star if you like it!</p>
             <p>Language: Rust</p>
-            <p>Stars: 24,502</p>
-            <p>Forks: 2,544</p>
+            <p>Stars: 6,757</p>
+            <p>Forks: 494</p>
             <p>Stars today: 19 stars today</p>
-            <h2>README</h2><pre># tree-sitter
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+    &lt;img src=&quot;https://cocoindex.io/images/github.svg&quot; alt=&quot;CocoIndex&quot;&gt;
+&lt;/p&gt;
 
-[![DOI](https://zenodo.org/badge/14164618.svg)](https://zenodo.org/badge/latestdoi/14164618)
-[![discord][discord]](https://discord.gg/w7nTvsVJhm)
-[![matrix][matrix]](https://matrix.to/#/#tree-sitter-chat:matrix.org)
+&lt;h1 align=&quot;center&quot;&gt;Data transformation for AI&lt;/h1&gt;
 
-Tree-sitter is a parser generator tool and an incremental parsing library. It can build a concrete syntax tree for a source file and efficiently update the syntax tree as the source file is edited. Tree-sitter aims to be:
+&lt;div align=&quot;center&quot;&gt;
 
-- **General** enough to parse any programming language
-- **Fast** enough to parse on every keystroke in a text editor
-- **Robust** enough to provide useful results even in the presence of syntax errors
-- **Dependency-free** so that the runtime library (which is written in pure C) can be embedded in any application
+[![GitHub](https://img.shields.io/github/stars/cocoindex-io/cocoindex?color=5B5BD6)](https://github.com/cocoindex-io/cocoindex)
+[![Documentation](https://img.shields.io/badge/Documentation-394e79?logo=readthedocs&amp;logoColor=00B9FF)](https://cocoindex.io/docs/getting_started/quickstart)
+[![License](https://img.shields.io/badge/license-Apache%202.0-5B5BD6?logoColor=white)](https://opensource.org/licenses/Apache-2.0)
+[![PyPI version](https://img.shields.io/pypi/v/cocoindex?color=5B5BD6)](https://pypi.org/project/cocoindex/)
+&lt;!--[![PyPI - Downloads](https://img.shields.io/pypi/dm/cocoindex)](https://pypistats.org/packages/cocoindex) --&gt;
+[![PyPI Downloads](https://static.pepy.tech/badge/cocoindex/month)](https://pepy.tech/projects/cocoindex)
+[![CI](https://github.com/cocoindex-io/cocoindex/actions/workflows/CI.yml/badge.svg?event=push&amp;color=5B5BD6)](https://github.com/cocoindex-io/cocoindex/actions/workflows/CI.yml)
+[![release](https://github.com/cocoindex-io/cocoindex/actions/workflows/release.yml/badge.svg?event=push&amp;color=5B5BD6)](https://github.com/cocoindex-io/cocoindex/actions/workflows/release.yml)
+[![Link Check](https://github.com/cocoindex-io/cocoindex/actions/workflows/links.yml/badge.svg)](https://github.com/cocoindex-io/cocoindex/actions/workflows/links.yml)
+[![prek](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/j178/prek/master/docs/assets/badge-v0.json)](https://github.com/j178/prek)
+[![Discord](https://img.shields.io/discord/1314801574169673738?logo=discord&amp;color=5B5BD6&amp;logoColor=white)](https://discord.com/invite/zpA9S2DR7s)
 
-## Links
-- [Documentation](https://tree-sitter.github.io)
-- [Rust binding](lib/binding_rust/README.md)
-- [Wasm binding](lib/binding_web/README.md)
-- [Command-line interface](crates/cli/README.md)
+&lt;/div&gt;
 
-[discord]: https://img.shields.io/discord/1063097320771698699?logo=discord&amp;label=discord
-[matrix]: https://img.shields.io/matrix/tree-sitter-chat%3Amatrix.org?logo=matrix&amp;label=matrix
+&lt;div align=&quot;center&quot;&gt;
+    &lt;a href=&quot;https://trendshift.io/repositories/13939&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/13939&quot; alt=&quot;cocoindex-io%2Fcocoindex | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+Ultra performant data transformation framework for AI, with core engine written in Rust. Support incremental processing and data lineage out-of-box.  Exceptional developer velocity. Production-ready at day 0.
+
+⭐ Drop a star to help us grow!
+
+&lt;div align=&quot;center&quot;&gt;
+
+&lt;!-- Keep these links. Translations will automatically update with the README. --&gt;
+[Deutsch](https://readme-i18n.com/cocoindex-io/cocoindex?lang=de) |
+[English](https://readme-i18n.com/cocoindex-io/cocoindex?lang=en) |
+[Español](https://readme-i18n.com/cocoindex-io/cocoindex?lang=es) |
+[français](https://readme-i18n.com/cocoindex-io/cocoindex?lang=fr) |
+[日本語](https://readme-i18n.com/cocoindex-io/cocoindex?lang=ja) |
+[한국어](https://readme-i18n.com/cocoindex-io/cocoindex?lang=ko) |
+[Português](https://readme-i18n.com/cocoindex-io/cocoindex?lang=pt) |
+[Русский](https://readme-i18n.com/cocoindex-io/cocoindex?lang=ru) |
+[中文](https://readme-i18n.com/cocoindex-io/cocoindex?lang=zh)
+
+&lt;/div&gt;
+
+&lt;/br&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+    &lt;img src=&quot;https://cocoindex.io/images/transformation.svg&quot; alt=&quot;CocoIndex Transformation&quot;&gt;
+&lt;/p&gt;
+
+&lt;/br&gt;
+
+CocoIndex makes it effortless to transform data with AI, and keep source data and target in sync. Whether you’re building a vector index, creating knowledge graphs for context engineering or performing any custom data transformations — goes beyond SQL.
+
+&lt;/br&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img alt=&quot;CocoIndex Features&quot; src=&quot;https://cocoindex.io/images/venn2.svg&quot; /&gt;
+&lt;/p&gt;
+
+&lt;/br&gt;
+
+## Exceptional velocity
+
+Just declare transformation in dataflow with ~100 lines of python
+
+```python
+# import
+data[&#039;content&#039;] = flow_builder.add_source(...)
+
+# transform
+data[&#039;out&#039;] = data[&#039;content&#039;]
+    .transform(...)
+    .transform(...)
+
+# collect data
+collector.collect(...)
+
+# export to db, vector db, graph db ...
+collector.export(...)
+```
+
+CocoIndex follows the idea of [Dataflow](https://en.wikipedia.org/wiki/Dataflow_programming) programming model. Each transformation creates a new field solely based on input fields, without hidden states and value mutation. All data before/after each transformation is observable, with lineage out of the box.
+
+**Particularly**, developers don&#039;t explicitly mutate data by creating, updating and deleting. They just need to define transformation/formula for a set of source data.
+
+## Plug-and-Play Building Blocks
+
+Native builtins for different source, targets and transformations. Standardize interface, make it 1-line code switch between different components - as easy as assembling building blocks.
+
+&lt;p align=&quot;center&quot;&gt;
+    &lt;img src=&quot;https://cocoindex.io/images/components.svg&quot; alt=&quot;CocoIndex Features&quot;&gt;
+&lt;/p&gt;
+
+## Data Freshness
+
+CocoIndex keep source data and target in sync effortlessly.
+
+&lt;p align=&quot;center&quot;&gt;
+    &lt;img src=&quot;https://github.com/user-attachments/assets/f4eb29b3-84ee-4fa0-a1e2-80eedeeabde6&quot; alt=&quot;Incremental Processing&quot; width=&quot;700&quot;&gt;
+&lt;/p&gt;
+
+It has out-of-box support for incremental indexing:
+
+- minimal recomputation on source or logic change.
+- (re-)processing necessary portions; reuse cache when possible
+
+## Quick Start
+
+If you&#039;re new to CocoIndex, we recommend checking out
+
+- 📖 [Documentation](https://cocoindex.io/docs)
+- ⚡  [Quick Start Guide](https://cocoindex.io/docs/getting_started/quickstart)
+- 🎬 [Quick Start Video Tutorial](https://youtu.be/gv5R8nOXsWU?si=9ioeKYkMEnYevTXT)
+
+### Setup
+
+1. Install CocoIndex Python library
+
+```sh
+pip install -U cocoindex
+```
+
+2. [Install Postgres](https://cocoindex.io/docs/getting_started/installation#-install-postgres) if you don&#039;t have one. CocoIndex uses it for incremental processing.
+
+3. (Optional) Install Claude Code skill for enhanced development experience. Run these commands in [Claude Code](https://claude.com/claude-code):
+
+```
+/plugin marketplace add cocoindex-io/cocoindex-claude
+/plugin install cocoindex-skills@cocoindex
+```
+
+## Define data flow
+
+Follow [Quick Start Guide](https://cocoindex.io/docs/getting_started/quickstart) to define your first indexing flow. An example flow looks like:
+
+```python
+@cocoindex.flow_def(name=&quot;TextEmbedding&quot;)
+def text_embedding_flow(flow_builder: cocoindex.FlowBuilder, data_scope: cocoindex.DataScope):
+    # Add a data source to read files from a directory
+    data_scope[&quot;documents&quot;] = flow_builder.add_source(cocoindex.sources.LocalFile(path=&quot;markdown_files&quot;))
+
+    # Add a collector for data to be exported to the vector index
+    doc_embeddings = data_scope.add_collector()
+
+    # Transform data of each document
+    with data_scope[&quot;documents&quot;].row() as doc:
+        # Split the document into chunks, put into `chunks` field
+        doc[&quot;chunks&quot;] = doc[&quot;content&quot;].transform(
+            cocoindex.functions.SplitRecursively(),
+            language=&quot;markdown&quot;, chunk_size=2000, chunk_overlap=500)
+
+        # Transform data of each chunk
+        with doc[&quot;chunks&quot;].row() as chunk:
+            # Embed the chunk, put into `embedding` field
+            chunk[&quot;embedding&quot;] = chunk[&quot;text&quot;].transform(
+                cocoindex.functions.SentenceTransformerEmbed(
+                    model=&quot;sentence-transformers/all-MiniLM-L6-v2&quot;))
+
+            # Collect the chunk into the collector.
+            doc_embeddings.collect(filename=doc[&quot;filename&quot;], location=chunk[&quot;location&quot;],
+                                   text=chunk[&quot;text&quot;], embedding=chunk[&quot;embedding&quot;])
+
+    # Export collected data to a vector index.
+    doc_embeddings.export(
+        &quot;doc_embeddings&quot;,
+        cocoindex.targets.Postgres(),
+        primary_key_fields=[&quot;filename&quot;, &quot;location&quot;],
+        vector_indexes=[
+            cocoindex.VectorIndexDef(
+                field_name=&quot;embedding&quot;,
+                metric=cocoindex.VectorSimilarityMetric.COSINE_SIMILARITY)])
+```
+
+It defines an index flow like this:
+
+&lt;p align=&quot;center&quot;&gt;
+    &lt;img width=&quot;400&quot; alt=&quot;Data Flow&quot; src=&quot;https://github.com/user-attachments/assets/2ea7be6d-3d94-42b1-b2bd-22515577e463&quot; /&gt;
+&lt;/p&gt;
+
+## 🚀 Examples and demo
+
+| Example | Description |
+|---------|-------------|
+| [Text Embedding](examples/text_embedding) | Index text documents with embeddings for semantic search |
+| [Code Embedding](examples/code_embedding) | Index code embeddings for semantic search |
+| [PDF Embedding](examples/pdf_embedding) | Parse PDF and index text embeddings for semantic search |
+| [PDF Elements Embedding](examples/pdf_elements_embedding) | Extract text and images from PDFs; embed text with SentenceTransformers and images with CLIP; store in Qdrant for multimodal search |
+| [Manuals LLM Extraction](examples/manuals_llm_extraction) | Extract structured information from a manual using LLM |
+| [Amazon S3 Embedding](examples/amazon_s3_embedding) | Index text documents from Amazon S3 |
+| [Azure Blob Storage Embedding](examples/azure_blob_embedding) | Index text documents from Azure Blob Storage |
+| [Google Drive Text Embedding](examples/gdrive_text_embedding) | Index text documents from Google Drive |
+| [Meeting Notes to Knowledge Graph](examples/meeting_notes_graph) | Extract structured meeting info from Google Drive and build a knowledge graph |
+| [Docs to Knowledge Graph](examples/docs_to_knowledge_graph) | Extract relationships from Markdown documents and build a knowledge graph |
+| [Embeddings to Qdrant](examples/text_embedding_qdrant) | Index documents in a Qdrant collection for semantic search |
+| [Embeddings to LanceDB](examples/text_embedding_lancedb) | Index documents in a LanceDB collection for semantic search |
+| [FastAPI Server with Docker](examples/fastapi_server_docker) | Run the semantic search server in a Dockerized FastAPI setup |
+| [Product Recommendation](examples/product_recommendation) | Build real-time product recommendations with LLM and graph database|
+| [Image Search with Vision API](examples/image_search) | Generates detailed captions for images using a vision model, embeds them, enables live-updating semantic search via FastAPI and served on a React frontend|
+| [Face Recognition](examples/face_recognition) | Recognize faces in images and build embedding index |
+| [Paper Metadata](examples/paper_metadata) | Index papers in PDF files, and build metadata tables for each paper |
+| [Multi Format Indexing](examples/multi_format_indexing) | Build visual document index from PDFs and images with ColPali for semantic search |
+| [Custom Source HackerNews](examples/custom_source_hn) | Index HackerNews threads and comments, using *CocoIndex Custom Source* |
+| [Custom Output Files](examples/custom_output_files) | Convert markdown files to HTML files and save them to a local directory, using *CocoIndex Custom Targets* |
+| [Patient intake form extraction](examples/patient_intake_extraction) | Use LLM to extract structured data from patient intake forms with different formats |
+| [HackerNews Trending Topics](examples/hn_trending_topics) | Extract trending topics from HackerNews threads and comments, using *CocoIndex Custom Source* and LLM |
+| [Patient Intake Form Extraction with BAML](examples/patient_intake_extraction_baml) | Extract structured data from patient intake forms using BAML |
+| [Patient Intake Form Extraction with DSPy](examples/patient_intake_extraction_dspy) | Extract structured data from patient intake forms using DSPy |
+
+More coming and stay tuned 👀!
+
+## 📖 Documentation
+
+For detailed documentation, visit [CocoIndex Documentation](https://cocoindex.io/docs), including a [Quickstart guide](https://cocoindex.io/docs/getting_started/quickstart).
+
+## 🤝 Contributing
+
+We love contributions from our community ❤️. For details on contributing or running the project for development, check out our [contributing guide](https://cocoindex.io/docs/about/contributing).
+
+## 👥 Community
+
+Welcome with a huge coconut hug 🥥⋆｡˚🤗. We are super excited for community contributions of all kinds - whether it&#039;s code improvements, documentation updates, issue reports, feature requests, and discussions in our Discord.
+
+Join our community here:
+
+- 🌟 [Star us on GitHub](https://github.com/cocoindex-io/cocoindex)
+- 👋 [Join our Discord community](https://discord.com/invite/zpA9S2DR7s)
+- ▶️ [Subscribe to our YouTube channel](https://www.youtube.com/@cocoindex-io)
+- 📜 [Read our blog posts](https://cocoindex.io/blogs/)
+
+## Support us
+
+We are constantly improving, and more features and examples are coming soon. If you love this project, please drop us a star ⭐ at GitHub repo [![GitHub](https://img.shields.io/github/stars/cocoindex-io/cocoindex?color=5B5BD6)](https://github.com/cocoindex-io/cocoindex) to stay tuned and help us grow.
+
+## License
+
+CocoIndex is Apache 2.0 licensed.
 </pre>
           ]]></content:encoded>
             <category>Rust</category>
         </item>
         <item>
-            <title><![CDATA[a2x/cs2-dumper]]></title>
-            <link>https://github.com/a2x/cs2-dumper</link>
-            <guid>https://github.com/a2x/cs2-dumper</guid>
-            <pubDate>Mon, 06 Apr 2026 00:11:03 GMT</pubDate>
-            <description><![CDATA[Counter-Strike: 2 Offset Dumper]]></description>
+            <title><![CDATA[RustPython/RustPython]]></title>
+            <link>https://github.com/RustPython/RustPython</link>
+            <guid>https://github.com/RustPython/RustPython</guid>
+            <pubDate>Tue, 07 Apr 2026 00:11:33 GMT</pubDate>
+            <description><![CDATA[A Python Interpreter written in Rust]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/a2x/cs2-dumper">a2x/cs2-dumper</a></h1>
-            <p>Counter-Strike: 2 Offset Dumper</p>
+            <h1><a href="https://github.com/RustPython/RustPython">RustPython/RustPython</a></h1>
+            <p>A Python Interpreter written in Rust</p>
             <p>Language: Rust</p>
-            <p>Stars: 1,896</p>
-            <p>Forks: 284</p>
-            <p>Stars today: 0 stars today</p>
-            <h2>README</h2><pre># cs2-dumper
+            <p>Stars: 21,965</p>
+            <p>Forks: 1,422</p>
+            <p>Stars today: 23 stars today</p>
+            <h2>README</h2><pre>&lt;img src=&quot;./logo.png&quot; width=&quot;125&quot; height=&quot;125&quot; align=&quot;right&quot; /&gt;
 
-An external offset/interface dumper for Counter-Strike 2, with support for both Windows &amp; Linux. Powered
-by [memflow](https://github.com/memflow/memflow).
+# [RustPython](https://rustpython.github.io/)
 
-The native Linux version is available in the [linux](https://github.com/a2x/cs2-dumper/tree/linux) branch (currently
-outdated).
+A Python-3 (CPython &gt;= 3.14.0) Interpreter written in Rust :snake: :scream:
+:metal:.
 
-For a work-in-progress offline version, check out the [cs2-analyzer](https://github.com/a2x/cs2-analyzer) repository or
-view its included web demo [here](https://a2x.github.io/cs2-analyzer).
-
-## Getting Started
-
-You can download the latest release from [Releases](https://github.com/a2x/cs2-dumper/releases) or compile it yourself.
-Note that compiling it yourself requires your Rust compiler version to be at least 1.74.0 or newer.
+[![Build Status](https://github.com/RustPython/RustPython/workflows/CI/badge.svg)](https://github.com/RustPython/RustPython/actions?query=workflow%3ACI)
+[![codecov](https://codecov.io/gh/RustPython/RustPython/branch/main/graph/badge.svg)](https://codecov.io/gh/RustPython/RustPython)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Contributors](https://img.shields.io/github/contributors/RustPython/RustPython.svg)](https://github.com/RustPython/RustPython/graphs/contributors)
+[![Discord Shield](https://discordapp.com/api/guilds/1043121930691149845/widget.png?style=shield)][discord]
+[![docs.rs](https://docs.rs/rustpython/badge.svg)](https://docs.rs/rustpython/)
+[![Crates.io](https://img.shields.io/crates/v/rustpython)](https://crates.io/crates/rustpython)
+[![dependency status](https://deps.rs/crate/rustpython/0.1.1/status.svg)](https://deps.rs/crate/rustpython/0.1.1)
+[![Open in Gitpod](https://img.shields.io/static/v1?label=Open%20in&amp;message=Gitpod&amp;color=1aa6e4&amp;logo=gitpod)](https://gitpod.io#https://github.com/RustPython/RustPython)
 
 ## Usage
 
-1. Ensure the game is running (Being in the main menu should suffice).
-2. Run the `cs2-dumper` executable.
+**Check out our [online demo](https://rustpython.github.io/demo/) running on WebAssembly.**
 
-_Note:_ If you run the executable without specifying an optional memflow connector name, it will automatically use the
-[memflow-native](https://github.com/memflow/memflow-native) OS layer to read the memory of the game process. If you
-wish to use an existing memflow connector instead, such as **pcileech** or **kvm**, you can pass the `connector` and
-optional `connector-args` arguments to the program. These connectors can be installed and managed using
-the [memflowup](https://github.com/memflow/memflowup) tool.
+RustPython requires Rust latest stable version (e.g 1.67.1 at February 7th 2023). If you don&#039;t
+currently have Rust installed on your system you can do so by following the instructions at [rustup.rs](https://rustup.rs/).
 
-E.g (for pcileech). `cs2-dumper -c pcileech -a :device=FPGA -vv`
+To check the version of Rust you&#039;re currently running, use `rustc --version`. If you wish to update,
+`rustup update stable` will update your Rust installation to the most recent stable release.
 
-Certain connectors, such as the [kvm](https://github.com/memflow/memflow-kvm) connector on Linux or
-the [pcileech](https://github.com/memflow/memflow-pcileech) / [winio](https://github.com/a2x/memflow-winio)
-connectors on Windows, require elevated privileges to work. So either run the `cs2-dumper` executable with `sudo` on
-Linux or as an administrator on Windows.
-
-### Available Arguments
-
-- `-c, --connector &lt;connector&gt;`: The name of the memflow connector to use.
-- `-a, --connector-args &lt;connector-args&gt;`: Additional arguments to pass to the memflow connector.
-- `-f, --file-types &lt;file-types&gt;`: The types of files to generate. Default: `cs`, `hpp`,  `json`, `rs`, `zig`.
-- `-i, --indent-size &lt;indent-size&gt;`: The number of spaces to use per indentation level. Default: `4`.
-- `-o, --output &lt;output&gt;`: The output directory to write the generated files to. Default: `output`.
-- `-p, --process-name &lt;process-name&gt;`: The name of the game process. Default: `cs2.exe`.
-- `-v...`: Increase logging verbosity. Can be specified multiple times.
-- `-h, --help`: Print help.
-- `-V, --version`: Print version.
-
-## Running Tests
-
-To run the few basic provided tests, use the following command: `cargo test -- --nocapture`.
-
-## License
-
-Licensed under the MIT license ([LICENSE](./LICENSE)).
-</pre>
-          ]]></content:encoded>
-            <category>Rust</category>
-        </item>
-        <item>
-            <title><![CDATA[fathyb/carbonyl]]></title>
-            <link>https://github.com/fathyb/carbonyl</link>
-            <guid>https://github.com/fathyb/carbonyl</guid>
-            <pubDate>Mon, 06 Apr 2026 00:11:02 GMT</pubDate>
-            <description><![CDATA[Chromium running inside your terminal]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/fathyb/carbonyl">fathyb/carbonyl</a></h1>
-            <p>Chromium running inside your terminal</p>
-            <p>Language: Rust</p>
-            <p>Stars: 18,157</p>
-            <p>Forks: 470</p>
-            <p>Stars today: 68 stars today</p>
-            <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
-          ]]></content:encoded>
-            <category>Rust</category>
-        </item>
-        <item>
-            <title><![CDATA[zed-industries/zed]]></title>
-            <link>https://github.com/zed-industries/zed</link>
-            <guid>https://github.com/zed-industries/zed</guid>
-            <pubDate>Mon, 06 Apr 2026 00:11:01 GMT</pubDate>
-            <description><![CDATA[Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/zed-industries/zed">zed-industries/zed</a></h1>
-            <p>Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.</p>
-            <p>Language: Rust</p>
-            <p>Stars: 78,531</p>
-            <p>Forks: 7,703</p>
-            <p>Stars today: 70 stars today</p>
-            <h2>README</h2><pre># Zed
-
-[![Zed](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/zed-industries/zed/main/assets/badge/v0.json)](https://zed.dev)
-[![CI](https://github.com/zed-industries/zed/actions/workflows/run_tests.yml/badge.svg)](https://github.com/zed-industries/zed/actions/workflows/run_tests.yml)
-
-Welcome to Zed, a high-performance, multiplayer code editor from the creators of [Atom](https://github.com/atom/atom) and [Tree-sitter](https://github.com/tree-sitter/tree-sitter).
-
----
-
-### Installation
-
-On macOS, Linux, and Windows you can [download Zed directly](https://zed.dev/download) or install Zed via your local package manager ([macOS](https://zed.dev/docs/installation#macos)/[Linux](https://zed.dev/docs/linux#installing-via-a-package-manager)/[Windows](https://zed.dev/docs/windows#package-managers)).
-
-Other platforms are not yet available:
-
-- Web ([tracking issue](https://github.com/zed-industries/zed/issues/5396))
-
-### Developing Zed
-
-- [Building Zed for macOS](./docs/src/development/macos.md)
-- [Building Zed for Linux](./docs/src/development/linux.md)
-- [Building Zed for Windows](./docs/src/development/windows.md)
-
-### Contributing
-
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for ways you can contribute to Zed.
-
-Also... we&#039;re hiring! Check out our [jobs](https://zed.dev/jobs) page for open roles.
-
-### Licensing
-
-License information for third party dependencies must be correctly provided for CI to pass.
-
-We use [`cargo-about`](https://github.com/EmbarkStudios/cargo-about) to automatically comply with open source licenses. If CI is failing, check the following:
-
-- Is it showing a `no license specified` error for a crate you&#039;ve created? If so, add `publish = false` under `[package]` in your crate&#039;s Cargo.toml.
-- Is the error `failed to satisfy license requirements` for a dependency? If so, first determine what license the project has and whether this system is sufficient to comply with this license&#039;s requirements. If you&#039;re unsure, ask a lawyer. Once you&#039;ve verified that this system is acceptable add the license&#039;s SPDX identifier to the `accepted` array in `script/licenses/zed-licenses.toml`.
-- Is `cargo-about` unable to find the license for a dependency? If so, add a clarification field at the end of `script/licenses/zed-licenses.toml`, as specified in the [cargo-about book](https://embarkstudios.github.io/cargo-about/cli/generate/config.html#crate-configuration).
-
-## Sponsorship
-
-Zed is developed by **Zed Industries, Inc.**, a for-profit company.
-
-If you’d like to financially support the project, you can do so via GitHub Sponsors.
-Sponsorships go directly to Zed Industries and are used as general company revenue.
-There are no perks or entitlements associated with sponsorship.
-</pre>
-          ]]></content:encoded>
-            <category>Rust</category>
-        </item>
-        <item>
-            <title><![CDATA[EasyTier/EasyTier]]></title>
-            <link>https://github.com/EasyTier/EasyTier</link>
-            <guid>https://github.com/EasyTier/EasyTier</guid>
-            <pubDate>Mon, 06 Apr 2026 00:11:00 GMT</pubDate>
-            <description><![CDATA[A simple, decentralized mesh VPN with WireGuard support.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/EasyTier/EasyTier">EasyTier/EasyTier</a></h1>
-            <p>A simple, decentralized mesh VPN with WireGuard support.</p>
-            <p>Language: Rust</p>
-            <p>Stars: 10,692</p>
-            <p>Forks: 1,047</p>
-            <p>Stars today: 10 stars today</p>
-            <h2>README</h2><pre># EasyTier
-
-[![Github release](https://img.shields.io/github/v/tag/EasyTier/EasyTier)](https://github.com/EasyTier/EasyTier/releases)
-[![GitHub](https://img.shields.io/github/license/EasyTier/EasyTier)](https://github.com/EasyTier/EasyTier/blob/main/LICENSE)
-[![GitHub last commit](https://img.shields.io/github/last-commit/EasyTier/EasyTier)](https://github.com/EasyTier/EasyTier/commits/main)
-[![GitHub issues](https://img.shields.io/github/issues/EasyTier/EasyTier)](https://github.com/EasyTier/EasyTier/issues)
-[![GitHub Core Actions](https://github.com/EasyTier/EasyTier/actions/workflows/core.yml/badge.svg)](https://github.com/EasyTier/EasyTier/actions/workflows/core.yml)
-[![GitHub GUI Actions](https://github.com/EasyTier/EasyTier/actions/workflows/gui.yml/badge.svg)](https://github.com/EasyTier/EasyTier/actions/workflows/gui.yml)
-[![GitHub Test Actions](https://github.com/EasyTier/EasyTier/actions/workflows/test.yml/badge.svg)](https://github.com/EasyTier/EasyTier/actions/workflows/test.yml)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/EasyTier/EasyTier)
-
-[简体中文](/README_CN.md) | [English](/README.md)
-
-&gt; ✨ A simple, secure, decentralized virtual private network solution powered by Rust and Tokio
-
-&lt;p align=&quot;center&quot;&gt;
-&lt;img src=&quot;assets/config-page.png&quot; width=&quot;300&quot; alt=&quot;config page&quot;&gt;
-&lt;img src=&quot;assets/running-page.png&quot; width=&quot;300&quot; alt=&quot;running page&quot;&gt;
-&lt;/p&gt;
-
-📚 **[Full Documentation](https://easytier.cn/en/)** | 🖥️ **[Web Console](https://easytier.cn/web)** | 📝 **[Download Releases](https://github.com/EasyTier/EasyTier/releases)** | 🧩 **[Third Party Tools](https://easytier.cn/en/guide/installation_gui.html#third-party-graphical-interfaces)** | ❤️ **[Sponsor](#sponsor)**
-
-## Features
-
-### Core Features
-
-- 🔒 **Decentralized**: Nodes are equal and independent, no centralized services required  
-- 🚀 **Easy to Use**: Multiple operation methods via web, client, and command line  
-- 🌍 **Cross-Platform**: Supports Win/MacOS/Linux/FreeBSD/Android and X86/ARM/MIPS architectures  
-- 🔐 **Secure**: AES-GCM or WireGuard encryption, prevents man-in-the-middle attacks  
-
-### Advanced Capabilities
-
-- 🔌 **Efficient NAT Traversal**: Supports UDP and IPv6 traversal, works with NAT4-NAT4 networks  
-- 🌐 **Subnet Proxy**: Nodes can share subnets for other nodes to access  
-- 🔄 **Intelligent Routing**: Latency priority and automatic route selection for best network experience  
-- ⚡ **High Performance**: Zero-copy throughout the entire link, supports TCP/UDP/WSS/WG protocols  
-
-### Network Optimization
-
-- 📊 **UDP Loss Resistance**: KCP/QUIC proxy optimizes latency and bandwidth in high packet loss environments  
-- 🔧 **Web Management**: Easy configuration and monitoring through web interface  
-- 🛠️ **Zero Config**: Simple deployment with statically linked executables  
-
-## Quick Start
-
-### 📥 Installation
-
-Choose the installation method that best suits your needs:
-
-Linux (Recommended):
-```bash
-curl -fsSL &quot;https://github.com/EasyTier/EasyTier/blob/main/script/install.sh?raw=true&quot; | sudo bash -s install
-```
-
-Homebrew (MacOS/Linux):
-```bash
-brew tap brewforge/chinese
-brew install --cask easytier-gui
-```
-
-Windows (Recommended, run with administrator privileges):
-```powershell
-irm &quot;https://github.com/EasyTier/EasyTier/blob/main/script/install.ps1?raw=true&quot; | iex
-```
-
-Install via cargo (Latest development version): 
-```bash
-cargo install --git https://github.com/EasyTier/EasyTier.git easytier
-```
-
-[Install pre-built binary](https://github.com/EasyTier/EasyTier/releases) (Recommended, All platforms supported)
-
-[Install via Docker](https://easytier.cn/en/guide/installation.html#installation-methods)
-
-[Install OpenWrt ipk package](https://github.com/EasyTier/luci-app-easytier)
-
-Additional steps:
-
-[One-Click Register Service](https://easytier.cn/en/guide/network/oneclick-install-as-service.html) (Automatically start when the system boots and run in the background)
-
-### 🚀 Basic Usage
-
-#### Quick Networking with Shared Nodes
-
-EasyTier supports quick networking using shared public nodes. When you don&#039;t have a public IP, you can use the free shared nodes provided by the EasyTier community. Nodes will automatically attempt NAT traversal and establish P2P connections. When P2P fails, data will be relayed through shared nodes.
-
-When using shared nodes, each node entering the network needs to provide the same `--network-name` and `--network-secret` parameters as the unique identifier of the network.
-
-Taking two nodes as an example (Please use more complex network name to avoid conflicts):
-
-1. Run on Node A:
+To build RustPython locally, first, clone the source code:
 
 ```bash
-# Run with administrator privileges
-sudo easytier-core -d --network-name abc --network-secret abc -p tcp://&lt;SharedNodeIP&gt;:11010
+git clone https://github.com/RustPython/RustPython
 ```
 
-2. Run on Node B:
+RustPython uses symlinks to manage python libraries in `Lib/`. If on windows, running the following helps:
+```bash
+git config core.symlinks true
+```
+
+Then you can change into the RustPython directory and run the demo (Note: `--release` is
+needed to prevent stack overflow on Windows):
 
 ```bash
-# Run with administrator privileges
-sudo easytier-core -d --network-name abc --network-secret abc -p tcp://&lt;SharedNodeIP&gt;:11010
+$ cd RustPython
+$ cargo run --release demo_closures.py
+Hello, RustPython!
 ```
 
-After successful execution, you can check the network status using `easytier-cli`:
-
-```text
-| ipv4         | hostname       | cost  | lat_ms | loss_rate | rx_bytes | tx_bytes | tunnel_proto | nat_type | id         | version         |
-| ------------ | -------------- | ----- | ------ | --------- | -------- | -------- | ------------ | -------- | ---------- | --------------- |
-| 10.126.126.1 | abc-1          | Local | *      | *         | *        | *        | udp          | FullCone | 439804259  | 2.6.0-70e69a38~ |
-| 10.126.126.2 | abc-2          | p2p   | 3.452  | 0         | 17.33 kB | 20.42 kB | udp          | FullCone | 390879727  | 2.6.0-70e69a38~ |
-|              | PublicServer_a | p2p   | 27.796 | 0.000     | 50.01 kB | 67.46 kB | tcp          | Unknown  | 3771642457 | 2.6.0-70e69a38~ |
-```
-
-You can test connectivity between nodes:
+Or use the interactive shell:
 
 ```bash
-# Test connectivity
-ping 10.126.126.1
-ping 10.126.126.2
+$ cargo run --release
+Welcome to rustpython
+&gt;&gt;&gt;&gt;&gt; 2+2
+4
 ```
 
-Note: If you cannot ping through, it may be that the firewall is blocking incoming traffic. Please turn off the firewall or add allow rules.
+NOTE: For windows users, please set `RUSTPYTHONPATH` environment variable as `Lib` path in project directory.
+(e.g. When RustPython directory is `C:\RustPython`, set `RUSTPYTHONPATH` as `C:\RustPython\Lib`)
 
-To improve availability, you can connect to multiple shared nodes simultaneously:
+You can also install and run RustPython with the following:
 
 ```bash
-# Connect to multiple shared nodes
-sudo easytier-core -d --network-name abc --network-secret abc -p tcp://&lt;SharedNodeIP1&gt;:11010 -p udp://&lt;SharedNodeIP2&gt;:11010
+$ cargo install --git https://github.com/RustPython/RustPython rustpython
+$ rustpython
+Welcome to the magnificent Rust Python interpreter
+&gt;&gt;&gt;&gt;&gt;
 ```
 
-Once your network is set up successfully, you can easily configure it to start automatically on system boot. Refer to the [One-Click Register Service guide](https://easytier.cn/en/guide/network/oneclick-install-as-service.html) for step-by-step instructions on registering EasyTier as a system service.
+### venv
 
-#### Decentralized Networking
+Because RustPython currently doesn&#039;t provide a well-packaged installation, using venv helps to use pip easier.
 
-EasyTier is fundamentally decentralized, with no distinction between server and client. As long as one device can communicate with any node in the virtual network, it can join the virtual network. Here&#039;s how to set up a decentralized network:
+```sh
+$ rustpython -m venv &lt;your_env_name&gt;
+$ . &lt;your_env_name&gt;/bin/activate
+$ python # now `python` is the alias of the RustPython for the new env
+```
 
-1. Start First Node (Node A):
+### PIP
+
+If you&#039;d like to make https requests, you can enable the `ssl` feature, which
+also lets you install the `pip` package manager. Note that on Windows, you may
+need to install OpenSSL, or you can enable the `ssl-vendor` feature instead,
+which compiles OpenSSL for you but requires a C compiler, perl, and `make`.
+OpenSSL version 3 is expected and tested in CI. Older versions may not work.
+
+Once you&#039;ve installed rustpython with SSL support, you can install pip by
+running:
 
 ```bash
-# Start the first node
-sudo easytier-core -i 10.144.144.1
+cargo install --git https://github.com/RustPython/RustPython
+rustpython --install-pip
 ```
 
-After startup, this node will listen on the following ports by default:
-- TCP: 11010
-- UDP: 11010
-- WebSocket: 11011
-- WebSocket SSL: 11012
-- WireGuard: 11013
-
-2. Connect Second Node (Node B):
+You can also install RustPython through the `conda` package manager, though
+this isn&#039;t officially supported and may be out of date:
 
 ```bash
-# Connect to the first node using its public IP
-sudo easytier-core -i 10.144.144.2 -p udp://FIRST_NODE_PUBLIC_IP:11010
+conda install rustpython -c conda-forge
+rustpython
 ```
 
-3. Verify Connection:
+### SSL provider
+
+For HTTPS requests, `ssl-rustls` feature is enabled by default. You can replace it with `ssl-openssl` feature if your environment requires OpenSSL.
+Note that to use OpenSSL on Windows, you may need to install OpenSSL, or you can enable the `ssl-vendor` feature instead,
+which compiles OpenSSL for you but requires a C compiler, perl, and `make`.
+OpenSSL version 3 is expected and tested in CI. Older versions may not work.
+
+### WASI
+
+You can compile RustPython to a standalone WebAssembly WASI module so it can run anywhere.
+
+Build
 
 ```bash
-# Test connectivity
-ping 10.144.144.2
-
-# View connected peers
-easytier-cli peer
-
-# View routing information
-easytier-cli route
-
-# View local node information
-easytier-cli node
+cargo build --target wasm32-wasip1 --no-default-features --features freeze-stdlib,stdlib --release
 ```
 
-For more nodes to join the network, they can connect to any existing node in the network using the `-p` parameter:
+Run by wasmer
 
 ```bash
-# Connect to any existing node using its public IP
-sudo easytier-core -i 10.144.144.3 -p udp://ANY_EXISTING_NODE_PUBLIC_IP:11010
+wasmer run --dir `pwd` -- target/wasm32-wasip1/release/rustpython.wasm `pwd`/extra_tests/snippets/stdlib_random.py
 ```
 
-### 🔍 Advanced Features
-
-#### Subnet Proxy
-
-Assuming the network topology is as follows, Node B wants to share its accessible subnet 10.1.1.0/24 with other nodes:
-
-```mermaid
-flowchart LR
-
-subgraph Node A Public IP 22.1.1.1
-nodea[EasyTier&lt;br/&gt;10.144.144.1]
-end
-
-subgraph Node B
-nodeb[EasyTier&lt;br/&gt;10.144.144.2]
-end
-
-id1[[10.1.1.0/24]]
-
-nodea &lt;--&gt; nodeb &lt;-.-&gt; id1
-```
-
-To share a subnet, add the `-n` parameter when starting EasyTier:
+Run by wapm
 
 ```bash
-# Share subnet 10.1.1.0/24 with other nodes
-sudo easytier-core -i 10.144.144.2 -n 10.1.1.0/24
+$ wapm install rustpython
+$ wapm run rustpython
+&gt;&gt;&gt;&gt;&gt; 2+2
+4
 ```
 
-Subnet proxy information will automatically sync to each node in the virtual network, and each node will automatically configure the corresponding route. You can verify the subnet proxy setup:
+#### Building the WASI file
 
-1. Check if the routing information has been synchronized (the proxy_cidrs column shows the proxied subnets):
+You can build the WebAssembly WASI file with:
 
 ```bash
-# View routing information
-easytier-cli route
+cargo build --release --target wasm32-wasip1 --features=&quot;freeze-stdlib&quot;
 ```
 
-![Routing Information](/assets/image-3.png)
+&gt; Note: we use the `freeze-stdlib` to include the standard library inside the binary. You also have to run once `rustup target add wasm32-wasip1`.
 
-2. Test if you can access nodes in the proxied subnet:
+### JIT (Just in time) compiler
+
+RustPython has a **very** experimental JIT compiler that compile python functions into native code.
+
+#### Building
+
+By default the JIT compiler isn&#039;t enabled, it&#039;s enabled with the `jit` cargo feature.
 
 ```bash
-# Test connectivity to proxied subnet
-ping 10.1.1.2
+cargo run --features jit
 ```
 
-#### WireGuard Integration
+This requires autoconf, automake, libtool, and clang to be installed.
 
-EasyTier can act as a WireGuard server, allowing any device with a WireGuard client (including iOS and Android) to access the EasyTier network. Here&#039;s an example setup:
+#### Using
 
-```mermaid
-flowchart LR
-
-ios[[iPhone&lt;br/&gt;WireGuard Installed]]
-
-subgraph Node A Public IP 22.1.1.1
-nodea[EasyTier&lt;br/&gt;10.144.144.1]
-end
-
-subgraph Node B
-nodeb[EasyTier&lt;br/&gt;10.144.144.2]
-end
-
-id1[[10.1.1.0/24]]
-
-ios &lt;-.-&gt; nodea &lt;--&gt; nodeb &lt;-.-&gt; id1
-```
-
-1. Start EasyTier with WireGuard portal enabled:
-
-```bash
-# Listen on 0.0.0.0:11013 and use 10.14.14.0/24 subnet for WireGuard clients
-sudo easytier-core -i 10.144.144.1 --vpn-portal wg://0.0.0.0:11013/10.14.14.0/24
-```
-
-2. Get WireGuard client configuration:
-
-```bash
-# Get WireGuard client configuration
-easytier-cli vpn-portal
-```
-
-3. In the output configuration:
-   - Set `Interface.Address` to an available IP from the WireGuard subnet
-   - Set `Peer.Endpoint` to the public IP/domain of your EasyTier node
-   - Import the modified configuration into your WireGuard client
-
-#### Self-Hosted Public Shared Node
-
-You can run your own public shared node to help other nodes discover each other. A public shared node is just a regular EasyTier network (with same network name and secret) that other networks can connect to.
-
-To run a public shared node:
-
-```bash
-# No need to specify IPv4 address for public shared nodes
-sudo easytier-core --network-name mysharednode --network-secret mysharednode
-```
-
-## Related Projects
-
-- [ZeroTier](https://www.zerotier.com/): A global virtual network for connecting devices.
-- [TailScale](https://tailscale.com/): A VPN solution aimed at simplifying network configuration.
-
-### Contact Us
-
-- 💬 **[Telegram Group](https://t.me/easytier)**
-- 👥 **[QQ Group]**
-  - No.1 [949700262](https://qm.qq.com/q/wFoTUChqZW)
-  - No.2 [837676408](https://qm.qq.com/q/4V33DrfgHe)
-  - No.3 [957189589](https://qm.qq.com/q/YNyTQjwlai)
-
-## License
-
-EasyTier is released under the [LGPL-3.0](https://github.com/EasyTier/EasyTier/blob/main/LICENSE).
-
-## Sponsor
-
-CDN acceleration and security protection for this project are sponsored by Tencent EdgeOne.
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://edgeone.ai/?from=github&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;assets/edgeone.png&quot; width=&quot;200&quot; alt=&quot;EdgeOne Logo&quot;&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-
-Special thanks to [Langlang Cloud](https://langlangy.cn/?i26c5a5)  and [RainCloud](https://www.rainyun.com/NjM0NzQ1_) for sponsoring our public servers.
-
-&lt;p align=&quot;center&quot;&gt;
-&lt;a href=&quot;https://langlangy.cn/?i26c5a5&quot; target=&quot;_blank&quot;&gt;
-&lt;img src=&quot;assets/langlang.png&quot; width=&quot;200&quot;&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://langlangy.cn/?i26c5a5&quot; target=&quot;_blank&quot;&gt;
-&lt;img src=&quot;assets/raincloud.png&quot; width=&quot;200&quot;&gt;
-&lt;/a&gt;
-&lt;/p&gt;
-
-
-If you find EasyTier helpful, please consider sponsoring us. Software development and maintenance require a lot of time and effort, and your sponsorship will help us better maintain and improve EasyTier.
-
-&lt;p align=&quot;center&quot;&gt;
-&lt;img src=&quot;assets/wechat.png&quot; width=&quot;200&quot;&gt;
-&lt;img src=&quot;assets/alipay.png&quot; width=&quot;200&quot;&gt;
-&lt;/p&gt;
-</pre>
-          ]]></content:encoded>
-            <category>Rust</category>
-        </item>
-        <item>
-            <title><![CDATA[EricLBuehler/mistral.rs]]></title>
-            <link>https://github.com/EricLBuehler/mistral.rs</link>
-            <guid>https://github.com/EricLBuehler/mistral.rs</guid>
-            <pubDate>Mon, 06 Apr 2026 00:10:59 GMT</pubDate>
-            <description><![CDATA[Fast, flexible LLM inference]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/EricLBuehler/mistral.rs">EricLBuehler/mistral.rs</a></h1>
-            <p>Fast, flexible LLM inference</p>
-            <p>Language: Rust</p>
-            <p>Stars: 6,864</p>
-            <p>Forks: 557</p>
-            <p>Stars today: 20 stars today</p>
-            <h2>README</h2><pre>&lt;a name=&quot;top&quot;&gt;&lt;/a&gt;
-&lt;!--
-&lt;h1 align=&quot;center&quot;&gt;
-  mistral.rs
-&lt;/h1&gt;
---&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://raw.githubusercontent.com/EricLBuehler/mistral.rs/master/res/banner.png&quot; alt=&quot;mistral.rs&quot; width=&quot;100%&quot; style=&quot;max-width: 800px;&quot;&gt;
-&lt;/div&gt;
-
-&lt;h3 align=&quot;center&quot;&gt;
-Fast, flexible LLM inference.
-&lt;/h3&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  | &lt;a href=&quot;https://ericlbuehler.github.io/mistral.rs/&quot;&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/a&gt; | &lt;a href=&quot;https://crates.io/crates/mistralrs&quot;&gt;&lt;b&gt;Rust SDK&lt;/b&gt;&lt;/a&gt; | &lt;a href=&quot;https://ericlbuehler.github.io/mistral.rs/PYTHON_SDK.html&quot;&gt;&lt;b&gt;Python SDK&lt;/b&gt;&lt;/a&gt; | &lt;a href=&quot;https://discord.gg/SZrecqK8qw&quot;&gt;&lt;b&gt;Discord&lt;/b&gt;&lt;/a&gt; |
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/EricLBuehler/mistral.rs/stargazers&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/github/stars/EricLBuehler/mistral.rs?style=social&amp;label=Star&quot; alt=&quot;GitHub stars&quot;&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-
-## Latest
-
-- **Gemma 4**: Full multimodal: text, image, video, and audio input. [Guide](docs/GEMMA4.md) | [Video setup](docs/VIDEO.md)
-- **MXFP4 ISQ quantization**: MXFP4 with optimized decode kernels for faster, smaller models. [Quantization docs](docs/QUANTS.md)
-- **Qwen 3.5 model family**: Support for the Qwen 3.5 series including vision. [Guide](docs/QWEN3_5.md)
-
-## Why mistral.rs?
-
-- **Any Hugging Face model, zero config**: Just `mistralrs run -m user/model`.
-- **True multimodality**: Text, vision, video, and audio, speech generation, image generation, and embeddings in one engine.
-- **Full quantization control**: Choose the precise quantization you want to use, or make your own UQFF with `mistralrs quantize`.
-- **Built-in web UI**: `mistralrs serve --ui` gives you a web interface instantly.
-- **Hardware-aware**: `mistralrs tune` benchmarks your system and picks optimal quantization + device mapping.
-- **Flexible SDKs**: Python package and Rust crate to build your projects.
-- **Agentic features** — tool calling, web search, and MCP client built in
-
-## Quick Start
-
-### Install
-
-**Linux/macOS:**
-```bash
-curl --proto &#039;=https&#039; --tlsv1.2 -sSf https://raw.githubusercontent.com/EricLBuehler/mistral.rs/master/install.sh | sh
-```
-
-**Windows (PowerShell):**
-```powershell
-irm https://raw.githubusercontent.com/EricLBuehler/mistral.rs/master/install.ps1 | iex
-```
-
-[Manual installation &amp; other platforms](docs/INSTALLATION.md)
-
-### Run Your First Model
-
-```bash
-# Interactive chat
-mistralrs run -m Qwen/Qwen3-4B
-
-# One-shot prompt (no interactive session)
-mistralrs run -m Qwen/Qwen3-4B -i &quot;What is the capital of France?&quot;
-
-# One-shot with an image
-mistralrs run -m google/gemma-4-E4B-it --image photo.jpg -i &quot;Describe this image&quot;
-
-# Or start a server with web UI
-mistralrs serve --ui -m google/gemma-4-E4B-it
-```
-
-Then visit `http://localhost:1234/ui` for the web chat interface.
-
-### The `mistralrs` CLI
-
-The CLI is designed to be **zero-config**: just point it at a model and go.
-
-- **Auto-detection**: Automatically detects model architecture, quantization format, and chat template
-- **All-in-one**: Single binary for chat, server, benchmarks, and web UI (`run`, `serve`, `bench`)
-- **Hardware tuning**: Run `mistralrs tune` to automatically benchmark and configure optimal settings for your hardware
-- **Format-agnostic**: Works with Hugging Face models, GGUF files, and [UQFF quantizations](docs/UQFF.md) seamlessly
-
-```bash
-# Auto-tune for your hardware and emit a config file
-mistralrs tune -m Qwen/Qwen3-4B --emit-config config.toml
-
-# Run using the generated config
-mistralrs from-config -f config.toml
-
-# Diagnose system issues (CUDA, Metal, HuggingFace connectivity)
-mistralrs doctor
-```
-
-[Full CLI documentation](docs/CLI.md)
-
-&lt;details open&gt;
-  &lt;summary&gt;&lt;b&gt;Web Chat Demo&lt;/b&gt;&lt;/summary&gt;
-  &lt;br&gt;
-  &lt;img src=&quot;https://raw.githubusercontent.com/EricLBuehler/mistral.rs/master/res/chat.gif&quot; alt=&quot;Web Chat UI Demo&quot; /&gt;
-&lt;/details&gt;
-
-## What Makes It Fast
-
-**Performance**
-- Continuous batching support by default on all devices.
-- CUDA with [FlashAttention](docs/FLASH_ATTENTION.md) V2/V3, Metal, [multi-GPU tensor parallelism](docs/DISTRIBUTED/DISTRIBUTED.md)
-- [PagedAttention](docs/PAGED_ATTENTION.md) for high throughput continuous batching on CUDA or Apple Silicon, prefix caching (including multimodal)
-
-**Quantization** ([full docs](docs/QUANTS.md))
-- [In-situ quantization (ISQ)](docs/ISQ.md) of any Hugging Face model
-- GGUF (2-8 bit), GPTQ, AWQ, HQQ, FP8, BNB support
-- ⭐ [Per-layer topology](docs/TOPOLOGY.md): Fine-tune quantization per layer for optimal quality/speed
-- ⭐ Auto-select fastest quant method for your hardware
-
-**Flexibility**
-- [LoRA &amp; X-LoRA](docs/ADAPTER_MODELS.md) with weight merging
-- [AnyMoE](docs/ANYMOE.md): Create mixture-of-experts on any base model
-- [Multiple models](docs/multi_model/README.md): Load/unload at runtime
-
-**Agentic Features**
-- Integrated [tool calling](docs/TOOL_CALLING.md) with Python/Rust callbacks
-- ⭐ [Web search integration](docs/WEB_SEARCH.md)
-- ⭐ [MCP client](docs/MCP/client.md): Connect to external tools automatically
-
-[Full feature documentation](docs/README.md)
-
-## Supported Models
-
-&lt;details&gt;
-&lt;summary&gt;&lt;b&gt;Text Models&lt;/b&gt;&lt;/summary&gt;
-
-- Granite 4.0
-- SmolLM 3
-- DeepSeek V3
-- GPT-OSS
-- DeepSeek V2
-- Qwen 3 Next
-- Qwen 3 MoE
-- Phi 3.5 MoE
-- Qwen 3
-- GLM 4
-- GLM-4.7-Flash
-- GLM-4.7 (MoE)
-- Gemma 2
-- Qwen 2
-- Starcoder 2
-- Phi 3
-- Mixtral
-- Phi 2
-- Gemma
-- Llama
-- Mistral
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;b&gt;Multimodal Models&lt;/b&gt;&lt;/summary&gt;
-
-- Qwen 3.5
-- Qwen 3.5 MoE
-- Qwen 3-VL
-- Qwen 3-VL MoE
-- Gemma 3n
-- Llama 4
-- Gemma 3
-- Mistral 3
-- Phi 4 multimodal
-- Qwen 2.5-VL
-- MiniCPM-O
-- Llama 3.2 Vision
-- Qwen 2-VL
-- Idefics 3
-- Idefics 2
-- LLaVA Next
-- LLaVA
-- Phi 3V
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;b&gt;Speech Models&lt;/b&gt;&lt;/summary&gt;
-
-- Voxtral (ASR/speech-to-text)
-- Dia
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;b&gt;Image Generation Models&lt;/b&gt;&lt;/summary&gt;
-
-- FLUX
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;b&gt;Embedding Models&lt;/b&gt;&lt;/summary&gt;
-
-- Embedding Gemma
-- Qwen 3 Embedding
-&lt;/details&gt;
-
-[Request a new model](https://github.com/EricLBuehler/mistral.rs/issues/156) | [Full compatibility tables](docs/SUPPORTED_MODELS.md)
-
-## Python SDK
-
-```bash
-pip install mistralrs  # or mistralrs-cuda, mistralrs-metal, mistralrs-mkl, mistralrs-accelerate
-```
+To compile a function, call `__jit__()` on it.
 
 ```python
-from mistralrs import Runner, Which, ChatCompletionRequest
+def foo():
+    a = 5
+    return 10 + a
 
-runner = Runner(
-    which=Which.Plain(model_id=&quot;Qwen/Qwen3-4B&quot;),
-    in_situ_quant=&quot;4&quot;,
-)
-
-res = runner.send_chat_completion_request(
-    ChatCompletionRequest(
-        model=&quot;default&quot;,
-        messages=[{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Hello!&quot;}],
-        max_tokens=256,
-    )
-)
-print(res.choices[0].message.content)
+foo.__jit__()  # this will compile foo to native code and subsequent calls will execute that native code
+assert foo() == 15
 ```
 
-[Python SDK](https://ericlbuehler.github.io/mistral.rs/PYTHON_SDK.html) | [Installation](https://ericlbuehler.github.io/mistral.rs/PYTHON_INSTALLATION.html) | [Examples](examples/python) | [Cookbook](examples/python/cookbook.ipynb)
+## Embedding RustPython into your Rust Applications
 
-## Rust SDK
+Interested in exposing Python scripting in an application written in Rust,
+perhaps to allow quickly tweaking logic where Rust&#039;s compile times would be inhibitive?
+Then `examples/hello_embed.rs` and `examples/mini_repl.rs` may be of some assistance.
 
-```bash
-cargo add mistralrs
-```
+## Disclaimer
 
-```rust
-use anyhow::Result;
-use mistralrs::{IsqType, TextMessageRole, TextMessages, MultimodalModelBuilder};
+RustPython is in development, and while the interpreter certainly can be used
+in interesting use cases like running Python in WASM and embedding into a Rust
+project, do note that RustPython is not totally production-ready.
 
-#[tokio::main]
-async fn main() -&gt; Result&lt;()&gt; {
-    let model = MultimodalModelBuilder::new(&quot;google/gemma-4-E4B-it&quot;)
-        .with_isq(IsqType::Q4K)
-        .with_logging()
-        .build()
-        .await?;
+Contribution is more than welcome! See our contribution section for more
+information on this.
 
-    let messages = TextMessages::new().add_message(
-        TextMessageRole::User,
-        &quot;Hello!&quot;,
-    );
+## Conference videos
 
-    let response = model.send_chat_request(messages).await?;
+Checkout those talks on conferences:
 
-    println!(&quot;{:?}&quot;, response.choices[0].message.content);
+- [FOSDEM 2019](https://www.youtube.com/watch?v=nJDY9ASuiLc)
+- [EuroPython 2018](https://www.youtube.com/watch?v=YMmio0JHy_Y)
 
-    Ok(())
-}
-```
+## Use cases
 
-[API Docs](https://docs.rs/mistralrs) | [Crate](https://crates.io/crates/mistralrs) | [Examples](mistralrs/examples)
+Although RustPython is a fairly young project, a few people have used it to
+make cool projects:
 
-## Docker
+- [GreptimeDB](https://github.com/GreptimeTeam/greptimedb): an open-source, cloud-native, distributed time-series database. Using RustPython for embedded scripting.
+- [pyckitup](https://github.com/pickitup247/pyckitup): a game engine written in
+  rust.
+- [Robot Rumble](https://github.com/robot-rumble/logic/): an arena-based AI competition platform
+- [Ruff](https://github.com/charliermarsh/ruff/): an extremely fast Python linter, written in Rust
 
-For quick containerized deployment:
+## Goals
 
-```bash
-docker pull ghcr.io/ericlbuehler/mistral.rs:latest
-docker run --gpus all -p 1234:1234 ghcr.io/ericlbuehler/mistral.rs:latest \
-  serve -m Qwen/Qwen3-4B
-```
-
-[Docker images](https://github.com/EricLBuehler/mistral.rs/pkgs/container/mistral.rs)
-
-&gt; For production use, we recommend installing the CLI directly for maximum flexibility.
+- Full Python-3 environment entirely in Rust (not CPython bindings)
+- A clean implementation without compatibility hacks
 
 ## Documentation
 
-For complete documentation, see the **[Documentation](https://ericlbuehler.github.io/mistral.rs/)**.
+Currently along with other areas of the project, documentation is still in an
+early phase.
 
-**Quick Links:**
-- [CLI Reference](docs/CLI.md) - All commands and options
-- [HTTP API](docs/HTTP.md) - OpenAI-compatible endpoints
-- [Quantization](docs/QUANTS.md) - ISQ, GGUF, GPTQ, and more
-- [Device Mapping](docs/DEVICE_MAPPING.md) - Multi-GPU and CPU offloading
-- [MCP Integration](docs/MCP/README.md) - MCP integration documentation
-- [Troubleshooting](docs/TROUBLESHOOTING.md) - Common issues and solutions
-- [Configuration](docs/CONFIGURATION.md) - Environment variables for configuration
+You can read the [online documentation](https://docs.rs/rustpython) for the
+latest release, or the [user guide](https://rustpython.github.io/docs/).
+
+You can also generate documentation locally by running:
+
+```shell
+cargo doc # Including documentation for all dependencies
+cargo doc --no-deps --all # Excluding all dependencies
+```
+
+Documentation HTML files can then be found in the `target/doc` directory or you can append `--open` to the previous commands to
+have the documentation open automatically on your default browser.
+
+For a high level overview of the components, see the [architecture](architecture/architecture.md) document.
 
 ## Contributing
 
-Contributions welcome! Please [open an issue](https://github.com/EricLBuehler/mistral.rs/issues) to discuss new features or report bugs. If you want to add a new model, please contact us via an issue and we can coordinate.
+Contributions are more than welcome, and in many cases we are happy to guide
+contributors through PRs or on Discord. Please refer to the
+[development guide](DEVELOPMENT.md) as well for tips on developments.
 
-## Credits
+With that in mind, please note this project is maintained by volunteers, some of
+the best ways to get started are below:
 
-This project would not be possible without the excellent work at [Candle](https://github.com/huggingface/candle). Thank you to all [contributors](https://github.com/EricLBuehler/mistral.rs/graphs/contributors)!
+Most tasks are listed in the
+[issue tracker](https://github.com/RustPython/RustPython/issues). Check issues
+labeled with [good first issue](https://github.com/RustPython/RustPython/issues?q=label%3A%22good+first+issue%22+is%3Aissue+is%3Aopen+) if you wish to start coding.
 
-mistral.rs is not affiliated with Mistral AI.
+To enhance CPython compatibility, try to increase unittest coverage by checking this article: [How to contribute to RustPython by CPython unittest](https://rustpython.github.io/guideline/2020/04/04/how-to-contribute-by-cpython-unittest.html)
 
-&lt;p align=&quot;right&quot;&gt;
-  &lt;a href=&quot;#top&quot;&gt;Back to Top&lt;/a&gt;
-&lt;/p&gt;
+Another approach is to checkout the source code: builtin functions and object
+methods are often the simplest and easiest way to contribute.
+
+You can also simply run `python -I scripts/whats_left.py` to assist in finding any unimplemented
+method.
+
+## Compiling to WebAssembly
+
+[See this doc](wasm/README.md)
+
+## Community
+
+[![Discord Banner](https://discordapp.com/api/guilds/1043121930691149845/widget.png?style=banner2)][discord]
+
+Chat with us on [Discord][discord].
+
+## Code of conduct
+
+Our code of conduct [can be found here](code-of-conduct.md).
+
+## Credit
+
+The initial work was based on
+[windelbouwman/rspython](https://github.com/windelbouwman/rspython) and
+[shinglyu/RustPython](https://github.com/shinglyu/RustPython)
+
+[discord]: https://discord.gg/vru8NypEhv
+
+## Links
+
+These are some useful links to related projects:
+
+- https://github.com/ProgVal/pythonvm-rust
+- https://github.com/shinglyu/RustPython
+- https://github.com/windelbouwman/rspython
+
+## License
+
+This project is licensed under the MIT license. Please see the
+[LICENSE](LICENSE) file for more details.
+
+The [project logo](logo.png) is licensed under the CC-BY-4.0
+license. Please see the [LICENSE-logo](LICENSE-logo) file
+for more details.
+</pre>
+          ]]></content:encoded>
+            <category>Rust</category>
+        </item>
+        <item>
+            <title><![CDATA[biomejs/biome]]></title>
+            <link>https://github.com/biomejs/biome</link>
+            <guid>https://github.com/biomejs/biome</guid>
+            <pubDate>Tue, 07 Apr 2026 00:11:32 GMT</pubDate>
+            <description><![CDATA[A toolchain for web projects, aimed to provide functionalities to maintain them. Biome offers formatter and linter, usable via CLI and LSP.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/biomejs/biome">biomejs/biome</a></h1>
+            <p>A toolchain for web projects, aimed to provide functionalities to maintain them. Biome offers formatter and linter, usable via CLI and LSP.</p>
+            <p>Language: Rust</p>
+            <p>Stars: 24,238</p>
+            <p>Forks: 933</p>
+            <p>Stars today: 10 stars today</p>
+            <h2>README</h2><pre>./packages/@biomejs/biome/README.md</pre>
+          ]]></content:encoded>
+            <category>Rust</category>
+        </item>
+        <item>
+            <title><![CDATA[j178/prek]]></title>
+            <link>https://github.com/j178/prek</link>
+            <guid>https://github.com/j178/prek</guid>
+            <pubDate>Tue, 07 Apr 2026 00:11:31 GMT</pubDate>
+            <description><![CDATA[⚡ A Git hook manager written in Rust, designed as a drop-in alternative to pre-commit.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/j178/prek">j178/prek</a></h1>
+            <p>⚡ A Git hook manager written in Rust, designed as a drop-in alternative to pre-commit.</p>
+            <p>Language: Rust</p>
+            <p>Stars: 7,208</p>
+            <p>Forks: 204</p>
+            <p>Stars today: 30 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+
+&lt;h1&gt;
+&lt;img width=&quot;180&quot; alt=&quot;prek&quot; src=&quot;https://raw.githubusercontent.com/j178/prek/master/docs/assets/logo.webp&quot; /&gt;
+
+prek
+
+&lt;/h1&gt;
+
+[![prek](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/j178/prek/master/docs/assets/badge-v0.json)](https://github.com/j178/prek)
+[![PyPI version](https://img.shields.io/pypi/v/prek.svg)](https://pypi.python.org/pypi/prek)
+[![codecov](https://codecov.io/github/j178/prek/graph/badge.svg?token=MP6TY24F43)](https://codecov.io/github/j178/prek)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/prek?logo=python)](https://pepy.tech/projects/prek)
+[![Discord](https://img.shields.io/discord/1403581202102878289?logo=discord)](https://discord.gg/3NRJUqJz86)
+
+&lt;/div&gt;
+
+&lt;!-- --8&lt;-- [start: description] --&gt;
+
+[pre-commit](https://pre-commit.com/) is a framework to run hooks written in many languages, and it manages the
+language toolchain and dependencies for running the hooks.
+
+*prek* is a reimagined version of pre-commit, built in Rust.
+It is designed to be a faster, dependency-free and drop-in alternative for it,
+while also providing some additional long-requested features.
+
+&lt;!-- --8&lt;-- [end: description] --&gt;
+
+&gt; [!NOTE]
+&gt; Although prek is pretty new, it’s already powering real‑world projects like [CPython](https://github.com/python/cpython), [Apache Airflow](https://github.com/apache/airflow), [FastAPI](https://github.com/fastapi/fastapi), and more projects are picking it up—see [Who is using prek?](#who-is-using-prek). If you’re looking for an alternative to `pre-commit`, please give it a try—we’d love your feedback!
+&gt;
+&gt; Please note that some languages are not yet supported for full drop‑in parity with `pre-commit`. See [Language Support](https://prek.j178.dev/languages/) for current status.
+
+&lt;!-- --8&lt;-- [start:features] --&gt;
+
+## Features
+
+- A single binary with no dependencies, does not require Python or any other runtime.
+- [Faster](https://prek.j178.dev/benchmark/) than `pre-commit` and more efficient in disk space usage.
+- Fully compatible with the original pre-commit configurations and hooks.
+- Built-in support for monorepos (i.e. [workspace mode](https://prek.j178.dev/workspace/)).
+- Integration with [`uv`](https://github.com/astral-sh/uv) for managing Python virtual environments and dependencies.
+- Improved toolchain installations for Python, Node.js, Bun, Go, Rust and Ruby, shared between hooks.
+- [Built-in](https://prek.j178.dev/builtin/) Rust-native implementation of some common hooks.
+
+&lt;!-- --8&lt;-- [end:features] --&gt;
+
+## Table of contents
+
+- [Installation](#installation)
+- [Quick start](#quick-start)
+- [Why prek?](#why-prek)
+- [Who is using prek?](#who-is-using-prek)
+- [Acknowledgements](#acknowledgements)
+
+## Installation
+
+&lt;details&gt;
+&lt;summary&gt;Standalone installer&lt;/summary&gt;
+
+prek provides a standalone installer script to download and install the tool,
+
+On Linux and macOS:
+
+&lt;!-- --8&lt;-- [start: linux-standalone-install] --&gt;
+
+```bash
+curl --proto &#039;=https&#039; --tlsv1.2 -LsSf https://github.com/j178/prek/releases/download/v0.3.8/prek-installer.sh | sh
+```
+
+&lt;!-- --8&lt;-- [end: linux-standalone-install] --&gt;
+
+On Windows:
+
+&lt;!-- --8&lt;-- [start: windows-standalone-install] --&gt;
+
+```powershell
+powershell -ExecutionPolicy ByPass -c &quot;irm https://github.com/j178/prek/releases/download/v0.3.8/prek-installer.ps1 | iex&quot;
+```
+
+&lt;!-- --8&lt;-- [end: windows-standalone-install] --&gt;
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;PyPI&lt;/summary&gt;
+
+&lt;!-- --8&lt;-- [start: pypi-install] --&gt;
+
+prek is published as Python binary wheel to PyPI, you can install it using `pip`, `uv` (recommended), or `pipx`:
+
+```bash
+# Using uv (recommended)
+uv tool install prek
+
+# Using uvx (install and run in one command)
+uvx prek
+
+# Adding prek to the project dev-dependencies
+uv add --dev prek
+
+# Using pip
+pip install prek
+
+# Using pipx
+pipx install prek
+```
+
+&lt;!-- --8&lt;-- [end: pypi-install] --&gt;
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;Homebrew&lt;/summary&gt;
+
+&lt;!-- --8&lt;-- [start: homebrew-install] --&gt;
+
+```bash
+brew install prek
+```
+
+&lt;!-- --8&lt;-- [end: homebrew-install] --&gt;
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;mise&lt;/summary&gt;
+
+&lt;!-- --8&lt;-- [start: mise-install] --&gt;
+
+To use prek with [mise](https://mise.jdx.dev) ([v2025.8.11](https://github.com/jdx/mise/releases/tag/v2025.8.11) or later):
+
+```bash
+mise use prek
+```
+
+&lt;!-- --8&lt;-- [end: mise-install] --&gt;
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;Cargo binstall&lt;/summary&gt;
+
+&lt;!-- --8&lt;-- [start: cargo-binstall] --&gt;
+
+Install pre-compiled binaries from GitHub using [cargo-binstall](https://github.com/cargo-bins/cargo-binstall):
+
+```bash
+cargo binstall prek
+```
+
+&lt;!-- --8&lt;-- [end: cargo-binstall] --&gt;
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;Cargo&lt;/summary&gt;
+
+&lt;!-- --8&lt;-- [start: cargo-install] --&gt;
+
+Build from source using Cargo (Rust 1.89+ is required):
+
+```bash
+cargo install --locked prek
+```
+
+&lt;!-- --8&lt;-- [end: cargo-install] --&gt;
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;npmjs&lt;/summary&gt;
+
+&lt;!-- --8&lt;-- [start: npmjs-install] --&gt;
+
+prek is published as a [Node.js package](https://www.npmjs.com/package/@j178/prek)
+and can be installed with any npm-compatible package manager:
+
+```bash
+# As a dev dependency
+npm add -D @j178/prek
+pnpm add -D @j178/prek
+bun add -D @j178/prek
+
+# Or install globally
+npm install -g @j178/prek
+pnpm add -g @j178/prek
+bun install -g @j178/prek
+
+# Or run directly without installing
+npx @j178/prek --version
+bunx @j178/prek --version
+```
+
+&lt;!-- --8&lt;-- [end: npmjs-install] --&gt;
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;Nix&lt;/summary&gt;
+
+&lt;!-- --8&lt;-- [start: nix-install] --&gt;
+
+prek is available via [Nixpkgs](https://search.nixos.org/packages?channel=unstable&amp;show=prek&amp;query=prek).
+
+```shell
+# Choose what&#039;s appropriate for your use case.
+# One-off in a shell:
+nix-shell -p prek
+
+# NixOS or non-NixOS without flakes:
+nix-env -iA nixos.prek
+
+# Non-NixOS with flakes:
+nix profile install nixpkgs#prek
+```
+
+&lt;!-- --8&lt;-- [end: nix-install] --&gt;
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;Conda&lt;/summary&gt;
+
+&lt;!-- --8&lt;-- [start: conda-forge-install] --&gt;
+
+prek is available as `prek` via [conda-forge](https://anaconda.org/conda-forge/prek).
+
+```shell
+conda install conda-forge::prek
+```
+
+&lt;!-- --8&lt;-- [end: conda-forge-install] --&gt;
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;Scoop (Windows)&lt;/summary&gt;
+
+&lt;!-- --8&lt;-- [start: scoop-install] --&gt;
+
+prek is available via [Scoop](https://scoop.sh/#/apps?q=prek).
+
+```powershell
+scoop install main/prek
+```
+
+&lt;!-- --8&lt;-- [end: scoop-install] --&gt;
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;Winget (Windows)&lt;/summary&gt;
+
+&lt;!-- --8&lt;-- [start: winget-install] --&gt;
+
+prek is available via [winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/).
+
+```powershell
+winget install --id j178.Prek
+```
+
+&lt;!-- --8&lt;-- [end: winget-install] --&gt;
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;MacPorts&lt;/summary&gt;
+
+&lt;!-- --8&lt;-- [start: macports-install] --&gt;
+
+prek is available via [MacPorts](https://ports.macports.org/port/prek/).
+
+```bash
+sudo port install prek
+```
+
+&lt;!-- --8&lt;-- [end: macports-install] --&gt;
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;GitHub Releases&lt;/summary&gt;
+
+&lt;!-- --8&lt;-- [start: pre-built-binaries] --&gt;
+
+Pre-built binaries are available for download from the [GitHub releases](https://github.com/j178/prek/releases) page.
+
+&lt;!-- --8&lt;-- [end: pre-built-binaries] --&gt;
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;GitHub Actions&lt;/summary&gt;
+
+&lt;!-- --8&lt;-- [start: github-actions] --&gt;
+
+prek can be used in GitHub Actions via the [j178/prek-action](https://github.com/j178/prek-action) repository.
+
+Example workflow:
+
+```yaml
+name: Prek checks
+on: [push, pull_request]
+
+jobs:
+  prek:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: j178/prek-action@v2
+```
+
+This action installs prek and runs `prek run --all-files` on your repository.
+
+prek is also available via [`taiki-e/install-action`](https://github.com/taiki-e/install-action) for installing various tools.
+
+&lt;!-- --8&lt;-- [end: github-actions] --&gt;
+
+&lt;/details&gt;
+
+&lt;!-- --8&lt;-- [start: self-update] --&gt;
+
+If installed via the standalone installer, prek can update itself to the latest version:
+
+```bash
+prek self update
+```
+
+&lt;!-- --8&lt;-- [end: self-update] --&gt;
+
+## Quick start
+
+- **I already use pre-commit:** follow the short migration checklist in the [quickstart guide](https://prek.j178.dev/quickstart/#already-using-pre-commit) to swap in `prek` safely.
+- **I&#039;m new to pre-commit-style tools:** learn the basics—creating a config, running hooks, and installing Git shims—in the [beginner quickstart walkthrough](https://prek.j178.dev/quickstart/#new-to-pre-commit-style-workflows).
+
+&lt;!-- --8&lt;-- [start: why] --&gt;
+
+## Why prek?
+
+### prek is faster
+
+- It is [multiple times faster](https://prek.j178.dev/benchmark/) than `pre-commit` and takes up half the disk space.
+- It redesigned how hook environments and toolchains are managed, they are all shared between hooks, which reduces the disk space usage and speeds up the installation process.
+- Repositories are cloned in parallel, and hooks are installed in parallel if their dependencies are disjoint.
+- Hooks can run in parallel by priority (hooks with the same [`priority`](https://prek.j178.dev/configuration/#priority) may run concurrently), reducing end-to-end runtime.
+- It uses [`uv`](https://github.com/astral-sh/uv) for creating Python virtualenvs and installing dependencies, which is known for its speed and efficiency.
+- It implements some common hooks in Rust, [built in prek](https://prek.j178.dev/builtin/), which are faster than their Python counterparts.
+- It supports `repo: builtin` for offline, zero-setup hooks, which is not available in `pre-commit`.
+
+### prek provides a better user experience
+
+- No need to install Python or any other runtime, just download a single binary.
+- No hassle with your Python version or virtual environments, prek automatically installs the required Python version and creates a virtual environment for you.
+- Built-in support for [workspaces](https://prek.j178.dev/workspace/) (or monorepos), each subproject can have its own `.pre-commit-config.yaml` file.
+- [`prek run`](https://prek.j178.dev/cli/#prek-run) has some nifty improvements over `pre-commit run`, such as:
+    - `prek run --directory &lt;dir&gt;` runs hooks for files in the specified directory, no need to use `git ls-files -- &lt;dir&gt; | xargs pre-commit run --files` anymore.
+    - `prek run --last-commit` runs hooks for files changed in the last commit.
+    - `prek run [HOOK] [HOOK]` selects and runs multiple hooks.
+- [`prek list`](https://prek.j178.dev/cli/#prek-list) command lists all available hooks, their ids, and descriptions, providing a better overview of the configured hooks.
+- [`prek auto-update`](https://prek.j178.dev/cli/#prek-auto-update) supports `--cooldown-days` to mitigate open source supply chain attacks.
+- prek provides shell completions for `prek run &lt;hook_id&gt;` command, making it easier to run specific hooks without remembering their ids.
+
+For more detailed improvements prek offers, take a look at [Difference from pre-commit](https://prek.j178.dev/diff/).
+
+## Who is using prek?
+
+prek is pretty new, but it is already being used or recommend by some projects and organizations:
+
+- [apache/airflow](https://github.com/apache/airflow/issues/44995)
+- [python/cpython](https://github.com/python/cpython/issues/143148)
+- [pdm-project/pdm](https://github.com/pdm-project/pdm/pull/3593)
+- [fastapi/fastapi](https://github.com/fastapi/fastapi/pull/14572)
+- [fastapi/typer](https://github.com/fastapi/typer/pull/1453)
+- [fastapi/asyncer](https://github.com/fastapi/asyncer/pull/437)
+- [astral-sh/ruff](https://github.com/astral-sh/ruff/pull/22505)
+- [astral-sh/ty](https://github.com/astral-sh/ty/pull/2469)
+- [openclaw/openclaw](https://github.com/openclaw/openclaw/pull/1720)
+- [home-assistant/core](https://github.com/home-assistant/core/pull/160427)
+- [python-telegram-bot/python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot/pull/5142)
+- [DetachHead/basedpyright](https://github.com/DetachHead/basedpyright/pull/1413)
+- [OpenLineage/OpenLineage](https://github.com/OpenLineage/OpenLineage/pull/3965)
+- [authlib/authlib](https://github.com/authlib/authlib/pull/804)
+- [django/djangoproject.com](https://github.com/django/djangoproject.com/pull/2252)
+- [Future-House/paper-qa](https://github.com/Future-House/paper-qa/pull/1098)
+- [requests-cache/requests-cache](https://github.com/requests-cache/requests-cache/pull/1116)
+- [Goldziher/kreuzberg](https://github.com/Goldziher/kreuzberg/pull/142)
+- [python-attrs/attrs](https://github.com/python-attrs/attrs/commit/c95b177682e76a63478d29d040f9cb36a8d31915)
+- [jlowin/fastmcp](https://github.com/jlowin/fastmcp/pull/2309)
+- [apache/iceberg-python](https://github.com/apache/iceberg-python/pull/2533)
+- [apache/iggy](https://github.com/apache/iggy/pull/2383)
+- [apache/lucene](https://github.com/apache/lucene/pull/15629)
+- [jcrist/msgspec](https://github.com/jcrist/msgspec/pull/918)
+- [python-humanize/humanize](https://github.com/python-humanize/humanize/pull/276)
+- [MoonshotAI/kimi-cli](https://github.com/MoonshotAI/kimi-cli/pull/535)
+- [simple-icons/simple-icons](https://github.com/simple-icons/simple-icons/pull/14245)
+- [ast-grep/ast-grep](https://github.com/ast-grep/ast-grep.github.io/commit/e30818144b2967a7f9172c8cf2f4596bba219bf5)
+- [commitizen-tools/commitizen](https://github.com/commitizen-tools/commitizen)
+- [cocoindex-io/cocoindex](https://github.com/cocoindex-io/cocoindex/pull/1564)
+- [cachix/devenv](https://github.com/cachix/devenv/pull/2304)
+- [copper-project/copper-rs](https://github.com/copper-project/copper-rs/pull/783)
+- [bramstroker/homeassistant-powercalc](https://github.com/bramstroker/homeassistant-powercalc/pull/3978)
+
+&lt;!-- --8&lt;-- [end: why] --&gt;
+
+## Acknowledgements
+
+This project is heavily inspired by the original [pre-commit](https://pre-commit.com/) tool, and it wouldn&#039;t be possible without the hard work
+of the maintainers and contributors of that project.
+
+And a special thanks to the [Astral](https://github.com/astral-sh) team for their remarkable projects, particularly [uv](https://github.com/astral-sh/uv),
+from which I&#039;ve learned a lot on how to write efficient and idiomatic Rust code.
+</pre>
+          ]]></content:encoded>
+            <category>Rust</category>
+        </item>
+        <item>
+            <title><![CDATA[tokio-rs/tokio]]></title>
+            <link>https://github.com/tokio-rs/tokio</link>
+            <guid>https://github.com/tokio-rs/tokio</guid>
+            <pubDate>Tue, 07 Apr 2026 00:11:30 GMT</pubDate>
+            <description><![CDATA[A runtime for writing reliable asynchronous applications with Rust. Provides I/O, networking, scheduling, timers, ...]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/tokio-rs/tokio">tokio-rs/tokio</a></h1>
+            <p>A runtime for writing reliable asynchronous applications with Rust. Provides I/O, networking, scheduling, timers, ...</p>
+            <p>Language: Rust</p>
+            <p>Stars: 31,564</p>
+            <p>Forks: 2,987</p>
+            <p>Stars today: 13 stars today</p>
+            <h2>README</h2><pre>*[TokioConf 2026 program and tickets are now available!](https://tokioconf.com)*
+
+---
+
+# Tokio
+
+A runtime for writing reliable, asynchronous, and slim applications with
+the Rust programming language. It is:
+
+* **Fast**: Tokio&#039;s zero-cost abstractions give you bare-metal
+  performance.
+
+* **Reliable**: Tokio leverages Rust&#039;s ownership, type system, and
+  concurrency model to reduce bugs and ensure thread safety.
+
+* **Scalable**: Tokio has a minimal footprint, and handles backpressure
+  and cancellation naturally.
+
+[![Crates.io][crates-badge]][crates-url]
+[![MIT licensed][mit-badge]][mit-url]
+[![Build Status][actions-badge]][actions-url]
+[![Discord chat][discord-badge]][discord-url]
+
+[crates-badge]: https://img.shields.io/crates/v/tokio.svg
+[crates-url]: https://crates.io/crates/tokio
+[mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
+[mit-url]: https://github.com/tokio-rs/tokio/blob/master/LICENSE
+[actions-badge]: https://github.com/tokio-rs/tokio/workflows/CI/badge.svg
+[actions-url]: https://github.com/tokio-rs/tokio/actions?query=workflow%3ACI+branch%3Amaster
+[discord-badge]: https://img.shields.io/discord/500028886025895936.svg?logo=discord&amp;style=flat-square
+[discord-url]: https://discord.gg/tokio
+
+[Website](https://tokio.rs) |
+[Guides](https://tokio.rs/tokio/tutorial) |
+[API Docs](https://docs.rs/tokio/latest/tokio) |
+[Chat](https://discord.gg/tokio)
+
+## Overview
+
+Tokio is an event-driven, non-blocking I/O platform for writing
+asynchronous applications with the Rust programming language. At a high
+level, it provides a few major components:
+
+* A multithreaded, work-stealing based task [scheduler].
+* A reactor backed by the operating system&#039;s event queue (epoll, kqueue,
+  IOCP, etc.).
+* Asynchronous [TCP and UDP][net] sockets.
+
+These components provide the runtime components necessary for building
+an asynchronous application.
+
+[net]: https://docs.rs/tokio/latest/tokio/net/index.html
+[scheduler]: https://docs.rs/tokio/latest/tokio/runtime/index.html
+
+## Example
+
+A basic TCP echo server with Tokio.
+
+Make sure you enable the full features of the tokio crate on Cargo.toml:
+
+```toml
+[dependencies]
+tokio = { version = &quot;1.51.0&quot;, features = [&quot;full&quot;] }
+```
+Then, on your main.rs:
+
+```rust,no_run
+use tokio::net::TcpListener;
+use tokio::io::{AsyncReadExt, AsyncWriteExt};
+
+#[tokio::main]
+async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
+    let listener = TcpListener::bind(&quot;127.0.0.1:8080&quot;).await?;
+
+    loop {
+        let (mut socket, _) = listener.accept().await?;
+
+        tokio::spawn(async move {
+            let mut buf = [0; 1024];
+
+            // In a loop, read data from the socket and write the data back.
+            loop {
+                let n = match socket.read(&amp;mut buf).await {
+                    // socket closed
+                    Ok(0) =&gt; return,
+                    Ok(n) =&gt; n,
+                    Err(e) =&gt; {
+                        eprintln!(&quot;failed to read from socket; err = {:?}&quot;, e);
+                        return;
+                    }
+                };
+
+                // Write the data back
+                if let Err(e) = socket.write_all(&amp;buf[0..n]).await {
+                    eprintln!(&quot;failed to write to socket; err = {:?}&quot;, e);
+                    return;
+                }
+            }
+        });
+    }
+}
+```
+
+More examples can be found [here][examples]. For a larger &quot;real world&quot; example, see the
+[mini-redis] repository.
+
+[examples]: https://github.com/tokio-rs/tokio/tree/master/examples
+[mini-redis]: https://github.com/tokio-rs/mini-redis/
+
+To see a list of the available feature flags that can be enabled, check our
+[docs][feature-flag-docs].
+
+## Getting Help
+
+First, see if the answer to your question can be found in the [Guides] or the
+[API documentation]. If the answer is not there, there is an active community in
+the [Tokio Discord server][chat]. We would be happy to try to answer your
+question. You can also ask your question on [the discussions page][discussions].
+
+[Guides]: https://tokio.rs/tokio/tutorial
+[API documentation]: https://docs.rs/tokio/latest/tokio
+[chat]: https://discord.gg/tokio
+[discussions]: https://github.com/tokio-rs/tokio/discussions
+[feature-flag-docs]: https://docs.rs/tokio/#feature-flags
+
+## Contributing
+
+:balloon: Thanks for your help improving the project! We are so happy to have
+you! We have a [contributing guide][guide] to help you get involved in the Tokio
+project.
+
+[guide]: https://github.com/tokio-rs/tokio/blob/master/docs/contributing/README.md
+
+## Related Projects
+
+In addition to the crates in this repository, the Tokio project also maintains
+several other libraries, including:
+
+* [`axum`]: A web application framework that focuses on ergonomics and modularity.
+
+* [`hyper`]: A fast and correct HTTP/1.1 and HTTP/2 implementation for Rust.
+
+* [`tonic`]: A gRPC over HTTP/2 implementation focused on high performance, interoperability, and flexibility.
+
+* [`warp`]: A super-easy, composable, web server framework for warp speeds.
+
+* [`tower`]: A library of modular and reusable components for building robust networking clients and servers.
+
+* [`tracing`] (formerly `tokio-trace`): A framework for application-level tracing and async-aware diagnostics.
+
+* [`mio`]: A low-level, cross-platform abstraction over OS I/O APIs that powers `tokio`.
+
+* [`bytes`]: Utilities for working with bytes, including efficient byte buffers.
+
+* [`loom`]: A testing tool for concurrent Rust code.
+
+[`axum`]: https://github.com/tokio-rs/axum
+[`warp`]: https://github.com/seanmonstar/warp
+[`hyper`]: https://github.com/hyperium/hyper
+[`tonic`]: https://github.com/hyperium/tonic
+[`tower`]: https://github.com/tower-rs/tower
+[`loom`]: https://github.com/tokio-rs/loom
+[`tracing`]: https://github.com/tokio-rs/tracing
+[`mio`]: https://github.com/tokio-rs/mio
+[`bytes`]: https://github.com/tokio-rs/bytes
+
+## Changelog
+
+The Tokio repository contains multiple crates. Each crate has its own changelog.
+
+ * `tokio` - [view changelog](https://github.com/tokio-rs/tokio/blob/master/tokio/CHANGELOG.md)
+ * `tokio-util` - [view changelog](https://github.com/tokio-rs/tokio/blob/master/tokio-util/CHANGELOG.md)
+ * `tokio-stream` - [view changelog](https://github.com/tokio-rs/tokio/blob/master/tokio-stream/CHANGELOG.md)
+ * `tokio-macros` - [view changelog](https://github.com/tokio-rs/tokio/blob/master/tokio-macros/CHANGELOG.md)
+ * `tokio-test` - [view changelog](https://github.com/tokio-rs/tokio/blob/master/tokio-test/CHANGELOG.md)
+
+## Supported Rust Versions
+
+&lt;!--
+When updating this, also update:
+- .github/workflows/ci.yml
+- CONTRIBUTING.md
+- README.md
+- tokio/README.md
+- tokio/Cargo.toml
+- tokio-util/Cargo.toml
+- tokio-test/Cargo.toml
+- tokio-stream/Cargo.toml
+--&gt;
+
+Tokio will keep a rolling MSRV (minimum supported rust version) policy of **at
+least** 6 months. When increasing the MSRV, the new Rust version must have been
+released at least six months ago. The current MSRV is 1.71.
+
+Note that the MSRV is not increased automatically, and only as part of a minor
+release. The MSRV history for past minor releases can be found below:
+
+ * 1.48 to now  - Rust 1.71
+ * 1.39 to 1.47 - Rust 1.70
+ * 1.30 to 1.38 - Rust 1.63
+ * 1.27 to 1.29 - Rust 1.56
+ * 1.17 to 1.26 - Rust 1.49
+ * 1.15 to 1.16 - Rust 1.46
+ * 1.0 to 1.14 - Rust 1.45
+
+Note that although we try to avoid the situation where a dependency transitively
+increases the MSRV of Tokio, we do not guarantee that this does not happen.
+However, every minor release will have some set of versions of dependencies that
+works with the MSRV of that minor release.
+
+## Release schedule
+
+Tokio doesn&#039;t follow a fixed release schedule, but we typically make one minor
+release each month. We make patch releases for bugfixes as necessary.
+
+## Bug patching policy
+
+For the purposes of making patch releases with bugfixes, we have designated
+certain minor releases as LTS (long term support) releases. Whenever a bug
+warrants a patch release with a fix for the bug, it will be backported and
+released as a new patch release for each LTS minor version. Our current LTS
+releases are:
+
+ * `1.47.x` - LTS release until September 2026. (MSRV 1.70)
+ * `1.51.x` - LTS release until March 2027. (MSRV 1.71)
+
+Each LTS release will continue to receive backported fixes for at least a year.
+If you wish to use a fixed minor release in your project, we recommend that you
+use an LTS release.
+
+To use a fixed minor version, you can specify the version with a tilde. For
+example, to specify that you wish to use the newest `1.47.x` patch release, you
+can use the following dependency specification:
+```text
+tokio = { version = &quot;~1.47&quot;, features = [...] }
+```
+
+### Previous LTS releases
+
+ * `1.8.x` - LTS release until February 2022.
+ * `1.14.x` - LTS release until June 2022.
+ * `1.18.x` - LTS release until June 2023.
+ * `1.20.x` - LTS release until September 2023.
+ * `1.25.x` - LTS release until March 2024.
+ * `1.32.x` - LTS release until September 2024.
+ * `1.36.x` - LTS release until March 2025.
+ * `1.38.x` - LTS release until July 2025.
+ * `1.43.x` - LTS release until March 2026.
+
+## License
+
+This project is licensed under the [MIT license].
+
+[MIT license]: https://github.com/tokio-rs/tokio/blob/master/LICENSE
+
+### Contribution
+
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in Tokio by you shall be licensed as MIT, without any additional
+terms or conditions.
 </pre>
           ]]></content:encoded>
             <category>Rust</category>
