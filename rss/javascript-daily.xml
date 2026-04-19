@@ -4,7 +4,7 @@
         <title>GitHub Trending Today for javascript - JavaScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for javascript.</description>
-        <lastBuildDate>Sat, 18 Apr 2026 00:12:37 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 19 Apr 2026 00:11:37 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
@@ -13,26 +13,36 @@
             <title><![CDATA[EvoMap/evolver]]></title>
             <link>https://github.com/EvoMap/evolver</link>
             <guid>https://github.com/EvoMap/evolver</guid>
-            <pubDate>Sat, 18 Apr 2026 00:12:37 GMT</pubDate>
+            <pubDate>Sun, 19 Apr 2026 00:11:37 GMT</pubDate>
             <description><![CDATA[The GEP-Powered Self-Evolution Engine for AI Agents. Genome Evolution Protocol. | evomap.ai]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/EvoMap/evolver">EvoMap/evolver</a></h1>
             <p>The GEP-Powered Self-Evolution Engine for AI Agents. Genome Evolution Protocol. | evomap.ai</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 4,225</p>
-            <p>Forks: 417</p>
-            <p>Stars today: 737 stars today</p>
+            <p>Stars: 4,990</p>
+            <p>Forks: 489</p>
+            <p>Stars today: 1,131 stars today</p>
             <h2>README</h2><pre># 🧬 Evolver
 
 [![GitHub stars](https://img.shields.io/github/stars/EvoMap/evolver?style=social)](https://github.com/EvoMap/evolver/stargazers)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](https://opensource.org/licenses/GPL-3.0)
 [![Node.js &gt;= 18](https://img.shields.io/badge/Node.js-%3E%3D%2018-green.svg)](https://nodejs.org/)
 [![GitHub last commit](https://img.shields.io/github/last-commit/EvoMap/evolver)](https://github.com/EvoMap/evolver/commits/main)
 [![GitHub issues](https://img.shields.io/github/issues/EvoMap/evolver)](https://github.com/EvoMap/evolver/issues)
 
 ![Evolver Cover](assets/cover.png)
 
-**[evomap.ai](https://evomap.ai)** | [Documentation](https://evomap.ai/wiki) | [Chinese / 中文文档](README.zh-CN.md) | [GitHub](https://github.com/EvoMap/evolver) | [Releases](https://github.com/EvoMap/evolver/releases)
+**[evomap.ai](https://evomap.ai)** | [Documentation](https://evomap.ai/wiki) | [Chinese / 中文文档](README.zh-CN.md) | [Japanese / 日本語ドキュメント](README.ja-JP.md) | [GitHub](https://github.com/EvoMap/evolver) | [Releases](https://github.com/EvoMap/evolver/releases)
+
+---
+
+&gt; **Notice — Moving Toward Source-Available**
+&gt;
+&gt; Evolver has been fully open source since our first release on 2026-02-01 (initially MIT, and GPL-3.0-or-later since 2026-04-09). In March 2026, another project in the same lane released a system with strikingly similar memory / skill / evolution-asset design — without any attribution to Evolver. Full analysis: [Hermes Agent Self-Evolution vs. Evolver: A Detailed Similarity Analysis](https://evomap.ai/en/blog/hermes-agent-evolver-similarity-analysis).
+&gt;
+&gt; To protect the integrity of the work and keep investing in this direction, future Evolver releases will transition from fully open source to source-available. **Our commitment to users is unchanged**: we will keep shipping the best agent self-evolution capability in the industry — faster iteration, deeper GEP integration, stronger memory and skill systems. All already-published MIT and GPL-3.0 versions remain freely usable under their original terms. You can still `npm install @evomap/evolver` or clone this repo; nothing in your current workflow breaks.
+&gt;
+&gt; Questions or concerns: open an issue or reach us at [evomap.ai](https://evomap.ai).
 
 ---
 
@@ -56,7 +66,56 @@ Keywords: protocol-constrained evolution, audit trail, genes and capsules, promp
 - **[Node.js](https://nodejs.org/)** &gt;= 18
 - **[Git](https://git-scm.com/)** -- Required. Evolver uses git for rollback, blast radius calculation, and solidify. Running in a non-git directory will fail with a clear error message.
 
-### Setup
+### Install from npm (recommended)
+
+```bash
+npm install -g @evomap/evolver
+```
+
+This installs the `evolver` CLI globally. Verify with `evolver --help`.
+
+If you hit `EACCES` on Linux/macOS, configure a user-level prefix instead of using `sudo`:
+
+```bash
+npm config set prefix ~/.npm-global
+echo &#039;export PATH=&quot;$HOME/.npm-global/bin:$PATH&quot;&#039; &gt;&gt; ~/.bashrc
+source ~/.bashrc
+```
+
+### Platform integration
+
+Evolver integrates with major agent runtimes through `setup-hooks`. Run the command once per platform you want to wire up.
+
+#### Cursor
+
+```bash
+evolver setup-hooks --platform=cursor
+```
+
+Writes `~/.cursor/hooks.json` and installs hook scripts under `~/.cursor/hooks/`. Restart Cursor (or open a new session) to activate. Hooks fire on `sessionStart`, `afterFileEdit`, and `stop`.
+
+#### Claude Code
+
+```bash
+evolver setup-hooks --platform=claude-code
+```
+
+Registers Evolver with Claude Code&#039;s hook system via `~/.claude/`. Restart the Claude Code CLI after installation.
+
+#### OpenClaw
+
+OpenClaw interprets the `sessions_spawn(...)` protocol that Evolver emits on stdout, so no hooks are required. Clone Evolver into your OpenClaw workspace and invoke it from within a session:
+
+```bash
+cd &lt;your-openclaw-workspace&gt;
+git clone https://github.com/EvoMap/evolver.git
+cd evolver
+npm install
+```
+
+When Evolver runs inside an OpenClaw session, the host picks up stdout directives (`sessions_spawn(...)`, etc.) and chains follow-up actions automatically.
+
+### Install from source (advanced)
 
 ```bash
 git clone https://github.com/EvoMap/evolver.git
@@ -64,7 +123,11 @@ cd evolver
 npm install
 ```
 
-To connect to the [EvoMap network](https://evomap.ai), create a `.env` file (optional):
+Use this mode if you want to hack on the engine itself, run unreleased builds, or inspect the source tree.
+
+### Connect to the EvoMap network (optional)
+
+To connect to the [EvoMap network](https://evomap.ai), create a `.env` file in your project root:
 
 ```bash
 # Register at https://evomap.ai to get your Node ID
@@ -408,40 +471,7 @@ See the full release history on [GitHub Releases](https://github.com/EvoMap/evol
 **Does this edit code automatically?**
 No. Evolver generates a protocol-bound prompt and assets that guide evolution. It does not modify your source code directly. See [What Evolver Does (and Does Not Do)](#what-evolver-does-and-does-not-do).
 
-**I ran `node index.js --loop` but it just keeps printing text. Is it working?**
-Yes. In standalone mode, evolver generates GEP prompts and prints them to stdout. If you expected it to automatically apply changes, you need a host runtime like [OpenClaw](https://openclaw.com) that interprets the output. Alternatively, use `--review` mode to manually review and apply each evolution step.
-
-**Do I need to connect to EvoMap Hub?**
-No. All core evolution features work offline. Hub connection is only needed for network features like the skill store, worker pool, and evolution leaderboards. See [Connecting to EvoMap Hub](#connecting-to-evomap-hub).
-
-**Do I need to use all GEP assets?**
-No. You can start with default Genes and extend over time.
-
-**Is this safe in production?**
-Use review mode and validation steps. Treat it as a safety-focused evolution tool, not a live patcher. See [Security Model](#security-model).
-
-**Where should I clone this repo?**
-Clone it into any directory you like. If you use [OpenClaw](https://openclaw.com), clone it into your OpenClaw workspace so the host runtime can access evolver&#039;s stdout. For standalone use, any location works.
-
-## Roadmap
-
-- Add a one-minute demo workflow
-- Add a comparison table vs alternatives
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=EvoMap/evolver&amp;type=Date)](https://star-history.com/#EvoMap/evolver&amp;Date)
-
-## Acknowledgments
-
-- [onthebigtree](https://github.com/onthebigtree) -- Inspired the creation of evomap evolution network. Fixed three runtime and logic bugs (PR [#25](https://github.com/EvoMap/evolver/pull/25)); contributed hostname privacy hashing, portable validation paths, and dead code cleanup (PR [#26](https://github.com/EvoMap/evolver/pull/26)).
-- [lichunr](https://github.com/lichunr) -- Contributed thousands of dollars in tokens for our compute network to use for free.
-- [shinjiyu](https://github.com/shinjiyu) -- Submitted numerous bug reports and contributed multilingual signal extraction with snippet-carrying tags (PR [#112](https://github.com/EvoMap/evolver/pull/112)).
-- [voidborne-d](https://github.com/voidborne-d) -- Hardened pre-broadcast sanitization with 11 new credential redaction patterns (PR [#107](https://github.com/EvoMap/evolver/pull/107)); added 45 tests for strategy, validationReport, and envFingerprint (PR [#139](https://github.com/EvoMap/evolver/pull/139)).
-- [blackdogcat](https://github.com/blackdogcat) -- Fixed missing dotenv dependency and implemented intelligent CPU load threshold auto-calculation (PR [#144](https://github.com/EvoMap/evolver/pull/144)).
-- [LKCY33](https://github.com/LKCY33) -- Fixed .env loading path and directory permissions (PR [#21](https://github.com/EvoMap/evolver/pull/21)).
-- [hendrixAIDev](https://github.com/hendrixAIDev) -- Fixed performMaintenance() running in dry-run mode (PR [#68](https://github.com/EvoMap/evolver/pull/68)).
-- [toller892](h
+**I ran `node index.js --loop` but it just keeps printing text. Is it working?
 
 ... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
@@ -451,15 +481,15 @@ Clone it into any directory you like. If you use [OpenClaw](https://openclaw.com
             <title><![CDATA[pbakaus/impeccable]]></title>
             <link>https://github.com/pbakaus/impeccable</link>
             <guid>https://github.com/pbakaus/impeccable</guid>
-            <pubDate>Sat, 18 Apr 2026 00:12:36 GMT</pubDate>
+            <pubDate>Sun, 19 Apr 2026 00:11:36 GMT</pubDate>
             <description><![CDATA[The design language that makes your AI harness better at design.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a></h1>
             <p>The design language that makes your AI harness better at design.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 20,316</p>
-            <p>Forks: 944</p>
-            <p>Stars today: 396 stars today</p>
+            <p>Stars: 20,489</p>
+            <p>Forks: 962</p>
+            <p>Stars today: 226 stars today</p>
             <h2>README</h2><pre># Impeccable
 
 The vocabulary you didn&#039;t know you needed. 1 skill, 18 commands, and curated anti-patterns for impeccable frontend design.
@@ -711,59 +741,769 @@ Created by [Paul Bakaus](https://www.paulbakaus.com)
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[cursor/plugins]]></title>
-            <link>https://github.com/cursor/plugins</link>
-            <guid>https://github.com/cursor/plugins</guid>
-            <pubDate>Sat, 18 Apr 2026 00:12:35 GMT</pubDate>
-            <description><![CDATA[Cursor plugin specification and official plugins]]></description>
+            <title><![CDATA[aandrew-me/ytDownloader]]></title>
+            <link>https://github.com/aandrew-me/ytDownloader</link>
+            <guid>https://github.com/aandrew-me/ytDownloader</guid>
+            <pubDate>Sun, 19 Apr 2026 00:11:35 GMT</pubDate>
+            <description><![CDATA[Desktop App for downloading Videos and Audios from hundreds of sites]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/cursor/plugins">cursor/plugins</a></h1>
-            <p>Cursor plugin specification and official plugins</p>
+            <h1><a href="https://github.com/aandrew-me/ytDownloader">aandrew-me/ytDownloader</a></h1>
+            <p>Desktop App for downloading Videos and Audios from hundreds of sites</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 233</p>
-            <p>Forks: 39</p>
+            <p>Stars: 9,322</p>
+            <p>Forks: 824</p>
+            <p>Stars today: 64 stars today</p>
+            <h2>README</h2><pre>&lt;img src=&quot;https://github-production-user-asset-6210df.s3.amazonaws.com/66430340/238887646-33b4cba9-3c45-4042-83d1-b79e94a3a769.png&quot; style=&quot;width:80px;&quot;&gt;
+
+# ytDownloader
+
+[![Flathub](https://img.shields.io/flathub/downloads/io.github.aandrew_me.ytdn?label=Flathub%20downloads)](https://flathub.org/apps/details/me.aandrew.ytdownloader)
+[![GitHub downloads](https://img.shields.io/github/downloads/aandrew-me/ytdownloader/total?label=Github%20downloads)](https://github.com/aandrew-me/ytDownloader/releases)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/aandrew-me/ytdownloader?label=latest%20release)](https://github.com/aandrew-me/ytDownloader/releases/latest)
+[![Flathub](https://img.shields.io/flathub/v/io.github.aandrew_me.ytdn)](https://flathub.org/apps/io.github.aandrew_me.ytdn)
+[![Snapcraft](https://img.shields.io/snapcraft/v/ytdownloader/latest/stable)](https://snapcraft.io/ytdownloader)
+![Chocolatey Version](https://img.shields.io/chocolatey/v/ytdownloader)
+![WinGet Package Version](https://img.shields.io/winget/v/aandrew-me.ytDownloader)
+
+A modern GUI video and audio downloader supporting [hundreds of sites](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md)
+
+
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/ytdownloader)
+[![Get AppImage](https://raw.githubusercontent.com/srevinsaju/get-appimage/master/static/badges/get-appimage-branding-blue.png)](https://github.com/aandrew-me/ytDownloader/releases/latest/download/YTDownloader_Linux.AppImage)
+&lt;a href=&quot;https://flathub.org/apps/io.github.aandrew_me.ytdn&quot;&gt;&lt;img src=&quot;https://flathub.org/api/badge?svg&amp;locale=en&quot; style=&quot;width:180px;&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/aandrew-me/ytDownloader/releases/latest/download/YTDownloader_Win.exe
+&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/66430340/187172806-a8edd12a-ef58-4a05-96a3-99d7490b42f6.png&quot; style=&quot;width:190px;&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/aandrew-me/ytDownloader/releases/latest/download/YTDownloader_Mac_arm64.dmg&quot;&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/aandrew-me/badges/download_mac_apple_silicon.png&quot; style=&quot;width:200px;&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/aandrew-me/ytDownloader/releases/latest/download/YTDownloader_Mac_x64.dmg&quot;&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/aandrew-me/badges/download_mac_intel.png&quot; style=&quot;width:200px;&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;https://community.chocolatey.org/packages/ytdownloader&quot;&gt;&lt;img style=&quot;width:200px;&quot; src=&quot;https://github-production-user-asset-6210df.s3.amazonaws.com/66430340/238886537-7b2769fe-bd62-4921-a0eb-edf2eb06216d.png&quot; alt=&quot;Chocolatey&quot;&gt;&lt;/a&gt;
+
+## Features 🚀
+
+
+✅ Supports hundreds of sites including Youtube, Facebook, Instagram, Tiktok, Twitter and so on.
+
+✅ Multiple themes
+
+✅ Video Compressor with Hardware Acceleration
+
+✅ Advanced options like Range Selection, Subtitles
+
+✅ Download playlists
+
+✅ Available on Linux, Windows &amp; macOS
+
+✅ Fast download speeds
+
+✅ And of-course no trackers or ads
+
+## Screenshots
+
+&lt;!-- ![dark](https://user-images.githubusercontent.com/66430340/196022794-885e5b90-40d2-4b58-a8fa-74f10c6e470e.png) --&gt;
+&lt;!-- ![light](https://user-images.githubusercontent.com/66430340/196022796-1215038d-bafb-4450-82b1-7baddd60c0e8.png) --&gt;
+
+
+&lt;!-- ![ytdownloader_dark](https://github.com/aandrew-me/ytDownloader/assets/66430340/62efbca0-28b8-4016-bcf2-1a14bcaa782c) --&gt;
+&lt;!-- ![ytdownloader_light](https://github.com/aandrew-me/ytDownloader/assets/66430340/34f5270f-bdea-460e-8622-6459cd147b73) --&gt;
+
+![ss_homepage](https://github.com/user-attachments/assets/12410bca-31c3-48a0-bbd3-1d74bcc752b6)
+![ss_settings](https://github.com/user-attachments/assets/060557bc-d209-4bd0-bda4-debe42ca83a0)
+![ss_compressor](https://github.com/user-attachments/assets/52da7e50-46bb-4749-8152-5e79324a6cc3)
+
+
+
+&lt;!-- ![ytdownloader_dark](https://github.com/aandrew-me/ytDownloader/assets/66430340/2f6695e7-6ca0-4f7c-91a0-0ad735c1e3af) --&gt;
+&lt;!-- ![ytdownloader_light](https://github.com/aandrew-me/ytDownloader/assets/66430340/3c974ab0-8257-4b8a-88ec-ee6bd119751e) --&gt;
+
+# Installation
+
+## Windows 🪟
+
+-   **Traditional way**
+
+    Download and install the exe or msi file. Exe file lets you choose custom download location, msi file doesn&#039;t ask for location. Windows defender may show a popup saying **Windows Protected Your PC**. Just click on **More info** and click on **Run Anyway**
+
+-   **Chocolatey**
+    App can be installed from [Chocolatey](https://community.chocolatey.org/packages/ytdownloader) using the following command
+    ```
+    choco install ytdownloader
+    ```
+-   **Scoop**
+    App can be installed with [Scoop](https://scoop.sh) using the following command
+    ```
+    scoop install https://raw.githubusercontent.com/aandrew-me/ytDownloader/main/ytdownloader.json
+    ```
+-   **Winget**
+
+    App can be installed with [Winget](https://github.com/microsoft/winget-cli) using the following command
+    ```
+    winget install aandrew-me.ytDownloader
+    ```
+## Linux 🐧
+
+Linux has several options available - Flatpak, AppImage and Snap.
+Flatpak is recommended. For arm processors, download from flathub.
+
+-   ### AppImage
+
+    **AppImage** format is supported on most Linux distros and has Auto-Update support.
+    It just needs to be executed after downloading. See more about [AppImages here](https://appimage.org/).
+
+    [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher) is recommended for integrating AppImages.
+
+-   ### Flatpak
+    ```
+    flatpak install flathub io.github.aandrew_me.ytdn
+    ```
+-   ### Snapcraft
+    ```
+    sudo snap install ytdownloader
+    ```
+
+## macOS 🍎
+
+Since the app is not signed, when you will try to open the app, macOS will not allow you to open it. 
+
+You need to open terminal and execute:
+```
+sudo xattr -r -d com.apple.quarantine /Applications/YTDownloader.app 
+```
+
+You will also need to install `yt-dlp` with [homebrew](https://brew.sh/)
+```
+brew install yt-dlp
+```
+
+## Internationalization (Localization) 🌍
+
+Translations into other languages would be highly appreciated. If you want to help translating the app to other languages, you can join from [here](https://crwd.in/ytdownloader). Open a new issue and that language will be added to Crowdin. Please don&#039;t make pull requests with json files, instead use Crowdin.
+
+[![Crowdin](https://badges.crowdin.net/ytdownloader/localized.svg)](https://crowdin.com/project/ytdownloader)
+
+### ✅ Available languages
+
+| Name                | Status |
+| ------------------- | ------ |
+| Arabic              | ✔️     |
+| Bengali             | ✔️     |
+| English             | ✔️     |
+| Chinese Simplified  | ✔️     |
+| Chinese Traditional | ✔️     |
+| Finnish             | ✔️     |
+| Hindi               | ✔️     |
+| French              | ✔️     |
+| Finnish             | ✔️     |
+| German              | ✔️     |
+| Greek               | ✔️     |
+| Hungarian           | ✔️     |
+| Italian             | ✔️     |
+| Japanese            | ✔️     |
+| Persian             | ✔️     |
+| Polish              | ✔️     |
+| Portuguese (Brazil) | ✔️     |
+| Russian             | ✔️     |
+| Spanish             | ✔️     |
+| Turkish             | ✔️     |
+| Ukrainian           | ✔️     |
+| Vietnamese          | ✔️     |
+
+Thanks to [nxjosephofficial](https://github.com/nxjosephofficial), [LINUX-SAUNA](https://t.me/linuxsauna), [Proxycon](https://github.com/proxycon), [albanobattistella](https://github.com/albanobattistella), [TheBlueQuasar](https://github.com/TheBlueQuasar), [MrQuerter](https://github.com/MrQuerter), [KotoWhiskas](https://github.com/KotoWhiskas), [André](https://github.com/andre1828), [haggen88](https://github.com/haggen88), [XfedeX](https://github.com/XfedeX), [Jok3r](https://github.com/th3knv), [TitouanReal](https://github.com/TitouanReal), [soredake](https://github.com/soredake), [yoi](https://github.com/thiennguyenqn), [HowlingWerewolf](https://github.com/HowlingWerewolf), [Kum](https://github.com/kum4423), [Mohammed Bakry](https://crowdin.com/profile/m7md_b4kry), [Huang Bingfeng](https://github.com/jackiotyu), [Abhinav](https://github.com/abhixdd), [CodWiz](https://github.com/C0dwiz) and others for helping.
+
+## Used technologies
+
+-   [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+-   [Electron](https://www.electronjs.org/)
+-   [ffmpeg](https://ffmpeg.org/)
+-   [nodeJS](https://nodejs.org/en/)
+-   [flaticon](https://www.flaticon.com/)
+
+## For building or running from source code
+
+[Nodejs](https://nodejs.org/) (along with npm) needs to be installed.
+
+Required commands to get started.
+
+```
+git clone https://github.com/aandrew-me/ytDownloader.git
+cd ytDownloader
+npm i
+```
+
+To run with [Electron](https://www.electronjs.org/) :
+
+```
+npm start
+```
+
+You need to download ffmpeg and put it in the root directory of the project. If you don&#039;t need to build for arm processor, you can download ffmpeg by executing any of the files - linux.sh / mac.sh / windows.sh depending on the platform. Otherwise you need to download ffmpeg from [here](https://github.com/yt-dlp/FFmpeg-Builds/releases) for windows/linux and from [here](http://www.osxexperts.net/) for mac (not tested)
+
+To build for Linux (It will create packages as specified in package.json). The builds are stored in **release** folder.
+```
+npm run linux
+```
+
+To build for Windows
+
+```
+npm run windows
+```
+
+To build for macOS
+
+```
+npm run mac
+```
+If you only want to build for one format, you can do
+```
+npx electron-builder -l appimage
+```
+It will just create a linux appimage build.
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[DavidHDev/react-bits]]></title>
+            <link>https://github.com/DavidHDev/react-bits</link>
+            <guid>https://github.com/DavidHDev/react-bits</guid>
+            <pubDate>Sun, 19 Apr 2026 00:11:34 GMT</pubDate>
+            <description><![CDATA[An open source collection of animated, interactive & fully customizable React components for building memorable websites.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/DavidHDev/react-bits">DavidHDev/react-bits</a></h1>
+            <p>An open source collection of animated, interactive & fully customizable React components for building memorable websites.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 38,461</p>
+            <p>Forks: 1,718</p>
+            <p>Stars today: 94 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+	&lt;br&gt;
+	&lt;br&gt;
+    &lt;picture&gt;
+      &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;src/assets/logos/reactbits-gh-black.svg&quot;&gt;
+      &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;src/assets/logos/reactbits-gh-white.svg&quot;&gt;
+      &lt;img src=&quot;src/assets/logos/reactbits-gh-black.svg&quot; alt=&quot;react-bits logo&quot; width=&quot;600&quot;&gt;
+    &lt;/picture&gt;
+	&lt;br&gt;
+	&lt;br&gt;
+  &lt;strong&gt;The largest &amp; most creative library of animated React components.&lt;/strong&gt;
+  &lt;br /&gt;
+  &lt;sub&gt;Stand out with 110+ free, customizable animations for text, backgrounds, and UI.&lt;/sub&gt;
+	&lt;br&gt;
+	&lt;br&gt;
+  &lt;a href=&quot;https://github.com/davidhdev/react-bits/stargazers&quot;&gt;&lt;img alt=&quot;GitHub Repo stars&quot; src=&quot;https://img.shields.io/github/stars/davidhdev/react-bits&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/davidhdev/react-bits/blob/main/LICENSE.md&quot;&gt;&lt;img alt=&quot;License&quot; src=&quot;https://img.shields.io/badge/License-MIT+Commons_Clause-magenta&quot;&gt;&lt;/a&gt;
+  &lt;br&gt;
+  &lt;br&gt;
+  &lt;a href=&quot;https://reactbits.dev/&quot;&gt;📖 Documentation&lt;/a&gt; · &lt;a href=&quot;https://reactbits.dev/get-started/installation&quot;&gt;⚡ Quick Start&lt;/a&gt; · &lt;a href=&quot;https://reactbits.dev/tools&quot;&gt;🛠️ Tools&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;br /&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+  &lt;img src=&quot;src/assets/common/readme-showcase.png&quot; alt=&quot;React Bits component showcase&quot; width=&quot;1000&quot;&gt;
+&lt;/div&gt;
+
+&lt;br /&gt;
+
+## ✨ Why React Bits?
+
+React Bits helps you **ship stunning interfaces faster**. Instead of spending hours crafting animations from scratch, grab a polished component and customize it to fit your vision.
+
+&gt; 💬 **Text Animations** · 🌀 **Animations** · 🧩 **Components** · 🖼️ **Backgrounds**
+
+## 🚀 Features
+
+- **110+ components** — text animations, UI elements, and backgrounds, growing weekly
+- **Minimal dependencies** — lightweight and tree-shakeable
+- **Fully customizable** — tweak everything via props or edit the source directly
+- **4 variants per component** — JS-CSS, JS-TW, TS-CSS, TS-TW (everyone&#039;s happy)
+- **Copy-paste ready** — works with any modern React project
+
+## 🛠️ Creative Tools
+
+&lt;div align=&quot;center&quot;&gt;
+  &lt;img src=&quot;src/assets/common/tools-readme.webp&quot; alt=&quot;React Bits Tools&quot; width=&quot;1000&quot; style=&quot;border-radius: 30px; max-width: 1920px;&quot;&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+### Beyond components, React Bits offers **free creative tools** to supercharge your workflow:
+
+| Tool                                                 | What it does                                                                             |
+| ---------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| **[Background Studio](https://reactbits.dev/tools)** | Explore animated backgrounds, customize effects, export as video/image/code              |
+| **[Shape Magic](https://reactbits.dev/tools)**       | Create inner rounded corners between shapes, export as SVG, React code or clip-path code |
+| **[Texture Lab](https://reactbits.dev/tools)**       | Apply 20+ effects (noise, dithering, ASCII) to images/videos and export in high quality  |
+
+## 📦 Installation
+
+React Bits supports [shadcn](https://ui.shadcn.com/) and [jsrepo](https://jsrepo.dev) for quick CLI installs.
+
+```bash
+# Example: Add a component via shadcn
+npx shadcn@latest add @react-bits/BlurText-TS-TW
+```
+
+Each component page includes copy-ready CLI commands. See the [installation guide](https://reactbits.dev/get-started/installation) for full details.
+
+You can also select your preferred technologies, and copy the code manually.
+
+## 🚀 Sponsors
+
+React Bits is proudly supported by these amazing sponsors:
+
+### Diamond
+
+&lt;a href=&quot;https://www.shadcnblocks.com/?utm_source=reactbits&amp;utm_medium=sponsor&amp;utm_campaign=diamond&amp;ref=reactbits&quot; target=&quot;_blank&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;public/assets/sponsors/shadcnblocks.svg&quot;&gt;
+    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;public/assets/sponsors/shadcnblocks-lightmode.svg&quot;&gt;
+    &lt;img src=&quot;public/assets/sponsors/shadcnblocks.svg&quot; alt=&quot;shadcnblocks.com&quot; style=&quot;height: 50px;&quot;&gt;
+  &lt;/picture&gt;
+&lt;/a&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&lt;a href=&quot;https://shadcnstudio.com/?utm_source=reactbits&amp;utm_medium=sponsor&amp;utm_campaign=diamond&amp;ref=reactbits&quot; target=&quot;_blank&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;public/assets/sponsors/shadcnstudio.svg&quot;&gt;
+    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;public/assets/sponsors/shadcnstudio-lightmode.svg&quot;&gt;
+    &lt;img src=&quot;public/assets/sponsors/shadcnstudio.svg&quot; alt=&quot;shadcn studio&quot; style=&quot;height: 50px;&quot;&gt;
+  &lt;/picture&gt;
+&lt;/a&gt;
+
+### Platinum
+
+&lt;a href=&quot;https://pro.tailark.com/?utm_source=reactbits&amp;utm_medium=sponsor&amp;utm_campaign=platinum&amp;ref=reactbits&quot; target=&quot;_blank&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;public/assets/sponsors/tailark.svg&quot;&gt;
+    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;public/assets/sponsors/tailark-lightmode.svg&quot;&gt;
+    &lt;img src=&quot;public/assets/sponsors/tailark.svg&quot; alt=&quot;Tailark&quot; style=&quot;height: 50px;&quot;&gt;
+  &lt;/picture&gt;
+&lt;/a&gt;
+
+### Silver
+
+&lt;a href=&quot;https://nextjsweekly.com/?utm_source=reactbits&amp;utm_medium=sponsor&amp;utm_campaign=silver&amp;ref=reactbits&quot; target=&quot;_blank&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;public/assets/sponsors/nextjsweekly.svg&quot;&gt;
+    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;public/assets/sponsors/nextjsweekly-lightmode.svg&quot;&gt;
+    &lt;img src=&quot;public/assets/sponsors/nextjsweekly.svg&quot; alt=&quot;Next.js Weekly&quot; style=&quot;height: 40px;&quot;&gt;
+  &lt;/picture&gt;
+&lt;/a&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&lt;a href=&quot;https://shadcncraft.com/?utm_source=reactbits&amp;utm_medium=sponsor&amp;utm_campaign=silver&amp;ref=reactbits&quot; target=&quot;_blank&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;public/assets/sponsors/shadcncraft.svg&quot;&gt;
+    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;public/assets/sponsors/shadcncraft-lightmode.svg&quot;&gt;
+    &lt;img src=&quot;public/assets/sponsors/shadcncraft.svg&quot; alt=&quot;Shadcncraft&quot; style=&quot;height: 40px;&quot;&gt;
+  &lt;/picture&gt;
+&lt;/a&gt;
+
+&lt;hr /&gt;
+
+**[Become a sponsor](https://reactbits.dev/sponsors)** — Get your brand in front of 500K+ developers monthly.
+
+## 🤝 Contributing
+
+We&#039;d love your help! Check the [open issues](https://github.com/DavidHDev/react-bits/issues) or submit ideas via the [feature request template](https://github.com/DavidHDev/react-bits/issues/new?template=2-feature-request.yml).
+
+Please read the [contribution guide](https://github.com/DavidHDev/react-bits/blob/main/CONTRIBUTING.md) first — thanks for making React Bits better!
+
+## 🙌 Contributors
+
+&lt;a href=&quot;https://github.com/davidhdev/react-bits/graphs/contributors&quot;&gt;
+  &lt;img src=&quot;https://contrib.rocks/image?repo=davidhdev/react-bits&quot; /&gt;
+&lt;/a&gt;
+
+## 👤 Maintainer
+
+**[David Haz](https://github.com/DavidHDev)** — creator &amp; lead maintainer
+
+## 🌐 Official Ports
+
+| Framework | Link                                  |
+| --------- | ------------------------------------- |
+| Vue.js    | [vue-bits.dev](https://vue-bits.dev/) |
+
+## 📊 Stats
+
+![Repobeats analytics](https://repobeats.axiom.co/api/embed/b1bf4dc0226458617adbdbf5586f2df953eb0922.svg &#039;Repobeats analytics image&#039;)
+
+## 🗳️ Credit
+
+React Bits occasionally draws inspiration from publicly available code examples. These are rewritten as full-fledged, customizable components for JS, TS, CSS, and Tailwind. If you recognize your work, [open an issue](https://github.com/DavidHDev/react-bits/issues) to request credit.
+
+## 📄 License
+
+[MIT + Commons Clause](https://github.com/davidhdev/react-bits/blob/main/LICENSE.md) — free for personal and commercial use.
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[prem-k-r/MaterialYouNewTab]]></title>
+            <link>https://github.com/prem-k-r/MaterialYouNewTab</link>
+            <guid>https://github.com/prem-k-r/MaterialYouNewTab</guid>
+            <pubDate>Sun, 19 Apr 2026 00:11:33 GMT</pubDate>
+            <description><![CDATA[MY NewTab: A Simple New Tab (browser's home page) inspired with Google's 'Material You' design]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/prem-k-r/MaterialYouNewTab">prem-k-r/MaterialYouNewTab</a></h1>
+            <p>MY NewTab: A Simple New Tab (browser's home page) inspired with Google's 'Material You' design</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 583</p>
+            <p>Forks: 140</p>
+            <p>Stars today: 8 stars today</p>
+            <h2>README</h2><pre>&lt;!-- Initialized : Sun 20 Aug 2023 03:41:08 PM IST --&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+
+&lt;a href=&quot;https://prem-k-r.github.io/MaterialYouNewTab/&quot;&gt;&lt;img src=&quot;https://github.com/user-attachments/assets/48c3a9cb-06fa-4c45-92ec-194cdb7c5661&quot; width=&quot;58&quot;&gt;&lt;/a&gt;
+&lt;br&gt;
+MYNT: Material You New Tab
+
+&lt;/h1&gt;
+&lt;div align=&quot;center&quot;&gt;
+
+MYNT: Material You New Tab is a versatile browser extension that personalizes your New Tab page with customizable themes, a welcoming message, and various handy tools, all while integrating seamlessly with your preferred search engine.
+
+&lt;/div&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+
+![License](https://img.shields.io/github/license/prem-k-r/MaterialYouNewTab)
+![Last Commit](https://img.shields.io/github/last-commit/prem-k-r/MaterialYouNewTab)
+![GitHub contributors](https://img.shields.io/github/contributors/prem-k-r/MaterialYouNewTab)
+![GitHub stars](https://img.shields.io/github/stars/prem-k-r/MaterialYouNewTab)
+![GitHub forks](https://img.shields.io/github/forks/prem-k-r/MaterialYouNewTab)
+
+[![](https://img.shields.io/chrome-web-store/v/jjpokbgpiljgndebfoljdeihhkpcpfgl.svg)](https://chrome.google.com/webstore/detail/mynt-material-you-new-tab/jjpokbgpiljgndebfoljdeihhkpcpfgl) [![](https://img.shields.io/chrome-web-store/rating/jjpokbgpiljgndebfoljdeihhkpcpfgl.svg)](https://chrome.google.com/webstore/detail/mynt-material-you-new-tab/jjpokbgpiljgndebfoljdeihhkpcpfgl) [![](https://img.shields.io/chrome-web-store/users/jjpokbgpiljgndebfoljdeihhkpcpfgl.svg)](https://chrome.google.com/webstore/detail/mynt-material-you-new-tab/jjpokbgpiljgndebfoljdeihhkpcpfgl) ‾ [![](https://img.shields.io/amo/v/mynt.svg)](https://addons.mozilla.org/en-US/firefox/addon/mynt/) [![](https://img.shields.io/amo/rating/mynt.svg)](https://addons.mozilla.org/en-US/firefox/addon/mynt/) [![](https://img.shields.io/amo/users/mynt.svg)](https://addons.mozilla.org/en-US/firefox/addon/mynt/)
+
+&lt;/div&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;#-features&quot;&gt;Features&lt;/a&gt; •
+  &lt;a href=&quot;#-installation-guide&quot;&gt;Installation Guide&lt;/a&gt; •
+  &lt;a href=&quot;#download&quot;&gt;Download&lt;/a&gt; •
+  &lt;a href=&quot;#-currently-supported-languages-31&quot;&gt;Currently Supported Languages&lt;/a&gt;
+&lt;br&gt;
+  &lt;a href=&quot;#-contributing&quot;&gt;Contributing&lt;/a&gt; •
+  &lt;a href=&quot;#-star-history&quot;&gt;Star History&lt;/a&gt; •
+  &lt;a href=&quot;#-issues-and-support&quot;&gt;Issues and Support&lt;/a&gt; •
+  &lt;a href=&quot;#-privacy-policy&quot;&gt;Privacy Policy&lt;/a&gt; •
+  &lt;a href=&quot;#-license&quot;&gt;License&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;img src=&quot;https://i.postimg.cc/CF43Yzj1/material-you-new-Tab-poster.webp&quot; alt=&quot;Screenshot 1&quot; width=&quot;100%&quot;&gt;
+
+#### 🔴 🟡 🟢 Test live: [https://prem-k-r.github.io/MaterialYouNewTab/](https://prem-k-r.github.io/MaterialYouNewTab/)
+
+## ✨ Features
+
+- **Integrated Search**: Search directly from the New Tab using your preferred search engine — Google, DuckDuckGo, Bing, Brave Search, YouTube, Wikipedia, and more, with integrated voice typing.
+- **Customizable Themes**: Choose from a selection of themes or use the built-in color picker to match your style.
+- **Wallpaper**: Upload your own wallpapers or enable daily random images sourced from [Lorem Picsum](https://picsum.photos).
+- **Personalized Greeting**: Add a custom message or your name, so you&#039;re greeted each time you open a new tab.
+- **Clock &amp; Time Display**: Choose between a modern analog or digital clock.
+- **Live Weather Updates**: View real-time temperature, conditions, humidity, feels like, and max-min temperature values. Supports °C and °F with location customization.
+- **Quick Shortcuts**: Access common platforms (YouTube, Email, WhatsApp, etc.) or add your own shortcuts for instant navigation.
+- **AI Tools**: Open ChatGPT, Gemini, Copilot, Perplexity, Claude, DeepSeek, and more with one click.
+- **To-Do List**: Manage daily tasks, pin important ones, and enjoy automatic cleanup at the start of each day (pinned tasks reset to pending).
+- **Sidebar Bookmarks**: View, delete, and organize bookmarks in either list or grid layout.
+- **Google Apps**: Quickly launch Gmail, Drive, Docs, and other Google services.
+- **Backup &amp; Reset**: Save or restore your setup anytime, or reset everything to default with one click.
+- **Language Support**: Use the extension in your preferred language for better accessibility.
+- **Browser Compatibility**: Supports all Chromium-based browsers, including **Chrome**, **Edge**, **Brave**, and **Opera**, as well as Firefox-based browsers like **Firefox** and **Zen**.
+
+## 📥 Installation Guide
+
+### Download
+
+1. **Development Version** (v3.2.*)
+
+    - **Clone the Repository**:
+      Use the following command to clone the repository:
+
+       ```bash
+       git clone https://github.com/prem-k-r/MaterialYouNewTab.git
+       ```
+
+    - Alternatively, download the latest version as a ZIP file by clicking below:
+
+      [![Download ZIP](https://img.shields.io/badge/Download-ZIP-blue.svg)](https://github.com/prem-k-r/MaterialYouNewTab/archive/refs/heads/main.zip)
+
+    - You can also download the ZIP file by clicking on the Code button. On the repository page, look for a green button labeled **Code**. Click on the **Code** button, and in the dropdown menu, select **Download ZIP**.
+
+2. **Stable Release** (v3.2)
+
+&lt;p align=&quot;center&quot;&gt;
+    &lt;a href=&quot;https://github.com/prem-k-r/MaterialYouNewTab/releases/latest&quot;&gt;&lt;img src=&quot;https://github.com/user-attachments/assets/51048d6d-0b35-4f62-8351-4a3ea52d2213&quot; alt=&quot;Download from GitHub&quot; height=&quot;48&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://chromewebstore.google.com/detail/mynt-material-you-new-tab/jjpokbgpiljgndebfoljdeihhkpcpfgl&quot;&gt;&lt;img src=&quot;https://github.com/user-attachments/assets/7a829ba4-dcd0-452b-922a-5efacbfda498&quot; alt=&quot;Download from Chrome Web Store&quot; height=&quot;48&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/mynt/&quot;&gt;&lt;img src=&quot;https://blog.mozilla.org/addons/files/2020/04/get-the-addon-fx-apr-2020.svg&quot; alt=&quot;Download from Mozilla Add-ons&quot; height=&quot;48&quot; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+---
+
+### Installation
+
+#### ![Chromium](https://img.icons8.com/?size=20&amp;id=104996&amp;format=png&amp;color=000000) Chromium-Based Browsers
+
+1. **Install from Chrome Web Store**:
+
+   - [Chrome Web Store link](https://chromewebstore.google.com/detail/mynt-material-you-new-tab/jjpokbgpiljgndebfoljdeihhkpcpfgl)
+
+   **Or** follow the manual steps below:
+
+2. **Manual Installation**:
+
+   - **Prepare the Extension Folder**:
+
+     - Ensure you’ve cloned the repository or downloaded the ZIP file and extracted it.
+
+   - **Open Extensions Page**:
+     Open your preferred browser and enter the following text in the address bar:
+
+     - ![Chrome](https://img.icons8.com/color/20/000000/chrome--v1.png) Chrome: `chrome://extensions`
+
+     - ![Edge](https://img.icons8.com/?size=20&amp;id=dGm9KIZPpukc&amp;format=png&amp;color=000000) Edge: `edge://extensions`
+
+     - ![Brave](https://img.icons8.com/color/20/000000/brave-web-browser.png) Brave: `brave://extensions`
+
+     - ![Opera](https://img.icons8.com/color/20/000000/opera--v1.png) Opera: `opera://extensions`
+
+   - **Enable Developer Mode**:
+
+     - Turn on **Developer Mode** in the extensions page.
+
+   - **Load Unpacked Extension**:
+     - Click on **Load unpacked** and select your extracted extension folder.
+
+3. **Additional Steps ONLY for &lt;img height=&quot;16&quot; src=&quot;https://cdn.simpleicons.org/opera&quot;/&gt; Opera (or &lt;img height=&quot;16&quot; src=&quot;https://cdn.simpleicons.org/operagx&quot;/&gt; Opera GX)**:
+
+&gt; [!NOTE]
+&gt; Opera does **not support replacing the default New Tab**.  
+&gt; This method only sets the extension as a **startup page**.
+
+&lt;details&gt;&lt;summary&gt;Click here for the workaround&lt;/summary&gt;
+
+- Go to the **Settings**.
+- Scroll to the **On startup** section (use the search option if needed).
+- Click on **Open a specific page or set of pages** and then click on **Add a new page**.
+- Add the following (replace 32-character extension ID if installed manually) to the **Site URL**:
+
+```text
+chrome-extension://jjpokbgpiljgndebfoljdeihhkpcpfgl/index.html
+```
+
+- To find the extension ID:
+
+  - Go to `opera://extensions`, find the extension, and copy the 32-character ID from its details.
+
+- To simulate new tabs:
+
+  - Bookmark the extension page to access new tab pages manually.
+
+  - Or, right-click the tab and select **Duplicate tab**.
+
+&lt;/details&gt;
+
+Below are screenshots of the process to guide you through each step visually.
+
+&lt;img src=&quot;https://i.postimg.cc/w6JYypvc/chrome.png&quot; alt=&quot;Screenshot 1&quot; width=&quot;569&quot;&gt;
+&lt;img src=&quot;https://i.postimg.cc/0ksR7BKg/edge.png&quot; alt=&quot;Screenshot 2&quot; width=&quot;569&quot;&gt;
+&lt;img src=&quot;https://i.postimg.cc/MqPSg5NR/brave.png&quot; alt=&quot;Screenshot 3&quot; width=&quot;569&quot;&gt;
+
+---
+
+#### ![Firefox](https://img.icons8.com/color/20/000000/firefox--v1.png) Firefox
+
+1. **Install from Mozilla Extensions Store**:
+
+   - [Mozilla Add-ons link](https://addons.mozilla.org/en-US/firefox/addon/mynt/)
+
+&lt;img src=&quot;https://i.postimg.cc/bPW2fHX7/FireFox.png&quot; alt=&quot;Screenshot&quot; width=&quot;569&quot;&gt;
+
+2. **Update the Homepage**:
+
+   - Open Firefox and **obtain the UUID**:
+      - Hover over the New Tab button (next to the tab close button). A tooltip will display the extension&#039;s unique ID, which looks like this: `0f31e1c1-d63c-4660-b950-8bfbda3bb20a`. Copy or note this ID.
+      - Alternatively, type `about:debugging#/runtime/this-firefox` in the address bar and find the extension&#039;s UUID there.
+   - Open **Settings** and navigate to **Home**, or type `about:preferences#home` in the address bar.
+   - Under the **Homepage and new windows** section, select **Custom URLs...**.
+   - Paste the following URL, replacing the ID with your actual UUID:
+
+     ```text
+     moz-extension://e31d6701-f699-414f-bb4c-8fde495c432e/index.html
+     ```
+
+   - This will update both your homepage and new tab to the extension.
+  
+3. **Additional Steps ONLY for Zen Browser** &lt;img height=&quot;16&quot; src=&quot;https://cdn.simpleicons.org/zenbrowser&quot;/&gt; :
+
+   - Open a new tab and go to `about:config`.
+   - Accept the risk and continue if prompted.
+   - In the search bar, type:
+
+     ```text
+     zen.urlbar.replace-newtab
+     ```
+
+   - Set its value to **false** by clicking the toggle icon.
+
+   This ensures the browser does not override the custom New Tab page set by the extension.
+
+4. **Manual Installation (Temporary)**:
+
+   - Clone the repository or download and extract the ZIP file.
+   - **Prepare the Manifest**:
+
+     - Delete the existing `manifest.json` file.
+     - Rename `manifest(firefox).json` to `manifest.json`.
+
+   - **Load Temporary Add-on**:
+     - Go to `about:debugging#/runtime/this-firefox`, select **&quot;This Firefox&quot;**, then click **Load Temporary Add-on**.
+     - Browse and select the updated `manifest.json`.
+
+---
+
+&lt;!-- ### Installation Video
+
+For a step-by-step walkthrough, watch this [installation guide video](https://youtu.be/P4ryQPixfw8).
+
+[![Watch the video](https://img.youtube.com/vi/P4ryQPixfw8/0.jpg)](https://youtu.be/P4ryQPixfw8) --&gt;
+
+## 🌐 Currently Supported Languages (31)
+
+| Language                                                                                     | Code  | Translator(s)                                                                         |
+| -------------------------------------------------------------------------------------------- | :---: | ------------------------------------------------------------------------------------- |
+| &lt;img src=&#039;https://flagcdn.com/us.svg&#039; width=20&gt; &amp;nbsp; **English**                           |  en   | [XengShi](https://github.com/XengShi/), [Prem](https://github.com/prem-k-r/)          |
+| &lt;img src=&#039;https://flagcdn.com/sa.svg&#039; width=20&gt; &amp;nbsp; **Arabic** - العربية                     | ar-SA | [Mazen](https://github.com/Mazen3Alharbi)                                             |
+| &lt;img src=&#039;https://flagcdn.com/az.svg&#039; width=20&gt; &amp;nbsp; **Azerbaijani** - Azərbaycanca        |  az   | [Hasan Bakhtiar](https://github.com/hasanbakhtiar/)                                   |
+| &lt;img src=&#039;https://flagcdn.com/bd.svg&#039; width=20&gt; &amp;nbsp; **Bangla** - বাংলা                     |  bn   | [It&#039;z RJ](https://github.com/itz-rj-here/), [Prem](https://github.com/prem-k-r/)      |
+| &lt;img src=&#039;https://flagcdn.com/cn.svg&#039; width=20&gt; &amp;nbsp; **Chinese** (Simplified) - 简体中文    | zh-CN | [Guy Berryman](https://github.com/Guy-Berryman), [Tianli](https://github.com/TIANLI0), [Konsento](http://github.com/kons10) |
+| &lt;img src=&#039;https://flagcdn.com/tw.svg&#039; width=20&gt; &amp;nbsp; **Chinese** (Traditional) - 繁體中文   | zh-TW | [C. Y. Tseng](https://github.com/Eddie40802)                                          |
+| &lt;img src=&#039;https://flagcdn.com/cz.svg&#039; width=20&gt; &amp;nbsp; **Czech** - Čeština                   |  cz   | [Michal Šmahel](https://github.com/ceskyDJ/)                                          |
+| &lt;img src=&#039;https://flagcdn.com/fr.svg&#039; width=20&gt; &amp;nbsp; **French** - Français                 |  fr   | [422.io](https://github.com/iamwinner422)                                             |
+| &lt;img src=&#039;https://flagcdn.com/de.svg&#039; width=20&gt; &amp;nbsp; **German** - Deutsch                  |  de   | [Prem](https://github.com/prem-k-r/)                                                  |
+| &lt;img src=&#039;https://flagcdn.com/gr.svg&#039; width=20&gt; &amp;nbsp; **Greek** - Ελληνικά                  |  el   | [Lefteris T.](https://github.com/trlef19)                                             |
+| &lt;img src=&#039;https://flagcdn.com/in.svg&#039; width=20&gt; &amp;nbsp; **Hindi** - हिंदी                       |  hi   | [XengShi](https://github.com/XengShi/), [Prem](https://github.com/prem-k-r/)          |
+| &lt;img src=&#039;https://flagcdn.com/hu.svg&#039; width=20&gt; &amp;nbsp; **Hungarian** - Magyar                |  hu   | [Zan1456](https://github.com/Zan1456/)                                                |
+| &lt;img src=&#039;https://flagcdn.com/id.svg&#039; width=20&gt; &amp;nbsp; **Indonesian** - Bahasa Indonesia     |  idn  | [Ayyas-RF](https://github.com/Ayyas-RF/)                                              |
+| &lt;img src=&#039;https://flagcdn.com/it.svg&#039; width=20&gt; &amp;nbsp; **Italian** - Italiano                |  it   | [Claudio Di Maio](https://github.com/ZiClaud/)                                        |
+| &lt;img src=&#039;https://flagcdn.com/jp.svg&#039; width=20&gt; &amp;nbsp; **Japanese** - 日本語                 |  ja   | [XengShi](https://github.com/XengShi/), [S-H-Y-A](https://github.com/S-H-Y-A/), [Konsento](http://github.com/kons10) |
+| &lt;img src=&#039;https://flagcdn.com/kr.svg&#039; width=20&gt; &amp;nbsp; **Korean** - 한국어                   |  ko   | [XengShi](https://github.com/XengShi/), [eunsunglee0524](https://github.com/eunsunglee0524/) |
+| &lt;img src=&#039;https://flagcdn.com/in.svg&#039; width=20&gt; &amp;nbsp; **Marathi** - मराठी                   |  mr   | [Prem](https://github.com/prem-k-r/), [Pratik Lokhande](https://github.com/konprtk)   |
+| &lt;img src=&#039;https://flagcdn.com/np.svg&#039; width=20&gt; &amp;nbsp; **Nepali** - नेपाली                    |  np   | [Bikash Shresha](https://github.com/sthaB-kash/)                                      |
+| &lt;img src=&#039;https://flagcdn.com/ir.svg&#039; width=20&gt; &amp;nbsp; **Persian** - فارسی                    |  fa   | [AMIRHOSSEIN](https://github.com/AMIRHOSSEIN-AHMADI-IR)                               |
+| &lt;img src=&#039;https://flagcdn.com/pl.svg&#039; width=20&gt; &amp;nbsp; **Polish** - Polski                  | pl | [Dawid Warkowski](https://github.com/dawid9707/)                                         |
+| &lt;img src=&#039;https://flagcdn.com/br.svg&#039; width=20&gt; &amp;nbsp; **Portuguese** - Português            | pt-BR | [Maycon Vitor Correa](https://github.com/MestreWalla/)                                |
+| &lt;img src=&#039;https://flagcdn.com/ru.svg&#039; width=20&gt; &amp;nbsp; **Russian** - Русский                 |  ru   | [giwi](https://github.com/giwih/), [CodWiz](https://github.com/C0dwiz/)               |
+| &lt;img src=&#039;https://flagcdn.com/si.svg&#039; width=20&gt; &amp;nbsp; **Slovenian** - Slovenščina           | sl-SI | [Linux-Alex](https://github.com/Linux-Alex/)                                          |
+| &lt;img src=&#039;https://flagcdn.com/es.svg&#039; width=20&gt; &amp;nbsp; **Spanish** - Español                 | es-ES | [XengShi](https://github.com/XengShi/), [Isaac Vergara](https://github.com/zRaidev), [Saúl Palacios](https://github.com/palacios22c)  |
+| &lt;img src=&#039;https://flagcdn.com/in.svg&#039; width=20&gt; &amp;nbsp; **Tamil** - தமிழ்                 | ta | [தமிழ்நேரம்](https://TamilNeram.github.io/)                                                |
+| &lt;img src=&#039;https://flagcdn.com/th.svg&#039; width=20&gt; &amp;nbsp; **Thai** - ภาษาไทย                 | th | [Prin](https://github.com/prinsasina)                                                |
+| &lt;img src=&#039;https://flagcdn.com/tr.svg&#039; width=20&gt; &amp;nbsp; **Turkish** - Türkçe                  |  tr   | [Nobody](https://github.com/Nobody9512), [Kerim Ölçer](https://github.com/kerimlcr)   |
+| &lt;img src=&#039;https://flagcdn.com/ua.svg&#039; width=20&gt; &amp;nbsp; **Ukrainian** - Українська | uk | [Serhii Lozytskyi](https://github.com/lozik4) |
+| &lt;img src=&#039;https://flagcdn.com/pk.svg&#039; width=20&gt; &amp;nbsp; **Urdu** - اردو                        |  ur   | [Asfandiyar Khan](https://github.com/asfand-dev)                                      |
+| &lt;img src=&#039;https://flagcdn.com/uz.svg&#039; width=20&gt; &amp;nbsp; **Uzbek** - O&#039;zbek                    |  uz   | [Firdavs](https://github.com/Firdavs9512/), [S0ME2](https://github.com/S0ME2/)                                            |
+| &lt;img src=&#039;https://flagcdn.com/vn.svg&#039; width=20&gt; &amp;nbsp; **Vietnamese** - Tiếng Việt           |  vn   | [Diep](https://github.com/diepdo1810/), [Tuan](https://github.com/Tuan1-2-3)          |
+
+Check the [Translation Status Page](https://prem-k-r.github.io/MaterialYouNewTab/tools/languagesAnalysis.html) for an overview of completed languages and missing strings analysis.
+
+If you&#039;d like to contribute quotes in any of the languages used in MYNT, check out [Multilingual Quotes](https://github.com/prem-k-r/multilingual-quotes-api).
+
+## 🤝 Contributing
+
+Contributions are welcome! If you’d like to contribute:
+
+1. Follow the guidelines in the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
+2. Fork the repository.
+3. Create a new branch: `git checkout -b feature/YourFeature`.
+4. Commit your changes: `git commit -m &#039;Add Your Feature&#039;`.
+5. Push to the branch: `git push origin feature/YourFeature`.
+6. Open a pull request.
+
+## ⭐ Star History
+
+Here is the star history chart for the **MYNT: Material You New Tab** repository. It shows the growth of stars over time, reflecting the increasing interest and support for the project.
+
+&lt;a href=&quot;https://star-history.com/#prem-k-r/MaterialYouNewTab&amp;Date&quot;&gt;
+ &lt;picture&gt;
+   &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/svg?repos=prem-k-r/MaterialYouNewTab&amp;type=Date&amp;theme=dark&quot; /&gt;
+   &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/svg?repos=prem-k-r/MaterialYouNewTab&amp;type=Date&quot; /&gt;
+   &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/svg?repos=prem-k-r/MaterialYouNewTab&amp;type=Date&quot; /&gt;
+ &lt;/picture&gt;
+&lt;/a&gt;
+
+## ❓ Issues and Support
+
+- If you encounter any issues or bugs, feel free to open an issue on [GitHub](https://github.com/prem-k-r/MaterialYouNewTab/issues).
+- For general questions or support, you can contact the repository maintainers through the **Telegram group**: [Join here](https://t.me/Material_You_NewTab).
+
+## 🛡 Privacy Policy
+
+MYNT: Material You New Tab prioritizes your privacy and is focused solely on providing a better browsing experience.
+We make the following commitments:
+
+- **No commercialization** — absolutely no ads, paid features, or premium tiers
+- **No trackers** — no data collection, analytics, or background reporting of any kind
+- **No access to personal information** — all settings, cache, and preferences are stored locally in your browser
+
+For more details, read our [Privacy Policy](https://prem-k-r.github.io/MaterialYouNewTab/privacy-policy.html).
+
+## 📜 License
+
+Copyright (C) 2024-2026 Prem Kumar
+
+Copyright (C) 2023-2025 XengShi
+
+&gt; This extension is the continuation of XengShi&#039;s Material You NewTab [(_Learn more_)](https://github.com/prem-k-r/MaterialYouNewTab/discussions/28#discussioncomment-13837571).
+
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0). This means you must **not** distribute this software, whether original or modified, to any platform **without** its source code or the reference to its original source code. See the [LICENSE](htt
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[jaegertracing/jaeger-ui]]></title>
+            <link>https://github.com/jaegertracing/jaeger-ui</link>
+            <guid>https://github.com/jaegertracing/jaeger-ui</guid>
+            <pubDate>Sun, 19 Apr 2026 00:11:32 GMT</pubDate>
+            <description><![CDATA[Web UI for Jaeger]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/jaegertracing/jaeger-ui">jaegertracing/jaeger-ui</a></h1>
+            <p>Web UI for Jaeger</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 1,461</p>
+            <p>Forks: 690</p>
             <p>Stars today: 1 star today</p>
-            <h2>README</h2><pre># Cursor plugins
+            <h2>README</h2><pre>[![Build Status][ci-img]][ci] [![Coverage Status][cov-img]][cov] [![FOSSA Status][fossa-img]][fossa] [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/jaegertracing/jaeger-ui/badge)](https://securityscorecards.dev/viewer/?uri=github.com/jaegertracing/jaeger-ui)
 
-Official Cursor plugins for popular developer tools, frameworks, and SaaS products. Each plugin is a standalone directory at the repository root with its own `.cursor-plugin/plugin.json` manifest.
+# Jaeger UI
 
-## Plugins
+Visualize distributed tracing with Jaeger.
 
-| `name` | Plugin | Author | Category | `description` (from marketplace) |
-|:-------|:-------|:-------|:---------|:-------------------------------------|
-| `continual-learning` | [Continual Learning](continual-learning/) | Cursor | Developer Tools | Incremental transcript-driven memory updates for AGENTS.md using high-signal bullet points only. |
-| `cursor-team-kit` | [Cursor Team Kit](cursor-team-kit/) | Cursor | Developer Tools | Internal team workflows used by Cursor developers for CI, code review, and shipping. |
-| `create-plugin` | [Create Plugin](create-plugin/) | Cursor | Developer Tools | Scaffold and validate new Cursor plugins. |
-| `agent-compatibility` | [Agent Compatibility](agent-compatibility/) | Cursor | Developer Tools | CLI-backed repo compatibility scans plus Cursor agents that audit startup, validation, and docs against reality. |
-| `cli-for-agent` | [CLI for Agents](cli-for-agent/) | Cursor | Developer Tools | Patterns for designing CLIs that coding agents can run reliably: flags, help with examples, pipelines, errors, idempotency, dry-run. |
-| `pr-review-canvas` | [PR Review Canvas](pr-review-canvas/) | Cursor | Developer Tools | Render PR diffs as interactive Cursor Canvases organized for reviewer comprehension — groups changes by importance, separates boilerplate from core logic, and highlights tricky or unexpected code. |
-| `docs-canvas` | [Docs Canvas](docs-canvas/) | Cursor | Developer Tools | Render documentation — architecture notes, API references, runbooks, and codebase walkthroughs — as a navigable Cursor Canvas with sections, table of contents, diagrams, and cross-references. |
+|              Trace Search              |             Trace Details              |
+| :------------------------------------: | :------------------------------------: |
+| ![Trace Search](./media/ss_search.png) | ![Trace Details](./media/ss_trace.png) |
 
-Author values match each plugin’s `plugin.json` `author.name` (Cursor lists `plugins@cursor.com` in the manifest).
+## Contributing
 
-## Repository structure
+See [CONTRIBUTING](./CONTRIBUTING.md) for development setup, coding standards, and contribution guidelines.
 
-This is a multi-plugin marketplace repository. The root `.cursor-plugin/marketplace.json` lists all plugins, and each plugin has its own manifest:
+Stuck somewhere or found a bug? See [Getting in Touch](https://www.jaegertracing.io/get-in-touch/) on how to ask for help.
 
-```
-plugins/
-├── .cursor-plugin/
-│   └── marketplace.json       # Marketplace manifest (lists all plugins)
-├── plugin-name/
-│   ├── .cursor-plugin/
-│   │   └── plugin.json        # Per-plugin manifest
-│   ├── skills/                # Agent skills (SKILL.md with frontmatter)
-│   ├── rules/                 # Cursor rules (.mdc files)
-│   ├── mcp.json               # MCP server definitions
-│   ├── README.md
-│   ├── CHANGELOG.md
-│   └── LICENSE
-└── ...
-```
+## UI Configuration
+
+See the [configuration guide](https://www.jaegertracing.io/docs/latest/frontend-ui/) for details on configuring Google Analytics tracking, menu customizations, and other aspects of UI behavior.
 
 ## License
 
-MIT
+[Apache 2.0 License](./LICENSE).
+
+[ci-img]: https://github.com/jaegertracing/jaeger-ui/workflows/Unit%20Tests/badge.svg?branch=main
+[ci]: https://github.com/jaegertracing/jaeger-ui/actions
+[cov-img]: https://codecov.io/gh/jaegertracing/jaeger-ui/branch/main/graph/badge.svg
+[cov]: https://codecov.io/gh/jaegertracing/jaeger-ui
+[fossa-img]: https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjaegertracing%2Fjaeger-ui.svg?type=shield
+[fossa]: https://app.fossa.io/projects/git%2Bgithub.com%2Fjaegertracing%2Fjaeger-ui?ref=badge_shield
 </pre>
           ]]></content:encoded>
             <category>JavaScript</category>
@@ -772,15 +1512,15 @@ MIT
             <title><![CDATA[atlassian/atlassian-mcp-server]]></title>
             <link>https://github.com/atlassian/atlassian-mcp-server</link>
             <guid>https://github.com/atlassian/atlassian-mcp-server</guid>
-            <pubDate>Sat, 18 Apr 2026 00:12:34 GMT</pubDate>
+            <pubDate>Sun, 19 Apr 2026 00:11:31 GMT</pubDate>
             <description><![CDATA[Remote MCP Server that securely connects Jira and Confluence with your LLM, IDE, or agent platform of choice.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/atlassian/atlassian-mcp-server">atlassian/atlassian-mcp-server</a></h1>
             <p>Remote MCP Server that securely connects Jira and Confluence with your LLM, IDE, or agent platform of choice.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 593</p>
+            <p>Stars: 595</p>
             <p>Forks: 68</p>
-            <p>Stars today: 5 stars today</p>
+            <p>Stars today: 7 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
   &lt;img src=&quot;images/atlassian_logo_brand_RGB.svg&quot;&gt;
 &lt;/p&gt;
@@ -1000,18 +1740,1152 @@ Learn more: MCP Clients - (Understanding the potential security risks)[https://w
             <category>JavaScript</category>
         </item>
         <item>
+            <title><![CDATA[docmirror/dev-sidecar]]></title>
+            <link>https://github.com/docmirror/dev-sidecar</link>
+            <guid>https://github.com/docmirror/dev-sidecar</guid>
+            <pubDate>Sun, 19 Apr 2026 00:11:30 GMT</pubDate>
+            <description><![CDATA[开发者边车，github打不开，github加速，git clone加速，git release下载加速，stackoverflow加速]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/docmirror/dev-sidecar">docmirror/dev-sidecar</a></h1>
+            <p>开发者边车，github打不开，github加速，git clone加速，git release下载加速，stackoverflow加速</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 21,772</p>
+            <p>Forks: 2,668</p>
+            <p>Stars today: 32 stars today</p>
+            <h2>README</h2><pre># dev-sidecar
+
+开发者边车，命名取自service-mesh的service-sidecar，意为为开发者打辅助的边车工具（以下简称ds）
+通过本地代理的方式将https请求代理到一些国内的加速通道上
+
+&lt;a href=&#039;https://github.com/docmirror/dev-sidecar&#039;&gt;&lt;img alt=&quot;GitHub stars&quot; src=&quot;https://img.shields.io/github/stars/docmirror/dev-sidecar?logo=github&quot;&gt;&lt;/a&gt;
+
+[![Star History Chart](https://api.star-history.com/svg?repos=docmirror/dev-sidecar&amp;type=date&amp;legend=top-left)](https://www.star-history.com/#docmirror/dev-sidecar&amp;type=date&amp;legend=top-left)
+
+&gt; Gitee上的同步项目已被封禁，请认准本项目唯一官方仓库地址[https://github.com/docmirror/dev-sidecar](https://github.com/docmirror/dev-sidecar) 【狗头保命】
+&gt;
+&gt; 我将继续奋战在开源一线，为社区贡献更多更好的开源项目。
+&gt;
+&gt; 感兴趣的可以关注我的主页 [【github】](https://github.com/greper) [【gitee】](https://gitee.com/greper)
+
+## 打个广告
+
+&gt; [https://github.com/certd/certd](https://github.com/certd/certd)
+&gt;
+&gt; 我的开源证书管理工具项目，全自动申请和部署证书，有需求的可以去试试，帮忙点个star
+
+## 重要提醒
+
+&gt; ------------------------------重要提醒1---------------------------------
+&gt;
+&gt; 注意：由于electron无法监听windows的关机事件，开着ds情况下直接重启电脑，会导致无法上网，你可以手动启动ds即可恢复网络，你也可以将ds设置为开机自启。
+&gt;
+&gt; 关于此问题的更多讨论请前往：[https://github.com/docmirror/dev-sidecar/issues/109](https://github.com/docmirror/dev-sidecar/issues/109)
+&gt;
+&gt; 注：此问题已在 `1.8.9` 版本中得到解决。
+
+&gt; ------------------------------重要提醒2---------------------------------
+&gt;
+&gt; 注意：本应用启动会自动修改系统代理，所以会与其他代理软件有冲突，一起使用时请谨慎使用。
+&gt;
+&gt; 与 `Watt Toolkit（原Steam++）` 共用时，请以hosts模式启动Watt Toolkit
+&gt;
+&gt; 与 `TUN网卡模式运行的游戏加速器` 可以共用
+&gt;
+&gt; 本应用主要目的在于直连访问github，如果你已经有飞机了，那建议还是不要用这个自行车（ds）了
+
+## 一、 特性
+
+### 1.1、 dns优选（解决\*\*\*污染问题）
+
+- 根据网络状况智能解析最佳域名ip地址，获取最佳网络速度
+- 解决一些网站和库无法访问或访问速度慢的问题
+- 建议遇到打开比较慢的国外网站，可以优先尝试将该域名添加到dns设置中（注意：被\*\*\*封杀的无效）
+
+### 1.2、 请求拦截
+
+- 拦截打不开的网站，代理到加速镜像站点上去。
+- 可配置多个镜像站作为备份
+- 具备测速机制，当访问失败或超时之后，自动切换到备用站点，使得目标服务高可用
+
+### 1.3、 github加速
+
+- github 直连加速 (通过修改sni实现，感谢 [fastGithub](https://github.com/dotnetcore/FastGithub) 提供的思路)
+- release、source、zip下载加速
+- clone 加速
+- 头像加速
+- 解决readme中图片引用无法加载的问题
+- gist.github.com 加速
+- 解决git push 偶尔失败需要输入账号密码的问题（fatal: TaskCanceledException encountered / fatal: HttpRequestException encountered）
+- raw/blame加速
+
+&gt; 以上部分功能通过 `X.I.U` 的油猴脚本实现， 以下是仓库和脚本下载链接，大家可以去支持一下。
+&gt;
+&gt; - [https://github.com/XIU2/UserScript](https://github.com/XIU2/UserScript)
+&gt; - [https://greasyfork.org/scripts/412245](https://greasyfork.org/scripts/412245)
+&gt;
+&gt; 由于此脚本在ds中是打包在本地的，更新会不及时，你可以直接通过浏览器安装油猴插件使用此脚本，从而获得最新更新（ds本地的可以通过 `加速服务-&gt;基本设置-&gt;启用脚本` 进行关闭）。
+
+### 1.4、 Stack Overflow 加速
+
+- 将ajax.google.com代理到加速CDN上
+- recaptcha 图片验证码加速
+
+### 1.5、 npm加速
+
+- 支持开启npm代理
+- 官方与淘宝npm registry一键切换
+- 某些npm install的时候，并且使用cnpm也无法安装时，可以尝试开启npm代理再试
+
+**_安全警告_**：
+
+- 请勿使用来源不明的服务/远程配置地址，有隐私和账号泄露风险
+- 本应用及服务/默认远程配置端承诺不收集任何信息。介意者请使用安全模式。
+
+## 二、快速开始
+
+支持windows、Mac、Linux(Ubuntu)
+
+### 2.1、DevSidecar桌面应用
+
+#### 1）下载安装包
+
+- release下载
+  [Github Release](https://github.com/docmirror/dev-sidecar/releases)
+
+&gt; Windows: 请选择DevSidecar-x.x.x-windows-universal.exe
+&gt;
+&gt; Mac: 请选择DevSidecar-x.x.x-macos-universal.dmg
+&gt;
+&gt; Debian系及其他支持deb安装包的Linux: 请选择DevSidecar-x.x.x-linux-[架构].deb
+&gt;
+&gt; 其他Linux: 请选择DevSidecar-x.x.x-linux-[架构].AppImage (未做测试，不保证能用)
+
+&gt; linux安装说明请参考 [linux安装文档](./doc/linux.md)
+
+&gt; 注意：由于没有买应用证书，所以应用在下载安装时会有“未知发行者”等安全提示，选择保留即可。
+
+#### 2）安装后打开
+
+界面应大致如下图所示：
+
+&gt; 注意：mac版安装需要在“系统偏好设置-&gt;安全性与隐私-&gt;通用”中解锁并允许应用安装
+
+![](./doc/index.png)
+
+#### 3）安装根证书
+
+第一次打开会提示安装证书，根据提示操作即可
+
+更多有关根证书的说明，请参考 [为什么要安装根证书?](./doc/caroot.md)
+
+&gt; 根证书是本地随机生成的，所以不用担心根证书的安全问题（本应用不收集任何用户信息）
+&gt;
+&gt; 你也可以在加速服务设置中自定义根证书（PEM格式的证书与私钥）
+
+&gt; 火狐浏览器需要[手动安装证书](#3火狐浏览器火狐浏览器不走系统的根证书需要在选项中添加根证书)
+
+#### 4）开始加速吧
+
+去试试打开github、huggingface、docker hub吧
+
+### 2.2、开启前 vs 开启后
+
+|          | 开启前                         | 开启后                                            |
+| -------- | ------------------------------ | ------------------------------------------------- |
+| 头像     | ![](./doc/avatar2.png)         | ![](./doc/avatar1.png)                            |
+| clone    | ![](./doc/clone-before.png)    | ![](./doc/clone.png)                              |
+| zip 下载 | ![](./doc/download-before.png) | ![](./doc/download.png)秒下的，实在截不到速度的图 |
+
+## 三、模式说明
+
+### 3.1、安全模式
+
+- 此模式：关闭拦截、关闭增强、不使用远程配置、开启dns优选、开启测速
+- 最安全，无需安装证书，可以在浏览器地址栏左侧查看域名证书
+- 功能也最弱，只有特性1，相当于查询github的国外ip，手动改hosts一个意思。
+- github的可访问性不稳定，取决于IP测速，如果有绿色ip存在，就 `有可能` 可以直连访问。
+  ![](./doc/speed.png)
+
+### 3.2、默认模式
+
+- 此模式：开启拦截、关闭增强、使用远程配置、开启dns优选、开启测速
+- 需要安装证书，通过修改sni直连访问github
+- 功能上包含特性1/2/3/4。
+
+## 四、 最佳实践
+
+- 把dev-sidecar一直开着就行了（注意部分版本的windows下开着ds重启电脑，可能会无法上网，重新打开ds即可。）
+- 建议遇到打开比较慢的国外网站，可以尝试将该域名添加到dns设置中（注意：被\*\*\*封杀的无效）
+
+### 其他加速
+
+#### 1）git clone 加速
+
+- 方式1：快捷复制：
+
+  &gt; 开启脚本支持，然后在复制clone链接下方，即可复制到加速链接
+
+- 方式2：
+
+  &gt; 1. 使用方式：用实际的名称替换 `{}` 的内容，即可加速clone [https://hub.fastgit.org/{username}/{reponame}.git](https://hub.fastgit.org/%7Busername%7D/%7Breponame%7D.git)
+  &gt; 2. clone 出来的 remote &quot;origin&quot; 为fastgit的地址，需要手动改回来
+  &gt; 3. 你也可以直接使用他们的clone加速工具 [fgit-go](https://github.com/FastGitORG/fgit-go)
+
+#### 2）`github.com` 的镜像网站（注意：部分镜像网站不能登录）
+
+&gt; 1. ~~[hub.fastgit.org](https://hub.fastgit.org/) （2024/11/18：这个好像失效了？）~~
+&gt; 2. ~~[github.com.cnpmjs.org](https://github.com.cnpmjs.org/) 这个很容易超限（2024/11/18：这个好像失效了？）~~
+&gt; 3. [bgithub.xyz](https://bgithub.xyz/)（edge浏览器可能报毒）
+
+## 五、api
+
+### 5.1、拦截配置
+
+没有配置域名的不会拦截，其他根据配置进行拦截处理。
+
+在【加速服务-拦截设置】中配置，格式如下：（更多内容参见[wiki](https://github.com/docmirror/dev-sidecar/wiki/%E5%8A%A0%E9%80%9F%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)）
+
+```json
+{
+  // 要拦截的域名
+  &quot;github.com&quot;: {
+    // 需要拦截url的正则表达式
+    &quot;/.*/.*/releases/download/&quot;: {
+      // 拦截类型
+      // &quot;redirect&quot;: &quot;url&quot;,        // 临时重定向（url会变，一些下载资源可以通过此方式配置）
+      // &quot;proxy&quot;: &quot;url&quot;,           // 代理（url不会变，没有跨域问题）
+      // &quot;abort&quot;: true,            // 取消请求（适用于被***封锁的资源，找不到替代，直接取消请求，快速失败，节省时间）
+      // &quot;success&quot;: true,          // 直接返回成功请求（某些请求不想发出去，可以伪装成功返回）
+      // &quot;cacheDays&quot;: 1,           // GET请求的使用缓存，单位：天（常用于一些静态资源）
+      // &quot;options&quot;: true,          // OPTIONS请求直接返回成功请求（该功能存在一定风险，请谨慎使用）
+      // &quot;optionsMaxAge&quot;: 2592000, // OPTIONS请求缓存时间，默认：2592000（一个月）
+
+      // 拦截配置示例：
+      &quot;redirect&quot;: &quot;download.fastgit.org&quot;
+    },
+    &quot;.*&quot;: {
+      &quot;proxy&quot;: &quot;github.com&quot;,
+      &quot;sni&quot;: &quot;baidu.com&quot; // 修改sni，规避***握手拦截
+    }
+  },
+  &quot;ajax.googleapis.com&quot;: {
+    &quot;.*&quot;: {
+      &quot;proxy&quot;: &quot;ajax.loli.net&quot;, // 代理请求，url不会变
+      &quot;backup&quot;: [&quot;ajax.proxy.ustclug.org&quot;], // 备份，当前代理请求失败后，将会切换到备用地址
+      &quot;test&quot;: &quot;ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;,
+      &quot;replace&quot;: &quot;/(.*)/xxx&quot; // 当加速地址的链接和原链接不是完全相同时，可以通过正则表达式replace，此时proxy通过$1$2来重组url， proxy:&#039;ajax.loli.net/xxx/$1&#039;
+    }
+  },
+  &quot;clients*.google.com&quot;: {
+    &quot;.*&quot;: {
+      &quot;abort&quot;: true // 取消请求，被***封锁的资源，找不到替代，直接取消请求，快速失败，节省时间
+    }
+  }
+}
+```
+
+### 5.2、DNS优选配置
+
+某些域名解析出来的ip会无法访问，（比如api.github.com会被解析到新加坡的ip上，新加坡的服务器在上午挺好，到了晚上就卡死，基本不可用）
+
+通过从dns上获取ip列表，切换不同的ip进行尝试，最终会挑选到一个最快的ip（该功能需要事先配置好所用DNS），更多说明参见[wiki](https://github.com/docmirror/dev-sidecar/wiki/%E5%8A%A0%E9%80%9F%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
+
+```json
+{
+  &quot;dns&quot;: {
+    &quot;mapping&quot;: {
+      &quot;api.github.com&quot;: &quot;cloudflare&quot;, // &quot;解决push的时候需要输入密码的问题&quot;,
+      &quot;gist.github.com&quot;: &quot;cloudflare&quot;, // 解决gist无法访问的问题
+      &quot;*.githubusercontent.com&quot;: &quot;cloudflare&quot; // 解决github头像经常下载不到的问题
+    }
+  }
+}
+```
+
+注意：暂时只支持IPv4的解析
+
+## 六、问题排查
+
+### 6.1、dev-sidecar的前两个开关没有处于打开状态
+
+1. 尝试将开关按钮手动打开
+2. 请尝试右键dev-sidecar图标，点退出。再重新打开
+3. 如果还不行，请将日志发送给作者
+
+如果是mac系统，可能是下面的原因
+
+#### 1）Mac系统使用时，首页的系统代理开关无法打开
+
+出现这个问题可能是没有开启系统代理命令的执行权限
+
+```
+networksetup -setwebproxy &#039;WiFi&#039; 127.0.0.1 31181
+#看是否有如下错误提示
+** Error: Command requires admin privileges.
+```
+
+如果有上面的错误提示，请尝试如下方法：
+
+&gt; 取消访问偏好设置需要管理员密码
+&gt;
+&gt; 系统偏好设置—&gt;安全性与隐私—&gt; 通用—&gt; 高级—&gt; 访问系统范围的偏好设置需要输入管理员密码（取消勾选）
+
+### 6.2、没有加速效果
+
+1. 本应用默认仅开启https加速，一般足够覆盖需求。
+   如果你访问的是仅支持http协议的网站，请手动在【系统代理】中打开【代理HTTP请求】
+2. 检查浏览器是否装了什么插件，与ds有冲突
+3. 检查是否安装了其他代理软件，与ds有冲突
+4. 请确认浏览器的代理设置为使用IE代理/或者使用系统代理状态
+5. 可以尝试换个浏览器试试
+6. 请确认网络代理设置处于勾选状态
+   正常情况下ds在“系统代理”开关打开时，会自动设置系统代理。
+
+### 6.3、浏览器打开提示证书不受信任
+
+![](./doc/crt-error.png)
+
+一般是证书安装位置不对，重新安装根证书后，重启浏览器
+
+#### 1）windows: 请确认证书已正确安装在“本地计算机-将所有的证书都放入下列存储：受信任的根证书颁发机构”下
+
+#### 2）mac: 请确认证书已经被安装并已经设置信任
+
+#### 3）火狐浏览器：火狐浏览器不走系统的根证书，需要在选项中添加根证书
+
+1. 火狐浏览器-&gt;选项-&gt;隐私与安全-&gt;证书-&gt;查看证书
+   ![](./doc/figures/Firefox/1.png)
+2. 证书颁发机构-&gt;导入
+3. 选择证书文件 `C:\Users(用户)\Administrator(你的账号)\.dev-sidecar\dev-sidecar.ca.crt`（Mac或linux为 `~/.dev-sidecar` 目录）
+   ![](./doc/figures/Firefox/2.png)
+4. 勾选信任由此证书颁发机构来标识网站，确定即可
+   ![](./doc/figures/Firefox/3.png)
+
+### 6.4、打开github显示连接超时
+
+```html
+DevSidecar Warning: Error: www.github.com:443, 代理请求超时
+```
+
+1. 检查测速界面github.com是否有ip ，如果没有ip，则可能是由于你的网络提供商封锁了dns服务商的ip（试试能否ping通：1.1.1.1 / 9.9.9.9 ）
+2. 如果是安全模式，则是因为不稳定导致的，等一会再刷新试试
+3. 如果是增强模式，则是由于访问人数过多，正常现象
+
+### 6.5、查看日志是否有报错
+
+如果还是不行，请在下方加官方QQ群或提issue，附上服务日志（server.log）以便进行分析
+
+日志打开方式：加速服务-&gt;右边日志按钮-&gt;打开日志文件夹
+
+![](./doc/log.png)
+
+### 6.6、某些原本可以打开的网站打不开了
+
+1. 可以尝试关闭pac
+2. 可以将域名加入白名单
+
+### 6.7、应用意外关闭导致没有网络了
+
+应用开启后会自动修改系统代理设置，正常退出会自动关闭系统代理
+当应用意外关闭时，可能会因为没有将系统代理恢复，从而导致完全无法上网。
+
+对于此问题有如下几种解决方案可供选择：
+
+1. 重新打开应用即可（右键应用托盘图标可完全退出，将会正常关闭系统代理设置）
+2. 如果应用被卸载了，此时需要[手动关闭系统代理设置](./doc/recover.md)
+3. 如果你是因为开着ds的情况下重启电脑导致无法上网，你可以设置ds为开机自启
+
+### 6.8、卸载应用后上不了网，git请求不了
+
+如果你在卸载应用前，没有正常退出app，就有可能无法上网。请按如下步骤操作恢复您的网络：
+
+1、关闭系统代理设置，参见：[手动关闭系统代理设置](./doc/recover.md)
+2、执行下面的命令关闭git的代理设置（如果你开启过 `Git.exe代理` 的开关）
+
+```shell
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+git config --global --unset http.sslVerify
+```
+
+3、执行下面的命令关闭npm的代理设置（如果你开启过npm加速的开关）
+
+```shell
+npm config delete proxy
+npm config delete https-proxy
+```
+
+### 6.9、其他问题
+
+请查阅[wiki](https://github.com/docmirror/dev-sidecar/wiki)
+
+也可以查阅[有文档tag的issue](https://github.com/docmirror/dev-sidecar/issues?q=is%3Aissue%20label%3ADocumentation)，它们被开发者认证为相当于文档级别的参考issue。
+
+## 七、在其他程序使用
+
+- [java程序使用](./doc/other.md#Java程序使用)
+
+## 八、贡献代码
+
+### 8.1、准备环境
+
+#### 1）安装 `nodejs`
+
+推荐安装 nodejs `22.x.x` 的版本，其他版本未做测试
+
+#### 2）安装 `pnpm`
+
+运行如下命令即可安装所需依赖：
+
+```shell
+npm install -g pnpm --registry=https://registry.npmmirror.com
+```
+
+### 8.2、开发调试模式启动
+
+运行如下命令即可开发模式启动
+
+```shell
+# 拉取代码
+git clone https://github.com/docmirror/dev-sidecar
+
+cd dev-sidecar
+
+# 注意不要使用 `npm install` 来安装依赖，因为 `pnpm` 会自动安装依赖
+pnpm install
+
+# 运行DevSidecar
+cd packages/gui
+npm run electron
+
+```
+
+&gt; 如果electron依赖包下载不动，可以开启ds的npm加速
+
+### 8.3、打包成可执行文件
+
+```shell
+# 先执行上面的步骤，然后运行如下命令打包成可执行文件
+npm run electron:build
+```
+
+### 8.4、提交pr
+
+如果你想将你的修改贡献出来，请提交pr
+
+## 九、联系作者
+
+欢迎bug反馈，需求建议，技术交流等
+
+加官方QQ群（请备注dev-sidecar，或简称DS）
+
+- QQ 1群：390691483，人数：500 / 500（满）
+- QQ 2群：[667666069](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&amp;k=n4nksr4sji93vZtD5e8YEHRT6qbh6VyQ&amp;authKey=XKBZnzmoiJrAFyOT4V%2BCrgX5c13ds59b84g%2FVRhXAIQd%2FlAiilsuwDRGWJct%2B570&amp;noverify=0&amp;group_code=667666069)，人数：500 / 500（满）
+- QQ 3群：419807815，人数：500 / 500（满）
+- QQ 4群：[438148299](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&amp;k=i_NCBB5f_Bkm2JsEV1tLs2TkQ79UlCID&amp;authKey=nMsVJbJ6P%2FGNO7Q6vsVUadXRKnULUURwR8zvUZJnP3IgzhHYPhYdcBCHvoOh8vYr&amp;noverify=0&amp;group_code=438148299)，人数：1004 / 2000（推荐）
+- QQ 5群：[767622917](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&amp;k=nAWi_Rxj7mM4Unp5LMiatmUWhGimtbcB&amp;authKey=aswmlWGjbt3GIWXtvjB2GJqqAKuv7hWjk6UBs3MTb%2Biyvr%2Fsbb1kA9CjF6sK7Hgg&amp;noverify=0&amp;group_code=767622917)，人数：200 / 500
+
+## 十、求star
+
+我的其他项目求star
+
+- [fast-crud](https://github.com/fast-crud/fast-crud) : 开发crud快如闪电
+- [certd](https://github.com/certd/certd) : 让你的证书永不过期
+- [trident-sync](https://github.com/handsfree-work/trident-sync) : 二次开发项目同步升级工具
+
+## 十一、感谢
+
+本项目曾使用lerna包管理工具
+
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+
+本项目参考如下开源项目
+
+- [node-mitmproxy](https://github.com/wuchangming/node-mitmproxy)
+- [ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN)
+
+特别感谢
+
+- [github增强油猴脚本](https://greasyfork.org/zh-CN/scripts/412245-github-%E5%A2%9E%E5%BC%BA-%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD) 本项目部分加速功能完全复制该脚本。
+- [中国域名白名单](https://github.com/pluwen/china-domain-allowlist)，本项目的系统代理排除域名功能中，使用了该白名单。
+
+本项目部分加速资源由如下组织提供
+
+- [FastGit UK](https://fastgit.org/)
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[electerm/electerm]]></title>
+            <link>https://github.com/electerm/electerm</link>
+            <guid>https://github.com/electerm/electerm</guid>
+            <pubDate>Sun, 19 Apr 2026 00:11:29 GMT</pubDate>
+            <description><![CDATA[📻Terminal/ssh/sftp/ftp/telnet/serialport/RDP/VNC/Spice client(linux, mac, win)]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/electerm/electerm">electerm/electerm</a></h1>
+            <p>📻Terminal/ssh/sftp/ftp/telnet/serialport/RDP/VNC/Spice client(linux, mac, win)</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 13,932</p>
+            <p>Forks: 1,114</p>
+            <p>Stars today: 12 stars today</p>
+            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot; style=&quot;padding-top: 60px;padding-bottom: 40px;&quot;&gt;
+    &lt;a href=&quot;https://electerm.html5beta.com&quot;&gt;
+        &lt;img src=&quot;https://github.com/electerm/electerm-resource/raw/master/static/images/electerm.png&quot;, alt=&quot;&quot; /&gt;
+    &lt;/a&gt;
+&lt;/h1&gt;
+
+# electerm [![Tweet](https://badgers.space/badge/Tweet/Tweet/social)](https://twitter.com/intent/tweet?text=Open%20sourced%20terminal%2Fssh%2Fsftp%20client(linux%2C%20mac%2C%20win)&amp;url=https%3A%2F%2Fgithub.com%2Felecterm%2Felecterm&amp;hashtags=electerm,ssh,terminal,sftp)
+
+[![GitHub version](https://badgers.space/github/release/electerm/electerm?corner_radius=m)](https://github.com/electerm/electerm/releases)
+[![Build Status](https://github.com/electerm/electerm/actions/workflows/mac-test-1.yml/badge.svg)](https://github.com/electerm/electerm/actions)
+[![license](https://img.shields.io/github/license/electerm/electerm)](https://github.com/electerm/electerm/blob/master/LICENSE)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Get it from the Snap Store](https://img.shields.io/badge/Snap-Store-green)](https://snapcraft.io/electerm)
+[![Get it from the Microsoft Store](https://img.shields.io/badge/Microsoft-Store-blue)](https://www.microsoft.com/store/apps/9NCN7272GTFF)
+[![Debian Repository](https://img.shields.io/badge/Debian-Repository-red)](https://electerm-repos.html5beta.com/deb)
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/electerm?label=Sponsors)](https://github.com/sponsors/electerm)
+[![Powered by manate](https://img.shields.io/badge/Powered%20by-manate-blue)](https://github.com/tylerlong/manate)
+[![Discord](https://img.shields.io/badge/Discord-Join-blue?logo=discord)](https://discord.gg/855W7g8EVd)
+[![star](https://atomgit.com/electerm/electerm/star/badge.svg)](https://atomgit.com/electerm/electerm)
+
+[![English](https://img.shields.io/badge/English-EN-blue)](README.md) [![中文](https://img.shields.io/badge/中文-Chinese-blue)](README_cn.md)
+
+[![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%202.svg)](https://www.digitalocean.com/?refcode=c10bcb28b846&amp;utm_campaign=Referral_Invite&amp;utm_medium=Referral_Program&amp;utm_source=badge)
+
+[![Vercel OSS Program](https://vercel.com/oss/program-badge.svg)](https://vercel.com/oss)
+
+Open-sourced terminal/ssh/sftp/telnet/serialport/RDP/VNC/Spice/ftp client(linux, mac, win).
+
+For experienced developers, you may try the web app version running in browser(including mobile device): [electerm-web](https://github.com/electerm/electerm-web) or [docker image for electerm-web](https://github.com/electerm/electerm-web-docker)
+
+Online demo: [https://electerm-demo.html5beta.com](https://electerm-demo.html5beta.com)
+
+&lt;div align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://github.com/electerm/electerm-resource/raw/master/static/images/electerm.gif&quot;, alt=&quot;&quot; /&gt;
+&lt;/div&gt;
+
+## Features
+
+- Works as a terminal/file manager or ssh/sftp/ftp/telnet/serialport/RDP/VNC/Spice client
+- Support Window 7+(X64/ARM64), Mac OS 10.15+(x64/arm64), Linux(x64/arm64), even old Linux with glibc 2.17+ like UOS/Kylin/Ubuntu 18.04 etc
+- Global hotkey to toggle window visibility (similar to guake, default is `ctrl + 2`)
+- Multi platform(linux, mac, win)
+- 🇺🇸 🇨🇳 🇧🇷 🇷🇺 🇪🇸 🇫🇷 🇹🇷 🇭🇰 🇯🇵 🇸🇦 🇩🇪 🇰🇷 🇮🇩 🇵🇱 Multi-language support([electerm-locales](https://github.com/electerm/electerm-locales), contributions/fixes welcome)
+- Double click to directly edit (small) remote files.
+- Auth with publicKey + password.
+- Support Zmodem(rz, sz).
+- Support ssh tunnel.
+- Support [Trzsz](https://github.com/trzsz/trzsz)(trz/tsz), similar to rz/sz, and compatible with tmux.
+- Transparent window(Mac, win).
+- Terminal background image.
+- Global/session proxy.
+- Quick commands
+- UI/terminal theme
+- Sync bookmarks/themes/quick commands to github/gitee secret gist/webdav/custom server/electerm cloud
+- Quick input to one or all terminals.
+- AI assistant integration (supporting [DeepSeek](https://www.deepseek.com), OpenAI, and other AI APIs) to help with command suggestions, script writing, and explaining selected terminal content
+- MCP (Model Context Protocol) widget for AI assistants and external tools integration - see [MCP Widget Usage Guide](https://github.com/electerm/electerm/wiki/MCP-Widget-Usage-Guide)
+- Deep link support: Open connections with URLs like `telnet://192.168.2.31:34554` or `ssh://user@host:22` - see [Deep link support wiki](https://github.com/electerm/electerm/wiki/Deep-link-support)
+- Command line usage: check [wiki](https://github.com/electerm/electerm/wiki/Command-line-usage)
+
+## Download
+
+- [Homepage](https://electerm.html5beta.com)
+- [sourceforge](https://sourceforge.net/projects/electerm.mirror/files/)
+- [github releases](https://github.com/electerm/electerm/releases)
+
+## Install
+
+- For Mac user: `brew install --cask electerm`
+- With snap: `sudo snap install electerm --classic`
+- For some Linux distribution, you can find it from OS default App store(Ubuntu, Deepin, Mint...).
+- For some linux OS, the `rpm`, `deb`, or `snap` release may not work, you can try the `tar.gz` or `.appImage` release.
+- For Windows users, you can install it from [windows store](https://www.microsoft.com/store/apps/9NCN7272GTFF), command-line installer [winget](https://github.com/microsoft/winget-cli) and [scoop](https://github.com/lukesampson/scoop) is also recommended:
+
+```powershell
+# winget https://github.com/microsoft/winget-cli
+winget install electerm.electerm
+
+# scoop https://github.com/lukesampson/scoop
+scoop bucket add dorado https://github.com/chawyehsu/dorado
+scoop install dorado/electerm
+```
+
+- Install from Debian repository (for Debian/Ubuntu-based systems) with `apt` command
+
+Check [https://electerm-repos.html5beta.com/deb](https://electerm-repos.html5beta.com/deb)
+
+- Install from npm
+
+```bash
+npm i -g electerm
+
+```
+
+## Upgrade
+
+- Auto upgrade: When a new version is released, you will get an upgrade notification after you start electerm again. You can then click the upgrade button to upgrade.
+- Download: Just download the latest edition, reinstall.
+- Npm: If you install from npm, just run `npm i -g electerm` again.
+- If use Snap or some other distribution system, these systems may provide upgrades.
+
+## Known issues
+
+[https://github.com/electerm/electerm/wiki/Know-issues](https://github.com/electerm/electerm/wiki/Know-issues)
+
+## Troubleshoot
+
+[https://github.com/electerm/electerm/wiki/Troubleshoot](https://github.com/electerm/electerm/wiki/Troubleshoot)
+
+## Discussion
+
+[![Discord](https://img.shields.io/badge/Discord-Join-blue?logo=discord)](https://discord.gg/855W7g8EVd)
+
+[Discussion board](https://github.com/electerm/electerm/discussions)
+
+![electerm-wechat-group-qr.jpg](https://electerm.html5beta.com/electerm-wechat-group-qr.jpg)
+
+## Support
+
+Would love to hear from you, please tell me what you think, [submit an issue](https://github.com/electerm/electerm/issues), [Start a new discussion](https://github.com/electerm/electerm/discussions/new), [create/fix language files](https://github.com/electerm/electerm-locales) or create pull requests, all welcome.
+
+## Sponsor this project
+
+github sponsor
+
+[https://github.com/sponsors/electerm](https://github.com/sponsors/electerm)
+
+kofi
+
+[https://ko-fi.com/zhaoxudong](https://ko-fi.com/zhaoxudong)
+
+wechat donate
+
+[![wechat donate](https://electerm.html5beta.com/electerm-wechat-donate.png)](https://github.com/electerm)
+
+## Dev
+
+```bash
+# May only works in Linux
+# needs nodejs/npm, suggest using nvm to install nodejs/npm
+# with nodejs 22.x
+
+git clone git@github.com:electerm/electerm.git
+cd electerm
+npm config set legacy-peer-deps true
+npm i
+
+# start vite dev server, requires port 5570
+npm start
+
+# in a separate terminal session run app
+npm run app
+
+# code format check
+npm run lint
+
+# code format fix
+npm run fix
+```
+
+## Test
+
+```bash
+npm run b
+npm run prepare-test
+cp .sample.env .env
+
+# edit .env, fill your test host/username/password, may only works in mac OS
+npm run test
+```
+
+## Test build
+
+```bash
+# May only works in Linux
+# Install yarn first(to do yarn autoclean)
+# See https://yarnpkg.com/en/docs/install
+
+# Build linux only with -l
+npm i
+npm run b
+npm run pb
+./node_modules/.bin/electron-builder --linux tar.gz
+# or replace tar.gz to rpm/deb/AppImage
+# check dist/ folder
+
+# build for linux arm/
+./node_modules/.bin/electron-builder --linux --arm64
+```
+
+## Video guide
+
+- [https://electerm.html5beta.com/videos](https://electerm.html5beta.com/videos)
+
+## Change log
+
+Visit [Releases](https://github.com/electerm/electerm/releases).
+
+## Contact author
+
+[zxdong@gmail.com](mailto:zxdong@gmail.com)
+
+
+## License
+
+MIT
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=electerm/electerm&amp;type=Date)](https://www.star-history.com/#electerm/electerm&amp;Date)</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[lodash/lodash]]></title>
+            <link>https://github.com/lodash/lodash</link>
+            <guid>https://github.com/lodash/lodash</guid>
+            <pubDate>Sun, 19 Apr 2026 00:11:28 GMT</pubDate>
+            <description><![CDATA[A modern JavaScript utility library delivering modularity, performance, & extras.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/lodash/lodash">lodash/lodash</a></h1>
+            <p>A modern JavaScript utility library delivering modularity, performance, & extras.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 61,315</p>
+            <p>Forks: 7,138</p>
+            <p>Stars today: 3 stars today</p>
+            <h2>README</h2><pre># lodash v4.18.1
+
+[Site](https://lodash.com/) |
+[Docs](https://lodash.com/docs) |
+[FP Guide](https://github.com/lodash/lodash/wiki/FP-Guide) |
+[Contributing](https://github.com/lodash/lodash/blob/master/.github/CONTRIBUTING.md) |
+[Wiki](https://github.com/lodash/lodash/wiki &quot;Changelog, Roadmap, etc.&quot;) |
+[Code of Conduct](https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md) |
+[Governance](https://github.com/lodash/lodash/blob/HEAD/GOVERNANCE.md) |
+[Twitter](https://twitter.com/bestiejs) |
+[Chat](https://gitter.im/lodash/lodash)
+
+&gt; [!IMPORTANT]
+&gt; As announced on the [OpenJS Foundation blog](https://openjsf.org/blog/sta-supports-lodash), Lodash has received support from the Sovereign Tech Agency and will transition to the Feature-Complete maturity stage so that it remains stable, secure, and sustainable long-term. As part of this effort, Lodash is rebooting its governance. A draft charter will be published shortly. The upcoming Technical Steering Committee (TSC) is already at work. For transparency, its members are listed in [GOVERNANCE.md](https://github.com/lodash/lodash/blob/HEAD/GOVERNANCE.md).
+
+The [Lodash](https://lodash.com/) library exported as a [UMD](https://github.com/umdjs/umd) module.
+
+Generated using [lodash-cli](https://www.npmjs.com/package/lodash-cli):
+```shell
+$ npm run build
+$ lodash -o ./dist/lodash.js
+$ lodash core -o ./dist/lodash.core.js
+```
+
+## Download
+
+ * [Core build](https://raw.githubusercontent.com/lodash/lodash/4.18.1/dist/lodash.core.js) ([~4 kB gzipped](https://raw.githubusercontent.com/lodash/lodash/4.18.1/dist/lodash.core.min.js))
+ * [Full build](https://raw.githubusercontent.com/lodash/lodash/4.18.1/dist/lodash.js) ([~24 kB gzipped](https://raw.githubusercontent.com/lodash/lodash/4.18.1/dist/lodash.min.js))
+ * [CDN copies](https://www.jsdelivr.com/projects/lodash)
+
+Lodash is released under the [MIT license](https://raw.githubusercontent.com/lodash/lodash/4.18.1/LICENSE) &amp; supports modern environments.&lt;br&gt;
+Review the [build differences](https://github.com/lodash/lodash/wiki/build-differences) &amp; pick one that’s right for you.
+
+## Installation
+
+In a browser:
+```html
+&lt;script src=&quot;lodash.js&quot;&gt;&lt;/script&gt;
+```
+
+Using npm:
+```shell
+$ npm i -g npm
+$ npm i --save lodash
+```
+
+In Node.js:
+```js
+// Load the full build.
+var _ = require(&#039;lodash&#039;);
+// Load the core build.
+var _ = require(&#039;lodash/core&#039;);
+// Load the FP build for immutable auto-curried iteratee-first data-last methods.
+var fp = require(&#039;lodash/fp&#039;);
+
+// Load method categories.
+var array = require(&#039;lodash/array&#039;);
+var object = require(&#039;lodash/fp/object&#039;);
+
+// Cherry-pick methods for smaller browserify/rollup/webpack bundles.
+var at = require(&#039;lodash/at&#039;);
+var curryN = require(&#039;lodash/fp/curryN&#039;);
+```
+
+## Why Lodash?
+
+Lodash makes JavaScript easier by taking the hassle out of working with arrays,&lt;br&gt;
+numbers, objects, strings, etc. Lodash’s modular methods are great for:
+
+ * Iterating arrays, objects, &amp; strings
+ * Manipulating &amp; testing values
+ * Creating composite functions
+
+## Module Formats
+
+Lodash is available in a [variety of builds](https://lodash.com/custom-builds) &amp; module formats.
+
+ * [lodash](https://www.npmjs.com/package/lodash) &amp; [per method packages](https://www.npmjs.com/browse/keyword/lodash-modularized)
+ * [lodash-es](https://www.npmjs.com/package/lodash-es), [babel-plugin-lodash](https://www.npmjs.com/package/babel-plugin-lodash), &amp; [lodash-webpack-plugin](https://www.npmjs.com/package/lodash-webpack-plugin)
+ * [lodash/fp](https://github.com/lodash/lodash/tree/npm/fp)
+ * [lodash-amd](https://www.npmjs.com/package/lodash-amd)
+
+
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[processing/p5.js]]></title>
+            <link>https://github.com/processing/p5.js</link>
+            <guid>https://github.com/processing/p5.js</guid>
+            <pubDate>Sun, 19 Apr 2026 00:11:27 GMT</pubDate>
+            <description><![CDATA[p5.js is a client-side JS platform that empowers artists, designers, students, and anyone to learn to code and express themselves creatively on the web. It is based on the core principles of Processing. Looking for p5.js 2.0? http://beta.p5js.org]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/processing/p5.js">processing/p5.js</a></h1>
+            <p>p5.js is a client-side JS platform that empowers artists, designers, students, and anyone to learn to code and express themselves creatively on the web. It is based on the core principles of Processing. Looking for p5.js 2.0? http://beta.p5js.org</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 23,608</p>
+            <p>Forks: 3,751</p>
+            <p>Stars today: 8 stars today</p>
+            <h2>README</h2><pre>[![npm version](https://badge.fury.io/js/p5.svg)](https://www.npmjs.com/package/p5)
+[![All Contributors](https://img.shields.io/github/all-contributors/processing/p5.js?color=ee8449)](#contributors)
+[![Total Downloads](https://img.shields.io/npm/dt/p5)](https://www.npmjs.com/package/p5)
+
+# [p5.js](https://p5js.org)
+
+Welcome! 👋👋🏿👋🏽👋🏻👋🏾👋🏼
+
+p5.js is a free and open-source JavaScript library for [accessible](https://p5js.org/contribute/access) creative coding. It is a nurturing community, an approachable language, an exploratory tool, an accessible environment, an inclusive platform, welcoming and playful for artists, designers, educators, beginners, and anyone else!
+
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;
+
+```js
+function setup() {
+  createCanvas(400, 400);
+  background(255);
+}
+
+function draw() {
+  circle(mouseX, mouseY, 80);
+}
+```
+
+&lt;/td&gt;
+&lt;td&gt;
+
+&lt;img src=&quot;./contributor_docs/images/p5-readme-sketch.png&quot; width=&quot;200&quot; height=&quot;200&quot; /&gt;
+
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+[Get Started](https://p5js.org/tutorials/get-started/) — [Reference](https://p5js.org/reference) — [Tutorials](https://p5js.org/tutorials) — [Examples](https://p5js.org/examples/) — [Libraries](https://p5js.org/libraries) — [Forum](https://discourse.processing.org/c/p5js) — [Discord](https://discord.p5js.org)
+
+## About
+
+p5.js is built and organized to prioritize [accessibility, inclusivity, community, and joy](https://p5js.org/community). Similar to sketching, p5.js has a full set of tools to draw. It also supports creating audio-visual, interactive, experimental, and generative works for the web. p5.js enables thinking of a web page as your sketch. p5.js is accessible in multiple languages and has an expansive [documentation](https://p5js.org/reference/) with visual examples. You can find [tutorials](https://p5js.org/tutorials/) on the p5.js website and start coding right now in the [p5.js web editor](https://editor.p5js.org/). You can extend p5.js with many community-created [libraries](https://p5js.org/libraries/) that bring different capabilities. Its community provides endless inspiration and support for creators.
+
+p5.js encourages iterative and exploratory code for creative expression. Its friendly, diverse community shares art, code, and learning resources to help elevate all voices. We share our values in open source and access for all, to learn, create, imagine, design, share and code freely.
+
+## Community
+
+The p5.js community shares an interest in exploring the creation of art and design with technology. We are a community of, and in solidarity with, people from every gender identity and expression, sexual orientation, race, ethnicity, language, neuro-type, size, disability, class, caste, religion, culture, subculture, immigration status, age, skill level, occupation, and background. We stand in solidarity with justice and liberation movements. We work to acknowledge, dismantle, and prevent barriers to access p5.js code and the p5.js community.
+
+Learn more about [our community](https://p5js.org/community/) and read our community statement and [code of conduct](https://github.com/processing/p5.js/blob/main/CODE_OF_CONDUCT.md). You can directly support our work with p5.js by donating to [the Processing Foundation](https://processingfoundation.org/support).
+
+## 🌼 p5.js 2.0 Now Available for Community Testing &amp; Development!
+
+We are releasing p5.js 2.0 to the community for testing and development! Here’s what you need to know.
+
+* For **reference**: p5.js 1.x reference will stay on [https://p5js.org/](https://p5js.org/), and p5.js 2.x documentation will be on [https://beta.p5js.org/](https://beta.p5js.org/)
+* In the p5.js Editor: the **default will continue to be 1.x** until at least August 2026 - more information and discussion on timeline can be found on [this Discourse thread](https://discourse.processing.org/t/dev-updates-p5-js-2-0-you-are-here/46130) or [this GitHub thread](https://github.com/processing/p5.js/issues/7488)
+* For updating sketches and add-on libraries: check out [the compatibility add-on libraries and guides](https://github.com/processing/p5.js-compatibility)
+* For **contribution**: `npm latest` will default to 2.x, but the git branches are still separated with `main` on 1.x and `dev-2.0` on 2.x. We will switch the branches when we have updated all automations (including deploying updated documentation to the website). Want to contribute ideas or implementation? Check the [2.x project board](https://github.com/orgs/processing/projects/21/views/8) for an overview of what still needs discussion, and what’s ready for work!
+
+## Issues
+
+If you have found a bug in the p5.js library or want to request new features, feel free to file an issue! See our [contributor guidelines](https://p5js.org/contribute/contributor_guidelines) for a full reference of our contribution process. A set of templates for reporting issues and requesting features are provided to assist you (and us!). Different parts of p5.js are in different repositories. You can open an issue on each of them through these links:
+
+[p5.js](https://github.com/processing/p5.js/issues) — [p5.js website](https://github.com/processing/p5.js-website/issues) —- [p5.js web editor](https://github.com/processing/p5.js-web-editor/issues)
+
+p5.js is maintained mostly by volunteers, so we thank you for your patience as we try to address your issues as soon as we can.
+
+## Get Started for Contributors
+
+p5.js is a collaborative project with many contributors, mostly volunteers, and you are invited to help. All types of involvement are welcome. See the [contribute](https://p5js.org/contribute) for more in-depth details about contributing to different areas of the project, including code, bug fixes, documentation, discussion, and more.
+
+A quick Getting Started with the Build and setting up the repository could be found [here](https://p5js.org/contribute/contributor_guidelines/#quick-get-started-for-developers).
+
+## AI Usage Policy
+This project does *not* accept fully AI-generated contributions. AI tools may be used assistively only. As a contributor, you should be able to understand and take responsibility for changes you make to the codebase.
+
+More details can be found in our [AI Usage Policy](./AI_USAGE_POLICY.md) and [AGENTS.md](./AGENTS.md).
+
+## Stewards
+
+Stewards are contributors who are particularly involved, familiar, or responsive to certain areas of the project. Their role is to help provide context and guidance to others working on p5.js. If you have a question about contributing to a particular area, you can tag the listed steward in an issue or pull request. They may also weigh in on feature requests and guide the overall direction of their area, with the input of the community. You can read more about the organization of the project in our p5.js [Contributor Guidelines](https://p5js.org/contribute/contributor_guidelines) and p5.js [Steward Guidelines](https://p5js.org/contribute/steward_guidelines).
+
+Anyone interested can volunteer to be a steward! There are no specific requirements for expertise, just an interest in actively learning and participating. If you’re familiar with or interested in actively learning and participating in some of the p5.js areas below, please reply to [this issue](https://github.com/processing/p5.js/issues/5719) mentioning which area(s) you are interested in volunteering as a steward! 👋👋👋
+
+p5.js was created by [Lauren Lee McCarthy](https://github.com/lmccart) in 2013 as a new interpretation of Processing for the context of the web. Since then we have allowed ourselves space to deviate and grow, while drawing inspiration from Processing and our shared community. p5.js is sustained by a community of contributors, with support from the Processing Foundation. p5.js follows a rotating leadership model started in 2020. Learn more about the [people](https://p5js.org/people/) behind p5.js.
+
+Current Lead/Mentor
+* [@ksen0](https://github.com/ksen0) - p5.js Lead，2024-present
+* [@limzykenneth](https://github.com/limzykenneth) - p5.js Mentor，2023-present
+
+Lead/Mentor Alumni
+* [@lmccart](https://github.com/lmccart) - p5.js Creator
+* [@qianqianye](https://github.com/qianqianye) - p5.js Lead，2021-2025
+* [@outofambit](https://github.com/outofambit) - p5.js Co-Lead 2021-22, Mentor 2022-2023
+* [@mcturner1995](https://github.com/mcturner1995) - p5.js Lead 2020
+
+&lt;!-- STEWARDS-LIST:START - Do not remove or modify this section --&gt;
+| Area | Steward(s) |
+|------|-------------|
+| Maintainers | [@davepagurek](https://github.com/davepagurek), [@doradocodes](https://github.com/doradocodes), [@ksen0](https://github.com/ksen0), [@limzykenneth](https://github.com/limzykenneth), [@perminder-17](https://github.com/perminder-17), [@qianqianye](https://github.com/qianqianye) |
+| Accessibility | [@calebfoss](https://github.com/calebfoss) |
+| Accessibility (p5.js-website) | [@coseeian](https://github.com/coseeian) |
+| Color | [@limzykenneth](https://github.com/limzykenneth) |
+| Core | [@davepagurek](https://github.com/davepagurek) |
+| DevOps | [@Vaivaswat2244](https://github.com/Vaivaswat2244), [@error-four-o-four](https://github.com/error-four-o-four), [@limzykenneth](https://github.com/limzykenneth), [@lirenjie95](https://github.com/lirenjie95) |
+| Documentation | [@VANSH3104](https://github.com/VANSH3104), [@limzykenneth](https://github.com/limzykenneth), [@perminder-17](https://github.com/perminder-17) |
+| Friendly Errors | [@IIITM-Jay](https://github.com/IIITM-Jay) |
+| Graphics (p5.strands) | [@lukeplowden](https://github.com/lukeplowden) |
+| Graphics (WebGL) | [@RandomGamingDev](https://github.com/RandomGamingDev), [@aferriss](https://github.com/aferriss), [@davepagurek](https://github.com/davepagurek), [@lukeplowden](https://github.com/lukeplowden), [@perminder-17](https://github.com/perminder-17) |
+| i18n (es) | [@marioguzzzman](https://github.com/marioguzzzman) |
+| i18n (hi) | [@Divyansh013](https://github.com/Divyansh013), [@takshittt](https://github.com/takshittt) |
+| i18n (ko) | [@eupthere](https://github.com/eupthere), [@hana-cho](https://github.com/hana-cho) |
+| i18n (zh) | [@limzykenneth](https://github.com/limzykenneth), [@lirenjie95](https://github.com/lirenjie95) |
+| Math | [@GregStanton](https://github.com/GregStanton), [@holomorfo](https://github.com/holomorfo) |
+| p5.js-web-editor | [@kitlord](https://github.com/kitlord) |
+| p5.js-website | [@Nwakaego-Ego](https://github.com/Nwakaego-Ego), [@clairep94](https://github.com/clairep94), [@doradocodes](https://github.com/doradocodes), [@ksen0](https://github.com/ksen0) |
+| p5.sound.js | [@ogbabydiesal](https://github.com/ogbabydiesal) |
+| Shapes | [@GregStanton](https://github.com/GregStanton) |
+| Typography | [@dhowe](https://github.com/dhowe) |
+&lt;!-- STEWARDS-LIST:END --&gt;
+
+## Contributors
+
+We recognize all types of contributions. This project follows the [all-contributors specification](https://github.com/all-contributors/all-contributors) and the [Emoji Key](https://github.com/all-contributors/all-contributors/blob/master/docs/emoji-key.md) ✨ for contribution types. Instructions to add yourself or add contribution emojis to your name are [here](https://github.com/processing/p5.js/issues/2309). You can also post an issue or comment on a pull request with the text: `@all-contributors please add @YOUR-USERNAME for THINGS` (where `THINGS` is a comma-separated list of entries from the [list of possible contribution types](https://github.com/all-contributors/all-contributors/blob/master/docs/emoji-key.md)) and our nice bot will add you to [CONTRIBUTORS.md](./CONTRIBUTORS.md) automatically!
+
+![Grid of avatars representing contributors to the p5.js project](contributors.png)
+
+Thanks to all the wonderful contributors! 💓
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[sveltejs/svelte]]></title>
+            <link>https://github.com/sveltejs/svelte</link>
+            <guid>https://github.com/sveltejs/svelte</guid>
+            <pubDate>Sun, 19 Apr 2026 00:11:26 GMT</pubDate>
+            <description><![CDATA[web development for the rest of us]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/sveltejs/svelte">sveltejs/svelte</a></h1>
+            <p>web development for the rest of us</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 86,343</p>
+            <p>Forks: 4,888</p>
+            <p>Stars today: 16 stars today</p>
+            <h2>README</h2><pre>&lt;a href=&quot;https://svelte.dev&quot;&gt;
+	&lt;picture&gt;
+		&lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;assets/banner_dark.png&quot;&gt;
+		&lt;img src=&quot;assets/banner.png&quot; alt=&quot;Svelte - web development for the rest of us&quot; /&gt;
+	&lt;/picture&gt;
+&lt;/a&gt;
+
+[![License](https://img.shields.io/npm/l/svelte.svg)](LICENSE.md) [![Chat](https://img.shields.io/discord/457912077277855764?label=chat&amp;logo=discord)](https://svelte.dev/chat)
+
+## What is Svelte?
+
+Svelte is a new way to build web applications. It&#039;s a compiler that takes your declarative components and converts them into efficient JavaScript that surgically updates the DOM.
+
+Learn more at the [Svelte website](https://svelte.dev), or stop by the [Discord chatroom](https://svelte.dev/chat).
+
+## Supporting Svelte
+
+Svelte is an MIT-licensed open source project with its ongoing development made possible entirely by fantastic volunteers. If you&#039;d like to support their efforts, please consider:
+
+- [Becoming a backer on Open Collective](https://opencollective.com/svelte).
+
+Funds donated via Open Collective will be used for compensating expenses related to Svelte&#039;s development such as hosting costs. If sufficient donations are received, funds may also be used to support Svelte&#039;s development more directly.
+
+## Roadmap
+
+You may view [our roadmap](https://svelte.dev/roadmap) if you&#039;d like to see what we&#039;re currently working on.
+
+## Contributing
+
+Please see the [Contributing Guide](CONTRIBUTING.md) and the [`svelte`](packages/svelte) package for information on contributing to Svelte.
+
+## Is svelte.dev down?
+
+Probably not, but it&#039;s possible. If you can&#039;t seem to access any `.dev` sites, check out [this SuperUser question and answer](https://superuser.com/q/1413402).
+
+## License
+
+[MIT](LICENSE.md)
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[IsmaelMartinez/teams-for-linux]]></title>
+            <link>https://github.com/IsmaelMartinez/teams-for-linux</link>
+            <guid>https://github.com/IsmaelMartinez/teams-for-linux</guid>
+            <pubDate>Sun, 19 Apr 2026 00:11:25 GMT</pubDate>
+            <description><![CDATA[Unofficial Microsoft Teams for Linux client]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/IsmaelMartinez/teams-for-linux">IsmaelMartinez/teams-for-linux</a></h1>
+            <p>Unofficial Microsoft Teams for Linux client</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 4,602</p>
+            <p>Forks: 330</p>
+            <p>Stars today: 4 stars today</p>
+            <h2>README</h2><pre># Teams for Linux
+
+[![Matrix Space](https://img.shields.io/matrix/teams-for-linux-space%3Amatrix.org?server_fqdn=matrix.org&amp;label=Matrix%20Space)](https://matrix.to/#/#teams-for-linux-space:matrix.org &quot;Matrix Space&quot;)
+![](https://img.shields.io/github/release/IsmaelMartinez/teams-for-linux.svg?style=flat)
+![](https://img.shields.io/github/downloads/IsmaelMartinez/teams-for-linux/total.svg?style=flat)
+![Build &amp; Release](https://github.com/IsmaelMartinez/teams-for-linux/workflows/Build%20&amp;%20Release/badge.svg)
+![](https://img.shields.io/librariesio/github/IsmaelMartinez/teams-for-linux)
+[![Known Vulnerabilities](https://snyk.io//test/github/IsmaelMartinez/teams-for-linux/badge.svg?targetFile=package.json)](https://snyk.io//test/github/IsmaelMartinez/teams-for-linux?targetFile=package.json)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=IsmaelMartinez_teams-for-linux&amp;metric=alert_status)](https://sonarcloud.io/summary/new_code?id=IsmaelMartinez_teams-for-linux)
+
+**Unofficial Microsoft Teams client for Linux** — a native desktop app that wraps the Teams web version with enhanced Linux integration.
+
+✅ **System notifications**  
+✅ **System tray integration** (badge support varies by desktop environment)  
+✅ **Custom backgrounds &amp; themes**  
+✅ **Screen sharing support**  
+✅ **Multiple account profiles**  
+
+&gt; [!NOTE]
+&gt; This is an independent project, not affiliated with Microsoft. Some features are limited by the Teams web app.
+
+## Sponsor
+
+### Recall.ai — API for Meeting Recording and Transcription
+&gt; If you&#039;re looking for a meeting recording API, consider checking out [Recall.ai](https://www.recall.ai/product/microsoft-teams-recording-api?utm_source=github&amp;utm_medium=sponsorship&amp;utm_campaign=ismaelmartinez-teams-for-linux), an API that records and transcribes Zoom, Google Meet, Microsoft Teams, in-person meetings, and more.
+
+_This sponsorship helps support the ongoing development of teams-for-linux._
+
+## Installation
+
+### Package Repositories
+
+We have a dedicated deb and rpm repo at https://teamsforlinux.de hosted with :heart: by [Nils Büchner](https://github.com/nbuechner). Please follow the installation instructions below.
+
+**Debian/Ubuntu:**
+```bash
+sudo mkdir -p /etc/apt/keyrings
+sudo wget -qO /etc/apt/keyrings/teams-for-linux.asc https://repo.teamsforlinux.de/teams-for-linux.asc
+sh -c &#039;echo &quot;Types: deb\nURIs: https://repo.teamsforlinux.de/debian/\nSuites: stable\nComponents: main\nSigned-By: /etc/apt/keyrings/teams-for-linux.asc\nArchitectures: amd64&quot; | sudo tee /etc/apt/sources.list.d/teams-for-linux-packages.sources&#039;
+sudo apt update &amp;&amp; sudo apt install teams-for-linux
+```
+
+**RHEL/Fedora:**
+```bash
+curl -1sLf -o /tmp/teams-for-linux.asc https://repo.teamsforlinux.de/teams-for-linux.asc; sudo rpm --import /tmp/teams-for-linux.asc
+sudo curl -1sLf -o /etc/yum.repos.d/teams-for-linux.repo https://repo.teamsforlinux.de/rpm/teams-for-linux.repo
+sudo dnf -y install teams-for-linux
+```
+
+### Distribution Packages
+
+[![AUR: teams-for-linux](https://img.shields.io/badge/AUR-teams--for--linux-blue.svg)](https://aur.archlinux.org/packages/teams-for-linux)
+[![Pacstall: teams-for-linux-deb](https://img.shields.io/badge/Pacstall-teams--for--linux--deb-00958C)](https://github.com/pacstall/pacstall-programs/tree/master/packages/teams-for-linux-deb)
+[![Vylen Linux: teams-for-linux](https://img.shields.io/badge/Vylen_Linux-teams--for--linux-green)](https://vylen.gitlab.io/packages/#teams-for-linux)  
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/teams-for-linux)
+&lt;a href=&#039;https://flathub.org/apps/details/com.github.IsmaelMartinez.teams_for_linux&#039;&gt;&lt;img width=&#039;170&#039; alt=&#039;Download on Flathub&#039; src=&#039;https://flathub.org/assets/badges/flathub-badge-en.png&#039;/&gt;&lt;/a&gt;
+
+### Manual Download
+
+Download from [GitHub Releases](https://github.com/IsmaelMartinez/teams-for-linux/releases) — available as AppImage, deb, rpm, snap, tar.gz (plus Windows/macOS builds).
+
+&gt; [!TIP]
+&gt; For AppImage files, use [`AppImageLauncher`](https://github.com/TheAssassin/AppImageLauncher) for better desktop integration.
+
+## Quick Start
+
+1. **Install** using your preferred method above
+2. **Launch** with `teams-for-linux` 
+3. **Configure** by creating `~/.config/teams-for-linux/config.json` if needed
+
+## Documentation
+
+📖 **[Complete Documentation](https://ismaelmartinez.github.io/teams-for-linux/)** — Enhanced documentation with search, mobile optimization, and comprehensive guides
+
+| Topic | Description |
+|-------|-------------|
+| **[Installation Guide](https://ismaelmartinez.github.io/teams-for-linux/installation)** | Package repositories and installation methods |
+| **[Configuration Guide](https://ismaelmartinez.github.io/teams-for-linux/configuration)** | Complete setup and configuration options |
+| **[Troubleshooting](https://ismaelmartinez.github.io/teams-for-linux/troubleshooting)** | Common issues and solutions |
+| **[Multiple Profiles](https://ismaelmartinez.github.io/teams-for-linux/multiple-instances)** | Running work &amp; personal accounts |
+| **[Custom Backgrounds](https://ismaelmartinez.github.io/teams-for-linux/custom-backgrounds)** | Video call backgrounds setup |
+| **[Contributing](https://ismaelmartinez.github.io/teams-for-linux/contributing)** | Development setup and contribution guidelines |
+
+## Project Activity
+
+![Alt](https://repobeats.axiom.co/api/embed/e63dcc8b154ee5f4490674818df091c243b041b7.svg &quot;Repobeats analytics image&quot;)
+
+## Support &amp; Community
+
+- 💬 **Chat**: Join our [Matrix Space](https://matrix.to/#/#teams-for-linux-space:matrix.org)
+- 🐛 **Issues**: [Report bugs](https://github.com/IsmaelMartinez/teams-for-linux/issues)
+- 🤝 **Contributing**: See [`CONTRIBUTING.md`](CONTRIBUTING.md)
+
+## Security &amp; Sandboxing
+
+Electron&#039;s contextIsolation and sandbox features are disabled to enable Teams DOM access functionality. For enhanced security, use system-level sandboxing:
+
+**Available options**:
+- **Flatpak**: Built-in isolation via Flathub
+- **Snap packages**: Application confinement with auto-updates
+- **Firejail**: Use this [script](https://codeberg.org/lars_uffmann/teams-for-linux-jailed) for manual sandboxing
+- **AppArmor/SELinux**: Most Linux distributions include these by default
+
+System-level sandboxing provides better isolation than Electron&#039;s built-in features while preserving full functionality.
+
+## Advanced Usage
+
+## History
+
+Read about the history of this project in the [`HISTORY.md`](HISTORY.md) file.
+
+## License
+
+**GPL-3.0** — See [`LICENSE.md`](LICENSE.md)
+
+Icons from [Icon Duck](https://iconduck.com/sets/hugeicons-essential-free-icons) (CC BY 4.0)
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
             <title><![CDATA[HeyPuter/puter]]></title>
             <link>https://github.com/HeyPuter/puter</link>
             <guid>https://github.com/HeyPuter/puter</guid>
-            <pubDate>Sat, 18 Apr 2026 00:12:33 GMT</pubDate>
+            <pubDate>Sun, 19 Apr 2026 00:11:24 GMT</pubDate>
             <description><![CDATA[🌐 The Internet Computer! Free, Open-Source, and Self-Hostable.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/HeyPuter/puter">HeyPuter/puter</a></h1>
             <p>🌐 The Internet Computer! Free, Open-Source, and Self-Hostable.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 40,371</p>
-            <p>Forks: 3,626</p>
-            <p>Stars today: 33 stars today</p>
+            <p>Stars: 40,409</p>
+            <p>Forks: 3,635</p>
+            <p>Stars today: 44 stars today</p>
             <h2>README</h2><pre>&lt;h3 align=&quot;center&quot;&gt;&lt;img width=&quot;80&quot; alt=&quot;Puter.com, The Personal Cloud Computer: All your files, apps, and games in one place accessible from anywhere at any time.&quot; src=&quot;https://assets.puter.site/puter-logo.png&quot;&gt;&lt;/h3&gt;
 
 &lt;h3 align=&quot;center&quot;&gt;The Internet OS! Free, Open-Source, and Self-Hostable.&lt;/h3&gt;
@@ -1196,1402 +3070,116 @@ This repository, including all its contents, sub-projects, modules, and componen
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[mrdoob/three.js]]></title>
-            <link>https://github.com/mrdoob/three.js</link>
-            <guid>https://github.com/mrdoob/three.js</guid>
-            <pubDate>Sat, 18 Apr 2026 00:12:32 GMT</pubDate>
-            <description><![CDATA[JavaScript 3D Library.]]></description>
+            <title><![CDATA[firebase/agent-skills]]></title>
+            <link>https://github.com/firebase/agent-skills</link>
+            <guid>https://github.com/firebase/agent-skills</guid>
+            <pubDate>Sun, 19 Apr 2026 00:11:23 GMT</pubDate>
+            <description><![CDATA[Agent Skills for Firebase]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/mrdoob/three.js">mrdoob/three.js</a></h1>
-            <p>JavaScript 3D Library.</p>
+            <h1><a href="https://github.com/firebase/agent-skills">firebase/agent-skills</a></h1>
+            <p>Agent Skills for Firebase</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 112,013</p>
-            <p>Forks: 36,324</p>
-            <p>Stars today: 40 stars today</p>
-            <h2>README</h2><pre># three.js
+            <p>Stars: 235</p>
+            <p>Forks: 35</p>
+            <p>Stars today: 2 stars today</p>
+            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/firebase-agent-skills_logo.svg&quot; width=&quot;48&quot; alt=&quot;Logo&quot; style=&quot;vertical-align: middle; margin-right: 10px;&quot;&gt;
+  Firebase Agent Skills
+&lt;/h1&gt;
 
-[![NPM Package][npm]][npm-url]
-[![Build Size][build-size]][build-size-url]
-[![NPM Downloads][npm-downloads]][npmtrends-url]
-[![jsDelivr Downloads][jsdelivr-downloads]][jsdelivr-url]
-[![Discord][discord]][discord-url]
 
-#### JavaScript 3D library
+A collection of skills for AI coding agents, to help them understand and work with Firebase more effectively. 
 
-The aim of the project is to create an easy-to-use, lightweight, cross-browser, general-purpose 3D library. The current builds only include WebGL and WebGPU renderers but SVG and CSS3D renderers are also available as addons.
-
-[Examples](https://threejs.org/examples/) &amp;mdash;
-[Docs](https://threejs.org/docs/) &amp;mdash;
-[Manual](https://threejs.org/manual/) &amp;mdash;
-[Wiki](https://github.com/mrdoob/three.js/wiki) &amp;mdash;
-[Migrating](https://github.com/mrdoob/three.js/wiki/Migration-Guide) &amp;mdash;
-[Questions](https://stackoverflow.com/questions/tagged/three.js) &amp;mdash;
-[Forum](https://discourse.threejs.org/) &amp;mdash;
-[Discord](https://discord.gg/56GBJwAnUS)
-
-### Usage
-
-This code creates a scene, a camera, and a geometric cube, and it adds the cube to the scene. It then creates a `WebGL` renderer for the scene and camera, and it adds that viewport to the `document.body` element. Finally, it animates the cube within the scene for the camera.
-
-```javascript
-import * as THREE from &#039;three&#039;;
-
-const width = window.innerWidth, height = window.innerHeight;
-
-// init
-
-const camera = new THREE.PerspectiveCamera( 70, width / height, 0.01, 10 );
-camera.position.z = 1;
-
-const scene = new THREE.Scene();
-
-const geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
-const material = new THREE.MeshNormalMaterial();
-
-const mesh = new THREE.Mesh( geometry, material );
-scene.add( mesh );
-
-const renderer = new THREE.WebGLRenderer( { antialias: true } );
-renderer.setSize( width, height );
-renderer.setAnimationLoop( animate );
-document.body.appendChild( renderer.domElement );
-
-// animation
-
-function animate( time ) {
-
-	mesh.rotation.x = time / 2000;
-	mesh.rotation.y = time / 1000;
-
-	renderer.render( scene, camera );
-
-}
-```
-
-If everything goes well, you should see [this](https://jsfiddle.net/w43x5Lgh/).
-
-### Cloning this repository
-
-Cloning the repo with all its history results in a ~2 GB download. If you don&#039;t need the whole history you can use the `depth` parameter to significantly reduce download size.
-
-```sh
-git clone --depth=1 https://github.com/mrdoob/three.js.git
-```
-
-### Change log
-
-[Releases](https://github.com/mrdoob/three.js/releases)
-
-
-[npm]: https://img.shields.io/npm/v/three
-[npm-url]: https://www.npmjs.com/package/three
-[build-size]: https://badgen.net/bundlephobia/minzip/three
-[build-size-url]: https://bundlephobia.com/result?p=three
-[npm-downloads]: https://img.shields.io/npm/dw/three
-[npmtrends-url]: https://www.npmtrends.com/three
-[jsdelivr-downloads]: https://data.jsdelivr.com/v1/package/npm/three/badge?style=rounded
-[jsdelivr-url]: https://www.jsdelivr.com/package/npm/three
-[discord]: https://img.shields.io/discord/685241246557667386
-[discord-url]: https://discord.gg/56GBJwAnUS
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[DavidHDev/react-bits]]></title>
-            <link>https://github.com/DavidHDev/react-bits</link>
-            <guid>https://github.com/DavidHDev/react-bits</guid>
-            <pubDate>Sat, 18 Apr 2026 00:12:31 GMT</pubDate>
-            <description><![CDATA[An open source collection of animated, interactive & fully customizable React components for building memorable websites.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/DavidHDev/react-bits">DavidHDev/react-bits</a></h1>
-            <p>An open source collection of animated, interactive & fully customizable React components for building memorable websites.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 38,407</p>
-            <p>Forks: 1,710</p>
-            <p>Stars today: 245 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-	&lt;br&gt;
-	&lt;br&gt;
-    &lt;picture&gt;
-      &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;src/assets/logos/reactbits-gh-black.svg&quot;&gt;
-      &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;src/assets/logos/reactbits-gh-white.svg&quot;&gt;
-      &lt;img src=&quot;src/assets/logos/reactbits-gh-black.svg&quot; alt=&quot;react-bits logo&quot; width=&quot;600&quot;&gt;
-    &lt;/picture&gt;
-	&lt;br&gt;
-	&lt;br&gt;
-  &lt;strong&gt;The largest &amp; most creative library of animated React components.&lt;/strong&gt;
-  &lt;br /&gt;
-  &lt;sub&gt;Stand out with 110+ free, customizable animations for text, backgrounds, and UI.&lt;/sub&gt;
-	&lt;br&gt;
-	&lt;br&gt;
-  &lt;a href=&quot;https://github.com/davidhdev/react-bits/stargazers&quot;&gt;&lt;img alt=&quot;GitHub Repo stars&quot; src=&quot;https://img.shields.io/github/stars/davidhdev/react-bits&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/davidhdev/react-bits/blob/main/LICENSE.md&quot;&gt;&lt;img alt=&quot;License&quot; src=&quot;https://img.shields.io/badge/License-MIT+Commons_Clause-magenta&quot;&gt;&lt;/a&gt;
-  &lt;br&gt;
-  &lt;br&gt;
-  &lt;a href=&quot;https://reactbits.dev/&quot;&gt;📖 Documentation&lt;/a&gt; · &lt;a href=&quot;https://reactbits.dev/get-started/installation&quot;&gt;⚡ Quick Start&lt;/a&gt; · &lt;a href=&quot;https://reactbits.dev/tools&quot;&gt;🛠️ Tools&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;br /&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-  &lt;img src=&quot;src/assets/common/readme-showcase.png&quot; alt=&quot;React Bits component showcase&quot; width=&quot;1000&quot;&gt;
-&lt;/div&gt;
-
-&lt;br /&gt;
-
-## ✨ Why React Bits?
-
-React Bits helps you **ship stunning interfaces faster**. Instead of spending hours crafting animations from scratch, grab a polished component and customize it to fit your vision.
-
-&gt; 💬 **Text Animations** · 🌀 **Animations** · 🧩 **Components** · 🖼️ **Backgrounds**
-
-## 🚀 Features
-
-- **110+ components** — text animations, UI elements, and backgrounds, growing weekly
-- **Minimal dependencies** — lightweight and tree-shakeable
-- **Fully customizable** — tweak everything via props or edit the source directly
-- **4 variants per component** — JS-CSS, JS-TW, TS-CSS, TS-TW (everyone&#039;s happy)
-- **Copy-paste ready** — works with any modern React project
-
-## 🛠️ Creative Tools
-
-&lt;div align=&quot;center&quot;&gt;
-  &lt;img src=&quot;src/assets/common/tools-readme.webp&quot; alt=&quot;React Bits Tools&quot; width=&quot;1000&quot; style=&quot;border-radius: 30px; max-width: 1920px;&quot;&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-### Beyond components, React Bits offers **free creative tools** to supercharge your workflow:
-
-| Tool                                                 | What it does                                                                             |
-| ---------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| **[Background Studio](https://reactbits.dev/tools)** | Explore animated backgrounds, customize effects, export as video/image/code              |
-| **[Shape Magic](https://reactbits.dev/tools)**       | Create inner rounded corners between shapes, export as SVG, React code or clip-path code |
-| **[Texture Lab](https://reactbits.dev/tools)**       | Apply 20+ effects (noise, dithering, ASCII) to images/videos and export in high quality  |
-
-## 📦 Installation
-
-React Bits supports [shadcn](https://ui.shadcn.com/) and [jsrepo](https://jsrepo.dev) for quick CLI installs.
-
-```bash
-# Example: Add a component via shadcn
-npx shadcn@latest add @react-bits/BlurText-TS-TW
-```
-
-Each component page includes copy-ready CLI commands. See the [installation guide](https://reactbits.dev/get-started/installation) for full details.
-
-You can also select your preferred technologies, and copy the code manually.
-
-## 🚀 Sponsors
-
-React Bits is proudly supported by these amazing sponsors:
-
-### Diamond
-
-&lt;a href=&quot;https://www.shadcnblocks.com/?utm_source=reactbits&amp;utm_medium=sponsor&amp;utm_campaign=diamond&amp;ref=reactbits&quot; target=&quot;_blank&quot;&gt;
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;public/assets/sponsors/shadcnblocks.svg&quot;&gt;
-    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;public/assets/sponsors/shadcnblocks-lightmode.svg&quot;&gt;
-    &lt;img src=&quot;public/assets/sponsors/shadcnblocks.svg&quot; alt=&quot;shadcnblocks.com&quot; style=&quot;height: 50px;&quot;&gt;
-  &lt;/picture&gt;
-&lt;/a&gt;
-&amp;nbsp;&amp;nbsp;&amp;nbsp;
-&lt;a href=&quot;https://shadcnstudio.com/?utm_source=reactbits&amp;utm_medium=sponsor&amp;utm_campaign=diamond&amp;ref=reactbits&quot; target=&quot;_blank&quot;&gt;
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;public/assets/sponsors/shadcnstudio.svg&quot;&gt;
-    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;public/assets/sponsors/shadcnstudio-lightmode.svg&quot;&gt;
-    &lt;img src=&quot;public/assets/sponsors/shadcnstudio.svg&quot; alt=&quot;shadcn studio&quot; style=&quot;height: 50px;&quot;&gt;
-  &lt;/picture&gt;
-&lt;/a&gt;
-
-### Platinum
-
-&lt;a href=&quot;https://pro.tailark.com/?utm_source=reactbits&amp;utm_medium=sponsor&amp;utm_campaign=platinum&amp;ref=reactbits&quot; target=&quot;_blank&quot;&gt;
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;public/assets/sponsors/tailark.svg&quot;&gt;
-    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;public/assets/sponsors/tailark-lightmode.svg&quot;&gt;
-    &lt;img src=&quot;public/assets/sponsors/tailark.svg&quot; alt=&quot;Tailark&quot; style=&quot;height: 50px;&quot;&gt;
-  &lt;/picture&gt;
-&lt;/a&gt;
-
-### Silver
-
-&lt;a href=&quot;https://nextjsweekly.com/?utm_source=reactbits&amp;utm_medium=sponsor&amp;utm_campaign=silver&amp;ref=reactbits&quot; target=&quot;_blank&quot;&gt;
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;public/assets/sponsors/nextjsweekly.svg&quot;&gt;
-    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;public/assets/sponsors/nextjsweekly-lightmode.svg&quot;&gt;
-    &lt;img src=&quot;public/assets/sponsors/nextjsweekly.svg&quot; alt=&quot;Next.js Weekly&quot; style=&quot;height: 40px;&quot;&gt;
-  &lt;/picture&gt;
-&lt;/a&gt;
-&amp;nbsp;&amp;nbsp;&amp;nbsp;
-&lt;a href=&quot;https://shadcncraft.com/?utm_source=reactbits&amp;utm_medium=sponsor&amp;utm_campaign=silver&amp;ref=reactbits&quot; target=&quot;_blank&quot;&gt;
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;public/assets/sponsors/shadcncraft.svg&quot;&gt;
-    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;public/assets/sponsors/shadcncraft-lightmode.svg&quot;&gt;
-    &lt;img src=&quot;public/assets/sponsors/shadcncraft.svg&quot; alt=&quot;Shadcncraft&quot; style=&quot;height: 40px;&quot;&gt;
-  &lt;/picture&gt;
-&lt;/a&gt;
-
-&lt;hr /&gt;
-
-**[Become a sponsor](https://reactbits.dev/sponsors)** — Get your brand in front of 500K+ developers monthly.
-
-## 🤝 Contributing
-
-We&#039;d love your help! Check the [open issues](https://github.com/DavidHDev/react-bits/issues) or submit ideas via the [feature request template](https://github.com/DavidHDev/react-bits/issues/new?template=2-feature-request.yml).
-
-Please read the [contribution guide](https://github.com/DavidHDev/react-bits/blob/main/CONTRIBUTING.md) first — thanks for making React Bits better!
-
-## 🙌 Contributors
-
-&lt;a href=&quot;https://github.com/davidhdev/react-bits/graphs/contributors&quot;&gt;
-  &lt;img src=&quot;https://contrib.rocks/image?repo=davidhdev/react-bits&quot; /&gt;
-&lt;/a&gt;
-
-## 👤 Maintainer
-
-**[David Haz](https://github.com/DavidHDev)** — creator &amp; lead maintainer
-
-## 🌐 Official Ports
-
-| Framework | Link                                  |
-| --------- | ------------------------------------- |
-| Vue.js    | [vue-bits.dev](https://vue-bits.dev/) |
-
-## 📊 Stats
-
-![Repobeats analytics](https://repobeats.axiom.co/api/embed/b1bf4dc0226458617adbdbf5586f2df953eb0922.svg &#039;Repobeats analytics image&#039;)
-
-## 🗳️ Credit
-
-React Bits occasionally draws inspiration from publicly available code examples. These are rewritten as full-fledged, customizable components for JS, TS, CSS, and Tailwind. If you recognize your work, [open an issue](https://github.com/DavidHDev/react-bits/issues) to request credit.
-
-## 📄 License
-
-[MIT + Commons Clause](https://github.com/davidhdev/react-bits/blob/main/LICENSE.md) — free for personal and commercial use.
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[aandrew-me/ytDownloader]]></title>
-            <link>https://github.com/aandrew-me/ytDownloader</link>
-            <guid>https://github.com/aandrew-me/ytDownloader</guid>
-            <pubDate>Sat, 18 Apr 2026 00:12:30 GMT</pubDate>
-            <description><![CDATA[Desktop App for downloading Videos and Audios from hundreds of sites]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/aandrew-me/ytDownloader">aandrew-me/ytDownloader</a></h1>
-            <p>Desktop App for downloading Videos and Audios from hundreds of sites</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 9,278</p>
-            <p>Forks: 819</p>
-            <p>Stars today: 168 stars today</p>
-            <h2>README</h2><pre>&lt;img src=&quot;https://github-production-user-asset-6210df.s3.amazonaws.com/66430340/238887646-33b4cba9-3c45-4042-83d1-b79e94a3a769.png&quot; style=&quot;width:80px;&quot;&gt;
-
-# ytDownloader
-
-[![Flathub](https://img.shields.io/flathub/downloads/io.github.aandrew_me.ytdn?label=Flathub%20downloads)](https://flathub.org/apps/details/me.aandrew.ytdownloader)
-[![GitHub downloads](https://img.shields.io/github/downloads/aandrew-me/ytdownloader/total?label=Github%20downloads)](https://github.com/aandrew-me/ytDownloader/releases)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/aandrew-me/ytdownloader?label=latest%20release)](https://github.com/aandrew-me/ytDownloader/releases/latest)
-[![Flathub](https://img.shields.io/flathub/v/io.github.aandrew_me.ytdn)](https://flathub.org/apps/io.github.aandrew_me.ytdn)
-[![Snapcraft](https://img.shields.io/snapcraft/v/ytdownloader/latest/stable)](https://snapcraft.io/ytdownloader)
-![Chocolatey Version](https://img.shields.io/chocolatey/v/ytdownloader)
-![WinGet Package Version](https://img.shields.io/winget/v/aandrew-me.ytDownloader)
-
-A modern GUI video and audio downloader supporting [hundreds of sites](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md)
-
-
-[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/ytdownloader)
-[![Get AppImage](https://raw.githubusercontent.com/srevinsaju/get-appimage/master/static/badges/get-appimage-branding-blue.png)](https://github.com/aandrew-me/ytDownloader/releases/latest/download/YTDownloader_Linux.AppImage)
-&lt;a href=&quot;https://flathub.org/apps/io.github.aandrew_me.ytdn&quot;&gt;&lt;img src=&quot;https://flathub.org/api/badge?svg&amp;locale=en&quot; style=&quot;width:180px;&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/aandrew-me/ytDownloader/releases/latest/download/YTDownloader_Win.exe
-&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/66430340/187172806-a8edd12a-ef58-4a05-96a3-99d7490b42f6.png&quot; style=&quot;width:190px;&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/aandrew-me/ytDownloader/releases/latest/download/YTDownloader_Mac_arm64.dmg&quot;&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/aandrew-me/badges/download_mac_apple_silicon.png&quot; style=&quot;width:200px;&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/aandrew-me/ytDownloader/releases/latest/download/YTDownloader_Mac_x64.dmg&quot;&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/aandrew-me/badges/download_mac_intel.png&quot; style=&quot;width:200px;&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://community.chocolatey.org/packages/ytdownloader&quot;&gt;&lt;img style=&quot;width:200px;&quot; src=&quot;https://github-production-user-asset-6210df.s3.amazonaws.com/66430340/238886537-7b2769fe-bd62-4921-a0eb-edf2eb06216d.png&quot; alt=&quot;Chocolatey&quot;&gt;&lt;/a&gt;
-
-## Features 🚀
-
-
-✅ Supports hundreds of sites including Youtube, Facebook, Instagram, Tiktok, Twitter and so on.
-
-✅ Multiple themes
-
-✅ Video Compressor with Hardware Acceleration
-
-✅ Advanced options like Range Selection, Subtitles
-
-✅ Download playlists
-
-✅ Available on Linux, Windows &amp; macOS
-
-✅ Fast download speeds
-
-✅ And of-course no trackers or ads
-
-## Screenshots
-
-&lt;!-- ![dark](https://user-images.githubusercontent.com/66430340/196022794-885e5b90-40d2-4b58-a8fa-74f10c6e470e.png) --&gt;
-&lt;!-- ![light](https://user-images.githubusercontent.com/66430340/196022796-1215038d-bafb-4450-82b1-7baddd60c0e8.png) --&gt;
-
-
-&lt;!-- ![ytdownloader_dark](https://github.com/aandrew-me/ytDownloader/assets/66430340/62efbca0-28b8-4016-bcf2-1a14bcaa782c) --&gt;
-&lt;!-- ![ytdownloader_light](https://github.com/aandrew-me/ytDownloader/assets/66430340/34f5270f-bdea-460e-8622-6459cd147b73) --&gt;
-
-![ss_homepage](https://github.com/user-attachments/assets/12410bca-31c3-48a0-bbd3-1d74bcc752b6)
-![ss_settings](https://github.com/user-attachments/assets/060557bc-d209-4bd0-bda4-debe42ca83a0)
-![ss_compressor](https://github.com/user-attachments/assets/52da7e50-46bb-4749-8152-5e79324a6cc3)
-
-
-
-&lt;!-- ![ytdownloader_dark](https://github.com/aandrew-me/ytDownloader/assets/66430340/2f6695e7-6ca0-4f7c-91a0-0ad735c1e3af) --&gt;
-&lt;!-- ![ytdownloader_light](https://github.com/aandrew-me/ytDownloader/assets/66430340/3c974ab0-8257-4b8a-88ec-ee6bd119751e) --&gt;
-
-# Installation
-
-## Windows 🪟
-
--   **Traditional way**
-
-    Download and install the exe or msi file. Exe file lets you choose custom download location, msi file doesn&#039;t ask for location. Windows defender may show a popup saying **Windows Protected Your PC**. Just click on **More info** and click on **Run Anyway**
-
--   **Chocolatey**
-    App can be installed from [Chocolatey](https://community.chocolatey.org/packages/ytdownloader) using the following command
-    ```
-    choco install ytdownloader
-    ```
--   **Scoop**
-    App can be installed with [Scoop](https://scoop.sh) using the following command
-    ```
-    scoop install https://raw.githubusercontent.com/aandrew-me/ytDownloader/main/ytdownloader.json
-    ```
--   **Winget**
-
-    App can be installed with [Winget](https://github.com/microsoft/winget-cli) using the following command
-    ```
-    winget install aandrew-me.ytDownloader
-    ```
-## Linux 🐧
-
-Linux has several options available - Flatpak, AppImage and Snap.
-Flatpak is recommended. For arm processors, download from flathub.
-
--   ### AppImage
-
-    **AppImage** format is supported on most Linux distros and has Auto-Update support.
-    It just needs to be executed after downloading. See more about [AppImages here](https://appimage.org/).
-
-    [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher) is recommended for integrating AppImages.
-
--   ### Flatpak
-    ```
-    flatpak install flathub io.github.aandrew_me.ytdn
-    ```
--   ### Snapcraft
-    ```
-    sudo snap install ytdownloader
-    ```
-
-## macOS 🍎
-
-Since the app is not signed, when you will try to open the app, macOS will not allow you to open it. 
-
-You need to open terminal and execute:
-```
-sudo xattr -r -d com.apple.quarantine /Applications/YTDownloader.app 
-```
-
-You will also need to install `yt-dlp` with [homebrew](https://brew.sh/)
-```
-brew install yt-dlp
-```
-
-## Internationalization (Localization) 🌍
-
-Translations into other languages would be highly appreciated. If you want to help translating the app to other languages, you can join from [here](https://crwd.in/ytdownloader). Open a new issue and that language will be added to Crowdin. Please don&#039;t make pull requests with json files, instead use Crowdin.
-
-[![Crowdin](https://badges.crowdin.net/ytdownloader/localized.svg)](https://crowdin.com/project/ytdownloader)
-
-### ✅ Available languages
-
-| Name                | Status |
-| ------------------- | ------ |
-| Arabic              | ✔️     |
-| Bengali             | ✔️     |
-| English             | ✔️     |
-| Chinese Simplified  | ✔️     |
-| Chinese Traditional | ✔️     |
-| Finnish             | ✔️     |
-| Hindi               | ✔️     |
-| French              | ✔️     |
-| Finnish             | ✔️     |
-| German              | ✔️     |
-| Greek               | ✔️     |
-| Hungarian           | ✔️     |
-| Italian             | ✔️     |
-| Japanese            | ✔️     |
-| Persian             | ✔️     |
-| Polish              | ✔️     |
-| Portuguese (Brazil) | ✔️     |
-| Russian             | ✔️     |
-| Spanish             | ✔️     |
-| Turkish             | ✔️     |
-| Ukrainian           | ✔️     |
-| Vietnamese          | ✔️     |
-
-Thanks to [nxjosephofficial](https://github.com/nxjosephofficial), [LINUX-SAUNA](https://t.me/linuxsauna), [Proxycon](https://github.com/proxycon), [albanobattistella](https://github.com/albanobattistella), [TheBlueQuasar](https://github.com/TheBlueQuasar), [MrQuerter](https://github.com/MrQuerter), [KotoWhiskas](https://github.com/KotoWhiskas), [André](https://github.com/andre1828), [haggen88](https://github.com/haggen88), [XfedeX](https://github.com/XfedeX), [Jok3r](https://github.com/th3knv), [TitouanReal](https://github.com/TitouanReal), [soredake](https://github.com/soredake), [yoi](https://github.com/thiennguyenqn), [HowlingWerewolf](https://github.com/HowlingWerewolf), [Kum](https://github.com/kum4423), [Mohammed Bakry](https://crowdin.com/profile/m7md_b4kry), [Huang Bingfeng](https://github.com/jackiotyu), [Abhinav](https://github.com/abhixdd), [CodWiz](https://github.com/C0dwiz) and others for helping.
-
-## Used technologies
-
--   [yt-dlp](https://github.com/yt-dlp/yt-dlp)
--   [Electron](https://www.electronjs.org/)
--   [ffmpeg](https://ffmpeg.org/)
--   [nodeJS](https://nodejs.org/en/)
--   [flaticon](https://www.flaticon.com/)
-
-## For building or running from source code
-
-[Nodejs](https://nodejs.org/) (along with npm) needs to be installed.
-
-Required commands to get started.
-
-```
-git clone https://github.com/aandrew-me/ytDownloader.git
-cd ytDownloader
-npm i
-```
-
-To run with [Electron](https://www.electronjs.org/) :
-
-```
-npm start
-```
-
-You need to download ffmpeg and put it in the root directory of the project. If you don&#039;t need to build for arm processor, you can download ffmpeg by executing any of the files - linux.sh / mac.sh / windows.sh depending on the platform. Otherwise you need to download ffmpeg from [here](https://github.com/yt-dlp/FFmpeg-Builds/releases) for windows/linux and from [here](http://www.osxexperts.net/) for mac (not tested)
-
-To build for Linux (It will create packages as specified in package.json). The builds are stored in **release** folder.
-```
-npm run linux
-```
-
-To build for Windows
-
-```
-npm run windows
-```
-
-To build for macOS
-
-```
-npm run mac
-```
-If you only want to build for one format, you can do
-```
-npx electron-builder -l appimage
-```
-It will just create a linux appimage build.
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[jgraph/drawio-desktop]]></title>
-            <link>https://github.com/jgraph/drawio-desktop</link>
-            <guid>https://github.com/jgraph/drawio-desktop</guid>
-            <pubDate>Sat, 18 Apr 2026 00:12:29 GMT</pubDate>
-            <description><![CDATA[Official electron build of draw.io]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/jgraph/drawio-desktop">jgraph/drawio-desktop</a></h1>
-            <p>Official electron build of draw.io</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 60,506</p>
-            <p>Forks: 5,653</p>
-            <p>Stars today: 30 stars today</p>
-            <h2>README</h2><pre>About
------ 
-
-**drawio-desktop** is a diagramming desktop app based on [Electron](https://electronjs.org/) that wraps the [core draw.io editor](https://github.com/jgraph/drawio).
-
-Download built binaries from the [releases section](https://github.com/jgraph/drawio-desktop/releases).
-
-**Can I use this app for free?** Yes, under the apache 2.0 license. If you don&#039;t change the code and accept it is provided &quot;as-is&quot;, you can use it for any purpose.
-
-Security
---------
-
-draw.io Desktop is designed to be completely isolated from the Internet, apart from the update process. This checks github.com at startup for a newer version and downloads it from an AWS S3 bucket owned by Github. All JavaScript files are self-contained, the Content Security Policy forbids running remotely loaded JavaScript.
-
-No diagram data is ever sent externally, nor do we send any analytics about app usage externally. There is a Content Security Policy in place on the web part of the interface to ensure external transmission cannot happen, even by accident.
-
-Security and isolating the app are the primarily objectives of draw.io desktop. If you ask for anything that involves external connections enabled in the app by default, the answer will be no.
-
-Support
--------
-
-Support is provided on a reasonable business constraints basis, but without anything contractually binding. All support is provided via this repo. There is no private ticketing support for non-paying users.
-
-Purchasing draw.io for Confluence or Jira does not entitle you to commercial support for draw.io desktop.
-
-Developing
-----------
-
-**draw.io** is a git submodule of **drawio-desktop**. To get both you need to clone recursively:
-
-`git clone --recursive https://github.com/jgraph/drawio-desktop.git`
-
-To run this:
-1. `npm install` (in the root directory of this repo)
-2. [internal use only] export DRAWIO_ENV=dev if you want to develop/debug in dev mode.
-3. `npm start` _in the root directory of this repo_ runs the app. For debugging, use `npm start --enable-logging`.
-
-Note: If a symlink is used to refer to drawio repo (instead of the submodule), then symlink the `node_modules` directory inside `drawio/src/main/webapp` also.
-
-To release:
-1. Update the draw.io sub-module and push the change. Add version tag before pushing to origin.
-2. Wait for the builds to complete (https://travis-ci.org/jgraph/drawio-desktop and https://ci.appveyor.com/project/davidjgraph/drawio-desktop)
-3. Go to https://github.com/jgraph/drawio-desktop/releases, edit the preview release.
-4. Download the windows exe and windows portable, sign them using `signtool sign /a /tr http://rfc3161timestamp.globalsign.com/advanced /td SHA256 c:/path/to/your/file.exe`
-5. Re-upload signed file as `draw.io-windows-installer-x.y.z.exe` and `draw.io-windows-no-installer-x.y.z.exe`
-6. Add release notes
-7. Publish release
-
-*Note*: In Windows release, when using both x64 and is32 as arch, the result is one big file with both archs. This is why we split them.
-
-Local Storage and Session Storage is stored in the AppData folder:
-
-- macOS: `~/Library/Application Support/draw.io`
-- Windows: `C:\Users\&lt;USER-NAME&gt;\AppData\Roaming\draw.io\`
-
-Not open-contribution
----------------------
-
-draw.io is closed to contributions (unless a maintainer permits it, which is extremely rare).
-
-The level of complexity of this project means that even simple changes 
-can break a _lot_ of other moving parts. The amount of testing required 
-is far more than it first seems. If we were to receive a PR, we&#039;d have 
-to basically throw it away and write it how we want it to be implemented.
-
-We are grateful for community involvement, bug reports, &amp; feature requests. We do
-not wish to come off as anything but welcoming, however, we&#039;ve
-made the decision to keep this project closed to contributions for 
-the long term viability of the project.
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[fastify/fastify]]></title>
-            <link>https://github.com/fastify/fastify</link>
-            <guid>https://github.com/fastify/fastify</guid>
-            <pubDate>Sat, 18 Apr 2026 00:12:28 GMT</pubDate>
-            <description><![CDATA[Fast and low overhead web framework, for Node.js]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/fastify/fastify">fastify/fastify</a></h1>
-            <p>Fast and low overhead web framework, for Node.js</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 36,075</p>
-            <p>Forks: 2,655</p>
-            <p>Stars today: 6 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt; &lt;a href=&quot;https://fastify.dev/&quot;&gt;
-    &lt;img
-      src=&quot;https://github.com/fastify/graphics/raw/HEAD/fastify-landscape-outlined.svg&quot;
-      width=&quot;650&quot;
-      height=&quot;auto&quot;
-    /&gt;
-  &lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-
-[![CI](https://github.com/fastify/fastify/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/fastify/fastify/actions/workflows/ci.yml)
-[![Package Manager
-CI](https://github.com/fastify/fastify/actions/workflows/package-manager-ci.yml/badge.svg?branch=main)](https://github.com/fastify/fastify/actions/workflows/package-manager-ci.yml)
-[![Web
-site](https://github.com/fastify/fastify/actions/workflows/website.yml/badge.svg?branch=main)](https://github.com/fastify/fastify/actions/workflows/website.yml)
-[![neostandard javascript style](https://img.shields.io/badge/code_style-neostandard-brightgreen?style=flat)](https://github.com/neostandard/neostandard)
-[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/7585/badge)](https://bestpractices.coreinfrastructure.org/projects/7585)
-
-&lt;/div&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-
-[![NPM
-version](https://img.shields.io/npm/v/fastify.svg?style=flat)](https://www.npmjs.com/package/fastify)
-[![NPM
-downloads](https://img.shields.io/npm/dm/fastify.svg?style=flat)](https://www.npmjs.com/package/fastify)
-[![Security Responsible
-Disclosure](https://img.shields.io/badge/Security-Responsible%20Disclosure-yellow.svg)](https://github.com/fastify/fastify/blob/main/SECURITY.md)
-[![Discord](https://img.shields.io/discord/725613461949906985)](https://discord.gg/fastify)
-[![Contribute with Gitpod](https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod&amp;color=blue)](https://gitpod.io/#https://github.com/fastify/fastify)
-[![Open Collective backers and sponsors](https://img.shields.io/opencollective/all/fastify)](https://github.com/sponsors/fastify#sponsors)
-
-&lt;/div&gt;
-
-&lt;br /&gt;
-
-An efficient server implies a lower cost of the infrastructure, better
-responsiveness under load, and happy users. How can you efficiently handle the
-resources of your server, knowing that you are serving the highest number of
-requests possible, without sacrificing security validations and handy
-development?
-
-Enter Fastify. Fastify is a web framework highly focused on providing the best
-developer experience with the least overhead and a powerful plugin architecture.
-It is inspired by Hapi and Express and as far as we know, it is one of the
-fastest web frameworks in town.
-
-The `main` branch refers to the Fastify `v5` release.
-Check out the [`4.x` branch](https://github.com/fastify/fastify/tree/4.x) for `v4`.
-
-### Table of Contents
-
- - [Quick start](#quick-start)
- - [Install](#install)
- - [Example](#example)
- - [Core features](#core-features)
- - [Benchmarks](#benchmarks)
- - [Documentation](#documentation)
- - [Ecosystem](#ecosystem)
- - [Support](#support)
- - [Team](#team)
- - [Hosted by](#hosted-by)
- - [License](#license)
-
-
-### Quick start
-
-Create a folder and make it your current working directory:
-
-```sh
-mkdir my-app
-cd my-app
-```
-
-Generate a fastify project with `npm init`:
-
-```sh
-npm init fastify
-```
-
-Install dependencies:
-
-```sh
-npm i
-```
-
-To start the app in dev mode:
-
-```sh
-npm run dev
-```
-
-For production mode:
-
-```sh
-npm start
-```
-
-Under the hood `npm init` downloads and runs [Fastify
-Create](https://github.com/fastify/create-fastify), which in turn uses the
-generate functionality of [Fastify CLI](https://github.com/fastify/fastify-cli).
-
-
-### Install
-
-To install Fastify in an existing project as a dependency:
-
-```sh
-npm i fastify
-```
-
-### Example
-
-```js
-// Require the framework and instantiate it
-
-// ESM
-import Fastify from &#039;fastify&#039;
-
-const fastify = Fastify({
-  logger: true
-})
-// CommonJs
-const fastify = require(&#039;fastify&#039;)({
-  logger: true
-})
-
-// Declare a route
-fastify.get(&#039;/&#039;, (request, reply) =&gt; {
-  reply.send({ hello: &#039;world&#039; })
-})
-
-// Run the server!
-fastify.listen({ port: 3000 }, (err, address) =&gt; {
-  if (err) throw err
-  // Server is now listening on ${address}
-})
-```
-
-With async-await:
-
-```js
-// ESM
-import Fastify from &#039;fastify&#039;
-
-const fastify = Fastify({
-  logger: true
-})
-// CommonJs
-const fastify = require(&#039;fastify&#039;)({
-  logger: true
-})
-
-fastify.get(&#039;/&#039;, async (request, reply) =&gt; {
-  reply.type(&#039;application/json&#039;).code(200)
-  return { hello: &#039;world&#039; }
-})
-
-fastify.listen({ port: 3000 }, (err, address) =&gt; {
-  if (err) throw err
-  // Server is now listening on ${address}
-})
-```
-
-Do you want to know more? Head to the &lt;a
-href=&quot;./docs/Guides/Getting-Started.md&quot;&gt;&lt;code&gt;&lt;b&gt;Getting Started&lt;/b&gt;&lt;/code&gt;&lt;/a&gt;.
-If you learn best by reading code, explore the official [demo](https://github.com/fastify/demo).
-
-&gt; ## Note
-&gt; `.listen` binds to the local host, `localhost`, interface by default
-&gt; (`127.0.0.1` or `::1`, depending on the operating system configuration). If
-&gt; you are running Fastify in a container (Docker,
-&gt; [GCP](https://cloud.google.com/), etc.), you may need to bind to `0.0.0.0`. Be
-&gt; careful when listening on all interfaces; it comes with inherent
-&gt; [security
-&gt; risks](https://web.archive.org/web/20170711105010/https://snyk.io/blog/mongodb-hack-and-secure-defaults/).
-&gt; See [the documentation](./docs/Reference/Server.md#listen) for more
-&gt; information.
-
-### Core features
-
-- **Highly performant:** as far as we know, Fastify is one of the fastest web
-  frameworks in town, depending on the code complexity we can serve up to 76+
-  thousand requests per second.
-- **Extensible:** Fastify is fully extensible via its hooks, plugins, and
-  decorators.
-- **Schema-based:** even if it is not mandatory we recommend using [JSON
-  Schema](https://json-schema.org/) to validate your routes and serialize your
-  outputs. Internally Fastify compiles the schema in a highly performant
-  function.
-- **Logging:** logs are extremely important but are costly; we chose the best
-  logger to almost remove this cost, [Pino](https://github.com/pinojs/pino)!
-- **Developer friendly:** the framework is built to be very expressive and help
-  developers in their daily use without sacrificing performance and
-  security.
-
-### Benchmarks
-
-__Machine:__ EX41S-SSD, Intel Core i7, 4Ghz, 64GB RAM, 4C/8T, SSD.
-
-__Method__: `autocannon -c 100 -d 40 -p 10 localhost:3000` * 2, taking the
-second average
-
-| Framework          | Version                    | Router?      |  Requests/sec |
-| :----------------- | :------------------------- | :----------: | ------------: |
-| Express            | 4.17.3                     | &amp;#10003;     | 14,200        |
-| hapi               | 20.2.1                     | &amp;#10003;     | 42,284        |
-| Restify            | 8.6.1                      | &amp;#10003;     | 50,363        |
-| Koa                | 2.13.0                     | &amp;#10007;     | 54,272        |
-| **Fastify**        | **4.0.0**                  | **&amp;#10003;** | **77,193**    |
-| -                  |                            |              |               |
-| `http.Server`      | 16.14.2	                  | &amp;#10007;     | 74,513        |
-
-These benchmarks taken using https://github.com/fastify/benchmarks. This is a
-synthetic &quot;hello world&quot; benchmark that aims to evaluate the framework overhead.
-The overhead that each framework has on your application depends on your
-application. You should __always__ benchmark if performance matters to you.
-
-## Documentation
-* [__`Getting Started`__](./docs/Guides/Getting-Started.md)
-* [__`Guides`__](./docs/Guides/Index.md)
-* [__`Server`__](./docs/Reference/Server.md)
-* [__`Routes`__](./docs/Reference/Routes.md)
-* [__`Encapsulation`__](./docs/Reference/Encapsulation.md)
-* [__`Logging`__](./docs/Reference/Logging.md)
-* [__`Middleware`__](./docs/Reference/Middleware.md)
-* [__`Hooks`__](./docs/Reference/Hooks.md)
-* [__`Decorators`__](./docs/Reference/Decorators.md)
-* [__`Validation and Serialization`__](./docs/Reference/Validation-and-Serialization.md)
-* [__`Fluent Schema`__](./docs/Guides/Fluent-Schema.md)
-* [__`Lifecycle`__](./docs/Reference/Lifecycle.md)
-* [__`Reply`__](./docs/Reference/Reply.md)
-* [__`Request`__](./docs/Reference/Request.md)
-* [__`Errors`__](./docs/Reference/Errors.md)
-* [__`Content Type Parser`__](./docs/Reference/ContentTypeParser.md)
-* [__`Plugins`__](./docs/Reference/Plugins.md)
-* [__`Testing`__](./docs/Guides/Testing.md)
-* [__`Benchmarking`__](./docs/Guides/Benchmarking.md)
-* [__`How to write a good plugin`__](./docs/Guides/Write-Plugin.md)
-* [__`Plugins Guide`__](./docs/Guides/Plugins-Guide.md)
-* [__`HTTP2`__](./docs/Reference/HTTP2.md)
-* [__`Long Term Support`__](./docs/Reference/LTS.md)
-* [__`TypeScript and types support`__](./docs/Reference/TypeScript.md)
-* [__`Serverless`__](./docs/Guides/Serverless.md)
-* [__`Recommendations`__](./docs/Guides/Recommendations.md)
-
-## Ecosystem
-
-- [Core](./docs/Guides/Ecosystem.md#core) - Core plugins maintained by the
-  _Fastify_ [team](#team).
-- [Community](./docs/Guides/Ecosystem.md#community) - Community-supported
-  plugins.
-- [Live Examples](https://github.com/fastify/example) - Multirepo with a broad
-  set of real working examples.
-- [Discord](https://discord.gg/D3FZYPy) - Join our discord server and chat with
-  the maintainers.
-
-## Support
-Please visit [Fastify help](https://github.com/fastify/help) to view prior
-support issues and to ask new support questions.
-
-Version 3 of Fastify and lower are EOL and will not receive any security or bug
-fixes.
-
-Fastify&#039;s partner, HeroDevs, provides commercial security fixes for all
-unsupported versions at [https://herodevs.com/support/fastify-nes][hd-link].
-Fastify&#039;s supported version matrix is available in the
-[Long Term Support][lts-link] documentation.
-
-## Contributing
-
-Whether reporting bugs, discussing improvements and new ideas, or writing code,
-we welcome contributions from anyone and everyone. Please read the [CONTRIBUTING](./CONTRIBUTING.md)
-guidelines before submitting pull requests.
-
-## Team
-
-_Fastify_ is the result of the work of a great community. Team members are
-listed in alphabetical order.
-
-**Lead Maintainers:**
-* [__Matteo Collina__](https://github.com/mcollina),
-  &lt;https://x.com/matteocollina&gt;, &lt;https://www.npmjs.com/~matteo.collina&gt;
-* [__Tomas Della Vedova__](https://github.com/delvedor),
-  &lt;https://x.com/delvedor&gt;, &lt;https://www.npmjs.com/~delvedor&gt;
-* [__KaKa Ng__](https://github.com/climba03003),
-  &lt;https://www.npmjs.com/~climba03003&gt;
-* [__Manuel Spigolon__](https://github.com/eomm),
-  &lt;https://x.com/manueomm&gt;, &lt;https://www.npmjs.com/~eomm&gt;
-* [__James Sumners__](https://github.com/jsumners),
-  &lt;https://x.com/jsumners79&gt;, &lt;https://www.npmjs.com/~jsumners&gt;
-
-### Fastify Core team
-* [__Aras Abbasi__](https://github.com/uzlopak),
-  &lt;https://www.npmjs.com/~uzlopak&gt;
-* [__Harry Brundage__](https://github.com/airhorns/),
-  &lt;https://x.com/harrybrundage&gt;, &lt;https://www.npmjs.com/~airhorns&gt;
-* [__Matteo Collina__](https://github.com/mcollina),
-  &lt;https://x.com/matteocollina&gt;, &lt;https://www.npmjs.com/~matteo.collina&gt;
-* [__Gürgün Dayıoğlu__](https://github.com/gurgunday),
-  &lt;https://www.npmjs.com/~gurgunday&gt;
-* [__Tomas Della Vedova__](https://github.com/delvedor),
-  &lt;https://x.com/delvedor&gt;, &lt;https://www.npmjs.com/~delvedor&gt;
-* [__Carlos Fuentes__](https://github.com/metcoder95),
-  &lt;https://x.com/metcoder95&gt;, &lt;https://www.npmjs.com/~metcoder95&gt;
-* [__Vincent Le Goff__](https://github.com/zekth)
-* [__Luciano Mammino__](https://github.com/lmammino),
-  &lt;https://x.com/loige&gt;, &lt;https://www.npmjs.com/~lmammino&gt;
-* [__Jean Michelet__](https://github.com/jean-michelet),
-  &lt;https://www.npmjs.com/~jean-michelet&gt;
-* [__KaKa Ng__](https://github.com/climba03003),
-  &lt;https://www.npmjs.com/~climba03003&gt;
-* [__Luis Orbaiceta__](https://github.com/luisorbaiceta),
-  &lt;https://x.com/luisorbai&gt;, &lt;https://www.npmjs.com/~luisorbaiceta&gt;
-* [__Maksim Sinik__](https://github.com/fox1t),
-  &lt;https://x.com/maksimsinik&gt;, &lt;https://www.npmjs.com/~fox1t&gt;
-* [__Manuel Spigolon__](https://github.com/eomm),
-  &lt;https://x.com/manueomm&gt;, &lt;https://www.npmjs.com/~eomm&gt;
-* [__James Sumners__](https://github.com/jsumners),
-  &lt;https://x.com/jsumners79&gt;, &lt;https://www.npmjs.com/~jsumners&gt;
-
-### Fastify Plugins team
-* [__Harry Brundage__](https://github.com/airhorns/),
-  &lt;https://x.com/harrybrundage&gt;, &lt;https://www.npmjs.com/~airhorns&gt;
-* [__Simone Busoli__](https://github.com/simoneb),
-  &lt;https://x.com/simonebu&gt;, &lt;https://www.npmjs.com/~simoneb&gt;
-* [__Dan Castillo__](https://github.com/dancastillo),
-  &lt;https://www.npmjs.com/~dancastillo&gt;
-* [__Matteo Collina__](https://github.com/mcollina),
-  &lt;https://x.com/matteocollina&gt;, &lt;https://www.npmjs.com/~matteo.collina&gt;
-* [__Gürgün Dayıoğlu__](https://github.com/gurgunday),
-  &lt;https://www.npmjs.com/~gurgunday&gt;
-* [__Tomas Della Vedova__](https://github.com/delvedor),
-  &lt;https://x.com/delvedor&gt;, &lt;https://www.npmjs.com/~delvedor&gt;
-* [__Carlos Fuentes__](https://github.com/metcoder95),
-  &lt;https://x.com/metcoder95&gt;, &lt;https://www.npmjs.com/~metcoder95&gt;
-* [__Vincent Le Goff__](https://github.com/zekth)
-* [__Jean Michelet__](https://github.com/jean-michelet),
-  &lt;https://www.npmjs.com/~jean-michelet&gt;
-* [__KaKa Ng__](https://github.com/climba03003),
-  &lt;https://www.npmjs.com/~climba03003&gt;
-* [__Maksim Sinik__](https://github.com/fox1t),
-  &lt;https://x.com/maksimsinik&gt;, &lt;https://www.npmjs.com/~fox1t&gt;
-* [__Frazer Smith__](https://github.com/Fdawgs), &lt;https://www.npmjs.com/~fdawgs&gt;
-* [__Manuel Spigolon__](https://github.com/eomm),
-  &lt;https://x.com/manueomm&gt;, &lt;https://www.npmjs.com/~eomm&gt;
-* [__Antonio Tripodi__](https://github.com/Tony133), &lt;https://www.npmjs.com/~tony133&gt;
-
-### Emeritus Contributors
-Great contributors to a specific area of the Fastify ecosystem will be invited
-to join this group by Lead Maintainers when they decide to step down from the
-active contributor&#039;s group.
-
-* [__Tommaso Allevi__](https://github.com/allevo),
-  &lt;https://x.com/allevitommaso&gt;, &lt;https://www.npmjs.com/~allevo&gt;
-* [__Ethan Arrowood__](https://github.com/Ethan-Arrowood/),
-  &lt;https://x.com/arrowoodtech&gt;, &lt;https://www.npmjs.com/~ethan_arrowood&gt;
-* [__Çağatay Çalı__](https://github.com/cagataycali),
-  &lt;https://x.com/cagataycali&gt;, &lt;https://www.npmjs.com/~cagataycali&gt;
-* [__David Mark Clements__](https://github.com/davidmarkclements),
-  &lt;https://x.com/davidmarkclem&gt;,
-  &lt;https://www.npmjs.com/~davidmarkclements&gt;
-* [__dalisoft__](https://github.com/dalisoft), &lt;https://x.com/dalisoft&gt;,
-  &lt;https://www.npmjs.com/~dalisoft&gt;
-* [__Dustin Deus__](https://github.com/StarpTech),
-  &lt;https://x.com/dustindeus&gt;, &lt;https://www.npmjs.com/~starptech&gt;
-* [__Denis Fäcke__](https://github.com/SerayaEryn),
-  &lt;https://x.com/serayaeryn&gt;, &lt;https://www.npmjs.com/~serayaeryn&gt;
-* [__Rafael Gonzaga__](https://github.com/rafaelgss),
-  &lt;https://x.com/_rafaelgss&gt;, &lt;https://www.npmjs.com/~rafaelgss&gt;
-* [__Trivikram Kamat__](https://github.com/trivikr),
-  &lt;https://x.com/trivikram&gt;, &lt;https://www.npmjs.com/~trivikr&gt;
-* [__Ayoub El Khattabi__](https://github.com/AyoubElk),
-  &lt;https://x.com/ayoubelkh&gt;, &lt;https://www.npmjs.com/~ayoubelk&gt;
-* [__Cemre Mengu__](https://github.com/cemremengu),
-  &lt;https://x.com/cemremengu&gt;, &lt;https://www.npmjs.com/~cemremengu&gt;
-* [__Salman Mitha__](https://github.com/salmanm),
-  &lt;https://www.npmjs.com/~salmanm&gt;
-* [__Nathan Woltman__](https://github.com/nwoltman),
-  &lt;https://x.com/NathanWoltman&gt;, &lt;https://www.npmjs.com/~nwoltman&gt;
-
-## Hosted by
-
-[&lt;img
-src=&quot;https://github.com/openjs-foundation/artwork/blob/main/openjs_foundation/openjs_foundation-logo-horizontal-color.png?raw=true&quot;
-width=&quot;250px;&quot;/&gt;](https://openjsf.org/projects)
-
-We are an [At-Large
-Project](https://github.com/openjs-foundation/cross-project-council/blob/HEAD/PROJECT_PROGRESSION.md#at-large-projects)
-in the [OpenJS Foundation](https://openjsf.org/).
-
-## Sponsors
-
-Support this project by becoming a [SPONSOR](./SPONSORS.md)!
-Fastify has an [Open Collective](https://opencollective.com/fastify)
-page where we accept and manage financial contributions.
-
-## Acknowledgments
-
-This project is kindly sponsored by:
-- [NearForm](https://nearform.com)
-- [Platformatic](https://platformatic.dev)
-
-Past Sponsors:
-- [LetzDoIt](https://www.letzdoitapp.com/)
-
-This list includes all companies that support one or more team members
-in maintaining this project.
-
-## License
-
-Licensed under [MIT](./LICENSE).
-
-For your convenience, here is a list of all the licenses of our production
-dependencies:
-- MIT
-- ISC
-- BSD-3-Clause
-- BSD-2-Clause
-
-[hd-link]: https://www.herodevs.com/support/fastify-nes?utm_source=fastify&amp;utm_medium=link&amp;utm_campaign=github_readme
-[lts-link]: https://fastify.dev/docs/latest/Reference/LTS/
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[expo/skills]]></title>
-            <link>https://github.com/expo/skills</link>
-            <guid>https://github.com/expo/skills</guid>
-            <pubDate>Sat, 18 Apr 2026 00:12:27 GMT</pubDate>
-            <description><![CDATA[A collection of AI agent skills for working with Expo projects and Expo Application Services]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/expo/skills">expo/skills</a></h1>
-            <p>A collection of AI agent skills for working with Expo projects and Expo Application Services</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 1,741</p>
-            <p>Forks: 76</p>
-            <p>Stars today: 12 stars today</p>
-            <h2>README</h2><pre># Expo Skills
-
-Official AI agent skills from the Expo team for building, deploying, and debugging robust Expo apps.
+Skills are packaged instructions and scripts that extend agent capabilities, following the [Agent Skills](https://agentskills.io/home) format.
 
 ## Installation
 
-We primarily use [Claude Code](https://claude.com/claude-code) at Expo, skills are fine-tuned for Opus models. But you can use these skills with any AI agent.
+### Option 1: Agent Skills CLI 
 
-## Claude Code
+For most popular AI-assistive tools, you can use the `skills` CLI to install Firebase agent skills:
 
-Add the marketplace:
-
-```
-/plugin marketplace add expo/skills
+```bash
+npx skills add firebase/skills
 ```
 
-Install the plugin:
+### Option 2: Gemini CLI Extension
 
-```
-/plugin install expo
-```
+This repository is configured as a Gemini CLI extension. You can add it using the Gemini CLI:
 
-## Cursor
-
-**Install from GitHub**
-
-1. Open Cursor Settings (Cmd+Shift+J / Ctrl+Shift+J)
-2. Navigate to `Rules &amp; Command` → `Project Rules` → Add Rule → Remote Rule (GitHub)
-3. Enter: `https://github.com/expo/skills.git`
-
-**How it works:** Skills are automatically discovered and used by the agent based on context. When you ask questions about Expo development, the agent will automatically use the relevant skills (e.g., `building-ui`, `data-fetching`, `deployment`) based on the skill descriptions.
-
-**Note:** Skills won&#039;t appear in the `/` slash command menu. The `/` menu in Cursor is for custom commands (stored in `.cursor/commands/`), not for skills. Skills work via auto-discovery - the agent uses them automatically when your questions match their descriptions.
-
-**Verify installation:** After adding the Remote Rule, try asking the agent Expo-related questions like:
-- &quot;How do I build a UI with Expo Router?&quot;
-- &quot;How do I make API calls in my Expo app?&quot;
-- &quot;How do I deploy my Expo app to the App Store?&quot;
-
-If the skills are working, the agent will use the relevant skill content to answer your questions.
-
-## Any agent
-
-```
-bunx skills add expo/skills
+```bash
+gemini extensions install https://github.com/firebase/skills
 ```
 
-&gt; This will extract the skills individually so you&#039;ll need to manually upgrade them.
+### Option 3: Claude Plugin
 
-## License
+1. Add the Firebase marketplace for Claude plugins:
 
-MIT
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[0xsdeo/AntiDebug_Breaker]]></title>
-            <link>https://github.com/0xsdeo/AntiDebug_Breaker</link>
-            <guid>https://github.com/0xsdeo/AntiDebug_Breaker</guid>
-            <pubDate>Sat, 18 Apr 2026 00:12:26 GMT</pubDate>
-            <description><![CDATA[JavaScript Reverse Tools -- JS逆向工具]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/0xsdeo/AntiDebug_Breaker">0xsdeo/AntiDebug_Breaker</a></h1>
-            <p>JavaScript Reverse Tools -- JS逆向工具</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 1,629</p>
-            <p>Forks: 249</p>
-            <p>Stars today: 6 stars today</p>
-            <h2>README</h2><pre>![Antidebug_Breaker](https://socialify.git.ci/0xsdeo/Antidebug_Breaker/image?description=1&amp;font=Bitter&amp;forks=1&amp;language=1&amp;logo=https%3A%2F%2Fp3-flow-imagex-sign.byteimg.com%2Ftos-cn-i-a9rns2rl98%2Frc_gen_image%2F83c1cf6f637940bba9ecb828b7f58ebc.jpeg%7Etplv-a9rns2rl98-image_raw_b.png%3Frcl%3D2025112123094019020B8768AB108FBE9E%26rk3s%3D8e244e95%26rrcfp%3D827586d3%26x-expires%3D2079097789%26x-signature%3DK1FvDsOfH%252BFlP1DmNm1nns1vAaM%253D&amp;name=1&amp;owner=1&amp;pattern=Overlapping+Hexagons&amp;stargazers=1&amp;theme=Light)
-
-## Intro
-
-本插件是基于&lt;a href=&quot;https://github.com/0xsdeo/Hook_JS&quot;&gt;Hook_JS&lt;/a&gt;库所写的Google插件，将致力于辅助前端JavaScript逆向以及渗透测试信息收集。
-
-如何提交您自己的脚本：&lt;a href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/wiki/%E6%8F%90%E4%BA%A4%E6%82%A8%E8%87%AA%E5%B7%B1%E7%9A%84hook%E8%84%9A%E6%9C%AC&quot;&gt;AntiDebug_Breaker wiki&lt;/a&gt;
-
-## 教学视频
-
-反调试：https://www.bilibili.com/video/BV1gQ4mzMEA4
-
-Vue：https://www.bilibili.com/video/BV12148z7EnP
-
-Hook CryptoJS对称加密 快速出key、iv、mode、padding：https://www.bilibili.com/video/BV1MPW1zDEK8
-
-JS逆向快速定位加密位置以及获取加密密文等加密参数：https://www.bilibili.com/video/BV1cRyXBaEJX
-
-SpiderDemo 靶场练习网站：https://www.spiderdemo.cn
-
-## 插件安装
-
-### 谷歌插件应用商店安装
-
-地址：https://chromewebstore.google.com/detail/antidebug-breaker/opkclndfcbafdaecbbaklefnaadopcln
-
-### 手动安装
-
-将源码下载到本地后打开chrome，访问`chrome://extensions/`，点击左上角的`加载未打包的扩展程序`，然后选中源码文件夹即可：
-![1753669187234](image/README/1753669187234.png)
-
-## 脚本使用场景
-
-&gt;AntiDebug
-
-- &lt;a href=&quot;#Bypass_Debugger&quot;&gt;Bypass Debugger&lt;/a&gt;
-- &lt;a href=&quot;#hook_log&quot;&gt;hook log&lt;/a&gt;
-- &lt;a href=&quot;#Hook_table&quot;&gt;Hook table&lt;/a&gt;
-- &lt;a href=&quot;#hook_clear&quot;&gt;hook clear&lt;/a&gt;
-- &lt;a href=&quot;#hook_close&quot;&gt;hook close&lt;/a&gt;
-- &lt;a href=&quot;#hook_history&quot;&gt;hook history&lt;/a&gt;
-- &lt;a href=&quot;#Fixed_window_size&quot;&gt;Fixed window size&lt;/a&gt;
-- &lt;a href=&quot;#location_href&quot;&gt;页面跳转JS代码定位通杀方案&lt;/a&gt;
-- &lt;a href=&quot;#Hook_CryptoJS&quot;&gt;Hook CryptoJS&lt;/a&gt;
-- &lt;a href=&quot;#Hook_JSEncrypt_RSA&quot;&gt;Hook JSEncrypt RSA&lt;/a&gt;
-- &lt;a href=&quot;#Hook_SMcrypto&quot;&gt;Hook SM-crypto&lt;/a&gt;
-
-&gt;Hook
-
-- &lt;a href=&quot;#document.cookie&quot;&gt;document.cookie&lt;/a&gt;
-- &lt;a href=&quot;#XMLHttpRequest.setRequestHeader&quot;&gt;XMLHttpRequest.setRequestHeader&lt;/a&gt;
-- &lt;a href=&quot;#XMLHttpRequest.open&quot;&gt;XMLHttpRequest.open&lt;/a&gt;
-- &lt;a href=&quot;#localStorage.setItem&quot;&gt;localStorage.setItem&lt;/a&gt;
-- &lt;a href=&quot;#localStorage.getItem&quot;&gt;localStorage.getItem&lt;/a&gt;
-- &lt;a href=&quot;#localStorage.removeItem&quot;&gt;localStorage.removeItem&lt;/a&gt;
-- &lt;a href=&quot;#localStorage.clear&quot;&gt;localStorage.clear&lt;/a&gt;
-- &lt;a href=&quot;#sessionStorage.setItem&quot;&gt;sessionStorage.setItem&lt;/a&gt;
-- &lt;a href=&quot;#sessionStorage.getItem&quot;&gt;sessionStorage.getItem&lt;/a&gt;
-- &lt;a href=&quot;#sessionStorage.removeItem&quot;&gt;sessionStorage.removeItem&lt;/a&gt;
-- &lt;a href=&quot;#sessionStorage.clear&quot;&gt;sessionStorage.clear&lt;/a&gt;
-- &lt;a href=&quot;#fetch&quot;&gt;fetch&lt;/a&gt;
-- &lt;a href=&quot;#JSON.parse&quot;&gt;JSON.parse&lt;/a&gt;
-- &lt;a href=&quot;#JSON.stringify&quot;&gt;JSON.stringify&lt;/a&gt;
-- &lt;a href=&quot;#Promise&quot;&gt;Promise&lt;/a&gt;
-- &lt;a href=&quot;#Math.random&quot;&gt;Math.random&lt;/a&gt;
-- &lt;a href=&quot;#Date.now&quot;&gt;Date.now&lt;/a&gt;
-- &lt;a href=&quot;#performance.now&quot;&gt;performance.now&lt;/a&gt;
-
-&gt; Vue
-
-- &lt;a href=&quot;#Get_Vue_0&quot;&gt;获取路由&lt;/a&gt;
-- &lt;a href=&quot;#Get_Vue_1&quot;&gt;清除跳转&lt;/a&gt;
-- &lt;a href=&quot;#Clear_vue_Navigation_Guards&quot;&gt;清除路由守卫&lt;/a&gt;
-- &lt;a href=&quot;#detectorExec&quot;&gt;激活Vue Devtools&lt;/a&gt;
-
-### 反调试
-
-- &lt;a id=&quot;Bypass_Debugger&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/Bypass_Debugger.js&quot;&gt;Bypass Debugger&lt;/a&gt;
-
-该脚本用于绕过**无限Debugger**，目前引起无限Debugger的三种核心方式为：
-
-&gt; eval
-
-&gt; Function
-
-&gt; Function.prototype.constructor
-
-本脚本通过 Hook 以上核心函数有效绕过大部分前端无限 debugger。但因 eval 作用域问题，某些网站可能会报错。此时可切换至火狐浏览器无视debugger进行调试。
-
-注：极少数网站可能采用特殊反制措施（如故意引发eval作用域问题或其他问题），导致前端报错或依然能引起debugger，这种情况需针对性解决。总体而言，**本脚本能覆盖绝大多数场景**。
-
-脚本原理：&lt;a href=&quot;https://mp.weixin.qq.com/s/3xagT-PXCgGrw9YiaCe__g&quot;&gt;JS逆向系列14-Bypass Debugger&lt;/a&gt;
-
-- &lt;a id=&quot;hook_log&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/hook_log.js&quot;&gt;hook log&lt;/a&gt;
-
-本脚本为&lt;a href=&quot;https://github.com/lyousan&quot;&gt;Yosan&lt;/a&gt;师傅所作，用于防止js重写console.log等方法。
-
-- &lt;a id=&quot;Hook_table&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/hook_table.js&quot;&gt;Hook table&lt;/a&gt;
-
-绕过js检测运行时间差来实现反调试。
-
-本脚本将针对以下这三种特征的反调试网站(注：包括但不仅限于这以下三种特征，需根据实际情况去判断是否需要使用本脚本)：
-
-&gt; 频繁调用console.clear清除控制台数据
-
-&gt; 控制台频繁输出大量内容
-
-&gt; 进行完以上两种操作后直接使用location.href进行跳转，一般跳转到主域名为github.io的网站。
-
-如存在以上特征的网站，均可尝试使用本脚本去进行绕过。
-
-脚本原理：&lt;a href=&quot;https://mp.weixin.qq.com/s/JZu-fknVdEpaI5anzSlLjg&quot;&gt;JS逆向系列19-无感绕过一类运行时间差反调试&lt;/a&gt;
-
-- &lt;a id=&quot;hook_clear&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/hook_clear.js&quot;&gt;hook clear&lt;/a&gt;
-
-禁止js清除控制台数据。
-
-脚本原理：&lt;a href=&quot;https://mp.weixin.qq.com/s/r-ZcP2knpmoVEK0y_26xBw&quot;&gt;JS逆向系列10-反调试与反反调试&lt;/a&gt;
-
-- &lt;a id=&quot;hook_close&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/hook_close.js&quot;&gt;hook close&lt;/a&gt;
-
-重写close，以此来避免网站反调试关闭当前页面。
-
-脚本原理：&lt;a href=&quot;https://mp.weixin.qq.com/s/r-ZcP2knpmoVEK0y_26xBw&quot;&gt;JS逆向系列10-反调试与反反调试&lt;/a&gt;
-
-- &lt;a id=&quot;hook_history&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/hook_history.js&quot;&gt;hook history&lt;/a&gt;
-
-避免网站反调试返回上一页或某个特定历史页面。
-
-脚本原理：&lt;a href=&quot;https://mp.weixin.qq.com/s/r-ZcP2knpmoVEK0y_26xBw&quot;&gt;JS逆向系列10-反调试与反反调试&lt;/a&gt;
-
-- &lt;a id=&quot;Fixed_window_size&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/Fixed_window_size.js&quot;&gt;Fixed window size&lt;/a&gt;
-
-固定浏览器高度宽度值以绕过前端检测用户是否打开控制台。
-
-固定的宽度高度值：
-```text
-innerHeight：660
-innerWidth：1366
-
-outerHeight：760
-outerWidth：1400
+```bash
+claude plugin marketplace add firebase/skills
 ```
 
-- &lt;a id=&quot;location_href&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/location_href.js&quot;&gt;页面跳转JS代码定位通杀方案&lt;/a&gt;
+Install the Claude plugin for Firebase:
 
-本脚本为&lt;a href=&quot;https://github.com/CC11001100&quot;&gt;CC11001100&lt;/a&gt;师傅所作，脚本原地址：`https://github.com/JSREI/page-redirect-code-location-hook`，用于阻断页面跳转，留在当前页面分析。
+```bash
+claude plugin install firebase@firebase
+```
 
-- &lt;a id=&quot;Hook_CryptoJS&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/Hook_CryptoJS.js&quot;&gt;Hook CryptoJS&lt;/a&gt;
+Verify the installation:
 
-Hook CryptoJS当中的所有 对称&amp;哈希&amp;HMAC算法，例如AES、DES、MD5、SHA等。如果未打印请自查目标站点是否清除了console.log或是否使用的是CryptoJS的加密算法，如果确认使用的是CryptoJS库进行的加密而无法打印可联系我。
+```bash
+claude plugin marketplace list
+```
 
-- &lt;a id=&quot;Hook_JSEncrypt_RSA&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/Hook_JSEncrypt.js&quot;&gt;Hook JSEncrypt RSA&lt;/a&gt;
+### Option 4: Manual Set Up
 
-Hook JSEncrypt加密库中的RSA算法，加密时将在控制台打印公钥、原始数据、加密后的密文。解密时将在控制台打印私钥、原始数据、解密后的明文。如果未打印请自查目标站点是否清除了console.log或是否使用的是JSEncrypt的RSA算法，如果确认使用的是JSEncrypt库进行的RSA加密而无法打印可联系我。
+1. Clone this repository:
 
-- &lt;a id=&quot;Hook_SMcrypto&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/Hook_SMcrypto.js&quot;&gt;Hook SM-crypto&lt;/a&gt;
+```bash
+git clone https://github.com/firebase/skills.git
+```
 
-本脚本思路与初始形态为&lt;a href=&quot;https://github.com/Hosinoharu&quot;&gt;魔法少女☆ホシノ&lt;/a&gt;所作。
+2. Copy the contents of the `skills` directory to the appropriate location for your AI tool. Common locations include:
+   - **Cursor**: `.cursor/rules/`
+   - **Windsurf**: `.windsurfrules/`
+   - **GitHub Copilot**: `.github/copilot-instructions.md` (or project-specific instruction files)
 
-Hook SM-crypto加密库当中的 SM2、SM3、SM4算法。如果未打印请自查目标站点是否清除了console.log或是否使用的是sm-crypto的加密算法，如果清除了console.log可以尝试使用hook log脚本防止js重写log方法，如果确认使用的是sm-crypto库进行的加密而无法打印可联系我。
+### Option 5: Local Path via Agent Skills CLI
 
-### Hook
+The `skills` CLI also supports installing skills from a local directory. If you have cloned this repository, you can add skills by pointing the CLI to your local folder:
 
-- &lt;a id=&quot;document.cookie&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/Hook_cookie.js&quot;&gt;document.cookie&lt;/a&gt;
+```bash
+npx skills add /path/to/your/local/firebase-skills/skills
+```
 
-开启本脚本后默认将在控制台打印设置的cookie，如果需要打印特定cookie请在下方输入框中输入cookie名称，脚本将会捕获这些特定cookie名。
+If you make changes to the local skills repository and want to update your project with the new changes, you can update them by running:
 
-- &lt;a id=&quot;XMLHttpRequest.setRequestHeader&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/hook_xhr_setRequestHeader.js&quot;&gt;XMLHttpRequest.setRequestHeader&lt;/a&gt;
+```bash
+npx skills experimental_install
+```
 
-开启本脚本后默认将在控制台打印设置的请求头，如果需要打印特定请求头请在下方输入框中输入请求头名称，脚本将会捕获这些特定请求头名。
+### Option 6: Local Development (Live Symlinking)
 
-- &lt;a id=&quot;XMLHttpRequest.open&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/hook_xhr_open.js&quot;&gt;XMLHttpRequest.open&lt;/a&gt;
+If you are actively contributing to or developing these skills, using `npx skills add` or copying files means you have to manually update them every time you make a change. Instead, use a symlink so that changes in your local clone are immediately reflected in your test project.
 
-开启本脚本后默认将在控制台打印初始化xhr请求配置(url,method)，如果需要捕获特定url请在下方输入框中输入url名称，脚本将会捕获这些特定url名称。
+For example, to test with Cursor:
 
-- &lt;a id=&quot;localStorage.setItem&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/hook_localStorage_setItem.js&quot;&gt;localStorage.setItem&lt;/a&gt;
+```bash
+ln -s /path/to/firebase-skills/skills /path/to/your/test-project/.cursor/rules
+```
 
-开启本脚本后默认将在控制台打印设置的localStorage键值，如果需要捕获特定键请在下方输入框中输入键名，脚本将会捕获这些特定键名。
+## 🤝 Contributing
 
-- &lt;a id=&quot;localStorage.getItem&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/hook_localStorage_getItem.js&quot;&gt;localStorage.getItem&lt;/a&gt;
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit changes: `git commit -m &#039;Add amazing feature&#039;`
+4. Push to branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request (PR)
 
-开启本脚本后默认将在控制台打印站点读取的localStorage键名，如果需要捕获特定键名请在下方输入框中输入键名，脚本将会捕获这些特定键名。
+## 📄 License
 
-- &lt;a id=&quot;localStorage.removeItem&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/hook_localStorage_removeItem.js&quot;&gt;localStorage.removeItem&lt;/a&gt;
+This project is licensed under the Apache 2 License - see the [LICENSE](LICENSE) file for details.
 
-开启本脚本后默认将在控制台打印移除的localStorage键名，如果需要捕获特定键名请在下方输入框中输入键名，脚本将会捕获这些特定键名。
-
-- &lt;a id=&quot;localStorage.clear&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/hook_localStorage_clear.js&quot;&gt;localStorage.clear&lt;/a&gt;
-
-开启本脚本后如果站点进行了清空localStorage动作，默认会在控制台打印消息。
-
-- &lt;a id=&quot;sessionStorage.setItem&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/hook_sessionStorage_setItem.js&quot;&gt;sessionStorage.setItem&lt;/a&gt;
-
-开启本脚本后默认将在控制台打印设置的sessionStorage键值，如果需要捕获特定键请在下方输入框中输入键名，脚本将会捕获这些特定键名。
-
-- &lt;a id=&quot;sessionStorage.getItem&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/hook_sessionStorage_getItem.js&quot;&gt;sessionStorage.getItem&lt;/a&gt;
-
-开启本脚本后默认将在控制台打印站点读取的sessionStorage键名，如果需要捕获特定键名请在下方输入框中输入键名，脚本将会捕获这些特定键名。
-
-- &lt;a id=&quot;sessionStorage.removeItem&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/hook_sessionStorage_removeItem.js&quot;&gt;sessionStorage.removeItem&lt;/a&gt;
-
-开启本脚本后默认将在控制台打印移除的sessionStorage键名，如果需要捕获特定键名请在下方输入框中输入键名，脚本将会捕获这些特定键名。
-
-- &lt;a id=&quot;sessionStorage.clear&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/hook_sessionStorage_clear.js&quot;&gt;sessionStorage.clear&lt;/a&gt;
-
-开启本脚本后如果站点进行了清空sessionStorage动作，默认会在控制台打印消息。
-
-- &lt;a id=&quot;fetch&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/hook_fetch.js&quot;&gt;fetch&lt;/a&gt;
-
-开启本脚本后默认将在控制台打印fetch请求设置。
-
-- &lt;a id=&quot;JSON.parse&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/hook_json_parse.js&quot;&gt;JSON.parse&lt;/a&gt;
-
-开启本脚本后默认将在控制台打印传入的JSON，如果需要捕获特定JSON请在下方输入框中输入JSON，脚本将会捕获这些特定JSON字符串。
-
-- &lt;a id=&quot;JSON.stringify&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/hook_json_stringify.js&quot;&gt;JSON.stringify&lt;/a&gt;
-
-开启本脚本后默认将在控制台打印传入JSON.stringify的值。
-
-- &lt;a id=&quot;Promise&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/hook_Promise.js&quot;&gt;Promise&lt;/a&gt;
-
-本脚本为&lt;a href=&quot;https://github.com/lyousan&quot;&gt;Yosan&lt;/a&gt;师傅所作。
-
-将在控制台打印Promise的resolve参数，可快速定位异步回调位置。
-
-- &lt;a id=&quot;Math.random&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/hook_random.js&quot;&gt;Math.random&lt;/a&gt;
-
-固定Math.random返回值
-
-- &lt;a id=&quot;Date.now&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/Hook_Date_now.js&quot;&gt;Date.now&lt;/a&gt;
-
-固定Date.now返回值
-
-- &lt;a id=&quot;performance.now&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/hook_performance_now.js&quot;&gt;performance.now&lt;/a&gt;
-
-固定performance.now返回值
-
-### Vue
-
-- &lt;a id=&quot;Get_Vue_0&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/Get_Vue_0.js&quot;&gt;获取路由&lt;/a&gt;
-
-获取已加载的路由并显示在下方的表格中，注意未加载的路由不会被获取到，如果长时间未获取到可能是由于目标站点未使用vue router，也可能是因为目标站点未加载完毕。
-
-- &lt;a id=&quot;Get_Vue_1&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/Get_Vue_1.js&quot;&gt;清除跳转&lt;/a&gt;
-
-本脚本将清除vue router的跳转方法，如果清除后依然会跳转，一方面可能是由于注入的脚本还未清除跳转方法，网站就调用了方法进行跳转，此时可以考虑手动替换js清除跳转方法。另一方面可能是由于在代码中调用的不是vue router的跳转方法，此时可以考虑开启反调试板块中的hook close或hook history脚本，再或者打开页面跳转JS代码定位通杀方案脚本，定位到跳转的函数并替换清除。
-
-- &lt;a id=&quot;Clear_vue_Navigation_Guards&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/Clear_vue_Navigation_Guards.js&quot;&gt;清除路由守卫&lt;/a&gt;
-
-仅清除全局前置守卫(beforeEach)和全局解析守卫(beforeResolve)，如果清除后网站控制台显示报错，可能是由于在路由守卫中做了动态加载等其他操作，此时可以考虑关闭本脚本并亲自替换js逻辑实现绕过。
-
-脚本原理：&lt;a href=&quot;https://mp.weixin.qq.com/s/klhBr2V7UJpspiAmRY1DXQ&quot;&gt;最大化收集Vue框架(SPA类型)下的js&lt;/a&gt;
-
-- &lt;a id=&quot;detectorExec&quot; href=&quot;https://github.com/0xsdeo/AntiDebug_Breaker/blob/main/scripts/detectorExec.js&quot;&gt;激活Vue Devtools&lt;/a&gt;
-
-本脚本引用自&lt;a href=&quot;https://github.com/hzmming/vue-force-dev&quot;&gt;vue-force-dev&lt;/a&gt;。
-
-当开启本脚本后将激活Vue Devtools。Vue2需开启Vue.js devtools(v5)，Vue3需开启Vue.js devtools，可自行去谷歌插件商店安装上述两个插件。注：1.上述两个插件不能同时开。2.当下方没有检测到Vue Router时并不能代表网站不是Vue框架，只能说明网站并没有使用Vue Router。
-
-## 插件使用注意事项
-
-1. 本插件目前不支持火狐。
-2. 进入网页后，无论是开启脚本还是关闭脚本，需刷新页面后才会生效。
-3. **更新插件时请将旧版本插件从浏览器中移除再导入新版插件。**
-
-## 致谢
-
-致谢个人：&lt;a href=&quot;https://github.com/Hosinoharu&quot;&gt;魔法少女☆ホシノ&lt;/a&gt;、&lt;a href=&quot;https://github.com/CC11001100&quot;&gt;CC11001100&lt;/a&gt;、&lt;a href=&quot;https://github.com/mingheyan&quot;&gt;Dexter&lt;/a&gt;、&lt;a href=&quot;https://github.com/d1sbb&quot;&gt;d1sbb&lt;/a&gt;、&lt;a href=&quot;https://github.com/lyousan&quot;&gt;Yosan&lt;/a&gt;
-
-本项目参考过、引用过或正在引用的优质项目：&lt;a href=&quot;https://github.com/Ad1euDa1e/VueCrack&quot;&gt;VueCrack&lt;/a&gt;、&lt;a href=&quot;https://github.com/keecth/FakeCryptoJS&quot;&gt;FakeCryptoJS&lt;/a&gt;、&lt;a href=&quot;https://github.com/hzmming/vue-force-dev&quot;&gt;vue-force-dev&lt;/a&gt;
-
-## Contact
-
-如有bug或其他问题可提交issues，或者关注公众号Spade sec联系我。
-
-如需添加交流群可加我微信：I-0xsdeo。
-
-## 使用许可
-
-本工具禁止未授权商业用途，禁止二次开发后进行未授权商业用途。
-
-## 404星链计划
-&lt;img src=&quot;https://github.com/knownsec/404StarLink-Project/raw/master/logo.png&quot; width=&quot;30%&quot;&gt;
-
-AntiDebug_Breaker 现已加入 [404星链计划](https://github.com/knownsec/404StarLink)
-
-## Star History
-[![Stargazers over time](https://starchart.cc/0xsdeo/AntiDebug_Breaker.svg?variant=adaptive)](https://starchart.cc/0xsdeo/AntiDebug_Breaker)
+**Made with ❤️ from Firebase for the AI community**
 </pre>
           ]]></content:encoded>
             <category>JavaScript</category>
