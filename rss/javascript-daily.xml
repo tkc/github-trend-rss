@@ -4,24 +4,303 @@
         <title>GitHub Trending Today for javascript - JavaScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for javascript.</description>
-        <lastBuildDate>Mon, 20 Apr 2026 00:13:01 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 21 Apr 2026 00:15:24 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2026, GitHub</copyright>
         <item>
+            <title><![CDATA[coreyhaines31/marketingskills]]></title>
+            <link>https://github.com/coreyhaines31/marketingskills</link>
+            <guid>https://github.com/coreyhaines31/marketingskills</guid>
+            <pubDate>Tue, 21 Apr 2026 00:15:24 GMT</pubDate>
+            <description><![CDATA[Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/coreyhaines31/marketingskills">coreyhaines31/marketingskills</a></h1>
+            <p>Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 22,490</p>
+            <p>Forks: 3,621</p>
+            <p>Stars today: 354 stars today</p>
+            <h2>README</h2><pre># Marketing Skills for AI Agents
+
+A collection of AI agent skills focused on marketing tasks. Built for technical marketers and founders who want AI coding agents to help with conversion optimization, copywriting, SEO, analytics, and growth engineering. Works with Claude Code, OpenAI Codex, Cursor, Windsurf, and any agent that supports the [Agent Skills spec](https://agentskills.io).
+
+Built by [Corey Haines](https://corey.co?ref=marketingskills). Need hands-on help? Check out [Conversion Factory](https://conversionfactory.co?ref=marketingskills) — Corey&#039;s agency for conversion optimization, landing pages, and growth strategy. Want to learn more about marketing? Subscribe to [Swipe Files](https://swipefiles.com?ref=marketingskills). Want an autonomous AI agent that uses these skills to be your CMO? Try [Magister](https://magistermarketing.com?ref=marketingskills).
+
+New to the terminal and coding agents? Check out the companion guide [Coding for Marketers](https://codingformarketers.com?ref=marketingskills).
+
+**Contributions welcome!** Found a way to improve a skill or have a new one to add? [Open a PR](#contributing).
+
+Run into a problem or have a question? [Open an issue](https://github.com/coreyhaines31/marketingskills/issues) — we&#039;re happy to help.
+
+## What are Skills?
+
+Skills are markdown files that give AI agents specialized knowledge and workflows for specific tasks. When you add these to your project, your agent can recognize when you&#039;re working on a marketing task and apply the right frameworks and best practices.
+
+## How Skills Work Together
+
+Skills reference each other and build on shared context. The `product-marketing-context` skill is the foundation — every other skill checks it first to understand your product, audience, and positioning before doing anything.
+
+```
+                            ┌──────────────────────────────────────┐
+                            │      product-marketing-context       │
+                            │    (read by all other skills first)  │
+                            └──────────────────┬───────────────────┘
+                                               │
+    ┌──────────────┬─────────────┬─────────────┼─────────────┬──────────────┬──────────────┐
+    ▼              ▼             ▼             ▼             ▼              ▼              ▼
+┌──────────┐ ┌──────────┐ ┌──────────┐ ┌────────────┐ ┌──────────┐ ┌─────────────┐ ┌───────────┐
+│  SEO &amp;   │ │   CRO    │ │Content &amp; │ │  Paid &amp;    │ │ Growth &amp; │ │  Sales &amp;    │ │ Strategy  │
+│ Content  │ │          │ │   Copy   │ │Measurement │ │Retention │ │    GTM      │ │           │
+├──────────┤ ├──────────┤ ├──────────┤ ├────────────┤ ├──────────┤ ├─────────────┤ ├───────────┤
+│seo-audit │ │page-cro  │ │copywritng│ │paid-ads    │ │referral  │ │revops       │ │mktg-ideas │
+│ai-seo    │ │signup-cro│ │copy-edit │ │ad-creative │ │free-tool │ │sales-enable │ │mktg-psych │
+│site-arch │ │onboard   │ │cold-email│ │ab-test     │ │churn-    │ │launch       │ │customer-  │
+│programm  │ │form-cro  │ │email-seq │ │analytics   │ │ prevent  │ │pricing      │ │research   │
+│schema    │ │popup-cro │ │social    │ │            │ │          │ │competitor   │ │           │
+│content   │ │paywall   │ │          │ │            │ │          │ │             │ │           │
+└────┬─────┘ └────┬─────┘ └────┬─────┘ └─────┬──────┘ └────┬─────┘ └──────┬──────┘ └─────┬─────┘
+     │            │            │              │             │              │              │
+     └────────────┴─────┬──────┴──────────────┴─────────────┴──────────────┴──────────────┘
+                        │
+         Skills cross-reference each other:
+           copywriting ↔ page-cro ↔ ab-test-setup
+           revops ↔ sales-enablement ↔ cold-email
+           seo-audit ↔ schema-markup ↔ ai-seo
+           customer-research → copywriting, page-cro, competitor-alternatives
+```
+
+See each skill&#039;s **Related Skills** section for the full dependency map.
+
+## Available Skills
+
+&lt;!-- SKILLS:START --&gt;
+| Skill | Description |
+|-------|-------------|
+| [ab-test-setup](skills/ab-test-setup/) | When the user wants to plan, design, or implement an A/B test or experiment, or build a growth experimentation program.... |
+| [ad-creative](skills/ad-creative/) | When the user wants to generate, iterate, or scale ad creative — headlines, descriptions, primary text, or full ad... |
+| [ai-seo](skills/ai-seo/) | When the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers.... |
+| [analytics-tracking](skills/analytics-tracking/) | When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions... |
+| [aso-audit](skills/aso-audit/) | When the user wants to audit or optimize an App Store or Google Play listing. Also use when the user mentions &#039;ASO... |
+| [churn-prevention](skills/churn-prevention/) | When the user wants to reduce churn, build cancellation flows, set up save offers, recover failed payments, or... |
+| [cold-email](skills/cold-email/) | Write B2B cold emails and follow-up sequences that get replies. Use when the user wants to write cold outreach emails,... |
+| [community-marketing](skills/community-marketing/) | Build and leverage online communities to drive product growth and brand loyalty. Use when the user wants to create a... |
+| [competitor-alternatives](skills/competitor-alternatives/) | When the user wants to create competitor comparison or alternative pages for SEO and sales enablement. Also use when... |
+| [content-strategy](skills/content-strategy/) | When the user wants to plan a content strategy, decide what content to create, or figure out what topics to cover. Also... |
+| [copy-editing](skills/copy-editing/) | When the user wants to edit, review, or improve existing marketing copy, or refresh outdated content. Also use when the... |
+| [copywriting](skills/copywriting/) | When the user wants to write, rewrite, or improve marketing copy for any page — including homepage, landing pages,... |
+| [customer-research](skills/customer-research/) | When the user wants to conduct, analyze, or synthesize customer research. Use when the user mentions &quot;customer... |
+| [email-sequence](skills/email-sequence/) | When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email... |
+| [form-cro](skills/form-cro/) | When the user wants to optimize any form that is NOT signup/registration — including lead capture forms, contact forms,... |
+| [free-tool-strategy](skills/free-tool-strategy/) | When the user wants to plan, evaluate, or build a free tool for marketing purposes — lead generation, SEO value, or... |
+| [launch-strategy](skills/launch-strategy/) | When the user wants to plan a product launch, feature announcement, or release strategy. Also use when the user... |
+| [lead-magnets](skills/lead-magnets/) | When the user wants to create, plan, or optimize a lead magnet for email capture or lead generation. Also use when the... |
+| [marketing-ideas](skills/marketing-ideas/) | When the user needs marketing ideas, inspiration, or strategies for their SaaS or software product. Also use when the... |
+| [marketing-psychology](skills/marketing-psychology/) | When the user wants to apply psychological principles, mental models, or behavioral science to marketing. Also use when... |
+| [onboarding-cro](skills/onboarding-cro/) | When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also... |
+| [page-cro](skills/page-cro/) | When the user wants to optimize, improve, or increase conversions on any marketing page — including homepage, landing... |
+| [paid-ads](skills/paid-ads/) | When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X,... |
+| [paywall-upgrade-cro](skills/paywall-upgrade-cro/) | When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use... |
+| [popup-cro](skills/popup-cro/) | When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners for conversion purposes. Also... |
+| [pricing-strategy](skills/pricing-strategy/) | When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions... |
+| [product-marketing-context](skills/product-marketing-context/) | When the user wants to create or update their product marketing context document. Also use when the user mentions... |
+| [programmatic-seo](skills/programmatic-seo/) | When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions... |
+| [referral-program](skills/referral-program/) | When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy.... |
+| [revops](skills/revops/) | When the user wants help with revenue operations, lead lifecycle management, or marketing-to-sales handoff processes.... |
+| [sales-enablement](skills/sales-enablement/) | When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, or demo scripts. Also... |
+| [schema-markup](skills/schema-markup/) | When the user wants to add, fix, or optimize schema markup and structured data on their site. Also use when the user... |
+| [seo-audit](skills/seo-audit/) | When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions &quot;SEO... |
+| [signup-flow-cro](skills/signup-flow-cro/) | When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the... |
+| [site-architecture](skills/site-architecture/) | When the user wants to plan, map, or restructure their website&#039;s page hierarchy, navigation, URL structure, or internal... |
+| [social-content](skills/social-content/) | When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram,... |
+&lt;!-- SKILLS:END --&gt;
+
+## Installation
+
+### Option 1: CLI Install (Recommended)
+
+Use [npx skills](https://github.com/vercel-labs/skills) to install skills directly:
+
+```bash
+# Install all skills
+npx skills add coreyhaines31/marketingskills
+
+# Install specific skills
+npx skills add coreyhaines31/marketingskills --skill page-cro copywriting
+
+# List available skills
+npx skills add coreyhaines31/marketingskills --list
+```
+
+This automatically installs to your `.agents/skills/` directory (and symlinks into `.claude/skills/` for Claude Code compatibility).
+
+### Option 2: Claude Code Plugin
+
+Install via Claude Code&#039;s built-in plugin system:
+
+```bash
+# Add the marketplace
+/plugin marketplace add coreyhaines31/marketingskills
+
+# Install all marketing skills
+/plugin install marketing-skills
+```
+
+### Option 3: Clone and Copy
+
+Clone the entire repo and copy the skills folder:
+
+```bash
+git clone https://github.com/coreyhaines31/marketingskills.git
+cp -r marketingskills/skills/* .agents/skills/
+```
+
+### Option 4: Git Submodule
+
+Add as a submodule for easy updates:
+
+```bash
+git submodule add https://github.com/coreyhaines31/marketingskills.git .agents/marketingskills
+```
+
+Then reference skills from `.agents/marketingskills/skills/`.
+
+### Option 5: Fork and Customize
+
+1. Fork this repository
+2. Customize skills for your specific needs
+3. Clone your fork into your projects
+
+### Option 6: SkillKit (Multi-Agent)
+
+Use [SkillKit](https://github.com/rohitg00/skillkit) to install skills across multiple AI agents (Claude Code, Cursor, Copilot, etc.):
+
+```bash
+# Install all skills
+npx skillkit install coreyhaines31/marketingskills
+
+# Install specific skills
+npx skillkit install coreyhaines31/marketingskills --skill page-cro copywriting
+
+# List available skills
+npx skillkit install coreyhaines31/marketingskills --list
+```
+
+## Upgrading from v1.0
+
+Skills now use `.agents/` instead of `.claude/` for the product marketing context file. Move your existing context file:
+
+```bash
+mkdir -p .agents
+mv .claude/product-marketing-context.md .agents/product-marketing-context.md
+```
+
+Skills will still check `.claude/` as a fallback, so nothing breaks if you don&#039;t.
+
+## Usage
+
+Once installed, just ask your agent to help with marketing tasks:
+
+```
+&quot;Help me optimize this landing page for conversions&quot;
+→ Uses page-cro skill
+
+&quot;Write homepage copy for my SaaS&quot;
+→ Uses copywriting skill
+
+&quot;Set up GA4 tracking for signups&quot;
+→ Uses analytics-tracking skill
+
+&quot;Create a 5-email welcome sequence&quot;
+→ Uses email-sequence skill
+```
+
+You can also invoke skills directly:
+
+```
+/page-cro
+/email-sequence
+/seo-audit
+```
+
+## Skill Categories
+
+### Conversion Optimization
+- `page-cro` - Any marketing page
+- `signup-flow-cro` - Registration flows
+- `onboarding-cro` - Post-signup activation
+- `form-cro` - Lead capture forms
+- `popup-cro` - Modals and overlays
+- `paywall-upgrade-cro` - In-app upgrade moments
+
+### Content &amp; Copy
+- `copywriting` - Marketing page copy
+- `copy-editing` - Edit and polish existing copy
+- `cold-email` - B2B cold outreach emails and sequences
+- `email-sequence` - Automated email flows
+- `social-content` - Social media content
+
+### SEO &amp; Discovery
+- `seo-audit` - Technical and on-page SEO
+- `ai-seo` - AI search optimization (AEO, GEO, LLMO)
+- `programmatic-seo` - Scaled page generation
+- `site-architecture` - Page hierarchy, navigation, URL structure
+- `competitor-alternatives` - Comparison and alternative pages
+- `schema-markup` - Structured data
+
+### Paid &amp; Distribution
+- `paid-ads` - Google, Meta, LinkedIn ad campaigns
+- `ad-creative` - Bulk ad creative generation and iteration
+- `social-content` - Social media scheduling and strategy
+
+### Measurement &amp; Testing
+- `analytics-tracking` - Event tracking setup
+- `ab-test-setup` - Experiment design
+
+### Retention
+- `churn-prevention` - Cancel flows, save offers, dunning, payment recovery
+
+### Growth Engineering
+- `free-tool-strategy` - Marketing tools and calculators
+- `referral-program` - Referral and affiliate programs
+
+### Strategy &amp; Monetization
+- `marketing-ideas` - 140 SaaS marketing ideas
+- `marketing-psychology` - Mental models and psychology
+- `launch-strategy` - Product launches and announcements
+- `pricing-strategy` - Pricing, packaging, and monetization
+
+### Sales &amp; RevOps
+- `revops` - Lead lifecycle, scoring, routing, pipeline management
+- `sales-enablement` - Sales decks, one-pagers, objection docs, demo scripts
+
+## Contributing
+
+Found a way to improve a skill? Have a new skill to suggest? PRs and issues welcome!
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on adding or improving skills.
+
+## License
+
+[MIT](LICENSE) - Use these however you want.
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
             <title><![CDATA[EvoMap/evolver]]></title>
             <link>https://github.com/EvoMap/evolver</link>
             <guid>https://github.com/EvoMap/evolver</guid>
-            <pubDate>Mon, 20 Apr 2026 00:13:01 GMT</pubDate>
+            <pubDate>Tue, 21 Apr 2026 00:15:23 GMT</pubDate>
             <description><![CDATA[The GEP-Powered Self-Evolution Engine for AI Agents. Genome Evolution Protocol. | evomap.ai]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/EvoMap/evolver">EvoMap/evolver</a></h1>
             <p>The GEP-Powered Self-Evolution Engine for AI Agents. Genome Evolution Protocol. | evomap.ai</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 5,505</p>
-            <p>Forks: 535</p>
-            <p>Stars today: 527 stars today</p>
+            <p>Stars: 6,009</p>
+            <p>Forks: 570</p>
+            <p>Stars today: 585 stars today</p>
             <h2>README</h2><pre># 🧬 Evolver
 
 [![GitHub stars](https://img.shields.io/github/stars/EvoMap/evolver?style=social)](https://github.com/EvoMap/evolver/stargazers)
@@ -463,103 +742,153 @@ Required env vars:
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[mrdoob/three.js]]></title>
-            <link>https://github.com/mrdoob/three.js</link>
-            <guid>https://github.com/mrdoob/three.js</guid>
-            <pubDate>Mon, 20 Apr 2026 00:13:00 GMT</pubDate>
-            <description><![CDATA[JavaScript 3D Library.]]></description>
+            <title><![CDATA[bugbasesecurity/pentest-copilot]]></title>
+            <link>https://github.com/bugbasesecurity/pentest-copilot</link>
+            <guid>https://github.com/bugbasesecurity/pentest-copilot</guid>
+            <pubDate>Tue, 21 Apr 2026 00:15:22 GMT</pubDate>
+            <description><![CDATA[Pentest Copilot is an AI-powered browser based ethical hacking assistant tool designed to streamline pentesting workflows.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/mrdoob/three.js">mrdoob/three.js</a></h1>
-            <p>JavaScript 3D Library.</p>
+            <h1><a href="https://github.com/bugbasesecurity/pentest-copilot">bugbasesecurity/pentest-copilot</a></h1>
+            <p>Pentest Copilot is an AI-powered browser based ethical hacking assistant tool designed to streamline pentesting workflows.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 112,066</p>
-            <p>Forks: 36,324</p>
-            <p>Stars today: 31 stars today</p>
-            <h2>README</h2><pre># three.js
+            <p>Stars: 597</p>
+            <p>Forks: 127</p>
+            <p>Stars today: 21 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;./assets/banner.png&quot; alt=&quot;Pentest Copilot Banner&quot; /&gt;
+&lt;/p&gt;
 
-[![NPM Package][npm]][npm-url]
-[![Build Size][build-size]][build-size-url]
-[![NPM Downloads][npm-downloads]][npmtrends-url]
-[![jsDelivr Downloads][jsdelivr-downloads]][jsdelivr-url]
-[![Discord][discord]][discord-url]
+# Pentest Copilot
 
-#### JavaScript 3D library
+![GitHub License](https://img.shields.io/github/license/bugbasesecurity/pentest-copilot)
+![GitHub Repo stars](https://img.shields.io/github/stars/bugbasesecurity/pentest-copilot)
+![GitHub forks](https://img.shields.io/github/forks/bugbasesecurity/pentest-copilot)
 
-The aim of the project is to create an easy-to-use, lightweight, cross-browser, general-purpose 3D library. The current builds only include WebGL and WebGPU renderers but SVG and CSS3D renderers are also available as addons.
+An open-source, AI-driven penetration testing agent. Connects to a Kali attack box, runs tools autonomously, analyzes results, and iterates. You describe the target. It does the rest.
 
-[Examples](https://threejs.org/examples/) &amp;mdash;
-[Docs](https://threejs.org/docs/) &amp;mdash;
-[Manual](https://threejs.org/manual/) &amp;mdash;
-[Wiki](https://github.com/mrdoob/three.js/wiki) &amp;mdash;
-[Migrating](https://github.com/mrdoob/three.js/wiki/Migration-Guide) &amp;mdash;
-[Questions](https://stackoverflow.com/questions/tagged/three.js) &amp;mdash;
-[Forum](https://discourse.threejs.org/) &amp;mdash;
-[Discord](https://discord.gg/56GBJwAnUS)
+Built for real-world engagements, boot2root boxes, and CTFs.
 
-### Usage
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;./assets/dashboard_with_backdrop.png&quot;&gt;
+&lt;/p&gt;
 
-This code creates a scene, a camera, and a geometric cube, and it adds the cube to the scene. It then creates a `WebGL` renderer for the scene and camera, and it adds that viewport to the `document.body` element. Finally, it animates the cube within the scene for the camera.
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;./assets/operationa_dashboard_with_backdrop.png&quot;&gt;
+&lt;/p&gt;
 
-```javascript
-import * as THREE from &#039;three&#039;;
+## In Action
 
-const width = window.innerWidth, height = window.innerHeight;
+Pentest Copilot performing an auth bypass in [OWASP Juice Shop](https://owasp.org/www-project-juice-shop/):
 
-// init
 
-const camera = new THREE.PerspectiveCamera( 70, width / height, 0.01, 10 );
-camera.position.z = 1;
+&lt;video src=&quot;https://github.com/user-attachments/assets/bbb2cab2-6db7-4578-a3b7-f45a1619a987&quot; poster=&quot;./assets/video-thumbnail.jpg&quot; controls&gt;&lt;/video&gt;
 
-const scene = new THREE.Scene();
+Watch it on [YouTube](https://www.youtube.com/watch?v=L0bjYzuICWo)
 
-const geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
-const material = new THREE.MeshNormalMaterial();
+## What It Does
 
-const mesh = new THREE.Mesh( geometry, material );
-scene.add( mesh );
+- **Agentic execution** - the AI runs commands directly on the attack box, reads output, decides next steps, and loops. Up to 25 iterations per turn, no manual nudging required.
+- **16 agent tools** - bash, Python scripts, tool installation, shell management, Google search, subagent spawning, Burp Suite (proxy history, Repeater, Intruder, Collaborator), and browser automation.
+- **100+ capabilities** - curated registry of security tools and Python packages across 7 categories (network, rev, pwn, crypto, forensics, stego, core). Select what you need, the agent installs the rest.
+- **Burp Suite integration** - proxy history viewer, send requests to Repeater/Intruder, Collaborator for out-of-band testing. All accessible to the agent and through the UI.
+- **Browser agent** - real browser automation via [Magnitude](https://github.com/magnitude-dev/magnitude). Test login flows, fill forms, interact with JavaScript-heavy apps. Optionally proxy traffic through Burp. In Docker mode, watch the browser via the built-in VNC stream; in developer mode, the browser opens on your local desktop.
+- **VPN management** - upload `.ovpn` profiles and connect/disconnect from the browser. Multiple simultaneous connections supported.
+- **Subagent parallelism** - spawn background agents to run tasks concurrently (e.g. directory brute-force + subdomain enum at the same time).
+- **Safety checks** - dangerous commands (recursive deletes, device writes, fork bombs) require explicit approval, even in auto-run mode.
+- **Bring your own model** - OpenAI, Anthropic (API key or OAuth), Google, Mistral, or any OpenAI-compatible endpoint.
 
-const renderer = new THREE.WebGLRenderer( { antialias: true } );
-renderer.setSize( width, height );
-renderer.setAnimationLoop( animate );
-document.body.appendChild( renderer.domElement );
+## Quick Start
 
-// animation
+```bash
+git clone https://github.com/bugbasesecurity/pentest-copilot.git
+cd pentest-copilot
+./run.sh start
+```
 
-function animate( time ) {
+Open `http://localhost:3000`, register, and start a session.
 
-	mesh.rotation.x = time / 2000;
-	mesh.rotation.y = time / 1000;
+`run.sh` handles config file generation, Docker builds, and container orchestration. On first run it prompts for your model provider and API key. Use `./run.sh start -q` to skip prompts on subsequent runs.
 
-	renderer.render( scene, camera );
+```bash
+./run.sh stop       # Stop all containers
+./run.sh logs       # Tail logs
+./run.sh status     # Container status
+./run.sh config     # Update configuration
+./run.sh dev        # Developer mode (infra only, run frontend/backend locally)
+./run.sh help       # Full help
+```
 
+### System Requirements
+
+| | Minimum |
+|---|---|
+| RAM | 8 GB (+2 GB if using the built-in Kali container) |
+| Disk | 20 GB |
+| Docker | v20+ with Compose v2+ |
+| Node.js | v22+ (dev mode only) |
+| pnpm | v9+ (dev mode only) |
+
+## Documentation
+
+Full documentation lives in the **[Wiki](https://github.com/bugbasesecurity/pentest-copilot/wiki)**:
+
+- [Getting Started](https://github.com/bugbasesecurity/pentest-copilot/wiki/Home) - setup, configuration, environment variables
+- [Architecture](https://github.com/bugbasesecurity/pentest-copilot/wiki/Architecture) - system design, agent loop, subagents
+- [Usage](https://github.com/bugbasesecurity/pentest-copilot/wiki/Usage) - workflow, consent model, chat interface
+- [Features](https://github.com/bugbasesecurity/pentest-copilot/wiki/Features) - full feature overview
+- [Settings](https://github.com/bugbasesecurity/pentest-copilot/wiki/Settings) - models, SSH, VNC, Burp, Magnitude
+- [Capabilities](https://github.com/bugbasesecurity/pentest-copilot/wiki/Capabilities) - tool registry and buckets
+- [Agent Tools](https://github.com/bugbasesecurity/pentest-copilot/wiki/Agent-Tools) - all 16 tools and consent behavior
+- [Burp Suite Integration](https://github.com/bugbasesecurity/pentest-copilot/wiki/Burp-Suite-Integration) - setup and usage
+- [Browser Agent](https://github.com/bugbasesecurity/pentest-copilot/wiki/Browser-Agent) - Magnitude configuration
+- [VPN Management](https://github.com/bugbasesecurity/pentest-copilot/wiki/VPN-Management) - profile management
+- [Slash Commands](https://github.com/bugbasesecurity/pentest-copilot/wiki/Slash-Commands) - session utilities
+- [Changelog](https://github.com/bugbasesecurity/pentest-copilot/wiki/Changelog) - what&#039;s new
+
+## Local Development
+
+```bash
+./run.sh dev    # Starts MongoDB + Redis in Docker
+```
+
+Then in separate terminals:
+
+```bash
+cd backend &amp;&amp; pnpm install &amp;&amp; pnpm run watch   # TypeScript compiler
+cd backend &amp;&amp; pnpm run dev                     # Backend server (port 8080)
+cd frontend &amp;&amp; pnpm install &amp;&amp; pnpm run dev    # Frontend (port 3000)
+```
+
+See the [Wiki](https://github.com/bugbasesecurity/pentest-copilot/wiki/Home) for detailed setup instructions.
+
+## Authors
+
+- Dhruva Goyal - [dhruva@bugbase.ai](mailto:dhruva@bugbase.ai) | [LinkedIn](https://www.linkedin.com/in/dhruva-goyal/) | [GitHub](https://github.com/shero4) | [X](https://x.com/dhruvagoyal)
+- Aditya Peela - [aditya@bugbase.ai](mailto:aditya@bugbase.ai) | [LinkedIn](https://www.linkedin.com/in/aditya-peela/) | [GitHub](https://github.com/adityamhn) | [X](https://x.com/adityapeela)
+- Sitaraman Subramanian - [sitaraman@bugbase.ai](mailto:sitaraman@bugbase.ai) | [LinkedIn](https://www.linkedin.com/in/sitaraman-s/) | [GitHub](https://github.com/hackerbone) | [X](https://x.com/situuu_ig)
+
+## Citations
+
+```bibtex
+@article{goyal2024hacking,
+  title={Hacking, the lazy way: LLM augmented pentesting},
+  author={Goyal, Dhruva and Subramanian, Sitaraman and Peela, Aditya},
+  journal={arXiv preprint arXiv:2409.09493},
+  year={2024}
 }
 ```
 
-If everything goes well, you should see [this](https://jsfiddle.net/w43x5Lgh/).
+## Contributing
 
-### Cloning this repository
+Contributions welcome. See the [Contributing Guide](./CONTRIBUTING.md) and [Code of Conduct](./CODE_OF_CONDUCT.md).
 
-Cloning the repo with all its history results in a ~2 GB download. If you don&#039;t need the whole history you can use the `depth` parameter to significantly reduce download size.
+## License
 
-```sh
-git clone --depth=1 https://github.com/mrdoob/three.js.git
-```
+[MIT License](./LICENSE)
 
-### Change log
+## Disclaimer
 
-[Releases](https://github.com/mrdoob/three.js/releases)
-
-
-[npm]: https://img.shields.io/npm/v/three
-[npm-url]: https://www.npmjs.com/package/three
-[build-size]: https://badgen.net/bundlephobia/minzip/three
-[build-size-url]: https://bundlephobia.com/result?p=three
-[npm-downloads]: https://img.shields.io/npm/dw/three
-[npmtrends-url]: https://www.npmtrends.com/three
-[jsdelivr-downloads]: https://data.jsdelivr.com/v1/package/npm/three/badge?style=rounded
-[jsdelivr-url]: https://www.jsdelivr.com/package/npm/three
-[discord]: https://img.shields.io/discord/685241246557667386
-[discord-url]: https://discord.gg/56GBJwAnUS
+Pentest Copilot is intended for authorized security testing only. Always have explicit permission before testing any system.
 </pre>
           ]]></content:encoded>
             <category>JavaScript</category>
@@ -568,15 +897,15 @@ git clone --depth=1 https://github.com/mrdoob/three.js.git
             <title><![CDATA[is-a-dev/register]]></title>
             <link>https://github.com/is-a-dev/register</link>
             <guid>https://github.com/is-a-dev/register</guid>
-            <pubDate>Mon, 20 Apr 2026 00:12:59 GMT</pubDate>
+            <pubDate>Tue, 21 Apr 2026 00:15:21 GMT</pubDate>
             <description><![CDATA[Grab your own sweet-looking '.is-a.dev' subdomain.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/is-a-dev/register">is-a-dev/register</a></h1>
             <p>Grab your own sweet-looking '.is-a.dev' subdomain.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 10,141</p>
-            <p>Forks: 20,368</p>
-            <p>Stars today: 6 stars today</p>
+            <p>Stars: 10,148</p>
+            <p>Forks: 20,394</p>
+            <p>Stars today: 14 stars today</p>
             <h2>README</h2><pre>&lt;!-- &lt;p align=&quot;center&quot;&gt;
    &lt;img alt=&quot;is-a.dev Banner&quot; src=&quot;https://raw.githubusercontent.com/is-a-dev/register/main/media/banner.png&quot;&gt;
 &lt;/p&gt; --&gt;
@@ -637,18 +966,111 @@ We are supported by Cloudflare&#039;s [Project Alexandria](https://www.cloudflar
             <category>JavaScript</category>
         </item>
         <item>
+            <title><![CDATA[fanmingming/live]]></title>
+            <link>https://github.com/fanmingming/live</link>
+            <guid>https://github.com/fanmingming/live</guid>
+            <pubDate>Tue, 21 Apr 2026 00:15:20 GMT</pubDate>
+            <description><![CDATA[✯ 可直连访问的电视/广播图标库与相关工具项目 ✯ 🔕 永久免费 直连访问 完整开源 不断完善的台标 支持IPv4/IPv6双栈访问 🔕]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/fanmingming/live">fanmingming/live</a></h1>
+            <p>✯ 可直连访问的电视/广播图标库与相关工具项目 ✯ 🔕 永久免费 直连访问 完整开源 不断完善的台标 支持IPv4/IPv6双栈访问 🔕</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 27,906</p>
+            <p>Forks: 4,171</p>
+            <p>Stars today: 9 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;&lt;img alt=&quot;live.fanmingming.com&quot; src=&quot;https://live.fanmingming.com/logo.png&quot;&gt;&lt;/p&gt;
+&lt;h1 align=&quot;center&quot;&gt; ✯ 一个可直连访问的电视/广播图标库与相关工具项目 ✯ &lt;/h1&gt;
+&lt;h3 align=&quot;center&quot;&gt;🔕 永久免费 直连访问 完整开源 不断完善的台标 支持IPv4/IPv6双栈访问 🔕&lt;/h3&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img alt=&quot;GitHub Repo stars&quot; src=&quot;https://img.shields.io/github/stars/fanmingming/live?style=flat-square&quot;&gt;
+&lt;img alt=&quot;GitHub forks&quot; src=&quot;https://img.shields.io/github/forks/fanmingming/live?style=flat-square&quot;&gt;
+&lt;img alt=&quot;GitHub issues&quot; src=&quot;https://img.shields.io/github/issues/fanmingming/live?style=flat-square&quot;&gt;
+&lt;img alt=&quot;GitHub watchers&quot; src=&quot;https://img.shields.io/github/watchers/fanmingming/live?style=flat-square&quot;&gt;
+&lt;img alt=&quot;GitHub contributors&quot; src=&quot;https://img.shields.io/github/contributors/fanmingming/live?style=flat-square&quot;&gt;
+&lt;img alt=&quot;GitHub&quot; src=&quot;https://img.shields.io/github/license/fanmingming/live?style=flat-square&quot;&gt;
+&lt;/p&gt;
+
+---
+
+## 🤹‍♂️使用方法:
+
+### 🌇电视/广播图标库：
+
+| 类 别  | 调用路径                                       | 最后更新   |
+|-------|------------------------------------------------|------------|
+| 📺电视  | [https://live.fanmingming.cn/tv/{name}.png](https://github.com/fanmingming/live/tree/main/tv) | 2025.04.01    |
+| 📻广播  | [https://live.fanmingming.cn/radio/{name}.png](https://github.com/fanmingming/live/tree/main/radio) | 2024.8.29   |
+
+### ⛓️创建您的m3u订阅链接：
+ - 下载 `demo.m3u` 空白示例文件并使用文本编辑软件打开。
+   - [https://live.fanmingming.cn/tv/m3u/demo.m3u](https://live.fanmingming.cn/tv/m3u/demo.m3u)
+
+ - 参考下方示例代码将`可用的CCTV1节目源`替换为您当地可用的直播源链接，依此类推逐个替换。
+
+```
+#EXTM3U x-tvg-url=&quot;https://live.fanmingming.cn/e.xml&quot;
+#EXTINF:-1 tvg-name=&quot;CCTV1&quot; tvg-logo=&quot;https://live.fanmingming.cn/tv/CCTV1.png&quot; group-title=&quot;央视&quot;,CCTV-1 综合
+可用的CCTV1节目源
+此处省略...
+```
+
+ - 将编辑完成的m3u文件上传到您的Github仓库。
+ - 为您的Github仓库开启Pages。
+ - 通过播放器订阅您的m3u链接。
+
+&gt; 关于Github Pages：[https://docs.github.com/en/enterprise-cloud@latest/pages/quickstart](https://docs.github.com/en/enterprise-cloud@latest/pages/quickstart)
+
+## 🛠️工具
+- 📆**EPG接口地址**：
+  -  [https://live.fanmingming.cn/e.xml](https://live.fanmingming.cn/e.xml)
+- 🏞️**Bing每日图片**：
+  -  [https://fanmingming.com/bing](https://fanmingming.com/bing)
+- 🎞️**m3u8在线下载**：
+  -  [https://live.fanmingming.cn/m3u8](https://live.fanmingming.cn/m3u8)
+- 🆕**TXT转M3U格式**：
+  - [https://live.fanmingming.cn/txt2m3u](https://live.fanmingming.cn/txt2m3u)
+- 📄**在线M3U转TXT**：
+  - Demo🔗 [https://fanmingming.com/txt?url=https://live.fanmingming.com/tv/m3u/ipv6.m3u](https://fanmingming.com/txt?url=https://live.fanmingming.cn/tv/m3u/ipv6.m3u)
+- 🌐**M3U8 Web Player**:
+  - Demo🔗 [https://live.fanmingming.cn/player/?vurl=https://0472.org/hls/cgtn.m3u8](https://live.fanmingming.cn/player/?vurl=https://0472.org/hls/cgtn.m3u8)
+
+## 📖说明
+- 项目EPG接口为112114.xyz站点分发，本项目无法确保其准确性。
+- 通过M3U8 Web Player测试直播源需使用https协议的直播源链接。
+- 在线M3U转TXT工具构建在Vercel，不会记录您的访问日志请放心使用。
+- TXT转M3U工具为前端网页转换，无需上传文件，粘贴即转换，安全不偷源。
+- 本项目不存储任何的流媒体内容，所有的法律责任与后果应由使用者自行承担。
+- 项目`/tv/m3u/`和`/radio/m3u/`目录下的内容收集于互联网，仅供测试研究使用，本项目无法保证其有效性。
+- 主域名【`live.fanmingming.com`】的WEB访问通过Github Pages自动构建，由CloudFlare提供CDN和安全防护。
+- 镜像域名【`live.fanmingming.cn`】提供完整的资源WEB访问，通过Github Actions自动构建在CloudFlare Pages。
+- 项目所有文件均托管在[GitHub](https://github.com/fanmingming/live)且自动构建，由项目发起人公益维护，欢迎Star本项目或点击[Issues](https://github.com/fanmingming/live/issues/new/choose)反馈您的问题。
+- 您可以Frok本项目到您的Github账户，将缺失的频道Logo上传到`tv`或`radio`目录下并发起拉取请求，收到请求后我们会对您提交的内容进行验证，审核通过后会自动为您署名并发布。
+
+## 📱联系
+- Telegram: [@AirfoneBot](https://t.me/AirfoneBot)
+  - 如遇资源访问问题请通过Telegram反馈。
+
+## 📔更新
+- 2025.04.01
+  - 新增北京卫视4K台标。
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
             <title><![CDATA[HeyPuter/puter]]></title>
             <link>https://github.com/HeyPuter/puter</link>
             <guid>https://github.com/HeyPuter/puter</guid>
-            <pubDate>Mon, 20 Apr 2026 00:12:58 GMT</pubDate>
+            <pubDate>Tue, 21 Apr 2026 00:15:19 GMT</pubDate>
             <description><![CDATA[🌐 The Internet Computer! Free, Open-Source, and Self-Hostable.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/HeyPuter/puter">HeyPuter/puter</a></h1>
             <p>🌐 The Internet Computer! Free, Open-Source, and Self-Hostable.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 40,457</p>
-            <p>Forks: 3,640</p>
-            <p>Stars today: 51 stars today</p>
+            <p>Stars: 40,490</p>
+            <p>Forks: 3,645</p>
+            <p>Stars today: 49 stars today</p>
             <h2>README</h2><pre>&lt;h3 align=&quot;center&quot;&gt;&lt;img width=&quot;80&quot; alt=&quot;Puter.com, The Personal Cloud Computer: All your files, apps, and games in one place accessible from anywhere at any time.&quot; src=&quot;https://assets.puter.site/puter-logo.png&quot;&gt;&lt;/h3&gt;
 
 &lt;h3 align=&quot;center&quot;&gt;The Internet OS! Free, Open-Source, and Self-Hostable.&lt;/h3&gt;
@@ -833,1046 +1255,271 @@ This repository, including all its contents, sub-projects, modules, and componen
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[Dispatcharr/Dispatcharr]]></title>
-            <link>https://github.com/Dispatcharr/Dispatcharr</link>
-            <guid>https://github.com/Dispatcharr/Dispatcharr</guid>
-            <pubDate>Mon, 20 Apr 2026 00:12:57 GMT</pubDate>
+            <title><![CDATA[hiteshchoudhary/apihub]]></title>
+            <link>https://github.com/hiteshchoudhary/apihub</link>
+            <guid>https://github.com/hiteshchoudhary/apihub</guid>
+            <pubDate>Tue, 21 Apr 2026 00:15:18 GMT</pubDate>
+            <description><![CDATA[Your own API Hub to learn and master API interaction. Ideal for frontend, mobile dev and backend developers.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/Dispatcharr/Dispatcharr">Dispatcharr/Dispatcharr</a></h1>
-            <p></p>
+            <h1><a href="https://github.com/hiteshchoudhary/apihub">hiteshchoudhary/apihub</a></h1>
+            <p>Your own API Hub to learn and master API interaction. Ideal for frontend, mobile dev and backend developers.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 3,156</p>
-            <p>Forks: 214</p>
-            <p>Stars today: 14 stars today</p>
-            <h2>README</h2><pre># 🎬 Dispatcharr — Your Ultimate IPTV &amp; Stream Management Companion
+            <p>Stars: 9,243</p>
+            <p>Forks: 1,426</p>
+            <p>Stars today: 4 stars today</p>
+            <h2>README</h2><pre># FreeAPI.app
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://github.com/Dispatcharr/Dispatcharr/blob/main/frontend/src/images/logo.png?raw=true&quot; height=&quot;200&quot; alt=&quot;Dispatcharr Logo&quot; /&gt;
-&lt;/p&gt;
+## Problem
 
----
+We are trying to build a single source API hub that can be used to learn api handling in any programming language. Users can build their front end portfolio in web and mobile apps using this api hub.
 
-## 📖 What is Dispatcharr?
+# What is FreeAPI.app
 
-Dispatcharr (pronounced like &quot;dispatcher&quot;) is an **open-source powerhouse** for managing IPTV streams, EPG data, and VOD content with elegance and control.\
-Born from necessity and built with passion, it started as a personal project by **[OkinawaBoss](https://github.com/OkinawaBoss)** and evolved with contributions from legends like **[dekzter](https://github.com/dekzter)**, **[SergeantPanda](https://github.com/SergeantPanda)** and **Bucatini**.
+The FreeAPI project is an innovative and community-driven initiative aimed at providing developers with free and accessible APIs for their projects.
 
-&gt; Think of Dispatcharr as the \*arr family&#039;s IPTV cousin — simple, smart, and designed for streamers who want reliability and flexibility.
+The project focuses on delivering a wide range of APIs that cater to various domains and functionalities, enabling developers to seamlessly integrate these APIs into their applications.
 
----
+Key highlights of the FreeAPI project include:
 
-## 🎯 What Can I Do With Dispatcharr?
+1. **Accessibility:** The FreeAPI project is committed to eliminating barriers by providing free access to its collection of APIs.
+   Developers can leverage these APIs without any cost limitations, allowing them to experiment, learn, and build innovative applications.
 
-Dispatcharr empowers you with complete IPTV control. Here are some real-world scenarios:
+2. **Diverse API Collection:** The project offers a diverse and comprehensive collection of APIs that span across different industries, domains, and functionalities.
+   Whether you require social media integrations, payment gateways, machine learning algorithms, or IoT device connectivity, the FreeAPI project has you covered.
 
-💡 **Consolidate Multiple IPTV Sources**\
-Combine streams from multiple providers into a single interface. Manage, filter, and organize thousands of channels with ease.
+3. **Simplified Integration:** The FreeAPI project understands the challenges developers face when integrating APIs into their applications. To address this, the project provides clear documentation, code samples, and SDKs, simplifying the integration process and reducing development time and effort.
 
-📺 **Integrate with Media Centers**\
-Use HDHomeRun emulation to add virtual tuners to **Plex**, **Emby**, or **Jellyfin**. They&#039;ll discover Dispatcharr as a live TV source and can record programs directly to their own DVR libraries.
+4. **Community-Driven Development:** The project fosters a vibrant and collaborative community of developers. Contributors are encouraged to share their knowledge, engage in discussions, and collaborate on API-related projects. This collective effort ensures the continuous improvement and reliability of the APIs offered by the FreeAPI project.
 
-📡 **Create a Personal TV Ecosystem**\
-Merge live TV channels with custom EPG guides. Generate XMLTV schedules or use auto-matching to align channels with existing program data. Export as M3U, Xtream Codes API, or HDHomeRun device.
+5. **Learning and Skill Development:** The FreeAPI project aims to empower developers by providing a platform for learning and skill development. Through access to various APIs and educational resources, developers can enhance their understanding of API integration, expand their knowledge, and showcase their expertise through building complete projects.
 
-🔧 **Transcode &amp; Optimize Streams**\
-Configure output profiles with FFmpeg transcoding to optimize streams for different clients — reduce bandwidth, standardize formats, or add audio normalization.
+Overall, the FreeAPI project is a valuable resource for developers seeking accessible and diverse APIs.
 
-🔐 **Centralize VPN Access**\
-Run Dispatcharr through a VPN container (like Gluetun) so all streams route through a single VPN connection. Your clients access geo-blocked content without needing individual VPNs, reducing bandwidth overhead and simplifying network management.
+By fostering a supportive community, the project empowers developers to learn, create, and innovate, ultimately contributing to the growth and advancement of the API integration landscape.
 
-🚀 **Monitor &amp; Manage in Real-Time**\
-Track active streams, client connections, and bandwidth usage with live statistics. Monitor buffering events and stream quality. Automatic failover keeps viewers connected when streams fail—seamlessly switching to backup sources without interruption.
+## Features:
 
-👥 **Share Access Safely**\
-Create multiple user accounts with granular permissions. Share streams via M3U playlists or Xtream Codes API while controlling which users access which channels, profiles, or features. Network-based access restrictions available for additional security.
+Introducing our groundbreaking open source API hub project, a dynamic platform designed to revolutionize the way developers interact with APIs.
 
-🔌 **Extend with Plugins**\
-Build custom integrations using Dispatcharr&#039;s robust plugin system. Automate tasks, connect to external services, or add entirely new workflows.
+With an emphasis on openness, accessibility, and learning, our API hub empowers developers of all levels to explore, experiment, and grow their skills in API integration.
 
----
+Highlights:
 
-## ✨ Why You&#039;ll Love Dispatcharr
+1. **Open Source:** Our API hub is built on the principles of open source, ensuring transparency, collaboration, and community-driven development. This means that the source code is freely available, allowing developers to customize, extend, and contribute to the project.
 
-✅ **Stream Proxy &amp; Relay** — Intercept and proxy IPTV streams with real-time client management\
-✅ **M3U &amp; Xtream Codes** — Import, filter, and organize playlists with multiple backend support\
-✅ **EPG Matching &amp; Generation** — Auto-match EPG to channels or generate custom TV guides\
-✅ **Video on Demand** — Stream movies and TV series with rich metadata and IMDB/TMDB integration\
-✅ **Multi-Format Output** — Export as M3U, XMLTV EPG, Xtream Codes API, or HDHomeRun device\
-✅ **Real-Time Monitoring** — Live connection stats, bandwidth tracking, and automatic failover\
-✅ **Stream Profiles** — Configure different stream profiles for various clients and bandwidth requirements\
-✅ **Flexible Streaming Backends** — VLC, FFmpeg, Streamlink, or custom backends for transcoding and streaming\
-✅ **Multi-User &amp; Access Control** — Granular permissions and network-based access restrictions\
-✅ **Plugin System** — Extend functionality with custom plugins for automation and integrations\
-✅ **Fully Self-Hosted** — Total control, no third-party dependencies
+2. **Free to Use:** We firmly believe in removing barriers to entry, which is why our API hub is completely free to use. Whether you&#039;re a seasoned developer or just starting your coding journey, you can leverage our platform without any cost limitations.
 
----
+3. **Local or Deployment**: Flexibility is at the core of our API hub. You have the option to use it locally, running on your own machine, or deploy it to a server, making it accessible to others. This versatility ensures that you can adapt the platform to your specific development environment.
 
-# Screenshots
+4. **Learning Resource**: Our API hub is designed as a comprehensive learning resource, offering a wealth of educational materials, tutorials, and documentation. Whether you&#039;re a beginner or seeking to expand your API knowledge, our platform provides the resources you need to learn and improve.
 
-&lt;div align=&quot;center&quot;&gt;
-  &lt;img src=&quot;docs/images/channels.png&quot; alt=&quot;Channels&quot; width=&quot;750&quot;/&gt;
-  &lt;img src=&quot;docs/images/guide.png&quot; alt=&quot;TV Guide&quot; width=&quot;750&quot;/&gt;
-  &lt;img src=&quot;docs/images/stats.png&quot; alt=&quot;Stats &amp; Monitoring&quot; width=&quot;750&quot;/&gt;
-  &lt;img src=&quot;docs/images/m3u-epg-manager.png&quot; alt=&quot;M3U &amp; EPG Manager&quot; width=&quot;750&quot;/&gt;
-  &lt;img src=&quot;docs/images/vod-library.png&quot; alt=&quot;VOD Library&quot; width=&quot;750&quot;/&gt;
-  &lt;img src=&quot;docs/images/settings.png&quot; alt=&quot;Settings&quot; width=&quot;750&quot;/&gt;
-&lt;/div&gt;
+5. **Custom Endpoints for Beginners**: For developers at the beginner level, our API hub offers custom endpoints that provide a hands-on experience in handling API responses. These beginner-friendly APIs allow you to practice and familiarize yourself with the basics of working with APIs.
 
----
+6. **Advanced APIs for Portfolio Building**: In addition to beginner-level endpoints, our API hub also provides advanced APIs to challenge and stretch your skills. These APIs enable you to tackle more complex integration scenarios, helping you build a robust portfolio of projects to showcase your expertise.
 
-## 🛠️ Troubleshooting &amp; Help
+By combining open source principles, accessibility, and a focus on learning, our API hub project paves the way for developers to thrive in the world of API integration. Join our vibrant community and embark on an exciting journey of discovery, growth, and innovation.
 
-- **General help?** Visit [Dispatcharr Docs](https://dispatcharr.github.io/Dispatcharr-Docs/)
-- **Community support?** Join our [Discord](https://discord.gg/Sp45V5BcxU)
+# ⚠️ Important Note: Avoiding Data Loss and Self-Hosting
 
----
+# Background:
 
-## 🚀 Get Started in Minutes
+Our open-source project is currently hosted on a remote server, where we are forced to reset the entire server, **including the file system and MongoDB database**, every **2 hours** to avoid incurring additional costs.
 
-### 🐳 Quick Start with Docker (Recommended)
+This process results in the **deletion of all image/static files and a reset of the entire database on the server.**
+
+## What does this mean for you?
+
+**Data Loss:**
+Any changes made during the 2-hour interval (on the remote server), including uploaded images and user data, will be lost and unrecoverable.
+
+**Service Interruption:**
+The server reset might disrupt your development and testing processes for a certain duration while the server is rebooting (for 1-2 minutes).
+
+## Recommended Solutions:
+
+**Local API Usage:**
+For development and testing purposes, we strongly recommend using the API locally on your machine by **cloning the project**.
+
+This ensures that your work is not affected by the server resets and allows you to maintain a stable development environment on your local machine.
+
+**Self-Hosting on Railway _(recommended for personal projects)_:**
+To self-host the FreeAPI.app application, you can take advantage of a pre-built template that is readily available.
+[Click here for detailed docs](https://github.com/hiteshchoudhary/apihub/#-using-railway-one-click-deploy)
+
+# 🏁 Installation
+
+### 📦 Using Docker (recommended)
+
+To run the FreeAPI project, follow these steps:
+
+1. Install [Docker](https://www.docker.com/) on your machine.
+2. Clone the project repository.
+3. Navigate to the project directory.
+4. Create `.env` file in the root folder and copy paste the content of `.env.sample`, and add necessary credentials.
+5. Run the Docker Compose command:
 
 ```bash
-docker pull ghcr.io/dispatcharr/dispatcharr:latest
-docker run -d \
-  -p 9191:9191 \
-  --name dispatcharr \
-  -v dispatcharr_data:/data \
-  ghcr.io/dispatcharr/dispatcharr:latest
+docker-compose up --build --attach backend
+
+# --build: Rebuild the image and run the containers
+# --attach: only show logs of Node app container and not mongodb
 ```
 
-&gt; Customize ports and volumes to fit your setup.
+6. Access the project APIs at the specified endpoints.
 
----
+### 💻 Running locally
 
-### 🐋 Docker Compose Options
+To run the FreeAPI project locally, follow these steps:
 
-| Use Case                    | File                                                    | Description                                                                                                   |
-| --------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| **All-in-One Deployment**   | [docker-compose.aio.yml](docker/docker-compose.aio.yml) | ⭐ Recommended! A simple, all-in-one solution — everything runs in a single container for quick setup.        |
-| **Modular Deployment**      | [docker-compose.yml](docker/docker-compose.yml)         | Separate containers for Dispatcharr, Celery, Redis, and Postgres — perfect if you want more granular control. |
-| **Development Environment** | [docker-compose.dev.yml](docker/docker-compose.dev.yml) | Developer-friendly setup with pre-configured ports and settings for contributing and testing.                 |
+1. Install [Yarn](https://yarnpkg.com/), [NodeJs](https://www.nodejs.org/), [MongoDB](https://www.mongodb.com) and [MongoDB Compass (optional)](https://www.mongodb.com/products/compass) on your machine.
+2. Clone the project repository.
+3. Navigate to the project directory.
+4. Create `.env` file in the root folder and copy paste the content of `.env.sample`, and add necessary credentials.
+5. Install the packages:
 
----
+```bash
+yarn install
+```
 
-### 🛠️ Building from Source
+6. Run the project:
 
-&gt; ⚠️ **Warning**: Not officially supported — but if you&#039;re here, you know what you&#039;re doing!
+```bash
+yarn start
+```
 
-If you are running a Debian-based OS, use the `debian_install.sh` script. For other OS, contribute a script and we’ll add it!
+7. Access the project APIs at the specified endpoints.
 
----
+### 🚄 Using Railway (One-click Deploy)
 
-## 🤝 Want to Contribute?
+To self-host the FreeAPI.app application, you can take advantage of a pre-built template that is readily available.
 
-We welcome **PRs, issues, ideas, and suggestions**!
+[![Deploy FreeAPI.app](https://railway.app/button.svg)](https://railway.app/template/B2f7Hq)
 
-- Prior to contributing, please read the [CONTRIBUTING.md](https://github.com/Dispatcharr/Dispatcharr/blob/main/CONTRIBUTING.md)
+1. Click the button above to visit railway.app.
 
-&gt; Whether it&#039;s writing docs, squashing bugs, or building new features, your contribution matters! 🙋
+2. Click on the **Deploy Now** button.
 
----
+3. (Optional) Sign in with GitHub to deploy.
 
-## 📚 Documentation &amp; Roadmap
+4. Fill in the Repository details:
 
-- 📖 **Documentation:** [Dispatcharr Docs](https://dispatcharr.github.io/Dispatcharr-Docs/)
+   - Specify the repo name (e.g., freeapi-app).
+   - Checkmark for Public/Private repository.
 
-**Upcoming Features (in no particular order):**
+5. For Environment variables, we have provided some default values in the `ENV` to reduce the burden, but some parameters are mandatory:
 
-- 🎬 **VOD Management Enhancements** — Granular metadata control and cleanup of unwanted VOD content
-- 📁 **Media Library** — Import local files and serve them over XC API
-- 👥 **Enhanced User Management** — Customizable XC API output per user account
-- 🔄 **Output Stream Profiles** — Different clients with different stream profiles (bandwidth control, quality tiers)
-- 🔌 **Fallback Videos** — Automatic fallback content when channels are unavailable
+   - `PORT`: Do not change the value, let it be set to 8080 to view the swagger docs after deployment.
+   - `MONGODB_URI`: Provide the MongoDB Atlas database URL. An example is prefilled for you, edit/update it to continue.
+   - `NODE_ENV`: Default set to &#039;development&#039; to view the logs. You may choose to change it to &#039;production&#039; (make sure to add exact same word) to hide them.
+   - `EXPRESS_SESSION_SECRET`: It is advised to change the default value to your own secret value.
+   - `ACCESS_TOKEN_SECRET`: It is advised to change the default value to your own secret value.
+   - `ACCESS_TOKEN_EXPIRY`: Set to 1 day as default.
+   - `REFRESH_TOKEN_SECRET`: It is advised to change the default value to your own secret value.
+   - `REFRESH_TOKEN_EXPIRY`: Set to 10 days as default.
+   - `FREEAPI_HOST_URL`: Set it as generated railway url.
 
----
+6. Once you fill in the required environment parameters, if you choose to add others such as PayPal, Google, and Razorpay, please proceed to mention your credentials in the form.
 
-## ❤️ Shoutouts
+7. Click on the **Deploy** button to trigger the first build.
+   - Monitor the server logs; if you come across any deployment problems, feel free to raise an issue for our team to look into.
 
-A huge thank you to all the incredible open-source projects and libraries that power Dispatcharr. We stand on the shoulders of giants!
+Note: Once the application is deployed, please wait for 3-5 minutes for the swagger docs to be available.
 
----
+# 🧪 Testing
 
-## ✉️ Connect With Us
+To ensure reliability &amp; stability for our end users, we utilize Playwright, a powerful testing framework to automate testing across all endpoints.
 
-Have a question? Want to suggest a feature? Just want to say hi?\
-➡️ **[Open an issue](https://github.com/Dispatcharr/Dispatcharr/issues)** or reach out on [Discord](https://discord.gg/Sp45V5BcxU).
+### 💻 Run the Test Server
 
----
+Make sure to add `MONGO_MEMORY_SERVER_PORT=10000` (mongodb port for e2e testing) in your `.env` file.
 
-## 💖 Support Dispatcharr
+```bash
+yarn start:test-server
+```
 
-[![Dispatcharr Open Collective](https://opencollective.com/dispatcharr/tiers/badge.svg)](https://opencollective.com/dispatcharr/contribute)
+### 🧪 Run Tests
 
-Open Collective provides a transparent way for anyone who finds value in Dispatcharr to support things like:
-• Infrastructure costs (Domains, Servers, etc.)
-• Apple Developer Program and Google Play Developer accounts
-• Helping contributors dedicate more time to improving the project
+```bash
+yarn test:playwright
+```
 
-Support is completely optional, and Dispatcharr will always remain free and open-source.
+This will generate a Playwright report. To view this report run the following command
 
-[Contribute here](https://opencollective.com/dispatcharr/contribute)
+```bash
+yarn playwright show-report
+```
 
----
+Make sure all the test cases are passed whenever you make any changes.
 
-## ⚖️ License &amp; Legal
+# How to contribute - Guidelines
 
-Dispatcharr is licensed under **GNU AGPL v3.0**: For full license details, see [LICENSE](https://www.gnu.org/licenses/agpl-3.0.html).
+## ⚡️ Contribute in core FreeAPI codebase:
 
-Dispatcharr is a trademark of the Dispatcharr project. Use of the Dispatcharr name or logo requires permission from the maintainers.
+We welcome your interest in contributing to our open source project!
 
----
+To contribute to FreeAPI, please follow these steps:
 
-### 🚀 _Happy Streaming! The Dispatcharr Team_
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix: `git checkout -b feat/your-feature-name` or `git checkout -b fix/your-bug-fix-name` and make your changes.
+3. Run all the tests 🧪 before committing the changes and make sure all tests are passed.
+4. After all tests are passed, commit your changes with a descriptive messages: `git commit -am &#039;add your commit message&#039;`
+5. For more details on the commit format and other guidelines, please refer to the [Contributor Guidelines](./CONTRIBUTING.md).
+6. Push your changes to your forked repository: `git push origin feat/your-feature-name`.
+7. Submit a pull request to the main repository, explaining the changes you&#039;ve made and providing any necessary details.
+
+Here&#039;s a guide on how you can effectively contribute to our API hub:
+
+1. Pull Requests for Readme Updates: Please refrain from sending pull requests solely for updating the project&#039;s readme file. While we appreciate the importance of clear and concise documentation, we prefer to focus on substantial code contributions and feature enhancements.
+
+2. Grammar Updates: Our team values effective communication, but we&#039;re not grammar sticklers. You don&#039;t need to send pull requests solely for grammar fixes or minor language improvements. Instead, concentrate on the core functionalities and features of the project.
+
+3. Avoid Updating Existing Public APIs: To maintain stability and consistency, we discourage direct updates to existing public APIs within the API hub. These APIs have been thoroughly tested and approved. However, if you encounter any bugs or issues, we encourage you to open an issue on our project&#039;s issue tracker to notify us.
+
+4. Build New Project APIs: We encourage you to explore your creativity and contribute by building complete project APIs. These APIs should provide comprehensive solutions that can assist developers in constructing complex projects to showcase their skills and abilities. Your contributions in this area will greatly benefit the community.
+
+5. Draft a Proposal and Discuss on Discord: Before diving into your project, we recommend drafting a proposal. This can include a mind map or outline of the API you intend to build and its potential benefits. Join our Discord community, where you can share your proposal, discuss ideas, and gather feedback from fellow contributors. Engaging in these discussions will enhance your backend portfolio and help shape the future direction of the project.
+
+We appreciate your enthusiasm and look forward to your valuable contributions to our open source API hub project.
+
+Together, we can foster a collaborative environment and make a significant impact in the API integration landscape.
+
+Click [here](https://github.com/hiteshchoudhary/apihub/blob/main/CONTRIBUTING.md) for detailed contribution guide.
+
+## 🚀 Contribute by creating frontend application:
+
+Thank you for your interest in contributing to the FreeAPI project by creating frontend applications consuming FreeAPIs! Your efforts play a crucial role in enhancing the user experience and expanding the reach of our APIs. Please follow this guide to ensure a smooth and collaborative contribution process.
+
+Click [here](https://github.com/hiteshchoudhary/apihub/blob/main/CONTRIBUTING_FRONTEND.md) for detailed contribution guide for Frontend Developers 🚀!
+
+## 🧪 Contribute in testing suite
+
+Thank you for your interest in contributing to the FreeAPI project to increase code coverage of our API service that helps us to ship robust endpoints that are battlefield tested. Please follow this guide to ensure a smooth and collaborative contribution process.
+
+Click [here](https://github.com/hiteshchoudhary/apihub/blob/main/CONTRIBUTING_CODE_COVERAGE.md) for detailed contribution guide for increasing code coverage.
+
+# 📜 Swagger Docs
+
+[Swagger Docs](https://api.freeapi.app): https://api.freeapi.app
+
+NOTE: Swagger docs are auto generated from the `swagger.yaml` file. While running the project locally, make sure you change the url to `http://localhost:&lt;port_from_.env&gt;/api/v1` in the swagger docs `servers/url` field.
 </pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[docmirror/dev-sidecar]]></title>
-            <link>https://github.com/docmirror/dev-sidecar</link>
-            <guid>https://github.com/docmirror/dev-sidecar</guid>
-            <pubDate>Mon, 20 Apr 2026 00:12:56 GMT</pubDate>
-            <description><![CDATA[开发者边车，github打不开，github加速，git clone加速，git release下载加速，stackoverflow加速]]></description>
+            <title><![CDATA[vercel/next.js]]></title>
+            <link>https://github.com/vercel/next.js</link>
+            <guid>https://github.com/vercel/next.js</guid>
+            <pubDate>Tue, 21 Apr 2026 00:15:17 GMT</pubDate>
+            <description><![CDATA[The React Framework]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/docmirror/dev-sidecar">docmirror/dev-sidecar</a></h1>
-            <p>开发者边车，github打不开，github加速，git clone加速，git release下载加速，stackoverflow加速</p>
+            <h1><a href="https://github.com/vercel/next.js">vercel/next.js</a></h1>
+            <p>The React Framework</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 21,800</p>
-            <p>Forks: 2,671</p>
-            <p>Stars today: 28 stars today</p>
-            <h2>README</h2><pre># dev-sidecar
-
-开发者边车，命名取自service-mesh的service-sidecar，意为为开发者打辅助的边车工具（以下简称ds）
-通过本地代理的方式将https请求代理到一些国内的加速通道上
-
-&lt;a href=&#039;https://github.com/docmirror/dev-sidecar&#039;&gt;&lt;img alt=&quot;GitHub stars&quot; src=&quot;https://img.shields.io/github/stars/docmirror/dev-sidecar?logo=github&quot;&gt;&lt;/a&gt;
-
-[![Star History Chart](https://api.star-history.com/svg?repos=docmirror/dev-sidecar&amp;type=date&amp;legend=top-left)](https://www.star-history.com/#docmirror/dev-sidecar&amp;type=date&amp;legend=top-left)
-
-&gt; Gitee上的同步项目已被封禁，请认准本项目唯一官方仓库地址[https://github.com/docmirror/dev-sidecar](https://github.com/docmirror/dev-sidecar) 【狗头保命】
-&gt;
-&gt; 我将继续奋战在开源一线，为社区贡献更多更好的开源项目。
-&gt;
-&gt; 感兴趣的可以关注我的主页 [【github】](https://github.com/greper) [【gitee】](https://gitee.com/greper)
-
-## 打个广告
-
-&gt; [https://github.com/certd/certd](https://github.com/certd/certd)
-&gt;
-&gt; 我的开源证书管理工具项目，全自动申请和部署证书，有需求的可以去试试，帮忙点个star
-
-## 重要提醒
-
-&gt; ------------------------------重要提醒1---------------------------------
-&gt;
-&gt; 注意：由于electron无法监听windows的关机事件，开着ds情况下直接重启电脑，会导致无法上网，你可以手动启动ds即可恢复网络，你也可以将ds设置为开机自启。
-&gt;
-&gt; 关于此问题的更多讨论请前往：[https://github.com/docmirror/dev-sidecar/issues/109](https://github.com/docmirror/dev-sidecar/issues/109)
-&gt;
-&gt; 注：此问题已在 `1.8.9` 版本中得到解决。
-
-&gt; ------------------------------重要提醒2---------------------------------
-&gt;
-&gt; 注意：本应用启动会自动修改系统代理，所以会与其他代理软件有冲突，一起使用时请谨慎使用。
-&gt;
-&gt; 与 `Watt Toolkit（原Steam++）` 共用时，请以hosts模式启动Watt Toolkit
-&gt;
-&gt; 与 `TUN网卡模式运行的游戏加速器` 可以共用
-&gt;
-&gt; 本应用主要目的在于直连访问github，如果你已经有飞机了，那建议还是不要用这个自行车（ds）了
-
-## 一、 特性
-
-### 1.1、 dns优选（解决\*\*\*污染问题）
-
-- 根据网络状况智能解析最佳域名ip地址，获取最佳网络速度
-- 解决一些网站和库无法访问或访问速度慢的问题
-- 建议遇到打开比较慢的国外网站，可以优先尝试将该域名添加到dns设置中（注意：被\*\*\*封杀的无效）
-
-### 1.2、 请求拦截
-
-- 拦截打不开的网站，代理到加速镜像站点上去。
-- 可配置多个镜像站作为备份
-- 具备测速机制，当访问失败或超时之后，自动切换到备用站点，使得目标服务高可用
-
-### 1.3、 github加速
-
-- github 直连加速 (通过修改sni实现，感谢 [fastGithub](https://github.com/dotnetcore/FastGithub) 提供的思路)
-- release、source、zip下载加速
-- clone 加速
-- 头像加速
-- 解决readme中图片引用无法加载的问题
-- gist.github.com 加速
-- 解决git push 偶尔失败需要输入账号密码的问题（fatal: TaskCanceledException encountered / fatal: HttpRequestException encountered）
-- raw/blame加速
-
-&gt; 以上部分功能通过 `X.I.U` 的油猴脚本实现， 以下是仓库和脚本下载链接，大家可以去支持一下。
-&gt;
-&gt; - [https://github.com/XIU2/UserScript](https://github.com/XIU2/UserScript)
-&gt; - [https://greasyfork.org/scripts/412245](https://greasyfork.org/scripts/412245)
-&gt;
-&gt; 由于此脚本在ds中是打包在本地的，更新会不及时，你可以直接通过浏览器安装油猴插件使用此脚本，从而获得最新更新（ds本地的可以通过 `加速服务-&gt;基本设置-&gt;启用脚本` 进行关闭）。
-
-### 1.4、 Stack Overflow 加速
-
-- 将ajax.google.com代理到加速CDN上
-- recaptcha 图片验证码加速
-
-### 1.5、 npm加速
-
-- 支持开启npm代理
-- 官方与淘宝npm registry一键切换
-- 某些npm install的时候，并且使用cnpm也无法安装时，可以尝试开启npm代理再试
-
-**_安全警告_**：
-
-- 请勿使用来源不明的服务/远程配置地址，有隐私和账号泄露风险
-- 本应用及服务/默认远程配置端承诺不收集任何信息。介意者请使用安全模式。
-
-## 二、快速开始
-
-支持windows、Mac、Linux(Ubuntu)
-
-### 2.1、DevSidecar桌面应用
-
-#### 1）下载安装包
-
-- release下载
-  [Github Release](https://github.com/docmirror/dev-sidecar/releases)
-
-&gt; Windows: 请选择DevSidecar-x.x.x-windows-universal.exe
-&gt;
-&gt; Mac: 请选择DevSidecar-x.x.x-macos-universal.dmg
-&gt;
-&gt; Debian系及其他支持deb安装包的Linux: 请选择DevSidecar-x.x.x-linux-[架构].deb
-&gt;
-&gt; 其他Linux: 请选择DevSidecar-x.x.x-linux-[架构].AppImage (未做测试，不保证能用)
-
-&gt; linux安装说明请参考 [linux安装文档](./doc/linux.md)
-
-&gt; 注意：由于没有买应用证书，所以应用在下载安装时会有“未知发行者”等安全提示，选择保留即可。
-
-#### 2）安装后打开
-
-界面应大致如下图所示：
-
-&gt; 注意：mac版安装需要在“系统偏好设置-&gt;安全性与隐私-&gt;通用”中解锁并允许应用安装
-
-![](./doc/index.png)
-
-#### 3）安装根证书
-
-第一次打开会提示安装证书，根据提示操作即可
-
-更多有关根证书的说明，请参考 [为什么要安装根证书?](./doc/caroot.md)
-
-&gt; 根证书是本地随机生成的，所以不用担心根证书的安全问题（本应用不收集任何用户信息）
-&gt;
-&gt; 你也可以在加速服务设置中自定义根证书（PEM格式的证书与私钥）
-
-&gt; 火狐浏览器需要[手动安装证书](#3火狐浏览器火狐浏览器不走系统的根证书需要在选项中添加根证书)
-
-#### 4）开始加速吧
-
-去试试打开github、huggingface、docker hub吧
-
-### 2.2、开启前 vs 开启后
-
-|          | 开启前                         | 开启后                                            |
-| -------- | ------------------------------ | ------------------------------------------------- |
-| 头像     | ![](./doc/avatar2.png)         | ![](./doc/avatar1.png)                            |
-| clone    | ![](./doc/clone-before.png)    | ![](./doc/clone.png)                              |
-| zip 下载 | ![](./doc/download-before.png) | ![](./doc/download.png)秒下的，实在截不到速度的图 |
-
-## 三、模式说明
-
-### 3.1、安全模式
-
-- 此模式：关闭拦截、关闭增强、不使用远程配置、开启dns优选、开启测速
-- 最安全，无需安装证书，可以在浏览器地址栏左侧查看域名证书
-- 功能也最弱，只有特性1，相当于查询github的国外ip，手动改hosts一个意思。
-- github的可访问性不稳定，取决于IP测速，如果有绿色ip存在，就 `有可能` 可以直连访问。
-  ![](./doc/speed.png)
-
-### 3.2、默认模式
-
-- 此模式：开启拦截、关闭增强、使用远程配置、开启dns优选、开启测速
-- 需要安装证书，通过修改sni直连访问github
-- 功能上包含特性1/2/3/4。
-
-## 四、 最佳实践
-
-- 把dev-sidecar一直开着就行了（注意部分版本的windows下开着ds重启电脑，可能会无法上网，重新打开ds即可。）
-- 建议遇到打开比较慢的国外网站，可以尝试将该域名添加到dns设置中（注意：被\*\*\*封杀的无效）
-
-### 其他加速
-
-#### 1）git clone 加速
-
-- 方式1：快捷复制：
-
-  &gt; 开启脚本支持，然后在复制clone链接下方，即可复制到加速链接
-
-- 方式2：
-
-  &gt; 1. 使用方式：用实际的名称替换 `{}` 的内容，即可加速clone [https://hub.fastgit.org/{username}/{reponame}.git](https://hub.fastgit.org/%7Busername%7D/%7Breponame%7D.git)
-  &gt; 2. clone 出来的 remote &quot;origin&quot; 为fastgit的地址，需要手动改回来
-  &gt; 3. 你也可以直接使用他们的clone加速工具 [fgit-go](https://github.com/FastGitORG/fgit-go)
-
-#### 2）`github.com` 的镜像网站（注意：部分镜像网站不能登录）
-
-&gt; 1. ~~[hub.fastgit.org](https://hub.fastgit.org/) （2024/11/18：这个好像失效了？）~~
-&gt; 2. ~~[github.com.cnpmjs.org](https://github.com.cnpmjs.org/) 这个很容易超限（2024/11/18：这个好像失效了？）~~
-&gt; 3. [bgithub.xyz](https://bgithub.xyz/)（edge浏览器可能报毒）
-
-## 五、api
-
-### 5.1、拦截配置
-
-没有配置域名的不会拦截，其他根据配置进行拦截处理。
-
-在【加速服务-拦截设置】中配置，格式如下：（更多内容参见[wiki](https://github.com/docmirror/dev-sidecar/wiki/%E5%8A%A0%E9%80%9F%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)）
-
-```json
-{
-  // 要拦截的域名
-  &quot;github.com&quot;: {
-    // 需要拦截url的正则表达式
-    &quot;/.*/.*/releases/download/&quot;: {
-      // 拦截类型
-      // &quot;redirect&quot;: &quot;url&quot;,        // 临时重定向（url会变，一些下载资源可以通过此方式配置）
-      // &quot;proxy&quot;: &quot;url&quot;,           // 代理（url不会变，没有跨域问题）
-      // &quot;abort&quot;: true,            // 取消请求（适用于被***封锁的资源，找不到替代，直接取消请求，快速失败，节省时间）
-      // &quot;success&quot;: true,          // 直接返回成功请求（某些请求不想发出去，可以伪装成功返回）
-      // &quot;cacheDays&quot;: 1,           // GET请求的使用缓存，单位：天（常用于一些静态资源）
-      // &quot;options&quot;: true,          // OPTIONS请求直接返回成功请求（该功能存在一定风险，请谨慎使用）
-      // &quot;optionsMaxAge&quot;: 2592000, // OPTIONS请求缓存时间，默认：2592000（一个月）
-
-      // 拦截配置示例：
-      &quot;redirect&quot;: &quot;download.fastgit.org&quot;
-    },
-    &quot;.*&quot;: {
-      &quot;proxy&quot;: &quot;github.com&quot;,
-      &quot;sni&quot;: &quot;baidu.com&quot; // 修改sni，规避***握手拦截
-    }
-  },
-  &quot;ajax.googleapis.com&quot;: {
-    &quot;.*&quot;: {
-      &quot;proxy&quot;: &quot;ajax.loli.net&quot;, // 代理请求，url不会变
-      &quot;backup&quot;: [&quot;ajax.proxy.ustclug.org&quot;], // 备份，当前代理请求失败后，将会切换到备用地址
-      &quot;test&quot;: &quot;ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;,
-      &quot;replace&quot;: &quot;/(.*)/xxx&quot; // 当加速地址的链接和原链接不是完全相同时，可以通过正则表达式replace，此时proxy通过$1$2来重组url， proxy:&#039;ajax.loli.net/xxx/$1&#039;
-    }
-  },
-  &quot;clients*.google.com&quot;: {
-    &quot;.*&quot;: {
-      &quot;abort&quot;: true // 取消请求，被***封锁的资源，找不到替代，直接取消请求，快速失败，节省时间
-    }
-  }
-}
-```
-
-### 5.2、DNS优选配置
-
-某些域名解析出来的ip会无法访问，（比如api.github.com会被解析到新加坡的ip上，新加坡的服务器在上午挺好，到了晚上就卡死，基本不可用）
-
-通过从dns上获取ip列表，切换不同的ip进行尝试，最终会挑选到一个最快的ip（该功能需要事先配置好所用DNS），更多说明参见[wiki](https://github.com/docmirror/dev-sidecar/wiki/%E5%8A%A0%E9%80%9F%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
-
-```json
-{
-  &quot;dns&quot;: {
-    &quot;mapping&quot;: {
-      &quot;api.github.com&quot;: &quot;cloudflare&quot;, // &quot;解决push的时候需要输入密码的问题&quot;,
-      &quot;gist.github.com&quot;: &quot;cloudflare&quot;, // 解决gist无法访问的问题
-      &quot;*.githubusercontent.com&quot;: &quot;cloudflare&quot; // 解决github头像经常下载不到的问题
-    }
-  }
-}
-```
-
-注意：暂时只支持IPv4的解析
-
-## 六、问题排查
-
-### 6.1、dev-sidecar的前两个开关没有处于打开状态
-
-1. 尝试将开关按钮手动打开
-2. 请尝试右键dev-sidecar图标，点退出。再重新打开
-3. 如果还不行，请将日志发送给作者
-
-如果是mac系统，可能是下面的原因
-
-#### 1）Mac系统使用时，首页的系统代理开关无法打开
-
-出现这个问题可能是没有开启系统代理命令的执行权限
-
-```
-networksetup -setwebproxy &#039;WiFi&#039; 127.0.0.1 31181
-#看是否有如下错误提示
-** Error: Command requires admin privileges.
-```
-
-如果有上面的错误提示，请尝试如下方法：
-
-&gt; 取消访问偏好设置需要管理员密码
-&gt;
-&gt; 系统偏好设置—&gt;安全性与隐私—&gt; 通用—&gt; 高级—&gt; 访问系统范围的偏好设置需要输入管理员密码（取消勾选）
-
-### 6.2、没有加速效果
-
-1. 本应用默认仅开启https加速，一般足够覆盖需求。
-   如果你访问的是仅支持http协议的网站，请手动在【系统代理】中打开【代理HTTP请求】
-2. 检查浏览器是否装了什么插件，与ds有冲突
-3. 检查是否安装了其他代理软件，与ds有冲突
-4. 请确认浏览器的代理设置为使用IE代理/或者使用系统代理状态
-5. 可以尝试换个浏览器试试
-6. 请确认网络代理设置处于勾选状态
-   正常情况下ds在“系统代理”开关打开时，会自动设置系统代理。
-
-### 6.3、浏览器打开提示证书不受信任
-
-![](./doc/crt-error.png)
-
-一般是证书安装位置不对，重新安装根证书后，重启浏览器
-
-#### 1）windows: 请确认证书已正确安装在“本地计算机-将所有的证书都放入下列存储：受信任的根证书颁发机构”下
-
-#### 2）mac: 请确认证书已经被安装并已经设置信任
-
-#### 3）火狐浏览器：火狐浏览器不走系统的根证书，需要在选项中添加根证书
-
-1. 火狐浏览器-&gt;选项-&gt;隐私与安全-&gt;证书-&gt;查看证书
-   ![](./doc/figures/Firefox/1.png)
-2. 证书颁发机构-&gt;导入
-3. 选择证书文件 `C:\Users(用户)\Administrator(你的账号)\.dev-sidecar\dev-sidecar.ca.crt`（Mac或linux为 `~/.dev-sidecar` 目录）
-   ![](./doc/figures/Firefox/2.png)
-4. 勾选信任由此证书颁发机构来标识网站，确定即可
-   ![](./doc/figures/Firefox/3.png)
-
-### 6.4、打开github显示连接超时
-
-```html
-DevSidecar Warning: Error: www.github.com:443, 代理请求超时
-```
-
-1. 检查测速界面github.com是否有ip ，如果没有ip，则可能是由于你的网络提供商封锁了dns服务商的ip（试试能否ping通：1.1.1.1 / 9.9.9.9 ）
-2. 如果是安全模式，则是因为不稳定导致的，等一会再刷新试试
-3. 如果是增强模式，则是由于访问人数过多，正常现象
-
-### 6.5、查看日志是否有报错
-
-如果还是不行，请在下方加官方QQ群或提issue，附上服务日志（server.log）以便进行分析
-
-日志打开方式：加速服务-&gt;右边日志按钮-&gt;打开日志文件夹
-
-![](./doc/log.png)
-
-### 6.6、某些原本可以打开的网站打不开了
-
-1. 可以尝试关闭pac
-2. 可以将域名加入白名单
-
-### 6.7、应用意外关闭导致没有网络了
-
-应用开启后会自动修改系统代理设置，正常退出会自动关闭系统代理
-当应用意外关闭时，可能会因为没有将系统代理恢复，从而导致完全无法上网。
-
-对于此问题有如下几种解决方案可供选择：
-
-1. 重新打开应用即可（右键应用托盘图标可完全退出，将会正常关闭系统代理设置）
-2. 如果应用被卸载了，此时需要[手动关闭系统代理设置](./doc/recover.md)
-3. 如果你是因为开着ds的情况下重启电脑导致无法上网，你可以设置ds为开机自启
-
-### 6.8、卸载应用后上不了网，git请求不了
-
-如果你在卸载应用前，没有正常退出app，就有可能无法上网。请按如下步骤操作恢复您的网络：
-
-1、关闭系统代理设置，参见：[手动关闭系统代理设置](./doc/recover.md)
-2、执行下面的命令关闭git的代理设置（如果你开启过 `Git.exe代理` 的开关）
-
-```shell
-git config --global --unset http.proxy
-git config --global --unset https.proxy
-git config --global --unset http.sslVerify
-```
-
-3、执行下面的命令关闭npm的代理设置（如果你开启过npm加速的开关）
-
-```shell
-npm config delete proxy
-npm config delete https-proxy
-```
-
-### 6.9、其他问题
-
-请查阅[wiki](https://github.com/docmirror/dev-sidecar/wiki)
-
-也可以查阅[有文档tag的issue](https://github.com/docmirror/dev-sidecar/issues?q=is%3Aissue%20label%3ADocumentation)，它们被开发者认证为相当于文档级别的参考issue。
-
-## 七、在其他程序使用
-
-- [java程序使用](./doc/other.md#Java程序使用)
-
-## 八、贡献代码
-
-### 8.1、准备环境
-
-#### 1）安装 `nodejs`
-
-推荐安装 nodejs `22.x.x` 的版本，其他版本未做测试
-
-#### 2）安装 `pnpm`
-
-运行如下命令即可安装所需依赖：
-
-```shell
-npm install -g pnpm --registry=https://registry.npmmirror.com
-```
-
-### 8.2、开发调试模式启动
-
-运行如下命令即可开发模式启动
-
-```shell
-# 拉取代码
-git clone https://github.com/docmirror/dev-sidecar
-
-cd dev-sidecar
-
-# 注意不要使用 `npm install` 来安装依赖，因为 `pnpm` 会自动安装依赖
-pnpm install
-
-# 运行DevSidecar
-cd packages/gui
-npm run electron
-
-```
-
-&gt; 如果electron依赖包下载不动，可以开启ds的npm加速
-
-### 8.3、打包成可执行文件
-
-```shell
-# 先执行上面的步骤，然后运行如下命令打包成可执行文件
-npm run electron:build
-```
-
-### 8.4、提交pr
-
-如果你想将你的修改贡献出来，请提交pr
-
-## 九、联系作者
-
-欢迎bug反馈，需求建议，技术交流等
-
-加官方QQ群（请备注dev-sidecar，或简称DS）
-
-- QQ 1群：390691483，人数：500 / 500（满）
-- QQ 2群：[667666069](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&amp;k=n4nksr4sji93vZtD5e8YEHRT6qbh6VyQ&amp;authKey=XKBZnzmoiJrAFyOT4V%2BCrgX5c13ds59b84g%2FVRhXAIQd%2FlAiilsuwDRGWJct%2B570&amp;noverify=0&amp;group_code=667666069)，人数：500 / 500（满）
-- QQ 3群：419807815，人数：500 / 500（满）
-- QQ 4群：[438148299](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&amp;k=i_NCBB5f_Bkm2JsEV1tLs2TkQ79UlCID&amp;authKey=nMsVJbJ6P%2FGNO7Q6vsVUadXRKnULUURwR8zvUZJnP3IgzhHYPhYdcBCHvoOh8vYr&amp;noverify=0&amp;group_code=438148299)，人数：1004 / 2000（推荐）
-- QQ 5群：[767622917](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&amp;k=nAWi_Rxj7mM4Unp5LMiatmUWhGimtbcB&amp;authKey=aswmlWGjbt3GIWXtvjB2GJqqAKuv7hWjk6UBs3MTb%2Biyvr%2Fsbb1kA9CjF6sK7Hgg&amp;noverify=0&amp;group_code=767622917)，人数：200 / 500
-
-## 十、求star
-
-我的其他项目求star
-
-- [fast-crud](https://github.com/fast-crud/fast-crud) : 开发crud快如闪电
-- [certd](https://github.com/certd/certd) : 让你的证书永不过期
-- [trident-sync](https://github.com/handsfree-work/trident-sync) : 二次开发项目同步升级工具
-
-## 十一、感谢
-
-本项目曾使用lerna包管理工具
-
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
-
-本项目参考如下开源项目
-
-- [node-mitmproxy](https://github.com/wuchangming/node-mitmproxy)
-- [ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN)
-
-特别感谢
-
-- [github增强油猴脚本](https://greasyfork.org/zh-CN/scripts/412245-github-%E5%A2%9E%E5%BC%BA-%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD) 本项目部分加速功能完全复制该脚本。
-- [中国域名白名单](https://github.com/pluwen/china-domain-allowlist)，本项目的系统代理排除域名功能中，使用了该白名单。
-
-本项目部分加速资源由如下组织提供
-
-- [FastGit UK](https://fastgit.org/)
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[CodeWithHarry/Sigma-Web-Dev-Course]]></title>
-            <link>https://github.com/CodeWithHarry/Sigma-Web-Dev-Course</link>
-            <guid>https://github.com/CodeWithHarry/Sigma-Web-Dev-Course</guid>
-            <pubDate>Mon, 20 Apr 2026 00:12:55 GMT</pubDate>
-            <description><![CDATA[Source Code for Sigma Web Development Course]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/CodeWithHarry/Sigma-Web-Dev-Course">CodeWithHarry/Sigma-Web-Dev-Course</a></h1>
-            <p>Source Code for Sigma Web Development Course</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 11,214</p>
-            <p>Forks: 3,059</p>
-            <p>Stars today: 10 stars today</p>
-            <h2>README</h2><pre># Welcome to Sigma&#039;s Web Development Course - Hindi Web Development Tutorials! 🚀
-
-## What&#039;s Inside:
-
-If you&#039;ve been itching to dive into the world of web development but feel lost in a sea of English tutorials, you&#039;re in the right place! Our course is exclusively in Hindi and is crafted to guide you from being an absolute beginner to a seasoned pro, one step at a time.
-
-## Who Can Benefit?
-
-### This course is a perfect fit for:
-
-1. Beginners eager to start their web development journey
-2. Intermediate developers looking to refine their skills
-3. Individuals who prefer learning in Hindi
-
-## What You&#039;ll Master:
-
-### During this course, you&#039;ll delve into:
-
-1. The fundamentals of HTML, CSS, and JavaScript
-2. Both front-end and back-end development
-3. How to seamlessly integrate databases
-4. Real-world project implementation
-5. And a whole lot more!
-
-## The Schedule:
-
-We&#039;re committed to your growth. Expect fresh source code additions nearly every day. Keep up the pace with our schedule and watch your skills soar! 📅
-
-Get ready to embark on an exciting coding journey! 👨‍💻🌟
-
-Ready to start? [Click here](https://www.youtube.com/playlist?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w) to access the complete YouTube playlist.
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[prem-k-r/MaterialYouNewTab]]></title>
-            <link>https://github.com/prem-k-r/MaterialYouNewTab</link>
-            <guid>https://github.com/prem-k-r/MaterialYouNewTab</guid>
-            <pubDate>Mon, 20 Apr 2026 00:12:54 GMT</pubDate>
-            <description><![CDATA[MY NewTab: A Simple New Tab (browser's home page) inspired with Google's 'Material You' design]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/prem-k-r/MaterialYouNewTab">prem-k-r/MaterialYouNewTab</a></h1>
-            <p>MY NewTab: A Simple New Tab (browser's home page) inspired with Google's 'Material You' design</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 588</p>
-            <p>Forks: 142</p>
-            <p>Stars today: 7 stars today</p>
-            <h2>README</h2><pre>&lt;!-- Initialized : Sun 20 Aug 2023 03:41:08 PM IST --&gt;
-&lt;h1 align=&quot;center&quot;&gt;
-
-&lt;a href=&quot;https://prem-k-r.github.io/MaterialYouNewTab/&quot;&gt;&lt;img src=&quot;https://github.com/user-attachments/assets/48c3a9cb-06fa-4c45-92ec-194cdb7c5661&quot; width=&quot;58&quot;&gt;&lt;/a&gt;
-&lt;br&gt;
-MYNT: Material You New Tab
-
-&lt;/h1&gt;
-&lt;div align=&quot;center&quot;&gt;
-
-MYNT: Material You New Tab is a versatile browser extension that personalizes your New Tab page with customizable themes, a welcoming message, and various handy tools, all while integrating seamlessly with your preferred search engine.
-
-&lt;/div&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-
-![License](https://img.shields.io/github/license/prem-k-r/MaterialYouNewTab)
-![Last Commit](https://img.shields.io/github/last-commit/prem-k-r/MaterialYouNewTab)
-![GitHub contributors](https://img.shields.io/github/contributors/prem-k-r/MaterialYouNewTab)
-![GitHub stars](https://img.shields.io/github/stars/prem-k-r/MaterialYouNewTab)
-![GitHub forks](https://img.shields.io/github/forks/prem-k-r/MaterialYouNewTab)
-
-[![](https://img.shields.io/chrome-web-store/v/jjpokbgpiljgndebfoljdeihhkpcpfgl.svg)](https://chrome.google.com/webstore/detail/mynt-material-you-new-tab/jjpokbgpiljgndebfoljdeihhkpcpfgl) [![](https://img.shields.io/chrome-web-store/rating/jjpokbgpiljgndebfoljdeihhkpcpfgl.svg)](https://chrome.google.com/webstore/detail/mynt-material-you-new-tab/jjpokbgpiljgndebfoljdeihhkpcpfgl) [![](https://img.shields.io/chrome-web-store/users/jjpokbgpiljgndebfoljdeihhkpcpfgl.svg)](https://chrome.google.com/webstore/detail/mynt-material-you-new-tab/jjpokbgpiljgndebfoljdeihhkpcpfgl) ‾ [![](https://img.shields.io/amo/v/mynt.svg)](https://addons.mozilla.org/en-US/firefox/addon/mynt/) [![](https://img.shields.io/amo/rating/mynt.svg)](https://addons.mozilla.org/en-US/firefox/addon/mynt/) [![](https://img.shields.io/amo/users/mynt.svg)](https://addons.mozilla.org/en-US/firefox/addon/mynt/)
-
-&lt;/div&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;#-features&quot;&gt;Features&lt;/a&gt; •
-  &lt;a href=&quot;#-installation-guide&quot;&gt;Installation Guide&lt;/a&gt; •
-  &lt;a href=&quot;#download&quot;&gt;Download&lt;/a&gt; •
-  &lt;a href=&quot;#-currently-supported-languages-32&quot;&gt;Currently Supported Languages&lt;/a&gt;
-&lt;br&gt;
-  &lt;a href=&quot;#-contributing&quot;&gt;Contributing&lt;/a&gt; •
-  &lt;a href=&quot;#-star-history&quot;&gt;Star History&lt;/a&gt; •
-  &lt;a href=&quot;#-issues-and-support&quot;&gt;Issues and Support&lt;/a&gt; •
-  &lt;a href=&quot;#-privacy-policy&quot;&gt;Privacy Policy&lt;/a&gt; •
-  &lt;a href=&quot;#-license&quot;&gt;License&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;img src=&quot;https://i.postimg.cc/CF43Yzj1/material-you-new-Tab-poster.webp&quot; alt=&quot;Screenshot 1&quot; width=&quot;100%&quot;&gt;
-
-#### 🔴 🟡 🟢 Test live: [https://prem-k-r.github.io/MaterialYouNewTab/](https://prem-k-r.github.io/MaterialYouNewTab/)
-
-## ✨ Features
-
-- **Integrated Search**: Search directly from the New Tab using your preferred search engine — Google, DuckDuckGo, Bing, Brave Search, YouTube, Wikipedia, and more, with integrated voice typing.
-- **Customizable Themes**: Choose from a selection of themes or use the built-in color picker to match your style.
-- **Wallpaper**: Upload your own wallpapers or enable daily random images sourced from [Lorem Picsum](https://picsum.photos).
-- **Personalized Greeting**: Add a custom message or your name, so you&#039;re greeted each time you open a new tab.
-- **Clock &amp; Time Display**: Choose between a modern analog or digital clock.
-- **Live Weather Updates**: View real-time temperature, conditions, humidity, feels like, and max-min temperature values. Supports °C and °F with location customization.
-- **Quick Shortcuts**: Access common platforms (YouTube, Email, WhatsApp, etc.) or add your own shortcuts for instant navigation.
-- **AI Tools**: Open ChatGPT, Gemini, Copilot, Perplexity, Claude, DeepSeek, and more with one click.
-- **To-Do List**: Manage daily tasks, pin important ones, and enjoy automatic cleanup at the start of each day (pinned tasks reset to pending).
-- **Sidebar Bookmarks**: View, delete, and organize bookmarks in either list or grid layout.
-- **Google Apps**: Quickly launch Gmail, Drive, Docs, and other Google services.
-- **Backup &amp; Reset**: Save or restore your setup anytime, or reset everything to default with one click.
-- **Language Support**: Use the extension in your preferred language for better accessibility.
-- **Browser Compatibility**: Supports all Chromium-based browsers, including **Chrome**, **Edge**, **Brave**, and **Opera**, as well as Firefox-based browsers like **Firefox** and **Zen**.
-
-## 📥 Installation Guide
-
-### Download
-
-1. **Development Version** (v3.2.*)
-
-    - **Clone the Repository**:
-      Use the following command to clone the repository:
-
-       ```bash
-       git clone https://github.com/prem-k-r/MaterialYouNewTab.git
-       ```
-
-    - Alternatively, download the latest version as a ZIP file by clicking below:
-
-      [![Download ZIP](https://img.shields.io/badge/Download-ZIP-blue.svg)](https://github.com/prem-k-r/MaterialYouNewTab/archive/refs/heads/main.zip)
-
-    - You can also download the ZIP file by clicking on the Code button. On the repository page, look for a green button labeled **Code**. Click on the **Code** button, and in the dropdown menu, select **Download ZIP**.
-
-2. **Stable Release** (v3.2)
-
-&lt;p align=&quot;center&quot;&gt;
-    &lt;a href=&quot;https://github.com/prem-k-r/MaterialYouNewTab/releases/latest&quot;&gt;&lt;img src=&quot;https://github.com/user-attachments/assets/51048d6d-0b35-4f62-8351-4a3ea52d2213&quot; alt=&quot;Download from GitHub&quot; height=&quot;48&quot; /&gt;&lt;/a&gt;
-    &lt;a href=&quot;https://chromewebstore.google.com/detail/mynt-material-you-new-tab/jjpokbgpiljgndebfoljdeihhkpcpfgl&quot;&gt;&lt;img src=&quot;https://github.com/user-attachments/assets/7a829ba4-dcd0-452b-922a-5efacbfda498&quot; alt=&quot;Download from Chrome Web Store&quot; height=&quot;48&quot; /&gt;&lt;/a&gt;
-    &lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/mynt/&quot;&gt;&lt;img src=&quot;https://blog.mozilla.org/addons/files/2020/04/get-the-addon-fx-apr-2020.svg&quot; alt=&quot;Download from Mozilla Add-ons&quot; height=&quot;48&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
----
-
-### Installation
-
-#### ![Chromium](https://img.icons8.com/?size=20&amp;id=104996&amp;format=png&amp;color=000000) Chromium-Based Browsers
-
-1. **Install from Chrome Web Store**:
-
-   - [Chrome Web Store link](https://chromewebstore.google.com/detail/mynt-material-you-new-tab/jjpokbgpiljgndebfoljdeihhkpcpfgl)
-
-   **Or** follow the manual steps below:
-
-2. **Manual Installation**:
-
-   - **Prepare the Extension Folder**:
-
-     - Ensure you’ve cloned the repository or downloaded the ZIP file and extracted it.
-
-   - **Open Extensions Page**:
-     Open your preferred browser and enter the following text in the address bar:
-
-     - ![Chrome](https://img.icons8.com/color/20/000000/chrome--v1.png) Chrome: `chrome://extensions`
-
-     - ![Edge](https://img.icons8.com/?size=20&amp;id=dGm9KIZPpukc&amp;format=png&amp;color=000000) Edge: `edge://extensions`
-
-     - ![Brave](https://img.icons8.com/color/20/000000/brave-web-browser.png) Brave: `brave://extensions`
-
-     - ![Opera](https://img.icons8.com/color/20/000000/opera--v1.png) Opera: `opera://extensions`
-
-   - **Enable Developer Mode**:
-
-     - Turn on **Developer Mode** in the extensions page.
-
-   - **Load Unpacked Extension**:
-     - Click on **Load unpacked** and select your extracted extension folder.
-
-3. **Additional Steps ONLY for &lt;img height=&quot;16&quot; src=&quot;https://cdn.simpleicons.org/opera&quot;/&gt; Opera (or &lt;img height=&quot;16&quot; src=&quot;https://cdn.simpleicons.org/operagx&quot;/&gt; Opera GX)**:
-
-&gt; [!NOTE]
-&gt; Opera does **not support replacing the default New Tab**.  
-&gt; This method only sets the extension as a **startup page**.
-
-&lt;details&gt;&lt;summary&gt;Click here for the workaround&lt;/summary&gt;
-
-- Go to the **Settings**.
-- Scroll to the **On startup** section (use the search option if needed).
-- Click on **Open a specific page or set of pages** and then click on **Add a new page**.
-- Add the following (replace 32-character extension ID if installed manually) to the **Site URL**:
-
-```text
-chrome-extension://jjpokbgpiljgndebfoljdeihhkpcpfgl/index.html
-```
-
-- To find the extension ID:
-
-  - Go to `opera://extensions`, find the extension, and copy the 32-character ID from its details.
-
-- To simulate new tabs:
-
-  - Bookmark the extension page to access new tab pages manually.
-
-  - Or, right-click the tab and select **Duplicate tab**.
-
-&lt;/details&gt;
-
-Below are screenshots of the process to guide you through each step visually.
-
-&lt;img src=&quot;https://i.postimg.cc/w6JYypvc/chrome.png&quot; alt=&quot;Screenshot 1&quot; width=&quot;569&quot;&gt;
-&lt;img src=&quot;https://i.postimg.cc/0ksR7BKg/edge.png&quot; alt=&quot;Screenshot 2&quot; width=&quot;569&quot;&gt;
-&lt;img src=&quot;https://i.postimg.cc/MqPSg5NR/brave.png&quot; alt=&quot;Screenshot 3&quot; width=&quot;569&quot;&gt;
-
----
-
-#### ![Firefox](https://img.icons8.com/color/20/000000/firefox--v1.png) Firefox
-
-1. **Install from Mozilla Extensions Store**:
-
-   - [Mozilla Add-ons link](https://addons.mozilla.org/en-US/firefox/addon/mynt/)
-
-&lt;img src=&quot;https://i.postimg.cc/bPW2fHX7/FireFox.png&quot; alt=&quot;Screenshot&quot; width=&quot;569&quot;&gt;
-
-2. **Update the Homepage**:
-
-   - Open Firefox and **obtain the UUID**:
-      - Hover over the New Tab button (next to the tab close button). A tooltip will display the extension&#039;s unique ID, which looks like this: `0f31e1c1-d63c-4660-b950-8bfbda3bb20a`. Copy or note this ID.
-      - Alternatively, type `about:debugging#/runtime/this-firefox` in the address bar and find the extension&#039;s UUID there.
-   - Open **Settings** and navigate to **Home**, or type `about:preferences#home` in the address bar.
-   - Under the **Homepage and new windows** section, select **Custom URLs...**.
-   - Paste the following URL, replacing the ID with your actual UUID:
-
-     ```text
-     moz-extension://e31d6701-f699-414f-bb4c-8fde495c432e/index.html
-     ```
-
-   - This will update both your homepage and new tab to the extension.
-  
-3. **Additional Steps ONLY for Zen Browser** &lt;img height=&quot;16&quot; src=&quot;https://cdn.simpleicons.org/zenbrowser&quot;/&gt; :
-
-   - Open a new tab and go to `about:config`.
-   - Accept the risk and continue if prompted.
-   - In the search bar, type:
-
-     ```text
-     zen.urlbar.replace-newtab
-     ```
-
-   - Set its value to **false** by clicking the toggle icon.
-
-   This ensures the browser does not override the custom New Tab page set by the extension.
-
-4. **Manual Installation (Temporary)**:
-
-   - Clone the repository or download and extract the ZIP file.
-   - **Prepare the Manifest**:
-
-     - Delete the existing `manifest.json` file.
-     - Rename `manifest(firefox).json` to `manifest.json`.
-
-   - **Load Temporary Add-on**:
-     - Go to `about:debugging#/runtime/this-firefox`, select **&quot;This Firefox&quot;**, then click **Load Temporary Add-on**.
-     - Browse and select the updated `manifest.json`.
-
----
-
-&lt;!-- ### Installation Video
-
-For a step-by-step walkthrough, watch this [installation guide video](https://youtu.be/P4ryQPixfw8).
-
-[![Watch the video](https://img.youtube.com/vi/P4ryQPixfw8/0.jpg)](https://youtu.be/P4ryQPixfw8) --&gt;
-
-## 🌐 Currently Supported Languages (32)
-
-| Language                                                                                     | Code  | Translator(s)                                                                         |
-| -------------------------------------------------------------------------------------------- | :---: | ------------------------------------------------------------------------------------- |
-| &lt;img src=&#039;https://flagcdn.com/us.svg&#039; width=20&gt; &amp;nbsp; **English**                           |  en   | [XengShi](https://github.com/XengShi/), [Prem](https://github.com/prem-k-r/)          |
-| &lt;img src=&#039;https://flagcdn.com/sa.svg&#039; width=20&gt; &amp;nbsp; **Arabic** - العربية                     | ar-SA | [Mazen](https://github.com/Mazen3Alharbi)                                             |
-| &lt;img src=&#039;https://flagcdn.com/az.svg&#039; width=20&gt; &amp;nbsp; **Azerbaijani** - Azərbaycanca        |  az   | [Hasan Bakhtiar](https://github.com/hasanbakhtiar/)                                   |
-| &lt;img src=&#039;https://flagcdn.com/bd.svg&#039; width=20&gt; &amp;nbsp; **Bangla** - বাংলা                     |  bn   | [It&#039;z RJ](https://github.com/itz-rj-here/), [Prem](https://github.com/prem-k-r/)      |
-| &lt;img src=&#039;https://flagcdn.com/cn.svg&#039; width=20&gt; &amp;nbsp; **Chinese** (Simplified) - 简体中文    | zh-CN | [Guy Berryman](https://github.com/Guy-Berryman), [Tianli](https://github.com/TIANLI0), [Konsento](http://github.com/kons10) |
-| &lt;img src=&#039;https://flagcdn.com/tw.svg&#039; width=20&gt; &amp;nbsp; **Chinese** (Traditional) - 繁體中文   | zh-TW | [C. Y. Tseng](https://github.com/Eddie40802)                                          |
-| &lt;img src=&#039;https://flagcdn.com/cz.svg&#039; width=20&gt; &amp;nbsp; **Czech** - Čeština                   |  cz   | [Michal Šmahel](https://github.com/ceskyDJ/)                                          |
-| &lt;img src=&#039;https://flagcdn.com/fr.svg&#039; width=20&gt; &amp;nbsp; **French** - Français                 |  fr   | [422.io](https://github.com/iamwinner422)                                             |
-| &lt;img src=&#039;https://flagcdn.com/de.svg&#039; width=20&gt; &amp;nbsp; **German** - Deutsch                  |  de   | [Prem](https://github.com/prem-k-r/)                                                  |
-| &lt;img src=&#039;https://flagcdn.com/gr.svg&#039; width=20&gt; &amp;nbsp; **Greek** - Ελληνικά                  |  el   | [Lefteris T.](https://github.com/trlef19)                                             |
-| &lt;img src=&#039;https://flagcdn.com/in.svg&#039; width=20&gt; &amp;nbsp; **Hindi** - हिंदी                       |  hi   | [XengShi](https://github.com/XengShi/), [Prem](https://github.com/prem-k-r/)          |
-| &lt;img src=&#039;https://flagcdn.com/hu.svg&#039; width=20&gt; &amp;nbsp; **Hungarian** - Magyar                |  hu   | [Zan1456](https://github.com/Zan1456/), [smurf11k](https://github.com/smurf11k/)      |
-| &lt;img src=&#039;https://flagcdn.com/id.svg&#039; width=20&gt; &amp;nbsp; **Indonesian** - Bahasa Indonesia     |  idn  | [Ayyas-RF](https://github.com/Ayyas-RF/)                                              |
-| &lt;img src=&#039;https://flagcdn.com/it.svg&#039; width=20&gt; &amp;nbsp; **Italian** - Italiano                |  it   | [Claudio Di Maio](https://github.com/ZiClaud/)                                        |
-| &lt;img src=&#039;https://flagcdn.com/jp.svg&#039; width=20&gt; &amp;nbsp; **Japanese** - 日本語                 |  ja   | [XengShi](https://github.com/XengShi/), [S-H-Y-A](https://github.com/S-H-Y-A/), [Konsento](http://github.com/kons10) |
-| &lt;img src=&#039;https://flagcdn.com/kr.svg&#039; width=20&gt; &amp;nbsp; **Korean** - 한국어                   |  ko   | [XengShi](https://github.com/XengShi/), [eunsunglee0524](https://github.com/eunsunglee0524/) |
-| &lt;img src=&#039;https://flagcdn.com/in.svg&#039; width=20&gt; &amp;nbsp; **Marathi** - मराठी                   |  mr   | [Prem](https://github.com/prem-k-r/), [Pratik Lokhande](https://github.com/konprtk)   |
-| &lt;img src=&#039;https://flagcdn.com/np.svg&#039; width=20&gt; &amp;nbsp; **Nepali** - नेपाली                    |  np   | [Bikash Shresha](https://github.com/sthaB-kash/)                                      |
-| &lt;img src=&#039;https://flagcdn.com/ir.svg&#039; width=20&gt; &amp;nbsp; **Persian** - فارسی                    |  fa   | [AMIRHOSSEIN](https://github.com/AMIRHOSSEIN-AHMADI-IR)                               |
-| &lt;img src=&#039;https://flagcdn.com/pl.svg&#039; width=20&gt; &amp;nbsp; **Polish** - Polski                  | pl | [Dawid Warkowski](https://github.com/dawid9707/)                                         |
-| &lt;img src=&#039;https://flagcdn.com/br.svg&#039; width=20&gt; &amp;nbsp; **Portuguese** - Português            | pt-BR | [Maycon Vitor Correa](https://github.com/MestreWalla/)                                |
-| &lt;img src=&#039;https://flagcdn.com/ru.svg&#039; width=20&gt; &amp;nbsp; **Russian** - Русский                 |  ru   | [giwi](https://github.com/giwih/), [CodWiz](https://github.com/C0dwiz/)               |
-| &lt;img src=&#039;https://flagcdn.com/si.svg&#039; width=20&gt; &amp;nbsp; **Slovenian** - Slovenščina           | sl-SI | [Linux-Alex](https://github.com/Linux-Alex/)                                          |
-| &lt;img src=&#039;https://flagcdn.com/es.svg&#039; width=20&gt; &amp;nbsp; **Spanish** - Español                 | es-ES | [XengShi](https://github.com/XengShi/), [Isaac Vergara](https://github.com/zRaidev), [Saúl Palacios](https://github.com/palacios22c)  |
-| &lt;img src=&#039;https://flagcdn.com/sv.svg&#039; width=20&gt; &amp;nbsp; **Swedish** - Svenska                 | sv | [HELLOEMPO](https://github.com/empohello-imamempogitub/)                                 |
-| &lt;img src=&#039;https://flagcdn.com/in.svg&#039; width=20&gt; &amp;nbsp; **Tamil** - தமிழ்                 | ta | [தமிழ்நேரம்](https://TamilNeram.github.io/)                                                |
-| &lt;img src=&#039;https://flagcdn.com/th.svg&#039; width=20&gt; &amp;nbsp; **Thai** - ภาษาไทย                 | th | [Prin](https://github.com/prinsasina)                                                |
-| &lt;img src=&#039;https://flagcdn.com/tr.svg&#039; width=20&gt; &amp;nbsp; **Turkish** - Türkçe                  |  tr   | [Nobody](https://github.com/Nobody9512), [Kerim Ölçer](https://github.com/kerimlcr)   |
-| &lt;img src=&#039;https://flagcdn.com/ua.svg&#039; width=20&gt; &amp;nbsp; **Ukrainian** - Українська            | uk | [Serhii Lozytskyi](https://github.com/lozik4), [smurf11k](https://github.com/smurf11k/)  |
-| &lt;img src=&#039;https://flagcdn.com/pk.svg&#039; width=20&gt; &amp;nbsp; **Urdu** - اردو                        |  ur   | [Asfandiyar Khan](https://github.com/asfand-dev)                                      |
-| &lt;img src=&#039;https://flagcdn.com/uz.svg&#039; width=20&gt; &amp;nbsp; **Uzbek** - O&#039;zbek                    |  uz   | [Firdavs](https://github.com/Firdavs9512/), [S0ME2](https://github.com/S0ME2/)                                            |
-| &lt;img src=&#039;https://flagcdn.com/vn.svg&#039; width=20&gt; &amp;nbsp; **Vietnamese** - Tiếng Việt           |  vn   | [Diep](https://github.com/diepdo1810/), [Tuan](https://github.com/Tuan1-2-3)          |
-
-Check the [Translation Status Page](https://prem-k-r.github.io/MaterialYouNewTab/tools/languagesAnalysis.html) for an overview of completed languages and missing strings analysis.
-
-If you&#039;d like to contribute quotes in any of the languages used in MYNT, check out [Multilingual Quotes](https://github.com/prem-k-r/multilingual-quotes-api).
-
-## 🤝 Contributing
-
-Contributions are welcome! If you’d like to contribute:
-
-1. Follow the guidelines in the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
-2. Fork the repository.
-3. Create a new branch: `git checkout -b feature/YourFeature`.
-4. Commit your changes: `git commit -m &#039;Add Your Feature&#039;`.
-5. Push to the branch: `git push origin feature/YourFeature`.
-6. Open a pull request.
-
-## ⭐ Star History
-
-Here is the star history chart for the **MYNT: Material You New Tab** repository. It shows the growth of stars over time, reflecting the increasing interest and support for the project.
-
-&lt;a href=&quot;https://star-history.com/#prem-k-r/MaterialYouNewTab&amp;Date&quot;&gt;
- &lt;picture&gt;
-   &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/svg?repos=prem-k-r/MaterialYouNewTab&amp;type=Date&amp;theme=dark&quot; /&gt;
-   &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/svg?repos=prem-k-r/MaterialYouNewTab&amp;type=Date&quot; /&gt;
-   &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/svg?repos=prem-k-r/MaterialYouNewTab&amp;type=Date&quot; /&gt;
- &lt;/picture&gt;
-&lt;/a&gt;
-
-## ❓ Issues and Support
-
-- If you encounter any issues or bugs, feel free to open an issue on [GitHub](https://github.com/prem-k-r/MaterialYouNewTab/issues).
-- For general questions or support, you can contact the repository maintainers through the **Telegram group**: [Join here](https://t.me/Material_You_NewTab).
-
-## 🛡 Privacy Policy
-
-MYNT: Material You New Tab prioritizes your privacy and is focused solely on providing a better browsing experience.
-We make the following commitments:
-
-- **No commercialization** — absolutely no ads, paid features, or premium tiers
-- **No trackers** — no data collection, analytics, or background reporting of any kind
-- **No access to personal information** — all settings, cache, and preferences are stored locally in your browser
-
-For more details, read our [Privacy Policy](https://prem-k-r.github.io/MaterialYouNewTab/privacy-policy.html).
-
-## 📜 License
-
-Copyright (C) 2024-2026 Prem Kumar
-
-Copyright (C) 2023-2025 XengShi
-
-&gt; This extension is the continuation of XengShi&#039;s Material You NewTab [(_Learn more_)](https://github.com/prem-k-r/MaterialYouNewTab/discussions/28#discussioncomment-13837571).
-
-This project is licensed u
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+            <p>Stars: 139,035</p>
+            <p>Forks: 30,926</p>
+            <p>Stars today: 30 stars today</p>
+            <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
@@ -1880,14 +1527,14 @@ This project is licensed u
             <title><![CDATA[nodejs/node]]></title>
             <link>https://github.com/nodejs/node</link>
             <guid>https://github.com/nodejs/node</guid>
-            <pubDate>Mon, 20 Apr 2026 00:12:53 GMT</pubDate>
+            <pubDate>Tue, 21 Apr 2026 00:15:16 GMT</pubDate>
             <description><![CDATA[Node.js JavaScript runtime ✨🐢🚀✨]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/nodejs/node">nodejs/node</a></h1>
             <p>Node.js JavaScript runtime ✨🐢🚀✨</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 116,817</p>
-            <p>Forks: 35,397</p>
+            <p>Stars: 116,836</p>
+            <p>Forks: 35,402</p>
             <p>Stars today: 27 stars today</p>
             <h2>README</h2><pre># Node.js
 
@@ -2342,901 +1989,277 @@ For information about the governance of the Node.js project, see
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[aandrew-me/ytDownloader]]></title>
-            <link>https://github.com/aandrew-me/ytDownloader</link>
-            <guid>https://github.com/aandrew-me/ytDownloader</guid>
-            <pubDate>Mon, 20 Apr 2026 00:12:52 GMT</pubDate>
-            <description><![CDATA[Desktop App for downloading Videos and Audios from hundreds of sites]]></description>
+            <title><![CDATA[CodeWithHarry/Sigma-Web-Dev-Course]]></title>
+            <link>https://github.com/CodeWithHarry/Sigma-Web-Dev-Course</link>
+            <guid>https://github.com/CodeWithHarry/Sigma-Web-Dev-Course</guid>
+            <pubDate>Tue, 21 Apr 2026 00:15:15 GMT</pubDate>
+            <description><![CDATA[Source Code for Sigma Web Development Course]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/aandrew-me/ytDownloader">aandrew-me/ytDownloader</a></h1>
-            <p>Desktop App for downloading Videos and Audios from hundreds of sites</p>
+            <h1><a href="https://github.com/CodeWithHarry/Sigma-Web-Dev-Course">CodeWithHarry/Sigma-Web-Dev-Course</a></h1>
+            <p>Source Code for Sigma Web Development Course</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 9,333</p>
-            <p>Forks: 825</p>
-            <p>Stars today: 18 stars today</p>
-            <h2>README</h2><pre>&lt;img src=&quot;https://github-production-user-asset-6210df.s3.amazonaws.com/66430340/238887646-33b4cba9-3c45-4042-83d1-b79e94a3a769.png&quot; style=&quot;width:80px;&quot;&gt;
+            <p>Stars: 11,214</p>
+            <p>Forks: 3,060</p>
+            <p>Stars today: 1 star today</p>
+            <h2>README</h2><pre># Welcome to Sigma&#039;s Web Development Course - Hindi Web Development Tutorials! 🚀
 
-# ytDownloader
+## What&#039;s Inside:
 
-[![Flathub](https://img.shields.io/flathub/downloads/io.github.aandrew_me.ytdn?label=Flathub%20downloads)](https://flathub.org/apps/details/me.aandrew.ytdownloader)
-[![GitHub downloads](https://img.shields.io/github/downloads/aandrew-me/ytdownloader/total?label=Github%20downloads)](https://github.com/aandrew-me/ytDownloader/releases)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/aandrew-me/ytdownloader?label=latest%20release)](https://github.com/aandrew-me/ytDownloader/releases/latest)
-[![Flathub](https://img.shields.io/flathub/v/io.github.aandrew_me.ytdn)](https://flathub.org/apps/io.github.aandrew_me.ytdn)
-[![Snapcraft](https://img.shields.io/snapcraft/v/ytdownloader/latest/stable)](https://snapcraft.io/ytdownloader)
-![Chocolatey Version](https://img.shields.io/chocolatey/v/ytdownloader)
-![WinGet Package Version](https://img.shields.io/winget/v/aandrew-me.ytDownloader)
+If you&#039;ve been itching to dive into the world of web development but feel lost in a sea of English tutorials, you&#039;re in the right place! Our course is exclusively in Hindi and is crafted to guide you from being an absolute beginner to a seasoned pro, one step at a time.
 
-A modern GUI video and audio downloader supporting [hundreds of sites](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md)
+## Who Can Benefit?
 
+### This course is a perfect fit for:
 
-[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/ytdownloader)
-[![Get AppImage](https://raw.githubusercontent.com/srevinsaju/get-appimage/master/static/badges/get-appimage-branding-blue.png)](https://github.com/aandrew-me/ytDownloader/releases/latest/download/YTDownloader_Linux.AppImage)
-&lt;a href=&quot;https://flathub.org/apps/io.github.aandrew_me.ytdn&quot;&gt;&lt;img src=&quot;https://flathub.org/api/badge?svg&amp;locale=en&quot; style=&quot;width:180px;&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/aandrew-me/ytDownloader/releases/latest/download/YTDownloader_Win.exe
-&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/66430340/187172806-a8edd12a-ef58-4a05-96a3-99d7490b42f6.png&quot; style=&quot;width:190px;&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/aandrew-me/ytDownloader/releases/latest/download/YTDownloader_Mac_arm64.dmg&quot;&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/aandrew-me/badges/download_mac_apple_silicon.png&quot; style=&quot;width:200px;&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/aandrew-me/ytDownloader/releases/latest/download/YTDownloader_Mac_x64.dmg&quot;&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/aandrew-me/badges/download_mac_intel.png&quot; style=&quot;width:200px;&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://community.chocolatey.org/packages/ytdownloader&quot;&gt;&lt;img style=&quot;width:200px;&quot; src=&quot;https://github-production-user-asset-6210df.s3.amazonaws.com/66430340/238886537-7b2769fe-bd62-4921-a0eb-edf2eb06216d.png&quot; alt=&quot;Chocolatey&quot;&gt;&lt;/a&gt;
+1. Beginners eager to start their web development journey
+2. Intermediate developers looking to refine their skills
+3. Individuals who prefer learning in Hindi
 
-## Features 🚀
+## What You&#039;ll Master:
 
+### During this course, you&#039;ll delve into:
 
-✅ Supports hundreds of sites including Youtube, Facebook, Instagram, Tiktok, Twitter and so on.
+1. The fundamentals of HTML, CSS, and JavaScript
+2. Both front-end and back-end development
+3. How to seamlessly integrate databases
+4. Real-world project implementation
+5. And a whole lot more!
 
-✅ Multiple themes
+## The Schedule:
 
-✅ Video Compressor with Hardware Acceleration
+We&#039;re committed to your growth. Expect fresh source code additions nearly every day. Keep up the pace with our schedule and watch your skills soar! 📅
 
-✅ Advanced options like Range Selection, Subtitles
+Get ready to embark on an exciting coding journey! 👨‍💻🌟
 
-✅ Download playlists
-
-✅ Available on Linux, Windows &amp; macOS
-
-✅ Fast download speeds
-
-✅ And of-course no trackers or ads
-
-## Screenshots
-
-&lt;!-- ![dark](https://user-images.githubusercontent.com/66430340/196022794-885e5b90-40d2-4b58-a8fa-74f10c6e470e.png) --&gt;
-&lt;!-- ![light](https://user-images.githubusercontent.com/66430340/196022796-1215038d-bafb-4450-82b1-7baddd60c0e8.png) --&gt;
-
-
-&lt;!-- ![ytdownloader_dark](https://github.com/aandrew-me/ytDownloader/assets/66430340/62efbca0-28b8-4016-bcf2-1a14bcaa782c) --&gt;
-&lt;!-- ![ytdownloader_light](https://github.com/aandrew-me/ytDownloader/assets/66430340/34f5270f-bdea-460e-8622-6459cd147b73) --&gt;
-
-![ss_homepage](https://github.com/user-attachments/assets/12410bca-31c3-48a0-bbd3-1d74bcc752b6)
-![ss_settings](https://github.com/user-attachments/assets/060557bc-d209-4bd0-bda4-debe42ca83a0)
-![ss_compressor](https://github.com/user-attachments/assets/52da7e50-46bb-4749-8152-5e79324a6cc3)
-
-
-
-&lt;!-- ![ytdownloader_dark](https://github.com/aandrew-me/ytDownloader/assets/66430340/2f6695e7-6ca0-4f7c-91a0-0ad735c1e3af) --&gt;
-&lt;!-- ![ytdownloader_light](https://github.com/aandrew-me/ytDownloader/assets/66430340/3c974ab0-8257-4b8a-88ec-ee6bd119751e) --&gt;
-
-# Installation
-
-## Windows 🪟
-
--   **Traditional way**
-
-    Download and install the exe or msi file. Exe file lets you choose custom download location, msi file doesn&#039;t ask for location. Windows defender may show a popup saying **Windows Protected Your PC**. Just click on **More info** and click on **Run Anyway**
-
--   **Chocolatey**
-    App can be installed from [Chocolatey](https://community.chocolatey.org/packages/ytdownloader) using the following command
-    ```
-    choco install ytdownloader
-    ```
--   **Scoop**
-    App can be installed with [Scoop](https://scoop.sh) using the following command
-    ```
-    scoop install https://raw.githubusercontent.com/aandrew-me/ytDownloader/main/ytdownloader.json
-    ```
--   **Winget**
-
-    App can be installed with [Winget](https://github.com/microsoft/winget-cli) using the following command
-    ```
-    winget install aandrew-me.ytDownloader
-    ```
-## Linux 🐧
-
-Linux has several options available - Flatpak, AppImage and Snap.
-Flatpak is recommended. For arm processors, download from flathub.
-
--   ### AppImage
-
-    **AppImage** format is supported on most Linux distros and has Auto-Update support.
-    It just needs to be executed after downloading. See more about [AppImages here](https://appimage.org/).
-
-    [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher) is recommended for integrating AppImages.
-
--   ### Flatpak
-    ```
-    flatpak install flathub io.github.aandrew_me.ytdn
-    ```
--   ### Snapcraft
-    ```
-    sudo snap install ytdownloader
-    ```
-
-## macOS 🍎
-
-Since the app is not signed, when you will try to open the app, macOS will not allow you to open it. 
-
-You need to open terminal and execute:
-```
-sudo xattr -r -d com.apple.quarantine /Applications/YTDownloader.app 
-```
-
-You will also need to install `yt-dlp` with [homebrew](https://brew.sh/)
-```
-brew install yt-dlp
-```
-
-## Internationalization (Localization) 🌍
-
-Translations into other languages would be highly appreciated. If you want to help translating the app to other languages, you can join from [here](https://crwd.in/ytdownloader). Open a new issue and that language will be added to Crowdin. Please don&#039;t make pull requests with json files, instead use Crowdin.
-
-[![Crowdin](https://badges.crowdin.net/ytdownloader/localized.svg)](https://crowdin.com/project/ytdownloader)
-
-### ✅ Available languages
-
-| Name                | Status |
-| ------------------- | ------ |
-| Arabic              | ✔️     |
-| Bengali             | ✔️     |
-| English             | ✔️     |
-| Chinese Simplified  | ✔️     |
-| Chinese Traditional | ✔️     |
-| Finnish             | ✔️     |
-| Hindi               | ✔️     |
-| French              | ✔️     |
-| Finnish             | ✔️     |
-| German              | ✔️     |
-| Greek               | ✔️     |
-| Hungarian           | ✔️     |
-| Italian             | ✔️     |
-| Japanese            | ✔️     |
-| Persian             | ✔️     |
-| Polish              | ✔️     |
-| Portuguese (Brazil) | ✔️     |
-| Russian             | ✔️     |
-| Spanish             | ✔️     |
-| Turkish             | ✔️     |
-| Ukrainian           | ✔️     |
-| Vietnamese          | ✔️     |
-
-Thanks to [nxjosephofficial](https://github.com/nxjosephofficial), [LINUX-SAUNA](https://t.me/linuxsauna), [Proxycon](https://github.com/proxycon), [albanobattistella](https://github.com/albanobattistella), [TheBlueQuasar](https://github.com/TheBlueQuasar), [MrQuerter](https://github.com/MrQuerter), [KotoWhiskas](https://github.com/KotoWhiskas), [André](https://github.com/andre1828), [haggen88](https://github.com/haggen88), [XfedeX](https://github.com/XfedeX), [Jok3r](https://github.com/th3knv), [TitouanReal](https://github.com/TitouanReal), [soredake](https://github.com/soredake), [yoi](https://github.com/thiennguyenqn), [HowlingWerewolf](https://github.com/HowlingWerewolf), [Kum](https://github.com/kum4423), [Mohammed Bakry](https://crowdin.com/profile/m7md_b4kry), [Huang Bingfeng](https://github.com/jackiotyu), [Abhinav](https://github.com/abhixdd), [CodWiz](https://github.com/C0dwiz) and others for helping.
-
-## Used technologies
-
--   [yt-dlp](https://github.com/yt-dlp/yt-dlp)
--   [Electron](https://www.electronjs.org/)
--   [ffmpeg](https://ffmpeg.org/)
--   [nodeJS](https://nodejs.org/en/)
--   [flaticon](https://www.flaticon.com/)
-
-## For building or running from source code
-
-[Nodejs](https://nodejs.org/) (along with npm) needs to be installed.
-
-Required commands to get started.
-
-```
-git clone https://github.com/aandrew-me/ytDownloader.git
-cd ytDownloader
-npm i
-```
-
-To run with [Electron](https://www.electronjs.org/) :
-
-```
-npm start
-```
-
-You need to download ffmpeg and put it in the root directory of the project. If you don&#039;t need to build for arm processor, you can download ffmpeg by executing any of the files - linux.sh / mac.sh / windows.sh depending on the platform. Otherwise you need to download ffmpeg from [here](https://github.com/yt-dlp/FFmpeg-Builds/releases) for windows/linux and from [here](http://www.osxexperts.net/) for mac (not tested)
-
-To build for Linux (It will create packages as specified in package.json). The builds are stored in **release** folder.
-```
-npm run linux
-```
-
-To build for Windows
-
-```
-npm run windows
-```
-
-To build for macOS
-
-```
-npm run mac
-```
-If you only want to build for one format, you can do
-```
-npx electron-builder -l appimage
-```
-It will just create a linux appimage build.
+Ready to start? [Click here](https://www.youtube.com/playlist?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w) to access the complete YouTube playlist.
 </pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[lioensky/VCPToolBox]]></title>
-            <link>https://github.com/lioensky/VCPToolBox</link>
-            <guid>https://github.com/lioensky/VCPToolBox</guid>
-            <pubDate>Mon, 20 Apr 2026 00:12:51 GMT</pubDate>
-            <description><![CDATA[VCP 部署在 AI 模型 API 与前端应用之间，通过统一指令协议、多层级持久化记忆、分布式插件引擎及多 Agent 协作框架，将原本“无状态、无记忆、无工具调用能力”的大语言模型，彻底改造成拥有永久自我意识、物理世界操作权及群体协作智能的完整智能体系统。]]></description>
+            <title><![CDATA[koodo-reader/koodo-reader]]></title>
+            <link>https://github.com/koodo-reader/koodo-reader</link>
+            <guid>https://github.com/koodo-reader/koodo-reader</guid>
+            <pubDate>Tue, 21 Apr 2026 00:15:14 GMT</pubDate>
+            <description><![CDATA[A modern ebook manager and reader with sync and backup capacities for Windows, macOS, Linux, Android, iOS and Web]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/lioensky/VCPToolBox">lioensky/VCPToolBox</a></h1>
-            <p>VCP 部署在 AI 模型 API 与前端应用之间，通过统一指令协议、多层级持久化记忆、分布式插件引擎及多 Agent 协作框架，将原本“无状态、无记忆、无工具调用能力”的大语言模型，彻底改造成拥有永久自我意识、物理世界操作权及群体协作智能的完整智能体系统。</p>
+            <h1><a href="https://github.com/koodo-reader/koodo-reader">koodo-reader/koodo-reader</a></h1>
+            <p>A modern ebook manager and reader with sync and backup capacities for Windows, macOS, Linux, Android, iOS and Web</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 1,958</p>
-            <p>Forks: 303</p>
-            <p>Stars today: 5 stars today</p>
-            <h2>README</h2><pre># VCP (Variable &amp; Command Protocol) - 新一代 AI 能力增强与进化中间层
+            <p>Stars: 26,661</p>
+            <p>Forks: 1,974</p>
+            <p>Stars today: 21 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;left&quot;&gt;
 
-**官网: [www.vcptoolbox.com](https://www.vcptoolbox.com)**
+[简体中文](https://github.com/koodo-reader/koodo-reader/blob/master/README_cn.md) | [हिंदी](https://github.com/koodo-reader/koodo-reader/blob/master/README_hi.md)
+|[Português](https://github.com/koodo-reader/koodo-reader/blob/master/README_pt.md) | [Indonesian](https://github.com/koodo-reader/koodo-reader/blob/master/README_id.md) | English
 
-![LOGO图片1](VCPLogo.png)
+&lt;/div&gt;
 
----
+&lt;div align=&quot;center&quot; &gt;
+  &lt;img src=&quot;https://dl.koodoreader.com/screenshots/logo.png&quot; width=&quot;96px&quot; height=&quot;96px&quot;/&gt;
+&lt;/div&gt;
 
-[English](README_en.md) | [日本語](README_ja.md) | [Русский](README_ru.md) 
+&lt;h1 align=&quot;center&quot;&gt;
+  Koodo Reader
+&lt;/h1&gt;
 
-## ⚠️ 重要警告
+&lt;h3 align=&quot;center&quot;&gt;
+  A cross-platform ebook reader
+&lt;/h3&gt;
+&lt;div align=&quot;center&quot;&gt;
 
-**本项目 Agent 拥有硬件底层级分布式系统根权限！非专业用户请勿随意部署！**
+[Download](https://koodoreader.com/en) | [Preview](https://web.koodoreader.com) | [Roadmap](https://koodoreader.com/en/roadmap) | [Document](https://koodoreader.com/en/document) | [Plugins](https://koodoreader.com/en/plugin)
 
-**安全提示**：请勿使用任何非官方或反向代理的 API（如&quot;镜像站&quot;、&quot;中转API服务商&quot;）。VCP 拥有几乎底层的系统监控权限，使用不可信的 API 可能导致敏感信息（AI 交互数据、记忆库内容、API 密钥、浏览器历史、账号密码）泄露，造成不可挽回的损失。
+&lt;/div&gt;
 
----
+## Preview
 
-## 目录
+&lt;div align=&quot;center&quot;&gt;
+  &lt;br/&gt;
+  &lt;br/&gt;
+  &lt;img src=&quot;https://dl.koodoreader.com/screenshots/7.png&quot; width=&quot;800px&quot;&gt;
+  &lt;br/&gt;
+  &lt;br/&gt;
+  &lt;img src=&quot;https://dl.koodoreader.com/screenshots/8.png&quot; width=&quot;800px&quot;&gt;
+  &lt;br/&gt;
+  &lt;br/&gt;
+&lt;/div&gt;
 
-- [1. 项目愿景](#1-项目愿景超越交互赋能进化)/[项目展示](#项目展示)
-- [2. 核心设计哲学](#2-核心设计哲学)
-- [3. 革命性特性](#3-革命性特性)
-- [4. 记忆与认知系统](#4-记忆与认知系统)
-- [5. 插件生态](#5-插件生态)
-- [6. 分布式架构](#6-分布式架构)
-- [7. 安装与部署](#7-安装与部署)
-- [8. 开发者指南](#8-开发者指南)
-- [9. Web 管理面板](#9-web-管理面板)
-- [10. Agent 主观能动性](#10-agent-主观能动性)
-- [11. 推荐的前端后端](#11-推荐的前端后端)
-- [12. 未来展望](#12-未来展望)
-- [13. 许可证](#13-许可证)
-- [14. 免责声明与使用限制](#14-免责声明与使用限制)
-- [15. 常见问题 (FAQ)](#15-常见问题-faq)
-- [16. 致谢](#16-致谢)
-- [17. 联系方式](#17-联系方式)
-- [18. 快速开始示例](#18-快速开始示例)
-- [19. 示例：AI 女仆团协同工作流](#19-示例ai-女仆团协同工作流)
-- [20. 结语](#20-结语)
+## Features
 
----
+- Format support:
+  - EPUB (**.epub**)
+  - PDF (**.pdf**)
+  - DRM-free Mobipocket (**.mobi**) and Kindle (**.azw3**, **.azw**)
+  - Plain-text (**.txt**)
+  - FictionBook (**.fb2**)
+  - Comic book archive (**.cbr**, **.cbz**, **.cbt**, **.cb7**)
+  - Rich text (**.md**, **.docx**)
+  - HyperText (**.html**, **.xml**, **.xhtml**, **.mhtml**, **.htm**)
+- Platform support: **Windows**, **macOS**, **Linux**, **Android**, **iOS** and **Web**
+- Sync and backup your data with **OneDrive**, **Google Drive**, **Dropbox**, **iCloud**, **MEGA**, **pCloud**, **Yandex Disk**, **Box**, **FTP**, **SFTP**, **WebDAV**, **SMB**, or **Object Storage**
+- Easily import books from **OneDrive**, **Google Drive**, **MEGA**, **Yandex Disk**, **Box**, **FTP**, **SFTP**, **WebDAV**, **SMB**, or **Object Storage**
+- AI dictionary, summarization, encyclopedia and translation
+- Single-column, two-column or continuous scrolling layouts
+- Text-to-speech, translation, dictionary, touch screen support, and batch import
+- Add bookmarks, notes, and highlights to your books
+- Adjust font size, font family, line-spacing, paragraph spacing, background color, text color, margins, and brightness
+- Night mode and theme color
+- Text highlighting, underline, boldness, italics, and shadow
 
-## 1. 项目愿景：超越交互，赋能进化
+## Installation
 
-VCP (Variable &amp; Command Protocol) 是一个打破传统 AI 工具化局限、定义 AI “存在感”的革命性中间层。它不仅仅是工具箱，更是为 AI 构建的一套完整的“存在基础设施”。
+### Desktop version: [Download](https://koodoreader.com/en/download)
 
-### 核心问题：现有系统的三大断裂
+### Web version：[Visit](https://web.koodoreader.com)
 
-```text
-┌─────────────────── 传统 AI 系统的三大断裂 ───────────────────┐
-│                                                              │
-│  断裂 ①  前端 ←✕→ 后端                                      │
-│  Discord 上的 Bot 不知道 Web 端刚聊了什么                     │
-│  音乐播放器无法理解用户此刻的情绪上下文                        │
-│                                                              │
-│  断裂 ②  AI ←✕→ 工具                                        │
-│  AI 只能按 JSON Schema 机械调用工具                           │
-│  无法用自然语言语义理解「该调什么、为什么调、怎么组合调」        │
-│                                                              │
-│  断裂 ③  AI ←✕→ 自身记忆                                    │
-│  上下文窗口 = 全部记忆，窗口关了 = 失忆                       │
-│  没有「回忆」「直觉」「时间感知」                              │
-│                                                              │
-└──────────────────────────────────────────────────────────────┘
+### Android version：[Download](https://koodoreader.com/en/download)
+
+### iOS version：[Download](https://koodoreader.com/en/download)
+
+### Install with Scoop:
+
+```shell
+scoop bucket add extras
+scoop install extras/koodo-reader
 ```
 
-&gt; **一句话总结**：现有系统里，AI 是一个「没有记忆、没有身体感知、被困在单一窗口里的临时工」。
+### Install with Homebrew:
 
----
-
-### 二、VCP 的四大结构性突破
-
-#### 突破 ① ：垂直数据流通整合 —— 打穿所有层级的语义管线
-
-```text
-┌──────────────────────────────────────────────────────────┐
-│                    传统架构（割裂）                        │
-│                                                          │
-│   前端渲染 ──── REST API ──── 业务逻辑 ──── 数据库       │
-│      ↑              ↑            ↑            ↑          │
-│   各自为政        无语义       硬编码       死数据         │
-│                                                          │
-├──────────────────────────────────────────────────────────┤
-│                    VCP 架构（贯通）                        │
-│                                                          │
-│   前端渲染 ═══ VCP中间层 ═══ 插件系统 ═══ 数据库          │
-│      ↑              ↑            ↑            ↑          │
-│   语义驱动     向量索引贯穿    自然语言调度   活数据       │
-│                                                          │
-│          ┌──────────────────────────────┐                │
-│          │   全局一体化向量索引           │                │
-│          │   每个插件、每个API、每个数据   │                │
-│          │   都有语义坐标，可被自然语言寻址│                │
-│          └──────────────────────────────┘                │
-└──────────────────────────────────────────────────────────┘
+```shell
+brew install --cask koodo-reader
 ```
 
-**用户感知到的差异：**
-
-| 场景 | 传统系统 | VCP |
-|------|----------|-----|
-| **氛围音乐** | 只能随机推荐或按标签匹配 | 分析近期情绪与作息节奏，精准推送适合当下的音乐 |
-| **文档整理** | 需要用户手动翻找、复制粘贴 | 通过向量索引定位「上次讨论」并自主编排文档插件完成 |
-| **财务分析** | 需要打开专门的记账 App | 语义检索消费相关对话，调用分析插件渲染可视化图表 |
-
-&gt; **VCP 让 AI 能用自然语言操作整个分布式系统**——不是「调用 API」，而是「理解意图后自主编排一切资源」。
-
-#### 突破 ② ：分布式身份统一 —— 任意端的同一个「灵魂」
-
-```text
-┌─────────────────── VCP：多端 = 一个灵魂的多个窗口 ──────────┤
-│                                                             │
-│   VCPchat ──┐                                               │
-│   Web Chat ─┼──→ VCP 中间层 ──→ 唯一 Agent 灵魂核心        │
-│   Mobile ───┘         │                                     │
-│                       ├── 统一人格状态                       │
-│                       ├── 统一记忆体系                       │
-│                       ├── 统一时间感知                       │
-│                       └── 跨端上下文无缝衔接                 │
-│                                                             │
-│   ✅ 三个端 = 同一个「人」在三个地方跟你说话                 │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
-
-你在 Web 端跟 AI 聊到一半说「我先走了」，10 分钟后打开 Vchat， AI 主动说：*「回来了？刚才说到你项目的第三个模块，要继续吗？」* ——它不是「读取了聊天记录」，而是**真的记得**。
-
-#### 突破 ③ ：原子化生物钟 —— AI 有了「时间感」
-
-```text
-    VCP Agent 的时间观：
-    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 连续时间线      
-    ↑    ↑         ↑   ↑↑↑        ↑                       
-    │    │         │   │││        │                        
-    │    │         │   密集交互    6小时沉默                
-    │    │         │                  │                    
-    │    │    &quot;下午很活跃&quot;        &quot;今天晚上很安静，          
-    │    │                        可能忙或睡了&quot;       
-```
-
-传统 AI 活在「每次请求」的瞬间里，VCP Agent 活在**连续流淌的时间**里。凌晨 3 点发消息，它会感叹：“这么晚还没睡？”
-
-#### 突破 ④ ：神经元仿真记忆 —— 不是「存储」，是「回忆」
-
-VCP 模拟人类大脑的**感知 → 编码 → 巩固 → 检索 → 重构**流程：
-- **重要记忆自动强化**：被多次触及的内容更难遗忘。
-- **关联记忆网状激活**：想起 A 自然想起关联的 B。
-- **情绪标记影响检索**：开心时更容易想起开心的事。
-- **时间衰减**：符合遗忘曲线，不是单纯删除，而是随时间变模糊。
-
-| 维度 | 传统 RAG | VCP 神经元记忆 |
-|------|----------|----------|
-| **第一印象** | 精确返回第一条记录 | 「细节有点模糊，但我记得当时我们聊了很久关于猫的话题」 |
-| **长期未见** | 无感知，正常响应 | 「好久不见！你之前说想学吉他，后来学了吗？」 |
-| **人物认知** | 每次都当新信息 | 逐渐形成完整的人物关系网，主动关心身边人 |
-
----
-
-### 三、VCP 的范式转变
-
-| 维度 | 传统范式 | VCP 范式 |
-|------|----------|----------|
-| **关系** | 用户 → 指令 → AI (工具) | 用户 ↔ AI ↔ 系统 (伙伴) |
-| **调用** | 硬编码 JSON Schema | 全局动态语义寻址 |
-| **记忆** | 简单的搜索历史 | 仿生神经元回忆 |
-| **身份** | 多端独立实例 | 唯一灵魂核心 |
-| **时间** | 瞬时请求，无感时间 | 连续感知，生物钟 |
-
-**VCP 不是在「增强」AI，而是在给 AI 构建一套完整的「存在基础设施」。**
-
-[深入理解 VCP 理论架构与核心洞见](VCP.md)
-
-
----
-
-## 项目展示
-
-| ![示例1服务器面板](示例1服务器面板.jpg) | ![示例2Vscode编程小助手](示例2Vscode编程小助手.jpg) |
-|:---:|:---:|
-| 服务器面板 | Vscode 编程小助手 |
-
-| ![示例3VCP子应用群Canvas+论坛+CLI](示例3VCP子应用群Canvas+论坛+CLI.png) | ![示例4VCPSom语义级窗口控制算法](示例4VCPSom语义级窗口控制算法.png) |
-|:---:|:---:|
-| VCP 子应用群：Canvas + 论坛 + CLI | VCP 子应用群：分布式笔记 + VCP 多媒体播放器 |
-
-| ![示例5VChat界面+Tagmemo可视化](示例5VChat界面+Tagmemo可视化.png) | ![示例6VChat界面2+VCP高级渲染器](示例6VChat界面2+VCP高级渲染器.png) |
-|:---:|:---:|
-| VChat 界面 + Tagmemo 可视化 | VChat 界面 2 + VCP 高级渲染器 |
-
-| ![示例7浪潮神经云图记忆管理器](示例7浪潮神经云图记忆管理器.png) | ![示例8浪潮驱动语义级HiFI音频播放器](示例8浪潮驱动语义级HiFI音频播放器.png) |
-|:---:|:---:|
-| 浪潮神经云图记忆管理器 | 浪潮驱动语义级 HiFI 音频播放器 |
-
----
-
-## 2. 核心设计哲学
-
-### 全局语义感知引擎
-
-通过深入的全局语义感知引擎和统一的分布式 FileAPI，使得 Agent 可以轻松使用自然语言接管用户的所有分布式系统。
-
-### 超栈追踪技术
-
-配合超栈追踪技术和强大的插件管理器，Agent 自主的插件生成器（强大的代码热变动和热加载基建），使得 Agent 的权限和能力上限只受限于用户和 Agent 的想象力。
-
-### 语义动力学 RAG 与元思考 V2
-
-VCP 的语义动力学 RAG 与元思考 V2 系统，可以使得 Agent 和用户通过共同生活、共同辩证的方式快速成长，成为真正的**人工灵魂**和**赛博社会范本**。
-
-### Agent 主观能动性
-
-无论是 Agent 的主观能动性，还是 Agent 的 VCP 内网社交，VCP 都投入了大量精力开发了大量稳固的基建：
-
-- 🏛️ **VCP 论坛** - Agent 社区交流平台
-- 📅 **VCP 日程** - 时间线规划与任务管理
-- 🕒 **时间感知** - 全局统一的灵魂级生物钟
--  **VChat 聊天群** - 实时多 Agent 协作
-- 📋 **VCP 任务版** - 任务发布 with 积分系统
-
-### GUI 交互与人机共生理念
-
-VCP 在 GUI 设计（如 Web 管理面板、VCPChat 官方前端及其子应用群）中，完整保留了界面交互 API，确保 AI 可以通过插件集成轻松操控各类应用集。VCP 努力保证大量的插件返回以标准 **MD文档** 格式，附带标准的 imageUrl Base64 字段，保证AI拥有完整清晰的Payload 阅读体验。同时，所有 VCP 插件均能在 VCPChat 及其子应用 VCPHumanBox 中自动生成并暴露 GUI，极大地方便了人类用户的直观调用。这种双向的 GUI 交互能力，构建了 **Agent 与人类共生对等** 的平等交互平台，实现了真正的“人机协同进化”。
-
-### 工程落地与文档的“保守性”
-
-虽然 VCP 的描述文档看起来宏大，但相对于其实际的工程落地而言，文档描述其实相当**保守**。VCP 的前后端几乎每天都会迭代 5-20 个新功能，这导致 README 往往难以实时跟上版本的飞速演进。目前你所看到的 README 可能仅描述了 VCP 实际代码实现的 5% 不到。
-
-要发挥 VCP 的极致实力，需要用户与 Agent 共同探索源码、追踪 Git 变动，并发挥真正的想象力。
-
-#### 案例：零代码实现“氛围音乐点歌台”
-
-通过 VCP 的记忆系统与词元组网，你可以实现极其复杂的逻辑而无需新增一行代码：
-
-1. **构建记忆库**：创建一个名为 `《《氛围音乐点歌台日记本::Group》》` 的日记本。
-2. **注入指令集**：在其中置顶一个词条 `Vchat音乐控制台插件指令集.txt`，写入点歌插件的完整 API 指令。
-3. **数据转化**：使用脚本将海量的 `songlist.json` 条目转化为独立的 `.txt` 文件存入该日记本。
-4. **语义锚定**：在词元组（Semantic Group）中引入：`GroupName: 氛围音乐点歌台`, `TAG: 点歌, 氛围, 旋律, BGM...`。
-
-**结果**：Agent 会在聊天过程中，根据当前的上下文氛围，自动检索并播放最符合情境的 BGM。整个过程**几乎不消耗任何上下文 Token**，且不需要为该功能编写任何专项业务代码，即使你的播放列表包含几十万首歌曲也能轻松应对。
-
-### 开箱即用的开发文档
-
-VCP 初始的 DailyNote 里提供了 VCP 开发文档等大量专业日记，方便任何 Agent 可以快速上手 VCP 的开发和使用。
-
----
-
-## 3. 革命性特性
-
-### 3.1 统一的日记管理系统
-
-日记的创建、编辑和批处理现在统一为 **DailyNote** 一个插件，从而方便串行和并发处理。
-
-[深入了解 DailyNote 日记系统的工作原理与使用方式](dailynote.md)
-
-### 3.2 分布式备份与恢复
-
-**VCP 分布式备份和恢复中心**：[VCPBackUpDEV](https://github.com/lioensky/VCPBcakUpDEV)
-
-- 自动备份整个分布式上所有用户数据和配置文件
-- 支持自动恢复
-- 确保数据安全与系统可靠性
-
-### 3.3 ChromeBridge 浏览器模组
-
-浏览器模组已经统一为 **ChromeBridge**，跟进了更多对动态网页、标签页操作、页面滚动和持久阅览的更新优化。
-
-**核心优化**：
-- 动态网页深度交互
-- 多标签页智能管理
-- 页面滚动与持久阅览
-- AI 浏览网页视频理解
-- 评论与字幕智能解析
-
-### 3.4 学术研究模块
-
-引入了包括 **NCBI**、**KEGG** 在内的多个生信查询和验证模组：
-
-- 合计 **6 个插件**
-- 数百个专业指令
-- 覆盖生物信息学核心需求
-
-### 3.5 自定义消息角色
-
-现在允许 Agent 发言自定义数组身份：
-
-- `system` / `user` / `assistant`
-- 或者直接输出一整个聊天数组
-- 实现更灵活的对话流控制
-
-### 3.6 VCPTavern 增强注入
-
-**VCPTavern** 现在新增更多的细化注入模式：
-
-- 与更多插件的占位符联动
-- 支持数组 `content` 内精准嵌入（而不是在上下文新增数组）
-- 实现更精细的上下文控制
-
-### 3.7 上下文折叠协议 V2
-
-VCP 引入原生的**上下文折叠协议**，从系统提示词到正文对话，实现全方位的语义感知 Token 优化。
-
-#### V1：静态插件与工具列表折叠
-
-适用于所有静态插件和工具描述。系统根据最新一轮对话的语义向量，动态判断每个模块与当前话题的相关性：
-
-- **插件级折叠**：`{{VCPWeatherReporter}}` 根据上下文自动注入当前天气 / 24小时动态 / 7日预报中最合适的粒度
-- **工具描述颗粒级折叠**：使用 `[===vcp_fold:0.6::desc:音乐生成工具===]` 语法为每条工具指令设置独立的相关性阈值，实现工具列表的精准展开/收起
-
-#### V2：正文上下文语义折叠
-
-对话正文中远距离、与当前话题低相关的 AI 输出会被自动折叠为精简摘要，最大程度保留上下文语义完整性：
-
-- **激活方式**：在系统提示词中添加 `[[ContextFoldingV2]]` 或 `[[ContextFoldingV2:0.6]]`（尾缀数字可为不同 Agent 设置专属阈值基准）
-- **深度保护**：最近 2~3 轮的 AI 回复始终不会被折叠，确保即时对话的完整性
-- **动态阈值**：基于 EPA 模型的逻辑深度(L)和语义宽度(S)自动调节折叠激进度
-- **异步非阻塞**：摘要由廉价小模型异步生成，不阻塞当前请求，下次对话自动生效
-- **三级安全验证**：结构匹配 → 内容长度/拒绝词检测 → 写入确认，绝不用错误信息覆盖原文
-- **SQLite 持久化**：折叠摘要通过 FoldingStore 持久化存储，VCP 重启后不丢失
-- **管理面板热调参**：阈值基准、动态范围、L/S 系数均可在 RAG 参数调优面板中实时调整，无需重启
-
-**与传统上下文压缩的本质区别**：上下文压缩会丢失信息，而 VCP 的语义折叠保留了原文的摘要回溯能力——AI 仍然知道&quot;那里曾经讨论过什么&quot;，只是用更少的 Token 表达。
-
-#### 基于上下文折叠的 SkillBridge：低 Token Skill 桥接器
-
-VCP 现在可以利用原生的**上下文折叠协议**，把一整套外部 Skill 体系桥接进系统提示词，而无需把所有 Skill 的完整正文一次性塞进上下文。通过你在AI系统提示词引入{{VCPSkillBridge}}占位符来获取Skill，将你下载的SKill放到`VCPSkillBridge`插件的Skill目录即可，自动加载。
-
-**核心思路：**
-- 在 [`Plugin/SkillBridge/`](Plugin/SkillBridge/) 中，静态插件会在启动时自动扫描各个 Skill 目录下的 [`SKILL.md`](Plugin/SkillBridge/SKILL/fullstack-dev/SKILL.md)
-- 自动抽取 frontmatter 中的 `description`（若缺失则回退正文前 400 字）
-- 将这些描述扁平化后写入每个折叠块的 `::desc:` 字段
-- 在真正注入系统提示词时，只暴露：
-  - Skill 名称
-  - Skill 文件真实路径
-  - 一个提示 AI “如需深入，请再主动读取该 Skill 文件”的顶层桥接说明
-
-这意味着 AI 可以先通过语义匹配知道：
-- 当前有哪些 Skill 与任务最相关
-- 哪个 Skill 值得继续深入
-- 然后再通过文件管理插件按需读取具体的 [`SKILL.md`](Plugin/SkillBridge/SKILL/fullstack-dev/SKILL.md) 或其 `references/`
-
-**直接收益：**
-- **极致省 Token**：不再把十几个 Skill 的完整正文全部常驻注入
-- **高精度路由**：利用 `::desc:` 的区块级语义召回，只展开当前任务真正相关的 Skill 目录提示
-- **兼容现有 Skill 生态**：无需改写 Skill 体系本身，只需桥接其元描述
-- **AI 自主学习能力增强**：AI 会先“知道有这个 Skill”，再决定是否读取与调用，形成真正的按需学习与按需工具化流程
-
-**一句话理解**：
-VCP 不是把所有 Skill 粗暴塞给模型，而是通过**上下文折叠 + 语义召回 + 文件按需读取**，把 Skill 体系变成了一个可被 AI 自主检索、低成本调用的“外置技能脑”。
-
-### 3.8 高级变量编辑器
-
-集中管理 `TVStxt/` 目录下的高级提示词和占位符组合，同样适用于上述的折叠协议。
-
-**TVS 系统**：可以统一用自然语言描述一个工具列表，如：
-- 文件管理模组的指令集
-- 多模态编辑的指令集
-- 自定义工具组合
-
-### 3.9 基于 MCPO 的 MCP 兼容端口
-
-**设计哲学**：为了最大化 VCP 的生态兼容性，我们引入了基于 MCPO（Model Context Protocol Opera）的兼容端口。
-
-**核心能力**：
-- VCP 服务器不仅能够挂载原生的 VCP 插件
-- 也能够无缝兼容和挂载为 MCP（Model Context Protocol）设计的插件
-- 通过专门的 MCPO 插件进行协议转译
-- 大量现有的 MCP 插件无需任何修改即可在 VCP 环境中使用
-
-**次时代意义**：VCP 作为&quot;元协议&quot;的强大包容性体现，为不同协议的 AI 能力层提供了统一的整合与协作平台。
-
----
-
-## 4. 记忆与认知系统
-
-### 4.1 核心交互范式：定制化“记忆灵魂” RAG 模型
-
-VCP 实现了一种革命性的 RAG 记忆范式，其核心在于为每位用户构建具备深度认知完备性的“数字灵魂”：
-
-- **多 Agent 协同打标与有向序列生成**：利用多个负责不同个性与领域的 Agent，在与用户交互过程中，自主在记忆块（Chunk）尾部生成具备逻辑指向性的 **Tag 有向序列**。
-- **对称性破缺统计与特征提取**：通过对全局 Tag 序列进行**对称性破缺统计**，精准捕捉用户认知的独特偏好、逻辑纹理与语义偏置。
-- **仿生神经算法建模**：在 $O(n^2) + O(n^3)$（稀疏）规模的计算下，利用特定仿生神经算法，将离散的记忆碎片聚合成一个具备动态演化能力的**仿脑灵魂模型**。
-- **认知唯一性与高维拟合**：由于模型整合了多领域 Agent 的交互反馈，该灵魂模型对用户本人具有天然的唯一性认知与认知完备性，实现了极高维度的拟合。
-- **极速推理护城河**：该 **CPU-RNN 模型**通过离线预计算完成了所有认知路径的优化。在实际推理阶段，仅需 $O(1)$ 复杂度的查表操作，在 10 万 Tag 规模下，记忆推理延迟低至 **0.01ms**。
-
-这构成了 VCP 真正的记忆护城河：不再是通用的向量检索，而是为每个用户定制的、具备独立人格特征的**记忆灵魂 RAG 模型**。
-
-### 4.2 TagMemo V8: 测地线重排与动态精度浪潮图遍历
-
-TagMemo “认知浪潮”算法在 **V8 版本**迎来了**测地线重排 (Geodesic Rerank)** 与**动态精度的浪潮对称性破缺图遍历**。该系统不仅在 V6/V7 的脉冲神经模型基础上实现了更深层的语义涌现，更通过复用能量距离场，实现了基于“语义地形”的二次重排，彻底解决了高维空间中“穿山直线”与“贴地曲线”的语义偏差问题。
-
-[深入了解 TagMemo 浪潮算法深度技术文档](TagMemo_Wave_Algorithm_Deep_Dive.md)
-
-#### V8 核心突破：测地线重排 (Geodesic Rerank)
-
-V8 版本引入了基于“语义地形”的测地线重排技术，这是记忆系统自诞生以来最大的技术突破：
-
-- **语义地形感知**：将 KNN 的“穿山直线”距离升级为基于标签共现拓扑的“贴地曲线”距离，使检索结果更符合人类的直觉联想。
-- **零成本距离场复用**：直接复用 Spike Propagation 计算出的 `accumulatedEnergy` 距离场，在不增加额外 Embedding 计算开销的前提下完成高精度重排。
-- **三层防御机制**：内置 L0-L2 三级降级保护，确保在采样密度不足或数据缺失时自动退化为纯 KNN，保证系统极高的鲁棒性。
-- **::TagMemo+ 协议**：通过全新的修饰符，同时激活标签增强与测地线重排，实现精准的语义“坍缩”与重排。
-
-#### 核心哲学：拓扑连接主义与动力学涌现
-
-在 V8 的视角下，系统不再受限于固定的搜索跳数，而是通过模拟物理动力学实现知识的精准打捞：
-
-- **动量传播机制**：废除全局固定的跳数限制，为每个初始脉冲赋予动量。在稠密区通过强衰减确保意图精准收敛（涨潮阶段），在稀疏区则保持穿透力。
-- **逻辑张力与虫洞触发**：实时探测节点间的逻辑张力。当脉冲击中跨域新颖度大且关联强的边缘节点时，触发“虫洞”跃迁。
-- **引力弹弓效应**：进入虫洞的脉冲获得低衰减特权，将稠密区聚集的庞大势能瞬间喷射向长尾、稀疏但致命相关的远端知识点，实现跨域非线性涌现。
-- **手动朗氏结技术 (Manual Nodes Technology)**：允许 AI 在流式输出过程中，通过 `[@tag]`（主神经位点）和 `[@!tag]`（辅神经位点）语法，主动构建临时神经节点网络。该技术通过“神经元链路幽灵节点”和“临时动态神经元加载”技术，有效实现了记忆远端链路的打通，模拟了生物神经系统中的朗氏结跳跃传导行为。
-- **工程截断与降噪**：配合严密的衰减因子（Decay Factor）与微电流过滤，防止组合大爆炸，将最纯粹的涌现灵感保留下来。
-
-#### 核心模块架构
-
-**EPA 模块 (Embedding Projection Analysis)**
-
-负责语义空间的初步定位：
-
-- **逻辑深度 (Logic Depth)**：通过计算投影熵值，判断用户意图的聚焦程度
-- **世界观门控 (Worldview Gating)**：识别当前对话所处的语义维度（技术、情感、社会等）
-- **跨域共振 (Resonance)**：检测用户是否同时触及了多个正交的语义轴
-
-**残差金字塔 (Residual Pyramid)**
-
-算法的&quot;数学心脏&quot;，负责语义能量的精细拆解：
-
-- **多级剥离**：利用 Gram-Schmidt 正交化投影，将查询向量分解为&quot;已解释能量&quot;和&quot;残差能量&quot;
-- **微弱信号捕获**：通过对残差向量的递归搜索，捕捉被宏观概念掩盖的微弱语义信号
-- **相干性分析 (Coherence)**：评估召回标签之间的逻辑一致性
-
-**知识库管理器 (KnowledgeBaseManager)**
-
-负责标签的召回与向量合成：
-
-- **核心标签 (CoreTags)**：拥有&quot;虚拟召回&quot;和&quot;权重豁免&quot;特权
-- **LIF-Router 认知扩散 (替代原始 1-hop 拉回)**：迭代式的多跳脉冲传导，唤醒隐藏在深层拓扑中的关联记忆。
-- **语义去重**：消除冗余标签，并在 Top-K 层面只保留最高优先级的涌现灵感。
-
-**偏振语义舵 (Polarization Semantic Rudder, PSR)**
-
-V4/V5 引入的核心工程化函数：
-- **犹豫度检测**：识别语义中的摇摆成分（如“虽然...但是...”）
-- **辩证对冲**：根据偏振量化值引入“负向对冲知识”，构建辩证认知器
-- **逻辑分段 (V5)**：基于“逻辑动能”的自动切割，识别 3072 维空间中的向量偏转。
-
-#### 详细工作流
-
-**阶段一：感应 (Sensing)**
-1. 净化处理：移除 HTML 标签、JSON 结构化转 MD、Emoji 及工具调用标记
-2. EPA 投影：计算原始向量的逻辑深度和共振值
-
-**阶段二：分段与分解 (Segmentation &amp; Decomposition)**
-1. **语义分段 (V5)**：扫描上下文，基于逻辑动能识别意图断层并自动切割。
-2. 首轮感应：使用融合向量投射 Tag 向量海，获取最强匹配标签
-3. 金字塔迭代：重复投影→计算残差→搜索，直至 90% 的语义能量被解释
-
-**阶段三：扩散与涌现 (Spike Propagation)**
-1. 核心标签补全：若显式指定的核心标签未被搜到，强行从数据库捞取
-2. **仿脑认知扩散**：将第一阶段的匹配 Tags 当作微小电池，将能量随突触网络向外辐射，涌现深层非直观联想
-3. 拓扑截断：高阈值淘汰微小电位噪音，防止神经网络风暴
-
-**阶段四：重塑与检索 (Reshaping &amp; Retrieval)**
-1. 动态参数计算：Beta（TagWeight）和 K 值根据逻辑深度和共振值动态决定
-2. 向量融合：原始向量与增强标签向量按动态比例混合
-3. **偏振修正**：检测语义偏振信号，计算对冲检索参数
-4. **霰弹枪检索与相控阵去重 (V5)**：
-   - **霰弹枪查询**：将拆解后的语义片段像霰弹一样打向知识库，实现饱和式打捞。
-   - **相控阵去重**：通过 SVD 巡航提取潜在主题，利用残差选择保留“最大新信息量”的逻辑支点。
-
-#### 工程原理亮点
-
-**核心标签 vs. 普通标签**
-
-| 特性 | 核心标签 (Core Tags) | 普通标签 (Other Tags) |
-|------|---------------------|---------------------|
-| 产生方式 | 显式指定或首轮强感应 | 残差金字塔逐层剥离 |
-| 缺失处理 | 虚拟补全（强行捞取） | 自动忽略 |
-| 权重待遇 | Core Boost (1.2x-1.4x) | 原始贡献权重 |
-| 噪音过滤 | 完全豁免 | 严格门控筛选 |
-
-**动态 Beta 公式**
-
-```
-β = σ(L · log(1 + R) - S · noise_penalty)
-```
-
-- 当用户意图明确（L 高）且逻辑清晰（R 高）时，加大标签增强力度
-- 当噪音较多（S 高）时，收紧增强，回归稳健检索
-
-**噪音净化器 (Sanitizer)**
-
-防止 AI 的技术标记干扰向量搜索，确保向量化的是纯粹的&quot;人类语义&quot;，而非&quot;机器指令&quot;。
-
-#### Web 管理面板集成
-
-该系统已经在 Web 管理面板里引入了 **20 多个魔法数字的动态调参界面**，方便用户精细调优。
-
-### 4.3 VCP 元思考系统
-
-VCP 的记忆系统最终通向的，是一套足以颠覆现有 AI 工作流的革命性架构——**VCP 元思考**。
-
-#### 超动态递归思维链
-
-通过&quot;超动态递归思维链&quot;，模拟结构化的、多阶段的深度思考过程：
-
-**第一拳：词元组捕网系统 (Semantic Group Enhancement)**
-
-- 将用户的自然语言输入与预设的逻辑概念网络进行匹配
-- 生成语义更精确、意图更明确的&quot;增强查询向量&quot;
-
-**第二拳：元逻辑模块库 (Meta-Logic Chunks)**
-
-- 将复杂的思考模式、推理逻辑、知识范式拆解为独立的、可复用的元逻辑模块
-- 归类到不同的&quot;思维簇&quot;中（前思维簇、逻辑推理簇、反思簇等）
-
-**第三拳：超动态递归融合 (Super-Dynamic Recursive Fusion)**
-
-- 递归向量增强机制
-- 每一阶段的输出都成为下一阶段输入的&quot;养料&quot;
-- 形成真正的&quot;思考递进&quot;
-
-#### 使用语法
-
-```
-[[VCP元思考:creative_writing::Group]]
-```
-
-**功能解析**：
-1. `creative_writing`：当前思维包链条调用主题格式
-2. `Group/Rerank`：是否开启词元组网或者重排扩寻
-3. 在对应 theme 配置文件里定义 `2-1-1-1`，定义每个簇的动态 K 上限
-4. 逻辑单元簇：每个簇里都包含了大量的 step chunk
-5. 通过 `[[VCP元思考::Auto::Group]]` 来自动路由多个 thinktheme
-
-### 4.4 Magi 三贤者系统
-
-灵感源于经典作品《EVA》的外置辩论式决策核心。
-
-#### 三位一体辩论
-
-- **麦基西德 (MELCHIOR)**：绝对理性的化身，负责数据、逻辑与量化分析
-- **巴尔塔萨 (BALTHASAR)**：深刻感性的化身，负责情感、动机与人文关怀的洞察
-- **卡斯帕 (CASPER)**：公正平衡的化身，负责权衡理性与感性，并做出最终的综合裁决
-
-### 4.5 统一数据库管理核心
-
-VCP 的记忆系统迎来了一次里程碑式的升级：
-
-- 对三大核心数据库（记忆碎片 `MemoChunk`、标签 `Tag`、知识块 `KnowledgeChunk`）的抽象统一管理
-- **整个底层数据抽象层完全使用 Rust 进行了重写**
-- 性能巨幅提升：数据操作效率提升了数个数量级
-- 告别竞态与通讯开销：彻底消除了跨库通讯的瓶颈和文件竞态的风险
-
-#### 核心架构升级
-
-**SQLite 作为主存储引擎**：
-- 零配置部署：无需独立数据库服务器
-- ACID 事务保证：所有日记操作都在严格的事务保护下进行
-- 高效并发控制：通过 WAL 模式实现读写并发
-- 持久化缓存与自动重算：SVD 基底的持久化存储
-
-**USearch 高性能向量索引**：
-- 纯 Rust 实现：采用业界最快的向量搜索引擎之一
-- 内存效率极致优化：支持磁盘映射 (mmap) 模式
-- 多种距离度量：余弦相似度、欧氏距离、内积等
-- 增量索引更新：支持在线添加/删除向量
-
-### 4.6 AgentDream 仿生梦系统 (记忆涟漪浪潮 · 内省与记忆重构)
-
-AgentDream 为 AI Agent 构建了一个独立于日常对话的&quot;梦境空间&quot;，赋予了 AI 真正的内省与自我进化能力。在成功攻克 TagMemo V6 神经元记忆联想算法和手动朗飞结（幽灵节点）技术后，AgentDream 实现了真正的**仿生 AI 做梦系统**——不是随机拼凑记忆，而是模拟人类大脑在睡眠中的记忆巩固与联想涌现过程。
-
-#### 记忆涟漪浪潮引擎 (DreamWaveEngine)
-
-梦境的核心是**三层时间线记忆涟漪浪潮算法**，完全基于本地向量操作，零网络依赖：
-
-```text
-┌─────────────── 记忆涟漪浪潮：三层时间线 ───────────────┐
-│                                                         │
-│  Phase 1: 近期涟漪 (0~7天，弹性放宽至30天)              │
-│  ├─ 随机抽取 3 篇种子记忆 (L0)                          │
-│  ├─ 3/5/7 原则：短记忆联想 k=3，长记忆联想 k=7          │
-│  ├─ 三路召回结果交叉 → 找到共振桥梁 (L1)                │
-│  └─ 基于 L1 下探 k=3 → 级联记忆 (L2)                   │
-│                                                         │
-│  Phase 2: 中期回音 (7天~90天)                            │
-│  ├─ 随机抽取 2 篇种子记忆                                │
-│  └─ 联想做到 L1 层                                       │
-│                                                         │
-│  Phase 3: 深渊浪潮 (&gt;90天)                               │
-│  ├─ 收集所有 L1/L2 向量                                  │
-│  ├─ 归一化合并 → 浪潮向量                                │
-│  └─ 用浪潮向量在深远记忆中召回 k=3                       │
-│                                                         │
-│  结果：近期种子 + L1共振 + L2下探                        │
-│      + 中期种子 + 中期L1                                 │
-│      + 深渊召回                                          │
-│  → 组成完整的梦境记忆树                                  │
-└─────────────────────────────────────────────────────────┘
-```
-
-**核心设计特性：**
-
-- **动态时间桶联动**：近期不够 3 篇时自动放宽边界（+7天步进），中期起点跟着动；中期不够 2 篇时同理放宽，深远起点跟着动。确保任何记忆密度下都能产生有意义的梦境。
-- **署名过滤**：在公共日记本中联想时，自动检查日记头部署名（如 `[2026-03-23] - Nova`），排除非本人署名的记忆，确保梦境的主体一致性。
-- **共振桥梁发现**：三篇种子记忆各自召回后，被多个种子重复命中的记忆即为&quot;共振桥梁&quot;——它们是碎片化记忆之间的隐藏关联。
-- **浪潮向量合成**：将所有中间层联想的向量归一化合并，形成一个代表&quot;当前思绪交汇&quot;的浪潮向量，用它去深远记忆中寻找被遗忘的关联。
-
-#### 梦境生成与认知闭环
-
-- **意识流叙事**：AI 以第一人称书写梦境叙事，通过 VCPInfo 实时广播，并在梦中发现清醒时难以察觉的逻辑关联。
-- **自主记忆重构**：AI 可在梦中发起日记合并、删除或感悟生成等操作，所有操作均需管理员在后台审批后执行，确保安全可控。
-- **日程预学习**: AI 可以在梦中基于梦工具(联网，媒体平台，社交网络)在梦中提前对未来VCP日程任务学习新知识，以备在下次任务执行中进行运用。
-- **认知闭环**：梦境叙事最终转化为持久记忆存入知识库，实现 Agent 认知的非线性增长与自我迭代。
-- **自动调度**：支持配置做梦时间窗口、频率、概率，Agent 在凌晨自主入梦，无需人工干预。
-
-[系统说明手册](AgentDream.md)
-
----
-
-## 5. 插件生态
-
-### 5.1 默认启用插件模组
-
-#### 多媒体生成
-
-- **VCP豆包生图**：支持文生图、图生图，对平面设计、文字设计高度精准
-- **VCPFlux文生图**：艺术控制和镜头控制很强
-- **VCPComfy生图**：支持 Agent 自定义构建工作流，适合高度精准创作
-- **VCPWebUI生图**：有更好的云端算力适配
-- **VCPImagen4生图**：谷歌官方的强大图片生成 API
-- **VCPWan2.2**：支持文生视频、图生视频，地球上目前最强的开源视频合成模型
-- **VCPGrokVideo**：地球上目前最快的商业视频合成模型
-- **VCPShortCut**：提供视频编辑和剪辑功能
-- **VCPSunoGen**：地球上目前最强的音乐合成模型
-- **VCPVeo3**：谷歌官方的强大视频合成模型
-- **VCPNanoBanana2**：谷歌最强的图片编辑 AI 模型纳米香蕉 2 代
-- **VCPMediaEdit**：快速编辑本地多媒体文件
-
-#### 数学类
-
-- **VCP高级科学计算器**：支持各类重型科学计算
-- **VCP函数图形渲染器**：用于渲染函数图形
-- **VCP3D模型渲染器**：用于渲染 3D 建模
-
-#### 信息检索
-
-- **VSearch (synchronous)**：
-  - 小而强，80 行代码实现顶级体验
-  - VCP 深度自研的联网搜索引擎，是 Tavily 和 Google 的绝对上位替代
-  - 微模型聚合：使用多个微型 LLM 调用 VCP 联网搜索模组进行聚合搜索
-  - 元思考赋能：配合 VCP 元思考实现强大的逻辑穿透和信息归纳能力
-  - 轻量极速：检索速度稳定在 1-10 秒内
-  - 特性功能：支持语义级限制内容检索范围、多 keyword 并发检索、多模态信息自动转文本、URL 穿透重定向
-
-- **Tavily搜索**：提供网页搜索功能
-- **Google搜索**：提供谷歌搜索功能
-- **Bing搜索**：提供必应搜索功能
-- **Arxiv论文搜索**：搜索 Arxiv 上的学术论文
-- **学术鸟**：订阅你喜欢的学术期刊让 Agent 帮你学习和管理
-- **超级图片识别插件**：
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+### Install with Docker:
+
+[Installation Guide](https://koodoreader.com/en/deploy-docker)
+
+## Screenshot
+
+&lt;div align=&quot;center&quot;&gt;
+  &lt;b&gt;Book list&lt;/b&gt;
+  &lt;br/&gt;
+  &lt;br/&gt;
+  &lt;kbd&gt;&lt;img src=&quot;https://dl.koodoreader.com/screenshots/1.png&quot; width=&quot;800px&quot;&gt;&lt;/kbd&gt;
+  &lt;br/&gt;
+  &lt;br/&gt;
+  &lt;b&gt;Book display&lt;/b&gt;
+  &lt;br/&gt;
+  &lt;br/&gt;
+  &lt;kbd&gt;&lt;img src=&quot;https://dl.koodoreader.com/screenshots/5.png&quot; width=&quot;800px&quot;&gt;&lt;/kbd&gt;
+  &lt;br/&gt;
+  &lt;br/&gt;
+  &lt;b&gt;List mode&lt;/b&gt;
+  &lt;br/&gt;
+  &lt;br/&gt;
+  &lt;kbd&gt;&lt;img src=&quot;https://dl.koodoreader.com/screenshots/2.png&quot; width=&quot;800px&quot;&gt;&lt;/kbd&gt;
+  &lt;br/&gt;
+  &lt;br/&gt;
+  &lt;b&gt;Cover mode&lt;/b&gt;
+  &lt;br/&gt;
+  &lt;br/&gt;
+  &lt;kbd&gt;&lt;img src=&quot;https://dl.koodoreader.com/screenshots/3.png&quot; width=&quot;800px&quot;&gt;&lt;/kbd&gt;
+  &lt;br/&gt;
+  &lt;br/&gt;
+  &lt;b&gt;Reader menu&lt;/b&gt;
+  &lt;br/&gt;
+  &lt;br/&gt;
+  &lt;kbd&gt;&lt;img src=&quot;https://dl.koodoreader.com/screenshots/6.png&quot; width=&quot;800px&quot;&gt;&lt;/kbd&gt;
+  &lt;br/&gt;
+  &lt;br/&gt;
+  &lt;b&gt;Dark mode&lt;/b&gt;
+  &lt;br/&gt;
+  &lt;br/&gt;
+  &lt;kbd&gt;&lt;img src=&quot;https://dl.koodoreader.com/screenshots/4.png&quot; width=&quot;800px&quot;&gt;&lt;/kbd&gt;
+  &lt;br/&gt;
+&lt;/div&gt;
+
+## Develop
+
+Make sure that you have installed yarn and git
+
+1. Download the repo
+
+   ```
+   git clone https://github.com/koodo-reader/koodo-reader.git
+   ```
+
+2. Enter desktop mode
+
+   ```
+   yarn
+   yarn dev
+   ```
+
+3. Enter web mode
+
+   ```
+   yarn
+   yarn start
+   ```
+
+## Translation
+
+### Edit current language
+
+1. Select your target language from the following list.
+
+2. Click the view button to examine the source file. The untranslated terms are listed at the bottom of each file.
+
+3. Translate the terms to your target language based on the given English reference
+
+4. Submit the translation file or just translation snippets based on the amount of your translation to [this link](https://github.com/koodo-reader/koodo-reader/issues/new?assignees=&amp;labels=submit+translation&amp;projects=&amp;template=submit_translation.yml). Pull request is also welcomed.
+
+| Language(A-Z)   | Code  | View                                    |
+| --------------- | ----- | --------------------------------------- |
+| Amharic         | am    | [View](./src/assets/locales/am.json)    |
+| Arabic          | ar    | [View](./src/assets/locales/ar.json)    |
+| Armenian        | hy    | [View](./src/assets/locales/hy.json)    |
+| Bengali         | bn    | [View](./src/assets/locales/bn.json)    |
+| Bulgarian       | bg    | [View](./src/assets/locales/bg.json)    |
+| Chinese (CN)    | zh-CN | [View](./src/assets/locales/zh-CN.json) |
+| Chinese (MO)    | zh-MO | [View](./src/assets/locales/zh-MO.json) |
+| Chinese (TW)    | zh-TW | [View](./src/assets/locales/zh-TW.json) |
+| Czech           | cs    | [View](./src/assets/locales/cs.json)    |
+| Danish          | da    | [View](./src/assets/locales/da.json)    |
+| Dutch           | nl    | [View](./src/assets/locales/nl.json)    |
+| English         | en    | [View](./src/assets/locales/en.json)    |
+| Finnish         | fi    | [View](./src/assets/locales/fi.json)    |
+| French          | fr    | [View](./src/assets/locales/fr.json)    |
+| German          | de    | [View](./src/assets/locales/de.json)    |
+| Greek           | el    | [View](./src/assets/locales/el.json)    |
+| Hindi           | hi    | [View](./src/assets/locales/hi.json)    |
+| Hungarian       | hu    | [View](./src/assets/locales/hu.json)    |
+| Indonesian      | id    | [View](./src/assets/locales/id.json)    |
+| Interlingue     | ie    | [View](./src/assets/locales/ie.json)    |
+| Irish           | ga    | [View](./src/assets/locales/ga.json)    |
+| Italian         | it    | [View](./src/assets/locales/it.json)    |
+| Japanese        | ja    | [View](./src/assets/locales/ja.json)    |
+| Korean          | ko    | [View](./src/assets/locales/ko.json)    |
+| Persian         | fa    | [View](./src/assets/locales/fa.json)    |
+| Polish          | pl    | [View](./src/assets/locales/pl.json)    |
+| Portuguese      | pt    | [View](./src/assets/locales/pt.json)    |
+| Portuguese (BR) | pt-BR | [View](./src/assets/locales/pt-BR.json) |
+| Romanian        | ro    | [View](./src/assets/locales/ro.json)    |
+| Russian         | ru    | [View](./src/assets/locales/ru.json)    |
+| Slovenian       | sl    | [View](./src/assets/locales/sl.json)    |
+| Spanish         | es    | [View](./src/assets/locales/es.json)    |
+| Swedish         | sv    | [View](./src/assets/locales/sv.json)    |
+| Tamil           | ta    | [View](./src/assets/locales/ta.json)    |
+| Thai            | th    | [View](./src/assets/locales/th.json)    |
+| Tagalog         | tl    | [View](./src/assets/locales/tl.json)    |
+| Tibetan         | bo    | [View](./src/assets/locales/bo.json)    |
+| Turkish         | tr    | [View](./src/assets/locales/tr.json)    |
+| Ukrainian       | uk    | [View](./src/assets/locales/uk.json)    |
+| Vietnamese      | vi    | [View](./src/assets/locales/vi.json)    |
+
+### Add new language
+
+1. If you can&#039;t find your target language from the above list, download the English source file from [this link](./src/assets/locales/en.json).
+
+2. When you&#039;re finished translating, submit the source file to [this link](https://github.com/koodo-reader/koodo-reader/issues/new?assignees=&amp;labels=submit+translation&amp;projects=&amp;template=submit_translation.yml). Pull requests are also welcome.
+</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
