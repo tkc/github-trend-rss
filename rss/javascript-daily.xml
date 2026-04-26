@@ -4,7 +4,7 @@
         <title>GitHub Trending Today for javascript - JavaScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for javascript.</description>
-        <lastBuildDate>Sat, 25 Apr 2026 00:14:07 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 26 Apr 2026 00:14:03 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
@@ -13,22 +13,20 @@
             <title><![CDATA[Anil-matcha/Open-Generative-AI]]></title>
             <link>https://github.com/Anil-matcha/Open-Generative-AI</link>
             <guid>https://github.com/Anil-matcha/Open-Generative-AI</guid>
-            <pubDate>Sat, 25 Apr 2026 00:14:07 GMT</pubDate>
+            <pubDate>Sun, 26 Apr 2026 00:14:03 GMT</pubDate>
             <description><![CDATA[Uncensored, open-source alternative to Higgsfield AI, Freepik AI, Krea AI, Openart AI — Free, unrestricted AI image & video generation studio with 200+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/Anil-matcha/Open-Generative-AI">Anil-matcha/Open-Generative-AI</a></h1>
             <p>Uncensored, open-source alternative to Higgsfield AI, Freepik AI, Krea AI, Openart AI — Free, unrestricted AI image & video generation studio with 200+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 7,674</p>
-            <p>Forks: 1,416</p>
-            <p>Stars today: 842 stars today</p>
+            <p>Stars: 8,288</p>
+            <p>Forks: 1,515</p>
+            <p>Stars today: 670 stars today</p>
             <h2>README</h2><pre># Open Generative AI — Uncensored Open-Source Alternative to Higgsfield AI, Freepik AI, Krea AI, Openart AI
 
 &gt; **The free, open-source, unrestricted alternative to Higgsfield AI, Freepik, Krea, Openart AI.** Generate AI images and videos using 200+ state-of-the-art models — no content filters, no closed ecosystem, no subscription fees.
 
 &gt; 🐎 **Early access to Happy Horse 1.0** — Alibaba&#039;s #1 ranked AI video model. Check out [Awesome HappyHorse 1.0 API &amp; Prompts](https://github.com/Anil-matcha/Awesome-HappyHorse-1.0-API-and-Prompt) — a Python wrapper plus a curated library of high-performing community prompts for native 1080p text-to-video and image-to-video generation with jointly generated audio.
-
-&gt; 💡 **Looking for GPT-Image-2 prompts?** Check out [Awesome GPT-Image-2 API Prompts](https://github.com/Anil-matcha/Awesome-GPT-Image-2-API-Prompts) — a curated collection of 40+ ready-to-use prompts for the OpenAI `gpt-image-2` API covering portraits, posters, UI mockups, game screenshots, and more.
 
 &gt; 🤖 **Automate Higgsfield, Freepik, Krea, Openart &amp; more with AI coding agents:** [Generative-Media-Skills](https://github.com/SamurAIGPT/Generative-Media-Skills) — a library of skills that let agents like **Claude Code**, **Codex**, and other coding assistants drive 200+ image/video models end-to-end (prompt → generate → edit → stitch) directly from your terminal. Perfect for building automated media pipelines without touching a UI.
 
@@ -58,10 +56,10 @@ One-click installers — no Node.js or terminal required.
 
 | Platform | Download |
 |---|---|
-| macOS Apple Silicon (M1/M2/M3/M4) | [Open Generative AI-1.0.2-arm64.dmg](https://github.com/Anil-matcha/Open-Generative-AI/releases/download/v1.0.2/Open.Generative.AI-1.0.2-arm64.dmg) |
-| macOS Intel (x64) | [Open Generative AI-1.0.2.dmg](https://github.com/Anil-matcha/Open-Generative-AI/releases/download/v1.0.2/Open.Generative.AI-1.0.2.dmg) |
-| Windows (x64 + ARM64) | [Open Generative AI Setup 1.0.2.exe](https://github.com/Anil-matcha/Open-Generative-AI/releases/download/v1.0.2/Open.Generative.AI.Setup.1.0.2.exe) |
-| Linux (Ubuntu x64) | Build locally with `npm run electron:build:linux` |
+| macOS Apple Silicon (M1/M2/M3/M4) | [Open Generative AI-1.0.7-arm64.dmg](https://github.com/Anil-matcha/Open-Generative-AI/releases/download/v1.0.7/Open.Generative.AI-1.0.7-arm64.dmg) |
+| macOS Intel (x64) | [Open Generative AI-1.0.7.dmg](https://github.com/Anil-matcha/Open-Generative-AI/releases/download/v1.0.7/Open.Generative.AI-1.0.7.dmg) |
+| Windows (x64) | See latest `.exe` on the [v1.0.6 release](https://github.com/Anil-matcha/Open-Generative-AI/releases/tag/v1.0.6) — v1.0.7 ships Mac-only; the v1.0.6 Windows build still works for local sd.cpp inference. |
+| Linux (Ubuntu x64) | See [v1.0.6 release](https://github.com/Anil-matcha/Open-Generative-AI/releases/tag/v1.0.6) for `.AppImage` and `.deb`, or build locally with `npm run electron:build:linux`. |
 
 All releases: [github.com/Anil-matcha/Open-Generative-AI/releases](https://github.com/Anil-matcha/Open-Generative-AI/releases)
 
@@ -156,15 +154,22 @@ For a deep dive into the technical architecture and the philosophy behind the &q
 
 ## ⚡ Local Model Inference (Desktop App Only)
 
-The desktop app includes a built-in **local generation engine** powered by [stable-diffusion.cpp](https://github.com/leejet/stable-diffusion.cpp) — generate images entirely on your own machine with no API key and no internet connection required.
+The desktop app supports **two independent local engines**. Pick whichever fits the machine you actually run on:
 
-### Supported Local Models
+| Engine | What it is | Best for |
+|---|---|---|
+| **sd.cpp** (bundled) | C++ engine from [stable-diffusion.cpp](https://github.com/leejet/stable-diffusion.cpp), runs on the same machine as the app. Metal GPU on Apple Silicon, CUDA/Vulkan/ROCm on Linux/Windows. | Image-only models. Works on Mac M-series. |
+| **Wan2GP** (BYO server) | HTTP client to a user-run [Wan2GP](https://github.com/deepbeepmeep/Wan2GP) server. The server runs Python + PyTorch on a CUDA/ROCm GPU; the desktop app only sends prompts and receives results. | Video models (Wan 2.2, Hunyuan, LTX) and large image models (Flux, Qwen-Image). NVIDIA/AMD GPU required on the *server*; the desktop app itself can run on a Mac. |
 
-| Model | Type | Size | Speed |
+Both engines share the same UI: open **Settings → Local Models** to configure each.
+
+### Engine 1 — sd.cpp (bundled)
+
+| Model | Type | Size | Notes |
 |---|---|---|---|
-| **Z-Image Turbo** ⚡ | Diffusion Transformer | 2.5 GB + 2.7 GB aux | 8-step turbo |
-| **Z-Image Base** ⚡ | Diffusion Transformer | 3.5 GB + 2.7 GB aux | 50-step high-quality |
-| **Dreamshaper 8** | SD 1.5 | 2.1 GB | 20-step versatile |
+| **Z-Image Turbo** ⚡ | Diffusion Transformer | 2.5 GB + 2.7 GB aux | 8-step turbo. Heavy on memory. |
+| **Z-Image Base** ⚡ | Diffusion Transformer | 3.5 GB + 2.7 GB aux | 50-step high-quality. Heavy on memory. |
+| **Dreamshaper 8** | SD 1.5 | 2.1 GB | 20-step versatile. Lightest tested option on Mac. |
 | **Realistic Vision v5.1** | SD 1.5 | 2.1 GB | 25-step photorealistic |
 | **Anything v5** | SD 1.5 | 2.1 GB | 20-step anime/illustration |
 | **SDXL Base 1.0** | SDXL | 6.9 GB | 30-step high-res |
@@ -173,8 +178,7 @@ The desktop app includes a built-in **local generation engine** powered by [stab
 &gt; - **Qwen3-4B Text Encoder** — 2.4 GB
 &gt; - **FLUX VAE** — 335 MB
 
-### How to Use Local Models
-
+**How to use:**
 1. Open **Settings → Local Models** in the desktop app
 2. Install the **sd.cpp inference engine** (one click — auto-downloaded)
 3. Download your chosen model (and auxiliary files for Z-Image)
@@ -183,21 +187,71 @@ The desktop app includes a built-in **local generation engine** powered by [stab
 
 All downloads happen inside the app. Nothing is installed system-wide.
 
+### Engine 2 — Wan2GP (remote Gradio server)
+
+The app does **not** bundle Python or model weights for Wan2GP. You run Wan2GP yourself on a machine with a CUDA or ROCm GPU and point the desktop app at its URL.
+
+```bash
+# On your GPU machine
+git clone https://github.com/deepbeepmeep/Wan2GP
+cd Wan2GP
+./install.sh                          # or install.bat on Windows
+python wgp.py --listen --server-name 0.0.0.0   # binds to all interfaces
+```
+
+Then in the desktop app: **Settings → Local Models → Wan2GP server**, paste the URL (e.g. `http://192.168.1.42:7860`), click **Test**, then **Save**. The Wan2GP models become available — image models in **Image Studio**, video models reachable via the same generation API (Image Studio rejects video output explicitly; full Video Studio wiring is on the roadmap).
+
+| Model | Type | Notes |
+|---|---|---|
+| **Flux.1 Dev** | Image | 1024px, 28 steps |
+| **Qwen Image** | Image | 1024px, 30 steps |
+| **Wan 2.2 (T2V / I2V)** | Video | Slow on consumer GPUs |
+| **Hunyuan Video** | Video | High-quality T2V |
+| **LTX Video** | Video | Fastest video option |
+
+&gt; **Why a separate server?** Wan2GP&#039;s runtime (Sage attention, flash-attn, AWQ/GGUF kernels) is CUDA-only — there is no MPS / Apple Silicon path. Treating it as a remote server lets a Mac-only user keep the desktop app while offloading inference to a Linux/Windows GPU box, a gaming PC on the LAN, or a rented RunPod/vast.ai instance.
+
 &gt; **Local inference is only available in the desktop app.** The hosted web version always uses cloud APIs.
 
 ### Hardware Notes
 
-- Runs on CPU (all platforms) and **Metal GPU** (macOS Apple Silicon — M1/M2/M3/M4)
-- Metal GPU acceleration is built into the macOS desktop binary — significantly faster than CPU-only
-- Recommended: 16 GB RAM for Z-Image models (7.4 GB weights + 2.4 GB compute buffer)
-- The system may slow during generation — the process uses all available CPU cores while running
+- **sd.cpp** runs on CPU (all platforms) and **Metal GPU** on Apple Silicon (M1/M2/M3/M4); CUDA/Vulkan/ROCm on Linux/Windows.
+- Metal GPU acceleration is built into the macOS desktop binary — significantly faster than CPU-only.
+- Recommended for sd.cpp Z-Image: 16 GB RAM (7.4 GB weights + 2.4 GB compute buffer). On a base 8 GB M-series Mac, **Z-Image is known to hang the system** — stick to SD 1.5 there.
+- For SD 1.5 on M2: expect ~1–2 s/step with the Metal dylib active. If you see ~10 s/step instead, the binary may have fallen back to CPU — see verification below.
+
+### Verifying the SD 1.5 path (the fastest sanity test on Mac)
+
+If you want to confirm sd.cpp is installed correctly without going through the UI, you can drive `sd-cli` directly. This is the same binary the app uses.
+
+```bash
+# 1. App data layout (created on first app launch)
+APP_DATA=&quot;$HOME/Library/Application Support/open-generative-ai/local-ai&quot;
+ls &quot;$APP_DATA/bin&quot;     # sd-cli, libstable-diffusion.dylib
+ls &quot;$APP_DATA/models&quot;  # whatever you&#039;ve downloaded
+
+# 2. Grab a small SD 1.5 model directly (Dreamshaper 8, ~2 GB)
+curl -L --fail --progress-bar \
+  -o &quot;$APP_DATA/models/DreamShaper_8_pruned.safetensors&quot; \
+  &quot;https://huggingface.co/Lykon/DreamShaper/resolve/main/DreamShaper_8_pruned.safetensors&quot;
+
+# 3. Run a single 512x512 / 12-step inference
+DYLD_LIBRARY_PATH=&quot;$APP_DATA/bin&quot; &quot;$APP_DATA/bin/sd-cli&quot; \
+  -m &quot;$APP_DATA/models/DreamShaper_8_pruned.safetensors&quot; \
+  -p &quot;a serene mountain lake at sunrise, oil painting&quot; \
+  -o /tmp/sd15-test.png \
+  --steps 12 -H 512 -W 512 --cfg-scale 7.5 --seed 42 \
+  --sampling-method euler_a
+```
+
+A healthy run on Apple Silicon prints `total params memory size = 1969.78MB (VRAM 1969.78MB, RAM 0.00MB)` (Metal-backed) and produces a coherent 512×512 PNG. If `VRAM` is `0.00MB` instead, the dylib is CPU-only — check `otool -L &quot;$APP_DATA/bin/libstable-diffusion.dylib&quot; | grep -i metal` and reinstall the engine from **Settings → Local Models** if Metal is missing.
 
 ---
 
 ## ✨ Features
 
 - **Image Studio** — Generate images from text prompts (50+ text-to-image models) or transform existing images (55+ image-to-image models). Switches model set automatically based on whether a reference image is provided. Quality and resolution controls visible for models that support them.
-- **Local Inference** — Generate images on-device with no API key using Z-Image Turbo/Base, Dreamshaper, Realistic Vision, Anything v5, or SDXL — powered by stable-diffusion.cpp with Metal GPU acceleration on Apple Silicon.
+- **Local Inference** — Two engines: **sd.cpp** (bundled, runs on Mac/Win/Linux with Metal/CUDA/Vulkan/ROCm) for SD 1.5, SDXL, and Z-Image; and **Wan2GP** (BYO Gradio server) for Flux, Qwen-Image, and video models (Wan 2.2, Hunyuan, LTX). Configure both in Settings → Local Models.
 - **Multi-Image Input** — Upload up to 14 reference images for compatible edit models (Nano Banana 2 Edit, Flux Kontext Dev, GPT-4o Edit, and more). Multi-select picker with order badges, batch upload, and a &quot;Use Selected&quot; confirmation flow.
 - **Video Studio** — Generate videos from text prompts (40+ text-to-video models) or animate a start-frame image (60+ image-to-video models). Same intelligent mode switching as Image Studio.
 - **Lip Sync Studio** — Animate portrait images or sync lips on existing videos using audio. 9 dedicated models across two modes: portrait image + audio → talking video, and video + audio → lipsync video.
@@ -306,608 +360,9 @@ The **Lip Sync Studio** generates audio-driven talking videos using 9 models acr
 
 **How it works:**
 1. Select **Portrait Image** or **Video** mode using the toggle
-2. Upload your portrait image (or video) using the image/video upload button
-3. Upload your audio file using the audio upload button
-4. Optionally enter a prompt to guide the motion style
-5. Select a model and resolution (where supported), then click **Generate**
-
-Generation history is saved separately in `lipsync_history` and pending jobs resume automatically on page reload.
-
-### 🔀 Workflow Studio
-
-The **Workflow Studio** lets you build and run multi-step AI pipelines without writing code.
-
-**Key capabilities:**
-- **Templates** — Start from pre-built workflows (image chains, video pipelines, and more)
-- **My Workflows** — Save and manage your own custom pipelines
-- **Community** — Browse and run workflows published by other users
-- **Node-based Builder** — Drag-and-drop visual editor to connect models and route outputs between steps
-- **Playground** — Run any workflow interactively with a form UI; results render inline
-- **API execution** — Every workflow is also callable via the Muapi API
-
-&gt; 💡 **Want to add workflows to your own app?** Check out **[Vibe Workflow](https://github.com/SamurAIGPT/Vibe-Workflow)** — the open-source workflow engine powering this feature. Drop it into any project.
-
-### 🎥 Cinema Studio Controls
-
-The **Cinema Studio** offers precise control over the virtual camera, translating your choices into optimized prompt modifiers:
-
-| Category | Available Options |
-| :--- | :--- |
-| **Cameras** | Modular 8K Digital, Full-Frame Cine Digital, Grand Format 70mm Film, Studio Digital S35, Classic 16mm Film, Premium Large Format Digital |
-| **Lenses** | Creative Tilt, Compact Anamorphic, Extreme Macro, 70s Cinema Prime, Classic Anamorphic, Premium Modern Prime, Warm Cinema Prime, Swirl Bokeh Portrait, Vintage Prime, Halation Diffusion, Clinical Sharp Prime |
-| **Focal Lengths** | 8mm (Ultra-Wide), 14mm, 24mm, 35mm (Human Eye), 50mm (Portrait), 85mm (Tight Portrait) |
-| **Apertures** | f/1.4 (Shallow DoF), f/4 (Balanced), f/11 (Deep Focus) |
-
-### 📁 Upload History &amp; Picker
-
-Every image you upload is saved locally (URL + thumbnail) so you never upload the same file twice:
-
-- Click the upload button to open the **reference image picker**
-- Previously uploaded images appear in a 3-column grid with thumbnails
-- **Single-image models** — click a thumbnail to instantly select and close
-- **Multi-image models** — toggle multiple thumbnails (shown with order numbers), then click **Use Selected**
-- Upload new images with the **Upload files** button (supports multi-file selection in multi-image mode)
-- Remove individual images from history with the ✕ button
-- History persists across browser sessions (stored in `localStorage`)
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) (v18+)
-- A [Muapi.ai](https://muapi.ai) API key
-
-### Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/Anil-matcha/Open-Generative-AI.git
-cd Open-Generative-AI
-
-# Install dependencies (installs root + packages/studio workspace)
-npm install
-
-# Start the development server
-npm run dev
-```
-
-Open `http://localhost:3000` in your browser. You&#039;ll be prompted to enter your Muapi API key on first use.
-
-### Production Build
-
-```bash
-npm run build
-npm run start
-```
-
-### Desktop App Build
-
-Build native desktop apps with Electron:
-
-```bash
-# macOS (DMG — Intel + Apple Silicon)
-npm run electron:build
-
-# Windows (NSIS installer — x64 + ARM64)
-npm run electron:build:win
-
-# Linux (AppImage + DEB — x64)
-npm run electron:build:linux
-
-# Both platforms in one pass
-npm run electron:build:all
-```
-
-Installers are output to the `release/` folder. Pre-built binaries are also available on the [Releases page](https://github.com/Anil-matcha/Open-Generative-AI/releases).
-
-## 🏗️ Architec
+2. Upload your portrait image (or video) using the ima
 
 ... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[coreyhaines31/marketingskills]]></title>
-            <link>https://github.com/coreyhaines31/marketingskills</link>
-            <guid>https://github.com/coreyhaines31/marketingskills</guid>
-            <pubDate>Sat, 25 Apr 2026 00:14:06 GMT</pubDate>
-            <description><![CDATA[Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/coreyhaines31/marketingskills">coreyhaines31/marketingskills</a></h1>
-            <p>Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 24,482</p>
-            <p>Forks: 3,882</p>
-            <p>Stars today: 913 stars today</p>
-            <h2>README</h2><pre># Marketing Skills for AI Agents
-
-A collection of AI agent skills focused on marketing tasks. Built for technical marketers and founders who want AI coding agents to help with conversion optimization, copywriting, SEO, analytics, and growth engineering. Works with Claude Code, OpenAI Codex, Cursor, Windsurf, and any agent that supports the [Agent Skills spec](https://agentskills.io).
-
-Built by [Corey Haines](https://corey.co?ref=marketingskills). Need hands-on help? Check out [Conversion Factory](https://conversionfactory.co?ref=marketingskills) — Corey&#039;s agency for conversion optimization, landing pages, and growth strategy. Want to learn more about marketing? Subscribe to [Swipe Files](https://swipefiles.com?ref=marketingskills). Want an autonomous AI agent that uses these skills to be your CMO? Try [Magister](https://magistermarketing.com?ref=marketingskills).
-
-New to the terminal and coding agents? Check out the companion guide [Coding for Marketers](https://codingformarketers.com?ref=marketingskills).
-
-**Contributions welcome!** Found a way to improve a skill or have a new one to add? [Open a PR](#contributing).
-
-Run into a problem or have a question? [Open an issue](https://github.com/coreyhaines31/marketingskills/issues) — we&#039;re happy to help.
-
-## What are Skills?
-
-Skills are markdown files that give AI agents specialized knowledge and workflows for specific tasks. When you add these to your project, your agent can recognize when you&#039;re working on a marketing task and apply the right frameworks and best practices.
-
-## How Skills Work Together
-
-Skills reference each other and build on shared context. The `product-marketing-context` skill is the foundation — every other skill checks it first to understand your product, audience, and positioning before doing anything.
-
-```
-                            ┌──────────────────────────────────────┐
-                            │      product-marketing-context       │
-                            │    (read by all other skills first)  │
-                            └──────────────────┬───────────────────┘
-                                               │
-    ┌──────────────┬─────────────┬─────────────┼─────────────┬──────────────┬──────────────┐
-    ▼              ▼             ▼             ▼             ▼              ▼              ▼
-┌──────────┐ ┌──────────┐ ┌──────────┐ ┌────────────┐ ┌──────────┐ ┌─────────────┐ ┌───────────┐
-│  SEO &amp;   │ │   CRO    │ │Content &amp; │ │  Paid &amp;    │ │ Growth &amp; │ │  Sales &amp;    │ │ Strategy  │
-│ Content  │ │          │ │   Copy   │ │Measurement │ │Retention │ │    GTM      │ │           │
-├──────────┤ ├──────────┤ ├──────────┤ ├────────────┤ ├──────────┤ ├─────────────┤ ├───────────┤
-│seo-audit │ │page-cro  │ │copywritng│ │paid-ads    │ │referral  │ │revops       │ │mktg-ideas │
-│ai-seo    │ │signup-cro│ │copy-edit │ │ad-creative │ │free-tool │ │sales-enable │ │mktg-psych │
-│site-arch │ │onboard   │ │cold-email│ │ab-test     │ │churn-    │ │launch       │ │customer-  │
-│programm  │ │form-cro  │ │email-seq │ │analytics   │ │ prevent  │ │pricing      │ │ research  │
-│schema    │ │popup-cro │ │social    │ │            │ │community │ │comp-alts    │ │           │
-│content   │ │paywall   │ │video     │ │            │ │lead-magnt│ │comp-profile │ │           │
-│aso-audit │ │          │ │image     │ │            │ │          │ │directory    │ │           │
-└────┬─────┘ └────┬─────┘ └────┬─────┘ └─────┬──────┘ └────┬─────┘ └──────┬──────┘ └─────┬─────┘
-     │            │            │              │             │              │              │
-     └────────────┴─────┬──────┴──────────────┴─────────────┴──────────────┴──────────────┘
-                        │
-         Skills cross-reference each other:
-           copywriting ↔ page-cro ↔ ab-test-setup
-           revops ↔ sales-enablement ↔ cold-email
-           seo-audit ↔ schema-markup ↔ ai-seo
-           customer-research → copywriting, page-cro, competitor-alternatives
-```
-
-See each skill&#039;s **Related Skills** section for the full dependency map.
-
-## Available Skills
-
-&lt;!-- SKILLS:START --&gt;
-| Skill | Description |
-|-------|-------------|
-| [ab-test-setup](skills/ab-test-setup/) | When the user wants to plan, design, or implement an A/B test or experiment, or build a growth experimentation program.... |
-| [ad-creative](skills/ad-creative/) | When the user wants to generate, iterate, or scale ad creative — headlines, descriptions, primary text, or full ad... |
-| [ai-seo](skills/ai-seo/) | When the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers.... |
-| [analytics-tracking](skills/analytics-tracking/) | When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions... |
-| [aso-audit](skills/aso-audit/) | When the user wants to audit or optimize an App Store or Google Play listing. Also use when the user mentions &#039;ASO... |
-| [churn-prevention](skills/churn-prevention/) | When the user wants to reduce churn, build cancellation flows, set up save offers, recover failed payments, or... |
-| [cold-email](skills/cold-email/) | Write B2B cold emails and follow-up sequences that get replies. Use when the user wants to write cold outreach emails,... |
-| [community-marketing](skills/community-marketing/) | Build and leverage online communities to drive product growth and brand loyalty. Use when the user wants to create a... |
-| [competitor-alternatives](skills/competitor-alternatives/) | When the user wants to create competitor comparison or alternative pages for SEO and sales enablement. Also use when... |
-| [competitor-profiling](skills/competitor-profiling/) | When the user wants to research, profile, or analyze competitors from their URLs. Also use when the user mentions... |
-| [content-strategy](skills/content-strategy/) | When the user wants to plan a content strategy, decide what content to create, or figure out what topics to cover. Also... |
-| [copy-editing](skills/copy-editing/) | When the user wants to edit, review, or improve existing marketing copy, or refresh outdated content. Also use when the... |
-| [copywriting](skills/copywriting/) | When the user wants to write, rewrite, or improve marketing copy for any page — including homepage, landing pages,... |
-| [customer-research](skills/customer-research/) | When the user wants to conduct, analyze, or synthesize customer research. Use when the user mentions &quot;customer... |
-| [directory-submissions](skills/directory-submissions/) | When the user wants to submit their product to startup, SaaS, AI, agent, MCP, no-code, or review directories for... |
-| [email-sequence](skills/email-sequence/) | When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email... |
-| [form-cro](skills/form-cro/) | When the user wants to optimize any form that is NOT signup/registration — including lead capture forms, contact forms,... |
-| [free-tool-strategy](skills/free-tool-strategy/) | When the user wants to plan, evaluate, or build a free tool for marketing purposes — lead generation, SEO value, or... |
-| [image](skills/image/) | When the user wants to create, generate, edit, or optimize images for marketing — blog heroes, social graphics, product... |
-| [launch-strategy](skills/launch-strategy/) | When the user wants to plan a product launch, feature announcement, or release strategy. Also use when the user... |
-| [lead-magnets](skills/lead-magnets/) | When the user wants to create, plan, or optimize a lead magnet for email capture or lead generation. Also use when the... |
-| [marketing-ideas](skills/marketing-ideas/) | When the user needs marketing ideas, inspiration, or strategies for their SaaS or software product. Also use when the... |
-| [marketing-psychology](skills/marketing-psychology/) | When the user wants to apply psychological principles, mental models, or behavioral science to marketing. Also use when... |
-| [onboarding-cro](skills/onboarding-cro/) | When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also... |
-| [page-cro](skills/page-cro/) | When the user wants to optimize, improve, or increase conversions on any marketing page — including homepage, landing... |
-| [paid-ads](skills/paid-ads/) | When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X,... |
-| [paywall-upgrade-cro](skills/paywall-upgrade-cro/) | When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use... |
-| [popup-cro](skills/popup-cro/) | When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners for conversion purposes. Also... |
-| [pricing-strategy](skills/pricing-strategy/) | When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions... |
-| [product-marketing-context](skills/product-marketing-context/) | When the user wants to create or update their product marketing context document. Also use when the user mentions... |
-| [programmatic-seo](skills/programmatic-seo/) | When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions... |
-| [referral-program](skills/referral-program/) | When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy.... |
-| [revops](skills/revops/) | When the user wants help with revenue operations, lead lifecycle management, or marketing-to-sales handoff processes.... |
-| [sales-enablement](skills/sales-enablement/) | When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, or demo scripts. Also... |
-| [schema-markup](skills/schema-markup/) | When the user wants to add, fix, or optimize schema markup and structured data on their site. Also use when the user... |
-| [seo-audit](skills/seo-audit/) | When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions &quot;SEO... |
-| [signup-flow-cro](skills/signup-flow-cro/) | When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the... |
-| [site-architecture](skills/site-architecture/) | When the user wants to plan, map, or restructure their website&#039;s page hierarchy, navigation, URL structure, or internal... |
-| [social-content](skills/social-content/) | When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram,... |
-| [video](skills/video/) | When the user wants to create, generate, or produce video content using AI tools or programmatic frameworks. Also use... |
-&lt;!-- SKILLS:END --&gt;
-
-## Installation
-
-### Option 1: CLI Install (Recommended)
-
-Use [npx skills](https://github.com/vercel-labs/skills) to install skills directly:
-
-```bash
-# Install all skills
-npx skills add coreyhaines31/marketingskills
-
-# Install specific skills
-npx skills add coreyhaines31/marketingskills --skill page-cro copywriting
-
-# List available skills
-npx skills add coreyhaines31/marketingskills --list
-```
-
-This automatically installs to your `.agents/skills/` directory (and symlinks into `.claude/skills/` for Claude Code compatibility).
-
-### Option 2: Claude Code Plugin
-
-Install via Claude Code&#039;s built-in plugin system:
-
-```bash
-# Add the marketplace
-/plugin marketplace add coreyhaines31/marketingskills
-
-# Install all marketing skills
-/plugin install marketing-skills
-```
-
-### Option 3: Clone and Copy
-
-Clone the entire repo and copy the skills folder:
-
-```bash
-git clone https://github.com/coreyhaines31/marketingskills.git
-cp -r marketingskills/skills/* .agents/skills/
-```
-
-### Option 4: Git Submodule
-
-Add as a submodule for easy updates:
-
-```bash
-git submodule add https://github.com/coreyhaines31/marketingskills.git .agents/marketingskills
-```
-
-Then reference skills from `.agents/marketingskills/skills/`.
-
-### Option 5: Fork and Customize
-
-1. Fork this repository
-2. Customize skills for your specific needs
-3. Clone your fork into your projects
-
-### Option 6: SkillKit (Multi-Agent)
-
-Use [SkillKit](https://github.com/rohitg00/skillkit) to install skills across multiple AI agents (Claude Code, Cursor, Copilot, etc.):
-
-```bash
-# Install all skills
-npx skillkit install coreyhaines31/marketingskills
-
-# Install specific skills
-npx skillkit install coreyhaines31/marketingskills --skill page-cro copywriting
-
-# List available skills
-npx skillkit install coreyhaines31/marketingskills --list
-```
-
-## Upgrading from v1.0
-
-Skills now use `.agents/` instead of `.claude/` for the product marketing context file. Move your existing context file:
-
-```bash
-mkdir -p .agents
-mv .claude/product-marketing-context.md .agents/product-marketing-context.md
-```
-
-Skills will still check `.claude/` as a fallback, so nothing breaks if you don&#039;t.
-
-## Usage
-
-Once installed, just ask your agent to help with marketing tasks:
-
-```
-&quot;Help me optimize this landing page for conversions&quot;
-→ Uses page-cro skill
-
-&quot;Write homepage copy for my SaaS&quot;
-→ Uses copywriting skill
-
-&quot;Set up GA4 tracking for signups&quot;
-→ Uses analytics-tracking skill
-
-&quot;Create a 5-email welcome sequence&quot;
-→ Uses email-sequence skill
-```
-
-You can also invoke skills directly:
-
-```
-/page-cro
-/email-sequence
-/seo-audit
-```
-
-## Skill Categories
-
-### Conversion Optimization
-- `page-cro` - Any marketing page
-- `signup-flow-cro` - Registration flows
-- `onboarding-cro` - Post-signup activation
-- `form-cro` - Lead capture forms
-- `popup-cro` - Modals and overlays
-- `paywall-upgrade-cro` - In-app upgrade moments
-
-### Content &amp; Copy
-- `copywriting` - Marketing page copy
-- `copy-editing` - Edit and polish existing copy
-- `cold-email` - B2B cold outreach emails and sequences
-- `email-sequence` - Automated email flows
-- `social-content` - Social media content
-- `image` - AI image generation, design tools, and optimization
-
-### SEO &amp; Discovery
-- `seo-audit` - Technical and on-page SEO
-- `ai-seo` - AI search optimization (AEO, GEO, LLMO)
-- `programmatic-seo` - Scaled page generation
-- `site-architecture` - Page hierarchy, navigation, URL structure
-- `competitor-alternatives` - Comparison and alternative pages
-- `schema-markup` - Structured data
-
-### Paid &amp; Distribution
-- `paid-ads` - Google, Meta, LinkedIn ad campaigns
-- `ad-creative` - Bulk ad creative generation and iteration
-- `social-content` - Social media scheduling and strategy
-
-### Measurement &amp; Testing
-- `analytics-tracking` - Event tracking setup
-- `ab-test-setup` - Experiment design
-
-### Retention
-- `churn-prevention` - Cancel flows, save offers, dunning, payment recovery
-
-### Growth Engineering
-- `free-tool-strategy` - Marketing tools and calculators
-- `referral-program` - Referral and affiliate programs
-
-### Strategy &amp; Monetization
-- `marketing-ideas` - 140 SaaS marketing ideas
-- `marketing-psychology` - Mental models and psychology
-- `launch-strategy` - Product launches and announcements
-- `pricing-strategy` - Pricing, packaging, and monetization
-
-### Sales &amp; RevOps
-- `revops` - Lead lifecycle, scoring, routing, pipeline management
-- `sales-enablement` - Sales decks, one-pagers, objection docs, demo scripts
-
-## Contributing
-
-Found a way to improve a skill? Have a new skill to suggest? PRs and issues welcome!
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on adding or improving skills.
-
-## License
-
-[MIT](LICENSE) - Use these however you want.
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[louislam/uptime-kuma]]></title>
-            <link>https://github.com/louislam/uptime-kuma</link>
-            <guid>https://github.com/louislam/uptime-kuma</guid>
-            <pubDate>Sat, 25 Apr 2026 00:14:05 GMT</pubDate>
-            <description><![CDATA[A fancy self-hosted monitoring tool]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/louislam/uptime-kuma">louislam/uptime-kuma</a></h1>
-            <p>A fancy self-hosted monitoring tool</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 85,854</p>
-            <p>Forks: 7,722</p>
-            <p>Stars today: 160 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot; width=&quot;100%&quot;&gt;
-    &lt;img src=&quot;./public/icon.svg&quot; width=&quot;128&quot; alt=&quot;Uptime Kuma Logo&quot; /&gt;
-&lt;/div&gt;
-
-# Uptime Kuma
-
-Uptime Kuma is an easy-to-use self-hosted monitoring tool.
-
-&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/louislam/uptime-kuma&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/stars/louislam/uptime-kuma?style=flat&quot; /&gt;&lt;/a&gt; &lt;a target=&quot;_blank&quot; href=&quot;https://hub.docker.com/r/louislam/uptime-kuma&quot;&gt;&lt;img src=&quot;https://img.shields.io/docker/pulls/louislam/uptime-kuma&quot; /&gt;&lt;/a&gt; &lt;a target=&quot;_blank&quot; href=&quot;https://hub.docker.com/r/louislam/uptime-kuma&quot;&gt;&lt;img src=&quot;https://img.shields.io/docker/v/louislam/uptime-kuma/2?label=docker%20image%20ver.&quot; /&gt;&lt;/a&gt; &lt;a target=&quot;_blank&quot; href=&quot;https://github.com/louislam/uptime-kuma&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/last-commit/louislam/uptime-kuma&quot; /&gt;&lt;/a&gt; &lt;a target=&quot;_blank&quot; href=&quot;https://opencollective.com/uptime-kuma&quot;&gt;&lt;img src=&quot;https://opencollective.com/uptime-kuma/total/badge.svg?label=Open%20Collective%20Backers&amp;color=brightgreen&quot; /&gt;&lt;/a&gt;
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/louislam?label=GitHub%20Sponsors)](https://github.com/sponsors/louislam) &lt;a href=&quot;https://weblate.kuma.pet/projects/uptime-kuma/uptime-kuma/&quot;&gt;
-&lt;img src=&quot;https://weblate.kuma.pet/widgets/uptime-kuma/-/svg-badge.svg&quot; alt=&quot;Translation status&quot; /&gt;
-&lt;/a&gt;
-
-&lt;img src=&quot;https://user-images.githubusercontent.com/1336778/212262296-e6205815-ad62-488c-83ec-a5b0d0689f7c.jpg&quot; width=&quot;700&quot; alt=&quot;Uptime Kuma Dashboard Screenshot&quot; /&gt;
-
-## 🥔 Live Demo
-
-Try it!
-
-Demo Server (Location: Frankfurt - Germany): &lt;https://demo.kuma.pet/start-demo&gt;
-
-It is a temporary live demo, all data will be deleted after 10 minutes. Sponsored by [Uptime Kuma Sponsors](https://github.com/louislam/uptime-kuma#%EF%B8%8F-sponsors).
-
-## ⭐ Features
-
-- Monitoring uptime for HTTP(s) / TCP / HTTP(s) Keyword / HTTP(s) Json Query / Websocket / Ping / DNS Record / Push / Steam Game Server / Docker Containers
-- Fancy, Reactive, Fast UI/UX
-- Notifications via Telegram, Discord, Gotify, Slack, Pushover, Email (SMTP), and [90+ notification services, click here for the full list](https://github.com/louislam/uptime-kuma/tree/master/src/components/notifications)
-- 20-second intervals
-- [Multi Languages](https://github.com/louislam/uptime-kuma/tree/master/src/lang)
-- Multiple status pages
-- Map status pages to specific domains
-- Ping chart
-- Certificate info
-- Proxy support
-- 2FA support
-
-## 🔧 How to Install
-
-### 🐳 Docker Compose
-
-```bash
-mkdir uptime-kuma
-cd uptime-kuma
-curl -o compose.yaml https://raw.githubusercontent.com/louislam/uptime-kuma/master/compose.yaml
-docker compose up -d
-```
-
-Uptime Kuma is now running on all network interfaces (e.g. http://localhost:3001 or http://your-ip:3001).
-
-&gt; [!WARNING]
-&gt; File Systems like **NFS** (Network File System) are **NOT** supported. Please map to a local directory or volume.
-
-### 🐳 Docker Command
-
-```bash
-docker run -d --restart=always -p 3001:3001 -v uptime-kuma:/app/data --name uptime-kuma louislam/uptime-kuma:2
-```
-
-Uptime Kuma is now running on all network interfaces (e.g. http://localhost:3001 or http://your-ip:3001).
-
-If you want to limit exposure to localhost only:
-
-```bash
-docker run ... -p 127.0.0.1:3001:3001 ...
-```
-
-### 💪🏻 Non-Docker
-
-Requirements:
-
-- Platform
-  - ✅ Major Linux distros such as Debian, Ubuntu, Fedora and ArchLinux etc.
-  - ✅ Windows 10 (x64), Windows Server 2012 R2 (x64) or higher
-  - ❌ FreeBSD / OpenBSD / NetBSD
-  - ❌ Replit / Heroku
-- [Node.js](https://nodejs.org/en/download/) &gt;= 20.4
-- [Git](https://git-scm.com/downloads)
-- [pm2](https://pm2.keymetrics.io/) - For running Uptime Kuma in the background
-
-```bash
-git clone https://github.com/louislam/uptime-kuma.git
-cd uptime-kuma
-npm run setup
-
-# Option 1. Try it
-node server/server.js
-
-# (Recommended) Option 2. Run in the background using PM2
-# Install PM2 if you don&#039;t have it:
-npm install pm2 -g &amp;&amp; pm2 install pm2-logrotate
-
-# Start Server
-pm2 start server/server.js --name uptime-kuma
-```
-
-Uptime Kuma is now running on all network interfaces (e.g. http://localhost:3001 or http://your-ip:3001).
-
-More useful PM2 Commands
-
-```bash
-# If you want to see the current console output
-pm2 monit
-
-# If you want to add it to startup
-pm2 startup &amp;&amp; pm2 save
-```
-
-### Advanced Installation
-
-If you need more options or need to browse via a reverse proxy, please read:
-
-&lt;https://github.com/louislam/uptime-kuma/wiki/%F0%9F%94%A7-How-to-Install&gt;
-
-## 🆙 How to Update
-
-Please read:
-
-&lt;https://github.com/louislam/uptime-kuma/wiki/%F0%9F%86%99-How-to-Update&gt;
-
-## 🆕 What&#039;s Next?
-
-I will assign requests/issues to the next milestone.
-
-&lt;https://github.com/louislam/uptime-kuma/milestones&gt;
-
-## ❤️ Sponsors
-
-Thank you so much! (GitHub Sponsors will be updated manually. OpenCollective sponsors will be updated automatically, the list will be cached by GitHub though. It may need some time to be updated)
-
-&lt;img src=&quot;https://uptime.kuma.pet/sponsors?v=6&quot; alt=&quot;Uptime Kuma Sponsors&quot; /&gt;
-
-## 🖼 More Screenshots
-
-Light Mode:
-
-&lt;img src=&quot;https://uptime.kuma.pet/img/light.jpg&quot; width=&quot;512&quot; alt=&quot;Uptime Kuma Light Mode Screenshot of how the Dashboard looks&quot; /&gt;
-
-Status Page:
-
-&lt;img src=&quot;https://user-images.githubusercontent.com/1336778/134628766-a3fe0981-0926-4285-ab46-891a21c3e4cb.png&quot; width=&quot;512&quot; alt=&quot;Uptime Kuma Status Page Screenshot&quot; /&gt;
-
-Settings Page:
-
-&lt;img src=&quot;https://louislam.net/uptimekuma/2.jpg&quot; width=&quot;400&quot; alt=&quot;Uptime Kuma Settings Page Screenshot&quot; /&gt;
-
-Telegram Notification Sample:
-
-&lt;img src=&quot;https://louislam.net/uptimekuma/3.jpg&quot; width=&quot;400&quot; alt=&quot;Uptime Kuma Telegram Notification Sample Screenshot&quot; /&gt;
-
-## Motivation
-
-- I was looking for a self-hosted monitoring tool like &quot;Uptime Robot&quot;, but it is hard to find a suitable one. One of the closest ones is statping. Unfortunately, it is not stable and no longer maintained.
-- Wanted to build a fancy UI.
-- Learn Vue 3 and vite.js.
-- Show the power of Bootstrap 5.
-- Try to use WebSocket with SPA instead of a REST API.
-- Deploy my first Docker image to Docker Hub.
-
-If you love this project, please consider giving it a ⭐.
-
-## 🗣️ Discussion / Ask for Help
-
-⚠️ For any general or technical questions, please don&#039;t send me an email, as I am unable to provide support in that manner. I will not respond if you ask questions there.
-
-I recommend using Google, GitHub Issues, or Uptime Kuma&#039;s subreddit for finding answers to your question. If you cannot find the information you need, feel free to ask:
-
-- [GitHub Issues](https://github.com/louislam/uptime-kuma/issues)
-- [Subreddit (r/UptimeKuma)](https://www.reddit.com/r/UptimeKuma/)
-
-My Reddit account: [u/louislamlam](https://reddit.com/u/louislamlam)
-You can mention me if you ask a question on the subreddit.
-
-## Contributions
-
-### Create Pull Requests
-
-Pull requests are awesome.
-To keep reviews fast and effective, please make sure you’ve [read our pull request guidelines](https://github.com/louislam/uptime-kuma/blob/master/CONTRIBUTING.md#can-i-create-a-pull-request-for-uptime-kuma).
-
-### Test Pull Requests
-
-There are a lot of pull requests right now, but I don&#039;t have time to test them all.
-
-If you want to help, you can check this:
-&lt;https://github.com/louislam/uptime-kuma/wiki/Test-Pull-Requests&gt;
-
-### Test Beta Version
-
-Check out the latest beta release here: &lt;https://github.com/louislam/uptime-kuma/releases&gt;
-
-### Bug Reports / Feature Requests
-
-If you want to report a bug or request a new feature, feel free to open a [new issue](https://github.com/louislam/uptime-kuma/issues).
-
-### Translations
-
-If you want to translate Uptime Kuma into your language, please visit [Weblate Readme](https://github.com/louislam/uptime-kuma/blob/master/src/lang/README.md).
-
-### Spelling &amp; Grammar
-
-Feel free to correct the grammar in the documentation or code.
-My mother language is not English and my grammar is not that great.
-</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
@@ -915,15 +370,15 @@ My mother language is not English and my grammar is not that great.
             <title><![CDATA[affaan-m/everything-claude-code]]></title>
             <link>https://github.com/affaan-m/everything-claude-code</link>
             <guid>https://github.com/affaan-m/everything-claude-code</guid>
-            <pubDate>Sat, 25 Apr 2026 00:14:04 GMT</pubDate>
+            <pubDate>Sun, 26 Apr 2026 00:14:02 GMT</pubDate>
             <description><![CDATA[The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/affaan-m/everything-claude-code">affaan-m/everything-claude-code</a></h1>
             <p>The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 166,247</p>
-            <p>Forks: 25,797</p>
-            <p>Stars today: 998 stars today</p>
+            <p>Stars: 166,958</p>
+            <p>Forks: 25,891</p>
+            <p>Stars today: 797 stars today</p>
             <h2>README</h2><pre>**Language:** English | [Português (Brasil)](docs/pt-BR/README.md) | [简体中文](README.zh-CN.md) | [繁體中文](docs/zh-TW/README.md) | [日本語](docs/ja-JP/README.md) | [한국어](docs/ko-KR/README.md) | [Türkçe](docs/tr/README.md)
 
 # Everything Claude Code
@@ -1290,1167 +745,18 @@ everything-claude-code/
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[Mathieu2301/TradingView-API]]></title>
-            <link>https://github.com/Mathieu2301/TradingView-API</link>
-            <guid>https://github.com/Mathieu2301/TradingView-API</guid>
-            <pubDate>Sat, 25 Apr 2026 00:14:03 GMT</pubDate>
-            <description><![CDATA[📈 Get real-time stocks from TradingView]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/Mathieu2301/TradingView-API">Mathieu2301/TradingView-API</a></h1>
-            <p>📈 Get real-time stocks from TradingView</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 3,220</p>
-            <p>Forks: 645</p>
-            <p>Stars today: 40 stars today</p>
-            <h2>README</h2><pre># TradingView API [![GitHub stars](https://img.shields.io/github/stars/Mathieu2301/TradingView-API.svg?style=social&amp;label=Star&amp;maxAge=2592000)](https://GitHub.com/Mathieu2301/TradingView-API/stargazers/)
-
-[![Tests](https://github.com/Mathieu2301/TradingView-API/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/Mathieu2301/TradingView-API/actions/workflows/tests.yml)
-[![CodeFactor](https://www.codefactor.io/repository/github/mathieu2301/tradingview-api/badge/main)](https://www.codefactor.io/repository/github/mathieu2301/tradingview-api/overview/main)
-[![GitHub latest commit](https://img.shields.io/github/last-commit/Mathieu2301/TradingView-API)](https://GitHub.com/Mathieu2301/TradingView-API/commit/)
-[![Npm package yearly downloads](https://badgen.net/npm/dt/@mathieuc/tradingview)](https://npmjs.com/@mathieuc/tradingview)
-[![Minimum node.js version](https://badgen.net/npm/node/@mathieuc/tradingview)](https://npmjs.com/@mathieuc/tradingview)
-[![Npm package version](https://badgen.net/npm/v/@mathieuc/tradingview)](https://npmjs.com/package/@mathieuc/tradingview)
-
-Get realtime market prices and indicator values from Tradingview !
-
-## 🟢 Need help with your project?
-
-🚀 Click [here](https://forms.gle/qPp5RKo8L55C5oJE7) for personalized assistance on your project.
-
-## 🔵 Telegram group
-
-👉 To get help, exchange tips, find collaborators, developers, missions, etc...
-
-Join the Telegram group of the TradingView-API Community: [t.me/tradingview_api](https://t.me/tradingview_api)
-
-## Features
-
-- [x] Premium features
-- [x] Automatically backtest many strategies and try many settings in a very little time
-- [x] Get drawings you made on your chart
-- [x] Works with invite-only indicators
-- [x] Unlimited simultaneous indicators
-- [x] Realtime
-- [x] Get TradingView&#039;s technical analysis
-- [x] Replay mode + Fake Replay mode (for free plan)
-- [x] Get values from a specific date range
-- [ ] TradingView socket server emulation
-- [ ] Interract with public chats
-- [ ] Get Screener top values
-- [ ] Get Hotlists
-- [ ] Get Calendar
-- IF YOU WANT A FEATURE, ASK ME !
-
-## Possibilities
-
-- Trading bot
-- Discord alerts
-- Hard backtest
-- Machine Learning based indicator
-- Free replay mode for all timeframes
-
-___
-
-## Installation
-
-Stable version:
-
-```ruby
-npm i @mathieuc/tradingview
-```
-
-Last version:
-
-```ruby
-npm i github:Mathieu2301/TradingView-API
-```
-
-## Examples
-
-You can find all the examples and snippets in `./examples` folder.
-
-## Before opening an issue
-
-Please look at examples and previously resolved issues before opening a new one. I can&#039;t help everyone (especially for questions that are not library related but JavaScript related). Thank you for your understanding.
-___
-
-## Problems
-
- If you have errors in console or unwanted behavior,
- please create an issue [here](https://github.com/Mathieu2301/Tradingview-API/issues).
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[fishjar/kiss-translator]]></title>
-            <link>https://github.com/fishjar/kiss-translator</link>
-            <guid>https://github.com/fishjar/kiss-translator</guid>
-            <pubDate>Sat, 25 Apr 2026 00:14:02 GMT</pubDate>
-            <description><![CDATA[A simple, open source bilingual translation extension & Greasemonkey script (一个简约、开源的 双语对照翻译扩展 & 油猴脚本)]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/fishjar/kiss-translator">fishjar/kiss-translator</a></h1>
-            <p>A simple, open source bilingual translation extension & Greasemonkey script (一个简约、开源的 双语对照翻译扩展 & 油猴脚本)</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 9,712</p>
-            <p>Forks: 414</p>
-            <p>Stars today: 27 stars today</p>
-            <h2>README</h2><pre># KISS Translator 简约翻译
-
-[English](README.en.md) | [中文](README.md) | [日本語](README.ja.md) | [한국어](README.ko.md)
-
-一个简约、开源的 [双语对照翻译扩展 &amp; 油猴脚本](https://github.com/fishjar/kiss-translator)。
-
-[kiss-translator.webm](https://github.com/fishjar/kiss-translator/assets/1157624/f7ba8a5c-e4a8-4d5a-823a-5c5c67a0a47f)
-
-## 特性
-
-- [x] 保持简约
-- [x] 开放源代码
-- [x] 适配常见浏览器
-  - [x] Chrome/Edge
-  - [x] Firefox
-  - [x] Kiwi (Android)
-  - [x] Orion (iOS)
-  - [x] Safari
-  - [x] Thunderbird
-- [x] 支持多种翻译服务
-  - [x] Google/Microsoft
-  - [x] Tencent/Volcengine
-  - [x] OpenAI/Gemini/Claude/Ollama/DeepSeek/OpenRouter
-  - [x] DeepL/DeepLX
-  - [x] AzureAI/CloudflareAI
-  - [x] Chrome浏览器内置AI翻译(BuiltinAI)
-- [x] 覆盖常见翻译场景
-  - [x] 网页双语对照翻译
-  - [x] 输入框翻译
-    - 通过快捷键立即将输入框内文本翻译成其他语言
-  - [x] 划词翻译
-    - [x] 任意页面打开翻译框，可用多种翻译服务对比翻译
-    - [x] 英文词典翻译
-    - [x] 收藏词汇
-  - [x] 鼠标悬停翻译
-  - [x] YouTube 字幕翻译
-    - 支持任意翻译服务对视频字幕进行翻译并双语显示
-    - 内置基础的字幕合并与断句算法，提升翻译效果
-    - 支持AI断句功能，可进一步提升翻译质量
-    - 自定义字幕样式
-- [x] 支持多样翻译效果
-  - [x] 支持自动识别文本与手动规则两种模式
-    - 自动识别文本模式使得绝大部分网站无需编写规则也能翻译完整
-    - 手动规则模式，可以针对特定网站极致优化
-  - [x] 自定义译文样式
-  - [x] 支持富文本翻译及显示，能够尽量保留原文中的链接及其他文本样式
-  - [x] 支持仅显示译文（隐藏原文）
-- [x] 翻译接口高级功能
-  - [x] 通过自定义接口，理论上支持任何翻译接口
-  - [x] 聚合批量发送翻译文本
-  - [x] 支持流式传输，实时显示翻译结果
-  - [x] 支持AI上下文会话记忆功能，提升翻译效果
-  - [x] 自定义AI术语词典
-  - [x] 所有接口均支持Hook和自定义参数等高级功能
-- [x] 跨客户端数据同步
-  - [x] KISS-Worker（cloudflare/docker）
-  - [x] WebDAV
-- [x] 自定义翻译规则
-  - [x] 规则订阅/规则分享
-  - [x] 自定义专业术语
-- [x] 自定义快捷键
-  - `Alt+Q` 开启翻译
-  - `Alt+C` 切换样式
-  - `Alt+K` 打开设置弹窗
-  - `Alt+S` 打开翻译弹窗/翻译选中文字
-  - `Alt+O` 打开设置页面
-  - `Alt+I` 输入框翻译
-
-## 安装
-
-&gt; 注：基于以下原因，建议优先使用浏览器扩展
-&gt;
-&gt; - 浏览器扩展的功能更完整（本地语言识别、右键菜单等）
-&gt; - 油猴脚本会遇到更多使用上的问题（跨域问题、脚本冲突等）
-
-- [x] 浏览器扩展
-  - [x] Chrome [安装地址](https://chrome.google.com/webstore/detail/kiss-translator/bdiifdefkgmcblbcghdlonllpjhhjgof?hl=zh-CN)
-    - [x] Kiwi (Android)
-    - [x] Orion (iOS)
-  - [x] Edge [安装地址](https://microsoftedge.microsoft.com/addons/detail/%E7%AE%80%E7%BA%A6%E7%BF%BB%E8%AF%91/jemckldkclkinpjighnoilpbldbdmmlh?hl=zh-CN)
-  - [x] Firefox [安装地址](https://addons.mozilla.org/zh-CN/firefox/addon/kiss-translator/)
-  - [ ] Safari
-    - [ ] Safari (Mac)
-    - [ ] Safari (iOS) 
-  - [x] Thunderbird [下载地址](https://github.com/fishjar/kiss-translator/releases)
-- [x] 油猴脚本
-  - [x] Chrome/Edge/Firefox ([Tampermonkey](https://www.tampermonkey.net/)/[Violentmonkey](https://violentmonkey.github.io/)) [安装链接](https://fishjar.github.io/kiss-translator/kiss-translator.user.js)
-    - [Greasy Fork](https://greasyfork.org/zh-CN/scripts/472840-kiss-translator)
-  - [x] iOS Safari ([Userscripts Safari](https://github.com/quoid/userscripts)) [安装链接](https://fishjar.github.io/kiss-translator/kiss-translator-ios-safari.user.js)
-
-## 关联项目
-
-- 数据同步服务: [https://github.com/fishjar/kiss-worker](https://github.com/fishjar/kiss-worker)
-  - 可用于本项目的数据同步服务。
-  - 亦可用于分享个人的私有规则列表。
-  - 自己部署，自己管理，数据私有。
-- 社区订阅规则: [https://github.com/fishjar/kiss-rules](https://github.com/fishjar/kiss-rules)
-  - 提供社区维护的，最新最全的订阅规则列表。
-  - 求助规则相关的问题。
-
-## 常见问题
-
-### 如何设置快捷键
-
-在插件管理那里设置，例如： 
-
-- chrome [chrome://extensions/shortcuts](chrome://extensions/shortcuts)
-- firefox [about:addons](about:addons)
-
-### 规则设置的优先级是如何的
-
-个人规则 &gt; 订阅规则 &gt; 全局规则
-
-其中全局规则优先级最低，但非常重要，相当于兜底规则。
-
-### 接口（Ollama等）测试失败
-
-一般接口测试失败常见有以下几种原因：
-
-- 地址填错了：
-  - 比如 `Ollama` 有原生接口地址和 `Openai` 兼容的地址，本插件目前统一支持 `Openai` 兼容的地址，不支持 `Ollama` 原生接口地址
-- 某些AI模型不支持聚合翻译：
-  - 此种情况可以选择禁用聚合翻译或通过自定义接口的方式来使用。
-  - 或通过自定义接口的方式来使用，详情参考： [自定义接口示例文档](https://github.com/fishjar/kiss-translator/blob/master/custom-api_v2.md)
-- 某些AI模型的参数不一致：
-  - 比如 `Gemini` 原生接口参数非常不一致，部分版本的模型不支持某些参数会导致返回错误。
-  - 此种情况可以通过 `Hook` 修改请求 `body` ,或者更换为 `Gemini2` (`Openai` 兼容的地址)
-- 服务器跨域限制访问，返回403错误：
-  - 比如 `Ollama` 启动时须添加环境变量 `OLLAMA_ORIGINS=*`, 参考：https://github.com/fishjar/kiss-translator/issues/174
-
-### 填写的接口在油猴脚本不能使用
-
-油猴脚本需要增加域名白名单，否则不能发出请求。
-
-### 如何设置自定义接口的hook函数
-
-自定义接口功能非常强大、灵活，理论可以接入任何翻译接口。
-
-示例参考： [custom-api_v2.md](https://github.com/fishjar/kiss-translator/blob/master/custom-api_v2.md)
-
-### 如何直接进入油猴脚本设置页面
-
-设置页面地址： https://fishjar.github.io/kiss-translator/options.html
-
-## 未来规划 
-
- 本项目为业余开发，无严格时间表，欢迎社区共建。以下为初步设想的功能方向：
-
-- [x] **聚合发送文本**：优化请求策略，减少翻译接口调用次数，提升性能。
-- [x] **增强富文本翻译**：支持更复杂的页面结构和富文本内容的准确翻译。
-- [x] **强化自定义/AI 接口**：支持流式传输、上下文记忆、多轮对话等高级 AI 功能。
-- [x] **英文词典备灾机制**：当翻译服务失效时，可切换其他词典或 fallback 到本地词典查询。
-- [x] **优化 YouTube 字幕支持**：改进流式字幕的合并与翻译体验，减少断句。
-- [ ] **规则共建机制升级**：引入更灵活的规则分享、版本管理与社区评审流程。
- 
- 如果你对某个方向感兴趣，欢迎在 [Issues](https://github.com/fishjar/kiss-translator/issues) 中讨论或提交 PR！
-
-## 开发指引
-
-```sh
-git clone https://github.com/fishjar/kiss-translator.git
-cd kiss-translator
-git checkout dev # 提交PR建议推送到dev分支
-pnpm install
-pnpm build
-```
-
-### 外部触发示例
-
-```js
-// `toggle_translate`   切换翻译
-// `toggle_styles`      切换样式
-// `toggle_popup`       打开/关闭控制面板
-// `toggle_transbox`    打开/关闭翻译弹窗
-// `toggle_hover_node`  翻译鼠标悬停段落
-// `input_translate`    翻译输入框
-window.dispatchEvent(new CustomEvent(&quot;kiss_translator&quot;, {detail: { action: &quot;toggle_translate&quot; }}));
-```
-
-## 交流
-
-- 加入 [Telegram 群](https://t.me/+RRCu_4oNwrM2NmFl)
-
-## 赞赏
-
-![appreciate](https://github.com/fishjar/kiss-translator/assets/1157624/ebaecabe-2934-4172-8085-af236f5ee399)
-
-## 赞助商
-
-&lt;p align=&quot;center&quot;&gt;
-&lt;a href=&quot;https://platform.ephone.ai/&quot; target=&quot;_blank&quot;&gt;
-&lt;img src=&quot;https://platform.ephone.ai/logo-e.png&quot; width=&quot;96&quot; /&gt;&lt;br /&gt;
-&lt;b&gt;ePhone AI&lt;/b&gt;&lt;br /&gt;
-一个面向开发者的 AI 模型 API 中转与聚合平台，支持 OpenAI、Claude、Gemini、DeepSeek、GLM 等多家大模型。
-&lt;/a&gt;
-&lt;/p&gt;
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[eyaltoledano/claude-task-master]]></title>
-            <link>https://github.com/eyaltoledano/claude-task-master</link>
-            <guid>https://github.com/eyaltoledano/claude-task-master</guid>
-            <pubDate>Sat, 25 Apr 2026 00:14:01 GMT</pubDate>
-            <description><![CDATA[An AI-powered task-management system you can drop into Cursor, Lovable, Windsurf, Roo, and others.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/eyaltoledano/claude-task-master">eyaltoledano/claude-task-master</a></h1>
-            <p>An AI-powered task-management system you can drop into Cursor, Lovable, Windsurf, Roo, and others.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 26,808</p>
-            <p>Forks: 2,505</p>
-            <p>Stars today: 34 stars today</p>
-            <h2>README</h2><pre>&lt;a name=&quot;readme-top&quot;&gt;&lt;/a&gt;
-
-&lt;div align=&#039;center&#039;&gt;
-&lt;a href=&quot;https://trendshift.io/repositories/13971&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/13971&quot; alt=&quot;eyaltoledano%2Fclaude-task-master | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://tryhamster.com/product/taskmaster&quot;&gt;&lt;img src=&quot;./images/logo.png?raw=true&quot; alt=&quot;Taskmaster logo&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-&lt;b&gt;Taskmaster&lt;/b&gt;: A task management system for AI-driven development, designed to work seamlessly with any AI chat.
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://discord.gg/taskmasterai&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://dcbadge.limes.pink/api/server/https://discord.gg/taskmasterai?style=flat&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt; |
-  &lt;a href=&quot;https://tryhamster.com/docs/taskmaster&quot; target=&quot;_blank&quot;&gt;Docs&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/eyaltoledano/claude-task-master/actions/workflows/ci.yml&quot;&gt;&lt;img src=&quot;https://github.com/eyaltoledano/claude-task-master/actions/workflows/ci.yml/badge.svg&quot; alt=&quot;CI&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/eyaltoledano/claude-task-master/stargazers&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/stars/eyaltoledano/claude-task-master?style=social&quot; alt=&quot;GitHub stars&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://badge.fury.io/js/task-master-ai&quot;&gt;&lt;img src=&quot;https://badge.fury.io/js/task-master-ai.svg&quot; alt=&quot;npm version&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/license-MIT%20with%20Commons%20Clause-blue.svg&quot; alt=&quot;License&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://www.npmjs.com/package/task-master-ai&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/d18m/task-master-ai?style=flat&quot; alt=&quot;NPM Downloads&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://www.npmjs.com/package/task-master-ai&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/dm/task-master-ai?style=flat&quot; alt=&quot;NPM Downloads&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://www.npmjs.com/package/task-master-ai&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/dw/task-master-ai?style=flat&quot; alt=&quot;NPM Downloads&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-## By [@eyaltoledano](https://x.com/eyaltoledano) &amp; [@RalphEcom](https://x.com/RalphEcom)
-
-[![Twitter Follow](https://img.shields.io/twitter/follow/eyaltoledano)](https://x.com/eyaltoledano)
-[![Twitter Follow](https://img.shields.io/twitter/follow/RalphEcom)](https://x.com/RalphEcom)
-
-A task management system for AI-driven development with Claude, designed to work seamlessly with Cursor AI.
-
-## Documentation
-
-📚 **[View Full Documentation](https://tryhamster.com/docs/taskmaster)**
-
-### Quick Links
-
-- [Quick Start Guide](https://tryhamster.com/docs/taskmaster/getting-started/quick-start/quick-start)
-- [Installation](https://tryhamster.com/docs/taskmaster/getting-started/quick-start/installation)
-- [API Keys &amp; Providers](https://tryhamster.com/docs/taskmaster/getting-started/api-keys)
-- [Supported Editors](https://tryhamster.com/docs/taskmaster/ide-setup/supported-editors)
-- [MCP Tools Reference](https://tryhamster.com/docs/taskmaster/capabilities/mcp)
-- [CLI Commands Reference](https://tryhamster.com/docs/taskmaster/capabilities/cli-root-commands)
-- [Task Structure](https://tryhamster.com/docs/taskmaster/capabilities/task-structure)
-- [Task Dependencies](https://tryhamster.com/docs/taskmaster/task-workflow/dependencies)
-- [Tags &amp; Workstreams](https://tryhamster.com/docs/taskmaster/task-workflow/tags)
-- [Research Command](https://tryhamster.com/docs/taskmaster/task-workflow/research)
-- [Loop Command](https://tryhamster.com/docs/taskmaster/automation/loop)
-- [AI Providers Overview](https://tryhamster.com/docs/taskmaster/ai-providers/overview)
-- [Team Collaboration](https://tryhamster.com/docs/taskmaster/team/overview)
-- [Best Practices](https://tryhamster.com/docs/taskmaster/best-practices/index)
-- [FAQ](https://tryhamster.com/docs/taskmaster/getting-started/faq)
-- [Changelog](CHANGELOG.md)
-
-### More from Hamster
-
-- [Hamster Studio](https://tryhamster.com/product/studio)
-- [Product &amp; Engineering Methods](https://tryhamster.com/methods)
-- [Product &amp; Engineering Skills](https://tryhamster.com/skills)
-- [Hamster Pricing](https://tryhamster.com/pricing)
-
-#### Quick Install for Cursor 1.0+ (One-Click)
-
-[![Add task-master-ai MCP server to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en/install-mcp?name=task-master-ai&amp;config=eyJjb21tYW5kIjoibnB4IC15IC0tcGFja2FnZT10YXNrLW1hc3Rlci1haSB0YXNrLW1hc3Rlci1haSIsImVudiI6eyJBTlRIUk9QSUNfQVBJX0tFWSI6IllPVVJfQU5USFJPUElDX0FQSV9LRVlfSEVSRSIsIlBFUlBMRVhJVFlfQVBJX0tFWSI6IllPVVJfUEVSUExFWElUWV9BUElfS0VZX0hFUkUiLCJPUEVOQUlfQVBJX0tFWSI6IllPVVJfT1BFTkFJX0tFWV9IRVJFIiwiR09PR0xFX0FQSV9LRVkiOiJZT1VSX0dPT0dMRV9LRVlfSEVSRSIsIk1JU1RSQUxfQVBJX0tFWSI6IllPVVJfTUlTVFJBTF9LRVlfSEVSRSIsIkdST1FfQVBJX0tFWSI6IllPVVJfR1JPUV9LRVlfSEVSRSIsIk9QRU5ST1VURVJfQVBJX0tFWSI6IllPVVJfT1BFTlJPVVRFUl9LRVlfSEVSRSIsIlhBSV9BUElfS0VZIjoiWU9VUl9YQUlfS0VZX0hFUkUiLCJBWlVSRV9PUEVOQUlfQVBJX0tFWSI6IllPVVJfQVpVUkVfS0VZX0hFUkUiLCJPTExBTUFfQVBJX0tFWSI6IllPVVJfT0xMQU1BX0FQSV9LRVlfSEVSRSJ9fQ%3D%3D)
-
-&gt; **Note:** After clicking the link, you&#039;ll still need to add your API keys to the configuration. The link installs the MCP server with placeholder keys that you&#039;ll need to replace with your actual API keys.
-
-#### Claude Code Quick Install
-
-For Claude Code users:
-
-```bash
-claude mcp add taskmaster-ai -- npx -y task-master-ai
-```
-
-Don&#039;t forget to add your API keys to the configuration:
-- in the root .env of your Project
-- in the &quot;env&quot; section of your mcp config for taskmaster-ai
-
-
-## Requirements
-
-Taskmaster utilizes AI across several commands, and those require a separate API key. You can use a variety of models from different AI providers provided you add your API keys. For example, if you want to use Claude 3.7, you&#039;ll need an Anthropic API key.
-
-You can define 3 types of models to be used: the main model, the research model, and the fallback model (in case either the main or research fail). Whatever model you use, its provider API key must be present in either mcp.json or .env.
-
-At least one (1) of the following is required:
-
-- Anthropic API key (Claude API)
-- OpenAI API key
-- Google Gemini API key
-- Perplexity API key (for research model)
-- xAI API Key (for research or main model)
-- OpenRouter API Key (for research or main model)
-- Claude Code (no API key required - requires Claude Code CLI)
-- Codex CLI (OAuth via ChatGPT subscription - requires Codex CLI)
-
-Using the research model is optional but highly recommended. You will need at least ONE API key (unless using Claude Code or Codex CLI with OAuth). Adding all API keys enables you to seamlessly switch between model providers at will.
-
-## Quick Start
-
-### Option 1: MCP (Recommended)
-
-MCP (Model Control Protocol) lets you run Task Master directly from your editor.
-
-#### 1. Add your MCP config at the following path depending on your editor
-
-| Editor       | Scope   | Linux/macOS Path                      | Windows Path                                      | Key          |
-| ------------ | ------- | ------------------------------------- | ------------------------------------------------- | ------------ |
-| **Cursor**   | Global  | `~/.cursor/mcp.json`                  | `%USERPROFILE%\.cursor\mcp.json`                  | `mcpServers` |
-|              | Project | `&lt;project_folder&gt;/.cursor/mcp.json`   | `&lt;project_folder&gt;\.cursor\mcp.json`               | `mcpServers` |
-| **Windsurf** | Global  | `~/.codeium/windsurf/mcp_config.json` | `%USERPROFILE%\.codeium\windsurf\mcp_config.json` | `mcpServers` |
-| **VS Code**  | Project | `&lt;project_folder&gt;/.vscode/mcp.json`   | `&lt;project_folder&gt;\.vscode\mcp.json`               | `servers`    |
-| **Q CLI**    | Global  | `~/.aws/amazonq/mcp.json`             |                                                   | `mcpServers` |
-
-##### Manual Configuration
-
-###### Cursor &amp; Windsurf &amp; Q Developer CLI (`mcpServers`)
-
-```json
-{
-  &quot;mcpServers&quot;: {
-    &quot;task-master-ai&quot;: {
-      &quot;command&quot;: &quot;npx&quot;,
-      &quot;args&quot;: [&quot;-y&quot;, &quot;task-master-ai&quot;],
-      &quot;env&quot;: {
-        // &quot;TASK_MASTER_TOOLS&quot;: &quot;all&quot;, // Options: &quot;all&quot;, &quot;standard&quot;, &quot;core&quot;, or comma-separated list of tools
-        &quot;ANTHROPIC_API_KEY&quot;: &quot;YOUR_ANTHROPIC_API_KEY_HERE&quot;,
-        &quot;PERPLEXITY_API_KEY&quot;: &quot;YOUR_PERPLEXITY_API_KEY_HERE&quot;,
-        &quot;OPENAI_API_KEY&quot;: &quot;YOUR_OPENAI_KEY_HERE&quot;,
-        &quot;GOOGLE_API_KEY&quot;: &quot;YOUR_GOOGLE_KEY_HERE&quot;,
-        &quot;MISTRAL_API_KEY&quot;: &quot;YOUR_MISTRAL_KEY_HERE&quot;,
-        &quot;GROQ_API_KEY&quot;: &quot;YOUR_GROQ_KEY_HERE&quot;,
-        &quot;OPENROUTER_API_KEY&quot;: &quot;YOUR_OPENROUTER_KEY_HERE&quot;,
-        &quot;XAI_API_KEY&quot;: &quot;YOUR_XAI_KEY_HERE&quot;,
-        &quot;AZURE_OPENAI_API_KEY&quot;: &quot;YOUR_AZURE_KEY_HERE&quot;,
-        &quot;OLLAMA_API_KEY&quot;: &quot;YOUR_OLLAMA_API_KEY_HERE&quot;
-      }
-    }
-  }
-}
-```
-
-&gt; 🔑 Replace `YOUR_…_KEY_HERE` with your real API keys. You can remove keys you don&#039;t use.
-
-&gt; **Note**: If you see `0 tools enabled` in the MCP settings, restart your editor and check that your API keys are correctly configured.
-
-###### VS Code (`servers` + `type`)
-
-```json
-{
-  &quot;servers&quot;: {
-    &quot;task-master-ai&quot;: {
-      &quot;command&quot;: &quot;npx&quot;,
-      &quot;args&quot;: [&quot;-y&quot;, &quot;task-master-ai&quot;],
-      &quot;env&quot;: {
-        // &quot;TASK_MASTER_TOOLS&quot;: &quot;all&quot;, // Options: &quot;all&quot;, &quot;standard&quot;, &quot;core&quot;, or comma-separated list of tools
-        &quot;ANTHROPIC_API_KEY&quot;: &quot;YOUR_ANTHROPIC_API_KEY_HERE&quot;,
-        &quot;PERPLEXITY_API_KEY&quot;: &quot;YOUR_PERPLEXITY_API_KEY_HERE&quot;,
-        &quot;OPENAI_API_KEY&quot;: &quot;YOUR_OPENAI_KEY_HERE&quot;,
-        &quot;GOOGLE_API_KEY&quot;: &quot;YOUR_GOOGLE_KEY_HERE&quot;,
-        &quot;MISTRAL_API_KEY&quot;: &quot;YOUR_MISTRAL_KEY_HERE&quot;,
-        &quot;GROQ_API_KEY&quot;: &quot;YOUR_GROQ_KEY_HERE&quot;,
-        &quot;OPENROUTER_API_KEY&quot;: &quot;YOUR_OPENROUTER_KEY_HERE&quot;,
-        &quot;XAI_API_KEY&quot;: &quot;YOUR_XAI_KEY_HERE&quot;,
-        &quot;AZURE_OPENAI_API_KEY&quot;: &quot;YOUR_AZURE_KEY_HERE&quot;,
-        &quot;OLLAMA_API_KEY&quot;: &quot;YOUR_OLLAMA_API_KEY_HERE&quot;
-      },
-      &quot;type&quot;: &quot;stdio&quot;
-    }
-  }
-}
-```
-
-&gt; 🔑 Replace `YOUR_…_KEY_HERE` with your real API keys. You can remove keys you don&#039;t use.
-
-#### 2. (Cursor-only) Enable Taskmaster MCP
-
-Open Cursor Settings (Ctrl+Shift+J) ➡ Click on MCP tab on the left ➡ Enable task-master-ai with the toggle
-
-#### 3. (Optional) Configure the models you want to use
-
-In your editor&#039;s AI chat pane, say:
-
-```txt
-Change the main, research and fallback models to &lt;model_name&gt;, &lt;model_name&gt; and &lt;model_name&gt; respectively.
-```
-
-For example, to use Claude Code (no API key required):
-```txt
-Change the main model to claude-code/sonnet
-```
-
-[Table of available models](docs/models.md) | [Claude Code setup](docs/examples/claude-code-usage.md)
-
-#### 4. Initialize Task Master
-
-In your editor&#039;s AI chat pane, say:
-
-```txt
-Initialize taskmaster-ai in my project
-```
-
-#### 5. Make sure you have a PRD (Recommended)
-
-For **new projects**: Create your PRD at `.taskmaster/docs/prd.txt`.
-For **existing projects**: You can use `scripts/prd.txt` or migrate with `task-master migrate`
-
-An example PRD template is available after initialization in `.taskmaster/templates/example_prd.txt`.
-
-&gt; [!NOTE]
-&gt; While a PRD is recommended for complex projects, you can always create individual tasks by asking &quot;Can you help me implement [description of what you want to do]?&quot; in chat.
-
-**Always start with a detailed PRD.**
-
-The more detailed your PRD, the better the generated tasks will be.
-
-#### 6. Common Commands
-
-Use your AI assistant to:
-
-- Parse requirements: `Can you parse my PRD at scripts/prd.txt?`
-- Plan next step: `What&#039;s the next task I should work on?`
-- Implement a task: `Can you help me implement task 3?`
-- View multiple tasks: `Can you show me tasks 1, 3, and 5?`
-- Expand a task: `Can you help me expand task 4?`
-- **Research fresh information**: `Research the latest best practices for implementing JWT authentication with Node.js`
-- **Research with context**: `Research React Query v5 migration strategies for our current API implementation in src/api.js`
-
-[More examples on how to use Task Master in chat](docs/examples.md)
-
-### Option 2: Using Command Line
-
-#### Installation
-
-```bash
-# Install globally
-npm install -g task-master-ai
-
-# OR install locally within your project
-npm install task-master-ai
-```
-
-#### Initialize a new project
-
-```bash
-# If installed globally
-task-master init
-
-# If installed locally
-npx task-master init
-
-# Initialize project with specific rules
-task-master init --rules cursor,windsurf,vscode
-```
-
-This will prompt you for project details and set up a new project with the necessary files and structure.
-
-#### Common Commands
-
-```bash
-# Initialize a new project
-task-master init
-
-# Parse a PRD and generate tasks
-task-master parse-prd your-prd.txt
-
-# List all tasks
-task-master list
-
-# Show the next task to work on
-task-master next
-
-# Show specific task(s) - supports comma-separated IDs
-task-master show 1,3,5
-
-# Research fresh information with project context
-task-master research &quot;What are the latest best practices for JWT authentication?&quot;
-
-# Move tasks between tags (cross-tag movement)
-task-master move --from=5 --from-tag=backlog --to-tag=in-progress
-task-master move --from=5,6,7 --from-tag=backlog --to-tag=done --with-dependencies
-task-master move --from=5 --from-tag=backlog --to-tag=in-progress --ignore-dependencies
-
-# Add rules after initialization
-task-master rules add windsurf,roo,vscode
-```
-
-## Tool Loading Configuration
-
-### Optimizing MCP Tool Loading
-
-Task Master&#039;s MCP server supports selective tool loading to reduce context window usage. By default, all 36 tools are loaded (~21,000 tokens) to maintain backward compatibility with existing installations.
-
-You can optimize performance by configuring the `TASK_MASTER_TOOLS` environment variable:
-
-### Available Modes
-
-| Mode | Tools | Context Usage | Use Case |
-|------|-------|--------------|----------|
-| `all` (default) | 36 | ~21,000 tokens | Complete feature set - all tools available |
-| `standard` | 15 | ~10,000 tokens | Common task management operations |
-| `core` (or `lean`) | 7 | ~5,000 tokens | Essential daily development workflow |
-| `custom` | Variable | Variable | Comma-separated list of specific tools |
-
-### Configuration Methods
-
-#### Method 1: Environment Variable in MCP Configuration
-
-Add `TASK_MASTER_TOOLS` to your MCP configuration file&#039;s `env` section:
-
-```jsonc
-{
-  &quot;mcpServers&quot;: {  // or &quot;servers&quot; for VS Code
-    &quot;task-master-ai&quot;: {
-      &quot;command&quot;: &quot;npx&quot;,
-      &quot;args&quot;: [&quot;-y&quot;, &quot;task-master-ai&quot;],
-      &quot;env&quot;: {
-        &quot;TASK_MASTER_TOOLS&quot;: &quot;standard&quot;,  // Options: &quot;all&quot;, &quot;standard&quot;, &quot;core&quot;, &quot;lean&quot;, or comma-separated list
-        &quot;ANTHROPIC_API_KEY&quot;: &quot;your-key-here&quot;,
-        // ... other API keys
-      }
-    }
-  }
-}
-```
-
-#### Method 2: Claude Code CLI (One-Time Setup)
-
-For Claude Code users, you can set the mode during installation:
-
-```bash
-# Core mode example (~70% token reduction)
-claude mcp add task-master-ai --scope user \
-  --env TASK_MASTER_TOOLS=&quot;core&quot; \
-  -- npx -y task-master-ai@latest
-
-# Custom tools example
-claude mcp add task-master-ai --scope user \
-  --env TASK_MASTER_TOOLS=&quot;get_tasks,next_task,set_task_status&quot; \
-  -- npx -y task-master-ai@latest
-```
-
-### Tool Sets Details
-
-**Core Tools (7):** `get_tasks`, `next_task`, `get_task`, `set_task_status`, `update_subtask`, `parse_prd`, `expand_task`
-
-**Standard Tools (15):** All core tools plus `initialize_project`, `analyze_project_complexity`, `expand_all`, `add_subtask`, `remove_task`, `generate`, `add_task`, `complexity_report`
-
-**All Tools (36):** Complete set including project setup, task management, analysis, dependencies, tags, research, and more
-
-### Recommendations
-
-- **New users**: Start with `&quot;standard&quot;` mode for a good balance
-- **Large projects**: Use `&quot;core&quot;` mode to minimize token usage
-- **Complex workflows**: Use `&quot;all&quot;` mode or custom selection
-- **Backward compatibility**: If not specified, defaults to `&quot;all&quot;` mode
-
-## Claude Code Support
-
-Task Master now supports Claude models through the Claude Code CLI, which requires no API key:
-
-- **Models**: `claude-code/opus` and `claude-code/sonnet`
-- **Requirements**: Claude Code CLI installed
-- **Benefits**: No API key needed, uses your local Claude instance
-
-[Learn more about Claude Code setup](docs/examples/claude-code-usage.md)
-
-## Troubleshooting
-
-### If `task-master init` doesn&#039;t respond
-
-Try running it with Node directly:
-
-```bash
-node node_modules/claude-task-master/scripts/init.js
-```
-
-Or clone the repository and run:
-
-```bash
-git clone https://github.com/eyaltoledano/claude-task-master.git
-cd claude-task-master
-node scripts/init.js
-```
-
-## Join Our Team
-
-&lt;a href=&quot;https://tryhamster.com&quot; target=&quot;_blank&quot;&gt;
-  &lt;img src=&quot;./images/hamster-hiring.png&quot; alt=&quot;Join Hamster&#039;s founding team&quot; /&gt;
-&lt;/a&gt;
-
-## Contributors
-
-&lt;a href=&quot;https://github.com/eyaltoledano/claude-task-master/graphs/contributors&quot;&gt;
-  &lt;img src=&quot;https://contrib.rocks/image?repo=eyaltoledano/claude-task-master&quot; alt=&quot;Task Master project contributors&quot; /&gt;
-&lt;/a&gt;
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=eyaltoledano/claude-task-master&amp;type=Timeline)](https://www.star-history.com/#eyaltoledano/claude-task-master&amp;Timeline)
-
-## Licensing
-
-Task Master is licensed under the MIT License with Commons Clause. This means you can:
-
-✅ **Allowed**:
-
-- Use Task Master for any purpose (personal, commercial, academic)
-- Modify the code
-- Distribute copies
-- Create and sell products built using Task Master
-
-❌ **Not Allowed**:
-
-- Sell Task Master itself
-- Offer Task Master as a hosted service
-- Create competing products based on Task Master
-
-See the [LICENSE](LICENSE) file for the complete license text and [licensing details](docs/licensing.md) for more information.
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[jesse-ai/jesse]]></title>
-            <link>https://github.com/jesse-ai/jesse</link>
-            <guid>https://github.com/jesse-ai/jesse</guid>
-            <pubDate>Sat, 25 Apr 2026 00:14:00 GMT</pubDate>
-            <description><![CDATA[An advanced crypto trading bot written in Python]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/jesse-ai/jesse">jesse-ai/jesse</a></h1>
-            <p>An advanced crypto trading bot written in Python</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 7,770</p>
-            <p>Forks: 1,096</p>
-            <p>Stars today: 45 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-&lt;br&gt;
-&lt;p align=&quot;center&quot;&gt;
-&lt;img src=&quot;assets/jesse-logo.png&quot; alt=&quot;Jesse&quot; height=&quot;72&quot; /&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-Algo-trading was 😵‍💫, we made it 🤩
-&lt;/p&gt;
-&lt;/div&gt;
-
-# Jesse
-[![PyPI](https://img.shields.io/pypi/v/jesse)](https://pypi.org/project/jesse)
-[![Downloads](https://pepy.tech/badge/jesse)](https://pepy.tech/project/jesse)
-[![Docker Pulls](https://img.shields.io/docker/pulls/salehmir/jesse)](https://hub.docker.com/r/salehmir/jesse)
-[![GitHub](https://img.shields.io/github/license/jesse-ai/jesse)](https://github.com/jesse-ai/jesse)
-[![coverage](https://codecov.io/gh/jesse-ai/jesse/graph/badge.svg)](https://codecov.io/gh/jesse-ai/jesse)
-
----
-
-Jesse is an advanced crypto trading framework that aims to **simplify** **researching** and defining **YOUR OWN trading strategies** for backtesting, optimizing, and live trading.
-
-## What is Jesse?
-Watch this video to get a quick overview of Jesse:
-
-[![Jesse Overview](https://img.youtube.com/vi/0EqN3OOqeJM/0.jpg)](https://www.youtube.com/watch?v=0EqN3OOqeJM)
-
-## Why Jesse?
-In short, Jesse is more **accurate** than other solutions, and way more **simple**. 
-In fact, it is so simple that in case you already know Python, you can get started today, in **matter of minutes**, instead of **weeks and months**. 
-
-## Key Features
-
-- 📝 **Simple Syntax**: Define both simple and advanced trading strategies with the simplest syntax in the fastest time.
-- 📊 **Comprehensive Indicator Library**: Access a complete library of technical indicators with easy-to-use syntax.
-- 📈 **Smart Ordering**: Supports market, limit, and stop orders, automatically choosing the best one for you.
-- ⏰ **Multiple Timeframes and Symbols**: Backtest and livetrade multiple timeframes and symbols simultaneously without look-ahead bias.
-- 🔒 **Self-Hosted and Privacy-First**: Designed with your privacy in mind, fully self-hosted to ensure your trading strategies and data remain secure.
-- 🛡️ **Risk Management**: Built-in helper functions for robust risk management.
-- 📋 **Metrics System**: A comprehensive metrics system to evaluate your trading strategy&#039;s performance.
-- 🔍 **Debug Mode**: Observe your strategy in action with a detailed debug mode.
-- 🔧 **Optimize Mode**: Fine-tune your strategies using AI, without needing a technical background.
-- 📈 **Leveraged and Short-Selling**: First-class support for leveraged trading and short-selling.
-- 🔀 **Partial Fills**: Supports entering and exiting positions in multiple orders, allowing for greater flexibility.
-- 🔔 **Advanced Alerts**: Create real-time alerts within your strategies for effective monitoring.
-- 🤖 **JesseGPT**: Jesse has its own GPT, JesseGPT, that can help you write strategies, optimize them, debug them, and much more.
-- 🔧 **Built-in Code Editor**: Write, edit, and debug your strategies with a built-in code editor.
-- 🎲 **Monte Carlo Analysis**: Stress-test your strategies with trade-order shuffling and candles-based simulations to distinguish skill from luck and guard against overfitting.
-- 🧠 **Machine Learning**: A built-in ML pipeline — gather labelled training data from backtests, train scikit-learn models (binary, multiclass, or regression), and deploy predictions directly inside your strategies.
-- 📺 **Youtube Channel**: Jesse has a Youtube channel with screencast tutorials that go through example strategies step by step.
-
-## Dive Deeper into Jesse&#039;s Capabilities
-
-### Stupid Simple
-Craft complex trading strategies with remarkably simple Python. Access 300+ indicators, multi-symbol/timeframe support, spot/futures trading, partial fills, and risk management tools. Focus on logic, not boilerplate.
-
-```python
-class GoldenCross(Strategy):
-    def should_long(self):
-        # go long when the EMA 8 is above the EMA 21
-        short_ema = ta.ema(self.candles, 8)
-        long_ema = ta.ema(self.candles, 21)
-        return short_ema &gt; long_ema
-
-    def go_long(self):
-        entry_price = self.price - 10        # limit buy order at $10 below the current price
-        qty = utils.size_to_qty(self.balance*0.05, entry_price) # spend only 5% of my total capital
-        self.buy = qty, entry_price                 # submit entry order
-        self.take_profit = qty, entry_price*1.2  # take profit at 20% above the entry price
-        self.stop_loss = qty, entry_price*0.9   # stop loss at 10% below the entry price
-```
-
-### Backtest
-Execute highly accurate and fast backtests without look-ahead bias. Utilize debugging logs, interactive charts with indicator support, and detailed performance metrics to validate your strategies thoroughly.
-
-![Backtest](https://raw.githubusercontent.com/jesse-ai/storage/refs/heads/master/backtest.gif)
-
-### Live/Paper Trading
-Deploy strategies live with robust monitoring tools. Supports paper trading, multiple accounts, real-time logs &amp; notifications (Telegram, Slack, Discord), interactive charts, spot/futures, DEX, and a built-in code editor.
-
-![Live/Paper Trading](https://raw.githubusercontent.com/jesse-ai/storage/refs/heads/master/live.gif)
-
-### Benchmark
-Accelerate research using the benchmark feature. Run batch backtests, compare across timeframes, symbols, and strategies. Filter and sort results by key performance metrics for efficient analysis.
-
-![Benchmark](https://raw.githubusercontent.com/jesse-ai/storage/refs/heads/master/benchmark.gif)
-
-### AI
-Leverage our AI assistant even with limited Python knowledge. Get help writing and improving strategies, implementing ideas, debugging, optimizing, and understanding code. Your personal AI quant.
-
-![AI](https://raw.githubusercontent.com/jesse-ai/storage/refs/heads/master/gpt.gif)
-
-### Monte Carlo Analysis
-Stress-test your strategies beyond a single historical path. Jesse&#039;s Monte Carlo mode runs hundreds of simulations using **trade-order shuffling** (tests whether trade timing drove your results) and **candles-based** (tests robustness under slightly different market conditions) methods. Use it to distinguish skill from luck, understand the range of outcomes you can realistically expect, and catch overfitting early.
-
-### Machine Learning
-Jesse includes a complete, end-to-end ML pipeline built for trading strategies:
-
-1. **Gather data** — run a backtest in gather mode; call `record_features({...})` at each signal bar and `record_label(name, value)` when the outcome is known. Data is auto-saved to CSV.
-2. **Train a model** — call `train_model()` with any scikit-learn–compatible estimator and choose a task type: `&quot;binary&quot;` classification, `&quot;multiclass&quot;` classification, or `&quot;regression&quot;`. Get a full report with feature importance, calibration, and metrics.
-3. **Deploy** — switch to deploy mode and call `ml_predict()` or `ml_predict_proba()` inside your strategy. Model loading, scaling, and feature ordering are handled automatically.
-
-```python
-# Gather phase — inside your strategy
-def before(self):
-    self.record_features({
-        &#039;rsi&#039;: ta.rsi(self.candles),
-        &#039;adx&#039;: ta.adx(self.candles),
-    })
-
-# Deploy phase — gate entries with model confidence
-def should_long(self):
-    proba = self.ml_predict_proba()
-    return proba[&#039;long&#039;] &gt; 0.65
-```
-
-### Optimize Your Strategies
-Unsure about optimal parameters? Let the optimization mode decide using simple syntax. Fine-tune any strategy parameter with the Optuna library and easy cross-validation.
-
-```python
-@property
-def slow_sma(self):
-    return ta.sma(self.candles, self.hp[&#039;slow_sma_period&#039;])
-
-@property
-def fast_sma(self):
-    return ta.sma(self.candles, self.hp[&#039;fast_sma_period&#039;])
-
-def hyperparameters(self):
-    return [
-        {&#039;name&#039;: &#039;slow_sma_period&#039;, &#039;type&#039;: int, &#039;min&#039;: 150, &#039;max&#039;: 210, &#039;default&#039;: 200},
-        {&#039;name&#039;: &#039;fast_sma_period&#039;, &#039;type&#039;: int, &#039;min&#039;: 20, &#039;max&#039;: 100, &#039;default&#039;: 50},
-    ]
-```
-
-## Getting Started
-Head over to the &quot;getting started&quot; section of the [documentation](https://docs.jesse.trade/docs/getting-started). The 
-documentation is **short yet very informative**. 
-
-## Resources
-
-- [⚡️ Website](https://jesse.trade)
-- [🎓 Documentation](https://docs.jesse.trade)
-- [🎥 Youtube channel (screencast tutorials)](https://jesse.trade/youtube)
-- [🛟 Help center](https://jesse.trade/help)
-- [💬 Discord community](https://jesse.trade/discord)
-- [🤖 JesseGPT](https://jesse.trade/gpt) (Requires a free account)
-
-## What&#039;s next?
-
-You can see the project&#039;s **[roadmap here](https://docs.jesse.trade/docs/roadmap.html)**. **Subscribe** to our mailing list at [jesse.trade](https://jesse.trade) to get the good stuff as soon they&#039;re released. Don&#039;t worry, We won&#039;t send you spam—Pinky promise.
-
-## Disclaimer
-This software is for educational purposes only. USE THE SOFTWARE AT **YOUR OWN RISK**. THE AUTHORS AND ALL AFFILIATES ASSUME **NO RESPONSIBILITY FOR YOUR TRADING RESULTS**. **Do not risk money that you are afraid to lose**. There might be **bugs** in the code - this software DOES NOT come with **ANY warranty**.
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[linagora/twake-drive]]></title>
-            <link>https://github.com/linagora/twake-drive</link>
-            <guid>https://github.com/linagora/twake-drive</guid>
-            <pubDate>Sat, 25 Apr 2026 00:13:59 GMT</pubDate>
-            <description><![CDATA[Twake Drive Web App]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/linagora/twake-drive">linagora/twake-drive</a></h1>
-            <p>Twake Drive Web App</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 754</p>
-            <p>Forks: 139</p>
-            <p>Stars today: 15 stars today</p>
-            <h2>README</h2><pre># Twake Drive
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/linagora/twake-drive&quot;&gt;
-   &lt;img src=&quot;./docs/twake-drive-banner.jpeg&quot; alt=&quot;banner&quot;&gt;
-   
-  &lt;/a&gt;
-  &lt;p align=&quot;center&quot;&gt;
-    &lt;b align=&quot;center&quot;&gt;The open-source alternative to Google Drive.&lt;/b&gt;
-    &lt;br /&gt;
-    &lt;a href=&quot;https://twake.app&quot;&gt;&lt;strong&gt;Learn more »&lt;/strong&gt;&lt;/a&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;
-    &lt;a href=&quot;https://twake-drive.com&quot;&gt;Website&lt;/a&gt;
-    |
-    &lt;a href=&quot;https://github.com/linagora/twake-drive/issues&quot;&gt;Issues&lt;/a&gt;
-  &lt;/p&gt;
-&lt;/p&gt;
-
-## About
-
-&lt;img width=&quot;100%!&quot; alt=&quot;booking-screen&quot; src=&quot;./docs/cozy-drive.png&quot;&gt;
-
-## What&#039;s Drive?
-
-Twake Drive makes your file management easy. Main features are:
-
-- File tree
-- Files and folders upload.
-- Files and folders sharing (via URLs)
-- Files and folders search
-
-## Getting Started
-
-_:pushpin: Note:_ [Yarn] is the official Node package manager of Twake Drive. Don&#039;t hesitate to [install Yarn][yarn-install]
-
-### Install
-
-Starting the Drive app requires you to [setup a dev environment][setup].
-
-You can then clone the app repository and install dependencies:
-
-```sh
-$ git clone https://github.com/linagora/twake-drive.git
-$ cd twake-drive
-$ yarn install
-```
-
-:pushpin: Don&#039;t forget to set the local node version indicated in the `.nvmrc` before doing a `yarn install`.
-
-Twake Drive use a standard set of _npm scripts_ to run common tasks, like watch, lint, test, build…
-
-### Run in dev mode
-
-Using a watcher - with Hot Module Replacement:
-
-```sh
-$ cd twake-drive
-$ yarn watch
-$ cozy-stack serve --appdir drive:/&lt;project_absolute_path&gt;/twake-drive/build/drive --disable-csp
-```
-
-Or directly build the app (static file generated):
-
-```sh
-$ cd twake-drive
-$ yarn build
-$ cozy-stack serve --appdir drive:/&lt;project_absolute_path&gt;/twake-drive/build/drive
-```
-
-Your app is available at http://drive.cozy.localhost:8080/#/folder
-
-Note: it&#039;s mandatory to explicit to cozy-stack the folder of the build that should be served, to be able to run the app.
-
-### Run it inside the VM
-
-You can view your current running app, you can use the [cozy-stack docker image][cozy-stack-docker]:
-
-```sh
-# in a terminal, run your app in watch mode
-$ cd twake-drive
-$ yarn watch
-```
-
-```sh
-# in another terminal, run the docker container
-$ docker run --rm -it -p 8080:8080 -v &quot;$(pwd)/build/drive&quot;:/data/cozy-app/drive cozy/cozy-app-dev
-```
-
-Your app is available at http://drive.cozy.tools:8080.
-
-## Advanced case
-
-### Share and send mails in development
-
-Twake Drive let users [share documents from twake to twake](https://github.com/cozy/cozy-stack/blob/master/docs/sharing.md#cozy-to-cozy-sharing).
-
-Meet Alice and Bob.
-Alice wants to share a folder with Bob.
-Alice clicks on the share button and fills in the email input with Bob&#039;s email address.
-Bob receives an email with a _« Accept the sharing »_ button.
-Bob clicks on that button and is redirected to Alice&#039;s twake to enter his own twake url to link both twakes.
-Bob sees Alice&#039;s shared folder in his own twake.
-
-🤔 But how could we do this scenario on binary cozy-stack development environment?
-
-If you develop with the [cozy-stack CLI](https://github.com/cozy/cozy-stack/blob/master/docs/cli/cozy-stack.md), you have to run [MailHog](https://github.com/mailhog/MailHog) on your computer and tell `cozy-stack serve` where to find the mail server with some [options](https://github.com/cozy/cozy-stack/blob/master/docs/cli/cozy-stack_serve.md#options):
-
-```
-./cozy-stack serve --appdir drive:../twake-drive/build --mail-disable-tls --mail-port 1025
-```
-
-_This commands assumes you `git clone` [twake-drive](https://github.com/linagora/twake-drive) in the same folder than you `git clone` [cozy-stack](https://github.com/cozy/cozy-stack)._
-
-Then simply run `mailhog` and open http://cozy.tools:8025/.
-
-#### Retrieve sent emails
-
-With MailHog, **every email** sent by cozy-stack is caught. That means the email address _does not have to be a real one_, ie. `bob@cozy`, `bob@cozy.tools` are perfectly fine. It _could be a real one_, but the email will not reach the real recipient&#039;s inbox, say `contact@cozycloud.cc`.
-
-### Living on the edge
-
-[Cozy-ui] is our frontend stack library that provides common styles and components accross the whole Twake React apps. You can use it for you own application to follow the official Twake&#039;s guidelines and styles. If you need to develop / hack cozy-ui, it&#039;s sometimes more useful to develop on it through another app. You can do it by cloning cozy-ui locally and link it to yarn local index:
-
-```sh
-git clone https://github.com/cozy/cozy-ui.git
-cd cozy-ui
-yarn install
-yarn link
-```
-
-then go back to your app project and replace the distributed cozy-ui module with the linked one:
-
-```sh
-cd twake-drive
-yarn link cozy-ui
-```
-
-You can now run the watch task and your project will hot-reload each times a cozy-ui source file is touched.
-
-###### Troubleshooting
-
-Consider using [rlink] instead of `yarn link`
-
-[Cozy-client] is our API library that provides an unified API on top of the cozy-stack. If you need to develop / hack cozy-client in parallel of your application, you can use the same trick that we used with [cozy-ui]: yarn linking.
-
-### Tests
-
-Tests are run by [jest] under the hood, and written using [chai] and [sinon]. You can easily run the tests suite with:
-
-```sh
-$ cd twake-drive
-$ yarn test
-```
-
-:pushpin: Don&#039;t forget to update / create new tests when you contribute to code to keep the app the consistent.
-
-### Open a Pull-Request
-
-If you want to work on Drive and submit code modifications, feel free to open pull-requests! See the [contributing guide][contribute] for more information about how to properly open pull-requests.
-
-## Community
-
-### Localization
-
-Localization and translations are handled by [Transifex][tx].
-
-As a _translator_, you can login to [Transifex][tx-signin] (using your Github account) and claim access to the [app repository][tx-app]. Locales are pulled [by the pipeline][yarn tx in travis.yml] when app is build before publishing.
-
-As a _developer_, you must configure the [Transifex CLI][tx-cli], and claim access as _maintainer_ to the [app repository][tx-app]. Then please **only update** the source locale file (usually `en.json` in client and/or server parts), and push it to Transifex repository using the `tx push -s` command.
-
-If you were using a [transifex-client](tx-client), you must move to [Transifex CLI](tx-cli) to be compatible with the v3 API.
-
-The transifex configuration file is still in an old version. Please use the previous client for the moment [https://github.com/transifex/transifex-client/](https://github.com/transifex/transifex-client/).
-
-## License
-
-Twake Drive is developed by Linagora and distributed under the [AGPL v3 license][agpl-3.0].
-
-[cozy]: https://cozy.io &#039;Cozy Cloud&#039;
-[setup]: https://docs.cozy.io/en/tutorials/app/#install-the-development-environment &#039;Cozy dev docs: Set up the Development Environment&#039;
-[yarn]: https://yarnpkg.com/
-[yarn-install]: https://yarnpkg.com/en/docs/install
-[cozy-ui]: https://github.com/cozy/cozy-ui
-[rlink]: https://gist.github.com/ptbrowne/add609bdcf4396d32072acc4674fff23
-[cozy-client]: https://github.com/cozy/cozy-client/
-[cozy-stack-docker]: https://github.com/cozy/cozy-stack/blob/master/docs/client-app-dev.md#with-docker
-[doctypes]: https://cozy.github.io/cozy-doctypes/
-[bill-doctype]: https://github.com/cozy/cozy-konnector-libs/blob/master/models/bill.js
-[konnector-doctype]: https://github.com/cozy/cozy-konnector-libs/blob/master/models/base_model.js
-[konnectors]: https://github.com/cozy/cozy-konnector-libs
-[agpl-3.0]: https://www.gnu.org/licenses/agpl-3.0.html
-[contribute]: CONTRIBUTING.md
-[tx]: https://www.transifex.com/cozy/
-[tx-signin]: https://www.transifex.com/signin/
-[tx-app]: https://www.transifex.com/cozy/cozy-drive/dashboard/
-[tx-translate]: https://www.transifex.com/cozy/cozy-drive/translate/
-[tx-cli]: https://developers.transifex.com/docs/cli
-[tx-client]: https://github.com/transifex/transifex-client
-[libera]: https://web.libera.chat/#cozycloud
-[forum]: https://forum.cozy.io/
-[github]: https://github.com/cozy/
-[twitter]: https://twitter.com/linagora
-[nvm]: https://github.com/creationix/nvm
-[cozy-dev]: https://github.com/cozy/cozy-dev/
-[jest]: https://jestjs.io/fr/
-[chai]: http://chaijs.com/
-[sinon]: http://sinonjs.org/
-[checkbox]: https://help.github.com/articles/basic-writing-and-formatting-syntax/#task-lists
-[yarn tx in travis.yml]: .travis.yml#L41
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
             <title><![CDATA[gsd-build/get-shit-done]]></title>
             <link>https://github.com/gsd-build/get-shit-done</link>
             <guid>https://github.com/gsd-build/get-shit-done</guid>
-            <pubDate>Sat, 25 Apr 2026 00:13:58 GMT</pubDate>
+            <pubDate>Sun, 26 Apr 2026 00:14:01 GMT</pubDate>
             <description><![CDATA[A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/gsd-build/get-shit-done">gsd-build/get-shit-done</a></h1>
             <p>A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 57,091</p>
-            <p>Forks: 4,836</p>
-            <p>Stars today: 419 stars today</p>
+            <p>Stars: 57,354</p>
+            <p>Forks: 4,862</p>
+            <p>Stars today: 305 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
 
 # GET SHIT DONE
@@ -2944,15 +1250,15 @@ GSD handles it for you:
             <title><![CDATA[npm/cli]]></title>
             <link>https://github.com/npm/cli</link>
             <guid>https://github.com/npm/cli</guid>
-            <pubDate>Sat, 25 Apr 2026 00:13:57 GMT</pubDate>
+            <pubDate>Sun, 26 Apr 2026 00:14:00 GMT</pubDate>
             <description><![CDATA[the package manager for JavaScript]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/npm/cli">npm/cli</a></h1>
             <p>the package manager for JavaScript</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 9,706</p>
-            <p>Forks: 4,292</p>
-            <p>Stars today: 4 stars today</p>
+            <p>Stars: 9,707</p>
+            <p>Forks: 4,294</p>
+            <p>Stars today: 5 stars today</p>
             <h2>README</h2><pre># npm - a JavaScript package manager
 
 ### Requirements
@@ -3006,6 +1312,1682 @@ npm &lt;command&gt;
 #### Is &quot;npm&quot; an acronym for &quot;Node Package Manager&quot;?
 
 Contrary to popular belief, **`npm`** **is not** an acronym for &quot;Node Package Manager.&quot; It is a recursive backronymic abbreviation for **&quot;npm is not an acronym&quot;** (if the project were named &quot;ninaa,&quot; then it would be an acronym). The precursor to **`npm`** was actually a bash utility named **&quot;pm&quot;**, which was the shortform name of **&quot;pkgmakeinst&quot;** - a bash function that installed various things on various platforms. If **`npm`** were ever considered an acronym, it would be as &quot;node pm&quot; or, potentially, &quot;new pm&quot;.
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[louislam/uptime-kuma]]></title>
+            <link>https://github.com/louislam/uptime-kuma</link>
+            <guid>https://github.com/louislam/uptime-kuma</guid>
+            <pubDate>Sun, 26 Apr 2026 00:13:59 GMT</pubDate>
+            <description><![CDATA[A fancy self-hosted monitoring tool]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/louislam/uptime-kuma">louislam/uptime-kuma</a></h1>
+            <p>A fancy self-hosted monitoring tool</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 85,905</p>
+            <p>Forks: 7,727</p>
+            <p>Stars today: 44 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot; width=&quot;100%&quot;&gt;
+    &lt;img src=&quot;./public/icon.svg&quot; width=&quot;128&quot; alt=&quot;Uptime Kuma Logo&quot; /&gt;
+&lt;/div&gt;
+
+# Uptime Kuma
+
+Uptime Kuma is an easy-to-use self-hosted monitoring tool.
+
+&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/louislam/uptime-kuma&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/stars/louislam/uptime-kuma?style=flat&quot; /&gt;&lt;/a&gt; &lt;a target=&quot;_blank&quot; href=&quot;https://hub.docker.com/r/louislam/uptime-kuma&quot;&gt;&lt;img src=&quot;https://img.shields.io/docker/pulls/louislam/uptime-kuma&quot; /&gt;&lt;/a&gt; &lt;a target=&quot;_blank&quot; href=&quot;https://hub.docker.com/r/louislam/uptime-kuma&quot;&gt;&lt;img src=&quot;https://img.shields.io/docker/v/louislam/uptime-kuma/2?label=docker%20image%20ver.&quot; /&gt;&lt;/a&gt; &lt;a target=&quot;_blank&quot; href=&quot;https://github.com/louislam/uptime-kuma&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/last-commit/louislam/uptime-kuma&quot; /&gt;&lt;/a&gt; &lt;a target=&quot;_blank&quot; href=&quot;https://opencollective.com/uptime-kuma&quot;&gt;&lt;img src=&quot;https://opencollective.com/uptime-kuma/total/badge.svg?label=Open%20Collective%20Backers&amp;color=brightgreen&quot; /&gt;&lt;/a&gt;
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/louislam?label=GitHub%20Sponsors)](https://github.com/sponsors/louislam) &lt;a href=&quot;https://weblate.kuma.pet/projects/uptime-kuma/uptime-kuma/&quot;&gt;
+&lt;img src=&quot;https://weblate.kuma.pet/widgets/uptime-kuma/-/svg-badge.svg&quot; alt=&quot;Translation status&quot; /&gt;
+&lt;/a&gt;
+
+&lt;img src=&quot;https://user-images.githubusercontent.com/1336778/212262296-e6205815-ad62-488c-83ec-a5b0d0689f7c.jpg&quot; width=&quot;700&quot; alt=&quot;Uptime Kuma Dashboard Screenshot&quot; /&gt;
+
+## 🥔 Live Demo
+
+Try it!
+
+Demo Server (Location: Frankfurt - Germany): &lt;https://demo.kuma.pet/start-demo&gt;
+
+It is a temporary live demo, all data will be deleted after 10 minutes. Sponsored by [Uptime Kuma Sponsors](https://github.com/louislam/uptime-kuma#%EF%B8%8F-sponsors).
+
+## ⭐ Features
+
+- Monitoring uptime for HTTP(s) / TCP / HTTP(s) Keyword / HTTP(s) Json Query / Websocket / Ping / DNS Record / Push / Steam Game Server / Docker Containers
+- Fancy, Reactive, Fast UI/UX
+- Notifications via Telegram, Discord, Gotify, Slack, Pushover, Email (SMTP), and [90+ notification services, click here for the full list](https://github.com/louislam/uptime-kuma/tree/master/src/components/notifications)
+- 20-second intervals
+- [Multi Languages](https://github.com/louislam/uptime-kuma/tree/master/src/lang)
+- Multiple status pages
+- Map status pages to specific domains
+- Ping chart
+- Certificate info
+- Proxy support
+- 2FA support
+
+## 🔧 How to Install
+
+### 🐳 Docker Compose
+
+```bash
+mkdir uptime-kuma
+cd uptime-kuma
+curl -o compose.yaml https://raw.githubusercontent.com/louislam/uptime-kuma/master/compose.yaml
+docker compose up -d
+```
+
+Uptime Kuma is now running on all network interfaces (e.g. http://localhost:3001 or http://your-ip:3001).
+
+&gt; [!WARNING]
+&gt; File Systems like **NFS** (Network File System) are **NOT** supported. Please map to a local directory or volume.
+
+### 🐳 Docker Command
+
+```bash
+docker run -d --restart=always -p 3001:3001 -v uptime-kuma:/app/data --name uptime-kuma louislam/uptime-kuma:2
+```
+
+Uptime Kuma is now running on all network interfaces (e.g. http://localhost:3001 or http://your-ip:3001).
+
+If you want to limit exposure to localhost only:
+
+```bash
+docker run ... -p 127.0.0.1:3001:3001 ...
+```
+
+### 💪🏻 Non-Docker
+
+Requirements:
+
+- Platform
+  - ✅ Major Linux distros such as Debian, Ubuntu, Fedora and ArchLinux etc.
+  - ✅ Windows 10 (x64), Windows Server 2012 R2 (x64) or higher
+  - ❌ FreeBSD / OpenBSD / NetBSD
+  - ❌ Replit / Heroku
+- [Node.js](https://nodejs.org/en/download/) &gt;= 20.4
+- [Git](https://git-scm.com/downloads)
+- [pm2](https://pm2.keymetrics.io/) - For running Uptime Kuma in the background
+
+```bash
+git clone https://github.com/louislam/uptime-kuma.git
+cd uptime-kuma
+npm run setup
+
+# Option 1. Try it
+node server/server.js
+
+# (Recommended) Option 2. Run in the background using PM2
+# Install PM2 if you don&#039;t have it:
+npm install pm2 -g &amp;&amp; pm2 install pm2-logrotate
+
+# Start Server
+pm2 start server/server.js --name uptime-kuma
+```
+
+Uptime Kuma is now running on all network interfaces (e.g. http://localhost:3001 or http://your-ip:3001).
+
+More useful PM2 Commands
+
+```bash
+# If you want to see the current console output
+pm2 monit
+
+# If you want to add it to startup
+pm2 startup &amp;&amp; pm2 save
+```
+
+### Advanced Installation
+
+If you need more options or need to browse via a reverse proxy, please read:
+
+&lt;https://github.com/louislam/uptime-kuma/wiki/%F0%9F%94%A7-How-to-Install&gt;
+
+## 🆙 How to Update
+
+Please read:
+
+&lt;https://github.com/louislam/uptime-kuma/wiki/%F0%9F%86%99-How-to-Update&gt;
+
+## 🆕 What&#039;s Next?
+
+I will assign requests/issues to the next milestone.
+
+&lt;https://github.com/louislam/uptime-kuma/milestones&gt;
+
+## ❤️ Sponsors
+
+Thank you so much! (GitHub Sponsors will be updated manually. OpenCollective sponsors will be updated automatically, the list will be cached by GitHub though. It may need some time to be updated)
+
+&lt;img src=&quot;https://uptime.kuma.pet/sponsors?v=6&quot; alt=&quot;Uptime Kuma Sponsors&quot; /&gt;
+
+## 🖼 More Screenshots
+
+Light Mode:
+
+&lt;img src=&quot;https://uptime.kuma.pet/img/light.jpg&quot; width=&quot;512&quot; alt=&quot;Uptime Kuma Light Mode Screenshot of how the Dashboard looks&quot; /&gt;
+
+Status Page:
+
+&lt;img src=&quot;https://user-images.githubusercontent.com/1336778/134628766-a3fe0981-0926-4285-ab46-891a21c3e4cb.png&quot; width=&quot;512&quot; alt=&quot;Uptime Kuma Status Page Screenshot&quot; /&gt;
+
+Settings Page:
+
+&lt;img src=&quot;https://louislam.net/uptimekuma/2.jpg&quot; width=&quot;400&quot; alt=&quot;Uptime Kuma Settings Page Screenshot&quot; /&gt;
+
+Telegram Notification Sample:
+
+&lt;img src=&quot;https://louislam.net/uptimekuma/3.jpg&quot; width=&quot;400&quot; alt=&quot;Uptime Kuma Telegram Notification Sample Screenshot&quot; /&gt;
+
+## Motivation
+
+- I was looking for a self-hosted monitoring tool like &quot;Uptime Robot&quot;, but it is hard to find a suitable one. One of the closest ones is statping. Unfortunately, it is not stable and no longer maintained.
+- Wanted to build a fancy UI.
+- Learn Vue 3 and vite.js.
+- Show the power of Bootstrap 5.
+- Try to use WebSocket with SPA instead of a REST API.
+- Deploy my first Docker image to Docker Hub.
+
+If you love this project, please consider giving it a ⭐.
+
+## 🗣️ Discussion / Ask for Help
+
+⚠️ For any general or technical questions, please don&#039;t send me an email, as I am unable to provide support in that manner. I will not respond if you ask questions there.
+
+I recommend using Google, GitHub Issues, or Uptime Kuma&#039;s subreddit for finding answers to your question. If you cannot find the information you need, feel free to ask:
+
+- [GitHub Issues](https://github.com/louislam/uptime-kuma/issues)
+- [Subreddit (r/UptimeKuma)](https://www.reddit.com/r/UptimeKuma/)
+
+My Reddit account: [u/louislamlam](https://reddit.com/u/louislamlam)
+You can mention me if you ask a question on the subreddit.
+
+## Contributions
+
+### Create Pull Requests
+
+Pull requests are awesome.
+To keep reviews fast and effective, please make sure you’ve [read our pull request guidelines](https://github.com/louislam/uptime-kuma/blob/master/CONTRIBUTING.md#can-i-create-a-pull-request-for-uptime-kuma).
+
+### Test Pull Requests
+
+There are a lot of pull requests right now, but I don&#039;t have time to test them all.
+
+If you want to help, you can check this:
+&lt;https://github.com/louislam/uptime-kuma/wiki/Test-Pull-Requests&gt;
+
+### Test Beta Version
+
+Check out the latest beta release here: &lt;https://github.com/louislam/uptime-kuma/releases&gt;
+
+### Bug Reports / Feature Requests
+
+If you want to report a bug or request a new feature, feel free to open a [new issue](https://github.com/louislam/uptime-kuma/issues).
+
+### Translations
+
+If you want to translate Uptime Kuma into your language, please visit [Weblate Readme](https://github.com/louislam/uptime-kuma/blob/master/src/lang/README.md).
+
+### Spelling &amp; Grammar
+
+Feel free to correct the grammar in the documentation or code.
+My mother language is not English and my grammar is not that great.
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[coreyhaines31/marketingskills]]></title>
+            <link>https://github.com/coreyhaines31/marketingskills</link>
+            <guid>https://github.com/coreyhaines31/marketingskills</guid>
+            <pubDate>Sun, 26 Apr 2026 00:13:58 GMT</pubDate>
+            <description><![CDATA[Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/coreyhaines31/marketingskills">coreyhaines31/marketingskills</a></h1>
+            <p>Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 24,752</p>
+            <p>Forks: 3,920</p>
+            <p>Stars today: 322 stars today</p>
+            <h2>README</h2><pre># Marketing Skills for AI Agents
+
+A collection of AI agent skills focused on marketing tasks. Built for technical marketers and founders who want AI coding agents to help with conversion optimization, copywriting, SEO, analytics, and growth engineering. Works with Claude Code, OpenAI Codex, Cursor, Windsurf, and any agent that supports the [Agent Skills spec](https://agentskills.io).
+
+Built by [Corey Haines](https://corey.co?ref=marketingskills). Need hands-on help? Check out [Conversion Factory](https://conversionfactory.co?ref=marketingskills) — Corey&#039;s agency for conversion optimization, landing pages, and growth strategy. Want to learn more about marketing? Subscribe to [Swipe Files](https://swipefiles.com?ref=marketingskills). Want an autonomous AI agent that uses these skills to be your CMO? Try [Magister](https://magistermarketing.com?ref=marketingskills).
+
+New to the terminal and coding agents? Check out the companion guide [Coding for Marketers](https://codingformarketers.com?ref=marketingskills).
+
+**Contributions welcome!** Found a way to improve a skill or have a new one to add? [Open a PR](#contributing).
+
+Run into a problem or have a question? [Open an issue](https://github.com/coreyhaines31/marketingskills/issues) — we&#039;re happy to help.
+
+## What are Skills?
+
+Skills are markdown files that give AI agents specialized knowledge and workflows for specific tasks. When you add these to your project, your agent can recognize when you&#039;re working on a marketing task and apply the right frameworks and best practices.
+
+## How Skills Work Together
+
+Skills reference each other and build on shared context. The `product-marketing-context` skill is the foundation — every other skill checks it first to understand your product, audience, and positioning before doing anything.
+
+```
+                            ┌──────────────────────────────────────┐
+                            │      product-marketing-context       │
+                            │    (read by all other skills first)  │
+                            └──────────────────┬───────────────────┘
+                                               │
+    ┌──────────────┬─────────────┬─────────────┼─────────────┬──────────────┬──────────────┐
+    ▼              ▼             ▼             ▼             ▼              ▼              ▼
+┌──────────┐ ┌──────────┐ ┌──────────┐ ┌────────────┐ ┌──────────┐ ┌─────────────┐ ┌───────────┐
+│  SEO &amp;   │ │   CRO    │ │Content &amp; │ │  Paid &amp;    │ │ Growth &amp; │ │  Sales &amp;    │ │ Strategy  │
+│ Content  │ │          │ │   Copy   │ │Measurement │ │Retention │ │    GTM      │ │           │
+├──────────┤ ├──────────┤ ├──────────┤ ├────────────┤ ├──────────┤ ├─────────────┤ ├───────────┤
+│seo-audit │ │page-cro  │ │copywritng│ │paid-ads    │ │referral  │ │revops       │ │mktg-ideas │
+│ai-seo    │ │signup-cro│ │copy-edit │ │ad-creative │ │free-tool │ │sales-enable │ │mktg-psych │
+│site-arch │ │onboard   │ │cold-email│ │ab-test     │ │churn-    │ │launch       │ │customer-  │
+│programm  │ │form-cro  │ │email-seq │ │analytics   │ │ prevent  │ │pricing      │ │ research  │
+│schema    │ │popup-cro │ │social    │ │            │ │community │ │comp-alts    │ │           │
+│content   │ │paywall   │ │video     │ │            │ │lead-magnt│ │comp-profile │ │           │
+│aso-audit │ │          │ │image     │ │            │ │          │ │directory    │ │           │
+└────┬─────┘ └────┬─────┘ └────┬─────┘ └─────┬──────┘ └────┬─────┘ └──────┬──────┘ └─────┬─────┘
+     │            │            │              │             │              │              │
+     └────────────┴─────┬──────┴──────────────┴─────────────┴──────────────┴──────────────┘
+                        │
+         Skills cross-reference each other:
+           copywriting ↔ page-cro ↔ ab-test-setup
+           revops ↔ sales-enablement ↔ cold-email
+           seo-audit ↔ schema-markup ↔ ai-seo
+           customer-research → copywriting, page-cro, competitor-alternatives
+```
+
+See each skill&#039;s **Related Skills** section for the full dependency map.
+
+## Available Skills
+
+&lt;!-- SKILLS:START --&gt;
+| Skill | Description |
+|-------|-------------|
+| [ab-test-setup](skills/ab-test-setup/) | When the user wants to plan, design, or implement an A/B test or experiment, or build a growth experimentation program.... |
+| [ad-creative](skills/ad-creative/) | When the user wants to generate, iterate, or scale ad creative — headlines, descriptions, primary text, or full ad... |
+| [ai-seo](skills/ai-seo/) | When the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers.... |
+| [analytics-tracking](skills/analytics-tracking/) | When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions... |
+| [aso-audit](skills/aso-audit/) | When the user wants to audit or optimize an App Store or Google Play listing. Also use when the user mentions &#039;ASO... |
+| [churn-prevention](skills/churn-prevention/) | When the user wants to reduce churn, build cancellation flows, set up save offers, recover failed payments, or... |
+| [cold-email](skills/cold-email/) | Write B2B cold emails and follow-up sequences that get replies. Use when the user wants to write cold outreach emails,... |
+| [community-marketing](skills/community-marketing/) | Build and leverage online communities to drive product growth and brand loyalty. Use when the user wants to create a... |
+| [competitor-alternatives](skills/competitor-alternatives/) | When the user wants to create competitor comparison or alternative pages for SEO and sales enablement. Also use when... |
+| [competitor-profiling](skills/competitor-profiling/) | When the user wants to research, profile, or analyze competitors from their URLs. Also use when the user mentions... |
+| [content-strategy](skills/content-strategy/) | When the user wants to plan a content strategy, decide what content to create, or figure out what topics to cover. Also... |
+| [copy-editing](skills/copy-editing/) | When the user wants to edit, review, or improve existing marketing copy, or refresh outdated content. Also use when the... |
+| [copywriting](skills/copywriting/) | When the user wants to write, rewrite, or improve marketing copy for any page — including homepage, landing pages,... |
+| [customer-research](skills/customer-research/) | When the user wants to conduct, analyze, or synthesize customer research. Use when the user mentions &quot;customer... |
+| [directory-submissions](skills/directory-submissions/) | When the user wants to submit their product to startup, SaaS, AI, agent, MCP, no-code, or review directories for... |
+| [email-sequence](skills/email-sequence/) | When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email... |
+| [form-cro](skills/form-cro/) | When the user wants to optimize any form that is NOT signup/registration — including lead capture forms, contact forms,... |
+| [free-tool-strategy](skills/free-tool-strategy/) | When the user wants to plan, evaluate, or build a free tool for marketing purposes — lead generation, SEO value, or... |
+| [image](skills/image/) | When the user wants to create, generate, edit, or optimize images for marketing — blog heroes, social graphics, product... |
+| [launch-strategy](skills/launch-strategy/) | When the user wants to plan a product launch, feature announcement, or release strategy. Also use when the user... |
+| [lead-magnets](skills/lead-magnets/) | When the user wants to create, plan, or optimize a lead magnet for email capture or lead generation. Also use when the... |
+| [marketing-ideas](skills/marketing-ideas/) | When the user needs marketing ideas, inspiration, or strategies for their SaaS or software product. Also use when the... |
+| [marketing-psychology](skills/marketing-psychology/) | When the user wants to apply psychological principles, mental models, or behavioral science to marketing. Also use when... |
+| [onboarding-cro](skills/onboarding-cro/) | When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also... |
+| [page-cro](skills/page-cro/) | When the user wants to optimize, improve, or increase conversions on any marketing page — including homepage, landing... |
+| [paid-ads](skills/paid-ads/) | When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X,... |
+| [paywall-upgrade-cro](skills/paywall-upgrade-cro/) | When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use... |
+| [popup-cro](skills/popup-cro/) | When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners for conversion purposes. Also... |
+| [pricing-strategy](skills/pricing-strategy/) | When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions... |
+| [product-marketing-context](skills/product-marketing-context/) | When the user wants to create or update their product marketing context document. Also use when the user mentions... |
+| [programmatic-seo](skills/programmatic-seo/) | When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions... |
+| [referral-program](skills/referral-program/) | When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy.... |
+| [revops](skills/revops/) | When the user wants help with revenue operations, lead lifecycle management, or marketing-to-sales handoff processes.... |
+| [sales-enablement](skills/sales-enablement/) | When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, or demo scripts. Also... |
+| [schema-markup](skills/schema-markup/) | When the user wants to add, fix, or optimize schema markup and structured data on their site. Also use when the user... |
+| [seo-audit](skills/seo-audit/) | When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions &quot;SEO... |
+| [signup-flow-cro](skills/signup-flow-cro/) | When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the... |
+| [site-architecture](skills/site-architecture/) | When the user wants to plan, map, or restructure their website&#039;s page hierarchy, navigation, URL structure, or internal... |
+| [social-content](skills/social-content/) | When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram,... |
+| [video](skills/video/) | When the user wants to create, generate, or produce video content using AI tools or programmatic frameworks. Also use... |
+&lt;!-- SKILLS:END --&gt;
+
+## Installation
+
+### Option 1: CLI Install (Recommended)
+
+Use [npx skills](https://github.com/vercel-labs/skills) to install skills directly:
+
+```bash
+# Install all skills
+npx skills add coreyhaines31/marketingskills
+
+# Install specific skills
+npx skills add coreyhaines31/marketingskills --skill page-cro copywriting
+
+# List available skills
+npx skills add coreyhaines31/marketingskills --list
+```
+
+This automatically installs to your `.agents/skills/` directory (and symlinks into `.claude/skills/` for Claude Code compatibility).
+
+### Option 2: Claude Code Plugin
+
+Install via Claude Code&#039;s built-in plugin system:
+
+```bash
+# Add the marketplace
+/plugin marketplace add coreyhaines31/marketingskills
+
+# Install all marketing skills
+/plugin install marketing-skills
+```
+
+### Option 3: Clone and Copy
+
+Clone the entire repo and copy the skills folder:
+
+```bash
+git clone https://github.com/coreyhaines31/marketingskills.git
+cp -r marketingskills/skills/* .agents/skills/
+```
+
+### Option 4: Git Submodule
+
+Add as a submodule for easy updates:
+
+```bash
+git submodule add https://github.com/coreyhaines31/marketingskills.git .agents/marketingskills
+```
+
+Then reference skills from `.agents/marketingskills/skills/`.
+
+### Option 5: Fork and Customize
+
+1. Fork this repository
+2. Customize skills for your specific needs
+3. Clone your fork into your projects
+
+### Option 6: SkillKit (Multi-Agent)
+
+Use [SkillKit](https://github.com/rohitg00/skillkit) to install skills across multiple AI agents (Claude Code, Cursor, Copilot, etc.):
+
+```bash
+# Install all skills
+npx skillkit install coreyhaines31/marketingskills
+
+# Install specific skills
+npx skillkit install coreyhaines31/marketingskills --skill page-cro copywriting
+
+# List available skills
+npx skillkit install coreyhaines31/marketingskills --list
+```
+
+## Upgrading from v1.0
+
+Skills now use `.agents/` instead of `.claude/` for the product marketing context file. Move your existing context file:
+
+```bash
+mkdir -p .agents
+mv .claude/product-marketing-context.md .agents/product-marketing-context.md
+```
+
+Skills will still check `.claude/` as a fallback, so nothing breaks if you don&#039;t.
+
+## Usage
+
+Once installed, just ask your agent to help with marketing tasks:
+
+```
+&quot;Help me optimize this landing page for conversions&quot;
+→ Uses page-cro skill
+
+&quot;Write homepage copy for my SaaS&quot;
+→ Uses copywriting skill
+
+&quot;Set up GA4 tracking for signups&quot;
+→ Uses analytics-tracking skill
+
+&quot;Create a 5-email welcome sequence&quot;
+→ Uses email-sequence skill
+```
+
+You can also invoke skills directly:
+
+```
+/page-cro
+/email-sequence
+/seo-audit
+```
+
+## Skill Categories
+
+### Conversion Optimization
+- `page-cro` - Any marketing page
+- `signup-flow-cro` - Registration flows
+- `onboarding-cro` - Post-signup activation
+- `form-cro` - Lead capture forms
+- `popup-cro` - Modals and overlays
+- `paywall-upgrade-cro` - In-app upgrade moments
+
+### Content &amp; Copy
+- `copywriting` - Marketing page copy
+- `copy-editing` - Edit and polish existing copy
+- `cold-email` - B2B cold outreach emails and sequences
+- `email-sequence` - Automated email flows
+- `social-content` - Social media content
+- `image` - AI image generation, design tools, and optimization
+
+### SEO &amp; Discovery
+- `seo-audit` - Technical and on-page SEO
+- `ai-seo` - AI search optimization (AEO, GEO, LLMO)
+- `programmatic-seo` - Scaled page generation
+- `site-architecture` - Page hierarchy, navigation, URL structure
+- `competitor-alternatives` - Comparison and alternative pages
+- `schema-markup` - Structured data
+
+### Paid &amp; Distribution
+- `paid-ads` - Google, Meta, LinkedIn ad campaigns
+- `ad-creative` - Bulk ad creative generation and iteration
+- `social-content` - Social media scheduling and strategy
+
+### Measurement &amp; Testing
+- `analytics-tracking` - Event tracking setup
+- `ab-test-setup` - Experiment design
+
+### Retention
+- `churn-prevention` - Cancel flows, save offers, dunning, payment recovery
+
+### Growth Engineering
+- `free-tool-strategy` - Marketing tools and calculators
+- `referral-program` - Referral and affiliate programs
+
+### Strategy &amp; Monetization
+- `marketing-ideas` - 140 SaaS marketing ideas
+- `marketing-psychology` - Mental models and psychology
+- `launch-strategy` - Product launches and announcements
+- `pricing-strategy` - Pricing, packaging, and monetization
+
+### Sales &amp; RevOps
+- `revops` - Lead lifecycle, scoring, routing, pipeline management
+- `sales-enablement` - Sales decks, one-pagers, objection docs, demo scripts
+
+## Contributing
+
+Found a way to improve a skill? Have a new skill to suggest? PRs and issues welcome!
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on adding or improving skills.
+
+## License
+
+[MIT](LICENSE) - Use these however you want.
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[datawhalechina/easy-vibe]]></title>
+            <link>https://github.com/datawhalechina/easy-vibe</link>
+            <guid>https://github.com/datawhalechina/easy-vibe</guid>
+            <pubDate>Sun, 26 Apr 2026 00:13:57 GMT</pubDate>
+            <description><![CDATA[💻 vibe coding 2026 | Your first modern programming course for beginners to master step by step.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/datawhalechina/easy-vibe">datawhalechina/easy-vibe</a></h1>
+            <p>💻 vibe coding 2026 | Your first modern programming course for beginners to master step by step.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 6,772</p>
+            <p>Forks: 685</p>
+            <p>Stars today: 346 stars today</p>
+            <h2>README</h2><pre>&lt;!-- trigger vercel build --&gt;
+&lt;div align=&quot;center&quot;&gt;
+
+&lt;img src=&quot;assets/easy-vibe-logo-hd.svg&quot; alt=&quot;Easy-Vibe Logo&quot; width=&quot;300&quot;&gt;
+
+&lt;p align=&quot;center&quot; style=&quot;font-size: 1.2em; color: #666; margin: 20px 0;&quot;&gt;
+  Jump right in and vibe together — if you can talk, you can build apps.&lt;br&gt;
+  &lt;span style=&quot;font-size: 0.9em; color: #888;&quot;&gt;直接上手，一起 vibe！会说话就会做应用。&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;a href=&quot;https://trendshift.io/repositories/22079&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/22079&quot; alt=&quot;datawhalechina/easy-vibe | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  🚀 &lt;a href=&quot;https://datawhalechina.github.io/easy-vibe/welcome.html&quot;&gt;Start Exploring&lt;/a&gt; · ✨ &lt;a href=&quot;https://datawhalechina.github.io/easy-vibe/en/appendix/&quot;&gt;Interactive Tutorial&lt;/a&gt; · 🦞 &lt;a href=&quot;https://github.com/datawhalechina/hello-claw&quot;&gt;Learn OpenClaw&lt;/a&gt;&lt;br&gt;
+  &lt;span style=&quot;font-size: 0.85em; color: #888;&quot;&gt;🚀 &lt;a href=&quot;https://datawhalechina.github.io/easy-vibe/welcome.html&quot;&gt;开始体验&lt;/a&gt; · ✨ &lt;a href=&quot;https://datawhalechina.github.io/easy-vibe/zh-cn/appendix/&quot;&gt;交互式教程&lt;/a&gt; · 🦞 &lt;a href=&quot;https://github.com/datawhalechina/hello-claw&quot;&gt;学习 OpenClaw&lt;/a&gt;&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://datawhalechina.github.io/easy-vibe/welcome.html&quot;&gt;Read Online&lt;/a&gt; ·
+  &lt;a href=&quot;#-content-navigation&quot;&gt;Learning Map&lt;/a&gt;&lt;br&gt;
+  &lt;span style=&quot;font-size: 0.85em; color: #888;&quot;&gt;
+    &lt;a href=&quot;https://datawhalechina.github.io/easy-vibe/welcome.html&quot;&gt;开始阅读&lt;/a&gt; ·
+    &lt;a href=&quot;#-content-navigation&quot;&gt;学习地图&lt;/a&gt;
+  &lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+    &lt;a href=&quot;https://github.com/datawhalechina/easy-vibe/stargazers&quot; target=&quot;_blank&quot;&gt;
+        &lt;img src=&quot;https://img.shields.io/github/stars/datawhalechina/easy-vibe?color=660874&amp;style=for-the-badge&amp;logo=star&amp;logoColor=white&amp;labelColor=1a1a2e&quot; alt=&quot;Stars&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://github.com/datawhalechina/easy-vibe/network/members&quot; target=&quot;_blank&quot;&gt;
+        &lt;img src=&quot;https://img.shields.io/github/forks/datawhalechina/easy-vibe?color=660874&amp;style=for-the-badge&amp;logo=git-fork&amp;logoColor=white&amp;labelColor=1a1a2e&quot; alt=&quot;Forks&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;LICENSE&quot; target=&quot;_blank&quot;&gt;
+        &lt;img src=&quot;https://img.shields.io/badge/License-CC_BY_NC_SA_4.0-4ecdc4?style=for-the-badge&amp;logo=creative-commons&amp;logoColor=white&amp;labelColor=1a1a2e&quot; alt=&quot;License&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;README.md&quot;&gt;&lt;img alt=&quot;English&quot; src=&quot;https://img.shields.io/badge/English-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;docs-readme/zh-CN/README.md&quot;&gt;&lt;img alt=&quot;简体中文&quot; src=&quot;https://img.shields.io/badge/简体中文-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;docs-readme/zh-TW/README.md&quot;&gt;&lt;img alt=&quot;繁體中文&quot; src=&quot;https://img.shields.io/badge/繁體中文-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;docs-readme/ja-JP/README.md&quot;&gt;&lt;img alt=&quot;日本語&quot; src=&quot;https://img.shields.io/badge/日本語-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;docs-readme/es-ES/README.md&quot;&gt;&lt;img alt=&quot;Español&quot; src=&quot;https://img.shields.io/badge/Español-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;docs-readme/fr-FR/README.md&quot;&gt;&lt;img alt=&quot;Français&quot; src=&quot;https://img.shields.io/badge/Français-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;docs-readme/ko-KR/README.md&quot;&gt;&lt;img alt=&quot;한국어&quot; src=&quot;https://img.shields.io/badge/한국어-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;docs-readme/ar-SA/README.md&quot;&gt;&lt;img alt=&quot;العربية&quot; src=&quot;https://img.shields.io/badge/العربية-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;docs-readme/vi-VN/README.md&quot;&gt;&lt;img alt=&quot;Tiếng_Việt&quot; src=&quot;https://img.shields.io/badge/Tiếng_Việt-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;docs-readme/de-DE/README.md&quot;&gt;&lt;img alt=&quot;Deutsch&quot; src=&quot;https://img.shields.io/badge/Deutsch-d9d9d9&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;table align=&quot;center&quot;&gt;
+  &lt;tr&gt;
+    &lt;td width=&quot;50%&quot; valign=&quot;top&quot; align=&quot;center&quot;&gt;
+      &lt;img src=&quot;assets/gif-header.png&quot; width=&quot;100%&quot;&gt;
+      &lt;br&gt;
+      &lt;strong&gt;A beginner-friendly learning map&lt;/strong&gt;
+      &lt;br&gt;
+      &lt;sub&gt;Clear guidance from zero, so you can stop &quot;learning and forgetting&quot;&lt;/sub&gt;
+    &lt;/td&gt;
+    &lt;td width=&quot;50%&quot; valign=&quot;top&quot; align=&quot;center&quot;&gt;
+      &lt;img src=&quot;assets/gif-tutorial.png&quot; width=&quot;100%&quot;&gt;
+      &lt;br&gt;
+      &lt;strong&gt;Step-by-step visual tutorials&lt;/strong&gt;
+      &lt;br&gt;
+      &lt;sub&gt;Detailed walkthroughs that feel like learning with a private tutor&lt;/sub&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td width=&quot;50%&quot; valign=&quot;top&quot; align=&quot;center&quot;&gt;
+      &lt;img src=&quot;assets/gif-ide.gif&quot; width=&quot;100%&quot;&gt;
+      &lt;br&gt;
+      &lt;strong&gt;Immersive simulated coding&lt;/strong&gt;
+      &lt;br&gt;
+      &lt;sub&gt;Virtual mouse guidance helps you quickly learn the core IDE workflow&lt;/sub&gt;
+    &lt;/td&gt;
+    &lt;td width=&quot;50%&quot; valign=&quot;top&quot; align=&quot;center&quot;&gt;
+      &lt;img src=&quot;assets/gif-diffusion.gif&quot; width=&quot;100%&quot;&gt;
+      &lt;br&gt;
+      &lt;strong&gt;Visible AI principles&lt;/strong&gt;
+      &lt;br&gt;
+      &lt;sub&gt;Animated explanations make it easy to see how AI generates images&lt;/sub&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td width=&quot;50%&quot; valign=&quot;top&quot; align=&quot;center&quot;&gt;
+      &lt;img src=&quot;assets/gif-rag.gif&quot; width=&quot;100%&quot;&gt;
+      &lt;br&gt;
+      &lt;strong&gt;Learn RAG like a game&lt;/strong&gt;
+      &lt;br&gt;
+      &lt;sub&gt;Interactive components let you click through the full RAG data flow&lt;/sub&gt;
+    &lt;/td&gt;
+    &lt;td width=&quot;50%&quot; valign=&quot;top&quot; align=&quot;center&quot;&gt;
+      &lt;img src=&quot;assets/git-terminal.gif&quot; width=&quot;100%&quot;&gt;
+      &lt;br&gt;
+      &lt;strong&gt;Visual terminal concepts&lt;/strong&gt;
+      &lt;br&gt;
+      &lt;sub&gt;Command-line behavior becomes intuitive when the underlying logic is visualized&lt;/sub&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;div align=&quot;center&quot;&gt;
+  &lt;h3&gt;⭐ &lt;a href=&quot;https://github.com/datawhalechina/easy-vibe&quot; style=&quot;color: #d0cd16ff;&quot;&gt;Star the repo here&lt;/a&gt; to help accelerate updates ❤️&lt;/h3&gt;
+&lt;/div&gt;
+
+&lt;div align=&quot;center&quot; style=&quot;margin: 30px 0;&quot;&gt;
+  &lt;a href=&quot;https://github.com/datawhalechina/easy-vibe/issues/new?template=story_submission.md&quot;&gt;
+    &lt;img src=&quot;https://raw.githubusercontent.com/datawhalechina/easy-vibe/main/assets/stories_image.png&quot; alt=&quot;Share Your Vibe Story&quot; width=&quot;80%&quot; style=&quot;border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);&quot;&gt;
+  &lt;/a&gt;
+  &lt;p style=&quot;margin-top: 15px; font-size: 1.1em; color: #666;&quot;&gt;
+    📝 &lt;strong&gt;Have your own vibe coding story?&lt;/strong&gt; 
+    Submit it here and inspire others!
+  &lt;/p&gt;
+&lt;/div&gt;
+
+## Why Easy-Vibe
+
+Want an expense tracker? Say it.
+
+Need a booking system with WeChat login? Say it.
+
+Want a blog with comments? Say it.
+
+In the AI era, programming starts by describing what you want.
+
+Easy-Vibe teaches you how to turn that into a real product.
+
+
+## 🔥 News
+
+- **[2026-03-29]** ✨ **Vibe Stories launched and upgraded with real user journeys**: Added a new homepage Vibe Stories section with an interactive carousel and dedicated story pages, then replaced placeholder content with four real user stories featuring a rural primary school teacher, a college student, a high school IT teacher, and a truck driver who built real products with AI. [👉 View the stories](https://datawhalechina.github.io/easy-vibe/zh-cn/vibe-stories/story-1.html)
+- **[2026-03-26]** 🚀 **Major Stage 2 practice update**: Completed the SaaS capstone project &quot;[Your First SaaS Full-Stack App: Copywriting Generator Website](https://datawhalechina.github.io/easy-vibe/en/stage-2/assignments/fullstack-app/)&quot; and substantially expanded the &quot;[How to integrate Stripe and payment systems](https://datawhalechina.github.io/easy-vibe/en/stage-2/backend/stripe-payment/)&quot; section, plus key content around multi-product UI and WeChat Mini Program backend workflows.
+- **[2026-03-25]** 📚 **New appendix: User Research and Requirement Validation**: Added four new articles covering idea sourcing, the Double Diamond model, Jobs to Be Done, and The Mom Test to help beginners discover and validate product ideas. [👉 Read the appendix](https://datawhalechina.github.io/easy-vibe/en/appendix/)
+- **[2026-03-25]** 📚 **English documentation fully updated**: Stage 2 (Full-stack Development) and Stage 3 (Advanced Development) are now fully available in English. [👉 Start learning](https://datawhalechina.github.io/easy-vibe/en/stage-2/)
+&lt;details&gt;
+&lt;summary&gt;Past News&lt;/summary&gt;
+
+- **[2026-03-02]** 🦞 **OpenClaw and AI Agent friendly support**: Added `llms.txt` so OpenClaw, Claude, Cursor, Trae, and other AI agents can quickly understand the repository structure and find the right tutorial content.
+- **[2026-03-01]** The [Advanced Development section](https://datawhalechina.github.io/easy-vibe/en/stage-3/) has been comprehensively upgraded with deep guides for Claude Code, including MCP, Skills, Agent Teams, and more, along with eight cross-platform project tutorials.
+- **[2026-02-25]** Updated the [Appendix Knowledge Base](https://datawhalechina.github.io/easy-vibe/en/appendix/), now covering 9 knowledge areas and 80+ interactive topics.
+- **[2026-01-27]** Added Android and iOS app development tutorials.
+- **[2026-01-19]** Released interactive demos for Prompt Engineering, AI history, authentication design, Git principles, and more.
+- **[2026-01-16]** Reorganized the project structure and formally established a beginner entry path.
+- **[2026-01-14]** Completed a large update to the Stage 1 product prototyping docs.
+- **[2026-01-13]** Refactored the documentation architecture and fully enabled multi-language support.
+- **[2026-01-01]** Released the core learning map for the project.
+&lt;/details&gt;
+
+## Who This Is For
+
+- **Complete beginners**: Build your first project first, then understand how it works
+- **Product managers / founders**: Validate ideas fast and build MVPs at low cost
+- **Students**: Develop practical skills for the AI era
+- **Junior developers**: Learn the full path from idea to launch
+- **Mid-level and senior developers**: Upgrade your AI collaboration workflow for complex projects
+
+
+
+## Your Learning Paths
+
+### 🎮 I want a fast first win
+**Best for**: Everyone
+**What you will learn**: What AI coding actually feels like through a simple, concrete hands-on example
+**What you will get**: A clear first impression of vibe coding and how to work with AI by conversation
+
+[Start here](https://datawhalechina.github.io/easy-vibe/en/stage-1/ai-capabilities-through-games/)
+
+### 💡 I want to turn an idea into a product prototype
+**Best for**: Beginners / product managers / founders
+**What you will learn**: Learning roadmap, AI IDE tools, idea validation, prototyping, AI capability integration, and full demo iteration
+**What you will get**: A demoable AI product prototype you can actually show to users or teammates
+
+[Start learning](https://datawhalechina.github.io/easy-vibe/en/stage-1/learning-map/)
+
+### 🚀 I want to build full-stack products end to end
+**Best for**: Junior developers / indie hackers / advanced learners
+**What you will learn**: Frontend workflows, design-to-code, databases, backend APIs, deployment, billing, and major projects
+**What you will get**: The ability to independently ship modern AI-enabled web applications
+
+[Start learning](https://datawhalechina.github.io/easy-vibe/en/stage-2/)
+
+### AI-Native: I want advanced Claude Code and agent workflows
+**Best for**: Developers interested in AI-native engineering
+**What you will learn**: Claude Code, MCP, Skills, Agent Teams, long-running tasks, Spec Coding, and cross-platform app delivery
+**What you will get**: A stronger workflow for complex AI-assisted development and automation
+
+[Go to advanced development](https://datawhalechina.github.io/easy-vibe/en/stage-3/)
+
+### 📚 I want reference material and fundamentals
+**Best for**: Everyone
+**What you will learn**: Computer fundamentals, frontend/backend basics, infrastructure, AI principles, and engineering practices
+**What you will get**: A long-term reference knowledge base covering 9 major knowledge areas
+
+[Browse the knowledge base](https://datawhalechina.github.io/easy-vibe/en/appendix/)
+
+## Study Suggestions
+
+- If you are a beginner, product manager, or founder, start with [Stage 1](https://datawhalechina.github.io/easy-vibe/en/stage-1/learning-map/)
+- If you want to move from prototypes to full-stack delivery, start with [Stage 2](https://datawhalechina.github.io/easy-vibe/en/stage-2/)
+- If you want advanced Claude Code workflows or cross-platform projects, go to [Stage 3](https://datawhalechina.github.io/easy-vibe/en/stage-3/)
+- If you get blocked by concepts or missing background knowledge, use the [Appendix Knowledge Base](https://datawhalechina.github.io/easy-vibe/en/appendix/)
+
+### 📖 Content Navigation
+
+&lt;div align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/readme-image1.png&quot; alt=&quot;Learning Map&quot; width=&quot;70%&quot; style=&quot;border-radius: 10px; box-shadow: 0 8px 20px rgba(45,55,72,0.3); margin: 15px 0;&quot;/&gt;
+&lt;/div&gt;
+
+### I. Beginner Entry
+
+| Section | Key Content |
+| :------ | :---------- |
+| [Learning Map](https://datawhalechina.github.io/easy-vibe/en/stage-1/learning-map/) | A guided overview of the full learning journey |
+| [AI Era: If You Can Speak, You Can Code](https://datawhalechina.github.io/easy-vibe/en/stage-1/ai-capabilities-through-games/) | Get your first feel for AI coding through examples like Snake |
+| [Master AI Programming Tools](https://datawhalechina.github.io/easy-vibe/en/stage-1/introduction-to-ai-ide/) | Learn how AI IDE tools work and build simple local projects with them |
+| [Find Great Ideas](https://datawhalechina.github.io/easy-vibe/en/stage-1/finding-great-idea/) | Learn how to discover and validate product ideas worth building |
+| [Build Product Prototypes](https://datawhalechina.github.io/easy-vibe/en/stage-1/building-prototype/) | Move from requirements to single-page and multi-page product prototypes |
+| [Integrate AI Capabilities](https://datawhalechina.github.io/easy-vibe/en/stage-1/integrating-ai-capabilities/) | Integrate text, image, and video AI features |
+| [Complete project practice](https://datawhalechina.github.io/easy-vibe/en/stage-1/complete-project-practice/) | Simulate real scenarios, collect user feedback, and iterate on a full project |
+
+#### Appendix: Product and Business Thinking
+
+| Section | Key Content |
+| :------ | :---------- |
+| [Product Thinking and Solution Design](https://datawhalechina.github.io/easy-vibe/en/stage-1/appendix-a-product-thinking/) | Core frameworks for going from zero to one with a product |
+| [AI Industry Application Scenarios (B-end)](https://datawhalechina.github.io/easy-vibe/en/stage-1/appendix-industry-scenarios/) | Understand how AI is applied across industries |
+| [AI Consumer Scenarios Inspiration (C-end)](https://datawhalechina.github.io/easy-vibe/en/stage-1/appendix-c-consumer-scenarios/) | Explore product opportunities in consumer AI |
+
+#### Appendix: User Research and Requirement Validation
+
+| Section | Key Content |
+| :------ | :---------- |
+| [Where to find ideas: 3 reference sources that work best for beginners](https://datawhalechina.github.io/easy-vibe/en/stage-1/appendix-idea-sources/) | Build a reliable pipeline for finding concrete product opportunities |
+| [Double Diamond: first do the right thing, then do it right](https://datawhalechina.github.io/easy-vibe/en/stage-1/appendix-double-diamond/) | Use a structured process to move from scattered inspiration to a workable direction |
+| [Use Jobs to Be Done to find what users really want done](https://datawhalechina.github.io/easy-vibe/en/stage-1/appendix-jobs-to-be-done/) | Analyze user goals through real tasks instead of surface-level feature requests |
+| [The Mom Test: a user interview method for validating demand](https://datawhalechina.github.io/easy-vibe/en/stage-1/appendix-mom-test/) | Learn how to ask better questions and avoid false-positive feedback |
+
+#### Appendix: Technical Solutions
+
+| Section | Key Content |
+| :------ | :---------- |
+| [What to do if you encounter errors](https://datawhalechina.github.io/easy-vibe/en/stage-1/appendix-b-common-errors/) | Common vibe coding issues and how to troubleshoot them |
+| [Comparison of Seven AI Programming Tools](https://datawhalechina.github.io/easy-vibe/en/stage-1/appendix-articles/example0-1/vibe-coding-tools-snake-game-tutorial) | Compare major AI coding platforms through hands-on testing |
+| [Design Websites with Agents](https://datawhalechina.github.io/easy-vibe/en/stage-1/appendix-articles/example0-2/vibe-coding-tools-build-website-with-ai-coding-and-design-agents) | Learn multi-agent collaboration in practice |
+
+### II. Junior and Mid-Level Developers
+
+#### Frontend
+
+| Section | Key Content |
+| :------ | :---------- |
+| [Frontend 0: Build Your Own Asset-Production Agent with Lovart](https://datawhalechina.github.io/easy-vibe/en/stage-2/frontend/lovart-assets/) | Use Nanobanana and Lovart to batch-generate visual assets and build a drawing agent with intent recognition |
+| [Frontend 1: Figma &amp; MasterGo Basics](https://datawhalechina.github.io/easy-vibe/en/stage-2/frontend/figma-mastergo/) | Learn the workflow from design drafts to implementation-ready UI thinking |
+| [Frontend 2: Build Your First Modern App - UI Design](https://datawhalechina.github.io/easy-vibe/en/stage-2/frontend/ui-design/) | Learn the UI design foundations behind modern application interfaces |
+| [Frontend 3: UI Guidelines and Multi-Product Design](https://datawhalechina.github.io/easy-vibe/en/stage-2/frontend/multi-product-ui/) | Improve consistency and aesthetics across multiple products with shared UI rules |
+| [Frontend 4: Make Interfaces Beautiful with LLMs and Skills](https://datawhalechina.github.io/easy-vibe/en/stage-2/frontend/llm-skills-beautiful/) | Use prompts and plugins to make AI generate more polished, distinctive interfaces |
+| [Frontend 4: Let&#039;s Build Hogwarts Portraits](https://datawhalechina.github.io/easy-vibe/en/stage-2/frontend/hogwarts-portraits/) | Build an interactive AI-image frontend project from scratch |
+| [Frontend 6: From Design Prototype to Project Code](https://datawhalechina.github.io/easy-vibe/en/stage-2/frontend/design-to-code/) | Turn design prototypes into frontend code that can really run in the browser |
+| [Frontend 7: Upgrade Your UI with Modern Component Libraries](https://datawhalechina.github.io/easy-vibe/en/stage-2/frontend/modern-component-library/) | Use component libraries to build professional interfaces faster |
+
+#### Backend
+
+| Section | Key Content |
+| :------ | :---------- |
+| [Backend 1: Learn Git and GitHub](https://datawhalechina.github.io/easy-vibe/en/stage-2/backend/git-workflow/) | Master core version control operations and collaboration workflows with Git |
+| [Backend 2: From Database to Supabase](https://datawhalechina.github.io/easy-vibe/en/stage-2/backend/database-supabase/) | Learn relational database basics and use Supabase as a modern BaaS platform |
+| [Backend 3: Backend API Design and Development](https://datawhalechina.github.io/easy-vibe/en/stage-2/backend/ai-interface-code/) | Use AI to assist API design, backend code generation, and API documentation |
+| [Backend 4: Ship Your Product Prototype](https://datawhalechina.github.io/easy-vibe/en/stage-2/backend/zeabur-deployment/) | Quickly deploy full-stack applications to the cloud with Zeabur |
+| [Backend 5: From IDEs to CLI AI Coding Tools](https://datawhalechina.github.io/easy-vibe/en/stage-2/backend/modern-cli/) | Explore terminal-first AI coding workflows for modern development |
+| [Backend 6: Integrate Stripe and Other Billing Systems](https://datawhalechina.github.io/easy-vibe/en/stage-2/backend/stripe-payment/) | Add monetization with payment and billing capabilities |
+
+#### Major Projects
+
+| Section | Key Content |
+| :------ | :---------- |
+| [Major Project 1: Your First SaaS Full-Stack App - AI Copywriting Website](https://datawhalechina.github.io/easy-vibe/en/stage-2/assignments/fullstack-app/) | Build an AI marketing copy workspace with login, generation, billing, and admin management |
+| [Major Project 2: Online Exam and Management System](https://datawhalechina.github.io/easy-vibe/en/stage-2/assignments/modern-frontend-trae/) | Build an online exam system with question generation, test-taking flows, and admin tools |
+
+#### AI Capabilities Appendix
+
+| Section | Key Content |
+| :------ | :---------- |
+| [AI 1: Dify Basics &amp; Knowledge Base Integration](https://datawhalechina.github.io/easy-vibe/en/stage-2/ai-capabilities/dify-knowledge-base/) | Learn to build AI applications with Dify and integrate private knowledge bases |
+
+### III. Advanced Developers
+
+#### Claude Code Core Skills
+
+| Section | Key Content |
+| :------ | :--------
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[SillyTavern/SillyTavern]]></title>
+            <link>https://github.com/SillyTavern/SillyTavern</link>
+            <guid>https://github.com/SillyTavern/SillyTavern</guid>
+            <pubDate>Sun, 26 Apr 2026 00:13:56 GMT</pubDate>
+            <description><![CDATA[LLM Frontend for Power Users.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/SillyTavern/SillyTavern">SillyTavern/SillyTavern</a></h1>
+            <p>LLM Frontend for Power Users.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 26,242</p>
+            <p>Forks: 5,167</p>
+            <p>Stars today: 66 stars today</p>
+            <h2>README</h2><pre># SillyTavern
+
+LLM Frontend for Power Users
+
+## Resources
+
+- GitHub: &lt;https://github.com/SillyTavern/SillyTavern&gt;
+- Docs: &lt;https://docs.sillytavern.app/&gt;
+- Discord: &lt;https://discord.gg/sillytavern&gt;
+- Reddit: &lt;https://reddit.com/r/SillyTavernAI&gt;
+
+## License
+
+AGPL-3.0
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[atlassian/atlassian-mcp-server]]></title>
+            <link>https://github.com/atlassian/atlassian-mcp-server</link>
+            <guid>https://github.com/atlassian/atlassian-mcp-server</guid>
+            <pubDate>Sun, 26 Apr 2026 00:13:55 GMT</pubDate>
+            <description><![CDATA[Remote MCP Server that securely connects Jira and Confluence with your LLM, IDE, or agent platform of choice.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/atlassian/atlassian-mcp-server">atlassian/atlassian-mcp-server</a></h1>
+            <p>Remote MCP Server that securely connects Jira and Confluence with your LLM, IDE, or agent platform of choice.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 616</p>
+            <p>Forks: 74</p>
+            <p>Stars today: 3 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;images/atlassian_logo_brand_RGB.svg&quot;&gt;
+&lt;/p&gt;
+
+# Atlassian MCP Server
+
+The Atlassian Rovo MCP Server is a cloud-based bridge between your Atlassian Cloud site and compatible external tools. Once configured, it enables those tools to interact with Jira, Compass, and Confluence data in real-time. This functionality is powered by secure authentication using **OAuth 2.1** or **API tokens**, which ensures all actions respect the user&#039;s existing access controls.
+
+With the Atlassian Rovo MCP Server, you can:
+
+* **Summarize and search** Jira, Compass, and Confluence content without switching tools.
+* **Create and update** issues or pages based on natural language commands.
+* **Automate repetitive work**, like generating tickets from meeting notes or specs.
+
+It&#039;s designed developers, content creators, and project teams who use IDEs or AI platforms and want to work with Atlassian data without constantly context switching.
+
+---
+
+## Supported clients
+
+The Atlassian Rovo MCP Server supports several clients, including:
+
+* [OpenAI ChatGPT](https://platform.openai.com/docs/guides/tools-connectors-mcp)
+* [Claude](https://code.claude.com/docs/en/mcp)
+* [GitHub Copilot CLI](https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli)
+* [Gemini CLI](https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md)
+* [Amazon Quick Suite](https://docs.aws.amazon.com/quicksuite/latest/userguide/mcp-integration.html)
+* [Visual Studio Code](https://code.visualstudio.com/)
+
+The Atlassian Rovo MCP Server also supports any **local MCP-compatible client** that can run on `localhost` and connect to the server via the `mcp-remote` proxy. This enables custom or third-party integrations that follow the MCP specification.
+
+For detailed setup instructions, refer to your client&#039;s own MCP documentation or built-in assistant.
+
+---
+
+## Before you start
+
+Ensure your environment meets the necessary requirements to successfully set up the Atlassian Rovo MCP Server. This section outlines the technical prerequisites and key access considerations.
+
+### Prerequisites
+
+Before connecting to the Atlassian Rovo MCP Server, review the setup requirements for your environment:
+
+#### For supported clients
+
+* An **Atlassian Cloud site** with Jira, Compass, and/or Confluence
+* Access to **the client of choice**
+* A modern browser to complete the OAuth 2.1 authorization flow, or API token credentials for headless authentication
+
+#### For IDEs or local clients (Desktop setup)
+
+* An **Atlassian Cloud site** with Jira, Compass, and/or Confluence
+* A supported IDE (for example, **Claude desktop, VS Code, or Cursor**) or a custom MCP-compatible client
+* **Node.js v18+** installed to run the local MCP proxy (`mcp-remote`)
+* A modern browser for completing OAuth login, or API token credentials for headless authentication
+
+---
+
+## Data and security
+
+Security is a core focus of the Atlassian Rovo MCP Server:
+
+* All traffic is encrypted via HTTPS using TLS 1.2 or later.
+* OAuth 2.1 and API token authentication provide secure access control.
+* Data access respects Jira, Compass, and Confluence user permissions.
+* If your organization uses IP allowlisting for Atlassian Cloud products, tool calls made through the Atlassian Rovo MCP Server also honor those IP rules.
+
+For a deeper overview of the security model and admin controls, see:
+
+* [Understand Atlassian Rovo MCP Server](https://support.atlassian.com/security-and-access-policies/docs/understand-atlassian-rovo-mcp-server/)
+* [Control Atlassian Rovo MCP Server settings](https://support.atlassian.com/security-and-access-policies/docs/control-atlassian-rovo-mcp-server-settings/)
+
+---
+
+## How it works
+
+### Architecture and communication
+
+1. A supported client connects to the server endpoint:
+```
+https://mcp.atlassian.com/v1/mcp
+```
+2. Depending on your setup, a secure browser-based OAuth 2.1 flow is triggered, or API token authentication is used.
+3. Once authorized, the client streams contextual data and receives real-time responses from Jira, Compass, or Confluence.
+
+&gt; [!NOTE]
+&gt; While `/sse` as a server endpoint are supported, we recommend updating any custom clients configured to use `/sse` so they now point to `/mcp`.
+
+### Permission management
+
+Access is granted only to data that the user already has permission to view in Atlassian Cloud. All actions respect existing project or space-level roles. OAuth and API token authentication both honor configured scopes and Atlassian permissions.
+
+### API token authentication (headless)
+
+API token authentication is available for headless or long-running client setups.
+
+* **Admin enablement required:** An organization admin must enable API token authentication for Rovo MCP Server.
+* **Scoped token required:** Use a Rovo MCP scoped API token for the required tools and data access.
+* **Configuration guide:** [Configure authentication via API token](https://support.atlassian.com/atlassian-rovo-mcp-server/docs/configuring-authentication-via-api-token/)
+* **Admin setting reference:** [Control Atlassian Rovo MCP Server settings - Configure authentication](https://support.atlassian.com/security-and-access-policies/docs/control-atlassian-rovo-mcp-server-settings/#Configure-authentication)
+
+---
+
+## Example workflows
+
+Once connected, you can perform a variety of useful tasks from within your supported client.
+
+### Jira workflows
+
+* **Search**: &quot;Find all open bugs in Project Alpha.&quot;
+* **Create/update**: &quot;Create a story titled &#039;Redesign onboarding&#039;.&quot;
+* **Bulk create**: &quot;Make five Jira issues from these notes.&quot;
+
+### Confluence workflows
+
+* **Summarize**: &quot;Summarize the Q2 planning page.&quot;
+* **Create**: &quot;Create a page titled &#039;Team Goals Q3&#039;.&quot;
+* **Navigate**: &quot;What spaces do I have access to?&quot;
+
+### Compass workflows
+
+* **Create**: &quot;Create a service component based on the current repository.&quot;
+* **Bulk create**: &quot;Import components and custom fields from this CSV/JSON&quot;
+* **Query**: &quot;What depends on the `api-gateway` service?&quot;
+
+### Combined tasks
+
+* **Link content**: &quot;Link these three Jira tickets to the &#039;Release Plan&#039; page.&quot;
+* **Find documentation**: &quot;Fetch the Confluence documentation page linked to this Compass component.&quot;
+
+&gt; [!NOTE]
+&gt; Actual capabilities vary, depending on your permission level and client platform.
+
+---
+
+## Tips and tricks
+
+### Set default CloudId, Jira project, and Confluence space
+
+Update your [AGENTS.md](https://agents.md/) with the Markdown below to reduce discovery tool calls, save time and tokens, and set maximum search results.
+
+``` MD
+## Atlassian Rovo MCP
+
+When connected to atlassian-rovo-mcp:
+- **MUST** use Jira project key = YOURPROJ
+- **MUST** use Confluence spaceId = &quot;123456&quot;
+- **MUST** use cloudId = &quot;https://yoursite.atlassian.net&quot; (do NOT call getAccessibleAtlassianResources)
+- **MUST** use `maxResults: 10` or `limit: 10` for ALL Jira JQL and Confluence CQL search operations.
+```
+
+### Use skills
+
+If you&#039;re using a desktop client like Claude, you can create or reuse skills for repeated tasks. [See the default Rovo MCP skills](https://github.com/atlassian/atlassian-mcp-server/tree/main/skills)
+
+For [Cursor](https://cursor.com/marketplace/atlassian), skills are part of the marketplace plugin.
+
+---
+
+## Admin notes: Managing access
+
+If you&#039;re an admin preparing your organization to use the Atlassian Rovo MCP Server, review these key considerations. For more detailed admin guidance, see:
+
+* [Understand Atlassian Rovo MCP server](https://support.atlassian.com/security-and-access-policies/docs/understand-atlassian-rovo-mcp-server/)
+* [Control Atlassian Rovo MCP server settings](https://support.atlassian.com/security-and-access-policies/docs/control-atlassian-rovo-mcp-server-settings/)
+* [Manage Atlassian Rovo MCP server](https://support.atlassian.com/security-and-access-policies/docs/manage-atlassian-rovo-mcp-server/)
+* [Monitor Atlassian Rovo MCP server activity](https://support.atlassian.com/security-and-access-policies/docs/monitor-atlassian-rovo-mcp-server-activity/)
+
+### Installation and access
+
+* **Not a Marketplace App:**  
+The Atlassian Rovo MCP Server is _not_ installed via the Atlassian Marketplace or the **Manage apps** screen. Instead, it is installed automatically the first time a user completes the OAuth 2.1 (3LO) consent flow (just-in-time or &quot;lazy loading&quot; installation).
+* **First-time installation requirements:**  
+The first user to complete the 3LO consent flow for your site must have access to the Atlassian apps requested by the MCP scopes (for example, Jira and/or Confluence). This ensures the MCP app is registered with the correct permissions for your site.
+* **Subsequent user access:**  
+After the initial install, users with access to only one Atlassian app (for example, just Jira or just Confluence) can also complete the 3LO flow to access that Atlassian app through MCP.
+
+### Manage, monitor, and revoke access
+
+* **Admin controls:**  
+Site and organization admins can manage, review, or revoke the MCP app&#039;s access from [Manage your organization&#039;s Marketplace and third-party apps](https://support.atlassian.com/security-and-access-policies/docs/manage-your-users-third-party-apps/). The app appears in your site&#039;s **Connected apps** list after the first successful 3LO consent.
+* **End-user controls:**  
+Individual users can revoke their own app authorizations from their profile settings.
+* **Domain and IP controls:**  
+Use the **Rovo MCP server** settings page in Atlassian Administration to control which external AI tools and domains are allowed to connect. For details, see [Available Atlassian Rovo MCP server domains](https://support.atlassian.com/security-and-access-policies/docs/available-atlassian-rovo-mcp-server-domains/). If your organization uses IP allowlisting for Atlassian Cloud apps, requests made through the Atlassian Rovo MCP Server must originate from an IP address that is allowed by your organization&#039;s IP allowlist for the relevant Atlassian app. For configuration details, see [Specify IP addresses for app access](https://support.atlassian.com/security-and-access-policies/docs/specify-ip-addresses-for-product-access/).
+* **Audit logging:** To support monitoring and compliance, key actions performed via the Atlassian Rovo MCP Server are logged in your organization&#039;s audit log. Admins can review these logs in Atlassian Administration. For more information, see [Monitor Atlassian Rovo MCP server activity](https://support.atlassian.com/security-and-access-policies/docs/monitor-atlassian-rovo-mcp-server-activity/).
+
+### Troubleshooting common issues
+
+* **&quot;Your site admin must authorize this app&quot; error:**  
+A site admin must complete the 3LO consent flow before anyone else can use the MCP app. See [&quot;Your site admin must authorize this app&quot;](https://support.atlassian.com/atlassian-cloud/kb/your-site-admin-must-authorize-this-app-error-in-atlassian-cloud-apps/) error in Atlassian Cloud apps for more details.
+* **&quot;You don&#039;t have permission to connect from this IP address. Please ask your admin for access.&quot;**  
+This usually indicates that IP allowlisting is enabled and the user&#039;s current IP address isn&#039;t allowed to access Jira, Confluence, Compass, or Rovo via the Atlassian Rovo MCP Server. Ask your site or organization admin to review the IP allowlist configuration and add the relevant network or VPN IP ranges if appropriate.
+* **App not appearing in Connected apps:**  
+Ensure the user is using the correct Atlassian account and site, and confirm the app is requesting the correct Atlassian app scopes (for example, Jira scopes). If issues persist, check [Manage your organization&#039;s Marketplace and third-party apps](https://support.atlassian.com/security-and-access-policies/docs/manage-your-users-third-party-apps/) or contact Atlassian Support. Also verify the user&#039;s Jira, Confluence, or Compass permissions in Atlassian Administration.
+
+## Security
+Model Context Protocol (MCP) lets AI agents connect to tools and Atlassian data using your account’s permissions, which creates powerful workflows but also structural risks. Any MCP client or server you enable (e.g., IDE plugins, desktop apps, hosted MCP servers, “one-click” integrations) can cause an AI agent to perform actions on your behalf.
+
+Large Language models (LLMs) are vulnerable to [prompt injection](https://owasp.org/www-community/attacks/PromptInjection) and related attacks (such as [indirect prompt injection](https://owasp.org/www-community/attacks/PromptInjection) and [tool poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)). These attacks can instruct the agent to exfiltrate data or make unintended changes without explicit requests.
+
+To reduce risk, only use trusted MCP clients and servers, carefully review which tools and data each agent can access, and apply least privilege (scoped tokens, minimal project/workspace access). For any high‑impact or destructive action, require human confirmation and monitor audit logs for unusual activity. We strongly recommend reviewing Atlassian’s guidance on MCP risks at [MCP Clients: Understanding the potential security risks](https://www.atlassian.com/blog/artificial-intelligence/mcp-risk-awareness)
+
+## Support and feedback
+Your feedback plays a crucial role in shaping the Atlassian Rovo MCP Server. If you encounter bugs, limitations, or have suggestions:
+- Visit the [Atlassian Support Portal](https://support.atlassian.com/) Portal to report issues and feature requests.
+- Share your experiences and questions on the [Atlassian Community](https://community.atlassian.com/) and developer-related asks on the [Developer&#039;s one](https://developer.atlassian.com/).
+- Go to our [Ecosystem Developer Portal](https://ecosystem.atlassian.net/servicedesk/customer/portal/14/user/login?destination=portal%2F14) if you are building an app and found a bug/issue or have suggestions.
+
+## Disclaimer
+
+MCP clients can perform actions in Jira, Confluence, and Compass with your existing permissions. Use least privilege, review high‑impact changes before confirming, and monitor audit logs for unusual activity.
+
+Learn more: MCP Clients - (Understanding the potential security risks)[https://www.atlassian.com/blog/artificial-intelligence/mcp-risk-awareness]
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[jesse-ai/jesse]]></title>
+            <link>https://github.com/jesse-ai/jesse</link>
+            <guid>https://github.com/jesse-ai/jesse</guid>
+            <pubDate>Sun, 26 Apr 2026 00:13:54 GMT</pubDate>
+            <description><![CDATA[An advanced crypto trading bot written in Python]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/jesse-ai/jesse">jesse-ai/jesse</a></h1>
+            <p>An advanced crypto trading bot written in Python</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 7,785</p>
+            <p>Forks: 1,097</p>
+            <p>Stars today: 14 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+&lt;br&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;assets/jesse-logo.png&quot; alt=&quot;Jesse&quot; height=&quot;72&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+Algo-trading was 😵‍💫, we made it 🤩
+&lt;/p&gt;
+&lt;/div&gt;
+
+# Jesse
+[![PyPI](https://img.shields.io/pypi/v/jesse)](https://pypi.org/project/jesse)
+[![Downloads](https://pepy.tech/badge/jesse)](https://pepy.tech/project/jesse)
+[![Docker Pulls](https://img.shields.io/docker/pulls/salehmir/jesse)](https://hub.docker.com/r/salehmir/jesse)
+[![GitHub](https://img.shields.io/github/license/jesse-ai/jesse)](https://github.com/jesse-ai/jesse)
+[![coverage](https://codecov.io/gh/jesse-ai/jesse/graph/badge.svg)](https://codecov.io/gh/jesse-ai/jesse)
+
+---
+
+Jesse is an advanced crypto trading framework that aims to **simplify** **researching** and defining **YOUR OWN trading strategies** for backtesting, optimizing, and live trading.
+
+## What is Jesse?
+Watch this video to get a quick overview of Jesse:
+
+[![Jesse Overview](https://img.youtube.com/vi/0EqN3OOqeJM/0.jpg)](https://www.youtube.com/watch?v=0EqN3OOqeJM)
+
+## Why Jesse?
+In short, Jesse is more **accurate** than other solutions, and way more **simple**. 
+In fact, it is so simple that in case you already know Python, you can get started today, in **matter of minutes**, instead of **weeks and months**. 
+
+## Key Features
+
+- 📝 **Simple Syntax**: Define both simple and advanced trading strategies with the simplest syntax in the fastest time.
+- 📊 **Comprehensive Indicator Library**: Access a complete library of technical indicators with easy-to-use syntax.
+- 📈 **Smart Ordering**: Supports market, limit, and stop orders, automatically choosing the best one for you.
+- ⏰ **Multiple Timeframes and Symbols**: Backtest and livetrade multiple timeframes and symbols simultaneously without look-ahead bias.
+- 🔒 **Self-Hosted and Privacy-First**: Designed with your privacy in mind, fully self-hosted to ensure your trading strategies and data remain secure.
+- 🛡️ **Risk Management**: Built-in helper functions for robust risk management.
+- 📋 **Metrics System**: A comprehensive metrics system to evaluate your trading strategy&#039;s performance.
+- 🔍 **Debug Mode**: Observe your strategy in action with a detailed debug mode.
+- 🔧 **Optimize Mode**: Fine-tune your strategies using AI, without needing a technical background.
+- 📈 **Leveraged and Short-Selling**: First-class support for leveraged trading and short-selling.
+- 🔀 **Partial Fills**: Supports entering and exiting positions in multiple orders, allowing for greater flexibility.
+- 🔔 **Advanced Alerts**: Create real-time alerts within your strategies for effective monitoring.
+- 🤖 **JesseGPT**: Jesse has its own GPT, JesseGPT, that can help you write strategies, optimize them, debug them, and much more.
+- 🔧 **Built-in Code Editor**: Write, edit, and debug your strategies with a built-in code editor.
+- 🎲 **Monte Carlo Analysis**: Stress-test your strategies with trade-order shuffling and candles-based simulations to distinguish skill from luck and guard against overfitting.
+- 🧠 **Machine Learning**: A built-in ML pipeline — gather labelled training data from backtests, train scikit-learn models (binary, multiclass, or regression), and deploy predictions directly inside your strategies.
+- 📺 **Youtube Channel**: Jesse has a Youtube channel with screencast tutorials that go through example strategies step by step.
+
+## Dive Deeper into Jesse&#039;s Capabilities
+
+### Stupid Simple
+Craft complex trading strategies with remarkably simple Python. Access 300+ indicators, multi-symbol/timeframe support, spot/futures trading, partial fills, and risk management tools. Focus on logic, not boilerplate.
+
+```python
+class GoldenCross(Strategy):
+    def should_long(self):
+        # go long when the EMA 8 is above the EMA 21
+        short_ema = ta.ema(self.candles, 8)
+        long_ema = ta.ema(self.candles, 21)
+        return short_ema &gt; long_ema
+
+    def go_long(self):
+        entry_price = self.price - 10        # limit buy order at $10 below the current price
+        qty = utils.size_to_qty(self.balance*0.05, entry_price) # spend only 5% of my total capital
+        self.buy = qty, entry_price                 # submit entry order
+        self.take_profit = qty, entry_price*1.2  # take profit at 20% above the entry price
+        self.stop_loss = qty, entry_price*0.9   # stop loss at 10% below the entry price
+```
+
+### Backtest
+Execute highly accurate and fast backtests without look-ahead bias. Utilize debugging logs, interactive charts with indicator support, and detailed performance metrics to validate your strategies thoroughly.
+
+![Backtest](https://raw.githubusercontent.com/jesse-ai/storage/refs/heads/master/backtest.gif)
+
+### Live/Paper Trading
+Deploy strategies live with robust monitoring tools. Supports paper trading, multiple accounts, real-time logs &amp; notifications (Telegram, Slack, Discord), interactive charts, spot/futures, DEX, and a built-in code editor.
+
+![Live/Paper Trading](https://raw.githubusercontent.com/jesse-ai/storage/refs/heads/master/live.gif)
+
+### Benchmark
+Accelerate research using the benchmark feature. Run batch backtests, compare across timeframes, symbols, and strategies. Filter and sort results by key performance metrics for efficient analysis.
+
+![Benchmark](https://raw.githubusercontent.com/jesse-ai/storage/refs/heads/master/benchmark.gif)
+
+### AI
+Leverage our AI assistant even with limited Python knowledge. Get help writing and improving strategies, implementing ideas, debugging, optimizing, and understanding code. Your personal AI quant.
+
+![AI](https://raw.githubusercontent.com/jesse-ai/storage/refs/heads/master/gpt.gif)
+
+### Monte Carlo Analysis
+Stress-test your strategies beyond a single historical path. Jesse&#039;s Monte Carlo mode runs hundreds of simulations using **trade-order shuffling** (tests whether trade timing drove your results) and **candles-based** (tests robustness under slightly different market conditions) methods. Use it to distinguish skill from luck, understand the range of outcomes you can realistically expect, and catch overfitting early.
+
+### Machine Learning
+Jesse includes a complete, end-to-end ML pipeline built for trading strategies:
+
+1. **Gather data** — run a backtest in gather mode; call `record_features({...})` at each signal bar and `record_label(name, value)` when the outcome is known. Data is auto-saved to CSV.
+2. **Train a model** — call `train_model()` with any scikit-learn–compatible estimator and choose a task type: `&quot;binary&quot;` classification, `&quot;multiclass&quot;` classification, or `&quot;regression&quot;`. Get a full report with feature importance, calibration, and metrics.
+3. **Deploy** — switch to deploy mode and call `ml_predict()` or `ml_predict_proba()` inside your strategy. Model loading, scaling, and feature ordering are handled automatically.
+
+```python
+# Gather phase — inside your strategy
+def before(self):
+    self.record_features({
+        &#039;rsi&#039;: ta.rsi(self.candles),
+        &#039;adx&#039;: ta.adx(self.candles),
+    })
+
+# Deploy phase — gate entries with model confidence
+def should_long(self):
+    proba = self.ml_predict_proba()
+    return proba[&#039;long&#039;] &gt; 0.65
+```
+
+### Optimize Your Strategies
+Unsure about optimal parameters? Let the optimization mode decide using simple syntax. Fine-tune any strategy parameter with the Optuna library and easy cross-validation.
+
+```python
+@property
+def slow_sma(self):
+    return ta.sma(self.candles, self.hp[&#039;slow_sma_period&#039;])
+
+@property
+def fast_sma(self):
+    return ta.sma(self.candles, self.hp[&#039;fast_sma_period&#039;])
+
+def hyperparameters(self):
+    return [
+        {&#039;name&#039;: &#039;slow_sma_period&#039;, &#039;type&#039;: int, &#039;min&#039;: 150, &#039;max&#039;: 210, &#039;default&#039;: 200},
+        {&#039;name&#039;: &#039;fast_sma_period&#039;, &#039;type&#039;: int, &#039;min&#039;: 20, &#039;max&#039;: 100, &#039;default&#039;: 50},
+    ]
+```
+
+## Getting Started
+Head over to the &quot;getting started&quot; section of the [documentation](https://docs.jesse.trade/docs/getting-started). The 
+documentation is **short yet very informative**. 
+
+## Resources
+
+- [⚡️ Website](https://jesse.trade)
+- [🎓 Documentation](https://docs.jesse.trade)
+- [🎥 Youtube channel (screencast tutorials)](https://jesse.trade/youtube)
+- [🛟 Help center](https://jesse.trade/help)
+- [💬 Discord community](https://jesse.trade/discord)
+- [🤖 JesseGPT](https://jesse.trade/gpt) (Requires a free account)
+
+## What&#039;s next?
+
+You can see the project&#039;s **[roadmap here](https://docs.jesse.trade/docs/roadmap.html)**. **Subscribe** to our mailing list at [jesse.trade](https://jesse.trade) to get the good stuff as soon they&#039;re released. Don&#039;t worry, We won&#039;t send you spam—Pinky promise.
+
+## Disclaimer
+This software is for educational purposes only. USE THE SOFTWARE AT **YOUR OWN RISK**. THE AUTHORS AND ALL AFFILIATES ASSUME **NO RESPONSIBILITY FOR YOUR TRADING RESULTS**. **Do not risk money that you are afraid to lose**. There might be **bugs** in the code - this software DOES NOT come with **ANY warranty**.
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[Haleclipse/CodexDesktop-Rebuild]]></title>
+            <link>https://github.com/Haleclipse/CodexDesktop-Rebuild</link>
+            <guid>https://github.com/Haleclipse/CodexDesktop-Rebuild</guid>
+            <pubDate>Sun, 26 Apr 2026 00:13:53 GMT</pubDate>
+            <description><![CDATA[Codex Desktop App - Cross-platform Rebuild]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/Haleclipse/CodexDesktop-Rebuild">Haleclipse/CodexDesktop-Rebuild</a></h1>
+            <p>Codex Desktop App - Cross-platform Rebuild</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 1,189</p>
+            <p>Forks: 90</p>
+            <p>Stars today: 11 stars today</p>
+            <h2>README</h2><pre># Codex Desktop Rebuild
+
+Cross-platform Electron build for OpenAI Codex Desktop App.
+
+## Supported Platforms
+
+| Platform | Architecture | Status |
+|----------|--------------|--------|
+| macOS    | x64, arm64   | ✅     |
+| Windows  | x64          | ✅     |
+| Linux    | x64, arm64   | ✅     |
+
+## Build
+
+```bash
+# Install dependencies
+npm install
+
+# Build for current platform
+npm run build
+
+# Build for specific platform
+npm run build:mac-x64
+npm run build:mac-arm64
+npm run build:win-x64
+npm run build:linux-x64
+npm run build:linux-arm64
+
+# Build all platforms
+npm run build:all
+```
+
+## Development
+
+```bash
+npm run dev
+```
+
+## Project Structure
+
+```
+├── src/
+│   ├── .vite/build/     # Main process (Electron)
+│   └── webview/         # Renderer (Frontend)
+├── resources/
+│   ├── electron.icns    # App icon
+│   └── notification.wav # Sound
+├── scripts/
+│   └── patch-copyright.js
+├── forge.config.js      # Electron Forge config
+└── package.json
+```
+
+## CI/CD
+
+GitHub Actions automatically builds on:
+- Push to `master`
+- Tag `v*` → Creates draft release
+
+## Credits
+
+**© OpenAI · Cometix Space**
+
+- [OpenAI Codex](https://github.com/openai/codex) - Original Codex CLI (Apache-2.0)
+- [Cometix Space](https://github.com/Haleclipse) - Cross-platform rebuild &amp; [@cometix/codex](https://www.npmjs.com/package/@cometix/codex) binaries
+- [Electron Forge](https://www.electronforge.io/) - Build toolchain
+
+## License
+
+This project rebuilds the Codex Desktop app for cross-platform distribution.
+Original Codex CLI by OpenAI is licensed under Apache-2.0.
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[ComposioHQ/open-claude-cowork]]></title>
+            <link>https://github.com/ComposioHQ/open-claude-cowork</link>
+            <guid>https://github.com/ComposioHQ/open-claude-cowork</guid>
+            <pubDate>Sun, 26 Apr 2026 00:13:52 GMT</pubDate>
+            <description><![CDATA[Open Source version of Claude Cowork with 500+ SaaS app integrations]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/ComposioHQ/open-claude-cowork">ComposioHQ/open-claude-cowork</a></h1>
+            <p>Open Source version of Claude Cowork with 500+ SaaS app integrations</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 3,976</p>
+            <p>Forks: 677</p>
+            <p>Stars today: 26 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;h1 align=&quot;center&quot;&gt;Open Claude Cowork&lt;/h1&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://platform.composio.dev?utm_source=Github&amp;utm_medium=Banner&amp;utm_content=open-claude-cowork&quot;&gt;
+    &lt;img src=&quot;assets/open_claude_cowork_banner.png&quot; width=&quot;800&quot;&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://platform.composio.dev?utm_source=github&amp;utm_medium=gif&amp;utm_campaign=2101&amp;utm_content=open-claude-cowork&quot;&gt;
+    &lt;img src=&quot;open-claude-cowork.gif&quot; alt=&quot;Secure Clawdbot Demo&quot; width=&quot;800&quot;&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://docs.composio.dev/tool-router/overview&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/Composio-Tool%20Router-orange&quot; alt=&quot;Composio&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://platform.claude.com/docs/en/agent-sdk/overview&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/Claude-Agent%20SDK-blue&quot; alt=&quot;Claude Agent SDK&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://github.com/anthropics/claude-code&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/Powered%20by-Claude%20Code-purple&quot; alt=&quot;Claude Code&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/composio&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/twitter/follow/composio?style=social&quot; alt=&quot;Twitter&quot;&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  An open-source desktop chat application powered by Claude Agent SDK and Composio Tool Router. Automate your work end-to-end across desktop and all your work apps in one place.
+  &lt;br&gt;&lt;br&gt;
+  &lt;a href=&quot;https://platform.composio.dev?utm_source=github&amp;utm_medium=description&amp;utm_campaign=2101&amp;utm_content=open-claude-cowork&quot;&gt;
+    &lt;b&gt;Get your free API key to get started →&lt;/b&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;i&gt;Pst. hey, you, join our stargazers :)&lt;/i&gt;
+  &lt;br&gt;
+  &lt;a href=&quot;https://github.com/ComposioHQ/open-claude-cowork&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/github/stars/ComposioHQ/open-claude-cowork.svg?style=social&amp;label=Star&amp;maxAge=2592000&quot; alt=&quot;GitHub stars&quot;&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+---
+
+## What&#039;s Inside
+
+This repo includes two powerful AI tools:
+
+| | **Open Claude Cowork** | 🦑 **Secure Clawdbot** |
+|---|---|---|
+| **What** | Full-featured desktop chat interface | Personal AI assistant on messaging |
+| **Where** | macOS, Windows, Linux | WhatsApp, Telegram, Signal, iMessage |
+| **Best for** | Work automation, multi-chat sessions | On-the-go AI access, reminders, memory |
+
+Both include **500+ app integrations** via Composio (Gmail, Slack, GitHub, Google Drive, and more).
+
+---
+
+## Quick Start
+
+### Open Claude Cowork
+
+```bash
+git clone https://github.com/ComposioHQ/open-claude-cowork.git
+cd open-claude-cowork
+./setup.sh
+```
+
+Then run in two terminals:
+```bash
+# Terminal 1
+cd server &amp;&amp; npm start
+
+# Terminal 2
+npm start
+```
+
+### 🦑 Secure Clawdbot
+
+```bash
+cd clawd
+npm install
+node cli.js
+```
+
+Select &quot;Terminal chat&quot; to test, or &quot;Start gateway&quot; to connect WhatsApp/Telegram/Signal/iMessage.
+
+See [Secure Clawdbot Documentation](./clawd/README.md) for full setup.
+
+---
+
+## Features
+
+### Open Claude Cowork
+- **Multi-Provider Support** - Claude Agent SDK or Opencode for different models
+- **Persistent Sessions** - Context maintained across messages
+- **Real-time Streaming** - Token-by-token response display
+- **Tool Visualization** - See tool inputs/outputs in the sidebar
+- **Skills Support** - Extend Claude with custom capabilities
+- **Modern UI** - Clean, dark-themed interface
+
+### 🦑 Secure Clawdbot
+- **Multi-Platform** - WhatsApp, Telegram, Signal, iMessage
+- **Persistent Memory** - Remembers facts, preferences, daily notes
+- **Browser Automation** - Navigate, click, fill forms, screenshot
+- **Scheduling** - Natural language reminders and cron jobs
+- **500+ Integrations** - Gmail, Slack, GitHub, Calendar via Composio
+
+---
+
+## Tech Stack
+
+| Component | Technology |
+|-----------|------------|
+| Desktop | Electron.js |
+| Backend | Node.js + Express |
+| AI | Claude Agent SDK + Opencode SDK |
+| Tools | Composio Tool Router + MCP |
+| Streaming | Server-Sent Events (SSE) |
+
+---
+
+## Configuration
+
+### API Keys
+
+You need:
+- **Anthropic API key** from [console.anthropic.com](https://console.anthropic.com)
+- **Composio API key** from [app.composio.dev](https://app.composio.dev)
+- **Opencode API key** (optional) from [opencode.dev](https://opencode.dev)
+
+```bash
+cp .env.example .env
+# Edit .env with your keys
+```
+
+### Skills
+
+Extend Claude with custom skills by adding `SKILL.md` files to `.claude/skills/`:
+
+```markdown
+---
+description: Use this skill when the user asks about [topic]
+---
+
+# My Skill
+
+Instructions for Claude...
+```
+
+See [Agent Skills documentation](https://platform.claude.com/docs/en/agent-sdk/skills) for details.
+
+---
+
+## Project Structure
+
+```
+open-claude-cowork/
+├── main.js              # Electron main process
+├── renderer/            # Frontend UI
+├── server/              # Backend + providers
+│   ├── providers/       # Claude &amp; Opencode implementations
+│   └── server.js        # Express server
+├── clawd/               # Secure Clawdbot (messaging bot)
+│   ├── cli.js           # Entry point
+│   ├── adapters/        # WhatsApp, Telegram, Signal, iMessage
+│   └── README.md        # Full documentation
+└── .claude/skills/      # Custom agent skills
+```
+
+---
+
+## Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| Can&#039;t connect to backend | Ensure server is running on port 3001 |
+| API key error | Check `.env` - Anthropic keys start with `sk-ant-` |
+| Session not persisting | Check server logs for session ID |
+| Streaming slow | Check firewall/network for SSE connections |
+
+---
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m &#039;Add amazing feature&#039;`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## Resources
+
+- [Claude Agent SDK](https://docs.anthropic.com/en/docs/claude-agent-sdk)
+- [Composio Tool Router](https://docs.composio.dev/tool-router)
+- [Composio Dashboard](https://app.composio.dev)
+- [Electron Docs](https://www.electronjs.org/docs)
+
+---
+
+## Community
+
+- [Discord](https://discord.com/invite/composio) - Chat with developers
+- [Twitter/X](https://x.com/composio) - Updates and features
+- [support@composio.dev](mailto:support@composio.dev) - Questions
+
+---
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;b&gt;Join 200,000+ developers building agents in production&lt;/b&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://platform.composio.dev/?utm_source=github&amp;utm_medium=community&amp;utm_campaign=2101&amp;utm_content=open claude cowork&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/Get_Started_For_Free-4F46E5?style=for-the-badge&quot; alt=&quot;Get Started For Free&quot;/&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  Built with Claude Code and Composio
+&lt;/p&gt;
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[browserbase/skills]]></title>
+            <link>https://github.com/browserbase/skills</link>
+            <guid>https://github.com/browserbase/skills</guid>
+            <pubDate>Sun, 26 Apr 2026 00:13:51 GMT</pubDate>
+            <description><![CDATA[Claude Agent SDK with a web browsing tool]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/browserbase/skills">browserbase/skills</a></h1>
+            <p>Claude Agent SDK with a web browsing tool</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 554</p>
+            <p>Forks: 47</p>
+            <p>Stars today: 6 stars today</p>
+            <h2>README</h2><pre># Browserbase Skills
+
+A set of skills for enabling **[Claude Code](https://docs.claude.com/en/docs/claude-code/overview)** to work with Browserbase through browser automation and the official `bb` CLI.
+
+## Skills
+
+This plugin includes the following skills (see `skills/` for details):
+
+| Skill | Description |
+|-------|-------------|
+| [browser](skills/browser/SKILL.md) | Automate web browser interactions via CLI commands — supports remote Browserbase sessions with anti-bot stealth, CAPTCHA solving, and residential proxies |
+| [browserbase-cli](skills/browserbase-cli/SKILL.md) | Use the official `bb` CLI for Browserbase Functions and platform API workflows including sessions, projects, contexts, extensions, fetch, and dashboard |
+| [functions](skills/functions/SKILL.md) | Deploy serverless browser automation to Browserbase cloud using the `bb` CLI |
+| [site-debugger](skills/site-debugger/SKILL.md) | Diagnose and fix failing browser automations — analyzes bot detection, selectors, timing, auth, and captchas, then generates a tested site playbook |
+| [bb-usage](skills/bb-usage/SKILL.md) | Show Browserbase usage stats, session analytics, and cost forecasts in a terminal dashboard |
+| [cookie-sync](skills/cookie-sync/SKILL.md) | Sync cookies from local Chrome to a Browserbase persistent context so the browse CLI can access authenticated sites |
+| [fetch](skills/fetch/SKILL.md) | Fetch HTML or JSON from static pages without a browser session — inspect status codes, headers, follow redirects |
+| [search](skills/search/SKILL.md) | Search the web and return structured results (titles, URLs, metadata) without a browser session |
+| [ui-test](skills/ui-test/SKILL.md) | AI-powered adversarial UI testing — analyzes git diffs to test changes, or explores the full app to find bugs |
+
+## Installation
+
+To install the skill to popular coding agents:
+
+```bash
+$ npx skills add browserbase/skills
+```
+
+### Claude Code
+
+On Claude Code, to add the marketplace, simply run:
+
+```bash
+/plugin marketplace add browserbase/skills
+```
+
+Then install the plugin:
+
+```bash
+/plugin install browse@browserbase
+```
+
+If you prefer the manual interface:
+1. On Claude Code, type `/plugin`
+2. Select option `3. Add marketplace`
+3. Enter the marketplace source: `browserbase/skills`
+4. Press enter to select the `browse` plugin
+5. Hit enter again to `Install now`
+6. **Restart Claude Code** for changes to take effect
+
+## Usage
+
+Once installed, you can ask Claude to browse or use the Browserbase CLI:
+- *&quot;Go to Hacker News, get the top post comments, and summarize them &quot;*
+- *&quot;QA test http://localhost:3000 and fix any bugs you encounter&quot;*
+- *&quot;Order me a pizza, you&#039;re already signed in on Doordash&quot;*
+- *&quot;Use `bb` to list my Browserbase projects and show the output as JSON&quot;*
+- *&quot;Initialize a new Browserbase Function with `bb functions init` and explain the next commands&quot;*
+
+Claude will handle the rest.
+
+For local and localhost work, `browse env local` now starts a clean isolated browser by default. Use `browse env local --auto-connect` when the agent should reuse your existing local Chrome session, cookies, or login state.
+
+## Troubleshooting
+
+### Chrome not found
+
+Install Chrome for your platform:
+- **macOS** or **Windows**: https://www.google.com/chrome/
+- **Linux**: `sudo apt install google-chrome-stable`
+
+### Profile refresh
+
+To refresh cookies from your main Chrome profile:
+```bash
+rm -rf .chrome-profile
+```
+
+## Resources
+
+- [Stagehand Documentation](https://github.com/browserbase/stagehand)
+- [Claude Code Skills](https://support.claude.com/en/articles/12512176-what-are-skills)
 </pre>
           ]]></content:encoded>
             <category>JavaScript</category>
