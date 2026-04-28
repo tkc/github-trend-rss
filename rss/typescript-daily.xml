@@ -4,7 +4,7 @@
         <title>GitHub Trending Today for typescript - TypeScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for typescript.</description>
-        <lastBuildDate>Mon, 27 Apr 2026 00:15:11 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 28 Apr 2026 00:18:35 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
@@ -13,17 +13,17 @@
             <title><![CDATA[abhigyanpatwari/GitNexus]]></title>
             <link>https://github.com/abhigyanpatwari/GitNexus</link>
             <guid>https://github.com/abhigyanpatwari/GitNexus</guid>
-            <pubDate>Mon, 27 Apr 2026 00:15:11 GMT</pubDate>
+            <pubDate>Tue, 28 Apr 2026 00:18:35 GMT</pubDate>
             <description><![CDATA[GitNexus: The Zero-Server Code Intelligence Engine - GitNexus is a client-side knowledge graph creator that runs entirely in your browser. Drop in a GitHub repo or ZIP file, and get an interactive knowledge graph wit a built in Graph RAG Agent. Perfect for code exploration]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/abhigyanpatwari/GitNexus">abhigyanpatwari/GitNexus</a></h1>
             <p>GitNexus: The Zero-Server Code Intelligence Engine - GitNexus is a client-side knowledge graph creator that runs entirely in your browser. Drop in a GitHub repo or ZIP file, and get an interactive knowledge graph wit a built in Graph RAG Agent. Perfect for code exploration</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 30,157</p>
-            <p>Forks: 3,480</p>
-            <p>Stars today: 700 stars today</p>
+            <p>Stars: 31,505</p>
+            <p>Forks: 3,603</p>
+            <p>Stars today: 1,102 stars today</p>
             <h2>README</h2><pre># GitNexus
-⚠️ Important Notice:** GitNexus has NO official cryptocurrency, token, or coin. Any token/coin using the GitNexus name on Pump.fun or any other platform is **not affiliated with, endorsed by, or created by** this project or its maintainers. Do not purchase any cryptocurrency claiming association with GitNexus.
+**⚠️ Important Notice:** GitNexus has NO official cryptocurrency, token, or coin. Any token/coin using the GitNexus name on Pump.fun or any other platform is **not affiliated with, endorsed by, or created by** this project or its maintainers. Do not purchase any cryptocurrency claiming association with GitNexus.
 
 &lt;div align=&quot;center&quot;&gt;
 
@@ -60,7 +60,7 @@ https://github.com/user-attachments/assets/172685ba-8e54-4ea7-9ad1-e31a3398da72
 
 &gt; *Like DeepWiki, but deeper.* DeepWiki helps you *understand* code. GitNexus lets you *analyze* it — because a knowledge graph tracks every relationship, not just descriptions.
 
-**TL;DR:** The **Web UI** is a quick way to chat with any repo. The **CLI + MCP** is how you make your AI agent actually reliable — it gives Cursor, Claude Code, Codex, and friends a deep architectural view of your codebase so they stop missing dependencies, breaking call chains, and shipping blind edits. Even smaller models get full architectural clarity, making it compete with goliath models.
+**TL;DR:** The **Web UI** is a quick way to chat with any repo. The **CLI + MCP** is how you make your AI agent actually reliable — it gives Cursor, Claude Code, Codex, and friends a deep architectural view of your codebase so they stop missing dependencies, breaking call chains, and shipping blind edits. Even smaller models get full architectural clarity, making it compete with Goliath models.
 
 ---
 
@@ -221,6 +221,7 @@ gitnexus analyze --skip-agents-md  # Preserve custom AGENTS.md/CLAUDE.md gitnexu
 gitnexus analyze --skip-git        # Index folders that are not Git repositories
 gitnexus analyze --embeddings    # Enable embedding generation (slower, better search)
 gitnexus analyze --verbose       # Log skipped files when parsers are unavailable
+gitnexus analyze --worker-timeout 60  # Increase worker idle timeout for slow parses
 gitnexus mcp                     # Start MCP server (stdio) — serves all indexed repos
 gitnexus serve                   # Start local HTTP server (multi-repo) for web UI connection
 gitnexus list                    # List all indexed repositories
@@ -241,6 +242,8 @@ gitnexus group contracts &lt;name&gt;  # Inspect extracted contracts and cross-l
 gitnexus group query &lt;name&gt; &lt;q&gt;  # Search execution flows across all repos in a group
 gitnexus group status &lt;name&gt;     # Check staleness of repos in a group
 ```
+
+If `analyze` reports a worker parse timeout on a large or unusual repository, it keeps running and falls back safely. To give slow worker jobs more time, use `gitnexus analyze --worker-timeout 60` or set `GITNEXUS_WORKER_SUB_BATCH_TIMEOUT_MS=60000`. For very large files, `GITNEXUS_WORKER_SUB_BATCH_MAX_BYTES` controls the worker job byte budget.
 
 ### What Your AI Agent Gets
 
@@ -425,810 +428,7 @@ docker compose --env-file .env up -d
 
 The Docker images are version-locked to the npm package:
 
-- Stable images are **only published from `vX.Y.Z` git tags** (via `docker.yml`
-  triggered directly by the tag push), and the workflow refuses to build unless
-  the tag exactly matches `gitnexus/package.json`&#039;s version. So
-  `ghcr.io/abhigyanpatwari/gitnexus:1.6.2` (and its Docker Hub mirror
-  `akonlabs/gitnexus:1.6.2`) is byte-for-byte the same release as
-  `npm install gitnexus@1.6.2` — no drift, no floating builds from `main`
-
 ... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[openclaw/openclaw]]></title>
-            <link>https://github.com/openclaw/openclaw</link>
-            <guid>https://github.com/openclaw/openclaw</guid>
-            <pubDate>Mon, 27 Apr 2026 00:15:10 GMT</pubDate>
-            <description><![CDATA[Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/openclaw/openclaw">openclaw/openclaw</a></h1>
-            <p>Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 364,598</p>
-            <p>Forks: 74,662</p>
-            <p>Stars today: 627 stars today</p>
-            <h2>README</h2><pre># 🦞 OpenClaw — Personal AI Assistant
-
-&lt;p align=&quot;center&quot;&gt;
-    &lt;picture&gt;
-        &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/openclaw-logo-text-dark.svg&quot;&gt;
-        &lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/openclaw-logo-text.svg&quot; alt=&quot;OpenClaw&quot; width=&quot;500&quot;&gt;
-    &lt;/picture&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;strong&gt;EXFOLIATE! EXFOLIATE!&lt;/strong&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/openclaw/openclaw/actions/workflows/ci.yml?branch=main&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/actions/workflow/status/openclaw/openclaw/ci.yml?branch=main&amp;style=for-the-badge&quot; alt=&quot;CI status&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/openclaw/openclaw/releases&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/v/release/openclaw/openclaw?include_prereleases&amp;style=for-the-badge&quot; alt=&quot;GitHub release&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://discord.gg/clawd&quot;&gt;&lt;img src=&quot;https://img.shields.io/discord/1456350064065904867?label=Discord&amp;logo=discord&amp;logoColor=white&amp;color=5865F2&amp;style=for-the-badge&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge&quot; alt=&quot;MIT License&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-**OpenClaw** is a _personal AI assistant_ you run on your own devices.
-It answers you on the channels you already use. It can speak and listen on macOS/iOS/Android, and can render a live Canvas you control. The Gateway is just the control plane — the product is the assistant.
-
-If you want a personal, single-user assistant that feels local, fast, and always-on, this is it.
-
-Supported channels include: WhatsApp, Telegram, Slack, Discord, Google Chat, Signal, iMessage, BlueBubbles, IRC, Microsoft Teams, Matrix, Feishu, LINE, Mattermost, Nextcloud Talk, Nostr, Synology Chat, Tlon, Twitch, Zalo, Zalo Personal, WeChat, QQ, WebChat.
-
-[Website](https://openclaw.ai) · [Docs](https://docs.openclaw.ai) · [Vision](VISION.md) · [DeepWiki](https://deepwiki.com/openclaw/openclaw) · [Getting Started](https://docs.openclaw.ai/start/getting-started) · [Updating](https://docs.openclaw.ai/install/updating) · [Showcase](https://docs.openclaw.ai/start/showcase) · [FAQ](https://docs.openclaw.ai/help/faq) · [Onboarding](https://docs.openclaw.ai/start/wizard) · [Nix](https://github.com/openclaw/nix-openclaw) · [Docker](https://docs.openclaw.ai/install/docker) · [Discord](https://discord.gg/clawd)
-
-New install? Start here: [Getting started](https://docs.openclaw.ai/start/getting-started)
-
-Preferred setup: run `openclaw onboard` in your terminal.
-OpenClaw Onboard guides you step by step through setting up the gateway, workspace, channels, and skills. It is the recommended CLI setup path and works on **macOS, Linux, and Windows (via WSL2; strongly recommended)**.
-Works with npm, pnpm, or bun.
-
-## Sponsors
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td align=&quot;center&quot; width=&quot;16.66%&quot;&gt;
-      &lt;a href=&quot;https://openai.com/&quot;&gt;
-        &lt;picture&gt;
-          &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/openai-light.svg&quot;&gt;
-          &lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/openai.svg&quot; alt=&quot;OpenAI&quot; height=&quot;28&quot;&gt;
-        &lt;/picture&gt;
-      &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td align=&quot;center&quot; width=&quot;16.66%&quot;&gt;
-      &lt;a href=&quot;https://github.com/&quot;&gt;
-        &lt;picture&gt;
-          &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/github-light.svg&quot;&gt;
-          &lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/github.svg&quot; alt=&quot;GitHub&quot; height=&quot;28&quot;&gt;
-        &lt;/picture&gt;
-      &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td align=&quot;center&quot; width=&quot;16.66%&quot;&gt;
-      &lt;a href=&quot;https://www.nvidia.com/&quot;&gt;
-        &lt;picture&gt;
-          &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/nvidia.svg&quot;&gt;
-          &lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/nvidia-dark.svg&quot; alt=&quot;NVIDIA&quot; height=&quot;28&quot;&gt;
-        &lt;/picture&gt;
-      &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td align=&quot;center&quot; width=&quot;16.66%&quot;&gt;
-      &lt;a href=&quot;https://vercel.com/&quot;&gt;
-        &lt;picture&gt;
-          &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/vercel-light.svg&quot;&gt;
-          &lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/vercel.svg&quot; alt=&quot;Vercel&quot; height=&quot;24&quot;&gt;
-        &lt;/picture&gt;
-      &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td align=&quot;center&quot; width=&quot;16.66%&quot;&gt;
-      &lt;a href=&quot;https://blacksmith.sh/&quot;&gt;
-        &lt;picture&gt;
-          &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/blacksmith-light.svg&quot;&gt;
-          &lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/blacksmith.svg&quot; alt=&quot;Blacksmith&quot; height=&quot;28&quot;&gt;
-        &lt;/picture&gt;
-      &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td align=&quot;center&quot; width=&quot;16.66%&quot;&gt;
-      &lt;a href=&quot;https://www.convex.dev/&quot;&gt;
-        &lt;picture&gt;
-          &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/convex-light.svg&quot;&gt;
-          &lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/convex.svg&quot; alt=&quot;Convex&quot; height=&quot;24&quot;&gt;
-        &lt;/picture&gt;
-      &lt;/a&gt;
-    &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
-
-**Subscriptions (OAuth):**
-
-- **[OpenAI](https://openai.com/)** (ChatGPT/Codex)
-
-Model note: while many providers and models are supported, prefer a current flagship model from the provider you trust and already use. See [Onboarding](https://docs.openclaw.ai/start/onboarding).
-
-## Install (recommended)
-
-Runtime: **Node 24 (recommended) or Node 22.14+**.
-
-```bash
-npm install -g openclaw@latest
-# or: pnpm add -g openclaw@latest
-
-openclaw onboard --install-daemon
-```
-
-OpenClaw Onboard installs the Gateway daemon (launchd/systemd user service) so it stays running.
-
-## Quick start (TL;DR)
-
-Runtime: **Node 24 (recommended) or Node 22.14+**.
-
-Full beginner guide (auth, pairing, channels): [Getting started](https://docs.openclaw.ai/start/getting-started)
-
-```bash
-openclaw onboard --install-daemon
-
-openclaw gateway --port 18789 --verbose
-
-# Send a message
-openclaw message send --target +1234567890 --message &quot;Hello from OpenClaw&quot;
-
-# Talk to the assistant (optionally deliver back to any connected channel: WhatsApp/Telegram/Slack/Discord/Google Chat/Signal/iMessage/BlueBubbles/IRC/Microsoft Teams/Matrix/Feishu/LINE/Mattermost/Nextcloud Talk/Nostr/Synology Chat/Tlon/Twitch/Zalo/Zalo Personal/WeChat/QQ/WebChat)
-openclaw agent --message &quot;Ship checklist&quot; --thinking high
-```
-
-Upgrading? [Updating guide](https://docs.openclaw.ai/install/updating) (and run `openclaw doctor`).
-
-Models config + CLI: [Models](https://docs.openclaw.ai/concepts/models). Auth profile rotation + fallbacks: [Model failover](https://docs.openclaw.ai/concepts/model-failover).
-
-## Security defaults (DM access)
-
-OpenClaw connects to real messaging surfaces. Treat inbound DMs as **untrusted input**.
-
-Full security guide: [Security](https://docs.openclaw.ai/gateway/security)
-
-Default behavior on Telegram/WhatsApp/Signal/iMessage/Microsoft Teams/Discord/Google Chat/Slack:
-
-- **DM pairing** (`dmPolicy=&quot;pairing&quot;` / `channels.discord.dmPolicy=&quot;pairing&quot;` / `channels.slack.dmPolicy=&quot;pairing&quot;`; legacy: `channels.discord.dm.policy`, `channels.slack.dm.policy`): unknown senders receive a short pairing code and the bot does not process their message.
-- Approve with: `openclaw pairing approve &lt;channel&gt; &lt;code&gt;` (then the sender is added to a local allowlist store).
-- Public inbound DMs require an explicit opt-in: set `dmPolicy=&quot;open&quot;` and include `&quot;*&quot;` in the channel allowlist (`allowFrom` / `channels.discord.allowFrom` / `channels.slack.allowFrom`; legacy: `channels.discord.dm.allowFrom`, `channels.slack.dm.allowFrom`).
-
-Run `openclaw doctor` to surface risky/misconfigured DM policies.
-
-## Highlights
-
-- **[Local-first Gateway](https://docs.openclaw.ai/gateway)** — single control plane for sessions, channels, tools, and events.
-- **[Multi-channel inbox](https://docs.openclaw.ai/channels)** — WhatsApp, Telegram, Slack, Discord, Google Chat, Signal, BlueBubbles (iMessage), iMessage (legacy), IRC, Microsoft Teams, Matrix, Feishu, LINE, Mattermost, Nextcloud Talk, Nostr, Synology Chat, Tlon, Twitch, Zalo, Zalo Personal, WeChat, QQ, WebChat, macOS, iOS/Android.
-- **[Multi-agent routing](https://docs.openclaw.ai/gateway/configuration)** — route inbound channels/accounts/peers to isolated agents (workspaces + per-agent sessions).
-- **[Voice Wake](https://docs.openclaw.ai/nodes/voicewake) + [Talk Mode](https://docs.openclaw.ai/nodes/talk)** — wake words on macOS/iOS and continuous voice on Android (ElevenLabs + system TTS fallback).
-- **[Live Canvas](https://docs.openclaw.ai/platforms/mac/canvas)** — agent-driven visual workspace with [A2UI](https://docs.openclaw.ai/platforms/mac/canvas#canvas-a2ui).
-- **[First-class tools](https://docs.openclaw.ai/tools)** — browser, canvas, nodes, cron, sessions, and Discord/Slack actions.
-- **[Companion apps](https://docs.openclaw.ai/platforms/macos)** — macOS menu bar app + iOS/Android [nodes](https://docs.openclaw.ai/nodes).
-- **[Onboarding](https://docs.openclaw.ai/start/wizard) + [skills](https://docs.openclaw.ai/tools/skills)** — onboarding-driven setup with bundled/managed/workspace skills.
-
-## Security model (important)
-
-- Default: tools run on the host for the `main` session, so the agent has full access when it is just you.
-- Group/channel safety: set `agents.defaults.sandbox.mode: &quot;non-main&quot;` to run non-`main` sessions inside sandboxes. Docker is the default sandbox backend; SSH and OpenShell backends are also available.
-- Typical sandbox default: allow `bash`, `process`, `read`, `write`, `edit`, `sessions_list`, `sessions_history`, `sessions_send`, `sessions_spawn`; deny `browser`, `canvas`, `nodes`, `cron`, `discord`, `gateway`.
-- Before exposing anything remotely, read [Security](https://docs.openclaw.ai/gateway/security), [Sandboxing](https://docs.openclaw.ai/gateway/sandboxing), and [Configuration](https://docs.openclaw.ai/gateway/configuration).
-
-## Operator quick refs
-
-- Chat commands: `/status`, `/new`, `/reset`, `/compact`, `/think &lt;level&gt;`, `/verbose on|off`, `/trace on|off`, `/usage off|tokens|full`, `/restart`, `/activation mention|always`
-- Session tools: `sessions_list`, `sessions_history`, `sessions_send`
-- Skills registry: [ClawHub](https://clawhub.ai)
-- Architecture overview: [Architecture](https://docs.openclaw.ai/concepts/architecture)
-
-## Docs by goal
-
-- New here: [Getting started](https://docs.openclaw.ai/start/getting-started), [Onboarding](https://docs.openclaw.ai/start/wizard), [Updating](https://docs.openclaw.ai/install/updating)
-- Channel setup: [Channels index](https://docs.openclaw.ai/channels), [WhatsApp](https://docs.openclaw.ai/channels/whatsapp), [Telegram](https://docs.openclaw.ai/channels/telegram), [Discord](https://docs.openclaw.ai/channels/discord), [Slack](https://docs.openclaw.ai/channels/slack)
-- Apps + nodes: [macOS](https://docs.openclaw.ai/platforms/macos), [iOS](https://docs.openclaw.ai/platforms/ios), [Android](https://docs.openclaw.ai/platforms/android), [Nodes](https://docs.openclaw.ai/nodes)
-- Config + security: [Configuration](https://docs.openclaw.ai/gateway/configuration), [Security](https://docs.openclaw.ai/gateway/security), [Sandboxing](https://docs.openclaw.ai/gateway/sandboxing)
-- Remote + web: [Gateway](https://docs.openclaw.ai/gateway), [Remote access](https://docs.openclaw.ai/gateway/remote), [Tailscale](https://docs.openclaw.ai/gateway/tailscale), [Web surfaces](https://docs.openclaw.ai/web)
-- Tools + automation: [Tools](https://docs.openclaw.ai/tools), [Skills](https://docs.openclaw.ai/tools/skills), [Cron jobs](https://docs.openclaw.ai/automation/cron-jobs), [Webhooks](https://docs.openclaw.ai/automation/webhook), [Gmail Pub/Sub](https://docs.openclaw.ai/automation/gmail-pubsub)
-- Internals: [Architecture](https://docs.openclaw.ai/concepts/architecture), [Agent](https://docs.openclaw.ai/concepts/agent), [Session model](https://docs.openclaw.ai/concepts/session), [Gateway protocol](https://docs.openclaw.ai/reference/rpc)
-- Troubleshooting: [Channel troubleshooting](https://docs.openclaw.ai/channels/troubleshooting), [Logging](https://docs.openclaw.ai/logging), [Docs home](https://docs.openclaw.ai)
-
-## Apps (optional)
-
-The Gateway alone delivers a great experience. All apps are optional and add extra features.
-
-If you plan to build/run companion apps, follow the platform runbooks below.
-
-### macOS (OpenClaw.app) (optional)
-
-- Menu bar control for the Gateway and health.
-- Voice Wake + push-to-talk overlay.
-- WebChat + debug tools.
-- Remote gateway control over SSH.
-
-Note: signed builds required for macOS permissions to stick across rebuilds (see [macOS Permissions](https://docs.openclaw.ai/platforms/mac/permissions)).
-
-### iOS node (optional)
-
-- Pairs as a node over the Gateway WebSocket (device pairing).
-- Voice trigger forwarding + Canvas surface.
-- Controlled via `openclaw nodes …`.
-
-Runbook: [iOS connect](https://docs.openclaw.ai/platforms/ios).
-
-### Android node (optional)
-
-- Pairs as a WS node via device pairing (`openclaw devices ...`).
-- Exposes Connect/Chat/Voice tabs plus Canvas, Camera, Screen capture, and Android device command families.
-- Runbook: [Android connect](https://docs.openclaw.ai/platforms/android).
-
-## From source (development)
-
-Prefer `pnpm` for builds from source. Bun is optional for running TypeScript directly.
-
-For the dev loop:
-
-```bash
-git clone https://github.com/openclaw/openclaw.git
-cd openclaw
-
-pnpm install
-
-# First run only (or after resetting local OpenClaw config/workspace)
-pnpm openclaw setup
-
-# Optional: prebuild Control UI before first startup
-pnpm ui:build
-
-# Dev loop (auto-reload on source/config changes)
-pnpm gateway:watch
-```
-
-If you need a built `dist/` from the checkout (for Node, packaging, or release validation), run:
-
-```bash
-pnpm build
-pnpm ui:build
-```
-
-`pnpm openclaw setup` writes the local config/workspace needed for `pnpm gateway:watch`. It is safe to re-run, but you normally only need it on first setup or after resetting local state. `pnpm gateway:watch` does not rebuild `dist/control-ui`, so rerun `pnpm ui:build` after `ui/` changes or use `pnpm ui:dev` when iterating on the Control UI. If you want this checkout to run onboarding directly, use `pnpm openclaw onboard --install-daemon`.
-
-Note: `pnpm openclaw ...` runs TypeScript directly (via `tsx`). `pnpm build` produces `dist/` for running via Node / the packaged `openclaw` binary, while `pnpm gateway:watch` rebuilds the runtime on demand during the dev loop.
-
-## Development channels
-
-- **stable**: tagged releases (`vYYYY.M.D` or `vYYYY.M.D-&lt;patch&gt;`), npm dist-tag `latest`.
-- **beta**: prerelease tags (`vYYYY.M.D-beta.N`), npm dist-tag `beta` (macOS app may be missing).
-- **dev**: moving head of `main`, npm dist-tag `dev` (when published).
-
-Switch channels (git + npm): `openclaw update --channel stable|beta|dev`.
-Details: [Development channels](https://docs.openclaw.ai/install/development-channels).
-
-## Agent workspace + skills
-
-- Workspace root: `~/.openclaw/workspace` (configurable via `agents.defaults.workspace`).
-- Injected prompt files: `AGENTS.md`, `SOUL.md`, `TOOLS.md`.
-- Skills: `~/.openclaw/workspace/skills/&lt;skill&gt;/SKILL.md`.
-
-## Configuration
-
-Minimal `~/.openclaw/openclaw.json` (model + defaults):
-
-```json5
-{
-  agent: {
-    model: &quot;&lt;provider&gt;/&lt;model-id&gt;&quot;,
-  },
-}
-```
-
-[Full configuration reference (all keys + examples).](https://docs.openclaw.ai/gateway/configuration)
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=openclaw/openclaw&amp;type=date&amp;legend=top-left)](https://www.star-history.com/#openclaw/openclaw&amp;type=date&amp;legend=top-left)
-
-## Molty
-
-OpenClaw was built for **Molty**, a space lobster AI assistant. 🦞
-by Peter Steinberger and the community.
-
-- [openclaw.ai](https://openclaw.ai)
-- [soul.md](https://soul.md)
-- [steipete.me](https://steipete.me)
-- [@openclaw](https://x.com/openclaw)
-
-## Community
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines, maintainers, and how to submit PRs.
-AI/vibe-coded PRs welcome! 🤖
-
-Special thanks to [Mario Zechner](https://mariozechner.at/) for his support and for
-[pi-mono](https://github.com/badlogic/pi-mono).
-Special thanks to Adam Doppelt for the lobster.bot domain.
-
-Thanks to all clawtributors:
-
-&lt;!-- clawtributors:start --&gt;
-
-[![steipete](https://avatars.githubusercontent.com/u/58493?v=4&amp;s=48)](https://github.com/steipete) [![vincentkoc](https://avatars.githubusercontent.com/u/25068?v=4&amp;s=48)](https://github.com/vincentkoc) [![Takhoffman](https://avatars.githubusercontent.com/u/781889?v=4&amp;s=48)](https://github.com/Takhoffman) [![obviyus](https://avatars.githubusercontent.com/u/22031114?v=4&amp;s=48)](https://github.com/obviyus) [![gumadeiras](https://avatars.githubusercontent.com/u/5599352?v=4&amp;s=48)](https://github.com/gumadeiras) [![Mariano Belinky](https://avatars.githubusercontent.com/u/132747814?v=4&amp;s=48)](https://github.com/mbelinky) [![vignesh07](https://avatars.githubusercontent.com/u/1436853?v=4&amp;s=48)](https://github.com/vignesh07) [![joshavant](https://avatars.githubusercontent.com/u/830519?v=4&amp;s=48)](https://github.com/joshavant) [![scoootscooob](https://avatars.githubusercontent.com/u/167050519?v=4&amp;s=48)](https://github.com/scoootscooob) [![jacobtomlinson](https://avatars.githubusercontent.com/u/1610850?v=4&amp;s=48)](https://github.com/jacobtomlinson)
-[![shakkernerd](https://avatars.githubusercontent.com/u/165377636?v=4&amp;s=48)](https://github.com/shakkernerd) [![sebslight](https://avatars.githubusercontent.com/u/19554889?v=4&amp;s=48)](https://github.com/sebslight) [![tyler6204](https://avatars.githubusercontent.com/u/64381258?v=4&amp;s=48)](https://github.com/tyler6204) [![ngutman](https://avatars.githubusercontent.com/u/1540134?v=4&amp;s=48)](https://github.com/ngutman) [![thewilloftheshadow](https://avatars.githubusercontent.com/u/35580099?v=4&amp;s=48)](https://github.com/thewilloftheshadow) [![Sid-Qin](https://avatars.githubusercontent.com/u/201593046?v=4&amp;s=48)](https://github.com/Sid-Qin) [![mcaxtr](https://avatars.githubusercontent.com/u/7562095?v=4&amp;s=48)](https://github.com/mcaxtr) [![eleqtrizit](https://avatars.githubusercontent.com/u/31522568?v=4&amp;s=48)](https://github.com/eleqtrizit) [![BunsDev](https://avatars.githubusercontent.com/u/68980965?v=4&amp;s=48)](https://github.com/BunsDev) [![cpojer](https://avatars.githubusercontent.com/u/13352?v=4&amp;s=48)](https://github.com/cpojer)
-[![Glucksberg](https://avatars.githubusercontent.com/u/80581902?v=4&amp;s=48)](https://github.com/Glucksberg) [![osolmaz](https://avatars.githubusercontent.com/u/2453968?v=4&amp;s=48)](https://github.com/osolmaz) [![bmendonca3](https://avatars.githubusercontent.com/u/208517100?v=4&amp;s=48)](https://github.com/bmendonca3) [![jalehman](https://avatars.githubusercontent.com/u/550978?v=4&amp;s=48)](https://github.com/jalehman) [![huntharo](https://avatars.githubusercontent.com/u/5617868?v=4&amp;s=48)](https://github.com/huntharo) [![neeravmakwana](https://avatars.githubusercontent.com/u/261249544?v=4&amp;s=48)](https://github.com/neeravmakwana) [![openperf](https://avatars.githubusercontent.com/u/80630709?v=4&amp;s=48)](https://github.com/openperf) [![joshp123](https://avatars.githubusercontent.com/u/1497361?v=4&amp;s=48)](https://github.com/joshp123) [![pgondhi987](https://avatars.githubusercontent.com/u/270720687?v=4&amp;s=48)](https://github.com/pgondhi987) [![altaywtf](https://avatars.githubusercontent.com/u/9790196?v=4&amp;s=48)](https://github.com/altaywtf)
-[![quotentiroler](https://avatars.githubusercontent.com/u/40643627?v=4&amp;s=48)](https://github.com/quotentiroler) [![liuxiaopai-ai](https://avatars.githubusercontent.com/u/73659136?v=4&amp;s=48)](https://github.com/liuxiaopai-ai) [![rodrigouroz
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[dreamhunter2333/cloudflare_temp_email]]></title>
-            <link>https://github.com/dreamhunter2333/cloudflare_temp_email</link>
-            <guid>https://github.com/dreamhunter2333/cloudflare_temp_email</guid>
-            <pubDate>Mon, 27 Apr 2026 00:15:09 GMT</pubDate>
-            <description><![CDATA[CloudFlare free temp domain email 免费收发 临时域名邮箱 支持附件 IMAP SMTP TelegramBot]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/dreamhunter2333/cloudflare_temp_email">dreamhunter2333/cloudflare_temp_email</a></h1>
-            <p>CloudFlare free temp domain email 免费收发 临时域名邮箱 支持附件 IMAP SMTP TelegramBot</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 8,750</p>
-            <p>Forks: 5,403</p>
-            <p>Stars today: 40 stars today</p>
-            <h2>README</h2><pre>&lt;!-- markdownlint-disable-file MD033 MD045 --&gt;
-# Cloudflare 临时邮箱 - 免费搭建临时邮件服务
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://temp-mail-docs.awsl.uk&quot; target=&quot;_blank&quot;&gt;
-    &lt;img alt=&quot;docs&quot; src=&quot;https://img.shields.io/badge/docs-grey?logo=vitepress&quot;&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://github.com/dreamhunter2333/cloudflare_temp_email/releases/latest&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/github/v/release/dreamhunter2333/cloudflare_temp_email&quot;&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://github.com/dreamhunter2333/cloudflare_temp_email/blob/main/LICENSE&quot; target=&quot;_blank&quot;&gt;
-    &lt;img alt=&quot;MIT License&quot; src=&quot;https://img.shields.io/github/license/dreamhunter2333/cloudflare_temp_email&quot;&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://github.com/dreamhunter2333/cloudflare_temp_email/graphs/contributors&quot; target=&quot;_blank&quot;&gt;
-   &lt;img alt=&quot;GitHub contributors&quot; src=&quot;https://img.shields.io/github/contributors/dreamhunter2333/cloudflare_temp_email&quot;&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;&quot;&gt;
-    &lt;img alt=&quot;GitHub top language&quot; src=&quot;https://img.shields.io/github/languages/top/dreamhunter2333/cloudflare_temp_email&quot;&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/github/last-commit/dreamhunter2333/cloudflare_temp_email&quot;&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://hellogithub.com/repository/2ccc64bb1ba346b480625f584aa19eb1&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;https://abroad.hellogithub.com/v1/widgets/recommend.svg?rid=2ccc64bb1ba346b480625f584aa19eb1&amp;claim_uid=FxNypXK7UQ9OECT&quot; alt=&quot;Featured｜HelloGitHub&quot; height=&quot;30&quot;/&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;README.md&quot;&gt;中文文档&lt;/a&gt; |
-  &lt;a href=&quot;README_EN.md&quot;&gt;English Document&lt;/a&gt;
-&lt;/p&gt;
-
-&gt; 本项目仅供学习和个人用途，请勿将其用于任何违法行为，否则后果自负。
-
-**一个功能完整的临时邮箱服务！**
-
-- **完全免费** - 基于 Cloudflare 免费服务构建，零成本运行
-- **高性能** - Rust WASM 邮件解析，响应速度极快
-- **现代化界面** - 响应式设计，支持多语言，操作简便
-- **地址密码** - 支持为邮箱地址设置独立密码，增强安全性 (通过 `ENABLE_ADDRESS_PASSWORD` 启用)
-
-## 部署文档 - 快速开始
-
-[部署文档](https://temp-mail-docs.awsl.uk) | [Github Action 部署文档](https://temp-mail-docs.awsl.uk/zh/guide/actions/github-action.html)
-
-&lt;a href=&quot;https://temp-mail-docs.awsl.uk/zh/guide/actions/github-action.html&quot;&gt;
-  &lt;img src=&quot;https://deploy.workers.cloudflare.com/button&quot; alt=&quot;Deploy to Cloudflare Workers&quot; height=&quot;32&quot;&gt;
-&lt;/a&gt;
-
-## 更新日志
-
-查看 [CHANGELOG](CHANGELOG.md) 了解最新更新内容。
-
-## 在线体验
-
-立即体验 → [https://mail.awsl.uk/](https://mail.awsl.uk/)
-
-&lt;details&gt;
-&lt;summary&gt;服务状态监控（点击收缩/展开）&lt;/summary&gt;
-
-|                                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Backend](https://temp-email-api.awsl.uk/) | [![Deploy Backend Production](https://github.com/dreamhunter2333/cloudflare_temp_email/actions/workflows/backend_deploy.yaml/badge.svg)](https://github.com/dreamhunter2333/cloudflare_temp_email/actions/workflows/backend_deploy.yaml) ![](https://uptime.aks.awsl.icu/api/badge/10/status) ![](https://uptime.aks.awsl.icu/api/badge/10/uptime) ![](https://uptime.aks.awsl.icu/api/badge/10/ping) ![](https://uptime.aks.awsl.icu/api/badge/10/avg-response) ![](https://uptime.aks.awsl.icu/api/badge/10/cert-exp) ![](https://uptime.aks.awsl.icu/api/badge/10/response) |
-| [Frontend](https://mail.awsl.uk/)          | [![Deploy Frontend](https://github.com/dreamhunter2333/cloudflare_temp_email/actions/workflows/frontend_deploy.yaml/badge.svg)](https://github.com/dreamhunter2333/cloudflare_temp_email/actions/workflows/frontend_deploy.yaml) ![](https://uptime.aks.awsl.icu/api/badge/12/status) ![](https://uptime.aks.awsl.icu/api/badge/12/uptime) ![](https://uptime.aks.awsl.icu/api/badge/12/ping) ![](https://uptime.aks.awsl.icu/api/badge/12/avg-response) ![](https://uptime.aks.awsl.icu/api/badge/12/cert-exp) ![](https://uptime.aks.awsl.icu/api/badge/12/response)         |
-
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;Star History（点击收缩/展开）&lt;/summary&gt;
-
-&lt;picture&gt;
-  &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/svg?repos=dreamhunter2333/cloudflare_temp_email&amp;type=Date&amp;theme=dark&quot; /&gt;
-  &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/svg?repos=dreamhunter2333/cloudflare_temp_email&amp;type=Date&quot; /&gt;
-  &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/svg?repos=dreamhunter2333/cloudflare_temp_email&amp;type=Date&quot; /&gt;
-&lt;/picture&gt;
-
-&lt;/details&gt;
-
-&lt;details open&gt;
-&lt;summary&gt;目录（点击收缩/展开）&lt;/summary&gt;
-
-- [Cloudflare 临时邮箱 - 免费搭建临时邮件服务](#cloudflare-临时邮箱---免费搭建临时邮件服务)
-  - [部署文档 - 快速开始](#部署文档---快速开始)
-  - [更新日志](#更新日志)
-  - [在线体验](#在线体验)
-  - [核心功能](#核心功能)
-    - [邮件处理](#邮件处理)
-    - [用户管理](#用户管理)
-    - [管理功能](#管理功能)
-    - [多语言与界面](#多语言与界面)
-    - [集成与扩展](#集成与扩展)
-  - [技术架构](#技术架构)
-    - [系统架构](#系统架构)
-    - [技术栈](#技术栈)
-    - [主要组件](#主要组件)
-  - [加入社区](#加入社区)
-
-&lt;/details&gt;
-
-## 核心功能
-
-&lt;details open&gt;
-&lt;summary&gt;核心功能详情（点击收缩/展开）&lt;/summary&gt;
-
-### 邮件处理
-
-- [x] 使用 `rust wasm` 解析邮件，解析速度快，几乎所有邮件都能解析，node 的解析模块解析邮件失败的邮件，rust wasm 也能解析成功
-- [x] **AI 邮件识别** - 使用 Cloudflare Workers AI 自动提取邮件中的验证码、认证链接、服务链接等重要信息
-- [x] 支持为指定基础域名创建随机二级域名邮箱地址，更适合收件隔离场景
-- [x] 支持发送邮件，支持 `DKIM` 验证
-- [x] 支持 `SMTP` 和 `Resend` 等多种发送方式 
-- [x] 增加查看 `附件` 功能，支持附件图片显示
-- [x] 支持 S3 附件存储和删除功能
-- [x] 垃圾邮件检测和黑白名单配置
-- [x] 邮件转发功能，支持全局转发地址
-
-### 用户管理
-
-- [x] 使用 `凭证` 重新登录之前的邮箱
-- [x] 添加完整的用户注册登录功能，可绑定邮箱地址，绑定后可自动获取邮箱JWT凭证切换不同邮箱
-- [x] 支持 `OAuth2` 第三方登录（Github、Authentik 等）
-- [x] 支持 `Passkey` 无密码登录
-- [x] 用户角色管理，支持多角色域名和前缀配置
-- [x] 用户收件箱查看，支持地址和关键词过滤
-
-### 管理功能
-
-- [x] 完整的 admin 控制台
-- [x] `admin` 后台创建无前缀邮箱
-- [x] admin 用户管理页面，增加用户地址查看功能
-- [x] 定时清理功能，支持多种清理策略
-- [x] 获取自定义名字的邮箱，`admin` 可配置黑名单
-- [x] 增加访问密码，可作为私人站点
-
-### 多语言与界面
-
-- [x] 前后台均支持多语言
-- [x] 现代化 UI 设计，支持响应式布局
-- [x] 支持 Google Ads 集成
-- [x] 使用 shadow DOM 防止样式污染
-- [x] 支持 URL JWT 参数自动登录
-
-### 集成与扩展
-
-- [x] 完整的 `Telegram Bot` 支持，以及 `Telegram` 推送，Telegram Bot 小程序
-- [x] 添加 `SMTP proxy server`，支持 `SMTP` 发送邮件，`IMAP` 查看邮件
-- [x] Webhook 支持，消息推送集成
-- [x] 支持 `CF Turnstile` 人机验证
-- [x] 限流配置，防止滥用
-- [x] **Agent 友好**：内置 [`cf-temp-mail-agent-mail`](skills/cf-temp-mail-agent-mail/SKILL.md) skill，AI agent 可直接消费邮箱，详见 [文档](vitepress-docs/docs/zh/guide/feature/agent-email.md)
-- [x] 社区移动端管理客户端：[CloudMail](https://github.com/Lur1N77777/CloudMail) 基于 Expo / React Native，面向本项目兼容 API，提供 Android 管理员后台、地址管理、收件/发件/未知邮件、验证码快捷复制、OLED 黑主题和本地分组。
-
-&lt;/details&gt;
-
-## 技术架构
-
-&lt;details&gt;
-&lt;summary&gt;技术架构详情（点击收缩/展开）&lt;/summary&gt;
-
-### 系统架构
-
-- **数据库**: Cloudflare D1 作为主数据库
-- **前端部署**: 使用 Cloudflare Pages 部署前端
-- **后端部署**: 使用 Cloudflare Workers 部署后端
-- **邮件转发**: 使用 Cloudflare Email Routing
-
-### 技术栈
-
-- **前端**: Vue 3 + Vite + TypeScript
-- **后端**: TypeScript + Cloudflare Workers
-- **邮件解析**: Rust WASM (mail-parser-wasm)
-- **数据库**: Cloudflare D1 (SQLite)
-- **存储**: Cloudflare KV + R2 (可选 S3)
-- **代理服务**: Python SMTP/IMAP Proxy Server
-
-### 主要组件
-
-- **Worker**: 核心后端服务
-- **Frontend**: Vue 3 用户界面
-- **Mail Parser WASM**: Rust 邮件解析模块
-- **SMTP Proxy Server**: Python 邮件代理服务
-- **Pages Functions**: Cloudflare Pages 中间件
-- **Documentation**: VitePress 文档站点
-
-&lt;/details&gt;
-
-### 提醒
-
-- 在Resend添加域名记录时，如果您域名解析服务商正在托管您的3级域名a.b.com，请删除Resend生成的默认name中二级域名前缀b，否则将会添加a.b.b.com，导致验证失败。添加记录后，可通过
-```bash
-nslookup -qt=&quot;mx&quot; a.b.com 1.1.1.1
-```
-进行验证。 
-
-## 加入社区
-
-- [Telegram](https://t.me/cloudflare_temp_email)
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[different-ai/openwork]]></title>
-            <link>https://github.com/different-ai/openwork</link>
-            <guid>https://github.com/different-ai/openwork</guid>
-            <pubDate>Mon, 27 Apr 2026 00:15:08 GMT</pubDate>
-            <description><![CDATA[An open-source alternative to Claude Cowork built for teams, powered by opencode]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/different-ai/openwork">different-ai/openwork</a></h1>
-            <p>An open-source alternative to Claude Cowork built for teams, powered by opencode</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 14,378</p>
-            <p>Forks: 1,373</p>
-            <p>Stars today: 88 stars today</p>
-            <h2>README</h2><pre>&gt; OpenWork is the open source alternative to Claude Cowork/Codex (desktop app).
-
-
-## Core Philosophy
-
-- Local-first, cloud-ready: OpenWork runs on your machine in one click. Send a message instantly.
-- Composable: desktop app, Slack/Telegram connector, or server. Use what fits, no lock-in.
-- Ejectable: OpenWork is powered by OpenCode, so everything OpenCode can do works in OpenWork, even without a UI yet.
-- Sharing is caring: start solo on localhost, then explicitly opt into remote sharing when you need it.
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;./app-demo.gif&quot; alt=&quot;OpenWork demo&quot; width=&quot;800&quot; /&gt;
-&lt;/p&gt;
-
-OpenWork is designed around the idea that you can easily ship your agentic workflows for your team as a repeatable, productized process.
-
-&gt; [!TIP]
-&gt; **Looking for an [Enterprise Plan](https://openworklabs.com/enterprise)?** [Speak with our Sales Team today](https://cal.com/team/openwork/enterprise)
-&gt;
-&gt; Get enhanced capabilities including feature prioritization, SSO, SLA support, LTS versions, and more.
-
-## Alternate UIs
-- **OpenWork Orchestrator (CLI host)**: run OpenCode + OpenWork server without the desktop UI.
-  - install: `npm install -g openwork-orchestrator`
-  - run: `openwork start --workspace /path/to/workspace --approval auto`
-  - docs: [apps/orchestrator/README.md](./apps/orchestrator/README.md)
-
-## Quick start
-
-Download the desktop app from [openworklabs.com/download](https://openworklabs.com/download), grab the latest [GitHub release](https://github.com/different-ai/openwork/releases), or install from source below.
-
-- macOS and Linux downloads are available directly.
-- Windows access is currently handled through the paid support plan on [openworklabs.com/pricing#windows-support](https://openworklabs.com/pricing#windows-support).
-- Hosted OpenWork Cloud workers are launched from the web app after checkout, then connected from the desktop app via `Add a worker` -&gt; `Connect remote`.
-
-## Why
-
-Current CLI and GUIs for opencode are anchored around developers. That means a focus on file diffs, tool names, and hard to extend capabilities without relying on exposing some form of cli.
-
-OpenWork is designed to be:
-
-- **Extensible**: skill and opencode plugins are installable modules.
-- **Auditable**: show what happened, when, and why.
-- **Permissioned**: access to privileged flows.
-- **Local/Remote**: OpenWork works locally as well as can connect to remote servers.
-
-## What’s Included
-
-- **Host mode**: runs opencode locally on your computer
-- **Client mode**: connect to an existing OpenCode server by URL.
-- **Sessions**: create/select sessions and send prompts.
-- **Live streaming**: SSE `/event` subscription for realtime updates.
-- **Execution plan**: render OpenCode todos as a timeline.
-- **Permissions**: surface permission requests and reply (allow once / always / deny).
-- **Templates**: save and re-run common workflows (stored locally).
-- **Debug exports**: copy or export the runtime debug report and developer log stream from Settings -&gt; Debug when you need to file a bug.
-- **Skills manager**:
-  - list installed `.opencode/skills` folders
-  - import a local skill folder into `.opencode/skills/&lt;skill-name&gt;`
-
-## Skill Manager
-
-&lt;img width=&quot;1292&quot; height=&quot;932&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/b500c1c6-a218-42ce-8a11-52787f5642b6&quot; /&gt;
-
-## Works on local computer or servers
-
-&lt;img width=&quot;1292&quot; height=&quot;932&quot; alt=&quot;Screenshot 2026-01-13 at 7 05 16 PM&quot; src=&quot;https://github.com/user-attachments/assets/9c864390-de69-48f2-82c1-93b328dd60c3&quot; /&gt;
-
-## Quick Start
-
-### Requirements
-
-- Node.js + `pnpm`
-- Rust toolchain (for Tauri): install via `curl --proto &#039;=https&#039; --tlsv1.2 -sSf https://sh.rustup.rs | sh`
-- Tauri CLI: `cargo install tauri-cli`
-- OpenCode CLI installed and available on PATH: `opencode`
-
-### Local Dev Prerequisites (Desktop)
-
-Before running `pnpm dev`, ensure these are installed and active in your shell:
-
-- Node + pnpm (repo uses `pnpm@10.27.0`)
-- **Bun 1.3.9+** (`bun --version`)
-- Rust toolchain (for Tauri), with Cargo from current `rustup` stable (supports `Cargo.lock` v4)
-- Xcode Command Line Tools (macOS)
-- On Linux, WebKitGTK 4.1 development packages so `pkg-config` can resolve `webkit2gtk-4.1` and `javascriptcoregtk-4.1`
-
-### One-minute sanity check
-
-Run from repo root:
-
-```bash
-git checkout dev
-git pull --ff-only origin dev
-pnpm install --frozen-lockfile
-
-which bun
-bun --version
-pnpm --filter @openwork/desktop exec tauri --version
-```
-
-### Install
-
-```bash
-pnpm install
-```
-
-OpenWork now lives in `apps/app` (UI) and `apps/desktop` (desktop shell).
-
-### Run (Desktop)
-
-```bash
-pnpm dev
-```
-
-`pnpm dev` now enables `OPENWORK_DEV_MODE=1` automatically, so desktop dev uses an isolated OpenCode state instead of your personal global config/auth/data.
-
-### Run (Web UI only)
-
-```bash
-pnpm dev:ui
-```
-
-All repo `dev` entrypoints now opt into the same dev-mode isolation so local testing uses the OpenWork-managed OpenCode state consistently.
-
-### Arch Users:
-
-```bash
-sudo pacman -S --needed webkit2gtk-4.1
-curl -fsSL https://opencode.ai/install | bash -s -- --version &quot;$(node -e &quot;const fs=require(&#039;fs&#039;); const parsed=JSON.parse(fs.readFileSync(&#039;constants.json&#039;,&#039;utf8&#039;)); process.stdout.write(String(parsed.opencodeVersion||&#039;&#039;).trim().replace(/^v/,&#039;&#039;));&quot;)&quot; --no-modify-path
-```
-
-## Architecture (high-level)
-
-- In **Host mode**, OpenWork runs a local host stack and connects the UI to it.
-  - Default runtime: `openwork` (installed from `openwork-orchestrator`), which orchestrates `opencode`, `openwork-server`, and optionally `opencode-router`.
-  - Fallback runtime: `direct`, where the desktop app spawns `opencode serve --hostname 127.0.0.1 --port &lt;free-port&gt;` directly.
-
-When you select a project folder, OpenWork runs the host stack locally using that folder and connects the desktop UI.
-This lets you run agentic workflows, send prompts, and see progress entirely on your machine without a remote server.
-
-- The UI uses `@opencode-ai/sdk/v2/client` to:
-  - connect to the server
-  - list/create sessions
-  - send prompts
-  - subscribe to SSE events(Server-Sent Events are used to stream real-time updates from the server to the UI.)
-  - read todos and permission requests
-
-## Folder Picker
-
-The folder picker uses the Tauri dialog plugin.
-Capability permissions are defined in:
-
-- `apps/desktop/src-tauri/capabilities/default.json`
-
-## OpenCode Plugins
-
-Plugins are the **native** way to extend OpenCode. OpenWork now manages them from the Skills tab by
-reading and writing `opencode.json`.
-
-- **Project scope**: `&lt;workspace&gt;/opencode.json`
-- **Global scope**: `~/.config/opencode/opencode.json` (or `$XDG_CONFIG_HOME/opencode/opencode.json`)
-
-You can still edit `opencode.json` manually; OpenWork uses the same format as the OpenCode CLI:
-
-```json
-{
-  &quot;$schema&quot;: &quot;https://opencode.ai/config.json&quot;,
-  &quot;plugin&quot;: [&quot;opencode-wakatime&quot;]
-}
-```
-
-## Useful Commands
-
-```bash
-pnpm dev
-pnpm dev:ui
-pnpm typecheck
-pnpm build
-pnpm build:ui
-pnpm test:e2e
-```
-
-## Troubleshooting
-
-If you need to report a desktop or session bug, open Settings -&gt; Debug and export both the runtime debug report and developer logs before filing an issue.
-
-### Linux / Wayland (Hyprland)
-
-If OpenWork crashes on launch with WebKitGTK errors like `Failed to create GBM buffer`, disable dmabuf or compositing before launch. Try one of the following environment flags.
-
-```bash
-WEBKIT_DISABLE_DMABUF_RENDERER=1 openwork
-```
-
-```bash
-WEBKIT_DISABLE_COMPOSITING_MODE=1 openwork
-```
-
-## Security Notes
-
-- OpenWork hides model reasoning and sensitive tool metadata by default.
-- Host mode binds to `127.0.0.1` by default.
-
-## Contributing
-
-- Review `AGENTS.md` plus `VISION.md`, `PRINCIPLES.md`, `PRODUCT.md`, and `ARCHITECTURE.md` to understand the product goals before making changes.
-- Ensure Node.js, `pnpm`, the Rust toolchain, and `opencode` are installed before working inside the repo.
-- Run `pnpm install` once per checkout, then verify your change with `pnpm typecheck` plus `pnpm test:e2e` (or the targeted subset of scripts) before opening a PR.
-- Use `.github/pull_request_template.md` when opening PRs and include exact commands, outcomes, manual verification steps, and evidence.
-- If CI fails, classify failures in the PR body as either code-related regressions or external/environment/auth blockers.
-- Add new PRDs to `apps/app/pr/&lt;name&gt;.md` following the `.opencode/skills/prd-conventions/SKILL.md` conventions described in `AGENTS.md`.
-
-Community docs:
-
-- `CODE_OF_CONDUCT.md`
-- `SECURITY.md`
-- `SUPPORT.md`
-- `TRIAGE.md`
-
-First contribution checklist:
-
-- [ ] Run `pnpm install` and baseline verification commands.
-- [ ] Confirm your change has a clear issue link and scope.
-- [ ] Add/update tests for behavioral changes.
-- [ ] Include commands run and outcomes in your PR.
-- [ ] Add screenshots/video for user-facing flow changes.
-
-## Supported Languages
-
-Translated READMEs: [`translated_readmes/`](./translated_readmes/README.md), available in English, 简体中文, 繁體中文, 日本語.
-
-The App is available in the following languages: English (`en`), Japanese (`ja`), Simplified Chinese (`zh`), Vietnamese (`vi`), Brazilian Portuguese (`pt-BR`).
-
-## For Teams &amp; Businesses
-
-Interested in using OpenWork in your organization? We&#039;d love to hear from you — reach out at [ben@openworklabs.com](mailto:ben@openworklabs.com) to chat about your use case.
-
-## License
-
-MIT — see `LICENSE`.
-</pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
@@ -1236,15 +436,15 @@ MIT — see `LICENSE`.
             <title><![CDATA[ruvnet/ruflo]]></title>
             <link>https://github.com/ruvnet/ruflo</link>
             <guid>https://github.com/ruvnet/ruflo</guid>
-            <pubDate>Mon, 27 Apr 2026 00:15:07 GMT</pubDate>
+            <pubDate>Tue, 28 Apr 2026 00:18:34 GMT</pubDate>
             <description><![CDATA[🌊 The leading agent orchestration platform for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features enterprise-grade architecture, distributed swarm intelligence, RAG integration, and native Claude Code / Codex Integration]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/ruvnet/ruflo">ruvnet/ruflo</a></h1>
             <p>🌊 The leading agent orchestration platform for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features enterprise-grade architecture, distributed swarm intelligence, RAG integration, and native Claude Code / Codex Integration</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 33,572</p>
-            <p>Forks: 3,801</p>
-            <p>Stars today: 256 stars today</p>
+            <p>Stars: 33,718</p>
+            <p>Forks: 3,821</p>
+            <p>Stars today: 178 stars today</p>
             <h2>README</h2><pre># 🌊 RuFlo v3.5: Enterprise AI Orchestration Platform
 
 &lt;div align=&quot;center&quot;&gt;
@@ -1665,470 +865,896 @@ swarm_init({
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[CherryHQ/cherry-studio]]></title>
-            <link>https://github.com/CherryHQ/cherry-studio</link>
-            <guid>https://github.com/CherryHQ/cherry-studio</guid>
-            <pubDate>Mon, 27 Apr 2026 00:15:06 GMT</pubDate>
-            <description><![CDATA[AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs]]></description>
+            <title><![CDATA[gitroomhq/postiz-app]]></title>
+            <link>https://github.com/gitroomhq/postiz-app</link>
+            <guid>https://github.com/gitroomhq/postiz-app</guid>
+            <pubDate>Tue, 28 Apr 2026 00:18:33 GMT</pubDate>
+            <description><![CDATA[📨 The ultimate agentic social media scheduling tool 🤖]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/CherryHQ/cherry-studio">CherryHQ/cherry-studio</a></h1>
-            <p>AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs</p>
+            <h1><a href="https://github.com/gitroomhq/postiz-app">gitroomhq/postiz-app</a></h1>
+            <p>📨 The ultimate agentic social media scheduling tool 🤖</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 44,468</p>
-            <p>Forks: 4,217</p>
-            <p>Stars today: 93 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;right&quot; &gt;
-  &lt;details&gt;
-    &lt;summary &gt;🌐 Language&lt;/summary&gt;
-    &lt;div&gt;
-      &lt;div align=&quot;right&quot;&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=en&quot;&gt;English&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=zh-CN&quot;&gt;简体中文&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=zh-TW&quot;&gt;繁體中文&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=ja&quot;&gt;日本語&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=ko&quot;&gt;한국어&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=hi&quot;&gt;हिन्दी&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=th&quot;&gt;ไทย&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=fr&quot;&gt;Français&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=de&quot;&gt;Deutsch&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=es&quot;&gt;Español&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=it&quot;&gt;Italiano&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=ru&quot;&gt;Русский&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=pt&quot;&gt;Português&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=nl&quot;&gt;Nederlands&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=pl&quot;&gt;Polski&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=ar&quot;&gt;العربية&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=fa&quot;&gt;فارسی&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=tr&quot;&gt;Türkçe&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=vi&quot;&gt;Tiếng Việt&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;a href=&quot;https://openaitx.github.io/view.html?user=CherryHQ&amp;project=cherry-studio&amp;lang=id&quot;&gt;Bahasa Indonesia&lt;/a&gt;&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/details&gt;
-&lt;/div&gt;
-
-&lt;h1 align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/CherryHQ/cherry-studio/releases&quot;&gt;
-    &lt;img src=&quot;https://github.com/CherryHQ/cherry-studio/blob/main/build/icon.png?raw=true&quot; width=&quot;150&quot; height=&quot;150&quot; alt=&quot;banner&quot; /&gt;&lt;br&gt;
+            <p>Stars: 29,649</p>
+            <p>Forks: 5,355</p>
+            <p>Stars today: 76 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://postiz.com/&quot; target=&quot;_blank&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://github.com/user-attachments/assets/765e9d72-3ee7-4a56-9d59-a2c9befe2311&quot;&gt;
+    &lt;img alt=&quot;Postiz Logo&quot; src=&quot;https://github.com/user-attachments/assets/f0d30d70-dddb-4142-8876-e9aa6ed1cb99&quot; width=&quot;280&quot;/&gt;
+  &lt;/picture&gt;
   &lt;/a&gt;
-&lt;/h1&gt;
-
-&lt;p align=&quot;center&quot;&gt;English | &lt;a href=&quot;./docs/zh/README.md&quot;&gt;中文&lt;/a&gt; | &lt;a href=&quot;https://cherry-ai.com&quot;&gt;Official Site&lt;/a&gt; | &lt;a href=&quot;https://docs.cherry-ai.com/docs/en-us&quot;&gt;Documents&lt;/a&gt; | &lt;a href=&quot;./docs/en/guides/development.md&quot;&gt;Development&lt;/a&gt; | &lt;a href=&quot;https://github.com/CherryHQ/cherry-studio/issues&quot;&gt;Feedback&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-
-[![][deepwiki-shield]][deepwiki-link]
-[![][twitter-shield]][twitter-link]
-[![][discord-shield]][discord-link]
-[![][telegram-shield]][telegram-link]
-
-&lt;/div&gt;
-&lt;div align=&quot;center&quot;&gt;
-
-[![][github-release-shield]][github-release-link]
-[![][github-nightly-shield]][github-nightly-link]
-[![][github-contributors-shield]][github-contributors-link]
-[![][license-shield]][license-link]
-[![][commercial-shield]][commercial-link]
-[![][sponsor-shield]][sponsor-link]
-
-&lt;/div&gt;
-
-&lt;div align=&quot;center&quot;&gt;
- &lt;a href=&quot;https://hellogithub.com/repository/1605492e1e2a4df3be07abfa4578dd37&quot; target=&quot;_blank&quot; style=&quot;text-decoration: none&quot;&gt;&lt;img src=&quot;https://api.hellogithub.com/v1/widgets/recommend.svg?rid=1605492e1e2a4df3be07abfa4578dd37&quot; alt=&quot;Featured｜HelloGitHub&quot;  width=&quot;220&quot; height=&quot;55&quot; /&gt;&lt;/a&gt;
- &lt;a href=&quot;https://trendshift.io/repositories/14318&quot; target=&quot;_blank&quot; style=&quot;text-decoration: none&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/14318&quot; alt=&quot;CherryHQ%2Fcherry-studio | Trendshift&quot; width=&quot;220&quot; height=&quot;55&quot; /&gt;&lt;/a&gt;
- &lt;a href=&quot;https://www.producthunt.com/posts/cherry-studio?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_souce=badge-cherry&amp;#0045;studio&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=496640&amp;theme=light&quot; alt=&quot;Cherry&amp;#0032;Studio - AI&amp;#0032;Chatbots&amp;#0044;&amp;#0032;AI&amp;#0032;Desktop&amp;#0032;Client | Product Hunt&quot; width=&quot;220&quot; height=&quot;55&quot; /&gt;&lt;/a&gt;
-&lt;/div&gt;
-
-# 🍒 Cherry Studio
-
-Cherry Studio is a desktop client that supports multiple LLM providers, available on Windows, Mac and Linux.
-
-👏 Join [Telegram Group](https://t.me/CherryStudioAI)｜[Discord](https://discord.gg/wez8HtpxqQ) | [QQ Group(575014769)](https://qm.qq.com/q/lo0D4qVZKi)
-
-❤️ Like Cherry Studio? Give it a star 🌟 or [Sponsor](docs/zh/guides/sponsor.md) to support the development!
-
-# 🌠 Screenshot
-
-![](https://github.com/user-attachments/assets/36dddb2c-e0fb-4a5f-9411-91447bab6e18)
-
-![](https://github.com/user-attachments/assets/f549e8a0-2385-40b4-b52b-2039e39f2930)
-
-![](https://github.com/user-attachments/assets/58e0237c-4d36-40de-b428-53051d982026)
-
-# 🌟 Key Features
-
-1. **Diverse LLM Provider Support**:
-
-- ☁️ Major LLM Cloud Services: OpenAI, Gemini, Anthropic, and more
-- 🔗 AI Web Service Integration: Claude, Perplexity, [Poe](https://poe.com/), and others
-- 💻 Local Model Support with Ollama, LM Studio
-
-2. **AI Assistants &amp; Conversations**:
-
-- 📚 300+ Pre-configured AI Assistants
-- 🤖 Custom Assistant Creation
-- 💬 Multi-model Simultaneous Conversations
-
-3. **Document &amp; Data Processing**:
-
-- 📄 Supports Text, Images, Office, PDF, and more
-- ☁️ WebDAV File Management and Backup
-- 📊 Mermaid Chart Visualization
-- 💻 Code Syntax Highlighting
-
-4. **Practical Tools Integration**:
-
-- 🔍 Global Search Functionality
-- 📝 Topic Management System
-- 🔤 AI-powered Translation
-- 🎯 Drag-and-drop Sorting
-- 🔌 Mini Program Support
-- ⚙️ MCP(Model Context Protocol) Server
-
-5. **Enhanced User Experience**:
-
-- 🖥️ Cross-platform Support for Windows, Mac, and Linux
-- 📦 Ready to Use - No Environment Setup Required
-- 🎨 Light/Dark Themes and Transparent Window
-- 📝 Complete Markdown Rendering
-- 🤲 Easy Content Sharing
-
-# 📝 Roadmap
-
-We&#039;re actively working on the following features and improvements:
-
-1. 🎯 **Core Features**
-
-- Selection Assistant with smart content selection enhancement
-- Deep Research with advanced research capabilities
-- Memory System with global context awareness
-- Document Preprocessing with improved document handling
-- MCP Marketplace for Model Context Protocol ecosystem
-
-2. 🗂 **Knowledge Management**
-
-- Notes and Collections
-- Dynamic Canvas visualization
-- OCR capabilities
-- TTS (Text-to-Speech) support
-
-3. 📱 **Platform Support**
-
-- HarmonyOS Edition (PC)
-- Android App (Phase 1)
-- iOS App (Phase 1)
-- Multi-Window support
-- Window Pinning functionality
-- Intel AI PC (Core Ultra) Support
-
-4. 🔌 **Advanced Features**
-
-- Plugin System
-- ASR (Automatic Speech Recognition)
-- Assistant and Topic Interaction Refactoring
-
-Track our progress and contribute on our [project board](https://github.com/orgs/CherryHQ/projects/7).
-
-Want to influence our roadmap? Join our [GitHub Discussions](https://github.com/CherryHQ/cherry-studio/discussions) to share your ideas and feedback!
-
-# 🌈 Theme
-
-- Theme Gallery: &lt;https://cherrycss.com&gt;
-- Aero Theme: &lt;https://github.com/hakadao/CherryStudio-Aero&gt;
-- PaperMaterial Theme: &lt;https://github.com/rainoffallingstar/CherryStudio-PaperMaterial&gt;
-- Claude dynamic-style: &lt;https://github.com/bjl101501/CherryStudio-Claudestyle-dynamic&gt;
-- Maple Neon Theme: &lt;https://github.com/BoningtonChen/CherryStudio_themes&gt;
-
-Welcome PR for more themes
-
-# 🤝 Contributing
-
-We welcome contributions to Cherry Studio! Here are some ways you can contribute:
-
-1. **Contribute Code**: Develop new features or optimize existing code.
-2. **Fix Bugs**: Submit fixes for any bugs you find.
-3. **Maintain Issues**: Help manage GitHub issues.
-4. **Product Design**: Participate in design discussions.
-5. **Write Documentation**: Improve user manuals and guides.
-6. **Community Engagement**: Join discussions and help users.
-7. **Promote Usage**: Spread the word about Cherry Studio.
-
-Refer to the [Branching Strategy](docs/en/guides/branching-strategy.md) for contribution guidelines
-
-## Getting Started
-
-1. **Fork the Repository**: Fork and clone it to your local machine.
-2. **Create a Branch**: For your changes.
-3. **Submit Changes**: Commit and push your changes.
-4. **Open a Pull Request**: Describe your changes and reasons.
-
-For more detailed guidelines, please refer to our [Contributing Guide](CONTRIBUTING.md).
-
-Thank you for your support and contributions!
-
-# 🔧 Developer Co-creation Program
-
-We are launching the Cherry Studio Developer Co-creation Program to foster a healthy and positive-feedback loop within the open-source ecosystem. We believe that great software is built collaboratively, and every merged pull request breathes new life into the project.
-
-We sincerely invite you to join our ranks of contributors and shape the future of Cherry Studio with us.
-
-## Contributor Rewards Program
-
-To give back to our core contributors and create a virtuous cycle, we have established the following long-term incentive plan.
-
-**The inaugural tracking period for this program will be Q3 2025 (July, August, September). Rewards for this cycle will be distributed on October 1st.**
-
-Within any tracking period (e.g., July 1st to September 30th for the first cycle), any developer who contributes more than **30 meaningful commits** to any of Cherry Studio&#039;s open-source projects on GitHub will be eligible for the following benefits:
-
-- **Cursor Subscription Sponsorship**: Receive a **$70 USD** credit or reimbursement for your [Cursor](https://cursor.sh/) subscription, making AI your most efficient coding partner.
-- **Unlimited Model Access**: Get **unlimited** API calls for the **DeepSeek** and **Qwen** models.
-- **Cutting-Edge Tech Access**: Enjoy occasional perks, including API access to models like **Claude**, **Gemini**, and **OpenAI**, keeping you at the forefront of technology.
-
-## Growing Together &amp; Future Plans
-
-A vibrant community is the driving force behind any sustainable open-source project. As Cherry Studio grows, so will our rewards program. We are committed to continuously aligning our benefits with the best-in-class tools and resources in the industry. This ensures our core contributors receive meaningful support, creating a positive cycle where developers, the community, and the project grow together.
-
-**Moving forward, the project will also embrace an increasingly open stance to give back to the entire open-source community.**
-
-## How to Get Started?
-
-We look forward to your first Pull Request!
-
-You can start by exploring our repositories, picking up a `good first issue`, or proposing your own enhancements. Every commit is a testament to the spirit of open source.
-
-Thank you for your interest and contributions.
-
-Let&#039;s build together.
-
-# 🏢 Enterprise Edition
-
-Building on the Community Edition, we are proud to introduce **Cherry Studio Enterprise Edition**—a privately-deployable AI productivity and management platform designed for modern teams and enterprises.
-
-The Enterprise Edition addresses core challenges in team collaboration by centralizing the management of AI resources, knowledge, and data. It empowers organizations to enhance efficiency, foster innovation, and ensure compliance, all while maintaining 100% control over their data in a secure environment.
-
-## Core Advantages
-
-- **Unified Model Management**: Centrally integrate and manage various cloud-based LLMs (e.g., OpenAI, Anthropic, Google Gemini) and locally deployed private models. Employees can use them out-of-the-box without individual configuration.
-- **Enterprise-Grade Knowledge Base**: Build, manage, and share team-wide knowledge bases. Ensures knowledge retention and consistency, enabling team members to interact with AI based on unified and accurate information.
-- **Fine-Grained Access Control**: Easily manage employee accounts and assign role-based permissions for different models, knowledge bases, and features through a unified admin backend.
-- **Fully Private Deployment**: Deploy the entire backend service on your on-premises servers or private cloud, ensuring your data remains 100% private and under your control to meet the strictest security and compliance standards.
-- **Reliable Backend Services**: Provides stable API services and enterprise-grade data backup and recovery mechanisms to ensure business continuity.
-
-## ✨ Online Demo
-
-**🔗 [Cherry Studio Enterprise](https://enterprise.cherry-ai.com)**
-
-## Version Comparison
-
-| Feature           | Community Edition                                                                    | Enterprise Edition                                                                                                                      |
-| :---------------- | :----------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------- |
-| **Open Source**   | ✅ Yes                                                                               | ⭕️ Partially released to customers                                                                                                      |
-| **Cost**          | [AGPL-3.0 License](https://github.com/CherryHQ/cherry-studio?tab=AGPL-3.0-1-ov-file) | Buyout / Subscription Fee                                                                                                               |
-| **Admin Backend** | —                                                                                    | ● Centralized **Model** Access&lt;br&gt;● **Employee** Management&lt;br&gt;● Shared **Knowledge Base**&lt;br&gt;● **Access** Control&lt;br&gt;● **Data** Backup |
-| **Server**        | —                                                                                    | ✅ Dedicated Private Deployment                                                                                                         |
-
-## Get the Enterprise Edition
-
-We believe the Enterprise Edition will become your team&#039;s AI productivity engine. If you are interested in Cherry Studio Enterprise Edition and would like to learn more, request a quote, or schedule a demo, please feel free to contact us.
-
-- **For Business Inquiries &amp; Purchasing**:
-  **📧 [bd@cherry-ai.com](mailto:bd@cherry-ai.com)**
-
-# 🔗 Related Projects
-
-- [new-api](https://github.com/QuantumNous/new-api): The next-generation LLM gateway and AI asset management system supports multiple languages.
-
-- [one-api](https://github.com/songquanpeng/one-api): LLM API management and distribution system supporting mainstream models like OpenAI, Azure, and Anthropic. Features a unified API interface, suitable for key management and secondary distribution.
-
-- [Poe](https://poe.com/): Poe gives you access to the best AI, all in one place. Explore GPT-5, Claude Opus 4.1, DeepSeek-R1, Veo 3, ElevenLabs, and millions of others.
-
-- [ublacklist](https://github.com/iorate/ublacklist): Blocks specific sites from appearing in Google search results
-
-# 🚀 Contributors
-
-&lt;a href=&quot;https://github.com/CherryHQ/cherry-studio/graphs/contributors&quot;&gt;
-  &lt;img src=&quot;https://contrib.rocks/image?repo=CherryHQ/cherry-studio&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;a href=&quot;https://opensource.org/license/agpl-v3&quot;&gt;
+  &lt;img src=&quot;https://img.shields.io/badge/License-AGPL%203.0-blue.svg&quot; alt=&quot;License&quot;&gt;
 &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;h3 align=&quot;center&quot;&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/gitroomhq/postiz-agent&quot;&gt;NEW: check out Postiz agent CLI! perfect for OpenClaw and other agents&lt;/a&gt;&lt;/strong&gt;&lt;/h3&gt;
+&lt;div align=&quot;center&quot;&gt;
+  &lt;strong&gt;
+  &lt;h2&gt;Your ultimate AI social media scheduling tool&lt;/h2&gt;&lt;br /&gt;
+  &lt;a href=&quot;https://postiz.com&quot;&gt;Postiz&lt;/a&gt;: An alternative to: Buffer.com, Hypefury, Twitter Hunter, etc...&lt;br /&gt;&lt;br /&gt;
+  &lt;/strong&gt;
+  Postiz offers everything you need to manage your social media posts,&lt;br /&gt;build an audience, capture leads, and grow your business.
+&lt;/div&gt;
+
+&lt;div class=&quot;flex&quot; align=&quot;center&quot;&gt;
+  &lt;br /&gt;
+  &lt;img alt=&quot;Instagram&quot; src=&quot;https://postiz.com/svgs/socials/Instagram.svg&quot; width=&quot;32&quot;&gt;
+  &lt;img alt=&quot;Youtube&quot; src=&quot;https://postiz.com/svgs/socials/Youtube.svg&quot; width=&quot;32&quot;&gt;
+  &lt;img alt=&quot;Dribbble&quot; src=&quot;https://postiz.com/svgs/socials/Dribbble.svg&quot; width=&quot;32&quot;&gt;
+  &lt;img alt=&quot;Linkedin&quot; src=&quot;https://postiz.com/svgs/socials/Linkedin.svg&quot; width=&quot;32&quot;&gt;
+  &lt;img alt=&quot;Reddit&quot; src=&quot;https://postiz.com/svgs/socials/Reddit.svg&quot; width=&quot;32&quot;&gt;
+  &lt;img alt=&quot;TikTok&quot; src=&quot;https://postiz.com/svgs/socials/TikTok.svg&quot; width=&quot;32&quot;&gt;
+  &lt;img alt=&quot;Facebook&quot; src=&quot;https://postiz.com/svgs/socials/Facebook.svg&quot; width=&quot;32&quot;&gt;
+  &lt;img alt=&quot;Pinterest&quot; src=&quot;https://postiz.com/svgs/socials/Pinterest.svg&quot; width=&quot;32&quot;&gt;
+  &lt;img alt=&quot;Threads&quot; src=&quot;https://postiz.com/svgs/socials/Threads.svg&quot; width=&quot;32&quot;&gt;
+  &lt;img alt=&quot;X&quot; src=&quot;https://postiz.com/svgs/socials/X.svg&quot; width=&quot;32&quot;&gt;
+  &lt;img alt=&quot;Slack&quot; src=&quot;https://postiz.com/svgs/socials/Slack.svg&quot; width=&quot;32&quot;&gt;
+  &lt;img alt=&quot;Discord&quot; src=&quot;https://postiz.com/svgs/socials/Discord.svg&quot; width=&quot;32&quot;&gt;
+  &lt;img alt=&quot;Mastodon&quot; src=&quot;https://postiz.com/svgs/socials/Mastodon.svg&quot; width=&quot;32&quot;&gt;
+  &lt;img alt=&quot;Bluesky&quot; src=&quot;https://postiz.com/svgs/socials/Bluesky.svg&quot; width=&quot;32&quot;&gt;
+&lt;/div&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;br /&gt;
+  &lt;a href=&quot;https://docs.postiz.com&quot; rel=&quot;dofollow&quot;&gt;&lt;strong&gt;Explore the docs »&lt;/strong&gt;&lt;/a&gt;
+  &lt;br /&gt;
+
+  &lt;br /&gt;
+  &lt;a href=&quot;https://youtube.com/@postizofficial&quot; rel=&quot;dofollow&quot;&gt;&lt;strong&gt;Watch the YouTube Tutorials»&lt;/strong&gt;&lt;/a&gt;
+  &lt;br /&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://platform.postiz.com&quot;&gt;Register&lt;/a&gt;
+  ·
+  &lt;a href=&quot;https://discord.postiz.com&quot;&gt;Join Our Discord (devs only)&lt;/a&gt;
+  ·
+  &lt;a href=&quot;https://docs.postiz.com/public-api&quot;&gt;Public API&lt;/a&gt;&lt;br /&gt;
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://www.npmjs.com/package/@postiz/node&quot;&gt;NodeJS SDK&lt;/a&gt;
+  ·
+  &lt;a href=&quot;https://www.npmjs.com/package/n8n-nodes-postiz&quot;&gt;N8N custom node&lt;/a&gt;
+  ·
+  &lt;a href=&quot;https://apps.make.com/postiz&quot;&gt;Make.com integration&lt;/a&gt;
+&lt;/p&gt;
+
 &lt;br /&gt;&lt;br /&gt;
 
-# 📊 GitHub Stats
+## 🔌 See the leading Postiz features
 
-![Stats](https://repobeats.axiom.co/api/embed/a693f2e5f773eed620f70031e974552156c7f397.svg &quot;Repobeats analytics image&quot;)
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://www.youtube.com/watch?v=BdsCVvEYgHU&quot; target=&quot;_blank&quot;&gt;
+    &lt;img alt=&quot;Postiz&quot; src=&quot;https://github.com/user-attachments/assets/8b9b7939-da1a-4be5-95be-42c6fce772de&quot; /&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
 
-# ⭐️ Star History
+## ✨ Features
 
-&lt;a href=&quot;https://www.star-history.com/#CherryHQ/cherry-studio&amp;Date&quot;&gt;
- &lt;picture&gt;
-   &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/svg?repos=CherryHQ/cherry-studio&amp;type=Date&amp;theme=dark&quot; /&gt;
-   &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/svg?repos=CherryHQ/cherry-studio&amp;type=Date&quot; /&gt;
-   &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/svg?repos=CherryHQ/cherry-studio&amp;type=Date&quot; /&gt;
- &lt;/picture&gt;
-&lt;/a&gt;
+| ![Image 1](https://github.com/user-attachments/assets/a27ee220-beb7-4c7e-8c1b-2c44301f82ef) | ![Image 2](https://github.com/user-attachments/assets/eb5f5f15-ed90-47fc-811c-03ccba6fa8a2) |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| ![Image 3](https://github.com/user-attachments/assets/d51786ee-ddd8-4ef8-8138-5192e9cfe7c3) | ![Image 4](https://github.com/user-attachments/assets/91f83c89-22f6-43d6-b7aa-d2d3378289fb) |
 
-# 📜 License
+### Our Sponsors
 
-The Cherry Studio Community Edition is governed by the standard GNU Affero General Public License v3.0 (AGPL-3.0), available at https://www.gnu.org/licenses/agpl-3.0.html.
+| Sponsor |                                  Logo                                   | Description     |
+|---------|:-----------------------------------------------------------------------:|-----------------|
+| [Hostinger](https://www.hostinger.com/vps/docker/postiz?ref=postiz) | &lt;img src=&quot;.github/sponsors/hostinger.png&quot; alt=&quot;Hostinger&quot; width=&quot;500&quot;/&gt; | Hostinger is on a mission to make online success possible for anyone – from developers to aspiring bloggers and business owners |
+| [Virlo](https://dev.virlo.ai/?ref=postiz) | &lt;img src=&quot;https://github.com/user-attachments/assets/25182598-5344-45fc-b9cd-e4cfa16aabfd&quot; alt=&quot;Virlo&quot; width=&quot;500&quot;/&gt; | Virlo is the #1 social media trend spotting and all-in-one GTM tool for teams leveraging short-form video |
 
-Use of the Cherry Studio Community Edition for commercial purposes is permitted, subject to full compliance with the terms and conditions of the AGPL-3.0 license.
 
-Should you require a commercial license that provides an exemption from the AGPL-3.0 requirements, please contact us at bd@cherry-ai.com.
 
-&lt;!-- Links &amp; Images --&gt;
+# Intro
 
-[deepwiki-shield]: https://img.shields.io/badge/Deepwiki-CherryHQ-0088CC?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNy45MyAzMiI+PHBhdGggZD0iTTE5LjMzIDE0LjEyYy42Ny0uMzkgMS41LS4zOSAyLjE4IDBsMS43NCAxYy4wNi4wMy4xMS4wNi4xOC4wN2guMDRjLjA2LjAzLjEyLjAzLjE4LjAzaC4wMmMuMDYgMCAuMTEgMCAuMTctLjAyaC4wM2MuMDYtLjAyLjEyLS4wNS4xNy0uMDhoLjAybDMuNDgtMi4wMWMuMjUtLjE0LjQtLjQxLjQtLjdWOC40YS44MS44MSAwIDAgMC0uNC0uN2wtMy40OC0yLjAxYS44My44MyAwIDAgMC0uODEgMEwxOS43NyA3LjdoLS4wMWwtLjE1LjEyLS4wMi4wMnMtLjA3LjA5LS4xLjE0VjhhLjQuNCAwIDAgMC0uMDguMTd2LjA0Yy0uMDMuMDYtLjAzLjEyLS4wMy4xOXYyLjAxYzAgLjc4LS40MSAxLjQ5LTEuMDkgMS44OC0uNjcuMzktMS41LjM5LTIuMTggMGwtMS43NC0xYS42LjYgMCAwIDAtLjIxLS4wOGMtLjA2LS4wMS0uMTItLjAyLS4xOC0uMDJoLS4wM2MtLjA2IDAtLjExLjAxLS4xNy4wMmgtLjAzYy0uMDYuMDItLjEyLjA0LS4xNy4wN2gtLjAybC0zLjQ3IDIuMDFjLS4yNS4xNC0uNC40MS0uNC43VjE4YzAgLjI5LjE1LjU1LjQuN2wzLjQ4IDIuMDFoLjAyYy4wNi4wNC4xMS4wNi4xNy4wOGguMDNjLjA1LjAyLjExLjAzLjE3LjAzaC4wMmMuMDYgMCAuMTIgMCAuMTgtLjAyaC4wNGMuMDYtLjAzLjEyLS4wNS4xOC0uMDhsMS43NC0xYy42Ny0uMzkgMS41LS4zOSAyLjE3IDBzMS4wOSAxLjExIDEuMDkgMS44OHYyLjAxYzAgLjA3IDAgLjEzLjAyLjE5di4wNGMuMDMuMDYuMDUuMTIuMDguMTd2LjAycy4wOC4wOS4xMi4xM2wuMDIuMDJzLjA5LjA4LjE1LjExYzAgMCAuMDEgMCAuMDEuMDFsMy40OCAyLjAxYy4yNS4xNC41Ni4xNC44MSAwbDMuNDgtMi4wMWMuMjUtLjE0LjQtLjQxLjQtLjd2LTQuMDFhLjgxLjgxIDAgMCAwLS40LS43bC0zLjQ4LTIuMDFoLS4wMmMtLjA1LS4wNC0uMTEtLjA2LS4xNy0uMDhoLS4wM2EuNS41IDAgMCAwLS4xNy0uMDNoLS4wM2MtLjA2IDAtLjEyIDAtLjE4LjAyLS4wNy4wMi0uMTUuMDUtLjIxLjA4bC0xLjc0IDFjLS42Ny4zOS0xLjUuMzktMi4xNyAwYTIuMTkgMi4xOSAwIDAgMS0xLjA5LTEuODhjMC0uNzguNDItMS40OSAxLjA5LTEuODhaIiBzdHlsZT0iZmlsbDojNWRiZjlkIi8+PHBhdGggZD0ibS40IDEzLjExIDMuNDcgMi4wMWMuMjUuMTQuNTYuMTQuOCAwbDMuNDctMi4wMWguMDFsLjE1LS4xMi4wMi0uMDJzLjA3LS4wOS4xLS4xNGwuMDItLjAyYy4wMy0uMDUuMDUtLjExLjA3LS4xN3YtLjA0Yy4wMy0uMDYuMDMtLjEyLjAzLS4xOVYxMC40YzAtLjc4LjQyLTEuNDkgMS4wOS0xLjg4czEuNS0uMzkgMi4xOCAwbDEuNzQgMWMuMDcuMDQuMTQuMDcuMjEuMDguMDYuMDEuMTIuMDIuMTguMDJoLjAzYy4wNiAwIC4xMS0uMDEuMTctLjAyaC4wM2MuMDYtLjAyLjEyLS4wNC4xNy0uMDdoLjAybDMuNDctMi4wMmMuMjUtLjE0LjQtLjQxLjQtLjd2LTRhLjgxLjgxIDAgMCAwLS40LS43bC0zLjQ2LTJhLjgzLjgzIDAgMCAwLS44MSAwbC0zLjQ4IDIuMDFoLS4wMWwtLjE1LjEyLS4wMi4wMi0uMS4xMy0uMDIuMDJjLS4wMy4wNS0uMDUuMTEtLjA3LjE3di4wNGMtLjAzLjA2LS4wMy4xMi0uMDMuMTl2Mi4wMWMwIC43OC0uNDIgMS40OS0xLjA5IDEuODhzLTEuNS4zOS0yLjE4IDBsLTEuNzQtMWEuNi42IDAgMCAwLS4yMS0uMDhjLS4wNi0uMDEtLjEyLS4wMi0uMTgtLjAyaC0uMDNjLS4wNiAwLS4xMS4wMS0uMTcuMDJoLS4wM2MtLjA2LjAyLS4xMi4wNS0uMTcuMDhoLS4wMkwuNCA3LjcxYy0uMjUuMTQtLjQuNDEtLjQuNjl2NC4wMWMwIC4yOS4xNS41Ni40LjciIHN0eWxlPSJmaWxsOiM0NDY4YzQiLz48cGF0aCBkPSJtMTcuODQgMjQuNDgtMy40OC0yLjAxaC0uMDJjLS4wNS0uMDQtLjExLS4wNi0uMTctLjA4aC0uMDNhLjUuNSAwIDAgMC0uMTctLjAzaC0uMDNjLS4wNiAwLS4xMiAwLS4xOC4wMmgtLjA0Yy0uMDYuMDMtLjEyLjA1LS4xOC4wOGwtMS43NCAxYy0uNjcuMzktMS41LjM5LTIuMTggMGEyLjE5IDIuMTkgMCAwIDEtMS4wOS0xLjg4di0yLjAxYzAtLjA2IDAtLjEzLS4wMi0uMTl2LS4wNGMtLjAzLS4wNi0uMDUtLjExLS4wOC0uMTdsLS4wMi0uMDJzLS4wNi0uMDktLjEtLjEzTDguMjkgMTlzLS4wOS0uMDgtLjE1LS4xMWgtLjAxbC0zLjQ3LTIuMDJhLjgzLjgzIDAgMCAwLS44MSAwTC4zNyAxOC44OGEuODcuODcgMCAwIDAtLjM3LjcxdjQuMDFjMCAuMjkuMTUuNTUuNC43bDMuNDcgMi4wMWguMDJjLjA1LjA0LjExLjA2LjE3LjA4aC4wM2MuMDUuMDIuMTEuMDMuMTYuMDNoLjAzYy4wNiAwIC4xMiAwIC4xOC0uMDJoLjA0Yy4wNi0uMDMuMTItLjA1LjE4LS4wOGwxLjc0LTFjLjY3LS4zOSAxLjUtLjM5IDIuMTcgMHMxLjA5IDEuMTEgMS4wOSAxLjg4djIuMDFjMCAuMDcgMCAuMTMuMDIuMTl2LjA0Yy4wMy4wNi4wNS4xMS4wOC4xN2wuMDIuMDJzLjA2
+- Schedule all your social media posts (many AI features)
+- Measure your work with analytics.
+- Collaborate with other team members to exchange or buy posts.
+- Invite your team members to collaborate, comment, and schedule posts.
+- At the moment there is no difference between the hosted version to the self-hosted version
+- Perfect for automation (API) with platforms like N8N, Make.com, Zapier, etc.
 
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+## Tech Stack
+
+- Pnpm workspaces (Monorepo)
+- NextJS (React)
+- NestJS
+- Prisma (Default to PostgreSQL)
+- Temporal
+- Resend (email notifications)
+
+## Quick Start
+
+To have the project up and running, please follow the [Quick Start Guide](https://docs.postiz.com/quickstart)
+
+## Sponsor Postiz
+
+We now give a few options to Sponsor Postiz:
+- Just a donation: You like what we are building, and want to buy us some coffees so we can build faster.
+- Main Repository: Get your logo with a backlink from the main Postiz repository. Postiz has almost 3m downloads and 20k views per month.
+- Main Repository + Website: Get your logo on the central repository and the main website. Here are some metrics: - Website has 20k hits per month + 65 DR (strong backlink) - Repository has 20k hits per month + Almost 3m docker downloads.
+
+Link: https://opencollective.com/postiz
+
+## Postiz Compliance
+
+- Postiz is an open-source, self-hosted social media scheduling tool that supports platforms like X (formerly Twitter), Bluesky, Mastodon, Discord, and others.
+- Postiz hosted service uses official, platform-approved OAuth flows.
+- Postiz does not automate or scrape content from social media platforms.
+- Postiz does not collect, store, or proxy API keys or access tokens from users.
+- Postiz never ask users to paste API keys into our hosted product.
+- Postiz Users always authenticate directly with the social platform (e.g., X, Discord, etc.), ensuring platform compliance and data privacy.
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=gitroomhq/postiz-app&amp;type=date&amp;legend=top-left)](https://www.star-history.com/#gitroomhq/postiz-app&amp;type=date&amp;legend=top-left)
+
+## License
+
+This repository&#039;s source code is available under the [AGPL-3.0 license](LICENSE).
+
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://www.g2.com/products/postiz/take_survey&quot; target=&quot;blank&quot;&gt;&lt;img alt=&quot;g2&quot; src=&quot;https://github.com/user-attachments/assets/892cb74c-0b49-4589-b2f5-fbdbf7a98f66&quot; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+</pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[immich-app/immich]]></title>
-            <link>https://github.com/immich-app/immich</link>
-            <guid>https://github.com/immich-app/immich</guid>
-            <pubDate>Mon, 27 Apr 2026 00:15:05 GMT</pubDate>
-            <description><![CDATA[High performance self-hosted photo and video management solution.]]></description>
+            <title><![CDATA[playcanvas/supersplat]]></title>
+            <link>https://github.com/playcanvas/supersplat</link>
+            <guid>https://github.com/playcanvas/supersplat</guid>
+            <pubDate>Tue, 28 Apr 2026 00:18:32 GMT</pubDate>
+            <description><![CDATA[3D Gaussian Splat Editor]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/immich-app/immich">immich-app/immich</a></h1>
-            <p>High performance self-hosted photo and video management solution.</p>
+            <h1><a href="https://github.com/playcanvas/supersplat">playcanvas/supersplat</a></h1>
+            <p>3D Gaussian Splat Editor</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 98,687</p>
-            <p>Forks: 5,489</p>
-            <p>Stars today: 82 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt; 
-  &lt;br/&gt;
-  &lt;a href=&quot;https://opensource.org/license/agpl-v3&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/License-AGPL_v3-blue.svg?color=3F51B5&amp;style=for-the-badge&amp;label=License&amp;logoColor=000000&amp;labelColor=ececec&quot; alt=&quot;License: AGPLv3&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://discord.immich.app&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/discord/979116623879368755.svg?label=Discord&amp;logo=Discord&amp;style=for-the-badge&amp;logoColor=000000&amp;labelColor=ececec&quot; alt=&quot;Discord&quot;/&gt;
-  &lt;/a&gt;
-  &lt;br/&gt;
-  &lt;br/&gt;
-&lt;/p&gt;
+            <p>Stars: 4,933</p>
+            <p>Forks: 583</p>
+            <p>Stars today: 89 stars today</p>
+            <h2>README</h2><pre># SuperSplat Editor
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;img src=&quot;design/immich-logo-stacked-light.svg&quot; width=&quot;300&quot; title=&quot;Login With Custom URL&quot;&gt;
-&lt;/p&gt;
-&lt;h3 align=&quot;center&quot;&gt;High performance self-hosted photo and video management solution&lt;/h3&gt;
-&lt;br/&gt;
-&lt;a href=&quot;https://immich.app&quot;&gt;
-&lt;img src=&quot;design/immich-screenshots.png&quot; title=&quot;Main Screenshot&quot;&gt;
-&lt;/a&gt;
-&lt;br/&gt;
+[![Github Release](https://img.shields.io/github/v/release/playcanvas/supersplat)](https://github.com/playcanvas/supersplat/releases)
+[![License](https://img.shields.io/github/license/playcanvas/supersplat)](https://github.com/playcanvas/supersplat/blob/main/LICENSE)
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=flat&amp;logo=discord&amp;logoColor=white&amp;color=black)](https://discord.gg/RSaMRzg)
+[![Reddit](https://img.shields.io/badge/Reddit-FF4500?style=flat&amp;logo=reddit&amp;logoColor=white&amp;color=black)](https://www.reddit.com/r/PlayCanvas)
+[![X](https://img.shields.io/badge/X-000000?style=flat&amp;logo=x&amp;logoColor=white&amp;color=black)](https://x.com/intent/follow?screen_name=playcanvas)
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;readme_i18n/README_ca_ES.md&quot;&gt;Català&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_es_ES.md&quot;&gt;Español&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_fr_FR.md&quot;&gt;Français&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_it_IT.md&quot;&gt;Italiano&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_ja_JP.md&quot;&gt;日本語&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_ko_KR.md&quot;&gt;한국어&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_de_DE.md&quot;&gt;Deutsch&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_nl_NL.md&quot;&gt;Nederlands&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_tr_TR.md&quot;&gt;Türkçe&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_zh_CN.md&quot;&gt;简体中文&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_zh_TW.md&quot;&gt;正體中文&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_uk_UA.md&quot;&gt;Українська&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_ru_RU.md&quot;&gt;Русский&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_pt_BR.md&quot;&gt;Português Brasileiro&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_sv_SE.md&quot;&gt;Svenska&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_ar_JO.md&quot;&gt;العربية&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_vi_VN.md&quot;&gt;Tiếng Việt&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_th_TH.md&quot;&gt;ภาษาไทย&lt;/a&gt;
-&lt;/p&gt;
+| [SuperSplat Editor](https://superspl.at/editor) | [User Guide](https://developer.playcanvas.com/user-manual/gaussian-splatting/editing/supersplat/) | [Blog](https://blog.playcanvas.com) | [Forum](https://forum.playcanvas.com) |
 
+The SuperSplat Editor is a free and open source tool for inspecting, editing, optimizing and publishing 3D Gaussian Splats. It is built on web technologies and runs in the browser, so there&#039;s nothing to download or install.
 
-&gt; [!WARNING]
-&gt; ⚠️ Always follow [3-2-1](https://www.backblaze.com/blog/the-3-2-1-backup-strategy/) backup plan for your precious photos and videos!
-&gt; 
- 
+A live version of this tool is available at: https://superspl.at/editor
 
-&gt; [!NOTE]
-&gt; You can find the main documentation, including installation guides, at https://immich.app/.
+![image](https://github.com/user-attachments/assets/b6cbb5cc-d3cc-4385-8c71-ab2807fd4fba)
 
-## Links
+To learn more about using SuperSplat, please refer to the [User Guide](https://developer.playcanvas.com/user-manual/gaussian-splatting/editing/supersplat/).
 
-- [Documentation](https://docs.immich.app/)
-- [About](https://docs.immich.app/overview/introduction)
-- [Installation](https://docs.immich.app/install/requirements)
-- [Roadmap](https://immich.app/roadmap)
-- [Demo](#demo)
-- [Features](#features)
-- [Translations](https://docs.immich.app/developer/translations)
-- [Contributing](https://docs.immich.app/overview/support-the-project)
+## Local Development
 
-## Demo
+To initialize a local development environment for SuperSplat, ensure you have [Node.js](https://nodejs.org/) 18 or later installed. Follow these steps:
 
-Access the demo [here](https://demo.immich.app). For the mobile app, you can use `https://demo.immich.app` for the `Server Endpoint URL`.
+1. Clone the repository:
 
-### Login credentials
+   ```sh
+   git clone https://github.com/playcanvas/supersplat.git
+   cd supersplat
+   ```
 
-| Email           | Password |
-| --------------- | -------- |
-| demo@immich.app | demo     |
+2. Install dependencies:
 
-## Features
+   ```sh
+   npm install
+   ```
 
-| Features                                     | Mobile | Web |
-| :------------------------------------------- | ------ | --- |
-| Upload and view videos and photos            | Yes    | Yes |
-| Auto backup when the app is opened           | Yes    | N/A |
-| Prevent duplication of assets                | Yes    | Yes |
-| Selective album(s) for backup                | Yes    | N/A |
-| Download photos and videos to local device   | Yes    | Yes |
-| Multi-user support                           | Yes    | Yes |
-| Album and Shared albums                      | Yes    | Yes |
-| Scrubbable/draggable scrollbar               | Yes    | Yes |
-| Support raw formats                          | Yes    | Yes |
-| Metadata view (EXIF, map)                    | Yes    | Yes |
-| Search by metadata, objects, faces, and CLIP | Yes    | Yes |
-| Administrative functions (user management)   | No     | Yes |
-| Background backup                            | Yes    | N/A |
-| Virtual scroll                               | Yes    | Yes |
-| OAuth support                                | Yes    | Yes |
-| API Keys                                     | N/A    | Yes |
-| LivePhoto/MotionPhoto backup and playback    | Yes    | Yes |
-| Support 360 degree image display             | No     | Yes |
-| User-defined storage structure               | Yes    | Yes |
-| Public Sharing                               | Yes    | Yes |
-| Archive and Favorites                        | Yes    | Yes |
-| Global Map                                   | Yes    | Yes |
-| Partner Sharing                              | Yes    | Yes |
-| Facial recognition and clustering            | Yes    | Yes |
-| Memories (x years ago)                       | Yes    | Yes |
-| Offline support                              | Yes    | No  |
-| Read-only gallery                            | Yes    | Yes |
-| Stacked Photos                               | Yes    | Yes |
-| Tags                                         | No     | Yes |
-| Folder View                                  | Yes    | Yes |
+3. Build SuperSplat and start a local web server:
 
-## Translations
+   ```sh
+   npm run develop
+   ```
 
-Read more about translations [here](https://docs.immich.app/developer/translations).
+4. Open a web browser tab and make sure network caching is disabled on the network tab and the other application caches are clear:
 
-&lt;a href=&quot;https://hosted.weblate.org/engage/immich/&quot;&gt;
-&lt;img src=&quot;https://hosted.weblate.org/widget/immich/immich/multi-auto.svg&quot; alt=&quot;Translation status&quot; /&gt;
-&lt;/a&gt;
+   - On Safari you can use `Cmd+Option+e` or Develop-&gt;Empty Caches.
+   - On Chrome ensure the options &quot;Update on reload&quot; and &quot;Bypass for network&quot; are enabled in the Application-&gt;Service workers tab:
 
-## Repository activity
+   &lt;img width=&quot;846&quot; alt=&quot;Screenshot 2025-04-25 at 16 53 37&quot; src=&quot;https://github.com/user-attachments/assets/888bac6c-25c1-4813-b5b6-4beecf437ac9&quot; /&gt;
 
-![Activities](https://repobeats.axiom.co/api/embed/9e86d9dc3ddd137161f2f6d2e758d7863b1789cb.svg &quot;Repobeats analytics image&quot;)
+5. Navigate to `http://localhost:3000`
 
-## Star history
+When changes to the source are detected, SuperSplat is rebuilt automatically. Simply refresh your browser to see your changes.
 
-&lt;a href=&quot;https://star-history.com/#immich-app/immich&amp;type=date&amp;legend=top-left&quot;&gt;
- &lt;picture&gt;
-   &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/svg?repos=immich-app/immich&amp;type=date&amp;theme=dark&quot; /&gt;
-   &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/svg?repos=immich-app/immich&amp;type=date&quot; /&gt;
-   &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/svg?repos=immich-app/immich&amp;type=date&quot; width=&quot;100%&quot; /&gt;
- &lt;/picture&gt;
-&lt;/a&gt;
+## Localizing the SuperSplat Editor
+
+The currently supported languages are available here:
+
+https://github.com/playcanvas/supersplat/tree/main/static/locales
+
+### Adding a New Language
+
+1. Add a new `&lt;locale&gt;.json` file in the `static/locales` directory.
+
+2. Add the locale to the list here:
+
+   https://github.com/playcanvas/supersplat/blob/main/src/ui/localization.ts
+
+### Testing Translations
+
+To test your translations:
+
+1. Run the development server:
+
+   ```sh
+   npm run develop
+   ```
+
+2. Open your browser and navigate to:
+
+   ```
+   http://localhost:3000/?lng=&lt;locale&gt;
+   ```
+
+   Replace `&lt;locale&gt;` with your language code (e.g., `fr`, `de`, `es`).
 
 ## Contributors
 
-&lt;a href=&quot;https://github.com/immich-app/immich/graphs/contributors&quot;&gt;
-  &lt;img src=&quot;https://contrib.rocks/image?repo=immich-app/immich&quot; width=&quot;100%&quot;/&gt;
+SuperSplat is made possible by our amazing open source community:
+
+&lt;a href=&quot;https://github.com/playcanvas/supersplat/graphs/contributors&quot;&gt;
+  &lt;img src=&quot;https://contrib.rocks/image?repo=playcanvas/supersplat&quot; /&gt;
 &lt;/a&gt;
 </pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[iptv-org/iptv]]></title>
+            <link>https://github.com/iptv-org/iptv</link>
+            <guid>https://github.com/iptv-org/iptv</guid>
+            <pubDate>Tue, 28 Apr 2026 00:18:31 GMT</pubDate>
+            <description><![CDATA[Collection of publicly available IPTV channels from all over the world]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/iptv-org/iptv">iptv-org/iptv</a></h1>
+            <p>Collection of publicly available IPTV channels from all over the world</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 115,548</p>
+            <p>Forks: 6,041</p>
+            <p>Stars today: 326 stars today</p>
+            <h2>README</h2><pre># IPTV [![update](https://github.com/iptv-org/iptv/actions/workflows/update.yml/badge.svg)](https://github.com/iptv-org/iptv/actions/workflows/update.yml)
+
+Collection of publicly available IPTV (Internet Protocol television) channels from all over the world.
+
+## Table of contents
+
+- 🚀 [How to use?](#how-to-use)
+- 📺 [Playlists](#playlists)
+- 🗓 [EPG](#epg)
+- 🗄 [Database](#database)
+- 👨‍💻 [API](#api)
+- 📚 [Resources](#resources)
+- 💬 [Discussions](#discussions)
+- ❓ [FAQ](#faq)
+- 🛠 [Contribution](#contribution)
+- ⚖ [Legal](#legal)
+- © [License](#license)
+
+## How to use?
+
+Simply paste the link to one of the playlists into [any video player](https://github.com/iptv-org/awesome-iptv#apps) that supports live streaming and press _Open_.
+
+![VLC Network Panel](https://github.com/iptv-org/iptv/raw/master/.readme/preview.png)
+
+## Playlists
+
+The main playlist containing all channels available in the repository can be found at:
+
+```
+https://iptv-org.github.io/iptv/index.m3u
+```
+
+Links to other playlists can be found in the [PLAYLISTS.md](PLAYLISTS.md) file.
+
+## EPG
+
+[Electronic Program Guide](https://en.wikipedia.org/wiki/Electronic_program_guide) for most of the channels can be downloaded using utilities published in the [iptv-org/epg](https://github.com/iptv-org/epg) repository.
+
+## Database
+
+All channel data is taken from the [iptv-org/database](https://github.com/iptv-org/database) repository. If you find any errors please open a new [issue](https://github.com/iptv-org/database/issues) there.
+
+## API
+
+The API documentation can be found in the [iptv-org/api](https://github.com/iptv-org/api) repository.
+
+## Resources
+
+Links to other useful IPTV-related resources can be found in the [iptv-org/awesome-iptv](https://github.com/iptv-org/awesome-iptv) repository.
+
+## Discussions
+
+If you have a question or idea, welcome to the [Discussions](https://github.com/orgs/iptv-org/discussions).
+
+## FAQ
+
+The answers to the most popular questions can be found in the [FAQ.md](FAQ.md) file.
+
+## Contribution
+
+Please make sure to read the [Contributing Guide](CONTRIBUTING.md) before sending an issue or making a pull request.
+
+And thank you to everyone who has already contributed!
+
+### Backers
+
+&lt;a href=&quot;https://opencollective.com/iptv-org&quot;&gt;&lt;img src=&quot;https://opencollective.com/iptv-org/backers.svg?width=890&quot; /&gt;&lt;/a&gt;
+
+### Contributors
+
+&lt;a href=&quot;https://github.com/iptv-org/iptv/graphs/contributors&quot;&gt;&lt;img src=&quot;https://opencollective.com/iptv-org/contributors.svg?width=890&quot; /&gt;&lt;/a&gt;
+
+## Legal
+
+No video files are stored in this repository. The repository simply contains user-submitted links to publicly available video stream URLs, which to the best of our knowledge have been intentionally made publicly by the copyright holders. If any links in these playlists infringe on your rights as a copyright holder, they may be removed by opening an [issue](https://github.com/iptv-org/iptv/issues/new?template=6_copyright-claim.yml). However, note that we have **no control** over the destination of the link, and just removing the link from the playlist will not remove its contents from the web. Note that linking does not directly infringe copyright because no copy is made on the site providing the link, and thus this is **not** a valid reason to send a DMCA notice to GitHub. To remove this content from the web, you should contact the web host that&#039;s actually hosting the content (**not** GitHub, nor the maintainers of this repository).
+
+## License
+
+[![CC0](http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](LICENSE)
+
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[RooCodeInc/Roo-Code]]></title>
+            <link>https://github.com/RooCodeInc/Roo-Code</link>
+            <guid>https://github.com/RooCodeInc/Roo-Code</guid>
+            <pubDate>Tue, 28 Apr 2026 00:18:30 GMT</pubDate>
+            <description><![CDATA[Roo Code gives you a whole dev team of AI agents in your code editor.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/RooCodeInc/Roo-Code">RooCodeInc/Roo-Code</a></h1>
+            <p>Roo Code gives you a whole dev team of AI agents in your code editor.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 23,697</p>
+            <p>Forks: 3,145</p>
+            <p>Stars today: 58 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/VS_Code_Marketplace-007ACC?style=flat&amp;logo=visualstudiocode&amp;logoColor=white&quot; alt=&quot;VS Code Marketplace&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://x.com/roocode&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/roocode-000000?style=flat&amp;logo=x&amp;logoColor=white&quot; alt=&quot;X&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://youtube.com/@roocodeyt?feature=shared&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/YouTube-FF0000?style=flat&amp;logo=youtube&amp;logoColor=white&quot; alt=&quot;YouTube&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://discord.gg/roocode&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Join%20Discord-5865F2?style=flat&amp;logo=discord&amp;logoColor=white&quot; alt=&quot;Join Discord&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://www.reddit.com/r/RooCode/&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Join%20r%2FRooCode-FF4500?style=flat&amp;logo=reddit&amp;logoColor=white&quot; alt=&quot;Join r/RooCode&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;em&gt;Get help fast → &lt;a href=&quot;https://discord.gg/roocode&quot;&gt;Join Discord&lt;/a&gt; • Prefer async? → &lt;a href=&quot;https://www.reddit.com/r/RooCode/&quot;&gt;Join r/RooCode&lt;/a&gt;&lt;/em&gt;
+&lt;/p&gt;
+
+# Roo Code
+
+&gt; Your AI-Powered Dev Team, Right in Your Editor
+
+## What&#039;s New in v3.53.0
+
+&gt; ### The Roo Code plugin is not going away.
+&gt;
+&gt; You may have seen the [recent announcement](https://x.com/mattrubens/status/2046636598859559114) that Roo Code hit 3 million installs and the original team is going all-in on Roomote. We know that news was hard for a lot of you. This plugin means a lot to us and to you, and we hear you.
+&gt;
+&gt; The good news: **a community team has stepped up to carry Roo Code forward**, and we&#039;re working with them on an official handoff so the plugin you rely on keeps getting maintained and improved.
+
+**What&#039;s new in this release:**
+
+- Add GPT-5.5 support via the OpenAI Codex provider.
+- Add Claude Opus 4.7 support on Vertex AI.
+- Add previous checkpoint navigation controls in chat so you can step back through prior checkpoints more easily.
+
+&lt;details&gt;
+  &lt;summary&gt;🌐 Available languages&lt;/summary&gt;
+
+- [English](README.md)
+- [Català](locales/ca/README.md)
+- [Deutsch](locales/de/README.md)
+- [Español](locales/es/README.md)
+- [Français](locales/fr/README.md)
+- [हिंदी](locales/hi/README.md)
+- [Bahasa Indonesia](locales/id/README.md)
+- [Italiano](locales/it/README.md)
+- [日本語](locales/ja/README.md)
+- [한국어](locales/ko/README.md)
+- [Nederlands](locales/nl/README.md)
+- [Polski](locales/pl/README.md)
+- [Português (BR)](locales/pt-BR/README.md)
+- [Русский](locales/ru/README.md)
+- [Türkçe](locales/tr/README.md)
+- [Tiếng Việt](locales/vi/README.md)
+- [简体中文](locales/zh-CN/README.md)
+- [繁體中文](locales/zh-TW/README.md)
+- ...
+    &lt;/details&gt;
+
+---
+
+## What Can Roo Code Do For YOU?
+
+- Generate Code from natural language descriptions and specs
+- Adapt with Modes: Code, Architect, Ask, Debug, and Custom Modes
+- Refactor &amp; Debug existing code
+- Write &amp; Update documentation
+- Answer Questions about your codebase
+- Automate repetitive tasks
+- Utilize MCP Servers
+
+## Modes
+
+Roo Code adapts to how you work:
+
+- Code Mode: everyday coding, edits, and file ops
+- Architect Mode: plan systems, specs, and migrations
+- Ask Mode: fast answers, explanations, and docs
+- Debug Mode: trace issues, add logs, isolate root causes
+- Custom Modes: build specialized modes for your team or workflow
+
+Learn more: [Using Modes](https://docs.roocode.com/basic-usage/using-modes) • [Custom Modes](https://docs.roocode.com/advanced-usage/custom-modes)
+
+## Tutorial &amp; Feature Videos
+
+&lt;div align=&quot;center&quot;&gt;
+
+|                                                                                                                                                                           |                                                                                                                                                                            |                                                                                                                                                                          |
+| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| &lt;a href=&quot;https://www.youtube.com/watch?v=Mcq3r1EPZ-4&quot;&gt;&lt;img src=&quot;https://img.youtube.com/vi/Mcq3r1EPZ-4/maxresdefault.jpg&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;b&gt;Installing Roo Code&lt;/b&gt; | &lt;a href=&quot;https://www.youtube.com/watch?v=ZBML8h5cCgo&quot;&gt;&lt;img src=&quot;https://img.youtube.com/vi/ZBML8h5cCgo/maxresdefault.jpg&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;b&gt;Configuring Profiles&lt;/b&gt; | &lt;a href=&quot;https://www.youtube.com/watch?v=r1bpod1VWhg&quot;&gt;&lt;img src=&quot;https://img.youtube.com/vi/r1bpod1VWhg/maxresdefault.jpg&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;b&gt;Codebase Indexing&lt;/b&gt;  |
+|    &lt;a href=&quot;https://www.youtube.com/watch?v=iiAv1eKOaxk&quot;&gt;&lt;img src=&quot;https://img.youtube.com/vi/iiAv1eKOaxk/maxresdefault.jpg&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;b&gt;Custom Modes&lt;/b&gt;     |     &lt;a href=&quot;https://www.youtube.com/watch?v=Ho30nyY332E&quot;&gt;&lt;img src=&quot;https://img.youtube.com/vi/Ho30nyY332E/maxresdefault.jpg&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;b&gt;Checkpoints&lt;/b&gt;      | &lt;a href=&quot;https://www.youtube.com/watch?v=HmnNSasv7T8&quot;&gt;&lt;img src=&quot;https://img.youtube.com/vi/HmnNSasv7T8/maxresdefault.jpg&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;b&gt;Context Management&lt;/b&gt; |
+
+&lt;/div&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;a href=&quot;https://docs.roocode.com/tutorial-videos&quot;&gt;More quick tutorial and feature videos...&lt;/a&gt;
+&lt;/p&gt;
+
+## Resources
+
+- **[Documentation](https://docs.roocode.com):** The official guide to installing, configuring, and mastering Roo Code.
+- **[YouTube Channel](https://youtube.com/@roocodeyt?feature=shared):** Watch tutorials and see features in action.
+- **[Discord Server](https://discord.gg/roocode):** Join the community for real-time help and discussion.
+- **[Reddit Community](https://www.reddit.com/r/RooCode):** Share your experiences and see what others are building.
+- **[GitHub Issues](https://github.com/RooCodeInc/Roo-Code/issues):** Report bugs and track development.
+- **[Feature Requests](https://github.com/RooCodeInc/Roo-Code/discussions/categories/feature-requests?discussions_q=is%3Aopen+category%3A%22Feature+Requests%22+sort%3Atop):** Have an idea? Share it with the developers.
+
+---
+
+## Local Setup &amp; Development
+
+1. **Clone** the repo:
+
+```sh
+git clone https://github.com/RooCodeInc/Roo-Code.git
+```
+
+2. **Install dependencies**:
+
+```sh
+pnpm install
+```
+
+3. **Run the extension**:
+
+There are several ways to run the Roo Code extension:
+
+### Development Mode (F5)
+
+For active development, use VSCode&#039;s built-in debugging:
+
+Press `F5` (or go to **Run** → **Start Debugging**) in VSCode. This will open a new VSCode window with the Roo Code extension running.
+
+- Changes to the webview will appear immediately.
+- Changes to the core extension will also hot reload automatically.
+
+### Automated VSIX Installation
+
+To build and install the extension as a VSIX package directly into VSCode:
+
+```sh
+pnpm install:vsix [-y] [--editor=&lt;command&gt;]
+```
+
+This command will:
+
+- Ask which editor command to use (code/cursor/code-insiders) - defaults to &#039;code&#039;
+- Uninstall any existing version of the extension.
+- Build the latest VSIX package.
+- Install the newly built VSIX.
+- Prompt you to restart VS Code for changes to take effect.
+
+Options:
+
+- `-y`: Skip all confirmation prompts and use defaults
+- `--editor=&lt;command&gt;`: Specify the editor command (e.g., `--editor=cursor` or `--editor=code-insiders`)
+
+### Manual VSIX Installation
+
+If you prefer to install the VSIX package manually:
+
+1.  First, build the VSIX package:
+    ```sh
+    pnpm vsix
+    ```
+2.  A `.vsix` file will be generated in the `bin/` directory (e.g., `bin/roo-cline-&lt;version&gt;.vsix`).
+3.  Install it manually using the VSCode CLI:
+    ```sh
+    code --install-extension bin/roo-cline-&lt;version&gt;.vsix
+    ```
+
+---
+
+We use [changesets](https://github.com/changesets/changesets) for versioning and publishing. Check our `CHANGELOG.md` for release notes.
+
+---
+
+## Disclaimer
+
+**Please note** that Roo Code, Inc does **not** make any representations or warranties regarding any code, models, or other tools provided or made available in connection with Roo Code, any associated third-party tools, or any resulting outputs. You assume **all risks** associated with the use of any such tools or outputs; such tools are provided on an **&quot;AS IS&quot;** and **&quot;AS AVAILABLE&quot;** basis. Such risks may include, without limitation, intellectual property infringement, cyber vulnerabilities or attacks, bias, inaccuracies, errors, defects, viruses, downtime, property loss or damage, and/or personal injury. You are solely responsible for your use of any such tools or outputs (including, without limitation, the legality, appropriateness, and results thereof).
+
+---
+
+## Contributing
+
+We love community contributions! Get started by reading our [CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
+
+## License
+
+[Apache 2.0 © 2025 Roo Code, Inc.](./LICENSE)
+
+---
+
+**Enjoy Roo Code!** Whether you keep it on a short leash or let it roam autonomously, we can’t wait to see what you build. If you have questions or feature ideas, drop by our [Reddit community](https://www.reddit.com/r/RooCode/) or [Discord](https://discord.gg/roocode). Happy coding!
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[openclaw/openclaw]]></title>
+            <link>https://github.com/openclaw/openclaw</link>
+            <guid>https://github.com/openclaw/openclaw</guid>
+            <pubDate>Tue, 28 Apr 2026 00:18:29 GMT</pubDate>
+            <description><![CDATA[Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/openclaw/openclaw">openclaw/openclaw</a></h1>
+            <p>Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 365,344</p>
+            <p>Forks: 74,829</p>
+            <p>Stars today: 1,060 stars today</p>
+            <h2>README</h2><pre># 🦞 OpenClaw — Personal AI Assistant
+
+&lt;p align=&quot;center&quot;&gt;
+    &lt;picture&gt;
+        &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/openclaw-logo-text-dark.svg&quot;&gt;
+        &lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/openclaw-logo-text.svg&quot; alt=&quot;OpenClaw&quot; width=&quot;500&quot;&gt;
+    &lt;/picture&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;strong&gt;EXFOLIATE! EXFOLIATE!&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://github.com/openclaw/openclaw/actions/workflows/ci.yml?branch=main&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/actions/workflow/status/openclaw/openclaw/ci.yml?branch=main&amp;style=for-the-badge&quot; alt=&quot;CI status&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/openclaw/openclaw/releases&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/v/release/openclaw/openclaw?include_prereleases&amp;style=for-the-badge&quot; alt=&quot;GitHub release&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://discord.gg/clawd&quot;&gt;&lt;img src=&quot;https://img.shields.io/discord/1456350064065904867?label=Discord&amp;logo=discord&amp;logoColor=white&amp;color=5865F2&amp;style=for-the-badge&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge&quot; alt=&quot;MIT License&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+**OpenClaw** is a _personal AI assistant_ you run on your own devices.
+It answers you on the channels you already use. It can speak and listen on macOS/iOS/Android, and can render a live Canvas you control. The Gateway is just the control plane — the product is the assistant.
+
+If you want a personal, single-user assistant that feels local, fast, and always-on, this is it.
+
+Supported channels include: WhatsApp, Telegram, Slack, Discord, Google Chat, Signal, iMessage, BlueBubbles, IRC, Microsoft Teams, Matrix, Feishu, LINE, Mattermost, Nextcloud Talk, Nostr, Synology Chat, Tlon, Twitch, Zalo, Zalo Personal, WeChat, QQ, WebChat.
+
+[Website](https://openclaw.ai) · [Docs](https://docs.openclaw.ai) · [Vision](VISION.md) · [DeepWiki](https://deepwiki.com/openclaw/openclaw) · [Getting Started](https://docs.openclaw.ai/start/getting-started) · [Updating](https://docs.openclaw.ai/install/updating) · [Showcase](https://docs.openclaw.ai/start/showcase) · [FAQ](https://docs.openclaw.ai/help/faq) · [Onboarding](https://docs.openclaw.ai/start/wizard) · [Nix](https://github.com/openclaw/nix-openclaw) · [Docker](https://docs.openclaw.ai/install/docker) · [Discord](https://discord.gg/clawd)
+
+New install? Start here: [Getting started](https://docs.openclaw.ai/start/getting-started)
+
+Preferred setup: run `openclaw onboard` in your terminal.
+OpenClaw Onboard guides you step by step through setting up the gateway, workspace, channels, and skills. It is the recommended CLI setup path and works on **macOS, Linux, and Windows (via WSL2; strongly recommended)**.
+Works with npm, pnpm, or bun.
+
+## Sponsors
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td align=&quot;center&quot; width=&quot;16.66%&quot;&gt;
+      &lt;a href=&quot;https://openai.com/&quot;&gt;
+        &lt;picture&gt;
+          &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/openai-light.svg&quot;&gt;
+          &lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/openai.svg&quot; alt=&quot;OpenAI&quot; height=&quot;28&quot;&gt;
+        &lt;/picture&gt;
+      &lt;/a&gt;
+    &lt;/td&gt;
+    &lt;td align=&quot;center&quot; width=&quot;16.66%&quot;&gt;
+      &lt;a href=&quot;https://github.com/&quot;&gt;
+        &lt;picture&gt;
+          &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/github-light.svg&quot;&gt;
+          &lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/github.svg&quot; alt=&quot;GitHub&quot; height=&quot;28&quot;&gt;
+        &lt;/picture&gt;
+      &lt;/a&gt;
+    &lt;/td&gt;
+    &lt;td align=&quot;center&quot; width=&quot;16.66%&quot;&gt;
+      &lt;a href=&quot;https://www.nvidia.com/&quot;&gt;
+        &lt;picture&gt;
+          &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/nvidia.svg&quot;&gt;
+          &lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/nvidia-dark.svg&quot; alt=&quot;NVIDIA&quot; height=&quot;28&quot;&gt;
+        &lt;/picture&gt;
+      &lt;/a&gt;
+    &lt;/td&gt;
+    &lt;td align=&quot;center&quot; width=&quot;16.66%&quot;&gt;
+      &lt;a href=&quot;https://vercel.com/&quot;&gt;
+        &lt;picture&gt;
+          &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/vercel-light.svg&quot;&gt;
+          &lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/vercel.svg&quot; alt=&quot;Vercel&quot; height=&quot;24&quot;&gt;
+        &lt;/picture&gt;
+      &lt;/a&gt;
+    &lt;/td&gt;
+    &lt;td align=&quot;center&quot; width=&quot;16.66%&quot;&gt;
+      &lt;a href=&quot;https://blacksmith.sh/&quot;&gt;
+        &lt;picture&gt;
+          &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/blacksmith-light.svg&quot;&gt;
+          &lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/blacksmith.svg&quot; alt=&quot;Blacksmith&quot; height=&quot;28&quot;&gt;
+        &lt;/picture&gt;
+      &lt;/a&gt;
+    &lt;/td&gt;
+    &lt;td align=&quot;center&quot; width=&quot;16.66%&quot;&gt;
+      &lt;a href=&quot;https://www.convex.dev/&quot;&gt;
+        &lt;picture&gt;
+          &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/convex-light.svg&quot;&gt;
+          &lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/convex.svg&quot; alt=&quot;Convex&quot; height=&quot;24&quot;&gt;
+        &lt;/picture&gt;
+      &lt;/a&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+**Subscriptions (OAuth):**
+
+- **[OpenAI](https://openai.com/)** (ChatGPT/Codex)
+
+Model note: while many providers and models are supported, prefer a current flagship model from the provider you trust and already use. See [Onboarding](https://docs.openclaw.ai/start/onboarding).
+
+## Install (recommended)
+
+Runtime: **Node 24 (recommended) or Node 22.14+**.
+
+```bash
+npm install -g openclaw@latest
+# or: pnpm add -g openclaw@latest
+
+openclaw onboard --install-daemon
+```
+
+OpenClaw Onboard installs the Gateway daemon (launchd/systemd user service) so it stays running.
+
+## Quick start (TL;DR)
+
+Runtime: **Node 24 (recommended) or Node 22.14+**.
+
+Full beginner guide (auth, pairing, channels): [Getting started](https://docs.openclaw.ai/start/getting-started)
+
+```bash
+openclaw onboard --install-daemon
+
+openclaw gateway --port 18789 --verbose
+
+# Send a message
+openclaw message send --target +1234567890 --message &quot;Hello from OpenClaw&quot;
+
+# Talk to the assistant (optionally deliver back to any connected channel: WhatsApp/Telegram/Slack/Discord/Google Chat/Signal/iMessage/BlueBubbles/IRC/Microsoft Teams/Matrix/Feishu/LINE/Mattermost/Nextcloud Talk/Nostr/Synology Chat/Tlon/Twitch/Zalo/Zalo Personal/WeChat/QQ/WebChat)
+openclaw agent --message &quot;Ship checklist&quot; --thinking high
+```
+
+Upgrading? [Updating guide](https://docs.openclaw.ai/install/updating) (and run `openclaw doctor`).
+
+Models config + CLI: [Models](https://docs.openclaw.ai/concepts/models). Auth profile rotation + fallbacks: [Model failover](https://docs.openclaw.ai/concepts/model-failover).
+
+## Security defaults (DM access)
+
+OpenClaw connects to real messaging surfaces. Treat inbound DMs as **untrusted input**.
+
+Full security guide: [Security](https://docs.openclaw.ai/gateway/security)
+
+Default behavior on Telegram/WhatsApp/Signal/iMessage/Microsoft Teams/Discord/Google Chat/Slack:
+
+- **DM pairing** (`dmPolicy=&quot;pairing&quot;` / `channels.discord.dmPolicy=&quot;pairing&quot;` / `channels.slack.dmPolicy=&quot;pairing&quot;`; legacy: `channels.discord.dm.policy`, `channels.slack.dm.policy`): unknown senders receive a short pairing code and the bot does not process their message.
+- Approve with: `openclaw pairing approve &lt;channel&gt; &lt;code&gt;` (then the sender is added to a local allowlist store).
+- Public inbound DMs require an explicit opt-in: set `dmPolicy=&quot;open&quot;` and include `&quot;*&quot;` in the channel allowlist (`allowFrom` / `channels.discord.allowFrom` / `channels.slack.allowFrom`; legacy: `channels.discord.dm.allowFrom`, `channels.slack.dm.allowFrom`).
+
+Run `openclaw doctor` to surface risky/misconfigured DM policies.
+
+## Highlights
+
+- **[Local-first Gateway](https://docs.openclaw.ai/gateway)** — single control plane for sessions, channels, tools, and events.
+- **[Multi-channel inbox](https://docs.openclaw.ai/channels)** — WhatsApp, Telegram, Slack, Discord, Google Chat, Signal, BlueBubbles (iMessage), iMessage (legacy), IRC, Microsoft Teams, Matrix, Feishu, LINE, Mattermost, Nextcloud Talk, Nostr, Synology Chat, Tlon, Twitch, Zalo, Zalo Personal, WeChat, QQ, WebChat, macOS, iOS/Android.
+- **[Multi-agent routing](https://docs.openclaw.ai/gateway/configuration)** — route inbound channels/accounts/peers to isolated agents (workspaces + per-agent sessions).
+- **[Voice Wake](https://docs.openclaw.ai/nodes/voicewake) + [Talk Mode](https://docs.openclaw.ai/nodes/talk)** — wake words on macOS/iOS and continuous voice on Android (ElevenLabs + system TTS fallback).
+- **[Live Canvas](https://docs.openclaw.ai/platforms/mac/canvas)** — agent-driven visual workspace with [A2UI](https://docs.openclaw.ai/platforms/mac/canvas#canvas-a2ui).
+- **[First-class tools](https://docs.openclaw.ai/tools)** — browser, canvas, nodes, cron, sessions, and Discord/Slack actions.
+- **[Companion apps](https://docs.openclaw.ai/platforms/macos)** — macOS menu bar app + iOS/Android [nodes](https://docs.openclaw.ai/nodes).
+- **[Onboarding](https://docs.openclaw.ai/start/wizard) + [skills](https://docs.openclaw.ai/tools/skills)** — onboarding-driven setup with bundled/managed/workspace skills.
+
+## Security model (important)
+
+- Default: tools run on the host for the `main` session, so the agent has full access when it is just you.
+- Group/channel safety: set `agents.defaults.sandbox.mode: &quot;non-main&quot;` to run non-`main` sessions inside sandboxes. Docker is the default sandbox backend; SSH and OpenShell backends are also available.
+- Typical sandbox default: allow `bash`, `process`, `read`, `write`, `edit`, `sessions_list`, `sessions_history`, `sessions_send`, `sessions_spawn`; deny `browser`, `canvas`, `nodes`, `cron`, `discord`, `gateway`.
+- Before exposing anything remotely, read [Security](https://docs.openclaw.ai/gateway/security), [Sandboxing](https://docs.openclaw.ai/gateway/sandboxing), and [Configuration](https://docs.openclaw.ai/gateway/configuration).
+
+## Operator quick refs
+
+- Chat commands: `/status`, `/new`, `/reset`, `/compact`, `/think &lt;level&gt;`, `/verbose on|off`, `/trace on|off`, `/usage off|tokens|full`, `/restart`, `/activation mention|always`
+- Session tools: `sessions_list`, `sessions_history`, `sessions_send`
+- Skills registry: [ClawHub](https://clawhub.ai)
+- Architecture overview: [Architecture](https://docs.openclaw.ai/concepts/architecture)
+
+## Docs by goal
+
+- New here: [Getting started](https://docs.openclaw.ai/start/getting-started), [Onboarding](https://docs.openclaw.ai/start/wizard), [Updating](https://docs.openclaw.ai/install/updating)
+- Channel setup: [Channels index](https://docs.openclaw.ai/channels), [WhatsApp](https://docs.openclaw.ai/channels/whatsapp), [Telegram](https://docs.openclaw.ai/channels/telegram), [Discord](https://docs.openclaw.ai/channels/discord), [Slack](https://docs.openclaw.ai/channels/slack)
+- Apps + nodes: [macOS](https://docs.openclaw.ai/platforms/macos), [iOS](https://docs.openclaw.ai/platforms/ios), [Android](https://docs.openclaw.ai/platforms/android), [Nodes](https://docs.openclaw.ai/nodes)
+- Config + security: [Configuration](https://docs.openclaw.ai/gateway/configuration), [Security](https://docs.openclaw.ai/gateway/security), [Sandboxing](https://docs.openclaw.ai/gateway/sandboxing)
+- Remote + web: [Gateway](https://docs.openclaw.ai/gateway), [Remote access](https://docs.openclaw.ai/gateway/remote), [Tailscale](https://docs.openclaw.ai/gateway/tailscale), [Web surfaces](https://docs.openclaw.ai/web)
+- Tools + automation: [Tools](https://docs.openclaw.ai/tools), [Skills](https://docs.openclaw.ai/tools/skills), [Cron jobs](https://docs.openclaw.ai/automation/cron-jobs), [Webhooks](https://docs.openclaw.ai/automation/webhook), [Gmail Pub/Sub](https://docs.openclaw.ai/automation/gmail-pubsub)
+- Internals: [Architecture](https://docs.openclaw.ai/concepts/architecture), [Agent](https://docs.openclaw.ai/concepts/agent), [Session model](https://docs.openclaw.ai/concepts/session), [Gateway protocol](https://docs.openclaw.ai/reference/rpc)
+- Troubleshooting: [Channel troubleshooting](https://docs.openclaw.ai/channels/troubleshooting), [Logging](https://docs.openclaw.ai/logging), [Docs home](https://docs.openclaw.ai)
+
+## Apps (optional)
+
+The Gateway alone delivers a great experience. All apps are optional and add extra features.
+
+If you plan to build/run companion apps, follow the platform runbooks below.
+
+### macOS (OpenClaw.app) (optional)
+
+- Menu bar control for the Gateway and health.
+- Voice Wake + push-to-talk overlay.
+- WebChat + debug tools.
+- Remote gateway control over SSH.
+
+Note: signed builds required for macOS permissions to stick across rebuilds (see [macOS Permissions](https://docs.openclaw.ai/platforms/mac/permissions)).
+
+### iOS node (optional)
+
+- Pairs as a node over the Gateway WebSocket (device pairing).
+- Voice trigger forwarding + Canvas surface.
+- Controlled via `openclaw nodes …`.
+
+Runbook: [iOS connect](https://docs.openclaw.ai/platforms/ios).
+
+### Android node (optional)
+
+- Pairs as a WS node via device pairing (`openclaw devices ...`).
+- Exposes Connect/Chat/Voice tabs plus Canvas, Camera, Screen capture, and Android device command families.
+- Runbook: [Android connect](https://docs.openclaw.ai/platforms/android).
+
+## From source (development)
+
+Prefer `pnpm` for builds from source. Bun is optional for running TypeScript directly.
+
+For the dev loop:
+
+```bash
+git clone https://github.com/openclaw/openclaw.git
+cd openclaw
+
+pnpm install
+
+# First run only (or after resetting local OpenClaw config/workspace)
+pnpm openclaw setup
+
+# Optional: prebuild Control UI before first startup
+pnpm ui:build
+
+# Dev loop (auto-reload on source/config changes)
+pnpm gateway:watch
+```
+
+If you need a built `dist/` from the checkout (for Node, packaging, or release validation), run:
+
+```bash
+pnpm build
+pnpm ui:build
+```
+
+`pnpm openclaw setup` writes the local config/workspace needed for `pnpm gateway:watch`. It is safe to re-run, but you normally only need it on first setup or after resetting local state. `pnpm gateway:watch` does not rebuild `dist/control-ui`, so rerun `pnpm ui:build` after `ui/` changes or use `pnpm ui:dev` when iterating on the Control UI. If you want this checkout to run onboarding directly, use `pnpm openclaw onboard --install-daemon`.
+
+Note: `pnpm openclaw ...` runs TypeScript directly (via `tsx`). `pnpm build` produces `dist/` for running via Node / the packaged `openclaw` binary, while `pnpm gateway:watch` rebuilds the runtime on demand during the dev loop.
+
+## Development channels
+
+- **stable**: tagged releases (`vYYYY.M.D` or `vYYYY.M.D-&lt;patch&gt;`), npm dist-tag `latest`.
+- **beta**: prerelease tags (`vYYYY.M.D-beta.N`), npm dist-tag `beta` (macOS app may be missing).
+- **dev**: moving head of `main`, npm dist-tag `dev` (when published).
+
+Switch channels (git + npm): `openclaw update --channel stable|beta|dev`.
+Details: [Development channels](https://docs.openclaw.ai/install/development-channels).
+
+## Agent workspace + skills
+
+- Workspace root: `~/.openclaw/workspace` (configurable via `agents.defaults.workspace`).
+- Injected prompt files: `AGENTS.md`, `SOUL.md`, `TOOLS.md`.
+- Skills: `~/.openclaw/workspace/skills/&lt;skill&gt;/SKILL.md`.
+
+## Configuration
+
+Minimal `~/.openclaw/openclaw.json` (model + defaults):
+
+```json5
+{
+  agent: {
+    model: &quot;&lt;provider&gt;/&lt;model-id&gt;&quot;,
+  },
+}
+```
+
+[Full configuration reference (all keys + examples).](https://docs.openclaw.ai/gateway/configuration)
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=openclaw/openclaw&amp;type=date&amp;legend=top-left)](https://www.star-history.com/#openclaw/openclaw&amp;type=date&amp;legend=top-left)
+
+## Molty
+
+OpenClaw was built for **Molty**, a space lobster AI assistant. 🦞
+by Peter Steinberger and the community.
+
+- [openclaw.ai](https://openclaw.ai)
+- [soul.md](https://soul.md)
+- [steipete.me](https://steipete.me)
+- [@openclaw](https://x.com/openclaw)
+
+## Community
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines, maintainers, and how to submit PRs.
+AI/vibe-coded PRs welcome! 🤖
+
+Special thanks to [Mario Zechner](https://mariozechner.at/) for his support and for
+[pi-mono](https://github.com/badlogic/pi-mono).
+Special thanks to Adam Doppelt for the lobster.bot domain.
+
+Thanks to all clawtributors:
+
+&lt;!-- clawtributors:start --&gt;
+
+[![steipete](https://avatars.githubusercontent.com/u/58493?v=4&amp;s=48)](https://github.com/steipete) [![vincentkoc](https://avatars.githubusercontent.com/u/25068?v=4&amp;s=48)](https://github.com/vincentkoc) [![Takhoffman](https://avatars.githubusercontent.com/u/781889?v=4&amp;s=48)](https://github.com/Takhoffman) [![obviyus](https://avatars.githubusercontent.com/u/22031114?v=4&amp;s=48)](https://github.com/obviyus) [![gumadeiras](https://avatars.githubusercontent.com/u/5599352?v=4&amp;s=48)](https://github.com/gumadeiras) [![Mariano Belinky](https://avatars.githubusercontent.com/u/132747814?v=4&amp;s=48)](https://github.com/mbelinky) [![vignesh07](https://avatars.githubusercontent.com/u/1436853?v=4&amp;s=48)](https://github.com/vignesh07) [![joshavant](https://avatars.githubusercontent.com/u/830519?v=4&amp;s=48)](https://github.com/joshavant) [![scoootscooob](https://avatars.githubusercontent.com/u/167050519?v=4&amp;s=48)](https://github.com/scoootscooob) [![jacobtomlinson](https://avatars.githubusercontent.com/u/1610850?v=4&amp;s=48)](https://github.com/jacobtomlinson)
+[![shakkernerd](https://avatars.githubusercontent.com/u/165377636?v=4&amp;s=48)](https://github.com/shakkernerd) [![sebslight](https://avatars.githubusercontent.com/u/19554889?v=4&amp;s=48)](https://github.com/sebslight) [![tyler6204](https://avatars.githubusercontent.com/u/64381258?v=4&amp;s=48)](https://github.com/tyler6204) [![ngutman](https://avatars.githubusercontent.com/u/1540134?v=4&amp;s=48)](https://github.com/ngutman) [![thewilloftheshadow](https://avatars.githubusercontent.com/u/35580099?v=4&amp;s=48)](https://github.com/thewilloftheshadow) [![Sid-Qin](https://avatars.githubusercontent.com/u/201593046?v=4&amp;s=48)](https://github.com/Sid-Qin) [![mcaxtr](https://avatars.githubusercontent.com/u/7562095?v=4&amp;s=48)](https://github.com/mcaxtr) [![eleqtrizit](https://avatars.githubusercontent.com/u/31522568?v=4&amp;s=48)](https://github.com/eleqtrizit) [![BunsDev](https://avatars.githubusercontent.com/u/68980965?v=4&amp;s=48)](https://github.com/BunsDev) [![cpojer](https://avatars.githubusercontent.com/u/13352?v=4&amp;s=48)](https://github.com/cpojer)
+[![Glucksberg](https://avatars.githubusercontent.com/u/80581902?v=4&amp;s=48)](https://github.com/Glucksberg) [![osolmaz](https://avatars.githubusercontent.com/u/2453968?v=4&amp;s=48)](https://github.com/osolmaz) [![bmendonca3](https://avatars.githubusercontent.com/u/208517100?v=4&amp;s=48)](https://github.com/bmendonca3) [![jalehman](https://avatars.githubusercontent.com/u/550978?v=4&amp;s=48)](https://github.com/jalehman) [![huntharo](https://avatars.githubusercontent.com/u/5617868?v=4&amp;s=48)](https://github.com/huntharo) [![neeravmakwana](https://avatars.githubusercontent.com/u/261249544?v=4&amp;s=48)](https://github.com/neeravmakwana) [![openperf](https://avatars.githubusercontent.com/u/80630709?v=4&amp;s=48)](https://github.com/openperf) [![joshp123](https://avatars.githubusercontent.com/u/1497361?v=4&amp;s=48)](https://github.com/joshp123) [![pgondhi987](https://avatars.githubusercontent.com/u/270720687?v=4&amp;s=48)](https://github.com/pgondhi987) [![altaywtf](https://avatars.githubusercontent.com/u/9790196?v=4&amp;s=48)](https://github.com/altaywtf)
+[![quotentiroler](https://avatars.githubusercontent.com/u/40643627?v=4&amp;s=48)](https://github.com/quotentiroler) [![liuxiaopai-ai](https://avatars.githubusercontent.com/u/73659136?v=4&amp;s=48)](https://github.com/liuxiaopai-ai) [![rodrigouroz
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
@@ -2136,15 +1762,15 @@ Read more about translations [here](https://docs.immich.app/developer/translatio
             <title><![CDATA[linshenkx/prompt-optimizer]]></title>
             <link>https://github.com/linshenkx/prompt-optimizer</link>
             <guid>https://github.com/linshenkx/prompt-optimizer</guid>
-            <pubDate>Mon, 27 Apr 2026 00:15:04 GMT</pubDate>
+            <pubDate>Tue, 28 Apr 2026 00:18:28 GMT</pubDate>
             <description><![CDATA[An AI prompt optimizer for writing better prompts and getting better AI results.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/linshenkx/prompt-optimizer">linshenkx/prompt-optimizer</a></h1>
             <p>An AI prompt optimizer for writing better prompts and getting better AI results.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 27,065</p>
-            <p>Forks: 3,202</p>
-            <p>Stars today: 123 stars today</p>
+            <p>Stars: 27,247</p>
+            <p>Forks: 3,214</p>
+            <p>Stars today: 227 stars today</p>
             <h2>README</h2><pre># Prompt Optimizer 🚀
 
 &lt;div align=&quot;center&quot;&gt;
@@ -2539,289 +2165,151 @@ To bypass this limitation, you need to have the application and API under the sa
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[RooCodeInc/Roo-Code]]></title>
-            <link>https://github.com/RooCodeInc/Roo-Code</link>
-            <guid>https://github.com/RooCodeInc/Roo-Code</guid>
-            <pubDate>Mon, 27 Apr 2026 00:15:03 GMT</pubDate>
-            <description><![CDATA[Roo Code gives you a whole dev team of AI agents in your code editor.]]></description>
+            <title><![CDATA[immich-app/immich]]></title>
+            <link>https://github.com/immich-app/immich</link>
+            <guid>https://github.com/immich-app/immich</guid>
+            <pubDate>Tue, 28 Apr 2026 00:18:27 GMT</pubDate>
+            <description><![CDATA[High performance self-hosted photo and video management solution.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/RooCodeInc/Roo-Code">RooCodeInc/Roo-Code</a></h1>
-            <p>Roo Code gives you a whole dev team of AI agents in your code editor.</p>
+            <h1><a href="https://github.com/immich-app/immich">immich-app/immich</a></h1>
+            <p>High performance self-hosted photo and video management solution.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 23,651</p>
-            <p>Forks: 3,137</p>
-            <p>Stars today: 226 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/VS_Code_Marketplace-007ACC?style=flat&amp;logo=visualstudiocode&amp;logoColor=white&quot; alt=&quot;VS Code Marketplace&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://x.com/roocode&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/roocode-000000?style=flat&amp;logo=x&amp;logoColor=white&quot; alt=&quot;X&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://youtube.com/@roocodeyt?feature=shared&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/YouTube-FF0000?style=flat&amp;logo=youtube&amp;logoColor=white&quot; alt=&quot;YouTube&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://discord.gg/roocode&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Join%20Discord-5865F2?style=flat&amp;logo=discord&amp;logoColor=white&quot; alt=&quot;Join Discord&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://www.reddit.com/r/RooCode/&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Join%20r%2FRooCode-FF4500?style=flat&amp;logo=reddit&amp;logoColor=white&quot; alt=&quot;Join r/RooCode&quot;&gt;&lt;/a&gt;
+            <p>Stars: 98,773</p>
+            <p>Forks: 5,495</p>
+            <p>Stars today: 84 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt; 
+  &lt;br/&gt;
+  &lt;a href=&quot;https://opensource.org/license/agpl-v3&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/License-AGPL_v3-blue.svg?color=3F51B5&amp;style=for-the-badge&amp;label=License&amp;logoColor=000000&amp;labelColor=ececec&quot; alt=&quot;License: AGPLv3&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://discord.immich.app&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/discord/979116623879368755.svg?label=Discord&amp;logo=Discord&amp;style=for-the-badge&amp;logoColor=000000&amp;labelColor=ececec&quot; alt=&quot;Discord&quot;/&gt;
+  &lt;/a&gt;
+  &lt;br/&gt;
+  &lt;br/&gt;
 &lt;/p&gt;
+
 &lt;p align=&quot;center&quot;&gt;
-  &lt;em&gt;Get help fast → &lt;a href=&quot;https://discord.gg/roocode&quot;&gt;Join Discord&lt;/a&gt; • Prefer async? → &lt;a href=&quot;https://www.reddit.com/r/RooCode/&quot;&gt;Join r/RooCode&lt;/a&gt;&lt;/em&gt;
+&lt;img src=&quot;design/immich-logo-stacked-light.svg&quot; width=&quot;300&quot; title=&quot;Login With Custom URL&quot;&gt;
 &lt;/p&gt;
+&lt;h3 align=&quot;center&quot;&gt;High performance self-hosted photo and video management solution&lt;/h3&gt;
+&lt;br/&gt;
+&lt;a href=&quot;https://immich.app&quot;&gt;
+&lt;img src=&quot;design/immich-screenshots.png&quot; title=&quot;Main Screenshot&quot;&gt;
+&lt;/a&gt;
+&lt;br/&gt;
 
-# Roo Code
-
-&gt; Your AI-Powered Dev Team, Right in Your Editor
-
-## What&#039;s New in v3.53.0
-
-&gt; ### The Roo Code plugin is not going away.
-&gt;
-&gt; You may have seen the [recent announcement](https://x.com/mattrubens/status/2046636598859559114) that Roo Code hit 3 million installs and the original team is going all-in on Roomote. We know that news was hard for a lot of you. This plugin means a lot to us and to you, and we hear you.
-&gt;
-&gt; The good news: **a community team has stepped up to carry Roo Code forward**, and we&#039;re working with them on an official handoff so the plugin you rely on keeps getting maintained and improved.
-
-**What&#039;s new in this release:**
-
-- Add GPT-5.5 support via the OpenAI Codex provider.
-- Add Claude Opus 4.7 support on Vertex AI.
-- Add previous checkpoint navigation controls in chat so you can step back through prior checkpoints more easily.
-
-&lt;details&gt;
-  &lt;summary&gt;🌐 Available languages&lt;/summary&gt;
-
-- [English](README.md)
-- [Català](locales/ca/README.md)
-- [Deutsch](locales/de/README.md)
-- [Español](locales/es/README.md)
-- [Français](locales/fr/README.md)
-- [हिंदी](locales/hi/README.md)
-- [Bahasa Indonesia](locales/id/README.md)
-- [Italiano](locales/it/README.md)
-- [日本語](locales/ja/README.md)
-- [한국어](locales/ko/README.md)
-- [Nederlands](locales/nl/README.md)
-- [Polski](locales/pl/README.md)
-- [Português (BR)](locales/pt-BR/README.md)
-- [Русский](locales/ru/README.md)
-- [Türkçe](locales/tr/README.md)
-- [Tiếng Việt](locales/vi/README.md)
-- [简体中文](locales/zh-CN/README.md)
-- [繁體中文](locales/zh-TW/README.md)
-- ...
-    &lt;/details&gt;
-
----
-
-## What Can Roo Code Do For YOU?
-
-- Generate Code from natural language descriptions and specs
-- Adapt with Modes: Code, Architect, Ask, Debug, and Custom Modes
-- Refactor &amp; Debug existing code
-- Write &amp; Update documentation
-- Answer Questions about your codebase
-- Automate repetitive tasks
-- Utilize MCP Servers
-
-## Modes
-
-Roo Code adapts to how you work:
-
-- Code Mode: everyday coding, edits, and file ops
-- Architect Mode: plan systems, specs, and migrations
-- Ask Mode: fast answers, explanations, and docs
-- Debug Mode: trace issues, add logs, isolate root causes
-- Custom Modes: build specialized modes for your team or workflow
-
-Learn more: [Using Modes](https://docs.roocode.com/basic-usage/using-modes) • [Custom Modes](https://docs.roocode.com/advanced-usage/custom-modes)
-
-## Tutorial &amp; Feature Videos
-
-&lt;div align=&quot;center&quot;&gt;
-
-|                                                                                                                                                                           |                                                                                                                                                                            |                                                                                                                                                                          |
-| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| &lt;a href=&quot;https://www.youtube.com/watch?v=Mcq3r1EPZ-4&quot;&gt;&lt;img src=&quot;https://img.youtube.com/vi/Mcq3r1EPZ-4/maxresdefault.jpg&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;b&gt;Installing Roo Code&lt;/b&gt; | &lt;a href=&quot;https://www.youtube.com/watch?v=ZBML8h5cCgo&quot;&gt;&lt;img src=&quot;https://img.youtube.com/vi/ZBML8h5cCgo/maxresdefault.jpg&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;b&gt;Configuring Profiles&lt;/b&gt; | &lt;a href=&quot;https://www.youtube.com/watch?v=r1bpod1VWhg&quot;&gt;&lt;img src=&quot;https://img.youtube.com/vi/r1bpod1VWhg/maxresdefault.jpg&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;b&gt;Codebase Indexing&lt;/b&gt;  |
-|    &lt;a href=&quot;https://www.youtube.com/watch?v=iiAv1eKOaxk&quot;&gt;&lt;img src=&quot;https://img.youtube.com/vi/iiAv1eKOaxk/maxresdefault.jpg&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;b&gt;Custom Modes&lt;/b&gt;     |     &lt;a href=&quot;https://www.youtube.com/watch?v=Ho30nyY332E&quot;&gt;&lt;img src=&quot;https://img.youtube.com/vi/Ho30nyY332E/maxresdefault.jpg&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;b&gt;Checkpoints&lt;/b&gt;      | &lt;a href=&quot;https://www.youtube.com/watch?v=HmnNSasv7T8&quot;&gt;&lt;img src=&quot;https://img.youtube.com/vi/HmnNSasv7T8/maxresdefault.jpg&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;b&gt;Context Management&lt;/b&gt; |
-
-&lt;/div&gt;
 &lt;p align=&quot;center&quot;&gt;
-&lt;a href=&quot;https://docs.roocode.com/tutorial-videos&quot;&gt;More quick tutorial and feature videos...&lt;/a&gt;
+  &lt;a href=&quot;readme_i18n/README_ca_ES.md&quot;&gt;Català&lt;/a&gt;
+  &lt;a href=&quot;readme_i18n/README_es_ES.md&quot;&gt;Español&lt;/a&gt;
+  &lt;a href=&quot;readme_i18n/README_fr_FR.md&quot;&gt;Français&lt;/a&gt;
+  &lt;a href=&quot;readme_i18n/README_it_IT.md&quot;&gt;Italiano&lt;/a&gt;
+  &lt;a href=&quot;readme_i18n/README_ja_JP.md&quot;&gt;日本語&lt;/a&gt;
+  &lt;a href=&quot;readme_i18n/README_ko_KR.md&quot;&gt;한국어&lt;/a&gt;
+  &lt;a href=&quot;readme_i18n/README_de_DE.md&quot;&gt;Deutsch&lt;/a&gt;
+  &lt;a href=&quot;readme_i18n/README_nl_NL.md&quot;&gt;Nederlands&lt;/a&gt;
+  &lt;a href=&quot;readme_i18n/README_tr_TR.md&quot;&gt;Türkçe&lt;/a&gt;
+  &lt;a href=&quot;readme_i18n/README_zh_CN.md&quot;&gt;简体中文&lt;/a&gt;
+  &lt;a href=&quot;readme_i18n/README_zh_TW.md&quot;&gt;正體中文&lt;/a&gt;
+  &lt;a href=&quot;readme_i18n/README_uk_UA.md&quot;&gt;Українська&lt;/a&gt;
+  &lt;a href=&quot;readme_i18n/README_ru_RU.md&quot;&gt;Русский&lt;/a&gt;
+  &lt;a href=&quot;readme_i18n/README_pt_BR.md&quot;&gt;Português Brasileiro&lt;/a&gt;
+  &lt;a href=&quot;readme_i18n/README_sv_SE.md&quot;&gt;Svenska&lt;/a&gt;
+  &lt;a href=&quot;readme_i18n/README_ar_JO.md&quot;&gt;العربية&lt;/a&gt;
+  &lt;a href=&quot;readme_i18n/README_vi_VN.md&quot;&gt;Tiếng Việt&lt;/a&gt;
+  &lt;a href=&quot;readme_i18n/README_th_TH.md&quot;&gt;ภาษาไทย&lt;/a&gt;
 &lt;/p&gt;
 
-## Resources
 
-- **[Documentation](https://docs.roocode.com):** The official guide to installing, configuring, and mastering Roo Code.
-- **[YouTube Channel](https://youtube.com/@roocodeyt?feature=shared):** Watch tutorials and see features in action.
-- **[Discord Server](https://discord.gg/roocode):** Join the community for real-time help and discussion.
-- **[Reddit Community](https://www.reddit.com/r/RooCode):** Share your experiences and see what others are building.
-- **[GitHub Issues](https://github.com/RooCodeInc/Roo-Code/issues):** Report bugs and track development.
-- **[Feature Requests](https://github.com/RooCodeInc/Roo-Code/discussions/categories/feature-requests?discussions_q=is%3Aopen+category%3A%22Feature+Requests%22+sort%3Atop):** Have an idea? Share it with the developers.
+&gt; [!WARNING]
+&gt; ⚠️ Always follow [3-2-1](https://www.backblaze.com/blog/the-3-2-1-backup-strategy/) backup plan for your precious photos and videos!
+&gt; 
+ 
 
----
+&gt; [!NOTE]
+&gt; You can find the main documentation, including installation guides, at https://immich.app/.
 
-## Local Setup &amp; Development
+## Links
 
-1. **Clone** the repo:
+- [Documentation](https://docs.immich.app/)
+- [About](https://docs.immich.app/overview/introduction)
+- [Installation](https://docs.immich.app/install/requirements)
+- [Roadmap](https://immich.app/roadmap)
+- [Demo](#demo)
+- [Features](#features)
+- [Translations](https://docs.immich.app/developer/translations)
+- [Contributing](https://docs.immich.app/overview/support-the-project)
 
-```sh
-git clone https://github.com/RooCodeInc/Roo-Code.git
-```
+## Demo
 
-2. **Install dependencies**:
+Access the demo [here](https://demo.immich.app). For the mobile app, you can use `https://demo.immich.app` for the `Server Endpoint URL`.
 
-```sh
-pnpm install
-```
+### Login credentials
 
-3. **Run the extension**:
-
-There are several ways to run the Roo Code extension:
-
-### Development Mode (F5)
-
-For active development, use VSCode&#039;s built-in debugging:
-
-Press `F5` (or go to **Run** → **Start Debugging**) in VSCode. This will open a new VSCode window with the Roo Code extension running.
-
-- Changes to the webview will appear immediately.
-- Changes to the core extension will also hot reload automatically.
-
-### Automated VSIX Installation
-
-To build and install the extension as a VSIX package directly into VSCode:
-
-```sh
-pnpm install:vsix [-y] [--editor=&lt;command&gt;]
-```
-
-This command will:
-
-- Ask which editor command to use (code/cursor/code-insiders) - defaults to &#039;code&#039;
-- Uninstall any existing version of the extension.
-- Build the latest VSIX package.
-- Install the newly built VSIX.
-- Prompt you to restart VS Code for changes to take effect.
-
-Options:
-
-- `-y`: Skip all confirmation prompts and use defaults
-- `--editor=&lt;command&gt;`: Specify the editor command (e.g., `--editor=cursor` or `--editor=code-insiders`)
-
-### Manual VSIX Installation
-
-If you prefer to install the VSIX package manually:
-
-1.  First, build the VSIX package:
-    ```sh
-    pnpm vsix
-    ```
-2.  A `.vsix` file will be generated in the `bin/` directory (e.g., `bin/roo-cline-&lt;version&gt;.vsix`).
-3.  Install it manually using the VSCode CLI:
-    ```sh
-    code --install-extension bin/roo-cline-&lt;version&gt;.vsix
-    ```
-
----
-
-We use [changesets](https://github.com/changesets/changesets) for versioning and publishing. Check our `CHANGELOG.md` for release notes.
-
----
-
-## Disclaimer
-
-**Please note** that Roo Code, Inc does **not** make any representations or warranties regarding any code, models, or other tools provided or made available in connection with Roo Code, any associated third-party tools, or any resulting outputs. You assume **all risks** associated with the use of any such tools or outputs; such tools are provided on an **&quot;AS IS&quot;** and **&quot;AS AVAILABLE&quot;** basis. Such risks may include, without limitation, intellectual property infringement, cyber vulnerabilities or attacks, bias, inaccuracies, errors, defects, viruses, downtime, property loss or damage, and/or personal injury. You are solely responsible for your use of any such tools or outputs (including, without limitation, the legality, appropriateness, and results thereof).
-
----
-
-## Contributing
-
-We love community contributions! Get started by reading our [CONTRIBUTING.md](CONTRIBUTING.md).
-
----
-
-## License
-
-[Apache 2.0 © 2025 Roo Code, Inc.](./LICENSE)
-
----
-
-**Enjoy Roo Code!** Whether you keep it on a short leash or let it roam autonomously, we can’t wait to see what you build. If you have questions or feature ideas, drop by our [Reddit community](https://www.reddit.com/r/RooCode/) or [Discord](https://discord.gg/roocode). Happy coding!
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[Vendicated/Vencord]]></title>
-            <link>https://github.com/Vendicated/Vencord</link>
-            <guid>https://github.com/Vendicated/Vencord</guid>
-            <pubDate>Mon, 27 Apr 2026 00:15:02 GMT</pubDate>
-            <description><![CDATA[The cutest Discord modification]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/Vendicated/Vencord">Vendicated/Vencord</a></h1>
-            <p>The cutest Discord modification</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 13,167</p>
-            <p>Forks: 2,145</p>
-            <p>Stars today: 18 stars today</p>
-            <h2>README</h2><pre># Vencord
-
-![](https://img.shields.io/github/package-json/v/Vendicated/Vencord?style=for-the-badge&amp;logo=github&amp;logoColor=d3869b&amp;label=&amp;color=1d2021&amp;labelColor=282828)
-[![Codeberg Mirror](https://img.shields.io/static/v1?style=for-the-badge&amp;label=Codeberg%20Mirror&amp;message=codeberg.org/Vee/cord&amp;color=2185D0&amp;logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAKbUlEQVR4nNVae3AV5RX/nW/3Pva+b24e5HHzIICQKGoiYiW8NFBFgohaa6ctglpbFSujSGurzUinohWsOij/gGX6R2fqOK0d1FYTEZXaTrWCBbEikJCEyCvkeXNvkrunf+zdkJDkPnex/c3cmd29+53v/M6e73znnF2Cydj4Tntldzi6qrN/qKqzf2jy6b7BnL4B1dI7oMp9AyoRAIdVsNMqhlxWMZjtspzyK/Jhr036OMsm//bh2vzPzNSPzBD6xFutd7R0Dq758ky4orkjYuc05RCAkixbeEq2/UCJ1/LczxcX/c5IPfU5DMHmxpbCpu7o1k/b+xc1n43YjJI7EqV+W2RmvuPt0oDjB2vn5bQbITNjAzzdeKK8qTO0bU9T77zucNQUjzofHrvENWWu3aUBZfW6+ZOOZiIrbYXrmUXo9daX3v6i667O/iGRiRLpwqtIvKDc+0efJ3hb/UIaSkdGWgZ4sqGt9r2m3lc/P9HvSWe80ZiRp3TPL/UsX1+bvyvVsSkb4NE3WjbuPNj5SM8Fcvdk4bAKrqvwv7DxhuCPUxmXNIn6XSy3nWr6R8OhrqrU1btwqJ3m/bgwu/SqZJdEUgbYsuuka09b9/4Pm3tLMlPvwuAbpe6m+RcplfdcURBKdG9CA2zZddLV2Nx1+JO2vlxj1LswqCpynlxc6SxLZIS40bueWfy9vXvv/xt5APhXa1/u7v+EPqvfxXK8++IaoO2Vpn9+cLS33FjVLhw+bOotOX7q6N/i3TOhAX7y+rHN/+sBLxm8fah71k93tjw/0f/jGuDJxtZrdh7setA8tS4sdn7eef+v3mmfP95/Ywxw6x9Yev9I35/6Iubv83WVfl5a6Uu3VkoavZEo7TnS/Vo98xi+Yy6UKC3bDp7sd5ut1OWFDjyzNMib6oq5Oug0ezp8dqLfG3r92Nbzr48ywNONJ8obDnV/z2xlAk4ZW1aUqhaJIAvCb5YVqwFn3GBtCBoO9dz5TOPxUbnMKAM0dYa2d5lc2AgCNi8r5klui3aBgWynjE11QZbI3FV3NjQkjnYNbB+lj36wubGlcE9T71xTNQDw0Px8nlvmHl73GmfCrKCL19Tkmh4P9jT1LHz2vVP5+vmwAZq71a1m1/PXTPXwD68eS5KIEVUZd1yZwwumeEw1Qld/lJrPhF7Sz4cNsO+rUK2ZExd6rfj10iCPZ2GJCCoAZuCJxQUc9FvNVAX72kPX6ccC0Hp4zR0Ru1kT2mTCSzeXqn5l/EAniMAqoDLDYZWwqa5EVSzmhaKmsxHbLxvbbgdiBmjpHFxj2mwANlxXxBdPUib8nwgQgqAyEFUZxT4L1i/MN3UpHDsTWQvEDHDoTLjCrIluuyzAt8zMSkhGFhp5hrYUFk3z8IqZftOMcKRj4GIAEM80tFccM8n9Z+Qq+MXigqRIWCQCMzQvYIbKwH1X53FFnjkr88iZsLKpoXWa6BiIrjbDzF67hK23lKp2Obm1LAstPEZVjTwDkAio/2ZQ9dolw/VjAB0DfKfoCg9WGy2cADy1NMhBX2rR3CIRGICq8rAhAg4Jj9UWsDBhg+4MR6vF2VC0zGjB99fk8eJp3pQdyyrRMHF9KURVxswCB6+alWO4o3b2RyeLU32D2UYKnVPm5gfm5qWlrF0Wo4hzbCmoDNw0089XlboNNcLpvsFc0RtRDXuNle+x4Lkbi9PO6WWJIBFGEY+qjGjswtq5eVzosRilLnoiUavoH1INiTCyIDy/vETNcmRW1dl0L4gRVxmx3YFhlwnrry1QrZIxASE0yJIIDaiGSHt8UQFXF2Ve1zusYgzxkXGhyGvFvePUE+mgfyAqhGqAqKWVPv5udbYhSjmtkpYWq6OJqzFjqCpjTpmbl1Rk3klSGRBWmTISNC3Hjo1LgoYFJ0GA1aIVR+cTVxlQoS2Pb18a4PLszMKXzSJYuCySmq4Al03CiytKVYfBhYvLKk1IXE+XLRLhwZp81WlNf26HTFHhd0jhdAYTgKduCPLkgPHfQjitYkLiAIEZBDBlu2R6aF7euCV2Mgg45bDw2qWOdAavnp3D109PPdlJBvpTnYg4kVY3MDMuylVw62WJi63x4LHLZ0TAIR9OdWBVodPUclUQwWmT4hLXfgCIUDfDi6oiR8rzBJzyl8LnkD9KZVCOU8aLN5eoshnJ+Qh4bFJC4gztmEjgrtk5anaKnWWfXfpIuBTLjmSpSILw/E0laq7LuGxsIngVCYmIa96hLRG3TaZ1C/KTfjAEQLFIO8TPFk7aH/RZI8kMWrdgEs8udqXLKSUoMkEW4ETEQTRsoHyPlVZfmVw+Uuy3hR9bVHBQAMD0XPu/Ew24dqqH777K/La1DiKCxyYlRRzQymgG4+oyDxZOTdxZnp5r3wvEWmJ5btuL8W4uzbJh87LitLebdOFVpKSJx4IlwIzbL81CcYLO8iSX/IImGQCYae6Wg/2tXQNjNnW7LPDKyilqZd7ETU2zEBlifNTSS4i9PNFIx44x4jh2nZlBsUr0dN8QP/6XVhEaHJvnlfhtkXd/NF0BUextKRFXFznfGk+JDdcX8tdBHtDa6YpFsB4I9ac88omf8wbEgqa2XAIOme6bM35foqrQ+QZIKwGG80ifVbrXZZNGDfhOVYBvviS9JMMoaP3AEcQpPnHdOxiMGXkKbrx4dGfZY5c4T8H9+vmwAeqXFLXOKXW9r59fWuDA44sKv1byAOBzyCkTH+kdS2f4MLPgXJI0p9T17vrFxcf181GVxEUB+0qfIqt+RcKWFSWGNR4ygd4RTpW4HiCJgFWzstmnSPA7ZLU827pypPwxDB/687GXl1X6Vs6bbGz/LRN80hZCT+yLFZ0cgHED4egACeiXm89GsP9EePuzy4rvGil7jAGYmQDsBjDHUBYZ4GhHBMfORigd4rpnyIS9u6d4rqgnGrUtjCmmSYuOqwB0GcwjbWh9xviurpNnxnDA1IspMPe6bOL755MHJvhKjIgOA7jbJD4pw22Thj+kSIW47h2KRaydVezeP57sCdspRPQqgGeNJJIuBAE+ReJUiOv32mXaXjPZs21C2QnmXgdghyEsMoRfkVMiDgCywF/by9z3xJMb1wCxeHAPgDczZpAh/Iq+HSYmDjCsstgThmf5t4ii8eQm7CgS0SCA5QBezoRApnBaBSyCEhIHCLJEb4ZUd+2SqZSwzE+qpUpEQ9CC4qb01M8cRIQsh8zxiKsMtsn08nvlnrpkyAPj5AGJwMw3AtgGwJ/q2ExxvHsQB74KxfKBMblAyGmTHq4pc4/5GjQeUm6qE9FrAK4E8H6ie41GlkN/jTk6F5Ak2ueUpNmpkgfSMAAAENERAAsB3AHgZDoy0oFdFnBYpXPEBfU4beLRD6Z4qmumug+kIzPjaoeZfQDWAHgAQFam8hLh4MkwWjsHemyS2OF08IYrCjynzZ4zKTCzi5nXMvOnzBw16bevIxR95JOj7DNKb1PqXWa+HMDtAGoBXII0lxq0N2OfAmgA8Hsi2muMhudgesHPzNkA5gKoADADwFRoS8UHQO+x9wLoBNAB4AsAnwM4AOADIjLVxf8L9kdXUOE0IskAAAAASUVORK5CYII=)](https://codeberg.org/Vee/cord)
-
-The cutest Discord client mod
-
-![](https://github.com/user-attachments/assets/3fac98c0-c411-4d2a-97a3-13b7da8687a2)
+| Email           | Password |
+| --------------- | -------- |
+| demo@immich.app | demo     |
 
 ## Features
 
--   Easy to install
--   [100+ built in plugins](https://vencord.dev/plugins)
--   Fairly lightweight despite the many inbuilt plugins
--   Excellent Browser Support: Run Vencord in your Browser via extension or UserScript
--   Works on any Discord branch: Stable, Canary or PTB all work
--   Custom CSS and Themes: Inbuilt css editor with support to import any css files (including BetterDiscord themes)
--   Privacy friendly: blocks Discord analytics &amp; crash reporting out of the box and has no telemetry
--   Maintained very actively, broken plugins are usually fixed within 12 hours
--   Settings sync: Keep your plugins and their settings synchronised between devices / apps (optional)
+| Features                                     | Mobile | Web |
+| :------------------------------------------- | ------ | --- |
+| Upload and view videos and photos            | Yes    | Yes |
+| Auto backup when the app is opened           | Yes    | N/A |
+| Prevent duplication of assets                | Yes    | Yes |
+| Selective album(s) for backup                | Yes    | N/A |
+| Download photos and videos to local device   | Yes    | Yes |
+| Multi-user support                           | Yes    | Yes |
+| Album and Shared albums                      | Yes    | Yes |
+| Scrubbable/draggable scrollbar               | Yes    | Yes |
+| Support raw formats                          | Yes    | Yes |
+| Metadata view (EXIF, map)                    | Yes    | Yes |
+| Search by metadata, objects, faces, and CLIP | Yes    | Yes |
+| Administrative functions (user management)   | No     | Yes |
+| Background backup                            | Yes    | N/A |
+| Virtual scroll                               | Yes    | Yes |
+| OAuth support                                | Yes    | Yes |
+| API Keys                                     | N/A    | Yes |
+| LivePhoto/MotionPhoto backup and playback    | Yes    | Yes |
+| Support 360 degree image display             | No     | Yes |
+| User-defined storage structure               | Yes    | Yes |
+| Public Sharing                               | Yes    | Yes |
+| Archive and Favorites                        | Yes    | Yes |
+| Global Map                                   | Yes    | Yes |
+| Partner Sharing                              | Yes    | Yes |
+| Facial recognition and clustering            | Yes    | Yes |
+| Memories (x years ago)                       | Yes    | Yes |
+| Offline support                              | Yes    | No  |
+| Read-only gallery                            | Yes    | Yes |
+| Stacked Photos                               | Yes    | Yes |
+| Tags                                         | No     | Yes |
+| Folder View                                  | Yes    | Yes |
 
+## Translations
 
-## Installing / Uninstalling
+Read more about translations [here](https://docs.immich.app/developer/translations).
 
-Visit https://vencord.dev/download
-
-## Join our Support/Community Server
-
-https://discord.gg/D9uwnFnqmd
-
-## Sponsors
-
-|     **Thanks a lot to all Vencord [sponsors](https://github.com/sponsors/Vendicated)!!**     |
-| :------------------------------------------------------------------------------------------: |
-|   [![](https://meow.vendicated.dev/sponsors.png)](https://github.com/sponsors/Vendicated)    |
-| *generated using [github-sponsor-graph](https://github.com/Vendicated/github-sponsor-graph)* |
-
-
-## Star History
-
-&lt;a href=&quot;https://star-history.com/#Vendicated/Vencord&amp;Timeline&quot;&gt;
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/svg?repos=Vendicated/Vencord&amp;type=Timeline&amp;theme=dark&quot; /&gt;
-    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/svg?repos=Vendicated/Vencord&amp;type=Timeline&quot; /&gt;
-    &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/svg?repos=Vendicated/Vencord&amp;type=Timeline&quot; /&gt;
-  &lt;/picture&gt;
+&lt;a href=&quot;https://hosted.weblate.org/engage/immich/&quot;&gt;
+&lt;img src=&quot;https://hosted.weblate.org/widget/immich/immich/multi-auto.svg&quot; alt=&quot;Translation status&quot; /&gt;
 &lt;/a&gt;
 
-## Disclaimer
+## Repository activity
 
-Discord is trademark of Discord Inc. and solely mentioned for the sake of descriptivity.
-Mention of it does not imply any affiliation with or endorsement by Discord Inc.
+![Activities](https://repobeats.axiom.co/api/embed/9e86d9dc3ddd137161f2f6d2e758d7863b1789cb.svg &quot;Repobeats analytics image&quot;)
 
-&lt;details&gt;
-&lt;summary&gt;Using Vencord violates Discord&#039;s terms of service&lt;/summary&gt;
+## Star history
 
-Client modifications are against Discord’s Terms of Service.
+&lt;a href=&quot;https://star-history.com/#immich-app/immich&amp;type=date&amp;legend=top-left&quot;&gt;
+ &lt;picture&gt;
+   &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/svg?repos=immich-app/immich&amp;type=date&amp;theme=dark&quot; /&gt;
+   &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/svg?repos=immich-app/immich&amp;type=date&quot; /&gt;
+   &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/svg?repos=immich-app/immich&amp;type=date&quot; width=&quot;100%&quot; /&gt;
+ &lt;/picture&gt;
+&lt;/a&gt;
 
-However, Discord is pretty indifferent about them and there are no known cases of users getting banned for using client mods! So you should generally be fine as long as you don’t use any plugins that implement abusive behaviour. But no worries, all inbuilt plugins are safe to use!
+## Contributors
 
-Regardless, if your account is very important to you and it getting disabled would be a disaster for you, you should probably not use any client mods (not exclusive to Vencord), just to be safe
-
-Additionally, make sure not to post screenshots with Vencord in a server where you might get banned for it
-
-&lt;/details&gt;
+&lt;a href=&quot;https://github.com/immich-app/immich/graphs/contributors&quot;&gt;
+  &lt;img src=&quot;https://contrib.rocks/image?repo=immich-app/immich&quot; width=&quot;100%&quot;/&gt;
+&lt;/a&gt;
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
@@ -2830,15 +2318,15 @@ Additionally, make sure not to post screenshots with Vencord in a server where y
             <title><![CDATA[badlogic/pi-mono]]></title>
             <link>https://github.com/badlogic/pi-mono</link>
             <guid>https://github.com/badlogic/pi-mono</guid>
-            <pubDate>Mon, 27 Apr 2026 00:15:01 GMT</pubDate>
+            <pubDate>Tue, 28 Apr 2026 00:18:26 GMT</pubDate>
             <description><![CDATA[AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/badlogic/pi-mono">badlogic/pi-mono</a></h1>
             <p>AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 40,666</p>
-            <p>Forks: 4,758</p>
-            <p>Stars today: 525 stars today</p>
+            <p>Stars: 41,595</p>
+            <p>Forks: 4,847</p>
+            <p>Stars today: 974 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
   &lt;a href=&quot;https://pi.dev&quot;&gt;
     &lt;img src=&quot;https://pi.dev/logo.svg&quot; alt=&quot;pi logo&quot; width=&quot;128&quot;&gt;
@@ -2916,160 +2404,349 @@ MIT
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[anomalyco/opencode]]></title>
-            <link>https://github.com/anomalyco/opencode</link>
-            <guid>https://github.com/anomalyco/opencode</guid>
-            <pubDate>Mon, 27 Apr 2026 00:15:00 GMT</pubDate>
-            <description><![CDATA[The open source coding agent.]]></description>
+            <title><![CDATA[diegosouzapw/OmniRoute]]></title>
+            <link>https://github.com/diegosouzapw/OmniRoute</link>
+            <guid>https://github.com/diegosouzapw/OmniRoute</guid>
+            <pubDate>Tue, 28 Apr 2026 00:18:25 GMT</pubDate>
+            <description><![CDATA[OmniRoute is an AI gateway for multi-provider LLMs: an OpenAI-compatible endpoint with smart routing, load balancing, retries, and fallbacks. Add policies, rate limits, caching, and observability for reliable, cost-aware inference.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></h1>
-            <p>The open source coding agent.</p>
+            <h1><a href="https://github.com/diegosouzapw/OmniRoute">diegosouzapw/OmniRoute</a></h1>
+            <p>OmniRoute is an AI gateway for multi-provider LLMs: an OpenAI-compatible endpoint with smart routing, load balancing, retries, and fallbacks. Add policies, rate limits, caching, and observability for reliable, cost-aware inference.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 149,970</p>
-            <p>Forks: 17,237</p>
-            <p>Stars today: 512 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://opencode.ai&quot;&gt;
-    &lt;picture&gt;
-      &lt;source srcset=&quot;packages/console/app/src/asset/logo-ornate-dark.svg&quot; media=&quot;(prefers-color-scheme: dark)&quot;&gt;
-      &lt;source srcset=&quot;packages/console/app/src/asset/logo-ornate-light.svg&quot; media=&quot;(prefers-color-scheme: light)&quot;&gt;
-      &lt;img src=&quot;packages/console/app/src/asset/logo-ornate-light.svg&quot; alt=&quot;OpenCode logo&quot;&gt;
-    &lt;/picture&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;The open source AI coding agent.&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://opencode.ai/discord&quot;&gt;&lt;img alt=&quot;Discord&quot; src=&quot;https://img.shields.io/discord/1391832426048651334?style=flat-square&amp;label=discord&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://www.npmjs.com/package/opencode-ai&quot;&gt;&lt;img alt=&quot;npm&quot; src=&quot;https://img.shields.io/npm/v/opencode-ai?style=flat-square&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/anomalyco/opencode/actions/workflows/publish.yml&quot;&gt;&lt;img alt=&quot;Build status&quot; src=&quot;https://img.shields.io/github/actions/workflow/status/anomalyco/opencode/publish.yml?style=flat-square&amp;branch=dev&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
+            <p>Stars: 3,578</p>
+            <p>Forks: 583</p>
+            <p>Stars today: 56 stars today</p>
+            <h2>README</h2><pre># 🚀 OmniRoute — The Free AI Gateway
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;README.md&quot;&gt;English&lt;/a&gt; |
-  &lt;a href=&quot;README.zh.md&quot;&gt;简体中文&lt;/a&gt; |
-  &lt;a href=&quot;README.zht.md&quot;&gt;繁體中文&lt;/a&gt; |
-  &lt;a href=&quot;README.ko.md&quot;&gt;한국어&lt;/a&gt; |
-  &lt;a href=&quot;README.de.md&quot;&gt;Deutsch&lt;/a&gt; |
-  &lt;a href=&quot;README.es.md&quot;&gt;Español&lt;/a&gt; |
-  &lt;a href=&quot;README.fr.md&quot;&gt;Français&lt;/a&gt; |
-  &lt;a href=&quot;README.it.md&quot;&gt;Italiano&lt;/a&gt; |
-  &lt;a href=&quot;README.da.md&quot;&gt;Dansk&lt;/a&gt; |
-  &lt;a href=&quot;README.ja.md&quot;&gt;日本語&lt;/a&gt; |
-  &lt;a href=&quot;README.pl.md&quot;&gt;Polski&lt;/a&gt; |
-  &lt;a href=&quot;README.ru.md&quot;&gt;Русский&lt;/a&gt; |
-  &lt;a href=&quot;README.bs.md&quot;&gt;Bosanski&lt;/a&gt; |
-  &lt;a href=&quot;README.ar.md&quot;&gt;العربية&lt;/a&gt; |
-  &lt;a href=&quot;README.no.md&quot;&gt;Norsk&lt;/a&gt; |
-  &lt;a href=&quot;README.br.md&quot;&gt;Português (Brasil)&lt;/a&gt; |
-  &lt;a href=&quot;README.th.md&quot;&gt;ไทย&lt;/a&gt; |
-  &lt;a href=&quot;README.tr.md&quot;&gt;Türkçe&lt;/a&gt; |
-  &lt;a href=&quot;README.uk.md&quot;&gt;Українська&lt;/a&gt; |
-  &lt;a href=&quot;README.bn.md&quot;&gt;বাংলা&lt;/a&gt; |
-  &lt;a href=&quot;README.gr.md&quot;&gt;Ελληνικά&lt;/a&gt; |
-  &lt;a href=&quot;README.vi.md&quot;&gt;Tiếng Việt&lt;/a&gt;
-&lt;/p&gt;
+### Never stop coding. Smart routing to **FREE &amp; low-cost AI models** with automatic fallback.
 
-[![OpenCode Terminal UI](packages/web/src/assets/lander/screenshot.png)](https://opencode.ai)
+_Your universal API proxy — one endpoint, 160+ providers, zero downtime. Now with **MCP Server (29 tools)**, **A2A Protocol**, **Memory/Skills Systems** &amp; **Electron Desktop App**._
+
+**Chat Completions • Embeddings • Image Generation • Video • Music • Audio • Reranking • **Web Search** • MCP Server • A2A Protocol • 100% TypeScript**
 
 ---
 
-### Installation
+&lt;div align=&quot;center&quot;&gt;
 
-```bash
-# YOLO
-curl -fsSL https://opencode.ai/install | bash
+[![npm version](https://img.shields.io/npm/v/omniroute?color=cb3837&amp;logo=npm)](https://www.npmjs.com/package/omniroute)
+[![Docker Hub](https://img.shields.io/docker/v/diegosouzapw/omniroute?label=Docker%20Hub&amp;logo=docker&amp;color=2496ED)](https://hub.docker.com/r/diegosouzapw/omniroute)
 
-# Package managers
-npm i -g opencode-ai@latest        # or bun/pnpm/yarn
-scoop install opencode             # Windows
-choco install opencode             # Windows
-brew install anomalyco/tap/opencode # macOS and Linux (recommended, always up to date)
-brew install opencode              # macOS and Linux (official brew formula, updated less)
-sudo pacman -S opencode            # Arch Linux (Stable)
-paru -S opencode-bin               # Arch Linux (Latest from AUR)
-mise use -g opencode               # Any OS
-nix run nixpkgs#opencode           # or github:anomalyco/opencode for latest dev branch
-```
+![NPM Downloads](https://img.shields.io/npm/dw/omniroute?label=npm%20down%20week&amp;color=red)
+![NPM Downloads](https://img.shields.io/npm/dm/omniroute?label=npm%20down%20month&amp;color=red)
 
-&gt; [!TIP]
-&gt; Remove versions older than 0.1.x before installing.
+![NPM Downloads](https://img.shields.io/npm/d18m/omniroute?label=npm%20down%20year&amp;color=red)
+![Docker Pulls](https://img.shields.io/docker/pulls/diegosouzapw/omniroute)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/diegosouzapw/omniroute/total?style=flat&amp;label=eletron%20donwloads&amp;color=blue)
 
-### Desktop App (BETA)
+[![stars](https://custom-icon-badges.demolab.com/github/stars/diegosouzapw/OmniRoute?logo=star&amp;style=flat)](https://github.com/diegosouzapw/OmniRoute/stargazers)
+[![open issues](https://custom-icon-badges.demolab.com/github/issues-raw/diegosouzapw/OmniRoute?logo=issue)](https://github.com/diegosouzapw/OmniRoute/issues)
+[![license](https://custom-icon-badges.demolab.com/github/license/diegosouzapw/OmniRoute?logo=law)](https://github.com/diegosouzapw/OmniRoute/blob/main/LICENSE)
+[![last commit](https://custom-icon-badges.demolab.com/github/last-commit/diegosouzapw/OmniRoute?logo=history&amp;logoColor=white)](https://github.com/diegosouzapw/OmniRoute/commits/main)
+[![total contributions](https://custom-icon-badges.demolab.com/badge/dynamic/json?logo=graph&amp;logoColor=fff&amp;color=blue&amp;label=total%20contributions&amp;query=%24.totalContributions&amp;url=https%3A%2F%2Fstreak-stats.demolab.com%2F%3Fuser%3Ddiegosouzapw%26type%3Djson)](https://github.com/diegosouzapw)
+[![code size](https://custom-icon-badges.demolab.com/github/languages/code-size/diegosouzapw/OmniRoute?logo=file-code&amp;logoColor=white)](https://github.com/diegosouzapw/OmniRoute)
+[![pr closed](https://custom-icon-badges.demolab.com/github/issues-pr-closed/diegosouzapw/OmniRoute?color=purple&amp;logo=git-pull-request&amp;logoColor=white)](https://github.com/diegosouzapw/OmniRoute/pulls?q=is%3Apr+is%3Aclosed)
+[![tag](https://custom-icon-badges.demolab.com/github/v/tag/diegosouzapw/OmniRoute?logo=tag&amp;logoColor=white)](https://github.com/diegosouzapw/OmniRoute/tags)
+[![github streak](https://custom-icon-badges.demolab.com/badge/dynamic/json?logo=fire&amp;logoColor=fff&amp;color=orange&amp;label=github%20streak&amp;query=%24.currentStreak.length&amp;suffix=%20days&amp;url=https%3A%2F%2Fstreak-stats.demolab.com%2F%3Fuser%3Ddiegosouzapw%26type%3Djson)](https://github.com/diegosouzapw)
+[![followers](https://custom-icon-badges.demolab.com/github/followers/diegosouzapw?logo=person-add)](https://github.com/diegosouzapw?tab=followers)
+[![fork](https://custom-icon-badges.demolab.com/github/forks/diegosouzapw/OmniRoute?logo=fork)](https://github.com/diegosouzapw/OmniRoute/network/members)
+[![watch](https://custom-icon-badges.demolab.com/github/watchers/diegosouzapw/OmniRoute?logo=eye)](https://github.com/diegosouzapw/OmniRoute/watchers)
 
-OpenCode is also available as a desktop application. Download directly from the [releases page](https://github.com/anomalyco/opencode/releases) or [opencode.ai/download](https://opencode.ai/download).
+[![License](https://img.shields.io/github/license/diegosouzapw/OmniRoute)](https://github.com/diegosouzapw/OmniRoute/blob/main/LICENSE)
+[![Website](https://img.shields.io/badge/Website-omniroute.online-blue?logo=google-chrome&amp;logoColor=white)](https://omniroute.online)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-Community-25D366?logo=whatsapp&amp;logoColor=white)](https://chat.whatsapp.com/JI7cDQ1GyaiDHhVBpLxf8b?mode=gi_t)
 
-| Platform              | Download                              |
-| --------------------- | ------------------------------------- |
-| macOS (Apple Silicon) | `opencode-desktop-darwin-aarch64.dmg` |
-| macOS (Intel)         | `opencode-desktop-darwin-x64.dmg`     |
-| Windows               | `opencode-desktop-windows-x64.exe`    |
-| Linux                 | `.deb`, `.rpm`, or AppImage           |
+[🌐 Website](https://omniroute.online) • [🚀 Quick Start](#-quick-start) • [💡 Features](#-key-features) • [📖 Docs](#-documentation) • [💰 Pricing](#-pricing-at-a-glance) • [💬 WhatsApp](https://chat.whatsapp.com/JI7cDQ1GyaiDHhVBpLxf8b?mode=gi_t)
 
-```bash
-# macOS (Homebrew)
-brew install --cask opencode-desktop
-# Windows (Scoop)
-scoop bucket add extras; scoop install extras/opencode-desktop
-```
+&lt;/div&gt;
 
-#### Installation Directory
-
-The install script respects the following priority order for the installation path:
-
-1. `$OPENCODE_INSTALL_DIR` - Custom installation directory
-2. `$XDG_BIN_DIR` - XDG Base Directory Specification compliant path
-3. `$HOME/bin` - Standard user binary directory (if it exists or can be created)
-4. `$HOME/.opencode/bin` - Default fallback
-
-```bash
-# Examples
-OPENCODE_INSTALL_DIR=/usr/local/bin curl -fsSL https://opencode.ai/install | bash
-XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://opencode.ai/install | bash
-```
-
-### Agents
-
-OpenCode includes two built-in agents you can switch between with the `Tab` key.
-
-- **build** - Default, full-access agent for development work
-- **plan** - Read-only agent for analysis and code exploration
-  - Denies file edits by default
-  - Asks permission before running bash commands
-  - Ideal for exploring unfamiliar codebases or planning changes
-
-Also included is a **general** subagent for complex searches and multistep tasks.
-This is used internally and can be invoked using `@general` in messages.
-
-Learn more about [agents](https://opencode.ai/docs/agents).
-
-### Documentation
-
-For more info on how to configure OpenCode, [**head over to our docs**](https://opencode.ai/docs).
-
-### Contributing
-
-If you&#039;re interested in contributing to OpenCode, please read our [contributing docs](./CONTRIBUTING.md) before submitting a pull request.
-
-### Building on OpenCode
-
-If you are working on a project that&#039;s related to OpenCode and is using &quot;opencode&quot; as part of its name, for example &quot;opencode-dashboard&quot; or &quot;opencode-mobile&quot;, please add a note to your README to clarify that it is not built by the OpenCode team and is not affiliated with us in any way.
-
-### FAQ
-
-#### How is this different from Claude Code?
-
-It&#039;s very similar to Claude Code in terms of capability. Here are the key differences:
-
-- 100% open source
-- Not coupled to any provider. Although we recommend the models we provide through [OpenCode Zen](https://opencode.ai/zen), OpenCode can be used with Claude, OpenAI, Google, or even local models. As models evolve, the gaps between them will close and pricing will drop, so being provider-agnostic is important.
-- Out-of-the-box LSP support
-- A focus on TUI. OpenCode is built by neovim users and the creators of [terminal.shop](https://terminal.shop); we are going to push the limits of what&#039;s possible in the terminal.
-- A client/server architecture. This, for example, can allow OpenCode to run on your computer while you drive it remotely from a mobile app, meaning that the TUI frontend is just one of the possible clients.
+🌐 **Available in:** 🇺🇸 [English](README.md) | 🇧🇷 [Português (Brasil)](docs/i18n/pt-BR/README.md) | 🇪🇸 [Español](docs/i18n/es/README.md) | 🇫🇷 [Français](docs/i18n/fr/README.md) | 🇮🇹 [Italiano](docs/i18n/it/README.md) | 🇷🇺 [Русский](docs/i18n/ru/README.md) | 🇨🇳 [中文 (简体)](docs/i18n/zh-CN/README.md) | 🇩🇪 [Deutsch](docs/i18n/de/README.md) | 🇮🇳 [हिन्दी](docs/i18n/in/README.md) | 🇹🇭 [ไทย](docs/i18n/th/README.md) | 🇺🇦 [Українська](docs/i18n/uk-UA/README.md) | 🇸🇦 [العربية](docs/i18n/ar/README.md) | 🇯🇵 [日本語](docs/i18n/ja/README.md) | 🇻🇳 [Tiếng Việt](docs/i18n/vi/README.md) | 🇧🇬 [Български](docs/i18n/bg/README.md) | 🇩🇰 [Dansk](docs/i18n/da/README.md) | 🇫🇮 [Suomi](docs/i18n/fi/README.md) | 🇮🇱 [עברית](docs/i18n/he/README.md) | 🇭🇺 [Magyar](docs/i18n/hu/README.md) | 🇮🇩 [Bahasa Indonesia](docs/i18n/id/README.md) | 🇰🇷 [한국어](docs/i18n/ko/README.md) | 🇲🇾 [Bahasa Melayu](docs/i18n/ms/README.md) | 🇳🇱 [Nederlands](docs/i18n/nl/README.md) | 🇳🇴 [Norsk](docs/i18n/no/README.md) | 🇵🇹 [Português (Portugal)](docs/i18n/pt/README.md) | 🇷🇴 [Română](docs/i18n/ro/README.md) | 🇵🇱 [Polski](docs/i18n/pl/README.md) | 🇸🇰 [Slovenčina](docs/i18n/sk/README.md) | 🇸🇪 [Svenska](docs/i18n/sv/README.md) | 🇵🇭 [Filipino](docs/i18n/phi/README.md) | 🇨🇿 [Čeština](docs/i18n/cs/README.md)
 
 ---
 
-**Join our community** [Discord](https://discord.gg/opencode) | [X.com](https://x.com/opencode)
-</pre>
+## 🖼️ Main Dashboard
+
+&lt;div align=&quot;center&quot;&gt;
+  &lt;img src=&quot;./docs/screenshots/MainOmniRoute.png&quot; alt=&quot;OmniRoute Dashboard&quot; width=&quot;800&quot;/&gt;
+&lt;/div&gt;
+
+---
+
+## 📸 Dashboard Preview
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Click to see dashboard screenshots&lt;/b&gt;&lt;/summary&gt;
+
+| Page           | Screenshot                                        |
+| -------------- | ------------------------------------------------- |
+| **Providers**  | ![Providers](docs/screenshots/01-providers.png)   |
+| **Combos**     | ![Combos](docs/screenshots/02-combos.png)         |
+| **Analytics**  | ![Analytics](docs/screenshots/03-analytics.png)   |
+| **Health**     | ![Health](docs/screenshots/04-health.png)         |
+| **Translator** | ![Translator](docs/screenshots/05-translator.png) |
+| **Settings**   | ![Settings](docs/screenshots/06-settings.png)     |
+| **CLI Tools**  | ![CLI Tools](docs/screenshots/07-cli-tools.png)   |
+| **Usage Logs** | ![Usage](docs/screenshots/08-usage.png)           |
+| **Endpoints**  | ![Endpoints](docs/screenshots/09-endpoint.png)    |
+
+&lt;/details&gt;
+
+---
+
+### 🤖 Free AI Provider for your favorite coding agents
+
+_Connect any AI-powered IDE or CLI tool through OmniRoute — free API gateway for unlimited coding._
+
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; width=&quot;110&quot;&gt;
+        &lt;a href=&quot;https://github.com/openclaw/openclaw&quot;&gt;
+          &lt;img src=&quot;./public/providers/openclaw.png&quot; alt=&quot;OpenClaw&quot; width=&quot;48&quot;/&gt;&lt;br/&gt;
+          &lt;b&gt;OpenClaw&lt;/b&gt;
+        &lt;/a&gt;&lt;br/&gt;
+        &lt;sub&gt;⭐ 205K&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;110&quot;&gt;
+        &lt;a href=&quot;https://github.com/HKUDS/nanobot&quot;&gt;
+          &lt;img src=&quot;./public/providers/nanobot.png&quot; alt=&quot;NanoBot&quot; width=&quot;48&quot;/&gt;&lt;br/&gt;
+          &lt;b&gt;NanoBot&lt;/b&gt;
+        &lt;/a&gt;&lt;br/&gt;
+        &lt;sub&gt;⭐ 20.9K&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;110&quot;&gt;
+        &lt;a href=&quot;https://github.com/sipeed/picoclaw&quot;&gt;
+          &lt;img src=&quot;./public/providers/picoclaw.jpg&quot; alt=&quot;PicoClaw&quot; width=&quot;48&quot;/&gt;&lt;br/&gt;
+          &lt;b&gt;PicoClaw&lt;/b&gt;
+        &lt;/a&gt;&lt;br/&gt;
+        &lt;sub&gt;⭐ 14.6K&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;110&quot;&gt;
+        &lt;a href=&quot;https://github.com/zeroclaw-labs/zeroclaw&quot;&gt;
+          &lt;img src=&quot;./public/providers/zeroclaw.png&quot; alt=&quot;ZeroClaw&quot; width=&quot;48&quot;/&gt;&lt;br/&gt;
+          &lt;b&gt;ZeroClaw&lt;/b&gt;
+        &lt;/a&gt;&lt;br/&gt;
+        &lt;sub&gt;⭐ 9.9K&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;110&quot;&gt;
+        &lt;a href=&quot;https://github.com/nearai/ironclaw&quot;&gt;
+          &lt;img src=&quot;./public/providers/ironclaw.png&quot; alt=&quot;IronClaw&quot; width=&quot;48&quot;/&gt;&lt;br/&gt;
+          &lt;b&gt;IronClaw&lt;/b&gt;
+        &lt;/a&gt;&lt;br/&gt;
+        &lt;sub&gt;⭐ 2.1K&lt;/sub&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; width=&quot;110&quot;&gt;
+        &lt;a href=&quot;https://github.com/anomalyco/opencode&quot;&gt;
+          &lt;img src=&quot;./public/providers/opencode.svg&quot; alt=&quot;OpenCode&quot; width=&quot;48&quot;/&gt;&lt;br/&gt;
+          &lt;b&gt;OpenCode&lt;/b&gt;
+        &lt;/a&gt;&lt;br/&gt;
+        &lt;sub&gt;⭐ 106K&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;110&quot;&gt;
+        &lt;a href=&quot;https://github.com/openai/codex&quot;&gt;
+          &lt;img src=&quot;./public/providers/codex.png&quot; alt=&quot;Codex CLI&quot; width=&quot;48&quot;/&gt;&lt;br/&gt;
+          &lt;b&gt;Codex CLI&lt;/b&gt;
+        &lt;/a&gt;&lt;br/&gt;
+        &lt;sub&gt;⭐ 60.8K&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;110&quot;&gt;
+        &lt;a href=&quot;https://github.com/anthropics/claude-code&quot;&gt;
+          &lt;img src=&quot;./public/providers/claude.png&quot; alt=&quot;Claude Code&quot; width=&quot;48&quot;/&gt;&lt;br/&gt;
+          &lt;b&gt;Claude Code&lt;/b&gt;
+        &lt;/a&gt;&lt;br/&gt;
+        &lt;sub&gt;⭐ 67.3K&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;110&quot;&gt;
+        &lt;a href=&quot;https://github.com/google-gemini/gemini-cli&quot;&gt;
+          &lt;img src=&quot;./public/providers/gemini-cli.png&quot; alt=&quot;Gemini CLI&quot; width=&quot;48&quot;/&gt;&lt;br/&gt;
+          &lt;b&gt;Gemini CLI&lt;/b&gt;
+        &lt;/a&gt;&lt;br/&gt;
+        &lt;sub&gt;⭐ 94.7K&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;110&quot;&gt;
+        &lt;a href=&quot;https://github.com/Kilo-Org/kilocode&quot;&gt;
+          &lt;img src=&quot;./public/providers/kilocode.png&quot; alt=&quot;Kilo Code&quot; width=&quot;48&quot;/&gt;&lt;br/&gt;
+          &lt;b&gt;Kilo Code&lt;/b&gt;
+        &lt;/a&gt;&lt;br/&gt;
+        &lt;sub&gt;⭐ 15.5K&lt;/sub&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+
+&lt;sub&gt;📡 All agents connect via &lt;code&gt;http://localhost:20128/v1&lt;/code&gt; or &lt;code&gt;http://cloud.omniroute.online/v1&lt;/code&gt; — one config, unlimited models and quota&lt;/sub&gt;
+
+---
+
+## 🤔 Why OmniRoute?
+
+**Stop wasting money and hitting limits:**
+
+- &lt;img src=&quot;https://img.shields.io/badge/✗-e74c3c?style=flat-square&quot; height=&quot;16&quot;/&gt; Subscription quota expires unused every month
+- &lt;img src=&quot;https://img.shields.io/badge/✗-e74c3c?style=flat-square&quot; height=&quot;16&quot;/&gt; Rate limits stop you mid-coding
+- &lt;img src=&quot;https://img.shields.io/badge/✗-e74c3c?style=flat-square&quot; height=&quot;16&quot;/&gt; Expensive APIs ($20-50/month per provider)
+- &lt;img src=&quot;https://img.shields.io/badge/✗-e74c3c?style=flat-square&quot; height=&quot;16&quot;/&gt; Manual switching between providers
+
+**OmniRoute solves this:**
+
+- ✅ **Maximize subscriptions** - Track quota, use every bit before reset
+- ✅ **Auto fallback** - Subscription → API Key → Cheap → Free, zero downtime
+- ✅ **Multi-account** - Round-robin between accounts per provider
+- ✅ **Universal** - Works with Claude Code, Codex, Gemini CLI, Cursor, Cline, OpenClaw, any CLI tool
+
+---
+
+## 📧 Support
+
+&gt; 💬 **Join our community!** [WhatsApp Group](https://chat.whatsapp.com/JI7cDQ1GyaiDHhVBpLxf8b?mode=gi_t) — Get help, share tips, and stay updated.
+
+- **Website**: [omniroute.online](https://omniroute.online)
+- **GitHub**: [github.com/diegosouzapw/OmniRoute](https://github.com/diegosouzapw/OmniRoute)
+- **Issues**: [github.com/diegosouzapw/OmniRoute/issues](https://github.com/diegosouzapw/OmniRoute/issues)
+- **WhatsApp**: [Community Group](https://chat.whatsapp.com/JI7cDQ1GyaiDHhVBpLxf8b?mode=gi_t)
+- **Contributing**: See [CONTRIBUTING.md](CONTRIBUTING.md), open a PR, or pick a `good first issue`
+- **Original Project**: [9router by decolua](https://github.com/decolua/9router)
+
+### 🐛 Reporting a Bug?
+
+When opening an issue, please run the system-info command and attach the generated file:
+
+```bash
+npm run system-info
+```
+
+This generates a `system-info.txt` with your Node.js version, OmniRoute version, OS details, installed CLI tools (qoder, gemini, claude, codex, antigravity, droid, etc.), Docker/PM2 status, and system packages — everything we need to reproduce your issue quickly. Attach the file directly to your GitHub issue.
+
+---
+
+## 🔄 How It Works
+
+```
+┌─────────────┐
+│  Your CLI   │  (Claude Code, Codex, Gemini CLI, OpenClaw, Cursor, Cline...)
+│   Tool      │
+└──────┬──────┘
+       │ http://localhost:20128/v1
+       ↓
+┌─────────────────────────────────────────┐
+│           OmniRoute (Smart Router)        │
+│  • Format translation (OpenAI ↔ Claude) │
+│  • Quota tracking + Embeddings + Images │
+│  • Auto token refresh                   │
+└──────┬──────────────────────────────────┘
+       │
+       ├─→ [Tier 1: SUBSCRIPTION] Claude Code, Codex, Gemini CLI
+       │   ↓ quota exhausted
+       ├─→ [Tier 2: API KEY] DeepSeek, Groq, xAI, Mistral, NVIDIA NIM, etc.
+       │   ↓ budget limit
+       ├─→ [Tier 3: CHEAP] GLM ($0.6/1M), MiniMax ($0.2/1M)
+       │   ↓ budget limit
+       └─→ [Tier 4: FREE] Qoder, Qwen, Kiro (unlimited)
+
+Result: Never stop coding, minimal cost
+```
+
+---
+
+## 🎯 What OmniRoute Solves — 30 Real Pain Points &amp; Use Cases
+
+&gt; **Every developer using AI tools faces these problems daily.** OmniRoute was built to solve them all — from cost overruns to regional blocks, from broken OAuth flows to protocol operations and enterprise observability.
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;💸 1. &quot;I pay for an expensive subscription but still get interrupted by limits&quot;&lt;/b&gt;&lt;/summary&gt;
+
+Developers pay $20–200/month for Claude Pro, Codex Pro, or GitHub Copilot. Even paying, quota has a ceiling — 5h of usage, weekly limits, or per-minute rate limits. Mid-coding session, the provider stops responding and the developer loses flow and productivity.
+
+**How OmniRoute solves it:**
+
+- **Smart 4-Tier Fallback** — If subscription quota runs out, automatically redirects to API Key → Cheap → Free with zero manual intervention
+- **Provider Limits Tracking** — Cached quota snapshots refresh on a server-side schedule (default `PROVIDER_LIMITS_SYNC_INTERVAL_MINUTES=70`) with manual refresh available in the UI
+- **Multi-Account Support** — Multiple accounts per provider with auto round-robin — when one runs out, switches to the next
+- **Custom Combos** — Customizable fallback chains with 13 balancing strategies (priority, weighted, fill-first, round-robin, P2C, random, least-used, cost-optimized, strict-random, auto, lkgp, context-optimized, **context-relay**)
+- **Structured Combo Builder** — Build combos with guided steps or expert single-page editing, including explicit provider + model + account selection, repeated providers, fixed-account targets, and direct model entry
+- **Quota-Aware P2C** — Power-of-two account selection now factors quota headroom, backoff, recent errors, and consecutive use
+- **Codex Business Quotas** — Business/Team workspace quota monitoring directly in the dashboard
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;🔌 2. &quot;I need to use multiple providers but each has a different API&quot;&lt;/b&gt;&lt;/summary&gt;
+
+OpenAI uses one format, Claude (Anthropic) uses another, Gemini yet another. If a dev wants to test models from different providers or fallback between them, they need to reconfigure SDKs, change endpoints, deal with incompatible formats. Custom providers (FriendLI, NIM) have non-standard model endpoints.
+
+**How OmniRoute solves it:**
+
+- **Unified Endpoint** — A single `http://localhost:20128/v1` serves as proxy for all 160+ providers
+- **Format Translation** — Automatic and transparent: OpenAI ↔ Claude ↔ Gemini ↔ Responses API
+- **Response Sanitization** — Strips non-standard fields (`x_groq`, `usage_breakdown`, `service_tier`) that break OpenAI SDK v1.83+
+- **Role Normalization** — Converts `developer` → `system` for non-OpenAI providers; `system` → `user` for GLM/ERNIE
+- **Think Tag Extraction** — Extracts `&lt;think&gt;` blocks from models like DeepSeek R1 into standardized `reasoning_content`
+- **Structured Output for Gemini** — `json_schema` → `responseMimeType`/`responseSchema` automatic conversion
+- **`stream` defaults to `false`** — Aligns with OpenAI spec, avoiding unexpected SSE in Python/Rust/Go SDKs
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;🌐 3. &quot;My AI provider blocks my region/country&quot;&lt;/b&gt;&lt;/summary&gt;
+
+Providers like OpenAI/Codex block access from certain geographic regions. Users get errors like `unsupported_country_region_territory` during OAuth and API connections. This is especially frustrating for developers from developing countries.
+
+**How OmniRoute solves it:**
+
+- **3-Level Proxy Config** — Configurable proxy at 3 levels: global (all traffic), per-provider (one provider only), and per-connection/key
+- **Color-Coded Proxy Badges** — Visual indicators: 🟢 global proxy, 🟡 provider proxy, 🔵 connection proxy, always showing the IP
+- **OAuth Token Exchange Through Proxy** — OAuth flow also goes through the proxy, solving `unsupported_country_region_territory`
+- **Connection Tests via Proxy** — Connection tests use the configured proxy (no more direct bypass)
+- **SOCKS5 Support** — Full SOCKS5 proxy support for outbound routing
+- **TLS Fingerprint Spoofing** — Browser-like TLS fingerprint via `wreq-js` to bypass bot detection
+- **🔏 CLI Fingerprint Matching** — Reorders headers and body fields to match native CLI binary signatures, drastically reducing account flagging risk. The proxy IP is preserved — you get both stealth **and** IP masking simultaneously
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;🆓 4. &quot;I want to use AI for coding but I have no money&quot;&lt;/b&gt;&lt;/summary&gt;
+
+Not everyone can pay $20–200/month for AI subscriptions. Students, devs from emerging countries, hobbyists, and freelancers need access to quality models at zero cost.
+
+**How OmniRoute solves it:**
+
+- **Free Tier Providers Built-in** — Native support for 100% free providers: Qoder (5 unlimited models via OAuth: kimi-k2-thinking, qwen3-coder-plus, deepseek-r1, minimax-m2, kimi-k2), Qwen (4 unlimited models: qwen3-coder-plus, qwen3-coder-flash, qwen3-coder-next, vision-model), Kiro (Claude + AWS Builder ID for free), Gemini CLI (180K tokens/month free)
+- **Ollama Cloud** — Cloud-hosted Ollama models at `api.ollama.com` with free &quot;Light usage&quot; tier; use `ollamacloud/&lt;model&gt;` prefix
+- **Free-Only Combos** — Chain `gc/gemini-3-flash → if/kimi-k2-thinking → qw/qwen3-coder-plus` = $0/month with zero downtime
+- **NVIDIA NIM Free Access** — ~40 RPM dev-forever free access to 70+ models at build.nvidia.com (transitioning from credits to pure rate limits)
+- **Cost Optimized Strategy** — Routing strategy that automatically chooses the cheapest available provider
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;🔒 5. &quot;I need to protect my AI gateway from unauthorized access&quot;&lt;/b&gt;&lt;/summary&gt;
+
+When exposing an AI gateway to the network (LAN, VPS, Docker), anyone with the address can consume the developer&#039;s tokens/quota. Without protection, APIs are vulnerable to misuse, prompt injection, and abuse.
+
+**How OmniRoute solves it:**
+
+- **API Key Management** — Generation, rotation, and scoping per provider with a dedicated `/dashboard/api-manager` page
+- **Model-Level Permissions** — Restrict API keys to specific models (`openai/*`, wildcard patterns), with Allow All/Restrict toggle
+- **API Endpoint Protection** — Require a key for `/v1/models` and block specific providers from the listing
+- **Auth Guard + CSRF Protection** — All dashboard routes protected with `withAuth` middleware + CSRF tokens
+- **Rate Limiter** — Per-IP rate limiting with configurable windows
+- **IP Filtering** — Allowlist/blocklist for access control
+- **Prompt Injection Guard** — Sanitization against malicious prompt patterns
+- **AES-256-GCM Encryption** — Credentials encrypted at rest
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;🛑 6. &quot;My provider went down and I lost my coding flow&quot;&lt;/b&gt;&lt;/summary&gt;
+
+AI providers can become unstable, return 5xx errors, or hit temporary rate limits. If a dev depends on a single provider, they&#039;re interrupted. Without circuit breakers, repeated retries can crash the application.
+
+**How OmniRoute solves it:**
+
+- **Request Queue &amp; Pacing** — Per-connection request buckets smooth bursts before they hit upstream rate caps
+- **Connection Cooldown** — A single connection cools down after retryable failures with optional upstream `Retry-After` hints and exponential backoff
+- **Provider Circuit Breaker** — The provider only trips after fallback is exhausted and the provider request still fails with provider-wide transient errors; connection-scoped `429` rate l
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
