@@ -4,24 +4,86 @@
         <title>GitHub Trending Today for typescript - TypeScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for typescript.</description>
-        <lastBuildDate>Sat, 30 May 2026 00:24:56 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 31 May 2026 00:24:45 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2026, GitHub</copyright>
         <item>
+            <title><![CDATA[cursor/plugins]]></title>
+            <link>https://github.com/cursor/plugins</link>
+            <guid>https://github.com/cursor/plugins</guid>
+            <pubDate>Sun, 31 May 2026 00:24:45 GMT</pubDate>
+            <description><![CDATA[Cursor plugin specification and official plugins]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/cursor/plugins">cursor/plugins</a></h1>
+            <p>Cursor plugin specification and official plugins</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 1,456</p>
+            <p>Forks: 118</p>
+            <p>Stars today: 205 stars today</p>
+            <h2>README</h2><pre># Cursor plugins
+
+Official Cursor plugins for popular developer tools, frameworks, and SaaS products. Each plugin is a standalone directory at the repository root with its own `.cursor-plugin/plugin.json` manifest.
+
+## Plugins
+
+| `name` | Plugin | Author | Category | `description` (from marketplace) |
+|:-------|:-------|:-------|:---------|:-------------------------------------|
+| `continual-learning` | [Continual Learning](continual-learning/) | Cursor | Developer Tools | Incremental transcript-driven memory updates for AGENTS.md using high-signal bullet points only. |
+| `cursor-team-kit` | [Cursor Team Kit](cursor-team-kit/) | Cursor | Developer Tools | Internal team workflows used by Cursor developers for CI, code review, shipping, local automation, and verification. |
+| `thermos` | [Thermos](thermos/) | Cursor | Developer Tools | Thermo-nuclear branch review: deep security/correctness audits, harsh code-quality rubrics, parallel subagents, thermos orchestration, and optional merge-ready PR flows. |
+| `create-plugin` | [Create Plugin](create-plugin/) | Cursor | Developer Tools | Scaffold and validate new Cursor plugins. |
+| `agent-compatibility` | [Agent Compatibility](agent-compatibility/) | Cursor | Developer Tools | CLI-backed repo compatibility scans plus Cursor agents that audit startup, validation, and docs against reality. |
+| `cli-for-agent` | [CLI for Agents](cli-for-agent/) | Cursor | Developer Tools | Patterns for designing CLIs that coding agents can run reliably: flags, help with examples, pipelines, errors, idempotency, dry-run. |
+| `pr-review-canvas` | [PR Review Canvas](pr-review-canvas/) | Cursor | Developer Tools | Render PR diffs as interactive Cursor Canvases organized for reviewer comprehension — groups changes by importance, separates boilerplate from core logic, and highlights tricky or unexpected code. |
+| `docs-canvas` | [Docs Canvas](docs-canvas/) | Cursor | Developer Tools | Render documentation — architecture notes, API references, runbooks, and codebase walkthroughs — as a navigable Cursor Canvas with sections, table of contents, diagrams, and cross-references. |
+| `cursor-sdk` | [Cursor SDK](cursor-sdk/) | Cursor | Developer Tools | Build apps, scripts, CI pipelines, and automations on top of the Cursor TypeScript SDK (@cursor/sdk) — runtime selection, auth, streaming, MCP, error handling, and ready-to-extend integration patterns. |
+| `orchestrate` | [Orchestrate](orchestrate/) | Cursor | Developer Tools | Fan large tasks out across parallel Cursor cloud agents with planners, workers, verifiers, and structured handoffs. |
+| `pstack` | [pstack](pstack/) | Lauren Tan | Developer Tools | if you want to go fast, go deep first. pstack helps you write less, but higher quality code. rigorous agent workflows you can parallelize with confidence. |
+
+Author values match each plugin’s `plugin.json` `author.name` (Cursor lists `plugins@cursor.com` in the manifest).
+
+## Repository structure
+
+This is a multi-plugin marketplace repository. The root `.cursor-plugin/marketplace.json` lists all plugins, and each plugin has its own manifest:
+
+```
+plugins/
+├── .cursor-plugin/
+│   └── marketplace.json       # Marketplace manifest (lists all plugins)
+├── plugin-name/
+│   ├── .cursor-plugin/
+│   │   └── plugin.json        # Per-plugin manifest
+│   ├── skills/                # Agent skills (SKILL.md with frontmatter)
+│   ├── rules/                 # Cursor rules (.mdc files)
+│   ├── mcp.json               # MCP server definitions
+│   ├── README.md
+│   ├── CHANGELOG.md
+│   └── LICENSE
+└── ...
+```
+
+## License
+
+MIT
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
             <title><![CDATA[EveryInc/compound-engineering-plugin]]></title>
             <link>https://github.com/EveryInc/compound-engineering-plugin</link>
             <guid>https://github.com/EveryInc/compound-engineering-plugin</guid>
-            <pubDate>Sat, 30 May 2026 00:24:56 GMT</pubDate>
+            <pubDate>Sun, 31 May 2026 00:24:44 GMT</pubDate>
             <description><![CDATA[Official Compound Engineering plugin for Claude Code, Codex, Cursor, and more]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/EveryInc/compound-engineering-plugin">EveryInc/compound-engineering-plugin</a></h1>
             <p>Official Compound Engineering plugin for Claude Code, Codex, Cursor, and more</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 18,126</p>
-            <p>Forks: 1,377</p>
-            <p>Stars today: 353 stars today</p>
+            <p>Stars: 18,415</p>
+            <p>Forks: 1,392</p>
+            <p>Stars today: 349 stars today</p>
             <h2>README</h2><pre># Compound Engineering
 
 [![Build Status](https://github.com/EveryInc/compound-engineering-plugin/actions/workflows/ci.yml/badge.svg)](https://github.com/EveryInc/compound-engineering-plugin/actions/workflows/ci.yml)
@@ -440,18 +502,528 @@ GitHub Releases are the canonical release-notes surface. The root [`CHANGELOG.md
             <category>TypeScript</category>
         </item>
         <item>
+            <title><![CDATA[Crosstalk-Solutions/project-nomad]]></title>
+            <link>https://github.com/Crosstalk-Solutions/project-nomad</link>
+            <guid>https://github.com/Crosstalk-Solutions/project-nomad</guid>
+            <pubDate>Sun, 31 May 2026 00:24:43 GMT</pubDate>
+            <description><![CDATA[Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/Crosstalk-Solutions/project-nomad">Crosstalk-Solutions/project-nomad</a></h1>
+            <p>Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 27,351</p>
+            <p>Forks: 2,683</p>
+            <p>Stars today: 469 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;admin/public/project_nomad_logo.webp&quot; width=&quot;200&quot; height=&quot;200&quot;/&gt;
+
+# Project N.O.M.A.D.
+### Node for Offline Media, Archives, and Data
+
+**Knowledge That Never Goes Offline**
+
+[![Website](https://img.shields.io/badge/Website-projectnomad.us-blue)](https://www.projectnomad.us)
+[![Discord](https://img.shields.io/badge/Discord-Join%20Community-5865F2)](https://discord.com/invite/crosstalksolutions)
+[![Benchmark](https://img.shields.io/badge/Benchmark-Leaderboard-green)](https://benchmark.projectnomad.us)
+
+&lt;/div&gt;
+
+---
+
+Project N.O.M.A.D. is a self-contained, offline-first knowledge and education server packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.
+
+## Installation &amp; Quickstart
+Project N.O.M.A.D. can be installed on any Debian-based operating system (we recommend Ubuntu). Installation is completely terminal-based, and all tools and resources are designed to be accessed through the browser, so there&#039;s no need for a desktop environment if you&#039;d rather setup N.O.M.A.D. as a &quot;server&quot; and access it through other clients.
+
+*Note: sudo/root privileges are required to run the install script*
+
+### Quick Install (Debian-based OS Only)
+```bash
+sudo apt-get update &amp;&amp; \
+sudo apt-get install -y curl &amp;&amp; \
+curl -fsSL https://raw.githubusercontent.com/Crosstalk-Solutions/project-nomad/refs/heads/main/install/install_nomad.sh \
+  -o install_nomad.sh &amp;&amp; \
+sudo bash install_nomad.sh
+```
+
+Project N.O.M.A.D. is now installed on your device! Open a browser and navigate to `http://localhost:8080` (or `http://DEVICE_IP:8080`) to start exploring!
+
+For a complete step-by-step walkthrough (including Ubuntu installation), see the [Installation Guide](https://www.projectnomad.us/install). For Windows users, see the [WSL2 install guide](https://www.projectnomad.us/install/wsl2) — community-supported path covering native Docker and Docker Desktop install routes.
+
+### Advanced Installation
+For more control over the installation process, copy and paste the [Docker Compose template](https://raw.githubusercontent.com/Crosstalk-Solutions/project-nomad/refs/heads/main/install/management_compose.yaml) into a `docker-compose.yml` file and customize it to your liking (be sure to replace any placeholders with your actual values). Then, run `docker compose up -d` to start the Command Center and its dependencies. Note: this method is recommended for advanced users only, as it requires familiarity with Docker and manual configuration before starting.
+
+## How It Works
+N.O.M.A.D. is a management UI (&quot;Command Center&quot;) and API that orchestrates a collection of containerized tools and resources via [Docker](https://www.docker.com/). It handles installation, configuration, and updates for everything — so you don&#039;t have to.
+
+**Built-in capabilities include:**
+- **AI Chat with Knowledge Base** — local AI chat powered by [Ollama](https://ollama.com/) or you can use OpenAI API compatible software such as LM Studio or llama.cpp, with document upload and semantic search (RAG via [Qdrant](https://qdrant.tech/))
+- **Information Library** — offline Wikipedia, medical references, ebooks, and more via [Kiwix](https://kiwix.org/)
+- **Education Platform** — Khan Academy courses with progress tracking via [Kolibri](https://learningequality.org/kolibri/)
+- **Offline Maps** — downloadable regional maps via [ProtoMaps](https://protomaps.com)
+- **Data Tools** — encryption, encoding, and analysis via [CyberChef](https://gchq.github.io/CyberChef/)
+- **Notes** — local note-taking via [FlatNotes](https://github.com/dullage/flatnotes)
+- **System Benchmark** — hardware scoring with a [community leaderboard](https://benchmark.projectnomad.us)
+- **Easy Setup Wizard** — guided first-time configuration with curated content collections
+
+N.O.M.A.D. also includes built-in tools like a Wikipedia content selector, ZIM library manager, and content explorer.
+
+## What&#039;s Included
+
+| Capability | Powered By | What You Get |
+|-----------|-----------|-------------|
+| Information Library | Kiwix | Offline Wikipedia, medical references, survival guides, ebooks |
+| AI Assistant | Ollama + Qdrant | Built-in chat with document upload and semantic search |
+| Education Platform | Kolibri | Khan Academy courses, progress tracking, multi-user support |
+| Offline Maps | ProtoMaps | Downloadable regional maps with search and navigation |
+| Data Tools | CyberChef | Encryption, encoding, hashing, and data analysis |
+| Notes | FlatNotes | Local note-taking with markdown support |
+| System Benchmark | Built-in | Hardware scoring, Builder Tags, and community leaderboard |
+
+## Device Requirements
+While many similar offline survival computers are designed to be run on bare-minimum, lightweight hardware, Project N.O.M.A.D. is quite the opposite. To install and run the
+available AI tools, we highly encourage the use of a beefy, GPU-backed device to make the most of your install.
+
+At it&#039;s core, however, N.O.M.A.D. is still very lightweight. For a barebones installation of the management application itself, the following minimal specs are required:
+
+*Note: Project N.O.M.A.D. is not sponsored by any hardware manufacturer and is designed to be as hardware-agnostic as possible. The harware listed below is for example/comparison use only*
+
+#### Minimum Specs
+- Processor: 2 GHz dual-core processor or better
+- RAM: 4GB system memory
+- Storage: At least 5 GB free disk space
+- OS: Debian-based (Ubuntu recommended)
+- Stable internet connection (required during install only)
+
+To run LLM&#039;s and other included AI tools:
+
+#### Optimal Specs
+- Processor: AMD Ryzen 7 or Intel Core i7 or better
+- RAM: 32 GB system memory
+- Graphics: NVIDIA RTX 3060 or AMD equivalent or better (more VRAM = run larger models)
+- Storage: At least 250 GB free disk space (preferably on SSD)
+- OS: Debian-based (Ubuntu recommended)
+- Stable internet connection (required during install only)
+
+**For detailed build recommendations at three price points ($150–$1,000+), see the [Hardware Guide](https://www.projectnomad.us/hardware).**
+
+Again, Project N.O.M.A.D. itself is quite lightweight - it&#039;s the tools and resources you choose to install with N.O.M.A.D. that will determine the specs required for your unique deployment
+
+#### Running AI models on a different host
+By default, N.O.M.A.D.&#039;s installer will attempt to setup Ollama on the host when the AI Assistant is installed. However, if you would like to run the AI model on a different host, you can go to the settings of of the AI assistant and input a URL for either an ollama or OpenAI-compatible API server (such as LM Studio).  
+Note that if you use Ollama on a different host, you must start the server with this option `OLLAMA_HOST=0.0.0.0`.  
+Ollama is the preferred way to use the AI assistant as it has features such as model download that OpenAI API does not support. So when using LM Studio for example, you will have to use LM Studio to download models.
+You are responsible for the setup of Ollama/OpenAI server on the other host.
+
+## Frequently Asked Questions (FAQ)
+For answers to common questions about Project N.O.M.A.D., please see our [FAQ](FAQ.md) page.
+
+## About Internet Usage &amp; Privacy
+Project N.O.M.A.D. is designed for offline usage. An internet connection is only required during the initial installation (to download dependencies) and if you (the user) decide to download additional tools and resources at a later time. Otherwise, N.O.M.A.D. does not require an internet connection and has ZERO built-in telemetry.
+
+To test internet connectivity, N.O.M.A.D. attempts to make a request to Cloudflare&#039;s utility endpoint, `https://1.1.1.1/cdn-cgi/trace` and checks for a successful response.
+
+## About Security
+By design, Project N.O.M.A.D. is intended to be open and available without hurdles - it includes no authentication. If you decide to connect your device to a local network after install (e.g. for allowing other devices to access it&#039;s resources), you can block/open ports to control which services are exposed.
+
+**Will authentication be added in the future?** Maybe. It&#039;s not currently a priority, but if there&#039;s enough demand for it, we may consider building in an optional authentication layer in a future release to support uses cases where multiple users need access to the same instance but with different permission levels (e.g. family use with parental controls, classroom use with teacher/admin accounts, etc.). We have a suggestion for this on our public roadmap, so if this is something you&#039;d like to see, please upvote it here: https://roadmap.projectnomad.us/posts/1/user-authentication-please-build-in-user-auth-with-admin-user-roles
+
+For now, we recommend using network-level controls to manage access if you&#039;re planning to expose your N.O.M.A.D. instance to other devices on a local network. N.O.M.A.D. is not designed to be exposed directly to the internet, and we strongly advise against doing so unless you really know what you&#039;re doing, have taken appropriate security measures, and understand the risks involved.
+
+## Contributing
+Contributions are welcome and appreciated! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to the project.
+
+## Community &amp; Resources
+
+- **Website:** [www.projectnomad.us](https://www.projectnomad.us) - Learn more about the project
+- **Discord:** [Join the Community](https://discord.com/invite/crosstalksolutions) - Get help, share your builds, and connect with other NOMAD users
+- **Benchmark Leaderboard:** [benchmark.projectnomad.us](https://benchmark.projectnomad.us) - See how your hardware stacks up against other NOMAD builds
+- **Troubleshooting Guide:** [TROUBLESHOOTING.md](TROUBLESHOOTING.md) - Find solutions to common issues
+- **FAQ:** [FAQ.md](FAQ.md) - Find answers to frequently asked questions
+- **Community Add-Ons:** [admin/docs/community-add-ons.md](admin/docs/community-add-ons.md) - Third-party content packs built by the community
+
+## License
+
+Project N.O.M.A.D. is licensed under the [Apache License 2.0](LICENSE).
+
+## Helper Scripts
+Once installed, Project N.O.M.A.D. has a few helper scripts should you ever need to troubleshoot issues or perform maintenance that can&#039;t be done through the Command Center. All of these scripts are found in Project N.O.M.A.D.&#039;s install directory, `/opt/project-nomad`
+
+###
+
+###### Start Script - Starts all installed project containers
+```bash
+sudo bash /opt/project-nomad/start_nomad.sh
+```
+###
+
+###### Stop Script - Stops all installed project containers
+```bash
+sudo bash /opt/project-nomad/stop_nomad.sh
+```
+###
+
+###### Update Script - Attempts to pull the latest images for the Command Center and its dependencies (i.e. mysql) and recreate the containers. Note: this *only* updates the Command Center containers. It does not update the installable application containers - that should be done through the Command Center UI
+```bash
+sudo bash /opt/project-nomad/update_nomad.sh
+```
+
+###### Uninstall Script - Need to start fresh? Use the uninstall script to make your life easy. Note: this cannot be undone!
+```bash
+curl -fsSL https://raw.githubusercontent.com/Crosstalk-Solutions/project-nomad/refs/heads/main/install/uninstall_nomad.sh -o uninstall_nomad.sh &amp;&amp; sudo bash uninstall_nomad.sh
+```
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[microsoft/playwright]]></title>
+            <link>https://github.com/microsoft/playwright</link>
+            <guid>https://github.com/microsoft/playwright</guid>
+            <pubDate>Sun, 31 May 2026 00:24:42 GMT</pubDate>
+            <description><![CDATA[Playwright is a framework for Web Testing and Automation. It allows testing Chromium, Firefox and WebKit with a single API.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/microsoft/playwright">microsoft/playwright</a></h1>
+            <p>Playwright is a framework for Web Testing and Automation. It allows testing Chromium, Firefox and WebKit with a single API.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 89,891</p>
+            <p>Forks: 5,826</p>
+            <p>Stars today: 68 stars today</p>
+            <h2>README</h2><pre># 🎭 Playwright
+
+[![npm version](https://img.shields.io/npm/v/playwright.svg)](https://www.npmjs.com/package/playwright) &lt;!-- GEN:chromium-version-badge --&gt;[![Chromium version](https://img.shields.io/badge/chromium-149.0.7827.22-blue.svg?logo=google-chrome)](https://www.chromium.org/Home)&lt;!-- GEN:stop --&gt; &lt;!-- GEN:firefox-version-badge --&gt;[![Firefox version](https://img.shields.io/badge/firefox-151.0-blue.svg?logo=firefoxbrowser)](https://www.mozilla.org/en-US/firefox/new/)&lt;!-- GEN:stop --&gt; &lt;!-- GEN:webkit-version-badge --&gt;[![WebKit version](https://img.shields.io/badge/webkit-26.4-blue.svg?logo=safari)](https://webkit.org/)&lt;!-- GEN:stop --&gt; [![Join Discord](https://img.shields.io/badge/join-discord-informational)](https://aka.ms/playwright/discord)
+
+## [Documentation](https://playwright.dev) | [API reference](https://playwright.dev/docs/api/class-playwright)
+
+Playwright is a framework for web automation and testing. It drives Chromium, Firefox, and WebKit with a single API — in your tests, in your scripts, and as a tool for AI agents.
+
+## Get Started
+
+Choose the path that fits your workflow:
+
+| | Best for | Install |
+|---|---|---|
+| **[Playwright Test](#playwright-test)** | End-to-end testing | `npm init playwright@latest` |
+| **[Playwright CLI](#playwright-cli)** | Coding agents (Claude Code, Copilot) | `npm i -g @playwright/cli@latest` |
+| **[Playwright MCP](#playwright-mcp)** | AI agents and LLM-driven automation | `npx @playwright/mcp@latest` |
+| **[Playwright Library](#playwright-library)** | Browser automation scripts | `npm i playwright` |
+| **[VS Code Extension](#vs-code-extension)** | Test authoring and debugging in VS Code | [Install from Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright) |
+
+---
+
+## Playwright Test
+
+Playwright Test is a full-featured test runner built for end-to-end testing. It runs tests across Chromium, Firefox, and WebKit with full browser isolation, auto-waiting, and web-first assertions.
+
+### Install
+
+```bash
+npm init playwright@latest
+```
+
+Or add manually:
+
+```bash
+npm i -D @playwright/test
+npx playwright install
+```
+
+### Write a test
+
+```TypeScript
+import { test, expect } from &#039;@playwright/test&#039;;
+
+test(&#039;has title&#039;, async ({ page }) =&gt; {
+  await page.goto(&#039;https://playwright.dev/&#039;);
+  await expect(page).toHaveTitle(/Playwright/);
+});
+
+test(&#039;get started link&#039;, async ({ page }) =&gt; {
+  await page.goto(&#039;https://playwright.dev/&#039;);
+  await page.getByRole(&#039;link&#039;, { name: &#039;Get started&#039; }).click();
+  await expect(page.getByRole(&#039;heading&#039;, { name: &#039;Installation&#039; })).toBeVisible();
+});
+```
+
+### Run tests
+
+```bash
+npx playwright test
+```
+
+Tests run in parallel across all configured browsers, in headless mode by default. Each test gets a fresh browser context — full isolation with near-zero overhead.
+
+### Key capabilities
+
+**Auto-wait and web-first assertions.** No artificial timeouts. Playwright waits for elements to be actionable, and assertions automatically retry until conditions are met.
+
+**Locators.** Find elements with resilient locators that mirror how users see the page:
+
+```TypeScript
+page.getByRole(&#039;button&#039;, { name: &#039;Submit&#039; })
+page.getByLabel(&#039;Email&#039;)
+page.getByPlaceholder(&#039;Search...&#039;)
+page.getByTestId(&#039;login-form&#039;)
+```
+
+**Test isolation.** Each test runs in its own browser context — equivalent to a fresh browser profile. Save authentication state once and reuse it across tests:
+
+```TypeScript
+// Save state after login
+await page.context().storageState({ path: &#039;auth.json&#039; });
+
+// Reuse in other tests
+test.use({ storageState: &#039;auth.json&#039; });
+```
+
+**Tracing.** Capture execution traces, screenshots, and videos on failure. Inspect every action, DOM snapshot, network request, and console message in the [Trace Viewer](https://playwright.dev/docs/trace-viewer):
+
+```TypeScript
+// playwright.config.ts
+export default defineConfig({
+  use: {
+    trace: &#039;on-first-retry&#039;,
+  },
+});
+```
+
+```bash
+npx playwright show-trace trace.zip
+```
+
+&lt;!-- TODO: screenshot of trace viewer --&gt;
+
+**Parallelism.** Tests run in parallel by default across all configured browsers.
+
+[Full testing documentation](https://playwright.dev/docs/intro)
+
+---
+
+## Playwright CLI
+
+[Playwright CLI](https://github.com/microsoft/playwright-cli) is a command-line interface for browser automation designed for coding agents. It&#039;s more token-efficient than MCP — commands avoid loading large tool schemas and accessibility trees into the model context.
+
+### Install
+
+```bash
+npm install -g @playwright/cli@latest
+```
+
+Optionally install skills for richer agent integration:
+
+```bash
+playwright-cli install --skills
+```
+
+### Usage
+
+Point your coding agent at a task:
+
+```
+Test the &quot;add todo&quot; flow on https://demo.playwright.dev/todomvc using playwright-cli.
+Take screenshots for all successful and failing scenarios.
+```
+
+Or run commands directly:
+
+```bash
+playwright-cli open https://demo.playwright.dev/todomvc/ --headed
+playwright-cli type &quot;Buy groceries&quot;
+playwright-cli press Enter
+playwright-cli screenshot
+```
+
+### Session monitoring
+
+Use `playwright-cli show` to open a visual dashboard with live screencast previews of all running browser sessions. Click any session to zoom in and take remote control.
+
+```bash
+playwright-cli show
+```
+
+&lt;!-- TODO: screenshot of playwright-cli show dashboard --&gt;
+
+[Full CLI documentation](https://playwright.dev/agent-cli/introduction) | [GitHub](https://github.com/microsoft/playwright-cli)
+
+---
+
+## Playwright MCP
+
+The [Playwright MCP server](https://github.com/microsoft/playwright-mcp) gives AI agents full browser control through the [Model Context Protocol](https://modelcontextprotocol.io). Agents interact with pages using structured accessibility snapshots — no vision models or screenshots required.
+
+### Setup
+
+Add to your MCP client (VS Code, Cursor, Claude Desktop, Windsurf, etc.):
+
+```json
+{
+  &quot;mcpServers&quot;: {
+    &quot;playwright&quot;: {
+      &quot;command&quot;: &quot;npx&quot;,
+      &quot;args&quot;: [&quot;@playwright/mcp@latest&quot;]
+    }
+  }
+}
+```
+
+**One-click install for VS Code:**
+
+[&lt;img src=&quot;https://img.shields.io/badge/VS_Code-VS_Code?style=flat-square&amp;label=Install%20MCP%20Server&amp;color=0098FF&quot; alt=&quot;Install in VS Code&quot; /&gt;](https://insiders.vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%257B%2522name%2522%253A%2522playwright%2522%252C%2522command%2522%253A%2522npx%2522%252C%2522args%2522%253A%255B%2522%2540playwright%252Fmcp%2540latest%2522%255D%257D)
+
+**For Claude Code:**
+
+```bash
+claude mcp add playwright npx @playwright/mcp@latest
+```
+
+### How it works
+
+Ask your AI assistant to interact with any web page:
+
+```
+Navigate to https://demo.playwright.dev/todomvc and add a few todo items.
+```
+
+The agent sees the page as a structured accessibility tree:
+
+```
+- heading &quot;todos&quot; [level=1]
+- textbox &quot;What needs to be done?&quot; [ref=e5]
+- listitem:
+  - checkbox &quot;Toggle Todo&quot; [ref=e10]
+  - text: &quot;Buy groceries&quot;
+```
+
+It uses element refs like `e5` and `e10` to click, type, and interact — deterministically and without visual ambiguity. Tools cover navigation, form filling, screenshots, network mocking, storage management, and more.
+
+[Full MCP documentation](https://playwright.dev/mcp/introduction) | [GitHub](https://github.com/microsoft/playwright-mcp)
+
+---
+
+## Playwright Library
+
+Use `playwright` as a library for browser automation scripts — web scraping, PDF generation, screenshot capture, and any workflow that needs programmatic browser control without a test runner.
+
+### Install
+
+```bash
+npm i playwright
+```
+
+### Examples
+
+**Take a screenshot:**
+
+```TypeScript
+import { chromium } from &#039;playwright&#039;;
+
+const browser = await chromium.launch();
+const page = await browser.newPage();
+await page.goto(&#039;https://playwright.dev/&#039;);
+await page.screenshot({ path: &#039;screenshot.png&#039; });
+await browser.close();
+```
+
+**Generate a PDF:**
+
+```TypeScript
+import { chromium } from &#039;playwright&#039;;
+
+const browser = await chromium.launch();
+const page = await browser.newPage();
+await page.goto(&#039;https://playwright.dev/&#039;);
+await page.pdf({ path: &#039;page.pdf&#039;, format: &#039;A4&#039; });
+await browser.close();
+```
+
+**Emulate a mobile device:**
+
+```TypeScript
+import { chromium, devices } from &#039;playwright&#039;;
+
+const browser = await chromium.launch();
+const context = await browser.newContext(devices[&#039;iPhone 15&#039;]);
+const page = await context.newPage();
+await page.goto(&#039;https://playwright.dev/&#039;);
+await page.screenshot({ path: &#039;mobile.png&#039; });
+await browser.close();
+```
+
+**Intercept network requests:**
+
+```TypeScript
+import { chromium } from &#039;playwright&#039;;
+
+const browser = await chromium.launch();
+const page = await browser.newPage();
+await page.route(&#039;**/*.{png,jpg,jpeg}&#039;, route =&gt; route.abort());
+await page.goto(&#039;https://playwright.dev/&#039;);
+await browser.close();
+```
+
+[Library documentation](https://playwright.dev/docs/library) | [API reference](https://playwright.dev/docs/api/class-playwright)
+
+---
+
+## VS Code Extension
+
+The [Playwright VS Code extension](https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright) brings test running, debugging, and code generation directly into your editor.
+
+&lt;!-- TODO: hero screenshot of VS Code with Playwright sidebar --&gt;
+
+**Run and debug tests** from the editor with a single click. Set breakpoints, inspect variables, and step through test execution with a live browser view.
+
+**Generate tests with CodeGen.** Click &quot;Record new&quot; to open a browser — navigate and interact with your app while Playwright writes the test code for you.
+
+**Pick locators.** Hover over any element in the browser to see the best available locator, then click to copy it to your clipboard.
+
+**Trace Viewer integration.** Enable &quot;Show Trace Viewer&quot; in the sidebar to get a full execution trace after each test run — DOM snapshots, network requests, console logs, and screenshots at every step.
+
+[Install the extension](https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright) | [VS Code guide](https://playwright.dev/docs/getting-started-vscode)
+
+---
+
+## Cross-Browser Support
+
+|          | Linux | macOS | Windows |
+|   :---   | :---: | :---: | :---:   |
+| Chromium&lt;sup&gt;1&lt;/sup&gt; &lt;!-- GEN:chromium-version --&gt;149.0.7827.22&lt;!-- GEN:stop --&gt; | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| WebKit &lt;!-- GEN:webkit-version --&gt;26.4&lt;!-- GEN:stop --&gt; | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Firefox &lt;!-- GEN:firefox-version --&gt;151.0&lt;!-- GEN:stop --&gt; | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+
+Headless and headed execution on all platforms. &lt;sup&gt;1&lt;/sup&gt; Uses [Chrome for Testing](https://developer.chrome.com/blog/chrome-for-testing) by default.
+
+## Other Languages
+
+Playwright is also available for [Python](https://playwright.dev/python/docs/intro), [.NET](https://playwright.dev/dotnet/docs/intro), and [Java](https://playwright.dev/java/docs/intro).
+
+## Resources
+
+* [Documentation](https://playwright.dev)
+* [API reference](https://playwright.dev/docs/api/class-playwright)
+* [MCP server](https://github.com/microsoft/playwright-mcp)
+* [CLI for coding agents](https://github.com/microsoft/playwright-cli)
+* [VS Code extension](https://github.com/microsoft/playwright-vscode)
+* [Contribution guide](CONTRIBUTING.md)
+* [Changelog](https://github.com/microsoft/playwright/releases)
+* [Discord](https://aka.ms/playwright/discord)
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
             <title><![CDATA[twentyhq/twenty]]></title>
             <link>https://github.com/twentyhq/twenty</link>
             <guid>https://github.com/twentyhq/twenty</guid>
-            <pubDate>Sat, 30 May 2026 00:24:55 GMT</pubDate>
+            <pubDate>Sun, 31 May 2026 00:24:41 GMT</pubDate>
             <description><![CDATA[The open alternative to Salesforce, designed for AI.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/twentyhq/twenty">twentyhq/twenty</a></h1>
             <p>The open alternative to Salesforce, designed for AI.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 48,402</p>
-            <p>Forks: 6,863</p>
-            <p>Stars today: 578 stars today</p>
+            <p>Stars: 48,708</p>
+            <p>Forks: 6,911</p>
+            <p>Stars today: 487 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
   &lt;a href=&quot;https://www.twenty.com&quot;&gt;
     &lt;img src=&quot;./packages/twenty-website/public/images/core/logo.svg&quot; width=&quot;100px&quot; alt=&quot;Twenty logo&quot; /&gt;
@@ -626,1866 +1198,823 @@ Want to go deeper? Read the &lt;a href=&quot;https://docs.twenty.com/user-guide/
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[cursor/plugins]]></title>
-            <link>https://github.com/cursor/plugins</link>
-            <guid>https://github.com/cursor/plugins</guid>
-            <pubDate>Sat, 30 May 2026 00:24:54 GMT</pubDate>
-            <description><![CDATA[Cursor plugin specification and official plugins]]></description>
+            <title><![CDATA[anomalyco/opencode]]></title>
+            <link>https://github.com/anomalyco/opencode</link>
+            <guid>https://github.com/anomalyco/opencode</guid>
+            <pubDate>Sun, 31 May 2026 00:24:40 GMT</pubDate>
+            <description><![CDATA[The open source coding agent.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/cursor/plugins">cursor/plugins</a></h1>
-            <p>Cursor plugin specification and official plugins</p>
+            <h1><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></h1>
+            <p>The open source coding agent.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 1,295</p>
-            <p>Forks: 111</p>
-            <p>Stars today: 134 stars today</p>
-            <h2>README</h2><pre># Cursor plugins
-
-Official Cursor plugins for popular developer tools, frameworks, and SaaS products. Each plugin is a standalone directory at the repository root with its own `.cursor-plugin/plugin.json` manifest.
-
-## Plugins
-
-| `name` | Plugin | Author | Category | `description` (from marketplace) |
-|:-------|:-------|:-------|:---------|:-------------------------------------|
-| `continual-learning` | [Continual Learning](continual-learning/) | Cursor | Developer Tools | Incremental transcript-driven memory updates for AGENTS.md using high-signal bullet points only. |
-| `cursor-team-kit` | [Cursor Team Kit](cursor-team-kit/) | Cursor | Developer Tools | Internal team workflows used by Cursor developers for CI, code review, shipping, local automation, and verification. |
-| `thermos` | [Thermos](thermos/) | Cursor | Developer Tools | Thermo-nuclear branch review: deep security/correctness audits, harsh code-quality rubrics, parallel subagents, thermos orchestration, and optional merge-ready PR flows. |
-| `create-plugin` | [Create Plugin](create-plugin/) | Cursor | Developer Tools | Scaffold and validate new Cursor plugins. |
-| `agent-compatibility` | [Agent Compatibility](agent-compatibility/) | Cursor | Developer Tools | CLI-backed repo compatibility scans plus Cursor agents that audit startup, validation, and docs against reality. |
-| `cli-for-agent` | [CLI for Agents](cli-for-agent/) | Cursor | Developer Tools | Patterns for designing CLIs that coding agents can run reliably: flags, help with examples, pipelines, errors, idempotency, dry-run. |
-| `pr-review-canvas` | [PR Review Canvas](pr-review-canvas/) | Cursor | Developer Tools | Render PR diffs as interactive Cursor Canvases organized for reviewer comprehension — groups changes by importance, separates boilerplate from core logic, and highlights tricky or unexpected code. |
-| `docs-canvas` | [Docs Canvas](docs-canvas/) | Cursor | Developer Tools | Render documentation — architecture notes, API references, runbooks, and codebase walkthroughs — as a navigable Cursor Canvas with sections, table of contents, diagrams, and cross-references. |
-| `cursor-sdk` | [Cursor SDK](cursor-sdk/) | Cursor | Developer Tools | Build apps, scripts, CI pipelines, and automations on top of the Cursor TypeScript SDK (@cursor/sdk) — runtime selection, auth, streaming, MCP, error handling, and ready-to-extend integration patterns. |
-| `orchestrate` | [Orchestrate](orchestrate/) | Cursor | Developer Tools | Fan large tasks out across parallel Cursor cloud agents with planners, workers, verifiers, and structured handoffs. |
-| `pstack` | [pstack](pstack/) | Lauren Tan | Developer Tools | if you want to go fast, go deep first. pstack helps you write less, but higher quality code. rigorous agent workflows you can parallelize with confidence. |
-
-Author values match each plugin’s `plugin.json` `author.name` (Cursor lists `plugins@cursor.com` in the manifest).
-
-## Repository structure
-
-This is a multi-plugin marketplace repository. The root `.cursor-plugin/marketplace.json` lists all plugins, and each plugin has its own manifest:
-
-```
-plugins/
-├── .cursor-plugin/
-│   └── marketplace.json       # Marketplace manifest (lists all plugins)
-├── plugin-name/
-│   ├── .cursor-plugin/
-│   │   └── plugin.json        # Per-plugin manifest
-│   ├── skills/                # Agent skills (SKILL.md with frontmatter)
-│   ├── rules/                 # Cursor rules (.mdc files)
-│   ├── mcp.json               # MCP server definitions
-│   ├── README.md
-│   ├── CHANGELOG.md
-│   └── LICENSE
-└── ...
-```
-
-## License
-
-MIT
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[Crosstalk-Solutions/project-nomad]]></title>
-            <link>https://github.com/Crosstalk-Solutions/project-nomad</link>
-            <guid>https://github.com/Crosstalk-Solutions/project-nomad</guid>
-            <pubDate>Sat, 30 May 2026 00:24:53 GMT</pubDate>
-            <description><![CDATA[Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/Crosstalk-Solutions/project-nomad">Crosstalk-Solutions/project-nomad</a></h1>
-            <p>Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 26,954</p>
-            <p>Forks: 2,656</p>
-            <p>Stars today: 318 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-&lt;img src=&quot;admin/public/project_nomad_logo.webp&quot; width=&quot;200&quot; height=&quot;200&quot;/&gt;
-
-# Project N.O.M.A.D.
-### Node for Offline Media, Archives, and Data
-
-**Knowledge That Never Goes Offline**
-
-[![Website](https://img.shields.io/badge/Website-projectnomad.us-blue)](https://www.projectnomad.us)
-[![Discord](https://img.shields.io/badge/Discord-Join%20Community-5865F2)](https://discord.com/invite/crosstalksolutions)
-[![Benchmark](https://img.shields.io/badge/Benchmark-Leaderboard-green)](https://benchmark.projectnomad.us)
-
-&lt;/div&gt;
-
----
-
-Project N.O.M.A.D. is a self-contained, offline-first knowledge and education server packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.
-
-## Installation &amp; Quickstart
-Project N.O.M.A.D. can be installed on any Debian-based operating system (we recommend Ubuntu). Installation is completely terminal-based, and all tools and resources are designed to be accessed through the browser, so there&#039;s no need for a desktop environment if you&#039;d rather setup N.O.M.A.D. as a &quot;server&quot; and access it through other clients.
-
-*Note: sudo/root privileges are required to run the install script*
-
-### Quick Install (Debian-based OS Only)
-```bash
-sudo apt-get update &amp;&amp; \
-sudo apt-get install -y curl &amp;&amp; \
-curl -fsSL https://raw.githubusercontent.com/Crosstalk-Solutions/project-nomad/refs/heads/main/install/install_nomad.sh \
-  -o install_nomad.sh &amp;&amp; \
-sudo bash install_nomad.sh
-```
-
-Project N.O.M.A.D. is now installed on your device! Open a browser and navigate to `http://localhost:8080` (or `http://DEVICE_IP:8080`) to start exploring!
-
-For a complete step-by-step walkthrough (including Ubuntu installation), see the [Installation Guide](https://www.projectnomad.us/install). For Windows users, see the [WSL2 install guide](https://www.projectnomad.us/install/wsl2) — community-supported path covering native Docker and Docker Desktop install routes.
-
-### Advanced Installation
-For more control over the installation process, copy and paste the [Docker Compose template](https://raw.githubusercontent.com/Crosstalk-Solutions/project-nomad/refs/heads/main/install/management_compose.yaml) into a `docker-compose.yml` file and customize it to your liking (be sure to replace any placeholders with your actual values). Then, run `docker compose up -d` to start the Command Center and its dependencies. Note: this method is recommended for advanced users only, as it requires familiarity with Docker and manual configuration before starting.
-
-## How It Works
-N.O.M.A.D. is a management UI (&quot;Command Center&quot;) and API that orchestrates a collection of containerized tools and resources via [Docker](https://www.docker.com/). It handles installation, configuration, and updates for everything — so you don&#039;t have to.
-
-**Built-in capabilities include:**
-- **AI Chat with Knowledge Base** — local AI chat powered by [Ollama](https://ollama.com/) or you can use OpenAI API compatible software such as LM Studio or llama.cpp, with document upload and semantic search (RAG via [Qdrant](https://qdrant.tech/))
-- **Information Library** — offline Wikipedia, medical references, ebooks, and more via [Kiwix](https://kiwix.org/)
-- **Education Platform** — Khan Academy courses with progress tracking via [Kolibri](https://learningequality.org/kolibri/)
-- **Offline Maps** — downloadable regional maps via [ProtoMaps](https://protomaps.com)
-- **Data Tools** — encryption, encoding, and analysis via [CyberChef](https://gchq.github.io/CyberChef/)
-- **Notes** — local note-taking via [FlatNotes](https://github.com/dullage/flatnotes)
-- **System Benchmark** — hardware scoring with a [community leaderboard](https://benchmark.projectnomad.us)
-- **Easy Setup Wizard** — guided first-time configuration with curated content collections
-
-N.O.M.A.D. also includes built-in tools like a Wikipedia content selector, ZIM library manager, and content explorer.
-
-## What&#039;s Included
-
-| Capability | Powered By | What You Get |
-|-----------|-----------|-------------|
-| Information Library | Kiwix | Offline Wikipedia, medical references, survival guides, ebooks |
-| AI Assistant | Ollama + Qdrant | Built-in chat with document upload and semantic search |
-| Education Platform | Kolibri | Khan Academy courses, progress tracking, multi-user support |
-| Offline Maps | ProtoMaps | Downloadable regional maps with search and navigation |
-| Data Tools | CyberChef | Encryption, encoding, hashing, and data analysis |
-| Notes | FlatNotes | Local note-taking with markdown support |
-| System Benchmark | Built-in | Hardware scoring, Builder Tags, and community leaderboard |
-
-## Device Requirements
-While many similar offline survival computers are designed to be run on bare-minimum, lightweight hardware, Project N.O.M.A.D. is quite the opposite. To install and run the
-available AI tools, we highly encourage the use of a beefy, GPU-backed device to make the most of your install.
-
-At it&#039;s core, however, N.O.M.A.D. is still very lightweight. For a barebones installation of the management application itself, the following minimal specs are required:
-
-*Note: Project N.O.M.A.D. is not sponsored by any hardware manufacturer and is designed to be as hardware-agnostic as possible. The harware listed below is for example/comparison use only*
-
-#### Minimum Specs
-- Processor: 2 GHz dual-core processor or better
-- RAM: 4GB system memory
-- Storage: At least 5 GB free disk space
-- OS: Debian-based (Ubuntu recommended)
-- Stable internet connection (required during install only)
-
-To run LLM&#039;s and other included AI tools:
-
-#### Optimal Specs
-- Processor: AMD Ryzen 7 or Intel Core i7 or better
-- RAM: 32 GB system memory
-- Graphics: NVIDIA RTX 3060 or AMD equivalent or better (more VRAM = run larger models)
-- Storage: At least 250 GB free disk space (preferably on SSD)
-- OS: Debian-based (Ubuntu recommended)
-- Stable internet connection (required during install only)
-
-**For detailed build recommendations at three price points ($150–$1,000+), see the [Hardware Guide](https://www.projectnomad.us/hardware).**
-
-Again, Project N.O.M.A.D. itself is quite lightweight - it&#039;s the tools and resources you choose to install with N.O.M.A.D. that will determine the specs required for your unique deployment
-
-#### Running AI models on a different host
-By default, N.O.M.A.D.&#039;s installer will attempt to setup Ollama on the host when the AI Assistant is installed. However, if you would like to run the AI model on a different host, you can go to the settings of of the AI assistant and input a URL for either an ollama or OpenAI-compatible API server (such as LM Studio).  
-Note that if you use Ollama on a different host, you must start the server with this option `OLLAMA_HOST=0.0.0.0`.  
-Ollama is the preferred way to use the AI assistant as it has features such as model download that OpenAI API does not support. So when using LM Studio for example, you will have to use LM Studio to download models.
-You are responsible for the setup of Ollama/OpenAI server on the other host.
-
-## Frequently Asked Questions (FAQ)
-For answers to common questions about Project N.O.M.A.D., please see our [FAQ](FAQ.md) page.
-
-## About Internet Usage &amp; Privacy
-Project N.O.M.A.D. is designed for offline usage. An internet connection is only required during the initial installation (to download dependencies) and if you (the user) decide to download additional tools and resources at a later time. Otherwise, N.O.M.A.D. does not require an internet connection and has ZERO built-in telemetry.
-
-To test internet connectivity, N.O.M.A.D. attempts to make a request to Cloudflare&#039;s utility endpoint, `https://1.1.1.1/cdn-cgi/trace` and checks for a successful response.
-
-## About Security
-By design, Project N.O.M.A.D. is intended to be open and available without hurdles - it includes no authentication. If you decide to connect your device to a local network after install (e.g. for allowing other devices to access it&#039;s resources), you can block/open ports to control which services are exposed.
-
-**Will authentication be added in the future?** Maybe. It&#039;s not currently a priority, but if there&#039;s enough demand for it, we may consider building in an optional authentication layer in a future release to support uses cases where multiple users need access to the same instance but with different permission levels (e.g. family use with parental controls, classroom use with teacher/admin accounts, etc.). We have a suggestion for this on our public roadmap, so if this is something you&#039;d like to see, please upvote it here: https://roadmap.projectnomad.us/posts/1/user-authentication-please-build-in-user-auth-with-admin-user-roles
-
-For now, we recommend using network-level controls to manage access if you&#039;re planning to expose your N.O.M.A.D. instance to other devices on a local network. N.O.M.A.D. is not designed to be exposed directly to the internet, and we strongly advise against doing so unless you really know what you&#039;re doing, have taken appropriate security measures, and understand the risks involved.
-
-## Contributing
-Contributions are welcome and appreciated! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to the project.
-
-## Community &amp; Resources
-
-- **Website:** [www.projectnomad.us](https://www.projectnomad.us) - Learn more about the project
-- **Discord:** [Join the Community](https://discord.com/invite/crosstalksolutions) - Get help, share your builds, and connect with other NOMAD users
-- **Benchmark Leaderboard:** [benchmark.projectnomad.us](https://benchmark.projectnomad.us) - See how your hardware stacks up against other NOMAD builds
-- **Troubleshooting Guide:** [TROUBLESHOOTING.md](TROUBLESHOOTING.md) - Find solutions to common issues
-- **FAQ:** [FAQ.md](FAQ.md) - Find answers to frequently asked questions
-- **Community Add-Ons:** [admin/docs/community-add-ons.md](admin/docs/community-add-ons.md) - Third-party content packs built by the community
-
-## License
-
-Project N.O.M.A.D. is licensed under the [Apache License 2.0](LICENSE).
-
-## Helper Scripts
-Once installed, Project N.O.M.A.D. has a few helper scripts should you ever need to troubleshoot issues or perform maintenance that can&#039;t be done through the Command Center. All of these scripts are found in Project N.O.M.A.D.&#039;s install directory, `/opt/project-nomad`
-
-###
-
-###### Start Script - Starts all installed project containers
-```bash
-sudo bash /opt/project-nomad/start_nomad.sh
-```
-###
-
-###### Stop Script - Stops all installed project containers
-```bash
-sudo bash /opt/project-nomad/stop_nomad.sh
-```
-###
-
-###### Update Script - Attempts to pull the latest images for the Command Center and its dependencies (i.e. mysql) and recreate the containers. Note: this *only* updates the Command Center containers. It does not update the installable application containers - that should be done through the Command Center UI
-```bash
-sudo bash /opt/project-nomad/update_nomad.sh
-```
-
-###### Uninstall Script - Need to start fresh? Use the uninstall script to make your life easy. Note: this cannot be undone!
-```bash
-curl -fsSL https://raw.githubusercontent.com/Crosstalk-Solutions/project-nomad/refs/heads/main/install/uninstall_nomad.sh -o uninstall_nomad.sh &amp;&amp; sudo bash uninstall_nomad.sh
-```
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[microsoft/vscode]]></title>
-            <link>https://github.com/microsoft/vscode</link>
-            <guid>https://github.com/microsoft/vscode</guid>
-            <pubDate>Sat, 30 May 2026 00:24:52 GMT</pubDate>
-            <description><![CDATA[Visual Studio Code]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/microsoft/vscode">microsoft/vscode</a></h1>
-            <p>Visual Studio Code</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 185,527</p>
-            <p>Forks: 40,234</p>
-            <p>Stars today: 58 stars today</p>
-            <h2>README</h2><pre># Visual Studio Code - Open Source (&quot;Code - OSS&quot;)
-[![Feature Requests](https://img.shields.io/github/issues/microsoft/vscode/feature-request.svg)](https://github.com/microsoft/vscode/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areactions-%2B1-desc)
-[![Bugs](https://img.shields.io/github/issues/microsoft/vscode/bug.svg)](https://github.com/microsoft/vscode/issues?utf8=✓&amp;q=is%3Aissue+is%3Aopen+label%3Abug)
-[![Gitter](https://img.shields.io/badge/chat-on%20gitter-yellow.svg)](https://gitter.im/Microsoft/vscode)
-
-## The Repository
-
-This repository (&quot;`Code - OSS`&quot;) is where we (Microsoft) develop the [Visual Studio Code](https://code.visualstudio.com) product together with the community. Not only do we work on code and issues here, but we also publish our [roadmap](https://github.com/microsoft/vscode/wiki/Roadmap), [monthly iteration plans](https://github.com/microsoft/vscode/wiki/Iteration-Plans), and our [endgame plans](https://github.com/microsoft/vscode/wiki/Running-the-Endgame). This source code is available to everyone under the standard [MIT license](https://github.com/microsoft/vscode/blob/main/LICENSE.txt).
-
-## Visual Studio Code
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img alt=&quot;VS Code in action&quot; src=&quot;https://github.com/user-attachments/assets/56af271c-949d-454c-a3ea-16188c063414&quot;&gt;
-&lt;/p&gt;
-
-[Visual Studio Code](https://code.visualstudio.com) is a distribution of the `Code - OSS` repository with Microsoft-specific customizations released under a traditional [Microsoft product license](https://code.visualstudio.com/License/).
-
-[Visual Studio Code](https://code.visualstudio.com) combines the simplicity of a code editor with what developers need for their core edit-build-debug cycle. It provides comprehensive code editing, navigation, and understanding support along with lightweight debugging, a rich extensibility model, and lightweight integration with existing tools.
-
-Visual Studio Code is updated monthly with new features and bug fixes. You can download it for Windows, macOS, and Linux on [Visual Studio Code&#039;s website](https://code.visualstudio.com/Download). To get the latest releases every day, install the [Insiders build](https://code.visualstudio.com/insiders).
-
-## Contributing
-
-There are many ways in which you can participate in this project, for example:
-
-* [Submit bugs and feature requests](https://github.com/microsoft/vscode/issues), and help us verify as they are checked in
-* Review [source code changes](https://github.com/microsoft/vscode/pulls)
-* Review the [documentation](https://github.com/microsoft/vscode-docs) and make pull requests for anything from typos to new content.
-
-If you are interested in fixing issues and contributing directly to the code base,
-please see the document [How to Contribute](https://github.com/microsoft/vscode/wiki/How-to-Contribute), which covers the following:
-
-* [How to build and run from source](https://github.com/microsoft/vscode/wiki/How-to-Contribute)
-* [The development workflow, including debugging and running tests](https://github.com/microsoft/vscode/wiki/How-to-Contribute#debugging)
-* [Coding guidelines](https://github.com/microsoft/vscode/wiki/Coding-Guidelines)
-* [Submitting pull requests](https://github.com/microsoft/vscode/wiki/How-to-Contribute#pull-requests)
-* [Finding an issue to work on](https://github.com/microsoft/vscode/wiki/How-to-Contribute#where-to-contribute)
-* [Contributing to translations](https://aka.ms/vscodeloc)
-
-## Feedback
-
-* Ask a question on [Stack Overflow](https://stackoverflow.com/questions/tagged/vscode)
-* [Request a new feature](CONTRIBUTING.md)
-* Upvote [popular feature requests](https://github.com/microsoft/vscode/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areactions-%2B1-desc)
-* [File an issue](https://github.com/microsoft/vscode/issues)
-* Connect with the extension author community on [GitHub Discussions](https://github.com/microsoft/vscode-discussions/discussions) or [Slack](https://aka.ms/vscode-dev-community)
-* Follow [@code](https://x.com/code) and let us know what you think!
-
-See our [wiki](https://github.com/microsoft/vscode/wiki/Feedback-Channels) for a description of each of these channels and information on some other available community-driven channels.
-
-## Related Projects
-
-Many of the core components and extensions to VS Code live in their own repositories on GitHub. For example, the [node debug adapter](https://github.com/microsoft/vscode-node-debug) and the [mono debug adapter](https://github.com/microsoft/vscode-mono-debug) repositories are separate from each other. For a complete list, please visit the [Related Projects](https://github.com/microsoft/vscode/wiki/Related-Projects) page on our [wiki](https://github.com/microsoft/vscode/wiki).
-
-## Bundled Extensions
-
-VS Code includes a set of built-in extensions located in the [extensions](extensions) folder, including grammars and snippets for many languages. Extensions that provide rich language support (inline suggestions, Go to Definition) for a language have the suffix `language-features`. For example, the `json` extension provides coloring for `JSON` and the `json-language-features` extension provides rich language support for `JSON`.
-
-## Development Container
-
-This repository includes a Visual Studio Code Dev Containers / GitHub Codespaces development container.
-
-* For [Dev Containers](https://aka.ms/vscode-remote/download/containers), use the **Dev Containers: Clone Repository in Container Volume...** command which creates a Docker volume for better disk I/O on macOS and Windows.
-  * If you already have VS Code and Docker installed, you can also click [here](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/vscode) to get started. This will cause VS Code to automatically install the Dev Containers extension if needed, clone the source code into a container volume, and spin up a dev container for use.
-
-* For Codespaces, install the [GitHub Codespaces](https://marketplace.visualstudio.com/items?itemName=GitHub.codespaces) extension in VS Code, and use the **Codespaces: Create New Codespace** command.
-
-Docker / the Codespace should have at least **4 cores and 6 GB of RAM (8 GB recommended)** to run a full build. See the [development container README](.devcontainer/README.md) for more information.
-
-## Code of Conduct
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-## License
-
-Copyright (c) Microsoft Corporation. All rights reserved.
-
-Licensed under the [MIT](LICENSE.txt) license.
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[pingdotgg/t3code]]></title>
-            <link>https://github.com/pingdotgg/t3code</link>
-            <guid>https://github.com/pingdotgg/t3code</guid>
-            <pubDate>Sat, 30 May 2026 00:24:51 GMT</pubDate>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a></h1>
-            <p></p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 12,175</p>
-            <p>Forks: 2,390</p>
-            <p>Stars today: 44 stars today</p>
-            <h2>README</h2><pre># T3 Code
-
-T3 Code is a minimal web GUI for coding agents (currently Codex, Claude, and OpenCode, more coming soon).
-
-## Installation
-
-&gt; [!WARNING]
-&gt; T3 Code currently supports Codex, Claude, and OpenCode.
-&gt; Install and authenticate at least one provider before use:
-&gt;
-&gt; - Codex: install [Codex CLI](https://developers.openai.com/codex/cli) and run `codex login`
-&gt; - Claude: install [Claude Code](https://claude.com/product/claude-code) and run `claude auth login`
-&gt; - OpenCode: install [OpenCode](https://opencode.ai) and run `opencode auth login`
-
-### Run without installing
-
-```bash
-npx t3
-```
-
-### Desktop app
-
-Install the latest version of the desktop app from [GitHub Releases](https://github.com/pingdotgg/t3code/releases), or from your favorite package registry:
-
-#### Windows (`winget`)
-
-```bash
-winget install T3Tools.T3Code
-```
-
-#### macOS (Homebrew)
-
-```bash
-brew install --cask t3-code
-```
-
-#### Arch Linux (AUR)
-
-```bash
-yay -S t3code-bin
-```
-
-## Some notes
-
-We are very very early in this project. Expect bugs.
-
-We are not accepting contributions yet.
-
-Observability guide: [docs/observability.md](./docs/observability.md)
-
-## If you REALLY want to contribute still.... read this first
-
-Before local development, prepare the environment and install dependencies:
-
-```bash
-# Optional: only needed if you use mise for dev tool management.
-mise install
-bun install .
-```
-
-Read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening an issue or PR.
-
-Need support? Join the [Discord](https://discord.gg/jn4EGJjrvv).
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[bia-pain-bache/BPB-Worker-Panel]]></title>
-            <link>https://github.com/bia-pain-bache/BPB-Worker-Panel</link>
-            <guid>https://github.com/bia-pain-bache/BPB-Worker-Panel</guid>
-            <pubDate>Sat, 30 May 2026 00:24:50 GMT</pubDate>
-            <description><![CDATA[A GUI Panel providing Worker subscriptions for VLESS, Trojan and Warp configs alongside a private DoH server and chain proxies, offering full DNS, clean IP, Fragment, Warp, Warp pro and routing settings for cross-platform clients using Amnezia, Wireguard, Sing-box, Clash/Mihomo and Xray cores.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/bia-pain-bache/BPB-Worker-Panel">bia-pain-bache/BPB-Worker-Panel</a></h1>
-            <p>A GUI Panel providing Worker subscriptions for VLESS, Trojan and Warp configs alongside a private DoH server and chain proxies, offering full DNS, clean IP, Fragment, Warp, Warp pro and routing settings for cross-platform clients using Amnezia, Wireguard, Sing-box, Clash/Mihomo and Xray cores.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 10,635</p>
-            <p>Forks: 31,421</p>
-            <p>Stars today: 44 stars today</p>
-            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;BPB Panel&lt;/h1&gt;
-
-### 🌏 Readme in [Farsi](README_fa.md)
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;docs/assets/images/panel-overview.jpg&quot;&gt;
-&lt;/p&gt;
-&lt;br&gt;
-
-## Introduction
-
-This project is aimed to provide a user panel to access FREE, SECURE and PRIVATE **VLESS**, **Trojan** and **Warp** configs and also a **private DoH** server. It ensures connectivity even when domains or Warp services are blocked by ISPs, offering two deployment options:
-
-- **Workers** deployment
-- **Pages** deployment
-
-🌟 If you found **BPB Panel** valuable, Your donations make all the difference 🌟
-
-### USDT (BEP20)
-
-```text
-0xbdf15d41C56f861f25b2b11C835bd45dfD5b792F
-```
-
-## Features
-
-1. **Free and Private**: No costs involved and the server is private.
-2. **Intuitive Panel:** Streamlined for effortless navigation, configuration and use.
-3. **Versatile Protocols:** Provides VLESS, Trojan and Wireguard (Warp) protocols.
-4. **Private DoH:** A ready to use DoH server, capable of customizing underlying DNS server.
-5. **Warp Pro configs:** Optimized Warp for crucial circumstances.
-6. **Fragment support:** Supports Fragment functionality for crucial network situations.
-7. **Comprehensive Routing Rules:** Bypassing Iran/China/Russia, Blocking QUIC, Porn, Ads, Malwares, Phishing and also bypassing sanctions.
-8. **Chain Proxy:** Capable of adding a chain proxy (VLESS, Trojan, Shadowsocks, socks and http) to fix IP.
-9. **Broad client compatibility:** Offers subscription links for Xray, Sing-box and Clash-Mihomo core clients.
-10. **Password-protected panel:** Provides secure and private panel with password protection.
-11. **Fully customizable:** Supports setting up clean IP-domains, Proxy IPs, DNS servers, choosing ports and protocols, Warp endpoints and more.
-
-## Limitations
-
-1. **UDP transport**: VLESS and Trojan protocols on workers do not handle **UDP** properly, so it is disabled by default (affecting features like Telegram video calls), UDP DNS is also unsupported. DoH is enabled by default for enhanced security.
-2. **Request limit**: each worker supports 100K requests per day for VLESS and Trojan, suitable for 2-3 users. You can use limitless Warp configs.
-
-## Getting started
-
-- [Installation methods](https://bia-pain-bache.github.io/BPB-Worker-Panel/installation/wizard/)
-- [Configuration](https://bia-pain-bache.github.io/BPB-Worker-Panel/configuration/)
-- [How to use](https://bia-pain-bache.github.io/BPB-Worker-Panel/usage/)
-- [FAQ](https://bia-pain-bache.github.io/BPB-Worker-Panel/faq/)
-
-## Supported Clients
-
-|       Client        |      Version      |  Fragment support  |  Warp Pro support  |
-| :-----------------: | :---------------: | :----------------: | :----------------: |
-|     **v2rayNG**     | 1.10.26 or higher | :heavy_check_mark: | :heavy_check_mark: |
-|     **MahsaNG**     |   14 or higher    | :heavy_check_mark: | :heavy_check_mark: |
-|     **v2rayN**      | 7.15.4 or higher  | :heavy_check_mark: | :heavy_check_mark: |
-|   **v2rayN-PRO**    |   1.9 or higher   | :heavy_check_mark: | :heavy_check_mark: |
-|    **Sing-box**     | 1.12.0 or higher  | :heavy_check_mark: |        :x:         |
-|    **Streisand**    | 1.6.64 or higher  | :heavy_check_mark: | :heavy_check_mark: |
-|   **Clash Meta**    |                   |        :x:         | :heavy_check_mark: |
-| **Clash Verge Rev** |                   |        :x:         | :heavy_check_mark: |
-|     **FLClash**     |                   |        :x:         | :heavy_check_mark: |
-|   **AmneziaVPN**    |                   |        :x:         | :heavy_check_mark: |
-|    **WG Tunnel**    |                   |        :x:         | :heavy_check_mark: |
-
-## Environment variables
-
-|   Variable   |               Usage                |     Mandatory      |
-| :----------: | :--------------------------------: | :----------------: |
-|   **UUID**   |             VLESS UUID             | :heavy_check_mark: |
-| **TR_PASS**  |          Trojan Password           | :heavy_check_mark: |
-| **PROXY_IP** | Proxy IP or domain (VLESS, Trojan) |        :x:         |
-|  **PREFIX**  |   NAT64 Prefixes (VLESS, Trojan)   |        :x:         |
-| **SUB_PATH** |         Subscriptions&#039; URI         |        :x:         |
-| **FALLBACK** |  Fallback domain (VLESS, Trojan)   |        :x:         |
-| **DOH_URL**  |              Core DOH              |        :x:         |
-
----
-
-## Stargazers Over Time
-
-[![Stargazers Over Time](https://starchart.cc/bia-pain-bache/BPB-Worker-Panel.svg?variant=adaptive)](https://starchart.cc/bia-pain-bache/BPB-Worker-Panel)
-
----
-
-### Special Thanks
-
-- VLESS, Trojan [Cloudflare-workers/pages proxy script](https://github.com/yonggekkk/Cloudflare-workers-pages-vless) created by [yonggekkk](https://github.com/yonggekkk)
-- CF-vless code author [3Kmfi6HP](https://github.com/3Kmfi6HP/EDtunnel)
-- CF preferred IP program author [badafans](https://github.com/badafans/Cloudflare-IP-SpeedTest), [XIU2](https://github.com/XIU2/CloudflareSpeedTest)
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[Open-Dev-Society/OpenStock]]></title>
-            <link>https://github.com/Open-Dev-Society/OpenStock</link>
-            <guid>https://github.com/Open-Dev-Society/OpenStock</guid>
-            <pubDate>Sat, 30 May 2026 00:24:49 GMT</pubDate>
-            <description><![CDATA[OpenStock is an open-source alternative to expensive market platforms. Track real-time prices, set personalized alerts, and explore detailed company insights — built openly, for everyone, forever free.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/Open-Dev-Society/OpenStock">Open-Dev-Society/OpenStock</a></h1>
-            <p>OpenStock is an open-source alternative to expensive market platforms. Track real-time prices, set personalized alerts, and explore detailed company insights — built openly, for everyone, forever free.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 12,787</p>
-            <p>Forks: 1,696</p>
-            <p>Stars today: 102 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-  Checkout new amazing projects also, &lt;a href=&quot;github.com/open-dev-society/openreadme&quot; target=&quot;_blank&quot;&gt;OpenReadme &lt;/a&gt; is live
-&lt;/div&gt;  
-&lt;a href=&quot;https://hellogithub.com/repository/Open-Dev-Society/OpenStock&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://abroad.hellogithub.com/v1/widgets/recommend.svg?rid=5c4337a9e2dd4a8ba8aba87a88f04b8b&amp;claim_uid=07HezcXv9puSGKQ&amp;theme=neutral&quot; alt=&quot;Featured｜HelloGitHub&quot; style=&quot;width: 250px; height: 54px;&quot; width=&quot;250&quot; height=&quot;54&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://peerlist.io/ravixalgorithm/project/openstock&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt;
-				&lt;img
-					src=&quot;https://peerlist.io/api/v1/projects/embed/PRJH8OED7MBL9MGB9HRMKAKLM66KNN?showUpvote=true&amp;theme=light&quot;
-					alt=&quot;OpenStock&quot;
-					style=&quot;width: auto; height: 54px;&quot;
-				/&gt;
-			&lt;/a&gt;
- &lt;a href=&quot;https://www.star-history.com/open-dev-society/openstock&quot;&gt;&lt;img src=&quot;https://api.star-history.com/badge?repo=Open-Dev-Society/OpenStock&quot; alt=&quot;Star History Rank&quot; /&gt;&lt;/a&gt;
-&lt;div align=&quot;center&quot;&gt;
-  &lt;br /&gt;
-  &lt;a href=&quot;#&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;./public/assets/images/dashboard.png&quot; alt=&quot;Project Banner&quot; /&gt;
-  &lt;/a&gt;
-  © Open Dev Society. This project is licensed under AGPL-3.0; if you modify, redistribute, or deploy it (including as a web service), you must release your source code under the same license and credit the original authors.
-  &lt;br /&gt;
-  &lt;br/&gt;
-
-  &lt;div&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/-Next.js-black?style=for-the-badge&amp;logoColor=white&amp;logo=next.js&amp;color=000000&quot; alt=&quot;Next.js badge&quot; /&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/-TypeScript-black?style=for-the-badge&amp;logoColor=white&amp;logo=typescript&amp;color=3178C6&quot;/&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/-Tailwind%20CSS-black?style=for-the-badge&amp;logoColor=white&amp;logo=tailwindcss&amp;color=38B2AC&quot;/&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/-shadcn/ui-black?style=for-the-badge&amp;logoColor=white&amp;logo=shadcnui&amp;color=000000&quot;/&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/-Radix%20UI-black?style=for-the-badge&amp;logoColor=white&amp;logo=radixui&amp;color=000000&quot;/&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/-Better%20Auth-black?style=for-the-badge&amp;logoColor=white&amp;logo=betterauth&amp;color=000000&quot;/&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/-MongoDB-black?style=for-the-badge&amp;logoColor=white&amp;logo=mongodb&amp;color=00A35C&quot;/&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/-Inngest-black?style=for-the-badge&amp;logoColor=white&amp;logo=inngest&amp;color=000000&quot;/&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/-Nodemailer-black?style=for-the-badge&amp;logoColor=white&amp;logo=gmail&amp;color=EA4335&quot;/&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/-TradingView-black?style=for-the-badge&amp;logoColor=white&amp;logo=tradingview&amp;color=2962FF&quot;/&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/-Finnhub-black?style=for-the-badge&amp;logoColor=white&amp;color=30B27A&quot;/&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/-CodeRabbit-black?style=for-the-badge&amp;logoColor=white&amp;logo=coderabbit&amp;color=9146FF&quot;/&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-# OpenStock
-
-OpenStock is an open-source alternative to expensive market platforms. Track real-time prices, set personalized alerts, and explore detailed company insights — built openly, for everyone, forever free.
-
-Note: OpenStock is community-built and not a brokerage. Market data may be delayed based on provider rules and your configuration. Nothing here is financial advice.
-
-## 📋 Table of Contents
-
-1. ✨ [Introduction](#introduction)
-2. 🌍 [Open Dev Society Manifesto](#manifesto)
-3. ⚙️ [Tech Stack](#tech-stack)
-4. 🔋 [Features](#features)
-5. 🤸 [Quick Start](#quick-start)
-6. 🐳 [Docker Setup](#docker-setup)
-7. 🔐 [Environment Variables](#environment-variables)
-8. 🧱 [Project Structure](#project-structure)
-9. 📡 [Data &amp; Integrations](#data--integrations)
-10. 🧪 [Scripts &amp; Tooling](#scripts--tooling)
-11. 🤝 [Contributing](#contributing)
-12. 🛡️ [Security](#security)
-13. 📜 [License](#license)
-14. 🙏 [Acknowledgements](#acknowledgements)
-
-## ✨ Introduction &lt;a name=&quot;introduction&quot;&gt;&lt;/a&gt;
-
-OpenStock is a modern stock market app powered by Next.js (App Router), shadcn/ui and Tailwind CSS, Better Auth for authentication, MongoDB for persistence, Finnhub for market data, and TradingView widgets for charts and market views.
-
-## 🌍 Open Dev Society Manifesto &lt;a name=&quot;manifesto&quot;&gt;&lt;/a&gt;
-
-We live in a world where knowledge is hidden behind paywalls. Where tools are locked in subscriptions. Where information is twisted by bias. Where newcomers are told they’re not “good enough” to build.
-
-We believe there’s a better way.
-
-- Our Belief: Technology should belong to everyone. Knowledge should be open, free, and accessible. Communities should welcome newcomers with trust, not gatekeeping.
-- Our Mission: Build free, open-source projects that make a real difference:
-    - Tools that professionals and students can use without barriers.
-    - Knowledge platforms where learning is free, forever.
-    - Communities where every beginner is guided, not judged.
-    - Resources that run on trust, not profit.
-- Our Promise: We will never lock knowledge. We will never charge for access. We will never trade trust for money. We run on transparency, donations, and the strength of our community.
-- Our Call: If you’ve ever felt you didn’t belong, struggled to find free resources, or wanted to build something meaningful — you belong here.
-
-Because the future belongs to those who build it openly.
-
-## ⚙️ Tech Stack &lt;a name=&quot;tech-stack&quot;&gt;&lt;/a&gt;
-
-Core
-- Next.js 15 (App Router), React 19
-- TypeScript
-- Tailwind CSS v4 (via @tailwindcss/postcss)
-- shadcn/ui + Radix UI primitives
-- Lucide icons
-
-Auth &amp; Data
-- Better Auth (email/password) with MongoDB adapter
-- MongoDB + Mongoose
-- Finnhub API for symbols, profiles, and market news
-- TradingView embeddable widgets
-
-Automation &amp; Comms
-- Inngest (events, cron, AI inference via Gemini)
-- Nodemailer (Gmail transport)
-- next-themes, cmdk (command palette), react-hook-form
-
-Language composition
-- TypeScript (~93.4%), CSS (~6%), JavaScript (~0.6%)
-
-## 🔋 Features &lt;a name=&quot;features&quot;&gt;&lt;/a&gt;
-
-- Authentication
-    - Email/password auth with Better Auth + MongoDB adapter
-    - Protected routes enforced via Next.js middleware
-- Global search and Command + K palette
-    - Fast stock search backed by Finnhub
-    - Popular stocks when idle; debounced querying
-- Watchlist
-    - Per-user watchlist stored in MongoDB (unique symbol per user)
-- Stock details
-    - TradingView symbol info, candlestick/advanced charts, baseline, technicals
-    - Company profile and financials widgets
-    - Optional cross-source sentiment insights for Reddit, X.com, news, and Polymarket
-- Market overview
-    - Heatmap, quotes, and top stories (TradingView widgets)
-- Personalized onboarding
-    - Collects country, investment goals, risk tolerance, preferred industry
-- Email &amp; automation
-    - AI-personalized welcome email (Gemini via Inngest)
-    - Daily news summary emails (cron) personalized using user watchlists
-- Polished UI
-    - shadcn/ui components, Radix primitives, Tailwind v4 design tokens
-    - Dark theme by default
-- Keyboard shortcut
-    - Cmd/Ctrl + K for quick actions/search
-
-## 🤸 Quick Start &lt;a name=&quot;quick-start&quot;&gt;&lt;/a&gt;
-
-Prerequisites
-- Node.js 20+ and pnpm or npm
-- MongoDB connection string (MongoDB Atlas or local via Docker Compose)
-- Finnhub API key (free tier supported; real-time may require paid)
-- Gmail account for email (or update Nodemailer transport)
-- Optional: Google Gemini API key (for AI-generated welcome intros)
-
-Clone and install
-```bash
-git clone https://github.com/Open-Dev-Society/OpenStock.git
-cd OpenStock
-
-# choose one:
-pnpm install
-# or
-npm install
-```
-
-Configure environment
-- Create a `.env` file (see [Environment Variables](#environment-variables)).
-- Verify DB connectivity:
-```bash
-pnpm test:db
-# or
-npm run test:db
-```
-
-Run development
-```bash
-# Next.js dev (Turbopack)
-pnpm dev
-# or
-npm run dev
-```
-
-Run Inngest locally (workflows, cron, AI)
-```bash
-npx inngest-cli@latest dev
-```
-
-Build &amp; start (production)
-```bash
-pnpm build &amp;&amp; pnpm start
-# or
-npm run build &amp;&amp; npm start
-```
-
-Open http://localhost:3000 to view the app.
-
-## 🐳 Docker Setup &lt;a name=&quot;docker-setup&quot;&gt;&lt;/a&gt;
-
-You can run OpenStock and MongoDB easily with Docker Compose.
-
-1) Ensure Docker and Docker Compose are installed.
-
-2) docker-compose.yml includes two services:
-- openstock (this app)
-- mongodb (MongoDB database with a persistent volume)
-
-3) Create your `.env` (see examples below). For the Docker setup, use a local connection string like:
-```env
-MONGODB_URI=mongodb://root:example@mongodb:27017/openstock?authSource=admin
-```
-
-4) Start the stack:
-```bash
-# from the repository root
-docker compose up -d mongodb &amp;&amp; docker compose up -d --build
-```
-
-5) Access the app:
-- App: http://localhost:3000
-- MongoDB is available inside the Docker network at host mongodb:27017
-
-Notes
-- The app service depends_on the mongodb service.
-- Credentials are defined in Compose for the MongoDB root user; authSource=admin is required on the connection string for root.
-- Data persists across restarts via the docker volume.
-
-Optional: Example MongoDB service definition used in this project:
-```yaml
-services:
-  mongodb:
-    image: mongo:7
-    container_name: mongodb
-    restart: unless-stopped
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
-    ports:
-      - &quot;27017:27017&quot;
-    volumes:
-      - mongo-data:/data/db
-    healthcheck:
-      test: [&quot;CMD&quot;, &quot;mongosh&quot;, &quot;--eval&quot;, &quot;db.adminCommand(&#039;ping&#039;)&quot;]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-volumes:
-  mongo-data:
-```
-
-## 🔐 Environment Variables &lt;a name=&quot;environment-variables&quot;&gt;&lt;/a&gt;
-
-Create `.env` at the project root. Choose either a hosted MongoDB (Atlas) URI or the local Docker URI.
-
-Hosted (MongoDB Atlas):
-```env
-# Core
-NODE_ENV=development
-
-# Database (Atlas)
-MONGODB_URI=mongodb+srv://&lt;user&gt;:&lt;pass&gt;@&lt;cluster&gt;/&lt;db&gt;?retryWrites=true&amp;w=majority
-
-# Better Auth
-BETTER_AUTH_SECRET=your_better_auth_secret
-BETTER_AUTH_URL=http://localhost:3000
-
-# Finnhub
-# Note: NEXT_PUBLIC_FINNHUB_API_KEY is required for Vercel deployment
-NEXT_PUBLIC_FINNHUB_API_KEY=your_finnhub_key
-FINNHUB_BASE_URL=https://finnhub.io/api/v1
-
-# Sentiment insights (optional)
-ADANOS_API_KEY=your_adanos_api_key
-# ADANOS_API_BASE_URL=https://api.adanos.org
-
-# AI Provider (optional, default: &quot;gemini&quot;)
-# Supported: &quot;gemini&quot;, &quot;minimax&quot;, &quot;siray&quot;
-# AI_PROVIDER=gemini
-
-# Gemini
-GEMINI_API_KEY=your_gemini_api_key
-
-# MiniMax (optional, used when AI_PROVIDER=minimax or as fallback)
-# Get your key at https://platform.minimaxi.com
-# MINIMAX_API_KEY=your_minimax_api_key
-
-# Inngest Signing Key (required for Vercel deployment)
-# Get this from your Inngest dashboard: https://app.inngest.com/env/settings/keys
-INNGEST_SIGNING_KEY=your_inngest_signing_key
-
-# Email (Nodemailer via Gmail; consider App Passwords if 2FA)
-NODEMAILER_EMAIL=youraddress@gmail.com
-NODEMAILER_PASSWORD=your_gmail_app_password
-```
-
-Local (Docker Compose) MongoDB:
-```env
-# Core
-NODE_ENV=development
-
-# Database (Docker)
-MONGODB_URI=mongodb://root:example@mongodb:27017/openstock?authSource=admin
-
-# Better Auth
-BETTER_AUTH_SECRET=your_better_auth_secret
-BETTER_AUTH_URL=http://localhost:3000
-
-# Finnhub
-# Note: NEXT_PUBLIC_FINNHUB_API_KEY is required for Vercel deployment
-NEXT_PUBLIC_FINNHUB_API_KEY=your_finnhub_key
-FINNHUB_BASE_URL=https://finnhub.io/api/v1
-
-# Sentiment insights (optional)
-ADANOS_API_KEY=your_adanos_api_key
-# ADANOS_API_BASE_URL=https://api.adanos.org
-
-# AI Provider (optional, default: &quot;gemini&quot;)
-# Supported: &quot;gemini&quot;, &quot;minimax&quot;, &quot;siray&quot;
-# AI_PROVIDER=gemini
-
-# Gemini
-GEMINI_API_KEY=your_gemini_api_key
-
-# MiniMax (optional, used when AI_PROVIDER=minimax or as fallback)
-# Get your key at https://platform.minimaxi.com
-# MINIMAX_API_KEY=your_minimax_api_key
-
-# Inngest Signing Key (required for Vercel deployment)
-# Get this from your Inngest dashboard: https://app.inngest.com/env/settings/keys
-INNGEST_SIGNING_KEY=your_inngest_signing_key
-
-# Email (Nodemailer via Gmail; consider App Passwords if 2FA)
-NODEMAILER_EMAIL=youraddress@gmail.com
-NODEMAILER_PASSWORD=your_gmail_app_password
-```
-
-Notes
-- Keep private keys server-side whenever possible.
-- If using `NEXT_PUBLIC_` variables, remember they are exposed to the browser.
-- In production, prefer a dedicated SMTP provider over a personal Gmail.
-- Do not hardcode secrets in the Dockerfile; use `.env` and Compose.
-
-## 🧱 Project Structure &lt;a name=&quot;project-structure&quot;&gt;&lt;/a&gt;
-
-```
-app/
-  (auth)/
-    layout.tsx
-    sign-in/page.tsx
-    sign-up/page.tsx
-  (root)/
-    layout.tsx
-    page.tsx
-    help/page.tsx
-    stocks/[symbol]/page.tsx
-  api/inngest/route.ts
-  globals.css
-  layout.tsx
-components/
-  ui/…          # shadcn/radix primitives (button, dialog, command, input, etc.)
-  forms/…       # InputField, SelectField, CountrySelectField, FooterLink
-  Header.tsx, Footer.tsx, SearchCommand.tsx, WatchlistButton.tsx, …
-database/
-  models/watchlist.model.ts
-  mongoose.ts
-lib/
-  actions/…     # server actions (auth, finnhub, user, watchlist)
-  better-auth/…
-  inngest/…     # client, functions, prompts
-  nodemailer/…  # transporter, email templates
-  constants.ts, utils.ts
-scripts/
-  test-db.mjs
-types/
-  global.d.ts
-next.config.ts          # i.ibb.co image domain allowlist
-postcss.config.mjs      # Tailwind v4 postcss setup
-components.json         # shadcn config
-public/assets/images/   # logos and screenshots
-```
-
-## 📡 Data &amp; Integrations &lt;a name=&quot;data--integrations&quot;&gt;&lt;/a&gt;
-
-- Finnhub
-    - Stock search, company profiles, and market news.
-    - Set `NEXT_PUBLIC_FINNHUB_API_KEY` and `FINNHUB_BASE_URL` (default: https://finnhub.io/api/v1).
-    - Free tiers may return delayed quotes; respect rate limits and terms.
-
-- Adanos sentiment insights (optional)
-    - Structured stock sentiment snapshots across Reddit, X.com, news, and Polymarket.
-    - Set `ADANOS_API_KEY`; optionally override the API host with `ADANOS_API_BASE_URL`.
-    - Used only for the stock detail sentiment card and does not replace Finnhub or TradingView.
-
-- TradingView
-    - Embeddable widgets used for charts, heatmap, quotes, and timelines.
-    - External images from `i.ibb.co` are allowlisted in `next.config.ts`.
-
-- Better Auth + MongoDB
-    - Email/password with MongoDB adapter.
-    - Session validation via middleware; most routes are protected, with public exceptions for `sign-in`, `sign-up`, assets and Next internals.
-
-- Inngest
-    - Workflows:
-        - `app/user.created` → AI-personalized Welcome Email
-        - Cron `0 12 * * *` → Daily News Summary per user
-    - Local dev: `npx inngest-cli@latest dev`.
-
-- Email (Nodemailer)
-    - Gmail transport. Update credentials or switch to your SMTP provider.
-    - Templates for welcome and news summary emails.
-
-## 🧪 Scripts &amp; Tooling &lt;a name=&quot;scripts--tooling&quot;&gt;&lt;/a&gt;
-
-Package scripts
-- `dev`: Next.js dev server with Turbopack
-- `build`: Production build (Turbopack)
-- `start`: Run production server
-- `lint`: ESLint
-- `test:db`: Validate DB connectivity
-
-Developer experience
-- TypeScript strict mode
-- Tailwind CSS v4 (no separate tailwind.config needed)
-- shadcn/ui components with Radix primitives
-- cmdk command palette, next-themes, lucide-react icons
-
-## 🤝 Contributing &lt;a name=&quot;contributing&quot;&gt;&lt;/a&gt;
-
-You belong here. Whether you’re a student, a self-taught dev, or a seasoned engineer — contributions are welcome.
-
-- Open an issue to discuss ideas and bugs
-- Look for “good first issue” or “help wanted”
-- Keep PRs focused; add screenshots for UI changes
-- Be kind, guide beginners, no gatekeeping — that’s the ODS way
-
-## 🛡️ Security &lt;a name=&quot;security&quot;&gt;&lt;/a&gt;
-
-If you discover a vulnerability:
-- Do not open a public issue
-- Email: &lt;a href=&quot;mailto:opendevsociety@cc.cc&quot;&gt;opendevsociety@cc.cc&lt;/a&gt;
-- We&#039;ll coordinate responsible disclosure and patch swiftly
-
-## 📜 License &lt;a name=&quot;license&quot;&gt;&lt;/a&gt;
-
-OpenStock is and will remain free and open for everyone. This project is licensed under the AGPL-3.0 License - see the LICENSE file for details.
-
-## 🙏 Acknowledgements &lt;a name=&quot;acknowledgements&quot;&gt;&lt;/a&gt;
-
-- Finnhub for accessible market data
-- TradingView for embeddable market widgets
-- shadcn/ui, Radix UI, Tailwind CSS, Next.js community
-- Inngest for dependable background jobs and workflows
-- Better Auth for simple and secure authentication
-- All contributors who make open tools possible
-
-— Built openly, for everyone, forever free. Open Dev Society.
-
-&gt; © Open Dev Society. This project is licensed under AGPL-3.0; if you modify, redistribute, or deploy it (including as a web service), you must release your source code under the same license and credit the original authors.
-
-## Our Honourable Contributors
-- [ravixalgorithm](https://github.com/ravixalgorithm) - Developed the entire application from the ground up, including authentication, UI design, API and AI integration, and deployment.
-- [Priyanshuu00007](https://github.com/Priyanshuu00007) - Created the official OpenStock logo and contributed to the project’s visual identity.
-- [chinnsenn](https://github.com/chinnsenn) - Set up Docker configuration for the repository, ensuring a smooth development and deployment process.
-- [koevoet1221](https://github.com/koevoet1221) - Resolved MongoDB Docker build issues, improving the project’s overall stability and reliability.
-- [ettoreciolli1](https://github.com/ettoreciolli1) - updated Readme
-
-
-
-## ❤️ Partners &amp; Backers
-
-&lt;a href=&quot;https://www.siray.ai/&quot;&gt;
-  &lt;img src=&quot;public/assets/icons/siray.svg&quot; alt=&quot;Siray.ai Logo&quot; width=&quot;100&quot; /&gt;
-&lt;/a&gt;
-
-**[Siray.ai](https://www.siray.ai/)** — The robust AI infrastructure backing OpenStock. Siray.ai ensures our market insights never sleep.
-
-## Special thanks
-Huge thanks to [Adrian Hajdin (JavaScript Mastery)](https://github.com/adrianhajdin) — his excellent Stock Market App tutorial was instrumental in building OpenStock for the open-source community under the Open Dev Society.
-
-GitHub: [adrianhajdin](https://github.com/adrianhajdin)
-YouTube tutorial: [Stock Market App Tutorial](https://www.youtube.com/watch?v=gu4pafNCXng)
-YouTube channel: [JavaScript Mastery](https://www.youtube.com/@javascriptmastery)
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[iOfficeAI/AionUi]]></title>
-            <link>https://github.com/iOfficeAI/AionUi</link>
-            <guid>https://github.com/iOfficeAI/AionUi</guid>
-            <pubDate>Sat, 30 May 2026 00:24:48 GMT</pubDate>
-            <description><![CDATA[Free, local, open-source 24/7 Cowork app for OpenClaw, Hermes Agent, Claude Code, Codex, OpenCode, Gemini CLI and 20+ more CLI | Customize your assistants | Star if you like it!]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/iOfficeAI/AionUi">iOfficeAI/AionUi</a></h1>
-            <p>Free, local, open-source 24/7 Cowork app for OpenClaw, Hermes Agent, Claude Code, Codex, OpenCode, Gemini CLI and 20+ more CLI | Customize your assistants | Star if you like it!</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 27,168</p>
-            <p>Forks: 2,597</p>
-            <p>Stars today: 137 stars today</p>
-            <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[millionco/react-doctor]]></title>
-            <link>https://github.com/millionco/react-doctor</link>
-            <guid>https://github.com/millionco/react-doctor</guid>
-            <pubDate>Sat, 30 May 2026 00:24:47 GMT</pubDate>
-            <description><![CDATA[Your agent writes bad React. This catches it]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/millionco/react-doctor">millionco/react-doctor</a></h1>
-            <p>Your agent writes bad React. This catches it</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 11,526</p>
-            <p>Forks: 372</p>
-            <p>Stars today: 148 stars today</p>
-            <h2>README</h2><pre>packages/react-doctor/README.md</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[moeru-ai/airi]]></title>
-            <link>https://github.com/moeru-ai/airi</link>
-            <guid>https://github.com/moeru-ai/airi</guid>
-            <pubDate>Sat, 30 May 2026 00:24:46 GMT</pubDate>
-            <description><![CDATA[💖🧸 Self hosted, you-owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraft, Factorio playing. Web / macOS / Windows supported.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/moeru-ai/airi">moeru-ai/airi</a></h1>
-            <p>💖🧸 Self hosted, you-owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraft, Factorio playing. Web / macOS / Windows supported.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 40,505</p>
-            <p>Forks: 4,069</p>
-            <p>Stars today: 55 stars today</p>
-            <h2>README</h2><pre>&lt;picture&gt;
-  &lt;source
-    width=&quot;100%&quot;
-    srcset=&quot;./docs/content/public/banner-dark-1280x640.avif&quot;
-    media=&quot;(prefers-color-scheme: dark)&quot;
-  /&gt;
-  &lt;source
-    width=&quot;100%&quot;
-    srcset=&quot;./docs/content/public/banner-light-1280x640.avif&quot;
-    media=&quot;(prefers-color-scheme: light), (prefers-color-scheme: no-preference)&quot;
-  /&gt;
-  &lt;img width=&quot;250&quot; src=&quot;./docs/content/public/banner-light-1280x640.avif&quot; /&gt;
-&lt;/picture&gt;
-
-&lt;h1 align=&quot;center&quot;&gt;Project AIRI&lt;/h1&gt;
-
-&lt;p align=&quot;center&quot;&gt;Re-creating Neuro-sama, a soul container of AI waifu / virtual characters to bring them into our world.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  [&lt;a href=&quot;https://discord.gg/TgQ3Cu2F7A&quot;&gt;Join Discord Server&lt;/a&gt;] [&lt;a href=&quot;https://airi.moeru.ai&quot;&gt;Try it&lt;/a&gt;] [&lt;a href=&quot;https://github.com/moeru-ai/airi/blob/main/docs/README.zh-CN.md&quot;&gt;简体中文&lt;/a&gt;] [&lt;a href=&quot;https://github.com/moeru-ai/airi/blob/main/docs/README.ja-JP.md&quot;&gt;日本語&lt;/a&gt;] [&lt;a href=&quot;https://github.com/moeru-ai/airi/blob/main/docs/README.ru-RU.md&quot;&gt;Русский&lt;/a&gt;] [&lt;a href=&quot;https://github.com/moeru-ai/airi/blob/main/docs/README.vi.md&quot;&gt;Tiếng Việt&lt;/a&gt;] [&lt;a href=&quot;https://github.com/moeru-ai/airi/blob/main/docs/README.fr.md&quot;&gt;Français&lt;/a&gt;] [&lt;a href=&quot;https://github.com/moeru-ai/airi/blob/main/docs/README.ko-KR.md&quot;&gt;한국어&lt;/a&gt;]
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://deepwiki.com/moeru-ai/airi&quot;&gt;&lt;img src=&quot;https://deepwiki.com/badge.svg&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/moeru-ai/airi/blob/main/LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/license/moeru-ai/airi.svg?style=flat&amp;colorA=080f12&amp;colorB=1fa669&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://discord.gg/TgQ3Cu2F7A&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscord.com%2Fapi%2Finvites%2FTgQ3Cu2F7A%3Fwith_counts%3Dtrue&amp;query=%24.approximate_member_count&amp;suffix=%20members&amp;logo=discord&amp;logoColor=white&amp;label=%20&amp;color=7389D8&amp;labelColor=6A7EC2&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://x.com/proj_airi&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/%40proj__airi-black?style=flat&amp;logo=x&amp;labelColor=%23101419&amp;color=%232d2e30&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://t.me/+7M_ZKO3zUHFlOThh&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Telegram-%235AA9E6?logo=telegram&amp;labelColor=FFFFFF&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;./docs/wechat.md&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/WeChat-%2307C160?logo=wechat&amp;logoColor=%2307C160&amp;labelColor=FFFFFF&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://qun.qq.com/universal-share/share?ac=1&amp;authKey=9g00d%2BZS7nORzcJugNNddJ7rCghZTIR7fhXabGwch2S%2BG%2BKGIKwlN1N2nIqkh2jg&amp;busi_data=eyJncm91cENvZGUiOiIxMDU4MTU2Njk3IiwidG9rZW4iOiJmcnkra1hWNFIxNytEcG0zcHRUdVJIaldlRDFxN0dzK080QWtvTEdOQjJkNEY2eUFta1g1clNpbkxSMS9FQWFYIiwidWluIjoiMTI2MDkwNzMzNSJ9&amp;data=b1eJrwn3GVOUh7YIxZ7l9vHQo99HPmRxKPpMKlDCmfzx8Y57IXb2EZCMaOC9rVTd2U558qpNjwUYUWlPHxVHvg&amp;svctype=4&amp;tempid=h5_group_info&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/QQ-%2312B7F5?logo=qq&amp;labelColor=FFFFFF&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p float=&quot;left&quot; align=&quot;center&quot;&gt;
-  &lt;!-- readme-section:release-binary-windows --&gt;
-  &lt;a href=&quot;https://github.com/moeru-ai/airi/releases/download/v0.10.2/AIRI-0.10.2-windows-x64-setup.exe&quot;&gt;
+            <p>Stars: 167,495</p>
+            <p>Forks: 19,984</p>
+            <p>Stars today: 379 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://opencode.ai&quot;&gt;
     &lt;picture&gt;
-      &lt;source
-        width=&quot;33%&quot;
-        srcset=&quot;./docs/content/public/assets/download-buttons/download-buttons.windows.dark.en-US.avif&quot;
-        media=&quot;(prefers-color-scheme: dark)&quot;
-      /&gt;
-      &lt;source
-        width=&quot;33%&quot;
-        srcset=&quot;./docs/content/public/assets/download-buttons/download-buttons.windows.light.en-US.avif&quot;
-        media=&quot;(prefers-color-scheme: light), (prefers-color-scheme: no-preference)&quot;
-      /&gt;
-      &lt;img width=&quot;33%&quot; src=&quot;./docs/content/public/assets/download-buttons/download-buttons.windows.light.en-US.avif&quot; /&gt;
-    &lt;/picture&gt;
-  &lt;/a&gt;
-  &lt;!-- readme-section:release-binary-macos --&gt;
-  &lt;a href=&quot;https://github.com/moeru-ai/airi/releases/download/v0.10.2/AIRI-0.10.2-darwin-arm64.dmg&quot;&gt;
-    &lt;picture&gt;
-      &lt;source
-        width=&quot;33%&quot;
-        srcset=&quot;./docs/content/public/assets/download-buttons/download-buttons.macos.dark.en-US.avif&quot;
-        media=&quot;(prefers-color-scheme: dark)&quot;
-      /&gt;
-      &lt;source
-        width=&quot;33%&quot;
-        srcset=&quot;./docs/content/public/assets/download-buttons/download-buttons.macos.light.en-US.avif&quot;
-        media=&quot;(prefers-color-scheme: light), (prefers-color-scheme: no-preference)&quot;
-      /&gt;
-      &lt;img width=&quot;33%&quot; src=&quot;./docs/content/public/assets/download-buttons/download-buttons.macos.light.en-US.avif&quot; /&gt;
-    &lt;/picture&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://github.com/moeru-ai/airi/releases/latest&quot;&gt;
-    &lt;picture&gt;
-      &lt;source
-        width=&quot;33%&quot;
-        srcset=&quot;./docs/content/public/assets/download-buttons/download-buttons.linux.dark.en-US.avif&quot;
-        media=&quot;(prefers-color-scheme: dark)&quot;
-      /&gt;
-      &lt;source
-        width=&quot;33%&quot;
-        srcset=&quot;./docs/content/public/assets/download-buttons/download-buttons.linux.light.en-US.avif&quot;
-        media=&quot;(prefers-color-scheme: light), (prefers-color-scheme: no-preference)&quot;
-      /&gt;
-      &lt;img width=&quot;33%&quot; src=&quot;./docs/content/public/assets/download-buttons/download-buttons.linux.light.en-US.avif&quot; /&gt;
+      &lt;source srcset=&quot;packages/console/app/src/asset/logo-ornate-dark.svg&quot; media=&quot;(prefers-color-scheme: dark)&quot;&gt;
+      &lt;source srcset=&quot;packages/console/app/src/asset/logo-ornate-light.svg&quot; media=&quot;(prefers-color-scheme: light)&quot;&gt;
+      &lt;img src=&quot;packages/console/app/src/asset/logo-ornate-light.svg&quot; alt=&quot;OpenCode logo&quot;&gt;
     &lt;/picture&gt;
   &lt;/a&gt;
 &lt;/p&gt;
-
-&lt;p float=&quot;left&quot; align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://airi.moeru.ai&quot;&gt;
-    &lt;picture&gt;
-      &lt;source
-        width=&quot;33%&quot;
-        srcset=&quot;./docs/content/public/assets/QR%20code%20button/section.cards.qrcode.dark.en-US.png&quot;
-        media=&quot;(prefers-color-scheme: dark)&quot;
-      /&gt;
-      &lt;source
-        width=&quot;33%&quot;
-        srcset=&quot;./docs/content/public/assets/QR%20code%20button/section.cards.qrcode.light.en-US.png&quot;
-        media=&quot;(prefers-color-scheme: light), (prefers-color-scheme: no-preference)&quot;
-      /&gt;
-      &lt;img width=&quot;33%&quot; src=&quot;./docs/content/public/assets/QR%20code%20button/section.cards.qrcode.light.en-US.png&quot; /&gt;
-    &lt;/picture&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://airi.moeru.ai&quot;&gt;
-    &lt;picture&gt;
-      &lt;source
-        width=&quot;33%&quot;
-        srcset=&quot;./docs/content/public/assets/download-buttons/download-buttons.mobile.dark.en-US.avif&quot;
-        media=&quot;(prefers-color-scheme: dark)&quot;
-      /&gt;
-      &lt;source
-        width=&quot;33%&quot;
-        srcset=&quot;./docs/content/public/assets/download-buttons/download-buttons.mobile.light.en-US.avif&quot;
-        media=&quot;(prefers-color-scheme: light), (prefers-color-scheme: no-preference)&quot;
-      /&gt;
-      &lt;img width=&quot;33%&quot; src=&quot;./docs/content/public/assets/download-buttons/download-buttons.mobile.light.en-US.avif&quot; /&gt;
-    &lt;/picture&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://airi.moeru.ai&quot;&gt;
-    &lt;picture&gt;
-      &lt;source
-        width=&quot;33%&quot;
-        srcset=&quot;./docs/content/public/assets/download-buttons/download-buttons.browser.dark.en-US.png&quot;
-        media=&quot;(prefers-color-scheme: dark)&quot;
-      /&gt;
-      &lt;source
-        width=&quot;33%&quot;
-        srcset=&quot;./docs/content/public/assets/download-buttons/download-buttons.browser.light.en-US.png&quot;
-        media=&quot;(prefers-color-scheme: light), (prefers-color-scheme: no-preference)&quot;
-      /&gt;
-      &lt;img width=&quot;33%&quot; src=&quot;./docs/content/public/assets/download-buttons/download-buttons.browser.light.en-US.png&quot; /&gt;
-    &lt;/picture&gt;
-  &lt;/a&gt;
+&lt;p align=&quot;center&quot;&gt;The open source AI coding agent.&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://opencode.ai/discord&quot;&gt;&lt;img alt=&quot;Discord&quot; src=&quot;https://img.shields.io/discord/1391832426048651334?style=flat-square&amp;label=discord&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://www.npmjs.com/package/opencode-ai&quot;&gt;&lt;img alt=&quot;npm&quot; src=&quot;https://img.shields.io/npm/v/opencode-ai?style=flat-square&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/anomalyco/opencode/actions/workflows/publish.yml&quot;&gt;&lt;img alt=&quot;Build status&quot; src=&quot;https://img.shields.io/github/actions/workflow/status/anomalyco/opencode/publish.yml?style=flat-square&amp;branch=dev&quot; /&gt;&lt;/a&gt;
 &lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://www.producthunt.com/products/airi?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_source=badge-airi&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=993524&amp;theme=neutral&amp;t=1752696535380&quot; alt=&quot;AIRI - A&amp;#0032;container&amp;#0032;of&amp;#0032;cyber&amp;#0032;living&amp;#0032;souls&amp;#0044;&amp;#0032;re&amp;#0045;creation&amp;#0032;of&amp;#0032;Neuro&amp;#0045;sama | Product Hunt&quot; style=&quot;width: 250px; height: 54px;&quot; width=&quot;250&quot; height=&quot;54&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://trendshift.io/repositories/14636&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/14636&quot; alt=&quot;moeru-ai%2Fairi | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+  &lt;a href=&quot;README.md&quot;&gt;English&lt;/a&gt; |
+  &lt;a href=&quot;README.zh.md&quot;&gt;简体中文&lt;/a&gt; |
+  &lt;a href=&quot;README.zht.md&quot;&gt;繁體中文&lt;/a&gt; |
+  &lt;a href=&quot;README.ko.md&quot;&gt;한국어&lt;/a&gt; |
+  &lt;a href=&quot;README.de.md&quot;&gt;Deutsch&lt;/a&gt; |
+  &lt;a href=&quot;README.es.md&quot;&gt;Español&lt;/a&gt; |
+  &lt;a href=&quot;README.fr.md&quot;&gt;Français&lt;/a&gt; |
+  &lt;a href=&quot;README.it.md&quot;&gt;Italiano&lt;/a&gt; |
+  &lt;a href=&quot;README.da.md&quot;&gt;Dansk&lt;/a&gt; |
+  &lt;a href=&quot;README.ja.md&quot;&gt;日本語&lt;/a&gt; |
+  &lt;a href=&quot;README.pl.md&quot;&gt;Polski&lt;/a&gt; |
+  &lt;a href=&quot;README.ru.md&quot;&gt;Русский&lt;/a&gt; |
+  &lt;a href=&quot;README.bs.md&quot;&gt;Bosanski&lt;/a&gt; |
+  &lt;a href=&quot;README.ar.md&quot;&gt;العربية&lt;/a&gt; |
+  &lt;a href=&quot;README.no.md&quot;&gt;Norsk&lt;/a&gt; |
+  &lt;a href=&quot;README.br.md&quot;&gt;Português (Brasil)&lt;/a&gt; |
+  &lt;a href=&quot;README.th.md&quot;&gt;ไทย&lt;/a&gt; |
+  &lt;a href=&quot;README.tr.md&quot;&gt;Türkçe&lt;/a&gt; |
+  &lt;a href=&quot;README.uk.md&quot;&gt;Українська&lt;/a&gt; |
+  &lt;a href=&quot;README.bn.md&quot;&gt;বাংলা&lt;/a&gt; |
+  &lt;a href=&quot;README.gr.md&quot;&gt;Ελληνικά&lt;/a&gt; |
+  &lt;a href=&quot;README.vi.md&quot;&gt;Tiếng Việt&lt;/a&gt;
 &lt;/p&gt;
 
-&gt; Heavily inspired by [Neuro-sama](https://www.youtube.com/@Neurosama)
-
-&gt; [!TIP]
-&gt; On Windows, you can also install AIRI with [Scoop](https://scoop.sh/):
-&gt;
-&gt; ```powershell
-&gt; scoop bucket add airi https://github.com/moeru-ai/airi
-&gt; scoop install airi/airi
-&gt; ```
-
-&gt; [!WARNING]
-&gt; **Attention:** We **do not** have any officially minted cryptocurrency or token associated with this project. Please check the information and proceed with caution.
-
-&gt; [!NOTE]
-&gt;
-&gt; We&#039;ve got a whole dedicated organization [@proj-airi](https://github.com/proj-airi) for all the sub-projects born from Project AIRI. Check it out!
-&gt;
-&gt; RAG, memory system, embedded database, icons, Live2D utilities, and more!
-
-&gt; [!TIP]
-&gt; We have a translation project on [Crowdin](https://crowdin.com/project/proj-airi). If you find any inaccurate translations, feel free to contribute improvements there.
-&gt; &lt;a href=&quot;https://crowdin.com/project/proj-airi&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;&lt;img style=&quot;width: 140px; height: 40px;&quot; src=&quot;https://badges.crowdin.net/badge/light/crowdin-on-dark.png&quot; srcset=&quot;https://badges.crowdin.net/badge/light/crowdin-on-dark.png 1x, https://badges.crowdin.net/badge/light/crowdin-on-dark@2x.png 2x&quot; alt=&quot;Crowdin | Agile localization for tech companies&quot; width=&quot;140&quot; height=&quot;40&quot; /&gt;&lt;/a&gt;
-
-Have you dreamed about having a cyber living being (cyber waifu, digital pet) or digital companion that could play with and talk to you?
-
-With the power of modern large language models like [ChatGPT](https://chatgpt.com) and famous [Claude](https://claude.ai), asking a virtual being to roleplay and chat with us is already easy enough for everyone. Platforms like [Character.ai (a.k.a. c.ai)](https://character.ai) and [JanitorAI](https://janitorai.com/) as well as local playgrounds like [SillyTavern](https://github.com/SillyTavern/SillyTavern) are already good-enough solutions for a chat based or visual adventure game like experience.
-
-&gt; But, what about the abilities to play games? And see what you are coding at? Chatting while playing games, watching videos, and is capable of doing many other things.
-
-Perhaps you know [Neuro-sama](https://www.youtube.com/@Neurosama) already. She is currently the best virtual streamer capable of playing games, chatting, and interacting with you and the participants. Some also call this kind of being &quot;digital human.&quot; **Sadly, as it&#039;s not open sourced, you cannot interact with her after her live streams go offline**.
-
-Therefore, this project, AIRI, offers another possibility here: **let you own your digital life, cyber living, easily, anywhere, anytime**.
-
-## DevLogs We Posted &amp; Recent Updates
-
-- [DevLog @ 2026.03.23](https://airi.moeru.ai/docs/en/blog/DevLog-2026.03.23/) on March 23, 2026
-- [DevLog @ 2026.03.14](https://airi.moeru.ai/docs/en/blog/DevLog-2026.03.14/) on March 14, 2026
-- [DevLog @ 2026.02.16](https://airi.moeru.ai/docs/en/blog/DevLog-2026.02.16/) on February 16, 2026
-- [DevLog @ 2026.01.01](https://airi.moeru.ai/docs/en/blog/DevLog-2026.01.01/) on January 1, 2026
-- [DevLog @ 2025.10.20](https://airi.moeru.ai/docs/en/blog/DevLog-2025.10.20/) on October 20, 2025
-- [DevLog @ 2025.08.05](https://airi.moeru.ai/docs/en/blog/DevLog-2025.08.05/) on August 5, 2025
-- [DevLog @ 2025.08.01](https://airi.moeru.ai/docs/en/blog/DevLog-2025.08.01/) on August 1, 2025
-- [DreamLog 0x1](https://airi.moeru.ai/docs/en/blog/dreamlog-0x1/) on June 16, 2025
-- ...more on [documentation site](https://airi.moeru.ai/docs/en/)
-
-## What&#039;s So Special About This Project?
-
-Unlike the other AI driven VTuber open source projects, アイリ was built with support of many Web technologies such as [WebGPU](https://www.w3.org/TR/webgpu/), [WebAudio](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API), [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), [WebAssembly](https://webassembly.org/), [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket), etc. from the first day.
-
-&gt; [!TIP]
-&gt; Worrying about the performance drop since we are using Web related technologies?
-&gt;
-&gt; Don&#039;t worry, while the Web browser version is meant to give an insight into how much we can push and do inside browsers and webviews, we will never fully rely on this. The desktop version of AIRI is capable of using native [NVIDIA CUDA](https://developer.nvidia.com/cuda-toolkit) and [Apple Metal](https://developer.apple.com/metal/) by default (thanks to HuggingFace &amp; the beloved [candle](https://github.com/huggingface/candle) project), without any complex dependency management. Considering the tradeoff, it is partially powered by Web technologies for graphics, layouts, animations, and the WIP plugin system for everyone to integrate things.
-
-This means that **アイリ is capable of running on modern browsers and devices** and even on mobile devices (already done with PWA support). This brings a lot of possibilities for us (the developers) to build and extend the power of アイリ VTuber to the next level, while still leaving the flexibility for users to enable features that require TCP connections or other non-Web technologies such as connecting to a Discord voice channel or playing Minecraft and Factorio with friends.
-
-&gt; [!NOTE]
-&gt;
-&gt; We are still in the early stage of development where we are seeking out talented developers to join us and help us to make アイリ a reality.
-&gt;
-&gt; It&#039;s ok if you are not familiar with Vue.js, TypeScript, and devtools required for this project, you can join us as an artist, designer, or even help us to launch our first live stream.
-&gt;
-&gt; Even if you are a big fan of React, Svelte or even Solid, we welcome you. You can open a sub-directory to add features that you want to see in アイリ, or would like to experiment with.
-&gt;
-&gt; Fields (and related projects) that we are looking for:
-&gt;
-&gt; - Live2D modeller
-&gt; - VRM modeller
-&gt; - VRChat avatar designer
-&gt; - Computer Vision
-&gt; - Reinforcement Learning
-&gt; - Speech Recognition
-&gt; - Speech Synthesis
-&gt; - ONNX Runtime
-&gt; - Transformers.js
-&gt; - vLLM
-&gt; - WebGPU
-&gt; - Three.js
-&gt; - WebXR ([checkout the another project](https://github.com/moeru-ai/chat) we have under the @moeru-ai organization)
-&gt;
-&gt; **If you are interested, why not introduce yourself here? [Would like to join part of us to build AIRI?](https://github.com/moeru-ai/airi/discussions/33)**
-
-## Current Progress
-
-Capable of
-
-- [x] Brain
-  - [x] Play [Minecraft](https://www.minecraft.net)
-  - [x] Play [Factorio](https://www.factorio.com) (WIP, but [PoC and demo available](https://github.com/moeru-ai/airi-factorio))
-  - [x] Play [Kerbal Space Program](https://www.kerbalspaceprogram.com/) (announcement TBD)
-  - [ ] Co-play [Helldivers 2](https://www.playstation.com/en-hk/games/helldivers-2/pc/) (WIP)
-  - [x] Chat in [Telegram](https://telegram.org)
-  - [x] Chat in [Discord](https://discord.com)
-  - [ ] Memory
-    - [x] Pure in-browser database support (DuckDB WASM | `pglite`)
-    - [ ] Memory Alaya (WIP)
-  - [ ] Pure in-browser local (WebGPU) inference
-- [x] Ears
-  - [x] Audio input from browser
-  - [x] Audio input from [Discord](https://discord.com)
-  - [x] Client side speech recognition
-  - [x] Client side talking detection
-- [x] Mouth
-  - [x] [ElevenLabs](https://elevenlabs.io/) voice synthesis
-- [x] Body
-  - [x] VRM support
-    - [x] Control VRM model
-  - [x] VRM model animations
-    - [x] Auto blink
-    - [x] Auto look at
-    - [x] Idle eye movement
-  - [x] Live2D support
-    - [x] Control Live2D model
-  - [x] Live2D model animations
-    - [x] Auto blink
-    - [x] Auto look at
-    - [x] Idle eye movement
-
-## Development
-
-&gt; For detailed instructions to develop this project, follow [CONTRIBUTING.md](./.github/CONTRIBUTING.md)
-
-&gt; [!NOTE]
-&gt; By default, `pnpm dev` will start the development server for the Stage Web (browser version). If you would
-&gt; like to try developing the desktop version, please make sure you read [CONTRIBUTING.md](./.github/CONTRIBUTING.md)
-&gt; to setup the environment correctly.
-
-```shell
-pnpm i
-pnpm dev
-```
-
-### Stage Web (Browser Version at [airi.moeru.ai](https://airi.moeru.ai))
-
-```shell
-pnpm dev
-```
-
-### Stage Tamagotchi (Desktop Version)
-
-```shell
-pnpm dev:tamagotchi
-```
-
-A Nix package for Tamagotchi is included. To run airi with Nix, first make sure to enable flakes, then run:
-
-```shell
-nix run github:moeru-ai/airi
-```
-
-#### NixOS
-
-Electron requires shared libraries that aren&#039;t in standard paths on NixOS. Use the FHS shell defined in `flake.nix`:
-
-```shell
-nix develop .#fhs
-pnpm dev:tamagotchi
-```
-
-### Stage Pocket (Mobile Version)
-
-Start the development server for the capacitor:
-
-```shell
-pnpm dev:pocket:ios --target &lt;DEVICE_ID_OR_SIMULATOR_NAME&gt;
-# Or
-CAPACITOR_DEVICE_ID_IOS=&lt;DEVICE_ID_OR_SIMULATOR_NAME&gt; pnpm dev:pocket:ios
-```
-
-You can see the list of available devices and simulators by running `pnpm exec cap run ios --list`.
-
-If you need to connect server channel on pocket in wireless mode, you need to start tamagotchi as root:
-
-```shell
-sudo pnpm dev:tamagotchi
-```
-
-Then enable secure websocket in tamagotchi `settings/connections`.
-
-### Documentation Site
-
-```shell
-pnpm dev:docs
-```
-
-### Publish
-
-Run `bumpp` to update the monorepo version:
-
-```shell
-npx bumpp --no-commit --no-tag
-```
-
-## Support of LLM API Providers (powered by [xsai](https://github.com/moeru-ai/xsai))
-
-- [x] [AIHubMix (recommended)](https://aihubmix.com/?aff=OOiX)
-- [x] [OpenRouter](https://openrouter.ai/)
-- [x] [vLLM](https://github.com/vllm-project/vllm)
-- [x] [SGLang](https://github.com/sgl-project/sglang)
-- [x] [Ollama](https://github.com/ollama/ollama)
-- [x] [302.AI (sponsored)](https://share.302.ai/514k2v)
-- [x] [OpenAI](https://platform.openai.com/docs/guides/gpt/chat-completions-api)
-  - [x] [Azure OpenAI API](https://learn.microsoft.com/en-us/azure/ai-services/openai/reference)
-- [x] [Anthropic Claude](https://anthropic.com)
-  - [ ] [AWS Claude](https://docs.anthropic.com/en/api/claude-on-amazon-bedrock) (PR welcome)
-- [x] [DeepSeek](https://www.deepseek.com/)
-- [x] [Qwen](https://help.aliyun.com/document_detail/2400395.html)
-- [x] [Google Gemini](https://developers.generativeai.google)
-- [x] [xAI](https://x.ai/)
-- [x] [Groq](https://wow.groq.com/)
-- [x] [Mistral](https://mistral.ai/)
-- [x] [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/)
-- [x] [Together.ai](https://www.together.ai/)
-- [x] [Fireworks.ai](https://www.together.ai/)
-- [x] [Novita](https://www.novita.ai/)
-- [x] [Zhipu](https://bigmodel.cn)
-- [x] [SiliconFlow](https://cloud.siliconflow.cn/i/rKXmRobW)
-- [x] [Stepfun](https://platform.stepfun.com/)
-- [x] [Baichuan](https://platform.baichuan-ai.com)
-- [x] [Minimax](https://api.minimax.chat/)
-- [x] [Moonshot AI](https://platform.moonshot.cn/)
-- [x] [ModelScope](https://modelscope.cn/docs/model-service/API-Inference/intro)
-- [x] [Player2](https://player2.game/)
-- [x] [Tencent Cloud](https://cloud.tencent.com/document/product/1729)
-- [ ] [Sparks](https://www.xfyun.cn/doc/spark/Web.html) (PR welcome)
-- [ ] [Volcano Engine](https://www.volcengine.com/experience/ark?utm_term=202502dsinvite&amp;ac=DSASUQY5&amp;rc=2QXCA1VI) (PR welcome)
-- [x] [Xiaomi Mimo](https://platform.xiaomimimo.com)
-
-## Sub-projects Born from This Project
-
-- [Awesome AI VTuber](https://github.com/proj-airi/awesome-ai-vtuber): A curated list of AI VTubers and related projects
-- [`unspeech`](https://github.com/moeru-ai/unspeech): Universal endpoint proxy server for `/audio/transcriptions` and `/audio/speech`, like LiteLLM but for any ASR and TTS
-- [`hfup`](https://github.com/moeru-ai/hfup): tools to help on deploying, bundling to HuggingFace Spaces
-- [`xsai-transformers`](https://github.com/moeru-ai/xsai-transformers): Experimental [🤗 Transformers.js](https://github.com/huggingface/transformers.js) provider for [xsAI](https://github.com/moeru-ai/xsai).
-- [WebAI: Realtime Voice Chat](https://github.com/proj-airi/webai-realtime-voice-chat): Full example of implementing ChatGPT&#039;s realtime voice from scratch with VAD + STT + LLM + TTS.
-- [`@proj-airi/drizzle-duckdb-wasm`](https://github.com/moeru-ai/airi/tree/main/packages/drizzle-duckdb-wasm/README.md): Drizzle ORM driver for DuckDB WASM
-- [`@proj-airi/duckdb-wasm`](https://github.com/moeru-ai/airi/tree/main/packages/duckdb-wasm/README.md): Easy to use wrapper for `@duckdb/duckdb-wasm`
-- [AIRI Factorio](https://github.com/moeru-ai/airi-factorio): Allow AIRI to play Factorio.
-- [AIRI DomeKeeper](https://github.com/proj-airi/game-playing-ai-dome-keeper): Allow AIRI to play DomeKeeper.
-- [Factorio RCON API](https://github.com/neko
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[ronisarkarexe/story-spark-ai]]></title>
-            <link>https://github.com/ronisarkarexe/story-spark-ai</link>
-            <guid>https://github.com/ronisarkarexe/story-spark-ai</guid>
-            <pubDate>Sat, 30 May 2026 00:24:45 GMT</pubDate>
-            <description><![CDATA[StorySparkAI is an open-source platform designed for creative minds to generate and share multiple story variations from a single prompt.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/ronisarkarexe/story-spark-ai">ronisarkarexe/story-spark-ai</a></h1>
-            <p>StorySparkAI is an open-source platform designed for creative minds to generate and share multiple story variations from a single prompt.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 132</p>
-            <p>Forks: 391</p>
-            <p>Stars today: 20 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-   &lt;a href=&quot;https://github.com/ronisarkarexe/story-spark-ai/blob/master/LICENSE&quot; target=&quot;blank&quot;&gt;
-   &lt;img src=&quot;https://img.shields.io/github/license/ronisarkarexe/story-spark-ai?style=for-the-badge&amp;logo=appveyor&quot; alt=&quot;License&quot; /&gt;
-   &lt;/a&gt;
-   &lt;a href=&quot;https://github.com/ronisarkarexe/story-spark-ai/fork&quot; target=&quot;blank&quot;&gt;
-   &lt;img src=&quot;https://img.shields.io/github/forks/ronisarkarexe/story-spark-ai?style=for-the-badge&amp;logo=appveyor&quot; alt=&quot;Forks&quot;/&gt;
-   &lt;/a&gt;
-   &lt;a href=&quot;https://github.com/ronisarkarexe/story-spark-ai/stargazers&quot; target=&quot;blank&quot;&gt;
-   &lt;img src=&quot;https://img.shields.io/github/stars/ronisarkarexe/story-spark-ai?style=for-the-badge&amp;logo=appveyor&quot; alt=&quot;Star&quot;/&gt;
-   &lt;/a&gt;
-   &lt;a href=&quot;https://github.com/ronisarkarexe/story-spark-ai/issues&quot; target=&quot;blank&quot;&gt;
-   &lt;img src=&quot;https://img.shields.io/github/issues/ronisarkarexe/story-spark-ai.svg?style=for-the-badge&amp;logo=appveyor&quot; alt=&quot;Click Vote Issue&quot;/&gt;
-   &lt;/a&gt;
-   &lt;a href=&quot;https://github.com/ronisarkarexe/story-spark-ai/pulls&quot; target=&quot;blank&quot;&gt;
-   &lt;img src=&quot;https://img.shields.io/github/issues-pr/ronisarkarexe/story-spark-ai.svg?style=for-the-badge&amp;logo=appveyor&quot; alt=&quot;Click Vote Open Pull Request&quot;/&gt;
-   &lt;/a&gt;
-   &lt;a href=&quot;https://github.com/ronisarkarexe/story-spark-ai&quot; target=&quot;blank&quot;&gt;
-   &lt;img src=&quot;https://komarev.com/ghpvc/?username=ronisarkarexe&amp;repo=story-spark-ai&amp;style=for-the-badge&amp;color=blue&quot; alt=&quot;Repository Views&quot;/&gt;
-   &lt;/a&gt;
-&lt;/p&gt;
-&lt;img src=&quot;https://img.shields.io/badge/Story-Spark_AI-6c3ff7?style=for-the-badge&amp;labelColor=0d0d0d&amp;color=6c3ff7&quot; alt=&quot;StorySpark AI&quot; height=&quot;40&quot;/&gt;
-
-# ✨ StorySpark AI
-
-**The open-source AI storytelling platform — turn a single prompt into infinite worlds.**
-
-*Generate, explore, and share multiple story variations powered by OpenAI &amp; Gemini.*
-
-&lt;br/&gt;
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-storysparkai.vercel.app-6c3ff7?style=for-the-badge&amp;logoColor=white)](https://storysparkai.vercel.app/)
-&amp;nbsp;
-[![License: MIT](https://img.shields.io/github/license/ronisarkarexe/story-spark-ai?style=for-the-badge&amp;color=22c55e)](https://github.com/ronisarkarexe/story-spark-ai/blob/master/LICENSE)
-&amp;nbsp;
-[![Forks](https://img.shields.io/github/forks/ronisarkarexe/story-spark-ai?style=for-the-badge&amp;color=3b82f6)](https://github.com/ronisarkarexe/story-spark-ai/fork)
-&amp;nbsp;
-[![Issues](https://img.shields.io/github/issues/ronisarkarexe/story-spark-ai?style=for-the-badge&amp;color=ef4444)](https://github.com/ronisarkarexe/story-spark-ai/issues)
-&amp;nbsp;
-[![PRs](https://img.shields.io/github/issues-pr/ronisarkarexe/story-spark-ai?style=for-the-badge&amp;color=8b5cf6)](https://github.com/ronisarkarexe/story-spark-ai/pulls)
-&lt;br/&gt;
-
-![Node](https://img.shields.io/badge/Node.js-20.x-339933?style=flat-square&amp;logo=node.js&amp;logoColor=white)
-![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&amp;logo=react&amp;logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=flat-square&amp;logo=typescript&amp;logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=flat-square&amp;logo=mongodb&amp;logoColor=white)
-![Express](https://img.shields.io/badge/Express-4.x-000000?style=flat-square&amp;logo=express&amp;logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-6.x-646CFF?style=flat-square&amp;logo=vite&amp;logoColor=white)
-
-&lt;/div&gt;
+[![OpenCode Terminal UI](packages/web/src/assets/lander/screenshot.png)](https://opencode.ai)
 
 ---
-
-## 📖 Table of Contents
-
-- [About](#-about)
-- [Key Features](#-key-features)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Environment Variables](#environment-variables)
-  - [Running Locally](#running-locally)
-- [Deployment](#%EF%B8%8F-deployment-vercel)
-- [Contributing](#-contributing)
-- [Contributors](#-contributors)
-- [License](#-license)
-- [Support](#-support)
-
----
-
-## 🚀 About
-
-**StorySpark AI** is an open-source, full-stack creative writing platform that harnesses the power of **OpenAI GPT** and **Google Gemini** to generate rich, diverse story variations from a single user prompt.
-
-Whether you&#039;re a writer battling creative block, an educator exploring narrative structure, or simply someone who loves stories — StorySpark AI is your intelligent storytelling companion.
-
-&gt; 🌐 **Live at:** [storysparkai.vercel.app](https://storysparkai.vercel.app/)
-
----
-
-## 💡 Key Features
-
-| Feature | Description |
-|---|---|
-| 🤖 **AI Story Generation** | Instantly create unique stories using OpenAI GPT and Google Gemini |
-| 🎭 **Multiple Variations** | Generate several different takes from a single prompt |
-| 🔖 **Bookmarks &amp; History** | Save your favorite stories and revisit past creations |
-| 🧠 **AI Analysis** | Get AI-powered summaries, critiques, and insights on any story |
-| ✍️ **Writing Assistant** | Overcome writer&#039;s block with intelligent suggestions |
-| 🔐 **Auth &amp; OAuth** | Secure login with email/password or Google OAuth |
-| 📬 **Email Verification** | SMTP-based account verification flow |
-| 🔔 **Real-time Notifications** | Socket.IO powered live notification system |
-| 📊 **Analytics Dashboard** | Track story stats and user activity with charts |
-| 📱 **Fully Responsive** | Beautiful, seamless experience across all screen sizes |
-
----
-
-## 🛠 Tech Stack
-
-| Layer | Technology | Purpose |
-|---|---|---|
-| ⚛️ **UI** | React 19 + TypeScript | Component-based frontend |
-| ⚡ **Build** | Vite 6 | Lightning-fast dev server &amp; bundler |
-| 🎨 **Styling** | Tailwind CSS v4 | Utility-first CSS |
-| 🔄 **State** | Redux Toolkit | Global state management |
-| 🎞️ **Animation** | Framer Motion + GSAP | Smooth UI animations |
-| 📈 **Charts** | Chart.js + Recharts + D3.js | Analytics &amp; data visualizations |
-| 🗺️ **Routing** | React Router v6 | Client-side navigation |
-| 🟢 **Runtime** | Node.js 20 + Express 4 | REST API server |
-| 🍃 **Database** | MongoDB + Mongoose | Data storage &amp; ODM |
-| 🤖 **AI** | OpenAI SDK + Google Generative AI | Story generation models |
-| 🔐 **Auth** | JWT + bcryptjs | Token-based auth &amp; password hashing |
-| 📧 **Email** | Nodemailer | SMTP email delivery |
-| 🔌 **Realtime** | Socket.IO | WebSocket notifications |
-| ✅ **Validation** | Zod | Runtime schema validation |
-| 📝 **Logging** | Winston | Structured server logs |
-
----
-
-## 📁 Project Structure
-
-```
-story-spark-ai/                 # Monorepo root (npm workspaces)
-├── frontend/                   # React 19 + Vite SPA
-│   ├── index.html
-│   ├── vite.config.ts
-│   ├── tailwind.config.ts
-│   ├── .env.example
-│   └── src/
-│       ├── App.tsx             # Root component &amp; route setup
-│       ├── main.tsx            # Entry point
-│       ├── assets/             # Static assets (images, fonts)
-│       ├── components/         # Reusable UI components
-│       ├── constants/          # App-wide constants
-│       ├── error/              # Error boundary components
-│       ├── helpers/            # Utility helper functions
-│       ├── hooks/              # Custom React hooks
-│       ├── models/             # Frontend data models / types
-│       ├── redux/              # Redux Toolkit slices &amp; store
-│       ├── services/           # API service layer (axios)
-│       ├── socket/             # Socket.IO client setup
-│       ├── types/              # TypeScript type definitions
-│       └── utils/              # General utilities
-├── backend/                    # Express + TypeScript API
-│   ├── vercel.json             # Vercel serverless config
-│   ├── .env.example
-│   ├── scripts/
-│   │   └── seed-admin.ts       # Admin user seeding script
-│   ├── ml/                     # ML / AI model helpers
-│   └── src/
-│       ├── server.ts           # Entry point
-│       ├── app.ts              # Express app setup
-│       ├── app/                # App-level bootstrap modules
-│       ├── config/             # Configuration (DB, env)
-│       ├── constants/          # Shared backend constants
-│       ├── controllers/        # Route handler functions
-│       ├── enums/              # TypeScript enums
-│       ├── errors/             # Custom error classes
-│       ├── interfaces/         # TypeScript interfaces
-│       ├── router/             # Express router aggregator
-│       ├── routes/             # Individual route files
-│       ├── services/           # Business logic &amp; AI calls
-│       ├── shared/             # Shared utilities/middleware
-│       ├── socket/             # Socket.IO server setup
-│       ├── types/              # Backend type definitions
-│       └── utils/              # Helper utilities
-├── package.json                # Root workspaces config
-├── pnpm-workspace.yaml
-└── pnpm-lock.yaml
-```
-
----
-
-## 🏁 Getting Started
-
-### Prerequisites
-
-Make sure you have the following installed:
-
-- **Node.js** `18.18+` (recommended: `20.x`)
-- **npm** `9+` or **pnpm** `9+`
-- **MongoDB** URI — [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) (free tier works great)
-- API keys for **OpenAI** and/or **Google Gemini** (see [Environment Variables](#environment-variables))
 
 ### Installation
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/ronisarkarexe/story-spark-ai.git
-cd story-spark-ai
+# YOLO
+curl -fsSL https://opencode.ai/install | bash
 
-# 2. Install all dependencies (npm workspaces — single install)
+# Package managers
+npm i -g opencode-ai@latest        # or bun/pnpm/yarn
+scoop install opencode             # Windows
+choco install opencode             # Windows
+brew install anomalyco/tap/opencode # macOS and Linux (recommended, always up to date)
+brew install opencode              # macOS and Linux (official brew formula, updated less)
+sudo pacman -S opencode            # Arch Linux (Stable)
+paru -S opencode-bin               # Arch Linux (Latest from AUR)
+mise use -g opencode               # Any OS
+nix run nixpkgs#opencode           # or github:anomalyco/opencode for latest dev branch
+```
+
+&gt; [!TIP]
+&gt; Remove versions older than 0.1.x before installing.
+
+### Desktop App (BETA)
+
+OpenCode is also available as a desktop application. Download directly from the [releases page](https://github.com/anomalyco/opencode/releases) or [opencode.ai/download](https://opencode.ai/download).
+
+| Platform              | Download                           |
+| --------------------- | ---------------------------------- |
+| macOS (Apple Silicon) | `opencode-desktop-mac-arm64.dmg`   |
+| macOS (Intel)         | `opencode-desktop-mac-x64.dmg`     |
+| Windows               | `opencode-desktop-windows-x64.exe` |
+| Linux                 | `.deb`, `.rpm`, or `.AppImage`     |
+
+```bash
+# macOS (Homebrew)
+brew install --cask opencode-desktop
+# Windows (Scoop)
+scoop bucket add extras; scoop install extras/opencode-desktop
+```
+
+#### Installation Directory
+
+The install script respects the following priority order for the installation path:
+
+1. `$OPENCODE_INSTALL_DIR` - Custom installation directory
+2. `$XDG_BIN_DIR` - XDG Base Directory Specification compliant path
+3. `$HOME/bin` - Standard user binary directory (if it exists or can be created)
+4. `$HOME/.opencode/bin` - Default fallback
+
+```bash
+# Examples
+OPENCODE_INSTALL_DIR=/usr/local/bin curl -fsSL https://opencode.ai/install | bash
+XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://opencode.ai/install | bash
+```
+
+### Agents
+
+OpenCode includes two built-in agents you can switch between with the `Tab` key.
+
+- **build** - Default, full-access agent for development work
+- **plan** - Read-only agent for analysis and code exploration
+  - Denies file edits by default
+  - Asks permission before running bash commands
+  - Ideal for exploring unfamiliar codebases or planning changes
+
+Also included is a **general** subagent for complex searches and multistep tasks.
+This is used internally and can be invoked using `@general` in messages.
+
+Learn more about [agents](https://opencode.ai/docs/agents).
+
+### Documentation
+
+For more info on how to configure OpenCode, [**head over to our docs**](https://opencode.ai/docs).
+
+### Contributing
+
+If you&#039;re interested in contributing to OpenCode, please read our [contributing docs](./CONTRIBUTING.md) before submitting a pull request.
+
+### Building on OpenCode
+
+If you are working on a project that&#039;s related to OpenCode and is using &quot;opencode&quot; as part of its name, for example &quot;opencode-dashboard&quot; or &quot;opencode-mobile&quot;, please add a note to your README to clarify that it is not built by the OpenCode team and is not affiliated with us in any way.
+
+---
+
+**Join our community** [Discord](https://discord.gg/opencode) | [X.com](https://x.com/opencode)
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[companion-inc/feynman]]></title>
+            <link>https://github.com/companion-inc/feynman</link>
+            <guid>https://github.com/companion-inc/feynman</guid>
+            <pubDate>Sun, 31 May 2026 00:24:39 GMT</pubDate>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/companion-inc/feynman">companion-inc/feynman</a></h1>
+            <p></p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 7,529</p>
+            <p>Forks: 924</p>
+            <p>Stars today: 54 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://feynman.is&quot;&gt;
+    &lt;img src=&quot;assets/hero.png&quot; alt=&quot;Feynman CLI&quot; width=&quot;800&quot; /&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;The open source AI research agent.&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://feynman.is/docs&quot;&gt;&lt;img alt=&quot;Docs&quot; src=&quot;https://img.shields.io/badge/docs-feynman.is-0d9668?style=flat-square&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/companion-inc/feynman/blob/main/LICENSE&quot;&gt;&lt;img alt=&quot;License&quot; src=&quot;https://img.shields.io/github/license/companion-inc/feynman?style=flat-square&quot; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+---
+
+### Installation
+
+**macOS / Linux:**
+
+```bash
+curl -fsSL https://feynman.is/install | bash
+```
+
+**Windows (PowerShell):**
+
+```powershell
+irm https://feynman.is/install.ps1 | iex
+```
+
+The one-line installer fetches the latest tagged release. To pin a version, pass it explicitly, for example `curl -fsSL https://feynman.is/install | bash -s -- 0.2.35`.
+
+The installer downloads a standalone native bundle with its own Node.js runtime.
+
+To upgrade the standalone app later, rerun the installer. `feynman update` only refreshes installed Pi packages inside Feynman&#039;s environment; it does not replace the standalone runtime bundle itself.
+
+To uninstall the standalone app, remove the launcher and runtime bundle, then optionally remove `~/.feynman` if you also want to delete settings, sessions, and installed package state. If you also want to delete alphaXiv login state, remove `~/.ahub`. See the installation guide for platform-specific paths.
+
+Local models are supported through the setup flow. For LM Studio, run `feynman setup`, choose `LM Studio`, and keep the default `http://localhost:1234/v1` unless you changed the server port. For LiteLLM, choose `LiteLLM Proxy` and keep the default `http://localhost:4000/v1`. For Ollama or vLLM, choose `Custom provider (baseUrl + API key)`, use `openai-completions`, and point it at the local `/v1` endpoint.
+
+### Skills Only
+
+If you want just the research skills without the full terminal app:
+
+**macOS / Linux:**
+
+```bash
+curl -fsSL https://feynman.is/install-skills | bash
+```
+
+**Windows (PowerShell):**
+
+```powershell
+irm https://feynman.is/install-skills.ps1 | iex
+```
+
+That installs the skill library into `~/.codex/skills/feynman` for Codex. You can also name the Codex target explicitly:
+
+**macOS / Linux:**
+
+```bash
+curl -fsSL https://feynman.is/install-skills | bash -s -- --codex
+```
+
+**Windows (PowerShell):**
+
+```powershell
+&amp; ([scriptblock]::Create((irm https://feynman.is/install-skills.ps1))) -Scope Codex
+```
+
+For a repo-local Claude/agent install instead:
+
+**macOS / Linux:**
+
+```bash
+curl -fsSL https://feynman.is/install-skills | bash -s -- --repo
+```
+
+**Windows (PowerShell):**
+
+```powershell
+&amp; ([scriptblock]::Create((irm https://feynman.is/install-skills.ps1))) -Scope Repo
+```
+
+That installs into `.agents/skills/feynman` under the current repository.
+
+For an OpenCode project-local install instead:
+
+**macOS / Linux:**
+
+```bash
+curl -fsSL https://feynman.is/install-skills | bash -s -- --opencode
+```
+
+**Windows (PowerShell):**
+
+```powershell
+&amp; ([scriptblock]::Create((irm https://feynman.is/install-skills.ps1))) -Scope OpenCode
+```
+
+That installs into `.opencode/skills/feynman` under the current repository.
+
+These installers download the bundled `skills/` and `prompts/` trees plus the repo guidance files referenced by those skills. They do not install the Feynman terminal, bundled Node runtime, auth storage, or Pi packages.
+
+---
+
+### What you type → what happens
+
+```
+$ feynman &quot;what do we know about scaling laws&quot;
+→ Searches papers and web, produces a cited research brief
+
+$ feynman deepresearch &quot;mechanistic interpretability&quot;
+→ Multi-agent investigation with parallel researchers, synthesis, verification
+
+$ feynman lit &quot;RLHF alternatives&quot;
+→ Literature review with consensus, disagreements, open questions
+
+$ feynman audit 2401.12345
+→ Compares paper claims against the public codebase
+
+$ feynman replicate &quot;chain-of-thought improves math&quot;
+→ Replicates experiments on local or cloud GPUs
+
+$ feynman recipe &quot;fine-tune a small model for math reasoning&quot;
+→ Finds ranked, implementable ML training recipes from papers, datasets, docs, and code
+```
+
+---
+
+### Workflows
+
+Ask naturally or use slash commands as shortcuts.
+
+| Command | What it does |
+| --- | --- |
+| `/deepresearch &lt;topic&gt;` | Source-heavy multi-agent investigation |
+| `/lit &lt;topic&gt;` | Literature review from paper search and primary sources |
+| `/review &lt;artifact&gt;` | Simulated peer review with severity and revision plan |
+| `/audit &lt;item&gt;` | Paper vs. codebase mismatch audit |
+| `/replicate &lt;paper&gt;` | Replicate experiments on local or cloud GPUs |
+| `/recipe &lt;task-or-paper&gt;` | Ranked ML training recipes with dataset, method, code, and verification status |
+| `/compare &lt;topic&gt;` | Source comparison matrix |
+| `/draft &lt;topic&gt;` | Paper-style draft from research findings |
+| `/autoresearch &lt;idea&gt;` | Autonomous experiment loop |
+| `/watch &lt;topic&gt;` | Recurring research watch |
+| `/outputs` | Browse all research artifacts |
+
+---
+
+### Agents
+
+Four bundled research agents, dispatched automatically.
+
+- **Researcher** — gather evidence across papers, web, repos, docs
+- **Reviewer** — simulated peer review with severity-graded feedback
+- **Writer** — structured drafts from research notes
+- **Verifier** — inline citations, source URL verification, dead link cleanup
+
+---
+
+### Skills &amp; Tools
+
+- **[AlphaXiv](https://www.alphaxiv.org/)** — paper search, Q&amp;A, code reading, annotations (via `alpha` CLI)
+- **[Hugging Face Hub](https://huggingface.co/docs/hub/api)** — dataset metadata, split/schema inspection, and small file reads from model, dataset, and Space repos
+- **Docker** — isolated container execution for safe experiments on your machine
+- **Web search** — Exa, Perplexity, or Gemini API; no Chromium cookie access by default
+- **Session search** — indexed recall across prior research sessions
+- **Preview** — browser and PDF export of generated artifacts
+- **Modal** — serverless GPU compute for burst training and inference
+- **RunPod** — persistent GPU pods with SSH access for long-running experiments
+
+---
+
+### How it works
+
+Built on [Pi](https://github.com/badlogic/pi-mono) for the agent runtime, [alphaXiv](https://www.alphaxiv.org/) for paper search and analysis, and CLI tools for compute and execution. Runtime resources follow Pi&#039;s documented package model for [packages](https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/packages.md), [extensions](https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/extensions.md), and [skills](https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/skills.md). Hugging Face inspection uses the public [Hub API endpoints](https://huggingface.co/docs/hub/api) and `HF_TOKEN` / `HUGGINGFACE_HUB_TOKEN` environment variables documented by [`huggingface_hub`](https://huggingface.co/docs/huggingface_hub/main/en/package_reference/environment_variables). The ML recipe workflow was informed by the open-source [Hugging Face `ml-intern`](https://github.com/huggingface/ml-intern) research-agent repo, but is implemented as native Feynman prompts, skills, and read-only tools. Every output is source-grounded — claims link to papers, docs, or repos with direct URLs.
+
+---
+
+### Star History
+
+&lt;a href=&quot;https://www.star-history.com/?repos=companion-inc%2Ffeynman&amp;type=date&amp;legend=top-left&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/chart?repos=companion-inc/feynman&amp;type=date&amp;theme=dark&amp;legend=top-left&quot; /&gt;
+    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/chart?repos=companion-inc/feynman&amp;type=date&amp;legend=top-left&quot; /&gt;
+    &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/chart?repos=companion-inc/feynman&amp;type=date&amp;legend=top-left&quot; /&gt;
+  &lt;/picture&gt;
+&lt;/a&gt;
+
+---
+
+### Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full contributor guide.
+
+```bash
+git clone https://github.com/companion-inc/feynman.git
+cd feynman
+nvm use || nvm install
 npm install
-```
-
-### Environment Variables
-
-Copy the example env files and fill in your values:
-
-```bash
-cp backend/.env.example  backend/.env
-cp frontend/.env.example frontend/.env
-```
-
-&gt; ⚠️ **Never commit** `backend/.env` or `frontend/.env`. Only `.env.example` files belong in git.
-
-#### Backend — `backend/.env`
-
-| Variable | Required | Description |
-|---|---|---|
-| `DATABASE_URL` | ✅ Yes | MongoDB connection string ([Atlas](https://www.mongodb.com/cloud/atlas) or local) |
-| `PORT` | No | API port (default `5000`) |
-| `NODE_ENV` | No | `development` or `production` |
-| `CORS_ORIGINS` | No | Comma-separated allowed frontend URLs (e.g. `http://localhost:4001`) |
-| `SALT_ROUNDS` | ✅ Yes | bcrypt cost factor (e.g. `10`) |
-| `JWT_SECRET` | ✅ Yes | Access token signing secret |
-| `JWT_REFRESH_SECRET` | ✅ Yes | Refresh token signing secret |
-| `JWT_EXPIRES_IN` | ✅ Yes | Access token lifetime (e.g. `60d`) |
-| `JWT_REFRESH_EXPIRES_IN` | ✅ Yes | Refresh token lifetime (e.g. `120d`) |
-| `DEFAULT_ADMIN_PASSWORD` | ✅ Yes | Initial admin password for seeding |
-| `OPEN_AI_KEY` | For OpenAI | [OpenAI API key](https://platform.openai.com/api-keys) |
-| `GEMINI_API_KEY` | For Gemini | [Google AI Studio key](https://aistudio.google.com/apikey) |
-| `UNSPLASH_KEY_API` | For images | [Unsplash Access Key](https://unsplash.com/developers) |
-| `UNSPLASH_KEY_API_SECRET` | For images | Unsplash secret |
-| `VERIFY_EMAIL` | For email | SMTP sender address |
-| `VERIFY_PASSWORD` | For email | SMTP password or app password |
-| `GOOGLE_CLIENT_ID` | For Google login | [Google Cloud Console](https://console.cloud.google.com) |
-
-#### Frontend — `frontend/.env`
-
-| Variable | Required | Description |
-|---|---|---|
-| `VITE_BASE_URL` | ✅ Yes | API base URL (e.g. `http://localhost:5000/api/v1`) |
-| `VITE_SOCKET_URL` | No | Socket.IO server URL for real-time notifications |
-| `VITE_GOOGLE_CLIENT_ID` | ✅ Yes | [Google Cloud Console](https://console.cloud.google.com) OAuth Client ID |
-
-### Running Locally
-
-**Step 1 — Seed the admin user** *(first time only)*
-
-Before starting the server for the first time, create an admin account:
-
-```bash
-cd backend
-npx ts-node scripts/seed-admin.ts
-```
-
-Make sure `DEFAULT_ADMIN_PASSWORD` and `ADMIN_EMAIL` are set in `backend/.env`.
-
-**Step 2 — Start development servers**
-
-```bash
-# Run both frontend &amp; backend concurrently (from repo root)
-npm run dev
-
-# Or run individually:
-npm run dev:backend    # API on http://localhost:5000
-npm run dev:frontend   # Vite on http://localhost:4001
-```
-
-**Step 3 — Production build**
-
-```bash
+npm test
+npm run typecheck
 npm run build
-npm run start:backend    # requires build:backend first
-npm run start:frontend   # serves built static app (preview)
 ```
 
----
+[Docs](https://feynman.is/docs) · [Release Notes](RELEASES.md) · [MIT License](LICENSE)
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[playcanvas/supersplat]]></title>
+            <link>https://github.com/playcanvas/supersplat</link>
+            <guid>https://github.com/playcanvas/supersplat</guid>
+            <pubDate>Sun, 31 May 2026 00:24:38 GMT</pubDate>
+            <description><![CDATA[3D Gaussian Splat Editor]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/playcanvas/supersplat">playcanvas/supersplat</a></h1>
+            <p>3D Gaussian Splat Editor</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 8,856</p>
+            <p>Forks: 968</p>
+            <p>Stars today: 56 stars today</p>
+            <h2>README</h2><pre># SuperSplat Editor
 
-## ☁️ Deployment (Vercel)
+[![Github Release](https://img.shields.io/github/v/release/playcanvas/supersplat)](https://github.com/playcanvas/supersplat/releases)
+[![License](https://img.shields.io/github/license/playcanvas/supersplat)](https://github.com/playcanvas/supersplat/blob/main/LICENSE)
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=flat&amp;logo=discord&amp;logoColor=white&amp;color=black)](https://discord.gg/RSaMRzg)
+[![Reddit](https://img.shields.io/badge/Reddit-FF4500?style=flat&amp;logo=reddit&amp;logoColor=white&amp;color=black)](https://www.reddit.com/r/PlayCanvas)
+[![X](https://img.shields.io/badge/X-000000?style=flat&amp;logo=x&amp;logoColor=white&amp;color=black)](https://x.com/intent/follow?screen_name=playcanvas)
 
-This monorepo deploys as **two separate Vercel projects**:
+| [SuperSplat Editor](https://superspl.at/editor) | [User Guide](https://developer.playcanvas.com/user-manual/gaussian-splatting/editing/supersplat/) | [Blog](https://blog.playcanvas.com) | [Forum](https://forum.playcanvas.com) |
 
-| Project | Root Directory | Example Domain |
-|---|---|---|
-| 🖥️ Frontend | `frontend` | `storysparkai.vercel.app` |
-| ⚙️ Backend API | `backend` | `apistorysparkai.vercel.app` |
+The SuperSplat Editor is a free and open source tool for inspecting, editing, optimizing and publishing 3D Gaussian Splats. It is built on web technologies and runs in the browser, so there&#039;s nothing to download or install.
 
-**Frontend environment variables** *(set in Vercel dashboard → redeploy after changes)*:
+A live version of this tool is available at: https://superspl.at/editor
 
-```env
-VITE_BASE_URL=https://&lt;your-api&gt;.vercel.app/api/v1
-VITE_SOCKET_URL=https://&lt;your-persistent-socket-host&gt;
-VITE_GOOGLE_CLIENT_ID=&lt;your-google-client-id&gt;
-```
+![image](https://github.com/user-attachments/assets/b6cbb5cc-d3cc-4385-8c71-ab2807fd4fba)
 
-&gt; ⚠️ **Do NOT** point `VITE_SOCKET_URL` at your Vercel API URL — Vercel serverless functions cannot run persistent Socket.IO connections, which causes endless `/socket.io/` 404 logs. Use a dedicated host (e.g. Render, Railway) for the Socket.IO server.
+To learn more about using SuperSplat, please refer to the [User Guide](https://developer.playcanvas.com/user-manual/gaussian-splatting/editing/supersplat/).
 
-**Backend environment variables**: Set `DATABASE_URL`, JWT secrets, AI keys, and add your frontend domain to `CORS_ORIGINS`.
+## Local Development
 
-**Git**: Use a **single** repository root (one `.git` folder). Do not nest another `.git` inside `frontend/` or `backend/`.
+To initialize a local development environment for SuperSplat, ensure you have [Node.js](https://nodejs.org/) 18 or later installed. Follow these steps:
 
----
+1. Clone the repository:
 
-## 🤝 Contributing
+   ```sh
+   git clone https://github.com/playcanvas/supersplat.git
+   cd supersplat
+   ```
 
-Contributions make the open-source community such an amazing place to **learn, inspire, and create**. All contributions are genuinely appreciated! 🙌
+2. Install dependencies:
 
-### How to Contribute
+   ```sh
+   npm install
+   ```
 
-```bash
-# 1. Fork this repository on GitHub
-# 2. Clone your fork
-git clone https://github.com/&lt;your-username&gt;/story-spark-ai.git
-cd story-spark-ai
+3. Build SuperSplat and start a local web server:
 
-# 3. Create a feature branch
-git checkout -b feat/your-amazing-feature
+   ```sh
+   npm run develop
+   ```
 
-# 4. Install dependencies &amp; configure env files
-npm install
+4. Open a web browser tab and make sure network caching is disabled on the network tab and the other application caches are clear:
 
-# 5. Make your changes, then commit
-git add .
-git commit -m &quot;feat: add your amazing feature&quot;
+   - On Safari you can use `Cmd+Option+e` or Develop-&gt;Empty Caches.
+   - On Chrome ensure the options &quot;Update on reload&quot; and &quot;Bypass for network&quot; are enabled in the Application-&gt;Service workers tab:
 
-# 6. Push and open a Pull Request
-git push origin feat/your-amazing-feature
-```
+   &lt;img width=&quot;846&quot; alt=&quot;Screenshot 2025-04-25 at 16 53 37&quot; src=&quot;https://github.com/user-attachments/assets/888bac6c-25c1-4813-b5b6-4beecf437ac9&quot; /&gt;
 
-Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines, and [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) before contributing.
+5. Navigate to `http://localhost:3000`
 
----
+When changes to the source are detected, SuperSplat is rebuilt automatically. Simply refresh your browser to see your changes.
 
-## 🌟 Contributors
+## Localizing the SuperSplat Editor
 
-Thanks to everyone who has helped build **Story Spark AI**! 💜
+The currently supported languages are available here:
 
-&lt;!-- CONTRIBUTORS:START --&gt;
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td align=&quot;center&quot;&gt;
-      &lt;a href=&quot;https://github.com/ronisarkarexe&quot;&gt;
-        &lt;img src=&quot;https://github.com/ronisarkarexe.png&quot; width=&quot;90&quot; style=&quot;border-radius:50%&quot; alt=&quot;ronisarkarexe&quot; /&gt;
-        &lt;br /&gt;&lt;sub&gt;&lt;b&gt;Roni Sarkar&lt;/b&gt;&lt;/sub&gt;
-      &lt;/a&gt;
-      &lt;br /&gt;&lt;sub&gt;🔧 Maintainer&lt;/sub&gt;
-    &lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;
-      &lt;a href=&quot;https://github.com/mzl2233&quot;&gt;
-        &lt;img src=&quot;https://github.com/mzl2233.png&quot; width=&quot;90&quot; style=&quot;border-radius:50%&quot; alt=&quot;mzl2233&quot; /&gt;
-        &lt;br /&gt;&lt;sub&gt;&lt;b&gt;mzl2233&lt;/b&gt;&lt;/sub&gt;
-      &lt;/a&gt;
-      &lt;br /&gt;&lt;sub&gt;💻 Contributor&lt;/sub&gt;
-    &lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;
-      &lt;a href=&quot;https://github.com/amrendrasharma1328-a11y&quot;&gt;
-        &lt;img src=&quot;https://github.com/amrendrasharma1328-a11y.png&quot; width=&quot;90&quot; style=&quot;border-radius:50%&quot; alt=&quot;amrendrasharma1328-a11y&quot; /&gt;
-        &lt;br /&gt;&lt;sub&gt;&lt;b&gt;Amrendra Sharma&lt;/b&gt;&lt;/sub&gt;
-      &lt;/a&gt;
-      &lt;br /&gt;&lt;sub&gt;💻 Contributor&lt;/sub&gt;
-    &lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;
-      &lt;a href=&quot;https://github.com/Swetanegi05&quot;&gt;
-        &lt;img src=&quot;https://github.com/Swetanegi05.png&quot; width=&quot;90&quot; style=&quot;border-radius:50%&quot; alt=&quot;Swetanegi05&quot; /&gt;
-        &lt;br /&gt;&lt;sub&gt;&lt;b&gt;Sweta Negi&lt;/b&gt;&lt;/sub&gt;
-      &lt;/a&gt;
-      &lt;br /&gt;&lt;sub&gt;💻 Contributor&lt;/sub&gt;
-    &lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;
-      &lt;a href=&quot;https://github.com/rajdeep-yadav&quot;&gt;
-        &lt;img src=&quot;https://github.com/rajdeep-yadav.png&quot; width=&quot;90&quot; style=&quot;border-radius:50%&quot; alt=&quot;rajdeep-yadav&quot; /&gt;
-        &lt;br /&gt;&lt;sub&gt;&lt;b&gt;Rajdeep&lt;/b&gt;&lt;/sub&gt;
-      &lt;/a&gt;
-      &lt;br /&gt;&lt;sub&gt;💻 Contributor&lt;/sub&gt;
-    &lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;
-      &lt;a href=&quot;https://github.com/charanbalaji2005&quot;&gt;
-        &lt;img src=&quot;https://github.com/charanbalaji2005.png&quot; width=&quot;90&quot; style=&quot;border-radius:50%&quot; alt=&quot;charanbalaji2005&quot; /&gt;
-        &lt;br /&gt;&lt;sub&gt;&lt;b&gt;Charan Balaji&lt;/b&gt;&lt;/sub&gt;
-      &lt;/a&gt;
-      &lt;br /&gt;&lt;sub&gt;ScrollFAB, Mobile Nav, UI Components&lt;/sub&gt;
-    &lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;
-      &lt;img src=&quot;https://via.placeholder.com/90/6c3ff7/ffffff?text=P.H&quot; width=&quot;90&quot; style=&quot;border-radius:50%&quot; alt=&quot;P. Harshini&quot; /&gt;
-      &lt;br /&gt;&lt;sub&gt;&lt;b&gt;P. Harshini Padmavathi&lt;/b&gt;&lt;/sub&gt;
-      &lt;br /&gt;&lt;sub&gt;💻 Contributor&lt;/sub&gt;
-    &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
-&lt;!-- CONTRIBUTORS:END --&gt;
+https://github.com/playcanvas/supersplat/tree/main/static/locales
 
----
+### Adding a New Language
 
-## 📄 License
+1. Add a new `&lt;locale&gt;.json` file in the `static/locales` directory.
 
-This project is licensed under the **MIT License** — see the [LICENSE](./LICENSE) file for full details.
+2. Add the locale to the list here:
 
-```
-MIT License — free to use, modify, and distribute.
-```
+   https://github.com/playcanvas/supersplat/blob/main/src/ui/localization.ts
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](./LICENSE)
+### Testing Translations
 
----
+To test your translations:
 
-## 💙 Support
+1. Run the development server:
 
-If you find **StorySpark AI** useful, please consider:
+   ```sh
+   npm run develop
+   ```
 
-- ⭐ **Starring** the repository — it helps others discover the project!
-- 🐛 **Reporting bugs** via [GitHub Issues](https://github.com/ronisarkarexe/story-spark-ai/issues)
-- 💡 **Suggesting features** in [Discussions](https://github.com/ronisarkarexe/story-spark-ai/discussions)
-- 🤝 **Contributing** code, docs, or tests
+2. Open your browser and navigate to:
 
-&gt; *Thank you for being part of the StorySpark AI community. Happy writing! 🚀✨*
+   ```
+   http://localhost:3000/?lng=&lt;locale&gt;
+   ```
 
-&lt;div align=&quot;center&quot;&gt;
+   Replace `&lt;locale&gt;` with your language code (e.g., `fr`, `de`, `es`).
 
----
+## Contributors
 
-Made with ❤️ by the [StorySpark AI community](https://github.com/ronisarkarexe/story-spark-ai/graphs/contributors)
+SuperSplat is made possible by our amazing open source community:
 
+&lt;a href=&quot;https://github.com/playcanvas/supersplat/graphs/contributors&quot;&gt;
+  &lt;img src=&quot;https://contrib.rocks/image?repo=playcanvas/supersplat&quot; /&gt;
+&lt;/a&gt;
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[RealKai42/qwerty-learner]]></title>
+            <link>https://github.com/RealKai42/qwerty-learner</link>
+            <guid>https://github.com/RealKai42/qwerty-learner</guid>
+            <pubDate>Sun, 31 May 2026 00:24:37 GMT</pubDate>
+            <description><![CDATA[为键盘工作者设计的单词记忆与英语肌肉记忆锻炼软件 / Words learning and English muscle memory training software designed for keyboard workers]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/RealKai42/qwerty-learner">RealKai42/qwerty-learner</a></h1>
+            <p>为键盘工作者设计的单词记忆与英语肌肉记忆锻炼软件 / Words learning and English muscle memory training software designed for keyboard workers</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 22,200</p>
+            <p>Forks: 2,504</p>
+            <p>Stars today: 61 stars today</p>
+            <h2>README</h2><pre>&lt;div align=center&gt;
+&lt;img  src=&quot;src/assets/logo.svg&quot;/&gt;
 &lt;/div&gt;
+
+&lt;h1 align=&quot;center&quot;&gt;
+  Qwerty Learner
+&lt;/h1&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;./docs/README_EN.md&quot;&gt;English&lt;/a&gt;
+  &lt;a href=&quot;./docs/README_JP.md&quot;&gt;日本語&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  为键盘工作者设计的单词记忆与英语肌肉记忆锻炼软件
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot; style=&quot;display: flex; justify-content: center; gap: 10px;&quot;&gt;
+  &lt;a href=&quot;https://github.com/Realkai42/qwerty-learner/blob/master/LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/license/Realkai42/qwerty-learner&quot; alt=&quot;License&quot;&gt;&lt;/a&gt;
+  &lt;a&gt;&lt;img src=&quot;https://img.shields.io/badge/PRs-welcome-brightgreen.svg&quot;/&gt;&lt;/a&gt;
+  &lt;a&gt;&lt;img src=&quot;https://img.shields.io/badge/Powered%20by-React-blue&quot;/&gt;&lt;/a&gt;
+  &lt;a&gt;&lt;img src=&quot;https://img.shields.io/github/stars/RealKai42/qwerty-learner&quot;/&gt;&lt;/a&gt;
+  &lt;a&gt;&lt;img src=&quot;https://img.shields.io/github/forks/RealKai42/qwerty-learner&quot;/&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;div align=center&gt;
+&lt;a href=&quot;https://trendshift.io/repositories/3239&quot; target=&quot;_blank&quot; class=&quot;trendshift-badge&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/3239&quot; alt=&quot;RealKai42%2Fqwerty-learner | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div align=center&gt;
+&lt;img  src=&quot;docs/Screenshot.png&quot;/&gt;
+&lt;/div&gt;
+
+## 📸 在线访问
+
+**首选部署**: &lt;https://qwerty.kaiyi.cool/&gt;
+GitHub Pages: &lt;https://realkai42.github.io/qwerty-learner/&gt;
+
+镜像仓库:
+[GitCode: RealKai42/qwerty-learner](https://gitcode.com/RealKai42/qwerty-learner/overview)
+[Gitee: KaiyiWing/qwerty-learner](https://gitee.com/KaiyiWing/qwerty-learner)
+&lt;br/&gt;
+&lt;br/&gt;
+
+项目已发布 VSCode 插件版，一键启动、随时开始练习
+[VSCode Plugin Market](https://marketplace.visualstudio.com/items?itemName=Kaiyi.qwerty-learner)
+[GitHub](https://github.com/Realkai42/qwerty-learner-vscode)
+
+&lt;br /&gt;
+
+## 快速部署
+
+### Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FRealKai42%2Fqwerty-learner)
+
+#### 部署步骤
+
+1. 更新 `Vercel Build &amp; Development Settings` -&gt; `Output Directory`：&quot;build&quot;
+2. Click Deploy Button
+
+&lt;br /&gt;
+
+## ✨ 设计思想
+
+软件设计的目标群体为以英语作为主要工作语言的键盘工作者。部分人会出现输入母语时的打字速度快于英语的情况，因为多年的母语输入练就了非常坚固的肌肉记忆 💪，而英语输入的肌肉记忆相对较弱，易出现输入英语时“提笔忘字”的现象。
+
+同时为了巩固英语技能，也需要持续的背诵单词 📕，本软件将英语单词的记忆与英语键盘输入的肌肉记忆的锻炼相结合，可以在背诵单词的同时巩固肌肉记忆。
+
+为了避免造成错误的肌肉记忆，设计上如果用户单词输入错误则需要重新输入单词，尽可能确保用户维持正确的肌肉记忆。
+
+软件也对需要机考英语的人群有一定的帮助。
+
+**For Coder**：
+
+内置了程序员工作常用单词的词库，方便练习工作中常用的单词、提高输入速度。也内置了诸多语言的 API 的练习，帮助以程序员快速熟悉常用的 API，更多语言的 API 正在逐步添加中...
+
+&lt;div align=center&gt;
+&lt;img  src=&quot;https://github.com/Realkai42/qwerty-learner/blob/master/docs/coder.png&quot;/&gt;
+&lt;/div&gt;
+
+&lt;br /&gt;
+&lt;br /&gt;
+
+## 🛠 功能列表
+
+### 词库
+
+内置了常用的 CET-4 、CET-6 、GMAT 、GRE 、IELTS 、SAT 、TOEFL 、考研英语、专业四级英语、专业八级英语，也有程序员常见英语单词以及多种编程语言 API 等词库。 尽可能满足大部分用户对单词记忆的需求，也非常欢迎社区贡献更多的词库。
+&lt;br /&gt;
+&lt;br /&gt;
+
+### 音标显示、发音功能
+
+方便用户在记忆单词时，同时记忆读音与音标。
+
+&lt;div align=center&gt;
+&lt;img  src=&quot;https://github.com/Realkai42/qwerty-learner/blob/master/docs/phonetic.jpeg&quot;/&gt;
+&lt;/div&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+
+### 默写模式
+
+在用户完成一个章节的练习后，会弹出选项是否默写本章，方便用户巩固本章学习的单词。
+
+&lt;div align=center&gt;
+&lt;img  src=&quot;https://github.com/Realkai42/qwerty-learner/blob/master/docs/dictation.png&quot;/&gt;
+&lt;/div&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+
+### 速度、正确率显示
+
+量化用户输入的速度和输入的正确率，让用户有感知的了解自己技能的提升
+
+&lt;div align=center&gt;
+&lt;img  src=&quot;https://github.com/Realkai42/qwerty-learner/blob/master/docs/speed.jpeg&quot;/&gt;
+&lt;/div&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+
+## 如何贡献
+
+### 贡献代码
+
+[Call for Contributor](https://github.com/Realkai42/qwerty-learner/issues/390)
+[贡献准则](./docs/CONTRIBUTING.md)
+
+### 贡献词库
+
+[导入词典](./docs/toBuildDict.md)
+
+## 运行项目
+
+本项目是基于`React`开发的，需要 node 环境来运行。
+
+### 环境准备
+
+1. NodeJS
+2. Git
+3. Yarn
+
+&gt; **验证是否已经拥有相关环境**
+&gt;
+&gt; 1. 手动验证  
+&gt;    请在命令行下执行以下命令，查看是否有对应版本输出
+&gt;
+&gt;    ```sh
+&gt;    node --version
+&gt;    git --version
+&gt;    yarn --version
+&gt;    ```
+&gt;
+&gt; 2. 脚本验证  
+&gt;    使用我们提供的脚本对所需环境进行验证，如果确实依赖项会自动安装
+&gt;    - Windows 用户可以直接执行 [pre-check.ps1](scripts/pre-check.ps1) 脚本
+&gt;    - MacOS 用户可以直接执行 [pre-check.sh](scripts/pre-check.sh) 脚本
+
+如果有对应环境缺失，我们可以参考下列官方文档进行安装
+
+&gt; - [NodeJS](https://nodejs.org/en/download)
+&gt; - [Git](https://git-scm.com/downloads)
+&gt; - [yarn](https://classic.yarnpkg.com/lang/en/docs/install)
+
+### 手动安装
+
+1. 在命令行中执行 `git clone https://github.com/RealKai42/qwerty-learner.git` 将项目拉取到本地, 如果不使用 git 可能因为缺少依赖而无法运行
+2. 在命令行中执行 `cd qwerty-learner`，进入项目根目录，执行`yarn install`来下载依赖。
+3. 执行`yarn start`来启动项目，项目默认地址为`http://localhost:5173/`
+4. 在浏览器中打开`http://localhost:5173/`来访问项目。
+
+### 脚本执行
+
+对于 Windows 用户，可以直接执行 [install.ps1](scripts/install.ps1) 脚本，来一键安装依赖并启动项目。
+
+1. 打开 powershell，定位到项目根目录中的`scripts`目录
+2. 在命令行中，执行`.\install.ps1`
+3. 等待脚本完成。
+
+&gt; 备注
+&gt; 脚本依赖`winget`来安装 node，仅在 Windows 10 1709（版本 16299）或更高版本上受支持！
+
+对于 MacOS 用户，可以直接执行 [install.sh](scripts/install.sh) 脚本来一键安装依赖并启动项目
+
+1. 打开终端，并进入此项目文件夹
+2. 在命令行中执行 `scripts/install.sh`
+3. 等待脚本完成
+
+&gt; 此脚本依赖于 `homebrew`，请确保自己电脑上可以执行`brew`命令
+
+## 🏆 荣誉
+
+- Github 全球趋势榜上榜项目
+- V2EX 全站热搜项目
+- Gitee 全站推荐项目
+- [少数派首页推荐](https://sspai.com/post/67535)
+- GitCode 开源摘星计划-毕业项目（[G-Star 计划](https://gitcode.com/g-star)）
+- Gitee 最有价值开源项目（[GVP](https://gitee.com/gvp)）
+
+## 📕 词库列表
+
+- CET-4
+- CET-6
+- GMAT
+- GRE
+- IELTS
+- SAT
+- TOEFL
+- 考研英语
+- 专业四级英语
+- 专业八级英语
+- Coder Dict 程序员常用词
+- 高考
+- 中考
+- 商务英语
+- BEC
+- 人教版英语 3-9 年级
+- 王陆雅思王听力语料库 [@Saigyouji_WKKun](https://github.com/ggehuliang)
+- 日语常见词、N1 ～ N5 [@xiaojia](https://github.com/wetery)
+- 哈萨克语基础 3000 词(哈拼版) 来源于 [@Elgar](https://github.com/Elgar17) 由 [@Herbert He](https://github.com/HerbertHe) 通过 [哈拼](https://ha-pin.js.org) 技术支持
+
+如果您需要背诵其他词库，欢迎在 Issue 中提出
+
+&lt;br /&gt;
+&lt;br /&gt;
+
+## 📗 API 词库
+
+- JavaScript API. [@sdu-gyf](https://github.com/sdu-gyf)
+- Node.js API. [@chrysalis1215](https://github.com/chrysalis1215)
+- Java API. [@darkSheep](https://github.com/darkSheep404)
+- Linux Command. [@归谜](https://github.com/vhxubo)
+- C#: List API [@nidbCN](https://github.com/nidbCN)
+
+目前 API 相关词库主要依赖于社区贡献，如果您想贡献自己需要的 API 词库，建议参考 [Issue #42](https://github.com/Realkai42/qwerty-learner/issues/40) [pr #67](https://github.com/Realkai42/qwerty-learner/pull/67) 贡献词典。
+
+&lt;br /&gt;
+&lt;br /&gt;
+
+## 🎙 功能与建议
+
+目前项目处于开发初期，新功能正在持续添加中，如果你对软件有任何功能与建议，欢迎在 Issues 中提出
+
+项目的进展与未来计划在 [Issue](https://github.com/Realkai42/qwerty-learner/issues/42) 中详细介绍，内部也包含对未来功能的意见征询等，如果对 Qwerty Learner 的未来感兴趣，欢迎参与讨论。
+
+如果你也喜欢本软件的设计思想，欢迎提交 pr，非常感谢你对我们的支持！
+&lt;br /&gt;
+&lt;br /&gt;
+
+## 🏄‍♂️ 贡献指南
+
+如果您对本项目感兴趣，我们非常欢迎参与到项目的贡献中，我们会尽可能地提供帮助
+
+在贡献前，希望您阅读 [Issue #42](https://github.com/Realkai42/qwerty-learner/issues/42) 了解我们目前的开发计划，我们希望您能参与到&quot;计划中&quot;的工作亦或者 Issue 区 Label 为 &quot;Help Wanted&quot; 的工作，我们也非常欢迎您实现自己的想法。
+
+如果您确定了想要参与的工作，希望在有基本进展后提交 draft pr，我们可以在 draft pr 上进行讨论，也有利于听取其他 collaborator 的意见。
+
+再次感谢您对项目的贡献！🎉
+
+&lt;br /&gt;
+
+## ☕️ Buy us a coffe
+
+非常感谢大家使用 Qwerty Learner, 目前该网站由三个人用业余时间在维护，我们希望在未来购买独立的域名(目前使用 vercel 部署)，并购买服务器以方便国内用户访问与云同步存储数据。
+
+如果您喜欢我们软件，非常感谢您对我们未来的支持!
+
+&lt;img  src=&quot;https://github.com/Realkai42/qwerty-learner/blob/master/docs/alipay.png&quot; width=&quot;200px&quot;/&gt;
+
+## 👨‍💻 Contributors
+
+&lt;a href=&quot;https://github.com/Realkai42/qwerty-learner/graphs/contributors&quot;&gt;
+  &lt;img src=&quot;https://contrib.rocks/image?repo=Realkai42/qwerty-learner&quot; /&gt;
+&lt;/a&gt;
+
+## 🎁 大感谢
+
+### 灵感来源
+
+[Keybr](https://www.keybr.com/)
+以算法著称，功能非常完善的打字网站，根据用户输入每个字母的正确率与速度生成“伪英语”来帮助用户集中锻炼个别输入较慢的字母。并可以根据用户的输入记录生成完整的分析报告。
+
+也是本项目的核心灵感来源，Keybr 更多针对英语为母语的用户。在我使用 Keybr 练习打字时，觉得虽然生成的伪英语能够练习输入不顺畅的个别字母，但并不能提升非母语用户对单词的掌握，于是有了本项目。
+
+[Typing Academy](https://www.typing.academy)
+非常优秀的打字练习网站
+其优秀的 UI 风格，以及对速度、正确率的展示极大的影响了本项目的 UI 设计
+
+[react-code-game](https://github.com/webzhd/react-code-game)
+一个非常酷的开源项目，使用 ts 实现，可以在练习打字的同时练习 js 内置 api，项目中添加代码 api 的想法便来源自此项目。
+&lt;br/&gt;&lt;br/&gt;
+
+### 开源项目
+
+[React](https://github.com/facebook/react) &amp; [CRA](https://github.com/facebook/create-react-app)
+完整和详细的文档对初学者非常友好，React 系的文档是我目前自学过程中读过最棒的文档，几乎解决使用中大部分问题。非常感谢 React 对开源世界的贡献，为我们搭建了很好的基础，让初学者也能构建非常棒的软件。
+
+[Tailwindcss](https://tailwindcss.com/docs)
+如果没有 tailwind，这个项目还有再拖一阵子，tailwind 的设计思路解决了 css 入门选手对写复杂 css 的恐惧，让新手以一个非常舒适的方式去设计 UI。
+&lt;br/&gt;&lt;br/&gt;
+
+### 数据来源
+
+字典数据来自于[kajweb](https://github.com/kajweb/dict)，项目爬取了常见的字典，也是这个项目让我看到了实现本项目的希望。
+
+语音数据来源于[有道词典](https://www.youdao.com/)开放 API，感谢有道的贡献让我们这种小项目也可以用上非常专业的发音资源，感谢有道团队以及考神团队为中国教育与中外交流做出的重要贡献。
+
+JS API 来自于[react-code-game](https://github.com/webzhd/react-code-game) ，感谢项目对 JS API 的爬取与预处理。
+&lt;br/&gt;&lt;br/&gt;
+
+### 项目 Icon
+
+感谢[libregd](https://github.com/libregd)提供图标设计，给项目贡献了多个好看的图标设计方案，同时也在项目的进行中提供了设计、建议、未来规划等诸多支持
+
+### 感谢支持
+
+感谢[云谦](https://github.com/sorrycc)、[大圣](https://github.com/shengxinjing) 在项目只有十几个 star 时关注了项目，给项目推进下去的动力。
+
+&lt;br/&gt;
+
+也感谢在项目初期跟我讨论 idea、提供建议并时不时 Push 一下我的朋友们，没有你们这个 idea 可能还得再拖一年（🐶
+
+感谢 [Pear Mini](https://github.com/pearmini) ，最开始跟我讨论 idea 给我项目支持，也是他的项目让我相信即使是一个学生的 idea 实现出来也可以很酷。 他的 [Gossip](https://github.com/pearmini/gossip) 项目完全是 Next Generation Slides 级别的创意！
+
+感谢 [AZ](https://github.com/sailist)，鼓励我把 idea 实现出来（虽然我还是拖了很久），他无与伦比的行动力影响了我。他是一个非常酷的 lib maker，写了很多非常棒的 python 库，例如中文语音识别的框架[ASRFrame](https://github.com/sailist/ASRFrame)
+
+感谢 [Luyu Cheng](https://github.com/chengluyu)，我认识的最酷的前端大佬，给项目与我的前端自学提供了无尽的帮助。在项目初期帮助我进行技术选型，在开发阶段帮我解决技术问题，为我不知道如何实现的 feature 提供技术思路，也为项目贡献了很多非常受欢迎的 feature。
+
+## 🌟 Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/Realkai42/qwerty-learner.svg)](https://starchart.cc/Realkai42/qwerty-learner)
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
