@@ -4,24 +4,403 @@
         <title>GitHub Trending Today for typescript - TypeScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for typescript.</description>
-        <lastBuildDate>Mon, 01 Jun 2026 00:25:11 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 02 Jun 2026 00:30:24 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2026, GitHub</copyright>
         <item>
+            <title><![CDATA[supermemoryai/supermemory]]></title>
+            <link>https://github.com/supermemoryai/supermemory</link>
+            <guid>https://github.com/supermemoryai/supermemory</guid>
+            <pubDate>Tue, 02 Jun 2026 00:30:24 GMT</pubDate>
+            <description><![CDATA[Memory engine and app that is extremely fast, scalable. The Memory API for the AI era.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/supermemoryai/supermemory">supermemoryai/supermemory</a></h1>
+            <p>Memory engine and app that is extremely fast, scalable. The Memory API for the AI era.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 23,963</p>
+            <p>Forks: 2,142</p>
+            <p>Stars today: 647 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;picture&gt;
+    &lt;source srcset=&quot;apps/web/public/logo-fullmark.svg&quot; media=&quot;(prefers-color-scheme: dark)&quot;&gt;
+    &lt;source srcset=&quot;apps/web/public/logo-light-fullmark.svg&quot; media=&quot;(prefers-color-scheme: light)&quot;&gt;
+    &lt;img src=&quot;apps/web/public/logo-fullmark.svg&quot; alt=&quot;Supermemory&quot; width=&quot;400&quot; /&gt;
+  &lt;/picture&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;strong&gt;State-of-the-art memory and context engine for AI. And yes - you can use it as a company/personal brain.&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://supermemory.ai/docs&quot;&gt;Docs&lt;/a&gt; ·
+  &lt;a href=&quot;https://supermemory.ai/docs/quickstart&quot;&gt;Quickstart&lt;/a&gt; ·
+  &lt;a href=&quot;https://console.supermemory.ai&quot;&gt;Dashboard&lt;/a&gt; ·
+  &lt;a href=&quot;https://supermemory.link/discord&quot;&gt;Discord&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://www.npmjs.com/package/supermemory&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/v/supermemory?style=flat-square&amp;color=blue&quot; alt=&quot;npm&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://pypi.org/project/supermemory/&quot;&gt;&lt;img src=&quot;https://img.shields.io/pypi/v/supermemory?style=flat-square&amp;color=blue&quot; alt=&quot;pypi&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://supermemory.ai/docs&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/docs-supermemory.ai-blue?style=flat-square&quot; alt=&quot;docs&quot; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+---
+
+Supermemory is the memory and context layer for AI. **#1 on [LongMemEval](https://github.com/xiaowu0162/LongMemEval), [LoCoMo](https://github.com/snap-research/locomo), and [ConvoMem](https://github.com/Salesforce/ConvoMem)** — the three major benchmarks for AI memory. 
+
+We are a research lab building the engine, plugins and tools around it.
+
+Your AI forgets everything between conversations. Supermemory fixes that.
+
+It automatically learns from conversations, extracts facts, builds user profiles, handles knowledge updates and contradictions, forgets expired information, and delivers the right context at the right time. Full RAG, connectors, file processing — the entire context stack, one system.
+
+| | |
+|---|---|
+| 🧠 **Memory** | Extracts facts from conversations. Handles temporal changes, contradictions, and automatic forgetting. |
+| 👤 **User Profiles** | Auto-maintained user context — stable facts + recent activity. One call, ~50ms. |
+| 🔍 **Hybrid Search** | RAG + Memory in a single query. Knowledge base docs and personalized context together. |
+| 🔌 **Connectors** | Google Drive · Gmail · Notion · OneDrive · GitHub — auto-sync with real-time webhooks. |
+| 📄 **Multi-modal Extractors** | PDFs, images (OCR), videos (transcription), code (AST-aware chunking). Upload and it works. |
+
+All of this is in our single memory structure and ontology. 
+
+&lt;img width=&quot;1414&quot; height=&quot;937&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/8863b6d9-c043-4c75-b200-4f1759e7edaf&quot; /&gt;
+
+
+---
+
+## Use Supermemory
+
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td width=&quot;50%&quot; valign=&quot;top&quot;&gt;
+
+&lt;h3&gt;🧑‍💻 I use AI tools&lt;/h3&gt;
+
+Build your own personal supermemory by using our app. Builds **persistent memory graph across every conversation**.
+
+Your AI remembers your preferences, projects, past discussions — and gets smarter over time.
+
+**[→ Jump to User setup](#give-your-ai-memory)**
+
+&lt;/td&gt;
+&lt;td width=&quot;50%&quot; valign=&quot;top&quot;&gt;
+
+&lt;h3&gt;🔧 I&#039;m building AI products&lt;/h3&gt;
+
+Add memory, RAG, user profiles, and connectors to your agents and apps with **a single API**.
+
+No vector DB config. No embedding pipelines. No chunking strategies.
+
+**[→ Jump to developer quickstart](#build-with-supermemory-api)**
+
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+---
+
+## Give your AI memory
+
+The Supermemory App, browser extension, plugins and MCP server gives any compatible AI assistant persistent memory. One install, and your AI remembers you.
+
+### The app
+
+You can use supermemory without any code, by using our consumer-facing app for free.
+
+Start at https://app.supermemory.ai
+
+&lt;img width=&quot;1705&quot; height=&quot;1030&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/5b43af30-b998-4585-8de6-f3e9a26d894a&quot; /&gt;
+
+It also comes with an agent embedded inside, which we call Nova.
+
+### Supermemory Plugins
+
+Supermemory comes built with Plugins for Claude Code, OpenCode, OpenClaw, and Hermes.
+
+&lt;img width=&quot;844&quot; height=&quot;484&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/ecb879a2-8652-495d-9228-f305a97ba603&quot; /&gt;
+
+These plugins are implementations of the supermemory API, and they are open source! 
+
+You can find them here: 
+
+- Openclaw plugin: https://github.com/supermemoryai/openclaw-supermemory
+- Claude code plugin: https://github.com/supermemoryai/claude-supermemory
+- OpenCode plugin: https://github.com/supermemoryai/opencode-supermemory
+- Hermes agent (Supermemory memory provider): https://github.com/NousResearch/hermes-agent
+
+### MCP - Quick install
+
+```bash
+npx -y install-mcp@latest https://mcp.supermemory.ai/mcp --client claude --oauth=yes
+```
+
+Replace `claude` with your client: `cursor`, `windsurf`, `vscode`, etc.
+
+Read more about our MCP here - https://supermemory.ai/docs/supermemory-mcp/mcp
+
+### What your AI gets
+
+| Tool | What it does |
+|---|---|
+| `memory` | Save or forget information. Your AI calls this automatically when you share something worth remembering. |
+| `recall` | Search memories by query. Returns relevant memories + your user profile summary. |
+| `context` | Injects your full profile (preferences, recent activity) into the conversation at start. In Cursor and Claude Code, just type `/context`. |
+
+### How it works
+
+Once installed, Supermemory runs in the background:
+
+1. **You talk to your AI normally.** Share preferences, mention projects, discuss problems.
+2. **Supermemory extracts and stores the important stuff.** Facts, preferences, project context — not noise.
+3. **Next conversation, your AI already knows you.** It recalls what you&#039;re working on, how you like things, what you discussed before.
+
+Memory is scoped with **projects** (container tags) so you can separate work and personal context, or organize by client, repo, or anything else.
+
+### Supported clients
+
+**Claude Desktop** · **Cursor** · **Windsurf** · **VS Code** · **Claude Code** · **OpenCode** · **OpenClaw** · **Hermes**
+
+The MCP server is open source — [view the source](https://supermemory.ai/docs/supermemory-mcp/mcp).
+
+### Manual configuration
+
+Add this to your MCP client config:
+
+```json
+{
+  &quot;mcpServers&quot;: {
+    &quot;supermemory&quot;: {
+      &quot;url&quot;: &quot;https://mcp.supermemory.ai/mcp&quot;
+    }
+  }
+}
+```
+
+Or use an API key instead of OAuth:
+
+```json
+{
+  &quot;mcpServers&quot;: {
+    &quot;supermemory&quot;: {
+      &quot;url&quot;: &quot;https://mcp.supermemory.ai/mcp&quot;,
+      &quot;headers&quot;: {
+        &quot;Authorization&quot;: &quot;Bearer sm_your_api_key_here&quot;
+      }
+    }
+  }
+}
+```
+
+---
+
+## Build with Supermemory (API)
+
+If you&#039;re building AI agents or apps, Supermemory gives you the entire context stack through one API — memory, RAG, user profiles, connectors, and file processing.
+
+### Install
+
+```bash
+npm install supermemory    # or: pip install supermemory
+```
+
+### Quickstart
+
+```typescript
+import Supermemory from &quot;supermemory&quot;;
+
+const client = new Supermemory();
+
+// Store a conversation
+await client.add({
+  content: &quot;User loves TypeScript and prefers functional patterns&quot;,
+  containerTag: &quot;user_123&quot;,
+});
+
+// Get user profile + relevant memories in one call
+const { profile, searchResults } = await client.profile({
+  containerTag: &quot;user_123&quot;,
+  q: &quot;What programming style does the user prefer?&quot;,
+});
+
+// profile.static  → [&quot;Loves TypeScript&quot;, &quot;Prefers functional patterns&quot;]
+// profile.dynamic → [&quot;Working on API integration&quot;]
+// searchResults   → Relevant memories ranked by similarity
+```
+
+```python
+from supermemory import Supermemory
+
+client = Supermemory()
+
+client.add(
+    content=&quot;User loves TypeScript and prefers functional patterns&quot;,
+    container_tag=&quot;user_123&quot;
+)
+
+result = client.profile(container_tag=&quot;user_123&quot;, q=&quot;programming style&quot;)
+
+print(result.profile.static)   # Long-term facts
+print(result.profile.dynamic)  # Recent context
+```
+
+Supermemory automatically extracts memories, builds user profiles, and returns relevant context. No embedding pipelines, no vector DB config, no chunking strategies.
+
+### Framework integrations
+
+Drop-in wrappers for every major AI framework:
+
+```typescript
+// Vercel AI SDK
+import { withSupermemory } from &quot;@supermemory/tools/ai-sdk&quot;;
+const model = withSupermemory(openai(&quot;gpt-4o&quot;), { containerTag: &quot;user_123&quot;, customId: &quot;conv-1&quot; });
+
+// Mastra
+import { withSupermemory } from &quot;@supermemory/tools/mastra&quot;;
+const agent = new Agent(withSupermemory(config, &quot;user-123&quot;, { mode: &quot;full&quot; }));
+```
+
+**Vercel AI SDK** · **LangChain** · **LangGraph** · **OpenAI Agents SDK** · **Mastra** · **Agno** · **Claude Memory Tool** · **n8n**
+
+### Search modes
+
+```typescript
+// Hybrid (default) — RAG + Memory in one query
+const results = await client.search.memories({
+  q: &quot;how do I deploy?&quot;,
+  containerTag: &quot;user_123&quot;,
+  searchMode: &quot;hybrid&quot;,
+});
+// Returns deployment docs (RAG) + user&#039;s deploy preferences (Memory)
+
+// Memories only
+const results = await client.search.memories({
+  q: &quot;user preferences&quot;,
+  containerTag: &quot;user_123&quot;,
+  searchMode: &quot;memories&quot;,
+});
+```
+
+### User profiles
+
+Traditional memory relies on search — you need to know what to ask for. Supermemory automatically maintains a profile for every user:
+
+```typescript
+const { profile } = await client.profile({ containerTag: &quot;user_123&quot; });
+
+// profile.static  → [&quot;Senior engineer at Acme&quot;, &quot;Prefers dark mode&quot;, &quot;Uses Vim&quot;]
+// profile.dynamic → [&quot;Working on auth migration&quot;, &quot;Debugging rate limits&quot;]
+```
+
+One call. ~50ms. Inject into your system prompt and your agent instantly knows who it&#039;s talking to.
+
+### Connectors
+
+Auto-sync external data into your knowledge base:
+
+**Google Drive** · **Gmail** · **Notion** · **OneDrive** · **GitHub** · **Web Crawler**
+
+Real-time webhooks. Documents automatically processed, chunked, and searchable.
+
+### API at a glance
+
+| Method | Purpose |
+|---|---|
+| `client.add()` | Store content — text, conversations, URLs, HTML |
+| `client.profile()` | User profile + optional search in one call |
+| `client.search.memories()` | Hybrid search across memories and documents |
+| `client.search.documents()` | Document search with metadata filters |
+| `client.documents.uploadFile()` | Upload PDFs, images, videos, code |
+| `client.documents.list()` | List and filter documents |
+| `client.settings.update()` | Configure memory extraction and chunking |
+
+Full API reference → [supermemory.ai/docs](https://supermemory.ai/docs)
+
+---
+
+## Benchmarks
+
+Supermemory is state of the art across all major AI memory benchmarks:
+
+| Benchmark | What it measures | Result |
+|---|---|---|
+| **[LongMemEval](https://github.com/xiaowu0162/LongMemEval)** | Long-term memory across sessions with knowledge updates | **81.6% — #1** |
+| **[LoCoMo](https://github.com/snap-research/locomo)** | Fact recall across extended conversations (single-hop, multi-hop, temporal, adversarial) | **#1** |
+| **[ConvoMem](https://github.com/Salesforce/ConvoMem)** | Personalization and preference learning | **#1** |
+
+We also built **[MemoryBench](https://supermemory.ai/docs/memorybench/overview)** — an open-source framework for standardized, reproducible benchmarks of memory providers. Compare Supermemory, Mem0, Zep, and others head-to-head:
+
+```bash
+bun run src/index.ts run -p supermemory -b longmemeval -j gpt-4o -r my-run
+```
+
+### Benchmarking your own memory solution
+
+We provide an Agent skill for companies to benchmark their own context and memory solutions against supermemory.
+
+```
+npx skills add supermemoryai/memorybench
+```
+
+Simply run this and do `/benchmark-context` - Supermemory will automatically do the work for you!
+
+---
+
+## How memory works under the hood
+
+```
+Your app / AI tool
+        ↓
+   Supermemory
+        │
+        ├── Memory Engine     Extracts facts, tracks updates, resolves contradictions,
+        │                     auto-forgets expired info
+        ├── User Profiles     Static facts + dynamic context built from engine, always fresh
+        ├── Hybrid Search     RAG + Memory in one query
+        ├── Connectors        Real-time sync from Google Drive, Gmail, Notion, GitHub...
+        └── File Processing   PDFs, images, videos, code → searchable chunks
+```
+
+**Memory is not RAG.** RAG retrieves document chunks — stateless, same results for everyone. Memory extracts and tracks *facts about users* over time. It understands that &quot;I just moved to SF&quot; supersedes &quot;I live in NYC.&quot; Supermemory runs both together by default, so you get knowledge base retrieval *and* personalized context in every query. Read more about this here - https://supermemory.ai/docs/concepts/memory-vs-rag
+
+**Automatic forgetting.** Supermemory knows when memories become irrelevant. Temporary facts (&quot;I have an exam tomorrow&quot;) expire after the date passes. Contradictions are resolved automatically. Noise never becomes permanent memory.
+
+---
+
+## Links
+
+- 📖 [Documentation](https://supermemory.ai/docs)
+- 🚀 [Quickstart](https://supermemory.ai/docs/quickstart)
+- 🧪 [MemoryBench](https://supermemory.ai/docs/memorybench/overview)
+- 🔌 [Integrations](https://supermemory.ai/docs/integrations)
+- 💬 [Discord](https://supermemory.link/discord)
+- 𝕏 [Twitter](https://twitter.com/supermemory)
+
+---
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;strong&gt;Give your AI a memory. It&#039;s about time..&lt;/strong&gt;
+&lt;/p&gt;
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
             <title><![CDATA[EveryInc/compound-engineering-plugin]]></title>
             <link>https://github.com/EveryInc/compound-engineering-plugin</link>
             <guid>https://github.com/EveryInc/compound-engineering-plugin</guid>
-            <pubDate>Mon, 01 Jun 2026 00:25:11 GMT</pubDate>
+            <pubDate>Tue, 02 Jun 2026 00:30:23 GMT</pubDate>
             <description><![CDATA[Official Compound Engineering plugin for Claude Code, Codex, Cursor, and more]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/EveryInc/compound-engineering-plugin">EveryInc/compound-engineering-plugin</a></h1>
             <p>Official Compound Engineering plugin for Claude Code, Codex, Cursor, and more</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 18,695</p>
-            <p>Forks: 1,408</p>
-            <p>Stars today: 251 stars today</p>
+            <p>Stars: 19,097</p>
+            <p>Forks: 1,428</p>
+            <p>Stars today: 417 stars today</p>
             <h2>README</h2><pre># Compound Engineering
 
 [![Build Status](https://github.com/EveryInc/compound-engineering-plugin/actions/workflows/ci.yml/badge.svg)](https://github.com/EveryInc/compound-engineering-plugin/actions/workflows/ci.yml)
@@ -440,435 +819,435 @@ GitHub Releases are the canonical release-notes surface. The root [`CHANGELOG.md
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[github/docs]]></title>
-            <link>https://github.com/github/docs</link>
-            <guid>https://github.com/github/docs</guid>
-            <pubDate>Mon, 01 Jun 2026 00:25:10 GMT</pubDate>
-            <description><![CDATA[The open-source repo for docs.github.com]]></description>
+            <title><![CDATA[can1357/oh-my-pi]]></title>
+            <link>https://github.com/can1357/oh-my-pi</link>
+            <guid>https://github.com/can1357/oh-my-pi</guid>
+            <pubDate>Tue, 02 Jun 2026 00:30:22 GMT</pubDate>
+            <description><![CDATA[⌥ AI Coding agent for the terminal — hash-anchored edits, optimized tool harness, LSP, Python, browser, subagents, and more]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/github/docs">github/docs</a></h1>
-            <p>The open-source repo for docs.github.com</p>
+            <h1><a href="https://github.com/can1357/oh-my-pi">can1357/oh-my-pi</a></h1>
+            <p>⌥ AI Coding agent for the terminal — hash-anchored edits, optimized tool harness, LSP, Python, browser, subagents, and more</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 19,724</p>
-            <p>Forks: 67,286</p>
-            <p>Stars today: 27 stars today</p>
-            <h2>README</h2><pre># GitHub Docs &lt;!-- omit in toc --&gt;
+            <p>Stars: 9,457</p>
+            <p>Forks: 759</p>
+            <p>Stars today: 335 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://github.com/can1357/oh-my-pi/blob/main/assets/hero.png?raw=true&quot; alt=&quot;omp&quot;&gt;
+&lt;/p&gt;
 
-Welcome to GitHub Docs! GitHub’s documentation is open source, meaning anyone from inside or outside the company can contribute. For full contributing guidelines, visit our [contributing guide](https://docs.github.com/en/contributing).
+&lt;p align=&quot;center&quot;&gt;
+  &lt;strong&gt;A coding agent with the IDE wired in.&lt;/strong&gt;
+  &lt;strong&gt;&lt;a href=&quot;https://omp.sh&quot;&gt;omp.sh&lt;/a&gt;&lt;/strong&gt;
+&lt;/p&gt;
 
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://www.npmjs.com/package/@oh-my-pi/pi-coding-agent&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/v/@oh-my-pi/pi-coding-agent?style=flat&amp;colorA=222222&amp;colorB=CB3837&quot; alt=&quot;npm version&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/can1357/oh-my-pi/blob/main/packages/coding-agent/CHANGELOG.md&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/changelog-keep-E05735?style=flat&amp;colorA=222222&quot; alt=&quot;Changelog&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/can1357/oh-my-pi/actions&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/actions/workflow/status/can1357/oh-my-pi/ci.yml?style=flat&amp;colorA=222222&amp;colorB=3FB950&quot; alt=&quot;CI&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/can1357/oh-my-pi/blob/main/LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/license/can1357/oh-my-pi?style=flat&amp;colorA=222222&amp;colorB=58A6FF&quot; alt=&quot;License&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://www.typescriptlang.org&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/TypeScript-3178C6?style=flat&amp;colorA=222222&amp;logo=typescript&amp;logoColor=white&quot; alt=&quot;TypeScript&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://www.rust-lang.org&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Rust-DEA584?style=flat&amp;colorA=222222&amp;logo=rust&amp;logoColor=white&quot; alt=&quot;Rust&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://bun.sh&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/runtime-Bun-f472b6?style=flat&amp;colorA=222222&quot; alt=&quot;Bun&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://discord.gg/4NMW9cdXZa&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Discord-5865F2?style=flat&amp;colorA=222222&amp;logo=discord&amp;logoColor=white&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
 
-## Quick links by contributor type
+&lt;p align=&quot;center&quot;&gt;
+  Fork of &lt;a href=&quot;https://github.com/badlogic/pi-mono&quot;&gt;Pi&lt;/a&gt; by &lt;a href=&quot;https://github.com/mariozechner&quot;&gt;@mariozechner&lt;/a&gt; 
+&lt;/p&gt;
 
-* **Hubbers (GitHub employees):** See [CONTRIBUTING.md](https://github.com/github/docs-content/blob/main/CONTRIBUTING.md) in the `docs-content` repository for GitHub-specific processes.
+The most capable agent surface that ships. Continuously tuned by real-world use — complete out of the box, open all the way down.
 
-* **Open source contributors:** See [CONTRIBUTING.md](https://github.com/github/docs/blob/main/.github/CONTRIBUTING.md) in the `docs` repository for a quick-start summary.
+**40+** providers · **32** built-in tools · **13** lsp ops · **27** dap ops · **~27k** lines of Rust core.
 
-## How we sync changes across Docs repositories
+## Install
 
-There are two GitHub Docs repositories: 
+**macOS · Linux**
 
-- **`github/docs`** (public): Open to external contributions
+```sh
+curl -fsSL https://omp.sh/install | sh
+```
 
-- **`github/docs-internal`** (private): For GitHub employee contributions. 
+**Bun (recommended)**
 
-The two repositories sync frequently. Content changes in one are reflected in the other.  Hubbers might prefer to post in `docs` when working with a customer, but `docs` has limitations on the types of contributions it accepts to safeguard the site and our workflows. Internal contributions should usually go to `docs-internal`.
+```sh
+bun install -g @oh-my-pi/pi-coding-agent
+```
 
-**Important:** The `docs` repository accepts contributions to content files (`.md` files in `/content` and select `/data` sections like reusables only). Infrastructure files, workflows, and site-building code are not open for external modification.
+**Windows (PowerShell)**
 
-## New to contributing
+```powershell
+irm https://omp.sh/install.ps1 | iex
+```
 
-Here are some resources to help you get started with open source contributions:
+**Pinned versions (mise)**
 
-* [Finding ways to contribute to open source on GitHub](https://docs.github.com/en/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github)
-* [Set up Git](https://docs.github.com/en/get-started/git-basics/set-up-git)
-* [GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)
-* [Collaborating with pull requests](https://docs.github.com/en/github/collaborating-with-pull-requests)
+```sh
+mise use -g github:can1357/oh-my-pi
+```
 
-## License
+macOS · Linux · Windows · bun ≥ 1.3.14
 
-This project is dual-licensed under:
+### Shell completions
 
-* **Creative Commons Attribution 4.0** - for documentation and content in the assets, content, and data folders (see [LICENSE](LICENSE))
-* **MIT License** - for code (see [LICENSE-CODE](LICENSE-CODE))
-</pre>
+`omp` generates its own completion scripts for **bash**, **zsh**, and **fish** from the live command/flag metadata, so they never drift from the actual CLI. Subcommands, flags, and enum values complete statically; model names (`--model`, `--smol`, `--slow`, `--plan`) resolve against the bundled model catalog and `--resume` against your on-disk sessions.
+
+```sh
+# zsh — add to ~/.zshrc (or write the output into a file on your $fpath)
+eval &quot;$(omp completions zsh)&quot;
+
+# bash — add to ~/.bashrc
+eval &quot;$(omp completions bash)&quot;
+
+# fish
+omp completions fish &gt; ~/.config/fish/completions/omp.fish
+```
+
+## Every tool, _benchmaxxed_.
+
+Edits that land on the first attempt. Reads that summarize files instead of dumping their content. Searches that return instantly. Pick any model — omp will get it right.
+
+| model            | metric       | what                                                                  |
+| ---------------- | ------------ | --------------------------------------------------------------------- |
+| Grok Code Fast 1 | 6.7% → 68.3% | Tenfold lift the moment the edit format stops eating the model alive. |
+| Gemini 3 Flash   | +5 pp        | Over str_replace — beats Google&#039;s own best attempt at the format.     |
+| Grok 4 Fast      | −61% tokens  | Output collapses once the retry loop on bad diffs disappears.         |
+| MiniMax          | 2.1×         | Pass rate more than doubles. Same weights, same prompt.               |
+
+- `read` : summarized snippets · ideal defaults · selector hit rate
+- `search` : fastest in the west
+- `lsp` : everything your IDE knows, the agent knows
+- `prompts` : adjusted relentlessly for each model
+
+[Read the full post ↗](https://blog.can.ac/2026/02/12/the-harness-problem/)
+
+## The Pi _you love_, with **batteries included**.
+
+Originally built on [Mario Zechner](https://github.com/mariozechner)&#039;s wonderful [Pi](https://github.com/badlogic/pi-mono), omp adds everything you&#039;re missing.
+
+### 01 · Code execution w/ tool-calling
+
+Most harnesses give the agent a Python sandbox and call it done. Ours runs persistent Python and a Bun worker, and either kernel can call back into the agent&#039;s own tools — read, search, task — over a loopback bridge. The agent loads a CSV with tool.read from inside Python, charts it from JavaScript, and never leaves the cell.
+
+![omp TUI: a single eval session with `[1/2] pandas describe` (Python) printing a real DataFrame.describe() table, followed by `[2/2] top scorer` (JavaScript) running a reduce. Footer: &#039;Both kernels ran in one session.&#039;](https://omp.sh/captures/eval.webp)
+
+### 02 · LSP wired into every write
+
+Ask for a rename and you get a rename. The call goes through workspace/willRenameFiles, so re-exports, barrel files, and aliased imports update before the file moves. Everything your IDE knows, the agent knows.
+
+![omp TUI: `LSP references` returns five hits across three files for the symbol `formatBytes`, then `LSP rename` applies the change with edits to format.ts/report.ts/cli.ts, then a `Search formatBytes 0 matches` confirmation. Final line: &#039;Rename complete. Five edits across three files…&#039;.](https://omp.sh/captures/lsp.webp)
+
+### 03 · Drives a real debugger
+
+A C binary segfaults: the agent attaches lldb, steps to the bad pointer, reads the frame. A Go service hangs: it attaches dlv and walks the goroutines. A Python process is wedged: debugpy, pause, inspect, evaluate. Most agents are still sprinkling print statements.
+
+![omp TUI: a live lldb-dap session against a native binary at /tmp/omp-native/demo. Adapter=lldb-dap, Status=stopped, Frame=xorshift32, Instruction pointer 0x10000055C, Location demo.c:6:10. Debug scopes and Debug variables cards show locals (x = 57351) and the agent confirms the math: x went from 7 → 57351 (= 7 ^ (7&lt;&lt;13)).](https://omp.sh/clips/dap-poster.webp)
+
+_[Watch the capture ↗](https://omp.sh/clips/dap.mp4)_
+
+### 04 · Time-traveling stream rules
+
+Your rules sit dormant until the model goes off-script. A regex match aborts the stream mid-token, injects the rule as a system reminder, and retries from the same point. You get course-correction without paying context tax on every turn. Injections survive compaction, so the fix sticks.
+
+![omp TUI: agent reading src.rs and about to write Box::leak when the request aborts (red `Error: Request was aborted`), an amber `⚠ Injecting rule: box-leak` card injects the rule body `Don&#039;t reach for Box::leak in production code paths`, and the agent then course-corrects by proposing `Arc&lt;str&gt;` and asking the user to confirm.](https://omp.sh/clips/ttsr-poster.webp)
+
+_[Watch the capture ↗](https://omp.sh/clips/ttsr.mp4)_
+
+### 05 · First-class subagents
+
+Split a job across workers and get typed results back. task fans out into isolated worktrees, each worker runs its own tool surface, and the final yield is a schema-validated object the parent reads directly. No prose to parse, no merge conflicts between siblings, no orphaned edits.
+
+![omp TUI showing `task` spawning two subagents `ComponentsExports` and `RoutesExports`, the constraints block requiring an IRC DM between peers, the per-subagent status cards with cost and duration, and a final Findings section listing both exports plus an honest &#039;IRC coordination note&#039; about a one-sided handshake.](https://omp.sh/clips/irc-poster.webp)
+
+_[Watch the capture ↗](https://omp.sh/clips/irc.mp4)_
+
+### 06 · Read a pdf on arxiv, why not?
+
+web_search chains fourteen ranked providers and hands whatever URLs it finds straight to read. Arxiv PDFs, GitHub pages, Stack Overflow threads come back as structured markdown with anchors intact — the same tool surface you use on local files. Cite, follow, quote, never lose where you came from.
+
+![omp TUI: web_search returns 10 ranked Perplexity sources for inference-time compute scaling, the agent picks an arxiv paper, calls read https://arxiv.org/pdf/2604.10739v1, and summarizes the paper&#039;s headline result with real numbers.](https://omp.sh/clips/web-poster.webp)
+
+_[Watch the capture ↗](https://omp.sh/clips/web.mp4)_
+
+### 07 · Unapologetically native. Even on Windows.
+
+Other agents shell out to rg, grep, find, and bash. On many machines those binaries don&#039;t exist, and on the ones where they do, every call costs a fork-exec round-trip. omp links the real implementations into the process. ripgrep, glob, find: in-process. brush is the bash, with sessions that survive across calls. The same omp binary runs on macOS, Linux, and Windows — no WSL bridge.
+
+### 08 · Code review with priorities and a verdict
+
+Get a clear verdict on whether the change ships, with every issue ranked P0 through P3 and scored for confidence. /review spawns dedicated reviewer subagents that sweep branches, single commits, or uncommitted work in parallel. You tackle what blocks release first; nothing important hides in a wall of prose.
+
+### 09 · Hashline: edit by content hash
+
+Perfect edits, fewer tokens. The model points at anchors instead of retyping the lines it wants to change, so whitespace battles and string-not-found loops just stop happening. Edit a stale file and the anchors diverge — we reject the patch before it corrupts anything. Grok 4 Fast spends 61% fewer output tokens on the same work.
+
+### 10 · GitHub is just another filesystem
+
+Other harnesses bolt on gh_issue_view, gh_pr_view, gh_search — each with its own parameters the agent has to learn and you have to debug. We skipped that. read already handles paths; PRs are paths. One interface to teach the model, one surface to keep correct.
+
+### 11 · Hindsight: memory the agent curates
+
+The agent remembers your codebase between sessions. It writes facts mid-run with retain, pulls them back with recall, and compresses each session into a mental model that loads on the first turn of the next one. Project-scoped by default, so what it learns about this repo stays with this repo.
+
+### 12 · ACP: editor-drivable agent
+
+Run omp inside Zed and you get the same agent you drive from the terminal — reading the buffer you&#039;re actually looking at, writing through the editor&#039;s save path, spawning shells in the editor&#039;s terminal. Destructive tools pause for a permission prompt you can answer once and forget. No bridge, no plugin, no second brain to keep in sync.
+
+### 13 · Inherits what your other tools already wrote
+
+Every other agent ships an importer and expects you to convert. omp reads the eight formats already on disk in their native shape — Cursor MDC, Cline .clinerules, Codex AGENTS.md, Copilot applyTo, and the rest. No migration script, no YAML-to-TOML port, no &quot;supported subset&quot; footnotes. The config your team wrote last quarter still works tonight.
+
+### 14 · omp commit: atomic splits, validated messages
+
+omp reads the working tree through git-overview, git-file-diff, and git-hunk, then splits unrelated changes into atomic commits ordered by their dependencies. Cycles are rejected before anything is written. Source files score above tests, docs, and configs, so the headline commit is the one that matters. Lock files are excluded from analysis entirely.
+
+### 15 · Read PRs. _Walk skills._ Pull JSON out of subagents.
+
+Ten internal schemes — `pr://`, `issue://`, `agent://`, `skill://`, `rule://`, and the rest — resolve transparently inside every FS-shaped tool the agent already calls. `read pr://1428` returns the same shape as `read src/foo.ts`. `search` walks a diff like a directory. `agent://&lt;id&gt;/findings.0.path` pulls a field out of a subagent&#039;s output by path.
+
+![omp TUI reading pr://can1357/oh-my-pi/1063 and then /diff/1, showing hunk headers, added lines, and a [MODIFIED] (+12 -0) summary.](https://omp.sh/captures/pr.webp)
+
+### 16 · Conflict resolution, made easy.
+
+Each merge conflict becomes one URL. The agent writes `@theirs`, `@ours`, or `@base` to `conflict://N` and the file resolves cleanly. Bulk form: `conflict://*`.
+
+![omp TUI: ✓ Read src/session.ts (⚠ 1 conflict), then ✓ Write conflict://1 · 1 line with content @theirs, then a confirmation &#039;Resolved.&#039;](https://omp.sh/clips/conflict-poster.webp)
+
+_[Watch the capture ↗](https://omp.sh/clips/conflict.mp4)_
+
+### 17 · Preview, then accept.
+
+`ast_edit` returns a _(proposed)_ card with the replacement count. The change is staged. The agent calls `resolve` with a reason; the TUI turns it into an **Accept** card and the disk move happens — atomic, all or nothing.
+
+![omp TUI: ✓ AST Edit: console.log($X) (proposed) 3 replacements · 1 file, then ✓ Accept: 3 replacements in 1 file (AST Edit), followed by &#039;Applied 3 replacements in src/auth.ts.&#039;](https://omp.sh/clips/codemod-poster.webp)
+
+_[Watch the capture ↗](https://omp.sh/clips/codemod.mp4)_
+
+### 18 · Drives a _real browser_. _Or your Slack?_
+
+Stealth&#039;s on by default, so pages see a normal user instead of a headless bot. The same API drives any Electron app in place — point it at Slack and the agent reads your DMs the way it reads the web.
+
+![omp TUI driving the browser tool against DuckDuckGo](https://omp.sh/captures/browser.webp)
+
+## Whatever the task needs, _it&#039;s already in the box_.
+
+32 tools live in the same namespace as `read` and `bash`. Pin the active set with `--tools read,edit,bash,…` and the rest stay hidden but indexed — `search_tool_bm25` pulls them back in mid-session when `tools.discoveryMode` says so.
+
+**Files &amp; search**
+
+- `read` — files, dirs, archives, SQLite, PDFs, notebooks, URLs, and internal `://` schemes through one path.
+- `write` — create or overwrite a file, archive entry, or SQLite row.
+- `edit` — hashline patches with content-hash anchors and stale-anchor recovery.
+- `ast_edit` — structural rewrites previewed before apply, via ast-grep.
+- `ast_grep` — structural code queries over 50+ tree-sitter grammars.
+- `search` — regex over files, globs, and internal URLs.
+- `find` — glob-based path lookup; reach for `search` when you need content matches.
+
+**Runtime**
+
+- `bash` — workspace shell, with optional PTY or background-job dispatch.
+- `eval` — persistent Python and JavaScript cells with shared prelude and tool re-entry.
+- `ssh` — one remote command against a configured host.
+
+**Code intelligence**
+
+- `lsp` — diagnostics, navigation, symbols, renames, code actions, raw requests.
+- `debug` — drive a DAP session — breakpoints, stepping, threads, stack, variables.
+
+**Coordination**
+
+- `task` — fan out subagents in parallel, optionally workspace-isolated.
+- `irc` — short prose between live agents in this process.
+- `todo_write` — ordered mutations over the session todo list with phase tracking.
+- `job` — wait on or cancel background jobs.
+- `ask` — structured follow-up questions for interactive runs.
+
+**Outside the box**
+
+- `browser` — Puppeteer tabs over headless Chromium or CDP-attached apps.
+- `web_search` — one query across configured providers, returning answer plus citations.
+- `github` — GitHub CLI ops — repo, PR, issues, code search, Actions run-watch.
+- `generate_image` — generate or edit raster images via Gemini image models.
+- `inspect_image` — vision-model analysis of a local image file.
+- `render_mermaid` — Mermaid source to terminal-friendly ASCII or PNG.
+
+**Memory &amp; state**
+
+- `checkpoint` — mark conversation state for a later collapse-and-report.
+- `rewind` — prune exploratory context, keep a concise report.
+- `retain` — queue durable facts into the active Hindsight bank.
+- `recall` — search the Hindsight bank for raw memories.
+- `reflect` — ask Hindsight to synthesize an answer over the bank.
+
+**Misc**
+
+- `resolve` — apply or discard a queued preview action.
+- `search_tool_bm25` — BM25 over the hidden tool index; activates top matches mid-session.
+
+Setting-gated, off by default: `github`, `inspect_image`, `render_mermaid`, `checkpoint`, `rewind`, `search_tool_bm25`, `retain`, `recall`, `reflect`. Flip them on once, scoped per project.
+
+[Full reference →](https://omp.sh/docs/tools)
+
+## Forty-plus providers, hundreds of models, _one /model away_.
+
+Roles route work by intent. `default` for normal turns. `smol` for cheap subagent fan-out. `slow` for deep reasoning. `plan` for plan mode. `commit` for changelogs. Override at launch with `--smol`, `--slow`, or `--plan`; cycle through the configured models for the active role with `Ctrl+P`. Swap the active model mid-session with the `/model` slash command.
+
+Auth tags below: `oauth` signs in with your provider account, `plan` routes through a coding-plan subscription, `local` runs against a local server with the key optional.
+
+### Frontier APIs
+
+Direct APIs and gateways. Mix providers per role.
+
+Anthropic `oauth` · OpenAI · OpenAI Codex `oauth` · Google Gemini · Google Antigravity `oauth` · xAI · Mistral · Groq · Cerebras · Fireworks · Together · Hugging Face · NVIDIA · OpenRouter · Synthetic · Vercel AI Gateway · Cloudflare AI Gateway · Wafer Serverless · Perplexity `oauth`
+
+### Coding plans
+
+Subscription-routed. `/login` attaches the session.
+
+Cursor `oauth` · GitHub Copilot `oauth` · GitLab Duo · Kimi Code `plan` · Moonshot · MiniMax Coding Plan `plan` · MiniMax Coding Plan CN `plan` · Alibaba Coding Plan `plan` · Qwen Portal · Z.AI / GLM Coding Plan `plan` · Xiaomi MiMo · Qianfan · NanoGPT · Venice · Kilo · ZenMux · Wafer Pass `plan` · OpenCode Go · OpenCode Zen
+
+### Run it yourself
+
+OpenAI-compatible `/v1/models`. Local instances skip the key.
+
+Ollama `local` · Ollama Cloud · LM Studio `local` · llama.cpp `local` · vLLM `local` · LiteLLM
+
+### Four knobs that make routing useful
+
+- **Custom providers** — Declare anything that speaks `openai-completions`, `openai-responses`, `openai-codex-responses`, `azure-openai-responses`, `anthropic-messages`, `google-generative-ai`, or `google-vertex` in `~/.omp/agent/models.yml`.
+- **Fallback chains** — Per-role chains under `retry.fallbackChains`. When the primary throws 429s or hits a quota wall, the next entry takes the rest of the turn — restored on cooldown.
+- **Path-scoped roles** — Nest `paths:` under `modelRoles` to pin a heavier `default` on one repo without touching the global config. Closest path wins.
+- **Round-robin credentials** — Stack API keys per provider and the runtime rotates with session affinity and per-credential backoff. Useful when one key would burn its quota by lunch.
+
+Full provider &amp; routing reference at [omp.sh/docs/providers](https://omp.sh/docs/providers).
+
+## Fourteen backends. _One tool the agent already knows_.
+
+`web_search` is built in, not bolted on. `auto` walks a fourteen-provider chain; pin one by name if you already pay for it. Behind every hit, site-aware extraction turns GitHub, registries, arXiv, Stack Overflow, and docs into structured markdown — anchors and link targets survive.
+
+### Search providers
+
+Fourteen backends. Pin one, or let `auto` walk the chain in order.
+
+| provider     | auth                   |
+| ------------ | ---------------------- |
+| `auto`       | chain                  |
+| `exa`        | `EXA_API_KEY` (or mcp) |
+| `brave`      | `BRAVE_API_KEY`        |
+| `jina`       | `JINA_API_KEY`         |
+| `kimi`       | `MOONSHOT_API_KEY`     |
+| `zai`        | `ZAI_API_KEY`          |
+| `anthropic`  | oauth                  |
+| `perplexity` | `PERPLEXITY_API_KEY`   |
+| `gemini`     | oauth                  |
+| `codex`      | oauth                  |
+| `tavily`     | `TAVILY_API_KEY`       |
+| `parallel`   | `PARALLEL_API_KEY`     |
+| `kagi`       | `KAGI_API_KEY`         |
+| `synthetic`  | `SYNTHETIC_API_KEY`    |
+| `searxng`    | self-hosted            |
+
+### Specialised handlers
+
+The agent gets structured content, not stripped HTML.
+
+- **Code hosts** — github, gitlab
+- **Package registries** — npm, PyP
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[supermemoryai/supermemory]]></title>
-            <link>https://github.com/supermemoryai/supermemory</link>
-            <guid>https://github.com/supermemoryai/supermemory</guid>
-            <pubDate>Mon, 01 Jun 2026 00:25:09 GMT</pubDate>
-            <description><![CDATA[Memory engine and app that is extremely fast, scalable. The Memory API for the AI era.]]></description>
+            <title><![CDATA[microsoft/vscode]]></title>
+            <link>https://github.com/microsoft/vscode</link>
+            <guid>https://github.com/microsoft/vscode</guid>
+            <pubDate>Tue, 02 Jun 2026 00:30:21 GMT</pubDate>
+            <description><![CDATA[Visual Studio Code]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/supermemoryai/supermemory">supermemoryai/supermemory</a></h1>
-            <p>Memory engine and app that is extremely fast, scalable. The Memory API for the AI era.</p>
+            <h1><a href="https://github.com/microsoft/vscode">microsoft/vscode</a></h1>
+            <p>Visual Studio Code</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 23,326</p>
-            <p>Forks: 2,106</p>
-            <p>Stars today: 264 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;picture&gt;
-    &lt;source srcset=&quot;apps/web/public/logo-fullmark.svg&quot; media=&quot;(prefers-color-scheme: dark)&quot;&gt;
-    &lt;source srcset=&quot;apps/web/public/logo-light-fullmark.svg&quot; media=&quot;(prefers-color-scheme: light)&quot;&gt;
-    &lt;img src=&quot;apps/web/public/logo-fullmark.svg&quot; alt=&quot;Supermemory&quot; width=&quot;400&quot; /&gt;
-  &lt;/picture&gt;
-&lt;/p&gt;
+            <p>Stars: 185,657</p>
+            <p>Forks: 40,293</p>
+            <p>Stars today: 64 stars today</p>
+            <h2>README</h2><pre># Visual Studio Code - Open Source (&quot;Code - OSS&quot;)
+[![Feature Requests](https://img.shields.io/github/issues/microsoft/vscode/feature-request.svg)](https://github.com/microsoft/vscode/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areactions-%2B1-desc)
+[![Bugs](https://img.shields.io/github/issues/microsoft/vscode/bug.svg)](https://github.com/microsoft/vscode/issues?utf8=✓&amp;q=is%3Aissue+is%3Aopen+label%3Abug)
+[![Gitter](https://img.shields.io/badge/chat-on%20gitter-yellow.svg)](https://gitter.im/Microsoft/vscode)
+
+## The Repository
+
+This repository (&quot;`Code - OSS`&quot;) is where we (Microsoft) develop the [Visual Studio Code](https://code.visualstudio.com) product together with the community. Not only do we work on code and issues here, but we also publish our [roadmap](https://github.com/microsoft/vscode/wiki/Roadmap), [monthly iteration plans](https://github.com/microsoft/vscode/wiki/Iteration-Plans), and our [endgame plans](https://github.com/microsoft/vscode/wiki/Running-the-Endgame). This source code is available to everyone under the standard [MIT license](https://github.com/microsoft/vscode/blob/main/LICENSE.txt).
+
+## Visual Studio Code
 
 &lt;p align=&quot;center&quot;&gt;
-  &lt;strong&gt;State-of-the-art memory and context engine for AI. And yes - you can use it as a company/personal brain.&lt;/strong&gt;
+  &lt;img alt=&quot;VS Code in action&quot; src=&quot;https://github.com/user-attachments/assets/56af271c-949d-454c-a3ea-16188c063414&quot;&gt;
 &lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://supermemory.ai/docs&quot;&gt;Docs&lt;/a&gt; ·
-  &lt;a href=&quot;https://supermemory.ai/docs/quickstart&quot;&gt;Quickstart&lt;/a&gt; ·
-  &lt;a href=&quot;https://console.supermemory.ai&quot;&gt;Dashboard&lt;/a&gt; ·
-  &lt;a href=&quot;https://supermemory.link/discord&quot;&gt;Discord&lt;/a&gt;
-&lt;/p&gt;
+[Visual Studio Code](https://code.visualstudio.com) is a distribution of the `Code - OSS` repository with Microsoft-specific customizations released under a traditional [Microsoft product license](https://code.visualstudio.com/License/).
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://www.npmjs.com/package/supermemory&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/v/supermemory?style=flat-square&amp;color=blue&quot; alt=&quot;npm&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://pypi.org/project/supermemory/&quot;&gt;&lt;img src=&quot;https://img.shields.io/pypi/v/supermemory?style=flat-square&amp;color=blue&quot; alt=&quot;pypi&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://supermemory.ai/docs&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/docs-supermemory.ai-blue?style=flat-square&quot; alt=&quot;docs&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
+[Visual Studio Code](https://code.visualstudio.com) combines the simplicity of a code editor with what developers need for their core edit-build-debug cycle. It provides comprehensive code editing, navigation, and understanding support along with lightweight debugging, a rich extensibility model, and lightweight integration with existing tools.
 
----
+Visual Studio Code is updated monthly with new features and bug fixes. You can download it for Windows, macOS, and Linux on [Visual Studio Code&#039;s website](https://code.visualstudio.com/Download). To get the latest releases every day, install the [Insiders build](https://code.visualstudio.com/insiders).
 
-Supermemory is the memory and context layer for AI. **#1 on [LongMemEval](https://github.com/xiaowu0162/LongMemEval), [LoCoMo](https://github.com/snap-research/locomo), and [ConvoMem](https://github.com/Salesforce/ConvoMem)** — the three major benchmarks for AI memory. 
+## Contributing
 
-We are a research lab building the engine, plugins and tools around it.
+There are many ways in which you can participate in this project, for example:
 
-Your AI forgets everything between conversations. Supermemory fixes that.
+* [Submit bugs and feature requests](https://github.com/microsoft/vscode/issues), and help us verify as they are checked in
+* Review [source code changes](https://github.com/microsoft/vscode/pulls)
+* Review the [documentation](https://github.com/microsoft/vscode-docs) and make pull requests for anything from typos to new content.
 
-It automatically learns from conversations, extracts facts, builds user profiles, handles knowledge updates and contradictions, forgets expired information, and delivers the right context at the right time. Full RAG, connectors, file processing — the entire context stack, one system.
+If you are interested in fixing issues and contributing directly to the code base,
+please see the document [How to Contribute](https://github.com/microsoft/vscode/wiki/How-to-Contribute), which covers the following:
 
-| | |
-|---|---|
-| 🧠 **Memory** | Extracts facts from conversations. Handles temporal changes, contradictions, and automatic forgetting. |
-| 👤 **User Profiles** | Auto-maintained user context — stable facts + recent activity. One call, ~50ms. |
-| 🔍 **Hybrid Search** | RAG + Memory in a single query. Knowledge base docs and personalized context together. |
-| 🔌 **Connectors** | Google Drive · Gmail · Notion · OneDrive · GitHub — auto-sync with real-time webhooks. |
-| 📄 **Multi-modal Extractors** | PDFs, images (OCR), videos (transcription), code (AST-aware chunking). Upload and it works. |
+* [How to build and run from source](https://github.com/microsoft/vscode/wiki/How-to-Contribute)
+* [The development workflow, including debugging and running tests](https://github.com/microsoft/vscode/wiki/How-to-Contribute#debugging)
+* [Coding guidelines](https://github.com/microsoft/vscode/wiki/Coding-Guidelines)
+* [Submitting pull requests](https://github.com/microsoft/vscode/wiki/How-to-Contribute#pull-requests)
+* [Finding an issue to work on](https://github.com/microsoft/vscode/wiki/How-to-Contribute#where-to-contribute)
+* [Contributing to translations](https://aka.ms/vscodeloc)
 
-All of this is in our single memory structure and ontology. 
+## Feedback
 
-&lt;img width=&quot;1414&quot; height=&quot;937&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/8863b6d9-c043-4c75-b200-4f1759e7edaf&quot; /&gt;
+* Ask a question on [Stack Overflow](https://stackoverflow.com/questions/tagged/vscode)
+* [Request a new feature](CONTRIBUTING.md)
+* Upvote [popular feature requests](https://github.com/microsoft/vscode/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areactions-%2B1-desc)
+* [File an issue](https://github.com/microsoft/vscode/issues)
+* Connect with the extension author community on [GitHub Discussions](https://github.com/microsoft/vscode-discussions/discussions) or [Slack](https://aka.ms/vscode-dev-community)
+* Follow [@code](https://x.com/code) and let us know what you think!
 
+See our [wiki](https://github.com/microsoft/vscode/wiki/Feedback-Channels) for a description of each of these channels and information on some other available community-driven channels.
 
----
+## Related Projects
 
-## Use Supermemory
+Many of the core components and extensions to VS Code live in their own repositories on GitHub. For example, the [node debug adapter](https://github.com/microsoft/vscode-node-debug) and the [mono debug adapter](https://github.com/microsoft/vscode-mono-debug) repositories are separate from each other. For a complete list, please visit the [Related Projects](https://github.com/microsoft/vscode/wiki/Related-Projects) page on our [wiki](https://github.com/microsoft/vscode/wiki).
 
-&lt;table&gt;
-&lt;tr&gt;
-&lt;td width=&quot;50%&quot; valign=&quot;top&quot;&gt;
+## Bundled Extensions
 
-&lt;h3&gt;🧑‍💻 I use AI tools&lt;/h3&gt;
+VS Code includes a set of built-in extensions located in the [extensions](extensions) folder, including grammars and snippets for many languages. Extensions that provide rich language support (inline suggestions, Go to Definition) for a language have the suffix `language-features`. For example, the `json` extension provides coloring for `JSON` and the `json-language-features` extension provides rich language support for `JSON`.
 
-Build your own personal supermemory by using our app. Builds **persistent memory graph across every conversation**.
+## Development Container
 
-Your AI remembers your preferences, projects, past discussions — and gets smarter over time.
+This repository includes a Visual Studio Code Dev Containers / GitHub Codespaces development container.
 
-**[→ Jump to User setup](#give-your-ai-memory)**
+* For [Dev Containers](https://aka.ms/vscode-remote/download/containers), use the **Dev Containers: Clone Repository in Container Volume...** command which creates a Docker volume for better disk I/O on macOS and Windows.
+  * If you already have VS Code and Docker installed, you can also click [here](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/vscode) to get started. This will cause VS Code to automatically install the Dev Containers extension if needed, clone the source code into a container volume, and spin up a dev container for use.
 
-&lt;/td&gt;
-&lt;td width=&quot;50%&quot; valign=&quot;top&quot;&gt;
+* For Codespaces, install the [GitHub Codespaces](https://marketplace.visualstudio.com/items?itemName=GitHub.codespaces) extension in VS Code, and use the **Codespaces: Create New Codespace** command.
 
-&lt;h3&gt;🔧 I&#039;m building AI products&lt;/h3&gt;
+Docker / the Codespace should have at least **4 cores and 6 GB of RAM (8 GB recommended)** to run a full build. See the [development container README](.devcontainer/README.md) for more information.
 
-Add memory, RAG, user profiles, and connectors to your agents and apps with **a single API**.
+## Code of Conduct
 
-No vector DB config. No embedding pipelines. No chunking strategies.
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-**[→ Jump to developer quickstart](#build-with-supermemory-api)**
+## License
 
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
+Copyright (c) Microsoft Corporation. All rights reserved.
 
----
-
-## Give your AI memory
-
-The Supermemory App, browser extension, plugins and MCP server gives any compatible AI assistant persistent memory. One install, and your AI remembers you.
-
-### The app
-
-You can use supermemory without any code, by using our consumer-facing app for free.
-
-Start at https://app.supermemory.ai
-
-&lt;img width=&quot;1705&quot; height=&quot;1030&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/5b43af30-b998-4585-8de6-f3e9a26d894a&quot; /&gt;
-
-It also comes with an agent embedded inside, which we call Nova.
-
-### Supermemory Plugins
-
-Supermemory comes built with Plugins for Claude Code, OpenCode, OpenClaw, and Hermes.
-
-&lt;img width=&quot;844&quot; height=&quot;484&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/ecb879a2-8652-495d-9228-f305a97ba603&quot; /&gt;
-
-These plugins are implementations of the supermemory API, and they are open source! 
-
-You can find them here: 
-
-- Openclaw plugin: https://github.com/supermemoryai/openclaw-supermemory
-- Claude code plugin: https://github.com/supermemoryai/claude-supermemory
-- OpenCode plugin: https://github.com/supermemoryai/opencode-supermemory
-- Hermes agent (Supermemory memory provider): https://github.com/NousResearch/hermes-agent
-
-### MCP - Quick install
-
-```bash
-npx -y install-mcp@latest https://mcp.supermemory.ai/mcp --client claude --oauth=yes
-```
-
-Replace `claude` with your client: `cursor`, `windsurf`, `vscode`, etc.
-
-Read more about our MCP here - https://supermemory.ai/docs/supermemory-mcp/mcp
-
-### What your AI gets
-
-| Tool | What it does |
-|---|---|
-| `memory` | Save or forget information. Your AI calls this automatically when you share something worth remembering. |
-| `recall` | Search memories by query. Returns relevant memories + your user profile summary. |
-| `context` | Injects your full profile (preferences, recent activity) into the conversation at start. In Cursor and Claude Code, just type `/context`. |
-
-### How it works
-
-Once installed, Supermemory runs in the background:
-
-1. **You talk to your AI normally.** Share preferences, mention projects, discuss problems.
-2. **Supermemory extracts and stores the important stuff.** Facts, preferences, project context — not noise.
-3. **Next conversation, your AI already knows you.** It recalls what you&#039;re working on, how you like things, what you discussed before.
-
-Memory is scoped with **projects** (container tags) so you can separate work and personal context, or organize by client, repo, or anything else.
-
-### Supported clients
-
-**Claude Desktop** · **Cursor** · **Windsurf** · **VS Code** · **Claude Code** · **OpenCode** · **OpenClaw** · **Hermes**
-
-The MCP server is open source — [view the source](https://supermemory.ai/docs/supermemory-mcp/mcp).
-
-### Manual configuration
-
-Add this to your MCP client config:
-
-```json
-{
-  &quot;mcpServers&quot;: {
-    &quot;supermemory&quot;: {
-      &quot;url&quot;: &quot;https://mcp.supermemory.ai/mcp&quot;
-    }
-  }
-}
-```
-
-Or use an API key instead of OAuth:
-
-```json
-{
-  &quot;mcpServers&quot;: {
-    &quot;supermemory&quot;: {
-      &quot;url&quot;: &quot;https://mcp.supermemory.ai/mcp&quot;,
-      &quot;headers&quot;: {
-        &quot;Authorization&quot;: &quot;Bearer sm_your_api_key_here&quot;
-      }
-    }
-  }
-}
-```
-
----
-
-## Build with Supermemory (API)
-
-If you&#039;re building AI agents or apps, Supermemory gives you the entire context stack through one API — memory, RAG, user profiles, connectors, and file processing.
-
-### Install
-
-```bash
-npm install supermemory    # or: pip install supermemory
-```
-
-### Quickstart
-
-```typescript
-import Supermemory from &quot;supermemory&quot;;
-
-const client = new Supermemory();
-
-// Store a conversation
-await client.add({
-  content: &quot;User loves TypeScript and prefers functional patterns&quot;,
-  containerTag: &quot;user_123&quot;,
-});
-
-// Get user profile + relevant memories in one call
-const { profile, searchResults } = await client.profile({
-  containerTag: &quot;user_123&quot;,
-  q: &quot;What programming style does the user prefer?&quot;,
-});
-
-// profile.static  → [&quot;Loves TypeScript&quot;, &quot;Prefers functional patterns&quot;]
-// profile.dynamic → [&quot;Working on API integration&quot;]
-// searchResults   → Relevant memories ranked by similarity
-```
-
-```python
-from supermemory import Supermemory
-
-client = Supermemory()
-
-client.add(
-    content=&quot;User loves TypeScript and prefers functional patterns&quot;,
-    container_tag=&quot;user_123&quot;
-)
-
-result = client.profile(container_tag=&quot;user_123&quot;, q=&quot;programming style&quot;)
-
-print(result.profile.static)   # Long-term facts
-print(result.profile.dynamic)  # Recent context
-```
-
-Supermemory automatically extracts memories, builds user profiles, and returns relevant context. No embedding pipelines, no vector DB config, no chunking strategies.
-
-### Framework integrations
-
-Drop-in wrappers for every major AI framework:
-
-```typescript
-// Vercel AI SDK
-import { withSupermemory } from &quot;@supermemory/tools/ai-sdk&quot;;
-const model = withSupermemory(openai(&quot;gpt-4o&quot;), { containerTag: &quot;user_123&quot;, customId: &quot;conv-1&quot; });
-
-// Mastra
-import { withSupermemory } from &quot;@supermemory/tools/mastra&quot;;
-const agent = new Agent(withSupermemory(config, &quot;user-123&quot;, { mode: &quot;full&quot; }));
-```
-
-**Vercel AI SDK** · **LangChain** · **LangGraph** · **OpenAI Agents SDK** · **Mastra** · **Agno** · **Claude Memory Tool** · **n8n**
-
-### Search modes
-
-```typescript
-// Hybrid (default) — RAG + Memory in one query
-const results = await client.search.memories({
-  q: &quot;how do I deploy?&quot;,
-  containerTag: &quot;user_123&quot;,
-  searchMode: &quot;hybrid&quot;,
-});
-// Returns deployment docs (RAG) + user&#039;s deploy preferences (Memory)
-
-// Memories only
-const results = await client.search.memories({
-  q: &quot;user preferences&quot;,
-  containerTag: &quot;user_123&quot;,
-  searchMode: &quot;memories&quot;,
-});
-```
-
-### User profiles
-
-Traditional memory relies on search — you need to know what to ask for. Supermemory automatically maintains a profile for every user:
-
-```typescript
-const { profile } = await client.profile({ containerTag: &quot;user_123&quot; });
-
-// profile.static  → [&quot;Senior engineer at Acme&quot;, &quot;Prefers dark mode&quot;, &quot;Uses Vim&quot;]
-// profile.dynamic → [&quot;Working on auth migration&quot;, &quot;Debugging rate limits&quot;]
-```
-
-One call. ~50ms. Inject into your system prompt and your agent instantly knows who it&#039;s talking to.
-
-### Connectors
-
-Auto-sync external data into your knowledge base:
-
-**Google Drive** · **Gmail** · **Notion** · **OneDrive** · **GitHub** · **Web Crawler**
-
-Real-time webhooks. Documents automatically processed, chunked, and searchable.
-
-### API at a glance
-
-| Method | Purpose |
-|---|---|
-| `client.add()` | Store content — text, conversations, URLs, HTML |
-| `client.profile()` | User profile + optional search in one call |
-| `client.search.memories()` | Hybrid search across memories and documents |
-| `client.search.documents()` | Document search with metadata filters |
-| `client.documents.uploadFile()` | Upload PDFs, images, videos, code |
-| `client.documents.list()` | List and filter documents |
-| `client.settings.update()` | Configure memory extraction and chunking |
-
-Full API reference → [supermemory.ai/docs](https://supermemory.ai/docs)
-
----
-
-## Benchmarks
-
-Supermemory is state of the art across all major AI memory benchmarks:
-
-| Benchmark | What it measures | Result |
-|---|---|---|
-| **[LongMemEval](https://github.com/xiaowu0162/LongMemEval)** | Long-term memory across sessions with knowledge updates | **81.6% — #1** |
-| **[LoCoMo](https://github.com/snap-research/locomo)** | Fact recall across extended conversations (single-hop, multi-hop, temporal, adversarial) | **#1** |
-| **[ConvoMem](https://github.com/Salesforce/ConvoMem)** | Personalization and preference learning | **#1** |
-
-We also built **[MemoryBench](https://supermemory.ai/docs/memorybench/overview)** — an open-source framework for standardized, reproducible benchmarks of memory providers. Compare Supermemory, Mem0, Zep, and others head-to-head:
-
-```bash
-bun run src/index.ts run -p supermemory -b longmemeval -j gpt-4o -r my-run
-```
-
-### Benchmarking your own memory solution
-
-We provide an Agent skill for companies to benchmark their own context and memory solutions against supermemory.
-
-```
-npx skills add supermemoryai/memorybench
-```
-
-Simply run this and do `/benchmark-context` - Supermemory will automatically do the work for you!
-
----
-
-## How memory works under the hood
-
-```
-Your app / AI tool
-        ↓
-   Supermemory
-        │
-        ├── Memory Engine     Extracts facts, tracks updates, resolves contradictions,
-        │                     auto-forgets expired info
-        ├── User Profiles     Static facts + dynamic context built from engine, always fresh
-        ├── Hybrid Search     RAG + Memory in one query
-        ├── Connectors        Real-time sync from Google Drive, Gmail, Notion, GitHub...
-        └── File Processing   PDFs, images, videos, code → searchable chunks
-```
-
-**Memory is not RAG.** RAG retrieves document chunks — stateless, same results for everyone. Memory extracts and tracks *facts about users* over time. It understands that &quot;I just moved to SF&quot; supersedes &quot;I live in NYC.&quot; Supermemory runs both together by default, so you get knowledge base retrieval *and* personalized context in every query. Read more about this here - https://supermemory.ai/docs/concepts/memory-vs-rag
-
-**Automatic forgetting.** Supermemory knows when memories become irrelevant. Temporary facts (&quot;I have an exam tomorrow&quot;) expire after the date passes. Contradictions are resolved automatically. Noise never becomes permanent memory.
-
----
-
-## Links
-
-- 📖 [Documentation](https://supermemory.ai/docs)
-- 🚀 [Quickstart](https://supermemory.ai/docs/quickstart)
-- 🧪 [MemoryBench](https://supermemory.ai/docs/memorybench/overview)
-- 🔌 [Integrations](https://supermemory.ai/docs/integrations)
-- 💬 [Discord](https://supermemory.link/discord)
-- 𝕏 [Twitter](https://twitter.com/supermemory)
-
----
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;strong&gt;Give your AI a memory. It&#039;s about time..&lt;/strong&gt;
-&lt;/p&gt;
+Licensed under the [MIT](LICENSE.txt) license.
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
@@ -877,15 +1256,15 @@ Your app / AI tool
             <title><![CDATA[Crosstalk-Solutions/project-nomad]]></title>
             <link>https://github.com/Crosstalk-Solutions/project-nomad</link>
             <guid>https://github.com/Crosstalk-Solutions/project-nomad</guid>
-            <pubDate>Mon, 01 Jun 2026 00:25:08 GMT</pubDate>
+            <pubDate>Tue, 02 Jun 2026 00:30:20 GMT</pubDate>
             <description><![CDATA[Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/Crosstalk-Solutions/project-nomad">Crosstalk-Solutions/project-nomad</a></h1>
             <p>Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 27,719</p>
-            <p>Forks: 2,712</p>
-            <p>Stars today: 374 stars today</p>
+            <p>Stars: 27,999</p>
+            <p>Forks: 2,725</p>
+            <p>Stars today: 392 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
 &lt;img src=&quot;admin/public/project_nomad_logo.webp&quot; width=&quot;200&quot; height=&quot;200&quot;/&gt;
 
@@ -1052,15 +1431,15 @@ curl -fsSL https://raw.githubusercontent.com/Crosstalk-Solutions/project-nomad/r
             <title><![CDATA[nicobailon/pi-subagents]]></title>
             <link>https://github.com/nicobailon/pi-subagents</link>
             <guid>https://github.com/nicobailon/pi-subagents</guid>
-            <pubDate>Mon, 01 Jun 2026 00:25:07 GMT</pubDate>
+            <pubDate>Tue, 02 Jun 2026 00:30:19 GMT</pubDate>
             <description><![CDATA[Pi extension for async subagent delegation with truncation, artifacts, and session sharing]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/nicobailon/pi-subagents">nicobailon/pi-subagents</a></h1>
             <p>Pi extension for async subagent delegation with truncation, artifacts, and session sharing</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 1,834</p>
-            <p>Forks: 255</p>
-            <p>Stars today: 69 stars today</p>
+            <p>Stars: 2,000</p>
+            <p>Forks: 265</p>
+            <p>Stars today: 214 stars today</p>
             <h2>README</h2><pre>&lt;p&gt;
   &lt;img src=&quot;https://raw.githubusercontent.com/nicobailon/pi-subagents/main/banner.png&quot; alt=&quot;pi-subagents&quot; width=&quot;1100&quot;&gt;
 &lt;/p&gt;
@@ -1475,18 +1854,895 @@ Use these fields when an agent should see more:
             <category>TypeScript</category>
         </item>
         <item>
+            <title><![CDATA[reconurge/flowsint]]></title>
+            <link>https://github.com/reconurge/flowsint</link>
+            <guid>https://github.com/reconurge/flowsint</guid>
+            <pubDate>Tue, 02 Jun 2026 00:30:18 GMT</pubDate>
+            <description><![CDATA[A modern platform for visual, flexible, and extensible graph-based investigations. For cybersecurity analysts and investigators.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/reconurge/flowsint">reconurge/flowsint</a></h1>
+            <p>A modern platform for visual, flexible, and extensible graph-based investigations. For cybersecurity analysts and investigators.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 4,228</p>
+            <p>Forks: 564</p>
+            <p>Stars today: 319 stars today</p>
+            <h2>README</h2><pre># Flowsint
+
+[![License](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](./LICENSE)
+[![Ethical Software](https://img.shields.io/badge/ethical-use-blue.svg)](./ETHICS.md)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20coffee-support-FFDD00?logo=buy-me-a-coffee&amp;logoColor=black)](https://www.buymeacoffee.com/dextmorgn)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-support-F16061?logo=ko-fi&amp;logoColor=white)](https://ko-fi.com/P5P01W3GPJ)
+[![Discord](https://img.shields.io/badge/Discord-Join%20Server-5865F2?logo=discord&amp;logoColor=white)](https://discord.gg/aST9HMQr)
+
+
+Flowsint is an open-source OSINT graph exploration tool designed for ethical investigation, transparency, and verification.
+
+**Ethics:** Please read [ETHICS.md](./ETHICS.md) for responsible use guidelines.
+
+&lt;img width=&quot;1439&quot; height=&quot;899&quot; alt=&quot;hero-dark&quot; src=&quot;https://github.com/user-attachments/assets/01eb128e-bef4-486e-9276-c4da58f829ae&quot; /&gt;
+
+
+https://github.com/user-attachments/assets/eaabfa81-d7b3-414d-8cf7-f69b4e37bab6
+
+
+https://github.com/user-attachments/assets/7457d94a-cf1d-4a97-949f-f9b1d8d92644
+
+
+https://github.com/user-attachments/assets/65c3f26e-7132-4853-be45-21b8933688bd
+
+
+## Contributing
+
+Flowsint is still in early development and definetly needs the help of the community! Feel free to raise issues, propose features, etc.
+
+## Get started
+
+Don&#039;t want to read ? Got it. Here&#039;s your install instructions:
+
+#### 1. Install pre-requisites
+
+- Docker
+- Make
+
+#### 2. Run install command
+
+```bash
+git clone https://github.com/reconurge/flowsint.git
+cd flowsint
+make prod
+```
+
+Then go to [http://localhost:5173/register](http://localhost:5173/register) and create an account. There are no credentials or account by default.
+
+
+&gt; ✅ OSINT investigations need a high level of privacy. Everything is stored on your machine.
+
+
+## What is it?
+
+Flowsint is a graph-based investigation tool focused on reconnaissance and OSINT (Open Source Intelligence). It allows you to explore relationships between entities through a visual graph interface and automated enrichers.
+
+### Available Enrichers
+
+**Domain Enrichers**
+- Reverse DNS Resolution - Find domains pointing to an IP
+- DNS Resolution - Resolve domain to IP addresses
+- Subdomain Discovery - Enumerate subdomains
+- WHOIS Lookup - Get domain registration information
+- Domain to Website - Convert domain to website entity
+- Domain to Root Domain - Extract root domain
+- Domain to ASN - Find ASN associated with domain
+- Domain History - Retrieve historical domain data
+
+**IP Enrichers**
+- IP Information - Get geolocation and network details
+- IP to ASN - Find ASN for IP address
+
+**ASN Enrichers**
+- ASN to CIDRs - Get IP ranges for an ASN
+
+**CIDR Enrichers**
+- CIDR to IPs - Enumerate IPs in a range
+
+**Social Media Enrichers**
+- Maigret - Username search across social platforms
+
+**Organization Enrichers**
+- Organization to ASN - Find ASNs owned by organization
+- Organization Information - Get company details
+- Organization to Domains - Find domains owned by organization
+
+**Cryptocurrency Enrichers**
+- Wallet to Transactions - Get transaction history
+- Wallet to NFTs - Find NFTs owned by wallet
+
+**Website Enrichers**
+- Website Crawler - Crawl and map website structure
+- Website to Links - Extract all links
+- Website to Domain - Extract domain from URL
+- Website to Webtrackers - Identify tracking scripts
+- Website to Text - Extract text content
+
+**Email Enrichers**
+- Email to Gravatar - Find Gravatar profile
+- Email to Breaches - Check data breach databases
+- Email to Domains - Find associated domains
+
+**Phone Enrichers**
+- Phone to Breaches - Check phone number in breaches
+
+**Individual Enrichers**
+- Individual to Organization - Find organizational affiliations
+- Individual to Domains - Find domains associated with person
+
+**Integration Enrichers**
+- N8n Connector - Connect to N8n workflows
+
+## Project structure
+
+The project is organized into autonomous modules:
+
+### Core modules
+
+- **flowsint-core**: Core utilities, orchestrator, vault, celery tasks, and base classes
+- **flowsint-types**: Pydantic models and type definitions
+- **flowsint-enrichers**: Enricher modules, scanning logic, and tools
+- **flowsint-api**: FastAPI server, API routes, and schemas only
+- **flowsint-app**: Frontend application
+
+### Module dependencies
+
+```
+flowsint-app (frontend)
+    ↓
+flowsint-api (API server)
+    ↓
+flowsint-core (orchestrator, tasks, vault)
+    ↓
+flowsint-enrichers (enrichers &amp; tools)
+    ↓
+flowsint-types (types)
+```
+
+## Development setup
+
+### Prerequisites
+
+- Docker
+
+### Run
+
+Make sure you have **Make** installed.
+
+```bash
+make dev
+```
+
+### Development
+
+The app is accessible at [http://localhost:5173](http://localhost:5173).
+
+## Module details
+
+### flowsint-core
+
+Core utilities and base classes used by all other modules:
+
+- Database connections (PostgreSQL, Neo4j)
+- Authentication and authorization
+- Logging and event handling
+- Configuration management
+- Base classes for enrichers and tools
+- Utility functions
+
+### flowsint-types
+
+Pydantic models for all data types:
+
+- Domain, IP, ASN, CIDR
+- Individual, Organization, Email, Phone
+- Website, Social profiles, Credentials
+- Crypto wallets, Transactions, NFTs
+- And many more...
+
+### flowsint-enrichers
+
+Enricher modules that process data:
+
+- Domain enrichers (subdomains, WHOIS, resolution)
+- IP enrichers (geolocation, ASN lookup)
+- Social media enrichers (Maigret, Sherlock)
+- Email enrichers (breaches, Gravatar)
+- Crypto enrichers (transactions, NFTs)
+- And many more...
+
+### flowsint-api
+
+FastAPI server providing:
+
+- REST API endpoints
+- Authentication and user management
+- Graph database integration
+- Real-time event streaming
+
+### flowsint-app
+
+Frontend application.
+
+- Modern and UI friendly interface
+- Built for performance (no lag even on thousands of nodes)
+
+## Development workflow
+
+1. **Adding new types**: Add to `flowsint-types` module
+2. **Adding new enrichers**: Add to `flowsint-enrichers` module
+3. **Adding new API endpoints**: Add to `flowsint-api` module
+4. **Adding new utilities**: Add to `flowsint-core` module
+
+## Testing
+
+Each module has its own (incomplete) test suite:
+
+```bash
+# Test core module
+cd flowsint-core
+uv run pytest
+
+# Test types module
+cd ../flowsint-types
+uv run pytest
+
+# Test enrichers module
+cd ../flowsint-enrichers
+uv run pytest
+
+# Test API module
+cd ../flowsint-api
+uv run pytest
+```
+
+## Contributing
+
+1. Follow the modular structure
+2. Use Poetry for dependency management
+3. Write tests for new functionality
+4. Update documentation as needed
+
+
+---
+
+## ⚖️ Legal &amp; Ethical Use
+
+**Ethics:** Please read [ETHICS.md](./ETHICS.md) for responsible use guidelines.
+
+Flowsint is designed **strictly for lawful, ethical investigation and research purposes**.
+
+It was created to assist:
+- Cybersecurity researchers and analysts
+- Journalists and OSINT investigators
+- Law enforcement or fraud investigation teams
+- Organizations conducting internal threat intelligence or digital risk analysis
+
+**Flowsint must not be used for:**
+- Unauthorized intrusion, surveillance, or data collection
+- Harassment, doxxing, or targeting of individuals
+- Political manipulation, misinformation, or violation of privacy laws
+
+Any misuse of this software is strictly prohibited and goes against the ethical principles defined in [ETHICS.md](./ETHICS.md).
+
+## ❤️ Support
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20coffee-support-FFDD00?logo=buy-me-a-coffee&amp;logoColor=black)](https://www.buymeacoffee.com/dextmorgn)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-support-F16061?logo=ko-fi&amp;logoColor=white)](https://ko-fi.com/P5P01W3GPJ)
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[github/docs]]></title>
+            <link>https://github.com/github/docs</link>
+            <guid>https://github.com/github/docs</guid>
+            <pubDate>Tue, 02 Jun 2026 00:30:17 GMT</pubDate>
+            <description><![CDATA[The open-source repo for docs.github.com]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/github/docs">github/docs</a></h1>
+            <p>The open-source repo for docs.github.com</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 19,842</p>
+            <p>Forks: 67,306</p>
+            <p>Stars today: 201 stars today</p>
+            <h2>README</h2><pre># GitHub Docs &lt;!-- omit in toc --&gt;
+
+Welcome to GitHub Docs! GitHub’s documentation is open source, meaning anyone from inside or outside the company can contribute. For full contributing guidelines, visit our [contributing guide](https://docs.github.com/en/contributing).
+
+
+## Quick links by contributor type
+
+* **Hubbers (GitHub employees):** See [CONTRIBUTING.md](https://github.com/github/docs-content/blob/main/CONTRIBUTING.md) in the `docs-content` repository for GitHub-specific processes.
+
+* **Open source contributors:** See [CONTRIBUTING.md](https://github.com/github/docs/blob/main/.github/CONTRIBUTING.md) in the `docs` repository for a quick-start summary.
+
+## How we sync changes across Docs repositories
+
+There are two GitHub Docs repositories: 
+
+- **`github/docs`** (public): Open to external contributions
+
+- **`github/docs-internal`** (private): For GitHub employee contributions. 
+
+The two repositories sync frequently. Content changes in one are reflected in the other.  Hubbers might prefer to post in `docs` when working with a customer, but `docs` has limitations on the types of contributions it accepts to safeguard the site and our workflows. Internal contributions should usually go to `docs-internal`.
+
+**Important:** The `docs` repository accepts contributions to content files (`.md` files in `/content` and select `/data` sections like reusables only). Infrastructure files, workflows, and site-building code are not open for external modification.
+
+## New to contributing
+
+Here are some resources to help you get started with open source contributions:
+
+* [Finding ways to contribute to open source on GitHub](https://docs.github.com/en/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github)
+* [Set up Git](https://docs.github.com/en/get-started/git-basics/set-up-git)
+* [GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)
+* [Collaborating with pull requests](https://docs.github.com/en/github/collaborating-with-pull-requests)
+
+## License
+
+This project is dual-licensed under:
+
+* **Creative Commons Attribution 4.0** - for documentation and content in the assets, content, and data folders (see [LICENSE](LICENSE))
+* **MIT License** - for code (see [LICENSE-CODE](LICENSE-CODE))
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[ruvnet/ruflo]]></title>
+            <link>https://github.com/ruvnet/ruflo</link>
+            <guid>https://github.com/ruvnet/ruflo</guid>
+            <pubDate>Tue, 02 Jun 2026 00:30:16 GMT</pubDate>
+            <description><![CDATA[🌊 The leading agent meta-harness for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning swarm intelligence, RAG integration, and native Claude Code / Codex Integration]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/ruvnet/ruflo">ruvnet/ruflo</a></h1>
+            <p>🌊 The leading agent meta-harness for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning swarm intelligence, RAG integration, and native Claude Code / Codex Integration</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 57,297</p>
+            <p>Forks: 6,532</p>
+            <p>Stars today: 366 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+
+[![Ruflo Banner](ruflo/assets/ruflo-small.jpeg)](https://cognitum.one/agentic-engineering)
+
+[![Try the UI Beta — flo.ruv.io](https://img.shields.io/badge/_Try_the_UI_Beta-flo.ruv.io-6366f1?style=for-the-badge&amp;logoColor=white&amp;logo=svelte)](https://flo.ruv.io/)
+[![Goal Planner — goal.ruv.io](https://img.shields.io/badge/_Goal_Planner-goal.ruv.io-8b5cf6?style=for-the-badge&amp;logoColor=white&amp;logo=react)](https://goal.ruv.io/)
+[![Live Agents — goal.ruv.io/agents](https://img.shields.io/badge/_Live_Agents-goal.ruv.io%2Fagents-10b981?style=for-the-badge&amp;logoColor=white&amp;logo=react)](https://goal.ruv.io/agents)
+
+[![npm version (ruflo)](https://img.shields.io/npm/v/ruflo?label=ruflo&amp;style=for-the-badge&amp;logo=npm&amp;color=cb3837)](https://www.npmjs.com/package/ruflo)
+[![Ecosystem downloads](https://img.shields.io/badge/ecosystem%20downloads-22.2M%2B-blue?style=for-the-badge&amp;logo=npm)](https://github.com/ruvnet/ruflo/blob/main/data/clone-data.proof.json)
+[![Git clones (14d)](https://img.shields.io/badge/git%20clones%2014d-115k-blueviolet?style=for-the-badge&amp;logo=github)](https://github.com/ruvnet/ruflo/blob/main/data/clone-data.ledger.json)
+
+[![Star on GitHub](https://img.shields.io/github/stars/ruvnet/claude-flow?style=for-the-badge&amp;logo=github&amp;color=gold)](https://github.com/ruvnet/claude-flow)
+[![MIT License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-Plugin-D97757?style=for-the-badge&amp;logoColor=white&amp;logo=anthropic)](https://github.com/ruvnet/claude-flow)
+[![Codex Plugin](https://img.shields.io/badge/Codex-Plugin-412991?style=for-the-badge&amp;logoColor=white&amp;logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0yMi4yODIgOS44MjFhNS45ODUgNS45ODUgMCAwIDAtLjUxNi00LjkxIDYuMDQ2IDYuMDQ2IDAgMCAwLTYuNTEtMi45QTYuMDY1IDYuMDY1IDAgMCAwIDQuOTgxIDQuMThhNS45ODUgNS45ODUgMCAwIDAtMy45OTggMi45IDYuMDQ2IDYuMDQ2IDAgMCAwIC43NDMgNy4wOTcgNS45OCA1Ljk4IDAgMCAwIC41MSA0LjkxMSA2LjA1MSA2LjA1MSAwIDAgMCA2LjUxNSAyLjlBNS45ODUgNS45ODUgMCAwIDAgMTMuMjYgMjRhNi4wNTYgNi4wNTYgMCAwIDAgNS43NzItNC4yMDYgNS45OSA1Ljk5IDAgMCAwIDMuOTk4LTIuOSA2LjA1NiA2LjA1NiAwIDAgMC0uNzQ3LTcuMDczek0xMy4yNiAyMi40M2E0LjQ3NiA0LjQ3NiAwIDAgMS0yLjg3Ni0xLjA0bC4xNDItLjA4IDQuNzc4LTIuNzU4YS43OTUuNzk1IDAgMCAwIC4zOTMtLjY4MXYtNi43MzdsMi4wMiAxLjE2OGEuMDcxLjA3MSAwIDAgMSAuMDM4LjA1MnY1LjU4M2E0LjUwNCA0LjUwNCAwIDAgMS00LjQ5NSA0LjQ5NHpNMy42IDE4LjMwNGE0LjQ3IDQuNDcgMCAwIDEtLjUzNS0zLjAxNGwuMTQyLjA4NSA0Ljc4MyAyLjc1OWEuNzcxLjc3MSAwIDAgMCAuNzgxIDBsNS44NDMtMy4zNjl2Mi4zMzJhLjA4LjA4IDAgMCAxLS4wMzMuMDYyTDkuNzQgMTkuOTVhNC41IDQuNSAwIDAgMS02LjE0LTEuNjQ2ek0yLjM0IDcuODk2YTQuNDg1IDQuNDg1IDAgMCAxIDIuMzY2LTEuOTczVjExLjZhLjc2Ni43NjYgMCAwIDAgLjM4OC42NzdsNS44MTUgMy4zNTQtMi4wMiAxLjE2OGEuMDc2LjA3NiAwIDAgMS0uMDcyIDBsLTQuODMtMi43ODZBNC41MDQgNC41MDQgMCAwIDEgMi4zNCA3Ljg3MnptMTYuNTk3IDMuODU1LTUuODMzLTMuMzg3IDIuMDE2LTEuMTY1YS4wNzYuMDc2IDAgMCAxIC4wNzEgMGw0LjgzIDIuNzkxYTQuNDk0IDQuNDk0IDAgMCAxLS42NzYgOC4xMDR2LTUuNjc3YS43OS43OSAwIDAgMC0uNDA3LS42Njd6bTIuMDEtMy4wMjMtLjE0MS0uMDg1LTQuNzc0LTIuNzgyYS43NzYuNzc2IDAgMCAwLS43ODUgMEw5LjQwOSA5LjIzVjYuODk3YS4wNjYuMDY2IDAgMCAxIC4wMjgtLjA2Mmw0LjgzLTIuNzg3YTQuNDk5IDQuNDk5IDAgMCAxIDYuNjggNC42NnpNOC4zMDcgMTIuODYzbC0yLjAyLTEuMTY0YS4wOC4wOCAwIDAgMS0uMDM4LS4wNTdWNi4wNzRhNC40OTkgNC40OTkgMCAwIDEgNy4zNzYtMy40NTRsLS4xNDIuMDgtNC43NzggMi43NThhLjc5NS43OTUgMCAwIDAtLjM5My42ODJ6bTEuMDk3LTIuMzY2IDIuNjAyLTEuNSAyLjYwNyAxLjV2Mi45OTlsLTIuNTk3IDEuNS0yLjYwNy0xLjVaIi8%2BPC9zdmc%2B)](https://www.npmjs.com/package/@claude-flow/codex)
+[![🕸️ RuVector Graph Ai](https://img.shields.io/badge/RuVector_Agentic-DB-06b6d4?style=for-the-badge&amp;logoColor=white&amp;logo=graphql)](https://github.com/ruvnet/ruvector)
+
+[![RuFlo Agentic Appliance](v3/docs/assets/RuFlo-agentic-appliance.png)](https://cognitum.one/appliance)
+
+[![ruFlo Summit — Budapest, June 2–3, 2026](v3/docs/assets/ruFlo-Summit.jpg)](https://github.com/ruvnet/ruflo/issues/1967)
+
+# Ruflo
+
+**Multi-agent AI harness for Claude Code and Codex**
+
+&lt;/div&gt;
+
+Orchestrate 100+ specialized AI agents across machines, teams, and trust boundaries. Ruflo adds coordinated swarms, self-learning memory, federated comms, and enterprise security to Claude Code — so agents don&#039;t just run, they collaborate.
+
+### Why Ruflo?
+
+&gt; Claude Flow is now Ruflo — named by [`rUv`](https://ruv.io), who loves Rust, flow states, and building things that feel inevitable. The &quot;Ru&quot; is the rUv. The &quot;flo&quot; is working until 3am. Underneath, powered by [`Cognitum.One`](https://cognitum.one/?RuFlo) agentic architecture, running a supercharged Rust based AI engine, embeddings, memory, and plugin system.
+
+
+### What Ruflo Does
+
+One `npx ruvflo init` gives Claude Code a nervous system: agents self-organize into swarms, learn from every task, remember across sessions, and — with federation — securely talk to agents on other machines without leaking data. You keep writing code. Ruflo handles the coordination.
+
+```
+Self-Learning / Self-Optimizing Agent Architecture
+
+User --&gt; Ruflo (CLI/MCP) --&gt; Router --&gt; Swarm --&gt; Agents --&gt; Memory --&gt; LLM Providers
+                          ^                           |
+                          +---- Learning Loop &lt;-------+
+```
+
+&gt; **New to Ruflo?** You don&#039;t need to learn 314 MCP tools or 26 CLI commands. After `init`, just use Claude Code normally -- the hooks system automatically routes tasks, learns from successful patterns, and coordinates agents in the background.
+
+---
+
+![Ruflo Plugins](./ruflo-plugins.gif)
+
+## Quick Start
+
+There are **two different install paths** with very different surface areas. Pick based on what you need (#1744):
+
+| | **Claude Code Plugin** | **CLI install (`npx ruflo init`)** |
+|---|---|---|
+| What it gives you | Slash commands + a few skills + agent definitions per-plugin | Full Ruflo loop — 98 agents, 60+ commands, 30 skills, MCP server, hooks, daemon |
+| Files in your workspace | **Zero** | `.claude/`, `.claude-flow/`, `CLAUDE.md`, helpers, settings |
+| MCP server registered | **No** (`memory_store`, `swarm_init`, etc. unavailable to Claude) | Yes |
+| Hooks installed | No | Yes |
+| Best for | Try a single plugin&#039;s commands without committing to the full install | Production use — everything works as documented |
+
+### Path A — Claude Code Plugins (lite, slash commands only)
+
+```bash
+# Add the marketplace
+/plugin marketplace add ruvnet/ruflo
+
+# Install core + any plugins you need
+/plugin install ruflo-core@ruflo
+/plugin install ruflo-swarm@ruflo
+/plugin install ruflo-rag-memory@ruflo
+/plugin install ruflo-neural-trader@ruflo
+```
+
+This adds slash commands and agent definitions only. The Ruflo MCP server is NOT registered, so `memory_store`, `swarm_init`, `agent_spawn`, etc. won&#039;t be callable from Claude. For the full loop, use Path B below.
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;🔌 All 33 plugins&lt;/strong&gt;&lt;/summary&gt;
+
+#### Core &amp; Orchestration
+
+| Plugin | What it does |
+|--------|-------------|
+| [**ruflo-core**](plugins/ruflo-core/README.md) | Foundation — server, health checks, plugin discovery |
+| [**ruflo-swarm**](plugins/ruflo-swarm/README.md) | Coordinate multiple agents as a team |
+| [**ruflo-autopilot**](plugins/ruflo-autopilot/README.md) | Let agents run autonomously in a loop |
+| [**ruflo-loop-workers**](plugins/ruflo-loop-workers/README.md) | Schedule background tasks on a timer |
+| [**ruflo-workflows**](plugins/ruflo-workflows/README.md) | Reusable multi-step task templates |
+| [**ruflo-federation**](plugins/ruflo-federation/README.md) | Agents on different machines collaborate securely |
+
+#### Memory &amp; Knowledge
+
+| Plugin | What it does |
+|--------|-------------|
+| [**ruflo-agentdb**](plugins/ruflo-agentdb/README.md) | Fast vector database for agent memory |
+| [**ruflo-rag-memory**](plugins/ruflo-rag-memory/README.md) | Smart retrieval — hybrid search, graph hops, diversity ranking |
+| [**ruflo-rvf**](plugins/ruflo-rvf/README.md) | Save and restore agent memory across sessions |
+| [**ruflo-ruvector**](plugins/ruflo-ruvector/README.md) | [`ruvector`](https://npmjs.com/package/ruvector) — GPU-accelerated search, Graph RAG, 103 tools |
+| [**ruflo-knowledge-graph**](plugins/ruflo-knowledge-graph/README.md) | Build and traverse entity relationship maps |
+
+#### Intelligence &amp; Learning
+
+| Plugin | What it does |
+|--------|-------------|
+| [**ruflo-intelligence**](plugins/ruflo-intelligence/README.md) | Agents learn from past successes and get smarter |
+| [**ruflo-graph-intelligence**](plugins/ruflo-graph-intelligence/) | Sublinear graph reasoning — PageRank, delta updates, complexity-aware execution (ADR-123) |
+| [**ruflo-daa**](plugins/ruflo-daa/README.md) | Dynamic agent behavior and cognitive patterns |
+| [**ruflo-ruvllm**](plugins/ruflo-ruvllm/README.md) | Run local LLMs (Ollama, etc.) with smart routing |
+| [**ruflo-goals**](plugins/ruflo-goals/README.md) | Break big goals into plans and track progress |
+
+#### Code Quality &amp; Testing
+
+| Plugin | What it does |
+|--------|-------------|
+| [**ruflo-testgen**](plugins/ruflo-testgen/README.md) | Find missing tests and generate them automatically |
+| [**ruflo-browser**](plugins/ruflo-browser/README.md) | Automate browser testing with Playwright |
+| [**ruflo-jujutsu**](plugins/ruflo-jujutsu/README.md) | Analyze git diffs, score risk, suggest reviewers |
+| [**ruflo-docs**](plugins/ruflo-docs/README.md) | Generate and maintain documentation automatically |
+
+#### Security &amp; Compliance
+
+| Plugin | What it does |
+|--------|-------------|
+| [**ruflo-security-audit**](plugins/ruflo-security-audit/README.md) | Scan for vulnerabilities and CVEs |
+| [**ruflo-aidefence**](plugins/ruflo-aidefence/README.md) | Block prompt injection, detect PII, safety scanning |
+
+#### Architecture &amp; Methodology
+
+| Plugin | What it does |
+|--------|-------------|
+| [**ruflo-adr**](plugins/ruflo-adr/README.md) | Track architecture decisions with a living record |
+| [**ruflo-ddd**](plugins/ruflo-ddd/README.md) | Scaffold domain-driven design — contexts, aggregates, events |
+| [**ruflo-sparc**](plugins/ruflo-sparc/README.md) | Guided 5-phase development methodology with quality gates |
+
+#### DevOps &amp; Observability
+
+| Plugin | What it does |
+|--------|-------------|
+| [**ruflo-migrations**](plugins/ruflo-migrations/README.md) | Manage database schema changes safely |
+| [**ruflo-observability**](plugins/ruflo-observability/README.md) | Structured logs, traces, and metrics in one place |
+| [**ruflo-cost-tracker**](plugins/ruflo-cost-tracker/README.md) | Track token usage, set budgets, get cost alerts |
+
+#### Extensibility
+
+| Plugin | What it does |
+|--------|-------------|
+| [**ruflo-agent**](plugins/ruflo-agent/README.md) | Run agents — local WASM sandbox (rvagent) + Anthropic Claude Managed Agents (cloud) |
+| [**ruflo-plugin-creator**](plugins/ruflo-plugin-creator/README.md) | Scaffold, validate, and publish your own plugins |
+
+#### Domain-Specific
+
+| Plugin | What it does |
+|--------|-------------|
+| [**ruflo-iot-cognitum**](plugins/ruflo-iot-cognitum/README.md) | IoT device management — trust scoring, anomaly detection, fleets |
+| [**ruflo-neural-trader**](plugins/ruflo-neural-trader/README.md) | [`neural-trader`](https://npmjs.com/package/neural-trader) — AI trading with 4 agents, backtesting, 112+ tools |
+| [**ruflo-market-data**](plugins/ruflo-market-data/README.md) | Ingest market data, vectorize OHLCV, detect patterns |
+
+&lt;/details&gt;
+
+### CLI Install
+
+**macOS / Linux / WSL / Git-Bash:**
+
+```bash
+# One-line install (POSIX shells only — see Windows note below)
+curl -fsSL https://cdn.jsdelivr.net/gh/ruvnet/ruflo@main/scripts/install.sh | bash
+```
+
+**All platforms (including native Windows PowerShell / cmd):**
+
+```bash
+# Interactive setup wizard — runs identically on every platform
+npx ruflo@latest init wizard
+
+# Quick non-interactive init
+# npx ruflo@latest init
+
+# Or install globally
+npm install -g ruflo@latest
+```
+
+&gt; 💡 **Windows users:** the `curl ... | bash` form needs a POSIX shell (Git-Bash, WSL, MSYS). The `npx ruflo@latest init wizard` line works natively in PowerShell and cmd. If you hit an `&#039;bash&#039; is not recognized` error, use the `npx` line instead — both end up running the same init flow.
+
+### MCP Server
+
+```bash
+# Add Ruflo as an MCP server in Claude Code (canonical form, matches USERGUIDE.md)
+claude mcp add ruflo -- npx ruflo@latest mcp start
+```
+
+---
+
+## What You Get
+
+| Capability | Description |
+|------------|-------------|
+| 🤖 **100+ Agents** | Specialized agents for coding, testing, security, docs, architecture |
+| 📡 **Comms Layer** | Zero-trust federation — agents across machines/orgs discover, authenticate, and exchange work securely |
+| 🐝 **Swarm Coordination** | Hierarchical, mesh, and adaptive topologies with consensus |
+| 🧠 **Self-Learning** | SONA neural patterns, ReasoningBank, trajectory learning |
+| 💾 **Vector Memory** | HNSW-indexed AgentDB — measured ~1.9x faster at N=20k, ~3.2x–4.7x at N=5k vs brute force (recall@10 ~0.99); ANN wins above the crossover, ties/loses at small N. See [audit](docs/reviews/intelligence-system-audit-2026-05-29.md) + [`scripts/benchmark-intelligence.mjs`](scripts/benchmark-intelligence.mjs) |
+| ⚡ **Background Workers** | 12 auto-triggered workers (audit, optimize, testgaps, etc.) |
+| 🧩 **Plugin Marketplace** | 32 native Claude Code plugins + 21 npm plugins |
+| 🔌 **Multi-Provider** | Claude, GPT, Gemini, Cohere, Ollama with smart routing |
+| 🛡️ **Security** | AIDefence, input validation, CVE remediation, path traversal prevention |
+| 🌐 **Agent Federation** | Cross-installation agent collaboration with zero-trust security |
+| 💬 **[Web UI Beta](https://flo.ruv.io/)** | Multi-model chat at flo.ruv.io with parallel MCP tool calling and an in-browser WASM tool gallery |
+| 🎯 **[RuFlo Research](https://goal.ruv.io/)** | GOAP A\* planner at goal.ruv.io — plain-English goals → executable agent plans, with a live agent dashboard at [/agents](https://goal.ruv.io/agents) |
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://flo.ruv.io/&quot;&gt;
+    &lt;img src=&quot;v3/docs/assets/ruVocal.png&quot; alt=&quot;RuFlo Web UI executing parallel MCP tool calls at flo.ruv.io — ruflo__memory_store and ruflo__memory_search firing in a single model turn with the &#039;Step 1 — 2 tools completed&#039; parallel-execution indicator, thinking process panel visible, Qwen 3.6 Max as the active model. Multi-agent AI chat with Model Context Protocol (MCP) tool calling, persistent vector memory via AgentDB + HNSW, swarm coordination, and 6 frontier models including Claude Sonnet 4.6, Gemini 2.5 Pro, and OpenAI through OpenRouter.&quot; width=&quot;100%&quot; /&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+### Web UI (Beta) — self-hostable, hosted demo at [flo.ruv.io](https://flo.ruv.io/)
+
+**RuFlo&#039;s web UI is a multi-model AI chat with built-in Model Context Protocol (MCP) tool calling.** Talk to Qwen, Claude, Gemini, or OpenAI while RuFlo invokes the same MCP tools the CLI uses — agent orchestration, persistent memory, swarm coordination, code review, GitHub ops — directly from chat. No install, no API key needed to try it.
+
+| | What it is | Why it matters |
+|---|------------|----------------|
+| 🧠 | **Any model, local or remote** | 6 curated frontier models out-of-the-box — Qwen 3.6 Max (default), Claude Sonnet 4.6, Claude Haiku 4.5, Gemini 2.5 Pro, Gemini 2.5 Flash, OpenAI — via OpenRouter. Add your own: any OpenAI-compatible endpoint (vLLM, Ollama, LM Studio, Together, Groq, self-hosted). |
+| 🦾 | **ruvLLM self-learning AI** | Native support for [ruvLLM](https://github.com/ruvnet/RuVector/tree/main/examples/ruvLLM) (lives in `ruvnet/RuVector/examples/ruvLLM`) — RuFlo&#039;s self-improving local model layer. Routes to MicroLoRA adapters, learns from your trajectories via SONA, and stays on your machine. Pair with the cloud models or run fully offline. |
+| 🛠️ | **~210 tools, ready to call** | 5 server groups (Core, Intelligence, Agents, Memory, DevTools) plus an 18-tool gallery that runs entirely in your browser — works offline. |
+| 🔌 | **Bring your own MCP servers** | Click the **MCP (n)** pill in the chat input → *Add Server* and paste any MCP endpoint (HTTP, SSE, or stdio). Your tools join RuFlo&#039;s native ones in the same parallel-execution flow. Run a local MCP server on `localhost:3000` and it just works. |
+| ⚡ | **Tools run in parallel** | One model response can fire 4–6+ tools at the same time. The UI shows them as cards with a *Step 1 — 2 tools completed* badge so you can see exactly what ran. |
+| 💾 | **Memory that sticks** | Say *&quot;remember my favorite color is indigo&quot;* and ask weeks later — RuFlo recalls it. Backed by AgentDB + HNSW vector search (measured ~1.9x–4.7x faster than brute force above the crossover, recall@10 ~0.99). |
+| 📘 | **Built-in capabilities tour** | Click the question-mark icon in the sidebar — a &quot;RuFlo Capabilities&quot; modal opens with the full tool list, model strengths, architecture, and keyboard shortcuts. |
+| 🏠 | **Self-hostable** | Web UI is shipped as Docker (`ruflo/src/ruvocal/Dockerfile`) with embedded Mongo. Deploy to your own Cloud Run / Fly / Kubernetes / docker-compose. The hosted [flo.ruv.io](https://flo.ruv.io/) demo is one option; running your own is fully supported. |
+| 🚀 | **Zero install to try** | Open the hosted URL, pick a model, type a question. That&#039;s the whole onboarding. |
+
+**Try the hosted demo:** [https://flo.ruv.io/](https://flo.ruv.io/) — no account, no API key. **Run your own:** the source lives in [`ruflo/src/ruvocal/`](ruflo/src/ruvocal/) with a multi-stage Dockerfile (`INCLUDE_DB=true` builds in MongoDB) and a `cloudbuild.yaml` for Google Cloud Run. See [ADR-033](ruflo/docs/adr/ADR-033-RUVOCAL-WASM-MCP-INTEGRATION.md) for the architecture and [issue #1689](https://github.com/ruvnet/ruflo/issues/1689) for the roadmap.
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://goal.ruv.io/agents&quot;&gt;
+    &lt;img src=&quot;v3/docs/assets/goal.png&quot; alt=&quot;goal.ruv.io/agents — RuFlo Goal-Oriented Action Planning (GOAP) UI for autonomous AI agents. Visual goal decomposition, A* search through state spaces, multi-agent task assignment, and live agent telemetry.&quot; width=&quot;100%&quot; /&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+### Goal Planner UI — autonomous agents at [goal.ruv.io](https://goal.ruv.io/)
+
+**Turn high-level goals into executable agent plans.** `goal.ruv.io` is RuFlo&#039;s hosted Goal-Oriented Action Planning (GOAP) front-end — describe an outcome in plain English and watch RuFlo decompose it into preconditions, actions, and an A* path through state space, then dispatch the work to live agents at [`/agents`](https://goal.ruv.io/agents).
+
+| | What it is | Why it matters |
+|---|------------|----------------|
+| 🎯 | **Plain-English goals** | Type *&quot;ship the auth refactor with tests and a PR&quot;* — RuFlo extracts the success criteria, the constraints, and the implicit preconditions. No JSON, no DSL. |
+| 🧭 | **GOAP A\* planner** | Classic gaming-AI planning ported to software work: state-space search through actions with preconditions/effects to find the shortest viable path. Replans on the fly when state changes. |
+| 🤖 | **Live agent dashboard** | [goal.ruv.io/agents](https://goal.ruv.io/agents) shows every spawned agent — role, current step, memory namespace, token budget, status. Click in to inspect trajectories, kill runaway workers, or reassign. |
+| 🌳 | **Visual plan tree** | Goals render as collapsible action trees with progress, blocked branches, and rollbacks highlighted. See *exactly* why an agent picked a path — no opaque chain-of-thought. |
+| ♻️ | **Adaptive replanning** | When an action fails or new info arrives, the planner re-runs A\* from the current state instead of restarting. Failures become learning, not loops. |
+| 🧠 | **Shared memory + SONA** | Plans, trajectories, and outcomes flow into AgentDB. Future plans retrieve past solutions via HNSW — the planner gets smarter with every run. |
+| 🔗 | **Wired to MCP tools** | Every action node maps to a tool call (RuFlo&#039;s ~210 MCP tools, your custom servers, or shell). The planner schedules them in parallel where the dependency graph allows.
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[better-auth/better-auth]]></title>
+            <link>https://github.com/better-auth/better-auth</link>
+            <guid>https://github.com/better-auth/better-auth</guid>
+            <pubDate>Tue, 02 Jun 2026 00:30:15 GMT</pubDate>
+            <description><![CDATA[The most comprehensive authentication framework]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/better-auth/better-auth">better-auth/better-auth</a></h1>
+            <p>The most comprehensive authentication framework</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 28,554</p>
+            <p>Forks: 2,583</p>
+            <p>Stars today: 21 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+  &lt;picture&gt;
+    &lt;source srcset=&quot;./banner-dark.png&quot; media=&quot;(prefers-color-scheme: dark)&quot;/&gt;
+    &lt;source srcset=&quot;./banner-light.png&quot; media=&quot;(prefers-color-scheme: light)&quot;/&gt;
+    &lt;img src=&quot;./banner-light.png&quot; alt=&quot;Better Auth Logo&quot;/&gt;
+  &lt;/picture&gt;
+
+  [![npm](https://img.shields.io/npm/dm/better-auth?style=flat&amp;colorA=000000&amp;colorB=000000)](https://npm.chart.dev/better-auth?primary=neutral&amp;gray=neutral&amp;theme=dark)
+  [![npm version](https://img.shields.io/npm/v/better-auth.svg?style=flat&amp;colorA=000000&amp;colorB=000000)](https://www.npmjs.com/package/better-auth)
+  [![GitHub stars](https://img.shields.io/github/stars/better-auth/better-auth?style=flat&amp;colorA=000000&amp;colorB=000000)](https://github.com/better-auth/better-auth/stargazers)
+
+  &lt;p&gt;
+    &lt;a href=&quot;https://discord.gg/better-auth&quot;&gt;Discord&lt;/a&gt;
+    ·
+    &lt;a href=&quot;https://better-auth.com&quot;&gt;Website&lt;/a&gt;
+    ·
+    &lt;a href=&quot;https://github.com/better-auth/better-auth/issues&quot;&gt;Issues&lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+
+## Better Auth
+
+Better Auth is a framework-agnostic authentication (and authorization) framework for TypeScript. It provides a comprehensive set of features out of the box and includes a plugin ecosystem that simplifies adding advanced functionalities with minimal code in a short amount of time. Whether you need 2FA, multi-tenant support, or other complex features, it lets you focus on building your actual application instead of reinventing the wheel.
+
+### Why Better Auth
+
+Authentication in the TypeScript ecosystem is a half-solved problem. Other open-source libraries often require a lot of additional code for anything beyond basic authentication. Rather than just pushing third-party services as the solution, I believe we can do better as a community—hence, Better Auth.
+
+## Contribution
+
+Better Auth is a free and open source project licensed under the [MIT License](./LICENSE.md). You are free to do whatever you want with it.
+
+You could help continuing its development by:
+
+- [Contribute to the source code](./CONTRIBUTING.md)
+- [Suggest new features and report issues](https://github.com/better-auth/better-auth/issues)
+
+## Security
+If you discover a security vulnerability within Better Auth, please send an e-mail to [security@better-auth.com](mailto:security@better-auth.com).
+
+All reports will be promptly addressed, and you&#039;ll be credited accordingly.
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[iptv-org/iptv]]></title>
+            <link>https://github.com/iptv-org/iptv</link>
+            <guid>https://github.com/iptv-org/iptv</guid>
+            <pubDate>Tue, 02 Jun 2026 00:30:14 GMT</pubDate>
+            <description><![CDATA[Collection of publicly available IPTV channels from all over the world]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/iptv-org/iptv">iptv-org/iptv</a></h1>
+            <p>Collection of publicly available IPTV channels from all over the world</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 116,739</p>
+            <p>Forks: 6,202</p>
+            <p>Stars today: 60 stars today</p>
+            <h2>README</h2><pre># IPTV [![update](https://github.com/iptv-org/iptv/actions/workflows/update.yml/badge.svg)](https://github.com/iptv-org/iptv/actions/workflows/update.yml)
+
+Collection of publicly available IPTV (Internet Protocol television) channels from all over the world.
+
+## Table of contents
+
+- 🚀 [How to use?](#how-to-use)
+- 📺 [Playlists](#playlists)
+- 🗓 [EPG](#epg)
+- 🗄 [Database](#database)
+- 👨‍💻 [API](#api)
+- 📚 [Resources](#resources)
+- 💬 [Discussions](#discussions)
+- ❓ [FAQ](#faq)
+- 🛠 [Contribution](#contribution)
+- ⚖ [Legal](#legal)
+- © [License](#license)
+
+## How to use?
+
+Simply paste the link to one of the playlists into [any video player](https://github.com/iptv-org/awesome-iptv#apps) that supports live streaming and press _Open_.
+
+![VLC Network Panel](https://github.com/iptv-org/iptv/raw/master/.readme/preview.png)
+
+## Playlists
+
+The main playlist containing all channels available in the repository can be found at:
+
+```
+https://iptv-org.github.io/iptv/index.m3u
+```
+
+Links to other playlists can be found in the [PLAYLISTS.md](PLAYLISTS.md) file.
+
+## EPG
+
+[Electronic Program Guide](https://en.wikipedia.org/wiki/Electronic_program_guide) for most of the channels can be downloaded using utilities published in the [iptv-org/epg](https://github.com/iptv-org/epg) repository.
+
+## Database
+
+All channel data is taken from the [iptv-org/database](https://github.com/iptv-org/database) repository. If you find any errors please open a new [issue](https://github.com/iptv-org/database/issues) there.
+
+## API
+
+The API documentation can be found in the [iptv-org/api](https://github.com/iptv-org/api) repository.
+
+## Resources
+
+Links to other useful IPTV-related resources can be found in the [iptv-org/awesome-iptv](https://github.com/iptv-org/awesome-iptv) repository.
+
+## Discussions
+
+If you have a question or idea, welcome to the [Discussions](https://github.com/orgs/iptv-org/discussions).
+
+## FAQ
+
+The answers to the most popular questions can be found in the [FAQ.md](FAQ.md) file.
+
+## Contribution
+
+Please make sure to read the [Contributing Guide](CONTRIBUTING.md) before sending an issue or making a pull request.
+
+And thank you to everyone who has already contributed!
+
+### Backers
+
+&lt;a href=&quot;https://opencollective.com/iptv-org&quot;&gt;&lt;img src=&quot;https://opencollective.com/iptv-org/backers.svg?width=890&quot; /&gt;&lt;/a&gt;
+
+### Contributors
+
+&lt;a href=&quot;https://github.com/iptv-org/iptv/graphs/contributors&quot;&gt;&lt;img src=&quot;https://opencollective.com/iptv-org/contributors.svg?width=890&quot; /&gt;&lt;/a&gt;
+
+## Legal
+
+No video files are stored in this repository. The repository simply contains user-submitted links to publicly available video stream URLs, which to the best of our knowledge have been intentionally made publicly by the copyright holders. If any links in these playlists infringe on your rights as a copyright holder, they may be removed by opening an [issue](https://github.com/iptv-org/iptv/issues/new?template=6_copyright-claim.yml). However, note that we have **no control** over the destination of the link, and just removing the link from the playlist will not remove its contents from the web. Note that linking does not directly infringe copyright because no copy is made on the site providing the link, and thus this is **not** a valid reason to send a DMCA notice to GitHub. To remove this content from the web, you should contact the web host that&#039;s actually hosting the content (**not** GitHub, nor the maintainers of this repository).
+
+## License
+
+[![CC0](http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](LICENSE)
+
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[bia-pain-bache/BPB-Worker-Panel]]></title>
+            <link>https://github.com/bia-pain-bache/BPB-Worker-Panel</link>
+            <guid>https://github.com/bia-pain-bache/BPB-Worker-Panel</guid>
+            <pubDate>Tue, 02 Jun 2026 00:30:13 GMT</pubDate>
+            <description><![CDATA[A GUI Panel providing Worker subscriptions for VLESS, Trojan and Warp configs alongside a private DoH server and chain proxies, offering full DNS, clean IP, Fragment, Warp, Warp pro and routing settings for cross-platform clients using Amnezia, Wireguard, Sing-box, Clash/Mihomo and Xray cores.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/bia-pain-bache/BPB-Worker-Panel">bia-pain-bache/BPB-Worker-Panel</a></h1>
+            <p>A GUI Panel providing Worker subscriptions for VLESS, Trojan and Warp configs alongside a private DoH server and chain proxies, offering full DNS, clean IP, Fragment, Warp, Warp pro and routing settings for cross-platform clients using Amnezia, Wireguard, Sing-box, Clash/Mihomo and Xray cores.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 11,034</p>
+            <p>Forks: 31,395</p>
+            <p>Stars today: 119 stars today</p>
+            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;BPB Panel&lt;/h1&gt;
+
+### 🌏 Readme in [Farsi](README_fa.md)
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;docs/assets/images/panel-overview.jpg&quot;&gt;
+&lt;/p&gt;
+&lt;br&gt;
+
+## Introduction
+
+This project is aimed to provide a user panel to access FREE, SECURE and PRIVATE **VLESS**, **Trojan** and **Warp** configs and also a **private DoH** server. It ensures connectivity even when domains or Warp services are blocked by ISPs, offering two deployment options:
+
+- **Workers** deployment
+- **Pages** deployment
+
+🌟 If you found **BPB Panel** valuable, Your donations make all the difference 🌟
+
+### USDT (BEP20)
+
+```text
+0xbdf15d41C56f861f25b2b11C835bd45dfD5b792F
+```
+
+## Features
+
+1. **Free and Private**: No costs involved and the server is private.
+2. **Intuitive Panel:** Streamlined for effortless navigation, configuration and use.
+3. **Versatile Protocols:** Provides VLESS, Trojan and Wireguard (Warp) protocols.
+4. **Private DoH:** A ready to use DoH server, capable of customizing underlying DNS server.
+5. **Warp Pro configs:** Optimized Warp for crucial circumstances.
+6. **Fragment support:** Supports Fragment functionality for crucial network situations.
+7. **Comprehensive Routing Rules:** Bypassing Iran/China/Russia, Blocking QUIC, Porn, Ads, Malwares, Phishing and also bypassing sanctions.
+8. **Chain Proxy:** Capable of adding a chain proxy (VLESS, Trojan, Shadowsocks, socks and http) to fix IP.
+9. **Broad client compatibility:** Offers subscription links for Xray, Sing-box and Clash-Mihomo core clients.
+10. **Password-protected panel:** Provides secure and private panel with password protection.
+11. **Fully customizable:** Supports setting up clean IP-domains, Proxy IPs, DNS servers, choosing ports and protocols, Warp endpoints and more.
+
+## Limitations
+
+1. **UDP transport**: VLESS and Trojan protocols on workers do not handle **UDP** properly, so it is disabled by default (affecting features like Telegram video calls), UDP DNS is also unsupported. DoH is enabled by default for enhanced security.
+2. **Request limit**: each worker supports 100K requests per day for VLESS and Trojan, suitable for 2-3 users. You can use limitless Warp configs.
+
+## Getting started
+
+- [Installation methods](https://bia-pain-bache.github.io/BPB-Worker-Panel/installation/wizard/)
+- [Configuration](https://bia-pain-bache.github.io/BPB-Worker-Panel/configuration/)
+- [How to use](https://bia-pain-bache.github.io/BPB-Worker-Panel/usage/)
+- [FAQ](https://bia-pain-bache.github.io/BPB-Worker-Panel/faq/)
+
+## Supported Clients
+
+|       Client        |      Version      |  Fragment support  |  Warp Pro support  |
+| :-----------------: | :---------------: | :----------------: | :----------------: |
+|     **v2rayNG**     | 1.10.26 or higher | :heavy_check_mark: | :heavy_check_mark: |
+|     **MahsaNG**     |   14 or higher    | :heavy_check_mark: | :heavy_check_mark: |
+|     **v2rayN**      | 7.15.4 or higher  | :heavy_check_mark: | :heavy_check_mark: |
+|   **v2rayN-PRO**    |   1.9 or higher   | :heavy_check_mark: | :heavy_check_mark: |
+|    **Sing-box**     | 1.12.0 or higher  | :heavy_check_mark: |        :x:         |
+|    **Streisand**    | 1.6.64 or higher  | :heavy_check_mark: | :heavy_check_mark: |
+|   **Clash Meta**    |                   |        :x:         | :heavy_check_mark: |
+| **Clash Verge Rev** |                   |        :x:         | :heavy_check_mark: |
+|     **FLClash**     |                   |        :x:         | :heavy_check_mark: |
+|   **AmneziaVPN**    |                   |        :x:         | :heavy_check_mark: |
+|    **WG Tunnel**    |                   |        :x:         | :heavy_check_mark: |
+
+## Environment variables
+
+|   Variable   |               Usage                |     Mandatory      |
+| :----------: | :--------------------------------: | :----------------: |
+|   **UUID**   |             VLESS UUID             | :heavy_check_mark: |
+| **TR_PASS**  |          Trojan Password           | :heavy_check_mark: |
+| **PROXY_IP** | Proxy IP or domain (VLESS, Trojan) |        :x:         |
+|  **PREFIX**  |   NAT64 Prefixes (VLESS, Trojan)   |        :x:         |
+| **SUB_PATH** |         Subscriptions&#039; URI         |        :x:         |
+| **FALLBACK** |  Fallback domain (VLESS, Trojan)   |        :x:         |
+| **DOH_URL**  |              Core DOH              |        :x:         |
+
+---
+
+## Stargazers Over Time
+
+[![Stargazers Over Time](https://starchart.cc/bia-pain-bache/BPB-Worker-Panel.svg?variant=adaptive)](https://starchart.cc/bia-pain-bache/BPB-Worker-Panel)
+
+---
+
+### Special Thanks
+
+- VLESS, Trojan [Cloudflare-workers/pages proxy script](https://github.com/yonggekkk/Cloudflare-workers-pages-vless) created by [yonggekkk](https://github.com/yonggekkk)
+- CF-vless code author [3Kmfi6HP](https://github.com/3Kmfi6HP/EDtunnel)
+- CF preferred IP program author [badafans](https://github.com/badafans/Cloudflare-IP-SpeedTest), [XIU2](https://github.com/XIU2/CloudflareSpeedTest)
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
             <title><![CDATA[AnInsomniacy/motrix-next]]></title>
             <link>https://github.com/AnInsomniacy/motrix-next</link>
             <guid>https://github.com/AnInsomniacy/motrix-next</guid>
-            <pubDate>Mon, 01 Jun 2026 00:25:06 GMT</pubDate>
+            <pubDate>Tue, 02 Jun 2026 00:30:12 GMT</pubDate>
             <description><![CDATA[A full-featured download manager — rebuilt from the ground up]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/AnInsomniacy/motrix-next">AnInsomniacy/motrix-next</a></h1>
             <p>A full-featured download manager — rebuilt from the ground up</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 7,031</p>
-            <p>Forks: 218</p>
-            <p>Stars today: 329 stars today</p>
+            <p>Stars: 7,141</p>
+            <p>Forks: 219</p>
+            <p>Stars today: 140 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
   &lt;img src=&quot;src/assets/logo.png&quot; alt=&quot;Motrix Next&quot; width=&quot;128&quot; height=&quot;128&quot; style=&quot;border-radius: 24px;&quot; /&gt;
   &lt;h1&gt;Motrix Next&lt;/h1&gt;
@@ -1787,880 +3043,18 @@ This app is not code-signed on macOS or Windows — Apple charges $99/year, and 
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[bia-pain-bache/BPB-Worker-Panel]]></title>
-            <link>https://github.com/bia-pain-bache/BPB-Worker-Panel</link>
-            <guid>https://github.com/bia-pain-bache/BPB-Worker-Panel</guid>
-            <pubDate>Mon, 01 Jun 2026 00:25:05 GMT</pubDate>
-            <description><![CDATA[A GUI Panel providing Worker subscriptions for VLESS, Trojan and Warp configs alongside a private DoH server and chain proxies, offering full DNS, clean IP, Fragment, Warp, Warp pro and routing settings for cross-platform clients using Amnezia, Wireguard, Sing-box, Clash/Mihomo and Xray cores.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/bia-pain-bache/BPB-Worker-Panel">bia-pain-bache/BPB-Worker-Panel</a></h1>
-            <p>A GUI Panel providing Worker subscriptions for VLESS, Trojan and Warp configs alongside a private DoH server and chain proxies, offering full DNS, clean IP, Fragment, Warp, Warp pro and routing settings for cross-platform clients using Amnezia, Wireguard, Sing-box, Clash/Mihomo and Xray cores.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 10,997</p>
-            <p>Forks: 31,442</p>
-            <p>Stars today: 281 stars today</p>
-            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;BPB Panel&lt;/h1&gt;
-
-### 🌏 Readme in [Farsi](README_fa.md)
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;docs/assets/images/panel-overview.jpg&quot;&gt;
-&lt;/p&gt;
-&lt;br&gt;
-
-## Introduction
-
-This project is aimed to provide a user panel to access FREE, SECURE and PRIVATE **VLESS**, **Trojan** and **Warp** configs and also a **private DoH** server. It ensures connectivity even when domains or Warp services are blocked by ISPs, offering two deployment options:
-
-- **Workers** deployment
-- **Pages** deployment
-
-🌟 If you found **BPB Panel** valuable, Your donations make all the difference 🌟
-
-### USDT (BEP20)
-
-```text
-0xbdf15d41C56f861f25b2b11C835bd45dfD5b792F
-```
-
-## Features
-
-1. **Free and Private**: No costs involved and the server is private.
-2. **Intuitive Panel:** Streamlined for effortless navigation, configuration and use.
-3. **Versatile Protocols:** Provides VLESS, Trojan and Wireguard (Warp) protocols.
-4. **Private DoH:** A ready to use DoH server, capable of customizing underlying DNS server.
-5. **Warp Pro configs:** Optimized Warp for crucial circumstances.
-6. **Fragment support:** Supports Fragment functionality for crucial network situations.
-7. **Comprehensive Routing Rules:** Bypassing Iran/China/Russia, Blocking QUIC, Porn, Ads, Malwares, Phishing and also bypassing sanctions.
-8. **Chain Proxy:** Capable of adding a chain proxy (VLESS, Trojan, Shadowsocks, socks and http) to fix IP.
-9. **Broad client compatibility:** Offers subscription links for Xray, Sing-box and Clash-Mihomo core clients.
-10. **Password-protected panel:** Provides secure and private panel with password protection.
-11. **Fully customizable:** Supports setting up clean IP-domains, Proxy IPs, DNS servers, choosing ports and protocols, Warp endpoints and more.
-
-## Limitations
-
-1. **UDP transport**: VLESS and Trojan protocols on workers do not handle **UDP** properly, so it is disabled by default (affecting features like Telegram video calls), UDP DNS is also unsupported. DoH is enabled by default for enhanced security.
-2. **Request limit**: each worker supports 100K requests per day for VLESS and Trojan, suitable for 2-3 users. You can use limitless Warp configs.
-
-## Getting started
-
-- [Installation methods](https://bia-pain-bache.github.io/BPB-Worker-Panel/installation/wizard/)
-- [Configuration](https://bia-pain-bache.github.io/BPB-Worker-Panel/configuration/)
-- [How to use](https://bia-pain-bache.github.io/BPB-Worker-Panel/usage/)
-- [FAQ](https://bia-pain-bache.github.io/BPB-Worker-Panel/faq/)
-
-## Supported Clients
-
-|       Client        |      Version      |  Fragment support  |  Warp Pro support  |
-| :-----------------: | :---------------: | :----------------: | :----------------: |
-|     **v2rayNG**     | 1.10.26 or higher | :heavy_check_mark: | :heavy_check_mark: |
-|     **MahsaNG**     |   14 or higher    | :heavy_check_mark: | :heavy_check_mark: |
-|     **v2rayN**      | 7.15.4 or higher  | :heavy_check_mark: | :heavy_check_mark: |
-|   **v2rayN-PRO**    |   1.9 or higher   | :heavy_check_mark: | :heavy_check_mark: |
-|    **Sing-box**     | 1.12.0 or higher  | :heavy_check_mark: |        :x:         |
-|    **Streisand**    | 1.6.64 or higher  | :heavy_check_mark: | :heavy_check_mark: |
-|   **Clash Meta**    |                   |        :x:         | :heavy_check_mark: |
-| **Clash Verge Rev** |                   |        :x:         | :heavy_check_mark: |
-|     **FLClash**     |                   |        :x:         | :heavy_check_mark: |
-|   **AmneziaVPN**    |                   |        :x:         | :heavy_check_mark: |
-|    **WG Tunnel**    |                   |        :x:         | :heavy_check_mark: |
-
-## Environment variables
-
-|   Variable   |               Usage                |     Mandatory      |
-| :----------: | :--------------------------------: | :----------------: |
-|   **UUID**   |             VLESS UUID             | :heavy_check_mark: |
-| **TR_PASS**  |          Trojan Password           | :heavy_check_mark: |
-| **PROXY_IP** | Proxy IP or domain (VLESS, Trojan) |        :x:         |
-|  **PREFIX**  |   NAT64 Prefixes (VLESS, Trojan)   |        :x:         |
-| **SUB_PATH** |         Subscriptions&#039; URI         |        :x:         |
-| **FALLBACK** |  Fallback domain (VLESS, Trojan)   |        :x:         |
-| **DOH_URL**  |              Core DOH              |        :x:         |
-
----
-
-## Stargazers Over Time
-
-[![Stargazers Over Time](https://starchart.cc/bia-pain-bache/BPB-Worker-Panel.svg?variant=adaptive)](https://starchart.cc/bia-pain-bache/BPB-Worker-Panel)
-
----
-
-### Special Thanks
-
-- VLESS, Trojan [Cloudflare-workers/pages proxy script](https://github.com/yonggekkk/Cloudflare-workers-pages-vless) created by [yonggekkk](https://github.com/yonggekkk)
-- CF-vless code author [3Kmfi6HP](https://github.com/3Kmfi6HP/EDtunnel)
-- CF preferred IP program author [badafans](https://github.com/badafans/Cloudflare-IP-SpeedTest), [XIU2](https://github.com/XIU2/CloudflareSpeedTest)
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[MHSanaei/3x-ui]]></title>
-            <link>https://github.com/MHSanaei/3x-ui</link>
-            <guid>https://github.com/MHSanaei/3x-ui</guid>
-            <pubDate>Mon, 01 Jun 2026 00:25:04 GMT</pubDate>
-            <description><![CDATA[Xray panel supporting multi-protocol multi-user expire day & traffic & IP limit (Vmess, Vless, Trojan, ShadowSocks, Wireguard, Hysteria, Tunnel, Mixed, HTTP, Tun)]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/MHSanaei/3x-ui">MHSanaei/3x-ui</a></h1>
-            <p>Xray panel supporting multi-protocol multi-user expire day & traffic & IP limit (Vmess, Vless, Trojan, ShadowSocks, Wireguard, Hysteria, Tunnel, Mixed, HTTP, Tun)</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 38,955</p>
-            <p>Forks: 7,330</p>
-            <p>Stars today: 128 stars today</p>
-            <h2>README</h2><pre>[English](/README.md) | [فارسی](/README.fa_IR.md) | [العربية](/README.ar_EG.md) | [中文](/README.zh_CN.md) | [Español](/README.es_ES.md) | [Русский](/README.ru_RU.md)
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;./media/3x-ui-dark.png&quot;&gt;
-    &lt;img alt=&quot;3x-ui&quot; src=&quot;./media/3x-ui-light.png&quot;&gt;
-  &lt;/picture&gt;
-&lt;/p&gt;
-
-[![Release](https://img.shields.io/github/v/release/mhsanaei/3x-ui.svg)](https://github.com/MHSanaei/3x-ui/releases)
-[![Build](https://img.shields.io/github/actions/workflow/status/mhsanaei/3x-ui/release.yml.svg)](https://github.com/MHSanaei/3x-ui/actions)
-[![GO Version](https://img.shields.io/github/go-mod/go-version/mhsanaei/3x-ui.svg)](#)
-[![Downloads](https://img.shields.io/github/downloads/mhsanaei/3x-ui/total.svg)](https://github.com/MHSanaei/3x-ui/releases/latest)
-[![License](https://img.shields.io/badge/license-GPL%20V3-blue.svg?longCache=true)](https://www.gnu.org/licenses/gpl-3.0.en.html)
-[![Go Reference](https://pkg.go.dev/badge/github.com/mhsanaei/3x-ui/v3.svg)](https://pkg.go.dev/github.com/mhsanaei/3x-ui/v3)
-[![Go Report Card](https://goreportcard.com/badge/github.com/mhsanaei/3x-ui/v3)](https://goreportcard.com/report/github.com/mhsanaei/3x-ui/v3)
-
-**3X-UI** — advanced, open-source web-based control panel designed for managing Xray-core server. It offers a user-friendly interface for configuring and monitoring various VPN and proxy protocols.
-
-&gt; [!IMPORTANT]
-&gt; This project is only for personal usage, please do not use it for illegal purposes, and please do not use it in a production environment.
-
-As an enhanced fork of the original X-UI project, 3X-UI provides improved stability, broader protocol support, and additional features.
-
-## Quick Start
-
-```bash
-bash &lt;(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
-```
-
-For full documentation, please visit the [project Wiki](https://github.com/MHSanaei/3x-ui/wiki).
-
-## Database Options
-
-3X-UI supports two backends, chosen during the install:
-
-- **SQLite** (default) — a single file at `/etc/x-ui/x-ui.db`. Zero setup, ideal for small/medium deployments.
-- **PostgreSQL** — recommended for high client counts or multi-node setups. The installer can install PostgreSQL locally for you, or accept a DSN to an existing server.
-
-At runtime the backend is selected via env vars (the installer writes these to `/etc/default/x-ui` for you):
-
-```
-XUI_DB_TYPE=postgres
-XUI_DB_DSN=postgres://xui:password@127.0.0.1:5432/xui?sslmode=disable
-```
-
-### Migrating an existing SQLite install to PostgreSQL
-
-```bash
-x-ui migrate-db --dsn &quot;postgres://xui:password@127.0.0.1:5432/xui?sslmode=disable&quot;
-# then set XUI_DB_TYPE and XUI_DB_DSN in /etc/default/x-ui and restart:
-systemctl restart x-ui
-```
-
-The source SQLite file is left untouched; remove it manually once you have verified the new backend.
-
-### Docker
-
-The default `docker compose up -d` keeps using SQLite. To run with the bundled PostgreSQL service, uncomment the two `XUI_DB_*` env lines in `docker-compose.yml` and start with the profile:
-
-```bash
-docker compose --profile postgres up -d
-```
-
-## A Special Thanks to
-
-- [alireza0](https://github.com/alireza0/)
-
-## Acknowledgment
-
-- [Iran v2ray rules](https://github.com/chocolate4u/Iran-v2ray-rules) (License: **GPL-3.0**): _Enhanced v2ray/xray and v2ray/xray-clients routing rules with built-in Iranian domains and a focus on security and adblocking._
-- [Russia v2ray rules](https://github.com/runetfreedom/russia-v2ray-rules-dat) (License: **GPL-3.0**): _This repository contains automatically updated V2Ray routing rules based on data on blocked domains and addresses in Russia._
-
-## Community Tools
-
-Tools and integrations built by the community around 3x-ui.
-
-- [terraform-provider-3x-ui](https://github.com/batonogov/terraform-provider-threexui) (License: **MIT**): _Manage inbounds, clients, panel settings, and Xray configuration as code with Terraform / OpenTofu._
-
-## Support project
-
-**If this project is helpful to you, you may wish to give it a**:star2:
-
-&lt;a href=&quot;https://www.buymeacoffee.com/MHSanaei&quot; target=&quot;_blank&quot;&gt;
-&lt;img src=&quot;./media/default-yellow.png&quot; alt=&quot;Buy Me A Coffee&quot; style=&quot;height: 70px !important;width: 277px !important;&quot; &gt;
-&lt;/a&gt;
-
-&lt;/br&gt;
-&lt;a href=&quot;https://nowpayments.io/donation/hsanaei&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;
-   &lt;img src=&quot;./media/donation-button-black.svg&quot; alt=&quot;Crypto donation button by NOWPayments&quot;&gt;
-&lt;/a&gt;
-
-## Stargazers over Time
-
-[![Stargazers over time](https://starchart.cc/MHSanaei/3x-ui.svg?variant=adaptive)](https://starchart.cc/MHSanaei/3x-ui)
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[tmoroney/auto-subs]]></title>
-            <link>https://github.com/tmoroney/auto-subs</link>
-            <guid>https://github.com/tmoroney/auto-subs</guid>
-            <pubDate>Mon, 01 Jun 2026 00:25:03 GMT</pubDate>
-            <description><![CDATA[On-device subtitle generation that connects directly to DaVinci Resolve, Premiere, and After Effects.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/tmoroney/auto-subs">tmoroney/auto-subs</a></h1>
-            <p>On-device subtitle generation that connects directly to DaVinci Resolve, Premiere, and After Effects.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 3,509</p>
-            <p>Forks: 223</p>
-            <p>Stars today: 15 stars today</p>
-            <h2>README</h2><pre># AutoSubs
-
-AutoSubs generates accurate, timestamped subtitles from any audio or video file. AI transcription runs locally — no cloud, no subscription.
-
-- Transcribes speech in many languages, with optional translation
-- Identifies and labels multiple speakers automatically
-- Exports to SRT, plain text, DaVinci Resolve, Premiere Pro, or After Effects
-- Works standalone, with DaVinci Resolve, or with Adobe apps through the bundled CEP extension
-
-[![Downloads](https://img.shields.io/endpoint?url=https://tom-moroney.com/release-tracker/data/badge-downloads.json)](https://tom-moroney.com/release-tracker/)
-[![Weekly App Opens](https://img.shields.io/endpoint?url=https://tom-moroney.com/release-tracker/data/badge-weekly-users.json&amp;style=flat)](https://tom-moroney.com/release-tracker/)
-[![New Downloads / Week](https://img.shields.io/endpoint?url=https://tom-moroney.com/release-tracker/data/badge-weekly-downloads.json)](https://tom-moroney.com/release-tracker/)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/tmoroney/auto-subs)
-
-&lt;img width=&quot;600&quot; alt=&quot;AutoSubs UI&quot; src=&quot;https://github.com/user-attachments/assets/5a95ef0c-43c7-426c-9d7b-ed3af4974a5c&quot; /&gt;
-
----
-
-## Download
-
-| Platform | Installer |
-|---|---|
-| 🪟 Windows | [AutoSubs-windows-x86_64.exe](https://github.com/tmoroney/auto-subs/releases/latest/download/AutoSubs-windows-x86_64.exe) |
-| 🍎 macOS (Apple Silicon) | [AutoSubs-Mac-ARM.pkg](https://github.com/tmoroney/auto-subs/releases/latest/download/AutoSubs-Mac-ARM.pkg) |
-| 🍎 macOS (Intel) | [AutoSubs-Mac-Intel.pkg](https://github.com/tmoroney/auto-subs/releases/latest/download/AutoSubs-Mac-Intel.pkg) |
-| 🐧 Linux (Debian/Ubuntu) | [AutoSubs-linux-x86_64.deb](#linux-install) |
-| 🐧 Linux (Fedora/openSUSE) | [AutoSubs-linux-x86_64.rpm](https://github.com/tmoroney/auto-subs/releases/latest/download/AutoSubs-linux-x86_64.rpm) |
-
-&lt;a href=&quot;https://www.buymeacoffee.com/tmoroney&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png&quot; alt=&quot;Buy Me A Coffee&quot; style=&quot;height: 48px !important;width: 173px !important;&quot; &gt;&lt;/a&gt;
-
----
-
-## Quick Start
-
-### Windows &amp; macOS
-
-Download the installer for your platform above and follow the prompts.
-
-&gt; [!TIP]
-&gt; macOS users can also install AutoSubs with Homebrew:
-&gt; ```bash
-&gt; brew install --cask auto-subs
-&gt; ```
-
-### Linux install
-
-**Debian/Ubuntu (.deb):**
-```bash
-wget https://github.com/tmoroney/auto-subs/releases/latest/download/AutoSubs-linux-x86_64.deb
-sudo apt install ./AutoSubs-linux-x86_64.deb
-```
-
-**Fedora/openSUSE (.rpm):**
-Download [AutoSubs-linux-x86_64.rpm](https://github.com/tmoroney/auto-subs/releases/latest/download/AutoSubs-linux-x86_64.rpm) and open it with your package manager.
-
-### Workflows
-
-#### Standalone Mode
-1. Launch AutoSubs and select an audio or video file.
-2. Pick your model and language/translation options.
-3. Click **Transcribe**. Edit speakers and subtitles as needed.
-4. Export as SRT, text, or copy to clipboard.
-
-#### DaVinci Resolve Mode
-1. Open DaVinci Resolve → **Workspace → Scripts → AutoSubs**.
-2. Select your timeline/audio source and settings.
-3. Click **Transcribe**. Edit speakers and subtitles as needed.
-4. Send styled subtitles back to Resolve.
-
-#### Adobe Premiere Pro / After Effects Mode
-1. Launch AutoSubs and open the bundled AutoSubs CEP extension in Premiere Pro or After Effects.
-2. Select the Adobe integration from AutoSubs.
-3. Export timeline audio for transcription or import generated subtitles back into the host app.
-4. In Premiere Pro, subtitles are imported as caption tracks; in After Effects, SRT entries are created as text layers.
-
-&gt; [!WARNING]
-&gt; AutoSubs will not work with the Mac App Store version of DaVinci Resolve. Re-install from the [official website](https://www.blackmagicdesign.com/products/davinciresolve/) if needed.
-
-### Command Line Interface
-
-Transcribe files straight from the terminal — handy for scripting and AI agents. Pass a file and AutoSubs runs without a window, prints the result, and exits; run it with no arguments to open the desktop app as usual.
-
-**1. Add `autosubs` to your PATH** (one-time setup):
-
-- **Linux** — already done; the `.deb`/`.rpm` installs `/usr/bin/autosubs`.
-- **macOS / Windows** — in the app, go to **Settings → Command line** and click **Install** (**Remove** reverses it).
-
-**2. Run it:**
-
-```bash
-autosubs interview.mp4 --model small                             # transcript to the console
-autosubs interview.mp4 --model small --diarize --max-speakers 2  # label speakers
-autosubs interview.mp4 --model small -o subs.srt                 # write a file (format from extension)
-autosubs interview.mp4 --model small -f json                     # or set the format explicitly
-autosubs --help                                                  # all options
-```
-
-`--model` accepts any AutoSubs model — Whisper sizes (`tiny`…`large-v3`), `parakeet`, or a `moonshine-*` variant. Run `autosubs --list-models` for the full list.
-
-**Output formats** (`-f` / `--format`, or inferred from the `-o` extension; defaults to `text`):
-
-| Format | Contents |
-|---|---|
-| `text` *(default)* | Readable transcript — `[HH:MM:SS] Speaker N: …`, one paragraph per speaker turn |
-| `srt` / `vtt` | Subtitle cues (SubRip / WebVTT) |
-| `json` | Full structured transcript with word-level timestamps |
-
-Only the result goes to stdout (so `&gt; out.srt` is clean); progress and errors go to stderr. Exit code is `0` on success, `1` on a runtime error, `2` on a usage error. Models download automatically on first use.
-
----
-
-## Integrations
-
-AutoSubs can run as a standalone subtitle generator, connect directly to DaVinci Resolve, or communicate with Adobe Premiere Pro and After Effects through the bundled CEP extension.
-
-Select a Preset Style |  Or create your own
-:-------------------------:|:-------------------------:
-&lt;img width=&quot;800&quot; alt=&quot;Transcription Page&quot; src=&quot;https://github.com/user-attachments/assets/f5338833-cdbb-4aae-9480-0aa8cbffda60&quot;&gt; | &lt;img width=&quot;500&quot; alt=&quot;Advanced Settings&quot; src=&quot;https://github.com/user-attachments/assets/9d2680ce-e80a-408f-a36f-54387a16f53c&quot;&gt;
-
----
-
-## What&#039;s New in v3.5
-
-### Transcription
-- **Voice Activity Detection** — strips non-speech audio before transcription for cleaner, faster results
-- **More models** — Whisper, Parakeet, and Moonshine supported, with easy download, switch, and delete
-- **Better speaker labels** — upgraded diarization model for more accurate identification
-- **Translation** — translate subtitles to other languages directly from the app
-
-### Editing &amp; UI
-- **Free-text subtitle editing** — edit subtitles naturally; word timing adjusts automatically
-- **Transcript history** — browse and reload past transcripts without re-running the pipeline
-- **Localisation** — UI available in Korean, Spanish, German, French, Japanese, and Chinese
-- **Custom titlebar** — sleeker look with better use of app space
-
-### DaVinci Resolve
-- **Animated caption macro** — create animated captions with per-word highlighting
-- **Preset system** — build, share, and preview caption presets before applying
-- **Marker-based word timing** — fine-tune timing directly on the Resolve timeline
-- **Conflict detection** — track conflicts flagged the moment a track is selected
-
-### Bug Fixes (v3.5.1)
-- Custom max characters per line, Korean inter-word spacing, and Cyrillic formatting fixes
-- Resolve export: corrected marker range calculation and cancellation handling
-- Model Manager: graceful recovery from broken HuggingFace cache; fixed delete button
-- Linux: install path fixes, double titlebar fix, and KDE crash fix
-
----
-
-## Contributing
-
-PRs are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for how to get started, including the dev setup and a full codebase walkthrough via **[AutoSubs DeepWiki](https://deepwiki.com/tmoroney/auto-subs)**.
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[cursor/plugins]]></title>
-            <link>https://github.com/cursor/plugins</link>
-            <guid>https://github.com/cursor/plugins</guid>
-            <pubDate>Mon, 01 Jun 2026 00:25:02 GMT</pubDate>
-            <description><![CDATA[Cursor plugin specification and official plugins]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/cursor/plugins">cursor/plugins</a></h1>
-            <p>Cursor plugin specification and official plugins</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 1,611</p>
-            <p>Forks: 128</p>
-            <p>Stars today: 199 stars today</p>
-            <h2>README</h2><pre># Cursor plugins
-
-Official Cursor plugins for popular developer tools, frameworks, and SaaS products. Each plugin is a standalone directory at the repository root with its own `.cursor-plugin/plugin.json` manifest.
-
-## Plugins
-
-| `name` | Plugin | Author | Category | `description` (from marketplace) |
-|:-------|:-------|:-------|:---------|:-------------------------------------|
-| `continual-learning` | [Continual Learning](continual-learning/) | Cursor | Developer Tools | Incremental transcript-driven memory updates for AGENTS.md using high-signal bullet points only. |
-| `cursor-team-kit` | [Cursor Team Kit](cursor-team-kit/) | Cursor | Developer Tools | Internal team workflows used by Cursor developers for CI, code review, shipping, local automation, and verification. |
-| `thermos` | [Thermos](thermos/) | Cursor | Developer Tools | Thermo-nuclear branch review: deep security/correctness audits, harsh code-quality rubrics, parallel subagents, thermos orchestration, and optional merge-ready PR flows. |
-| `create-plugin` | [Create Plugin](create-plugin/) | Cursor | Developer Tools | Scaffold and validate new Cursor plugins. |
-| `agent-compatibility` | [Agent Compatibility](agent-compatibility/) | Cursor | Developer Tools | CLI-backed repo compatibility scans plus Cursor agents that audit startup, validation, and docs against reality. |
-| `cli-for-agent` | [CLI for Agents](cli-for-agent/) | Cursor | Developer Tools | Patterns for designing CLIs that coding agents can run reliably: flags, help with examples, pipelines, errors, idempotency, dry-run. |
-| `pr-review-canvas` | [PR Review Canvas](pr-review-canvas/) | Cursor | Developer Tools | Render PR diffs as interactive Cursor Canvases organized for reviewer comprehension — groups changes by importance, separates boilerplate from core logic, and highlights tricky or unexpected code. |
-| `docs-canvas` | [Docs Canvas](docs-canvas/) | Cursor | Developer Tools | Render documentation — architecture notes, API references, runbooks, and codebase walkthroughs — as a navigable Cursor Canvas with sections, table of contents, diagrams, and cross-references. |
-| `cursor-sdk` | [Cursor SDK](cursor-sdk/) | Cursor | Developer Tools | Build apps, scripts, CI pipelines, and automations on top of the Cursor TypeScript SDK (@cursor/sdk) — runtime selection, auth, streaming, MCP, error handling, and ready-to-extend integration patterns. |
-| `orchestrate` | [Orchestrate](orchestrate/) | Cursor | Developer Tools | Fan large tasks out across parallel Cursor cloud agents with planners, workers, verifiers, and structured handoffs. |
-| `pstack` | [pstack](pstack/) | Lauren Tan | Developer Tools | if you want to go fast, go deep first. pstack helps you write less, but higher quality code. rigorous agent workflows you can parallelize with confidence. |
-
-Author values match each plugin’s `plugin.json` `author.name` (Cursor lists `plugins@cursor.com` in the manifest).
-
-## Repository structure
-
-This is a multi-plugin marketplace repository. The root `.cursor-plugin/marketplace.json` lists all plugins, and each plugin has its own manifest:
-
-```
-plugins/
-├── .cursor-plugin/
-│   └── marketplace.json       # Marketplace manifest (lists all plugins)
-├── plugin-name/
-│   ├── .cursor-plugin/
-│   │   └── plugin.json        # Per-plugin manifest
-│   ├── skills/                # Agent skills (SKILL.md with frontmatter)
-│   ├── rules/                 # Cursor rules (.mdc files)
-│   ├── mcp.json               # MCP server definitions
-│   ├── README.md
-│   ├── CHANGELOG.md
-│   └── LICENSE
-└── ...
-```
-
-## License
-
-MIT
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[playcanvas/supersplat]]></title>
-            <link>https://github.com/playcanvas/supersplat</link>
-            <guid>https://github.com/playcanvas/supersplat</guid>
-            <pubDate>Mon, 01 Jun 2026 00:25:01 GMT</pubDate>
-            <description><![CDATA[3D Gaussian Splat Editor]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/playcanvas/supersplat">playcanvas/supersplat</a></h1>
-            <p>3D Gaussian Splat Editor</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 8,894</p>
-            <p>Forks: 976</p>
-            <p>Stars today: 49 stars today</p>
-            <h2>README</h2><pre># SuperSplat Editor
-
-[![Github Release](https://img.shields.io/github/v/release/playcanvas/supersplat)](https://github.com/playcanvas/supersplat/releases)
-[![License](https://img.shields.io/github/license/playcanvas/supersplat)](https://github.com/playcanvas/supersplat/blob/main/LICENSE)
-[![Discord](https://img.shields.io/badge/Discord-5865F2?style=flat&amp;logo=discord&amp;logoColor=white&amp;color=black)](https://discord.gg/RSaMRzg)
-[![Reddit](https://img.shields.io/badge/Reddit-FF4500?style=flat&amp;logo=reddit&amp;logoColor=white&amp;color=black)](https://www.reddit.com/r/PlayCanvas)
-[![X](https://img.shields.io/badge/X-000000?style=flat&amp;logo=x&amp;logoColor=white&amp;color=black)](https://x.com/intent/follow?screen_name=playcanvas)
-
-| [SuperSplat Editor](https://superspl.at/editor) | [User Guide](https://developer.playcanvas.com/user-manual/gaussian-splatting/editing/supersplat/) | [Blog](https://blog.playcanvas.com) | [Forum](https://forum.playcanvas.com) |
-
-The SuperSplat Editor is a free and open source tool for inspecting, editing, optimizing and publishing 3D Gaussian Splats. It is built on web technologies and runs in the browser, so there&#039;s nothing to download or install.
-
-A live version of this tool is available at: https://superspl.at/editor
-
-![image](https://github.com/user-attachments/assets/b6cbb5cc-d3cc-4385-8c71-ab2807fd4fba)
-
-To learn more about using SuperSplat, please refer to the [User Guide](https://developer.playcanvas.com/user-manual/gaussian-splatting/editing/supersplat/).
-
-## Local Development
-
-To initialize a local development environment for SuperSplat, ensure you have [Node.js](https://nodejs.org/) 18 or later installed. Follow these steps:
-
-1. Clone the repository:
-
-   ```sh
-   git clone https://github.com/playcanvas/supersplat.git
-   cd supersplat
-   ```
-
-2. Install dependencies:
-
-   ```sh
-   npm install
-   ```
-
-3. Build SuperSplat and start a local web server:
-
-   ```sh
-   npm run develop
-   ```
-
-4. Open a web browser tab and make sure network caching is disabled on the network tab and the other application caches are clear:
-
-   - On Safari you can use `Cmd+Option+e` or Develop-&gt;Empty Caches.
-   - On Chrome ensure the options &quot;Update on reload&quot; and &quot;Bypass for network&quot; are enabled in the Application-&gt;Service workers tab:
-
-   &lt;img width=&quot;846&quot; alt=&quot;Screenshot 2025-04-25 at 16 53 37&quot; src=&quot;https://github.com/user-attachments/assets/888bac6c-25c1-4813-b5b6-4beecf437ac9&quot; /&gt;
-
-5. Navigate to `http://localhost:3000`
-
-When changes to the source are detected, SuperSplat is rebuilt automatically. Simply refresh your browser to see your changes.
-
-## Localizing the SuperSplat Editor
-
-The currently supported languages are available here:
-
-https://github.com/playcanvas/supersplat/tree/main/static/locales
-
-### Adding a New Language
-
-1. Add a new `&lt;locale&gt;.json` file in the `static/locales` directory.
-
-2. Add the locale to the list here:
-
-   https://github.com/playcanvas/supersplat/blob/main/src/ui/localization.ts
-
-### Testing Translations
-
-To test your translations:
-
-1. Run the development server:
-
-   ```sh
-   npm run develop
-   ```
-
-2. Open your browser and navigate to:
-
-   ```
-   http://localhost:3000/?lng=&lt;locale&gt;
-   ```
-
-   Replace `&lt;locale&gt;` with your language code (e.g., `fr`, `de`, `es`).
-
-## Contributors
-
-SuperSplat is made possible by our amazing open source community:
-
-&lt;a href=&quot;https://github.com/playcanvas/supersplat/graphs/contributors&quot;&gt;
-  &lt;img src=&quot;https://contrib.rocks/image?repo=playcanvas/supersplat&quot; /&gt;
-&lt;/a&gt;
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[companion-inc/feynman]]></title>
-            <link>https://github.com/companion-inc/feynman</link>
-            <guid>https://github.com/companion-inc/feynman</guid>
-            <pubDate>Mon, 01 Jun 2026 00:25:00 GMT</pubDate>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/companion-inc/feynman">companion-inc/feynman</a></h1>
-            <p></p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 7,618</p>
-            <p>Forks: 929</p>
-            <p>Stars today: 111 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://feynman.is&quot;&gt;
-    &lt;img src=&quot;assets/hero.png&quot; alt=&quot;Feynman CLI&quot; width=&quot;800&quot; /&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;The open source AI research agent.&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://feynman.is/docs&quot;&gt;&lt;img alt=&quot;Docs&quot; src=&quot;https://img.shields.io/badge/docs-feynman.is-0d9668?style=flat-square&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/companion-inc/feynman/blob/main/LICENSE&quot;&gt;&lt;img alt=&quot;License&quot; src=&quot;https://img.shields.io/github/license/companion-inc/feynman?style=flat-square&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
----
-
-### Installation
-
-**macOS / Linux:**
-
-```bash
-curl -fsSL https://feynman.is/install | bash
-```
-
-**Windows (PowerShell):**
-
-```powershell
-irm https://feynman.is/install.ps1 | iex
-```
-
-The one-line installer fetches the latest tagged release. To pin a version, pass it explicitly, for example `curl -fsSL https://feynman.is/install | bash -s -- 0.2.35`.
-
-The installer downloads a standalone native bundle with its own Node.js runtime.
-
-To upgrade the standalone app later, rerun the installer. `feynman update` only refreshes installed Pi packages inside Feynman&#039;s environment; it does not replace the standalone runtime bundle itself.
-
-To uninstall the standalone app, remove the launcher and runtime bundle, then optionally remove `~/.feynman` if you also want to delete settings, sessions, and installed package state. If you also want to delete alphaXiv login state, remove `~/.ahub`. See the installation guide for platform-specific paths.
-
-Local models are supported through the setup flow. For LM Studio, run `feynman setup`, choose `LM Studio`, and keep the default `http://localhost:1234/v1` unless you changed the server port. For LiteLLM, choose `LiteLLM Proxy` and keep the default `http://localhost:4000/v1`. For Ollama or vLLM, choose `Custom provider (baseUrl + API key)`, use `openai-completions`, and point it at the local `/v1` endpoint.
-
-### Skills Only
-
-If you want just the research skills without the full terminal app:
-
-**macOS / Linux:**
-
-```bash
-curl -fsSL https://feynman.is/install-skills | bash
-```
-
-**Windows (PowerShell):**
-
-```powershell
-irm https://feynman.is/install-skills.ps1 | iex
-```
-
-That installs the skill library into `~/.codex/skills/feynman` for Codex. You can also name the Codex target explicitly:
-
-**macOS / Linux:**
-
-```bash
-curl -fsSL https://feynman.is/install-skills | bash -s -- --codex
-```
-
-**Windows (PowerShell):**
-
-```powershell
-&amp; ([scriptblock]::Create((irm https://feynman.is/install-skills.ps1))) -Scope Codex
-```
-
-For a repo-local Claude/agent install instead:
-
-**macOS / Linux:**
-
-```bash
-curl -fsSL https://feynman.is/install-skills | bash -s -- --repo
-```
-
-**Windows (PowerShell):**
-
-```powershell
-&amp; ([scriptblock]::Create((irm https://feynman.is/install-skills.ps1))) -Scope Repo
-```
-
-That installs into `.agents/skills/feynman` under the current repository.
-
-For an OpenCode project-local install instead:
-
-**macOS / Linux:**
-
-```bash
-curl -fsSL https://feynman.is/install-skills | bash -s -- --opencode
-```
-
-**Windows (PowerShell):**
-
-```powershell
-&amp; ([scriptblock]::Create((irm https://feynman.is/install-skills.ps1))) -Scope OpenCode
-```
-
-That installs into `.opencode/skills/feynman` under the current repository.
-
-These installers download the bundled `skills/` and `prompts/` trees plus the repo guidance files referenced by those skills. They do not install the Feynman terminal, bundled Node runtime, auth storage, or Pi packages.
-
----
-
-### What you type → what happens
-
-```
-$ feynman &quot;what do we know about scaling laws&quot;
-→ Searches papers and web, produces a cited research brief
-
-$ feynman deepresearch &quot;mechanistic interpretability&quot;
-→ Multi-agent investigation with parallel researchers, synthesis, verification
-
-$ feynman lit &quot;RLHF alternatives&quot;
-→ Literature review with consensus, disagreements, open questions
-
-$ feynman audit 2401.12345
-→ Compares paper claims against the public codebase
-
-$ feynman replicate &quot;chain-of-thought improves math&quot;
-→ Replicates experiments on local or cloud GPUs
-
-$ feynman recipe &quot;fine-tune a small model for math reasoning&quot;
-→ Finds ranked, implementable ML training recipes from papers, datasets, docs, and code
-```
-
----
-
-### Workflows
-
-Ask naturally or use slash commands as shortcuts.
-
-| Command | What it does |
-| --- | --- |
-| `/deepresearch &lt;topic&gt;` | Source-heavy multi-agent investigation |
-| `/lit &lt;topic&gt;` | Literature review from paper search and primary sources |
-| `/review &lt;artifact&gt;` | Simulated peer review with severity and revision plan |
-| `/audit &lt;item&gt;` | Paper vs. codebase mismatch audit |
-| `/replicate &lt;paper&gt;` | Replicate experiments on local or cloud GPUs |
-| `/recipe &lt;task-or-paper&gt;` | Ranked ML training recipes with dataset, method, code, and verification status |
-| `/compare &lt;topic&gt;` | Source comparison matrix |
-| `/draft &lt;topic&gt;` | Paper-style draft from research findings |
-| `/autoresearch &lt;idea&gt;` | Autonomous experiment loop |
-| `/watch &lt;topic&gt;` | Recurring research watch |
-| `/outputs` | Browse all research artifacts |
-
----
-
-### Agents
-
-Four bundled research agents, dispatched automatically.
-
-- **Researcher** — gather evidence across papers, web, repos, docs
-- **Reviewer** — simulated peer review with severity-graded feedback
-- **Writer** — structured drafts from research notes
-- **Verifier** — inline citations, source URL verification, dead link cleanup
-
----
-
-### Skills &amp; Tools
-
-- **[AlphaXiv](https://www.alphaxiv.org/)** — paper search, Q&amp;A, code reading, annotations (via `alpha` CLI)
-- **[Hugging Face Hub](https://huggingface.co/docs/hub/api)** — dataset metadata, split/schema inspection, and small file reads from model, dataset, and Space repos
-- **Docker** — isolated container execution for safe experiments on your machine
-- **Web search** — Exa, Perplexity, or Gemini API; no Chromium cookie access by default
-- **Session search** — indexed recall across prior research sessions
-- **Preview** — browser and PDF export of generated artifacts
-- **Modal** — serverless GPU compute for burst training and inference
-- **RunPod** — persistent GPU pods with SSH access for long-running experiments
-
----
-
-### How it works
-
-Built on [Pi](https://github.com/badlogic/pi-mono) for the agent runtime, [alphaXiv](https://www.alphaxiv.org/) for paper search and analysis, and CLI tools for compute and execution. Runtime resources follow Pi&#039;s documented package model for [packages](https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/packages.md), [extensions](https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/extensions.md), and [skills](https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/skills.md). Hugging Face inspection uses the public [Hub API endpoints](https://huggingface.co/docs/hub/api) and `HF_TOKEN` / `HUGGINGFACE_HUB_TOKEN` environment variables documented by [`huggingface_hub`](https://huggingface.co/docs/huggingface_hub/main/en/package_reference/environment_variables). The ML recipe workflow was informed by the open-source [Hugging Face `ml-intern`](https://github.com/huggingface/ml-intern) research-agent repo, but is implemented as native Feynman prompts, skills, and read-only tools. Every output is source-grounded — claims link to papers, docs, or repos with direct URLs.
-
----
-
-### Star History
-
-&lt;a href=&quot;https://www.star-history.com/?repos=companion-inc%2Ffeynman&amp;type=date&amp;legend=top-left&quot;&gt;
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/chart?repos=companion-inc/feynman&amp;type=date&amp;theme=dark&amp;legend=top-left&quot; /&gt;
-    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/chart?repos=companion-inc/feynman&amp;type=date&amp;legend=top-left&quot; /&gt;
-    &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/chart?repos=companion-inc/feynman&amp;type=date&amp;legend=top-left&quot; /&gt;
-  &lt;/picture&gt;
-&lt;/a&gt;
-
----
-
-### Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the full contributor guide.
-
-```bash
-git clone https://github.com/companion-inc/feynman.git
-cd feynman
-nvm use || nvm install
-npm install
-npm test
-npm run typecheck
-npm run build
-```
-
-[Docs](https://feynman.is/docs) · [Release Notes](RELEASES.md) · [MIT License](LICENSE)
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[firecrawl/open-lovable]]></title>
-            <link>https://github.com/firecrawl/open-lovable</link>
-            <guid>https://github.com/firecrawl/open-lovable</guid>
-            <pubDate>Mon, 01 Jun 2026 00:24:59 GMT</pubDate>
-            <description><![CDATA[🔥 Clone and recreate any website as a modern React app in seconds]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/firecrawl/open-lovable">firecrawl/open-lovable</a></h1>
-            <p>🔥 Clone and recreate any website as a modern React app in seconds</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 26,629</p>
-            <p>Forks: 5,119</p>
-            <p>Stars today: 29 stars today</p>
-            <h2>README</h2><pre># Open Lovable
-
-Chat with AI to build React apps instantly. An example app made by the [Firecrawl](https://firecrawl.dev/?ref=open-lovable-github) team. For a complete cloud solution, check out [Lovable.dev](https://lovable.dev/) ❤️.
-
-&lt;img src=&quot;https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmZtaHFleGRsMTNlaWNydGdianI4NGQ4dHhyZjB0d2VkcjRyeXBucCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZFVLWMa6dVskQX0qu1/giphy.gif&quot; alt=&quot;Open Lovable Demo&quot; width=&quot;100%&quot;/&gt;
-
-## Setup
-
-1. **Clone &amp; Install**
-```bash
-git clone https://github.com/firecrawl/open-lovable.git
-cd open-lovable
-pnpm install  # or npm install / yarn install
-```
-
-2. **Add `.env.local`**
-
-```env
-# =================================================================
-# REQUIRED
-# =================================================================
-FIRECRAWL_API_KEY=your_firecrawl_api_key    # https://firecrawl.dev
-
-# =================================================================
-# AI PROVIDER - Choose your LLM
-# =================================================================
-GEMINI_API_KEY=your_gemini_api_key        # https://aistudio.google.com/app/apikey
-ANTHROPIC_API_KEY=your_anthropic_api_key  # https://console.anthropic.com
-OPENAI_API_KEY=your_openai_api_key        # https://platform.openai.com
-GROQ_API_KEY=your_groq_api_key            # https://console.groq.com
-
-# =================================================================
-# FAST APPLY (Optional - for faster edits)
-# =================================================================
-MORPH_API_KEY=your_morphllm_api_key    # https://morphllm.com/dashboard
-
-# =================================================================
-# SANDBOX PROVIDER - Choose ONE: Vercel (default) or E2B
-# =================================================================
-SANDBOX_PROVIDER=vercel  # or &#039;e2b&#039;
-
-# Option 1: Vercel Sandbox (default)
-# Choose one authentication method:
-
-# Method A: OIDC Token (recommended for development)
-# Run `vercel link` then `vercel env pull` to get VERCEL_OIDC_TOKEN automatically
-VERCEL_OIDC_TOKEN=auto_generated_by_vercel_env_pull
-
-# Method B: Personal Access Token (for production or when OIDC unavailable)
-# VERCEL_TEAM_ID=team_xxxxxxxxx      # Your Vercel team ID 
-# VERCEL_PROJECT_ID=prj_xxxxxxxxx    # Your Vercel project ID
-# VERCEL_TOKEN=vercel_xxxxxxxxxxxx   # Personal access token from Vercel dashboard
-
-# Option 2: E2B Sandbox
-# E2B_API_KEY=your_e2b_api_key      # https://e2b.dev
-```
-
-3. **Run**
-```bash
-pnpm dev  # or npm run dev / yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000)
-
-## License
-
-MIT</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
             <title><![CDATA[mattpocock/sandcastle]]></title>
             <link>https://github.com/mattpocock/sandcastle</link>
             <guid>https://github.com/mattpocock/sandcastle</guid>
-            <pubDate>Mon, 01 Jun 2026 00:24:58 GMT</pubDate>
+            <pubDate>Tue, 02 Jun 2026 00:30:11 GMT</pubDate>
             <description><![CDATA[Orchestrate sandboxed coding agents in TypeScript with sandcastle.run()]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/mattpocock/sandcastle">mattpocock/sandcastle</a></h1>
             <p>Orchestrate sandboxed coding agents in TypeScript with sandcastle.run()</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 5,554</p>
-            <p>Forks: 566</p>
-            <p>Stars today: 174 stars today</p>
+            <p>Stars: 5,625</p>
+            <p>Forks: 570</p>
+            <p>Stars today: 82 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
   &lt;picture&gt;
     &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://res.cloudinary.com/total-typescript/image/upload/v1775033787/readme-sandcastle-ondark_2x.png&quot;&gt;
@@ -3045,6 +3439,153 @@ if (closeResult.preservedWorktreePath) {
 Use `createWorktree()` when you need a worktree (git worktree) as an independent, first-class concept — separate from any sandbox. This is 
 
 ... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[jimuzhe/tiez-clipboard]]></title>
+            <link>https://github.com/jimuzhe/tiez-clipboard</link>
+            <guid>https://github.com/jimuzhe/tiez-clipboard</guid>
+            <pubDate>Tue, 02 Jun 2026 00:30:10 GMT</pubDate>
+            <description><![CDATA[TieZ 是一款基于 Tauri 的跨平台剪贴板管理器 / A cross-platform clipboard manager with history, tags, sync, privacy protection, and fast daily workflows.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/jimuzhe/tiez-clipboard">jimuzhe/tiez-clipboard</a></h1>
+            <p>TieZ 是一款基于 Tauri 的跨平台剪贴板管理器 / A cross-platform clipboard manager with history, tags, sync, privacy protection, and fast daily workflows.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 1,864</p>
+            <p>Forks: 79</p>
+            <p>Stars today: 116 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;left&quot;&gt;
+  &lt;img src=&quot;docs/images/logo.png&quot; width=&quot;32&quot; vertical-align=&quot;middle&quot; /&gt;
+  &lt;b&gt;Making fragmented information flow effortlessly.&lt;/b&gt;
+&lt;/p&gt;
+
+---
+
+&lt;div align=&quot;center&quot;&gt;
+  &lt;img src=&quot;docs/images/logo.png&quot; alt=&quot;TieZ Hero Logo&quot; width=&quot;300&quot; /&gt;
+
+  ### **STAY FAST. STAY SYNCED.**
+
+  | STARS | VERSION | LICENSE | PLATFORM |
+  | :--- | :--- | :--- | :--- |
+  | [![Stars](https://img.shields.io/github/stars/jimuzhe/tiez-clipboard?label=STARS&amp;style=for-the-badge&amp;color=4CAF50)](https://github.com/jimuzhe/tiez-clipboard/stargazers) | [![Version](https://img.shields.io/github/v/release/jimuzhe/tiez-clipboard?label=VERSION&amp;style=for-the-badge&amp;color=2196F3)](https://github.com/jimuzhe/tiez-clipboard/releases) | [![License](https://img.shields.io/badge/LICENSE-GPL--3.0-FF9800?style=for-the-badge)](https://www.gnu.org/licenses/gpl-3.0) | [![Platform](https://img.shields.io/badge/PLATFORM-WIN%20%2F%20MAC-f44336?style=for-the-badge)](https://github.com/jimuzhe/tiez-clipboard/releases) |
+
+  [English](./README.md) | [简体中文](./README.zh-CN.md)
+&lt;/div&gt;
+
+---
+
+&lt;div align=&quot;center&quot;&gt;
+
+## Theme Gallery
+
+Explore 4 elegant themes designed for every workspace and efficiency scenarios.
+
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot;&gt;&lt;b&gt;Frosted Glass&lt;/b&gt;&lt;br&gt;&lt;img src=&quot;docs/images/毛玻璃.png&quot; width=&quot;220&quot; /&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;&lt;b&gt;Notebook Style&lt;/b&gt;&lt;br&gt;&lt;img src=&quot;docs/images/书.png&quot; width=&quot;220&quot; /&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;&lt;b&gt;Sticky Note&lt;/b&gt;&lt;br&gt;&lt;img src=&quot;docs/images/便利贴.png&quot; width=&quot;220&quot; /&gt;&lt;/td&gt;
+      &lt;td align=&quot;center&quot;&gt;&lt;b&gt;3D Interaction&lt;/b&gt;&lt;br&gt;&lt;img src=&quot;docs/images/3d.png&quot; width=&quot;220&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+
+---
+
+## Why TieZ?
+
+| Performance | Practicality | Privacy | Sync |
+| :--- | :--- | :--- | :--- |
+| **Instant Access**&lt;br&gt;Native listeners and Rust core ensure absolute speed. | **Power Workflows**&lt;br&gt;Rich text, tags, and AI-assisted actions. | **Local &amp; Private**&lt;br&gt;Local-first storage with smart masking for sensitive data in previews. | **Cloud Fluent**&lt;br&gt;Seamless WebDAV and MQTT cross-device sync. |
+
+---
+
+## Key Features
+
+### Core Experience
+- **Native Efficiency**: Built with Tauri 2 and Rust for minimum memory footprint.
+- **Smart Capture**: Automatically collects text, rich text (HTML), images, and file paths.
+- **Modern UI**: Supports Mica/Acrylic effects and Dark/Light modes with **4 elegant theme styles**.
+- **Edge Docking**: Automatically hides at the screen edge to stay out of your way.
+
+### Management &amp; Enhancements
+- **Tag System**: Organize your history with custom multi-color tags.
+- **Emoji Library**: Comprehensive built-in emoji management for quick access.
+- **Advanced Settings**: Granular control over cleanup rules and app behavior.
+- **Privacy Masking**: Auto-masks sensitive info like IDs and phone numbers in previews.
+
+### Networking &amp; Transport
+- **WebDAV Sync**: Your data, your cloud. Complete cross-device history.
+- **LAN File Transfer**: Seamlessly move items between devices on the same network.
+- **Verifcation Code Sync**: Instant transfer of OTP codes to your active device.
+- **MQTT Connectivity**: Optimized for real-time synchronization between devices.
+
+### Productivity Tools
+- **External Collaboration**: Open items in external editors with auto-sync back.
+- **Global Search**: Find anything by content, source app, or date.
+- **Sequential Paste**: Optimized workflow for high-frequency copy-paste tasks.
+
+---
+
+## Installation
+
+### Platform Support
+| Platform | Requirement | Output |
+| :--- | :--- | :--- |
+| **Windows** | Windows 10/11 (x86/x64)&lt;br&gt;*(Windows 11 Recommended)* | `.exe` / **`.zip` (Portable)** |
+| **macOS** | Sierra 10.15+ &lt;br&gt;(Apple Silicon / Intel) | `.dmg` |
+| **Linux** | Support Coming Soon | TBD |
+
+[**Download the Latest Release →**](https://github.com/jimuzhe/tiez-clipboard/releases)
+
+---
+
+## Star History
+
+&lt;div align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://star-history.com/#jimuzhe/tiez-clipboard&amp;Date&quot;&gt;
+    &lt;img src=&quot;https://api.star-history.com/svg?repos=jimuzhe/tiez-clipboard&amp;type=Date&quot; alt=&quot;Star History Chart&quot; width=&quot;800&quot; /&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+
+---
+
+## Community &amp; Support
+
+If TieZ makes your life easier, consider supporting the journey.
+
+&lt;div align=&quot;center&quot;&gt;
+  &lt;table style=&quot;border: none;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;border: none;&quot;&gt;
+        &lt;p&gt;&lt;strong&gt;WeChat&lt;/strong&gt;&lt;/p&gt;
+        &lt;img src=&quot;docs/images/wx.jpeg&quot; alt=&quot;WeChat&quot; width=&quot;180&quot; height=&quot;180&quot; /&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; style=&quot;border: none;&quot;&gt;
+        &lt;p&gt;&lt;strong&gt;Alipay&lt;/strong&gt;&lt;/p&gt;
+        &lt;img src=&quot;docs/images/zfb.jpeg&quot; alt=&quot;Alipay&quot; width=&quot;180&quot; height=&quot;180&quot; /&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; style=&quot;border: none;&quot;&gt;
+        &lt;p&gt;&lt;strong&gt;QQ Group&lt;/strong&gt;&lt;/p&gt;
+        &lt;img src=&quot;docs/images/qq.jpeg&quot; alt=&quot;QQ Group&quot; width=&quot;180&quot; height=&quot;180&quot; /&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;br&gt;
+  &lt;p&gt;Your support keeps the project active and the developer caffeinated!&lt;/p&gt;
+  &lt;a href=&quot;https://tiez.name666.top/zh/sponsors.html&quot;&gt;&lt;strong&gt;View Sponsor List&lt;/strong&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+---
+
+&lt;div align=&quot;center&quot;&gt;
+  Built with technical precision for every efficient developer.
+  &lt;br&gt;
+  &lt;b&gt;Please consider leaving a Star if you find this project useful.&lt;/b&gt;
+&lt;/div&gt;
+</pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
