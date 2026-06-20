@@ -4,24 +4,489 @@
         <title>GitHub Trending Today for javascript - JavaScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for javascript.</description>
-        <lastBuildDate>Fri, 19 Jun 2026 00:34:39 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 20 Jun 2026 00:26:36 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2026, GitHub</copyright>
         <item>
+            <title><![CDATA[nodejs/node]]></title>
+            <link>https://github.com/nodejs/node</link>
+            <guid>https://github.com/nodejs/node</guid>
+            <pubDate>Sat, 20 Jun 2026 00:26:36 GMT</pubDate>
+            <description><![CDATA[Node.js JavaScript runtime ✨🐢🚀✨]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/nodejs/node">nodejs/node</a></h1>
+            <p>Node.js JavaScript runtime ✨🐢🚀✨</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 117,875</p>
+            <p>Forks: 35,729</p>
+            <p>Stars today: 48 stars today</p>
+            <h2>README</h2><pre># Node.js
+
+Node.js is an open-source, cross-platform JavaScript runtime environment.
+
+For information on using Node.js, see the [Node.js website][].
+
+The Node.js project uses an [open governance model](./GOVERNANCE.md). The
+[OpenJS Foundation][] provides support for the project.
+
+Contributors are expected to act in a collaborative manner to move
+the project forward. We encourage the constructive exchange of contrary
+opinions and compromise. The [TSC](./GOVERNANCE.md#technical-steering-committee)
+reserves the right to limit or block contributors who repeatedly act in ways
+that discourage, exhaust, or otherwise negatively affect other participants.
+
+**This project has a [Code of Conduct][].**
+
+## Table of contents
+
+* [Support](#support)
+* [Release types](#release-types)
+  * [Download](#download)
+    * [Current and LTS releases](#current-and-lts-releases)
+    * [Nightly releases](#nightly-releases)
+    * [API documentation](#api-documentation)
+  * [Verifying binaries](#verifying-binaries)
+* [Building Node.js](#building-nodejs)
+* [Security](#security)
+* [Contributing to Node.js](#contributing-to-nodejs)
+* [Current project team members](#current-project-team-members)
+  * [TSC (Technical Steering Committee)](#tsc-technical-steering-committee)
+  * [Collaborators](#collaborators)
+  * [Triagers](#triagers)
+  * [Release keys](#release-keys)
+* [License](#license)
+
+## Support
+
+Looking for help? Check out the
+[instructions for getting support](.github/SUPPORT.md).
+
+## Release types
+
+* **Current**: Under active development. Code for the Current release is in the
+  branch for its major version number (for example,
+  [v22.x](https://github.com/nodejs/node/tree/v22.x)). Node.js releases a new
+  major version every 6 months, allowing for breaking changes. This happens in
+  April and October every year. Releases appearing each October have a support
+  life of 8 months. Releases appearing each April convert to LTS (see below)
+  each October.
+* **LTS**: Releases that receive Long Term Support, with a focus on stability
+  and security. Every even-numbered major version will become an LTS release.
+  LTS releases receive 12 months of _Active LTS_ support and a further 18 months
+  of _Maintenance_. LTS release lines have alphabetically-ordered code names,
+  beginning with v4 Argon. There are no breaking changes or feature additions,
+  except in some special circumstances.
+* **Nightly**: Code from the Current branch built every 24-hours when there are
+  changes. Use with caution.
+
+Current and LTS releases follow [semantic versioning](https://semver.org). A
+member of the Release Team [signs](#release-keys) each Current and LTS release.
+For more information, see the
+[Release README](https://github.com/nodejs/Release#readme).
+
+### Download
+
+Binaries, installers, and source tarballs are available at
+&lt;https://nodejs.org/en/download/&gt;.
+
+#### Current and LTS releases
+
+&lt;https://nodejs.org/download/release/&gt;
+
+The [latest](https://nodejs.org/download/release/latest/) directory is an
+alias for the latest Current release. The latest-_codename_ directory is an
+alias for the latest release from an LTS line. For example, the
+[latest-hydrogen](https://nodejs.org/download/release/latest-hydrogen/)
+directory contains the latest Hydrogen (Node.js 18) release.
+
+#### Nightly releases
+
+&lt;https://nodejs.org/download/nightly/&gt;
+
+Each directory and filename includes the version (e.g., `v22.0.0`),
+followed by the UTC date (e.g., `20240424` for April 24, 2024),
+and the short commit SHA of the HEAD of the release (e.g., `ddd0a9e494`).
+For instance, a full directory name might look like `v22.0.0-nightly20240424ddd0a9e494`.
+
+#### API documentation
+
+Documentation for the latest Current release is at &lt;https://nodejs.org/api/&gt;.
+Version-specific documentation is available in each release directory in the
+_docs_ subdirectory. Version-specific documentation is also at
+&lt;https://nodejs.org/download/docs/&gt;.
+
+### Verifying binaries
+
+Download directories contain a `SHASUMS256.txt.asc` file with SHA checksums for the
+files and the releaser PGP signature.
+
+You can get a trusted keyring from nodejs/release-keys, e.g. using `curl`:
+
+```bash
+curl -fsLo &quot;/path/to/nodejs-keyring.kbx&quot; &quot;https://github.com/nodejs/release-keys/raw/HEAD/gpg/pubring.kbx&quot;
+```
+
+Alternatively, you can import the releaser keys in your default keyring, see
+[Release keys](#release-keys) for commands on how to do that.
+
+Then, you can verify the files you&#039;ve downloaded locally
+(if you&#039;re using your default keyring, pass `--keyring=&quot;${GNUPGHOME:-~/.gnupg}/pubring.kbx&quot;`):
+
+```bash
+curl -fsO &quot;https://nodejs.org/dist/${VERSION}/SHASUMS256.txt.asc&quot; \
+&amp;&amp; gpgv --keyring=&quot;/path/to/nodejs-keyring.kbx&quot; --output SHASUMS256.txt &lt; SHASUMS256.txt.asc \
+&amp;&amp; shasum --check SHASUMS256.txt --ignore-missing
+```
+
+## Building Node.js
+
+See [BUILDING.md](BUILDING.md) for instructions on how to build Node.js from
+source and a list of supported platforms.
+
+## Security
+
+For information on reporting security vulnerabilities in Node.js, see
+[SECURITY.md](./SECURITY.md).
+
+## Contributing to Node.js
+
+* [Contributing to the project][]
+* [Working Groups][]
+* [Strategic initiatives][]
+* [Technical values and prioritization][]
+
+## Current project team members
+
+For information about the governance of the Node.js project, see
+[GOVERNANCE.md](./GOVERNANCE.md).
+
+&lt;!-- node-core-utils and find-inactive-tsc.mjs depend on the format of the TSC
+     list. If the format changes, those utilities need to be tested and
+     updated. --&gt;
+
+### TSC (Technical Steering Committee)
+
+#### TSC voting members
+
+&lt;!--lint disable prohibited-strings--&gt;
+
+* [aduh95](https://github.com/aduh95) -
+  **Antoine du Hamel** &lt;&lt;duhamelantoine1995@gmail.com&gt;&gt; (he/him)
+* [anonrig](https://github.com/anonrig) -
+  **Yagiz Nizipli** &lt;&lt;yagiz@nizipli.com&gt;&gt; (he/him)
+* [benjamingr](https://github.com/benjamingr) -
+  **Benjamin Gruenbaum** &lt;&lt;benjamingr@gmail.com&gt;&gt;
+* [BridgeAR](https://github.com/BridgeAR) -
+  **Ruben Bridgewater** &lt;&lt;ruben@bridgewater.de&gt;&gt; (he/him)
+* [gireeshpunathil](https://github.com/gireeshpunathil) -
+  **Gireesh Punathil** &lt;&lt;gpunathi@in.ibm.com&gt;&gt; (he/him)
+* [jasnell](https://github.com/jasnell) -
+  **James M Snell** &lt;&lt;jasnell@gmail.com&gt;&gt; (he/him)
+* [joyeecheung](https://github.com/joyeecheung) -
+  **Joyee Cheung** &lt;&lt;joyeec9h3@gmail.com&gt;&gt; (she/her)
+* [legendecas](https://github.com/legendecas) -
+  **Chengzhong Wu** &lt;&lt;legendecas@gmail.com&gt;&gt; (he/him)
+* [marco-ippolito](https://github.com/marco-ippolito) -
+  **Marco Ippolito** &lt;&lt;marcoippolito54@gmail.com&gt;&gt; (he/him)
+* [mcollina](https://github.com/mcollina) -
+  **Matteo Collina** &lt;&lt;matteo.collina@gmail.com&gt;&gt; (he/him)
+* [panva](https://github.com/panva) -
+  **Filip Skokan** &lt;&lt;panva.ip@gmail.com&gt;&gt; (he/him)
+* [RafaelGSS](https://github.com/RafaelGSS) -
+  **Rafael Gonzaga** &lt;&lt;rafael.nunu@hotmail.com&gt;&gt; (he/him)
+* [RaisinTen](https://github.com/RaisinTen) -
+  **Darshan Sen** &lt;&lt;raisinten@gmail.com&gt;&gt; (he/him)
+* [richardlau](https://github.com/richardlau) -
+  **Richard Lau** &lt;&lt;richard.lau@ibm.com&gt;&gt;
+* [ronag](https://github.com/ronag) -
+  **Robert Nagy** &lt;&lt;ronagy@icloud.com&gt;&gt;
+* [ruyadorno](https://github.com/ruyadorno) -
+  **Ruy Adorno** &lt;&lt;ruy@vlt.sh&gt;&gt; (he/him)
+* [ShogunPanda](https://github.com/ShogunPanda) -
+  **Paolo Insogna** &lt;&lt;paolo@cowtech.it&gt;&gt; (he/him)
+* [targos](https://github.com/targos) -
+  **Michaël Zasso** &lt;&lt;targos@protonmail.com&gt;&gt; (he/him)
+* [tniessen](https://github.com/tniessen) -
+  **Tobias Nießen** &lt;&lt;tniessen@tnie.de&gt;&gt; (he/him)
+
+#### TSC regular members
+
+* [BethGriggs](https://github.com/BethGriggs) -
+  **Beth Griggs** &lt;&lt;bethanyngriggs@gmail.com&gt;&gt; (she/her)
+* [bnoordhuis](https://github.com/bnoordhuis) -
+  **Ben Noordhuis** &lt;&lt;info@bnoordhuis.nl&gt;&gt;
+* [cjihrig](https://github.com/cjihrig) -
+  **Colin Ihrig** &lt;&lt;cjihrig@gmail.com&gt;&gt; (he/him)
+* [codebytere](https://github.com/codebytere) -
+  **Shelley Vohr** &lt;&lt;shelley.vohr@gmail.com&gt;&gt; (she/her)
+* [GeoffreyBooth](https://github.com/GeoffreyBooth) -
+  **Geoffrey Booth** &lt;&lt;webadmin@geoffreybooth.com&gt;&gt; (he/him)
+* [MoLow](https://github.com/MoLow) -
+  **Moshe Atlow** &lt;&lt;moshe@atlow.co.il&gt;&gt; (he/him)
+* [Trott](https://github.com/Trott) -
+  **Rich Trott** &lt;&lt;rtrott@gmail.com&gt;&gt; (he/him)
+
+&lt;details&gt;
+
+&lt;summary&gt;TSC emeriti members&lt;/summary&gt;
+
+#### TSC emeriti members
+
+* [addaleax](https://github.com/addaleax) -
+  **Anna Henningsen** &lt;&lt;anna@addaleax.net&gt;&gt; (she/her)
+* [apapirovski](https://github.com/apapirovski) -
+  **Anatoli Papirovski** &lt;&lt;apapirovski@mac.com&gt;&gt; (he/him)
+* [ChALkeR](https://github.com/ChALkeR) -
+  **Сковорода Никита Андреевич** &lt;&lt;chalkerx@gmail.com&gt;&gt; (he/him)
+* [chrisdickinson](https://github.com/chrisdickinson) -
+  **Chris Dickinson** &lt;&lt;christopher.s.dickinson@gmail.com&gt;&gt;
+* [danbev](https://github.com/danbev) -
+  **Daniel Bevenius** &lt;&lt;daniel.bevenius@gmail.com&gt;&gt; (he/him)
+* [danielleadams](https://github.com/danielleadams) -
+  **Danielle Adams** &lt;&lt;adamzdanielle@gmail.com&gt;&gt; (she/her)
+* [evanlucas](https://github.com/evanlucas) -
+  **Evan Lucas** &lt;&lt;evanlucas@me.com&gt;&gt; (he/him)
+* [fhinkel](https://github.com/fhinkel) -
+  **Franziska Hinkelmann** &lt;&lt;franziska.hinkelmann@gmail.com&gt;&gt; (she/her)
+* [Fishrock123](https://github.com/Fishrock123) -
+  **Jeremiah Senkpiel** &lt;&lt;fishrock123@rocketmail.com&gt;&gt; (he/they)
+* [gabrielschulhof](https://github.com/gabrielschulhof) -
+  **Gabriel Schulhof** &lt;&lt;gabrielschulhof@gmail.com&gt;&gt;
+* [gibfahn](https://github.com/gibfahn) -
+  **Gibson Fahnestock** &lt;&lt;gibfahn@gmail.com&gt;&gt; (he/him)
+* [indutny](https://github.com/indutny) -
+  **Fedor Indutny** &lt;&lt;fedor@indutny.com&gt;&gt;
+* [isaacs](https://github.com/isaacs) -
+  **Isaac Z. Schlueter** &lt;&lt;i@izs.me&gt;&gt;
+* [joshgav](https://github.com/joshgav) -
+  **Josh Gavant** &lt;&lt;josh.gavant@outlook.com&gt;&gt;
+* [mhdawson](https://github.com/mhdawson) -
+  **Michael Dawson** &lt;&lt;midawson@redhat.com&gt;&gt; (he/him)
+* [mmarchini](https://github.com/mmarchini) -
+  **Mary Marchini** &lt;&lt;oss@mmarchini.me&gt;&gt; (she/her)
+* [mscdex](https://github.com/mscdex) -
+  **Brian White** &lt;&lt;mscdex@mscdex.net&gt;&gt;
+* [MylesBorins](https://github.com/MylesBorins) -
+  **Myles Borins** &lt;&lt;myles.borins@gmail.com&gt;&gt; (he/him)
+* [nebrius](https://github.com/nebrius) -
+  **Bryan Hughes** &lt;&lt;bryan@nebri.us&gt;&gt;
+* [ofrobots](https://github.com/ofrobots) -
+  **Ali Ijaz Sheikh** &lt;&lt;ofrobots@google.com&gt;&gt; (he/him)
+* [orangemocha](https://github.com/orangemocha) -
+  **Alexis Campailla** &lt;&lt;orangemocha@nodejs.org&gt;&gt;
+* [piscisaureus](https://github.com/piscisaureus) -
+  **Bert Belder** &lt;&lt;bertbelder@gmail.com&gt;&gt;
+* [rvagg](https://github.com/rvagg) -
+  **Rod Vagg** &lt;&lt;r@va.gg&gt;&gt;
+* [sam-github](https://github.com/sam-github) -
+  **Sam Roberts** &lt;&lt;vieuxtech@gmail.com&gt;&gt;
+* [shigeki](https://github.com/shigeki) -
+  **Shigeki Ohtsu** &lt;&lt;ohtsu@ohtsu.org&gt;&gt; (he/him)
+* [thefourtheye](https://github.com/thefourtheye) -
+  **Sakthipriyan Vairamani** &lt;&lt;thechargingvolcano@gmail.com&gt;&gt; (he/him)
+* [TimothyGu](https://github.com/TimothyGu) -
+  **Tiancheng &quot;Timothy&quot; Gu** &lt;&lt;timothygu99@gmail.com&gt;&gt; (he/him)
+* [trevnorris](https://github.com/trevnorris) -
+  **Trevor Norris** &lt;&lt;trev.norris@gmail.com&gt;&gt;
+
+&lt;/details&gt;
+
+&lt;!-- node-core-utils and find-inactive-collaborators.mjs depend on the format
+     of the collaborator list. If the format changes, those utilities need to be
+     tested and updated. --&gt;
+
+### Collaborators
+
+* [abmusse](https://github.com/abmusse) -
+  **Abdirahim Musse** &lt;&lt;abdirahim.musse@ibm.com&gt;&gt;
+* [addaleax](https://github.com/addaleax) -
+  **Anna Henningsen** &lt;&lt;anna@addaleax.net&gt;&gt; (she/her)
+* [Aditi-1400](https://github.com/Aditi-1400) -
+  **Aditi Singh** &lt;&lt;aditisingh1400@gmail.com&gt;&gt; (she/her)
+* [aduh95](https://github.com/aduh95) -
+  **Antoine du Hamel** &lt;&lt;duhamelantoine1995@gmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/aduh95)
+* [anonrig](https://github.com/anonrig) -
+  **Yagiz Nizipli** &lt;&lt;yagiz@nizipli.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/anonrig)
+* [atlowChemi](https://github.com/atlowChemi) -
+  **Chemi Atlow** &lt;&lt;chemi@atlow.co.il&gt;&gt; (he/him)
+* [avivkeller](https://github.com/avivkeller) -
+  **Aviv Keller** &lt;&lt;me@aviv.sh&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/avivkeller)
+* [Ayase-252](https://github.com/Ayase-252) -
+  **Qingyu Deng** &lt;&lt;i@ayase-lab.com&gt;&gt;
+* [bengl](https://github.com/bengl) -
+  **Bryan English** &lt;&lt;bryan@bryanenglish.com&gt;&gt; (he/him)
+* [benjamingr](https://github.com/benjamingr) -
+  **Benjamin Gruenbaum** &lt;&lt;benjamingr@gmail.com&gt;&gt;
+* [BethGriggs](https://github.com/BethGriggs) -
+  **Beth Griggs** &lt;&lt;bethanyngriggs@gmail.com&gt;&gt; (she/her)
+* [bnb](https://github.com/bnb) -
+  **Tierney Cyren** &lt;&lt;hello@bnb.im&gt;&gt; (they/them)
+* [bnoordhuis](https://github.com/bnoordhuis) -
+  **Ben Noordhuis** &lt;&lt;info@bnoordhuis.nl&gt;&gt;
+* [BridgeAR](https://github.com/BridgeAR) -
+  **Ruben Bridgewater** &lt;&lt;ruben@bridgewater.de&gt;&gt; (he/him)
+* [cclauss](https://github.com/cclauss) -
+  **Christian Clauss** &lt;&lt;cclauss@me.com&gt;&gt; (he/him)
+* [ChALkeR](https://github.com/ChALkeR) -
+  **Сковорода Никита Андреевич** &lt;&lt;chalkerx@gmail.com&gt;&gt; (he/him)
+* [cjihrig](https://github.com/cjihrig) -
+  **Colin Ihrig** &lt;&lt;cjihrig@gmail.com&gt;&gt; (he/him)
+* [codebytere](https://github.com/codebytere) -
+  **Shelley Vohr** &lt;&lt;shelley.vohr@gmail.com&gt;&gt; (she/her)
+* [cola119](https://github.com/cola119) -
+  **Kohei Ueno** &lt;&lt;kohei.ueno119@gmail.com&gt;&gt; (he/him)
+* [daeyeon](https://github.com/daeyeon) -
+  **Daeyeon Jeong** &lt;&lt;daeyeon.dev@gmail.com&gt;&gt; (he/him)
+* [dario-piotrowicz](https://github.com/dario-piotrowicz) -
+  **Dario Piotrowicz** &lt;&lt;dario.piotrowicz@gmail.com&gt;&gt; (he/him)
+* [deokjinkim](https://github.com/deokjinkim) -
+  **Deokjin Kim** &lt;&lt;deokjin81.kim@gmail.com&gt;&gt; (he/him)
+* [edsadr](https://github.com/edsadr) -
+  **Adrian Estrada** &lt;&lt;edsadr@gmail.com&gt;&gt; (he/him)
+* [ErickWendel](https://github.com/ErickWendel) -
+  **Erick Wendel** &lt;&lt;erick.workspace@gmail.com&gt;&gt; (he/him)
+* [Ethan-Arrowood](https://github.com/Ethan-Arrowood) -
+  **Ethan Arrowood** &lt;&lt;ethan@arrowood.dev&gt;&gt; (he/him)
+* [fhinkel](https://github.com/fhinkel) -
+  **Franziska Hinkelmann** &lt;&lt;franziska.hinkelmann@gmail.com&gt;&gt; (she/her)
+* [Flarna](https://github.com/Flarna) -
+  **Gerhard Stöbich** &lt;&lt;deb2001-github@yahoo.de&gt;&gt; (he/they)
+* [gabrielschulhof](https://github.com/gabrielschulhof) -
+  **Gabriel Schulhof** &lt;&lt;gabrielschulhof@gmail.com&gt;&gt;
+* [geeksilva97](https://github.com/geeksilva97) -
+  **Edy Silva** &lt;&lt;edigleyssonsilva@gmail.com&gt;&gt; (he/him)
+* [gengjiawen](https://github.com/gengjiawen) -
+  **Jiawen Geng** &lt;&lt;technicalcute@gmail.com&gt;&gt;
+* [GeoffreyBooth](https://github.com/GeoffreyBooth) -
+  **Geoffrey Booth** &lt;&lt;webadmin@geoffreybooth.com&gt;&gt; (he/him)
+* [gireeshpunathil](https://github.com/gireeshpunathil) -
+  **Gireesh Punathil** &lt;&lt;gpunathi@in.ibm.com&gt;&gt; (he/him)
+* [gurgunday](https://github.com/gurgunday) -
+  **Gürgün Dayıoğlu** &lt;&lt;hey@gurgun.day&gt;&gt; (he/him)
+* [guybedford](https://github.com/guybedford) -
+  **Guy Bedford** &lt;&lt;guybedford@gmail.com&gt;&gt; (he/him)
+* [H4ad](https://github.com/H4ad) -
+  **Vinícius Lourenço Claro Cardoso** &lt;&lt;contact@viniciusl.com.br&gt;&gt; (he/him)
+* [HarshithaKP](https://github.com/HarshithaKP) -
+  **Harshitha K P** &lt;&lt;harshitha014@gmail.com&gt;&gt; (she/her)
+* [himself65](https://github.com/himself65) -
+  **Zeyu &quot;Alex&quot; Yang** &lt;&lt;himself65@outlook.com&gt;&gt; (he/him)
+* [hybrist](https://github.com/hybrist) -
+  **Jan Martin** &lt;&lt;jan.krems@gmail.com&gt;&gt; (he/him)
+* [IlyasShabi](https://github.com/IlyasShabi) -
+  **Ilyas Shabi** &lt;&lt;ilyasshabi94@gmail.com&gt;&gt; (he/him)
+* [islandryu](https://github.com/islandryu) -
+  **Ryuhei Shima** &lt;&lt;shimaryuhei@gmail.com&gt;&gt; (he/him)
+* [jakecastelli](https://github.com/jakecastelli) -
+  **Jake Yuesong Li** &lt;&lt;jake.yuesong@gmail.com&gt;&gt; (he/him)
+* [JakobJingleheimer](https://github.com/JakobJingleheimer) -
+  **Jacob Smith** &lt;&lt;jacob@frende.me&gt;&gt; (he/him)
+* [jasnell](https://github.com/jasnell) -
+  **James M Snell** &lt;&lt;jasnell@gmail.com&gt;&gt; (he/him)
+* [jazelly](https://github.com/jazelly) -
+  **Jason Zhang** &lt;&lt;xzha4350@gmail.com&gt;&gt; (he/him)
+* [joyeecheung](https://github.com/joyeecheung) -
+  **Joyee Cheung** &lt;&lt;joyeec9h3@gmail.com&gt;&gt; (she/her)
+* [juanarbol](https://github.com/juanarbol) -
+  **Juan José Arboleda** &lt;&lt;soyjuanarbol@gmail.com&gt;&gt; (he/him)
+* [JungMinu](https://github.com/JungMinu) -
+  **Minwoo Jung** &lt;&lt;nodecorelab@gmail.com&gt;&gt; (he/him)
+* [KhafraDev](https://github.com/KhafraDev) -
+  **Matthew Aitken** &lt;&lt;maitken033380023@gmail.com&gt;&gt; (he/him)
+* [legendecas](https://github.com/legendecas) -
+  **Chengzhong Wu** &lt;&lt;legendecas@gmail.com&gt;&gt; (he/him)
+* [lemire](https://github.com/lemire) -
+  **Daniel Lemire** &lt;&lt;daniel@lemire.me&gt;&gt;
+* [LiviaMedeiros](https://github.com/LiviaMedeiros) -
+  **LiviaMedeiros** &lt;&lt;livia@cirno.name&gt;&gt;
+* [ljharb](https://github.com/ljharb) -
+  **Jordan Harband** &lt;&lt;ljharb@gmail.com&gt;&gt;
+* [lpinca](https://github.com/lpinca) -
+  **Luigi Pinca** &lt;&lt;luigipinca@gmail.com&gt;&gt; (he/him)
+* [Lxxyx](https://github.com/Lxxyx) -
+  **Zijian Liu** &lt;&lt;lxxyxzj@gmail.com&gt;&gt; (he/him)
+* [marco-ippolito](https://github.com/marco-ippolito) -
+  **Marco Ippolito** &lt;&lt;marcoippolito54@gmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/marco-ippolito)
+* [marsonya](https://github.com/marsonya) -
+  **Akhil Marsonya** &lt;&lt;akhil.marsonya27@gmail.com&gt;&gt; (he/him)
+* [MattiasBuelens](https://github.com/MattiasBuelens) -
+  **Mattias Buelens** &lt;&lt;mattias@buelens.com&gt;&gt; (he/him)
+* [mcollina](https://github.com/mcollina) -
+  **Matteo Collina** &lt;&lt;matteo.collina@gmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/mcollina)
+* [meixg](https://github.com/meixg) -
+  **Xuguang Mei** &lt;&lt;meixuguang@gmail.com&gt;&gt; (he/him)
+* [MoLow](https://github.com/MoLow) -
+  **Moshe Atlow** &lt;&lt;moshe@atlow.co.il&gt;&gt; (he/him)
+* [MrJithil](https://github.com/MrJithil) -
+  **Jithil P Ponnan** &lt;&lt;jithil@outlook.com&gt;&gt; (he/him)
+* [ovflowd](https://github.com/ovflowd) -
+  **Claudio Wunder** &lt;&lt;cwunder@gnome.org&gt;&gt; (he/they)
+* [panva](https://github.com/panva) -
+  **Filip Skokan** &lt;&lt;panva.ip@gmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/panva)
+* [pimterry](https://github.com/pimterry) -
+  **Tim Perry** &lt;&lt;pimterry@gmail.com&gt;&gt; (he/him)
+* [pmarchini](https://github.com/pmarchini) -
+  **Pietro Marchini** &lt;&lt;pietro.marchini94@gmail.com&gt;&gt; (he/him)
+* [puskin](https://github.com/puskin) -
+  **Giovanni Bucci** &lt;&lt;github@puskin.it&gt;&gt; (he/him)
+* [Qard](https://github.com/Qard) -
+  **Stephen Belanger** &lt;&lt;admin@stephenbelanger.com&gt;&gt; (he/him)
+* [RafaelGSS](https://github.com/RafaelGSS) -
+  **Rafael Gonzaga** &lt;&lt;rafael.nunu@hotmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/RafaelGSS)
+* [RaisinTen](https://github.com/RaisinTen) -
+  **Darshan Sen** &lt;&lt;raisinten@gmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/RaisinTen)
+* [Renegade334](https://github.com/Renegade334) -
+  **René** &lt;&lt;contact.9a5d6388@renegade334.me.uk&gt;&gt;
+* [richardlau](https://github.com/richardlau) -
+  **Richard Lau** &lt;&lt;richard.lau@ibm.com&gt;&gt;
+* [rluvaton](https://github.com/rluvaton) -
+  **Raz Luvaton** &lt;&lt;rluvaton@gmail.com&gt;&gt; (he/him)
+* [ronag](https://github.com/ronag) -
+  **Robert Nagy** &lt;&lt;ronagy@icloud.com&gt;&gt;
+* [ruyadorno](https://github.com/ruyadorno) -
+  **Ruy Adorno** &lt;&lt;ruy@vlt.sh&gt;&gt; (he/him)
+* [santigimeno](https://github.com/santigimeno) -
+  **Santiago Gimeno** &lt;&lt;santiago.gimeno@gmail.com&gt;&gt;
+* [ShogunPanda](https://github.com/ShogunPanda) -
+  **Paolo Insogna** &lt;&lt;paolo@cowtech.it&gt;&gt; (he/him)
+* [srl295](https://github.com/srl295) -
+  **Steven R Loomis** &lt;&lt;srl295@gmail.com&gt;&gt;
+* [StefanStojanovic](https://github.com/StefanStojanovic) -
+  **Stefan Stojanovic** &lt;&lt;stefan.stojanovic@janeasystems.com&gt;&gt; (he/him)
+* [sxa](https://github.com/sxa) -
+  **Stewart X Addison** &lt;&lt;sxa@redhat.com&gt;&gt; (he/him)
+* [targos](https://github.com/targos) -
+  **Michaël Zasso** &lt;&lt;targos@protonmail.com&gt;&gt; (he/him)
+* [theanarkh](https://github.com/theanarkh) -
+  **theanarkh** &lt;&lt;theratliter@gmail.com&gt;&gt; (he/him)
+* [tniessen](https://github.com/tniessen) -
+  **Tobias Nießen** &lt;&lt;tniessen@tnie.de&gt;&gt; (he/him)
+* [trivikr](https://github.com/trivikr) -
+  **Trivikram Kamat** &lt;&lt;trivikr.dev@gmail.com&gt;&gt;
+* [Trott](https://github.com/Trott) -
+  **Rich Trott** &lt;&lt;rtrott@gmail.com&gt;&gt; (he/him)
+* [UlisesGascon](https://github.com/UlisesGascon) -
+  **Ulises Gascón** &lt;&lt;ulisesg
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
             <title><![CDATA[Mathieu2301/TradingView-API]]></title>
             <link>https://github.com/Mathieu2301/TradingView-API</link>
             <guid>https://github.com/Mathieu2301/TradingView-API</guid>
-            <pubDate>Fri, 19 Jun 2026 00:34:39 GMT</pubDate>
+            <pubDate>Sat, 20 Jun 2026 00:26:35 GMT</pubDate>
             <description><![CDATA[📈 Get real-time stocks from TradingView]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/Mathieu2301/TradingView-API">Mathieu2301/TradingView-API</a></h1>
             <p>📈 Get real-time stocks from TradingView</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 3,890</p>
-            <p>Forks: 751</p>
-            <p>Stars today: 106 stars today</p>
+            <p>Stars: 3,901</p>
+            <p>Forks: 754</p>
+            <p>Stars today: 11 stars today</p>
             <h2>README</h2><pre># TradingView API [![GitHub stars](https://img.shields.io/github/stars/Mathieu2301/TradingView-API.svg?style=social&amp;label=Star&amp;maxAge=2592000)](https://GitHub.com/Mathieu2301/TradingView-API/stargazers/)
 
 [![Tests](https://github.com/Mathieu2301/TradingView-API/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/Mathieu2301/TradingView-API/actions/workflows/tests.yml)
@@ -103,18 +568,802 @@ ___
             <category>JavaScript</category>
         </item>
         <item>
+            <title><![CDATA[TryGhost/Ghost]]></title>
+            <link>https://github.com/TryGhost/Ghost</link>
+            <guid>https://github.com/TryGhost/Ghost</guid>
+            <pubDate>Sat, 20 Jun 2026 00:26:34 GMT</pubDate>
+            <description><![CDATA[Independent technology for modern publishing, memberships, subscriptions and newsletters.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/TryGhost/Ghost">TryGhost/Ghost</a></h1>
+            <p>Independent technology for modern publishing, memberships, subscriptions and newsletters.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 54,036</p>
+            <p>Forks: 11,739</p>
+            <p>Stars today: 21 stars today</p>
+            <h2>README</h2><pre>&amp;nbsp;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://ghost.org/#gh-light-mode-only&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;https://user-images.githubusercontent.com/65487235/157884383-1b75feb1-45d8-4430-b636-3f7e06577347.png&quot; alt=&quot;Ghost&quot; width=&quot;200px&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://ghost.org/#gh-dark-mode-only&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;https://user-images.githubusercontent.com/65487235/157849205-aa24152c-4610-4d7d-b752-3a8c4f9319e6.png&quot; alt=&quot;Ghost&quot; width=&quot;200px&quot;&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+&amp;nbsp;
+
+&lt;p align=&quot;center&quot;&gt;
+    &lt;a href=&quot;https://ghost.org/&quot;&gt;Ghost.org&lt;/a&gt; •
+    &lt;a href=&quot;https://forum.ghost.org&quot;&gt;Forum&lt;/a&gt; •
+    &lt;a href=&quot;https://docs.ghost.org&quot;&gt;Docs&lt;/a&gt; •
+    &lt;a href=&quot;https://github.com/TryGhost/Ghost/blob/main/.github/CONTRIBUTING.md&quot;&gt;Contributing&lt;/a&gt; •
+    &lt;a href=&quot;https://twitter.com/ghost&quot;&gt;Twitter&lt;/a&gt;
+    &lt;br /&gt;&lt;br /&gt;
+    &lt;a href=&quot;https://ghost.org/&quot;&gt;
+        &lt;img src=&quot;https://img.shields.io/badge/downloads-100M+-brightgreen.svg&quot; alt=&quot;Downloads&quot; /&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;https://github.com/TryGhost/Ghost/releases/&quot;&gt;
+        &lt;img src=&quot;https://img.shields.io/github/release/TryGhost/Ghost.svg&quot; alt=&quot;Latest release&quot; /&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;https://github.com/TryGhost/Ghost/actions&quot;&gt;
+        &lt;img src=&quot;https://github.com/TryGhost/Ghost/workflows/CI/badge.svg?branch=main&quot; alt=&quot;Build status&quot; /&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;https://github.com/TryGhost/Ghost/contributors/&quot;&gt;
+        &lt;img src=&quot;https://img.shields.io/github/contributors/TryGhost/Ghost.svg&quot; alt=&quot;Contributors&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&amp;nbsp;
+
+&gt; [!NOTE]
+&gt; Love open source? We&#039;re hiring! Ghost is looking staff engineers to [join the team](https://careers.ghost.org) and work with us full-time
+
+&lt;a href=&quot;https://ghost.org/&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/353959/169805900-66be5b89-0859-4816-8da9-528ed7534704.png&quot; alt=&quot;Fiercely independent, professional publishing. Ghost is the most popular open source, headless Node.js CMS which already works with all the tools you know and love.&quot; /&gt;&lt;/a&gt;
+
+&amp;nbsp;
+
+&lt;a href=&quot;https://ghost.org/pricing/#gh-light-mode-only&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/65487235/157849437-9b8fcc48-1920-4b26-a1e8-5806db0e6bb9.png&quot; alt=&quot;Ghost(Pro)&quot; width=&quot;165px&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://ghost.org/pricing/#gh-dark-mode-only&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/65487235/157849438-79889b04-b7b6-4ba7-8de6-4c1e4b4e16a5.png&quot; alt=&quot;Ghost(Pro)&quot; width=&quot;165px&quot; /&gt;&lt;/a&gt;
+
+The easiest way to get a production instance deployed is with our official **[Ghost(Pro)](https://ghost.org/pricing/)** managed service. It takes about 2 minutes to launch a new site with worldwide CDN, backups, security and maintenance all done for you.
+
+For most people this ends up being the best value option because of [how much time it saves](https://ghost.org/docs/hosting/) — and 100% of revenue goes to the Ghost Foundation; funding the maintenance and further development of the project itself. So you’ll be supporting open source software *and* getting a great service!
+
+&amp;nbsp;
+
+# Quickstart install
+
+If you want to run your own instance of Ghost, in most cases the best way is to use our **CLI tool**
+
+```
+npm install ghost-cli -g
+```
+
+&amp;nbsp;
+
+Then, if installing locally add the `local` flag to get up and running in under a minute - [Local install docs](https://ghost.org/docs/install/local/)
+
+```
+ghost install local
+```
+
+&amp;nbsp;
+
+or on a server run the full install, including automatic SSL setup using LetsEncrypt - [Production install docs](https://ghost.org/docs/install/ubuntu/)
+
+```
+ghost install
+```
+
+&amp;nbsp;
+
+Check out our [official documentation](https://ghost.org/docs/) for more information about our [recommended hosting stack](https://ghost.org/docs/hosting/) &amp; properly [upgrading Ghost](https://ghost.org/docs/update/), plus everything you need to develop your own Ghost [themes](https://ghost.org/docs/themes/) or work with [our API](https://ghost.org/docs/content-api/).
+
+### Contributors &amp; advanced developers
+
+For anyone wishing to contribute to Ghost or to hack/customize core files we recommend following our full development setup guides: [Contributor guide](https://ghost.org/docs/contributing/) • [Developer setup](https://ghost.org/docs/install/source/)
+
+&amp;nbsp;
+
+# Ghost sponsors
+
+A big thanks to our sponsors and partners who make Ghost possible. If you&#039;re interested in sponsoring Ghost and supporting the project, please check out our profile on [GitHub sponsors](https://github.com/sponsors/TryGhost) :heart:
+
+**[DigitalOcean](https://m.do.co/c/9ff29836d717)** • **[Fastly](https://www.fastly.com/)** • **[Tinybird](https://tbrd.co/ghost)** • **[BairesDev](https://www.bairesdev.com)**
+
+&amp;nbsp;
+
+# Getting help
+
+Everyone can get help and support from a large community of developers over on the [Ghost forum](https://forum.ghost.org/). **Ghost(Pro)** customers have access to 24/7 email support.
+
+To stay up to date with all the latest news and product updates, make sure you [subscribe to our changelog newsletter](https://ghost.org/changelog/) — or follow us [on Twitter](https://twitter.com/Ghost), if you prefer your updates bite-sized and facetious. :saxophone::turtle:
+
+&amp;nbsp;
+
+# License &amp; trademark
+
+Copyright (c) 2013-2026 Ghost Foundation - Released under the [MIT license](LICENSE).
+Ghost and the Ghost Logo are trademarks of Ghost Foundation Ltd. Please see our [trademark policy](https://ghost.org/trademark/) for info on acceptable usage.
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[zarazhangrui/follow-builders]]></title>
+            <link>https://github.com/zarazhangrui/follow-builders</link>
+            <guid>https://github.com/zarazhangrui/follow-builders</guid>
+            <pubDate>Sat, 20 Jun 2026 00:26:33 GMT</pubDate>
+            <description><![CDATA[AI builders digest — monitors top AI builders on X and YouTube podcasts, remixes their content into digestible summaries. Follow builders, not influencers.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/zarazhangrui/follow-builders">zarazhangrui/follow-builders</a></h1>
+            <p>AI builders digest — monitors top AI builders on X and YouTube podcasts, remixes their content into digestible summaries. Follow builders, not influencers.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 5,313</p>
+            <p>Forks: 670</p>
+            <p>Stars today: 22 stars today</p>
+            <h2>README</h2><pre>**English** | [中文](README.zh-CN.md)
+
+# Follow Builders, Not Influencers
+
+An AI-powered digest that tracks the top builders in AI — researchers, founders, PMs,
+and engineers who are actually building things — and delivers curated summaries of
+what they&#039;re saying.
+
+**Philosophy:** Follow people who build products and have original opinions, not
+influencers who regurgitate information.
+
+## What You Get
+
+A daily or weekly digest delivered to your preferred messaging app (Telegram, Discord,
+WhatsApp, etc.) with:
+
+- Summaries of new podcast episodes from top AI podcasts
+- Key posts and insights from 26 curated AI builders on X/Twitter
+- Full articles from official AI company blogs (Anthropic Engineering, Claude Blog)
+- Links to all original content
+- Available in English, Chinese, or bilingual
+
+## Quick Start
+
+1. Install the skill in your agent (OpenClaw or Claude Code)
+2. Say &quot;set up follow builders&quot; or invoke `/follow-builders`
+3. The agent walks you through setup conversationally — no config files to edit
+
+The agent will ask you:
+- How often you want your digest (daily or weekly) and what time
+- What language you prefer
+- How you want it delivered (Telegram, email, or in-chat)
+
+No API keys needed — all content is fetched centrally.
+Your first digest arrives immediately after setup.
+
+## Changing Settings
+
+Your delivery preferences are configurable through conversation. Just tell your agent:
+
+- &quot;Switch to weekly digests on Monday mornings&quot;
+- &quot;Change language to Chinese&quot;
+- &quot;Make the summaries shorter&quot;
+- &quot;Show me my current settings&quot;
+
+The source list (builders and podcasts) is curated centrally and updates
+automatically — you always get the latest sources without doing anything.
+
+## Customizing the Summaries
+
+The skill uses plain-English prompt files to control how content is summarized.
+You can customize them two ways:
+
+**Through conversation (recommended):**
+Tell your agent what you want — &quot;Make summaries more concise,&quot; &quot;Focus on actionable
+insights,&quot; &quot;Use a more casual tone.&quot; The agent updates the prompts for you.
+
+**Direct editing (power users):**
+Edit the files in the `prompts/` folder:
+- `summarize-podcast.md` — how podcast episodes are summarized
+- `summarize-tweets.md` — how X/Twitter posts are summarized
+- `summarize-blogs.md` — how blog posts are summarized
+- `digest-intro.md` — the overall digest format and tone
+- `translate.md` — how English content is translated to Chinese
+
+These are plain English instructions, not code. Changes take effect on the next digest.
+
+## Default Sources
+
+### Podcasts (6)
+- [Latent Space](https://www.youtube.com/@LatentSpacePod)
+- [Training Data](https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8)
+- [No Priors](https://www.youtube.com/@NoPriorsPodcast)
+- [Unsupervised Learning](https://www.youtube.com/@RedpointAI)
+- [The MAD Podcast with Matt Turck](https://www.youtube.com/@DataDrivenNYC)
+- [AI &amp; I by Every](https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL)
+
+### AI Builders on X (26)
+[Andrej Karpathy](https://x.com/karpathy), [Swyx](https://x.com/swyx), [Josh Woodward](https://x.com/joshwoodward), [Boris Cherny](https://x.com/bcherny), [Thibault Sottiaux](https://x.com/thsottiaux), [Peter Yang](https://x.com/petergyang), [Nan Yu](https://x.com/thenanyu), [Madhu Guru](https://x.com/realmadhuguru), [Amanda Askell](https://x.com/AmandaAskell), [Cat Wu](https://x.com/_catwu), [Thariq](https://x.com/trq212), [Google Labs](https://x.com/GoogleLabs), [Amjad Masad](https://x.com/amasad), [Guillermo Rauch](https://x.com/rauchg), [Alex Albert](https://x.com/alexalbert__), [Aaron Levie](https://x.com/levie), [Ryo Lu](https://x.com/ryolu_), [Garry Tan](https://x.com/garrytan), [Matt Turck](https://x.com/mattturck), [Zara Zhang](https://x.com/zarazhangrui), [Nikunj Kothari](https://x.com/nikunj), [Peter Steinberger](https://x.com/steipete), [Dan Shipper](https://x.com/danshipper), [Aditya Agarwal](https://x.com/adityaag), [Sam Altman](https://x.com/sama), [Claude](https://x.com/claudeai)
+
+### Official Blogs (2)
+- [Anthropic Engineering](https://www.anthropic.com/engineering) — technical deep-dives from the Anthropic team
+- [Claude Blog](https://claude.com/blog) — product announcements and updates from Claude
+
+## Installation
+
+### OpenClaw
+```bash
+# From ClawhHub (coming soon)
+clawhub install follow-builders
+
+# Or manually
+git clone https://github.com/zarazhangrui/follow-builders.git ~/skills/follow-builders
+cd ~/skills/follow-builders/scripts &amp;&amp; npm install
+```
+
+### Claude Code
+```bash
+git clone https://github.com/zarazhangrui/follow-builders.git ~/.claude/skills/follow-builders
+cd ~/.claude/skills/follow-builders/scripts &amp;&amp; npm install
+```
+
+## Requirements
+
+- An AI agent (OpenClaw, Claude Code, or similar)
+- Internet connection (to fetch the central feed)
+
+That&#039;s it. No API keys needed. All content (blog articles + YouTube transcripts + X/Twitter posts)
+is fetched centrally and updated daily.
+
+## How It Works
+
+1. A central feed is updated daily with the latest content from all sources
+   (blog articles via web scraping, YouTube transcripts via Supadata, X/Twitter via official API)
+2. Your agent fetches the feed — one HTTP request, no API keys
+3. Your agent remixes the raw content into a digestible summary using your preferences
+4. The digest is delivered to your messaging app (or shown in-chat)
+
+See [examples/sample-digest.md](examples/sample-digest.md) for what the output looks like.
+
+## Privacy
+
+- No API keys are sent anywhere — all content is fetched centrally
+- If you use Telegram/email delivery, those keys are stored locally in `~/.follow-builders/.env`
+- The skill only reads public content (public blog posts, public YouTube videos, public X posts)
+- Your configuration, preferences, and reading history stay on your machine
+
+## License
+
+MIT
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[vercel/next.js]]></title>
+            <link>https://github.com/vercel/next.js</link>
+            <guid>https://github.com/vercel/next.js</guid>
+            <pubDate>Sat, 20 Jun 2026 00:26:32 GMT</pubDate>
+            <description><![CDATA[The React Framework]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/vercel/next.js">vercel/next.js</a></h1>
+            <p>The React Framework</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 140,089</p>
+            <p>Forks: 31,235</p>
+            <p>Stars today: 48 stars today</p>
+            <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[fishjar/kiss-translator]]></title>
+            <link>https://github.com/fishjar/kiss-translator</link>
+            <guid>https://github.com/fishjar/kiss-translator</guid>
+            <pubDate>Sat, 20 Jun 2026 00:26:31 GMT</pubDate>
+            <description><![CDATA[A simple, open source bilingual translation extension & Greasemonkey script (一个简约、开源的 双语对照翻译扩展 & 油猴脚本)]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/fishjar/kiss-translator">fishjar/kiss-translator</a></h1>
+            <p>A simple, open source bilingual translation extension & Greasemonkey script (一个简约、开源的 双语对照翻译扩展 & 油猴脚本)</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 10,841</p>
+            <p>Forks: 483</p>
+            <p>Stars today: 21 stars today</p>
+            <h2>README</h2><pre># KISS Translator 简约翻译
+
+[English](README.en.md) | [中文](README.md) | [日本語](README.ja.md) | [한국어](README.ko.md)
+
+一个简约、开源的 [双语对照翻译扩展 &amp; 油猴脚本](https://github.com/fishjar/kiss-translator)。
+
+[kiss-translator.webm](https://github.com/fishjar/kiss-translator/assets/1157624/f7ba8a5c-e4a8-4d5a-823a-5c5c67a0a47f)
+
+## 特性
+
+- [x] 保持简约
+- [x] 开放源代码
+- [x] 适配常见浏览器
+  - [x] Chrome/Edge
+  - [x] Firefox
+  - [x] Kiwi (Android)
+  - [x] Orion (iOS)
+  - [x] Safari
+  - [x] Thunderbird
+- [x] 支持多种翻译服务
+  - [x] Google/Microsoft
+  - [x] Tencent/Volcengine
+  - [x] OpenAI/Gemini/Claude/Ollama/DeepSeek/OpenRouter
+  - [x] DeepL/DeepLX
+  - [x] AzureAI/CloudflareAI
+  - [x] Chrome浏览器内置AI翻译(BuiltinAI)
+- [x] 覆盖常见翻译场景
+  - [x] 网页双语对照翻译
+  - [x] 输入框翻译
+    - 通过快捷键立即将输入框内文本翻译成其他语言
+  - [x] 划词翻译
+    - [x] 任意页面打开翻译框，可用多种翻译服务对比翻译
+    - [x] 英文词典翻译
+    - [x] 收藏词汇
+  - [x] 鼠标悬停翻译
+  - [x] YouTube 字幕翻译
+    - 支持任意翻译服务对视频字幕进行翻译并双语显示
+    - 内置基础的字幕合并与断句算法，提升翻译效果
+    - 支持AI断句功能，可进一步提升翻译质量
+    - 自定义字幕样式
+- [x] 支持多样翻译效果
+  - [x] 支持自动识别文本与手动规则两种模式
+    - 自动识别文本模式使得绝大部分网站无需编写规则也能翻译完整
+    - 手动规则模式，可以针对特定网站极致优化
+  - [x] 自定义译文样式
+  - [x] 支持富文本翻译及显示，能够尽量保留原文中的链接及其他文本样式
+  - [x] 支持仅显示译文（隐藏原文）
+- [x] 翻译接口高级功能
+  - [x] 通过自定义接口，理论上支持任何翻译接口
+  - [x] 聚合批量发送翻译文本
+  - [x] 支持流式传输，实时显示翻译结果
+  - [x] 支持AI上下文会话记忆功能，提升翻译效果
+  - [x] 自定义AI术语词典
+  - [x] 所有接口均支持Hook和自定义参数等高级功能
+- [x] 跨客户端数据同步
+  - [x] KISS-Worker（cloudflare/docker）
+  - [x] WebDAV
+- [x] 自定义翻译规则
+  - [x] 规则订阅/规则分享
+  - [x] 自定义专业术语
+- [x] 自定义快捷键
+  - `Alt+Q` 开启翻译
+  - `Alt+C` 切换样式
+  - `Alt+K` 打开设置弹窗
+  - `Alt+S` 打开翻译弹窗/翻译选中文字
+  - `Alt+O` 打开设置页面
+  - `Alt+I` 输入框翻译
+
+## 安装
+
+&gt; 注：基于以下原因，建议优先使用浏览器扩展
+&gt;
+&gt; - 浏览器扩展的功能更完整（本地语言识别、右键菜单等）
+&gt; - 油猴脚本会遇到更多使用上的问题（跨域问题、脚本冲突等）
+
+- [x] 浏览器扩展
+  - [x] Chrome [安装地址](https://chrome.google.com/webstore/detail/kiss-translator/bdiifdefkgmcblbcghdlonllpjhhjgof?hl=zh-CN)
+    - [x] Kiwi (Android)
+    - [x] Orion (iOS)
+  - [x] Edge [安装地址](https://microsoftedge.microsoft.com/addons/detail/%E7%AE%80%E7%BA%A6%E7%BF%BB%E8%AF%91/jemckldkclkinpjighnoilpbldbdmmlh?hl=zh-CN)
+  - [x] Firefox [安装地址](https://addons.mozilla.org/zh-CN/firefox/addon/kiss-translator/)
+  - [ ] Safari
+    - [ ] Safari (Mac)
+    - [ ] Safari (iOS) 
+  - [x] Thunderbird [下载地址](https://github.com/fishjar/kiss-translator/releases)
+- [x] 油猴脚本
+  - [x] Chrome/Edge/Firefox ([Tampermonkey](https://www.tampermonkey.net/)/[Violentmonkey](https://violentmonkey.github.io/)) [安装链接](https://fishjar.github.io/kiss-translator/kiss-translator.user.js)
+    - [Greasy Fork](https://greasyfork.org/zh-CN/scripts/472840-kiss-translator)
+  - [x] iOS Safari ([Userscripts Safari](https://github.com/quoid/userscripts)) [安装链接](https://fishjar.github.io/kiss-translator/kiss-translator-ios-safari.user.js)
+
+## 关联项目
+
+- 数据同步服务: [https://github.com/fishjar/kiss-worker](https://github.com/fishjar/kiss-worker)
+  - 可用于本项目的数据同步服务。
+  - 亦可用于分享个人的私有规则列表。
+  - 自己部署，自己管理，数据私有。
+- 社区订阅规则: [https://github.com/fishjar/kiss-rules](https://github.com/fishjar/kiss-rules)
+  - 提供社区维护的，最新最全的订阅规则列表。
+  - 求助规则相关的问题。
+
+## 常见问题
+
+### 如何设置快捷键
+
+在插件管理那里设置，例如： 
+
+- chrome [chrome://extensions/shortcuts](chrome://extensions/shortcuts)
+- firefox [about:addons](about:addons)
+
+### 规则设置的优先级是如何的
+
+个人规则 &gt; 订阅规则 &gt; 全局规则
+
+其中全局规则优先级最低，但非常重要，相当于兜底规则。
+
+### 接口（Ollama等）测试失败
+
+一般接口测试失败常见有以下几种原因：
+
+- 地址填错了：
+  - 比如 `Ollama` 有原生接口地址和 `Openai` 兼容的地址，本插件目前统一支持 `Openai` 兼容的地址，不支持 `Ollama` 原生接口地址
+- 某些AI模型不支持聚合翻译：
+  - 此种情况可以选择禁用聚合翻译或通过自定义接口的方式来使用。
+  - 或通过自定义接口的方式来使用，详情参考： [自定义接口示例文档](https://github.com/fishjar/kiss-translator/blob/master/custom-api_v2.md)
+- 某些AI模型的参数不一致：
+  - 比如 `Gemini` 原生接口参数非常不一致，部分版本的模型不支持某些参数会导致返回错误。
+  - 此种情况可以通过 `Hook` 修改请求 `body` ,或者更换为 `Gemini2` (`Openai` 兼容的地址)
+- 服务器跨域限制访问，返回403错误：
+  - 比如 `Ollama` 启动时须添加环境变量 `OLLAMA_ORIGINS=*`, 参考：https://github.com/fishjar/kiss-translator/issues/174
+
+### 填写的接口在油猴脚本不能使用
+
+油猴脚本需要增加域名白名单，否则不能发出请求。
+
+### 如何设置自定义接口的hook函数
+
+自定义接口功能非常强大、灵活，理论可以接入任何翻译接口。
+
+示例参考： [custom-api_v2.md](https://github.com/fishjar/kiss-translator/blob/master/custom-api_v2.md)
+
+### 如何直接进入油猴脚本设置页面
+
+设置页面地址： https://fishjar.github.io/kiss-translator/options.html
+
+## 未来规划 
+
+ 本项目为业余开发，无严格时间表，欢迎社区共建。以下为初步设想的功能方向：
+
+- [x] **聚合发送文本**：优化请求策略，减少翻译接口调用次数，提升性能。
+- [x] **增强富文本翻译**：支持更复杂的页面结构和富文本内容的准确翻译。
+- [x] **强化自定义/AI 接口**：支持流式传输、上下文记忆、多轮对话等高级 AI 功能。
+- [x] **英文词典备灾机制**：当翻译服务失效时，可切换其他词典或 fallback 到本地词典查询。
+- [x] **优化 YouTube 字幕支持**：改进流式字幕的合并与翻译体验，减少断句。
+- [ ] **规则共建机制升级**：引入更灵活的规则分享、版本管理与社区评审流程。
+ 
+ 如果你对某个方向感兴趣，欢迎在 [Issues](https://github.com/fishjar/kiss-translator/issues) 中讨论或提交 PR！
+
+## 开发指引
+
+```sh
+git clone https://github.com/fishjar/kiss-translator.git
+cd kiss-translator
+git checkout dev # 提交PR建议推送到dev分支
+pnpm install
+pnpm build
+```
+
+### 外部触发示例
+
+```js
+// `toggle_translate`   切换翻译
+// `toggle_styles`      切换样式
+// `toggle_popup`       打开/关闭控制面板
+// `toggle_transbox`    打开/关闭翻译弹窗
+// `toggle_hover_node`  翻译鼠标悬停段落
+// `input_translate`    翻译输入框
+window.dispatchEvent(new CustomEvent(&quot;kiss_translator&quot;, {detail: { action: &quot;toggle_translate&quot; }}));
+```
+
+## 交流
+
+- 加入 [Telegram 群](https://t.me/+RRCu_4oNwrM2NmFl)
+
+## 赞赏
+
+![appreciate](https://github.com/fishjar/kiss-translator/assets/1157624/ebaecabe-2934-4172-8085-af236f5ee399)
+
+## 赞助商
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;a href=&quot;https://platform.ephone.ai/&quot; target=&quot;_blank&quot;&gt;
+&lt;img src=&quot;https://platform.ephone.ai/logo-e.png&quot; width=&quot;96&quot; /&gt;&lt;br /&gt;
+&lt;b&gt;ePhone AI&lt;/b&gt;&lt;br /&gt;
+一个面向开发者的 AI 模型 API 中转与聚合平台，支持 OpenAI、Claude、Gemini、DeepSeek、GLM 等多家大模型。
+&lt;/a&gt;
+&lt;/p&gt;
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[atlassian/atlassian-mcp-server]]></title>
+            <link>https://github.com/atlassian/atlassian-mcp-server</link>
+            <guid>https://github.com/atlassian/atlassian-mcp-server</guid>
+            <pubDate>Sat, 20 Jun 2026 00:26:30 GMT</pubDate>
+            <description><![CDATA[Remote MCP Server that securely connects Jira and Confluence with your LLM, IDE, or agent platform of choice.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/atlassian/atlassian-mcp-server">atlassian/atlassian-mcp-server</a></h1>
+            <p>Remote MCP Server that securely connects Jira and Confluence with your LLM, IDE, or agent platform of choice.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 790</p>
+            <p>Forks: 96</p>
+            <p>Stars today: 1 star today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;images/atlassian_logo_brand_RGB.svg&quot;&gt;
+&lt;/p&gt;
+
+# Atlassian MCP Server
+
+The Atlassian Rovo MCP Server is a cloud-based bridge between your Atlassian Cloud site and compatible external tools. Once configured, it enables those tools to interact with Jira, Compass, and Confluence data in real-time. This functionality is powered by secure authentication using **OAuth 2.1** or **API tokens**, which ensures all actions respect the user&#039;s existing access controls.
+
+With the Atlassian Rovo MCP Server, you can:
+
+* **Summarize and search** Jira, Compass, and Confluence content without switching tools.
+* **Create and update** issues or pages based on natural language commands.
+* **Automate repetitive work**, like generating tickets from meeting notes or specs.
+
+It&#039;s designed developers, content creators, and project teams who use IDEs or AI platforms and want to work with Atlassian data without constantly context switching.
+
+---
+
+## Supported clients
+
+The Atlassian Rovo MCP Server supports several clients, including:
+
+* [OpenAI ChatGPT](https://platform.openai.com/docs/guides/tools-connectors-mcp)
+* [Claude](https://code.claude.com/docs/en/mcp)
+* [GitHub Copilot CLI](https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli)
+* [Gemini CLI](https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md)
+* [Amazon Quick Suite](https://docs.aws.amazon.com/quicksuite/latest/userguide/mcp-integration.html)
+* [Visual Studio Code](https://code.visualstudio.com/)
+
+The Atlassian Rovo MCP Server also supports any **local MCP-compatible client** that can run on `localhost` and connect to the server via the `mcp-remote` proxy. This enables custom or third-party integrations that follow the MCP specification.
+
+For detailed setup instructions, refer to your client&#039;s own MCP documentation or built-in assistant.
+
+---
+
+## Before you start
+
+Ensure your environment meets the necessary requirements to successfully set up the Atlassian Rovo MCP Server. This section outlines the technical prerequisites and key access considerations.
+
+### Prerequisites
+
+Before connecting to the Atlassian Rovo MCP Server, review the setup requirements for your environment:
+
+#### For supported clients
+
+* An **Atlassian Cloud site** with Jira, Compass, and/or Confluence
+* Access to **the client of choice**
+* A modern browser to complete the OAuth 2.1 authorization flow, or API token credentials for headless authentication
+
+#### For IDEs or local clients (Desktop setup)
+
+* An **Atlassian Cloud site** with Jira, Compass, and/or Confluence
+* A supported IDE (for example, **Claude desktop, VS Code, or Cursor**) or a custom MCP-compatible client
+* **Node.js v18+** installed to run the local MCP proxy (`mcp-remote`)
+* A modern browser for completing OAuth login, or API token credentials for headless authentication
+
+---
+
+## Data and security
+
+Security is a core focus of the Atlassian Rovo MCP Server:
+
+* All traffic is encrypted via HTTPS using TLS 1.2 or later.
+* OAuth 2.1 and API token authentication provide secure access control.
+* Data access respects Jira, Compass, and Confluence user permissions.
+* If your organization uses IP allowlisting for Atlassian Cloud products, tool calls made through the Atlassian Rovo MCP Server also honor those IP rules.
+
+For a deeper overview of the security model and admin controls, see:
+
+* [Understand Atlassian Rovo MCP Server](https://support.atlassian.com/security-and-access-policies/docs/understand-atlassian-rovo-mcp-server/)
+* [Control Atlassian Rovo MCP Server settings](https://support.atlassian.com/security-and-access-policies/docs/control-atlassian-rovo-mcp-server-settings/)
+
+---
+
+## How it works
+
+### Architecture and communication
+
+1. A supported client connects to the server endpoint:
+```
+https://mcp.atlassian.com/v1/mcp
+```
+2. Depending on your setup, a secure browser-based OAuth 2.1 flow is triggered, or API token authentication is used.
+3. Once authorized, the client streams contextual data and receives real-time responses from Jira, Compass, or Confluence.
+
+&gt; [!NOTE]
+&gt; While `/sse` as a server endpoint are supported, we recommend updating any custom clients configured to use `/sse` so they now point to `/mcp`.
+
+### Permission management
+
+Access is granted only to data that the user already has permission to view in Atlassian Cloud. All actions respect existing project or space-level roles. OAuth and API token authentication both honor configured scopes and Atlassian permissions.
+
+### API token authentication (headless)
+
+API token authentication is available for headless or long-running client setups.
+
+* **Admin enablement required:** An organization admin must enable API token authentication for Rovo MCP Server.
+* **Scoped token required:** Use a Rovo MCP scoped API token for the required tools and data access.
+* **Configuration guide:** [Configure authentication via API token](https://support.atlassian.com/atlassian-rovo-mcp-server/docs/configuring-authentication-via-api-token/)
+* **Admin setting reference:** [Control Atlassian Rovo MCP Server settings - Configure authentication](https://support.atlassian.com/security-and-access-policies/docs/control-atlassian-rovo-mcp-server-settings/#Configure-authentication)
+
+---
+
+## Example workflows
+
+Once connected, you can perform a variety of useful tasks from within your supported client.
+
+### Jira workflows
+
+* **Search**: &quot;Find all open bugs in Project Alpha.&quot;
+* **Create/update**: &quot;Create a story titled &#039;Redesign onboarding&#039;.&quot;
+* **Bulk create**: &quot;Make five Jira issues from these notes.&quot;
+
+### Confluence workflows
+
+* **Summarize**: &quot;Summarize the Q2 planning page.&quot;
+* **Create**: &quot;Create a page titled &#039;Team Goals Q3&#039;.&quot;
+* **Navigate**: &quot;What spaces do I have access to?&quot;
+
+### Compass workflows
+
+* **Create**: &quot;Create a service component based on the current repository.&quot;
+* **Bulk create**: &quot;Import components and custom fields from this CSV/JSON&quot;
+* **Query**: &quot;What depends on the `api-gateway` service?&quot;
+
+### Combined tasks
+
+* **Link content**: &quot;Link these three Jira tickets to the &#039;Release Plan&#039; page.&quot;
+* **Find documentation**: &quot;Fetch the Confluence documentation page linked to this Compass component.&quot;
+
+&gt; [!NOTE]
+&gt; Actual capabilities vary, depending on your permission level and client platform.
+
+---
+
+## Tips and tricks
+
+### Set default CloudId, Jira project, and Confluence space
+
+Update your [AGENTS.md](https://agents.md/) with the Markdown below to reduce discovery tool calls, save time and tokens, and set maximum search results.
+
+``` MD
+## Atlassian Rovo MCP
+
+When connected to atlassian-rovo-mcp:
+- **MUST** use Jira project key = YOURPROJ
+- **MUST** use Confluence spaceId = &quot;123456&quot;
+- **MUST** use cloudId = &quot;https://yoursite.atlassian.net&quot; (do NOT call getAccessibleAtlassianResources)
+- **MUST** use `maxResults: 10` or `limit: 10` for ALL Jira JQL and Confluence CQL search operations.
+```
+
+### Use skills
+
+If you&#039;re using a desktop client like Claude, you can create or reuse skills for repeated tasks. [See the default Rovo MCP skills](https://github.com/atlassian/atlassian-mcp-server/tree/main/skills)
+
+For [Cursor](https://cursor.com/marketplace/atlassian), skills are part of the marketplace plugin.
+
+---
+
+## Admin notes: Managing access
+
+If you&#039;re an admin preparing your organization to use the Atlassian Rovo MCP Server, review these key considerations. For more detailed admin guidance, see:
+
+* [Understand Atlassian Rovo MCP server](https://support.atlassian.com/security-and-access-policies/docs/understand-atlassian-rovo-mcp-server/)
+* [Control Atlassian Rovo MCP server settings](https://support.atlassian.com/security-and-access-policies/docs/control-atlassian-rovo-mcp-server-settings/)
+* [Manage Atlassian Rovo MCP server](https://support.atlassian.com/security-and-access-policies/docs/manage-atlassian-rovo-mcp-server/)
+* [Monitor Atlassian Rovo MCP server activity](https://support.atlassian.com/security-and-access-policies/docs/monitor-atlassian-rovo-mcp-server-activity/)
+
+### Installation and access
+
+* **Not a Marketplace App:**  
+The Atlassian Rovo MCP Server is _not_ installed via the Atlassian Marketplace or the **Manage apps** screen. Instead, it is installed automatically the first time a user completes the OAuth 2.1 (3LO) consent flow (just-in-time or &quot;lazy loading&quot; installation).
+* **First-time installation requirements:**  
+The first user to complete the 3LO consent flow for your site must have access to the Atlassian apps requested by the MCP scopes (for example, Jira and/or Confluence). This ensures the MCP app is registered with the correct permissions for your site.
+* **Subsequent user access:**  
+After the initial install, users with access to only one Atlassian app (for example, just Jira or just Confluence) can also complete the 3LO flow to access that Atlassian app through MCP.
+
+### Manage, monitor, and revoke access
+
+* **Admin controls:**  
+Site and organization admins can manage, review, or revoke the MCP app&#039;s access from [Manage your organization&#039;s Marketplace and third-party apps](https://support.atlassian.com/security-and-access-policies/docs/manage-your-users-third-party-apps/). The app appears in your site&#039;s **Connected apps** list after the first successful 3LO consent.
+* **End-user controls:**  
+Individual users can revoke their own app authorizations from their profile settings.
+* **Domain and IP controls:**  
+Use the **Rovo MCP server** settings page in Atlassian Administration to control which external AI tools and domains are allowed to connect. For details, see [Available Atlassian Rovo MCP server domains](https://support.atlassian.com/security-and-access-policies/docs/available-atlassian-rovo-mcp-server-domains/). If your organization uses IP allowlisting for Atlassian Cloud apps, requests made through the Atlassian Rovo MCP Server must originate from an IP address that is allowed by your organization&#039;s IP allowlist for the relevant Atlassian app. For configuration details, see [Specify IP addresses for app access](https://support.atlassian.com/security-and-access-policies/docs/specify-ip-addresses-for-product-access/).
+* **Audit logging:** To support monitoring and compliance, key actions performed via the Atlassian Rovo MCP Server are logged in your organization&#039;s audit log. Admins can review these logs in Atlassian Administration. For more information, see [Monitor Atlassian Rovo MCP server activity](https://support.atlassian.com/security-and-access-policies/docs/monitor-atlassian-rovo-mcp-server-activity/).
+
+### Troubleshooting common issues
+
+* **&quot;Your site admin must authorize this app&quot; error:**  
+A site admin must complete the 3LO consent flow before anyone else can use the MCP app. See [&quot;Your site admin must authorize this app&quot;](https://support.atlassian.com/atlassian-cloud/kb/your-site-admin-must-authorize-this-app-error-in-atlassian-cloud-apps/) error in Atlassian Cloud apps for more details.
+* **&quot;You don&#039;t have permission to connect from this IP address. Please ask your admin for access.&quot;**  
+This usually indicates that IP allowlisting is enabled and the user&#039;s current IP address isn&#039;t allowed to access Jira, Confluence, Compass, or Rovo via the Atlassian Rovo MCP Server. Ask your site or organization admin to review the IP allowlist configuration and add the relevant network or VPN IP ranges if appropriate.
+* **App not appearing in Connected apps:**  
+Ensure the user is using the correct Atlassian account and site, and confirm the app is requesting the correct Atlassian app scopes (for example, Jira scopes). If issues persist, check [Manage your organization&#039;s Marketplace and third-party apps](https://support.atlassian.com/security-and-access-policies/docs/manage-your-users-third-party-apps/) or contact Atlassian Support. Also verify the user&#039;s Jira, Confluence, or Compass permissions in Atlassian Administration.
+
+## Security
+Model Context Protocol (MCP) lets AI agents connect to tools and Atlassian data using your account’s permissions, which creates powerful workflows but also structural risks. Any MCP client or server you enable (e.g., IDE plugins, desktop apps, hosted MCP servers, “one-click” integrations) can cause an AI agent to perform actions on your behalf.
+
+Large Language models (LLMs) are vulnerable to [prompt injection](https://owasp.org/www-community/attacks/PromptInjection) and related attacks (such as [indirect prompt injection](https://owasp.org/www-community/attacks/PromptInjection) and [tool poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)). These attacks can instruct the agent to exfiltrate data or make unintended changes without explicit requests.
+
+To reduce risk, only use trusted MCP clients and servers, carefully review which tools and data each agent can access, and apply least privilege (scoped tokens, minimal project/workspace access). For any high‑impact or destructive action, require human confirmation and monitor audit logs for unusual activity. We strongly recommend reviewing Atlassian’s guidance on MCP risks at [MCP Clients: Understanding the potential security risks](https://www.atlassian.com/blog/artificial-intelligence/mcp-risk-awareness)
+
+## Support and feedback
+Your feedback plays a crucial role in shaping the Atlassian Rovo MCP Server. If you encounter bugs, limitations, or have suggestions:
+- Visit the [Atlassian Support Portal](https://support.atlassian.com/) Portal to report issues and feature requests.
+- Share your experiences and questions on the [Atlassian Community](https://community.atlassian.com/) and developer-related asks on the [Developer&#039;s one](https://developer.atlassian.com/).
+- Go to our [Ecosystem Developer Portal](https://ecosystem.atlassian.net/servicedesk/customer/portal/14/user/login?destination=portal%2F14) if you are building an app and found a bug/issue or have suggestions.
+
+## Disclaimer
+
+MCP clients can perform actions in Jira, Confluence, and Compass with your existing permissions. Use least privilege, review high‑impact changes before confirming, and monitor audit logs for unusual activity.
+
+Learn more: MCP Clients - (Understanding the potential security risks)[https://www.atlassian.com/blog/artificial-intelligence/mcp-risk-awareness]
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[sveltejs/svelte]]></title>
+            <link>https://github.com/sveltejs/svelte</link>
+            <guid>https://github.com/sveltejs/svelte</guid>
+            <pubDate>Sat, 20 Jun 2026 00:26:29 GMT</pubDate>
+            <description><![CDATA[web development for the rest of us]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/sveltejs/svelte">sveltejs/svelte</a></h1>
+            <p>web development for the rest of us</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 87,316</p>
+            <p>Forks: 4,950</p>
+            <p>Stars today: 39 stars today</p>
+            <h2>README</h2><pre>&lt;a href=&quot;https://svelte.dev&quot;&gt;
+	&lt;picture&gt;
+		&lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;assets/banner_dark.png&quot;&gt;
+		&lt;img src=&quot;assets/banner.png&quot; alt=&quot;Svelte - web development for the rest of us&quot; /&gt;
+	&lt;/picture&gt;
+&lt;/a&gt;
+
+[![License](https://img.shields.io/npm/l/svelte.svg)](LICENSE.md) [![Chat](https://img.shields.io/discord/457912077277855764?label=chat&amp;logo=discord)](https://svelte.dev/chat)
+
+## What is Svelte?
+
+Svelte is a new way to build web applications. It&#039;s a compiler that takes your declarative components and converts them into efficient JavaScript that surgically updates the DOM.
+
+Learn more at the [Svelte website](https://svelte.dev), or stop by the [Discord chatroom](https://svelte.dev/chat).
+
+## Supporting Svelte
+
+Svelte is an MIT-licensed open source project with its ongoing development made possible entirely by fantastic volunteers. If you&#039;d like to support their efforts, please consider:
+
+- [Becoming a backer on Open Collective](https://opencollective.com/svelte).
+
+Funds donated via Open Collective will be used for compensating expenses related to Svelte&#039;s development such as hosting costs. If sufficient donations are received, funds may also be used to support Svelte&#039;s development more directly.
+
+## Roadmap
+
+You may view [our roadmap](https://svelte.dev/roadmap) if you&#039;d like to see what we&#039;re currently working on.
+
+## Contributing
+
+Please see the [Contributing Guide](CONTRIBUTING.md) and the [`svelte`](packages/svelte) package for information on contributing to Svelte.
+
+## Is svelte.dev down?
+
+Probably not, but it&#039;s possible. If you can&#039;t seem to access any `.dev` sites, check out [this SuperUser question and answer](https://superuser.com/q/1413402).
+
+## License
+
+[MIT](LICENSE.md)
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
             <title><![CDATA[asgeirtj/system_prompts_leaks]]></title>
             <link>https://github.com/asgeirtj/system_prompts_leaks</link>
             <guid>https://github.com/asgeirtj/system_prompts_leaks</guid>
-            <pubDate>Fri, 19 Jun 2026 00:34:38 GMT</pubDate>
+            <pubDate>Sat, 20 Jun 2026 00:26:28 GMT</pubDate>
             <description><![CDATA[Extracted system prompts from Anthropic - Claude Fable 5, Opus 4.8, Claude Code, Claude Design. OpenAI - ChatGPT 5.5 Thinking, GPT 5.5 Instant, Codex. Google - Gemini 3.5 Flash, 3.1 Pro, Antigravity. xAI - Grok, Cursor, Copilot, VS Code, Perplexity, and more. Updated regularly.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/asgeirtj/system_prompts_leaks">asgeirtj/system_prompts_leaks</a></h1>
             <p>Extracted system prompts from Anthropic - Claude Fable 5, Opus 4.8, Claude Code, Claude Design. OpenAI - ChatGPT 5.5 Thinking, GPT 5.5 Instant, Codex. Google - Gemini 3.5 Flash, 3.1 Pro, Antigravity. xAI - Grok, Cursor, Copilot, VS Code, Perplexity, and more. Updated regularly.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 43,351</p>
-            <p>Forks: 7,182</p>
-            <p>Stars today: 282 stars today</p>
+            <p>Stars: 43,571</p>
+            <p>Forks: 7,219</p>
+            <p>Stars today: 156 stars today</p>
             <h2>README</h2><pre>&gt; **As seen in The Washington Post:** [See the hidden rules behind AI. Then use them to rewrite this article.](https://wapo.st/49t4gSb) (May 11, 2026)
 # System Prompts Leaks
 The purpose of this repo is to document the System Prompt instructions for all the AI chatbots out there - Claude, ChatGPT, Gemini etc.
@@ -386,166 +1635,97 @@ The purpose of this repo is to document the System Prompt instructions for all t
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[zarazhangrui/follow-builders]]></title>
-            <link>https://github.com/zarazhangrui/follow-builders</link>
-            <guid>https://github.com/zarazhangrui/follow-builders</guid>
-            <pubDate>Fri, 19 Jun 2026 00:34:37 GMT</pubDate>
-            <description><![CDATA[AI builders digest — monitors top AI builders on X and YouTube podcasts, remixes their content into digestible summaries. Follow builders, not influencers.]]></description>
+            <title><![CDATA[react/react]]></title>
+            <link>https://github.com/react/react</link>
+            <guid>https://github.com/react/react</guid>
+            <pubDate>Sat, 20 Jun 2026 00:26:27 GMT</pubDate>
+            <description><![CDATA[The library for web and native user interfaces.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/zarazhangrui/follow-builders">zarazhangrui/follow-builders</a></h1>
-            <p>AI builders digest — monitors top AI builders on X and YouTube podcasts, remixes their content into digestible summaries. Follow builders, not influencers.</p>
+            <h1><a href="https://github.com/react/react">react/react</a></h1>
+            <p>The library for web and native user interfaces.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 5,292</p>
-            <p>Forks: 667</p>
-            <p>Stars today: 25 stars today</p>
-            <h2>README</h2><pre>**English** | [中文](README.zh-CN.md)
+            <p>Stars: 245,954</p>
+            <p>Forks: 51,075</p>
+            <p>Stars today: 62 stars today</p>
+            <h2>README</h2><pre># [React](https://react.dev/) &amp;middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![(Runtime) Build and Test](https://github.com/facebook/react/actions/workflows/runtime_build_and_test.yml/badge.svg)](https://github.com/facebook/react/actions/workflows/runtime_build_and_test.yml) [![(Compiler) TypeScript](https://github.com/facebook/react/actions/workflows/compiler_typescript.yml/badge.svg?branch=main)](https://github.com/facebook/react/actions/workflows/compiler_typescript.yml) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://legacy.reactjs.org/docs/how-to-contribute.html#your-first-pull-request)
 
-# Follow Builders, Not Influencers
+React is a JavaScript library for building user interfaces.
 
-An AI-powered digest that tracks the top builders in AI — researchers, founders, PMs,
-and engineers who are actually building things — and delivers curated summaries of
-what they&#039;re saying.
+* **Declarative:** React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes. Declarative views make your code more predictable, simpler to understand, and easier to debug.
+* **Component-Based:** Build encapsulated components that manage their own state, then compose them to make complex UIs. Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep the state out of the DOM.
+* **Learn Once, Write Anywhere:** We don&#039;t make assumptions about the rest of your technology stack, so you can develop new features in React without rewriting existing code. React can also render on the server using [Node](https://nodejs.org/en) and power mobile apps using [React Native](https://reactnative.dev/).
 
-**Philosophy:** Follow people who build products and have original opinions, not
-influencers who regurgitate information.
-
-## What You Get
-
-A daily or weekly digest delivered to your preferred messaging app (Telegram, Discord,
-WhatsApp, etc.) with:
-
-- Summaries of new podcast episodes from top AI podcasts
-- Key posts and insights from 26 curated AI builders on X/Twitter
-- Full articles from official AI company blogs (Anthropic Engineering, Claude Blog)
-- Links to all original content
-- Available in English, Chinese, or bilingual
-
-## Quick Start
-
-1. Install the skill in your agent (OpenClaw or Claude Code)
-2. Say &quot;set up follow builders&quot; or invoke `/follow-builders`
-3. The agent walks you through setup conversationally — no config files to edit
-
-The agent will ask you:
-- How often you want your digest (daily or weekly) and what time
-- What language you prefer
-- How you want it delivered (Telegram, email, or in-chat)
-
-No API keys needed — all content is fetched centrally.
-Your first digest arrives immediately after setup.
-
-## Changing Settings
-
-Your delivery preferences are configurable through conversation. Just tell your agent:
-
-- &quot;Switch to weekly digests on Monday mornings&quot;
-- &quot;Change language to Chinese&quot;
-- &quot;Make the summaries shorter&quot;
-- &quot;Show me my current settings&quot;
-
-The source list (builders and podcasts) is curated centrally and updates
-automatically — you always get the latest sources without doing anything.
-
-## Customizing the Summaries
-
-The skill uses plain-English prompt files to control how content is summarized.
-You can customize them two ways:
-
-**Through conversation (recommended):**
-Tell your agent what you want — &quot;Make summaries more concise,&quot; &quot;Focus on actionable
-insights,&quot; &quot;Use a more casual tone.&quot; The agent updates the prompts for you.
-
-**Direct editing (power users):**
-Edit the files in the `prompts/` folder:
-- `summarize-podcast.md` — how podcast episodes are summarized
-- `summarize-tweets.md` — how X/Twitter posts are summarized
-- `summarize-blogs.md` — how blog posts are summarized
-- `digest-intro.md` — the overall digest format and tone
-- `translate.md` — how English content is translated to Chinese
-
-These are plain English instructions, not code. Changes take effect on the next digest.
-
-## Default Sources
-
-### Podcasts (6)
-- [Latent Space](https://www.youtube.com/@LatentSpacePod)
-- [Training Data](https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8)
-- [No Priors](https://www.youtube.com/@NoPriorsPodcast)
-- [Unsupervised Learning](https://www.youtube.com/@RedpointAI)
-- [The MAD Podcast with Matt Turck](https://www.youtube.com/@DataDrivenNYC)
-- [AI &amp; I by Every](https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL)
-
-### AI Builders on X (26)
-[Andrej Karpathy](https://x.com/karpathy), [Swyx](https://x.com/swyx), [Josh Woodward](https://x.com/joshwoodward), [Boris Cherny](https://x.com/bcherny), [Thibault Sottiaux](https://x.com/thsottiaux), [Peter Yang](https://x.com/petergyang), [Nan Yu](https://x.com/thenanyu), [Madhu Guru](https://x.com/realmadhuguru), [Amanda Askell](https://x.com/AmandaAskell), [Cat Wu](https://x.com/_catwu), [Thariq](https://x.com/trq212), [Google Labs](https://x.com/GoogleLabs), [Amjad Masad](https://x.com/amasad), [Guillermo Rauch](https://x.com/rauchg), [Alex Albert](https://x.com/alexalbert__), [Aaron Levie](https://x.com/levie), [Ryo Lu](https://x.com/ryolu_), [Garry Tan](https://x.com/garrytan), [Matt Turck](https://x.com/mattturck), [Zara Zhang](https://x.com/zarazhangrui), [Nikunj Kothari](https://x.com/nikunj), [Peter Steinberger](https://x.com/steipete), [Dan Shipper](https://x.com/danshipper), [Aditya Agarwal](https://x.com/adityaag), [Sam Altman](https://x.com/sama), [Claude](https://x.com/claudeai)
-
-### Official Blogs (2)
-- [Anthropic Engineering](https://www.anthropic.com/engineering) — technical deep-dives from the Anthropic team
-- [Claude Blog](https://claude.com/blog) — product announcements and updates from Claude
+[Learn how to use React in your project](https://react.dev/learn).
 
 ## Installation
 
-### OpenClaw
-```bash
-# From ClawhHub (coming soon)
-clawhub install follow-builders
+React has been designed for gradual adoption from the start, and **you can use as little or as much React as you need**:
 
-# Or manually
-git clone https://github.com/zarazhangrui/follow-builders.git ~/skills/follow-builders
-cd ~/skills/follow-builders/scripts &amp;&amp; npm install
+* Use [Quick Start](https://react.dev/learn) to get a taste of React.
+* [Add React to an Existing Project](https://react.dev/learn/add-react-to-an-existing-project) to use as little or as much React as you need.
+* [Create a New React App](https://react.dev/learn/start-a-new-react-project) if you&#039;re looking for a powerful JavaScript toolchain.
+
+## Documentation
+
+You can find the React documentation [on the website](https://react.dev/).
+
+Check out the [Getting Started](https://react.dev/learn) page for a quick overview.
+
+The documentation is divided into several sections:
+
+* [Quick Start](https://react.dev/learn)
+* [Tutorial](https://react.dev/learn/tutorial-tic-tac-toe)
+* [Thinking in React](https://react.dev/learn/thinking-in-react)
+* [Installation](https://react.dev/learn/installation)
+* [Describing the UI](https://react.dev/learn/describing-the-ui)
+* [Adding Interactivity](https://react.dev/learn/adding-interactivity)
+* [Managing State](https://react.dev/learn/managing-state)
+* [Advanced Guides](https://react.dev/learn/escape-hatches)
+* [API Reference](https://react.dev/reference/react)
+* [Where to Get Support](https://react.dev/community)
+* [Contributing Guide](https://legacy.reactjs.org/docs/how-to-contribute.html)
+
+You can improve it by sending pull requests to [this repository](https://github.com/reactjs/react.dev).
+
+## Examples
+
+We have several examples [on the website](https://react.dev/). Here is the first one to get you started:
+
+```jsx
+import { createRoot } from &#039;react-dom/client&#039;;
+
+function HelloMessage({ name }) {
+  return &lt;div&gt;Hello {name}&lt;/div&gt;;
+}
+
+const root = createRoot(document.getElementById(&#039;container&#039;));
+root.render(&lt;HelloMessage name=&quot;Taylor&quot; /&gt;);
 ```
 
-### Claude Code
-```bash
-git clone https://github.com/zarazhangrui/follow-builders.git ~/.claude/skills/follow-builders
-cd ~/.claude/skills/follow-builders/scripts &amp;&amp; npm install
-```
+This example will render &quot;Hello Taylor&quot; into a container on the page.
 
-## Requirements
+You&#039;ll notice that we used an HTML-like syntax; [we call it JSX](https://react.dev/learn#writing-markup-with-jsx). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML.
 
-- An AI agent (OpenClaw, Claude Code, or similar)
-- Internet connection (to fetch the central feed)
+## Contributing
 
-That&#039;s it. No API keys needed. All content (blog articles + YouTube transcripts + X/Twitter posts)
-is fetched centrally and updated daily.
+The main purpose of this repository is to continue evolving React core, making it faster and easier to use. Development of React happens in the open on GitHub, and we are grateful to the community for contributing bugfixes and improvements. Read below to learn how you can take part in improving React.
 
-## How It Works
+### [Code of Conduct](https://code.fb.com/codeofconduct)
 
-1. A central feed is updated daily with the latest content from all sources
-   (blog articles via web scraping, YouTube transcripts via Supadata, X/Twitter via official API)
-2. Your agent fetches the feed — one HTTP request, no API keys
-3. Your agent remixes the raw content into a digestible summary using your preferences
-4. The digest is delivered to your messaging app (or shown in-chat)
+Facebook has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://code.fb.com/codeofconduct) so that you can understand what actions will and will not be tolerated.
 
-See [examples/sample-digest.md](examples/sample-digest.md) for what the output looks like.
+### [Contributing Guide](https://legacy.reactjs.org/docs/how-to-contribute.html)
 
-## Privacy
+Read our [contributing guide](https://legacy.reactjs.org/docs/how-to-contribute.html) to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to React.
 
-- No API keys are sent anywhere — all content is fetched centrally
-- If you use Telegram/email delivery, those keys are stored locally in `~/.follow-builders/.env`
-- The skill only reads public content (public blog posts, public YouTube videos, public X posts)
-- Your configuration, preferences, and reading history stay on your machine
+### [Good First Issues](https://github.com/facebook/react/labels/good%20first%20issue)
 
-## License
+To help you get your feet wet and get you familiar with our contribution process, we have a list of [good first issues](https://github.com/facebook/react/labels/good%20first%20issue) that contain bugs that have a relatively limited scope. This is a great place to get started.
 
-MIT
+### License
+
+React is [MIT licensed](./LICENSE).
 </pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[usebruno/bruno]]></title>
-            <link>https://github.com/usebruno/bruno</link>
-            <guid>https://github.com/usebruno/bruno</guid>
-            <pubDate>Fri, 19 Jun 2026 00:34:36 GMT</pubDate>
-            <description><![CDATA[Opensource IDE For Exploring and Testing API's (lightweight alternative to Postman/Insomnia)]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/usebruno/bruno">usebruno/bruno</a></h1>
-            <p>Opensource IDE For Exploring and Testing API's (lightweight alternative to Postman/Insomnia)</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 45,004</p>
-            <p>Forks: 2,591</p>
-            <p>Stars today: 30 stars today</p>
-            <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
@@ -553,15 +1733,15 @@ MIT
             <title><![CDATA[TheOdinProject/curriculum]]></title>
             <link>https://github.com/TheOdinProject/curriculum</link>
             <guid>https://github.com/TheOdinProject/curriculum</guid>
-            <pubDate>Fri, 19 Jun 2026 00:34:35 GMT</pubDate>
+            <pubDate>Sat, 20 Jun 2026 00:26:26 GMT</pubDate>
             <description><![CDATA[The open curriculum for learning web development]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/TheOdinProject/curriculum">TheOdinProject/curriculum</a></h1>
             <p>The open curriculum for learning web development</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 12,672</p>
-            <p>Forks: 16,401</p>
-            <p>Stars today: 13 stars today</p>
+            <p>Stars: 12,678</p>
+            <p>Forks: 16,402</p>
+            <p>Stars today: 7 stars today</p>
             <h2>README</h2><pre># The Odin Project Curriculum
 
 [The Odin Project](https://www.theodinproject.com/) (TOP) is an open-source curriculum for learning full-stack web development. Our curriculum is divided into distinct courses, each covering the subject language in depth. Each course contains a listing of lessons interspersed with multiple projects. These projects give users the opportunity to practice what they are learning, thereby reinforcing and solidifying the theoretical knowledge learned in the lessons. Completed projects may then be included in the user&#039;s portfolio.
@@ -596,926 +1776,321 @@ Created by [Erik Trautman](http://www.github.com/eriktrautman).
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[vllm-project/recipes]]></title>
-            <link>https://github.com/vllm-project/recipes</link>
-            <guid>https://github.com/vllm-project/recipes</guid>
-            <pubDate>Fri, 19 Jun 2026 00:34:34 GMT</pubDate>
-            <description><![CDATA[Common recipes to run vLLM]]></description>
+            <title><![CDATA[trekhleb/javascript-algorithms]]></title>
+            <link>https://github.com/trekhleb/javascript-algorithms</link>
+            <guid>https://github.com/trekhleb/javascript-algorithms</guid>
+            <pubDate>Sat, 20 Jun 2026 00:26:25 GMT</pubDate>
+            <description><![CDATA[📝 Algorithms and data structures implemented in JavaScript with explanations and links to further readings]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/vllm-project/recipes">vllm-project/recipes</a></h1>
-            <p>Common recipes to run vLLM</p>
+            <h1><a href="https://github.com/trekhleb/javascript-algorithms">trekhleb/javascript-algorithms</a></h1>
+            <p>📝 Algorithms and data structures implemented in JavaScript with explanations and links to further readings</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 867</p>
-            <p>Forks: 308</p>
+            <p>Stars: 196,103</p>
+            <p>Forks: 31,054</p>
             <p>Stars today: 8 stars today</p>
-            <h2>README</h2><pre># [vLLM Recipes](https://docs.vllm.ai/projects/recipes)
+            <h2>README</h2><pre># JavaScript Algorithms and Data Structures
 
-This repo intends to host community maintained common recipes to run vLLM answering the question:
-**How do I run model X on hardware Y for task Z?**
+&gt; 🇺🇦 UKRAINE [IS BEING ATTACKED](https://war.ukraine.ua/) BY RUSSIAN ARMY. CIVILIANS ARE GETTING KILLED. RESIDENTIAL AREAS ARE GETTING BOMBED.
+&gt; - Help Ukraine via:
+&gt;   - [Serhiy Prytula Charity Foundation](https://prytulafoundation.org/en/)
+&gt;   - [Come Back Alive Charity Foundation](https://savelife.in.ua/en/donate-en/)
+&gt;   - [National Bank of Ukraine](https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi)
+&gt; - More info on [war.ukraine.ua](https://war.ukraine.ua/) and [MFA of Ukraine](https://twitter.com/MFA_Ukraine)
 
-## Guides
+&lt;hr/&gt;
 
-### Arcee AI &lt;img src=&quot;https://cdn-avatars.huggingface.co/v1/production/uploads/6435718aaaef013d1aec3b8b/GZPnGkfMn8Ino6JbkL4fJ.png&quot; alt=&quot;Arcee AI&quot; width=&quot;16&quot; height=&quot;16&quot; style=&quot;vertical-align:middle;&quot;&gt;
+[![CI](https://github.com/trekhleb/javascript-algorithms/workflows/CI/badge.svg)](https://github.com/trekhleb/javascript-algorithms/actions?query=workflow%3ACI+branch%3Amaster)
+[![codecov](https://codecov.io/gh/trekhleb/javascript-algorithms/branch/master/graph/badge.svg)](https://codecov.io/gh/trekhleb/javascript-algorithms)
+![repo size](https://img.shields.io/github/repo-size/trekhleb/javascript-algorithms.svg)
 
-- [Trinity-Large-Thinking](ArceeAI/Trinity-Large-Thinking.md)
+This repository contains JavaScript based examples of many
+popular algorithms and data structures.
 
-### DeepSeek &lt;img src=&quot;https://avatars.githubusercontent.com/u/148330874?s=200&amp;v=4&quot; alt=&quot;DeepSeek&quot; width=&quot;16&quot; height=&quot;16&quot; style=&quot;vertical-align:middle;&quot;&gt;
+Each algorithm and data structure has its own separate README
+with related explanations and links for further reading (including ones
+to YouTube videos).
 
-- [DeepSeek-OCR](DeepSeek/DeepSeek-OCR.md)
-- [DeepSeek-V3.1](DeepSeek/DeepSeek-V3_1.md)
-- [DeepSeek-V3, DeepSeek-R1](DeepSeek/DeepSeek-V3.md)
-- [DeepSeek-V3.2-Exp](DeepSeek/DeepSeek-V3_2-Exp.md)
-- [DeepSeek-V3.2](DeepSeek/DeepSeek-V3_2.md)
+_Read this in other languages:_
+[_简体中文_](README.zh-CN.md),
+[_繁體中文_](README.zh-TW.md),
+[_한국어_](README.ko-KR.md),
+[_日本語_](README.ja-JP.md),
+[_Polski_](README.pl-PL.md),
+[_Français_](README.fr-FR.md),
+[_Español_](README.es-ES.md),
+[_Português_](README.pt-BR.md),
+[_Русский_](README.ru-RU.md),
+[_Türkçe_](README.tr-TR.md),
+[_Italiano_](README.it-IT.md),
+[_Bahasa Indonesia_](README.id-ID.md),
+[_Українська_](README.uk-UA.md),
+[_Arabic_](README.ar-AR.md),
+[_Tiếng Việt_](README.vi-VN.md),
+[_Deutsch_](README.de-DE.md),
+[_Uzbek_](README.uz-UZ.md),
+[_עברית_](README.he-IL.md)
 
+## Data Structures
 
-### Ernie &lt;img src=&quot;https://avatars.githubusercontent.com/u/13245940?v=4&quot; alt=&quot;Ernie&quot; width=&quot;16&quot; height=&quot;16&quot; style=&quot;vertical-align:middle;&quot;&gt;
+A data structure is a particular way of organizing and storing data in a computer so that it can
+be accessed and modified efficiently. More precisely, a data structure is a collection of data
+values, the relationships among them, and the functions or operations that can be applied to
+the data.
 
-- [Ernie4.5](Ernie/Ernie4.5.md)
-- [Ernie4.5-VL](Ernie/Ernie4.5-VL.md)
+Remember that each data has its own trade-offs. And you need to pay attention more to why you&#039;re choosing a certain data structure than to how to implement it.
 
-### GLM &lt;img src=&quot;https://raw.githubusercontent.com/zai-org/GLM-4.5/refs/heads/main/resources/logo.svg&quot; alt=&quot;GLM&quot; width=&quot;16&quot; height=&quot;16&quot; style=&quot;vertical-align:middle;&quot;&gt;
+`B` - Beginner, `A` - Advanced
 
-- [GLM-5.1, GLM-5](GLM/GLM5.md)
-- [Glyph](GLM/Glyph.md)
-- [GLM-4.7-Flash, GLM-4.7, GLM-4.6, GLM-4.5, GLM-4.5-Air](GLM/GLM.md)
-- [GLM-4.5V, GLM-4.6V](GLM/GLM-V.md)
+* `B` [Linked List](src/data-structures/linked-list)
+* `B` [Doubly Linked List](src/data-structures/doubly-linked-list)
+* `B` [Queue](src/data-structures/queue)
+* `B` [Stack](src/data-structures/stack)
+* `B` [Deque](src/data-structures/deque) - double-ended queue
+* `B` [Hash Table](src/data-structures/hash-table)
+* `B` [Heap](src/data-structures/heap) - max and min heap versions
+* `B` [Priority Queue](src/data-structures/priority-queue)
+* `A` [Trie](src/data-structures/trie)
+* `A` [Tree](src/data-structures/tree)
+  * `A` [Binary Search Tree](src/data-structures/tree/binary-search-tree)
+  * `A` [AVL Tree](src/data-structures/tree/avl-tree)
+  * `A` [Red-Black Tree](src/data-structures/tree/red-black-tree)
+  * `A` [Segment Tree](src/data-structures/tree/segment-tree) - with min/max/sum range queries examples
+  * `A` [Fenwick Tree](src/data-structures/tree/fenwick-tree) (Binary Indexed Tree)
+* `A` [Graph](src/data-structures/graph) (both directed and undirected)
+* `A` [Disjoint Set](src/data-structures/disjoint-set) - a union–find data structure or merge–find set
+* `A` [Bloom Filter](src/data-structures/bloom-filter)
+* `A` [LRU Cache](src/data-structures/lru-cache/) - Least Recently Used (LRU) cache
 
-### Google &lt;img src=&quot;https://avatars.githubusercontent.com/u/1342004?v=4&quot; alt=&quot;Google&quot; width=&quot;16&quot; height=&quot;16&quot; style=&quot;vertical-align:middle;&quot;&gt;
+## Algorithms
 
-- [Gemma 4](Google/Gemma4.md)
-- [TranslateGemma](Google/TranslateGemma.md)
+An algorithm is an unambiguous specification of how to solve a class of problems. It is
+a set of rules that precisely define a sequence of operations.
 
-### inclusionAI &lt;img src=&quot;https://avatars.githubusercontent.com/u/199075982?s=200&amp;v=4&quot; alt=&quot;inclusionAI&quot; width=&quot;16&quot; height=&quot;16&quot; style=&quot;vertical-align:middle;&quot;&gt;
+`B` - Beginner, `A` - Advanced
 
-- [Ring-1T-FP8](inclusionAI/Ring-1T-FP8.md)
+### Algorithms by Topic
 
-### InternVL &lt;img src=&quot;https://github.com/user-attachments/assets/930e6814-8a9f-43e1-a284-118a5732daa4&quot; alt=&quot;InternVL&quot; width=&quot;64&quot; height=&quot;16&quot;&gt;
+* **Math**
+  * `B` [Bit Manipulation](src/algorithms/math/bits) - set/get/update/clear bits, multiplication/division by two, make negative etc.
+  * `B` [Binary Floating Point](src/algorithms/math/binary-floating-point) - binary representation of the floating-point numbers.
+  * `B` [Factorial](src/algorithms/math/factorial)
+  * `B` [Fibonacci Number](src/algorithms/math/fibonacci) - classic and closed-form versions
+  * `B` [Prime Factors](src/algorithms/math/prime-factors) - finding prime factors and counting them using Hardy-Ramanujan&#039;s theorem
+  * `B` [Primality Test](src/algorithms/math/primality-test) (trial division method)
+  * `B` [Euclidean Algorithm](src/algorithms/math/euclidean-algorithm) - calculate the Greatest Common Divisor (GCD)
+  * `B` [Least Common Multiple](src/algorithms/math/least-common-multiple) (LCM)
+  * `B` [Sieve of Eratosthenes](src/algorithms/math/sieve-of-eratosthenes) - finding all prime numbers up to any given limit
+  * `B` [Is Power of Two](src/algorithms/math/is-power-of-two) - check if the number is power of two (naive and bitwise algorithms)
+  * `B` [Pascal&#039;s Triangle](src/algorithms/math/pascal-triangle)
+  * `B` [Complex Number](src/algorithms/math/complex-number) - complex numbers and basic operations with them
+  * `B` [Radian &amp; Degree](src/algorithms/math/radian) - radians to degree and backwards conversion
+  * `B` [Fast Powering](src/algorithms/math/fast-powering)
+  * `B` [Horner&#039;s method](src/algorithms/math/horner-method) - polynomial evaluation
+  * `B` [Matrices](src/algorithms/math/matrix) - matrices and basic matrix operations (multiplication, transposition, etc.)
+  * `B` [Euclidean Distance](src/algorithms/math/euclidean-distance) - distance between two points/vectors/matrices
+  * `A` [Integer Partition](src/algorithms/math/integer-partition)
+  * `A` [Square Root](src/algorithms/math/square-root) - Newton&#039;s method
+  * `A` [Liu Hui π Algorithm](src/algorithms/math/liu-hui) - approximate π calculations based on N-gons
+  * `A` [Discrete Fourier Transform](src/algorithms/math/fourier-transform) - decompose a function of time (a signal) into the frequencies that make it up
+* **Sets**
+  * `B` [Cartesian Product](src/algorithms/sets/cartesian-product) - product of multiple sets
+  * `B` [Fisher–Yates Shuffle](src/algorithms/sets/fisher-yates) - random permutation of a finite sequence
+  * `A` [Power Set](src/algorithms/sets/power-set) - all subsets of a set (bitwise, backtracking, and cascading solutions)
+  * `A` [Permutations](src/algorithms/sets/permutations) (with and without repetitions)
+  * `A` [Combinations](src/algorithms/sets/combinations) (with and without repetitions)
+  * `A` [Longest Common Subsequence](src/algorithms/sets/longest-common-subsequence) (LCS)
+  * `A` [Longest Increasing Subsequence](src/algorithms/sets/longest-increasing-subsequence)
+  * `A` [Shortest Common Supersequence](src/algorithms/sets/shortest-common-supersequence) (SCS)
+  * `A` [Knapsack Problem](src/algorithms/sets/knapsack-problem) - &quot;0/1&quot; and &quot;Unbound&quot; ones
+  * `A` [Maximum Subarray](src/algorithms/sets/maximum-subarray) - &quot;Brute Force&quot; and &quot;Dynamic Programming&quot; (Kadane&#039;s) versions
+  * `A` [Combination Sum](src/algorithms/sets/combination-sum) - find all combinations that form specific sum
+* **Strings**
+  * `B` [Hamming Distance](src/algorithms/string/hamming-distance) - number of positions at which the symbols are different
+  * `B` [Palindrome](src/algorithms/string/palindrome) - check if the string is the same in reverse
+  * `A` [Levenshtein Distance](src/algorithms/string/levenshtein-distance) - minimum edit distance between two sequences
+  * `A` [Knuth–Morris–Pratt Algorithm](src/algorithms/string/knuth-morris-pratt) (KMP Algorithm) - substring search (pattern matching)
+  * `A` [Z Algorithm](src/algorithms/string/z-algorithm) - substring search (pattern matching)
+  * `A` [Rabin Karp Algorithm](src/algorithms/string/rabin-karp) - substring search
+  * `A` [Longest Common Substring](src/algorithms/string/longest-common-substring)
+  * `A` [Regular Expression Matching](src/algorithms/string/regular-expression-matching)
+* **Searches**
+  * `B` [Linear Search](src/algorithms/search/linear-search)
+  * `B` [Jump Search](src/algorithms/search/jump-search) (or Block Search) - search in sorted array
+  * `B` [Binary Search](src/algorithms/search/binary-search) - search in sorted array
+  * `B` [Interpolation Search](src/algorithms/search/interpolation-search) - search in uniformly distributed sorted array
+* **Sorting**
+  * `B` [Bubble Sort](src/algorithms/sorting/bubble-sort)
+  * `B` [Selection Sort](src/algorithms/sorting/selection-sort)
+  * `B` [Insertion Sort](src/algorithms/sorting/insertion-sort)
+  * `B` [Heap Sort](src/algorithms/sorting/heap-sort)
+  * `B` [Merge Sort](src/algorithms/sorting/merge-sort)
+  * `B` [Quicksort](src/algorithms/sorting/quick-sort) - in-place and non-in-place implementations
+  * `B` [Shellsort](src/algorithms/sorting/shell-sort)
+  * `B` [Counting Sort](src/algorithms/sorting/counting-sort)
+  * `B` [Radix Sort](src/algorithms/sorting/radix-sort)
+  * `B` [Bucket Sort](src/algorithms/sorting/bucket-sort)
+* **Linked Lists**
+  * `B` [Straight Traversal](src/algorithms/linked-list/traversal)
+  * `B` [Reverse Traversal](src/algorithms/linked-list/reverse-traversal)
+* **Trees**
+  * `B` [Depth-First Search](src/algorithms/tree/depth-first-search) (DFS)
+  * `B` [Breadth-First Search](src/algorithms/tree/breadth-first-search) (BFS)
+* **Graphs**
+  * `B` [Depth-First Search](src/algorithms/graph/depth-first-search) (DFS)
+  * `B` [Breadth-First Search](src/algorithms/graph/breadth-first-search) (BFS)
+  * `B` [Kruskal’s Algorithm](src/algorithms/graph/kruskal) - finding Minimum Spanning Tree (MST) for weighted undirected graph
+  * `A` [Dijkstra Algorithm](src/algorithms/graph/dijkstra) - finding the shortest paths to all graph vertices from single vertex
+  * `A` [Bellman-Ford Algorithm](src/algorithms/graph/bellman-ford) - finding the shortest paths to all graph vertices from single vertex
+  * `A` [Floyd-Warshall Algorithm](src/algorithms/graph/floyd-warshall) - find the shortest paths between all pairs of vertices
+  * `A` [Detect Cycle](src/algorithms/graph/detect-cycle) - for both directed and undirected graphs (DFS and Disjoint Set based versions)
+  * `A` [Prim’s Algorithm](src/algorithms/graph/prim) - finding Minimum Spanning Tree (MST) for weighted undirected graph
+  * `A` [Topological Sorting](src/algorithms/graph/topological-sorting) - DFS method
+  * `A` [Articulation Points](src/algorithms/graph/articulation-points) - Tarjan&#039;s algorithm (DFS based)
+  * `A` [Bridges](src/algorithms/graph/bridges) - DFS based algorithm
+  * `A` [Eulerian Path and Eulerian Circuit](src/algorithms/graph/eulerian-path) - Fleury&#039;s algorithm - Visit every edge exactly once
+  * `A` [Hamiltonian Cycle](src/algorithms/graph/hamiltonian-cycle) - Visit every vertex exactly once
+  * `A` [Strongly Connected Components](src/algorithms/graph/strongly-connected-components) - Kosaraju&#039;s algorithm
+  * `A` [Travelling Salesman Problem](src/algorithms/graph/travelling-salesman) - shortest possible route that visits each city and returns to the origin city
+* **Cryptography**
+  * `B` [Polynomial Hash](src/algorithms/cryptography/polynomial-hash) - rolling hash function based on polynomial
+  * `B` [Rail Fence Cipher](src/algorithms/cryptography/rail-fence-cipher) - a transposition cipher algorithm for encoding messages
+  * `B` [Caesar Cipher](src/algorithms/cryptography/caesar-cipher) - simple substitution cipher
+  * `B` [Hill Cipher](src/algorithms/cryptography/hill-cipher) - substitution cipher based on linear algebra
+* **Machine Learning**
+  * `B` [NanoNeuron](https://github.com/trekhleb/nano-neuron) - 7 simple JS functions that illustrate how machines can actually learn (forward/backward propagation)
+  * `B` [k-NN](src/algorithms/ml/knn) - k-nearest neighbors classification algorithm
+  * `B` [k-Means](src/algorithms/ml/k-means) - k-Means clustering algorithm
+* **Image Processing**
+  * `B` [Seam Carving](src/algorithms/image-processing/seam-carving) - content-aware image resizing algorithm
+* **Statistics**
+  * `B` [Weighted Random](src/algorithms/statistics/weighted-random) - select the random item from the list based on items&#039; weights
+* **Evolutionary algorithms**
+  * `A` [Genetic algorithm](https://github.com/trekhleb/self-parking-car-evolution) - example of how the genetic algorithm may be applied for training the self-parking cars
+* **Uncategorized**
+  * `B` [Tower of Hanoi](src/algorithms/uncategorized/hanoi-tower)
+  * `B` [Square Matrix Rotation](src/algorithms/uncategorized/square-matrix-rotation) - in-place algorithm
+  * `B` [Jump Game](src/algorithms/uncategorized/jump-game) - backtracking, dynamic programming (top-down + bottom-up) and greedy examples
+  * `B` [Unique Paths](src/algorithms/uncategorized/unique-paths) - backtracking, dynamic programming and Pascal&#039;s Triangle based examples
+  * `B` [Rain Terraces](src/algorithms/uncategorized/rain-terraces) - trapping rain water problem (dynamic programming and brute force versions)
+  * `B` [Recursive Staircase](src/algorithms/uncategorized/recursive-staircase) - count the number of ways to reach to the top (4 solutions)
+  * `B` [Best Time To Buy Sell Stocks](src/algorithms/uncategorized/best-time-to-buy-sell-stocks) - divide and conquer and one-pass examples
+  * `B` [Valid Parentheses](src/algorithms/stack/valid-parentheses) - check if a string has valid parentheses (using stack)
+  * `A` [N-Queens Problem](src/algorithms/uncategorized/n-queens)
+  * `A` [Knight&#039;s Tour](src/algorithms/uncategorized/knight-tour)
 
-- [InternVL3.5](InternVL/InternVL3_5.md)
+### Algorithms by Paradigm
 
-### InternLM &lt;img src=&quot;https://avatars.githubusercontent.com/u/135356492?s=200&amp;v=4&quot; alt=&quot;InternLM&quot; width=&quot;16&quot; height=&quot;16&quot; style=&quot;vertical-align:middle;&quot;&gt;
+An algorithmic paradigm is a generic method or approach which underlies the design of a class
+of algorithms. It is an abstraction higher than the notion of an algorithm, just as an
+algorithm is an abstraction higher than a computer program.
 
-- [Intern-S1](InternLM/Intern-S1.md)
+* **Brute Force** - look at all the possibilities and selects the best solution
+  * `B` [Linear Search](src/algorithms/search/linear-search)
+  * `B` [Rain Terraces](src/algorithms/uncategorized/rain-terraces) - trapping rain water problem
+  * `B` [Recursive Staircase](src/algorithms/uncategorized/recursive-staircase) - count the number of ways to reach the top
+  * `A` [Maximum Subarray](src/algorithms/sets/maximum-subarray)
+  * `A` [Travelling Salesman Problem](src/algorithms/graph/travelling-salesman) - shortest possible route that visits each city and returns to the origin city
+  * `A` [Discrete Fourier Transform](src/algorithms/math/fourier-transform) - decompose a function of time (a signal) into the frequencies that make it up
+* **Greedy** - choose the best option at the current time, without any consideration for the future
+  * `B` [Jump Game](src/algorithms/uncategorized/jump-game)
+  * `A` [Unbound Knapsack Problem](src/algorithms/sets/knapsack-problem)
+  * `A` [Dijkstra Algorithm](src/algorithms/graph/dijkstra) - finding the shortest path to all graph vertices
+  * `A` [Prim’s Algorithm](src/algorithms/graph/prim) - finding Minimum Spanning Tree (MST) for weighted undirected graph
+  * `A` [Kruskal’s Algorithm](src/algorithms/graph/kruskal) - finding Minimum Spanning Tree (MST) for weighted undirected graph
+* **Divide and Conquer** - divide the problem into smaller parts and then solve those parts
+  * `B` [Binary Search](src/algorithms/search/binary-search)
+  * `B` [Tower of Hanoi](src/algorithms/uncategorized/hanoi-tower)
+  * `B` [Pascal&#039;s Triangle](src/algorithms/math/pascal-triangle)
+  * `B` [Euclidean Algorithm](src/algorithms/math/euclidean-algorithm) - calculate the Greatest Common Divisor (GCD)
+  * `B` [Merge Sort](src/algorithms/sorting/merge-sort)
+  * `B` [Quicksort](src/algorithms/sorting/quick-sort)
+  * `B` [Tree Depth-First Search](src/algorithms/tree/depth-first-search) (DFS)
+  * `B` [Graph Depth-First Search](src/algorithms/graph/depth-first-search) (DFS)
+  * `B` [Matrices](src/algorithms/math/matrix) - generating and traversing the matrices of different shapes
+  * `B` [Jump Game](src/algorithms/uncategorized/jump-game)
+  * `B` [Fast Powering](src/algorithms/math/fast-powering)
+  * `B` [Best Time To Buy Sell Stocks](src/algorithms/uncategorized/best-time-to-buy-sell-stocks) - divide and conquer and one-pass examples
+  * `A` [Permutations](src/algorithms/sets/permutations) (with and without repetitions)
+  * `A` [Combinations](src/algorithms/sets/combinations) (with and without repetitions)
+  * `A` [Maximum Subarray](src/algorithms/sets/maximum-subarray)
+* **Dynamic Programming** - build up a solution using previously found sub-solutions
+  * `B` [Fibonacci Number](src/algorithms/math/fibonacci)
+  * `B` [Jump Game](src/algorithms/uncategorized/jump-game)
+  * `B` [Unique Paths](src/algorithms/uncategorized/unique-paths)
+  * `B` [Rain Terraces](src/algorithms/uncategorized/rain-terraces) - trapping rain water problem
+  * `B` [Recursive Staircase](src/algorithms/uncategorized/recursive-staircase) - count the number of ways to reach the top
+  * `B` [Seam Carving](src/algorithms/image-processing/seam-carving) - content-aware image resizing algorithm
+  * `A` [Levenshtein Distance](src/algorithms/string/levenshtein-distance) - minimum edit distance between two sequences
+  * `A` [Longest Common Subsequence](src/algorithms/sets/longest-common-subsequence) (LCS)
+  * `A` [Longest Common Substring](src/algorithms/string/longest-common-substring)
+  * `A` [Longest Increasing Subsequence](src/algorithms/sets/longest-increasing-subsequence)
+  * `A` [Shortest Common Supersequence](src/algorithms/sets/shortest-common-supersequence)
+  * `A` [0/1 Knapsack Problem](src/algorithms/sets/knapsack-problem)
+  * `A` [Integer Partition](src/algorithms/math/integer-partition)
+  * `A` [Maximum Subarray](src/algorithms/sets/maximum-subarray)
+  * `A` [Bellman-Ford Algorithm](src/algorithms/graph/bellman-ford) - finding the shortest path to all graph vertices
+  * `A` [Floyd-Warshall Algorithm](src/algorithms/graph/floyd-warshall) - find the shortest paths between all pairs of vertices
+  * `A` [Regular Expression Matching](src/algorithms/string/regular-expression-matching)
+* **Backtracking** - similarly to brute force, try to generate all possible solutions, but each time you generate the next solution, you test
+if it satisfies all conditions and only then continue generating subsequent solutions. Otherwise, backtrack and go on a
+different path to finding a solution. Normally the DFS traversal of state-space is being used.
+  * `B` [Jump Game](src/algorithms/uncategorized/jump-game)
+  * `B` [Unique Paths](src/algorithms/uncategorized/unique-paths)
+  * `B` [Power Set](src/algorithms/sets/power-set) - all subsets of a set
+  * `A` [Hamiltonian Cycle](src/algorithms/graph/hamiltonian-cycle) - Visit every vertex exactly once
+  * `A` [N-Queens Problem](src/algorithms/uncategorized/n-queens)
+  * `A` [Knight&#039;s Tour](src/algorithms/uncategorized/knight-tour)
+  * `A` [Combination Sum](src/algorithms/sets/combination-sum) - find all combinations that form specific sum
+* **Branch &amp; Bound** - remember the lowest-cost solution found at each stage of the backtracking
+search, and use the cost of the lowest-cost solution found so far as a lower bound on the cost of
+a least-cost solution to the problem in order to discard partial solutions with costs larger than the
+lowest-cost solution found so far. Normally, BFS traversal in combination with DFS traversal of state-space
+tree is being used.
 
-### Jina AI &lt;img src=&quot;https://avatars.githubusercontent.com/u/60539444?s=200&amp;v=4&quot; alt=&quot;Jina AI&quot; width=&quot;16&quot; height=&quot;16&quot; style=&quot;vertical-align:middle;&quot;&gt;
+## How to use this repository
 
-- [Jina-reranker-m0](Jina/Jina-reranker-m0.md)
+**Install all dependencies**
 
-### Llama
-
-- [Llama4-Scout](Llama/Llama4-Scout.md)
-- [Llama3.3-70B](Llama/Llama3.3-70B.md)
-- [Llama3.1](Llama/Llama3.1.md)
-
-### Microsoft &lt;img src=&quot;https://avatars.githubusercontent.com/u/6154722?s=48&amp;v=4&quot; alt=&quot;Microsoft&quot; width=&quot;16&quot; height=&quot;16&quot; style=&quot;vertical-align:middle;&quot;&gt;
-
-- [Phi-4](Microsoft/Phi-4.md)
-
-### MiniMax &lt;img src=&quot;https://github.com/MiniMax-AI/MiniMax-01/raw/main/figures/minimax.svg&quot; alt=&quot;minmax&quot; width=&quot;16&quot; height=&quot;16&quot; style=&quot;vertical-align:middle;&quot;&gt;
-
-- [MiniMax-M2.7, MiniMax-M2.5, MiniMax-M2.1, MiniMax-M2](MiniMax/MiniMax-M2.md)
-
-### Xiaomi MiMo &lt;img src=&quot;https://avatars.githubusercontent.com/u/208276378?&amp;v=4&quot; alt=&quot;Xiaomi MiMo&quot; width=&quot;16&quot; height=&quot;16&quot; style=&quot;vertical-align:middle;&quot;&gt;
-
-- [MiMo-V2-Flash](MiMo/MiMo-V2-Flash.md)
-
-### Mistral AI &lt;img src=&quot;https://avatars.githubusercontent.com/u/132372032?&amp;v=4&quot; alt=&quot;Mistral AI&quot; width=&quot;16&quot; height=&quot;16&quot; style=&quot;vertical-align:middle;&quot;&gt;
-
-- [Ministral-3-Instruct](Mistral/Ministral-3-Instruct.md)
-- [Ministral-3-Reasoning](Mistral/Ministral-3-Reasoning.md)
-- [Mistral-Large-3-Instruct](Mistral/Mistral-Large-3.md)
-
-### Moonshotai &lt;img src=&quot;https://avatars.githubusercontent.com/u/129152888?v=4&quot; alt=&quot;Moonshotai&quot; width=&quot;16&quot; height=&quot;16&quot; style=&quot;vertical-align:middle;&quot;&gt;
-
-- [Kimi-K2.5](moonshotai/Kimi-K2.5.md)
-- [Kimi-K2](moonshotai/Kimi-K2.md)
-- [Kimi-K2-Think](moonshotai/Kimi-K2-Think.md)
-- [Kimi-Linear](moonshotai/Kimi-Linear.md)
-
-### NVIDIA
-
-- [Nemotron-3-Nano-30B-A3B](NVIDIA/Nemotron-3-Nano-30B-A3B.md)
-- [Nemotron-Nano-12B-v2-VL](NVIDIA/Nemotron-Nano-12B-v2-VL.md)
-
-### OpenAI &lt;img src=&quot;https://avatars.githubusercontent.com/u/14957082?v=4&quot; alt=&quot;OpenAI&quot; width=&quot;16&quot; height=&quot;16&quot; style=&quot;vertical-align:middle;&quot;&gt;
-
-- [gpt-oss](OpenAI/GPT-OSS.md)
-
-### PaddlePaddle &lt;img src=&quot;https://avatars.githubusercontent.com/u/23534030?v=4&quot; alt=&quot;PaddlePaddle&quot; width=&quot;16&quot; height=&quot;16&quot; style=&quot;vertical-align:middle;&quot;&gt;
-
-- [PaddleOCR-VL](PaddlePaddle/PaddleOCR-VL.md)
-
-### Qwen &lt;img src=&quot;https://qwenlm.github.io/favicon.png&quot; alt=&quot;Qwen&quot; width=&quot;16&quot; height=&quot;16&quot; style=&quot;vertical-align:middle;&quot;&gt;
-
-- [Qwen3](Qwen/Qwen3.md)
-- [Qwen3-ASR](Qwen/Qwen3-ASR.md)
-- [Qwen3-VL](Qwen/Qwen3-VL.md)
-- [Qwen3-Next](Qwen/Qwen3-Next.md)
-- [Qwen3.5](Qwen/Qwen3.5.md)
-- [Qwen3-Coder-480B-A35B](Qwen/Qwen3-Coder-480B-A35B.md)
-- [Qwen2.5-VL](Qwen/Qwen2.5-VL.md)
-- [Qwen3Guard-Gen](Qwen/Qwen3Guard-Gen.md)
-  
-### Seed &lt;img src=&quot;https://avatars.githubusercontent.com/u/4158466?s=200&amp;v=4&quot; alt=&quot;Seed&quot; width=&quot;16&quot; height=&quot;16&quot; style=&quot;vertical-align:middle;&quot;&gt;
-
-- [Seed-OSS-36B](Seed/Seed-OSS-36B.md)
-
-
-### StepFun &lt;img src=&quot;StepFun/assets/stepfun_logo.jpg&quot; alt=&quot;StepFun&quot; width=&quot;16&quot; height=&quot;16&quot; style=&quot;vertical-align:middle;&quot;&gt;
-
-- [Step-3.5-Flash](StepFun/Step-3.5-Flash.md)
-
-
-### Tencent-Hunyuan &lt;img src=&quot;https://avatars.githubusercontent.com/u/210980732?s=200&amp;v=4&quot; alt=&quot;Tencent-Hunyuan&quot; width=&quot;16&quot; height=&quot;16&quot; style=&quot;vertical-align:middle;&quot;&gt;
-
-- [HunyuanOCR](Tencent-Hunyuan/HunyuanOCR.md)
-
-## Contributing
-
-New recipes live as structured YAML at `models/&lt;hf_org&gt;/&lt;hf_repo&gt;.yaml` and render on [recipes.vllm.ai](https://recipes.vllm.ai/). **See [CONTRIBUTING.md](CONTRIBUTING.md) for the full schema, VRAM formula, and validation steps.**
-
-Quick loop:
-
-```bash
-pnpm install
-pnpm dev                              # http://localhost:3000
-node scripts/build-recipes-api.mjs    # validates every YAML + rebuilds the JSON API
+```
+npm install
 ```
 
-### Legacy MkDocs guides
+**Run ESLint**
 
-The top-level Markdown directories (`DeepSeek/`, `Qwen/`, etc.) are the historical MkDocs site, kept as a reference during the YAML migration. To preview them:
+You may want to run it to check code quality.
 
-```bash
-uv venv
-source .venv/bin/activate
-uv pip install -r requirements.txt
-uv run mkdocs serve --dev-addr 127.0.0.1:8001
+```
+npm run lint
 ```
 
-## License
+**Run all tests**
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](https://github.com/vllm-project/recipes/blob/main/LICENSE) file for details.
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[decaporg/decap-cms]]></title>
-            <link>https://github.com/decaporg/decap-cms</link>
-            <guid>https://github.com/decaporg/decap-cms</guid>
-            <pubDate>Fri, 19 Jun 2026 00:34:33 GMT</pubDate>
-            <description><![CDATA[A Git-based CMS for Static Site Generators]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/decaporg/decap-cms">decaporg/decap-cms</a></h1>
-            <p>A Git-based CMS for Static Site Generators</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 19,163</p>
-            <p>Forks: 3,121</p>
-            <p>Stars today: 6 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;/img/decap.svg&quot; alt=&quot;Decap CMS&quot; width=&quot;260&quot; /&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;strong&gt;Documentation: &lt;a href=&quot;https://www.decapcms.org/&quot;&gt;decapcms.org&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/decaporg/decap-cms/blob/main/LICENSE) [![Netlify Status](https://api.netlify.com/api/v1/badges/8b87160b-0a11-4f75-8050-1d21bc1cff8c/deploy-status)](https://app.netlify.com/sites/decap-www/deploys) [![npm version](https://img.shields.io/npm/v/decap-cms.svg?style=flat)](https://www.npmjs.com/package/decap-cms) [![Build Status](https://github.com/decaporg/decap-cms/workflows/Node%20CI/badge.svg)](https://github.com/decaporg/decap-cms/actions?query=branch%3Amain+workflow%3A%22Node+CI%22) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/decaporg/decap-cms/blob/main/CONTRIBUTING.md)
-
-A CMS for static site generators. Give teams a simple way to edit and add content to any site built with a static site generator.
-
-_Decap CMS is the new name of Netlify CMS [since February 2023](https://www.netlify.com/blog/netlify-cms-to-become-decap-cms/)._
-
-&lt;a href=&quot;https://decapcms.org/chat&quot;&gt;Join us on Discord&lt;/a&gt; for community chat.
-
-## How It Works
-
-Decap CMS is a single-page app that you pull into the `/admin` part of your site.
-
-It presents a clean UI for editing content stored in a Git repository.
-
-You setup a YAML config to describe the content model of your site, and typically
-tweak the main layout of the CMS a bit to fit your own site.
-
-When a user navigates to `/admin/` they&#039;ll be prompted to log in, and once authenticated
-they&#039;ll be able to create new content or edit existing content.
-
-Read more about Decap CMS [Core Concepts](https://www.decapcms.org/docs/intro/).
-
-## Installation and Configuration
-
-Decap CMS can be used in two different ways.
-
-* A quick and easy install that requires a single HTML file and a configuration file. All CMS JavaScript and CSS are loaded from a CDN.
-  Learn more in the [Quick Start Guide](https://www.decapcms.org/docs/quick-start/).
-* A complete, more advanced install that gives you more flexibility but requires a static site builder with a build system that supports npm packages.
-
-Need centralized user management, advanced roles, a database proxy, or premium support? Explore [Decap Turbo](https://decapcms.org/turbo/).
-
-## Sponsors
-
-Help support Decap CMS development by becoming a sponsor! Your contributions help us maintain and improve this open-source project.
-
-[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?style=for-the-badge&amp;logo=github)](https://github.com/sponsors/decaporg)
-[![Open Collective](https://img.shields.io/badge/Sponsor-Open%20Collective-blue?style=for-the-badge&amp;logo=opencollective)](https://opencollective.com/decap)
-
-### Main Partner
-
-Decap CMS is supported by our main partner &lt;a href=&quot;https://p-m.si/&quot;&gt;PM&lt;/a&gt;.
-
-### Backers
-
-![Open Collective Backers](https://opencollective.com/decap/backers.svg?limit=30&amp;button=false&amp;avatarHeight=48&amp;width=400)
-
-&lt;!-- sponsors --&gt;&lt;a href=&quot;https://github.com/Zwyx&quot;&gt;&lt;img src=&quot;https://github.com/Zwyx.png&quot; width=&quot;48px&quot; alt=&quot;Zwyx&quot; style=&quot;border-radius:50%&quot; /&gt;&lt;/a&gt; &amp;nbsp;&lt;a href=&quot;https://github.com/smolcodes&quot;&gt;&lt;img src=&quot;https://github.com/smolcodes.png&quot; width=&quot;48px&quot; alt=&quot;smolcodes&quot; style=&quot;border-radius:50%&quot; /&gt;&lt;/a&gt; &amp;nbsp;&lt;a href=&quot;https://github.com/shizik&quot;&gt;&lt;img src=&quot;https://github.com/shizik.png&quot; width=&quot;48px&quot; alt=&quot;shizik&quot; style=&quot;border-radius:50%&quot; /&gt;&lt;/a&gt; &amp;nbsp;&lt;a href=&quot;https://github.com/JacquesRaoult&quot;&gt;&lt;img src=&quot;https://github.com/JacquesRaoult.png&quot; width=&quot;48px&quot; alt=&quot;JacquesRaoult&quot; style=&quot;border-radius:50%&quot; /&gt;&lt;/a&gt; &amp;nbsp;&lt;!-- sponsors --&gt;
-
-Thank you for your support!
-
-## Contribute
-
-New contributors are always welcome! Check out [CONTRIBUTING.md](https://github.com/decaporg/decap-cms/blob/main/CONTRIBUTING.md) to get involved.
-
-## Change Log
-
-This project adheres to [Semantic Versioning](http://semver.org/).
-Every release is documented on the GitHub [Releases](https://github.com/decaporg/decap-cms/releases) page.
-
-## License
-
-Decap CMS is released under the [MIT License](LICENSE).
-Please make sure you understand its [implications and guarantees](https://writing.kemitchell.com/2016/09/21/MIT-License-Line-by-Line.html).
-
-## Expert Services
-
-Get hands-on help from Decap experts and partners for onboarding, custom feature development, website development and premium support.
-
-[Explore expert services](https://decapcms.org/services/)
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[maboloshi/github-chinese]]></title>
-            <link>https://github.com/maboloshi/github-chinese</link>
-            <guid>https://github.com/maboloshi/github-chinese</guid>
-            <pubDate>Fri, 19 Jun 2026 00:34:32 GMT</pubDate>
-            <description><![CDATA[GitHub 汉化插件，GitHub 中文化界面。 (GitHub Translation To Chinese)]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/maboloshi/github-chinese">maboloshi/github-chinese</a></h1>
-            <p>GitHub 汉化插件，GitHub 中文化界面。 (GitHub Translation To Chinese)</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 27,332</p>
-            <p>Forks: 1,589</p>
-            <p>Stars today: 51 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;&lt;a name=&quot;readme-top&quot;&gt;&lt;/a&gt;
-
-# [GitHub 中文化插件][github-project-link]
-
-&gt; 让 GitHub 界面全面中文化 | 源自 [52cik/github-hans](https://github.com/52cik/github-hans)
-
-**简体中文** · [繁體中文](./README_zh-TW.md) · [反馈问题][github-issues-link]
-
-&lt;!-- SHIELD GROUP --&gt;
-
-[![GitHub stars][github-stars-shield]][github-stars-link]
-[![GitHub forks][github-forks-shield]][github-forks-link]
-[![GitHub issues][github-issues-shield]][github-issues-link]
-[![license GPL-3.0][github-license-shield]][github-license-link]
-[![GreasyFork installs][greasyFork-shield]][greasyFork-link]
-
-&lt;a href=&quot;https://hellogithub.com/repository/738d0abae49543f18d887a7e29ec9e90&quot; target=&quot;_blank&quot;&gt;
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.hellogithub.com/v1/widgets/recommend.svg?rid=738d0abae49543f18d887a7e29ec9e90&amp;claim_uid=zepvSg6Vwl4EqMr&amp;theme=dark&quot; /&gt;
-    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.hellogithub.com/v1/widgets/recommend.svg?rid=738d0abae49543f18d887a7e29ec9e90&amp;claim_uid=zepvSg6Vwl4EqMr&amp;theme=neutral&quot; /&gt;
-    &lt;img alt=&quot;Featured｜HelloGitHub&quot; src=&quot;https://api.hellogithub.com/v1/widgets/recommend.svg?rid=738d0abae49543f18d887a7e29ec9e90&amp;claim_uid=zepvSg6Vwl4EqMr&amp;theme=neutral&quot; style=&quot;width: 250px; height: 54px;&quot; /&gt;
-  &lt;/picture&gt;
-&lt;/a&gt;
-
-&lt;/div&gt;
-
-&gt; [!warning]
-&gt; 本项目从未发布至 GitCode，如您发现请截图并保留证据
-
-&lt;details&gt;
-&lt;summary&gt;&lt;kbd&gt;目录树&lt;/kbd&gt;&lt;/summary&gt;
-
-#### TOC
-- [🌟 功能特性](#-功能特性)
-- [🌐 兼容环境](#-兼容环境)
-- [💻 安装指南](#-安装指南)
-- [🔧 本地调试](#-本地调试)
-- [🔄 更新日志](#-更新日志)
-- [📌 待办事项](#-待办事项)
-- [🤝 参与贡献](#-参与贡献)
-- [🖼️ 效果预览](#-效果预览)
-- [🙏 特别鸣谢](#-特别鸣谢)
-- [📈 项目统计](#-项目统计)
-- [🎁 欢迎打赏](#-欢迎打赏)
-&lt;/details&gt;
-
-## 🌟 功能特性
-
-- [x] 全面中文化 GitHub 界面元素（菜单栏、标题、按钮等）
-- [x] 智能正则匹配功能
-- [x] 支持项目描述的人机翻译
-- [x] 自动本地化时间元素
-- [x] 持续更新词库
-
-## 🌐 兼容环境
-
-浏览器类型           | 支持的脚本管理器
-:------------------: | :---------------:
-Chrome / Chromium 内核 | [Tampermonkey][Tampermonkey], [Violentmonkey][Violentmonkey]
-Safari（全平台）     | [Tampermonkey][Tampermonkey], [Macaque][Macaque], [Stay][Stay]
-Firefox / Gecko 内核   | [Tampermonkey][Tampermonkey], [Violentmonkey][Violentmonkey]
-Via（Android）       | 内置管理器
-
-## 💻 安装指南
-
-1. 安装用户脚本管理器：
-    - 推荐：[Tampermonkey][Tampermonkey]
-1. **基于 Chrome / Chromium 内核浏览器：**
-    1. 务必开启 “扩展程序” 管理中的 **“开发者模式”**[^1]
-    1. 务必开启 “扩展程序” 管理中脚本管理器扩展的 **“允许运行用户脚本”**
-    1. 具体可参考 [Tampermonkey 官方指引](https://www.tampermonkey.net/faq.php#Q209)
-1. 选择安装源：
-    - [GitHub 源【开发版】][main.user.js]
-    - [GreasyFork 源【稳定版】][main(greasyfork).user.js]
-1. 刷新页面后，插件即可生效
-1. 必要时，重启浏览器
-
-[^1]: [Chrome 切换到 Manifest V3后，使用问题](https://github.com/maboloshi/github-chinese/issues/234)
-
-&gt; [!NOTE]
-&gt; **版本说明**：
-&gt; - 🚀 开发版：实时更新，每周五自动更新词库
-&gt; - 🛡️ 稳定版：每周一同步开发版词库，更稳定
-
-## 🔧 本地调试
-
-1. 安装 [Tampermonkey][Tampermonkey]，并启用 “允许访问文件网址”。
-1. 下载词库文件到本地（如：`D:\github-chinese\locals.js`）
-1. 在脚本管理器中修改引用路径：
-   ```js
-   // 原始路径
-   // @require https://raw.githubusercontent.com/...
-   
-   // 修改为
-   // @require file:///D:/github-chinese/locals.js
-   ```
-1. 刷新页面生效
-
-&gt; [!IMPORTANT]
-&gt; **若无效：**
-&gt; 1. 进入 [Tampermonkey][Tampermonkey] 插件`设置页`
-&gt; 1. 将 `通用 - 配置模式` 设置为`高级`，进入高级设置模式
-&gt; 1. 找到 `安全 - 允许脚本访问本地文件` 并设置为 `外部(@require 和 @resource)`
-
-&gt; [!TIP]
-&gt; 💡 **温馨提示：** 您可以将词库文件拖拽至浏览器地址栏，复制路径直接使用。
-
-&lt;div align=&quot;right&quot;&gt;
-
-[![][back-to-top]](#readme-top)
-
-&lt;/div&gt;
-
-
-## 🔄 更新日志
-
-### 最新版本
-
-#### v1.9.4.3 (2026-06-17)
-
-1. 兼容修复`1.9.2.3`,`1.9.4.3`：
-   - 收窄 React 搜索模块忽略范围，恢复仓库议题页和搜索页主体区域翻译。
-
-#### v1.9.4.2 (2026-06-17)
-
-1. 兼容修复`1.9.2.2`,`1.9.4.2`：
-   - 在保持 React 头部搜索框稳定的前提下，恢复头部导航、菜单、搜索弹层和提示翻译。
-
-#### v1.9.4.1 (2026-06-16)
-
-1. 临时修复`1.9.2`,`1.9.4`：
-   - 关于 GitHub 引入 React 机制导致头部搜索框消失。副作用整个头部导航全部加入忽略规则，无法翻译。
-
-#### v1.9.4 (2026-05-17)
-
-1. 代码重构：
-   - 全面结构化重组：抽离配置常量 `CONFIG`、状态管理器 `State`
-   - 引入 `safe()` 错误边界包裹关键函数，便于排错
-   - 函数拆分细化：`watchUpdate` → `setupMutationObserver` + `processMutations`，`transDesc` → `handleTransClick` + `requestRemoteTrans` + `showTransResult`
-   - `processMutations` 祖先去重：同一批 mutation 中后代节点不再重复遍历
-1. 新增功能：
-   - 翻译结果 UI 暗色主题适配（CSS 变量 + `prefers-color-scheme` 媒体查询），使用 `GM_addStyle` 插入
-   - 未命中词条管理器 `MissedTermsManager`（记录、导出 JSON、清空、统计、菜单）
-   - 开发者模式（`CONFIG.DEV`）控制未命中词条菜单显隐
-   - Tampermonkey `onurlchange` 事件支持（`setupUrlChangeListener`）
-1. 修复：
-   - 修复翻译 API 响应 XSS 漏洞：`innerHTML` 模板拼接改为 `textContent` 安全赋值（由 #692 报告）
-   - 修复 TreeWalker 过滤器在 `ignoreSelectors` 为空时抛出 `SyntaxError`
-   - 修复翻译按钮可能重复添加的问题（`nextSibling` 空值检查）
-   - 修复 `RELATIVE-TIME` shadowRoot 为 null 时的崩溃
-   - 修复从未识别页面离开后 `State.pageConfig` 未清空，导致旧配置残留的问题
-1. 性能优化：减少无效迭代，消除不必要的 DOM 遍历
-
-#### v1.9.3 (2024-08-18)
-
-1. 新增功能：通过设置中文环境，自动本地化时间元素，仅保留`on`开头的时间正则，并停用时间元素监视
-1. 优化突变翻译处理：
-   - 引入`characterDataPage`规则，对特定页面启用`筛选字符数据`的变更
-   - 引入`ignoreMutationSelectorPage`规则，忽略特定突变元素
-1. 合并`reIgnoreClass，reIgnoreItemprop，ignoreId，ignoreTag`为`ignoreSelectorPage`规则，处理全局及特定页面，忽略特定元素
-1. 引入全局缓存模式，减少重复构建包括不限于基于`page`变化的忽略规则、正则规则数组等
-1. 调整：更新讯飞听见翻译引擎v2.0
-1. 优化：梳理、优化脚本
-1. 调整：调整词库语言代码为`zh-CN`, 与环境语言设置一致
-
-&lt;details&gt;&lt;summary&gt;&lt;kbd&gt;查看更多历史版本&lt;/kbd&gt;&lt;/summary&gt;
-
-#### v1.9.2 (2024-06-14)
-
-1. 适配`www.githubstatus.com`
-1. 适配`skills.github.com`
-
-#### v1.9.1 (2024-05-23)
-
-1. 更新`切换正则功能按钮`
-
-#### v1.9.0 (2023-12-09)
-
-1. 重新定义版本号规则, 如`1.9.0-2023-12-09`。
-   - `1.9.0`: 主版本号（由项目所有者更新）
-   - `2023-12-09`：`词库`发布版本号（由 GitHub Action 自动更新）
-1. 加强: [GitHub 源【开发版】][main.user.js]每周一凌晨自动更新`词库`发布版本号
-1. 加强: [GreasyFork 源【稳定版】][main(greasyfork).user.js]每周五凌晨自动更新`词库`发布版本号, 词库内容同上一次[GitHub 源【开发版】][main.user.js]
-1. 加强：在 `README.md` 中自动更新贡献者头像
-1. 更新: 忽略规则, 词条等
-
-#### v1.8.5 (2023-08-31)
-
-1. 优化: `transDesc 函数`代码
-1. 修复: 重复添加`translate-me`翻译按钮
-1. 加强：`watchUpdate 函数`新增节点文本更新的情况
-1. 调整: `transBySelector和transDesc函数`延迟执行时间
-1. 更新: 忽略规则, 词条等
-
-#### v1.8.4 (2023-08-08)
-
-1. 修复: `Itemprop`过滤规则, 依然使用正则方式
-1. 修复: `tooltipped`样式提示, 依然使用正则方式
-
-#### v1.8.3 (2023-08-07)
-
-1. 梳理、优化脚本
-1. 更新: 忽略规则, 大量词条等
-
-#### v1.8.2 (2023-05-15)
-
-1. `greasyfork 托管`源切换到`按页面精细化词条模式`
-1. 调整词库格式
-1. 功能加强: 优化`元素筛选器`翻译逻辑
-1. 更新: 忽略规则, 大量词条等
-
-#### v1.8.1 (2023-01-22)
-
-1. 修复: #8 与 dark reader 扩展发生冲突，导致时间显示出现问题
-1. `GitHub`源开始切换到`按页面精细化词条模式(开发版)`, 词库未完全迁移适配
-1. 停止`greasyfork`源词库文件的同步更新
-
-#### v1.8.0 (2023-01-18)
-
-1. 删除: `TURBO-FRAME`框架处理代码. Github 已调整新动态加载模式, 直接检测`url`的变化就能获取对应的`page`信息
-1. 新增: 支持时间元素的`Shadow DOM`翻译, 并监听变化
-1. 新增: 启用并更新`时间元素翻译`专项正则词条
-1. 新增: 仅当`page`有效才翻译页面
-1. 修复: 原`简介翻译`引擎`GitHub中文社区`失效, 改为`讯飞`引擎(测试)
-1. 修复: 追加公共正则重复迭代的问题
-1. 修复: 正则标记变量`RegExp`与构造函数`new RegExp`冲突
-1. 更新: 忽略规则, 词条等
-
-预告, 下次将细化`page`匹配规则, 导致词库文件结构大调整, 词库文件会适当变大, 页面正则更精细效率会提升
-
-#### v1.7.9 (2022-07-17)
-
-GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/defunkt/jquery-pjax) 切换到 [hotwired/turbo](turbo.hotwired.dev), 导致已有的动态监测方式逐步失效
-
-目前, 通过以下修复:
-
-1. 新增 `BODY` 元素新增监视
-1. 解析 `TURBO-FRAME` 框架, 获取对应的 `page`
-1. 修复 github 新动态加载模式, 导致`翻译描述`返回值无法插入
-1. 修复 github 新动态加载模式, 导致`chrome`浏览器自带翻译功能卡死页面
-
-其他更新:
-
-1. 修复`rePagePath`,`rePagePathRepo`,`rePagePathOrg`匹配规则，限制路径匹配层次，排除干扰
-1. 直接使用网页URL`document.URL`变化触发`标题翻译`和`JS 筛选器`翻译
-1. 修复`关闭正则`无法生效, 需要刷新页面才生效
-1. 日常更新词库和忽略规则
-1. 更新`JS 筛选器`规则
-
-#### v1.7.8 (2022-06-29)
-
-1. 紧急修复: GitHub 变更了`document.body`和`title`更新机制, 导致原有的`监测更新`规则部分失效, 目前使用`document.documentElement`监视整个页面 DOM 的变更
-1. 跳过`&lt;HEAD&gt;`标签
-1. `标题翻译`和`JS 筛选器`翻译, 依据 URL变化更新
-
-#### v1.7.7 (2022-06-26)
-
-1. 新增`时间元素翻译`功能
-1. 重写`页面标题翻译`函数
-1. 梳理`遍历节点`函数逻辑
-1. 优化`transPage`函数，默认翻译公共部分
-1. 调整`getPage`函数, 使`ClassName匹配规则`优先
-1. 优化`translate`函数, 跳过`不存在英文字母和符号,.`, 保留首尾空白部分等
-1. 部分函数重命名，使用`es6`新语法
-1. 日常更新词库和忽略规则，修复一个`JS 选择器规则`
-
-#### v1.7.6 (2022-05-12)
-
-1. 日常更新词库和忽略规则
-1. 添加手动开启/禁用正则翻译，添加切换菜单
-1. 优化翻译文本函数：避免已翻译词汇二次匹配，提高效率；局部翻译优先于全局
-
-&lt;/details&gt;
-
-&lt;div align=&quot;right&quot;&gt;
-
-[![][back-to-top]](#readme-top)
-
-&lt;/div&gt;
-
-
-## 📌 待办事项
-
-1. 添加 GitHub 专用名词解释
-1. 整理 [Git](https://git-scm.com/) &amp; [GitHub](https://github.com/) 学习资料
-1. 完善文档翻译，需大家 PR 共同翻译
-
-## 🤝 参与贡献
-
-欢迎通过以下方式参与贡献：
-
-1. 完善词库翻译（编辑 `locals.js`）
-1. 提交议题报告，参与话题讨论
-1. 改进代码逻辑
-
-[![][pr-welcome-shield]][pr-welcome-link]
-
-### 翻译参考资源:
-
-1. [Pro Git 第二版 简体中文](https://git-scm.com/book/zh/v2)
-1. [Pro Git: 翻译约定](https://github.com/progit/progit2-zh/blob/master/TRANSLATION_NOTES.asc)
-1. [Git 官方软件包的简体中文翻译](https://github.com/git/git/blob/master/po/zh_CN.po)
-1. [GitHub 词汇表官方译本](https://docs.github.com/cn/get-started/quickstart/github-glossary)
-1. **[CSS 选择器](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference/Selectors) 用于编写忽略规则**
-
-&gt; [查看详细贡献指南](https://github.com/maboloshi/github-chinese/discussions/57)
-
-## 🖼️ 效果预览
-
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img1.png&quot;/&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img3.png&quot;/&gt;
-    &lt;img src=&quot;https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img1.png&quot; width=&quot;75%&quot; /&gt;
-  &lt;/picture&gt;
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img2.png&quot;/&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img4.png&quot;/&gt;
-    &lt;img src=&quot;https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img2.png&quot; width=&quot;75%&quot; /&gt;
-  &lt;/picture&gt;
-
-## 🙏 特别鸣谢
-
-### 核心团队
-
-- [maboloshi](https://github.com/maboloshi) - 项目作者
-- [wyc-26](https://github.com/wyc-26)，[陈生杂物房](https://github.com/TC999) - 项目协作者
-- [52cik](https://github.com/52cik) - 项目原作者
-
-### 贡献者墙
-
-一如既往，感谢我们出色的贡献者❤️！
-
-&lt;!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT--&gt;
-&lt;a href=&quot;https://github.com/maboloshi&quot; title=&quot;沙漠之子&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/7850715?v=4&quot; width=&quot;42;&quot; alt=&quot;沙漠之子&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/52cik&quot; title=&quot;楼教主&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/5033310?v=4&quot; width=&quot;42;&quot; alt=&quot;楼教主&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/TC999&quot; title=&quot;陈生杂物房&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/88823709?v=4&quot; width=&quot;42;&quot; alt=&quot;陈生杂物房&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/wyc-26&quot; title=&quot;wyc-26&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/154735436?v=4&quot; width=&quot;42;&quot; alt=&quot;wyc-26&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/qznfbnj&quot; title=&quot;其智乃反不能及&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/100760086?v=4&quot; width=&quot;42;&quot; alt=&quot;其智乃反不能及&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/LuYifei2011&quot; title=&quot;Lu Yifei&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/118034848?v=4&quot; width=&quot;42;&quot; alt=&quot;Lu Yifei&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/tangyuan0821&quot; title=&quot;Paper Moon&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/195516213?v=4&quot; width=&quot;42;&quot; alt=&quot;Paper Moon&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/cat-kun&quot; title=&quot;cat-kun&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/8529528?v=4&quot; width=&quot;42;&quot; alt=&quot;cat-kun&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/pylover7&quot; title=&quot;大叶子&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/56282729?v=4&quot; width=&quot;42;&quot; alt=&quot;大叶子&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/Kisechan&quot; title=&quot;Kise Platinyl&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/162338950?v=4&quot; width=&quot;42;&quot; alt=&quot;Kise Platinyl&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/pecasha&quot; title=&quot;Pecasha&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/9607128?v=4&quot; width=&quot;42;&quot; alt=&quot;Pecasha&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/pooneyy&quot; title=&quot;poney&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/85266337?v=4&quot; width=&quot;42;&quot; alt=&quot;poney&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/ChinaGodMan&quot; title=&quot;人民的勤务员&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/96548841?v=4&quot; width=&quot;42;&quot; alt=&quot;人民的勤务员&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/sebastiondev&quot; title=&quot;Sebastion&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/262984339?v=4&quot; width=&quot;42;&quot; alt=&quot;Sebastion&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/PtJade-Ceramic&quot; title=&quot;PtJade Ceramic&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/185668489?v=4&quot; width=&quot;42;&quot; alt=&quot;PtJade Ceramic&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/MasterBao66&quot; title=&quot;Mr.Baoboer&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/272576744?v=4&quot; width=&quot;42;&quot; alt=&quot;Mr.Baoboer&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/wang93wei&quot; title=&quot;AlanWang&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/6371053?v=4&quot; width=&quot;42;&quot; alt=&quot;AlanWang&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/yrljroli&quot; title=&quot;苓𥤚&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/169890386?v=4&quot; width=&quot;42;&quot; alt=&quot;苓𥤚&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/YiShengJunn&quot; title=&quot;益生君&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/134821571?v=4&quot; width=&quot;42;&quot; alt=&quot;益生君&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/3DMXM&quot; title=&quot;小莫&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/28587093?v=4&quot; width=&quot;42;&quot; alt=&quot;小莫&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/xuezhaju&quot; title=&quot;学渣驹&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/175468713?v=4&quot; width=&quot;42;&quot; alt=&quot;学渣驹&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/xuexb&quot; title=&quot;前端小武&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/3872051?v=4&quot; width=&quot;42;&quot; alt=&quot;前端小武&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/wang4yu6peng13&quot; title=&quot;wang4yu6peng13&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/10207042?v=4&quot; width=&quot;42;&quot; alt=&quot;wang4yu6peng13&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/pangshitong&quot; title=&quot;pangshitong&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/41714457?v=4&quot; width=&quot;42;&quot; alt=&quot;pangshitong&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/daydaygo&quot; title=&quot;dayday&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/3986303?v=4&quot; width=&quot;42;&quot; alt=&quot;dayday&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/heicks&quot; title=&quot;create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/12287943?v=4&quot; width=&quot;42;&quot; alt=&quot;create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/shuwn&quot; title=&quot;Shuwn Hsu&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/20023822?v=4&quot; width=&quot;42;&quot; alt=&quot;Shuwn Hsu&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/Iamliuxiaozhen&quot; title=&quot;Oliver Lin&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/149680880?v=4&quot; width=&quot;42;&quot; alt=&quot;Oliver Lin&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/NyA1K0&quot; title=&quot;NyA!K0&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/177237971?v=4&quot; width=&quot;42;&quot; alt=&quot;NyA!K0&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/MaydayV&quot; title=&quot;MaydayV&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/61279703?v=4&quot; width=&quot;42;&quot; alt=&quot;MaydayV&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/KS-OTO&quot; title=&quot;KS-OTO&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/6616413?v=4&quot; width=&quot;42;&quot; alt=&quot;KS-OTO&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/swsoyee&quot; title=&quot;InfinityLoop&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/20528423?v=4&quot; width=&quot;42;&quot; alt=&quot;InfinityLoop&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/ImgBotApp&quot; title=&quot;Imgbot&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/31427850?v=4&quot; width=&quot;42;&quot; alt=&quot;Imgbot&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/HeavenlessLing&quot; title=&quot;Heavenless&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/238226870?v=4&quot; width=&quot;42;&quot; alt=&quot;Heavenless&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/BluewhaleYF&quot; title=&quot;Flint Scophire&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/206069864?v=4&quot; width=&quot;42;&quot; alt=&quot;Flint Scophire&quot;/&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://github.com/neveler&quot; title=&quot;neveler&quot;&gt;
-  &lt;img src=&quot;https://avatars.githubusercontent.com/u/55753029?v=4&quot; width=&quot;42;&quot; alt=&quot;neveler&quot;/&gt;
-&lt;/a&gt;
-&lt;!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END--&gt;
-
-&gt; 贡献者列表，由 [GitHub Action][update-contributors-images] 自动生成
-
-&lt;div align=&quot;right&quot;&gt;
-
-[![][back-to-top]](#readme-top)
-
-&lt;/div&gt;
-
-
-## 📈 项目统计
-
-&lt;a href=&quot;https://star-history.com/#maboloshi/github-chinese&amp;Timeline&quot;&gt;
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/svg?repos=maboloshi/github-chinese&amp;type=Timeline&amp;theme=dark&quot; /&gt;
-    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/svg?repos=maboloshi/github-chinese&amp;type=Timeline&quot; /&gt;
-    &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/svg?repos=maboloshi/github-chinese&amp;type=Timeline&quot; width=&quot;75%&quot; /&gt;
-  &lt;/picture&gt;
-&lt;/a&gt;
-
-![Alt](https://repobeats.axiom.co/api/embed/ae4c378f0e6ec317654ec5c4e8b01218c734cd53.svg &quot;Repobeats analytics image&quot;)
-
-&lt;div align=&quot;right&quot;&gt;
-
-[![][back-to-top]](#readme-top)
-
-&lt;/div&gt;
-
-## 🎁 欢迎打赏
-[赞赏列表](https://github.com/maboloshi/maboloshi/issues/1)
-|                                        微信赞赏                                        |                                       支付宝赞赏                                       |
-| :--------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: |
-| &lt;img src=&quot;https://cdn.jsdelivr.net/gh/maboloshi/maboloshi/img/wechat.png?raw=true&quot; alt=&quot;WeChat QRcode&quot; width=200&gt; &lt;br&gt;&lt;small&gt;☕喝点咖啡继续干☕&lt;/small&gt; | &lt;img src=&quot;https://cdn.jsdelivr.net/gh/maboloshi/maboloshi/img/alipay-1.jpg?raw=true&quot; alt=&quot;AliPay QRcode&quot; width=200&gt; &lt;br&gt;&lt;small&gt;🌶️来包辣条吧~🍪&lt;/small&gt; |
-
-
-&lt;!-- LINK GROUP --&gt;
-
-[back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square
-[github-project-link]: https://github.com/maboloshi/github-chinese &quot;GitHub 中文化插件&quot;
-[github-issues-link]: https://github.com/maboloshi/github-chinese/issues &quot;议题&quot;
-[github-issues-shield]: https://img.shields.io/github/issues/maboloshi/github-chinese?style=flat-square&amp;logo=github&amp;label=Issue
-[github-stars-link]: https://github.com/maboloshi/github-chinese/stargazers &quot;星标&quot;
-[github-stars-shield]: https://img.shields.io/github/stars/maboloshi/github-chinese?style=flat-square&amp;logo=github&amp;label=Star
-[github-forks-link]: https://github.com/maboloshi/github-chinese/network &quot;复刻&quot;
-[github-forks-shield]: https://img.shields.io/github/forks/maboloshi/github-chinese?style=flat-square&amp;logo=github&amp;label=Fork
-[github-license-link]: https://opensource.org/licenses/GPL-3.0  &quot;许可证&quot;
-[github-license-shield]: https://img.shields.io/github/license/maboloshi/github-chinese?style=flat-square&amp;logo=github&amp;label=License
-[greasyFork-link]: https://greasyfork.org/scripts/435208  &quot;GreasyFork 源 - GitHub 中文化插件&quot;
-[greasyFork-shield]: https://img.shields.io/greasyfork/dt/435208?style=flat-square&amp;logo=GreasyFork&amp;label=GreasyFork%20Installs
-[pr-welcome-link]: https://github.com/maboloshi/github-chinese/pulls
-[pr-welcome-shield]: https://img.shields.io/badge/🤯_pr_welcome-%E2%86%92-ffcb47?labelColor=black&amp;style=for-the-badge &quot;欢迎提交 PR&quot;
-[Tampermonkey]: http://tampermonkey.net/ &quot;篡改猴&quot;
-[Violentmonkey]: https://violentmonkey.github.io/ &quot;暴力猴&quot;
-[Macaque]: https://macaque.app/ &quot;猕猴&quot;
-[Stay]: https://apps.apple.com/cn/app/stay-for-safari-%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BC%B4%E4%BE%A3/id1591620171 &quot;Stay&quot;
-[main.user.js]: https://github.com/maboloshi/github-chinese/raw/gh-pages/main.user.js &quot;GitHub 中文化插件 - GitHub 源&quot;
-[main(greasyfork).user.js]: https://greasyfork.org/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6.user.js &quot;GitHub 中文化插件 - GreasyFork 源&quot;
-[update-contributors-images]: https://github.com/maboloshi/github-chinese/blob/gh-pages/.github/workflows/update_contributors_images.yml
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[zed-industries/extensions]]></title>
-            <link>https://github.com/zed-industries/extensions</link>
-            <guid>https://github.com/zed-industries/extensions</guid>
-            <pubDate>Fri, 19 Jun 2026 00:34:31 GMT</pubDate>
-            <description><![CDATA[Extensions for the Zed editor]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/zed-industries/extensions">zed-industries/extensions</a></h1>
-            <p>Extensions for the Zed editor</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 1,758</p>
-            <p>Forks: 2,071</p>
-            <p>Stars today: 2 stars today</p>
-            <h2>README</h2><pre># Zed Extensions
-
-This is the central repository containing the extensions available for [Zed](https://zed.dev/).
-
-## Getting started
-
-See the [Developing Extensions](https://zed.dev/docs/extensions/developing-extensions) docs for how to develop and publish your extension
-
-Looking for extension ideas? Check out:
-
-- [Top theme requests](https://github.com/zed-industries/extensions/issues?q=is%3Aissue+is%3Aopen+label%3Atheme+sort%3Areactions-%2B1-desc)
-- [Top language requests](https://github.com/zed-industries/extensions/issues?q=is%3Aissue+is%3Aopen+label%3Alanguage+sort%3Areactions-%2B1-desc)
-
-If an issue requesting an extension is tagged with the `needs infrastructure` label, it indicates that the extension cannot currently be developed due to the absence of necessary system infrastructure.
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[facebook/stylex]]></title>
-            <link>https://github.com/facebook/stylex</link>
-            <guid>https://github.com/facebook/stylex</guid>
-            <pubDate>Fri, 19 Jun 2026 00:34:30 GMT</pubDate>
-            <description><![CDATA[StyleX is the styling system for ambitious user interfaces.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/facebook/stylex">facebook/stylex</a></h1>
-            <p>StyleX is the styling system for ambitious user interfaces.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 9,355</p>
-            <p>Forks: 424</p>
-            <p>Stars today: 19 stars today</p>
-            <h2>README</h2><pre># StyleX &amp;middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/stylex/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/@stylexjs/stylex.svg?style=flat)](https://www.npmjs.com/package/@stylexjs/stylex) [![tests](https://github.com/facebook/stylex/actions/workflows/tests.yml/badge.svg)](https://github.com/facebook/stylex/actions/workflows/tests.yml) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/facebook/stylex/blob/main/.github/CONTRIBUTING.md)
-
-StyleX is a JavaScript library for defining styles for optimized user
-interfaces.
-
-## Documentation
-
-[Documentation Website](https://stylexjs.com)
-
-Documentation for individual packages can be found in their respective README
-files. Start with
-[`@stylexjs/stylex`](https://github.com/facebook/stylex/blob/main/packages/@stylexjs/stylex).
-
-### Example
-
-Here is a simple example of StyleX use:
-
-```js
-import * as stylex from &#039;@stylexjs/stylex&#039;;
-
-const styles = stylex.create({
-  root: {
-    padding: 10,
-  },
-  element: {
-    backgroundColor: &#039;red&#039;,
-  },
-});
-
-const styleProps = stylex.props(styles.root, styles.element);
+```
+npm test
 ```
 
-## Development
+**Run tests by name**
 
-This is the development monorepo for StyleX.
+```
+npm test -- &#039;LinkedList&#039;
+```
 
-### Structure
+**Troubleshooting**
 
-- `.github`
-  - Contains workflows used by GitHub Actions.
-  - Contains issue templates and contribution guidelines.
-- `examples`
-  - Contains examples using StyleX and its integration with build tools.
-- `packages`
-  - Contains the public and private packages managed in the monorepo.
-  - [babel-plugin](https://github.com/facebook/stylex/blob/main/packages/@stylexjs/babel-plugin)
-  - [benchmarks](https://github.com/facebook/stylex/blob/main/packages/benchmarks)
-  - [cli](https://github.com/facebook/stylex/blob/main/packages/@stylexjs/cli)
-  - [docs](https://github.com/facebook/stylex/blob/main/packages/docs)
-  - [eslint-plugin](https://github.com/facebook/stylex/blob/main/packages/@stylexjs/eslint-plugin)
-  - [postcss-plugin](https://github.com/facebook/stylex/blob/main/packages/@stylexjs/postcss-plugin)
-  - [rollup-plugin](https://github.com/facebook/stylex/blob/main/packages/@stylexjs/rollup-plugin)
-  - [scripts](https://github.com/facebook/stylex/blob/main/packages/scripts)
-  - [shared](https://github.com/facebook/stylex/blob/main/packages/@stylexjs/babel-plugin/shared)
-  - [style-value-parser](https://github.com/facebook/stylex/blob/main/packages/style-value-parser)
-  - [stylex](https://github.com/facebook/stylex/blob/main/packages/@stylexjs/stylex)
+If linting or testing is failing, try to delete the `node_modules` folder and re-install npm packages:
 
+```
+rm -rf ./node_modules
+npm i
+```
 
-### Tasks
+Also, make sure that you&#039;re using the correct Node version (`&gt;=16`). If you&#039;re using [nvm](https://github.com/nvm-sh/nvm) for Node version management you may run `nvm use` from the root folder of the project and the correct version will be picked up.
 
-First, `yarn install` the yarn workspace.
+**Playground**
 
-- `build`
-  - Use `yarn build` to run the build script in every package.
-  - Use `yarn workspace &lt;package-name&gt; build` to run the build script for a
-    specific package.
-- `test`
-  - Use `yarn test` to run tests for every package.
-  - Use `yarn workspace &lt;package-name&gt; test` to run the test script for a
-    specific package. More details can be found in the contributing guide below.
+You 
 
-## Contributing
-
-Development happens in the open on GitHub and we are grateful for contributions
-including bug fixes, improvements, and ideas.
-
-### Code of Conduct
-
-This project expects all participants to adhere to Meta&#039;s OSS
-[Code of Conduct](https://opensource.fb.com/code-of-conduct/). Please read
-the full text so that you can understand what actions will and will not be
-tolerated.
-
-### Contributing Guide
-
-Read the
-[contributing guide](https://github.com/facebook/stylex/blob/main/.github/CONTRIBUTING.md)
-to learn about our development process, how to propose bug fixes and
-improvements, and how to build and test your changes.
-
-### Architectural Principles
-
-Before proposing a change or addition to the StyleX API, you should familiarize
-yourself with the
-[goals and architectural principles](https://stylexjs.com/docs/learn/thinking-in-stylex/)
-of the project.
-
-### License
-
-StyleX is [MIT licensed](./LICENSE).
-
-</pre>
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
