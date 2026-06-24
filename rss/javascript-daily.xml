@@ -4,648 +4,333 @@
         <title>GitHub Trending Today for javascript - JavaScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for javascript.</description>
-        <lastBuildDate>Tue, 23 Jun 2026 00:27:14 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 24 Jun 2026 00:22:19 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2026, GitHub</copyright>
         <item>
-            <title><![CDATA[tradesdontlie/tradingview-mcp]]></title>
-            <link>https://github.com/tradesdontlie/tradingview-mcp</link>
-            <guid>https://github.com/tradesdontlie/tradingview-mcp</guid>
-            <pubDate>Tue, 23 Jun 2026 00:27:14 GMT</pubDate>
-            <description><![CDATA[AI-assisted TradingView chart analysis — connect Claude Code to your TradingView Desktop for personal workflow automation]]></description>
+            <title><![CDATA[affaan-m/ECC]]></title>
+            <link>https://github.com/affaan-m/ECC</link>
+            <guid>https://github.com/affaan-m/ECC</guid>
+            <pubDate>Wed, 24 Jun 2026 00:22:19 GMT</pubDate>
+            <description><![CDATA[The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/tradesdontlie/tradingview-mcp">tradesdontlie/tradingview-mcp</a></h1>
-            <p>AI-assisted TradingView chart analysis — connect Claude Code to your TradingView Desktop for personal workflow automation</p>
+            <h1><a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a></h1>
+            <p>The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 3,871</p>
-            <p>Forks: 1,896</p>
-            <p>Stars today: 42 stars today</p>
-            <h2>README</h2><pre># TradingView MCP Bridge
+            <p>Stars: 220,523</p>
+            <p>Forks: 33,781</p>
+            <p>Stars today: 593 stars today</p>
+            <h2>README</h2><pre>**Language:** English | [Português (Brasil)](docs/pt-BR/README.md) | [简体中文](README.zh-CN.md) | [繁體中文](docs/zh-TW/README.md) | [日本語](docs/ja-JP/README.md) | [한국어](docs/ko-KR/README.md) | [Türkçe](docs/tr/README.md) | [Русский](docs/ru/README.md) | [Tiếng Việt](docs/vi-VN/README.md) | [ไทย](docs/th/README.md) | [Deutsch](docs/de-DE/README.md) | [Español](docs/es/README.md)
 
-Personal AI assistant for your TradingView Desktop charts. Connects Claude Code to your locally running TradingView app via Chrome DevTools Protocol for AI-assisted chart analysis, Pine Script development, and workflow automation.
+![ECC — the agent harness operating system](assets/hero.png)
+
+[![Discord](https://img.shields.io/discord/1496644400590094540?logo=discord&amp;logoColor=white&amp;label=Join%20the%20Discord&amp;color=5865F2)](https://discord.gg/36yGMHGFbR)
+[![Website](https://img.shields.io/badge/Website-ecc.tools-E07856?logo=googlechrome&amp;logoColor=white)](https://ecc.tools)
+[![GitHub App](https://img.shields.io/badge/GitHub%20App-ECC%20Tools-181717?logo=github&amp;logoColor=white)](https://github.com/apps/ecc-tools)
+[![Guides](https://img.shields.io/badge/Guides-Start%20here-1f6feb?logo=readme&amp;logoColor=white)](#the-guides)
+
+[![Stars](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Fstars&amp;style=flat)](https://github.com/affaan-m/ECC/stargazers)
+[![Forks](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Fforks&amp;style=flat)](https://github.com/affaan-m/ECC/network/members)
+[![Contributors](https://img.shields.io/github/contributors/affaan-m/ECC?style=flat)](https://github.com/affaan-m/ECC/graphs/contributors)
+[![npm ecc-universal](https://img.shields.io/npm/dw/ecc-universal?label=ecc-universal%20weekly%20downloads&amp;logo=npm)](https://www.npmjs.com/package/ecc-universal)
+[![npm ecc-agentshield](https://img.shields.io/npm/dw/ecc-agentshield?label=ecc-agentshield%20weekly%20downloads&amp;logo=npm)](https://www.npmjs.com/package/ecc-agentshield)
+[![GitHub App Install](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Finstalls&amp;logo=github)](https://github.com/marketplace/ecc-tools)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Shell](https://img.shields.io/badge/-Shell-4EAA25?logo=gnu-bash&amp;logoColor=white)
+![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&amp;logoColor=white)
+![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&amp;logoColor=white)
+![Go](https://img.shields.io/badge/-Go-00ADD8?logo=go&amp;logoColor=white)
+![Java](https://img.shields.io/badge/-Java-ED8B00?logo=openjdk&amp;logoColor=white)
+![Perl](https://img.shields.io/badge/-Perl-39457E?logo=perl&amp;logoColor=white)
+![Markdown](https://img.shields.io/badge/-Markdown-000000?logo=markdown&amp;logoColor=white)
 
 &gt; [!WARNING]
-&gt; **This tool is not affiliated with, endorsed by, or associated with TradingView Inc.** It interacts with your locally running TradingView Desktop application via Chrome DevTools Protocol. Review the [Disclaimer](#disclaimer) before use.
+&gt; **Official sources only.** Install ECC only from verified channels: the GitHub repository [github.com/affaan-m/ECC](https://github.com/affaan-m/ECC), the npm packages [`ecc-universal`](https://www.npmjs.com/package/ecc-universal) and [`ecc-agentshield`](https://www.npmjs.com/package/ecc-agentshield), the [GitHub App](https://github.com/apps/ecc-tools), the plugin slug `ecc@ecc`, and the project website [ecc.tools](https://ecc.tools). Third-party re-uploads and unofficial mirrors are not maintained or reviewed by the project and may contain malware.
 
-&gt; [!IMPORTANT]
-&gt; **Requires a valid TradingView subscription.** This tool does not bypass or circumvent any TradingView paywall or access control. It reads from and controls the TradingView Desktop app already running on your machine.
+**211.9K+ stars** | **32.5K+ forks** | **230+ contributors** | **12+ language ecosystems** | **Cross-harness agent workflows**
 
-&gt; [!NOTE]
-&gt; **All data processing occurs locally on your machine.** No TradingView data is transmitted, stored, or redistributed externally by this tool.
+---
 
-&gt; [!CAUTION]
-&gt; This tool accesses undocumented internal TradingView APIs via the Electron debug interface. These can change or break without notice in any TradingView update. Pin your TradingView Desktop version if stability matters to you.
+&lt;div align=&quot;center&quot;&gt;
 
-## How It Works (and why it&#039;s safe to run)
+**Language / 语言 / 語言 / Dil / Язык / Ngôn ngữ / Idioma**
 
-This tool does not connect to TradingView&#039;s servers, modify any TradingView files, or intercept any network traffic. It communicates exclusively with your locally running TradingView Desktop instance via Chrome DevTools Protocol (CDP) — a standard debugging interface built into all Chromium/Electron applications by Google, including VS Code, Slack, and Discord.
+[**English**](README.md) | [Português (Brasil)](docs/pt-BR/README.md) | [简体中文](README.zh-CN.md) | [繁體中文](docs/zh-TW/README.md) | [日本語](docs/ja-JP/README.md) | [한국어](docs/ko-KR/README.md)
+ | [Türkçe](docs/tr/README.md) | [Русский](docs/ru/README.md) | [Tiếng Việt](docs/vi-VN/README.md) | [ไทย](docs/th/README.md) | [Deutsch](docs/de-DE/README.md) | [Español](docs/es/README.md)
 
-The debug port is disabled by default and must be explicitly enabled by you using a standard Chromium flag (`--remote-debugging-port=9222`). Nothing happens without that deliberate step.
+&lt;/div&gt;
 
-## What This Tool Does Not Do
+---
 
-- Connect to TradingView&#039;s servers or APIs
-- Store, transmit, or redistribute any market data
-- Work without a valid TradingView subscription and installed Desktop app
-- Bypass any TradingView paywall or access restriction
-- Execute real trades (chart interaction only)
-- Work if TradingView changes their internal Electron structure
+**The harness-native operator system for agentic work. Built from real-world multi-harness engineering workflows.**
 
-## Research Context
+Not just configs. A complete system: skills, instincts, memory optimization, continuous learning, security scanning, and research-first development. Production-ready agents, skills, hooks, rules, MCP configurations, and legacy command shims evolved over 10+ months of intensive daily use building real products.
 
-This project explores an open research question: **how can LLM-based agents interact with professional trading interfaces to support human decision-making?**
+Works across **Codex**, **Claude Code**, **Cursor**, **OpenCode**, **Gemini**, **Zed**, **GitHub Copilot**, and other AI agent harnesses.
 
-Specifically it investigates:
+ECC v2.0.0 adds the public Hermes operator story on top of that reusable layer: start with the [Hermes setup guide](docs/HERMES-SETUP.md), then review the [2.0.0 release notes](docs/releases/2.0.0/release-notes.md) and [cross-harness architecture](docs/architecture/cross-harness.md).
 
-- How structured tool APIs (MCP) can bridge LLMs and stateful desktop financial applications
-- What latency, context, and reliability constraints emerge when an agent operates on live chart data
-- How agents handle ambiguous financial UI state (e.g. interpreting Pine Script output, reading indicator tables)
-- Whether natural language is an effective interface for chart navigation and Pine Script development
-- The failure modes of LLM agents operating in real-time data environments
+---
 
-This is not a trading bot. It is an interface layer that makes a trading application legible to an LLM agent, allowing researchers and developers to study human-AI collaboration in financial workflows.
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td width=&quot;25%&quot; align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://ecc.tools/pricing&quot;&gt;
+    &lt;strong&gt; ECC Pro&lt;/strong&gt;&lt;br /&gt;
+    &lt;sub&gt;Private repos · GitHub App · $19/seat/mo&lt;/sub&gt;
+  &lt;/a&gt;
+&lt;/td&gt;
+&lt;td width=&quot;25%&quot; align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://github.com/sponsors/affaan-m&quot;&gt;
+    &lt;strong&gt; Sponsor&lt;/strong&gt;&lt;br /&gt;
+    &lt;sub&gt;Fund the OSS · From $5/mo&lt;/sub&gt;
+  &lt;/a&gt;
+&lt;/td&gt;
+&lt;td width=&quot;25%&quot; align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://github.com/affaan-m/ECC/discussions&quot;&gt;
+    &lt;strong&gt;Community&lt;/strong&gt;
+    &lt;br /&gt;
+    &lt;sub&gt;Discussions · Q&amp;amp;A · Show &amp; Tell&lt;/sub&gt;
+  &lt;/a&gt;
+&lt;/td&gt;
+&lt;td width=&quot;25%&quot; align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://github.com/apps/ecc-tools&quot;&gt;
+    &lt;strong&gt; GitHub App&lt;/strong&gt;&lt;br /&gt;
+    &lt;sub&gt;Install · PR audits · Free tier&lt;/sub&gt;
+  &lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
 
-See [RESEARCH.md](RESEARCH.md) for open questions, findings, and related work.
+&lt;sub&gt;**OSS stays free.** This repo is MIT-licensed forever. ECC Pro is the hosted GitHub App for private repos. &lt;a href=&quot;https://github.com/sponsors/affaan-m&quot;&gt;Sponsors&lt;/a&gt; and &lt;a href=&quot;https://ecc.tools/pricing&quot;&gt;Pro subscribers&lt;/a&gt; fund the work — that&#039;s why a single maintainer ships weekly across 7 harnesses.&lt;/sub&gt;
 
-## Prerequisites
+&lt;div align=&quot;center&quot;&gt;
 
-- **TradingView Desktop app** (paid subscription required for real-time data)
-- **Node.js 18+**
-- **Claude Code** with MCP support (for MCP tools) or any terminal (for CLI)
-- **macOS, Windows, or Linux**
+&lt;sub&gt;&lt;strong&gt;Business sponsors&lt;/strong&gt;&lt;/sub&gt;
 
-## What It Does
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot; width=&quot;220&quot;&gt;
+  &lt;a href=&quot;https://www.coderabbit.ai&quot;&gt;
+    &lt;img src=&quot;assets/images/sponsors/coderabbit.png&quot; width=&quot;96&quot; alt=&quot;CodeRabbit logo&quot; /&gt;&lt;br /&gt;
+    &lt;strong&gt;CodeRabbit&lt;/strong&gt;
+  &lt;/a&gt;
+&lt;/td&gt;
+&lt;td align=&quot;center&quot; width=&quot;220&quot;&gt;
+  &lt;a href=&quot;https://www.greptile.com/go/ecc&quot;&gt;
+    &lt;img src=&quot;assets/images/sponsors/greptile.png&quot; width=&quot;96&quot; alt=&quot;Greptile logo&quot; /&gt;&lt;br /&gt;
+    &lt;strong&gt;Greptile&lt;/strong&gt;
+  &lt;/a&gt;
+&lt;/td&gt;
+&lt;td align=&quot;center&quot; width=&quot;220&quot;&gt;
+  &lt;a href=&quot;https://www.atlascloud.ai/?utm_source=github&amp;utm_medium=link&amp;utm_campaign=ECC&quot;&gt;
+    &lt;img src=&quot;assets/images/sponsors/atlascloud.png&quot; width=&quot;96&quot; alt=&quot;Atlas Cloud logo&quot; /&gt;&lt;br /&gt;
+    &lt;strong&gt;Atlas Cloud&lt;/strong&gt;
+  &lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
 
-Gives your AI assistant eyes and hands on your own chart:
+&lt;sub&gt;&lt;strong&gt;Community sponsors:&lt;/strong&gt; &lt;a href=&quot;https://github.com/mikejmorgan-ai&quot;&gt;Mike Morgan&lt;/a&gt; · &lt;a href=&quot;https://github.com/jasonwu513&quot;&gt;@jasonwu513&lt;/a&gt; · &lt;a href=&quot;https://github.com/1anter&quot;&gt;@1anter&lt;/a&gt; · &lt;a href=&quot;https://github.com/massimotodaro&quot;&gt;@massimotodaro&lt;/a&gt; · &lt;a href=&quot;https://github.com/meadmccabe&quot;&gt;@meadmccabe&lt;/a&gt;&lt;/sub&gt;
 
-- **Pine Script development** — write, inject, compile, debug, and iterate on scripts with AI assistance
-- **Chart navigation** — change symbols, timeframes, zoom to dates, add/remove indicators
-- **Visual analysis** — read your chart&#039;s indicator values, price levels, and annotations
-- **Draw on charts** — trend lines, horizontal lines, rectangles, text annotations
-- **Manage alerts** — create, list, and delete price alerts
-- **Replay practice** — step through historical bars, practice entries/exits
-- **Screenshots** — capture chart state for AI visual analysis
-- **Multi-pane layouts** — set up 2x2, 3x1, etc. grids with different symbols per pane
-- **Monitor your chart** — stream JSONL from your locally running chart for local monitoring scripts
-- **CLI access** — every MCP tool is also a `tv` CLI command, pipe-friendly with JSON output
-- **Launch TradingView** — auto-detect and launch with debug mode from any platform
+&lt;sub&gt;&lt;a href=&quot;https://github.com/sponsors/affaan-m&quot;&gt;&lt;strong&gt;Become a Sponsor&lt;/strong&gt;&lt;/a&gt; · &lt;a href=&quot;SPONSORS.md&quot;&gt;Sponsor Tiers&lt;/a&gt; · &lt;a href=&quot;SPONSORING.md&quot;&gt;Sponsorship Program&lt;/a&gt;&lt;/sub&gt;
 
-## Install with Claude Code
+&lt;/div&gt;
 
-Paste this into Claude Code and it will handle the rest:
+---
 
-&gt; Install the TradingView MCP server. Clone https://github.com/tradesdontlie/tradingview-mcp.git, run npm install, add it to my MCP config at ~/.claude/.mcp.json, and launch TradingView with the debug port. Then verify the connection with tv_health_check.
+## The Guides
 
-Or follow the manual steps below.
+This repo is the raw code only. The guides explain everything.
+
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td width=&quot;50%&quot; align=&quot;center&quot;&gt;
+&lt;a href=&quot;./the-shortform-guide.md&quot;&gt;
+&lt;img src=&quot;./assets/images/shortform/00-header.png&quot; width=&quot;420&quot; alt=&quot;The Shorthand Guide to ECC&quot; /&gt;&lt;br /&gt;
+&lt;b&gt;The Shorthand Guide&lt;/b&gt;
+&lt;/a&gt;
+&lt;br /&gt;&lt;sub&gt;Setup, foundations, philosophy. &lt;b&gt;Read this first.&lt;/b&gt; (&lt;a href=&quot;https://x.com/affaan/status/2012378465664745795&quot;&gt;thread&lt;/a&gt;)&lt;/sub&gt;
+&lt;/td&gt;
+&lt;td width=&quot;50%&quot; align=&quot;center&quot;&gt;
+&lt;a href=&quot;./the-longform-guide.md&quot;&gt;
+&lt;img src=&quot;./assets/images/longform/01-header.png&quot; width=&quot;420&quot; alt=&quot;The Longform Guide to ECC&quot; /&gt;&lt;br /&gt;
+&lt;b&gt;The Longform Guide&lt;/b&gt;
+&lt;/a&gt;
+&lt;br /&gt;&lt;sub&gt;Token optimization, memory persistence, evals, parallelization. (&lt;a href=&quot;https://x.com/affaan/status/2014040193557471352&quot;&gt;thread&lt;/a&gt;)&lt;/sub&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;a href=&quot;./the-security-guide.md&quot;&gt;
+&lt;img src=&quot;./assets/images/security/security-guide-header.png&quot; width=&quot;420&quot; alt=&quot;The Shorthand Guide to Everything Agentic Security&quot; /&gt;&lt;br /&gt;
+&lt;b&gt;The Security Guide&lt;/b&gt;
+&lt;/a&gt;
+&lt;br /&gt;&lt;sub&gt;Attack vectors, sandboxing, sanitization, CVEs, AgentShield. (&lt;a href=&quot;https://x.com/affaan/status/2033263813387223421&quot;&gt;thread&lt;/a&gt;)&lt;/sub&gt;
+&lt;/div&gt;
+
+| Topic | What You&#039;ll Learn |
+|-------|-------------------|
+| Token Optimization | Model selection, system prompt slimming, background processes |
+| Memory Persistence | Hooks that save/load context across sessions automatically |
+| Continuous Learning | Auto-extract patterns from sessions into reusable skills |
+| Verification Loops | Checkpoint vs continuous evals, grader types, pass@k metrics |
+| Parallelization | Git worktrees, cascade method, when to scale instances |
+| Subagent Orchestration | The context problem, iterative retrieval pattern |
+
+---
+
+## What&#039;s New
+
+### v2.0.0 — The Agent Harness Operating System (Jun 2026)
+
+Stable graduation of the 2.0 line: 261 skills, the control-pane substrate (session adapters + MCP inventory), the worktree-lifecycle service, the `orch-*` orchestrator family, and the launch of the [ECC Discord community](https://discord.gg/36yGMHGFbR). Full notes: [docs/releases/2.0.0/release-notes.md](docs/releases/2.0.0/release-notes.md).
+
+### v2.0.0-rc.1 — Surface Refresh, Operator Workflows, and ECC 2.0 Alpha (Apr 2026)
+
+- **Dashboard GUI** — New Tkinter-based desktop application (`ecc_dashboard.py` or `npm run dashboard`) with dark/light theme toggle, font customization, and project logo in header and taskbar.
+- **Public surface synced to the live repo** — metadata, catalog counts, plugin manifests, and install-facing docs now match the actual OSS surface: 66 agents, 268 skills, and 84 legacy command shims.
+- **Operator and outbound workflow expansion** — `brand-voice`, `social-graph-ranker`, `connections-optimizer`, `customer-billing-ops`, `ecc-tools-cost-audit`, `google-workspace-ops`, `project-flow-ops`, and `workspace-surface-audit` round out the operator lane.
+- **Media and launch tooling** — `manim-video`, `remotion-video-creation`, and upgraded social publishing surfaces make technical explainers and launch content part of the same system.
+- **Framework and product surface growth** — `nestjs-patterns`, richer Codex/OpenCode install surfaces, and expanded cross-harness packaging keep the repo usable beyond Claude Code alone.
+- **Itô prediction-market skill pack** — `ito-market-intelligence`, `ito-basket-compare`, `ito-trade-planner`, `ito-data-atlas-agent`, `prediction-market-oracle-research`, and `prediction-market-risk-review` add public, non-advisory market/basket workflows while keeping live Itô API access gated and separate from ECC Tools billing.
+- **Optimization skill pack** — `parallel-execution-optimizer`, `benchmark-optimization-loop`, `data-throughput-accelerator`, `latency-critical-systems`, and `recursive-decision-ledger` turn repeated speed/recursion prompts into bounded benchmark, throughput, and decision-ledger workflows.
+- **ECC 2.0 alpha is in-tree** — the Rust control-plane prototype in `ecc2/` now builds locally and exposes `dashboard`, `start`, `sessions`, `status`, `stop`, `resume`, and `daemon` commands. It is usable as an alpha, not yet a general release.
+- **Operator status snapshots** — `ecc status --markdown --write status.md` turns the local state store into a portable handoff covering readiness, active sessions, skill-run health, install health, pending governance events, and linked work items from Linear/GitHub/handoffs. Use `ecc work-items upsert ...` for manual entries, `ecc work-items sync-github --repo owner/repo` for PR/issue queue state, and `ecc status --exit-code` to fail automation when readiness needs attention.
+- **Ecosystem hardening** — AgentShield, ECC Tools cost controls, billing portal work, and website refreshes continue to ship around the core plugin instead of drifting into separate silos.
+
+### v1.9.0 — Selective Install &amp; Language Expansion (Mar 2026)
+
+- **Selective install architecture** — Manifest-driven install pipeline with `install-plan.js` and `install-apply.js` for targeted component installation. State store tracks what&#039;s installed and enables incremental updates.
+- **6 new agents** — `typescript-reviewer`, `pytorch-build-resolver`, `java-build-resolver`, `java-reviewer`, `kotlin-reviewer`, `kotlin-build-resolver` expand language coverage to 10 languages.
+- **New skills** — `pytorch-patterns` for deep learning workflows, `documentation-lookup` for API reference research, `bun-runtime` and `nextjs-turbopack` for modern JS toolchains, plus 8 operational domain skills and `mcp-server-patterns`.
+- **Session &amp; state infrastructure** — SQLite state store with query CLI, session adapters for structured recording, skill evolution foundation for self-improving skills.
+- **Orchestration overhaul** — Harness audit scoring made deterministic, orchestration status and launcher compatibility hardened, observer loop prevention with 5-layer guard.
+- **Observer reliability** — Memory explosion fix with throttling and tail sampling, sandbox access fix, lazy-start logic, and re-entrancy guard.
+- **12 language ecosystems** — New rules for Java, PHP, Perl, Kotlin/Android/KMP, C++, and Rust join existing TypeScript, Python, Go, and common rules.
+- **Community contributions** — Korean and Chinese translations, biome hook optimization, video processing skills, operational skills, PowerShell installer, Antigravity IDE support.
+- **CI hardening** — 19 test failure fixes, catalog count enforcement, install manifest validation, and full test suite green.
+
+### v1.8.0 — Harness Performance System (Mar 2026)
+
+- **Harness-first release** — ECC is now explicitly framed as an agent harness performance system, not just a config pack.
+- **Hook reliability overhaul** — SessionStart root fallback, Stop-phase session summaries, and script-based hooks replacing fragile inline one-liners.
+- **Hook runtime controls** — `ECC_HOOK_PROFILE=minimal|standard|strict` and `ECC_DISABLED_HOOKS=...` for runtime gating without editing hook files.
+- **New harness commands** — `/harness-audit`, `/loop-start`, `/loop-status`, `/quality-gate`, `/model-route`.
+- **NanoClaw v2** — model routing, skill hot-load, session branch/search/export/compact/metrics.
+- **Cross-harness parity** — behavior tightened across Claude Code, Cursor, OpenCode, and Codex app/CLI.
+- **997 internal tests passing** — full suite green after hook/runtime refactor and compatibility updates.
+
+### v1.7.0 — Cross-Platform Expansion &amp; Presentation Builder (Feb 2026)
+
+- **Codex app + CLI support** — Direct `AGENTS.md`-based Codex support, installer targeting, and Codex docs
+- **`frontend-slides` skill** — Zero-dependency HTML presentation builder with PPTX conversion guidance and strict viewport-fit rules
+- **5 new generic business/content skills** — `article-writing`, `content-engine`, `market-research`, `investor-materials`, `investor-outreach`
+- **Broader tool coverage** — Cursor, Codex, and OpenCode support tightened so the same repo ships cleanly across all major harnesses
+- **992 internal tests** — Expanded validation and regression coverage across plugin, hooks, skills, and packaging
+
+### v1.6.0 — Codex CLI, AgentShield &amp; Marketplace (Feb 2026)
+
+- **Codex CLI support** — New `/codex-setup` command generates `codex.md` for OpenAI Codex CLI compatibility
+- **7 new skills** — `search-first`, `swift-actor-persistence`, `swift-protocol-di-testing`, `regex-vs-llm-structured-text`, `content-hash-cache-pattern`, `cost-aware-llm-pipeline`, `skill-stocktake`
+- **AgentShield integration** — `/security-scan` skill runs AgentShield directly from Claude Code; 1282 tests, 102 rules
+- **GitHub Marketplace** — ECC Tools GitHub App live at [github.com/marketplace/ecc-tools](https://github.com/marketplace/ecc-tools) with free/pro/enterprise tiers
+- **30+ community PRs merged** — Contributions from 30 contributors across 6 languages
+- **978 internal tests** — Expanded validation suite across agents, skills, commands, hooks, and rules
+
+### v1.4.1 — Bug Fix (Feb 2026)
+
+- **Fixed instinct import content loss** — `parse_instinct_file()` was silently dropping all content after frontmatter (Action, Evidence, Examples sections) during `/instinct-import`. ([#148](https://github.com/affaan-m/ECC/issues/148), [#161](https://github.com/affaan-m/ECC/pull/161))
+
+### v1.4.0 — Multi-Language Rules, Installation Wizard &amp; PM2 (Feb 2026)
+
+- **Interactive installation wizard** — New `configure-ecc` skill provides guided setup with merge/overwrite detection
+- **PM2 &amp; multi-agent orchestration** — 6 new commands (`/pm2`, `/multi-plan`, `/multi-execute`, `/multi-backend`, `/multi-frontend`, `/multi-workflow`) for managing complex multi-service workflows
+- **Multi-language rules architecture** — Rules restructured from flat files into `common/` + `typescript/` + `python/` + `golang/` directories. Install only the languages you need
+- **Chinese (zh-CN) translations** — Complete translation of all agents, commands, skills, and rules (80+ files)
+- **GitHub Sponsors support** — Sponsor the project via GitHub Sponsors
+- **Enhanced CONTRIBUTING.md** — Detailed PR templates for each contribution type
+
+### v1.3.0 — OpenCode Plugin Support (Feb 2026)
+
+- **Full OpenCode integration** — 12 agents, 24 commands, 16 skills with hook support via OpenCode&#039;s plugin system (20+ event types)
+- **3 native custom tools** — run-tests, check-coverage, security-audit
+- **LLM documentation** — `llms.txt` for comprehensive OpenCode docs
+
+### v1.2.0 — Unified Commands &amp; Skills (Feb 2026)
+
+- **Python/Django support** — Django patterns, security, TDD, and verification skills
+- **Java Spring Boot skills** — Patterns, security, TDD, and verification for Spring Boot
+- **Session management** — `/sessions` command for session history
+- **Continuous learning v2** — Instinct-based learning with confidence scoring, import/export, evolution
+
+See the full changelog in [Releases](https://github.com/affaan-m/ECC/releases).
+
+---
 
 ## Quick Start
 
-### 1. Install
+Get up and running in under 2 minutes:
+
+### Pick one path only
+
+Most Claude Code users should use exactly one install path:
+
+- **Recommended default:** install the Claude Code plugin, then copy only the rule folders you actually want.
+- **Use the manual installer only if** you want finer-grained control, want to avoid the plugin path entirely, or your Claude Code build has trouble resolving the self-hosted marketplace entry.
+- **Do not stack install methods.** The most common broken setup is: `/plugin install` first, then `install.sh --profile full` or `npx ecc-install --profile full` afterward.
+
+If you already layered multiple installs and things look duplicated, skip straight to [Reset / Uninstall ECC](#reset--uninstall-ecc).
+
+### Low-context / no-hooks path
+
+If hooks feel too global or you only want ECC&#039;s rules, agents, commands, and core workflow skills, skip the plugin and use the minimal manual profile:
 
 ```bash
-git clone https://github.com/tradesdontlie/tradingview-mcp.git
-cd tradingview-mcp
-npm install
+./install.sh --profile minimal --target claude
 ```
 
-### 2. Launch TradingView with CDP
-
-TradingView Desktop must be running with Chrome DevTools Protocol enabled on port 9222.
-
-**Mac:**
-```bash
-./scripts/launch_tv_debug_mac.sh
+```powershell
+.\install.ps1 --profile minimal --target claude
+# or
+npx ecc-install --profile minimal --target claude
 ```
 
-**Windows:**
-```bash
-scripts\launch_tv_debug.bat
-```
+This profile intentionally excludes `hooks-runtime`.
 
-**Linux:**
-```bash
-./scripts/launch_tv_debug_linux.sh
-```
-
-**Or launch manually on any platform:**
-```bash
-/path/to/TradingView --remote-debugging-port=9222
-```
-
-**Or use the MCP tool** (auto-detects your install):
-&gt; &quot;Use tv_launch to start TradingView in debug mode&quot;
-
-### 3. Add to Claude Code
-
-Add to your Claude Code MCP config (`~/.claude/.mcp.json` or project `.mcp.json`):
-
-```json
-{
-  &quot;mcpServers&quot;: {
-    &quot;tradingview&quot;: {
-      &quot;command&quot;: &quot;node&quot;,
-      &quot;args&quot;: [&quot;/path/to/tradingview-mcp/src/server.js&quot;]
-    }
-  }
-}
-```
-
-Replace `/path/to/tradingview-mcp` with your actual path.
-
-### 4. Verify
-
-Ask Claude: *&quot;Use tv_health_check to verify TradingView is connected&quot;*
-
-## CLI
-
-Every MCP tool is also accessible as a `tv` CLI command. All output is JSON for piping with `jq`.
+If you want the normal core profile but need hooks off, use:
 
 ```bash
-# Install globally (optional)
-npm link
-
-# Or run directly
-node src/cli/index.js &lt;command&gt;
+./install.sh --profile core --without baseline:hooks --target claude
 ```
 
-### Quick Examples
+Add hooks later only if you want runtime enforcement:
 
 ```bash
-tv status                          # check connection
-tv quote                           # current price
-tv symbol AAPL                     # change symbol
-tv ohlcv --summary                 # price summary
-tv screenshot -r chart             # capture chart
-tv pine compile                    # compile Pine Script
-tv pane layout 2x2                 # 4-chart grid
-tv pane symbol 1 ES1!              # set pane symbol
-tv stream quote | jq &#039;.close&#039;      # monitor price changes
+./install.sh --target claude --modules hooks-runtime
 ```
 
-### All Commands
+### Find the right components first
 
-```
-tv status / launch / state / symbol / timeframe / type / info / search
-tv quote / ohlcv / values
-tv data lines/labels/tables/boxes/strategy/trades/equity/depth/indicator
-tv pine get/set/compile/analyze/check/save/new/open/list/errors/console
-tv draw shape/list/get/remove/clear
-tv alert list/create/delete
-tv watchlist get/add
-tv indicator add/remove/toggle/set/get
-tv layout list/switch
-tv pane list/layout/focus/symbol
-tv tab list/new/close/switch
-tv replay start/step/stop/status/autoplay/trade
-tv stream quote/bars/values/lines/labels/tables/all
-tv ui click/keyboard/hover/scroll/find/eval/type/panel/fullscreen/mouse
-tv screenshot / discover / ui-state / range / scroll
-```
-
-## Streaming
-
-The `tv stream` commands poll your locally running TradingView Desktop instance at regular intervals via Chrome DevTools Protocol on localhost.
-
-No connection is made to TradingView&#039;s servers. All data stays on your machine.
-
-&gt; [!WARNING]
-&gt; Programmatic consumption of TradingView data may conflict with their Terms of Use regardless of the data source. You are solely responsible for ensuring your usage complies.
+If you are not sure which ECC profile or component to install, ask the packaged advisor from any project:
 
 ```bash
-tv stream quote                          # price tick monitoring
-tv stream bars                           # bar-by-bar updates
-tv stream values                         # indicator value monitoring
-tv stream lines --filter &quot;NY Levels&quot;     # price level monitoring
-tv stream tables --filter Profiler       # table data monitoring
-tv stream all                            # all panes at once (multi-symbol)
+npx ecc consult &quot;security reviews&quot; --target claude
 ```
 
-## How Claude Knows Which Tool to Use
+It returns matching components, related profiles, and preview/install commands. Use the preview command before installing if you want to inspect the exact file plan.
 
-Claude reads [`CLAUDE.md`](CLAUDE.md) automatically when working in this project. It contains a complete decision tree:
-
-| You say... | Claude uses... |
-|------------|---------------|
-| &quot;What&#039;s on my chart?&quot; | `chart_get_state` → `data_get_study_values` → `quote_get` |
-| &quot;What levels are showing?&quot; | `data_get_pine_lines` → `data_get_pine_labels` |
-| &quot;Read the session table&quot; | `data_get_pine_tables` with `study_filter` |
-| &quot;Give me a full analysis&quot; | `quote_get` → `data_get_study_values` → `data_get_pine_lines` → `data_get_pine_labels` → `data_get_pine_tables` → `data_get_ohlcv` (summary) → `capture_screenshot` |
-| &quot;Switch to AAPL daily&quot; | `chart_set_symbol` → `chart_set_timeframe` |
-| &quot;Write a Pine Script for...&quot; | `pine_set_source` → `pine_smart_compile` → `pine_get_errors` |
-| &quot;Start replay at March 1st&quot; | `replay_start` → `replay_step` → `replay_trade` |
-| &quot;Set up a 4-chart grid&quot; | `pane_set_layout` → `pane_set_symbol` for each pane |
-| &quot;Draw a level at 24500&quot; | `draw_shape` (horizontal_line) |
-| &quot;Take a screenshot&quot; | `capture_screenshot` |
-
-## Tool Reference (78 MCP tools)
-
-### Chart Reading
-
-| Tool | When to use | Output size |
-|------|------------|-------------|
-| `chart_get_state` | First call — get symbol, timeframe, all indicator names + IDs | ~500B |
-| `data_get_study_values` | Read current RSI, MACD, BB, EMA values from all indicators | ~500B |
-| `quote_get` | Get latest price, OHLC, volume | ~200B |
-| `data_get_ohlcv` | Get price bars. **Use `summary: true`** for compact stats | 500B (summary) / 8KB (100 bars) |
-
-### Custom Indicator Data (Pine Drawings)
-
-Read `line.new()`, `label.new()`, `table.new()`, `box.new()` output from any visible Pine indicator.
-
-| Tool | When to use | Output size |
-|------|------------|-------------|
-| `data_get_pine_lines` | Read horizontal price levels (support/resistance, session levels) | ~1-3KB |
-| `data_get_pine_labels` | Read text annotations + prices (&quot;PDH 24550&quot;, &quot;Bias Long&quot;) | ~2-5KB |
-| `data_get_pine_tables` | Read data tables (session stats, analytics dashboards) | ~1-4KB |
-| `data_get_pine_boxes` | Read price zones / ranges as {high, low} pairs | ~1-2KB |
-
-**Always use `study_filter`** to target a specific indicator: `study_filter: &quot;Profiler&quot;`.
-
-### Chart Control
-
-| Tool | What it does |
-|------|-------------|
-| `chart_set_symbol` | Change ticker (BTCUSD, AAPL, ES1!, NYMEX:CL1!) |
-| `chart_set_timeframe` | Change resolution (1, 5, 15, 60, D, W, M) |
-| `chart_set_type` | Change style (Candles, HeikinAshi, Line, Area, Renko) |
-| `chart_manage_indicator` | Add/remove indicators. **Use full names**: &quot;Relative Strength Index&quot; not &quot;RSI&quot; |
-| `chart_scroll_to_date` | Jump to a date (ISO: &quot;2025-01-15&quot;) |
-| `chart_set_visible_range` | Zoom to exact range (unix timestamps) |
-| `symbol_info` / `symbol_search` | Symbol metadata and search |
-| `indicator_set_inputs` / `indicator_toggle_visibility` | Change indicator settings, show/hide |
-
-### Multi-Pane Layouts
-
-| Tool | What it does |
-|------|-------------|
-| `pane_list` | List all panes with symbols and active state |
-| `pane_set_layout` | Change grid: `s`, `2h`, `2v`, `2x2`, `4`, `6`, `8` |
-| `pane_focus` | Focus a specific pane by index |
-| `pane_set_symbol` | Set symbol on any pane |
-
-### Tab Management
-
-| Tool | What it does |
-|------|-------------|
-| `tab_list` | List open chart tabs |
-| `tab_new` / `tab_close` | Open/close tabs |
-| `tab_switch` | Switch to a tab by index |
-
-### Pine Script Development
-
-| Tool | Step |
-|------|------|
-| `pine_set_source` | 1. Inject code into editor |
-| `pine_smart_compile` | 2. Compile with auto-detection + error check |
-| `pine_get_errors` | 3. Read compilation errors if any |
-| `pine_get_console` | 4. Read log.info() output |
-| `pine_save` | 5. Save to TradingView cloud |
-| `pine_get_source` | Read current script (**warning: can be 200KB+ for complex scripts**) |
-| `pine_new` | Create blank indicator/strategy/library |
-| `pine_open` / `pine_list_scripts` | Open or list saved scripts |
-| `pine_analyze` | Offline static analysis (no chart needed) |
-| `pine_check` | Server-side compile check (no chart needed) |
-
-### Replay Mode
-
-| Tool | Step |
-|------|------|
-| `replay_start` | Enter replay at a date |
-| `replay_step` | Advance one bar |
-| `replay_autoplay` | Auto-advance (set speed in ms) |
-| `replay_trade` | Buy/sell/close positions |
-| `replay_status` | Check position, P&amp;L, date |
-| `replay_stop` | Return to realtime |
-
-### Drawing, Alerts, UI Automation
-
-| Tool | What it does |
-|------|-------------|
-| `draw_shape` | Draw horizontal_line, trend_line, rectangle, text |
-| `draw_list` / `draw_remove_one` / `draw_clear` | Manage drawings |
-| `alert_create` / `alert_list` / `alert_delete` | Manage price alerts |
-| `capture_screenshot` | Screenshot (regions: full, chart, strategy_tester) |
-| `batch_run` | Run action across multiple symbols/timeframes |
-| `watchlist_get` / `watchlist_add` | Read/modify watchlist |
-| `layout_list` / `layout_switch` | Manage saved layouts |
-| `ui_open_panel` / `ui_click` / `ui_evaluate` | UI automation |
-| `tv_launch` / `tv_health_check` / `tv_discover` | Connection management |
-
-## Context Management
-
-Tools return compact output by default to minimize context usage. For a typical &quot;analyze my chart&quot; workflow, total context is ~5-10KB instead of ~80KB.
-
-| Feature | How it saves context |
-|---------|---------------------|
-| Pine lines | Returns deduplicated price levels only, not every line object |
-| Pine labels | Capped at 50 per study, text+price only |
-| Pine tables | Pre-formatted row strings, no cell metadata |
-| Pine boxes | Deduplicated {high, low} zones only |
-| OHLCV summary mode | Stats + last 5 bars instead of all bars |
-| Indicator inputs | Encrypted/encoded blobs auto-filtered |
-| `verbose: true` | Pass on any pine tool to get raw data with IDs/colors when needed |
-| `study_filter` | Target one indicator instead of scanning all |
-
-## Finding TradingView on Your System
-
-Launch scripts and `tv_launch` auto-detect TradingView. If auto-detection fails:
-
-| Platform | Common Locations |
-|----------|-----------------|
-| **Mac** | `/Applications/TradingView.app/Contents/MacOS/TradingView` |
-| **Windows** | `%LOCALAPPDATA%\TradingView\TradingView.exe`, `%PROGRAMFILES%\WindowsApps\TradingView*\TradingView.exe` |
-| **Linux** | `/opt/TradingView/tradingview`, `~/.local/share/TradingView/TradingView`, `/snap/tradingview/current/tradingview` |
-
-The key flag: `--remote-debugging-port=9222`
-
-## Testing
+For production ML/MLOps workflows, keep the install opt-in and component-scoped:
 
 ```bash
-# Requires TradingView running with --remote-debugging-port=9222
-npm test
+npx ecc consult &quot;mlops training model deployment&quot; --target claude
+npx ecc install --profile minimal --target claude --with capability:machine-learning
 ```
 
-29 tests covering: Pine Script static analysis, server-side compilation, and CLI routing.
-
-## Architecture
-
-```
-Claude Code  ←→  MCP Server (stdio)  ←→  CDP (port 9222)  ←→  TradingView Desktop (Electron)
-```
-
-- **Transport**: MCP over stdio (78 tools) + CLI (`tv` command, 30 commands with 66 subcommands)
-- **Connection**: Chrome DevTools Protocol on localhost:9222
-- **Streaming**: Poll-and-diff loop with deduplication, JSONL output to stdout
-- **No dependencies** beyond `@modelcontextprotocol/sdk` and `chrome-remote-interface`
-
-## Attributions
-
-This project is not affiliated with, endorsed by, or associated with:
-- **TradingView Inc.** — TradingView is a trademark of TradingView Inc.
-- **Anthropic** — Claude and Claude Code are trademarks of Anthropic, PBC.
-
-This tool is an independent MCP server that connects to Claude Code via the standard MCP protocol. It does not contain or modify any Anthropic software.
-
-## Disclaimer
-
-This project is provided **for personal, educational, and research purposes only**.
-
-**How this tool works:** This tool uses the Chrome DevTools Protocol (CDP), a standard debugging interface built into all Chromium-based applications by Google. It does not reverse engineer any proprietary TradingView protocol, connect to TradingView&#039;s servers, or bypass any access controls. The debug port must be explicitly enabled by the user via a standard Chromium command-line flag (`--remote-debugging-port=9222`).
-
-By using this software, you acknowledge and agree that:
-
-1. **You are solely responsible** for ensuring your use of this tool complies with [TradingView&#039;s Terms of Use](https://www.tradingview.com/policies/) and all applicable laws.
-2. TradingView&#039;s Terms of Use **restrict automated data collection, scraping, and non-display usage** of their platform and data. This tool uses Chrome DevTools Protocol to programmatically interact with the TradingView Desktop app, which may conflict with those terms.
-3. **You assume all risk** associated with using this tool. The authors are not responsible for any account bans, suspensions, legal actions, or other consequences resulting from its use.
-4. This tool **must not be used** for, including but not limited to:
-   - Redistributing, reselling, or commercially exploiting TradingView&#039;s market data
-   - Circumventing TradingView&#039;s access controls or subscription restrictions
-   - Performing automated trading or algorithmic decision-making using extracted data
-   - Violating the intellectual property rights of Pine Script indicator authors
-   - Connecting to TradingView&#039;s servers or infrastructure (all access is via the locally running Desktop app)
-5. The streaming functionality monitors your locally running TradingView Desktop instance only. It does not connect to TradingView&#039;s servers or extract data from TradingView&#039;s infrastructure.
-6. Market data accessed through this tool remains subject to exchange and data provider licensing terms. **Do not redistribute, store, or commercially exploit any data obtained through this tool.**
-7. This tool accesses internal, undocumented TradingView application interfaces that may change or break at any time without notice.
-
-**Use at your own risk.** If you are unsure whether your intended use complies with TradingView&#039;s terms, do not use this tool.
-
-## License
-
-MIT — see [LICENSE](LICENSE) for details.
-
-The MIT license applies to the source code of this project only. It does not grant any rights to TradingView&#039;s software, data, trademarks, or intellectual property.
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[Leonxlnx/taste-skill]]></title>
-            <link>https://github.com/Leonxlnx/taste-skill</link>
-            <guid>https://github.com/Leonxlnx/taste-skill</guid>
-            <pubDate>Tue, 23 Jun 2026 00:27:13 GMT</pubDate>
-            <description><![CDATA[Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/Leonxlnx/taste-skill">Leonxlnx/taste-skill</a></h1>
-            <p>Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 49,057</p>
-            <p>Forks: 3,406</p>
-            <p>Stars today: 724 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;assets/readme-banner.webp&quot; alt=&quot;Taste Skill - Anti-slop Agent Skills for premium frontends&quot; width=&quot;100%&quot; /&gt;
-&lt;/p&gt;
-
-# Taste Skill
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;em&gt;The Anti-Slop Frontend Framework for AI Agents&lt;/em&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot; style=&quot;margin-bottom: 8px;&quot;&gt;
-  &lt;a href=&quot;https://tasteskill.dev&quot; title=&quot;Visit tasteskill.dev&quot;&gt;&lt;img src=&quot;assets/readme-buttons/btn-site.webp&quot; alt=&quot;Visit tasteskill.dev&quot; height=&quot;56&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;h3 align=&quot;center&quot;&gt;Sponsors&lt;/h3&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https://animations.dev&quot;&gt;&lt;img src=&quot;assets/sponsors/animations-dev.webp&quot; alt=&quot;animations.dev&quot; width=&quot;62&quot; height=&quot;62&quot; valign=&quot;middle&quot; /&gt;&lt;/a&gt;&lt;sub&gt;&lt;a href=&quot;https://github.com/emilkowalski&quot;&gt;&lt;strong&gt;Emil Kowalski&lt;/strong&gt;&lt;/a&gt; · &lt;a href=&quot;https://animations.dev&quot;&gt;animations.dev&lt;/a&gt;&lt;/sub&gt;&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https://vercel.com/open-source-program&quot;&gt;&lt;img alt=&quot;Vercel OSS Program&quot; src=&quot;assets/vercel-oss-program-badge.svg&quot; height=&quot;24&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;sub&gt;&lt;a href=&quot;https://github.com/sponsors/Leonxlnx&quot;&gt;Become a sponsor&lt;/a&gt;&lt;/sub&gt;&lt;/p&gt;
-
-Portable **Agent Skills** that upgrade AI-built interfaces: stronger layout, typography, motion, and spacing instead of boilerplate-looking UIs. This repo also includes **image-generation skills** for reference boards (web, mobile, brand kits). Pair them with **ChatGPT Images** or similar generators, then hand the frames to Codex, Cursor, or Claude Code for implementation.
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;LICENSE&quot;&gt;&lt;img src=&quot;assets/readme-buttons/btn-mit.webp&quot; alt=&quot;MIT License&quot; height=&quot;45&quot; valign=&quot;middle&quot; /&gt;&lt;/a&gt;
-  &amp;nbsp;
-  &lt;a href=&quot;https://github.com/vercel-labs/agent-skills&quot;&gt;&lt;img src=&quot;assets/readme-buttons/btn-agent-skills.webp&quot; alt=&quot;Agent Skills compatible&quot; height=&quot;45&quot; valign=&quot;middle&quot; /&gt;&lt;/a&gt;
-  &amp;nbsp;
-  &lt;a href=&quot;#installing&quot;&gt;&lt;img src=&quot;assets/readme-buttons/btn-tools.webp&quot; alt=&quot;Codex, Cursor, Claude&quot; height=&quot;45&quot; valign=&quot;middle&quot; /&gt;&lt;/a&gt;
-  &amp;nbsp;
-  &lt;a href=&quot;https://www.tasteskill.dev/changelog&quot;&gt;&lt;img src=&quot;assets/readme-buttons/btn-changelog.webp&quot; alt=&quot;Changelog&quot; height=&quot;45&quot; valign=&quot;middle&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-## Disclaimer
-
-Taste Skill has no official token, coin, or crypto project. Any token using my name, image, or project is unaffiliated and not endorsed by me.
-
-&lt;p align=&quot;center&quot;&gt;&lt;sub&gt;&lt;a href=&quot;#disclaimer&quot;&gt;Disclaimer&lt;/a&gt; · &lt;a href=&quot;#installing&quot;&gt;Install&lt;/a&gt; · &lt;a href=&quot;#skills&quot;&gt;Skills&lt;/a&gt; · &lt;a href=&quot;#settings-taste-skill-only&quot;&gt;Settings&lt;/a&gt; · &lt;a href=&quot;#examples&quot;&gt;Examples&lt;/a&gt; · &lt;a href=&quot;#sponsors&quot;&gt;Sponsors&lt;/a&gt; · &lt;a href=&quot;#research&quot;&gt;Research&lt;/a&gt; · &lt;a href=&quot;#common-questions&quot;&gt;FAQ&lt;/a&gt; · &lt;a href=&quot;#license&quot;&gt;License&lt;/a&gt;&lt;/sub&gt;&lt;/p&gt;
-
-## Feedback &amp; Contributions
-
-We would love your feedback. Suggestions and bug reports:
-
-- Open a Pull Request or Issue on GitHub  
-- DM [@lexnlin](https://x.com/lexnlin) or [@blueemi99](https://x.com/blueemi99)  
-- Email us at [hello@tasteskill.dev](mailto:hello@tasteskill.dev)
-
-## Installing
-
-The [`npx skills add`](https://github.com/vercel-labs/agent-skills) CLI scans the `skills/` folder in this repo, so **all skills below (code and image-generation) install the same way.**
-
-```bash
-npx skills add https://github.com/Leonxlnx/taste-skill
-```
-
-Install a single skill by its **install name** (the `name:` field inside the SKILL frontmatter, not the folder name):
-
-```bash
-npx skills add https://github.com/Leonxlnx/taste-skill --skill &quot;design-taste-frontend&quot;
-```
-
-You can also copy any `SKILL.md` into your project or paste it into ChatGPT / Codex conversations.
-
-### Updating from the previous version
-
-The default `taste-skill` (install name `design-taste-frontend`) is now **v2 (experimental)**, a substantial rewrite of the original v1. If you already have v1 installed, just re-run the install command and you will be upgraded:
-
-```bash
-npx skills add https://github.com/Leonxlnx/taste-skill --skill &quot;design-taste-frontend&quot;
-```
-
-The install name did not change, so no script updates are needed. The newer SKILL.md replaces the older one in place.
-
-If you depend on the exact behavior of v1 and want to pin to it explicitly:
-
-```bash
-npx skills add https://github.com/Leonxlnx/taste-skill --skill &quot;design-taste-frontend-v1&quot;
-```
-
-See [CHANGELOG.md](CHANGELOG.md) for the full v1 to v2 diff and the rationale.
-
-## Skills
-
-Each skill does one job; you do not need all of them at once. **Implementation skills** output code. **Image-generation skills** output reference images only.
-
-The `Install name` column is the exact value you pass to `--skill`.
-
-| Skill (folder) | Install name | Description |
-| --- | --- | --- |
-| **taste-skill** | `design-taste-frontend` | 🆕 **v2 (experimental)** - substantial rewrite of the default skill. Reads the brief, infers the design language, tunes three dials (VARIANCE / MOTION / DENSITY). Brief inference, design-system map, hard em-dash ban, canonical GSAP code skeletons, redesign-audit protocol, strict pre-flight check. Actively iterating toward v2.0.0 stable. |
-| **taste-skill-v1** | `design-taste-frontend-v1` | The original v1 of taste-skill, preserved for projects depending on its exact behavior. Use only if the v2 default breaks something specific in your workflow. |
-| **gpt-tasteskill** | `gpt-taste` | Stricter variant for GPT/Codex: higher layout variance, stronger GSAP direction, aggressive anti-slop. |
-| **image-to-code-skill** | `image-to-code` | Image-first pipeline: generate site references, analyze them, then implement the frontend to match. |
-| **redesign-skill** | `redesign-existing-projects` | Existing projects: audit the UI first, then fix layout, spacing, hierarchy, styling. |
-| **soft-skill** | `high-end-visual-design` | Polished, calm, expensive UI with softer contrast, whitespace, premium fonts, spring motion. |
-| **output-skill** | `full-output-enforcement` | When the model ships half-finished work: full output, no placeholder comments. |
-| **minimalist-skill** | `minimalist-ui` | Editorial product UI (Notion/Linear vibes), restrained palette, crisp structure. |
-| **brutalist-skill** | `industrial-brutalist-ui` | Hard mechanical language: Swiss type, sharp contrast, experimental layout. |
-| **stitch-skill** | `stitch-design-taste` | Google Stitch-compatible rules, including optional `DESIGN.md` export format. |
-
-### Image generation skills
-
-These produce design images only (no code). Use with ChatGPT Images, Codex image mode, or any agent that generates images.
-
-| Skill (folder) | Install name | Description |
-| --- | --- | --- |
-| **imagegen-frontend-web** | `imagegen-frontend-web` | Website comps: hero, landing, multi-section with strong typography, spacing, anti-slop art direction. |
-| **imagegen-frontend-mobile** | `imagegen-frontend-mobile` | Mobile screens and flows: iOS/Android/cross-platform, mockups, readable type, coherent sets. |
-| **brandkit** | `brandkit` | Brand-kit boards: logo directions, palettes, type, identity applications across categories. |
-
-### Which one should I use?
-
-- Start with **taste-skill** for the safest general default. (Now v2 experimental - see what changed in the [CHANGELOG](CHANGELOG.md).)
-- If you depend on the exact behavior of the original taste-skill, install **taste-skill-v1** instead. 
-- Use **gpt-taste** when you want the stricter GPT/Codex-oriented rules and motion/layout enforcement. 
-- Use **image-to-code-skill** for image → analyze → code website workflows. 
-- Use **redesign-skill** to improve an existing codebase instead of greenfield styling. 
-- Add **soft-skill**, **minimalist-skill**, or **brutalist-skill** when the visual direction is already chosen. 
-- Add **output-skill** if the agent keeps truncating output. 
-- Use **imagegen-frontend-web**, **imagegen-frontend-mobile**, or **brandkit** when the deliverable is **images** (comps, flows, identity boards), then pass results to your coding agent.
-
-### Image-first tip
-
-For **image-to-code-skill**, state the pipeline in the prompt, e.g.: `follow the skill: generate images, then analyze, then code`.
-
-### ChatGPT Images and Codex
-
-Attach or paste **`imagegen-frontend-web`**, **`imagegen-frontend-mobile`**, or **`brandkit`** and ask for the frames you need, then feed the renders to Codex, Cursor, or Claude Code. Use **image-to-code-skill** when you want one workflow that both generates references and implements the site in code.
-
-## Settings (taste-skill only)
-
-Numbers at the top of the file are 1-10 dials:
-
-- **DESIGN_VARIANCE**: Layout experimentation (lower: centered/clean · higher: asymmetric/modern).
-- **MOTION_INTENSITY**: Animation depth (lower: hover · higher: scroll/magnetic).
-- **VISUAL_DENSITY**: Information per viewport (lower: spacious · higher: dense dashboards).
-
-## Examples
-
-Created with taste-skill:
-
-&lt;p&gt;
-  &lt;img src=&quot;examples/floria-top.webp&quot; width=&quot;400&quot; /&gt;
-  &lt;img src=&quot;examples/floria-bottom.webp&quot; width=&quot;400&quot; /&gt;
-&lt;/p&gt;
-
-## Support the project
-
-If Taste Skill helps you, consider sponsoring:
-
-[Sponsor on GitHub](https://github.com/sponsors/Leonxlnx)
-
-### Current Sponsors
-
-&lt;a href=&quot;https://animations.dev&quot; title=&quot;Emil Kowalski · animations.dev&quot;&gt;&lt;img src=&quot;assets/sponsors/animations-dev.webp&quot; width=&quot;62&quot; height=&quot;62&quot; alt=&quot;Emil Kowalski&quot; title=&quot;Emil Kowalski · animations.dev&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/dnakov&quot;&gt;&lt;img src=&quot;https://github.com/dnakov.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;dnakov&quot; title=&quot;dnakov&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/AkramReshad&quot;&gt;&lt;img src=&quot;https://github.com/AkramReshad.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;AkramReshad&quot; title=&quot;AkramReshad&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/ajmalaksar25&quot;&gt;&lt;img src=&quot;https://github.com/ajmalaksar25.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;ajmalaksar25&quot; title=&quot;ajmalaksar25&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/krikkkk&quot;&gt;&lt;img src=&quot;https://github.com/krikkkk.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;krikkkk&quot; title=&quot;krikkkk&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/navanchauhan&quot;&gt;&lt;img src=&quot;https://github.com/navanchauhan.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;navanchauhan&quot; title=&quot;navanchauhan&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/robinebers&quot;&gt;&lt;img src=&quot;https://github.com/robinebers.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;robinebers&quot; title=&quot;robinebers&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/JKc66&quot;&gt;&lt;img src=&quot;https://github.com/JKc66.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;JKc66&quot; title=&quot;JKc66&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/u2393696078-rgb&quot;&gt;&lt;img src=&quot;https://github.com/u2393696078-rgb.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;u2393696078-rgb&quot; title=&quot;u2393696078-rgb&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/a-human-created-this&quot;&gt;&lt;img src=&quot;https://github.com/a-human-created-this.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;a-human-created-this&quot; title=&quot;a-human-created-this&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/AtharvaJaiswal005&quot;&gt;&lt;img src=&quot;https://github.com/AtharvaJaiswal005.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;AtharvaJaiswal005&quot; title=&quot;AtharvaJaiswal005&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/ghughes7&quot;&gt;&lt;img src=&quot;https://github.com/ghughes7.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;ghughes7&quot; title=&quot;ghughes7&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/mccun934&quot;&gt;&lt;img src=&quot;https://github.com/mccun934.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;mccun934&quot; title=&quot;mccun934&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/techmedic5&quot;&gt;&lt;img src=&quot;https://github.com/techmedic5.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;techmedic5&quot; title=&quot;techmedic5&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/bytewerk-dev&quot;&gt;&lt;img src=&quot;https://github.com/bytewerk-dev.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;bytewerk-dev&quot; title=&quot;bytewerk-dev&quot; /&gt;&lt;/a&gt;
-
-&lt;p align=&quot;center&quot;&gt;
- &lt;a href=&quot;https://www.star-history.com/leonxlnx/taste-skill&quot;&gt;
-  &lt;picture&gt;
-   &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/badge?repo=Leonxlnx/taste-skill&amp;theme=dark&quot; /&gt;
-   &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/badge?repo=Leonxlnx/taste-skill&quot; /&gt;
-   &lt;img alt=&quot;Star History Rank&quot; src=&quot;https://api.star-history.com/badge?repo=Leonxlnx/taste-skill&quot; /&gt;
-  &lt;/picture&gt;
- &lt;/a&gt;
-&lt;/p&gt;
-
-## Research
-
-Background writing that shaped these skills lives in [`research/`](research/).
-
-## Star History
-
-&lt;a href=&quot;https://www.star-history.com/?repos=Leonxlnx%2Ftaste-skill&amp;type=date&amp;legend=top-left&quot;&gt;
- &lt;picture&gt;
-   &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/chart?repos=Leonxlnx/taste-skill&amp;type=date&amp;theme=dark&amp;legend=top-left&quot; /&gt;
-   &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/chart?repos=Leonxlnx/taste-skill&amp;type=date&amp;legend=top-left&quot; /&gt;
-   &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/chart?repos=Leonxlnx/taste-skill&amp;type=date&amp;legend=top-left&quot; /&gt;
- &lt;/picture&gt;
-&lt;/a&gt;
-
-## Common Questions
-
-**How is this different from other AI design skills?**  
-Multiple specialized variants, adjustable dials in key skills, anti-repetition rules informed by dedicated research. All are framework agnostic across major coding agents.
-
-**Does it work with React, Vue, Svelte?**  
-Yes. Rules target design intent, not a single framework API.
-
-**What is SKILL.md?**  
-A portable instruction file agents can load automatically; install via `npx skills add` or by copying into a repo or conversation.
-
-**Do image-generation skills install with `npx skills add`?**  
-Yes. They live under `skills/` alongside the code skills so the same CLI discovers them.
-
-## License
-
-[MIT License](LICENSE) · Copyright (c) 2026 Leonxlnx
-</pre>
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
@@ -653,15 +338,15 @@ Yes. They live under `skills/` alongside the code skills so the same CLI discove
             <title><![CDATA[asgeirtj/system_prompts_leaks]]></title>
             <link>https://github.com/asgeirtj/system_prompts_leaks</link>
             <guid>https://github.com/asgeirtj/system_prompts_leaks</guid>
-            <pubDate>Tue, 23 Jun 2026 00:27:12 GMT</pubDate>
+            <pubDate>Wed, 24 Jun 2026 00:22:18 GMT</pubDate>
             <description><![CDATA[Extracted system prompts from Anthropic - Claude Fable 5, Opus 4.8, Claude Code, Claude Design. OpenAI - ChatGPT 5.5 Thinking, GPT 5.5 Instant, Codex. Google - Gemini 3.5 Flash, 3.1 Pro, Antigravity. xAI - Grok, Cursor, Copilot, VS Code, Perplexity, and more. Updated regularly.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/asgeirtj/system_prompts_leaks">asgeirtj/system_prompts_leaks</a></h1>
             <p>Extracted system prompts from Anthropic - Claude Fable 5, Opus 4.8, Claude Code, Claude Design. OpenAI - ChatGPT 5.5 Thinking, GPT 5.5 Instant, Codex. Google - Gemini 3.5 Flash, 3.1 Pro, Antigravity. xAI - Grok, Cursor, Copilot, VS Code, Perplexity, and more. Updated regularly.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 45,019</p>
-            <p>Forks: 7,412</p>
-            <p>Stars today: 775 stars today</p>
+            <p>Stars: 45,405</p>
+            <p>Forks: 7,462</p>
+            <p>Stars today: 418 stars today</p>
             <h2>README</h2><pre>&gt; **As seen in The Washington Post:** [See the hidden rules behind AI. Then use them to rewrite this article.](https://wapo.st/49t4gSb) (May 11, 2026)
 # System Prompts Leaks
 The purpose of this repo is to document the System Prompt instructions for all the AI chatbots out there - Claude, ChatGPT, Gemini etc.
@@ -682,8 +367,8 @@ The purpose of this repo is to document the System Prompt instructions for all t
 
 | What | Date | Link |
 |------|------|------|
+| **Claude Design (Opus 4.8 — full prompt + 50 tools + 16 skills + 8 starter sources)** | June 23, 2026 | [System prompt](Anthropic/claude-design.md) |
 | **GitHub Copilot for macOS (app)** | June 18, 2026 | [System prompt](Microsoft/copilot-macos-app.md) |
-| **Claude Design (full built-in skills)** | June 18, 2026 | [System prompt](Anthropic/claude-design.md) |
 | **GPT-5.5 Codex (full prompt)** | June 18, 2026 | [System prompt](OpenAI/Codex/gpt-5.5.md) |
 | **Claude Fable 5** | June 9, 2026 | [System prompt](Anthropic/claude-fable-5.md) · [Diff vs Opus 4.8](https://www.diffchecker.com/QJn9jFNk/) |
 | **Claude Opus 4.8** | June 9, 2026 | [System prompt](Anthropic/claude-opus-4.8.md) · [Official](Anthropic/Official/2026-05-28-claude-opus-4.8.md) |
@@ -933,839 +618,1250 @@ The purpose of this repo is to document the System Prompt instructions for all t
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[FB208/OpenBidKit_Yibiao]]></title>
-            <link>https://github.com/FB208/OpenBidKit_Yibiao</link>
-            <guid>https://github.com/FB208/OpenBidKit_Yibiao</guid>
-            <pubDate>Tue, 23 Jun 2026 00:27:11 GMT</pubDate>
-            <description><![CDATA[开箱即用的AI标书编写工具，标书AI生成工具，投标工具箱、知识库、标书查重、废标项检查，完全开源免费，欢迎使用]]></description>
+            <title><![CDATA[juliangarnier/anime]]></title>
+            <link>https://github.com/juliangarnier/anime</link>
+            <guid>https://github.com/juliangarnier/anime</guid>
+            <pubDate>Wed, 24 Jun 2026 00:22:17 GMT</pubDate>
+            <description><![CDATA[JavaScript animation engine]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/FB208/OpenBidKit_Yibiao">FB208/OpenBidKit_Yibiao</a></h1>
-            <p>开箱即用的AI标书编写工具，标书AI生成工具，投标工具箱、知识库、标书查重、废标项检查，完全开源免费，欢迎使用</p>
+            <h1><a href="https://github.com/juliangarnier/anime">juliangarnier/anime</a></h1>
+            <p>JavaScript animation engine</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 1,034</p>
-            <p>Forks: 309</p>
-            <p>Stars today: 32 stars today</p>
-            <h2>README</h2><pre>&lt;img src=&quot;./screenshots/banner.webp&quot; alt=&quot;易标使用演示视频&quot; width=&quot;100%&quot;&gt;
-
-# 易标投标工具箱 - AI智能标书写作助手
+            <p>Stars: 70,304</p>
+            <p>Forks: 4,746</p>
+            <p>Stars today: 162 stars today</p>
+            <h2>README</h2><pre># Anime.js
 
 &lt;p align=&quot;center&quot;&gt;
-  &lt;strong&gt;简体中文&lt;/strong&gt; | &lt;a href=&quot;./README.en.md&quot;&gt;English&lt;/a&gt;
+  &lt;picture align=&quot;center&quot;&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;./assets/images/animejs-v4-logo-animation-dark.gif&quot;&gt;
+    &lt;img align=&quot;center&quot; alt=&quot;Anime.js V4 logo animation&quot; src=&quot;./assets/images/animejs-v4-logo-animation.gif&quot; width=&quot;560&quot;&gt;
+  &lt;/picture&gt;
 &lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/Electron-41+-47848f.svg&quot; alt=&quot;Electron&quot;&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/React-19+-61dafb.svg&quot; alt=&quot;React&quot;&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/TypeScript-5.9+-3178c6.svg&quot; alt=&quot;TypeScript&quot;&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/Vite-7+-646cff.svg&quot; alt=&quot;Vite&quot;&gt;
-  &lt;a href=&quot;https://deepwiki.com/FB208/OpenBidKit_Yibiao&quot;&gt;&lt;img src=&quot;https://deepwiki.com/badge.svg&quot; alt=&quot;Ask DeepWiki&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://linux.do/&quot; rel=&quot;nofollow&quot;&gt;
-  &lt;img src=&quot;https://camo.githubusercontent.com/1c3b7d159a0bd69f89a8147a3d875d8d6431c97c172e52bac05fda35ae7370c3/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c494e55582d2d444f2d436f6d6d756e6974792d626c75652e7376673f6c6f676f3d64617461253341696d616765253246737667253242786d6c25334262617365363425324350484e325a79423361575230614430694d5449774969426f5a576c6e61485139496a45794d434967646d6c6c64304a76654430694d434177494445794d4341784d6a4169494868746247357a50534a6f644852774f693876643364334c6e637a4c6d39795a7938794d4441774c334e325a794925324250474e73615842515958526f49476c6b50534a68496a343859326c795932786c49474e34505349324d43496759336b39496a597749694279505349304e794976506a7776593278706346426864476725324250474e70636d4e735a53426d615778735053496a5a6a426d4d4759774969426a654430694e6a416949474e35505349324d434967636a30694e5441694c7a3438636d566a6443426d615778735053496a4d574d78597a466c4969426a62476c774c58426864476739496e56796243676a59536b6949486739496a457749694235505349784d43496764326c6b64476739496a45774d434967614756705a3268305053497a4d434976506a78795a574e3049475a706247773949694e6d4d4759775a6a416949474e7361584174634746306144306964584a734b434e684b534967654430694d54416949486b39496a51774969423361575230614430694d5441774969426f5a576c6e61485139496a517749693825324250484a6c593351675a6d6c736244306949325a6d596a41774d79496759327870634331775958526f50534a31636d776f4932457049694234505349784d434967655430694f444169494864705a48526f505349784d4441694947686c6157646f644430694d7a41694c7a34384c334e325a7a34253344267374796c653d666c6174&quot; alt=&quot;友链 linux.do&quot; data-canonical-src=&quot;https://img.shields.io/badge/LINUX--DO-Community-blue.svg?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI%2BPGNsaXBQYXRoIGlkPSJhIj48Y2lyY2xlIGN4PSI2MCIgY3k9IjYwIiByPSI0NyIvPjwvY2xpcFBhdGg%2BPGNpcmNsZSBmaWxsPSIjZjBmMGYwIiBjeD0iNjAiIGN5PSI2MCIgcj0iNTAiLz48cmVjdCBmaWxsPSIjMWMxYzFlIiBjbGlwLXBhdGg9InVybCgjYSkiIHg9IjEwIiB5PSIxMCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIzMCIvPjxyZWN0IGZpbGw9IiNmMGYwZjAiIGNsaXAtcGF0aD0idXJsKCNhKSIgeD0iMTAiIHk9IjQwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIi8%2BPHJlY3QgZmlsbD0iI2ZmYjAwMyIgY2xpcC1wYXRoPSJ1cmwoI2EpIiB4PSIxMCIgeT0iODAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMzAiLz48L3N2Zz4%3D&amp;amp;style=flat&quot; style=&quot;max-width: 100%;&quot;&gt;
-  &lt;/a&gt;
+  &lt;strong&gt;
+  &lt;em&gt;Anime.js&lt;/em&gt; is a fast, multipurpose and lightweight JavaScript animation library with a simple, yet powerful API.&lt;br&gt;
+  It works with CSS properties, SVG, DOM attributes and JavaScript Objects.
+  &lt;/strong&gt;
 &lt;/p&gt;
 
-
-&lt;p align=&quot;left&quot;&gt;
-  &lt;strong&gt;🚀 开箱即用-开源免费AI标书编写工具&lt;/strong&gt;
-  &lt;br&gt;
-  易标投标工具箱是一款面向招投标场景的智能标书制作工具，完全开源，包括AI生成技术方案、图文生成、商务标、企业知识库管理、标书查重、废标项检查、标讯等，更多功能还在开发中。
-  &lt;br&gt;
-  支持OpenAI like模式的所有AI api，目前已深度适配DeepSeek、龙猫、火山方舟三个平台，也支持ollama、lm studio等接入本地模型。
-  &lt;br&gt;
-  &lt;br&gt;
-  &lt;strong&gt;❓ 解决什么问题&lt;/strong&gt;
-  &lt;br&gt;
-  现在AI写标书的付费工具非常多，但是价格都超级高，一份标书几十块，除非企业给报销，小企业的牛马根本用不起。免费的工具质量又非常差，OpenBidkit力争做投标领域的OpenClaw，提供开箱即用的优质标书编写工具，亲测一份20万字的投标标书，用deepseek v4 flash 生成只需要0.8-1元，还努力适配了完全免费的LongCat-2.0-Preview，从此牛马不用自己买草料了。
-&lt;/p&gt;
-
-
-## 🌐 官方网站
-
-**在线体验**: [https://yibiao.pro](https://yibiao.pro)
-
-获取更多产品信息、在线体验和技术支持。
-
-&gt; **广告位 · Jlaude API**
-&gt;
-&gt; 专注 GPT 全系列，比 DeepSeek V4 PRO更低成本，7 个月稳定高速！演武场原生对话 + 无限画布生图，一站配齐，好用不贵。
-&gt;
-&gt; 链接直达：https://jlaudeapi.com
-
-## 📢 声明
-近期收到大量issue攻击，对本仓库进行无理由诋毁和攻击，特此声明：
-
-1. 我不会停止开源，永不！
-2. 即使以后商业化，也会效仿Excalidraw、NocoDB这样优秀的开源项目，仅针对项目管理、云端存储、团队协作、企业服务等B端业务进行收费。我用人格担保，个人使用基础功能永久开源免费，且生成质量向付费软件看齐。  
-
-&lt;img src=&quot;./screenshots/issue_claim.png&quot; alt=&quot;易标使用演示视频&quot; width=&quot;100%&quot;&gt;
-
-## 🍉 鸣谢
-- 感谢所有用户的支持与信任
-- 特别鸣谢 &lt;a href=&quot;https://linux.do/&quot; rel=&quot;nofollow&quot;&gt;linuxdo&lt;/a&gt; 佬友们的支持与鼓励
-
-&lt;h2 align=&quot;center&quot;&gt;✨ 核心功能与优势&lt;/h2&gt;
 
 &lt;p align=&quot;center&quot;&gt;
-  &lt;strong&gt;AI写标书 · 标书AI · AI标书生成 · 技术标编写 · 投标文件生成&lt;/strong&gt;&lt;br&gt;
-  &lt;sub&gt;不止生成标书初稿，更强调开源可控、本地工作区、素材复用、图文表达和流程可恢复。&lt;/sub&gt;
+  &lt;img alt=&quot;NPM Downloads&quot; src=&quot;https://img.shields.io/npm/dm/animejs?style=flat-square&amp;logo=npm&quot;&gt;
+  &lt;img alt=&quot;jsDelivr hits (npm)&quot; src=&quot;https://img.shields.io/jsdelivr/npm/hm/animejs?style=flat-square&amp;logo=jsdeliver&quot;&gt;
+  &lt;img alt=&quot;GitHub Sponsors&quot; src=&quot;https://img.shields.io/github/sponsors/juliangarnier?style=flat-square&amp;logo=github&quot;&gt;
 &lt;/p&gt;
+
+## Sponsors
+
+Anime.js is 100% free and is only made possible with the help of our sponsors.
+Help the project become sustainable by sponsoring us on &lt;a target=&quot;_blank&quot; href=&quot;https://github.com/sponsors/juliangarnier&quot;&gt;GitHub Sponsors&lt;/a&gt;.
+
+### Platinum sponsors
 
 &lt;table&gt;
-  &lt;tr&gt;
-    &lt;td width=&quot;33%&quot; valign=&quot;top&quot;&gt;
-      &lt;strong&gt;🧩 开源可控&lt;/strong&gt;&lt;br&gt;
-      开源 AI标书 项目，可自行部署、二次开发和适配团队流程。
-    &lt;/td&gt;
-    &lt;td width=&quot;33%&quot; valign=&quot;top&quot;&gt;
-      &lt;strong&gt;💻 本地桌面工作区&lt;/strong&gt;&lt;br&gt;
-      配置、缓存和生成结果保存在本机，适合 Windows 标书文件处理。
-    &lt;/td&gt;
-    &lt;td width=&quot;33%&quot; valign=&quot;top&quot;&gt;
-      &lt;strong&gt;📄 多方式文档解析&lt;/strong&gt;&lt;br&gt;
-      支持本地解析与 MinerU 解析配置，兼顾常规文档和复杂文件。
-    &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td width=&quot;33%&quot; valign=&quot;top&quot;&gt;
-      &lt;strong&gt;📚 知识库复用&lt;/strong&gt;&lt;br&gt;
-      沉淀企业资料、历史案例和方案素材，让标书AI更贴合业务。
-    &lt;/td&gt;
-    &lt;td width=&quot;33%&quot; valign=&quot;top&quot;&gt;
-      &lt;strong&gt;🧩 图文与图表&lt;/strong&gt;&lt;br&gt;
-      支持 Mermaid 预览、正文配图和图表转 Word，增强方案表达。
-    &lt;/td&gt;
-    &lt;td width=&quot;33%&quot; valign=&quot;top&quot;&gt;
-      &lt;strong&gt;🔄 后台任务恢复&lt;/strong&gt;&lt;br&gt;
-      解析、生成等耗时任务持续落盘，切换页面后仍可恢复进度。
-    &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td width=&quot;33%&quot; valign=&quot;top&quot;&gt;
-      &lt;strong&gt;🛡️ 风险检查入口&lt;/strong&gt;&lt;br&gt;
-      预留标书查重、废标项检查工作区，聚焦重复表达和响应完整性。
-    &lt;/td&gt;
-    &lt;td width=&quot;33%&quot; valign=&quot;top&quot;&gt;
-      &lt;strong&gt;⚙️ 自定义AI配置&lt;/strong&gt;&lt;br&gt;
-      支持文本模型、生图模型和文件解析方式配置，适配团队习惯。
-    &lt;/td&gt;
-    &lt;td width=&quot;33%&quot; valign=&quot;top&quot;&gt;
-      &lt;strong&gt;✏️ 可编辑工作流&lt;/strong&gt;&lt;br&gt;
-      目录、正文和扩写结果可持续调整，方便 AI写标书 后人工定稿。
-    &lt;/td&gt;
-  &lt;/tr&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;
+        &lt;a target=&quot;_blank&quot; href=&quot;https://github.com/sponsors/juliangarnier&quot;&gt;
+          &lt;picture&gt;
+            &lt;img align=&quot;center&quot; src=&quot;./assets/sponsors/placeholder-large.png?v=200126&quot; width=&quot;310&quot;&gt;
+          &lt;/picture&gt;
+        &lt;/a&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        &lt;a target=&quot;_blank&quot; href=&quot;https://github.com/sponsors/juliangarnier&quot;&gt;
+          &lt;picture&gt;
+            &lt;img align=&quot;center&quot; src=&quot;./assets/sponsors/placeholder-large.png?v=200126&quot; width=&quot;310&quot;&gt;
+          &lt;/picture&gt;
+        &lt;/a&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        &lt;a target=&quot;_blank&quot; href=&quot;https://github.com/sponsors/juliangarnier&quot;&gt;
+          &lt;picture&gt;
+            &lt;img align=&quot;center&quot; src=&quot;./assets/sponsors/placeholder-large.png?v=200126&quot; width=&quot;310&quot;&gt;
+          &lt;/picture&gt;
+        &lt;/a&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 
-
-
-## 📦 下载与使用
-
-### ⬇️ 下载方式
-
-从 [GitHub Releases](https://github.com/yibiaoai/yibiao-simple/releases) 下载最新版本，运行安装包或可执行文件即可启动。
-
-### 🎬 使用方式
-
-&lt;a href=&quot;https://www.bilibili.com/video/BV1sC5i6SE74&quot;&gt;
-  &lt;img src=&quot;./screenshots/new_home.png&quot; alt=&quot;易标使用演示视频&quot; width=&quot;100%&quot;&gt;
-&lt;/a&gt;
-
-[点击前往 Bilibili 观看使用演示视频](https://www.bilibili.com/video/BV1sC5i6SE74)
-
-## 🧑‍💻 本地开发调试
-
-本仓库根目录没有 `package.json`，桌面客户端代码在 `client/`，开发命令都需要在 `client/` 目录下执行。
-
-本地开发调试 OpenCode Agent 相关能力前，需要先准备当前平台的 OpenCode binary。否则开发者测试页会报错：`OpenCode binary 不存在`。
-
-Windows x64：
-
-```powershell
-cd client
-npm ci
-$env:OPENCODE_VERSION=&quot;v1.17.8&quot;
-node scripts/prepare-opencode-binary.cjs --platform win32 --arch x64
-node scripts/verify-opencode-binary.cjs --platform win32 --arch x64
-npm run dev
-```
-
-macOS Apple Silicon：
-
-```bash
-cd client
-npm ci
-export OPENCODE_VERSION=&quot;v1.17.8&quot;
-node scripts/prepare-opencode-binary.cjs --platform darwin --arch arm64
-node scripts/verify-opencode-binary.cjs --platform darwin --arch arm64
-npm run dev
-```
-
-macOS Intel：
-
-```bash
-cd client
-npm ci
-export OPENCODE_VERSION=&quot;v1.17.8&quot;
-node scripts/prepare-opencode-binary.cjs --platform darwin --arch x64
-node scripts/verify-opencode-binary.cjs --platform darwin --arch x64
-npm run dev
-```
-
-如果你已经有可用的 OpenCode binary，也可以通过环境变量指定路径：
-
-```bash
-YIBIAO_OPENCODE_BIN=/absolute/path/to/opencode npm run dev
-```
-
-普通用户下载 GitHub Release 安装包后不需要执行这些脚本；发布流程会在 GitHub Actions 中自动下载并注入对应平台的 OpenCode binary。本地手动打包前也需要先执行对应平台的 `prepare-opencode-binary.cjs` 和 `verify-opencode-binary.cjs`。
-
-常规构建验证：
-
-```powershell
-cd client
-npm run build
-```
-
-## 🛠️ 技术架构
-
-当前产品主体是 `client/` 下的独立桌面客户端，不依赖旧 `frontend/`、`backend/` 结构。
-
-- **桌面端**：Electron Main / Preload 提供本地文件、配置、导出和后台任务能力
-- **界面层**：Vite + React + TypeScript，使用全局 CSS 和 Radix UI 基础组件
-- **业务模块**：技术方案、知识库、标书查重、废标项检查、设置页
-- **本地数据**：配置、工作区、生成缓存保存在 Electron `userData` 目录
-- **打包发布**：使用 electron-builder 构建 Windows / macOS 客户端
-
-### 🏗️ 项目结构
-
-```
-易标投标工具箱/
-├── client/                    # 当前桌面客户端主体
-│   ├── electron/              # Main、Preload、IPC、本地服务
-│   ├── src/                   # Renderer 应用源码
-│   │   ├── app/               # 路由、菜单、Provider
-│   │   ├── features/          # 技术方案、知识库等业务模块
-│   │   └── shared/            # 通用类型、AI、UI、工具函数
-│   ├── assets/                # 图标与静态资源
-│   └── package.json           # 客户端依赖和打包配置
-├── analytics/                 # 独立埋点服务
-├── tools/                     # 独立文档解析与 MinerU 验证工具
-└── README.md                  # 项目文档
-```
-
-## 🤝 贡献指南
-
-欢迎各种形式的贡献！
-
-1. **🐛 问题反馈**: 在 [Issues](https://github.com/yibiaoai/yibiao-simple/issues) 中报告bug
-2. **💡 功能建议**: 提出新功能需求和改进建议  
-3. **🔧 代码贡献**: Fork项目，提交Pull Request
-4. **📖 文档完善**: 帮助改进文档和使用说明
-
-
-## 📄 许可证
-
-本项目基于 [GNU Affero General Public License v3.0](LICENSE) 开源协议发布。
-
-你可以自由使用、修改、分发和商用本项目，但修改版、分发版和通过网络提供服务的版本必须遵守 AGPL-3.0 的开源义务，并保留本项目的 [NOTICE](NOTICE) 归属声明、原始仓库链接和作者信息。
-
-## 🙋‍♂️ 联系我们
+### Silver sponsors
 
 &lt;table&gt;
-  &lt;tr&gt;
-    &lt;td width=&quot;50%&quot; valign=&quot;top&quot;&gt;
-
-- **官方网站**: [https://yibiao.pro](https://yibiao.pro)
-- **问题反馈**: [GitHub Issues](https://github.com/yibiaoai/yibiao-simple/issues)
-- **邮箱联系**: support@yibiao.pro
-
-    &lt;/td&gt;
-    &lt;td width=&quot;33%&quot; valign=&quot;top&quot;&gt;
-      &lt;p&gt;
-        &lt;img src=&quot;./screenshots/企业微信.png&quot; alt=&quot;企业微信二维码&quot; width=&quot;180&quot;&gt;
-      &lt;/p&gt;
-    &lt;/td&gt;
-  &lt;/tr&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;
+        &lt;a target=&quot;_blank&quot; href=&quot;https://github.com/sponsors/juliangarnier&quot;&gt;
+          &lt;picture&gt;
+            &lt;img align=&quot;center&quot; src=&quot;./assets/sponsors/placeholder-small.png?v=200126&quot; width=&quot;141&quot;&gt;
+          &lt;/picture&gt;
+        &lt;/a&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        &lt;a target=&quot;_blank&quot; href=&quot;https://github.com/sponsors/juliangarnier&quot;&gt;
+          &lt;picture&gt;
+            &lt;img align=&quot;center&quot; src=&quot;./assets/sponsors/placeholder-small.png?v=200126&quot; width=&quot;141&quot;&gt;
+          &lt;/picture&gt;
+        &lt;/a&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        &lt;a target=&quot;_blank&quot; href=&quot;https://github.com/sponsors/juliangarnier&quot;&gt;
+          &lt;picture&gt;
+            &lt;img align=&quot;center&quot; src=&quot;./assets/sponsors/placeholder-small.png?v=200126&quot; width=&quot;141&quot;&gt;
+          &lt;/picture&gt;
+        &lt;/a&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        &lt;a target=&quot;_blank&quot; href=&quot;https://github.com/sponsors/juliangarnier&quot;&gt;
+          &lt;picture&gt;
+            &lt;img align=&quot;center&quot; src=&quot;./assets/sponsors/placeholder-small.png?v=200126&quot; width=&quot;141&quot;&gt;
+          &lt;/picture&gt;
+        &lt;/a&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        &lt;a target=&quot;_blank&quot; href=&quot;https://github.com/sponsors/juliangarnier&quot;&gt;
+          &lt;picture&gt;
+            &lt;img align=&quot;center&quot; src=&quot;./assets/sponsors/placeholder-small.png?v=200126&quot; width=&quot;141&quot;&gt;
+          &lt;/picture&gt;
+        &lt;/a&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        &lt;a target=&quot;_blank&quot; href=&quot;https://github.com/sponsors/juliangarnier&quot;&gt;
+          &lt;picture&gt;
+            &lt;img align=&quot;center&quot; src=&quot;./assets/sponsors/placeholder-small.png?v=200126&quot; width=&quot;141&quot;&gt;
+          &lt;/picture&gt;
+        &lt;/a&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 
+Get featured here by becoming a &lt;a target=&quot;_blank&quot; href=&quot;https://github.com/sponsors/juliangarnier&quot;&gt;GitHub Sponsor&lt;/a&gt;.
 
 
-## Star History
+## Usage
 
-&lt;a href=&quot;https://www.star-history.com/?repos=FB208%2FOpenBidKit_Yibiao&amp;type=timeline&amp;legend=top-left&quot;&gt;
- &lt;picture&gt;
-   &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/chart?repos=FB208/OpenBidKit_Yibiao&amp;type=timeline&amp;theme=dark&amp;legend=top-left&quot; /&gt;
-   &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/chart?repos=FB208/OpenBidKit_Yibiao&amp;type=timeline&amp;legend=top-left&quot; /&gt;
-   &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/chart?repos=FB208/OpenBidKit_Yibiao&amp;type=timeline&amp;legend=top-left&quot; /&gt;
- &lt;/picture&gt;
-&lt;/a&gt;
-
----
-
-&lt;p align=&quot;center&quot;&gt;
-  ⭐ 如果这个项目对您有帮助，请给我们一个Star支持！
-&lt;/p&gt;
+Anime.js V4 works by importing ES modules like so:
 
 
-&lt;p align=&quot;center&quot;&gt;
-  ⭐ 本项目已在 LINUX DO 社区进行开源自荐与交流，欢迎佬友监督、反馈和贡献。
-&lt;/p&gt;
+&lt;table&gt;
+&lt;tr&gt;
+  &lt;td&gt;
 
-`AI写标书` `标书AI` `AI标书生成` `免费标书工具`
+```javascript
+import {
+  animate,
+  stagger,
+} from &#039;animejs&#039;;
+
+animate(&#039;.square&#039;, {
+  x: 320,
+  rotate: { from: -180 },
+  duration: 1250,
+  delay: stagger(65, { from: &#039;center&#039; }),
+  ease: &#039;inOutQuint&#039;,
+  loop: true,
+  alternate: true
+});
+```
+
+  &lt;/td&gt;
+  &lt;td&gt;
+    &lt;img align=&quot;center&quot; alt=&quot;Anime.js code example&quot; src=&quot;./assets/images/usage-example-result.gif&quot;&gt;
+  &lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+## V4 Documentation
+
+The full documentation is available [here](https://animejs.com/documentation).
+
+## V3 Migration guide
+
+You can find the v3 to v4 migration guide [here](https://github.com/juliangarnier/anime/wiki/Migrating-from-v3-to-v4).
+
+## NPM development scripts
+
+First, run `npm i` to install all the necessary packages.
+Then, execute the following scripts with `npm run &lt;script&gt;`.
+
+| script | action |
+| ------ | ------ |
+| `dev` | Watches for changes in `src/**/*.js`, bundles the ESM version to `lib/` and creates type declarations in `types/` |
+| `dev:test` | Runs `dev` and `test:browser` concurrently |
+| `build` | Bundles ESM / UMD / CJS / IIFE versions to `lib/` and creates type declarations in `types/` |
+| `test:browser` | Starts a local server and runs all browser-related tests |
+| `test:node` | Starts Node-related tests |
+| `open:examples` | Starts a local server to browse the examples locally |
+
+© [Julian Garnier](http://juliangarnier.com) | [MIT License](LICENSE.md)
 </pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[gsd-build/get-shit-done]]></title>
-            <link>https://github.com/gsd-build/get-shit-done</link>
-            <guid>https://github.com/gsd-build/get-shit-done</guid>
-            <pubDate>Tue, 23 Jun 2026 00:27:10 GMT</pubDate>
-            <description><![CDATA[A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.]]></description>
+            <title><![CDATA[truelockmc/streambert]]></title>
+            <link>https://github.com/truelockmc/streambert</link>
+            <guid>https://github.com/truelockmc/streambert</guid>
+            <pubDate>Wed, 24 Jun 2026 00:22:16 GMT</pubDate>
+            <description><![CDATA[A cross-platform Electron Desktop App to stream and download any Movie, TV Series or Anime in the World. Zero Ads and Tracking]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/gsd-build/get-shit-done">gsd-build/get-shit-done</a></h1>
-            <p>A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.</p>
+            <h1><a href="https://github.com/truelockmc/streambert">truelockmc/streambert</a></h1>
+            <p>A cross-platform Electron Desktop App to stream and download any Movie, TV Series or Anime in the World. Zero Ads and Tracking</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 64,450</p>
-            <p>Forks: 5,471</p>
-            <p>Stars today: 46 stars today</p>
-            <h2>README</h2><pre>&lt;!-- GSD 2 - Archived repository redirect --&gt;
+            <p>Stars: 5,456</p>
+            <p>Forks: 473</p>
+            <p>Stars today: 160 stars today</p>
+            <h2>README</h2><pre>[![Downloads@latest](https://img.shields.io/github/downloads/truelockmc/streambert/latest/total?style=for-the-badge)](https://github.com/truelockmc/streambert/releases/latest/)
+[![Release Version Badge](https://img.shields.io/github/v/release/truelockmc/streambert?style=for-the-badge)](https://github.com/truelockmc/streambert/releases)
+[![Issues Badge](https://img.shields.io/github/issues/truelockmc/streambert?style=for-the-badge)](https://github.com/truelockmc/streambert/issues)
+[![Closed Issues Badge](https://img.shields.io/github/issues-closed/truelockmc/streambert?color=%238256d0&amp;style=for-the-badge)](https://github.com/truelockmc/streambert/issues?q=is%3Aissue+is%3Aclosed)&lt;br&gt;
 
-# GSD Has Moved
+[![GitHub](https://img.shields.io/badge/GitHub-truelockmc%2Fstreambert-181717?style=for-the-badge&amp;logo=github)](https://github.com/truelockmc/streambert)
+[![Codeberg](https://img.shields.io/badge/Codeberg-truelockmc%2Fstreambert-2185D0?style=for-the-badge&amp;logo=codeberg)](https://codeberg.org/truelockmc/streambert)
+[![AUR Version](https://img.shields.io/aur/version/streambert-bin?style=for-the-badge&amp;logo=archlinux)](https://aur.archlinux.org/packages/streambert-bin)
+# Streambert
+A cross-platform Electron Desktop App to stream and download any Movie, TV Series or Anime in the World. Zero Ads and Tracking &lt;br&gt;&lt;/br&gt;
+![Logo](public/logo.svg)
+[Installation](https://github.com/truelockmc/streambert?tab=readme-ov-file#requirements)
 
-This repository is no longer the active home for GSD development.
+## Why Streambert?
+- 🎦 **Streaming:** Stream any Movie, Anime or TV Series from around the World.
+- 📥 **Downloading:** Download anything you want to watch.
+- 📃 **Subtitles:** Download and manage Subtitles.
+- ⚙️ **Customizability:** Customize the Interface and Features to your unique needs.
+- 📚 **Library:** Track what you watched, save stuff you want to watch and manage your Downloads.
+- ✨ **Trending:** Discover new things to Watch every Day.
+- 🛡️ **Privacy:** Completely Ads and Tracker free, forever.
+- ⚡ **Speed:** Stream faster than any Browser can, download with multithreading.
 
-The project now continues as **GSD Core** in the Open GSD repository:
-
-https://github.com/open-gsd/gsd-core
-
-Use the new repository for current source code, issues, releases, and contribution
-work.
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[decolua/9router]]></title>
-            <link>https://github.com/decolua/9router</link>
-            <guid>https://github.com/decolua/9router</guid>
-            <pubDate>Tue, 23 Jun 2026 00:27:09 GMT</pubDate>
-            <description><![CDATA[Unlimited FREE AI coding. Connect Claude Code, Codex, Cursor, Cline, Copilot, Antigravity to FREE Claude/GPT/Gemini via 40+ providers. Auto-fallback, RTK -40% tokens, never hit limits.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/decolua/9router">decolua/9router</a></h1>
-            <p>Unlimited FREE AI coding. Connect Claude Code, Codex, Cursor, Cline, Copilot, Antigravity to FREE Claude/GPT/Gemini via 40+ providers. Auto-fallback, RTK -40% tokens, never hit limits.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 18,242</p>
-            <p>Forks: 2,874</p>
-            <p>Stars today: 98 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-  &lt;img src=&quot;./images/9router.png?1&quot; alt=&quot;9Router Dashboard&quot; width=&quot;800&quot;/&gt;
-  
-  # 9Router - FREE AI Router &amp; Token Saver
-  
-  **Never stop coding. Save 20-40% tokens with RTK + auto-fallback to FREE &amp; cheap AI models.**
-  
-  **Connect All AI Code Tools (Claude Code, Cursor, Antigravity, Copilot, Codex, Gemini, OpenCode, Cline, OpenClaw...) to 40+ AI Providers &amp; 100+ Models.**
-  
-  [![npm](https://img.shields.io/npm/v/9router.svg)](https://www.npmjs.com/package/9router)
-  [![Downloads](https://img.shields.io/npm/dm/9router.svg)](https://www.npmjs.com/package/9router)
-  [![Docker Pulls](https://img.shields.io/docker/pulls/decolua/9router.svg?logo=docker&amp;label=Docker%20pulls)](https://hub.docker.com/r/decolua/9router)
-  [![GHCR](https://img.shields.io/badge/GHCR-decolua%2F9router-blue?logo=github)](https://github.com/decolua/9router/pkgs/container/9router)
-  [![License](https://img.shields.io/npm/l/9router.svg)](https://github.com/decolua/9router/blob/main/LICENSE)
-
-  &lt;a href=&quot;https://trendshift.io/repositories/22628&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/22628&quot; alt=&quot;decolua%2F9router | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
-  
-  [🚀 Quick Start](#-quick-start) • [💡 Features](#-key-features) • [📖 Setup](#-setup-guide) • [🌐 Website](https://9router.com)
-
-  [🇻🇳 Tiếng Việt](./i18n/README.vi.md) • [🇨🇳 中文](./i18n/README.zh-CN.md) • [🇯🇵 日本語](./i18n/README.ja-JP.md) • [🇷🇺 Русский](./i18n/README.ru.md)
-&lt;/div&gt;
+![Explore new Stuff](screenshots/trending.png)
+![Watch TV Series](screenshots/series.png)
+![Watch Movies](screenshots/movie.png)
+![Watch Anime](screenshots/anime.png)
+![Without any Ads or Trackers](screenshots/adblock.png)
+![Customize](screenshots/customize-1.png)
+![Customize](screenshots/customize-2.png)
+![Download Subtitles](screenshots/subs.png)
+![Download Everything](screenshots/download.png)
+---
+[![Stargazers](https://reporoster.com/stars/dark/truelockmc/streambert)](https://github.com/truelockmc/streambert/stargazers)
+---
+## Streaming
+The Application mainly gets Video Streams from VidSrc (you can also Stream from videasy.net and 2Embed). &lt;br&gt;&lt;/br&gt;
+It fetches Information for Images, Info Texts, Search and Homepage from [tmdb](https://www.themoviedb.org/).
 
 ---
 
-## 🤔 Why 9Router?
-
-**Stop wasting money, tokens and hitting limits:**
-
-- ❌ Subscription quota expires unused every month
-- ❌ Rate limits stop you mid-coding
-- ❌ Tool outputs (git diff, grep, ls...) burn tokens fast
-- ❌ Expensive APIs ($20-50/month per provider)
-- ❌ Manual switching between providers
-
-**9Router solves this:**
-
-- ✅ **RTK Token Saver** - Auto-compress tool_result content, save 20-40% tokens per request
-- ✅ **Maximize subscriptions** - Track quota, use every bit before reset
-- ✅ **Auto fallback** - Subscription → Cheap → Free, zero downtime
-- ✅ **Multi-account** - Round-robin between accounts per provider
-- ✅ **Universal** - Works with Claude Code, Codex, Cursor, Cline, any CLI tool
+## Downloading
+You can download those Video Streams because the Program sources Links to their .m3u8 Playlist Files ([similar to this Browser Extension](https://addons.mozilla.org/en-US/firefox/addon/m3u8-link-finder/)). &lt;br&gt;&lt;/br&gt;
+Once you click &#039;Download&#039; these Links are used to download the Full Movie/TV Episode using [this Program](https://github.com/truelockmc/vid-dl-cli-only). You can then watch them In-App or take the Files on any Storage Medium you want.
 
 ---
 
-## 🔄 How It Works
+## Anime
+You can also watch Anime, the App checks if a Movie or Series is an Anime and then sources its Metadata from [AniList](https://anilist.co/) instead of [tmdb](https://www.themoviedb.org/). &lt;br&gt;&lt;/br&gt;
+Media Files for Animes are scraped from AllManga.to (i stole this mechanic from [ani-cli](https://github.com/pystardust/ani-cli)). The App directly gets .mp4 Files and doesnt evem show you the AllManga website, you can also download these Files, just like any other Content.
 
-```
-┌─────────────┐
-│  Your CLI   │  (Claude Code, Codex, OpenClaw, Cursor, Cline...)
-│   Tool      │
-└──────┬──────┘
-       │ http://localhost:20128/v1
-       ↓
-┌─────────────────────────────────────────────┐
-│           9Router (Smart Router)            │
-│  • RTK Token Saver (cut tool_result tokens) │
-│  • Format translation (OpenAI ↔ Claude)     │
-│  • Quota tracking                           │
-│  • Auto token refresh                       │
-└──────┬──────────────────────────────────────┘
-       │
-       ├─→ [Tier 1: SUBSCRIPTION] Claude Code, Codex, GitHub Copilot
-       │   ↓ quota exhausted
-       ├─→ [Tier 2: CHEAP] GLM ($0.6/1M), MiniMax ($0.2/1M)
-       │   ↓ budget limit
-       └─→ [Tier 3: FREE] Kiro, OpenCode Free, Vertex ($300 credits)
 
-Result: Never stop coding, minimal cost + 20-40% token savings via RTK
-```
+## Requirements
+
+- [Node.js](https://nodejs.org/) (&gt;=22.12.0) installed (only if you aren&#039;t using [prebuilt Binaries](https://github.com/truelockmc/streambert/releases/latest))
+- A free TMDB API Read Access Token ([Guide on how to get one](tmdb-tutorial.md))
+- For downloading, [this Program](https://github.com/truelockmc/vid-dl-cli-only/releases/latest) somewhere on your PC and [ffmpeg](https://ffmpeg.org/download.html) installed
 
 ---
+## Installation
+On first launch you&#039;ll be prompted to enter your TMDB API key. ([Guide on how to get one](tmdb-tutorial.md))
+It&#039;s saved locally, you only need to do this once.
 
-## ⚡ Quick Start
+### Linux, Manual (.deb / .AppImage / .pacman)
 
-**1. Install globally:**
-
+Download the latest `.deb` `.pacman` or `.AppImage` from the [Releases](https://github.com/truelockmc/streambert/releases/latest) page.
 ```bash
-npm install -g 9router
-9router
+# .deb
+sudo dpkg -i streambert_*.deb
+
+# Arch Linux (.pacman)
+sudo pacman -U streambert-*.pacman
+
+# .AppImage (you can also do it with Gearlever)
+chmod +x Streambert-x64.AppImage &amp;&amp; ./Streambert-x64.AppImage
 ```
 
-🎉 Dashboard opens at `http://localhost:20128`
+### Windows
 
-**2. Connect a FREE provider (no signup needed):**
+Download the latest `Streambert Setup *.exe` from the [Releases](https://github.com/truelockmc/streambert/releases/latest) page and run it.
 
-Dashboard → Providers → Connect **Kiro AI** (free Claude unlimited) or **OpenCode Free** (no auth) → Done!
+### macOS
+Download the latest `Streambert-*-universal.dmg` from the [Releases](https://github.com/truelockmc/streambert/releases/latest) page, open it and drag Streambert to your Applications folder.
 
-**3. Use in your CLI tool:**
+---
 
-```
-Claude Code/Codex/OpenClaw/Cursor/Cline Settings:
-  Endpoint: http://localhost:20128/v1
-  API Key: [copy from dashboard]
-  Model: kr/claude-sonnet-4.5
-```
 
-**That&#039;s it!** Start coding with FREE AI models.
-
-**Alternative: run from source (this repository):**
-
-This repository package is private (`9router-app`), so source/Docker execution is the expected local development path.
-
+## Building from Source
+1. Install dependencies:
 ```bash
-cp .env.example .env
 npm install
-PORT=20128 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run dev
 ```
-
-Production mode:
-
+2. Build
 ```bash
-npm run build
-PORT=20128 HOSTNAME=0.0.0.0 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run start
+npm run dist:win   
+```
+or
+```bash
+npm run dist:linux 
+```
+or (for Arch Linux)
+```bash
+npm run dist:arch
+```
+or (for an AppImage only)
+```bash
+npm run dist:appimage
+```
+or (for a .deb only)
+```bash
+npm run dist:deb
+```
+or (for a .rpm only)
+```bash
+npm run dist:rpm
+```
+or (for macOS)
+```bash
+npm run dist:mac
+```
+or (build all platforms at once)
+```bash
+npm run dist
 ```
 
-Default URLs:
-- Dashboard: `http://localhost:20128/dashboard`
-- OpenAI-compatible API: `http://localhost:20128/v1`
+&gt; [!IMPORTANT]
+&gt; If you are building/installing on Arch Linux and encounter errors, you may need these libraries:
+&gt; - **libcrypt.so.1 error:** `sudo pacman -S libxcrypt-compat`
+&gt; - **http-parser dependency error:** `yay -S http-parser` (from AUR)
 
----
+## License
+This project is open-source software licensed under the GNU General Public License v3.0 [(GPL-3.0)](LICENSE).
 
-## Video Guides
+Forks may be created but they MUST stay open-sourced.
 
-&lt;div align=&quot;center&quot;&gt;
+## Contributing
+Everyone is welcome to contribute to this project.
+Before contributing please make sure to read the [Contributing Guidelines](CONTRIBUTING.md) and act accordingly.
 
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;
-      &lt;a href=&quot;https://www.youtube.com/watch?v=raEyZPg5xE0&quot;&gt;
-        &lt;img src=&quot;https://img.youtube.com/vi/raEyZPg5xE0/maxresdefault.jpg&quot; alt=&quot;9Router Setup Tutorial&quot; width=&quot;300&quot;/&gt;
-      &lt;/a&gt;&lt;br/&gt;
-      &lt;b&gt;🇺🇸 English&lt;/b&gt;&lt;br/&gt;
-      &lt;sub&gt;9Router + Claude Code FREE Setup&lt;br/&gt;by &lt;a href=&quot;https://www.youtube.com/@BuildAIWithHamid&quot;&gt;Build AI With Hamid&lt;/a&gt;&lt;/sub&gt;
-    &lt;/td&gt;
-    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;
-      &lt;a href=&quot;https://www.youtube.com/watch?v=X69n5Lm06Yw&quot;&gt;
-        &lt;img src=&quot;https://img.youtube.com/vi/X69n5Lm06Yw/maxresdefault.jpg&quot; alt=&quot;Tiết kiệm chi phí LLM với 9Router&quot; width=&quot;300&quot;/&gt;
-      &lt;/a&gt;&lt;br/&gt;
-      &lt;b&gt;🇻🇳 Tiếng Việt&lt;/b&gt;&lt;br/&gt;
-      &lt;sub&gt;Tiết kiệm chi phí LLM cho OpenClaw với 9Router&lt;br/&gt;by &lt;a href=&quot;https://www.youtube.com/c/M%C3%ACAIblog&quot;&gt;Mì AI&lt;/a&gt;&lt;/sub&gt;
-    &lt;/td&gt;
-    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;
-      &lt;a href=&quot;https://www.youtube.com/watch?v=o3qYCyjrFYg&quot;&gt;
-        &lt;img src=&quot;https://img.youtube.com/vi/o3qYCyjrFYg/maxresdefault.jpg&quot; alt=&quot;Claude Code FREE Forever&quot; width=&quot;300&quot;/&gt;
-      &lt;/a&gt;&lt;br/&gt;
-      &lt;b&gt;🇺🇸 English&lt;/b&gt;&lt;br/&gt;
-      &lt;sub&gt;Claude Code FREE Forever — Unlimited Models&lt;br/&gt;by &lt;a href=&quot;https://www.youtube.com/@BuildAIWithHamid&quot;&gt;Build AI With Hamid&lt;/a&gt;&lt;/sub&gt;
-    &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;
-      &lt;a href=&quot;https://www.youtube.com/watch?v=Ttpc26m39Dw&quot;&gt;
-        &lt;img src=&quot;https://img.youtube.com/vi/Ttpc26m39Dw/maxresdefault.jpg&quot; alt=&quot;Claude CLI Free Setup&quot; width=&quot;300&quot;/&gt;
-      &lt;/a&gt;&lt;br/&gt;
-      &lt;b&gt;🇺🇸 English&lt;/b&gt;&lt;br/&gt;
-      &lt;sub&gt;Claude CLI Free Setup with 9Router 🚀&lt;br/&gt;by &lt;a href=&quot;https://www.youtube.com/@CodeVerseSoban&quot;&gt;CodeVerse Soban&lt;/a&gt;&lt;/sub&gt;
-    &lt;/td&gt;
-    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;
-      &lt;a href=&quot;https://www.youtube.com/watch?v=G-5A_D5Pm6Y&quot;&gt;
-        &lt;img src=&quot;https://img.youtube.com/vi/G-5A_D5Pm6Y/maxresdefault.jpg&quot; alt=&quot;Cài đặt OpenClaw Free A-Z&quot; width=&quot;300&quot;/&gt;
-      &lt;/a&gt;&lt;br/&gt;
-      &lt;b&gt;🇻🇳 Tiếng Việt&lt;/b&gt;&lt;br/&gt;
-      &lt;sub&gt;Cài Đặt OpenClaw Free Từ A-Z + 9Router&lt;br/&gt;by &lt;a href=&quot;https://www.youtube.com/@maigia&quot;&gt;Mai Gia&lt;/a&gt;&lt;/sub&gt;
-    &lt;/td&gt;
-    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;
-      &lt;a href=&quot;https://www.youtube.com/watch?v=JXmg8_gccgE&quot;&gt;
-        &lt;img src=&quot;https://img.youtube.com/vi/JXmg8_gccgE/maxresdefault.jpg&quot; alt=&quot;FREE OpenClaw with Claude Opus&quot; width=&quot;300&quot;/&gt;
-      &lt;/a&gt;&lt;br/&gt;
-      &lt;b&gt;🇺🇸 English&lt;/b&gt;&lt;br/&gt;
-      &lt;sub&gt;FREE OpenClaw + Claude Opus 4.6&lt;br/&gt;by &lt;a href=&quot;https://www.youtube.com/@BuildAIWithHamid&quot;&gt;Build AI With Hamid&lt;/a&gt;&lt;/sub&gt;
-    &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;
-      &lt;a href=&quot;https://www.youtube.com/watch?v=CkVZZUSTXAI&quot;&gt;
-        &lt;img src=&quot;https://img.youtube.com/vi/CkVZZUSTXAI/mqdefault.jpg&quot; alt=&quot;Claude CLI Free Setup&quot; width=&quot;300&quot;/&gt;
-      &lt;/a&gt;&lt;br/&gt;
-      &lt;b&gt;🇮🇩 Indonesia&lt;/b&gt;&lt;br/&gt;
-      &lt;sub&gt;Koding 24 Jam Anti Rate Limit! Hemat Token AI 65% | Tutorial Quick Setup 9Router 🚀&lt;br/&gt;by &lt;a href=&quot;https://www.youtube.com/@krisswuh&quot;&gt;Krisswuh&lt;/a&gt;&lt;/sub&gt;
-    &lt;/td&gt;
-    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;
-      &lt;a href=&quot;https://www.youtube.com/watch?v=TXGv4eofe1I&quot;&gt;
-        &lt;img src=&quot;https://img.youtube.com/vi/TXGv4eofe1I/mqdefault.jpg&quot; alt=&quot;Cara Deploy 9Router di Hugging Face GRATIS Non-Stop! | Alternatif VPS RAM 16GB&quot; width=&quot;300&quot;/&gt;
-      &lt;/a&gt;&lt;br/&gt;
-      &lt;b&gt;🇮🇩 Indonesia&lt;/b&gt;&lt;br/&gt;
-      &lt;sub&gt;Cara Deploy 9Router di Hugging Face GRATIS Non-Stop! | Alternatif VPS RAM 16GB&lt;br/&gt;by &lt;a href=&quot;https://www.youtube.com/@krisswuh&quot;&gt;Krisswuh&lt;/a&gt;&lt;/sub&gt;
-    &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
+## Legal Disclaimer
 
-&lt;/div&gt;
+**IMPORTANT: This application is for educational and personal use only.**
 
-&gt; 🎬 **Made a video about 9Router?** Submit a [Pull Request](https://github.com/decolua/9router/pulls) adding your video to this section — we&#039;ll merge it!
+- Streambert does not host, store, or distribute any copyrighted content
+- All content is sourced from third-party providers and websites
+- Users are solely responsible for ensuring they have legal rights to access any content
+- The developer does not endorse or encourage copyright infringement
+- Users must comply with all applicable laws in their jurisdiction
+- Any legal issues should be directed to the actual content providers
+- This app functions as a search engine aggregator only
+- No copyrighted material is stored on my side
 
----
+## Legal Notice
 
-## 🛠️ Supported CLI Tools
+This application is provided &quot;as is&quot; for educational purposes. The developer:
+- Does not claim ownership of any content
+- Does not profit from copyrighted material in any way
+- Does not control third-party content providers
+- Encourages users to support content creators through legal means
 
-9Router works seamlessly with all major AI coding tools:
-
-&lt;div align=&quot;center&quot;&gt;
-  &lt;table&gt;
-    &lt;tr&gt;
-      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
-        &lt;img src=&quot;./public/providers/claude.png&quot; width=&quot;60&quot; alt=&quot;Claude Code&quot;/&gt;&lt;br/&gt;
-        &lt;b&gt;Claude-Code&lt;/b&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
-        &lt;img src=&quot;./public/providers/openclaw.png&quot; width=&quot;60&quot; alt=&quot;OpenClaw&quot;/&gt;&lt;br/&gt;
-        &lt;b&gt;OpenClaw&lt;/b&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
-        &lt;img src=&quot;./public/providers/codex.png&quot; width=&quot;60&quot; alt=&quot;Codex&quot;/&gt;&lt;br/&gt;
-        &lt;b&gt;Codex&lt;/b&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
-        &lt;img src=&quot;./public/providers/opencode.png&quot; width=&quot;60&quot; alt=&quot;OpenCode&quot;/&gt;&lt;br/&gt;
-        &lt;b&gt;OpenCode&lt;/b&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
-        &lt;img src=&quot;./public/providers/cursor.png&quot; width=&quot;60&quot; alt=&quot;Cursor&quot;/&gt;&lt;br/&gt;
-        &lt;b&gt;Cursor&lt;/b&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
-        &lt;img src=&quot;./public/providers/antigravity.png&quot; width=&quot;60&quot; alt=&quot;Antigravity&quot;/&gt;&lt;br/&gt;
-        &lt;b&gt;Antigravity&lt;/b&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
-        &lt;img src=&quot;./public/providers/cline.png&quot; width=&quot;60&quot; alt=&quot;Cline&quot;/&gt;&lt;br/&gt;
-        &lt;b&gt;Cline&lt;/b&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
-        &lt;img src=&quot;./public/providers/continue.png&quot; width=&quot;60&quot; alt=&quot;Continue&quot;/&gt;&lt;br/&gt;
-        &lt;b&gt;Continue&lt;/b&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
-        &lt;img src=&quot;./public/providers/droid.png&quot; width=&quot;60&quot; alt=&quot;Droid&quot;/&gt;&lt;br/&gt;
-        &lt;b&gt;Droid&lt;/b&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
-        &lt;img src=&quot;./public/providers/roo.png&quot; width=&quot;60&quot; alt=&quot;Roo&quot;/&gt;&lt;br/&gt;
-        &lt;b&gt;Roo&lt;/b&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
-        &lt;img src=&quot;./public/providers/copilot.png&quot; width=&quot;60&quot; alt=&quot;Copilot&quot;/&gt;&lt;br/&gt;
-        &lt;b&gt;Copilot&lt;/b&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
-        &lt;img src=&quot;./public/providers/kilocode.png&quot; width=&quot;60&quot; alt=&quot;Kilo Code&quot;/&gt;&lt;br/&gt;
-        &lt;b&gt;Kilo Code&lt;/b&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/table&gt;
-&lt;/div&gt;
-
----
-
-## 🌐 Supported Providers
-
-### 🔐 OAuth Providers
-
-&lt;div align=&quot;center&quot;&gt;
-  &lt;table&gt;
-    &lt;tr&gt;
-      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
-        &lt;img src=&quot;./public/providers/claude.png&quot; width=&quot;60&quot; alt=&quot;Claude Code&quot;/&gt;&lt;br/&gt;
-        &lt;b&gt;Claude-Code&lt;/b&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
-        &lt;img src=&quot;./public/providers/antigravity.png&quot; width=&quot;60&quot; alt=&quot;Antigravity&quot;/&gt;&lt;br/&gt;
-        &lt;b&gt;Antigravity&lt;/b&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
-        &lt;img src=&quot;./public/providers/codex.png&quot; width=&quot;60&quot; alt=&quot;Codex&quot;/&gt;&lt;br/&gt;
-        &lt;b&gt;Codex&lt;/b&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
-        &lt;img src=&quot;./public/providers/github.png&quot; width=&quot;60&quot; alt=&quot;GitHub&quot;/&gt;&lt;br/&gt;
-        &lt;b&gt;GitHub&lt;/b&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
-        &lt;img src=&quot;./public/providers/cursor.png&quot; width=&quot;60&quot; alt=&quot;Cursor&quot;/&gt;&lt;br/&gt;
-        &lt;b&gt;Cursor&lt;/b&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/table&gt;
-&lt;/div&gt;
-
-### 🆓 Free Providers
-
-&lt;div align=&quot;center&quot;&gt;
-  &lt;table&gt;
-    &lt;tr&gt;
-      &lt;td align=&quot;center&quot; width=&quot;150&quot;&gt;
-        &lt;img src=&quot;./public/providers/kiro.png&quot; width=&quot;70&quot; alt=&quot;Kiro&quot;/&gt;&lt;br/&gt;
-        &lt;b&gt;Kiro AI&lt;/b&gt;&lt;br/&gt;
-        &lt;sub&gt;Claude 4.5 + GLM-5 + MiniMax&lt;br/&gt;Unlimited FREE&lt;/sub&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;150&quot;&gt;
-        &lt;img src=&quot;./public/providers/opencode.png&quot; width=&quot;70&quot; alt=&quot;OpenCode Free&quot;/&gt;&lt;br/&gt;
-        &lt;b&gt;OpenCode Free&lt;/b&gt;&lt;br/&gt;
-        &lt;sub&gt;No auth • Auto-fetch models&lt;br/&gt;Unlimited FREE&lt;/sub&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;150&quot;&gt;
-        &lt;img src=&quot;./public/providers/gemini.png&quot; width=&quot;70&quot; alt=&quot;Vertex AI&quot;/&gt;&lt;br/&gt;
-        &lt;b&gt;Vertex AI&lt;/b&gt;&lt;br/&gt;
-        &lt;sub&gt;Gemini 3 Pro + GLM-5 + DeepSeek&lt;br/&gt;$300 credits free&lt;/sub&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/table&gt;
-&lt;/div&gt;
-
-&gt; **Note:** iFlow, Qwen and Gemini CLI free tiers were discontinued in 2026. Use Kiro / OpenCode Free / Vertex instead.
-
-### 🔑 API Key Providers (40+)
-
-&lt;div align=&quot;center&quot;&gt;
-  &lt;table&gt;
-    &lt;tr&gt;
-      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
-        &lt;img src=&quot;./public/providers/openrouter.png&quot; width=&quot;50&quot; alt=&quot;OpenRouter&quot;/&gt;&lt;br/&gt;
-        &lt;sub&gt;OpenRouter&lt;/sub&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
-        &lt;img src=&quot;./public/providers/glm.png&quot; width=&quot;50&quot; alt=&quot;GLM&quot;/&gt;&lt;br/&gt;
-        &lt;sub&gt;GLM&lt;/sub&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
-        &lt;img src=&quot;./public/providers/kimi.png&quot; width=&quot;50&quot; alt=&quot;Kimi&quot;/&gt;&lt;br/&gt;
-        &lt;sub&gt;Kimi&lt;/sub&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
-        &lt;img src=&quot;./public/providers/minimax.png&quot; width=&quot;50&quot; alt=&quot;MiniMax&quot;/&gt;&lt;br/&gt;
-        &lt;sub&gt;MiniMax&lt;/sub&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
-        &lt;img src=&quot;./public/providers/openai.png&quot; width=&quot;50&quot; alt=&quot;OpenAI&quot;/&gt;&lt;br/&gt;
-        &lt;sub&gt;OpenAI&lt;/sub&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
-        &lt;img src=&quot;./public/providers/anthropic.png&quot; width=&quot;50&quot; alt=&quot;Anthropic&quot;/&gt;&lt;br/&gt;
-        &lt;sub&gt;Anthropic&lt;/sub&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
-        &lt;img src=&quot;./public/providers/gemini.png&quot; width=&quot;50&quot; alt=&quot;Gemini&quot;/&gt;&lt;br/&gt;
-        &lt;sub&gt;Gemini&lt;/sub&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
-        &lt;img src=&quot;./public/providers/deepseek.png&quot; width=&quot;50&quot; alt=&quot;DeepSeek&quot;/&gt;&lt;br/&gt;
-        &lt;sub&gt;DeepSeek&lt;/sub&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
-        &lt;img src=&quot;./public/providers/groq.png&quot; width=&quot;50&quot; alt=&quot;Groq&quot;/&gt;&lt;br/&gt;
-        &lt;sub&gt;Groq&lt;/sub&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
-        &lt;img src=&quot;./public/providers/xai.png&quot; width=&quot;50&quot; alt=&quot;xAI&quot;/&gt;&lt;br/&gt;
-        &lt;sub&gt;xAI&lt;/sub&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
-        &lt;img src=&quot;./public/providers/mistral.png&quot; width=&quot;50&quot; alt=&quot;Mistral&quot;/&gt;&lt;br/&gt;
-        &lt;sub&gt;Mistral&lt;/sub&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
-        &lt;img src=&quot;./public/providers/perplexity.png&quot; width=&quot;50&quot; alt=&quot;Perplexity&quot;/&gt;&lt;br/&gt;
-        &lt;sub&gt;Perplexity&lt;/sub&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
-        &lt;img src=&quot;./public/providers/together.png&quot; width=&quot;50&quot; alt=&quot;Together&quot;/&gt;&lt;br/&gt;
-        &lt;sub&gt;Together AI&lt;/sub&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
-        &lt;img src=&quot;./public/providers/fireworks.png&quot; width=&quot;50&quot; alt=&quot;Fireworks&quot;/&gt;&lt;br/&gt;
-        &lt;sub&gt;Fireworks&lt;/sub&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
-        &lt;img src=&quot;./public/providers/cerebras.png&quot; width=&quot;50&quot; alt=&quot;Cerebras&quot;/&gt;&lt;br/&gt;
-        &lt;sub&gt;Cerebras&lt;/sub&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
-        &lt;img src=&quot;./public/providers/cohere.png&quot; width=&quot;50&quot; alt=&quot;Cohere&quot;/&gt;&lt;br/&gt;
-        &lt;sub&gt;Cohere&lt;/sub&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
-        &lt;img src=&quot;./public/providers/nvidia.png&quot; width=&quot;50&quot; alt=&quot;NVIDIA&quot;/&gt;&lt;br/&gt;
-        &lt;sub&gt;NVIDIA&lt;/sub&gt;
-      &lt;/td&gt;
-      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
-        &lt;img src=&quot;./public/providers/siliconflow.png&quot; width=&quot;50&quot; alt=&quot;SiliconFlow&quot;/&gt;&lt;br/&gt;
-        &lt;sub&gt;SiliconFlow&lt;/sub&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/table&gt;
-  &lt;p&gt;&lt;i&gt;...and 20+ more providers including Nebius, Chutes, Hyperbolic, and custom OpenAI/Anthropic compatible endpoints&lt;/i&gt;&lt;/p&gt;
-&lt;/div&gt;
-
----
-
-## 💡 Key Features
-
-| Feature | What It Does | Why It Matters |
-|---------|--------------|----------------|
-| 🚀 **RTK Token Saver** ([RTK](https://github.com/rtk-ai/rtk) ⭐40K) | Compress tool outputs (`git diff`, `grep`, `ls`, `tree`...) before sending to LLM | Save **20-40% input tokens** per request |
-| 🧠 **Headroom Token Saver** ([Headroom](https://github.com/chopratejas/headroom)) | Optional external `/v1/compress` proxy before provider routing | Save more context tokens without changing clients |
-| 🪨 **Caveman Mode** ([Caveman](https://github.com/JuliusBrussee/caveman) ⭐52K) | Inject caveman-speak prompt → LLM replies terse, technical substance preserved | Save **up to 65% output tokens** |
-| 🐴 **Ponytail** ([Ponytail](https://github.com/DietrichGebert/ponytail)) | Inject &quot;lazy senior dev&quot; prompt → LLM writes minimal, YAGNI-first code (Lite/Full/Ultra) | **Fewer output tokens, less refactoring** |
-| 🎯 **Smart 3-Tier Fallback** | Auto-route: Subscription → Cheap → Free | Never stop coding, zero downtime |
-| 📊 **Real-Time Quota Tracking** | Live token count + reset countdown | Maximize subscription value |
-| 🔄 **Format Translation** | OpenAI ↔ Claude ↔ Gemini ↔ Cursor ↔ Kiro ↔ Vertex | Works with any CLI tool |
-| 👥 **Multi-Account Support** | Multiple accounts per provider | Load balancing + redundancy |
-| 🔄 **Auto Token Refresh** | OAuth tokens refresh automatically | No manual re-login needed |
-| 🎨 **Custom Combos** | Create unlimited model combinations | Tailor fallback to your needs |
-| 📝 **Request Logging** | Debug mode with full request/response logs | Troubleshoot issues easily |
-| 💾 **Cloud Sync** | Sync config across devices | Same setup everywhere |
-| 📊 **Usage Analytics** | Track tokens, cost, trends over time | Optimize spending |
-| 🌐 **Deploy Anywhere** | Localhost, VPS, Docker, Cloudflare Workers | Flexible deployment options |
+[![RepoStars](https://repostars.dev/api/embed?repo=truelockmc%2Fstreambert&amp;theme=dark)](https://repostars.dev/?repos=truelockmc%2Fstreambert&amp;theme=dark)
 
 &lt;details&gt;
-&lt;summary&gt;&lt;b&gt;📖 Feature Details&lt;/b&gt;&lt;/summary&gt;
+    &lt;summary&gt;Project Structure&lt;/summary&gt;
+    
+```
+Project Root
+├── index.html
+├── main.js
+├── package.json
+├── preload.js
+├── vite.config.js
+├── LICENSE
+├── README.md
+├── public
+│   ├── icon.png
+│   ├── installer-sidebar.bmp
+│   └── logo.svg
+├── screenshots
+│   ├── adblock.png
+│   ├── anime.png
+│   ├── api-settings_tmdb.png
+│   ├── application_tmdb.png
+│   ├── download.png
+│   ├── icon.png
+│   ├── movie.png
+│   ├── personal-use_tmdb.png
+│   ├── series.png
+│   ├── setup.png
+│   ├── signup_tmdb.png
+│   ├── subs.png
+│   ├── token_tmdb.png
+│   └── trending.png
+└── src
+    ├── App.jsx
+    ├── main.jsx
+    ├── components
+    │   ├── BlockedStatsModal.jsx
+    │   ├── CloseConfirmModal.jsx
+    │   ├── DownloadModal.jsx
+    │   ├── ErrorBoundary.jsx
+    │   ├── Icons.jsx
+    │   ├── KeyboardShortcutsModal.jsx
+    │   ├── MediaCard.jsx
+    │   ├── SearchModal.jsx
+    │   ├── SetupScreen.jsx
+    │   ├── Sidebar.jsx
+    │   ├── SubtitleDownloaderModal.jsx
+    │   ├── TrailerModal.jsx
+    │   ├── TrendingCarousel.jsx
+    │   ├── UpdateModal.jsx
+    │   └── WindowTitlebar.jsx
+    ├── ipc
+    │   ├── allmanga.js
+    │   ├── blockStats.js
+    │   ├── downloads.js
+    │   ├── player.js
+    │   ├── storage.js
+    │   └── subtitles.js
+    ├── pages
+    │   ├── DownloadsPage.jsx
+    │   ├── HomePage.jsx
+    │   ├── LibraryPage.jsx
+    │   ├── MoviePage.jsx
+    │   ├── SettingsPage.jsx
+    │   └── TVPage.jsx
+    ├── styles
+    │   ├── global.css
+    │   └── fonts
+    │       ├── bebas-neue-regular.woff2
+    │       ├── dm-sans-300.woff2
+    │       ├── dm-sans-500.woff2
+    │       ├── dm-sans-600.woff2
+    │       └── dm-sans-regular.woff2
+    └── utils
+        ├── ageRating.js
+        ├── aniSkip.js
+        ├── api.js
+        ├── appearance.js
+        ├── backup.js
+        ├── episodeMappings.js
+        ├── homeLayout.js
+        ├── storage.js
+        ├── subtitles.js
+        ├── updates.js
+        ├── useBlockedStats.js
+        └── useRatings.js
+```
+&lt;/details&gt;
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[jarrodwatts/claude-hud]]></title>
+            <link>https://github.com/jarrodwatts/claude-hud</link>
+            <guid>https://github.com/jarrodwatts/claude-hud</guid>
+            <pubDate>Wed, 24 Jun 2026 00:22:15 GMT</pubDate>
+            <description><![CDATA[A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/jarrodwatts/claude-hud">jarrodwatts/claude-hud</a></h1>
+            <p>A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 25,652</p>
+            <p>Forks: 1,169</p>
+            <p>Stars today: 66 stars today</p>
+            <h2>README</h2><pre># Claude HUD
 
-### 🚀 RTK Token Saver
+A Claude Code plugin that shows what&#039;s happening — context usage, active tools, running agents, and todo progress. Always visible below your input.
 
-Tool outputs (`git diff`, `grep`, `find`, `ls`, `tree`, log dumps...) often eat 30-50% of your prompt budget. RTK detects them and applies smart, lossless compression **before** the request hits the LLM:
+[![License](https://img.shields.io/github/license/jarrodwatts/claude-hud?v=2)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/jarrodwatts/claude-hud)](https://github.com/jarrodwatts/claude-hud/stargazers)
 
-- **Filters:** `git-diff`, `git-status`, `grep`, `find`, `ls`, `tree`, `dedup-log`, `smart-truncate`, `read-numbered`, `search-list`
-- **Auto-detect:** No config needed — RTK peeks the first 1KB of each `tool_result` and picks the right filter.
-- **Safe by design:** If a filter fails, throws, or makes output bigger, RTK silently keeps the original text. Errors never break your request.
-- **Universal:** Works across all formats (OpenAI, Claude, Gemini, Cursor, Kiro, OpenAI Responses) because it runs **before** any format translation.
-- **Default ON:** Toggle anytime in Dashboard → Endpoint settings.
+![Claude HUD in action](claude-hud-preview-5-2.png)
+
+&gt; 🌐 English | [中文文档](README.zh.md)
+
+## Install
+
+Inside a Claude Code instance, run the following commands:
+
+**Step 1: Add the marketplace**
+```
+/plugin marketplace add jarrodwatts/claude-hud
+```
+
+**Step 2: Install the plugin**
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;⚠️ Linux users: Click here first&lt;/strong&gt;&lt;/summary&gt;
+
+On Linux, `/tmp` is often a separate filesystem (tmpfs), which causes plugin installation to fail with:
+```
+EXDEV: cross-device link not permitted
+```
+
+**Fix**: Set TMPDIR before installing:
+```bash
+mkdir -p ~/.cache/tmp &amp;&amp; TMPDIR=~/.cache/tmp claude
+```
+
+Then run the install command below in that session. This is a [Claude Code platform limitation](https://github.com/anthropics/claude-code/issues/14799).
+
+&lt;/details&gt;
 
 ```
-Without RTK: 47K tokens sent to LLM
-With RTK:    28K tokens sent to LLM   (40% saved · same context · same answer)
+/plugin install claude-hud
 ```
 
-### 🧠 Headroom Token Saver
-
-Headroom is optional and runs separately. 9Router calls Headroom&#039;s local `/v1/compress` endpoint, then keeps normal routing, fallback, auth, and usage tracking:
+After that, reload plugins:
 
 ```
-Client → 9Router → Headroom /v1/compress → 9Router → provider
+/reload-plugins
 ```
 
-Local setup:
+
+**Step 3: Configure the statusline**
+```
+/claude-hud:setup
+```
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;⚠️ Windows users: Click here if setup says no JavaScript runtime was found&lt;/strong&gt;&lt;/summary&gt;
+
+On Windows, Node.js LTS is the supported runtime for Claude HUD setup. If setup says no JavaScript runtime was found, install Node.js for your shell first:
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+Then restart your shell and run `/claude-hud:setup` again.
+
+&lt;/details&gt;
+
+Done! Restart Claude Code to load the new statusLine config, then the HUD will appear.
+
+On Windows, make that a full Claude Code restart after setup writes the new `statusLine` config.
+
+---
+
+## What is Claude HUD?
+
+Claude HUD gives you better insights into what&#039;s happening in your Claude Code session.
+
+| What You See | Why It Matters |
+|--------------|----------------|
+| **Project path** | Know which project you&#039;re in (configurable 1-3 directory levels) |
+| **Context health** | Know exactly how full your context window is before it&#039;s too late |
+| **Tool activity** | Watch Claude read, edit, and search files as it happens |
+| **Agent tracking** | See which subagents are running and what they&#039;re doing |
+| **Todo progress** | Track task completion in real-time |
+
+## What You See
+
+### Default (2 lines)
+```
+[Opus] │ my-project git:(main*)
+Context █████░░░░░ 45% │ Usage ██░░░░░░░░ 25% (1h 30m / 5h)
+```
+- **Line 1** — Model, provider label when positively identified (for example `Bedrock`, `Vertex`), project path, git branch
+- **Line 2** — Context bar (green → yellow → red) and usage rate limits
+
+### Optional lines (enable via `/claude-hud:configure`)
+```
+◐ Edit: auth.ts | ✓ Read ×3 | ✓ Grep ×2        ← Tools activity
+◐ explore [haiku]: Finding auth code (2m 15s)    ← Agent status
+▸ Fix authentication bug (2/5)                   ← Todo progress
+```
+
+---
+
+## How It Works
+
+Claude HUD uses Claude Code&#039;s native **statusline API** — no separate window, no tmux required, works in any terminal.
+
+```
+Claude Code → stdin JSON → claude-hud → stdout → displayed in your terminal
+           ↘ transcript JSONL (tools, agents, todos)
+```
+
+**Key features:**
+- Native token data from Claude Code (not estimated)
+- Scales with Claude Code&#039;s reported context window size, including newer 1M-context sessions
+- Parses the transcript for tool/agent activity
+- Updates every ~300ms
+
+---
+
+## Configuration
+
+Customize your HUD anytime:
+
+```
+/claude-hud:configure
+```
+
+The guided flow handles layout, language, and common display toggles. Advanced overrides such as
+custom colors and thresholds are preserved there, but you set them by editing the config file directly:
+
+- **First time setup**: Choose a preset (Full/Essential/Minimal), pick a label language, then fine-tune individual elements
+- **Customize anytime**: Toggle items on/off, adjust git display style, switch layouts, or change label language
+- **Preview before saving**: See exactly how your HUD will look before committing changes
+
+### Presets
+
+| Preset | What&#039;s Shown |
+|--------|--------------|
+| **Full** | Everything enabled — tools, agents, todos, git, usage, duration |
+| **Essential** | Activity lines + git status, minimal info clutter |
+| **Minimal** | Core only — just model name and context bar |
+
+After choosing a preset, you can turn individual elements on or off.
+
+### Manual Configuration
+
+Edit `~/.claude/plugins/claude-hud/config.json` directly for advanced settings such as `colors.*`,
+`pathLevels`, `maxWidth`, threshold overrides, `display.timeFormat`, and `display.promptCacheTtlSeconds`. Running `/claude-hud:configure`
+preserves those manual settings while still letting you change `language`, layout, and the common
+guided toggles.
+
+Chinese HUD labels are available as an explicit opt-in. English stays the default unless you choose `中文` in `/claude-hud:configure` or set `language` in config. The short `zh` alias remains valid, and new guided config writes the canonical `zh-Hans` value.
+
+### Options
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `language` | `en` \| `zh` \| `zh-Hans` | `en` | HUD label language. English is the default; set `zh` or `zh-Hans` to enable Simplified Chinese labels. |
+| `lineLayout` | string | `expanded` | Layout: `expanded` (multi-line) or `compact` (single line) |
+| `pathLevels` | 1-3 | 1 | Directory levels to show in project path |
+| `maxWidth` | number \| `null` | `null` | Optional fallback width used only when terminal width detection fails completely |
+| `forceMaxWidth` | boolean | false | Always use `maxWidth` when it is set, even if terminal width detection returns a smaller value |
+| `elementOrder` | string[] | `[&quot;project&quot;,&quot;addedDirs&quot;,&quot;context&quot;,&quot;usage&quot;,&quot;promptCache&quot;,&quot;memory&quot;,&quot;environment&quot;,&quot;tools&quot;,&quot;skills&quot;,&quot;mcp&quot;,&quot;agents&quot;,&quot;todos&quot;,&quot;sessionTime&quot;]` | Expanded-mode element order. Omit entries to hide them in expanded mode. Existing configs keep their explicit order until updated. |
+| `display.mergeGroups` | string[][] | `[[&quot;context&quot;,&quot;usage&quot;]]` | Expanded-mode groups that should share a line when adjacent. Set `[]` to disable merged lines. |
+| `gitStatus.enabled` | boolean | true | Show git branch in HUD |
+| `gitStatus.showDirty` | boolean | true | Show `*` for uncommitted changes |
+| `gitStatus.showAheadBehind` | boolean | false | Show `↑N ↓N` for ahead/behind remote |
+| `gitStatus.pushWarningThreshold` | number | 0 | Color the ahead count with the warning color at or above this unpushed-commit count (`0` disables it) |
+| `gitStatus.pushCriticalThreshold` | number | 0 | Color the ahead count with the critical color at or above this unpushed-commit count (`0` disables it) |
+| `gitStatus.showFileStats` | boolean | false | Show file change counts `!M +A ✘D ?U` |
+| `gitStatus.branchOverflow` | `truncate` \| `wrap` | `truncate` | Keep current truncation behavior or let the git block wrap onto its own line boundary when possible |
+| `display.showModel` | boolean | true | Show model name `[Opus]` |
+| `display.showProvider` | boolean | false | Show the provider label *before* the model name, e.g. `[Bedrock \| Opus 4.6]`. Useful when a custom proxy serves identically-named models from different providers. When off, an auto-detected provider still trails the model as before |
+| `display.providerName` | string | `&quot;&quot;` | Explicit provider label used with `display.showProvider`, e.g. for a custom proxy that can&#039;t be auto-detected. Falls back to the auto-detected provider (Bedrock/Vertex/Enterprise) when empty; capped at 40 chars |
+| `display.showAddedDirs` | boolean | true | Show extra workspace directories from `/add-dir` (e.g. `+sparkle +lib-foo`); empty array renders nothing. In both layouts at most 5 dirs render (overflow shown as `+N more`) and basenames are truncated to 24 chars with `…` |
+| `display.addedDirsLayout` | `inline` \| `line` | `inline` | `inline` puts dirs next to the project name with a `+name` prefix per dir; `line` renders them on a separate `Added dirs: name1, name2` line (no `+` prefix, comma-separated) |
+| `display.showContextBar` | boolean | true | Show visual context bar `████░░░░░░` |
+| `display.contextValue` | `percent` \| `tokens` \| `remaining` \| `both` | `percent` | Context display format (`45%`, `45k/200k`, `55%` remaining, or `45% (45k/200k)`) |
+| `display.autoCompactWindow` | number \| `null` | `null` | When set to a positive number such as `200000`, compute the context percentage against this auto-compact window instead of the full model context window, matching the `/context` figure. Leave unset or `null` to preserve default full-window behavior. |
+| `display.showConfigCounts` | boolean | false | Show CLAUDE.md, rules, MCPs, hooks counts |
+| `display.showCost` | boolean | false | Show session cost using Claude Code&#039;s native `cost.total_cost_usd` when available, with a local estimate fallback for direct Anthropic sessions |
+| `display.showOutputStyle` | boolean | false | Show the active Claude Code `outputStyle` from settings files as `style: &lt;name&gt;` |
+| `display.showDuration` | boolean | false | Show session duration `⏱️ 5m` |
+| `display.showSpeed` | boolean | false | Show output token speed `out: 42.1 tok/s` |
+| `display.showUsage` | boolean | true | Show Claude subscriber usage limits when available |
+| `display.usageValue` | `percent` \| `remaining` | `percent` | Usage display format (`25%` used, or `75%` remaining) |
+| `display.usageBarEnabled` | boolean | true | Display usage as visual bar instead of text |
+| `display.usageCompact` | boolean | false | Display usage in a shorter text form such as `5h: 25% (1h 30m)`; takes precedence over `display.usageBarEnabled` |
+| `display.showResetLabel` | boolean | true | Show the `resets in` prefix before usage countdowns |
+| `display.timeFormat` | `relative` \| `absolute` \| `both` \| `elapsed` \| `elapsedAndAbsolute` | `relative` | How usage-window time is shown: countdown only (`resets in 2h 30m`), wall-clock reset (`resets at 14:30`), both, elapsed window percentage (`53% elapsed`), or elapsed plus wall-clock reset |
+| `display.sevenDayThreshold` | 0-100 | 80 | Show 7-day usage when &gt;= threshold (0 = always) |
+| `display.externalUsagePath` | string | `&quot;&quot;` | Optional absolute path to a local usage snapshot file. Relative paths are ignored. When stdin `rate_limits` are present, only `balance_label` is appended; when they are missing, valid usage windows can be used as a fallback |
+| `display.externalUsageWritePath` | string | `&quot;&quot;` | Optional absolute `.json` path in an existing directory. When stdin `rate_limits` exists, ClaudeHUD writes a private snapshot for other local tools. Relative paths, non-json files, and missing parent directories are ignored |
+| `display.externalUsageFreshnessMs` | number | `300000` | Maximum allowed age for the external usage snapshot before it is ignored |
+| `display.showTokenBreakdown` | boolean | true | Show token details at high context (85%+) |
+| `display.showTools` | boolean | false | Show tools activity line |
+| `display.showSkills` | boolean | false | Show active Skills detected from `Skill` tool invocations |
+| `display.showMcp` | boolean | false | Show active MCP servers detected from `mcp__server__tool` invocations |
+| `display.toolNameMaxLength` | number | `0` | Maximum displayed tool-name length. `0` keeps full names; MCP names may shorten to their final segment when truncating |
+| `display.toolsMaxVisible` | number | `4` | Maximum completed tools shown on the tools line. `0` means unlimited |
+| `display.showAgents` | boolean | false | Show agents activity line |
+| `display.showTodos` | boolean | false | Show todos progress line |
+| `display.showSessionName` | boolean | false | Show session slug or custom title from `/rename` |
+| `display.showAdvisor` | boolean | false | Inline the model configured via Claude Code&#039;s `/advisor` on the project line, e.g. `Advisor: Opus 4.7`. Read from the `advisorModel` field that Claude Code stamps on each assistant transcript record; sanitised and capped at 64 chars before rendering |
+| `display.advisorOverride` | string | `&quot;&quot;` | Optional manual override for the displayed advisor label. When non-empty, replaces transcript-driven detection. Also sanitised and capped at 64 chars |
+| `display.showSessionStartDate` | boolean | false | Show the transcript session start timestamp |
+| `display.showLastResponseAt` | boolean | false | Show how long ago the last assistant response was written |
+| `display.showCompactions` | boolean | false | Show how many context compactions (manual `/compact` or auto) have occurred this session, counted from transcript `compact_boundary` entries, e.g. `Compactions: 2`. Hidden until the first compaction |
+| `display.showClaudeCodeVersion` | boolean | false | Show the installed Claude Code version, e.g. `CC v2.1.81` |
+| `display.showMemoryUsage` | boolean | false | Show an approximate system RAM usage line in expanded layout |
+| `display.showPromptCache` | boolean | false | Show a prompt cache countdown based on the last assistant response timestamp in the transcript |
+| `display.promptCacheTtlSeconds` | number | `300` | Prompt cache TTL in seconds. Keep the default for Pro, set `3600` for Max |
+| `colors.context` | color value | `green` | Base color for the context bar and context percentage |
+| `colors.usage` | color value | `brightBlue` | Base color for usage bars and percentages below warning thresholds |
+| `colors.warning` | color value | `yellow` | Warning color for context thresholds and usage warning text |
+| `colors.usageWarning` | color value | `brightMagenta` | Warning color for usage bars and percentages near their threshold |
+| `colors.critical` | color value | `red` | Critical color for limit-reached states and critical thresholds |
+| `colors.model` | color value | `cyan` | Color for the model badge such as `[Opus]` |
+| `colors.project` | color value | `yellow` | Color for the project path |
+| `colors.git` | color value | `magenta` | Color for git wrapper text such as `git:(` and `)` |
+| `colors.gitBranch` | color value | `cyan` | Color for the git branch and branch status text |
+| `colors.label` | color value | `dim` | Color for labels and secondary metadata such as `Context`, `Usage`, counts, and progress text |
+| `colors.custom` | color value | `208` | Color for the optional custom line |
+| `colors.barFilled` | string | `█` | Character used for the filled portion of progress bars |
+| `colors.barEmpty` | string | `░` | Character used for the empty portion of progress bars |
+
+`colors.barFilled` and `colors.barEmpty` accept a single visible grapheme. Control characters, invisible format characters (bidi controls, zero-width joiners, variation selectors), line/paragraph separators, and noncharacters are rejected. Wide characters (emoji, CJK) may affect bar alignment depending on the terminal.
+
+Supported color names: `dim`, `red`, `green`, `yellow`, `magenta`, `cyan`, `brightBlue`, `brightMagenta`. You can also use a 256-color number (`0-255`) or hex (`#rrggbb`).
+
+`display.showMemoryUsage` is fully opt-in and only renders in `expanded` layout. It reports approximate system RAM usage from the local machine, not precise memory pressure inside Claude Code or a specific process. The number may overstate actual pressure because reclaimable OS cache and buffers can still be counted as used memory.
+
+`display.showCost` is fully opt-in. ClaudeHUD prefers the native `cost.total_cost_usd` field that Claude Code provides on stdin when it is available. If that field is absent or invalid for a direct Anthropic session, ClaudeHUD falls back to the existing local transcript-based estimate so the cost line still works on older payloads. The native field is absent before the first API response in a session, so the cost display may stay hidden until then. ClaudeHUD also keeps the cost hidden for known routed providers such as Bedrock and Vertex AI, because cloud-provider billed sessions may report `$0.00` or omit the field even though the session was not literally free.
+
+`display.showPromptCache` is fully opt-in. When enabled, ClaudeHUD looks at the timestamp of the last assistant response in the local transcript and shows a live countdown until the prompt cache expires. The default TTL is 5 minutes (`300` seconds). Set `display.promptCacheTtlSeconds` to `3600` if you want a 1-hour Max-style window. If the transcript does not have an assistant timestamp yet, the cache element stays hidden.
+
+### Usage Limits
+
+Usage display is **enabled by default** when Claude Code provides subscriber `rate_limits` data on stdin. It shows your rate limit consumption on line 2 alongside the context bar.
+
+Set `display.usageValue` to `remaining` to show quota left instead of quota used. Warning colors and 7-day threshold checks still use the underlying used percentage.
+
+ClaudeHUD prefers the official statusline stdin payload for rate-limit windows. If `display.externalUsagePath` points to a fresh local sidecar snapshot, ClaudeHUD can append its `balance_label` alongside stdin windows. If stdin `rate_limits` are missing, the same snapshot can provide fallback usage windows.
+
+The fallback snapshot path must be absolute. The snapshot must be fresh enough (`display.externalUsageFreshnessMs`) and include valid `updated_at`, plus a `five_hour` window, `seven_day` window, or `balance_label`. `balance_label` is optional text for prepaid provider balances; it is trimmed, length-limited, and sanitized before display. Relative paths, invalid JSON, stale files, or invalid timestamps are ignored quietly.
+
+Set `display.externalUsageWritePath` if you want ClaudeHUD to write the official stdin `rate_limits` into a local snapshot for other tools. The path must be absolute, end in `.json`, and live in an existing directory. ClaudeHUD writes the file with private permissions and ignores invalid paths quietly.
+
+Free/weekly-only accounts render the weekly window by itself instead of showing a ghost `5h: --` placeholder.
+
+The 7-day percentage appears when above the `display.sevenDayThreshold` (default 80%):
+
+```
+Context █████░░░░░ 45% │ Usage ██░░░░░░░░ 25% (1h 30m / 5h) | ██████████ 85% (2d / 7d)
+```
+
+To disable, set `display.showUsage` to `false`.
+
+Reset times use relative countdowns by default. Set `display.timeFormat` to `absolute` for wall-clock
+times, `both` to show both forms, `elapsed` to show how far through each usage window you are, or
+`elapsedAndAbsolute` to show elapsed window progress plus the wall-clock reset time. This setting is
+manual-only today; `/claude-hud:configure` preserves it without editing it.
+
+Set `display.showResetLabel` to `false` if you want shorter usage countdowns such as `(3h 17m)` instead of `(resets in 3h 17m)`.
+
+Set `display.usageCompact` to `true` if you want the shorter usage-only form, for example `5h: 25% (1h 30m)`. Compact usage takes precedence over `display.usageBarEnabled`.
+
+### Security Notes
+
+ClaudeHUD is local-only by design. It does not make network requests, scrape credentials, or call undocumented Claude APIs. It reads the statusline JSON from stdin, the current session transcript path supplied by Claude Code, selected Claude configuration files under `~/.claude`, and git metadata for the current workspace.
+
+HUD cache files are written under `~/.claude/plugins/claude-hud` with private permissions on POSIX filesystems. The cache stores derived display metadata such as context percentages, token counters, activity names, and the resolved Claude Code version.
+
+`--extra-cmd` is disabled unless `CLAUDE_HUD_ALLOW_EXTRA_CMD=1` (or `true`, `yes`, `on`) is present in the HUD process environment. Treat this option as arbitrary code execution: it runs the supplied shell command with your user privileges on statusline refreshes. Do not use commands copied from untrusted sources.
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[mrdoob/three.js]]></title>
+            <link>https://github.com/mrdoob/three.js</link>
+            <guid>https://github.com/mrdoob/three.js</guid>
+            <pubDate>Wed, 24 Jun 2026 00:22:14 GMT</pubDate>
+            <description><![CDATA[JavaScript 3D Library.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/mrdoob/three.js">mrdoob/three.js</a></h1>
+            <p>JavaScript 3D Library.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 113,265</p>
+            <p>Forks: 36,390</p>
+            <p>Stars today: 27 stars today</p>
+            <h2>README</h2><pre># three.js
+
+[![NPM Package][npm]][npm-url]
+[![Build Size][build-size]][build-size-url]
+[![NPM Downloads][npm-downloads]][npmtrends-url]
+[![jsDelivr Downloads][jsdelivr-downloads]][jsdelivr-url]
+[![Discord][discord]][discord-url]
+
+#### JavaScript 3D library
+
+The aim of the project is to create an easy-to-use, lightweight, cross-browser, general-purpose 3D library. The current builds only include WebGL and WebGPU renderers but SVG and CSS3D renderers are also available as addons.
+
+[Examples](https://threejs.org/examples/) &amp;mdash;
+[Docs](https://threejs.org/docs/) &amp;mdash;
+[Manual](https://threejs.org/manual/) &amp;mdash;
+[Wiki](https://github.com/mrdoob/three.js/wiki) &amp;mdash;
+[Migrating](https://github.com/mrdoob/three.js/wiki/Migration-Guide) &amp;mdash;
+[Questions](https://stackoverflow.com/questions/tagged/three.js) &amp;mdash;
+[Forum](https://discourse.threejs.org/) &amp;mdash;
+[Discord](https://discord.gg/56GBJwAnUS)
+
+### Usage
+
+This code creates a scene, a camera, and a geometric cube, and it adds the cube to the scene. It then creates a `WebGL` renderer for the scene and camera, and it adds that viewport to the `document.body` element. Finally, it animates the cube within the scene for the camera.
+
+```javascript
+import * as THREE from &#039;three&#039;;
+
+const width = window.innerWidth, height = window.innerHeight;
+
+// init
+
+const camera = new THREE.PerspectiveCamera( 70, width / height, 0.01, 10 );
+camera.position.z = 1;
+
+const scene = new THREE.Scene();
+
+const geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
+const material = new THREE.MeshNormalMaterial();
+
+const mesh = new THREE.Mesh( geometry, material );
+scene.add( mesh );
+
+const renderer = new THREE.WebGLRenderer( { antialias: true } );
+renderer.setSize( width, height );
+renderer.setAnimationLoop( animate );
+document.body.appendChild( renderer.domElement );
+
+// animation
+
+function animate( time ) {
+
+	mesh.rotation.x = time / 2000;
+	mesh.rotation.y = time / 1000;
+
+	renderer.render( scene, camera );
+
+}
+```
+
+If everything goes well, you should see [this](https://jsfiddle.net/w43x5Lgh/).
+
+### Cloning this repository
+
+Cloning the repo with all its history results in a ~2 GB download. If you don&#039;t need the whole history you can use the `depth` parameter to significantly reduce download size.
+
+```sh
+git clone --depth=1 https://github.com/mrdoob/three.js.git
+```
+
+### Change log
+
+[Releases](https://github.com/mrdoob/three.js/releases)
+
+
+[npm]: https://img.shields.io/npm/v/three
+[npm-url]: https://www.npmjs.com/package/three
+[build-size]: https://badgen.net/bundlephobia/minzip/three
+[build-size-url]: https://bundlephobia.com/result?p=three
+[npm-downloads]: https://img.shields.io/npm/dw/three
+[npmtrends-url]: https://www.npmtrends.com/three
+[jsdelivr-downloads]: https://data.jsdelivr.com/v1/package/npm/three/badge?style=rounded
+[jsdelivr-url]: https://www.jsdelivr.com/package/npm/three
+[discord]: https://img.shields.io/discord/685241246557667386
+[discord-url]: https://discord.gg/56GBJwAnUS
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[axios/axios]]></title>
+            <link>https://github.com/axios/axios</link>
+            <guid>https://github.com/axios/axios</guid>
+            <pubDate>Wed, 24 Jun 2026 00:22:13 GMT</pubDate>
+            <description><![CDATA[Promise based HTTP client for the browser and node.js]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/axios/axios">axios/axios</a></h1>
+            <p>Promise based HTTP client for the browser and node.js</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 109,085</p>
+            <p>Forks: 11,733</p>
+            <p>Stars today: 8 stars today</p>
+            <h2>README</h2><pre>&lt;h3 align=&quot;center&quot;&gt; 🥇 Gold sponsors &lt;br&gt; &lt;/h3&gt; &lt;table align=&quot;center&quot; width=&quot;100%&quot;&gt;&lt;tr width=&quot;33.333333333333336%&quot;&gt;&lt;td align=&quot;center&quot; width=&quot;33.333333333333336%&quot;&gt; &lt;a href=&quot;https://www.principal.com/about-us?utm_source&amp;#x3D;axios&amp;amp;utm_medium&amp;#x3D;sponsorlist&amp;amp;utm_campaign&amp;#x3D;sponsorship&quot; style=&quot;padding: 10px; display: inline-block&quot; target=&quot;_blank&quot;&gt; &lt;img width=&quot;133px&quot; height=&quot;43px&quot; src=&quot;https://axios-http.com/assets/sponsors/principal.svg&quot; alt=&quot;Principal Financial Group&quot;/&gt; &lt;/a&gt; &lt;p align=&quot;center&quot; title=&quot;We’re bound by one common purpose: to give you the financial tools, resources and information you need to live your best life.&quot;&gt;We’re bound by one common purpose: to give you the financial tools, resources and information you ne...&lt;/p&gt; &lt;p align=&quot;center&quot;&gt; &lt;a href=&quot;https://www.principal.com/about-us?utm_source&amp;#x3D;axios&amp;amp;utm_medium&amp;#x3D;readme_sponsorlist&amp;amp;utm_campaign&amp;#x3D;sponsorship&quot; target=&quot;_blank&quot;&gt;&lt;b&gt;www.principal.com&lt;/b&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;/td&gt;&lt;td align=&quot;center&quot; width=&quot;33.333333333333336%&quot;&gt; &lt;a href=&quot;https://twicsy.com/buy-instagram-followers?utm_source&amp;#x3D;axios&amp;amp;utm_medium&amp;#x3D;sponsorlist&amp;amp;utm_campaign&amp;#x3D;sponsorship&quot; style=&quot;padding: 10px; display: inline-block&quot; target=&quot;_blank&quot;&gt; &lt;img width=&quot;85px&quot; height=&quot;70px&quot; src=&quot;https://axios-http.com/assets/sponsors/opencollective/dfa9670ad5e66eea17315332453c7f4e3a3b5905.png&quot; alt=&quot;Buy Instagram Followers Twicsy&quot;/&gt; &lt;/a&gt; &lt;p align=&quot;center&quot; title=&quot;Buy real Instagram followers from Twicsy starting at only $2.97. Twicsy has been voted the best site to buy followers from the likes of US Magazine.&quot;&gt;Buy real Instagram followers from Twicsy starting at only $2.97. Twicsy has been voted the best site...&lt;/p&gt; &lt;p align=&quot;center&quot;&gt; &lt;a href=&quot;https://twicsy.com/buy-instagram-followers?utm_source&amp;#x3D;axios&amp;amp;utm_medium&amp;#x3D;readme_sponsorlist&amp;amp;utm_campaign&amp;#x3D;sponsorship&quot; target=&quot;_blank&quot;&gt;&lt;b&gt;twicsy.com&lt;/b&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;/td&gt;&lt;td align=&quot;center&quot; width=&quot;33.333333333333336%&quot;&gt; &lt;a href=&quot;https://www.descope.com/?utm_source&amp;#x3D;axios&amp;amp;utm_medium&amp;#x3D;referral&amp;amp;utm_campaign&amp;#x3D;axios-oss-sponsorship&quot; style=&quot;padding: 10px; display: inline-block&quot; target=&quot;_blank&quot;&gt; &lt;picture&gt; &lt;source width=&quot;200px&quot; height=&quot;52px&quot; media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://axios-http.com/assets/sponsors/descope_white.png&quot;&gt; &lt;img width=&quot;200px&quot; height=&quot;52px&quot; src=&quot;https://axios-http.com/assets/sponsors/descope.png&quot; alt=&quot;Descope&quot;/&gt; &lt;/picture&gt; &lt;/a&gt; &lt;p align=&quot;center&quot; title=&quot;Hi, we&amp;#x27;re Descope! We are building something in the authentication space for app developers and can’t wait to place it in your hands.&quot;&gt;Hi, we&amp;#x27;re Descope! We are building something in the authentication space for app developers and...&lt;/p&gt; &lt;p align=&quot;center&quot;&gt; &lt;a href=&quot;https://www.descope.com/?utm_source&amp;#x3D;axios&amp;amp;utm_medium&amp;#x3D;referral&amp;amp;utm_campaign&amp;#x3D;axios-oss-sponsorship&quot; target=&quot;_blank&quot;&gt;&lt;b&gt;Website&lt;/b&gt;&lt;/a&gt; | &lt;a href=&quot;https://docs.descope.com/?utm_source&amp;#x3D;axios&amp;amp;utm_medium&amp;#x3D;referral&amp;amp;utm_campaign&amp;#x3D;axios-oss-sponsorship&quot; target=&quot;_blank&quot;&gt;&lt;b&gt;Docs&lt;/b&gt;&lt;/a&gt; | &lt;a href=&quot;https://www.descope.com/community?utm_source&amp;#x3D;axios&amp;amp;utm_medium&amp;#x3D;referral&amp;amp;utm_campaign&amp;#x3D;axios-oss-sponsorship&quot; target=&quot;_blank&quot;&gt;&lt;b&gt;Community&lt;/b&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;tr width=&quot;33.333333333333336%&quot;&gt;&lt;td align=&quot;center&quot; width=&quot;33.333333333333336%&quot;&gt; &lt;a href=&quot;https://route4me.com/?utm_source&amp;#x3D;axios&amp;amp;utm_medium&amp;#x3D;sponsorlist&amp;amp;utm_campaign&amp;#x3D;sponsorship&quot; style=&quot;padding: 10px; display: inline-block&quot; target=&quot;_blank&quot;&gt; &lt;picture&gt; &lt;source width=&quot;200px&quot; height=&quot;51px&quot; media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://axios-http.com/assets/sponsors/route4me_white.png&quot;&gt; &lt;img width=&quot;200px&quot; height=&quot;51px&quot; src=&quot;https://axios-http.com/assets/sponsors/route4me.png&quot; alt=&quot;Route4Me&quot;/&gt; &lt;/picture&gt; &lt;/a&gt; &lt;p align=&quot;center&quot; title=&quot;Best Route Planning And Route Optimization Software&quot;&gt;Best Route Planning And Route Optimization Software&lt;/p&gt; &lt;p align=&quot;center&quot;&gt; &lt;a href=&quot;https://route4me.com/platform/route-optimization-software?utm_source&amp;#x3D;axios&amp;amp;utm_medium&amp;#x3D;readme_sponsorlist&amp;amp;utm_campaign&amp;#x3D;sponsorship&quot; target=&quot;_blank&quot;&gt;&lt;b&gt;Explore&lt;/b&gt;&lt;/a&gt; | &lt;a href=&quot;https://route4me.com/platform/marketplace/pricing?utm_source&amp;#x3D;axios&amp;amp;utm_medium&amp;#x3D;readme_sponsorlist&amp;amp;utm_campaign&amp;#x3D;sponsorship&quot; target=&quot;_blank&quot;&gt;&lt;b&gt;Free Trial&lt;/b&gt;&lt;/a&gt; | &lt;a href=&quot;https://route4me.com/contact?utm_source&amp;#x3D;axios&amp;amp;utm_medium&amp;#x3D;readme_sponsorlist&amp;amp;utm_campaign&amp;#x3D;sponsorship&quot; target=&quot;_blank&quot;&gt;&lt;b&gt;Contact&lt;/b&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;/td&gt;&lt;td align=&quot;center&quot; width=&quot;33.333333333333336%&quot;&gt; &lt;a href=&quot;https://buzzoid.com/buy-instagram-followers/?utm_source&amp;#x3D;axios&amp;amp;utm_medium&amp;#x3D;sponsorlist&amp;amp;utm_campaign&amp;#x3D;sponsorship&quot; style=&quot;padding: 10px; display: inline-block&quot; target=&quot;_blank&quot;&gt; &lt;img width=&quot;62px&quot; height=&quot;70px&quot; src=&quot;https://axios-http.com/assets/sponsors/opencollective/e1625cb54e10ee40180c99d1495a462e9d6664a4.png&quot; alt=&quot;Buzzoid - Buy Instagram Followers&quot;/&gt; &lt;/a&gt; &lt;p align=&quot;center&quot; title=&quot;At Buzzoid, you can buy Instagram followers quickly, safely, and easily with just a few clicks. Rated world&amp;#x27;s #1 IG service since 2012.&quot;&gt;At Buzzoid, you can buy Instagram followers quickly, safely, and easily with just a few clicks. Rate...&lt;/p&gt; &lt;p align=&quot;center&quot;&gt; &lt;a href=&quot;https://buzzoid.com/buy-instagram-followers/?utm_source&amp;#x3D;axios&amp;amp;utm_medium&amp;#x3D;readme_sponsorlist&amp;amp;utm_campaign&amp;#x3D;sponsorship&quot; target=&quot;_blank&quot;&gt;&lt;b&gt;buzzoid.com&lt;/b&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;/td&gt;&lt;td align=&quot;center&quot; width=&quot;33.333333333333336%&quot;&gt; &lt;a href=&quot;https://poprey.com/?utm_source&amp;#x3D;axios&amp;amp;utm_medium&amp;#x3D;sponsorlist&amp;amp;utm_campaign&amp;#x3D;sponsorship&quot; style=&quot;padding: 10px; display: inline-block&quot; target=&quot;_blank&quot;&gt; &lt;img width=&quot;70px&quot; height=&quot;70px&quot; src=&quot;https://axios-http.com/assets/sponsors/opencollective/e699ec99f7df3a203ddbc49d3c7712a907e628ea.png&quot; alt=&quot;Poprey - Buy Instagram Likes&quot;/&gt; &lt;/a&gt; &lt;p align=&quot;center&quot; title=&quot;Buy Instagram Likes&quot;&gt;Buy Instagram Likes&lt;/p&gt; &lt;p align=&quot;center&quot;&gt; &lt;a href=&quot;https://poprey.com/?utm_source&amp;#x3D;axios&amp;amp;utm_medium&amp;#x3D;readme_sponsorlist&amp;amp;utm_campaign&amp;#x3D;sponsorship&quot; target=&quot;_blank&quot;&gt;&lt;b&gt;poprey.com&lt;/b&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;tr width=&quot;33.333333333333336%&quot;&gt;&lt;td align=&quot;center&quot; width=&quot;33.333333333333336%&quot;&gt; &lt;a href=&quot;https://requestly.com/?utm_source&amp;#x3D;axios&amp;amp;utm_medium&amp;#x3D;sponsorlist&amp;amp;utm_campaign&amp;#x3D;sponsorship&quot; style=&quot;padding: 10px; display: inline-block&quot; target=&quot;_blank&quot;&gt; &lt;img width=&quot;71px&quot; height=&quot;70px&quot; src=&quot;https://axios-http.com/assets/sponsors/opencollective/16450b4dc0deb9dab5a511bf2bc8b8b4ac33412f.png&quot; alt=&quot;Requestly&quot;/&gt; &lt;/a&gt; &lt;p align=&quot;center&quot; title=&quot;A lightweight open-source API Development, Testing &amp;amp; Mocking platform&quot;&gt;A lightweight open-source API Development, Testing &amp;amp; Mocking platform&lt;/p&gt; &lt;p align=&quot;center&quot;&gt; &lt;a href=&quot;https://requestly.com/?utm_source&amp;#x3D;axios&amp;amp;utm_medium&amp;#x3D;readme_sponsorlist&amp;amp;utm_campaign&amp;#x3D;sponsorship&quot; target=&quot;_blank&quot;&gt;&lt;b&gt;requestly.com&lt;/b&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;/td&gt;&lt;td align=&quot;center&quot; width=&quot;33.333333333333336%&quot;&gt; &lt;a href=&quot;https://opencollective.com/axios/contribute&quot; target=&quot;_blank&quot; &gt;💜 Become a sponsor&lt;/a&gt;
+&lt;/td&gt;&lt;td align=&quot;center&quot; width=&quot;33.333333333333336%&quot;&gt; &lt;a href=&quot;https://opencollective.com/axios/contribute&quot; target=&quot;_blank&quot; &gt;💜 Become a sponsor&lt;/a&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;!--&lt;div&gt;marker&lt;/div&gt;--&gt;
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+   &lt;a href=&quot;https://axios-http.com&quot;&gt;&lt;img src=&quot;https://axios-http.com/assets/logo.svg&quot; alt=&quot;Axios&quot; /&gt;&lt;/a&gt;&lt;br&gt;
+&lt;/div&gt;
+
+&lt;p align=&quot;center&quot;&gt;Promise based HTTP client for the browser and node.js&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+    &lt;a href=&quot;https://axios-http.com/&quot;&gt;&lt;b&gt;Website&lt;/b&gt;&lt;/a&gt; •
+    &lt;a href=&quot;https://axios-http.com/docs/intro&quot;&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+
+[![npm version](https://img.shields.io/npm/v/axios.svg?style=flat-square)](https://www.npmjs.org/package/axios)
+[![CDNJS](https://img.shields.io/cdnjs/v/axios.svg?style=flat-square)](https://cdnjs.com/libraries/axios)
+[![Build status](https://img.shields.io/github/actions/workflow/status/axios/axios/ci.yml?branch=v1.x&amp;label=CI&amp;logo=github&amp;style=flat-square)](https://github.com/axios/axios/actions/workflows/ci.yml)
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod&amp;style=flat-square)](https://gitpod.io/#https://github.com/axios/axios)
+[![code coverage](https://img.shields.io/coveralls/mzabriskie/axios.svg?style=flat-square)](https://coveralls.io/r/mzabriskie/axios)
+[![install size](https://img.shields.io/badge/dynamic/json?url=https://packagephobia.com/v2/api.json?p=axios&amp;query=$.install.pretty&amp;label=install%20size&amp;style=flat-square)](https://packagephobia.now.sh/result?p=axios)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/axios?style=flat-square)](https://bundlephobia.com/package/axios@latest)
+[![npm downloads](https://img.shields.io/npm/dm/axios.svg?style=flat-square)](https://npm-stat.com/charts.html?package=axios)
+[![gitter chat](https://img.shields.io/gitter/room/mzabriskie/axios.svg?style=flat-square)](https://gitter.im/mzabriskie/axios)
+[![code helpers](https://www.codetriage.com/axios/axios/badges/users.svg)](https://www.codetriage.com/axios/axios)
+[![Known Vulnerabilities](https://snyk.io/test/npm/axios/badge.svg)](https://snyk.io/test/npm/axios)
+[![Contributors](https://img.shields.io/github/contributors/axios/axios.svg?style=flat-square)](CONTRIBUTORS.md)
+
+&lt;/div&gt;
+
+## Table of Contents
+
+- [Features](#features)
+- [Browser Support](#browser-support)
+- [Installing](#installing)
+  - [Package manager](#package-manager)
+  - [CDN](#cdn)
+- [Example](#example)
+- [Axios API](#axios-api)
+- [Request method aliases](#request-method-aliases)
+- [Concurrency 👎](#concurrency-deprecated)
+- [Creating an instance](#creating-an-instance)
+- [Instance methods](#instance-methods)
+- [Request Config](#request-config)
+- [Response Schema](#response-schema)
+- [Config Defaults](#config-defaults)
+  - [Global axios defaults](#global-axios-defaults)
+  - [Custom instance defaults](#custom-instance-defaults)
+  - [Config order of precedence](#config-order-of-precedence)
+- [Interceptors](#interceptors)
+  - [Multiple Interceptors](#multiple-interceptors)
+- [Handling Errors](#handling-errors)
+- [Handling Timeouts](#handling-timeouts)
+- [Cancellation](#cancellation)
+  - [AbortController](#abortcontroller)
+  - [CancelToken 👎](#canceltoken-deprecated)
+- [Using application/x-www-form-urlencoded format](#using-applicationx-www-form-urlencoded-format)
+  - [URLSearchParams](#urlsearchparams)
+  - [Query string](#query-string-older-browsers)
+  - [🆕 Automatic serialization](#-automatic-serialization-to-urlsearchparams)
+- [Using multipart/form-data format](#using-multipartform-data-format)
+  - [FormData](#formdata)
+  - [🆕 Automatic serialization](#-automatic-serialization-to-formdata)
+- [Files Posting](#files-posting)
+- [HTML Form Posting](#-html-form-posting-browser)
+- [🆕 Progress capturing](#-progress-capturing)
+- [🆕 Rate limiting](#-rate-limiting)
+- [🆕 AxiosHeaders](#-axiosheaders)
+- [🔥 Fetch adapter](#-fetch-adapter)
+  - [🔥 Custom fetch](#-custom-fetch)
+    - [🔥 Using with Tauri](#-using-with-tauri)
+    - [🔥 Using with SvelteKit](#-using-with-sveltekit-)
+- [🔥 HTTP2](#-http2)
+- [Semver](#semver)
+- [Promises](#promises)
+- [TypeScript](#typescript)
+- [Resources](#resources)
+- [Credits](#credits)
+- [License](#license)
+
+## Features
+
+- **Browser Requests:** Make [XMLHttpRequests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) directly from the browser.
+- **Node.js Requests:** Make [http](https://nodejs.org/api/http.html) requests from Node.js environments.
+- **Promise-based:** Fully supports the [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) API for easier asynchronous code.
+- **Interceptors:** Intercept requests and responses to add custom logic or transform data.
+- **Data Transformation:** Transform request and response data automatically.
+- **Request Cancellation:** Cancel requests using built-in mechanisms.
+- **Automatic JSON Handling:** Automatically serializes and parses [JSON](https://www.json.org/json-en.html) data.
+- **Form Serialization:** 🆕 Automatically serializes data objects to `multipart/form-data` or `x-www-form-urlencoded` formats.
+- **XSRF Protection:** Client-side support to protect against [Cross-Site Request Forgery](https://en.wikipedia.org/wiki/Cross-site_request_forgery).
+
+## Browser Support
+
+|                                                     Chrome                                                     |                                                      Firefox                                                      |                                                     Safari                                                     |                                                    Opera                                                    |                                                   Edge                                                   |
+| :------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------: |
+| ![Chrome browser logo](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_48x48.png) | ![Firefox browser logo](https://raw.githubusercontent.com/alrra/browser-logos/main/src/firefox/firefox_48x48.png) | ![Safari browser logo](https://raw.githubusercontent.com/alrra/browser-logos/main/src/safari/safari_48x48.png) | ![Opera browser logo](https://raw.githubusercontent.com/alrra/browser-logos/main/src/opera/opera_48x48.png) | ![Edge browser logo](https://raw.githubusercontent.com/alrra/browser-logos/main/src/edge/edge_48x48.png) |
+|                                                    Latest ✔                                                    |                                                     Latest ✔                                                      |                                                    Latest ✔                                                    |                                                  Latest ✔                                                   |                                                 Latest ✔                                                 |
+
+[![Browser Matrix](https://saucelabs.com/open_sauce/build_matrix/axios.svg)](https://saucelabs.com/u/axios)
+
+## Installing
+
+### Package manager
+
+Using npm:
 
 ```bash
-pip install &quot;headroom-ai[proxy]&quot;
-headroom proxy --port 8787
+$ npm install axios
 ```
 
-Enable in Dashboard → Endpoint → Token Saver → Headroom. Default URL: `http://localhost:8787`.
-
-Docker examples:
+Using bower:
 
 ```bash
-# Headroom service in same Docker network
-http://headroom:8787
-
-# Headroom running on host machine
-http://host.docker.internal:8787
+$ bower install axios
 ```
 
-If Headroom is down or returns an error, 9Router fails open and sends the original request.
+Using yarn:
 
-### 🐴 Ponytail (Lazy Senior Dev)
-
-Ponytail injects a *&quot;lazy senior dev&quot;* system prompt into every request, biasing the LLM toward minimal, YAGNI-first code — deletion over addition, stdlib over new deps, one-liners over abstractions. Adapted from [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail).
-
-- **Lite** — Build what&#039;s asked, name the lazier alternative.
-- **Full** — YAGNI ladder enforced: stdlib → native → existing deps → one-liner → minimal code.
-- **Ultra** — YAGNI extremist: deletion first, ship the one-liner, challenge the rest of the requirement in the same response.
-
-```
-Without Ponytail: verbose code, extra abstractions, &quot;just in case&quot; scaffolding
-With Ponytail:    shortest working diff, no unrequested abstractions, fewer tokens
+```bash
+$ yarn add axios
 ```
 
-Never trades away: input validation, error handling that prevents data loss, security, accessibility, or anything explicitly requested. Enable in Dashboard → Endpoint → Ponytail. Stacks with Caveman (output terseness) and RTK (input compression).
+Using pnpm:
 
-### 🎯 Smart 3-Tier Fallback
-
-Create combos with automatic fallback:
-
-```
-Combo: &quot;my-coding-stack&quot;
-  1. cc/claude-opus-4-6        (your subscription)
-  2. glm/glm-4.7               (cheap backup, $0.6/1M)
-  3. if/kimi-k2-thinking       (free fallback)
-
-→ Auto switches when quota runs out or errors occur
+```bash
+$ pnpm add axios
 ```
 
-### 📊 Real-Time Quota Tracking
+Using bun:
 
-- Token consumption per provider
-- Reset countdown (5-hour, daily, weekly)
-- Cost estimation for paid tiers
-- Monthly spending reports
+```bash
+$ bun add axios
+```
 
-### 🔄 Format Translation
+Once the package is installed, you can import the library using `import` or `require` approach:
 
-Seamless translation between formats:
-- **OpenA
+```js
+import axios, { isCancel, AxiosError } from &quot;axios&quot;;
+```
+
+You can also use the default export, since the named export is just a re-export from the Axios factory:
+
+```js
+import axios from &quot;axios&quot;;
+
+console.log(axios.isCancel(&quot;something&quot;));
+```
+
+If you use `require` for importing, **only the default export is available**:
+
+```js
+const axios = require(&quot;axios&quot;);
+
+console.log(axios.isCancel(&quot;something&quot;));
+```
+
+For some bundlers and some ES6 linters you may need to do the following:
+
+```js
+import { default as axios } from &quot;axios&quot;;
+```
+
+For cases where something went wrong when trying to import a module into a custom or legacy environment,
+you can try importing the module package directly:
+
+```js
+const axios = require(&quot;axios/dist/browser/axios.cjs&quot;); // browser commonJS bundle (ES2017)
+// const axios = require(&#039;axios/dist/node/axios.cjs&#039;); // node commonJS bundle (ES2017)
+```
+
+### CDN
+
+Using jsDelivr CDN (ES5 UMD browser module):
+
+```html
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js&quot;&gt;&lt;/script&gt;
+```
+
+Using unpkg CDN:
+
+```html
+&lt;script src=&quot;https://unpkg.com/axios@1.13.2/dist/axios.min.js&quot;&gt;&lt;/script&gt;
+```
+
+## Example
+
+```js
+import axios from &quot;axios&quot;;
+//const axios = require(&#039;axios&#039;); // legacy way
+
+try {
+  const response = await axios.get(&quot;/user?ID=12345&quot;);
+  console.log(response);
+} catch (error) {
+  console.error(error);
+}
+
+// Optionally the request above could also be done as
+axios
+  .get(&quot;/user&quot;, {
+    params: {
+      ID: 12345,
+    },
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
+  .finally(function () {
+    // always executed
+  });
+
+// Want to use async/await? Add the `async` keyword to your outer function/method.
+async function getUser() {
+  try {
+    const response = await axios.get(&quot;/user?ID=12345&quot;);
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+
+&gt; **Note**: `async/await` is part of ECMAScript 2017 and is not supported in Internet
+&gt; Explorer and older browsers, so use with caution.
+
+Performing a `POST` request
+
+```js
+const response = await axios.post(&quot;/user&quot;, {
+  firstName: &quot;Fred&quot;,
+  lastName: &quot;Flintstone&quot;,
+});
+console.log(response);
+```
+
+Performing multiple concurrent requests
+
+```js
+function getUserAccount() {
+  return axios.get(&quot;/user/12345&quot;);
+}
+
+function getUserPermissions() {
+  return axios.get(&quot;/user/12345/permissions&quot;);
+}
+
+Promise.all([getUserAccount(), getUserPermissions()]).then(function (results) {
+  const acct = results[0];
+  const perm = results[1];
+});
+```
+
+## axios API
+
+Requests can be made by passing the relevant config to `axios`.
+
+##### axios(config)
+
+```js
+// Send a POST request
+axios({
+  method: &quot;post&quot;,
+  url: &quot;/user/12345&quot;,
+  data: {
+    firstName: &quot;Fred&quot;,
+    lastName: &quot;Flintstone&quot;,
+  },
+});
+```
+
+```js
+// GET request for remote image in node.js
+const response = await axios({
+  method: &quot;get&quot;,
+  url: &quot;https://bit.ly/2mTM3nY&quot;,
+  responseType: &quot;stream&quot;,
+});
+response.data.pipe(fs.createWriteStream(&quot;ada_lovelace.jpg&quot;));
+```
+
+##### axios(url[, config])
+
+```js
+// Send a GET request (default method)
+axios(&quot;/user/12345&quot;);
+```
+
+### Request method aliases
+
+For convenience, aliases have been provided for all common request methods.
+
+##### axios.request(config)
+
+##### axios.get(url[, config])
+
+##### axios.delete(url[, config])
+
+##### axios.head(url[, config])
+
+##### axios.options(url[, config])
+
+##### axios.post(url[, data[, config]])
+
+##### axios.put(url[, data[, config]])
+
+##### axios.patch(url[, data[, config]])
+
+###### NOTE
+
+When using the alias methods `url`, `method`, and `data` properties don&#039;t need to be specified in config.
+
+### Concurrency (Deprecated)
+
+Please use `Promise.all` to replace the below functions.
+
+Helper functions for dealing with concurrent requests.
+
+axios.all(iterable)
+axios.spread(callback)
+
+### Creating an instance
+
+You can create a new instance of axios with a custom config.
+
+##### axios.create([config])
+
+```js
+const instance = axios.create({
+  baseURL: &quot;https://some-domain.com/api/&quot;,
+  timeout: 1000,
+  headers: { &quot;X-Custom-Header&quot;: &quot;foobar&quot; },
+});
+```
+
+### Instance methods
+
+The available instance methods are listed below. The specified config will be merged with the instance config.
+
+##### axios#request(config)
+
+##### axios#get(url[, config])
+
+##### axios#delete(url[, config])
+
+##### axios#head(url[, config])
+
+##### axios#options(url[, config])
+
+##### axios#post(url[, data[, config]])
+
+##### axios#put(url[, data[, config]])
+
+##### axios#patch(url[, data[, config]])
+
+##### axios#getUri([config])
+
+## Request Config
+
+These are the available config options for making requests. Only the `url` is required. Requests will default to `GET` if `method` is not specified.
+
+```js
+{
+  // `url` is the server URL that will be used for the request
+  url: &#039;/user&#039;,
+
+  // `method` is the request method to be used when making the request
+  method: &#039;get&#039;, // default
+
+  // `baseURL` will be prepended to `url` u
 
 ... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
