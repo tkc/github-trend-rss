@@ -4,7 +4,7 @@
         <title>GitHub Trending Today for typescript - TypeScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for typescript.</description>
-        <lastBuildDate>Tue, 29 Sep 2026 00:07:29 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 30 Sep 2026 00:07:02 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
@@ -13,15 +13,15 @@
             <title><![CDATA[paperclipai/paperclip]]></title>
             <link>https://github.com/paperclipai/paperclip</link>
             <guid>https://github.com/paperclipai/paperclip</guid>
-            <pubDate>Tue, 29 Sep 2026 00:07:29 GMT</pubDate>
+            <pubDate>Wed, 30 Sep 2026 00:07:02 GMT</pubDate>
             <description><![CDATA[The open-source app everyone uses to manage agents at work]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/paperclipai/paperclip">paperclipai/paperclip</a></h1>
             <p>The open-source app everyone uses to manage agents at work</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 92,744</p>
-            <p>Forks: 15,885</p>
-            <p>Stars today: 3,197 stars today</p>
+            <p>Stars: 94,434</p>
+            <p>Forks: 16,048</p>
+            <p>Stars today: 2,458 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
   &lt;img src=&quot;doc/assets/banner.jpg&quot; alt=&quot;Paperclip is the app people use to manage AI agents for work.&quot; width=&quot;720&quot; /&gt;
 &lt;/p&gt;
@@ -415,15 +415,15 @@ See [`doc/INSTALLING.md`](doc/INSTALLING.md) f
             <title><![CDATA[mvschwarz/openrig]]></title>
             <link>https://github.com/mvschwarz/openrig</link>
             <guid>https://github.com/mvschwarz/openrig</guid>
-            <pubDate>Tue, 29 Sep 2026 00:07:28 GMT</pubDate>
+            <pubDate>Wed, 30 Sep 2026 00:07:01 GMT</pubDate>
             <description><![CDATA[Multi-agent harness that runs Claude Code and Codex together as one system]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/mvschwarz/openrig">mvschwarz/openrig</a></h1>
             <p>Multi-agent harness that runs Claude Code and Codex together as one system</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 1,701</p>
-            <p>Forks: 135</p>
-            <p>Stars today: 734 stars today</p>
+            <p>Stars: 2,423</p>
+            <p>Forks: 176</p>
+            <p>Stars today: 737 stars today</p>
             <h2>README</h2><pre># OpenRig
 
 [![npm version](https://img.shields.io/npm/v/@openrig/cli)](https://www.npmjs.com/package/@openrig/cli) [![npm downloads](https://img.shields.io/npm/dw/@openrig/cli)](https://www.npmjs.com/package/@openrig/cli) [![License: Apache 2.0](https://img.shields.io/github/license/mvschwarz/openrig)](LICENSE) [![GitHub stars](https://img.shields.io/github/stars/mvschwarz/openrig?style=social)](https://github.com/mvschwarz/openrig/stargazers)
@@ -431,6 +431,16 @@ See [`doc/INSTALLING.md`](doc/INSTALLING.md) f
 A harness wraps a model. A rig wraps your harnesses. Define your agent team in YAML, boot it with one command. Claude Code and Codex in the same rig, managed as one system.
 
 OpenRig turns AI coding agents from a pile of terminal sessions into a persistent, organized team. Talk to a lead agent about the outcome you want; it can coordinate specialists across teams and bring you results and decisions that need your attention. Start with a repository and one useful change, then keep the team&#039;s work and context at the same addresses.
+
+**Guide:** [Getting started](docs/reference/getting-started.md) · **Stuck?** [Help](docs/reference/help.md) · **Questions:** [Q&amp;A](https://github.com/mvschwarz/openrig/discussions/92) · **Updates and demos:** [@_feralmachine on X](https://x.com/_feralmachine)
+
+## See it running
+
+![The OpenRig TUI: the build rig as a graph, then as a table of seats with runtime, model, context and state, then one seat in detail (real recording, 10 seconds)](assets/readme/openrig-agents-working.gif)
+
+**Start here:** [the guided first-use path](docs/reference/getting-started.md): install, launch a two-agent team in your repository, and get one reviewed change.
+
+Not setting this up today? Get the next walkthrough and occasional OpenRig updates → https://openrig.dev/follow
 
 ## Install and first run
 
@@ -443,41 +453,48 @@ rig setup --dry-run
 
 To install with Bun instead, run `bun add -g @openrig/cli`. OpenRig still runs on Node.js, so install Node.js 22 as well. Bun may block this package&#039;s postinstall script, in which case the Node.js and SQLite check described under [what OpenRig changes on your machine](#what-openrig-changes-on-your-machine) does not run at install time.
 
-Review setup&#039;s plan before applying `rig setup`: it checks both native harnesses and cmux. This starter requires tmux and authenticated Codex; the other harness and terminal provider are optional for its repository task.
+Choose the working account you already have: **Claude Code, Codex, or both**. Reuse an explicit choice; no second subscription is required. `rig setup --dry-run` previews the broader setup, but applying `rig setup` checks both harnesses and cmux. It is optional for the [selected-provider path](docs/reference/getting-started.md#choose-your-providers).
 
-Before launching, ask your agent to [configure your chosen permissions](docs/reference/getting-started.md#have-your-agent-configure-permissions): keep prompts, remember selected commands, or deliberately choose broader access. The agent handles setup and verification; OpenRig&#039;s shipped defaults stay unchanged.
+Before launching, your agent asks once: **“Allow your agents to run OpenRig commands without repeated permission prompts?” Yes — recommended / No — keep prompts.** This covers every `rig` command, including starting/stopping agents and configuration, at personal project scope unless you explicitly choose user-wide sessions. It is not global YOLO or permission to invent work. On Yes, the agent [adds and verifies native rules](docs/reference/getting-started.md#have-your-agent-configure-permissions); No or no answer leaves settings unchanged. An existing explicit choice is reused. Say “Undo the OpenRig command allowances added by this setup” to remove only its additions.
 
-Check prerequisites in your launch shell:
+Check `tmux -V` and only your selected CLI/login: `claude --version` plus
+`claude auth status`, or `codex --version` plus `codex login status`. If needed,
+sign in once with `claude auth login` or `codex login`; do not install or log in
+to an unused provider.
 
-```bash
-tmux -V
-codex --version
-codex login status
-```
+| Team | Starter | Models |
+| --- | --- | --- |
+| Two Codex agents | `first-project` | Both `gpt-6-astra` (unchanged) |
+| Two Claude agents | `first-project-claude` | Configured native Claude default |
+| Claude owner + Codex checker | `first-project-mixed` | Claude default + `gpt-6-astra` |
 
-Resolve missing tools or login before continuing. From your repository, inspect the plan before launching the two Codex seats, an owner and a checker:
+All three use the same owner/checker roles and task. Show the selected runtime,
+configured model and command before launch; confirm the account supports the
+model instead of silently falling back. The kernel starts automatically and
+selects from available authenticated providers independently of these two project
+agents. A missing unused provider is not a setup requirement.
 
 ```bash
 cd /path/to/your/repository
-rig up first-project --cwd . --plan
-rig up first-project --cwd .
+starter=first-project  # or first-project-claude or first-project-mixed
+rig specs preview &quot;$starter&quot; --kind rig
+rig up &quot;$starter&quot; --cwd . --plan
+rig up &quot;$starter&quot; --cwd .
 rig tui --shared
 ```
 
 The kernel provides separate operational support and the shared dashboard. To detach without stopping the dashboard, press Ctrl-b then d; `rig tui --shared` returns to that view. Plain `rig tui` opens an independent view. Closing a viewing terminal does not mean you should relaunch the team.
 
-Check project-seat readiness with `rig ps --nodes --rig first-project` and resolve any authentication, trust or permission prompt before assigning work. Then give the owner one bounded outcome from your repository:
+Check project-seat readiness with `rig ps --nodes --rig &quot;$starter&quot;` and resolve any authentication, trust or permission prompt before assigning work. Then give the owner one bounded outcome from your repository:
 
 ```bash
-rig send dev-owner@first-project &#039;Implement &lt;one useful change&gt;. Track the task in the queue and return its ID. Keep it local, verify the behavior, ask dev-check@first-project to check the exact candidate, and record the result and how I can try it.&#039;
-rig queue list --destination dev-owner@first-project --limit 1000
+rig send &quot;dev-owner@$starter&quot; &#039;Implement &lt;one useful change&gt;. Track the task in the queue and return its ID. Keep it local, verify the behavior, ask dev-check in this rig to check the exact candidate, and record the result and how I can try it.&#039;
+rig queue list --destination &quot;dev-owner@$starter&quot; --limit 1000
 ```
 
 Sending a message does not itself create a queue item; the owner records the task. Read the final artifact and the review of its exact candidate, then return to the same owner for the next change. [The guided first-use path](docs/reference/getting-started.md) covers readiness, a useful task, a reviewed result, Herdr/cmux terminals and recovery.
 
-## See it running
-
-![The OpenRig TUI: the build rig as a graph, then as a table of seats with runtime, model, context and state, then one seat in detail (real recording, 10 seconds)](assets/readme/openrig-agents-working.gif)
+Not setting this up today? Get the next walkthrough and occasional OpenRig updates → https://openrig.dev/follow
 
 ## Community
 
@@ -502,7 +519,7 @@ using a published package, since repository guidance can be ahead of npm.
 | **`rig setup`** | Attempts missing tools and writes an OpenRig block in `~/.tmux.conf` for mouse support and scrollback. On macOS it can install cmux and enable its automation socket control in `~/.config/cmux/settings.json`. `--full` adds workstation tools. `--dry-run` shows setup&#039;s plan without applying it. |
 | **Daemon startup** | Creates/updates instance state under `OPENRIG_HOME` (normally `~/.openrig`), including its database and managed plugin resources. Seeds the `openrig-skills` discovery skill in `~/.claude/skills` and `~/.agents/skills`, subject to existing version ownership. With `runtime.codex.hooks_enabled` enabled (the default), writes Codex hook configuration and trust records as described below—even before a rig launches. |
 | **Rig/seat launch and attachment** | Creates tmux sessions, supplies seat identity and daemon connection environment, and projects selected guidance, skills, plugins and runtime resources into the workspace. Managed startup pre-trusts the workspace. Claude context collection can also be provisioned for attached sessions and refreshed during monitoring. |
-| **Explicit permission configuration** | The built-in bootstrap does **not** add `rig` command allow rules. Ask your agent to [apply your chosen project or user scope](docs/reference/getting-started.md#have-your-agent-configure-permissions); existing rules remain relevant. Broader access is a separate choice. |
+| **Explicit permission configuration** | The built-in bootstrap does **not** add `rig` command allow rules. Agent-guided setup recommends Yes and requires your actual answer before the agent [adds rules at your chosen scope](docs/reference/getting-started.md#have-your-agent-configure-permissions). No/no answer preserves settings; existing choices and stricter rules remain relevant. Broader access is separate. |
 
 The provider files are separate from instance state. Here `~` means the daemon
 user&#039;s home; changing `OPENRIG_HOME` alone does not isolate provider configuration.
@@ -585,7 +602,8 @@ Every agent runs in a tmux session you can attach to, inspect, and work with dir
 
 ## Starter Rigs
 
-Use `first-project` for the focused first-use path. `product-team` is an optional
+Use `first-project`, `first-project-claude`, or `first-project-mixed` for the
+same focused first-use path on your selected providers. `product-team` is an optional
 larger product-development example:
 
 ```bash
@@ -685,44 +703,288 @@ the new Node (a version manager keeps a separate global package set for each
 Node):
 
 ```bash
-nvm install 22          # or 24; fnm or your package manager work the same way
-npm install -g @openrig/cli
-rig --version
-```
-
-Your existing OpenRig data stays where it is. The daemon reopens the same
-database under the new binding and applies any pending migrations in place.
-Restart the daemon under the new Node by following the upgrade procedure above.
-
-### Crossing the 0.5.9 layout boundary
-
-The migration below still applies when upgrading from a pre-0.5.9 instance.
-
-0.5.9 makes `$OPENRIG_HOME/context` the addressable context library, writes
-Claude telemetry to `state/context-usage` (and provider telemetry to
-`state/provider-usage`), and installs the default System World at
-`context/system/system-world.yaml`. Existing instances cross this boundary by
-an **Agent-Operated Migration** from the shipped `openrig-upgrade` skill. The
-target runtime reads canonical-first with legacy-fallback while new writes use
-the canonical roots; a custom context-library root stays stable during
-activation. This is not a directory rename to do while an old collector writes.
-
-```bash
-# SKILL_DIR is the installed openrig-upgrade skill directory.
-node &quot;$SKILL_DIR/scripts/migrate-telemetry-state-0.5.9.mjs&quot; --help
-node &quot;$SKILL_DIR/scripts/migrate-telemetry-state-0.5.9.mjs&quot; --home &quot;$OPENRIG_HOME&quot;
-node &quot;$SKILL_DIR/scripts/migrate-telemetry-state-0.5.9.mjs&quot; --home &quot;$OPENRIG_HOME&quot; --apply-state --preimage /safe/path/layout-0.5.9-before
-
-# Activate the exact target runtime separately. After every bounded legacy tail is followed by newer paired samples at both new state roots:
-node &quot;$SKILL_DIR/scripts/migrate-telemetry-state-0.5.9.mjs&quot; --home &quot;$OPENRIG_HOME&quot; --verify --preimage /safe/path/layout-0.5.9-before &gt; /safe/path/layout-0.5.9-verify.json
-
-# Run the separately invoked non-destructive finalizer only with that exact receipt:
-node &quot;$SKILL_DIR/scripts/migrate-telemetry-state-0.5.9.mjs&quot; --home &quot;$OPENRIG_HOME&quot; --apply-library --preimage /safe/path/layout-0.5.9-before --verification /safe/path/layout-0.5.9-verify.json
-
-# Restore only helper-owned preparation/finalizer effects if the observed upgrade must be reversed:
-node &quot;$SKILL_DIR/scripts/migr
+nvm install 22          # or 24; fnm or your pa
 
 ... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[oblien/openship]]></title>
+            <link>https://github.com/oblien/openship</link>
+            <guid>https://github.com/oblien/openship</guid>
+            <pubDate>Wed, 30 Sep 2026 00:07:00 GMT</pubDate>
+            <description><![CDATA[Self-hosted deployment platform]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/oblien/openship">oblien/openship</a></h1>
+            <p>Self-hosted deployment platform</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 13,807</p>
+            <p>Forks: 1,235</p>
+            <p>Stars today: 437 stars today</p>
+            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;Openship&lt;/h1&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  Open-source, self-hostable deployment platform with built-in CI/CD.&lt;br&gt;
+  Point it at a repo — it builds, ships, routes, and TLS-terminates your app. Drive it from a desktop app, web dashboard, or CLI.
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://trendshift.io/repositories/38817?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-38817&quot;&gt;
+    &lt;img src=&quot;https://trendshift.io/api/badge/repositories/38817&quot; alt=&quot;Trendshift&quot; width=&quot;250&quot; height=&quot;55&quot; /&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://www.npmjs.com/package/openship&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/v/openship?color=0b7285&amp;label=npm&quot; alt=&quot;npm version&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/license-Apache--2.0-blue&quot; alt=&quot;License&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://openship.io&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/website-openship.io-0b7285&quot; alt=&quot;Website&quot; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;#quick-start&quot;&gt;Quick Start&lt;/a&gt; ·
+  &lt;a href=&quot;#how-it-works&quot;&gt;How It Works&lt;/a&gt; ·
+  &lt;a href=&quot;#interfaces&quot;&gt;Interfaces&lt;/a&gt; ·
+  &lt;a href=&quot;https://openship.io/docs&quot;&gt;Docs&lt;/a&gt; ·
+  &lt;a href=&quot;CONTRIBUTING.md&quot;&gt;Contributing&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;README.md&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/lang-English-0b7285&quot; alt=&quot;English&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;docs/i18n/README.ar.md&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/lang-العربية-555&quot; alt=&quot;العربية&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;docs/i18n/README.zh.md&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/lang-简体中文-555&quot; alt=&quot;简体中文&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;docs/i18n/README.es.md&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/lang-Español-555&quot; alt=&quot;Español&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;docs/i18n/README.fr.md&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/lang-Français-555&quot; alt=&quot;Français&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;docs/i18n/README.ja.md&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/lang-日本語-555&quot; alt=&quot;日本語&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;docs/i18n/README.pt.md&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/lang-Português-555&quot; alt=&quot;Português&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;docs/i18n/README.de.md&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/lang-Deutsch-555&quot; alt=&quot;Deutsch&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;docs/i18n/README.tr.md&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/lang-Türkçe-555&quot; alt=&quot;Türkçe&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;docs/i18n/README.ko.md&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/lang-한국어-555&quot; alt=&quot;한국어&quot; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;docs/screenshots/screen.png&quot; alt=&quot;Openship dashboard&quot; width=&quot;800&quot; /&gt;
+&lt;/p&gt;
+
+---
+
+## Quick Start
+
+There&#039;s one decision to make first: **how you run Openship itself** (the control plane). Everything else is the same afterwards.
+
+| If you&#039;re… | Run Openship as | Where your apps run |
+|---|---|---|
+| **Solo, one machine, no ops** | **Desktop app** | A server you connect over SSH, or Openship Cloud |
+| **A team — or you want push-to-deploy / to host apps on your own box** | **Self-hosted server** (`openship up`) | On that box (Compose mode) — or out to another server / Cloud (bare mode) |
+| **Not interested in running anything** | **Openship Cloud** | Managed sandboxes, zero setup |
+
+&gt; [!TIP]
+&gt; **Solo? Use the desktop app.** It runs Openship&#039;s control plane on your own machine *only while the app is open* — nothing is left running on an always-on server, nothing is exposed publicly. You only need an always-on server install once you want **push-to-deploy (CI/CD)**, **team access**, or to **host apps on that box** — the things that need a public, always-on endpoint.
+
+### Solo — desktop app
+
+The control plane runs locally and drives your servers over SSH. No login, no terminal, no public surface — download, open, done:
+
+| Platform | Download |
+|---|---|
+| **macOS** (Apple Silicon) | [Openship-arm64.dmg](https://github.com/oblien/openship/releases/latest/download/Openship-arm64.dmg) |
+| **macOS** (Intel) | [Openship-x64.dmg](https://github.com/oblien/openship/releases/latest/download/Openship-x64.dmg) |
+| **Windows** | [Openship-win32-x64.zip](https://github.com/oblien/openship/releases/latest/download/Openship-win32-x64.zip) |
+| **Linux** | [Openship.AppImage](https://github.com/oblien/openship/releases/latest/download/Openship.AppImage) |
+
+Linux: `chmod +x Openship.AppImage &amp;&amp; ./Openship.AppImage`. Already have the CLI? `openship install` fetches and launches it. Links always point at the newest release.
+
+From the desktop app you connect a server (SSH) or Openship Cloud and deploy to it — the app itself doesn&#039;t host public apps on your laptop.
+
+### Team / always-on — self-hosted server
+
+Install the CLI (it bundles the API + dashboard), then run **`openship`** — an interactive wizard creates the first admin, wires your domain, and installs Openship as a boot service. Run it again anytime to manage the instance.
+
+```bash
+curl -fsSL https://get.openship.io | sh          # install  (or: npm i -g openship — needs Node 22+)
+openship                                          # guided setup, then control panel
+```
+
+The install script brings its own Node when your system one is older than 22; a package-manager
+install runs on the Node you already have.
+
+For CI / headless boxes, skip the wizard and drive `openship up` directly:
+
+```bash
+openship up                                       # install + start as a background service (boots + auto-restarts)
+openship up --public-url https://openship.example.com   # + serve the dashboard on your domain (edge + TLS handled)
+```
+
+**`openship up` picks how it runs for you:**
+
+- **On Linux with Docker → Compose mode** (the default). Brings up the full stack — Postgres, Redis, API, dashboard, and a containerized **OpenResty edge on :80/:443** — from published images. This is the flavor that **hosts your deployed apps on the same box**, with automatic domains + Let&#039;s Encrypt TLS. Force it with `--compose`.
+- **Everywhere else → bare mode** (macOS, Windows, or Linux without Docker). A single lightweight process with an embedded database — an always-on control plane that **deploys apps out to a server (SSH) or Cloud**, like the desktop app but always on and login-required. Force it with `--bare`.
+
+A self-hosted instance **always requires login** (the admin you create in setup). `openship open` opens the dashboard · `openship stop` stops it · `openship update` upgrades · `openship up --foreground` runs attached.
+
+&gt; **Preview an unreleased build (dev).** To run the CLI built straight from source — a branch, tag, or `main` ahead of the next release — install the from-source build:
+&gt;
+&gt; ```bash
+&gt; curl -fsSL https://get.openship.io/dev | sh                  # main (default)
+&gt; curl -fsSL https://get.openship.io/dev | OPENSHIP_REF=dev sh  # a branch/tag (var goes on sh, not curl)
+&gt; openship-dev                                     # same CLI, built from source
+&gt; openship-dev update                              # pull latest source + rebuild (no release needed)
+&gt; ```
+&gt;
+&gt; It installs as a **separate `openship-dev`** command with its own isolated home (`~/.openship-dev`) and boot service, so your production `openship` and its data are never touched. Needs Bun + git; it&#039;s an unverified dev build (the dashboard compile wants real RAM/CPU) — not a production path.
+
+**Deploy a project:**
+
+```bash
+cd your-project
+openship init            # link this directory to a project
+openship deploy
+```
+
+Full server guide + complete CLI reference: **[openship.io/docs](https://openship.io/docs)**.
+
+&lt;details&gt;
+&lt;summary&gt;Shell completion (bash/zsh/fish)&lt;/summary&gt;
+
+Two ways to enable Tab-completion for `openship`:
+
+| | Setup | Trade-off |
+|---|---|---|
+| **Static file** (recommended) | `openship completion &lt;shell&gt; &gt; &lt;path&gt;` | Instant shell startup. Regenerate after upgrading to pick up newly added commands. |
+| **Live-sourced** | add `source &lt;(openship completion &lt;shell&gt;)` to your shell config | Always reflects the currently installed version. Adds a small delay to every new shell session. |
+
+**Static file:**
+```bash
+openship completion bash &gt; /etc/bash_completion.d/openship
+openship completion zsh  &gt; ~/.zsh/completions/_openship
+openship completion fish &gt; ~/.config/fish/completions/openship.fish
+```
+Open a new terminal — done.
+
+**Live-sourced** (zsh example):
+```bash
+echo &#039;source &lt;(openship completion zsh)&#039; &gt;&gt; ~/.zshrc
+```
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;Self-host with raw Docker Compose (no CLI)&lt;/summary&gt;
+
+The self-hosted stack lives in **`docker/docker-compose.yml`** and **pulls** published images from GitHub Container Registry (`ghcr.io/oblien/*`) — no build tooling, no monorepo compile. Run it from the repo root:
+
+```bash
+git clone https://github.com/oblien/openship.git &amp;&amp; cd openship
+cp .env.example .env          # then edit
+docker compose --env-file .env -f docker/docker-compose.yml up -d
+```
+
+The stack is **postgres + redis + api + dashboard + edge**. The `edge` is OpenResty on **:80/:443** as a container (`network_mode: host`) — routing + Let&#039;s Encrypt, no bare host install. **Linux only** (host networking); on mac/win use `openship up` (bare). The `api` container mounts the host Docker socket so the control plane can build + run your apps as host containers — it&#039;s host-privileged through the socket, so run it only on a trusted host.
+
+**Upgrade:** pin `OPENSHIP_VERSION` in `.env` for reproducible pulls, then `docker compose --env-file .env -f docker/docker-compose.yml pull &amp;&amp; … up -d`. `openship update` only reconciles a stack the CLI installed, and `openship up` would *adopt* this one — don&#039;t reach for either here. **Build from source instead:** add `-f docker/docker-compose.build.yml … up -d --build`.
+
+**Host operations** (`:80`/`:443` takeover, the mail engine, host terminal/port scans) need the container→host SSH channel, which `openship up` provisions and this path does not — the five manual steps are in `.env.example` under *Host operations from the container*, and the failure it produces is [Troubleshooting → Host control channel](https://openship.io/docs/troubleshooting/host-channel). Everything else, including deploys, works without it.
+
+&gt; The **root** `docker-compose.yml` is a different file: it&#039;s the SaaS / from-source **control plane** (builds from source, ships the marketing site, no edge/socket). It does **not** self-host your apps — use `docker/docker-compose.yml` above or `openship up`.
+
+&lt;/details&gt;
+
+---
+
+## How It Works
+
+Point Openship at a source — a **GitHub repo**, a **local folder**, or a **prebuilt artifact** — and it runs one pipeline end to end:
+
+1. **Detect.** It reads your `package.json`, framework config, lockfiles, and any `docker-compose.yml` / `openship.json` to work out the stack, package manager, build/start commands, and port. Zero config files required; an `openship.json` overrides the guesses if you want control.
+2. **Build.** On the target server or locally on the orchestrator, into a Docker image or a bare release. The resolved config is frozen into a snapshot, so redeploys and rollbacks re-run *exactly* what shipped.
+3. **Run.** As a container (published on loopback only — never a public port) or a supervised host process.
+4. **Route + secure.** The OpenResty edge writes a reverse-proxy vhost to your domain and issues a Let&#039;s Encrypt certificate (HTTP-01). Because routing and TLS happen *after* the app is up, a DNS or cert hiccup surfaces as &quot;action required&quot; — it never fails the deploy or takes your app down.
+5. **Push-to-deploy.** A GitHub webhook re-runs the pipeline on every push to the tracked branch — rebuilding only the services a monorepo push actually touched.
+
+Databases, domains, SSL, CDN, mail, and backups are managed from the same place. (Push-to-deploy and public domains need an always-on server or Cloud — a desktop/loopback instance has no public endpoint to receive webhooks.)
+
+---
+
+## Interfaces
+
+Choose how to work with OpenShip:
+
+- **Desktop app** — full GUI, real-time logs, one-click everything. Best for solo.
+- **Web dashboard** — the same UI in the browser, built for teams.
+- **CLI** — scriptable and CI-friendly; also how you install and manage a self-hosted instance.
+- **Ship SDK** — deploy and manage resources from JavaScript or TypeScript. Connect to an existing instance with `OpenshipClient`, or embed the engine with `createShip`. Install with `npm install openship` (0.8.0+, Node.js 22+) and follow the [SDK guide](https://openship.io/docs/api/sdk).
+
+An **MCP** endpoint (for AI agents) and a **REST API** round it out for automation. Only routes that opt in are exposed as MCP tools, every call re-checks your permissions, and credential/token routes can never become tools. Full reference at [openship.io/docs](https://openship.io/docs).
+
+&gt; [!NOTE]
+&gt; The docs are actively being filled out. If something&#039;s missing or unclear, [contributions](CONTRIBUTING.md) are hugely welcome.
+
+---
+
+## Features
+
+| | |
+|---|---|
+| **Built-in CI/CD** | Push-to-deploy, preview environments, staging/prod flows, rollbacks |
+| **Any stack** | Node, Python, Go, Rust, PHP, Ruby, Java, .NET, Docker, monorepos |
+| **Full backend** | Postgres, MySQL, MongoDB, Redis, workers, WebSockets, storage |
+| **Domains &amp; SSL** | Automatic Let&#039;s Encrypt, wildcards, unlimited domains, auto-renewal |
+| **CDN** | Edge caching, HTTP/3, Brotli compression, instant purge |
+| **Mail server** | Built-in SMTP with DKIM/SPF/DMARC — no Mailgun or SES needed |
+| **Backups** | Scheduled, databases + volumes, one-click restore, export anytime |
+| **Real-time monitoring** | Live build logs, container metrics, visitor geography and per-code response mix — [~1.4 µs per request, zero DB writes per request](docs/monitoring.md) |
+| **Scaling** | Auto-scaling on cloud, multi-node ready on self-hosted |
+| **Portability** | Standard Docker containers — move between providers freely |
+| **Docker Compose** | Deploy existing compose files as-is |
+
+---
+
+## Deploy Anywhere
+
+- **Openship Cloud** — managed, auto-scaling, zero setup
+- **Any VPS** — Hetzner, DigitalOcean, Linode, OVH, and the rest
+- **Dedicated servers** — bare metal, colo, homelab
+- **Multi-server** — spread workloads across machines
+
+Same interface regardless of where you deploy.
+
+---
+
+## Status
+
+Production-ready core, actively developed. Self-hosting is **free** (no billing).
+
+**Coming next:** multi-node clusters, load-balancing UI, private networking, advanced monitoring, and visual CI/CD pipelines.
+
+---
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
+
+## Security
+
+Found a vulnerability? We welcome your report — please disclose it **privately**,
+never in a public issue, PR, or discussion.
+
+- **Report it here (preferred):** [Report a vulnerability](https://github.com/oblien/openship/security/advisories/new) — a private GitHub advisory, visible only to you and the maintainers.
+- Scope, what to include, and our response/disclosure process: [SECURITY.md](SECURITY.md).
+
+Good-faith security research is **authorized** under our
+[safe-harbor policy](SECURITY.md#safe-harbor), and we&#039;re happy to credit valid
+first reports.
+
+## License
+
+Openship-authored code is licensed under the [Apache License 2.0](LICENSE).
+Bundled third-party components retain their own licenses. In particular,
+the [iRedMail engine](apps/email/engine/LICENSE) is GPL-licensed and is included
+in several control-plane distributions even when mail setup is not used.
+See the [component and packaging inventory](docs/licensing.md) for the recorded
+license boundaries and outstanding upstream notice review.
+</pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
@@ -730,15 +992,15 @@ node &quot;$SKILL_DIR/scripts/migr
             <title><![CDATA[dream-num/univer]]></title>
             <link>https://github.com/dream-num/univer</link>
             <guid>https://github.com/dream-num/univer</guid>
-            <pubDate>Tue, 29 Sep 2026 00:07:27 GMT</pubDate>
+            <pubDate>Wed, 30 Sep 2026 00:06:59 GMT</pubDate>
             <description><![CDATA[The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/dream-num/univer">dream-num/univer</a></h1>
             <p>The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 21,235</p>
-            <p>Forks: 1,801</p>
-            <p>Stars today: 1,099 stars today</p>
+            <p>Stars: 21,840</p>
+            <p>Forks: 1,842</p>
+            <p>Stars today: 696 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
 
 &lt;img src=&quot;./docs/img/banner.png&quot; alt=&quot;Univer SDK&quot; width=&quot;800&quot; /&gt;
@@ -1065,269 +1327,18 @@ Boundary principles:
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[HelpCode-ai/anythingmcp]]></title>
-            <link>https://github.com/HelpCode-ai/anythingmcp</link>
-            <guid>https://github.com/HelpCode-ai/anythingmcp</guid>
-            <pubDate>Tue, 29 Sep 2026 00:07:26 GMT</pubDate>
-            <description><![CDATA[Turn any REST, SOAP, GraphQL, OData or SQL API into MCP tools for Claude & ChatGPT. Self-hosted. 265 connectors: SAP S/4HANA & Business One, ERP, e-commerce.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/HelpCode-ai/anythingmcp">HelpCode-ai/anythingmcp</a></h1>
-            <p>Turn any REST, SOAP, GraphQL, OData or SQL API into MCP tools for Claude & ChatGPT. Self-hosted. 265 connectors: SAP S/4HANA & Business One, ERP, e-commerce.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 562</p>
-            <p>Forks: 71</p>
-            <p>Stars today: 81 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://raw.githubusercontent.com/HelpCode-ai/anythingmcp/badges/banner.png&quot; alt=&quot;AnythingMCP turns ERP, e-commerce, REST, SOAP and SQL systems into MCP tools for Claude and ChatGPT: 265 connectors, 21 of them with no API key.&quot; width=&quot;100%&quot; /&gt;
-&lt;/p&gt;
-
-&lt;h1 align=&quot;center&quot;&gt;AnythingMCP&lt;/h1&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;README.md&quot;&gt;English&lt;/a&gt; · &lt;a href=&quot;README.de.md&quot;&gt;Deutsch&lt;/a&gt; · &lt;a href=&quot;README.zh-CN.md&quot;&gt;简体中文&lt;/a&gt; · &lt;a href=&quot;README.ja.md&quot;&gt;日本語&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;strong&gt;Turn any REST/OpenAPI, SOAP, GraphQL or SQL API into MCP tools for Claude, ChatGPT and Copilot.&lt;/strong&gt;&lt;br/&gt;
-  A self-hosted MCP server and gateway, no code, 265 ready connectors including ERP and e-commerce: SAP Business One, Odoo, Xentral, weclapp, Shopware, WooCommerce, Amazon Seller, Kaufland and more.
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/HelpCode-ai/anythingmcp/stargazers&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/stars/HelpCode-ai/anythingmcp?style=flat&amp;logo=github&amp;logoColor=white&amp;color=2563eb&amp;labelColor=0b1220&quot; alt=&quot;GitHub Stars&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/HelpCode-ai/anythingmcp/releases&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/v/release/HelpCode-ai/anythingmcp?include_prereleases&amp;color=2563eb&amp;labelColor=0b1220&quot; alt=&quot;Release&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/HelpCode-ai/anythingmcp/blob/main/LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/open%20source-AGPL--3.0-2563eb?labelColor=0b1220&quot; alt=&quot;Open source, AGPL-3.0&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://hub.docker.com/r/helpcodeai/anythingmcp&quot;&gt;&lt;img src=&quot;https://img.shields.io/docker/pulls/helpcodeai/anythingmcp?logo=docker&amp;logoColor=white&amp;color=2563eb&amp;labelColor=0b1220&quot; alt=&quot;Docker pulls&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;#the-adapter-catalog&quot;&gt;&lt;img src=&quot;https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FHelpCode-ai%2Fanythingmcp%2Fbadges%2Fadapters.json&quot; alt=&quot;Adapters in the catalog&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;#the-adapter-catalog&quot;&gt;&lt;img src=&quot;https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FHelpCode-ai%2Fanythingmcp%2Fbadges%2Ftools.json&quot; alt=&quot;Tools across all adapters&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;#the-adapter-catalog&quot;&gt;&lt;img src=&quot;https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FHelpCode-ai%2Fanythingmcp%2Fbadges%2Fkeyless.json&quot; alt=&quot;Adapters that need no API key&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-**Claude answering a question no chatbot could answer**, because the data lives in a field-service system that speaks REST, not MCP:
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;docs/assets/demo-claude.gif&quot; alt=&quot;AnythingMCP in Claude: asked which companies a technician visited last week, Claude calls MCP tools that AnythingMCP generated from a field-service REST API&quot; width=&quot;100%&quot; /&gt;
-&lt;/p&gt;
-
-**Run it yourself** — three lines, no clone, [details below](#run-it-yourself):
-
-```bash
-mkdir anythingmcp &amp;&amp; cd anythingmcp
-curl -fsSLo docker-compose.yml \
-  https://raw.githubusercontent.com/HelpCode-ai/anythingmcp/main/docker-compose.quickstart.yml
-printf &#039;JWT_SECRET=%s\nENCRYPTION_KEY=%s\n&#039; &quot;$(openssl rand -hex 32)&quot; &quot;$(openssl rand -hex 32)&quot; &gt; .env
-docker compose up -d   # → http://localhost:3000
-```
-
----
-
-Three words appear throughout and mean three different things:
-
-- an **adapter** is one of the 265 JSON definitions that ship in this repo — SAP Business One, Odoo, weclapp, Xentral, Shopware, WooCommerce, Amazon Seller, DHL and the rest. 21 of them need no API key at all; the others ask for your credentials at import.
-- a **connector** is an adapter, or your own OpenAPI spec / Postman collection / WSDL / GraphQL endpoint / database, once you have configured it in your workspace. Anything you can point at, in minutes, without writing an MCP server.
-- an **MCP server** is the URL you hand to Claude. It exposes the connectors you assign to it, and nothing else.
-
-Everything runs on your infrastructure, so you decide what leaves it. Per-tool response mapping declares which fields ever reach the model; credentials are AES-256-GCM at rest; the audit log keeps the full upstream response on your side. OAuth2, RBAC, SSO and SCIM are in the self-hosted build, not held back for a paid tier.
-
-**In production at [KOCH Freiburg GmbH](https://www.kochfreiburg.de/)**, where it connects AI assistants to 15+ internal systems — ERP, CRM, SOAP services and on-prem databases. AnythingMCP was extracted from that system by [helpcode.ai](https://helpcode.ai) in Freiburg, Germany, and open-sourced because an adapter catalog grows faster as a community than as a product.
-
----
-
-## Run it yourself
-
-**The recommended path**, and the one measured below. Requires Docker 24+ and `openssl`; on macOS, start Docker Desktop first.
-
-```bash
-mkdir anythingmcp &amp;&amp; cd anythingmcp
-curl -fsSLo docker-compose.yml \
-  https://raw.githubusercontent.com/HelpCode-ai/anythingmcp/main/docker-compose.quickstart.yml
-printf &#039;JWT_SECRET=%s\nENCRYPTION_KEY=%s\n&#039; &quot;$(openssl rand -hex 32)&quot; &quot;$(openssl rand -hex 32)&quot; &gt; .env
-docker compose up -d
-```
-
-Open &lt;http://localhost:3000&gt; and register — **the first account becomes admin**.
-
-&gt; **Keep the generated `.env`.** `ENCRYPTION_KEY` is what decrypts the credentials you store. Lose it and every connector has to be re-credentialed; back it up wherever you keep your other secrets.
-
-| Service | Default URL |
-|---|---|
-| Web UI | `http://localhost:3000` |
-| MCP endpoint | `http://localhost:4000/mcp` |
-| Swagger docs | `http://localhost:4000/api/docs` |
-
-*Measured on amd64: 31 s to pull the image, 24 s to a healthy API and a login page. The published image is amd64 only for now — the compose file pins the platform so it also runs on Apple Silicon under Docker Desktop&#039;s emulation, where the same boot took 24 s on an M-series laptop but can take a few minutes on older hardware.*
-
-The quickstart binds to `127.0.0.1` on purpose: nothing in front of it terminates TLS. **For an instance other people or a cloud AI client can reach**, clone the repo and run `./setup.sh` — it asks for a domain, gets certificates through Caddy, generates the secrets and sets the MCP auth mode. See the [Deployment Guide](docs/deployment.md).
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Other ways to deploy&lt;/strong&gt; — managed cloud, Railway, DigitalOcean&lt;/summary&gt;
-
-&lt;br/&gt;
-
-[**AnythingMCP Cloud**](https://cloud.anythingmcp.com) is the same AGPL code, operated by us in **Frankfurt, Germany**. Start there to see it work on your own APIs without provisioning anything, and move it in-house when you want the credentials to stop travelling — the connectors are the same either way. DPA/AVV on request via [info@helpcode.ai](mailto:info@helpcode.ai). SSO and SCIM are self-hosted only.
-
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/8-X4WD?referralCode=k30bPV&amp;utm_medium=integration&amp;utm_source=template&amp;utm_campaign=generic)
-&amp;nbsp;
-[![Install on DigitalOcean](https://www.deploytodo.com/do-btn-blue.svg)](https://marketplace.digitalocean.com/apps/anythingmcp)
-
-&lt;/details&gt;
-
----
-
-## Connect any system
-
-Most companies have no MCP servers yet. They have a REST API, an ERP, a SOAP service and a database. Each of them becomes a set of MCP tools, and one MCP server URL hands them to Claude, ChatGPT or Copilot.
-
-### OpenAPI / REST API to MCP
-
-Import an OpenAPI 3.x or Swagger 2.0 spec, by URL or by pasting it, and every operation becomes an MCP tool with its parameters, auth and endpoint mapping filled in. Rename and describe the tools in the visual editor so the model picks the right one. [REST connector docs](docs/connectors/rest.md) · [guide](https://anythingmcp.com/guides/rest-api-to-mcp) · [5-minute demo: openapi-to-mcp](https://github.com/HelpCode-ai/openapi-to-mcp)
-
-### SOAP / WSDL to MCP
-
-Point AnythingMCP at a WSDL and each SOAP operation becomes a tool: envelopes, parameter order and WCF services are handled for you, with Basic, Bearer or API-key auth. That is how a SOAP service from 2009 ends up in front of a 2026 model, in minutes rather than weeks. [SOAP connector docs](docs/connectors/soap.md) · [guide](https://anythingmcp.com/guides/soap-to-mcp) · [5-minute demo: soap-to-mcp](https://github.com/HelpCode-ai/soap-to-mcp)
-
-### SQL database to MCP
-
-PostgreSQL, MySQL, MariaDB, SQL Server, Oracle, SAP HANA, SQLite and MongoDB. The connector generates schema, example and query tools; you decide whether the model writes SQL or only fills in the parameters of queries you wrote. Query tools are read-only by default: AnythingMCP runs a single SELECT and blocks writes and stacked statements. Add a read-only database user and a role that sees only the tools it needs. [Database connector docs](docs/connectors/database.md) · [SAP HANA](docs/connectors/sap-hana.md) · [guide](https://anythingmcp.com/guides/database-to-mcp) · [5-minute demo: sql-to-mcp](https://github.com/HelpCode-ai/sql-to-mcp)
-
-### GraphQL to MCP
-
-Introspection turns the queries and mutations of a GraphQL endpoint into MCP tools, or you define the operations yourself. [GraphQL connector docs](docs/connectors/graphql.md) · [guide](https://anythingmcp.com/guides/graphql-to-mcp)
-
-### Postman collection to MCP
-
-Import a Postman v2.1 collection: folders, auth, body modes and `{{variables}}` carry over, and every request becomes a tool. cURL commands work the same way. [Postman import docs](docs/connectors/rest.md#from-postman-collection)
-
----
-
-## ERP connectors
-
-Ready adapters for the ERPs behind most order, stock and invoice questions. Install one, add your credentials, and the tools are live on your MCP server. Each name links to its setup guide.
-
-| System | Market | Tools | What the AI can do |
-|---|---|---|---|
-| [SAP Business One](https://anythingmcp.com/guides/connect-sap-business-one-to-claude) | Global | 12 | Business partners, items, orders, invoices, quotations, deliveries; create sales orders |
-| [SAP S/4HANA Cloud](https://anythingmcp.com/guides/connect-sap-s4hana-cloud-to-claude) | Global | 15 | Business partners, sales and purchase orders, billing documents, deliveries, journal entries |
-| [Odoo](https://anythingmcp.com/guides/connect-odoo-to-claude) | Global | 11 | Any model: partners, sales orders, invoices, products; create and update |
-| [Microsoft Dynamics NAV](https://anythingmcp.com/guides/connect-dynamics-nav-to-claude) | Global | 6 | Any published OData page: customers, items, sales orders; create and update |
-| [ERPNext](https://anythingmcp.com/guides/connect-erpnext-to-claude) | Global | 11 | Any DocType: customers, sales orders, invoices, items, stock |
-| [Dolibarr](https://anythingmcp.com/guides/connect-dolibarr-to-claude) | Global | 10 | Third parties, invoices, orders, proposals, products, stock |
-| [JTL-Wawi](https://anythingmcp.com/guides/connect-jtl-wawi-to-claude) † | DE | 9 | Items, stock per warehouse, customers, sales orders, shipments |
-| [Xentral](https://anythingmcp.com/guides/connect-xentral-to-claude) | DE | 7 | Articles, customers, sales orders, invoices, stock |
-| [weclapp](https://anythingmcp.com/guides/connect-weclapp-to-claude) | DACH | 11 | Customers, sales orders, invoices, articles, quotations, opportunities |
-| [Sage 100](https://anythingmcp.com/guides/connect-sage-100-to-claude) † | DE | 6 | Addresses, items, sales documents, any Web API entity |
-| [Haufe X360](https://anythingmcp.com/guides/connect-haufe-x360-to-claude) † | DE | 7 | Customers, stock items, sales orders, invoices, shipments |
-| [ScopeVisio](https://anythingmcp.com/guides/connect-scopevisio-to-claude) | DE | 6 | Contacts, invoices, projects, tasks |
-| [AFAS Profit](https://anythingmcp.com/guides/connect-afas-profit-to-claude) † | NL | 6 | Any GetConnector: debtors, invoices, employees |
-| [Zucchetti](https://anythingmcp.com/guides/connect-zucchetti-to-claude) † | IT | 6 | Anagrafiche, documents, items |
-| [TeamSystem](https://anythingmcp.com/guides/connect-teamsystem-to-claude) † | IT | 6 | Customers, suppliers, invoices, items |
-| [Axonaut](https://anythingmcp.com/guides/connect-axonaut-to-claude) † | FR | 9 | Companies, invoices, quotations, expenses, products, projects |
-
-† Built from the vendor&#039;s published API documentation and not yet exercised against a live tenant. If you run one of these, a report or a fix is very welcome.
-
-**Repositories:** [erp-mcp-server](https://github.com/HelpCode-ai/erp-mcp-server) · [weclapp-mcp-server](https://github.com/kochfreiburg/weclapp-mcp-server) · [odoo-mcp-server](https://github.com/keysersoft/odoo-mcp-server) · [sap-mcp-server](https://github.com/HelpCode-ai/sap-mcp-server) · [sap-business-one-mcp-server](https://github.com/HelpCode-ai/sap-business-one-mcp-server) · [xentral-mcp-server](https://github.com/kochfreiburg/xentral-mcp-server)
-
-**Your ERP isn&#039;t listed, or it&#039;s a custom or on-prem build?** Connect it through its [REST API](#openapi--rest-api-to-mcp), [SOAP services](#soap--wsdl-to-mcp) or straight to its [SQL database](#sql-database-to-mcp), read-only. That is how [KOCH Freiburg](https://www.kochfreiburg.de/) runs its ERP in production.
-
----
-
-## E-commerce &amp;amp; marketplace connectors
-
-Shops and marketplaces, from Amazon and eBay to the DACH marketplaces. Each name links to its setup guide.
-
-| System | Market | Tools | What the AI can do |
-|---|---|---|---|
-| [Amazon Seller Central](https://anythingmcp.com/guides/connect-amazon-seller-to-claude) | Global | 15 | Orders, catalog, FBA inventory, offers, fees, financial events, reports |
-| [WooCommerce](https://anythingmcp.com/guides/connect-woocommerce-to-claude) | Global | 49 | Products, variations, stock, orders, refunds, customers, reports |
-| [Shopware 6](https://anythingmcp.com/guides/connect-shopware-6-to-claude) | DACH | 6 | Storefront catalog via the Store API: products, categories, cross-sells |
-| [Magento 2 / Adobe Commerce](https://anythingmcp.com/guides/connect-magento-to-claude) | Global | 12 | Products, stock, orders, customers |
-| [BigCommerce](https://anythingmcp.com/guides/connect-bigcommerce-to-claude) | Global | 14 | Products, variants, inventory, orders, customers |
-| [eBay Sell](https://anythingmcp.com/guides/connect-ebay-sell-to-claude) | Global | 10 | Inventory, offers, orders, disputes, price updates |
-| [Etsy](https://anythingmcp.com/guides/connect-etsy-to-claude) | Global | 9 | Listings, receipts (orders), reviews |
-| [Ecwid](https://anythingmcp.com/guides/connect-ecwid-to-claude) | Global | 10 | Products, categories, orders, customers |
-| [Kaufland Marketplace](https://anythingmcp.com/guides/connect-kaufland-to-claude) | DE | 8 | Orders and units, shipments, tickets, storefronts |
-| [OTTO Market](https://anythingmcp.com/guides/connect-otto-market-to-claude) † | DE | 8 | Orders, products, returns, stock and price updates |
-| [Zalando Direct Ship](https://anythingmcp.com/guides/connect-zalando-zds-to-claude) † | EU | 7 | Orders, shipments, returns, stock, prices |
-| [Billbee](https://anythingmcp.com/guides/connect-billbee-to-claude) | DACH | 8 | Orders, products, customers, shipping providers |
-| [Mercado Libre](https://anythingmcp.com/guides/connect-mercado-libre-to-claude) | LATAM | 4 | Item search, seller orders |
-
-† Built from the vendor&#039;s published API documentation and not yet exercised against a live seller account.
-
-**Repositories:** [ecommerce-mcp-server](https://github.com/HelpCode-ai/ecommerce-mcp-server) · [amazon-seller-mcp-server](https://github.com/keysersoft/amazon-seller-mcp-server) · [billbee-mcp-server](https://github.com/kochfreiburg/billbee-mcp-server) · [magento-mcp-server](https://github.com/keysersoft/magento-mcp-server) · [woocommerce-mcp-server](https://github.com/keysersoft/woocommerce-mcp-server) · [shopware-mcp-server](https://github.com/kochfreiburg/shopware-mcp-server) · [kaufland-mcp-server](https://github.com/kochfreiburg/kaufland-mcp-server) · [otto-market-mcp-server](https://github.com/kochfreiburg/otto-market-mcp-server)
-
----
-
-## What it connects, governs and learns
-
-### Connect
-
-- **6 connector types** — [REST](docs/connectors/rest.md), [SOAP](docs/connectors/soap.md), [GraphQL](docs/connectors/graphql.md), [OData](docs/connectors/odata.md) (SAP Gateway included), [Database](docs/connectors/database.md), [MCP-to-MCP bridge](docs/connectors/mcp-bridge.md). Eight database engines: PostgreSQL, MySQL, MariaDB, MSSQL, Oracle, SAP HANA, MongoDB, SQLite.
-- **Import from what you already have** — OpenAPI/Swagger, Postman, cURL, WSDL, GraphQL introspection, or tool discovery straight from a running MCP server.
-- **The adapter catalog** — [see what ships](#the-adapter-catalog).
-- **Visual tool editor** — map parameters to path, query, body and headers; rename and describe tools so the AI reads them the way you meant.
-- **Dynamic MCP server** — tools register at runtime, no restart. Per-connector `{{VAR}}` interpolation, hidden from the AI.
-
-### Govern
-
-- **[Response shaping](#control-what-the-model-sees)** — declare per tool exactly which fields reach the model, with a live before/after preview.
-- **Read-only where it matters.** Every tool carries MCP annotations (`readOnlyHint`, `destructiveHint`), derived from the operation and overridable per tool, so a client can show the difference between reading an invoice and issuing a credit note. Role-based tool whitelisting lets you publish an MCP server that can only read — which is how most people should start with an ERP.
-- **Every auth scheme you will meet** — OAuth2 (PKCE and Client Credentials), Bearer, API Key, Basic, HMAC request signing, [LOGIN_TOKEN](docs/connectors/login-token-auth.md) and OAuth 1.0a.
-- **Audit logging** — every tool call recorded with input, output, duration and status, in your own database.
-- **[SSO](docs/sso.md) and [SCIM](docs/scim-entra-setup.md)** — Entra ID, Google, Okta, Auth0, generic OIDC. Roles sync from your directory groups on every sign-in; disable someone in the directory and their workspace access and MCP API keys die with it (self-hosted only).
-
-### Learn
-
-- **[Knowledge Graph](docs/knowledge-graph.md)** — a per-workspace, PII-safe map of how your connectors&#039; data relates, served back to the agent as an MCP tool so it chains calls across systems correctly.
-- **[AI skills](docs/knowledge-graph.md)** — recurring usage turned into small reusable rules and composed into the server&#039;s instructions, so they guide the agent without adding a tool call (optional, opt-in).
-
----
-
-## Knowledge Graph &amp;amp; AI skills
-
-Forwarding calls leaves the hard part to the agent: knowing which tool to call
-next, and what your business actually means by &quot;open order&quot; or &quot;active
-customer&quot;. AnythingMCP learns both — **how the data in your connectors
-relates**, and **how your team really uses the tools** — then feeds that back to
-the AI client as context rather than as extra tool calls.
-
-- **Knowledge Graph** — a per-workspace map of *entities* (customers, orders,
-  products…) and their *relationships*. It builds itself from tool names,
-  parameters and the input/output of real calls; an optional AI pass infers the
-  cross-connector links heuristics miss. It stays **PII-safe**: it stores
-  entity/field *names* and relationship metadata, never the values.
-- **Build it visually** — a graph editor lets you create, edit and delete
-  entities and connections by hand, add descriptions, and curate what the AI
-  proposed.
-- **Served over MCP** — each server exposes a `kg_how_to_obtain` tool, so the
-  *customer&#039;s* agent can ask &quot;how do I get from a Shopware order to a DHL
-  tracking number?&quot; and receive chaining hints across connectors.
-- **AI skills, written from real usage** — with intent capture on, each tool
-  call can record *why* it was made. An AI pass turns recurring patterns into
-  small reusable rules (e.g. *&quot;today&#039;s revenue includes order statuses 2, 3 and
-  4&quot;*). You Apply, Edit or Dismiss each one, or let auto-apply take the
-  high-confidence ones unattended. Applied skills are composed into the MCP
-  server&#039;s **instructions** at serve time, so they guide the agent **without
-  adding a single tool call**. The knowledge your team builds up by using the
-  system stops living in someone&#039;s head.
-
-The AI passes are **off 
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
             <title><![CDATA[moeru-ai/airi]]></title>
             <link>https://github.com/moeru-ai/airi</link>
             <guid>https://github.com/moeru-ai/airi</guid>
-            <pubDate>Tue, 29 Sep 2026 00:07:25 GMT</pubDate>
+            <pubDate>Wed, 30 Sep 2026 00:06:58 GMT</pubDate>
             <description><![CDATA[💖🧸 Self hosted, you-owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraft, Factorio playing. Web / macOS / Windows supported.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/moeru-ai/airi">moeru-ai/airi</a></h1>
             <p>💖🧸 Self hosted, you-owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraft, Factorio playing. Web / macOS / Windows supported.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 49,724</p>
-            <p>Forks: 4,950</p>
-            <p>Stars today: 274 stars today</p>
+            <p>Stars: 49,832</p>
+            <p>Forks: 4,966</p>
+            <p>Stars today: 124 stars today</p>
             <h2>README</h2><pre>&lt;picture&gt;
   &lt;source
     width=&quot;100%&quot;
@@ -1716,18 +1727,247 @@ npx bumpp --no-commit --no-tag
             <category>TypeScript</category>
         </item>
         <item>
+            <title><![CDATA[heygen-com/hyperframes]]></title>
+            <link>https://github.com/heygen-com/hyperframes</link>
+            <guid>https://github.com/heygen-com/hyperframes</guid>
+            <pubDate>Wed, 30 Sep 2026 00:06:57 GMT</pubDate>
+            <description><![CDATA[Write HTML. Render video. Built for agents.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a></h1>
+            <p>Write HTML. Render video. Built for agents.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 54,250</p>
+            <p>Forks: 4,937</p>
+            <p>Stars today: 324 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;docs/logo/dark.svg&quot;&gt;
+    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;docs/logo/light.svg&quot;&gt;
+    &lt;img alt=&quot;HyperFrames&quot; src=&quot;docs/logo/light.svg&quot; width=&quot;300&quot;&gt;
+  &lt;/picture&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://www.npmjs.com/package/hyperframes&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/v/hyperframes.svg?style=flat&quot; alt=&quot;npm version&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://www.npmjs.com/package/hyperframes&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/dm/hyperframes.svg?style=flat&quot; alt=&quot;npm downloads&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/license-Apache%202.0-blue.svg&quot; alt=&quot;License&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://nodejs.org&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/node-%3E%3D22-brightgreen&quot; alt=&quot;Node.js&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://discord.gg/EbK98HBPdk&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Discord-Join-5865F2?logo=discord&amp;logoColor=white&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;b&gt;Write HTML. Render video. Built for agents.&lt;/b&gt;&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://hyperframes.heygen.com/quickstart&quot;&gt;Quickstart&lt;/a&gt; |
+  &lt;a href=&quot;https://hyperframes.heygen.com/showcase&quot;&gt;Showcase&lt;/a&gt; |
+  &lt;a href=&quot;https://www.hyperframes.dev/&quot;&gt;Playground&lt;/a&gt; |
+  &lt;a href=&quot;https://hyperframes.heygen.com/catalog/blocks/data-chart&quot;&gt;Catalog&lt;/a&gt; |
+  &lt;a href=&quot;https://hyperframes.heygen.com/introduction&quot;&gt;Docs&lt;/a&gt; |
+  &lt;a href=&quot;https://discord.gg/EbK98HBPdk&quot;&gt;Discord&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;docs/public/images/hyperframes-logo-motion-1280-trimmed.webp&quot; alt=&quot;HyperFrames demo: HTML code on the left transforms into a rendered video on the right&quot; width=&quot;800&quot;&gt;
+&lt;/p&gt;
+
+HyperFrames is an open-source framework for turning HTML, CSS, media, and seekable animations into deterministic MP4 videos. Use it locally with the CLI, from AI coding agents with skills, or as the rendering core behind hosted authoring workflows.
+
+## Quick Start
+
+### With an AI coding agent
+
+For Claude Code, install the versioned plugin:
+
+```bash
+claude plugin marketplace add heygen-com/hyperframes
+claude plugin install hyperframes@hyperframes
+```
+
+Enable auto-update for the **hyperframes** marketplace in `/plugin` → **Marketplaces**,
+then use `/hyperframes:hyperframes`. See the [plugin guide](docs/guides/plugins.mdx)
+for Copilot, VS Code, Cursor, Gemini CLI, updates, and migration.
+
+For standalone skills (including OpenCode), use:
+
+```bash
+npx skills add heygen-com/hyperframes
+```
+
+&gt; The picker opens with nothing pre-selected — the **Core Skills** group is all you need: the `/hyperframes` router installs each creation workflow on demand. Agents and non-interactive runs should use `npx hyperframes skills update` instead — it installs exactly the core set, whereas `skills add --all` installs all 21 published skills. The six repo-internal skills under `.claude/skills` / `.agents/skills` are excluded by default. For the full published set use `npx hyperframes skills`.
+&gt;
+&gt; `skills add` resolves the skills.sh registry blob, which can lag `main` by hours. `npx hyperframes skills update` installs from the current `main`, so reach for it when you need the newest copy of a skill.
+
+Try a prompt like:
+
+&gt; Using `/hyperframes`, create a 10-second product intro with a fade-in title, a background video, and subtle background music.
+
+The skills teach agents the HyperFrames production loop: plan the video, write valid HTML, wire seekable animations, add media, lint, preview, and render. They work with Claude Code, Codex, Cursor, Gemini CLI, IBM Bob, and other coding agents that support skills.
+
+## Skills
+
+HyperFrames ships 21 skills agents load on demand. Read `/hyperframes` first — it&#039;s the router and capability map; it picks a workflow for any &quot;make me a…&quot; request — video, deck, or composition port — and points to the domain skills below.
+
+For standalone installation, default to the **core set** — the router installs each creation workflow on demand. `npx hyperframes skills update` installs exactly that from anywhere; the interactive picker (`npx skills add heygen-com/hyperframes`) lists it as the &quot;Core Skills&quot; group, nothing pre-selected. The picker is interactive-only — a non-interactive or agent run without `--skill` installs all 21. Use `npx skills add heygen-com/hyperframes --all` to install the complete published set deliberately (skips the picker), or `npx skills add heygen-com/hyperframes --skill &lt;name&gt;` for just one (bare name, no leading `/`).
+
+Standalone installs stay lean after that: `npx hyperframes init` keeps the **core set** fresh (the router, the `hyperframes-*` domain skills, and `media-use` — plus whatever is already installed; `/figma` stays on demand) and never expands a partial install; the creation workflows install **on demand** — the router runs `npx hyperframes skills update &lt;workflow&gt;` before entering one. Nothing re-pulls the full set behind your back.
+
+### Plugin packages
+
+Plugins bundle the full skill catalog and use their agent&#039;s update manager.
+`bun run package:agent-plugin` builds the committed portable ZIP, source metadata,
+and SHA-256 checksum. See the [maintainer checklist](docs/contributing/agent-plugins.mdx).
+
+### Upload to Codex
+
+Build the upload-ready Codex plugin archive from the committed `HEAD` version of the manifest, brand assets, and skills:
+
+```bash
+bun run package:codex-plugin
+```
+
+This writes `dist/hyperframes-plugin.zip` with a `hyperframes/` root folder and fails if the archive exceeds Codex&#039;s 100 MB upload limit.
+
+### Router
+
+| Skill          | Use when                                                                                                                                                                                                                                                                 |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `/hyperframes` | **Read first** for any request to make / create / edit / animate / render a video, animation, or motion graphic. Capability map for the domain skills, the intent layer that confirms every creation brief up front, and intent router for the creation workflows below. |
+
+### Creation workflows
+
+| Skill                      | Use when                                                                                                                                                                                                                     |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/product-launch-video`    | Any **website** — marketing / launching / promoting a product (from its URL, a brief, or a script), or a site tour / showcase / social clip featuring the site&#039;s own visuals. Up to ~3 min (sweet spot 30-90s).              |
+| `/faceless-explainer`      | **Explaining a topic / concept** from arbitrary text — no product, no URL, no website capture; every visual is LLM-invented (typography / abstract / diagram / data-viz).                                                    |
+| `/pr-to-video`             | A **GitHub pull request** (PR URL, `owner/repo#N` ref, or &quot;this PR&quot;) → changelog / feature-reveal / fix / refactor explainer, read via the `gh` CLI.                                                                         |
+| `/embedded-captions`       | Adding **captions / subtitles** to an existing talking-head video (footage untouched) — verbatim rail, embedded climax behind the subject, or pure-cinematic embed.                                                          |
+| `/talking-head-recut`      | Packaging an existing talking-head / interview / podcast video with **designed graphic overlays** — lower-thirds, data callouts, kinetic titles, pull-quotes, side panels, PiP.                                              |
+| `/motion-graphics`         | A short, **unnarrated, design-led motion graphic** (~under 10s) — kinetic type, stat / chart hit, logo sting, lower-third, animated tweet / headline. MP4 or transparent overlay.                                            |
+| `/music-to-video`          | A **music track** (audio file, video to pull audio from, or one generated from a mood brief) → a **beat-synced** video — lyric, slideshow, or kinetic promo; music drives pacing.                                            |
+| `/slideshow`               | A **presentation / pitch deck / interactive deck** — discrete slides, fragment reveals, branching, hotspot navigation, presenter mode. Output is a navigable deck, not a rendered video.                                     |
+| `/general-video`           | **Anything else** — longer or multi-scene pieces, brand / sizzle reel, title card, static loop, freeform composition. Input- and length-agnostic fallback, and the home of companion mode (co-create with the full toolbox). |
+| `/remotion-to-hyperframes` | **Porting an existing Remotion** (React) composition&#039;s source to HyperFrames HTML. One-way migration, not creation.                                                                                                          |
+
+### Domain skills (loaded on demand)
+
+Atomic capabilities the creation workflows compose against — pull one when you need that specific layer.
+
+| Skill                    | Covers                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `/hyperframes-core`      | The composition contract — `data-*` timing attributes, `class=&quot;clip&quot;`, tracks, sub-compositions, variables, framework-owned media playback, determinism rules.                                                                                                                                                                                                                                                                                                                       |
+| `/hyperframes-animation` | All animation knowledge — atomic motion rules, scene blueprints, transitions, runtime adapters (GSAP / Lottie / Three.js / Anime.js / CSS / WAAPI / TypeGPU).                                                                                                                                                                                                                                                                                                                        |
+| `/hyperframes-keyframes` | Seek-safe keyframe authoring across runtimes — GSAP timelines, CSS keyframes, Anime.js, WAAPI, FLIP, paths, masks, SVG morph/draw, 3D depth — plus `hyperframes keyframes` diagnostics for rendered motion.                                                                                                                                                                                                                                                                          |
+| `/hyperframes-creative`  | Non-animation creative direction — `frame.md` / `design.md`, palettes, typography, narration, beat planning, audio-reactive visuals, composition patterns.                                                                                                                                                                                                                                                                                                                           |
+| `/media-use`             | The media OS — resolve any media need (BGM, SFX, image, icon, logo, voice, color grade, LUT) into a frozen local file or paste-ready block + ledger record, generate via TTS/music/image models when the catalog misses, transcribe, caption, remove backgrounds, and reuse assets across projects. One shared audio engine + manifest tracking.                                                                                                                                     |
+| `/hyperframes-cli`       | CLI dev loop — `init`, `lint`, `check`, `snapshot`, `preview`, `render`, `publish`, `doctor`, plus HeyGen-hosted cloud rendering (`cloud render`) and AWS Lambda rendering (`lambda deploy / render / progress`).                                                                                                                                                                                                                                                                    |
+| `/hyperframes-audio`     | Mix the audio already placed in a composition — voiceover carve (dip a music bed only in the bands the voice occupies, static or dynamic, level match included), the effect chain (EQ, compressor, limiter, gate, saturation, delay, reverb, chorus, phaser, bitcrush), automation envelopes on volume or any effect parameter, and submix buses (`&lt;hf-audio-group&gt;`) carrying one chain, fader and automation clock for several tracks at once. Sourcing the audio is `/media-use`. |
+| `/hyperframes-registry`  | Search, install and wire registry blocks and components into compositions via `hyperframes catalog` / `hyperframes add`. Load before hand-building any named look, effect, treatment or transition. Authoring a new block or component to contribute upstream.                                                                                                                                                                                                                       |
+| `/figma`                 | Import Figma assets, tokens, components, and storyboard sections → reconstructed motion (frames read as states, not slides) (REST/CLI) plus Motion animations (MCP) and shaders (MCP source / native export) into a composition.                                                                                                                                                                                                                                                     |
+
+For visual design handoff workflows, see the [Claude Design guide](https://hyperframes.heygen.com/guides/claude-design) and [Open Design guide](https://hyperframes.heygen.com/guides/open-design).
+
+### Manually with the CLI
+
+```bash
+npx hyperframes init my-video
+cd my-video
+npx hyperframes preview      # preview in browser with live reload
+npx hyperframes render       # render to MP4
+```
+
+**Requirements:** Node.js 22+, FFmpeg
+
+## What You Can Build
+
+Need ideas? Browse the [Showcase](https://hyperframes.heygen.com/showcase) for finished videos you can watch, read, run, and remix.
+
+- Product launch videos and feature announcements
+- PR walkthroughs with animated code diffs, narration, and captions
+- Data visualizations, chart races, and map animations
+- Social videos with kinetic captions, overlays, and music
+- Docs-to-video, PDF-to-video, and site-tour explainers
+- Reusable motion graphics for automated content pipelines
+
+## Frame.md
+
+**frame.md — your design system, ready for video.**
+
+Every brand has a `design.md`. None of them were written for a camera. `frame.md` is the missing translation layer: it takes your web-context design spec and inverts it for the frame — the same tokens, the same rules, but rewritten so an AI agent can compose a promo video without guessing at scale or reaching for web chrome.
+
+The output is a `DESIGN.md` superset your whole toolchain can read. Atoms stay sacred. Composition stays free. Numbers come from the script.
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td width=&quot;50%&quot; align=&quot;center&quot;&gt;
+      &lt;a href=&quot;https://www.hyperframes.dev/design/biennale-yellow&quot;&gt;&lt;img src=&quot;https://static.heygen.ai/hyperframes-oss/docs/images/design-templates/biennale-yellow.png&quot; alt=&quot;Biennale Yellow&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;
+      &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://www.hyperframes.dev/design/biennale-yellow&quot;&gt;Biennale Yellow&lt;/a&gt;&lt;/b&gt;
+    &lt;/td&gt;
+    &lt;td width=&quot;50%&quot; align=&quot;center&quot;&gt;
+      &lt;a href=&quot;https://www.hyperframes.dev/design/blockframe&quot;&gt;&lt;img src=&quot;https://static.heygen.ai/hyperframes-oss/docs/images/design-templates/blockframe.png&quot; alt=&quot;BlockFrame&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;
+      &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://www.hyperframes.dev/design/blockframe&quot;&gt;BlockFrame&lt;/a&gt;&lt;/b&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td width=&quot;50%&quot; align=&quot;center&quot;&gt;
+      &lt;a href=&quot;https://www.hyperframes.dev/design/blue-professional&quot;&gt;&lt;img src=&quot;https://static.heygen.ai/hyperframes-oss/docs/images/design-templates/blue-professional.png&quot; alt=&quot;Blue Professional&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;
+      &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://www.hyperframes.dev/design/blue-professional&quot;&gt;Blue Professional&lt;/a&gt;&lt;/b&gt;
+    &lt;/td&gt;
+    &lt;td width=&quot;50%&quot; align=&quot;center&quot;&gt;
+      &lt;a href=&quot;https://www.hyperframes.dev/design/bold-poster&quot;&gt;&lt;img src=&quot;https://static.heygen.ai/hyperframes-oss/docs/images/design-templates/bold-poster.png&quot; alt=&quot;Bold Poster&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;
+      &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://www.hyperframes.dev/design/bold-poster&quot;&gt;Bold Poster&lt;/a&gt;&lt;/b&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td width=&quot;50%&quot; align=&quot;center&quot;&gt;
+      &lt;a href=&quot;https://www.hyperframes.dev/design/broadside&quot;&gt;&lt;img src=&quot;https://static.heygen.ai/hyperframes-oss/docs/images/design-templates/broadside.png&quot; alt=&quot;Broadside&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;
+      &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://www.hyperframes.dev/design/broadside&quot;&gt;Broadside&lt;/a&gt;&lt;/b&gt;
+    &lt;/td&gt;
+    &lt;td width=&quot;50%&quot; align=&quot;center&quot;&gt;
+      &lt;a href=&quot;https://www.hyperframes.dev/design/capsule&quot;&gt;&lt;img src=&quot;https://static.heygen.ai/hyperframes-oss/docs/images/design-templates/capsule.png&quot; alt=&quot;Capsule&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;
+      &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://www.hyperframes.dev/design/capsule&quot;&gt;Capsule&lt;/a&gt;&lt;/b&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td width=&quot;50%&quot; align=&quot;center&quot;&gt;
+      &lt;a href=&quot;https://www.hyperframes.dev/design/cartesian&quot;&gt;&lt;img src=&quot;https://static.heygen.ai/hyperframes-oss/docs/images/design-templates/cartesian.png&quot; alt=&quot;Cartesian&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;
+      &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://www.hyperframes.dev/design/cartesian&quot;&gt;Cartesian&lt;/a&gt;&lt;/b&gt;
+    &lt;/td&gt;
+    &lt;td width=&quot;50%&quot; align=&quot;center&quot;&gt;
+      &lt;a href=&quot;https://www.hyperframes.dev/design/cobalt-grid&quot;&gt;&lt;img src=&quot;https://static.heygen.ai/hyperframes-oss/docs/images/design-templates/cobalt-grid.png&quot; alt=&quot;Cobalt Grid&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;
+      &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://www.hyperframes.dev/design/cobalt-grid&quot;&gt;Cobalt Grid&lt;/a&gt;&lt;/b&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td width=&quot;50%&quot; align=&quot;center&quot;&gt;
+      &lt;a href=&quot;https://www.hyperframes.dev/design/coral&quot;&gt;&lt;img src=&quot;https://static.heygen.ai/hyperframes-oss/docs/images/design-templates/coral.png&quot; alt=&quot;Coral&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;
+      &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://www.hyperframes.dev/design/coral&quot;&gt;Coral&lt;/a&gt;&lt;/b&gt;
+    &lt;/td&gt;
+    &lt;td width=&quot;50%&quot; align=&quot;center&quot;&gt;
+      &lt;a href=&quot;https://www.hyperframes.dev/design/creative-mode&quot;&gt;&lt;img src=&quot;https://static.heygen.ai/hyperframes-oss/docs/images/design-templates/creative-mode.png&quot; alt=&quot;Creative Mode&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;
+      &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://www.hyperframes.dev/design/creative-mode&quot;&gt;Creative Mode&lt;/a&gt;&lt;/b&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+Browse and remix them all at [hyperframes.dev/design
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
             <title><![CDATA[vercel-labs/scriptc]]></title>
             <link>https://github.com/vercel-labs/scriptc</link>
             <guid>https://github.com/vercel-labs/scriptc</guid>
-            <pubDate>Tue, 29 Sep 2026 00:07:24 GMT</pubDate>
+            <pubDate>Wed, 30 Sep 2026 00:06:56 GMT</pubDate>
             <description><![CDATA[TypeScript-to-Native Compiler]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/vercel-labs/scriptc">vercel-labs/scriptc</a></h1>
             <p>TypeScript-to-Native Compiler</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 5,612</p>
-            <p>Forks: 146</p>
-            <p>Stars today: 317 stars today</p>
+            <p>Stars: 5,696</p>
+            <p>Forks: 157</p>
+            <p>Stars today: 93 stars today</p>
             <h2>README</h2><pre># scriptc
 
 &lt;p&gt;
@@ -1927,717 +2167,18 @@ AddressSanitizer and the runtime reference-count audit.
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[alsk1992/CloddsBot]]></title>
-            <link>https://github.com/alsk1992/CloddsBot</link>
-            <guid>https://github.com/alsk1992/CloddsBot</guid>
-            <pubDate>Tue, 29 Sep 2026 00:07:23 GMT</pubDate>
-            <description><![CDATA[Open Source AI trading agent that operates autonomously across 1000+ markets - Polymarket, Kalshi, Binance, Hyperliquid, Solana DEXs, 5 EVM chains. Scans for edge, executes instantly, manages risk while you sleep. Agent commerce protocol for machine-to-machine payments. Self-hosted. Built on Claude.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/alsk1992/CloddsBot">alsk1992/CloddsBot</a></h1>
-            <p>Open Source AI trading agent that operates autonomously across 1000+ markets - Polymarket, Kalshi, Binance, Hyperliquid, Solana DEXs, 5 EVM chains. Scans for edge, executes instantly, manages risk while you sleep. Agent commerce protocol for machine-to-machine payments. Self-hosted. Built on Claude.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 2,897</p>
-            <p>Forks: 353</p>
-            <p>Stars today: 5 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://cloddsbot.com/logo.png&quot; alt=&quot;Clodds Logo&quot; width=&quot;280&quot;&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;strong&gt;AI-powered trading terminal for prediction markets, crypto &amp; futures&lt;/strong&gt;
-  &lt;br&gt;
-  &lt;sub&gt;Claude + Odds = Clodds&lt;/sub&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;strong&gt;Clodds CA:&lt;/strong&gt; &lt;code&gt;2puc76ehVHyPXhZmDprtP2phDSFE4kzZKDT4JgAWpump&lt;/code&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/alsk1992/CloddsBot/releases/latest&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/v/release/alsk1992/CloddsBot?display_name=tag&amp;color=blue&quot; alt=&quot;GitHub release&quot;&gt;&lt;/a&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/node-%3E%3D22-brightgreen&quot; alt=&quot;Node.js&quot;&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/typescript-5.3-blue&quot; alt=&quot;TypeScript&quot;&gt;
-  &lt;a href=&quot;https://opensource.org/licenses/MIT&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/license-MIT-yellow&quot; alt=&quot;MIT License&quot;&gt;&lt;/a&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/skills-121%2B-purple&quot; alt=&quot;121+ Skills&quot;&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/markets-1000%2B-orange&quot; alt=&quot;1000+ Markets&quot;&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/Colosseum-Agent%20Hackathon-blueviolet&quot; alt=&quot;Built for Colosseum Hackathon&quot;&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/clones%2F14d-10.7k-brightgreen&quot; alt=&quot;10.7k clones in 14 days&quot;&gt;
-  &lt;a href=&quot;https://trendshift.io/repositories/24896?utm_source=repository-badge&amp;amp;utm_medium=badge&amp;amp;utm_campaign=badge-repository-24896&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/24896&quot; alt=&quot;alsk1992%2FCloddsBot | Trendshift&quot; width=&quot;250&quot; height=&quot;55&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;./assets/screenshots/clones-14d.jpeg&quot; alt=&quot;10,746 Git clones in last 14 days&quot; width=&quot;520&quot;&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;#quick-start&quot;&gt;Quick Start&lt;/a&gt; •
-  &lt;a href=&quot;#webchat&quot;&gt;WebChat&lt;/a&gt; •
-  &lt;a href=&quot;#everything-we-built&quot;&gt;Features&lt;/a&gt; •
-  &lt;a href=&quot;#channels&quot;&gt;Channels&lt;/a&gt; •
-  &lt;a href=&quot;#prediction-markets-10&quot;&gt;Markets&lt;/a&gt; •
-  &lt;a href=&quot;#token-launch&quot;&gt;Launch&lt;/a&gt; •
-  &lt;a href=&quot;#agent-forum&quot;&gt;Forum&lt;/a&gt; •
-  &lt;a href=&quot;#documentation&quot;&gt;Docs&lt;/a&gt;
-&lt;/p&gt;
-
----
-
-**Clodds** is a personal AI trading terminal for prediction markets, crypto spot, perpetual futures with leverage, **token launches**, and **Bittensor subnet mining**. Run it on your own machine, chat via any of **21 messaging platforms**, trade across **10 prediction markets + 7 futures exchanges**, with full Solana integration (Jupiter, Pump.fun, Raydium, Orca, Bags.fm) and EVM chains (Robinhood,Base, ETH, Arbitrum, Optimism, Polygon via Uniswap V3, 1inch, Virtuals Protocol), mine TAO on Bittensor, and manage your portfolio — all through natural conversation.
-
-Powered by Claude with 118+ trading strategies, whale tracking, arbitrage detection, copy trading, and DCA bots.
-
-&gt; 🏗️ **Built for [Colosseum Agent Hackathon](https://colosseum.com) on Solana** — Developed in 12 days as a fully-featured autonomous trading agent.
-
----
-
-## Quick Start
-
-&gt; **Requirement:** Node.js 22 or newer. Node.js 20 is not supported and dependency installation may fail.
-
-```bash
-npm install -g https://github.com/alsk1992/CloddsBot/releases/latest/download/clodds.tgz --loglevel=error
-clodds onboard
-```
-
-&gt; The old `clodds` package on npmjs.com is no longer maintained. Install the current release from GitHub using the command above.
-
-That&#039;s it. The setup wizard walks you through everything — API key, messaging channel, and starts the gateway. WebChat opens at `http://localhost:18789/webchat`.
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;From source (alternative)&lt;/strong&gt;&lt;/summary&gt;
-
-```bash
-git clone https://github.com/alsk1992/CloddsBot.git &amp;&amp; cd CloddsBot
-npm install &amp;&amp; cp .env.example .env
-# Add ANTHROPIC_API_KEY to .env
-npm run build &amp;&amp; npm start
-```
-&lt;/details&gt;
-
-## Demo
-
-**30-second terminal onboarding** — See Clodds in action:
-
-[![Watch the demo video](https://img.shields.io/badge/▶-Watch%20Demo-blue?style=for-the-badge)](https://cloddsbot.com/onboard.mp4)
-
-The demo shows:
-- Install the latest GitHub Release → `clodds onboard`
-- Onboarding wizard walks through credentials setup
-- Fetches live 15-minute BTC prediction markets from Polymarket (in real-time)
-- One command away from trading
-
-After the demo: Set your env vars or input credentials, then you&#039;re ready to trade.
-
----
-
-## WebChat
-
-Built-in browser interface at `http://localhost:18789/webchat` -- no setup, no third-party dependencies.
-
-**Interface:**
-- Claude-style sidebar with 4 tabs: Chats, Projects, Artifacts, Code
-- Create and organize conversations into project folders
-- Artifacts and code blocks auto-extracted from chat history
-- One-click copy for code snippets, search across all conversations
-
-**Thinking Indicator:**
-- Live spinner with elapsed timer while the AI generates
-- Replaces generic typing dots with actual status feedback
-
-**Unlimited History:**
-- Every message stored in a dedicated database table (append-only, one row per message)
-- No message cap -- scroll back through entire conversation history
-- Paginated loading so even 1000+ message chats load instantly
-
-**Context Compacting:**
-- Older messages automatically summarized so the AI never fully forgets what you discussed
-- LLM receives a compressed recap of earlier conversation + the last 20 messages
-- Similar to how Claude.ai and ChatGPT handle long conversations
-
-**Session Management:**
-- Create, rename, delete conversations via REST API
-- Profile menu with language selector (9 languages), help, about
-- Persistent across restarts (SQLite-backed)
-
----
-
-## CLI
-
-```bash
-clodds onboard     # Interactive setup wizard
-clodds start       # Start the gateway
-clodds repl        # Interactive REPL
-clodds doctor      # System diagnostics
-clodds secure      # Harden security
-clodds locale set zh  # Change language
-clodds mcp         # Start MCP server (for Claude Desktop/Code)
-clodds mcp install # Auto-configure Claude Desktop/Code
-```
-
-See [docs/USER_GUIDE.md](./docs/USER_GUIDE.md) for all commands.
-
----
-
-## Everything We Built
-
-### At a Glance
-
-| Category | What&#039;s Included |
-|----------|-----------------|
-| **Messaging** | 21 platforms (Telegram, Discord, WhatsApp, Slack, Teams, Signal, Matrix, iMessage, LINE, Nostr, and more) + built-in WebChat with sidebar, unlimited history, context compacting |
-| **Prediction Markets** | 10 platforms (Polymarket, Kalshi, Betfair, Smarkets, Drift, Manifold, Metaculus, PredictIt, Opinion.xyz, Predict.fun) |
-| **Polymarket Crypto Markets** | Deep expertise in BTC/ETH/SOL/XRP binary markets — 5-minute (BTC only), 15-minute, 1-hour, 4-hour, and daily rounds with round-based discovery, timing gates, and 4 automated strategies |
-| **Perpetual Futures** | 7 exchanges (Binance, Bybit, Hyperliquid, MEXC, Drift, Percolator, Lighter) with up to 200x leverage, database tracking, A/B testing |
-| **On-Chain Perps** | Percolator protocol — Solana-native perpetual futures with pluggable matchers, keeper cranking, real-time slab polling |
-| **Trading Strategies** | 118+ strategies including momentum, mean reversion, penny clipper, expiry fade, DCA bots, smart routing, whale tracking, copy trading |
-| **Risk Management** | Unified risk engine with circuit breaker, VaR/CVaR, volatility regime detection, stress testing, Kelly sizing, daily loss limits, kill switch |
-| **Backtesting** | Configurable strategy backtesting with historical data, SL/TP validation, P&amp;L analysis |
-| **Skills System** | 121 bundled skills + lazy-loaded extensions (no missing dependencies crash) — chat-driven automation |
-| **Token Security** | GoPlus-powered audits — honeypot detection, rug-pull analysis, holder concentration, risk scoring |
-| **Security Shield** | Code scanning (75 rules), scam DB (70+ addresses), multi-chain address checking, pre-trade tx validation |
-| **Trading** | Order execution on 16+ platforms (prediction markets, futures, Solana DEXs, EVM DEXs), portfolio tracking, P&amp;L, DCA |
-| **Market Data** | Real-time orderbooks, candles, liquidity tracking, depth analysis, price feeds across all platforms |
-| **MCP Server** | Expose all 121 skills as MCP tools for Claude Desktop and Claude Code |
-| **Arbitrage** | Cross-platform detection, combinatorial analysis, semantic matching, real-time scanning |
-| **AI** | 8 LLM providers, 4 specialized agents, semantic memory, 18 tools |
-| **Data Persistence** | SQLite (local), LanceDB (semantic memory + embeddings), PostgreSQL (analytics) — unlimited WebChat history, trade database, context compacting, hybrid search, user profiles |
-| **i18n** | 10 languages (EN, ZH, ES, JA, KO, DE, FR, PT, RU, AR) |
-| **Solana DeFi** | Jupiter, Raydium, Orca, Meteora, Kamino, MarginFi, Solend, Pump.fun, Bags.fm |
-| **EVM DeFi** | Uniswap V3, 1inch, PancakeSwap, Virtuals Protocol, Clanker, Veil, ENS (ETH, ARB, OP, Base, Polygon) |
-| **Trade Ledger** | Decision audit trail with confidence calibration, SHA-256 integrity hashing, statistics |
-| **Crypto Whale Tracking** | Multi-chain whale monitoring (Solana, ETH, Polygon, ARB, Base, OP) |
-| **Payments** | x402 protocol for machine-to-machine USDC payments (Base + Solana) |
-| **Bridging** | Wormhole cross-chain token transfers |
-| **Agent Forum** | Agent-only discussion platform for market insights, strategy sharing, and voting (cloddsbot.com/forum) |
-| **Token Launch** | One-API-call Solana token launches via Meteora Dynamic Bonding Curves — 90/10 creator fee split, anti-sniper protection, auto AMM graduation, agent-gated access |
-| **Agent Marketplace** | Peer-to-peer marketplace for AI agents to buy/sell strategies, APIs, datasets with USDC escrow on Solana |
-| **Compute API** | Pay-per-use compute (LLM, code execution, web scraping, data, storage, trade execution) with USDC micropayments |
-| **Bittensor Mining** | Subnet mining with wallet management, earnings tracking, Chutes SN64 support |
-| **Automation** | Trading bots, cron jobs, webhooks, skills system |
-
----
-
-## Channels (21)
-
-Telegram, Discord, Slack, WhatsApp, Teams, Matrix, Signal, iMessage, LINE, Nostr, Twitch, **WebChat**, and more.
-
-All channels support real-time sync, rich media, and offline queuing. WebChat is the built-in browser interface with a full sidebar UI, unlimited message history, and conversation management -- see [WebChat](#webchat) above.
-
----
-
-## Prediction Markets (10)
-
-| Platform | Trading | Type |
-|----------|:-------:|------|
-| Polymarket | ✓ | Crypto (USDC) |
-| Kalshi | ✓ | US Regulated |
-| Betfair | ✓ | Sports Exchange |
-| Smarkets | ✓ | Sports |
-| Drift | ✓ | Solana DEX |
-| Manifold | data | Play Money |
-| Metaculus | data | Forecasting |
-| PredictIt | data | US Politics |
-| AgentBets | data | AI Agents / Solana (Colosseum Hackathon) |
-| Opinion.xyz | ✓ | BNB Chain |
-| Predict.fun | ✓ | BNB Chain |
-
-Supports limit/market orders, maker rebates, real-time orderbooks, P&amp;L tracking, and smart routing.
-
----
-
-## Crypto &amp; DeFi
-
-**Solana:** Jupiter, Raydium, Orca, Meteora (DeFi + Token Launches), Kamino, MarginFi, Solend, Pump.fun, Bags.fm — with Jito MEV protection
-
-**EVM (5 chains):** Uniswap V3, 1inch, PancakeSwap, Virtuals Protocol on Ethereum, Arbitrum, Optimism, Base, Polygon — with Flashbots MEV protection
-
-**Bridging:** Wormhole cross-chain transfers (ETH ↔ Solana, Polygon ↔ Base)
-
-**Payments:** x402 protocol for agent-to-agent USDC payments
-
----
-
-## Perpetual Futures (7 Exchanges)
-
-| Exchange | Max Leverage | KYC | Type |
-|----------|--------------|-----|------|
-| Binance | 125x | Yes | CEX |
-| Bybit | 100x | Yes | CEX |
-| Hyperliquid | 50x | No | DEX |
-| MEXC | 200x | No | CEX |
-| Drift | 20x | No | DEX (Solana) |
-| Percolator | Varies | No | On-chain (Solana) |
-| Lighter | 50x | No | DEX (Arbitrum) |
-
-Long/short, cross/isolated margin, TP/SL, liquidation alerts, funding tracking, database logging.
-
-```
-/futures long BTCUSDT 0.1 10x
-/futures sl BTCUSDT 95000
-```
-
-### Percolator (On-Chain Solana Perps)
-
-Trade perpetual futures directly on Solana via Anatoly Yakovenko&#039;s Percolator protocol — no KYC, no intermediaries, fully on-chain.
-
-```
-/percolator status          # Oracle price, OI, funding, spread
-/percolator positions       # Your open positions
-/percolator long 100        # Open $100 long
-/percolator short 50        # Open $50 short
-/percolator deposit 500     # Deposit USDC collateral
-/percolator withdraw 100    # Withdraw USDC collateral
-```
-
-Configure: `PERCOLATOR_ENABLED=true PERCOLATOR_SLAB=&lt;pubkey&gt; PERCOLATOR_ORACLE=&lt;pubkey&gt;`
-
----
-
-## AI System
-
-**8 LLM providers:** Claude (primary), GPT-4, Gemini, Groq, Together, Fireworks, AWS Bedrock, Ollama
-
-**4 agents:** Main, Trading, Research, Alerts
-
-**18 tools:** Browser, docker, exec, files, git, email, sms, webhooks, sql, vision
-
-**Memory:** Semantic search (LanceDB), hybrid BM25, user profiles, persistent facts
-
----
-
-## Arbitrage Detection
-
-Based on [arXiv:2508.03474](https://arxiv.org/abs/2508.03474). Detects internal, cross-platform, and combinatorial arbitrage with semantic matching, liquidity scoring, and Kelly sizing.
-
-```
-YES: 45c + NO: 52c = 97c → Buy both → 3c profit
-Polymarket @ 52c vs Kalshi @ 55c → 3c spread
-```
-
-**Note:** Defaults to dry-run mode. Cross-platform has currency/settlement complexity.
-
----
-
-## Advanced Trading
-
-**Whale Tracking:** Multi-chain monitoring (Solana, ETH, Polygon, ARB, Base, OP) with configurable thresholds
-
-**Copy Trading:** Mirror successful wallets with sizing controls and SL/TP
-
-**Swarm Trading:** Coordinated multi-wallet Pump.fun trading (20 wallets, Jito bundles)
-
-**Smart Routing:** Best price, liquidity, or fees across platforms
-
-**External Data:** FedWatch, 538, Silver Bulletin, RCP, Odds API for edge detection
-
-**Safety:** Unified risk engine with circuit breaker, VaR/CVaR, volatility regime detection, stress testing, Kelly sizing, daily loss limits, kill switch
-
----
-
-## Bittensor Mining
-
-Mine TAO on Bittensor subnets directly from Clodds:
-
-```bash
-clodds bittensor setup           # Interactive wizard: Python, btcli, wallet, config
-clodds bittensor status          # Check mining status
-clodds bittensor wallet balance  # Check TAO balance
-clodds bittensor register 64     # Register on Chutes (SN64)
-```
-
-**In chat:** `/tao status`, `/tao earnings daily`, `/tao wallet`
-
-Features: Wallet management via `@polkadot/api`, Python sidecar for btcli, Chutes SN64 GPU compute, earnings tracking with SQLite persistence, HTTP API at `/api/bittensor/*`.
-
----
-
-## Trading Bots
-
-Built-in strategies: Mean Reversion, Momentum, Arbitrage, Market Making
-
-Features: Configurable sizing, SL/TP, backtesting, live trading with safety limits
-
----
-
-## Security
-
-- Sandboxed execution (shell commands need approval)
-- Encrypted credentials (AES-256-GCM)
-- Audit logging for all trades
-
----
-
-## Trade Ledger
-
-Decision audit trail for AI trading transparency:
-
-- **Decision Capture:** Every trade, copy, and risk decision logged with reasoning
-- **Confidence Calibration:** Track AI prediction accuracy vs confidence levels
-- **Integrity Hashing:** Optional SHA-256 hashes for tamper-proof records
-- **Onchain Anchoring:** Anchor hashes to Solana, Polygon, or Base for immutable proof
-- **Statistics:** Win rates, P&amp;L, block reasons, accuracy by confidence bucket
-
-```bash
-clodds ledger stats              # Show decision statistics
-clodds ledger calibration        # Confidence vs accuracy analysis
-clodds ledger verify &lt;id&gt;        # Verify record integrity
-clodds ledger anchor &lt;id&gt;        # Anchor hash to Solana
-```
-
-Enable: `clodds config set ledger.enabled true`
-
----
-
-## Skills &amp; Extensions
-
-**118 bundled skills** across trading, data, automation, and infrastructure — lazy-loaded on first use so missing dependencies don&#039;t crash the app. Run `/skills` to see status.
-
-| Category | Skills |
-|----------|--------|
-| Trading | Polymarket, Kalshi, Betfair, Hyperliquid, Binance, Bybit, MEXC, Drift, Jupiter, Raydium, Orca, Percolator, DCA (16 platforms) |
-| Analysis | Arbitrage detection, edge finding, whale tracking, copy trading, token security audits, security shield |
-| Automation | Cron jobs, triggers, bots, webhooks |
-| AI | Memory, embeddings, multi-agent routing |
-
-**9 extensions** for Copilot, OpenTelemetry, LanceDB, Qwen Portal, and more.
-
----
-
-## Architecture
-
-```
-┌──────────────────────────────────────────────────────────────────────────────┐
-│                         GATEWAY &amp; USER INTERFACE                              │
-│  HTTP • WebSocket • Auth • Rate Limiting • 1000 connections                   │
-│  21 Messaging Channels: WebChat, Telegram, Discord, Slack, Teams, Matrix...  │
-└──────────────────────────────────────────┬─────────────────────────────────────┘
-                                           │
-┌──────────────────────────────────────────┴─────────────────────────────────────┐
-│                            AI AGENTS LAYER (4)                                 │
-│  Main (Claude) • Trading (Exec) • Research (Data) • Alerts (Monitor)          │
-│  121+ Skills • 18 Tools • LanceDB Memory • Semantic Reasoning                  │
-└──────────────────────────────────────────┬─────────────────────────────────────┘
-                                           │
-┌──────────────────────────────────────────┴─────────────────────────────────────┐
-│                    UNIFIED STRATEGY &amp; RISK LAYER                               │
-│  118+ Strategies • Risk Engine (VaR/CVaR/Circuit Breaker) • Kelly Sizing      │
-│  Backtesting • Trade Ledger • Position Manager • Arbitrage Detection          │
-│  Whale Tracking • Copy Trading • MEV Protection • Smart Routing               │
-└──────────────────────────────────────────┬─────────────────────────────────────┘
-                                           │
-    ┌──────────────────────┬──────────────┼──────────────┬──────────────────────┐
-    ▼                      ▼              ▼              ▼                      ▼
-┌──────────────────┐ ┌──────────────┐ ┌──────────────┐ ┌─────────────┐ ┌──────────────┐
-│ PREDICTION       │ │ SOLANA DeFi  │ │ EVM DeFi     │ │ PERPETUAL   │ │ ON-CHAIN     │
-│ MARKETS          │ │              │ │              │ │ FUTURES     │ │ PERPS        │
-├──────────────────┤ ├──────────────┤ ├──────────────┤ ├─────────────┤ ├──────────────┤
-│ Polymarket:      │ │ Jupiter      │ │ Uniswap V3   │ │ Binance     │ │ Percolator   │
-│  • 5-min BTC     │ │ Raydium      │ │ 1inch        │ │  (125x)     │ │ (Solana)     │
-│  • 1h/4h/daily   │ │ Orca         │ │ PancakeSwap  │ │ Bybit       │ │              │
-│    (All assets)  │ │ Meteora      │ │ Virtuals     │ │  (100x)     │ │ Slab Parser  │
-│ Kalshi           │ │ Kamino       │ │ Clanker      │ │ Hyperliquid │ │ Keeper Crank │
-│ Betfair          │ │ MarginFi     │ │ Veil         │ │  (50x)      │ │ Oracle Feed  │
-│ Smarkets         │ │ Solend       │ │ (ETH, ARB,   │ │ MEXC (200x) │ │              │
-│ Drift           │ │ Pump.fun     │ │  OP, Base,   │ │ Drift       │ │ Settlement   │
-│ Opinion.xyz      │ │ Bags.fm      │ │  Polygon)    │ │  (Solana)   │ │ Monitoring   │
-│ Predict.fun      │ │              │ │              │ │ Percolator  │ │ Liquidation  │
-│ Manifold         │ │ Jito Bundles │ │ Flashbots    │ │ Lighter     │ │ Alerts       │
-│ Metaculus        │ │ MEV Protect. │ │ MEV Protect. │ │  (ARB)      │ │              │
-│ PredictIt        │ │              │ │              │ │             │ │ Up to 200x   │
-│                  │ │ WebSocket &amp;  │ │ WebSocket &amp;  │ │ WebSocket &amp; │ │ leverage     │
-│ CLOB Orders      │ │ HTTP APIs    │ │ HTTP APIs    │ │ HTTP APIs   │ │              │
-│ Settlement       │ │              │ │              │ │             │ │ Fully        │
-│ Tracking         │ │ Real-time    │ │ Real-time    │ │ Liquidation │ │ On-chain     │
-└──────────────────┘ │ Price Feeds  │ │ Price Feeds  │ │ Monitoring  │ │              │
-                     │              │ │              │ │             │ │ No KYC       │
-    │ Gamma API │    │ Chainlink    │ │ Chainlink    │ │ Funding     │ │              │
-    │ Poll for  │    │ Feeds        │ │ Feeds        │ │ Rates       │ └──────────────┘
-    │ rounds    │    │              │ │              │ │             │
-    │ Ex
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[code-yeongyu/oh-my-openagent]]></title>
-            <link>https://github.com/code-yeongyu/oh-my-openagent</link>
-            <guid>https://github.com/code-yeongyu/oh-my-openagent</guid>
-            <pubDate>Tue, 29 Sep 2026 00:07:22 GMT</pubDate>
-            <description><![CDATA[OmO: Just type "mass ulw" keyword with your prompt. Now you are the master of graph engineering.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/code-yeongyu/oh-my-openagent">code-yeongyu/oh-my-openagent</a></h1>
-            <p>OmO: Just type "mass ulw" keyword with your prompt. Now you are the master of graph engineering.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 69,629</p>
-            <p>Forks: 5,735</p>
-            <p>Stars today: 66 stars today</p>
-            <h2>README</h2><pre>&gt; [!NOTE]
-&gt; **OmO 5.0: OmO ❤️ Pi**
-&gt; Install it with `bun add -g omo-ai`. Memory system, CodeMode, Anthropic subscriptions, all covered.
-&gt; [![OmO Herdr DAG - live OmO workflow DAGs in a Herdr side pane](./.github/assets/omo-herdr-dag.png)](https://github.com/jc01rho/omo-herdr-dag)
-&gt; *Just type &quot;mass ulw&quot; with your prompt - now you are the master of graph engineering. Multi-model ultracode, together with a better memory system. (The right panel is [omo-herdr-dag](https://github.com/jc01rho/omo-herdr-dag).)*
-
-&gt; **Sponsors**
-&gt; These are our sponsors. They help keep OmO going as a personal side project.
-&gt; | [&lt;img alt=&quot;OpenGateway&quot; src=&quot;./.github/assets/opengateway-logo.svg&quot; width=&quot;156px&quot; /&gt;](https://opengateway.ai/) | **[OpenGateway](https://opengateway.ai/)** sponsors OmO. An OpenAI-compatible gateway that puts many model providers behind one API. Thank you for backing open source. |
-&gt; | :-----| :----- |
-
-
-&gt; [!NOTE]
-&gt;
-&gt; [![Sisyphus Labs - Meet Dori. Not a demo. Subscribes to everything.](./.github/assets/sisyphuslabs.png?v=4)](https://sisyphuslabs.ai)
-&gt; &gt; **OmO is maintained by Jobdori, the AI assistant shown above. Meet your own Jobdori, Dori. &lt;br /&gt;Join the waitlist [here](https://sisyphuslabs.ai).**
-
-&gt; [!TIP]
-&gt; Be with us!
-&gt;
-&gt; | [&lt;img alt=&quot;Discord link&quot; src=&quot;https://img.shields.io/discord/1452487457085063218?color=5865F2&amp;label=discord&amp;labelColor=black&amp;logo=discord&amp;logoColor=white&amp;style=flat-square&quot; width=&quot;156px&quot; /&gt;](https://discord.gg/PUwSMR9XNk) | Join our [Discord community](https://discord.gg/PUwSMR9XNk) to connect with contributors and fellow OmO users. |
-&gt; | :-----| :----- |
-&gt; | [&lt;img alt=&quot;X link&quot; src=&quot;https://img.shields.io/badge/Follow-%40justsisyphus-00CED1?style=flat-square&amp;logo=x&amp;labelColor=black&quot; width=&quot;156px&quot; /&gt;](https://x.com/justsisyphus) | Updates for OmO used to be posted on my X account. &lt;br /&gt; Since it was mistakenly suspended, [@justsisyphus](https://x.com/justsisyphus) now posts updates on my behalf. |
-&gt; | [&lt;img alt=&quot;GitHub Follow&quot; src=&quot;https://img.shields.io/github/followers/code-yeongyu?style=flat-square&amp;logo=github&amp;labelColor=black&amp;color=24292f&quot; width=&quot;156px&quot; /&gt;](https://github.com/code-yeongyu) | Follow [@code-yeongyu](https://github.com/code-yeongyu) on GitHub for more projects. |
-
-&lt;!-- &lt;CENTERED SECTION FOR GITHUB DISPLAY&gt; --&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-
-&lt;a href=&quot;https://omo.dev&quot;&gt;&lt;img src=&quot;./.github/assets/omo-icon-light.svg&quot; alt=&quot;OmO&quot; width=&quot;200&quot; /&gt;&lt;/a&gt;
-
-# OmO
-
-**Your tool for real work. But it&#039;s an agent.**
-
-[![GitHub Release](https://img.shields.io/github/v/release/code-yeongyu/oh-my-openagent?color=369eff&amp;labelColor=black&amp;logo=github&amp;style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/releases)
-[![downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fomo.dev%2Fapi%2Fdownloads&amp;style=flat-square)](https://omo.dev)
-[![GitHub Contributors](https://img.shields.io/github/contributors/code-yeongyu/oh-my-openagent?color=c4f042&amp;labelColor=black&amp;style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/graphs/contributors)
-[![GitHub Stars](https://img.shields.io/github/stars/code-yeongyu/oh-my-openagent?color=ffcb47&amp;labelColor=black&amp;style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/stargazers)
-[![License](https://img.shields.io/badge/license-SUL--1.0-white?labelColor=black&amp;style=flat-square)](https://github.com/code-yeongyu/oh-my-openagent/blob/dev/LICENSE.md)
-[![Docs](https://img.shields.io/badge/docs-omo.dev-369eff?labelColor=black&amp;logo=readthedocs&amp;logoColor=white&amp;style=flat-square)](https://omo.dev/docs)
-
-[English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-cn.md) | [Русский](README.ru.md)
-
-&lt;/div&gt;
-
-&lt;!-- &lt;/CENTERED SECTION FOR GITHUB DISPLAY&gt; --&gt;
-
-OmO is one `omo` command that turns your tokens into finished work: research across ten thousand sources, a deck people actually get, backends, frontends, code. It runs on senpi, our fork of [pi](https://github.com/badlogic/pi-mono), with everything below built in.
-
-## Install
-
-```bash
-bun add -g omo-ai
-omo
-```
-
-No bun? `npm i -g omo-ai` works too. The package is `omo-ai`; the unrelated `omo` package on npm is someone else&#039;s.
-
-Open your project, run `omo`, describe the job. That&#039;s the whole setup.
-
-Coming from the OpenCode edition or LazyCodex? Run `omo setup` once. It carries your provider keys, custom providers, MCP servers, skills and model picks across. `omo doctor` then shows which task categories your providers can run and what the old install left behind. The full walkthrough is [Migrating from OpenCode](docs/guide/migrating-from-opencode.md).
-
-`omo update` updates in place. `bun remove -g omo-ai` (or `npm uninstall -g omo-ai`) removes it.
-
-## Why OmO
-
-**ultrawork.** Skip the study. If a task feels hard, add `ultrawork` (or `ulw`) to your prompt. The agent reads the codebase before touching a line, plans, proves each step before moving on, checks the result on the real surface, and stops when it&#039;s done.
-
-**Hundreds of agents, one keyword.** Type `mass ulw` and the whole job becomes a graph of agents: deep research over thousands of sources, a full machine-learning pipeline, a migration nobody wants to do. Each part runs on the model that fits it, in parallel, and gets checked before anything is called done.
-
-**Kibitzer. Your agent doesn&#039;t forget you, or your work.** Memory lives in a git repository of markdown files. A small, cheap model sits beside the expensive main agent, reads what you&#039;ve done before, and nudges the main agent before it repeats a mistake. You stop re-explaining yourself.
-
-**Mix models without thinking about it.** Use the frontier models you love together with the cheap ones. Just sign in: `/login` covers Claude, ChatGPT, Kimi and GLM subscriptions. Every model ships with a system prompt tuned for it, so you never pick the wrong one.
-
-**High-quality skills, only the ones you need.** Your model is smart, but it still doesn&#039;t know a lot about solving real-world problems. OmO ships the missing knowledge as skills, browser use included, and loads only what the task needs.
-
-**Everything else is crafted.** Independent tool calls run together in one small program, so twenty reads are one round trip. Malformed tool arguments are repaired before they run. Waiting on a build or a deploy is a subscription, not polling. Long work keeps a record of what was checked, so a restarted session picks up where it stopped. Config, skills and prompts reload live.
-
-## Configuration
-
-Opinionated defaults, adjustable if you insist. Your settings live in `~/.omo/omo.jsonc`, and a project can add its own `.omo/omo.jsonc`; the closest file wins. Every key is in the [configuration reference](docs/reference/configuration.md).
-
-## Docs
-
-- [omo.dev/docs](https://omo.dev/docs)
-- [Migrating from OpenCode](docs/guide/migrating-from-opencode.md)
-- [Configuration reference](docs/reference/configuration.md)
-- [Features](docs/reference/features.md)
-- [Computer use](docs/guide/computer-use.md) (experimental)
-- [Ultrawork Manifesto](docs/manifesto.md)
-
-## Reviews
-
-&gt; &quot;It made me cancel my Cursor subscription. Unbelievable things are happening in the open source community.&quot; - [Arthur Guiot](https://x.com/arthur_guiot/status/2008736347092382053?s=20)
-
-&gt; &quot;If Claude Code does in 7 days what a human does in 3 months, OmO does it in 1 hour.&quot; &lt;br/&gt;- B, Quant Researcher
-
-&gt; &quot;You guys should pull this into core and recruit him. Seriously. It&#039;s really, really, really good.&quot; &lt;br/&gt;- Henning Kilset
-
-## Author&#039;s Note
-
-When I have to take the wheel back from an agent, that isn&#039;t teamwork. The system failed. OmO is built on that idea. You say what you want; the agent researches, plans, writes code you couldn&#039;t tell from a senior engineer&#039;s, verifies it, and keeps going until it&#039;s finished. It spends tokens when they buy real speed and routes the easy parts to cheap models.
-
-I&#039;m this project&#039;s most obsessive user. Which model has the sharpest logic? Who writes the best prose? What did everyone else ship this week? OmO is where those answers land. Have a better way? PRs welcome.
-
-The goal is an agent you stop noticing. You flip the switch, the light turns on. The long version is the [Ultrawork Manifesto](docs/manifesto.md).
-
-No affiliation with any project or model mentioned. The Ultragoal and UltraQA ideas come from [oh-my-codex](https://github.com/Yeachan-Heo/oh-my-codex), reimplemented from concept for OmO.
-
-## Loved by professionals at
-
-[Indent](https://indentcorp.com), makers of Spray (influencer marketing solution), vovushop (cross-border commerce platform) and vreview (AI commerce review marketing solution). [Google](https://google.com). [Microsoft](https://microsoft.com). [Vercel](https://vercel.com). [ELESTYLE](https://elestyle.jp), makers of elepay (multi-mobile payment gateway) and OneQR (mobile application SaaS for cashless solutions). [Deepgram](https://deepgram.com).
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[satnaing/shadcn-admin]]></title>
-            <link>https://github.com/satnaing/shadcn-admin</link>
-            <guid>https://github.com/satnaing/shadcn-admin</guid>
-            <pubDate>Tue, 29 Sep 2026 00:07:21 GMT</pubDate>
-            <description><![CDATA[Admin Dashboard UI built with Shadcn and Vite.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/satnaing/shadcn-admin">satnaing/shadcn-admin</a></h1>
-            <p>Admin Dashboard UI built with Shadcn and Vite.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 14,990</p>
-            <p>Forks: 2,290</p>
-            <p>Stars today: 279 stars today</p>
-            <h2>README</h2><pre># Shadcn Admin Dashboard
-
-Admin Dashboard UI crafted with Shadcn and Vite. Built with responsiveness and accessibility in mind.
-
-![alt text](public/images/shadcn-admin.png)
-
-[![Sponsored by Clerk](https://img.shields.io/badge/Sponsored%20by-Clerk-5b6ee1?logo=clerk)](https://go.clerk.com/GttUAaK)
-
-I&#039;ve been creating dashboard UIs at work and for my personal projects. I always wanted to make a reusable collection of dashboard UI for future projects; and here it is now. While I&#039;ve created a few custom components, some of the code is directly adapted from ShadcnUI examples.
-
-&gt; This is not a starter project (template) though. I&#039;ll probably make one in the future.
-
-## Features
-
-- Light/dark mode
-- Responsive
-- Accessible
-- With built-in Sidebar component
-- Global search command
-- 10+ pages
-- Extra custom components
-- RTL support
-
-&lt;details&gt;
-&lt;summary&gt;Customized Components (click to expand)&lt;/summary&gt;
-
-This project uses Shadcn UI components, but some have been slightly modified for better RTL (Right-to-Left) support and other improvements. These customized components differ from the original Shadcn UI versions.
-
-If you want to update components using the Shadcn CLI (e.g., `npx shadcn@latest add &lt;component&gt;`), it&#039;s generally safe for non-customized components. For the listed customized ones, you may need to manually merge changes to preserve the project&#039;s modifications and avoid overwriting RTL support or other updates.
-
-&gt; If you don&#039;t require RTL support, you can safely update the &#039;RTL Updated Components&#039; via the Shadcn CLI, as these changes are primarily for RTL compatibility. The &#039;Modified Components&#039; may have other customizations to consider.
-
-### Modified Components
-
-- scroll-area
-- sonner
-- separator
-
-### RTL Updated Components
-
-- alert-dialog
-- calendar
-- command
-- dialog
-- dropdown-menu
-- select
-- table
-- sheet
-- sidebar
-- switch
-
-**Notes:**
-
-- **Modified Components**: These have general updates, potentially including RTL adjustments.
-- **RTL Updated Components**: These have specific changes for RTL language support (e.g., layout, positioning).
-- For implementation details, check the source files in `src/components/ui/`.
-- All other Shadcn UI components in the project are standard and can be safely updated via the CLI.
-
-&lt;/details&gt;
-
-## Tech Stack
-
-**UI:** [ShadcnUI](https://ui.shadcn.com) (TailwindCSS + RadixUI)
-
-**Build Tool:** [Vite](https://vitejs.dev/)
-
-**Routing:** [TanStack Router](https://tanstack.com/router/latest)
-
-**Type Checking:** [TypeScript](https://www.typescriptlang.org/)
-
-**Linting/Formatting:** [ESLint](https://eslint.org/) &amp; [Prettier](https://prettier.io/)
-
-**Icons:** [Lucide Icons](https://lucide.dev/icons/), [Tabler Icons](https://tabler.io/icons) (Brand icons only)
-
-**Auth (partial):** [Clerk](https://go.clerk.com/GttUAaK)
-
-## Run Locally
-
-Clone the project
-
-```bash
-  git clone https://github.com/satnaing/shadcn-admin.git
-```
-
-Go to the project directory
-
-```bash
-  cd shadcn-admin
-```
-
-Install dependencies
-
-```bash
-  pnpm install
-```
-
-Start the server
-
-```bash
-  pnpm run dev
-```
-
-## Sponsoring this project ❤️
-
-If you find this project helpful or use this in your own work, consider [sponsoring me](https://github.com/sponsors/satnaing) to support development and maintenance. You can [buy me a coffee](https://buymeacoffee.com/satnaing) as well. Don’t worry, every penny helps. Thank you! 🙏
-
-For questions or sponsorship inquiries, feel free to reach out at [satnaingdev@gmail.com](mailto:satnaingdev@gmail.com).
-
-### Current Sponsor
-
-- [Clerk](https://go.clerk.com/GttUAaK) - authentication and user management for the modern web
-
-## Author
-
-Crafted with 🤍 by [@satnaing](https://github.com/satnaing)
-
-## License
-
-Licensed under the [MIT License](https://choosealicense.com/licenses/mit/)
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
             <title><![CDATA[mobile-next/mobile-mcp]]></title>
             <link>https://github.com/mobile-next/mobile-mcp</link>
             <guid>https://github.com/mobile-next/mobile-mcp</guid>
-            <pubDate>Tue, 29 Sep 2026 00:07:20 GMT</pubDate>
+            <pubDate>Wed, 30 Sep 2026 00:06:55 GMT</pubDate>
             <description><![CDATA[Model Context Protocol Server for Mobile Automation and Scraping (iOS, Android, Emulators, Simulators and Real Devices)]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/mobile-next/mobile-mcp">mobile-next/mobile-mcp</a></h1>
             <p>Model Context Protocol Server for Mobile Automation and Scraping (iOS, Android, Emulators, Simulators and Real Devices)</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 8,259</p>
-            <p>Forks: 716</p>
-            <p>Stars today: 449 stars today</p>
+            <p>Stars: 8,410</p>
+            <p>Forks: 733</p>
+            <p>Stars today: 241 stars today</p>
             <h2>README</h2><pre># Mobile Next - MCP server for Mobile Development and Automation | iOS, Android, Simulator, Emulator, and Real Devices
 
 **English** | [日本語](README.ja.md) | [简体中文](README.zh-CN.md)
@@ -3186,6 +2727,948 @@ Mobile MCP is one piece of a toolkit for driving real mobile devices:
 - **[mobilewright](https://github.com/mobile-next/mobilewr
 
 ... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[cloudflare/vinext]]></title>
+            <link>https://github.com/cloudflare/vinext</link>
+            <guid>https://github.com/cloudflare/vinext</guid>
+            <pubDate>Wed, 30 Sep 2026 00:06:54 GMT</pubDate>
+            <description><![CDATA[Vite plugin that reimplements the Next.js API surface — deploy anywhere]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/cloudflare/vinext">cloudflare/vinext</a></h1>
+            <p>Vite plugin that reimplements the Next.js API surface — deploy anywhere</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 8,980</p>
+            <p>Forks: 422</p>
+            <p>Stars today: 100 stars today</p>
+            <h2>README</h2><pre># vinext
+
+Run Next.js applications on Vite, with Cloudflare Workers as the primary deployment target.
+
+**Website:** [vinext.dev](https://vinext.dev)
+
+**Documentation:** [vinext.dev/docs](https://vinext.dev/docs)
+
+&gt; **Read the announcement:** [How we rebuilt Next.js with AI in one week](https://blog.cloudflare.com/vinext/)
+
+&gt; **Under active development.** vinext supports substantial Next.js applications today, but it is not yet a drop-in replacement for every application or production workload. Expect compatibility gaps, especially in newer App Router features, and evaluate it against your own application before adopting it.
+
+vinext reimplements the Next.js API surface on Vite rather than consuming `next build` output. It supports both the App Router and Pages Router, React Server Components, Server Actions, middleware, route handlers, ISR, static export, and the most commonly used `next/*` modules. Cloudflare Workers has the deepest integration; Node.js and other platforms are available with different levels of support.
+
+## Project status
+
+### What works today
+
+- **App Router and Pages Router** in development and production builds
+- **React Server Components, Server Actions, route handlers, and middleware**
+- **Static generation, ISR, `output: &quot;export&quot;`, and standalone Node.js output**
+- **Core Next.js APIs and modules**, including `next/link`, `next/image`, `next/navigation`, `next/headers`, `next/cache`, and the Metadata API
+- **Cloudflare Workers deployment** with bindings, cache adapters, and image optimization support
+- **Migration tooling** through `vinext check`, `vinext init`, and the vinext Agent Skill
+
+### Known gaps we&#039;re working on
+
+These are active compatibility areas, not permanent exclusions:
+
+- **Cache Components and Partial Prerendering:** `&quot;use cache&quot;` is partially implemented, but full `cacheComponents` behavior is still incomplete. Cache profiles, tags, partial shells, resume behavior, prefetching, and some dev/build cache semantics do not yet match Next.js in every case.
+- **Build-time image and font optimization:** images can be optimized at request time on Cloudflare, but vinext does not yet reproduce Next.js&#039;s complete build-time image pipeline. Google Fonts are loaded from the CDN, and local font CSS is injected at runtime rather than extracted during the build.
+- **Native modules in App Router development:** packages such as `sharp`, `resvg`, `satori`, `lightningcss`, and `@napi-rs/canvas` can fail in Vite&#039;s RSC development environment. Production builds support more of these cases than development mode.
+- **Platform-specific and advanced Next.js behavior:** `preferredRegion` route config is ignored, and `runtime` doesn&#039;t choose where a route runs (outside `cacheComponents`, a `runtime = &quot;edge&quot;` App Router page is never ISR-cached, as in Next.js), and some recently introduced or undocumented Next.js behavior may not yet be reproduced.
+
+Run `vinext check` against an existing application before migrating. If a gap is not listed here, check the [open issues](https://github.com/cloudflare/vinext/issues) or file a focused reproduction.
+
+## Quick start
+
+**Use the official setup commands below.** They are the recommended way to create or migrate a vinext project because they configure dependencies, scripts, Vite, and your deployment target for you.
+
+Start a new project with `create-vinext-app`:
+
+```bash
+pnpm create vinext-app@latest my-app
+```
+
+Migrate an existing Next.js project with `vinext init`:
+
+```bash
+npx vinext init
+```
+
+### Optional: migrate with an AI agent
+
+Prefer `vinext init` for a direct, repeatable migration. If you want an AI agent to investigate compatibility issues and guide the migration, vinext also includes an optional [Agent Skill](https://agentskills.io/home). It works with Claude Code, OpenCode, Cursor, Codex, and dozens of other AI coding tools:
+
+```sh
+npx skills add cloudflare/vinext
+```
+
+Then open your Next.js project in any supported tool and say:
+
+```
+migrate this project to vinext
+```
+
+The skill handles compatibility checking, dependency installation, config generation, and dev server startup. It knows what vinext supports and will flag anything that needs manual attention.
+
+### Or do it manually
+
+```bash
+npm install vinext
+npm install -D vite @vitejs/plugin-react
+```
+
+If you&#039;re using the App Router, also install:
+
+```bash
+npm install react-server-dom-webpack
+npm install -D @vitejs/plugin-rsc
+```
+
+Add a Vite config:
+
+```ts
+import { defineConfig } from &quot;vite&quot;;
+import vinext from &quot;vinext&quot;;
+
+export default defineConfig({
+  plugins: [vinext()],
+});
+```
+
+Then use Vite for development and builds:
+
+```json
+{
+  &quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;vite dev&quot;,
+    &quot;build&quot;: &quot;vite build&quot;,
+    &quot;start&quot;: &quot;vinext start&quot;
+  }
+}
+```
+
+```bash
+npx vite dev        # Development server with HMR
+npx vite build      # Production build
+npx @vinext/cloudflare deploy  # Build and deploy to Cloudflare Workers
+```
+
+With Vite+, use `vpx @vinext/cloudflare deploy`, or
+`vp exec vinext-cloudflare deploy` when running the locally installed bin.
+
+The `vinext()` plugin auto-detects your `app/` or `pages/` directory and loads `next.config.js`.
+
+Your existing `pages/`, `app/`, `next.config.js`, and `public/` directories work as-is. Run `vinext check` first to scan for known compatibility issues, or use `vinext init` to [automate the full migration](#migrating-an-existing-nextjs-project).
+
+### CLI reference
+
+| Command                            | Description                                                             |
+| ---------------------------------- | ----------------------------------------------------------------------- |
+| `vite dev`                         | Start dev server with HMR                                               |
+| `vite build`                       | Production build (multi-environment for App Router: RSC + SSR + client) |
+| `vinext start`                     | Start local production server for testing                               |
+| `npx @vinext/cloudflare deploy`    | Build and deploy to Cloudflare Workers                                  |
+| `vp exec vinext-cloudflare deploy` | Build and deploy to Cloudflare Workers with Vite+                       |
+| `vinext init`                      | Migrate a Next.js project to run under vinext                           |
+| `vinext check`                     | Scan your Next.js app for compatibility issues before migrating         |
+| `vinext lint`                      | Delegate to eslint or oxlint                                            |
+
+`vinext dev` and `vinext build` remain as thin aliases for the project-local Vite commands.
+They require a Vite config; if one is missing, run `vinext init`. Vite owns their options,
+output, and exit behavior. For older configured projects, the aliases still preload dotenv
+before Vite evaluates the config and add `&quot;type&quot;: &quot;module&quot;` (renaming known CommonJS config
+files to `.cjs`) when an unambiguous default Vite config requires the ESM migration. An explicit
+`&quot;type&quot;: &quot;commonjs&quot;` is never changed. Direct `vite dev` and `vite build` do not perform these
+wrapper compatibility steps.
+
+`@vinext/cloudflare deploy` options: `--preview`, `--env &lt;name&gt;`, `--name &lt;name&gt;`, `--skip-build`, `--dry-run`, `--warm-cache`, `--traffic-aware-warm-cache`.
+
+`vinext init` prompts for a deployment target, defaulting to Cloudflare. Agents must ask the
+user which target they want, then pass `--platform=cloudflare` or `--platform=node`.
+
+Other options: `--port &lt;port&gt;` (default: 3001), `--skip-check`, `--force`.
+
+Cloudflare init uses `cf` and `cloudflare.config.ts` by default. Both `vinext init`
+and `create-vinext-app` accept `--legacy-wrangler-cloudflare-init` to retain the
+legacy Wrangler setup. Existing Wrangler configs are not automatically migrated.
+
+If your `next.config.*` sets `output: &quot;standalone&quot;`, `vite build` emits a self-hosting bundle at `dist/standalone/`. Start it with:
+
+```bash
+node dist/standalone/server.js
+```
+
+Environment variables: `PORT` (default `3000`), `HOST` (default `0.0.0.0`).
+
+&gt; **Note:** Next.js standalone uses `HOSTNAME` for the bind address, but vinext uses `HOST` to avoid collision with the system-set `HOSTNAME` variable on Linux. Update your deployment config accordingly.
+
+### Starting a new vinext project
+
+Use `create-vinext-app` for new projects. It creates a TypeScript App Router project
+with Tailwind CSS and then runs the same vinext init setup used for existing apps:
+
+```bash
+pnpm create vinext-app@latest my-app
+```
+
+The generated project is Cloudflare Workers-ready by default. Pass
+`--platform=node` if you want the Node target instead.
+
+### Migrating an existing Next.js project
+
+`vinext init` automates the migration in one command:
+
+```bash
+npx vinext init
+```
+
+This will:
+
+1. Run `vinext check` to scan for compatibility issues
+2. Install vinext runtime packages as dependencies and Vite/plugin tooling as devDependencies
+3. Rename CJS config files (e.g. `postcss.config.js` -&gt; `.cjs`) to avoid ESM conflicts
+4. Add `&quot;type&quot;: &quot;module&quot;` to `package.json`
+5. Add `dev:vinext`, `build:vinext`, and `start:vinext` scripts to `package.json`
+6. Prompt for a deployment platform (Cloudflare by default, or Node)
+7. Generate the matching `vite.config.ts`
+8. For Cloudflare, generate `cloudflare.config.ts` for `cf` and Cloudflare Vite plugin v2
+
+The migration is non-destructive -- your existing Next.js setup continues to work alongside vinext. It does not modify `next.config`, `tsconfig.json`, or any source files, and it does not remove Next.js dependencies.
+
+vinext targets Vite 8, which defaults to Rolldown, Oxc, Lightning CSS, and a newer browser baseline. If you bring custom Vite config or plugins from an older setup, prefer `oxc`, `optimizeDeps.rolldownOptions`, and `build.rolldownOptions` over older `esbuild` and `build.rollupOptions` knobs, and override `build.target` if you still need older browsers. If a dependency breaks because of stricter CommonJS default import handling, fix the import or use `legacy.inconsistentCjsInterop: true` as a temporary escape hatch. See the [Vite 8 migration guide](https://vite.dev/guide/migration).
+
+```bash
+npm run dev:vinext    # Start the vinext dev server (port 3001)
+npm run build:vinext  # Build production output with vinext
+npm run start:vinext  # Start vinext production server
+npm run dev           # Still runs Next.js as before
+```
+
+Use `--platform=cloudflare` or `--platform=node` to skip the platform prompt. Cloudflare init
+updates an existing JavaScript or TypeScript Vite config using its AST, preserving unrelated
+settings. Use `--force` to replace an existing Node-target Vite config, or `--skip-check` to skip
+the compatibility report.
+
+## Why
+
+Vite has become the default build tool for modern web frameworks — fast HMR, a clean plugin API, native ESM, and a growing ecosystem. With [`@vitejs/plugin-rsc`](https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-rsc) adding React Server Components support, it&#039;s now possible to build a full RSC framework on Vite.
+
+vinext reimplements the Next.js API surface on Vite so existing Next.js applications can run on a different toolchain. The answer, so far, is that substantial applications can.
+
+vinext works everywhere. It natively supports Cloudflare Workers (with `npx @vinext/cloudflare deploy` or `vp exec vinext-cloudflare deploy`, bindings, KV caching), and can be deployed to Vercel, Netlify, AWS, Deno Deploy, and more via the [Nitro](https://v3.nitro.build/) Vite plugin. Native support for additional platforms is [planned](https://github.com/cloudflare/vinext/issues/80).
+
+**Alternatives worth knowing about:**
+
+- **[OpenNext](https://opennext.js.org/)** — adapts `next build` output for AWS, Cloudflare, and other platforms. OpenNext has been around much longer than vinext, is more mature, and covers more of the Next.js API surface because it builds on top of Next.js&#039;s own output rather than reimplementing it. If you want the safer, more proven option, start there.
+- **[Next.js self-hosting](https://nextjs.org/docs/app/building-your-application/deploying#self-hosting)** — Next.js can be deployed to any Node.js server, Docker container, or as a static export.
+
+### Design principles
+
+- **Deploy anywhere.** Natively supports Cloudflare Workers, with other platforms available via Nitro. Native adapters for more platforms are [planned](https://github.com/cloudflare/vinext/issues/80).
+- **Pragmatic compatibility, not bug-for-bug parity.** Targets 95%+ of real-world Next.js apps. Edge cases that depend on undocumented Vercel behavior are intentionally not supported.
+- **Latest Next.js only.** Targets Next.js 16.x. No support for deprecated APIs from older versions.
+- **Incremental adoption.** Drop in the plugin, fix what breaks, deploy.
+
+## FAQ
+
+**What is this?**
+vinext is a Vite plugin that reimplements the public Next.js API — routing, server rendering, `next/*` module imports, the CLI — so you can run Next.js applications on Vite instead of the Next.js compiler toolchain. It can be deployed anywhere: Cloudflare Workers is the first natively supported target, with other platforms available via Nitro. Native adapters for more platforms are [planned](https://github.com/cloudflare/vinext/issues/80).
+
+**Is this a fork of Next.js?**
+No. vinext is an alternative implementation of the Next.js API surface built on Vite. The core is written from scratch. The goal is not to create a competing framework or add features beyond what Next.js offers; it is to provide the same well-defined API surface on Vite&#039;s toolchain.
+
+**Does vinext require Next.js to be installed?**
+No. vinext ships fallback declarations for the supported `next` and `next/*` APIs, so applications can run and type-check without the `next` package. If both packages are installed, vinext keeps using Next.js&#039;s authoritative types and adds only its own extensions. Compatibility features that consume Next.js internals, such as `styled-jsx`, may still require a matching Next.js installation when used.
+
+**How is this different from OpenNext?**
+[OpenNext](https://opennext.js.org/) adapts the _output_ of a standard `next build` to run on various platforms. Because it builds on Next.js&#039;s own output, it inherits broad API coverage and has been well-tested for much longer. vinext takes a different approach: it reimplements the Next.js APIs on Vite from scratch, which means faster builds and smaller bundles, but less coverage of the long tail of Next.js features. If you need a mature, well-tested way to run Next.js outside Vercel, OpenNext is the safer choice. If you want a lighter Vite-based toolchain and do not need every Next.js API, vinext may be a good fit.
+
+**Can I use this in production?**
+You can, with caution. vinext has known compatibility gaps and has not yet been battle-tested across the full range of production Next.js workloads. Evaluate the features and deployment target your application relies on before adopting it.
+
+**Can I just self-host Next.js?**
+Yes. Next.js supports [self-hosting](https://nextjs.org/docs/app/building-your-application/deploying#self-hosting) on Node.js servers, Docker containers, and static exports. If you&#039;re happy with the Next.js toolchain and just want to run it somewhere other than Vercel, self-hosting is the simplest path.
+
+**How are you verifying this works?**
+The test suite has over 1,700 Vitest tests and 380 Playwright E2E tests. This includes tests ported directly from the [Next.js test suite](https://github.com/vercel/next.js/tree/canary/test) and [OpenNext&#039;s Cloudflare conformance suite](https://github.com/opennextjs/opennextjs-cloudflare), covering routing, SSR, RSC, server actions, caching, metadata, middleware, streaming, and more. Vercel&#039;s [App Router Playground](https://github.com/vercel/next-app-router-playground) also runs on vinext as an integration test. See the [Tests](#tests) section and `tests/nextjs-compat/TRACKING.md` for details.
+
+**Who is reviewing this code?**
+A mix of humans and AI agents. Humans review PRs before they merge, focused on behavior, structure, and long-term direction. We lean heavily on agent-driven code review to catch issues at PR time and across the codebase. The test suite is the primary quality gate. Outside contributions and deeper human code review are very welcome.
+
+**Why Vite?**
+Vite is an excellent build tool with a rich plugin ecosystem, first-class ESM support, and fast HMR. The [`@vitejs/plugin-rsc`](https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-rsc) plugin adds React Server Components support with multi-environment builds. vinext builds the Next.js developer experience on top of that infrastructure.
+
+**Does this support the Pages Router, App Router, or both?**
+Both. File-system routing, SSR, client hydration, and deployment to Cloudflare Workers work for both routers.
+
+**What version of Next.js does this target?**
+Next.js 16.x. No support for deprecated APIs from older versions.
+
+**Can I deploy to AWS/Netlify/other platforms?**
+Yes. Add the [Nitro](https://v3.nitro.build/) Vite plugin alongside vinext, and you can deploy to Vercel, Netlify, AWS Amplify, Deno Deploy, Azure, and [many more](https://v3.nitro.build/deploy). See [Other platforms (via Nitro)](#other-platforms-via-nitro) for setup. For Cloudflare Workers, the native integration (`npx @vinext/cloudflare deploy` or `vp exec vinext-cloudflare deploy`) gives you the smoothest experience. Native adapters for more platforms are [planned](https://github.com/cloudflare/vinext/issues/80).
+
+**What happens when Next.js releases a new feature?**
+We track the public Next.js API surface and add support for new stable features. Experimental or unstable Next.js features are lower priority. The plan is to add commit-level tracking of the Next.js repo so we can stay current as new versions are released.
+
+## Deployment
+
+### Cloudflare Workers
+
+vinext has native integration with Cloudflare Workers through `@cloudflare/vite-plugin`, including bindings access via `cloudflare:workers`, KV caching, image optimization, and the `@vinext/cloudflare deploy` one-command workflow.
+
+#### Prerequisites
+
+Before running `npx @vinext/cloudflare deploy` for the first time, run `vinext init --platform=cloudflare` to install `cf` and Cloudflare Vite plugin v2, create or update `vite.config.*`, and generate `cloudflare.config.ts`.
+
+**Authentication — pick one:**
+
+- **`cf auth login`** (recommended for local development) — opens a browser window to authenticate.
+- **`CLOUDFLARE_API_TOKEN` env var** (CI / non-interactive) — create a token at [dash.cloudflare.com/profile/api-tokens](https://dash.cloudflare.com/profile/api-tokens) using the **Edit Cloudflare Workers** template. That template grants all the permissions `@vinext/cloudflare deploy` needs.
+
+**Account ID:**
+
+Set `accountId` at the top level of `defineConfig` in `cloudflare.config.ts`, outside `worker`. Find your account ID in the Cloudflare dashboard URL (`dash.cloudflare.com/&lt;account-id&gt;`).
+
+Alternatively, set the `CLOUDFLARE_ACCOUNT_ID` environment variable instead of hardcoding it in the config file.
+
+`@vinext/cloudflare deploy` validates the initialized setup, builds the application,
+and deploys its Cloudflare Build Output with `cf` without rewriting project configuration.
+
+Cloudflare init can also configure image optimization declaratively in the Vite config with
+`imagesOptimizer()` and add the matching Images binding to `cloudflare.config.ts`. The built-in fetch handlers register
+that optimizer at runtime; image optimization is not implemented or generated by `@vinext/cloudflare deploy`.
+
+```bash
+npx @vinext/cloudflare deploy
+vp exec vinext-cloudflare deploy
+npx @vinext/cloudflare deploy --env staging
+vp exec vinext-cloudflare deploy --env staging
+```
+
+Use `--env &lt;name&gt;` to select the Vite mode for the build and deployment. `--preview` is shorthand for `--env preview`.
+
+In Response Store service-binding mode, both Workers build together, but the cache Worker is deployed 
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[cypress-io/cypress]]></title>
+            <link>https://github.com/cypress-io/cypress</link>
+            <guid>https://github.com/cypress-io/cypress</guid>
+            <pubDate>Wed, 30 Sep 2026 00:06:53 GMT</pubDate>
+            <description><![CDATA[Fast, easy and reliable testing for anything that runs in a browser.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/cypress-io/cypress">cypress-io/cypress</a></h1>
+            <p>Fast, easy and reliable testing for anything that runs in a browser.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 51,042</p>
+            <p>Forks: 3,646</p>
+            <p>Stars today: 17 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://www.cypress.io&quot;&gt;
+    &lt;picture&gt;
+      &lt;source media=&quot;(prefers-color-scheme: dark)&quot;  srcset=&quot;./assets/cypress-logo-dark.png&quot;&gt;
+      &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;./assets/cypress-logo-light.png&quot;&gt;
+      &lt;img alt=&quot;Cypress Logo&quot; src=&quot;./assets/cypress-logo-light.png&quot;&gt;
+    &lt;/picture&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://on.cypress.io&quot;&gt;Documentation&lt;/a&gt; |
+  &lt;a href=&quot;https://on.cypress.io/changelog&quot;&gt;Changelog&lt;/a&gt; |
+  &lt;a href=&quot;https://on.cypress.io/roadmap&quot;&gt;Roadmap&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;h3 align=&quot;center&quot;&gt;
+  The web has evolved. Finally, testing has too.
+&lt;/h3&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  Fast, easy and reliable testing for anything that runs in a browser.
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+  Join us, we&#039;re &lt;a href=&quot;https://cypress.io/jobs&quot;&gt;hiring&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://www.npmjs.com/package/cypress&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/npm/dm/cypress.svg&quot; alt=&quot;npm&quot;/&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://on.cypress.io/discord&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/chat-on%20Discord-brightgreen&quot; alt=&quot;Discord chat&quot;/&gt;
+  &lt;/a&gt;
+    &lt;a href=&quot;https://stackshare.io/cypress&quot;&gt;
+    &lt;img src=&quot;https://img.stackshare.io/misc/follow-on-stackshare-badge.svg&quot; alt=&quot;StackShare&quot;/&gt;
+  &lt;/a&gt;&lt;br /&gt;
+&lt;/p&gt;
+
+## What is Cypress?
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://player.vimeo.com/video/237527670&quot;&gt;
+    &lt;img alt=&quot;Why Cypress Video&quot; src=&quot;https://user-images.githubusercontent.com/1271364/31739717-dbdff0ee-b41c-11e7-9b16-bfa1b6ac1814.png&quot; width=&quot;75%&quot; height=&quot;75%&quot; /&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+## Installing
+
+[![npm version](https://badge.fury.io/js/cypress.svg)](https://badge.fury.io/js/cypress)
+
+Install Cypress for Mac, Linux, or Windows, then [get started](https://on.cypress.io/install).
+
+```bash
+npm install cypress --save-dev
+```
+or
+```bash
+yarn add cypress --dev
+```
+or
+```bash
+pnpm add cypress --save-dev
+```
+
+![installing-cli e1693232](./assets/cypress-installation.gif)
+
+## Contributing
+
+[![cypress](https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/simple/ypt4pf/develop&amp;style=flat&amp;logo=cypress)](https://cloud.cypress.io/projects/ypt4pf/runs)
+[![CircleCI](https://circleci.com/gh/cypress-io/cypress/tree/develop.svg?style=svg)](https://circleci.com/gh/cypress-io/cypress/tree/develop) -  `develop` branch
+
+Please see our [Contributing Guideline](./CONTRIBUTING.md) which explains repo organization, linting, testing, and other steps.
+
+## License
+
+[![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/cypress-io/cypress/blob/develop/LICENSE)
+
+This project is licensed under the terms of the [MIT license](/LICENSE).
+
+## Badges
+
+Configure a badge for your project&#039;s README to show your test status or test count in the [Cypress Cloud](https://www.cypress.io/cloud).
+
+[![cypress](https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/simple/ypt4pf/develop&amp;style=flat&amp;logo=cypress)](https://cloud.cypress.io/projects/ypt4pf/runs)
+
+[![cypress](https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/count/ypt4pf/develop&amp;style=flat&amp;logo=cypress)](https://cloud.cypress.io/projects/ypt4pf/runs)
+
+Or let the world know your project is using Cypress with the badge below.
+
+[![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)
+
+```
+[![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)
+```
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[VoltAgent/voltagent]]></title>
+            <link>https://github.com/VoltAgent/voltagent</link>
+            <guid>https://github.com/VoltAgent/voltagent</guid>
+            <pubDate>Wed, 30 Sep 2026 00:06:52 GMT</pubDate>
+            <description><![CDATA[AI Agent Engineering Platform built on an Open Source TypeScript AI Agent Framework]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/VoltAgent/voltagent">VoltAgent/voltagent</a></h1>
+            <p>AI Agent Engineering Platform built on an Open Source TypeScript AI Agent Framework</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 10,704</p>
+            <p>Forks: 1,148</p>
+            <p>Stars today: 10 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+&lt;a href=&quot;https://voltagent.dev/&quot;&gt;
+&lt;img width=&quot;1500&quot; height=&quot;276&quot; alt=&quot;voltagent&quot; src=&quot;https://github.com/user-attachments/assets/d9ad69bd-b905-42a3-81af-99a0581348c0&quot; /&gt;
+&lt;/a&gt;
+
+&lt;h3 align=&quot;center&quot;&gt;
+AI Agent Engineering Platform
+&lt;/h3&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+English | &lt;a href=&quot;i18n/README-cn-traditional.md&quot;&gt;繁體中文&lt;/a&gt; | &lt;a href=&quot;i18n/README-cn-bsc.md&quot;&gt;简体中文&lt;/a&gt; | &lt;a href=&quot;i18n/README-jp.md&quot;&gt;日本語&lt;/a&gt; | &lt;a href=&quot;i18n/README-kr.md&quot;&gt;한국어&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;br/&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+    &lt;a href=&quot;https://voltagent.dev&quot;&gt;Home Page&lt;/a&gt; |
+    &lt;a href=&quot;https://voltagent.dev/docs/&quot;&gt;Documentation&lt;/a&gt; |
+    &lt;a href=&quot;https://github.com/voltagent/voltagent/tree/main/examples&quot;&gt;Examples&lt;/a&gt; 
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;br/&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+
+[![GitHub issues](https://img.shields.io/github/issues/voltagent/voltagent)](https://github.com/voltagent/voltagent/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/voltagent/voltagent)](https://github.com/voltagent/voltagent/pulls)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](CODE_OF_CONDUCT.md)
+[![npm version](https://img.shields.io/npm/v/@voltagent/core.svg)](https://www.npmjs.com/package/@voltagent/core)
+
+[![npm downloads](https://img.shields.io/npm/dm/@voltagent/core.svg)](https://www.npmjs.com/package/@voltagent/core)
+[![Discord](https://img.shields.io/discord/1361559153780195478.svg?label=&amp;logo=discord&amp;logoColor=ffffff&amp;color=7389D8&amp;labelColor=6A7EC2)](https://s.voltagent.dev/discord)
+[![Twitter Follow](https://img.shields.io/twitter/follow/voltagent_dev?style=social)](https://x.com/voltagent_dev)
+
+&lt;/div&gt;
+
+VoltAgent is an end-to-end AI Agent Engineering Platform that consists of two main parts:
+
+- **[Open-Source TypeScript Framework](#core-framework)** – Memory, RAG, Guardrails, Tools, MCP, Voice, Workflow, and more.
+- **[VoltOps Console](#voltops-console)** `Cloud` `Self-Hosted` – Observability, Automation, Deployment, Evals, Guardrails, Prompts, and more.
+
+Build agents with full code control and ship them with production-ready visibility and operations.
+
+&lt;h2 id=&quot;core-framework&quot;&gt;Core TypeScript Framework&lt;/h2&gt;
+
+With the open-source framework, you can build intelligent agents with memory, tools, and multi-step workflows while connecting to any AI provider. Create sophisticated multi-agent systems where specialized agents work together under supervisor coordination.
+
+- **[Core Runtime](https://voltagent.dev/docs/agents/overview/) (`@voltagent/core`)**: Define agents with typed roles, tools, memory, and model providers in one place so everything stays organized.
+- **[Workflow Engine](https://voltagent.dev/docs/workflows/overview/)**: Describe multi-step automations declaratively rather than stitching together custom control flow.
+- **[Supervisors &amp; Sub-Agents](https://voltagent.dev/docs/agents/sub-agents/)**: Run teams of specialized agents under a supervisor runtime that routes tasks and keeps them in sync.
+- **[Tool Registry](https://voltagent.dev/docs/agents/tools/) &amp; [MCP](https://voltagent.dev/docs/agents/mcp/)**: Ship Zod-typed tools with lifecycle hooks and cancellation, and connect to [Model Context Protocol](https://modelcontextprotocol.io/) servers without extra glue code.
+- **[LLM Compatibility](https://voltagent.dev/docs/getting-started/providers-models/)**: Swap between OpenAI, Anthropic, Google, or other providers by changing config, not rewriting agent logic.
+- **[Memory](https://voltagent.dev/docs/agents/memory/overview/)**: Attach durable memory adapters so agents remember important context across runs.
+- **[Resumable Streaming](https://voltagent.dev/docs/agents/resumable-streaming/)**: Let clients reconnect to in-flight streams after refresh and continue receiving the same response.
+- **[Retrieval &amp; RAG](https://voltagent.dev/docs/rag/overview/)**: Plug in retriever agents to pull facts from your data sources and ground responses (RAG) before the model answers.
+- **[VoltAgent Knowledge Base](https://voltagent.dev/docs/rag/voltagent/)**: Use the managed RAG service for document ingestion, chunking, embeddings, and search.
+- **[Voice](https://voltagent.dev/docs/agents/voice/)**: Add text-to-speech and speech-to-text capabilities with OpenAI, ElevenLabs, or custom voice providers.
+- **[Guardrails](https://voltagent.dev/docs/guardrails/overview/)**: Intercept and validate agent input or output at runtime to enforce content policies and safety rules.
+- **[Evals](https://voltagent.dev/docs/evals/overview/)**: Run agent eval suites alongside your workflows to measure and improve agent behavior.
+
+#### MCP Server (@voltagent/mcp-docs-server)
+
+You can use the MCP server `@voltagent/mcp-docs-server` to teach your LLM how to use VoltAgent for AI-powered coding assistants like Claude, Cursor, or Windsurf. This allows AI assistants to access VoltAgent documentation, examples, and changelogs directly while you code.
+
+📖 [How to setup MCP docs server](https://voltagent.dev/docs/getting-started/mcp-docs-server/)
+
+## 💛 Sponsors
+
+|                                                                                                                                                                                                                                                                                             |                                                                                                                                                                                                                                                                  |
+| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| &lt;a href=&quot;https://www.testmuai.com&quot;&gt;&lt;picture&gt;&lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://cdn.voltagent.dev/awesome-repo/testmui/testmuai-white.png&quot;&gt;&lt;img alt=&quot;TestMu AI&quot; src=&quot;https://cdn.voltagent.dev/awesome-repo/testmui/testmuai-black.png&quot; width=&quot;425&quot;&gt;&lt;/picture&gt;&lt;/a&gt; | [TestMu AI (formerly LambdaTest)](https://www.testmuai.com) is an AI-native testing cloud platform built for modern engineering teams. Covering everything from autonomous test creation and fast execution to testing AI agents, chatbots and voice assistants. |
+
+## ⚡ Quick Start
+
+Create a new VoltAgent project in seconds using the `create-voltagent-app` CLI tool:
+
+```bash
+npm create voltagent-app@latest
+```
+
+This command guides you through setup.
+
+You&#039;ll see the starter code in `src/index.ts`, which now registers both an agent and a comprehensive workflow example found in `src/workflows/index.ts`.
+
+```typescript
+import { VoltAgent, Agent, Memory } from &quot;@voltagent/core&quot;;
+import { LibSQLMemoryAdapter } from &quot;@voltagent/libsql&quot;;
+import { createPinoLogger } from &quot;@voltagent/logger&quot;;
+import { honoServer } from &quot;@voltagent/server-hono&quot;;
+import { openai } from &quot;@ai-sdk/openai&quot;;
+import { expenseApprovalWorkflow } from &quot;./workflows&quot;;
+import { weatherTool } from &quot;./tools&quot;;
+
+// Create a logger instance
+const logger = createPinoLogger({
+  name: &quot;my-agent-app&quot;,
+  level: &quot;info&quot;,
+});
+
+// Optional persistent memory (remove to use default in-memory)
+const memory = new Memory({
+  storage: new LibSQLMemoryAdapter({ url: &quot;file:./.voltagent/memory.db&quot; }),
+});
+
+// A simple, general-purpose agent for the project.
+const agent = new Agent({
+  name: &quot;my-agent&quot;,
+  instructions: &quot;A helpful assistant that can check weather and help with various tasks&quot;,
+  model: openai(&quot;gpt-4o-mini&quot;),
+  tools: [weatherTool],
+  memory,
+});
+
+// Initialize VoltAgent with your agent(s) and workflow(s)
+new VoltAgent({
+  agents: {
+    agent,
+  },
+  workflows: {
+    expenseApprovalWorkflow,
+  },
+  server: honoServer(),
+  logger,
+});
+```
+
+Afterwards, navigate to your project and run:
+
+```bash
+npm run dev
+```
+
+When you run the dev command, tsx will compile and run your code. You should see the VoltAgent server startup message in your terminal:
+
+```
+══════════════════════════════════════════════════
+VOLTAGENT SERVER STARTED SUCCESSFULLY
+══════════════════════════════════════════════════
+✓ HTTP Server: http://localhost:3141
+
+Test your agents with VoltOps Console: https://console.voltagent.dev
+══════════════════════════════════════════════════
+```
+
+Your agent is now running! To interact with it:
+
+1. Open the Console: Click the [VoltOps LLM Observability Platform](https://console.voltagent.dev) link in your terminal output (or copy-paste it into your browser).
+2. Find Your Agent: On the VoltOps LLM Observability Platform page, you should see your agent listed (e.g., &quot;my-agent&quot;).
+3. Open Agent Details: Click on your agent&#039;s name.
+4. Start Chatting: On the agent detail page, click the chat icon in the bottom right corner to open the chat window.
+5. Send a Message: Type a message like &quot;Hello&quot; and press Enter.
+
+[![VoltAgent Demo](thumbnail.png)](https://github.com/user-attachments/assets/26340c6a-be34-48a5-9006-e822bf6098a7)
+
+### Running Your First Workflow
+
+Your new project also includes a powerful workflow engine.
+
+The expense approval workflow demonstrates human-in-the-loop automation with suspend/resume capabilities:
+
+```typescript
+import { createWorkflowChain } from &quot;@voltagent/core&quot;;
+import { z } from &quot;zod&quot;;
+
+export const expenseApprovalWorkflow = createWorkflowChain({
+  id: &quot;expense-approval&quot;,
+  name: &quot;Expense Approval Workflow&quot;,
+  purpose: &quot;Process expense reports with manager approval for high amounts&quot;,
+
+  input: z.object({
+    employeeId: z.string(),
+    amount: z.number(),
+    category: z.string(),
+    description: z.string(),
+  }),
+  result: z.object({
+    status: z.enum([&quot;approved&quot;, &quot;rejected&quot;]),
+    approvedBy: z.string(),
+    finalAmount: z.number(),
+  }),
+})
+  // Step 1: Validate expense and check if approval needed
+  .andThen({
+    id: &quot;check-approval-needed&quot;,
+    resumeSchema: z.object({
+      approved: z.boolean(),
+      managerId: z.string(),
+      comments: z.string().optional(),
+      adjustedAmount: z.number().optional(),
+    }),
+    execute: async ({ data, suspend, resumeData }) =&gt; {
+      // If we&#039;re resuming with manager&#039;s decision
+      if (resumeData) {
+        return {
+          ...data,
+          approved: resumeData.approved,
+          approvedBy: resumeData.managerId,
+          finalAmount: resumeData.adjustedAmount || data.amount,
+        };
+      }
+
+      // Check if manager approval is needed (expenses over $500)
+      if (data.amount &gt; 500) {
+        await suspend(&quot;Manager approval required&quot;, {
+          employeeId: data.employeeId,
+          requestedAmount: data.amount,
+        });
+      }
+
+      // Auto-approve small expenses
+      return {
+        ...data,
+        approved: true,
+        approvedBy: &quot;system&quot;,
+        finalAmount: data.amount,
+      };
+    },
+  })
+  // Step 2: Process the final decision
+  .andThen({
+    id: &quot;process-decision&quot;,
+    execute: async ({ data }) =&gt; {
+      return {
+        status: data.approved ? &quot;approved&quot; : &quot;rejected&quot;,
+        approvedBy: data.approvedBy,
+        finalAmount: data.finalAmount,
+      };
+    },
+  });
+```
+
+You can test the pre-built `expenseApprovalWorkflow` directly from the VoltOps console:
+
+[![expense-approval](thumbnail.png)](https://github.com/user-attachments/assets/3d3ea67b-4ab5-4dc0-932d-cedd92894b18)
+
+1.  **Go to the Workflows Page:** After starting your server, go directly to the [Workflows page](https://console.voltagent.dev/workflows).
+2.  **Select Your Project:** Use the project selector to choose your project (e.g., &quot;my-agent-app&quot;).
+3.  **Find and Run:** You will see **&quot;Expense Approval Workflow&quot;** listed. Click it, then click the **&quot;Run&quot;** button.
+4.  **Provide Input:** The workflow expects a JSON object with expense details. Try a small expense for automatic approval:
+    ```json
+    {
+      &quot;employeeId&quot;: &quot;EMP-123&quot;,
+      &quot;amount&quot;: 250,
+      &quot;category&quot;: &quot;office-supplies&quot;,
+      &quot;description&quot;: &quot;New laptop mouse and keyboard&quot;
+    }
+    ```
+5.  **View the Results:** After execution, you can inspect the detailed logs for each step and see the final output directly in the console.
+
+## Examples
+
+For more examples, visit our [examples repository](https://github.com/VoltAgent/voltagent/tree/main/examples).
+
+- **[Airtable Agent](https://voltagent.dev/recipes-and-guides/airtable-agent)** - React to new records and write updates back into Airtable with VoltOps actions.
+- **[Slack Agent](https://voltagent.dev/recipes-and-guides/slack-agent)** - Respond to channel messages and reply via VoltOps Slack actions.
+- **[ChatGPT App With VoltAgent](https://voltagent.dev/examples/agents/chatgpt-app)** - Deploy VoltAgent over MCP and connect to ChatGPT Apps.
+- **[WhatsApp Order Agent](https://voltagent.dev/examples/agents/whatsapp-ai-agent)** - Build a WhatsApp chatbot that handles food orders through natural conversation. ([Source](https://github.com/VoltAgent/voltagent/tree/main/examples/with-whatsapp))
+- **[YouTube to Blog Agent](https://voltagent.dev/examples/agents/youtube-blog-agent)** - Convert YouTube videos into Markdown blog posts using a supervisor agent with MCP tools. ([Source](https://github.com/VoltAgent/voltagent/tree/main/examples/with-youtube-to-blog))
+- **[AI Ads Generator Agent](https://voltagent.dev/examples/agents/ai-instagram-ad-agent)** - Generate Instagram ads using BrowserBase Stagehand and Google Gemini AI. ([Source](https://github.com/VoltAgent/voltagent/tree/main/examples/with-ad-creator))
+- **[AI Recipe Generator Agent](https://voltagent.dev/examples/agents/recipe-generator)** - Create personalized cooking suggestions based on ingredients and preferences. ([Source](https://github.com/VoltAgent/voltagent/tree/main/examples/with-recipe-generator) | [Video](https://youtu.be/KjV1c6AhlfY))
+- **[AI Research Assistant Agent](https://voltagent.dev/examples/agents/research-assistant)** - Multi-agent research workflow for generating comprehensive reports. ([Source](https://github.com/VoltAgent/voltagent/tree/main/examples/with-research-assistant) | [Video](https://youtu.be/j6KAUaoZMy4))
+
+&lt;h2 id=&quot;voltops-console&quot;&gt;VoltOps Console: LLM Observability - Automation - Deployment&lt;/h2&gt;
+
+VoltOps Console is the platform side of VoltAgent, providing observability, automation, and deployment so you can monitor and debug agents in production with real-time execution traces, performance metrics, and visual dashboards.
+
+🎬 [Try Live Demo](https://console.voltagent.dev/demo)
+
+📖 [VoltOps Documentation](https://voltagent.dev/voltops-llm-observability-docs/)
+
+🚀 [VoltOps Platform](https://voltagent.dev/voltops-llm-observability/)
+
+### Observability &amp; Tracing
+
+Deep dive into agent execution flow with detailed traces and performance metrics.
+
+&lt;img alt=&quot;1&quot; src=&quot;https://github.com/user-attachments/assets/21c6d05d-f333-4c61-9218-8862d16110fd&quot; /&gt;
+
+### Dashboard
+
+Get a comprehensive overview of all your agents, workflows, and system performance metrics.
+
+&lt;img alt=&quot;dashboar&quot; src=&quot;https://github.com/user-attachments/assets/c88a5543-219e-4cf0-8f41-14a68ca297fb&quot; /&gt;
+
+### Logs
+
+Track detailed execution logs for every agent interaction and workflow step.
+
+![VoltOps Logs](https://cdn.voltagent.dev/console/logs.png)
+
+### Memory Management
+
+Inspect and manage agent memory, context, and conversation history.
+
+![VoltOps Memory Overview](https://cdn.voltagent.dev/console/memory.png)
+
+### Traces
+
+Analyze complete execution traces to understand agent behavior and optimize performance.
+
+![VoltOps Traces](https://cdn.voltagent.dev/console/traces.png)
+
+### Prompt Builder
+
+Design, test, and refine prompts directly in the console.
+
+&lt;img  alt=&quot;prompts&quot; src=&quot;https://github.com/user-attachments/assets/fb6d71eb-8f81-4443-a494-08c33ec9bcc4&quot; /&gt;
+
+### Deployment
+
+Deploy your agents to production with one-click GitHub integration and managed infrastructure.
+
+&lt;img alt=&quot;deployment&quot; src=&quot;https://github.com/user-attachments/assets/e329ab4b-7464-435a-96cc-90214e8a3cfa&quot; /&gt;
+
+📖 [VoltOps Deploy Documentation](https://voltagent.dev/docs/deployment/voltops/)
+
+### Triggers &amp; Actions
+
+Automate agent workflows with webhooks, schedules, and custom triggers to react to external events.
+
+&lt;img width=&quot;1277&quot;  alt=&quot;triggers&quot; src=&quot;https://github.com/user-attachments/assets/67e36934-2eb5-4cf1-94f8-3057d805ef65&quot; /&gt;
+
+### Monitoring
+
+Monitor agent health, performance metrics, and resource usage across your entire system.
+
+&lt;img  alt=&quot;monitoring&quot; src=&quot;https://github.com/user-attachments/assets/1fd1151f-5ee4-4c7c-8ec7-29874e37c48f&quot; /&gt;
+
+### Guardrails
+
+Set up safety boundaries and content filters to ensure agents operate within defined parameters.
+
+&lt;img  alt=&quot;guardrails&quot; src=&quot;https://github.com/user-attachments/assets/52bd51f0-944e-4202-9f54-7bb2e0e2d1f6&quot; /&gt;
+
+### Evals
+
+Run evaluation suites to test agent behavior, accuracy, and performance against benchmarks.
+
+&lt;img  alt=&quot;evals&quot; src=&quot;https://github.com/user-attachments/assets/510cc180-2661-4973-a48f-074d4703d90b&quot; /&gt;
+
+### RAG (Knowledge Base)
+
+Connect your agents to knowledge sources with built-in retrieval-augmented generation capabilities.
+
+&lt;img  alt=&quot;rag&quot; src=&quot;https://github.com/user-attachments/assets/a6c2f668-7ad1-4fb6-b67f-654335285f1e&quot; /&gt;
+
+## Learning VoltAgent
+
+- **[Start with interactive tutorial](https://voltagent.dev/tutorial/introduction/)** to learn the fundamentals building AI Agents.
+- **[Documentation](https://voltagent.dev/docs/)**: Dive into guides, concepts, and tutorials.
+- **[Examples](https://github.com/voltagent/voltagent/tree/main/examples)**: Explore practical implementations.
+- **[Blog](https://voltagent.dev/blog/)**: Read more about technical insights, and best practices.
+
+## Contribution
+
+We welcome contributions! Please refer to the contribution guidelines (link needed if available). Join our [Discord](https://s.voltagent.dev/discord) server for questions and discussions.
+
+## Contributor ♥️ Thanks
+
+Big thanks to everyone who&#039;s been part of the VoltAgent journey, whether you&#039;ve built a plugin, opened an issue, dropped a pull request, or just helped someone out on Discord or GitHub Discussions.
+
+VoltAgent is a community effort, and it keeps getting better because of people like you.
+
+![Contributors](https://contrib.rocks/image?repo=voltagent/voltagent&amp;max=500&amp;columns=20&amp;anon=1)
+
+## License
+
+Licensed under the MIT License, Copyright © 2026-present VoltAgent.
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[OpenCTI-Platform/opencti]]></title>
+            <link>https://github.com/OpenCTI-Platform/opencti</link>
+            <guid>https://github.com/OpenCTI-Platform/opencti</guid>
+            <pubDate>Wed, 30 Sep 2026 00:06:51 GMT</pubDate>
+            <description><![CDATA[Open Cyber Threat Intelligence Platform]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/OpenCTI-Platform/opencti">OpenCTI-Platform/opencti</a></h1>
+            <p>Open Cyber Threat Intelligence Platform</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 10,067</p>
+            <p>Forks: 1,463</p>
+            <p>Stars today: 5 stars today</p>
+            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://opencti.io&quot;&gt;&lt;img src=&quot;./.github/img/logo_opencti.png&quot; alt=&quot;OpenCTI&quot;&gt;&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://opencti.io&quot; alt=&quot;Website&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/website-opencti.io-blue.svg&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://docs.opencti.io&quot; alt=&quot;Documentation&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/documentation-latest-orange.svg&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://community.filigran.io&quot; alt=&quot;Slack&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/slack-6K%2B%20members-4A154B&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://drone.filigran.io/OpenCTI-Platform/opencti&quot;&gt;&lt;img src=&quot;https://drone.filigran.io/api/badges/OpenCTI-Platform/opencti/status.svg&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://codecov.io/gh/OpenCTI-Platform/opencti&quot;&gt;&lt;img src=&quot;https://codecov.io/gh/OpenCTI-Platform/opencti/graph/badge.svg&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://deepscan.io/dashboard#view=project&amp;tid=4926&amp;pid=6716&amp;bid=57311&quot;&gt;&lt;img src=&quot;https://deepscan.io/api/teams/4926/projects/6716/branches/57311/badge/grade.svg&quot; alt=&quot;DeepScan grade&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://renovatebot.com&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/renovate-enabled-brightgreen.svg&quot; alt=&quot;DeepScan grade&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://hub.docker.com/u/opencti&quot; alt=&quot;Docker pulls&quot;&gt;&lt;img src=&quot;https://img.shields.io/docker/pulls/opencti/platform&quot; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&gt; **Note:** **THREAD 2026 — 15 October, Paris.** Our community conference for threat
+&gt; intelligence and cyber defense practitioners. Talks, labs, workshops, and an
+&gt; evening social. [Join us →](https://thread.filigran.io/?utm_medium=outbound&amp;utm_source=github&amp;utm_campaign=2026-10_EUROPE_THREAD)
+
+## Introduction
+
+OpenCTI is an open source platform allowing organizations to manage their cyber threat intelligence knowledge and observables. It has been created in order to structure, store, organize and visualize technical and non-technical information about cyber threats.
+
+The structuration of the data is performed using a knowledge schema based on the [STIX2 standards](https://oasis-open.github.io/cti-documentation/). It has been designed as a modern web application including a [GraphQL API](https://graphql.org) and a UX-oriented frontend. Also, OpenCTI can be integrated with other tools and applications such as [MISP](https://github.com/MISP/MISP), [TheHive](https://github.com/TheHive-Project/TheHive), [MITRE ATT&amp;CK](https://github.com/mitre/cti), etc.
+
+![Screenshot](./.github/img/screenshot.png &quot;Screenshot&quot;)
+
+## Objective
+
+The goal is to create a comprehensive tool allowing users to capitalize technical (such as TTPs and observables) and non-technical information (such as suggested attribution, victimology etc.) while linking each piece of information to its primary source (a report, a MISP event, etc.), with features such as links between each information, first and last seen dates, levels of confidence, etc. The tool is able to use the [MITRE ATT&amp;CK framework](https://attack.mitre.org) (through a [dedicated connector](https://github.com/OpenCTI-Platform/connectors)) to help structure the data. The user can also choose to implement their own datasets.
+
+Once data has been capitalized and processed by the analysts within OpenCTI, new relations may be inferred from existing ones to facilitate the understanding and the representation of this information. This allows the user to extract and leverage meaningful knowledge from the raw data.
+
+OpenCTI not only allows [imports](https://docs.opencti.io/latest/usage/import-automated/) but also [exports of data](https://docs.opencti.io/latest/usage/feeds/) under different formats (CSV, STIX2 bundles, etc.). [Connectors](https://hub.filigran.io/cybersecurity-solutions/open-cti-integrations) are currently developed to accelerate interactions between the tool and other platforms.
+
+## Editions of the platform
+
+OpenCTI platform has 2 different editions: Community (CE) and Enterprise (EE). The purpose of the Enterprise Edition is to provide [additional and powerful features](https://filigran.io/offering/subscribe) which require specific investments in research and development. You can enable the Enterprise Edition directly in the settings of the platform.
+
+* OpenCTI Community Edition, licensed under the [Apache 2, Version 2.0 license](LICENSE).
+* OpenCTI Enterprise Edition, licensed under the [Enterprise Edition license](LICENSE).
+
+To understand what OpenCTI Enterprise Edition brings in terms of features, just check the [Enterprise Editions page](https://filigran.io/offering/subscribe) on the Filigran website. You can also try this edition by enabling it in the settings of the platform.
+
+## Documentation and demonstration
+
+If you want to know more on OpenCTI, you can read the [documentation on the tool](https://docs.opencti.io). If you wish to discover how the OpenCTI platform is working, a [demonstration instance](https://demo.opencti.io) is available and open to everyone. This instance is reset every night and is based on reference data maintained by the OpenCTI developers.
+
+## Releases download
+
+The releases are available on the [Github releases page](https://github.com/OpenCTI-Platform/opencti/releases). You can also access the [rolling release package](https://releases.opencti.io) generated from the master branch of the repository.
+
+## Installation
+
+All you need to install the OpenCTI platform can be found in the [official documentation](https://docs.opencti.io). For installation, you can:
+
+* [Use Docker](https://docs.opencti.io/latest/deployment/installation/#using-docker)
+* [Install manually](https://docs.opencti.io/latest/deployment/installation/#install-manually)
+* [Use Terraform (community)](https://docs.opencti.io/latest/deployment/installation/#terraform)
+* [Use Helm charts (community)](https://docs.opencti.io/latest/deployment/installation/#helm-charts)
+
+## Contributing
+
+### Code of Conduct
+
+OpenCTI has adopted a [Code of Conduct](CODE_OF_CONDUCT.md) that we expect project participants to adhere to. Please read the [full text](CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
+
+### Contributing Guide
+
+Read our [contributing guide](CONTRIBUTING.md) to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to OpenCTI.
+
+### Beginner friendly issues
+
+To help you get familiar with our contribution process, we have a list of [beginner friendly issues](https://github.com/OpenCTI-Platform/opencti/labels/beginner%20friendly%20issue) which are fairly easy to implement. This is a great place to get started.
+
+### Development
+
+If you want to actively help OpenCTI, we created a [dedicated documentation](https://docs.opencti.io/latest/development/environment_ubuntu/) about the deployment of a development environment and how to start the source code modification.
+
+## Community
+
+### Status &amp; bugs
+
+Currently OpenCTI is under heavy development, if you wish to report bugs or ask for new features, you can directly use the [Github issues module](https://github.com/OpenCTI-Platform/opencti/issues).
+
+### Discussion
+
+If you need support or you wish to engage a discussion about the OpenCTI platform, feel free to join us on our [Slack channel](https://community.filigran.io). You can also send us an email to contact@filigran.io.
+
+## About
+
+### Authors
+
+OpenCTI is a product designed and developed by the company [Filigran](https://filigran.io).
+
+&lt;a href=&quot;https://filigran.io&quot; alt=&quot;Filigran&quot;&gt;&lt;img src=&quot;./.github/img/logo_filigran.png&quot; width=&quot;300&quot; /&gt;&lt;/a&gt;
+
+### Data Collection
+
+#### Usage telemetry
+
+To improve the features and the performances of OpenCTI, the platform collects anonymous statistical data related to its usage and health.
+
+You can find all the details on collected data and associated usage in the [usage telemetry documentation](https://docs.opencti.io/latest/reference/usage-telemetry/).
+</pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
