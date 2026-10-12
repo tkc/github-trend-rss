@@ -4,7 +4,7 @@
         <title>GitHub Trending Today for typescript - TypeScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for typescript.</description>
-        <lastBuildDate>Sun, 11 Oct 2026 00:07:56 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 12 Oct 2026 00:07:43 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
@@ -13,15 +13,15 @@
             <title><![CDATA[morluto/rea]]></title>
             <link>https://github.com/morluto/rea</link>
             <guid>https://github.com/morluto/rea</guid>
-            <pubDate>Sun, 11 Oct 2026 00:07:56 GMT</pubDate>
+            <pubDate>Mon, 12 Oct 2026 00:07:43 GMT</pubDate>
             <description><![CDATA[Reverse engineer anything with agents, from app behavior down to native binaries.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/morluto/rea">morluto/rea</a></h1>
             <p>Reverse engineer anything with agents, from app behavior down to native binaries.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 72,027</p>
-            <p>Forks: 15,133</p>
-            <p>Stars today: 25,793 stars today</p>
+            <p>Stars: 103,509</p>
+            <p>Forks: 22,695</p>
+            <p>Stars today: 25,599 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
 
 **English** · [简体中文](README_zh.md) · [繁體中文](README_zh-TW.md) · [日本語](README_ja.md) · [한국어](README_ko.md) · [Türkçe](README_tr.md) · [Русский](README_ru.md) · [Tiếng Việt](README_vi.md) · [ไทย](README_th.md) · [Deutsch](README_de.md) · [Español](README_es.md) · [Français](README_fr.md) · [Українська](README_uk.md) · [Polski](README_pl.md) · [Português (Brasil)](README_pt-BR.md) · [العربية](README_ar.md) · [فارسی](README_fa.md) · [Bahasa Indonesia](README_id.md) · [Italiano](README_it.md)
@@ -33,7 +33,6 @@
 **See a feature you like. Understand how it works, down to the binary level.**
 
 [![npm version](https://img.shields.io/npm/v/rea-agents?style=flat-square&amp;color=cb3837)](https://www.npmjs.com/package/rea-agents)
-[![CI](https://img.shields.io/github/actions/workflow/status/morluto/rea/ci.yml?branch=main&amp;style=flat-square&amp;label=CI)](https://github.com/morluto/rea/actions/workflows/ci.yml)
 [![MCP tool catalog](https://img.shields.io/badge/MCP-tool_catalog-5c4ee5?style=flat-square)](docs/mcp-contracts.md#generated-catalog)
 [![Node.js requirements](https://img.shields.io/badge/Node.js-requirements-339933?style=flat-square&amp;logo=nodedotjs&amp;logoColor=white)](#what-you-can-analyze)
 [![skills.sh](https://skills.sh/b/morluto/rea?style=flat-square)](https://skills.sh/morluto/rea/reverse-engineer-anything)
@@ -135,11 +134,14 @@ snapshots and scripting.
 REA changes quickly, and new releases include frequent bug fixes. Keep your
 installation up to date.
 
-For an npm-installed CLI:
+For a CLI installed with `npm install --global` or `bun add --global`:
 
 ```bash
 rea update
 ```
+
+Bun global updates require Bun 1.2.17 or later. With an older Bun release,
+upgrade Bun manually before running `rea update`.
 
 To refresh your agent registrations and skill, run the setup command printed
 by the update.
@@ -151,7 +153,8 @@ npx rea-agents@latest setup
 ```
 
 Review the setup changes and restart your agent. For one-off CLI commands,
-use `npx rea-agents@latest` followed by the command.
+use `npx rea-agents@latest` followed by the command. With Bun, use
+`bunx rea-agents@latest` in place of `npx rea-agents@latest`.
 
 ## How REA works
 
@@ -175,6 +178,7 @@ Additional tools and host support depend on the target:
 | ---------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
 | Native binaries        | Pseudocode, assembly, strings, symbols, calls and references                         | Hopper, Ghidra or IDA; [native analysis](https://rea.tools/guides/native/)                                                            |
 | Offline ELF layout     | Sections, segments, original symbols/relocations and static mitigation candidates    | Caller-supplied pwntools on Linux x64; [binary diagnostics](docs/binary-diagnostics.md)                                               |
+| WASM artifact          | Validation, sections, exact import/export WAT forms and decoded WAT                  | Caller-supplied WABT 1.0.42; `inspect_wasm_artifact`                                                                                  |
 | EVM bytecode           | Dispatch selectors, byte offsets, inferred arguments and mutability                  | Local raw/hex carrier on Linux x64; [offline EVM guide](docs/evm-bytecode.md)                                                         |
 | Recorded Linux crashes | Raw notes, every recorded thread&#039;s registers/signals and optional mapping candidates | Caller-supplied pwntools on Linux x64; optional GDB/pwndbg; [recorded crashes](docs/recorded-crashes.md)                              |
 | JavaScript / Electron  | Modules, imports, source maps, routes, IPC and native add-on relationships           | Node.js and npm; [application analysis](https://rea.tools/guides/javascript/)                                                         |
@@ -200,8 +204,8 @@ Native formats and host support vary by provider. See
 [IDA guide](docs/ida-provider.md), and
 [experimental Windows Ghidra support](docs/windows-ghidra-p0.md).
 Ghidra also supports [16-bit DOS analysis](docs/ghidra-dos.md).
-For large binaries, raise its startup deadline with
-`REA_GHIDRA_STARTUP_TIMEOUT_MS`.
+For large binaries, raise the provider&#039;s startup deadline with
+`REA_GHIDRA_STARTUP_TIMEOUT_MS` or `REA_HOPPER_STARTUP_TIMEOUT_MS`.
 For provider selection, see the [CLI guide](docs/cli.md#choose-a-provider).
 Check [release availability](docs/installation.md#released-package-and-main)
 for features added since the latest npm release.
@@ -264,7 +268,9 @@ Ghidra and IDA use your existing installations. See [provider setup](docs/instal
 &lt;summary&gt;&lt;strong&gt;Do I need to start Hopper first?&lt;/strong&gt;&lt;/summary&gt;
 
 REA starts Hopper when an operation needs it. On macOS, a first-run dialog may
-ask you to choose demo mode or activate your license. See
+ask you to choose demo mode or activate your license. Complete that prompt in the
+same user session before your first CLI/MCP operation or unattended job. Open
+Hopper manually if needed. See
 [Hopper startup and troubleshooting](docs/installation.md#launcher-paths-and-troubleshooting).
 
 &lt;/details&gt;
@@ -300,7 +306,7 @@ model provider has its own data policy.
 
 Update first; a recent release may already fix it.
 
-For an npm-installed CLI:
+For a CLI installed with `npm install --global` or `bun add --global`:
 
 ```bash
 rea update
@@ -334,7 +340,7 @@ Report vulnerabilities through [SECURITY.md](SECURITY.md).
 
 ## Star history
 
-🎉 **60,000 GitHub stars — thank you!**
+🎉 **90,000 GitHub stars — thank you!**
 
 Thanks to everyone using REA, reporting bugs, requesting features, testing builds, and contributing fixes.
 
@@ -373,15 +379,15 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup and checks,
             <title><![CDATA[mksglu/context-mode]]></title>
             <link>https://github.com/mksglu/context-mode</link>
             <guid>https://github.com/mksglu/context-mode</guid>
-            <pubDate>Sun, 11 Oct 2026 00:07:55 GMT</pubDate>
+            <pubDate>Mon, 12 Oct 2026 00:07:42 GMT</pubDate>
             <description><![CDATA[Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/mksglu/context-mode">mksglu/context-mode</a></h1>
             <p>Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 26,307</p>
-            <p>Forks: 1,891</p>
-            <p>Stars today: 178 stars today</p>
+            <p>Stars: 26,678</p>
+            <p>Forks: 1,917</p>
+            <p>Stars today: 485 stars today</p>
             <h2>README</h2><pre># Context Mode
 
 **The other half of the context problem.**
@@ -764,1731 +770,1436 @@ After Cursor lists context-mode in the [Marketplace](https://cursor.com/marketpl
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[angular/angular]]></title>
-            <link>https://github.com/angular/angular</link>
-            <guid>https://github.com/angular/angular</guid>
-            <pubDate>Sun, 11 Oct 2026 00:07:54 GMT</pubDate>
-            <description><![CDATA[Deliver web apps with confidence 🚀]]></description>
+            <title><![CDATA[langgenius/dify]]></title>
+            <link>https://github.com/langgenius/dify</link>
+            <guid>https://github.com/langgenius/dify</guid>
+            <pubDate>Mon, 12 Oct 2026 00:07:41 GMT</pubDate>
+            <description><![CDATA[Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/angular/angular">angular/angular</a></h1>
-            <p>Deliver web apps with confidence 🚀</p>
+            <h1><a href="https://github.com/langgenius/dify">langgenius/dify</a></h1>
+            <p>Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 101,025</p>
-            <p>Forks: 29,946</p>
-            <p>Stars today: 8 stars today</p>
-            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;Angular - The modern web developer&#039;s platform&lt;/h1&gt;
+            <p>Stars: 158,168</p>
+            <p>Forks: 25,004</p>
+            <p>Stars today: 79 stars today</p>
+            <h2>README</h2><pre>![cover-v5-optimized](./images/GitHub_README_if.png)
 
 &lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;adev/src/assets/images/press-kit/angular_icon_gradient.gif&quot; alt=&quot;angular-logo&quot; width=&quot;120px&quot; height=&quot;120px&quot;/&gt;
-  &lt;br&gt;
-  &lt;em&gt;Angular is a development platform for building mobile and desktop web applications
-    &lt;br&gt; using TypeScript/JavaScript and other languages.&lt;/em&gt;
-  &lt;br&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://angular.dev/&quot;&gt;&lt;strong&gt;angular.dev&lt;/strong&gt;&lt;/a&gt;
-  &lt;br&gt;
+  &lt;a href=&quot;https://cloud.dify.ai&quot;&gt;Dify Cloud&lt;/a&gt; ·
+  &lt;a href=&quot;https://docs.dify.ai/getting-started/install-self-hosted&quot;&gt;Self-hosting&lt;/a&gt; ·
+  &lt;a href=&quot;https://docs.dify.ai&quot;&gt;Documentation&lt;/a&gt; ·
+  &lt;a href=&quot;https://dify.ai/pricing&quot;&gt;Dify edition overview&lt;/a&gt;
 &lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;CONTRIBUTING.md&quot;&gt;Contributing Guidelines&lt;/a&gt;
-  ·
-  &lt;a href=&quot;https://github.com/angular/angular/issues&quot;&gt;Submit an Issue&lt;/a&gt;
-  ·
-  &lt;a href=&quot;https://blog.angular.dev/&quot;&gt;Blog&lt;/a&gt;
-  &lt;br&gt;
-  &lt;br&gt;
+    &lt;a href=&quot;https://dify.ai&quot; target=&quot;_blank&quot;&gt;
+        &lt;img alt=&quot;Static Badge&quot; src=&quot;https://img.shields.io/badge/Product-F04438&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://dify.ai/pricing&quot; target=&quot;_blank&quot;&gt;
+        &lt;img alt=&quot;Static Badge&quot; src=&quot;https://img.shields.io/badge/free-pricing?logo=free&amp;color=%20%23155EEF&amp;label=pricing&amp;labelColor=%20%23528bff&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://discord.gg/FngNHpbcY7&quot; target=&quot;_blank&quot;&gt;
+        &lt;img src=&quot;https://img.shields.io/discord/1082486657678311454?logo=discord&amp;labelColor=%20%235462eb&amp;logoColor=%20%23f5f5f5&amp;color=%20%235462eb&quot;
+            alt=&quot;chat on Discord&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://reddit.com/r/difyai&quot; target=&quot;_blank&quot;&gt;
+        &lt;img src=&quot;https://img.shields.io/reddit/subreddit-subscribers/difyai?style=plastic&amp;logo=reddit&amp;label=r%2Fdifyai&amp;labelColor=white&quot;
+            alt=&quot;join Reddit&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://twitter.com/intent/follow?screen_name=dify_ai&quot; target=&quot;_blank&quot;&gt;
+        &lt;img src=&quot;https://img.shields.io/twitter/follow/dify_ai?logo=X&amp;color=%20%23f5f5f5&quot;
+            alt=&quot;follow on X(Twitter)&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://www.linkedin.com/company/langgenius/&quot; target=&quot;_blank&quot;&gt;
+        &lt;img src=&quot;https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&amp;logoColor=fff&quot;
+            alt=&quot;follow on LinkedIn&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://hub.docker.com/u/langgenius&quot; target=&quot;_blank&quot;&gt;
+        &lt;img alt=&quot;Docker Pulls&quot; src=&quot;https://img.shields.io/docker/pulls/langgenius/dify-web?labelColor=%20%23FDB062&amp;color=%20%23f79009&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://github.com/langgenius/dify/graphs/commit-activity&quot; target=&quot;_blank&quot;&gt;
+        &lt;img alt=&quot;Commits last month&quot; src=&quot;https://img.shields.io/github/commit-activity/m/langgenius/dify?labelColor=%20%2332b583&amp;color=%20%2312b76a&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://github.com/langgenius/dify/&quot; target=&quot;_blank&quot;&gt;
+        &lt;img alt=&quot;Issues closed&quot; src=&quot;https://img.shields.io/github/issues-search?query=repo%3Alanggenius%2Fdify%20is%3Aclosed&amp;label=issues%20closed&amp;labelColor=%20%237d89b0&amp;color=%20%235d6b98&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://github.com/langgenius/dify/discussions/&quot; target=&quot;_blank&quot;&gt;
+        &lt;img alt=&quot;Discussion posts&quot; src=&quot;https://img.shields.io/github/discussions/langgenius/dify?labelColor=%20%239b8afb&amp;color=%20%237a5af8&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://insights.linuxfoundation.org/project/langgenius-dify&quot; target=&quot;_blank&quot;&gt;
+        &lt;img alt=&quot;LFX Health Score&quot; src=&quot;https://insights.linuxfoundation.org/api/badge/health-score?project=langgenius-dify&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://insights.linuxfoundation.org/project/langgenius-dify&quot; target=&quot;_blank&quot;&gt;
+        &lt;img alt=&quot;LFX Contributors&quot; src=&quot;https://insights.linuxfoundation.org/api/badge/contributors?project=langgenius-dify&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://insights.linuxfoundation.org/project/langgenius-dify&quot; target=&quot;_blank&quot;&gt;
+        &lt;img alt=&quot;LFX Active Contributors&quot; src=&quot;https://insights.linuxfoundation.org/api/badge/active-contributors?project=langgenius-dify&quot;&gt;&lt;/a&gt;
 &lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://www.npmjs.com/@angular/core&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/npm/v/@angular/core.svg?logo=npm&amp;logoColor=fff&amp;label=NPM+package&amp;color=limegreen&quot; alt=&quot;Angular on npm&quot; /&gt;
-  &lt;/a&gt;
+  &lt;a href=&quot;./README.md&quot;&gt;&lt;img alt=&quot;README in English&quot; src=&quot;https://img.shields.io/badge/English-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;./docs/zh-TW/README.md&quot;&gt;&lt;img alt=&quot;繁體中文文件&quot; src=&quot;https://img.shields.io/badge/繁體中文-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;./docs/zh-CN/README.md&quot;&gt;&lt;img alt=&quot;简体中文文件&quot; src=&quot;https://img.shields.io/badge/简体中文-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;./docs/ja-JP/README.md&quot;&gt;&lt;img alt=&quot;日本語のREADME&quot; src=&quot;https://img.shields.io/badge/日本語-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;./docs/es-ES/README.md&quot;&gt;&lt;img alt=&quot;README en Español&quot; src=&quot;https://img.shields.io/badge/Español-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;./docs/fr-FR/README.md&quot;&gt;&lt;img alt=&quot;README en Français&quot; src=&quot;https://img.shields.io/badge/Français-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;./docs/tlh/README.md&quot;&gt;&lt;img alt=&quot;README tlhIngan Hol&quot; src=&quot;https://img.shields.io/badge/Klingon-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;./docs/ko-KR/README.md&quot;&gt;&lt;img alt=&quot;README in Korean&quot; src=&quot;https://img.shields.io/badge/한국어-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;./docs/ar-SA/README.md&quot;&gt;&lt;img alt=&quot;README بالعربية&quot; src=&quot;https://img.shields.io/badge/العربية-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;./docs/tr-TR/README.md&quot;&gt;&lt;img alt=&quot;Türkçe README&quot; src=&quot;https://img.shields.io/badge/Türkçe-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;./docs/vi-VN/README.md&quot;&gt;&lt;img alt=&quot;README Tiếng Việt&quot; src=&quot;https://img.shields.io/badge/Ti%E1%BA%BFng%20Vi%E1%BB%87t-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;./docs/de-DE/README.md&quot;&gt;&lt;img alt=&quot;README in Deutsch&quot; src=&quot;https://img.shields.io/badge/German-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;./docs/it-IT/README.md&quot;&gt;&lt;img alt=&quot;README in Italiano&quot; src=&quot;https://img.shields.io/badge/Italiano-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;./docs/pt-BR/README.md&quot;&gt;&lt;img alt=&quot;README em Português do Brasil&quot; src=&quot;https://img.shields.io/badge/Portugu%C3%AAs%20do%20Brasil-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;./docs/sl-SI/README.md&quot;&gt;&lt;img alt=&quot;README Slovenščina&quot; src=&quot;https://img.shields.io/badge/Sloven%C5%A1%C4%8Dina-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;./docs/bn-BD/README.md&quot;&gt;&lt;img alt=&quot;README in বাংলা&quot; src=&quot;https://img.shields.io/badge/বাংলা-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;./docs/hi-IN/README.md&quot;&gt;&lt;img alt=&quot;README in हिन्दी&quot; src=&quot;https://img.shields.io/badge/Hindi-d9d9d9&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;./docs/id-ID/README.md&quot;&gt;&lt;img alt=&quot;README dalam Bahasa Indonesia&quot; src=&quot;https://img.shields.io/badge/Bahasa%20Indonesia-d9d9d9&quot;&gt;&lt;/a&gt;
 &lt;/p&gt;
 
-&lt;hr&gt;
+Dify is an open-source LLM app development platform. Its intuitive interface combines AI workflow, RAG pipeline, agent capabilities, model management, observability features (including [Opik](https://www.comet.com/docs/opik/integrations/dify), [Langfuse](https://docs.langfuse.com), and [Arize Phoenix](https://docs.arize.com/phoenix)) and more, letting you quickly go from prototype to production. Here&#039;s a list of the core features:
 
-## Documentation
+## Quick start
 
-Get started with Angular, learn the fundamentals and explore advanced topics on our documentation website.
+&gt; Before installing Dify, make sure your machine meets the following minimum system requirements:
+&gt;
+&gt; - CPU &gt;= 2 Core
+&gt; - RAM &gt;= 4 GiB
 
-- [Getting Started][quickstart]
-- [Architecture][architecture]
-- [Components and Templates][componentstemplates]
-- [Forms][forms]
-- [API][api]
+&lt;br/&gt;
 
-### Advanced
+The easiest way to start the Dify server is through [Docker Compose](docker/docker-compose.yaml). Before running Dify with the following commands, make sure that [Docker](https://docs.docker.com/get-docker/) and Docker Compose v2.24.0 or later are installed on your machine:
 
-- [Angular Elements][angularelements]
-- [Server Side Rendering][ssr]
-- [Schematics][schematics]
-- [Lazy Loading][lazyloading]
-- [Animations][animations]
-
-### Local Development
-
-To contribute to the Angular Docs, check out the [Angular.dev README](adev/README.md)
-
-## Development Setup
-
-### Prerequisites
-
-- Install [Node.js] which includes [Node Package Manager][npm]
-
-### Setting Up a Project
-
-Install the Angular CLI globally:
-
-```
-npm install -g @angular/cli
+```bash
+cd dify
+cd docker
+cp .env.example .env
+docker compose up -d
 ```
 
-Create a workspace:
+After running, you can access the Dify dashboard in your browser at [http://localhost/install](http://localhost/install) and start the initialization process.
 
-```
-ng new [PROJECT NAME]
-```
+### Seeking help
 
-Run the application:
+Please refer to our [FAQ](https://docs.dify.ai/getting-started/install-self-hosted/faqs) if you encounter problems setting up Dify. Reach out to [the community and us](#community--contact) if you are still having issues.
 
-```
-cd [PROJECT NAME]
-ng serve
-```
+&gt; If you&#039;d like to contribute to Dify or do additional development, refer to our [guide to deploying from source code](https://docs.dify.ai/getting-started/install-self-hosted/local-source-code)
 
-Angular is cross-platform, fast, scalable, has incredible tooling, and is loved by millions.
+## Key features
 
-## Quickstart
+**1. Workflow**:
+Build and test powerful AI workflows on a visual canvas, leveraging all the following features and beyond.
 
-[Get started in 5 minutes][quickstart].
+**2. Comprehensive model support**:
+Seamless integration with hundreds of proprietary / open-source LLMs from dozens of inference providers and self-hosted solutions, covering GPT, Mistral, Llama3, and any OpenAI API-compatible models. A full list of supported model providers can be found [here](https://docs.dify.ai/getting-started/readme/model-providers).
 
-## Ecosystem
+![providers-v5](https://github.com/langgenius/dify/assets/13230914/5a17bdbe-097a-4100-8363-40255b70f6e3)
 
-&lt;p&gt;
-  &lt;img src=&quot;/contributing-docs/images/angular-ecosystem-logos.png&quot; alt=&quot;angular ecosystem logos&quot; width=&quot;500px&quot; height=&quot;auto&quot;&gt;
-&lt;/p&gt;
+**3. Prompt IDE**:
+Intuitive interface for crafting prompts, comparing model performance, and adding additional features such as text-to-speech to a chat-based app.
 
-- [Angular Command Line (CLI)][cli]
-- [Angular Material][angularmaterial]
+**4. RAG Pipeline**:
+Extensive RAG capabilities that cover everything from document ingestion to retrieval, with out-of-box support for text extraction from PDFs, PPTs, and other common document formats.
 
-## Changelog
+**5. Agent**: Autonomous agents with a sandbox of their own: they run commands, install software, and handle files to get open-ended tasks done. Describe the agent you want and it builds itself. Give it skills, connect tools from [Dify Marketplace](https://marketplace.dify.ai/?category=tool), MCP servers, or your own APIs, and put it to work as a chat app or as a step in any workflow.
 
-[Learn about the latest improvements][changelog].
+**6. LLMOps**:
+Monitor and analyze application logs and performance over time. You could continuously improve prompts, datasets, and models based on production data and annotations.
 
-## Upgrading
+**7. Backend-as-a-Service**:
+All of Dify&#039;s offerings come with corresponding APIs, so you could effortlessly integrate Dify into your own business logic.
 
-Check out our [upgrade guide](https://angular.dev/update-guide/) to find out the best way to upgrade your project.
+## Using Dify
+
+- **Cloud &lt;br/&gt;**
+  We host [Dify Cloud](https://cloud.dify.ai) so you can try Dify without managing a server. See the [pricing page](https://dify.ai/pricing) for current plans and usage allowances. If you run into issues, [contact our Cloud support team](mailto:cloud@dify.ai?subject=%5BGitHub%5DDify%20Cloud%20Support).
+
+- **Self-hosting Dify Community Edition&lt;br/&gt;**
+  Quickly get Dify running in your environment with this [starter guide](#quick-start).
+  Use our [documentation](https://docs.dify.ai) for further references and more in-depth instructions.
+
+- **[Dify Enterprise](https://dify.ai/dify-enterprise)&lt;br/&gt;**
+  For organizations requiring self-hosting, SSO, RBAC Security and Enterprise Support SLAs, please fill out [this form](https://share-na2.hsforms.com/14-09ff5HS92Sh4m3f4yrcw40s9fk) to speak to a solution representative. &lt;br/&gt;
+
+## Staying ahead
+
+Star Dify on GitHub and be instantly notified of new releases.
+
+&lt;img width=&quot;1344&quot; height=&quot;720&quot; alt=&quot;star&quot; src=&quot;https://github.com/user-attachments/assets/dcd086d1-af0f-471b-ae52-1ad2fa040595&quot; /&gt;
+
+## Advanced Setup
+
+For custom configuration, observability, and deployment options, see [Advanced Setup](docs/ADVANCED_SETUP.md).
 
 ## Contributing
 
-### Contributing Guidelines
+Dify welcomes contributions of all kinds:
 
-Read through our [contributing guidelines][contributing] to learn about our submission process, coding rules, and more.
+- **Code**: Read the [Contribution Guide](CONTRIBUTING.md), then browse [good first issues](https://github.com/langgenius/dify/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22).
+- **Ideas and feedback**: Start or join a [GitHub Discussion](https://github.com/langgenius/dify/discussions).
+- **Translations**: Follow the [internationalization guide](web/i18n/README.md) to add or update a locale.
+- **Community**: Share the apps you build, help other users, and spread the word about Dify.
 
-### Want to Help?
+### Contributors
 
-Want to report a bug, contribute some code, or improve the documentation? Excellent! Read up on our guidelines for [contributing][contributing] and then check out one of our issues labeled as &lt;kbd&gt;[help wanted](https://github.com/angular/angular/labels/help%20wanted)&lt;/kbd&gt; or &lt;kbd&gt;[good first issue](https://github.com/angular/angular/labels/good%20first%20issue)&lt;/kbd&gt;.
-
-### Code of Conduct
-
-Help us keep Angular open and inclusive. Please read and follow our [Code of Conduct][codeofconduct].
-
-## Community
-
-Join the conversation and help the community.
-
-- [X (formerly Twitter)][X (formerly Twitter)]
-- [Bluesky][bluesky]
-- [Discord][discord]
-- [YouTube][youtube]
-- [StackOverflow][stackoverflow]
-- Find a Local [Meetup][meetup]
-
-[![Love Angular badge](https://img.shields.io/badge/angular-love-blue?logo=angular&amp;angular=love)](https://www.github.com/angular/angular)
-
-**Love Angular? Give our repo a star :star: :arrow_up:.**
-
-[contributing]: CONTRIBUTING.md
-[quickstart]: https://angular.dev/tutorials/learn-angular
-[changelog]: CHANGELOG.md
-[ng]: https://angular.dev
-[documentation]: https://angular.dev/overview
-[angularmaterial]: https://material.angular.dev/
-[cli]: https://angular.dev/tools/cli
-[architecture]: https://angular.dev/essentials
-[componentstemplates]: https://angular.dev/tutorials/learn-angular/1-components-in-angular
-[forms]: https://angular.dev/tutorials/learn-angular/15-forms
-[api]: https://angular.dev/api
-[angularelements]: https://angular.dev/guide/elements
-[ssr]: https://angular.dev/guide/ssr
-[schematics]: https://angular.dev/tools/cli/schematics
-[lazyloading]: https://angular.dev/guide/routing/define-routes#lazily-loaded-components
-[node.js]: https://nodejs.org/
-[npm]: https://www.npmjs.com/get-npm
-[codeofconduct]: CODE_OF_CONDUCT.md
-[X (formerly Twitter)]: https://www.x.com/angular
-[bluesky]: https://bsky.app/profile/angular.dev
-[discord]: https://discord.gg/angular
-[stackoverflow]: https://stackoverflow.com/questions/tagged/angular
-[youtube]: https://youtube.com/angular
-[meetup]: https://www.meetup.com/find/?keywords=angular
-[animations]: https://angular.dev/guide/animations
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[remotion-dev/remotion]]></title>
-            <link>https://github.com/remotion-dev/remotion</link>
-            <guid>https://github.com/remotion-dev/remotion</guid>
-            <pubDate>Sun, 11 Oct 2026 00:07:53 GMT</pubDate>
-            <description><![CDATA[🎥 Make videos programmatically with React]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/remotion-dev/remotion">remotion-dev/remotion</a></h1>
-            <p>🎥 Make videos programmatically with React</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 63,065</p>
-            <p>Forks: 4,952</p>
-            <p>Stars today: 283 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/remotion-dev/logo&quot;&gt;
-    &lt;picture&gt;
-      &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng&quot;&gt;
-      &lt;img alt=&quot;Animated Remotion Logo&quot; src=&quot;https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif&quot;&gt;
-    &lt;/picture&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-
-[![Discord Shield](https://img.shields.io/discord/809501355504959528?color=000000&amp;label=Discord&amp;logo=fdgssdf)](https://remotion.dev/discord)
-[![NPM Version](https://img.shields.io/npm/v/remotion.svg?style=flat&amp;color=black)](https://www.npmjs.org/package/remotion)
-[![NPM Downloads](https://img.shields.io/npm/dm/remotion.svg?style=flat&amp;color=black&amp;label=Downloads)](https://npmcharts.com/compare/remotion?minimal=true)
-&lt;a href=&quot;https://twitter.com/remotion&quot;&gt;&lt;img src=&quot;https://img.shields.io/twitter/follow/remotion?label=Twitter&amp;color=black&quot; alt=&quot;Twitter&quot;&gt;&lt;/a&gt;
-
-Video tools for the agent era.
-
-## Video Creation
-
-- **Make videos agentically**: Turn your idea into a video using your coding agent.
-- **Make videos interactively**: Edit and animate using drag and drop.
-- **Make videos programmatically**: Connect to data, and manage complexity with code.
-
-React Code is the source of truth. Switch your workflow at any point.
-
-## Video Automation
-
-- **Design systems**: Create a library of animated assets for your organization.
-- **Batch rendering**: Render millions of videos on your own infrastructure.
-- **Applications**: Publish a simple tool or a complex video editor.
-
-## Get started
-
-If you already have Node.JS installed, type
-
-```console
-npx create-video@latest
-```
-
-to get started. Otherwise, read the [installation page](https://www.remotion.dev/docs/) in the documentation.
-
-## Discover Remotion
-
-Remotion is extensively documented over more than 1000 pages.
-
-- Get Started
-  - [Installation](https://remotion.dev/docs)
-  - [Agent Skills](https://www.remotion.dev/docs/ai/skills)
-  - [Prompts](https://www.remotion.dev/prompts)
-  - [Templates](https://remotion.dev/templates)
-- Components
-  - [Elements](https://remotion.dev/elements)
-  - [Effects](https://remotion.dev/effects)
-  - [Shapes](https://remotion.dev/docs/shapes)
-  - [Transitions](https://remotion.dev/transitions)
-  - [Sound Effects](https://remotion.dev/docs/sfx)
-  - [Captions](https://remotion.dev/docs/captions)
-  - [Fonts](https://remotion.dev/docs/fonts)
-- Rendering
-  - [Node.js APIs](https://www.remotion.dev/docs/ssr)
-  - [Lambda](https://www.remotion.dev/docs/lambda)
-  - [Vercel](https://www.remotion.dev/docs/vercel-sandbox)
-  - [Client-side rendering](https://www.remotion.dev/docs/client-side-rendering/)
-  - [Comparison of options](https://remotion.dev/docs/compare-ssr)
-- Making apps
-  - [Player](https://remotion.dev/docs/player)
-  - [Editor Starter](https://remotion.dev/editor-starter)
-  - [Mediabunny](https://remotion.dev/docs/mediabunny)
-- Community
-  - [Discord](https://remotion.dev/discord)
-  - [Experts](https://remotion.dev/experts)
-  - [Resources](https://remotion.dev/resources)
-  - [Contributing](https://remotion.dev/contributing)
-  - Follow us on [X](https://x.com/remotion), [YouTube](https://youtube.com/@remotion_dev), [Instagram](https://instagram.com/remotion), [LinkedIn](https://linkedin.com/company/remotion)
-- Commercial
-  - [License](https://remotion.dev/license)
-  - [Store](https://remotion.pro/store)
-  - [About Remotion](https://remotion.dev/about)
-  - [Showcase](https://remotion.dev/showcase)
-- Help
-  - [Support](https://remotion.dev/support)
-  - [Discord](https://remotion.dev/discord)
-  - [Search](https://remotion.dev/search)
-  - [Ask AI](https://remotion.dev/ai)
-  - [GitHub Issues](https://remotion.dev/issues)
-
-## Documentation
-
-Documentation: [**remotion.dev/docs**](https://www.remotion.dev/docs)  
-API Reference: [**remotion.dev/api**](https://www.remotion.dev/api)
-
-## License
-
-Be aware of that Remotion has a special license and requires obtaining a company license in some cases. Read the [LICENSE](LICENSE.md) page for more information.
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) to learn about contributing to this project.
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[zenbu-labs/terminal-browser]]></title>
-            <link>https://github.com/zenbu-labs/terminal-browser</link>
-            <guid>https://github.com/zenbu-labs/terminal-browser</guid>
-            <pubDate>Sun, 11 Oct 2026 00:07:52 GMT</pubDate>
-            <description><![CDATA[A browser inside your terminal]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/zenbu-labs/terminal-browser">zenbu-labs/terminal-browser</a></h1>
-            <p>A browser inside your terminal</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 3,786</p>
-            <p>Forks: 180</p>
-            <p>Stars today: 29 stars today</p>
-            <h2>README</h2><pre># terminal-browser
-
-
-A real browser that runs inside your terminal
-
-
-
-&lt;video src=&quot;https://github.com/user-attachments/assets/abe2f43e-fc50-4866-b753-33388967945d&quot; controls&gt;&lt;/video&gt;
-
-
-## Installation
-### curl (macOS &amp; Linux):
-
-```bash
-curl -fsSL https://terminal-browser.sh/install | bash
-```
-&gt; Note: Run `terminal-browser upgrade` to upgrade versions
-
-### Homebrew (macOS &amp; Linux):
-```
-brew install terminal-browser
-```
-
-### Windows
-To install on Windows you must be using WSL. Terminals with kitty graphics support are also very limited on Windows, the following are terminals I have tested that terminal-browser will work on inside Windows:
-- https://noctty.com/
- 
-```bash
-curl -fsSL https://terminal-browser.sh/install | bash
-```
-
-### Claude code plugin
-[Install instructions here](/claude-code-plugin/README.md)
-
-### Usage
-```
-terminal-browser # launches the browser
-terminal-browser open &lt;url&gt; # opens the browser at a url
-terminal-browser --split right # opens the browser in a split pane to the right
-terminal-browser open --ssh &lt;user@host&gt; &lt;url&gt; # performs all network requests through a remote server
-terminal-browser open --transparent &lt;url&gt; # the terminal background will show through pages without a background color
-terminal-browser ls # lists open browsers
-terminal-browser action # an agent-browser compatible cli for interacting with open terminal-browsers
-terminal-browser upgrade # upgrade to the latest version
-
-```
-
-
-
-
-### Use cases:
-- You can have a coding agent and website scoped to the same terminal tab
-- Your agent has full access to interact with open terminal-browsers, which gives your agent the capability to use the web
-- You can ask an agent to make HTML plans and then open them inside terminal-browser, which will automatically open in a split pane next to your agent
-- terminal-browser works over SSH, which allows you to preview websites running on remote machines easily
-
-### Shortcuts
-
-| Action | macOS | Linux |
-| --- | --- | --- |
-| Quit | ctrl+q or ctrl+c | ctrl+q |
-| New tab | cmd+t | ctrl+t |
-| Edit URL | cmd+l | ctrl+l |
-| Command palette | cmd+p | ctrl+k or alt+k |
-| Find in page | cmd+shift+f | ctrl+shift+f |
-| Next / previous match | enter / shift+enter | enter / shift+enter |
-| Reload | cmd+r | ctrl+r |
-| Back / forward | cmd+[ / cmd+] or ctrl+[ / ctrl+] | ctrl+[ / ctrl+] |
-| Zoom in / out / reset | your terminal&#039;s zoom keybind | your terminal&#039;s zoom keybind |
-| Devtools | cmd+shift+i or f12 | ctrl+shift+i or f12 |
-| Devtools console | cmd+alt+j | ctrl+alt+j |
-| Copy / paste / cut | cmd+c / cmd+v / cmd+x | ctrl+c / ctrl+v / ctrl+x |
-| Record page (start/stop) | ctrl+r | ctrl+shift+r |
-| Complete recording review | ctrl+enter | ctrl+enter |
-| Start element selection (send to agent) | ctrl+g | ctrl+g |
-| Close popup / overlay | escape | escape |
-
-
-
-### How does it work?
-Terminals that support the kitty graphics protocol, including ghostty, kitty, cmux, vscode and many more, allow a program running in a terminal to display pixels in your terminal. We use this capability to display pixels generated by chromium.
-
-We use [electrons offscreen rendering API](https://www.electronjs.org/docs/latest/tutorial/offscreen-rendering) to read pixels generated by chromium directly from the GPU. Any time a website visually changes, terminal-browser only sends small patches to the terminal that cover changed regions. These choices allows terminal-browser to render smoothly without dropping any frames.
-
-After the browser engine starts and is displaying pixels in the terminal, it needs to be able to read user input for websites to actually work. terminal-browser listens to mouse clicks, mouse position, and keyboard events from the terminal, and then sends synthetic events to chromium based on that data. For any user input events that are not retrievable from the terminal, we read directly from the operating system using a background swift app to listen for input events (non intrusively). This is what allows terminal-browser to implement smooth scrolling, and listen to trackpad events (websites with infinite canvases work great inside terminal-browser!)
-
-The outer UI of the browser is implemented using a graphics engine built on top of rust. The actual UI is defined inside react with a custom react renderer, which allows us to build the UI for the browser using typescript. The UI of the outer browser and the browser content itself is all drawn to the same shared canvas inside the rust engine, which allows us to layer UI on top of the browser.
-
-The underlying logic described here has been abstracted into a javascript library that you can use to build your own graphical applications in the terminal - [`pixel`](./pixel)
-
-### SSH
-The recommended way to use terminal-browser over ssh is running `terminal-browser --ssh &lt;ssh arguments&gt;`.
-
-The alternative is running terminal-browser directly on the machine you are shh&#039;d into. This will work, but:
-- requires every single frame drawn by the website to be sent over the network
-- all user input must be sent over the network before a website can react
-- misses out some [extra optimizations](https://sw.kovidgoyal.net/kitty/graphics-protocol/#local-client)
-
-`terminal-browser --ssh` improves on this by running the website on your local device, and simply proxying all network requests made by the browser via the remote machine over ssh. This means you can load any website running on `localhost` of the remote machine on your local device.
-
-
-
-### Embedded mode
-terminal-browser supports embedding inside of existing TUIs. See
-[examples/embedded](examples/embedded/) for a reference implementation
-
-### Telemetry
-
-terminal-browser collects psuedo-anonymous usage events that gives me the ability to see how many people are using the project, which is extremely helpful information for improving the project.
-
-telemetry can be disabled by any of the following:
-- DO_NOT_TRACK=1
-- TERMINAL_BROWSER_NO_TELEMETRY=1 
-- disabling via the settings GUI in general
-- terminal-browser config set telemetry.usage off
-
-All data that is sent is appended to `~/.local/state/terminal-browser-*/logs/telemetry.jsonl`, which allows you to audit no sensitive or identifying information is leaving your machine.
-
-terminal-browser also collects crash reports if terminal-browser fails to start or unexpected errors occur internally. This can be disabled by any of the following:
-- DO_NOT_TRACK=1
-- TERMINAL_BROWSER_NO_TELEMETRY=1 
-- disabling via the settings GUI in general
-- terminal-browser config set telemetry.crashReports off
-
-If you are using [pixel/](pixel/), no telemetry is ever active and there is nothing to disable.
-
-### Roadmap
-- linux support ✅
-- design mode ⏳
-- chrome extensions ⏳
-
-### Contributing
-
-- PR **descriptions** must be authored by humans and explained well, otherwise we will close them
-- When making a PR, the motivation must be clearly defined in the description
-- Minimize the size of your PR for the best chance to get it landed
-
-To get a local development setup of terminal-browser, the recommended way is to ask a coding agent.
-
-### Adding enhanced support for a new terminal
-`terminal-browser`&#039;s cli includes sub commands that rely on terminal/multiplexer scripting features. 
-To implement support for a terminal/multiplexer not yet supported, reference existing implementations
-located here https://github.com/zenbu-labs/terminal-browser/tree/main/terminals/src/terminals
-
-### [Discord](https://discord.gg/t3jzHHfc6z)
-
-### Acknowledgments
-- the [kitty](https://github.com/kovidgoyal/kitty) project for developing the kitty graphics protocol
-- [awrit](https://github.com/chase/awrit) - the first attempt to embed chromium inside a terminal
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[microsoft/vscode]]></title>
-            <link>https://github.com/microsoft/vscode</link>
-            <guid>https://github.com/microsoft/vscode</guid>
-            <pubDate>Sun, 11 Oct 2026 00:07:51 GMT</pubDate>
-            <description><![CDATA[Visual Studio Code]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/microsoft/vscode">microsoft/vscode</a></h1>
-            <p>Visual Studio Code</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 193,531</p>
-            <p>Forks: 45,012</p>
-            <p>Stars today: 40 stars today</p>
-            <h2>README</h2><pre># Visual Studio Code - Open Source (&quot;Code - OSS&quot;)
-[![Feature Requests](https://img.shields.io/github/issues/microsoft/vscode/feature-request.svg)](https://github.com/microsoft/vscode/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areactions-%2B1-desc)
-[![Bugs](https://img.shields.io/github/issues/microsoft/vscode/bug.svg)](https://github.com/microsoft/vscode/issues?utf8=✓&amp;q=is%3Aissue+is%3Aopen+label%3Abug)
-
-## The Repository
-
-This repository (&quot;`Code - OSS`&quot;) is where we (Microsoft) develop the [Visual Studio Code](https://code.visualstudio.com) product together with the community. Not only do we work on code and issues here, but we also publish our [roadmap](https://github.com/microsoft/vscode/wiki/Roadmap), [monthly iteration plans](https://github.com/microsoft/vscode/wiki/Iteration-Plans), and our [endgame plans](https://github.com/microsoft/vscode/wiki/Running-the-Endgame). This source code is available to everyone under the standard [MIT license](https://github.com/microsoft/vscode/blob/main/LICENSE.txt).
-
-## Visual Studio Code
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img alt=&quot;VS Code in action&quot; src=&quot;https://github.com/user-attachments/assets/56af271c-949d-454c-a3ea-16188c063414&quot;&gt;
-&lt;/p&gt;
-
-[Visual Studio Code](https://code.visualstudio.com) is a distribution of the `Code - OSS` repository with Microsoft-specific customizations released under a traditional [Microsoft product license](https://code.visualstudio.com/License/).
-
-[Visual Studio Code](https://code.visualstudio.com) combines the simplicity of a code editor with what developers need for their core edit-build-debug cycle. It provides comprehensive code editing, navigation, and understanding support along with lightweight debugging, a rich extensibility model, and lightweight integration with existing tools.
-
-Visual Studio Code is updated monthly with new features and bug fixes. You can download it for Windows, macOS, and Linux on the [Visual Studio Code website](https://code.visualstudio.com/Download). To get the latest releases every day, install the [Insiders build](https://code.visualstudio.com/insiders).
-
-## Contributing
-
-There are many ways in which you can participate in this project, for example:
-
-* [Submit bugs and feature requests](https://github.com/microsoft/vscode/issues), and help us verify them as they are checked in
-* Review [source code changes](https://github.com/microsoft/vscode/pulls)
-* Review the [documentation](https://github.com/microsoft/vscode-docs) and make pull requests for anything from typos to new content.
-
-If you are interested in fixing issues and contributing directly to the codebase, please see the document [How to Contribute](https://github.com/microsoft/vscode/wiki/How-to-Contribute), which covers the following:
-
-* [How to build and run from source](https://github.com/microsoft/vscode/wiki/How-to-Contribute)
-* [The development workflow, including debugging and running tests](https://github.com/microsoft/vscode/wiki/How-to-Contribute#debugging)
-* [Coding guidelines](https://github.com/microsoft/vscode/wiki/Coding-Guidelines)
-* [Submitting pull requests](https://github.com/microsoft/vscode/wiki/How-to-Contribute#pull-requests)
-* [Finding an issue to work on](https://github.com/microsoft/vscode/wiki/How-to-Contribute#where-to-contribute)
-* [Contributing to translations](https://aka.ms/vscodeloc)
-
-## Feedback
-
-* Ask a question on [Stack Overflow](https://stackoverflow.com/questions/tagged/vscode)
-* [Request a new feature](CONTRIBUTING.md)
-* Upvote [popular feature requests](https://github.com/microsoft/vscode/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areactions-%2B1-desc)
-* [File an issue](https://github.com/microsoft/vscode/issues)
-* Connect with the extension author community on [GitHub Discussions](https://github.com/microsoft/vscode-discussions/discussions) or [Slack](https://aka.ms/vscode-dev-community)
-* Follow [@code](https://x.com/code) and let us know what you think!
-
-See our [wiki](https://github.com/microsoft/vscode/wiki/Feedback-Channels) for a description of each of these channels and information on some other available community-driven channels.
-
-## Related Projects
-
-Many of the core components and extensions to VS Code live in their own repositories on GitHub. For example, the [node debug adapter](https://github.com/microsoft/vscode-node-debug) and the [mono debug adapter](https://github.com/microsoft/vscode-mono-debug) repositories are separate from each other. For a complete list, please visit the [Related Projects](https://github.com/microsoft/vscode/wiki/Related-Projects) page on our [wiki](https://github.com/microsoft/vscode/wiki).
-
-## Bundled Extensions
-
-VS Code includes a set of built-in extensions located in the [extensions](extensions) folder, including grammars and snippets for many languages. Extensions that provide rich language support (inline suggestions, Go to Definition) for a language have the suffix `language-features`. For example, the `json` extension provides coloring for `JSON` and the `json-language-features` extension provides rich language support for `JSON`.
-
-## Development Container
-
-This repository includes a Visual Studio Code Dev Containers / GitHub Codespaces development container.
-
-* For [Dev Containers](https://aka.ms/vscode-remote/download/containers), use the **Dev Containers: Clone Repository in Container Volume...** command, which creates a Docker volume for better disk I/O on macOS and Windows.
-  * If you already have VS Code and Docker installed, you can also click [here](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/vscode) to get started. This will cause VS Code to automatically install the Dev Containers extension if needed, clone the source code into a container volume, and spin up a dev container for use.
-
-* For Codespaces, install the [GitHub Codespaces](https://marketplace.visualstudio.com/items?itemName=GitHub.codespaces) extension in VS Code, and use the **Codespaces: Create New Codespace** command.
-
-Docker / the Codespace should have at least **4 cores and 6 GB of RAM (8 GB recommended)** to run a full build. See the [development container README](.devcontainer/README.md) for more information.
-
-## Code of Conduct
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-## License
-
-Copyright (c) Microsoft Corporation. All rights reserved.
-
-Licensed under the [MIT](LICENSE.txt) license.
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[Vincentwei1021/video-shotcraft]]></title>
-            <link>https://github.com/Vincentwei1021/video-shotcraft</link>
-            <guid>https://github.com/Vincentwei1021/video-shotcraft</guid>
-            <pubDate>Sun, 11 Oct 2026 00:07:50 GMT</pubDate>
-            <description><![CDATA[AI video skill for Claude Code & Codex — cinematic product videos with Remotion: 152 shot recipe cards, 209 motion previews, a production-ready template]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/Vincentwei1021/video-shotcraft">Vincentwei1021/video-shotcraft</a></h1>
-            <p>AI video skill for Claude Code & Codex — cinematic product videos with Remotion: 152 shot recipe cards, 209 motion previews, a production-ready template</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 11,179</p>
-            <p>Forks: 997</p>
-            <p>Stars today: 142 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-
-&lt;picture&gt;
-  &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;./assets/brand/logo-mark-reverse.svg&quot;&gt;
-  &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;./assets/brand/logo-mark.svg&quot;&gt;
-  &lt;img alt=&quot;video-shotcraft logo&quot; src=&quot;./assets/brand/logo-mark.svg&quot; width=&quot;112&quot; height=&quot;112&quot;&gt;
-&lt;/picture&gt;
-
-&lt;h1&gt;video-shotcraft&lt;/h1&gt;
-
-[![Gallery](https://img.shields.io/badge/Gallery-live%20previews-d3923c)](https://vincentwei1021.github.io/video-shotcraft/)
-[![Showcase](https://img.shields.io/badge/Showcase-community%20videos-7c3aed)](https://vincentwei1021.github.io/video-shotcraft/showcase.html)
-[![GitHub stars](https://img.shields.io/github/stars/Vincentwei1021/video-shotcraft)](https://github.com/Vincentwei1021/video-shotcraft/stargazers)
-[![AtomGit Star](https://atomgit.com/VincentWei/video-shotcraft/star/badge.svg)](https://atomgit.com/VincentWei/video-shotcraft)
-
-&lt;a href=&quot;https://trendshift.io/repositories/88911?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-88911&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/trendshift/repositories/88911/daily?language=TypeScript&quot; alt=&quot;Vincentwei1021%2Fvideo-shotcraft | Trendshift&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://trendshift.io/repositories/88911?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-88911&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/trendshift/repositories/88911/weekly?language=TypeScript&quot; alt=&quot;Vincentwei1021%2Fvideo-shotcraft | Trendshift&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
-
-**An agent skill for crafting cinematic product videos: 157 shot recipe cards · 214 styles · 214 motion previews · a production-ready template**
-
-[English](README.md) | [中文](README_CN.md) | [日本語](README_JA.md)
-
-&lt;/div&gt;
-
-**video-shotcraft** is an AI agent skill that turns Claude Code or Codex into a
-motion-design studio: point it at your product and it storyboards, animates, and
-sound-designs a cinematic promo, marketing, launch, or demo video with
-[Remotion](https://www.remotion.dev/) — real page captures, 2.5D camera moves,
-beat-synced cuts, and film-grade SFX included.
-
-🎬 [**Watch finished films in the Showcase »**](https://vincentwei1021.github.io/video-shotcraft/showcase.html) — see what makers have created with video-shotcraft.
-
-🖼️ [**Browse all 214 motion previews in the live Gallery »**](https://vincentwei1021.github.io/video-shotcraft/)
-
-## ✨ What&#039;s new
-
-- **One-click film themes:** switch the template between Ink Press, Modern Light, Midnight, Sage, Coral, Iris, Deep Ocean, Obsidian Violet, and Vintage Kraft in the workbench while keeping your edits. [Theme guide](template/THEMES.md).
-
-&gt; [!IMPORTANT]
-&gt; ### 🔥 2026-08 · New in the series: **video-talkcraft**, for narration videos
-&gt; [**video-talkcraft**](https://github.com/Vincentwei1021/video-talkcraft) is the
-&gt; narration-video installment of this series. Hand it a script plus a finished
-&gt; voiceover and every motion beat locks to the voice: word-level timestamps
-&gt; aligned locally (median 20–40 ms per character), **78 motion recipe cards**, a
-&gt; 7-layer anti-slideshow shot system (continuous camera curves, parallax planes,
-&gt; idle/yield lifecycle, breathing environment), plain-cut subtitles, and
-&gt; triple-gate QA. Same recipe-card + Remotion workflow as here, retuned for
-&gt; talking content.
-&gt;
-&gt; 🎙️ [**Project page »**](https://github.com/Vincentwei1021/video-talkcraft) ·
-&gt; 🖼️ [**Browse all 78 narration motion previews »**](https://vincentwei1021.github.io/video-talkcraft/)
-
-&gt; [!IMPORTANT]
-&gt; ### 🛠️ 2026-09 · New: the **Motion Workbench** — keep editing the delivered film in your browser
-&gt; After delivery the skill opens a CapCut-style workbench
-&gt; (`node workbench/scripts/open.mjs &lt;project&gt;`). The film is decomposed into
-&gt; shot / transition / caption / SFX tracks exactly as authored; select any shot
-&gt; and edit its copy, font sizes and colours in a schema-driven inspector, move,
-&gt; trim or speed-ramp clips, drag any of the **216 demo motions** in from the
-&gt; library, then export with Remotion. Preview and render are frame-identical
-&gt; (pixel-parity verified).
-&gt;
-&gt; ![Motion Workbench](workbench/docs/overview.png)
-&gt;
-&gt; 🧭 [**Workbench guide — every panel and feature, with screenshots »**](workbench/GUIDE.md) (Chinese) ·
-&gt; 🔌 [**Integration contract »**](references/workbench.md)
-
-- 🌟 **2026-08 · 48 new shot recipe cards** — the library grows from 104 to
-  **152 cards / 209 previews**. Distilled from 209 candidate motions through
-  eight rounds of frame-by-frame review against reference footage, then folded
-  into the regular Gallery categories with full recipe cards, native Remotion
-  components (`demos/&lt;category&gt;/&lt;name&gt;/&lt;Component&gt;.tsx`, deterministic and
-  driven by the normalized progress `t` — see demos/README.md for the wiring
-  snippet), and motion previews. All de-branded: neutral placeholder copy and a
-  single swappable `ACCENT` color variable.
-- 🎞️ **2026-08 · JianYing (CapCut CN) project export** — after final delivery
-  the film can be exported as an editable JianYing draft: the plate is cut per
-  shot (retime/reorder/grade), captions are rebuilt as native text tracks
-  (content/size/color editable), SFX/BGM land on separate audio tracks.
-  Verified on JianYing Pro 11.2 for macOS; see
-  [references/jianying-export.md](references/jianying-export.md).
-
-## 🎬 Showcase
-
-The 38-second Gallery intro below was itself produced with this skill —
-storyboard, shot implementation, and sound design were all done by an agent
-following the toolkit&#039;s methodology:
-
-https://github.com/user-attachments/assets/cba2df8a-4b2e-4247-bace-d0b1dea9c2bd
-
-▶️ [Watch in HD on YouTube](https://youtu.be/gcVvRM_P3SM)
-
-&gt; Watch finished product films made with this skill: **[Showcase](https://vincentwei1021.github.io/video-shotcraft/showcase.html)**
-&gt; — community submissions sit alongside the project&#039;s own demos.
-&gt;
-&gt; Browse every shot card and motion preview online: **[Gallery](https://vincentwei1021.github.io/video-shotcraft/)**
-&gt; — search, filter, switch between variants, and copy selected shot-card names.
-
-## 🚀 Quick start
-
-**The most direct way: hand the repo link to your agent.**
-In Claude Code / Codex or a similar agent, just say:
-
-```text
-Install this skill for me: https://github.com/Vincentwei1021/video-shotcraft
-```
-
-The agent will clone the repo and link it into your skills directory. Or install
-with the [skills](https://skills.sh/) CLI / manually:
-
-```bash
-npx skills add Vincentwei1021/video-shotcraft
-```
-
-```bash
-git clone https://github.com/Vincentwei1021/video-shotcraft.git
-cd video-shotcraft
-ln -s &quot;$(pwd)&quot; ~/.claude/skills/video-shotcraft   # Claude Code
-# or
-ln -s &quot;$(pwd)&quot; ~/.codex/skills/video-shotcraft    # Codex
-```
-
-Then make requests like:
-
-```text
-Use video-shotcraft to create a promo for my desktop product.
-Use the deck-deal-flyin and row-embed shot cards to present this feature.
-Design a product close-up inspired by spotlight-hero-card.
-```
-
-If no shot card is specified, the skill introduces the built-in video template
-first and asks whether to use it; you can also pick shots in the
-[Gallery](https://vincentwei1021.github.io/video-shotcraft/) before starting.
-
-## 📼 Video template: Ink Press
-
-The skill ships with **Ink Press** — a validated, complete promo template:
-36.2 seconds, 1920×1080, 30fps, 10 shots in a paper-ink-amber style, with 2.5D
-real-page camera moves, title cards, transitions, and a fully pinned cinematic
-SFX pass:
-
-https://github.com/user-attachments/assets/4cf5af51-98f3-4af2-8ab2-7267f470513d
-
-▶️ [Watch in HD on YouTube](https://youtu.be/iShab28B_ak)
-
-To use it, just tell your agent:
-
-```text
-Use video-shotcraft to make a promo for my product with the Ink Press template.
-```
-
-The agent swaps in your product&#039;s screenshots, copy, and branding to reproduce
-the same quality — the fastest, most reliable path to a finished film.
-
-&gt; More templates are on the way.
-
-### Headless / CI notes
-
-Rendering on a headless Linux box (tested: 2 cores, Node 22) hits three walls
-worth knowing:
-
-1. **Concurrency cap** — `remotion still/render` fails with &quot;Maximum for
-   --concurrency is 2&quot; on low-core machines. Fix: pass `--concurrency=1`.
-2. **Old Headless removal** — recent Chrome/Chromium dropped old headless mode;
-   pointing Remotion at system chromium fails to launch. Fix: use a
-   chrome-headless-shell binary instead of full Chrome.
-3. **Blocked CDN** — if remotion.media is unreachable, the automatic
-   headless-shell download is rejected. Fix:
-   `--browser-executable=&lt;path-to-local chrome-headless-shell&gt;`.
-
-With these three flags, frame renders from the bundled template work.
-
-## 📦 What&#039;s included
-
-| Content | Description |
-| --- | --- |
-| 157 shot recipe cards | Purpose, energy, suggested duration, parameters, implementation notes, and known pitfalls |
-| 214 motion previews | Covering 214 styles; searchable and filterable in the online Gallery |
-| Remotion implementations | Tuned TSX demos containing the actual easing and timing parameters for each card |
-| Complete video template | A validated 36.2-second, 1920×1080, 30fps product promo with 10 shots |
-| Components and assets | 2.5D page camera, captions, flash cuts, digit rolls, SFX, and capture scripts |
-| Production methodology | Capture, visual direction, storyboarding, sound design, beat sync, and final QA |
-| JianYing project export | Load the film into JianYing (CapCut CN) for further editing — per-shot speed, captions, and audio all editable (verified on macOS 11.2) |
-| Motion workbench | Browser timeline editor opened after delivery: split the film into tracks, edit exposed shot properties, retime, drag in any of the 216 demo motions, export via Remotion |
-
-The toolkit primarily targets web and desktop product promos, while individual
-shot cards can also be used in feature demos, brand films, launch videos, and
-other motion projects.
-
-## 🗂 Repository structure
-
-```text
-video-shotcraft/
-├── SKILL.md                 # Agent entry point and core production rules
-├── references/
-│   ├── pipeline.md          # End-to-end production workflow
-│   ├── shots/               # 157 shot recipe cards in 10 functional categories
-│   ├── sequences/           # Reusable full-video structures and sequence patterns
-│   ├── aesthetic-rules.md   # Visual QA criteria
-│   ├── music-beat-sync.md   # BGM analysis and beat-sync methodology
-│   ├── sound-design.md      # Sound-design guidance and examples
-│   ├── jianying-export.md   # JianYing (CapCut CN) project-export guide
-│   └── workbench.md         # Motion workbench: manifest contract + editability rules
-├── demos/                   # Remotion reference implementations (same categories)
-├── gallery/                 # Static motion-preview Gallery
-├── template/                # Runnable complete video template
-├── jianying-export/         # JianYing draft installers (mac tested / win untested)
-├── workbench/               # Post-delivery motion workbench (Vite + Remotion Player)
-└── assets/
-    ├── lib/                 # Reusable Remotion components
-    ├── scripts/             # Page-asset capture scripts
-    └── audio/               # Audio assets
-        ├── bgm/             # 5 BGM options
-        └── sfx/&lt;category&gt;/  # 149 SFX across 16 scene categories
-```
-
-For the complete workflow and implementation requirements, see [SKILL.md](SKILL.md),
-the [production pipeline](references/pipeline.md), and the
-[visual QA criteria](references/aesthetic-rules.md).
-
-## 🔊 Audio and asset notes
-
-Audio files under `assets/audio/` may be used according to their respective license terms.
-See [ATTRIBUTION.md](assets/audio/ATTRIBUTION.md) for sources and license details.
-
-SFX are organized into 16 scene/material categories (`transition` `impact` `riser`
-`camera` `ui` `text` `paper` `film` `light` `data` `scifi` `mech` `glass` `fluid`
-`crowd` `counter`) — **pick the category first, then the timbre**. See
-[sound-design.md](references/sound-design.md) for the category index and per-file usage.
-
-Product screenshots bundled with the template are demonstration assets. Replace them with
-screenshots from the target product before publishing, and verify whether any product,
-customer, or personal data needs to be anonymized.
-
-## 🙏 Acknowledgements
-
-Many shot recipes in this library were distilled by studying the motion language
-of outstanding official product films — including promos from **ClickUp,
-Perplexity, Slack, Notion, Figma, Framer, Bear, Raycast, Pitch, Miro, Superhuman,
-and Loom**. The cards document motion techniques (timing, easing, choreography)
-re-implemented from scratch; no footage, artwork, or brand assets from these
-films are included in this repository. All trademarks belong to their respective
-owners, and none of these companies are affiliated with or endorse this project.
-Per-batch sourcing notes for the 48 cards added in 2026-08 live in
-[references/shots/ATTRIBUTION.md](references/shots/ATTRIBUTION.md).
-
-Special thanks to:
-
-- **[Remotion](https://www.remotion.dev/)** — the React-based video framework
-  that powers every demo and template here. Note that Remotion has its own
-  [license](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md)
-  (free for individuals and small teams; companies may need a paid license).
-- **[Mixkit](https://mixkit.co/)** — source of the SFX and music assets bundled
-  under their free commercial license.
-- The game-feel and animation communities whose published principles (e.g.
-  Vlambeer&#039;s screenshake talks, classic animation timing) inform several cards.
-- **Claude Code** — this library itself was built, iterated, and QA&#039;d with an
-  AI coding agent, using the same workflow the skill teaches.
-
-## Follow me
-
-&lt;p&gt;
-  &lt;a href=&quot;https://x.com/VincentWei93&quot;&gt;&lt;img alt=&quot;Follow Vincent on X&quot; src=&quot;https://img.shields.io/badge/X-Follow_Me-000000?style=for-the-badge&amp;logo=x&amp;logoColor=white&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://www.douyin.com/user/MS4wLjABAAAAK1pkjBxilk2Oi_9h_vFyD-lTAu9CTlvhmOtkosDvvxg&quot;&gt;&lt;img alt=&quot;Follow Vincent on Douyin&quot; src=&quot;https://img.shields.io/badge/Douyin-Follow_Me-000000?style=for-the-badge&amp;logo=tiktok&amp;logoColor=white&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://xhslink.cn/m/At9iP2d5C1V&quot;&gt;&lt;img alt=&quot;Follow Vincent on Red Note&quot; src=&quot;https://img.shields.io/badge/Red_Note-Follow_Me-FF2442?style=for-the-badge&amp;logo=xiaohongshu&amp;logoColor=white&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-## ⭐ Star history
-
-&lt;a href=&quot;https://www.star-history.com/?repos=Vincentwei1021%2Fvideo-shotcraft&amp;type=date&amp;legend=top-left&quot;&gt;
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/chart?repos=Vincentwei1021/video-shotcraft&amp;type=date&amp;theme=dark&amp;legend=top-left&amp;sealed_token=DQ8_yn0k8in6tP80CRd9Ghuk1fcdEW7poFh9ticGB3wMNO-E_i6g51sUiQWCAQYP0u0bjRweuIfGoRS8FnrIz86oFp1lcl5zu2vrEJrQOoNvwdUSwmm8XNPkAiln1o-EBAX0uU8k6ReIlSRufGLqpoxsWshMSZ9mmok6ox5XXIUO77b7zOgp2yRIH6yR&quot; /&gt;
-    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/chart?repos=Vincentwei1021/video-shotcraft&amp;type=date&amp;legend=top-left&amp;sealed_token=DQ8_yn0k8in6tP80CRd9Ghuk1fcdEW7poFh9ticGB3wMNO-E_i6g51sUiQWCAQYP0u0bjRweuIfGoRS8FnrIz86oFp1lcl5zu2vrEJrQOoNvwdUSwmm8XNPkAiln1o-EBAX0uU8k6ReIlSRufGLqpoxsWshMSZ9mmok6ox5XXIUO77b7zOgp2yRIH6yR&quot; /&gt;
-    &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/chart?repos=Vincentwei1021/video-shotcraft&amp;type=date&amp;legend=top-left&amp;sealed_token=DQ8_yn0k8in6tP80CRd9Ghuk1fcdEW7poFh9ticGB3wMNO-E_i6g51sUiQWCAQYP0u0bjRweuIfGoRS8FnrIz86oFp1lcl5zu2vrEJrQOoNvwdUSwmm8XNPkAiln1o-EBAX0uU8k6ReIlSRufGLqpoxsWshMSZ9mmok6ox5XXIUO77b7zOgp2yRIH6yR&quot; /&gt;
-  &lt;/picture&gt;
+&lt;a href=&quot;https://github.com/langgenius/dify/graphs/contributors&quot;&gt;
+  &lt;img alt=&quot;Dify contributors&quot; src=&quot;https://contrib.rocks/image?repo=langgenius/dify&quot; /&gt;
 &lt;/a&gt;
+
+## Community &amp; contact
+
+Choose the channel that best fits your question:
+
+- [GitHub Discussions](https://github.com/langgenius/dify/discussions): Get help, share feedback, and propose ideas.
+- [GitHub Issues](https://github.com/langgenius/dify/issues): Report reproducible bugs and track engineering work. Read the [Contribution Guide](CONTRIBUTING.md) before opening one.
+- [Discord](https://discord.gg/FngNHpbcY7): Chat in real time, share your apps, and connect with other Dify users.
+- [X](https://x.com/dify_ai): Follow Dify for release news and project updates.
+
+## Star History
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=langgenius/dify&amp;type=date&amp;legend=top-left)](https://star-history.dera.page/langgenius/dify?type=date&amp;legend=top-left#gh-light-mode-only) [![Star History Chart](https://star-history.dera.page/svg?repos=langgenius/dify&amp;type=date&amp;theme=dark&amp;legend=top-left)](https://star-history.dera.page/langgenius/dify?type=date&amp;legend=top-left#gh-dark-mode-only)
+
+## Security disclosure
+
+Report vulnerabilities privately through GitHub Security Advisories, following our [security policy](SECURITY.md). Do not disclose them in public issues, discussions, or pull requests.
+
+## License
+
+This repository is licensed under the [Dify Open Source License](LICENSE), based on Apache 2.0 with additional conditions.
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[appwrite/appwrite]]></title>
-            <link>https://github.com/appwrite/appwrite</link>
-            <guid>https://github.com/appwrite/appwrite</guid>
-            <pubDate>Sun, 11 Oct 2026 00:07:49 GMT</pubDate>
-            <description><![CDATA[The open-source cloud for agents & devs. Including Auth, Databases, Storage, Functions, Messaging, Hosting, Realtime, WAF and more]]></description>
+            <title><![CDATA[openclaw/openclaw]]></title>
+            <link>https://github.com/openclaw/openclaw</link>
+            <guid>https://github.com/openclaw/openclaw</guid>
+            <pubDate>Mon, 12 Oct 2026 00:07:40 GMT</pubDate>
+            <description><![CDATA[The AI that really does things. Any OS. Any Platform. The lobster way. 🦞]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/appwrite/appwrite">appwrite/appwrite</a></h1>
-            <p>The open-source cloud for agents & devs. Including Auth, Databases, Storage, Functions, Messaging, Hosting, Realtime, WAF and more</p>
+            <h1><a href="https://github.com/openclaw/openclaw">openclaw/openclaw</a></h1>
+            <p>The AI that really does things. Any OS. Any Platform. The lobster way. 🦞</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 57,627</p>
-            <p>Forks: 5,776</p>
-            <p>Stars today: 11 stars today</p>
-            <h2>README</h2><pre>&lt;img width=&quot;1920&quot; height=&quot;1080&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/55a81268-4ecc-46cd-bdf5-73f7e8662fee&quot; /&gt;
+            <p>Stars: 391,699</p>
+            <p>Forks: 82,365</p>
+            <p>Stars today: 164 stars today</p>
+            <h2>README</h2><pre># OpenClaw 🦞 — Your assistant, on your devices, in your chats
 
-&lt;br /&gt;
 &lt;p align=&quot;center&quot;&gt;
-    &lt;h1&gt;Appwrite&lt;/h1&gt;
-    &lt;b&gt;The open-source cloud for agents and developers. Appwrite is an MCP and agent-first platform for building and scaling apps. Give your agents Auth, Databases, Storage, Functions, Messaging, Realtime, and Hosting, all in one place.&lt;/b&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/openclaw-banner-light.png&quot;&gt;
+    &lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/openclaw-banner-dark.png&quot; alt=&quot;OpenClaw — EXFOLIATE! EXFOLIATE! Your AI assistant, running on your own devices.&quot;&gt;
+  &lt;/picture&gt;
 &lt;/p&gt;
 
-[![Discord](https://img.shields.io/badge/chat-5865F2?style=flat-square&amp;logo=discord&amp;logoColor=white)](https://appwrite.io/discord)
-[![X](https://img.shields.io/badge/follow-000000?style=flat-square&amp;logo=x&amp;logoColor=white)](https://x.com/appwrite)
-[![Appwrite Cloud](https://img.shields.io/badge/Cloud-F02E65?style=flat-square&amp;logo=icloud&amp;logoColor=white)](https://cloud.appwrite.io)
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://github.com/openclaw/openclaw/actions/workflows/ci.yml&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/actions/workflow/status/openclaw/openclaw/ci.yml?branch=main&amp;style=flat-square&amp;label=ci&quot; alt=&quot;CI status&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://www.npmjs.com/package/openclaw&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/v/openclaw?style=flat-square&amp;label=npm&quot; alt=&quot;npm version&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://nodejs.org&quot;&gt;&lt;img src=&quot;https://img.shields.io/node/v/openclaw?style=flat-square&quot; alt=&quot;Node.js version&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/license-MIT-green?style=flat-square&quot; alt=&quot;License: MIT&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://discord.gg/clawd&quot;&gt;&lt;img src=&quot;https://img.shields.io/discord/1456350064065904867?label=discord&amp;logo=discord&amp;logoColor=white&amp;color=5865F2&amp;style=flat-square&quot; alt=&quot;Discord&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
 
-English | [简体中文](README-CN.md)
+OpenClaw is an open-source AI assistant that runs on your own computer and meets you in the channels you already use: Discord, iMessage, Slack, Teams, Telegram, WhatsApp, and 20+ more, plus native apps for macOS, iOS, Android, Windows, and Linux. One Gateway runs it as a personal assistant on a laptop or as a shared [team deployment](https://docs.openclaw.ai/start/teams); configuration is the only difference.
 
-Appwrite is an MCP and agent-first, open-source platform for building and scaling apps. MCP is included, so coding agents can operate on a live Appwrite project. Appwrite is available as a managed cloud platform and can also be self-hosted on infrastructure you control.
+**Yours, with no catch.** State, memory, and credentials live on your hardware. Models and agent harnesses (Claude, Codex, local models) are plugins you can swap without changing anything else. Your prompts go to the model provider and chat platforms you configure, plus any diagnostics export you enable yourself; by default OpenClaw itself phones home for nothing but a daily version check, anonymous feature statistics are opt-in, and `update.checkOnStart: false` disables both ([what OpenClaw sends](https://docs.openclaw.ai/gateway/telemetry)). OpenClaw is stewarded by the [OpenClaw Foundation](https://openclaw.org), an independent 501(c)(3), and has no paid tier, hosted service, or token. The architecture case — trusted gateway, untrusted execution, deterministic policy — is in [Why OpenClaw](https://docs.openclaw.ai/start/why-openclaw).
 
-It is designed for the AI agents in your workflow as well as for developers. Connect Cursor, Claude Code, Codex, and other agents through the hosted MCP server, or integrate an SDK into your app. Modular products stay unified from the first prototype to production scale.
+[Website](https://openclaw.ai) · [Docs](https://docs.openclaw.ai) · [Getting started](https://docs.openclaw.ai/start/getting-started) · [Why OpenClaw](https://docs.openclaw.ai/start/why-openclaw) · [FAQ](https://docs.openclaw.ai/help/faq) · [Vision](VISION.md) · [DeepWiki](https://deepwiki.com/openclaw/openclaw)
 
-Find out more at [https://appwrite.io](https://appwrite.io).
+## Install
 
-Table of Contents:
-
-- [Products](#products)
-- [Installation \&amp; Setup](#installation--setup)
-- [Self-Hosting](#self-hosting)
-  - [Unix](#unix)
-  - [Windows](#windows)
-    - [CMD](#cmd)
-    - [PowerShell](#powershell)
-  - [Docker API version mismatch](#docker-api-version-mismatch)
-  - [Upgrade from an Older Version](#upgrade-from-an-older-version)
-- [One-Click Setups](#one-click-setups)
-- [Getting Started](#getting-started)
-  - [Agents](#agents)
-  - [SDKs](#sdks)
-    - [Client](#client)
-    - [Server](#server)
-- [Architecture](#architecture)
-- [Contributing](#contributing)
-- [Security](#security)
-- [Follow Us](#follow-us)
-- [License](#license)
-
-
-## Products
-
-- **[Appwrite Auth](https://appwrite.io/docs/products/auth)** - Authenticate users securely with email, SMS, OAuth, anonymous sessions, and magic URLs.
-
-- **[Appwrite Databases](https://appwrite.io/docs/products/databases)** - Model, query, and scale with Appwrite databases or managed PostgreSQL and MySQL, so you can match your use case and team needs.
-
-- **[Appwrite Storage](https://appwrite.io/docs/products/storage)** - Store files with compression, encryption, image transformations, and access control.
-
-- **[Appwrite Functions](https://appwrite.io/docs/products/functions)** - Deploy serverless functions with secure isolated runtimes and event-driven execution.
-
-- **[Appwrite Sites](https://appwrite.io/docs/products/sites)** - Deploy static, SSR, and CSR frontends from Git with instant previews and Appwrite behind them.
-
-- **[Appwrite Messaging](https://appwrite.io/docs/products/messaging)** - Send email, SMS, and push notifications through a unified messaging service.
-
-- **[Appwrite Firewall](https://appwrite.io/docs/products/network)** - Protect apps with traffic rules, abuse controls, and edge security for every project.
-
-- **[Appwrite Realtime](https://appwrite.io/docs/apis/realtime)** - Subscribe and react to events across your project as they happen.
-
-- **[Appwrite MCP](https://appwrite.io/docs/tooling/ai/mcp-servers/api)** - Connect agents to your Appwrite project, APIs, and docs. MCP is included on Cloud, with no local install required.
-
-
-## Installation &amp; Setup
-
-The easiest way to get started with Appwrite is by [signing up for Appwrite Cloud](https://cloud.appwrite.io/). Cloud includes a [Free plan](https://appwrite.io/pricing) so you can start building immediately, with paid plans when you need to scale.
-
-## Self-Hosting
-
-Appwrite was designed from the ground up with self-hosting in mind. You can install and run Appwrite on any operating system that can run a [Docker CLI](https://www.docker.com/products/docker-desktop). Running your server is as easy as running one command from your terminal.
-
-Before running the installation command, make sure you have [Docker](https://www.docker.com/products/docker-desktop) installed on your machine. The setup wizard listens on port **20080** and is published on localhost only. It also prints a one-time installer secret to STDOUT — open the printed URL (or send `x-appwrite-installer-secret`) to complete setup. For a remote host, SSH-tunnel to `127.0.0.1:20080` rather than publishing the port on all interfaces.
-
-### Unix
+The installer supports macOS, Linux, and Windows. It provisions a supported Node.js runtime when needed.
 
 ```bash
-docker run -it --rm \
-    --publish 127.0.0.1:20080:20080 \
-    --volume /var/run/docker.sock:/var/run/docker.sock \
-    --volume &quot;$(pwd)&quot;/appwrite:/usr/src/code/appwrite:rw \
-    --entrypoint=&quot;install&quot; \
-    appwrite/appwrite:2.4.0
+# macOS / Linux / WSL2
+curl -fsSL https://openclaw.ai/install.sh | bash
 ```
-
-### Windows
-
-#### CMD
-
-```cmd
-docker run -it --rm ^
-    --publish 127.0.0.1:20080:20080 ^
-    --volume //var/run/docker.sock:/var/run/docker.sock ^
-    --volume &quot;%cd%&quot;/appwrite:/usr/src/code/appwrite:rw ^
-    --entrypoint=&quot;install&quot; ^
-    appwrite/appwrite:2.4.0
-```
-
-#### PowerShell
 
 ```powershell
-docker run -it --rm `
-    --publish 127.0.0.1:20080:20080 `
-    --volume /var/run/docker.sock:/var/run/docker.sock `
-    --volume ${pwd}/appwrite:/usr/src/code/appwrite:rw `
-    --entrypoint=&quot;install&quot; `
-    appwrite/appwrite:2.4.0
+# Windows PowerShell
+iwr -useb https://openclaw.ai/install.ps1 | iex
 ```
 
-Once the installer is running, open the URL printed in the terminal (it includes a one-time secret) to complete the setup wizard. After installation, go to http://localhost to access the Appwrite console from your browser. Please note that on non-Linux native hosts, the server might take a few minutes to start after completing the installation.
-
-### Docker API version mismatch
-
-If install or upgrade fails with an error like `client version 1.52 is too new. Maximum supported API version is 1.42`, the Docker CLI inside the Appwrite image is newer than your host Docker Engine. Pass `DOCKER_API_VERSION` set to the maximum API version from the error (or upgrade Docker on the host):
+Already manage Node.js? Install the published package instead (Node 24.16+ or 26.1+; Node 26 recommended):
 
 ```bash
-docker run -it --rm \
-    --env DOCKER_API_VERSION=1.42 \
-    --publish 127.0.0.1:20080:20080 \
-    --volume /var/run/docker.sock:/var/run/docker.sock \
-    --volume &quot;$(pwd)&quot;/appwrite:/usr/src/code/appwrite:rw \
-    --entrypoint=&quot;install&quot; \
-    appwrite/appwrite:2.4.0
+npm install -g openclaw@latest --allow-scripts=openclaw
 ```
 
-Use the same `--env DOCKER_API_VERSION=...` flag with `--entrypoint=&quot;upgrade&quot;` when upgrading.
+That command is for npm 12 or npm 11.16+. On npm 11.15 and earlier, omit
+`--allow-scripts=openclaw`. See the
+[installation guide](https://docs.openclaw.ai/install) for the lifecycle script
+contract, Docker, Nix, and other deployment paths.
 
-For advanced production and custom installation, check out our Docker [environment variables](https://appwrite.io/docs/advanced/self-hosting/configuration/environment-variables) docs. You can also use our public [docker-compose.yml](https://appwrite.io/install/compose) and [.env](https://appwrite.io/install/env) files to manually set up an environment.
+## Quick start
 
-### Upgrade from an Older Version
-
-If you are upgrading your Appwrite server from an older version, you should use the Appwrite migration tool once your setup is completed. For more information regarding this, check out the [migration instructions](https://appwrite.io/docs/advanced/self-hosting/production/updates).
-
-## One-Click Setups
-
-In addition to running Appwrite locally, you can launch Appwrite using a pre-configured marketplace app for instant setup.
-
-Choose from one of the providers below:
-
-&lt;table border=&quot;0&quot;&gt;
-  &lt;tr&gt;
-    &lt;td align=&quot;center&quot; width=&quot;100&quot; height=&quot;100&quot;&gt;
-      &lt;a href=&quot;https://marketplace.digitalocean.com/apps/appwrite&quot;&gt;
-        &lt;img width=&quot;50&quot; height=&quot;39&quot; src=&quot;public/images/integrations/digitalocean-logo.svg&quot; alt=&quot;DigitalOcean Logo&quot; /&gt;
-        &lt;br /&gt;&lt;sub&gt;&lt;b&gt;DigitalOcean&lt;/b&gt;&lt;/sub&gt;
-      &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td align=&quot;center&quot; width=&quot;100&quot; height=&quot;100&quot;&gt;
-      &lt;a href=&quot;https://gitpod.io/#https://github.com/appwrite/integration-for-gitpod&quot;&gt;
-        &lt;img width=&quot;50&quot; height=&quot;39&quot; src=&quot;public/images/integrations/gitpod-logo.svg&quot; alt=&quot;Gitpod Logo&quot; /&gt;
-        &lt;br /&gt;&lt;sub&gt;&lt;b&gt;Gitpod&lt;/b&gt;&lt;/sub&gt;
-      &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td align=&quot;center&quot; width=&quot;100&quot; height=&quot;100&quot;&gt;
-      &lt;a href=&quot;https://www.linode.com/marketplace/apps/appwrite/appwrite/&quot;&gt;
-        &lt;img width=&quot;50&quot; height=&quot;39&quot; src=&quot;public/images/integrations/akamai-logo.svg&quot; alt=&quot;Akamai Logo&quot; /&gt;
-        &lt;br /&gt;&lt;sub&gt;&lt;b&gt;Akamai Compute&lt;/b&gt;&lt;/sub&gt;
-      &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td align=&quot;center&quot; width=&quot;100&quot; height=&quot;100&quot;&gt;
-      &lt;a href=&quot;https://aws.amazon.com/marketplace/pp/prodview-2hiaeo2px4md6&quot;&gt;
-        &lt;img width=&quot;50&quot; height=&quot;39&quot; src=&quot;public/images/integrations/aws-logo.svg&quot; alt=&quot;AWS Logo&quot; /&gt;
-        &lt;br /&gt;&lt;sub&gt;&lt;b&gt;AWS Marketplace&lt;/b&gt;&lt;/sub&gt;
-      &lt;/a&gt;
-    &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
-
-For custom deployments on a cloud provider or PaaS, see the guides for [AWS](https://appwrite.io/docs/advanced/self-hosting/platforms/aws), [DigitalOcean](https://appwrite.io/docs/advanced/self-hosting/platforms/digitalocean), [Google Cloud](https://appwrite.io/docs/advanced/self-hosting/platforms/google-cloud), [Azure](https://appwrite.io/docs/advanced/self-hosting/platforms/azure), [Coolify](https://appwrite.io/docs/advanced/self-hosting/platforms/coolify), and [Dokploy](https://appwrite.io/docs/advanced/self-hosting/platforms/dokploy).
-
-## Getting Started
-
-Getting started with Appwrite is as easy as creating a new project, connecting an agent, or integrating an SDK into your code. You can start from a prompt, a quick start tutorial, or the hosted MCP server.
-
-### Agents
-
-Designed for the AI agents in your workflow. Query a database, chart traffic, or ship a change: your agent does it on a live Appwrite project. The hosted MCP server uses OAuth, so you do not need to create or manage API keys. For a self-hosted instance, use the [local MCP server](https://appwrite.io/docs/advanced/self-hosting/mcp) instead.
-
-Add the remote server to Cursor, Claude Code, Codex, VS Code, and other MCP clients:
-
-```json
-{
-    &quot;mcpServers&quot;: {
-        &quot;appwrite&quot;: {
-            &quot;url&quot;: &quot;https://mcp.appwrite.io/&quot;
-        }
-    }
-}
-```
-
-You can also [add the MCP server to Cursor](https://cursor.com/install-mcp?name=appwrite&amp;config=eyJ1cmwiOiJodHRwczovL21jcC5hcHB3cml0ZS5pby8ifQ==) in one click.
-
-Install language-specific [agent skills](https://appwrite.io/docs/tooling/ai/skills) so models generate correct SDK calls:
+On a fresh install, the installer scripts start onboarding automatically.
+Complete the wizard they open. If you installed the package directly with npm,
+pnpm, or Bun, run:
 
 ```bash
-npx skills add appwrite/agent-skills
+openclaw onboard --install-daemon
 ```
 
-Browse [quick start prompts](https://appwrite.io/docs/tooling/ai/quickstart-prompts), generate an [AGENTS.md](https://appwrite.io/docs/tooling/ai/agents-md) file for your repo, or see the [AI tooling docs](https://appwrite.io/docs/tooling/ai) for IDE and vibe coding setup.
+After onboarding:
 
-Getting started with your platform of choice is also covered in the tutorials below.
-
-| Platform              | Technology                                                                         |
-| --------------------- | ---------------------------------------------------------------------------------- |
-| **Web app**           | [Quick start for Web](https://appwrite.io/docs/quick-starts/web)                   |
-|                       | [Quick start for Next.js](https://appwrite.io/docs/quick-starts/nextjs)            |
-|                       | [Quick start for React](https://appwrite.io/docs/quick-starts/react)               |
-|                       | [Quick start for Vue.js](https://appwrite.io/docs/quick-starts/vue)                |
-|                       | [Quick start for Nuxt](https://appwrite.io/docs/quick-starts/nuxt)                 |
-|                       | [Quick start for SvelteKit](https://appwrite.io/docs/quick-starts/sveltekit)       |
-|                       | [Quick start for Astro](https://appwrite.io/docs/quick-starts/astro)               |
-|                       | [Quick start for TanStack Start](https://appwrite.io/docs/quick-starts/tanstack-start) |
-|                       | [Quick start for Refine](https://appwrite.io/docs/quick-starts/refine)             |
-|                       | [Quick start for Angular](https://appwrite.io/docs/quick-starts/angular)           |
-| **Mobile and Native** | [Quick start for React Native](https://appwrite.io/docs/quick-starts/react-native) |
-|                       | [Quick start for Flutter](https://appwrite.io/docs/quick-starts/flutter)           |
-|                       | [Quick start for Apple](https://appwrite.io/docs/quick-starts/apple)               |
-|                       | [Quick start for Android](https://appwrite.io/docs/quick-starts/android)           |
-| **Server**            | [Quick start for Node.js](https://appwrite.io/docs/quick-starts/node)              |
-|                       | [Quick start for Python](https://appwrite.io/docs/quick-starts/python)             |
-|                       | [Quick start for .NET](https://appwrite.io/docs/quick-starts/dotnet)               |
-|                       | [Quick start for Dart](https://appwrite.io/docs/quick-starts/dart)                 |
-|                       | [Quick start for Ruby](https://appwrite.io/docs/quick-starts/ruby)                 |
-|                       | [Quick start for Deno](https://appwrite.io/docs/quick-starts/deno)                 |
-|                       | [Quick start for PHP](https://appwrite.io/docs/quick-starts/php)                   |
-|                       | [Quick start for Kotlin](https://appwrite.io/docs/quick-starts/kotlin)             |
-|                       | [Quick start for Swift](https://appwrite.io/docs/quick-starts/swift)               |
-|                       | [Quick start for Go](https://appwrite.io/docs/quick-starts/go)                     |
-|                       | [Quick start for Rust](https://appwrite.io/docs/quick-starts/rust)                 |
-
-### SDKs
-
-Below is a list of currently supported platforms and languages. If you would like to help us add support to your platform of choice, you can go over to our [SDK Generator](https://github.com/appwrite/sdk-generator) project and view our [contribution guide](https://github.com/appwrite/sdk-generator/blob/master/CONTRIBUTING.md).
-
-#### Client
-
-- :white_check_mark: &amp;nbsp; [Web](https://github.com/appwrite/sdk-for-web)
-- :white_check_mark: &amp;nbsp; [Flutter](https://github.com/appwrite/sdk-for-flutter)
-- :white_check_mark: &amp;nbsp; [Apple](https://github.com/appwrite/sdk-for-apple)
-- :white_check_mark: &amp;nbsp; [Android](https://github.com/appwrite/sdk-for-android)
-- :white_check_mark: &amp;nbsp; [React Native](https://github.com/appwrite/sdk-for-react-native)
-
-#### Server
-
-- :white_check_mark: &amp;nbsp; [Node.js](https://github.com/appwrite/sdk-for-node)
-- :white_check_mark: &amp;nbsp; [Python](https://github.com/appwrite/sdk-for-python)
-- :white_check_mark: &amp;nbsp; [Dart](https://github.com/appwrite/sdk-for-dart)
-- :white_check_mark: &amp;nbsp; [PHP](https://github.com/appwrite/sdk-for-php)
-- :white_check_mark: &amp;nbsp; [Ruby](https://github.com/appwrite/sdk-for-ruby)
-- :white_check_mark: &amp;nbsp; [.NET](https://github.com/appwrite/sdk-for-dotnet)
-- :white_check_mark: &amp;nbsp; [Go](https://github.com/appwrite/sdk-for-go)
-- :white_check_mark: &amp;nbsp; [Swift](https://github.com/appwrite/sdk-for-swift)
-- :white_check_mark: &amp;nbsp; [Kotlin](https://github.com/appwrite/sdk-for-kotlin)
-- :white_check_mark: &amp;nbsp; [Rust](https://github.com/appwrite/sdk-for-rust)
-
-Looking for more SDKs? - Help us by contributing a pull request to our [SDK Generator](https://github.com/appwrite/sdk-generator)!
-
-## Architecture
-
-```mermaid
-flowchart TB
-  Console &amp; Flutter &amp; iOS &amp; Android &amp; Web &amp; Agents &amp; MCP &amp; CLI &amp; SDKs &amp; Terraform --&gt; Appwrite
-  Appwrite --&gt; REST &amp; Realtime &amp; GraphQL &amp; S3
-  REST &amp; Realtime &amp; GraphQL &amp; S3 --&gt; securityLayer[Security layer]
-  securityLayer --&gt; services
-  subgraph services [Services]
-    Auth
-    Databases
-    Functions
-    Sites
-    Messaging
-    Storage
-    Avatars
-    Locale
-  end
-  services --&gt; Executor &amp; Queue &amp; Cache &amp; Browser &amp; SMTP &amp; Embeddings
-  Cache --&gt; Database
-  Queue --&gt; Workers
-  Executor --&gt; openRuntimes[Open Runtimes]
+```bash
+openclaw gateway status
+openclaw dashboard
 ```
 
-Appwrite uses a hybrid monolithic-microservice architecture that was designed for easy scaling and delegation of responsibilities. In addition, Appwrite supports multiple APIs, such as REST, WebSocket, and GraphQL to allow you to interact with your resources by leveraging your existing knowledge and protocols of choice.
+Onboarding verifies model access, creates the workspace, and configures the Gateway. The last command opens the Control UI; send a message there to confirm the assistant is working. See the [getting started guide](https://docs.openclaw.ai/start/getting-started) for channel setup and troubleshooting.
 
-The Appwrite API layer was designed to be extremely fast by leveraging in-memory caching and delegating any heavy-lifting tasks to the Appwrite background workers. The background workers also allow you to precisely control your compute capacity and costs using a message queue to handle the load. You can learn more about our architecture in [AGENTS.md](AGENTS.md).
+## How it fits together
 
-## Contributing
+- The [Gateway](https://docs.openclaw.ai/gateway) is the local control plane for sessions, tools, events, and channel connections.
+- The [Control UI](https://docs.openclaw.ai/web/control-ui), CLI, and [TUI](https://docs.openclaw.ai/web/tui) connect to the Gateway.
+- [Channels](https://docs.openclaw.ai/channels) bring the assistant to WhatsApp, Telegram, Slack, Discord, Google Chat, Signal, iMessage, and other messaging services.
+- [Companion apps and nodes](https://docs.openclaw.ai/platforms) add voice, Canvas, camera, screen, and device-local actions on supported platforms.
 
-All code contributions, including those of people having commit access, must go through a pull request and be approved by a core developer before being merged. This is to ensure a proper review of all the code.
-
-We truly :heart: pull requests! If you wish to help, you can learn more about how you can contribute to this project in the [contribution guide](CONTRIBUTING.md).
+OpenClaw works with hosted and local [model providers](https://docs.openclaw.ai/concepts/model-providers). Its [tools](https://docs.openclaw.ai/tools), [skills](https://docs.openclaw.ai/tools/skills), and [plugins](https://docs.openclaw.ai/plugins) extend what an assistant can do.
 
 ## Security
 
-Please see [SECURITY.md](SECURITY.md) for how to report a vulnerability. Do not open a public GitHub issue for security reports.
+Treat inbound messages as untrusted input. DM-capable channels pair unknown senders by default; approve a pairing request with `openclaw pairing approve &lt;channel&gt; &lt;code&gt;`.
 
-## Follow Us
+Tools run on the host for the main session unless you configure sandboxing. Read the [security guide](https://docs.openclaw.ai/gateway/security), [exposure runbook](https://docs.openclaw.ai/gateway/security/exposure-runbook), and [sandboxing guide](https://docs.openclaw.ai/gateway/sandboxing) before connecting other users or exposing the Gateway remotely.
 
-Join our growing community around the world! Read the [Blog](https://appwrite.io/blog), or follow us on [Discord](https://appwrite.io/discord), [GitHub](https://github.com/appwrite), [X](https://x.com/appwrite), [LinkedIn](https://linkedin.com/company/appwrite), [YouTube](https://youtube.com/c/appwrite), [daily.dev](https://app.daily.dev/squads/appwrite), [Bluesky](https://bsky.app/profile/appwrite.io), [TikTok](https://tiktok.com/@appwrite), and [Instagram](https://instagram.com/appwrite.io).
+## Documentation
 
-## License
+| Goal                             | Start here                                                                                                                                                                                                                                                           |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Configure models and auth        | [Models](https://docs.openclaw.ai/concepts/models) · [Model providers](https://docs.openclaw.ai/concepts/model-providers)                                                                                                                                            |
+| Connect a messaging service      | [Channels](https://docs.openclaw.ai/channels)                                                                                                                                                                                                                        |
+| Add tools, skills, and plugins   | [Tools](https://docs.openclaw.ai/tools) · [Skills](https://docs.openclaw.ai/tools/skills) · [Plugins](https://docs.openclaw.ai/plugins) · [ClawHub](https://clawhub.ai)                                                                                              |
+| Run apps and device nodes        | [Platforms](https://docs.openclaw.ai/platforms) · [Nodes](https://docs.openclaw.ai/nodes)                                                                                                                                                                            |
+| Use the CLI and chat commands    | [CLI reference](https://docs.openclaw.ai/cli) · [Slash commands](https://docs.openclaw.ai/tools/slash-commands)                                                                                                                                                      |
+| Configure or operate the Gateway | [Configuration](https://docs.openclaw.ai/gateway/configuration) · [Architecture](https://docs.openclaw.ai/concepts/architecture) · [Updating](https://docs.openclaw.ai/install/updating) · [Release channels](https://docs.openclaw.ai/install/development-channels) |
 
-This repository is available under the [BSD 3-Clause License](./LICENSE).
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[anthropics/claude-code]]></title>
-            <link>https://github.com/anthropics/claude-code</link>
-            <guid>https://github.com/anthropics/claude-code</guid>
-            <pubDate>Sun, 11 Oct 2026 00:07:48 GMT</pubDate>
-            <description><![CDATA[Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></h1>
-            <p>Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 150,068</p>
-            <p>Forks: 26,101</p>
-            <p>Stars today: 190 stars today</p>
-            <h2>README</h2><pre># Claude Code
+## Development
 
-![](https://img.shields.io/badge/Node.js-18%2B-brightgreen?style=flat-square) [![npm]](https://www.npmjs.com/package/@anthropic-ai/claude-code)
-
-[npm]: https://img.shields.io/npm/v/@anthropic-ai/claude-code.svg?style=flat-square
-
-Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows -- all through natural language commands. Use it in your terminal, IDE, or tag @claude on Github.
-
-**Learn more in the [official documentation](https://code.claude.com/docs/en/overview)**.
-
-&lt;img src=&quot;./demo.gif&quot; /&gt;
-
-## Get started
-&gt; [!NOTE]
-&gt; Installation via npm is deprecated. Use one of the recommended methods below.
-
-For more installation options, uninstall steps, and troubleshooting, see the [setup documentation](https://code.claude.com/docs/en/setup).
-
-1. Install Claude Code:
-
-    **MacOS/Linux (Recommended):**
-    ```bash
-    curl -fsSL https://claude.ai/install.sh | bash
-    ```
-
-    **Homebrew (MacOS/Linux):**
-    ```bash
-    brew install --cask claude-code
-    ```
-
-    **Windows (Recommended):**
-    ```powershell
-    irm https://claude.ai/install.ps1 | iex
-    ```
-
-    **WinGet (Windows):**
-    ```powershell
-    winget install Anthropic.ClaudeCode
-    ```
-
-    **NPM (Deprecated):**
-    ```bash
-    npm install -g @anthropic-ai/claude-code
-    ```
-
-2. Navigate to your project directory and run `claude`.
-
-## Plugins
-
-This repository includes several Claude Code plugins that extend functionality with custom commands and agents. See the [plugins directory](./plugins/README.md) for detailed documentation on available plugins.
-
-## Reporting Bugs
-
-We welcome your feedback. Use the `/bug` command to report issues directly within Claude Code, or file a [GitHub issue](https://github.com/anthropics/claude-code/issues).
-
-## Connect on Discord
-
-Join the [Claude Developers Discord](https://anthropic.com/discord) to connect with other developers using Claude Code. Get help, share feedback, and discuss your projects with the community.
-
-## Data collection, usage, and retention
-
-When you use Claude Code, we collect feedback, which includes usage data (such as code acceptance or rejections), associated conversation data, and user feedback submitted via the `/bug` command.
-
-### How we use your data
-
-See our [data usage policies](https://code.claude.com/docs/en/data-usage).
-
-### Privacy safeguards
-
-We have implemented several safeguards to protect your data, including limited retention periods for sensitive information, restricted access to user session data, and clear policies against using feedback for model training.
-
-For full details, please review our [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms) and [Privacy Policy](https://www.anthropic.com/legal/privacy).
-</pre>
-          ]]></content:encoded>
-            <category>TypeScript</category>
-        </item>
-        <item>
-            <title><![CDATA[Yeachan-Heo/oh-my-claudecode]]></title>
-            <link>https://github.com/Yeachan-Heo/oh-my-claudecode</link>
-            <guid>https://github.com/Yeachan-Heo/oh-my-claudecode</guid>
-            <pubDate>Sun, 11 Oct 2026 00:07:47 GMT</pubDate>
-            <description><![CDATA[Teams-first Multi-agent orchestration for Claude Code]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/Yeachan-Heo/oh-my-claudecode">Yeachan-Heo/oh-my-claudecode</a></h1>
-            <p>Teams-first Multi-agent orchestration for Claude Code</p>
-            <p>Language: TypeScript</p>
-            <p>Stars: 39,772</p>
-            <p>Forks: 3,563</p>
-            <p>Stars today: 43 stars today</p>
-            <h2>README</h2><pre>English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](README.ja.md) | [Español](README.es.md) | [Tiếng Việt](README.vi.md) | [Português](README.pt.md)
-
-# oh-my-claudecode
-
-[![npm version](https://img.shields.io/npm/v/oh-my-claude-sisyphus?color=cb3837)](https://www.npmjs.com/package/oh-my-claude-sisyphus)
-[![npm downloads](https://img.shields.io/npm/dm/oh-my-claude-sisyphus?color=blue)](https://www.npmjs.com/package/oh-my-claude-sisyphus)
-[![GitHub stars](https://img.shields.io/github/stars/Yeachan-Heo/oh-my-claudecode?style=flat&amp;color=yellow)](https://github.com/Yeachan-Heo/oh-my-claudecode/stargazers)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Sponsor](https://img.shields.io/badge/Sponsor-❤️-red?style=flat&amp;logo=github)](https://github.com/sponsors/Yeachan-Heo)
-[![Discord](https://img.shields.io/discord/1452487457085063218?color=5865F2&amp;logo=discord&amp;logoColor=white&amp;label=Discord)](https://discord.gg/wSyUQYfhAw)
-
-&gt; **For Codex users:** Check out [oh-my-codex](https://github.com/Yeachan-Heo/oh-my-codex) — the same orchestration experience for OpenAI Codex CLI.
-
-&gt; **Liked OmC but found it a bit overkill? Try [gajae-code](https://github.com/Yeachan-Heo/gajae-code).**
-&gt; Keeps Claude OAuth as-is while being faster, cheaper, simpler, and more powerful — with an SDK-based integration path built for OpenClaw, Hermes, Grokbot, and similar agent runtimes.
-
-**Multi-agent orchestration for Claude Code. Zero learning curve.**
-
-_Don&#039;t learn Claude Code. Just use OMC._
-
-[Get Started](#quick-start) • [Documentation](https://yeachan-heo.github.io/oh-my-claudecode-website) • [CLI Reference](https://yeachan-heo.github.io/oh-my-claudecode-website/docs/#cli-reference) • [Workflows](https://yeachan-heo.github.io/oh-my-claudecode-website/docs/#workflows) • [Migration Guide](docs/MIGRATION.md) • [Discord](https://discord.gg/wSyUQYfhAw)
-
----
-
-## Core Maintainers
-
-| Role           | Name        | GitHub                                         |
-| -------------- | ----------- | ---------------------------------------------- |
-| Creator &amp; Lead | Yeachan Heo | [@Yeachan-Heo](https://github.com/Yeachan-Heo) |
-
-## Ambassadors
-
-| Name       | GitHub                                           |
-| ---------- | ------------------------------------------------ |
-| Sigrid Jin | [@sigridjineth](https://github.com/sigridjineth) |
-
-## Document Specialists
-
-| Name    | GitHub                                 |
-| ------- | -------------------------------------- |
-| devswha | [@devswha](https://github.com/devswha) |
-
-## Top Collaborators
-
-| Name           | GitHub                                         | Commits |
-| -------------- | ---------------------------------------------- | ------- |
-| JunghwanNA     | [@shaun0927](https://github.com/shaun0927)     | 65      |
-| riftzen-bit    | [@riftzen-bit](https://github.com/riftzen-bit) | 52      |
-| Seunggwan Song | [@Nathan-Song](https://github.com/Nathan-Song) | 20      |
-| BLUE           | [@blue-int](https://github.com/blue-int)       | 20      |
-| Junho Yeo      | [@junhoyeo](https://github.com/junhoyeo)       | 15      |
-
-## Quick Start
-
-**Step 1: Install**
-
-Marketplace/plugin install (recommended for most Claude Code users).
-These are Claude Code slash commands — enter them **one at a time** (pasting both lines at once will fail):
+The repository is a pnpm workspace. Plain `npm install` at the repository root is not supported.
 
 ```bash
-/plugin marketplace add https://github.com/Yeachan-Heo/oh-my-claudecode
+git clone https://github.com/openclaw/openclaw.git
+cd openclaw
+pnpm install
+pnpm build
+pnpm ui:build
 ```
 
-Then:
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the contribution workflow and the [source setup guide](https://docs.openclaw.ai/start/setup) for the development loop.
 
-```bash
-/plugin install oh-my-claudecode
-```
+## Governance
 
-If you prefer the npm CLI/runtime path instead of the marketplace flow:
+OpenClaw is developed in the open by the [OpenClaw Foundation](https://openclaw.org), an independent 501(c)(3). The Foundation employs the core team and signs releases. Donors and infrastructure sponsors support the Foundation; none of them own or direct the project. OpenAI is a donor, not an owner.
 
-```bash
-npm i -g oh-my-claude-sisyphus@latest
-```
+## Community
 
-&gt; **Known npm warning:** npm may print `deprecated prebuild-install@7.1.3` during the CLI install.
-&gt; This currently comes from the upstream `better-sqlite3` native-addon dependency
-&gt; (`better-sqlite3 -&gt; prebuild-install`); `prebuild-install@7.1.3` is still the latest
-&gt; published version, so there is no safe repo-side dependency bump or override to remove
-&gt; the warning yet. The warning is tracked in [#2913](https://github.com/Yeachan-Heo/oh-my-claudecode/issues/2913)
-&gt; and does not by itself mean the OMC CLI install failed.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for maintainers and contribution guidelines; AI-assisted PRs are welcome.
 
-**Step 2: Setup**
+Use the [issue chooser](https://github.com/openclaw/openclaw/issues/new/choose) for bugs and feature requests, ask setup questions in [Discord](https://discord.gg/clawd), and report vulnerabilities through [SECURITY.md](SECURITY.md). New capabilities usually belong in plugins built on the [plugin SDK](https://docs.openclaw.ai/plugins/building-plugins) and shared through [ClawHub](https://clawhub.ai).
 
-```bash
-# Inside a Claude Code / OMC session
-/omc-setup
+OpenClaw was built for **Molty**, a space lobster AI assistant, by Peter Steinberger and the community. Explore the [project lore](https://docs.openclaw.ai/start/lore), [soul.md](https://soul.md), [Peter&#039;s site](https://steipete.me), [Star History](https://www.star-history.com/#openclaw/openclaw&amp;type=date&amp;legend=top-left), and [@openclaw](https://x.com/openclaw).
 
-# From your terminal
-omc setup
-```
+Special thanks to [Mario Zechner](https://mariozechner.at/) for his support and for [pi](https://github.com/earendil-works/pi), and to Adam Doppelt for the lobster.bot domain.
 
-If you run OMC via `omc --plugin-dir &lt;path&gt;` or `claude --plugin-dir &lt;path&gt;`, add `--plugin-dir-mode` to `omc setup` (or export `OMC_PLUGIN_ROOT` before running it) so the installer doesn&#039;t duplicate skills/agents that the plugin already provides at runtime. See the [Plugin directory flags section in REFERENCE.md](./docs/REFERENCE.md#plugin-directory-flags) for a complete decision matrix and all available flags.
+## Donors and sponsors
 
-**Step 3: Build something**
+The Foundation is funded by donors including Amazon, Lobster Computer Company, Offline Holdings, OpenAI, Red Hat, and the University of Michigan, with infrastructure support from Blacksmith, Convex, GitHub, NVIDIA, and Vercel.
 
-```bash
-# Inside a Claude Code / OMC session
-/autopilot &quot;build a REST API for managing tasks&quot;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;https://blacksmith.sh/&quot;&gt;&lt;picture&gt;&lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/blacksmith-light.svg&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/blacksmith.svg&quot; alt=&quot;Blacksmith&quot; height=&quot;28&quot;&gt;&lt;/picture&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;https://www.convex.dev/&quot;&gt;&lt;picture&gt;&lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/convex-light.svg&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/convex.svg&quot; alt=&quot;Convex&quot; height=&quot;24&quot;&gt;&lt;/picture&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;https://github.com/&quot;&gt;&lt;picture&gt;&lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/github-light.svg&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/github.svg&quot; alt=&quot;GitHub&quot; height=&quot;28&quot;&gt;&lt;/picture&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;https://www.nvidia.com/&quot;&gt;&lt;picture&gt;&lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/nvidia.svg&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/nvidia-dark.svg&quot; alt=&quot;NVIDIA&quot; height=&quot;28&quot;&gt;&lt;/picture&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;https://github.com/openai&quot;&gt;&lt;picture&gt;&lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/openai-light.svg&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/openai.svg&quot; alt=&quot;OpenAI&quot; height=&quot;28&quot;&gt;&lt;/picture&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;https://www.redhat.com/&quot;&gt;&lt;picture&gt;&lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;docs/assets/sponsors/redhat-light.svg&quot;&gt;&lt;img src=&quot;docs/assets/sponsors/redhat.svg&quot; alt=&quot;Red Hat&quot; height=&quot;28&quot;&gt;&lt;/picture&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;https://vercel.com/&quot;&gt;&lt;picture&gt;&lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/vercel-light.svg&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/sponsors/vercel.svg&quot; alt=&quot;Vercel&quot; height=&quot;24&quot;&gt;&lt;/picture&gt;&lt;/a&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
 
-# Natural-language in-session shortcut
-autopilot: build a REST API for managing tasks
-```
+## Contributors
 
-#### Named autopilot stage profiles (v1)
+Thanks to all clawtributors:
 
-Select a configured stage profile only through `/autopilot --workflow &lt;name&gt; &lt;task&gt;`:
+&lt;!-- clawtributors:start --&gt;
 
-```text
-/autopilot --workflow plan-build-qa &quot;build a REST API for managing tasks&quot;
-```
-
-Profiles are configured under `autopilot.workflows` in `.claude/omc.jsonc` (project) or `~/.config/claude-omc/config.jsonc` (user). A v1 profile contains only `version: 1` and `stages`:
-
-```jsonc
-{
-  &quot;autopilot&quot;: {
-    &quot;workflows&quot;: {
-      &quot;plan-build-qa&quot;: {
-        &quot;version&quot;: 1,
-        &quot;stages&quot;: [&quot;ralplan&quot;, &quot;execution&quot;, &quot;qa&quot;]
-      }
-    }
-  }
-}
-```
-
-The admitted sequences are `[ralplan, execution]`, `[ralplan, execution, ralph]`, `[ralplan, execution, qa]`, and `[ralplan, execution, ralph, qa]`. A project profile of the same name wholly replaces the user profile; different names coexist. Environment variables cannot define profiles. Profiles remain within autopilot&#039;s existing state, cancel, resume, Stop, and HUD lifecycle; legacy invocations without `--workflow` remain compatible.
-
-Named profiles currently require Linux with the `flock` utility because their transcript evidence boundary uses Linux no-follow file-descriptor traversal and their recoverable mutation lock uses kernel advisory locking. Unsupported environments reject explicit `--workflow` invocation before creating or changing autopilot state; legacy autopilot remains available.
-
-V1 intentionally excludes model fields or routing (`stageModels`), inline execution, dynamic commands/modes/state, arbitrary stages or plugins, and the separate custom-skill frontmatter parser mismatch. See [Named Autopilot Stage Profiles ADR](docs/adr/03487-named-autopilot-stage-profiles.md) and [Reference](docs/REFERENCE.md#named-autopilot-stage-profiles-v1).
-
-
-That&#039;s it. Everything else is automatic.
-
-### CLI Commands vs In-Session Skills
-
-OMC exposes two different surfaces:
-
-- **Terminal CLI commands**: run `omc ...` from your shell after installing the npm/runtime path (`npm i -g oh-my-claude-sisyphus@latest`) or from a local checkout.
-- **In-session skills**: run `/...` inside a Claude Code session after installing the plugin/setup flow.
-
-| Feature                                        | Terminal CLI                                  | In-session skill                                                        | Notes                                                                                                                                |
-| ---------------------------------------------- | --------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| Setup                                          | `omc setup`                                   | `/omc-setup`                                                            | Both are real entrypoints.                                                                                                            |
-| Ask providers                                  | `omc ask codex &quot;review this patch&quot;`           | `/ask codex &quot;review this patch&quot;`                                        | Both route through the same advisor flow. Providers: `claude`, `codex`, `gemini`, `antigravity`, `grok`, `cursor`.                                            |
-| Team orchestration                             | `omc team 2:codex &quot;review auth flow&quot;`         | `/team 3:executor &quot;fix all TypeScript errors&quot;`                          | Both exist, but they are different runtimes: `omc team` launches tmux CLI workers; `/team` runs the in-session native team workflow. |
-| Pre-flight danger scan                         | `omc lookout scan --brief &quot;...&quot; [--json] [--strict]` | —                                                                | Advisory only: scans the task briefing and workspace before an unattended run and reports danger findings (findings/severity contract). Exit codes: 0 for successful non-strict scans (and strict scans without high-risk signals), 1 `--strict` with high-risk signals, 2 usage/scan error. |
-| Autopilot / Ralph / Execute / Deep Interview   | —                                             | `/autopilot ...`, `/ralph ...`, `/execute ...`, `/deep-interview ...`   | These are in-session skills. There is no `omc autopilot` / `omc ralph` / `omc execute` CLI subcommand in this repo.                  |
-| Autoresearch                                   | `omc autoresearch` (**hard-deprecated shim**) | `/deep-interview --autoresearch ...` + `/oh-my-claudecode:autoresearch` | Setup stays in deep-interview; execution now belongs to the stateful skill.                                                          |
-
-### VS Code, Agent SDK, and automation scope
-
-- **VS Code / IDE extension**: OMC does not ship a VS Code extension and does not document extension-specific install or automation flows. Use the Claude Code plugin or terminal CLI surfaces above; IDE integrations are only an optional way to access Claude Code itself.
-- **Agent SDK / programmatic usage**: the npm package exports TypeScript helpers such as `createOmcSession()` and prompt expansion utilities for local Node.js programs using `@anthropic-ai/claude-agent-sdk`. This is a library surface, not a replacement for the Claude Code plugin UI.
-- **CI/CD and headless automation**: prefer deterministic terminal commands (`omc setup`, `omc ask`, `omc session search`, repository scripts such as `npm run sync-metadata:verify`) and set `ANTHROPIC_API_KEY` or provider-specific CLI auth in the runner environment. Do not rely on interactive slash commands (`/autopilot`, `/ralph`, `/execute`, `/team`) in CI; they require an active Claude Code session.
-
-### Not Sure Where to Start?
-
-If you&#039;re uncertain about requirements, have a vague idea, or want to micromanage the design:
-
-```
-/deep-interview &quot;I want to build a task management app&quot;
-```
-
-The deep interview uses Socratic questioning to clarify your thinking before any code is written. It exposes hidden assumptions and measures clarity across weighted dimensions, ensuring you know exactly what to build before execution begins.
-
-## Team Mode (Recommended)
-
-Starting in **v4.1.7**, **Team** is the canonical orchestration surface in OMC. The legacy `swarm` keyword/skill has been removed; use `team` directly.
-
-```bash
-/team 3:executor &quot;fix all TypeScript errors&quot;
-```
-
-Use `/team ...` when you want Claude Code&#039;s in-session native team workflow. Use `omc team ...` when you want terminal-launched tmux CLI workers (`claude` / `codex` / `gemini` panes).
-
-Team runs as a staged pipeline:
-
-`team-plan → team-prd → team-exec → team-verify → team-fix (loop)`
-
-Enable Claude Code native teams in `~/.claude/settings.json`:
-
-```json
-{
-  &quot;env&quot;: {
-    &quot;CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS&quot;: &quot;1&quot;
-  }
-}
-```
-
-&gt; If teams are disabled, OMC will warn you and fall back to non-team execution where possible.
-
-### tmux CLI Workers — Codex, Gemini &amp; Antigravity (v4.4.0+)
-
-**v4.4.0 removes the Codex/Gemini MCP servers** (`x`, `g` providers). Use the CLI-first Team runtime (`omc team ...`) to spawn real tmux worker panes:
-
-```bash
-omc team 2:codex &quot;review auth module for security issues&quot;
-omc team 2:gemini &quot;redesign UI components for accessibility&quot;
-omc team 2:antigravity &quot;redesign UI components for accessibility&quot;
-omc team 1:claude &quot;implement the payment flow&quot;
-omc team 1:cursor &quot;implement the payment flow&quot;
-omc team status auth-review
-omc team shutdown auth-review
-```
-
-For mixed Codex + Antigravity work in one command, run `/ask codex` and `/ask antigravity` and have Claude synthesize the results (Gemini remains available as an enterprise/API-key fallback):
-
-```bash
-/ask codex &quot;Review this PR — architecture&quot;
-/ask antigravity &quot;Review this PR — UI components&quot;
-```
-
-| Surface                         | Workers                       | Best For                                     |
-| ------------------------------- | ----------------------------- | -------------------------------------------- |
-| `omc team N:codex &quot;...&quot;`        | N Codex CLI panes             | Code review, security analysis, architecture |
-| `omc team N:gemini &quot;...&quot;`       | N Gemini CLI panes            | UI/UX design, docs, large-context tasks (enterprise/API-key) |
-| `omc team N:antigravity &quot;...&quot;`  | N Antigravity (`agy`) panes   | UI/UX design, docs, large-context tasks                      |
-| `omc team N:grok &quot;...&quot;`         | N Grok Build CLI panes        | Code review, analysis cross-check            |
-| `omc team N:cursor &quot;...&quot;`       | N Cursor agent panes          | Implementation and reviewer-style tasks      |
-| `omc team N:claude &quot;...&quot;`       | N Claude CLI panes            | General tasks via Claude CLI in tmux         |
-| `/ask codex` + `/ask antigravity` | Tri-model advisor synthesis | Mixed Codex + Antigravity review in one pass |
-
-Workers spawn on-demand and die when their task completes — no idle resource usage. Requires the selected CLI (`codex`, `gemini`, `agy` (antigravity), `grok`, or `cursor-agent`) installed/authenticated and an active tmux session.
-
-Autopilot can prefer Cursor executor workers during team execution via `.claude/omc.jsonc`:
-
-```jsonc
-{
-  &quot;autopilot&quot;: {
-    &quot;execution&quot;: &quot;team&quot;,
-    &quot;team&quot;: { &quot;agentTypes&quot;: [&quot;cursor&quot;] }
-  }
-}
-```
-
-This config makes the autopilot execution stage use `omc team 1:cursor &quot;...&quot;` or `/team 1:cursor &quot;...&quot;` for implementation work. Cursor also supports reviewer-style roles (`critic`, `code-reviewer`, `security-reviewer`, `test-engineer`): those workers emit the structured verdict file the team leader consumes to transition the task, and final approval stays a lead-session responsibility. Cursor requires an installed/authenticated `cursor-agent`.
-
-Pin a Cursor model with the `OMC_EXTERNAL_MODELS_DEFAULT_CURSOR_MODEL` environment variable, or per role with `team.roleRouting.&lt;role&gt;.model`. `externalModels.defaults.cursorModel` applies to workers routed through `team.roleRouting`. Ids come from `cursor-agent --list-models`, for example `cursor-grok-4.6-high` or `composer-2.5`. Left unset, `cursor-agent` chooses its own model.
-
-Native team worker worktrees are being added behind an opt-in/config gate. See [Native Team Worktree Mode](docs/TEAM-WORKTREE-MODE.md) for the workspace contract, canonical state-root rules, dirty-worktree preservation policy, and verification checklist.
-
-&gt; **Note: Package naming** — The project is branded as **oh-my-claudecode** (repo, plugin, commands), but the npm package is published as [`oh-my-claude-sisyphus`](https://www.npmjs.com/package/oh-my-claude-sisyphus). If you install or upgrade the CLI tools via npm/bun, use `npm i -g oh-my-claude-sisyphus@latest`; the package installs both `oh-my-claudecode` and the short `omc` command aliases.
-
-### Updating
-
-If you installed OMC via npm, upgrade with the published package name:
-
-```bash
-npm i -g oh-my-claude-sisyphus@latest
-```
-
-&gt; **Package naming note:** the repo, plugin, and commands are branded **oh-my-claudecode**, but the published npm package name remains `oh-my-claude-sisyphus`. npm installs expose both `oh-my-claudecode` and `omc`; examples prefer `omc` for brevity.
-
-If you installed OMC via the Claude Code marketplace/plugin flow, update with:
-
-```bash
-# 1. Update the marketplace clone
-/plugin marketplace update omc
-
-# 2. Re-run setup to refresh configuration
-/omc-setup
-```
-
-If you are developing from a local checkout or git worktree, update the checkout first, then re-run setup from that worktree so the active runtime matches the code you are testing.
-
-&gt; **Note:** If marketplace auto-update is not enabled, you must manually run `/plugin marketplace update omc` to sync the latest version before running setup.
-
-If you experience issues after updating, clear the old plugin cache:
-
-```bash
-/omc-doctor
-```
-
-&lt;h1 align=&quot;center&quot;&gt;Your Claude Just Have been Steroided.&lt;/h1&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;assets/omc-character.jpg&quot; alt=&quot;oh-my-claudecode&quot; width=&quot;400&quot; /&gt;
-&lt;/p&gt;
-
----
-
-## Why oh-my-claudecode?
-
-- **Zero configuration required** - Works out of the box with intelligent defaults
-- **Team-first orchestration** - Team is the canonical multi-agent surface
-- **Natural language interface** - No commands to memorize, just describe what you want
-- **Automatic parallelization** - Complex tasks distributed across specialized agents
-- **Persistent execution** - Won&#039;t give up until the job is verified complete
-- **Cost optimization** - Smart model routing saves 30-50% on tokens
-- **Learn from experience** - Automatically extracts and reuses problem-solving patterns
-- **Real-time visibility** - HUD statusline shows what&#039;s happening under the hood
-
----
-
-## Features
-
-### Orchestration Modes
-
-Multiple strategies for different use cases — from Team-backed orchestration to token-efficient refactoring. [Learn more →](https://yeachan-heo.github.io/oh-my-claudecode-website/docs/#execution-modes)
-
-| Mode                        | What it is                                                                              | Use For                                                                 |
-| --------------------------- | --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| **Team (recommended)**      | Canonical staged pipeline (`team-plan → team-prd → team-exec → team-verify → team-fix`) | Coordinated Claude agents on a shared task list                         |
-| **omc team (CLI)**          | tmux CLI workers — real `claude`/`codex`/`gemini`/`antigravity`/`grok`/`cursor-agent` processes in split-panes       | Codex/Gemini/Antigravity/Grok/Cursor CLI tasks; on-demand spawn, die when done             |
-| **Tri-model advisor (`/ask codex` + `/ask antigravity`)** | Claude synthesizes both advisors&#039; output                                 | Mixed backend+UI work needing both Codex and Antigravity                     |
-| **Autopilot**               | Autonomous execution (single lead agent)                                                | End-to-end feature work with minimal ceremony                           |
-| **Execute**                 | Persistent execution with verify/fix loops, from plan to working code                   | Tasks that must complete fully (no silent partials)                     |
-| **Verify**                  | Evidence-based completion checks until tests/build/lint/typecheck goals pass            | Quality gates that need repeat diagnose/fix cycles                      |
-| **Claude Code `/goal`**     | Native Claude Code cross-turn goal loop                                                 | One measurable session completion condition; not an OMC evidence ledger |
-| **Artifact-only Ultragoal** | Durable goal/checkpoint/evidence artifacts without starting a loop                      | Handoffs, audits, or unavailable/conflicting loop runtimes              |
-
-### Goal Workflow Guidance
-
-Use only one primary loop authority in a session. Claude Code `/goal` is u
+&lt;a href=&quot;https://github.com/steipete&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/58493?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;steipete&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/vincentkoc&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/25068?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;vincentkoc&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/Takhoffman&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/781889?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;Takhoffman&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/obviyus&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/22031114?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;obviyus&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/gumadeiras&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/5599352?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;gumadeiras&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/mbelinky&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/132747814?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;Mariano Belinky&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/vignesh07&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/1436853?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;vignesh07&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/joshavant&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/830519?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;joshavant&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/scoootscooob&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/167050519?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;scoootscooob&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/jacobtomlinson&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/1610850?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;jacobtomlinson&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/shakkernerd&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/165377636?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;shakkernerd&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/sebslight&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/19554889?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;sebslight&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/tyler6204&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/64381258?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;tyler6204&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/ngutman&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/1540134?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;ngutman&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/thewilloftheshadow&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/35580099?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;thewilloftheshadow&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/Sid-Qin&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/201593046?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;Sid-Qin&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/mcaxtr&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/7562095?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;mcaxtr&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/eleqtrizit&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/31522568?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;eleqtrizit&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/BunsDev&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/68980965?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;BunsDev&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/cpojer&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/13352?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;cpojer&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/Glucksberg&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/80581902?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;Glucksberg&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/osolmaz&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/2453968?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;osolmaz&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/bmendonca3&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/208517100?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;bmendonca3&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/jalehman&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/550978?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;jalehman&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/huntharo&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/5617868?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;huntharo&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/neeravmakwana&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/261249544?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;neeravmakwana&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/openperf&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/80630709?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;openperf&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/joshp123&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/1497361?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;joshp123&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/pgondhi987&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/270720687?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;pgondhi987&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/altaywtf&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/9790196?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;altaywtf&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/quotentiroler&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/40643627?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;quotentiroler&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/liuxiaopai-ai&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/73659136?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;liuxiaopai-ai&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/rodrigouroz&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/384037?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;rodrigouroz&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/frankekn&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/4488090?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;frankekn&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/drobison00&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/5256797?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;drobison00&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/zerone0x&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/39543393?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;zerone0x&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/onutc&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/152018508?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;onutc&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/ademczuk&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/5212682?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;ademczuk&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/ImLukeF&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/92253590?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;ImLukeF&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/hydro13&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/6640526?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;hydro13&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/hxy91819&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/8814856?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;hxy91819&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/coygeek&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/65363919?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;coygeek&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/dutifulbob&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/261991368?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;dutifulbob&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/sliverp&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/38134380?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;sliverp&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/0xRaini&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/190923101?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;Elonito&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/robbyczgw-cla&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/239660374?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;robbyczgw-cla&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/joelnishanth&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/140015627?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;joelnishanth&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/echoVic&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/16428813?v=4&amp;s=48&quot; width=&quot;48&quot; height=&quot;48&quot; alt=&quot;echoVic&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/sallyom&quot;&gt;&lt;img src=&quot;https://avatars.githubuserconte
 
 ... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
             <category>TypeScript</category>
         </item>
         <item>
-            <title><![CDATA[immich-app/immich]]></title>
-            <link>https://github.com/immich-app/immich</link>
-            <guid>https://github.com/immich-app/immich</guid>
-            <pubDate>Sun, 11 Oct 2026 00:07:46 GMT</pubDate>
-            <description><![CDATA[High performance self-hosted photo and video management solution.]]></description>
+            <title><![CDATA[CopilotKit/OpenIntelligentUI]]></title>
+            <link>https://github.com/CopilotKit/OpenIntelligentUI</link>
+            <guid>https://github.com/CopilotKit/OpenIntelligentUI</guid>
+            <pubDate>Mon, 12 Oct 2026 00:07:39 GMT</pubDate>
+            <description><![CDATA[Open-Source Generative UI Framework]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/immich-app/immich">immich-app/immich</a></h1>
-            <p>High performance self-hosted photo and video management solution.</p>
+            <h1><a href="https://github.com/CopilotKit/OpenIntelligentUI">CopilotKit/OpenIntelligentUI</a></h1>
+            <p>Open-Source Generative UI Framework</p>
             <p>Language: TypeScript</p>
-            <p>Stars: 115,975</p>
-            <p>Forks: 7,177</p>
-            <p>Stars today: 95 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt; 
-  &lt;br/&gt;
-  &lt;a href=&quot;https://opensource.org/license/agpl-v3&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/License-AGPL_v3-blue.svg?color=3F51B5&amp;style=for-the-badge&amp;label=License&amp;logoColor=000000&amp;labelColor=ececec&quot; alt=&quot;License: AGPLv3&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://discord.immich.app&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/discord/979116623879368755.svg?label=Discord&amp;logo=Discord&amp;style=for-the-badge&amp;logoColor=000000&amp;labelColor=ececec&quot; alt=&quot;Discord&quot;/&gt;
-  &lt;/a&gt;
-  &lt;br/&gt;
-  &lt;br/&gt;
+            <p>Stars: 2,664</p>
+            <p>Forks: 305</p>
+            <p>Stars today: 278 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+
+# Open Intelligent UI
+
+### Answers you can interact with.
+
+**An open-source chat interface that turns questions into explanations, comparisons, and working tools.**
+
+Built with [CopilotKit](https://github.com/CopilotKit/CopilotKit) and [AG-UI](https://docs.ag-ui.com/introduction). · [Get started](#get-started) · [Overview](#overview) · [Demos](#demo-scenes) · [Architecture](#how-it-works) · [Contributing](CONTRIBUTING.md)
+
+[![CI](https://github.com/CopilotKit/OpenIntelligentUI/actions/workflows/ci.yml/badge.svg)](https://github.com/CopilotKit/OpenIntelligentUI/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+Clone the project, connect your model and visualization router, and adapt the interface and agent to your own workflows.
+
+[**Building with Open Intelligent UI? Talk to an engineer →**](https://www.copilotkit.ai/talk-to-an-engineer?ref=openintelligentui_readme&amp;utm_source=github&amp;utm_medium=readme&amp;utm_campaign=openintelligentui)
+
+&lt;/div&gt;
+
+---
+
+&lt;div align=&quot;center&quot;&gt;
+
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;
+
+https://github.com/user-attachments/assets/eb1666c1-e177-410b-96eb-9eb5c5534d95
+
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;/div&gt;
+
+_The 54-second launch film: ask, explore a 3D explanation, compare options, use a calculator, and follow a coastal itinerary. These are rendered launch scenes; the app runs the agent for each request._
+
+## Overview
+
+Ask a question, explore an idea, compare your options, or make a tool for the moment. The agent chooses a direct text answer, a native component, or a custom interactive UI based on what helps you accomplish the task.
+
+- **Understand** — explore a mechanism, step through an explanation, or change a variable.
+- **Compare** — examine criteria, assumptions, and tradeoffs side by side.
+- **Make a tool** — use a calculator, planner, or interactive model with working controls.
+
+The interface opens directly to chat. Type your request or choose a starter suggestion to begin an agent run. Text, native components, and generated interactive answers appear in the conversation. Sample numbers are illustrations, not live business or weather data.
+
+## Demo scenes
+
+From the launch film: explanations, comparisons, working tools, and maps in one conversation.
+
+### Explore in 3D
+
+Rotate an airplane with labeled pitch, roll, and yaw axes. Change the angles, play a smooth demonstration, or reset the view.
+
+&lt;div align=&quot;center&quot;&gt;
+
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;
+
+https://github.com/user-attachments/assets/d0f96662-c8c0-4b25-8c0a-c26b032eb463
+
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;/div&gt;
+
+_3D plane · 4 seconds._
+
+### Turn comparisons into charts
+
+Compare exact values in a table, then ask a follow-up to visualize the differences. Jev selects A2UI for basic tables and Open Generative UI for charts and more complex visuals.
+
+&lt;div align=&quot;center&quot;&gt;
+
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;
+
+https://github.com/user-attachments/assets/36c67a73-ddcf-4d64-b76a-ff659c988836
+
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;/div&gt;
+
+_Tables and charts · 8 seconds. Plan names and prices are illustrative._
+
+### Make a tool for the moment
+
+Split a bill with controls for the total, tip, and group size. Calculations update as you change the inputs.
+
+&lt;div align=&quot;center&quot;&gt;
+
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;
+
+https://github.com/user-attachments/assets/a878a71c-2189-4313-848d-49216b52ce5b
+
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;/div&gt;
+
+_Bill splitter · 5 seconds._
+
+### Follow a trip on the map
+
+Explore a coastal itinerary with numbered pins and destination photos. The app uses live USGS tiles, credits its photos, and lets you pause, replay, or select a stop. Connections illustrate the itinerary; they are not verified driving directions.
+
+&lt;div align=&quot;center&quot;&gt;
+
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;
+
+https://github.com/user-attachments/assets/2dd65441-e0e7-4813-891f-9bd476e873d6
+
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;/div&gt;
+
+_Coastal map · 4 seconds._
+
+&lt;details&gt;
+&lt;summary&gt;Scene gallery&lt;/summary&gt;
+
+| 3D explanations | Tables → charts |
+| --- | --- |
+| ![3D airplane with pitch, roll, and yaw controls](https://github.com/user-attachments/assets/b74a1551-a096-4c12-84e8-af79949a2df6) | ![A plan comparison becomes a cost-per-seat chart](https://github.com/user-attachments/assets/6a25cc1d-d401-4914-b4f8-6488f3b17005) |
+| Explore aircraft rotation with labeled axes and sliders. | Compare exact values, then visualize them with a follow-up. |
+
+| Interactive tools | Maps |
+| --- | --- |
+| ![Bill splitter recalculating the share per person](https://github.com/user-attachments/assets/dea3c40b-025c-4d50-8fef-b14c50e3ca62) | ![California coastal itinerary with numbered map pins and photo cards](https://github.com/user-attachments/assets/098d4aad-95a9-4229-aae6-2de38f1eaa69) |
+| Change the group size and tip; the calculation updates. | Follow a coastal itinerary with map pins and destination photos. |
+
+&lt;/details&gt;
+
+## Try it
+
+- **Animate a coastal trip** — a real USGS map with numbered pins, credited destination photos, and a six-second pin-drop sequence. Pause, replay, or select a stop. Connections are illustrative, not verified driving directions.
+- **Pitch, Roll &amp; Yaw** — rotate a 3D airplane with labeled axes, angle controls, smooth demonstrations, and reset.
+- **Find your kind of weekend** — compare trip ideas and adjust your preferences.
+- **Split the bill fairly** — change the total, tip, and group size in a working calculator.
+
+These starters run the agent; they are not prerecorded responses. Jev chooses the presentation, so outputs can vary. Map tiles and destination photos require network access. Streaming answers preserve your reading position, reveal text as it enters view, and show the copy action on hover or keyboard focus (always available on touch).
+
+&lt;a id=&quot;run-locally&quot;&gt;&lt;/a&gt;
+
+## Get started
+
+Prerequisites: Node.js 22+, pnpm 9+, Python 3.12+, and [uv](https://docs.astral.sh/uv/).
+
+```bash
+git clone https://github.com/CopilotKit/OpenIntelligentUI.git
+cd OpenIntelligentUI
+make setup
+# Optional: set shared OPENAI_API_KEY and TYPESAFE_API_KEY in apps/agent/.env
+# Or use API keys in the chat header after starting the app
+make dev
+```
+
+Open the [app](http://localhost:3000). The [agent health endpoint](http://localhost:8123/health) confirms the agent service is running. See [Getting started](docs/getting-started.md) for configuration and verification.
+
+The default model is `chat-latest`, OpenAI’s documented alias for the latest ChatGPT Instant model, requiring `OPENAI_API_KEY`. Jev (`jev-latest`, requiring `TYPESAFE_API_KEY`) selects the renderer and visualization for each user turn. Basic tables use A2UI; charts, diagrams, calculators, and maps use Open Generative UI. Provider failures are surfaced instead of silently substituting another router or model. See [Visualization routing](docs/visualization-routing.md).
+
+## Use your own API keys
+
+The chat asks for both keys before sending your first message or example prompt and keeps your draft while you set them up. Open **API keys** in the chat header, enter an OpenAI key and a Jev key, then choose **Test connection** and **Save keys**. The connection test makes a small request to each provider. Your keys use `chat-latest` for answers and `jev-latest` for visualization routing, with usage billed to your provider accounts.
+
+Keys stay in browser memory until refresh or **Clear keys**; the app does not save them in browser storage. Requests send them through the application server to their respective providers. They are kept out of chat state and checkpoints, and hosted LangSmith tracing is disabled for requests using your keys. Only use this feature on a deployment whose operator you trust. Saving or clearing keys starts a new chat; **New chat** keeps your keys for the current session.
+
+The agent can run without shared provider keys. Visitors must then supply both keys before chatting. Configured server credentials remain available to direct API clients that omit visitor keys; the chat interface requires visitors to add their own keys.
+
+## How it works
+
+The Python Deep Agent uses a task-first system prompt and focused skills. CopilotKit carries the agent stream to the Next.js app. Native components handle supported structured tasks; `generateSandboxedUi` streams custom HTML, CSS, and JavaScript into an isolated iframe.
+
+Custom UI parameters must arrive in this order:
+
+`initialHeight` → `placeholderMessages` → `css` → `html` → `jsFunctions` → `jsExpressions`
+
+Local controls run inside the sandbox. A user-clicked follow-up can send selected values through the validated host bridge and start another agent turn. Prior outputs remain separate conversation artifacts; there is no cross-call patch API. See [Product and agent behavior](docs/interactive-answers.md) and [Architecture](docs/architecture.md).
+
+```text
+apps/app/                Next.js + CopilotKit frontend
+apps/agent/              Python Deep Agent + FastAPI
+apps/mcp/                Optional standalone MCP server
+packages/design-system/  Shared theme, SVG, and form styles
+```
+
+## Development
+
+```bash
+make dev-app     # Frontend
+make dev-agent   # Agent
+make dev-mcp     # Optional MCP server
+pnpm test       # JavaScript workspace tests
+uv run --directory apps/agent pytest
+make lint
+make build
+```
+
+The [launch workflow](docs/deployment.md#verification-and-launch) includes browser checks and a real provider smoke test. Tests and builds alone do not verify model access or a deployment.
+
+## Standalone MCP
+
+The optional MCP server exposes skill resources, prompt templates, and `assemble_document`. The assembler returns an HTML document as text; a compatible host must render it and implement its bridge. It is distinct from the web app&#039;s streaming Websandbox integration.
+
+See the [MCP server guide](apps/mcp/README.md) for HTTP, stdio, and Docker configuration.
+
+## Compatibility and documentation
+
+Built with CopilotKit. The `openGenerativeUI` runtime API and `generateSandboxedUi` tool power the streaming experience.
+
+- [Documentation index](docs/README.md)
+- [Bring these patterns to your app](docs/bring-to-your-app.md)
+- [Source repository](https://github.com/CopilotKit/OpenIntelligentUI)
+
+## Contributing
+
+See [Contributing](CONTRIBUTING.md) for the development workflow and [the documentation index](docs/README.md) for guides to the agent, rendering, and deployment.
+
+## License
+
+[MIT](LICENSE).
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[chthollyphile/folia-major]]></title>
+            <link>https://github.com/chthollyphile/folia-major</link>
+            <guid>https://github.com/chthollyphile/folia-major</guid>
+            <pubDate>Mon, 12 Oct 2026 00:07:38 GMT</pubDate>
+            <description><![CDATA[专注于绚丽的歌词动画效果的本地音乐/navidrome/第三方多平台在线音乐播放器]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/chthollyphile/folia-major">chthollyphile/folia-major</a></h1>
+            <p>专注于绚丽的歌词动画效果的本地音乐/navidrome/第三方多平台在线音乐播放器</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 4,986</p>
+            <p>Forks: 418</p>
+            <p>Stars today: 555 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://github.com/user-attachments/assets/b5d0e863-48be-497b-b0e9-4bd8d8ce9bf0&quot; alt=&quot;Folia&quot; width=&quot;100%&quot; /&gt;
 &lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;img src=&quot;design/immich-logo-stacked-light.svg&quot; width=&quot;300&quot; title=&quot;Login With Custom URL&quot;&gt;
-&lt;/p&gt;
-&lt;h3 align=&quot;center&quot;&gt;High performance self-hosted photo and video management solution&lt;/h3&gt;
-&lt;br/&gt;
-&lt;a href=&quot;https://immich.app&quot;&gt;
-&lt;img src=&quot;design/immich-screenshots.png&quot; title=&quot;Main Screenshot&quot;&gt;
-&lt;/a&gt;
-&lt;br/&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;a href=&quot;https://trendshift.io/repositories/71740?utm_source=repository-badge&amp;amp;utm_medium=badge&amp;amp;utm_campaign=badge-repository-71740&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/71740&quot; alt=&quot;chthollyphile%2Ffolia-major | Trendshift&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;readme_i18n/README_ca_ES.md&quot;&gt;Català&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_es_ES.md&quot;&gt;Español&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_fr_FR.md&quot;&gt;Français&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_it_IT.md&quot;&gt;Italiano&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_ja_JP.md&quot;&gt;日本語&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_ko_KR.md&quot;&gt;한국어&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_de_DE.md&quot;&gt;Deutsch&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_nl_NL.md&quot;&gt;Nederlands&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_tr_TR.md&quot;&gt;Türkçe&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_zh_CN.md&quot;&gt;简体中文&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_zh_TW.md&quot;&gt;正體中文&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_uk_UA.md&quot;&gt;Українська&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_ru_RU.md&quot;&gt;Русский&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_bg_BG.md&quot;&gt;Български&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_pt_BR.md&quot;&gt;Português Brasileiro&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_sv_SE.md&quot;&gt;Svenska&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_ar_JO.md&quot;&gt;العربية&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_vi_VN.md&quot;&gt;Tiếng Việt&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_th_TH.md&quot;&gt;ภาษาไทย&lt;/a&gt;
-  &lt;a href=&quot;readme_i18n/README_ml_IN.md&quot;&gt;മലയാളം&lt;/a&gt;
-&lt;/p&gt;
+# Folia
 
+Lyrics Reimagined // 辞曲新境
 
-&gt; [!WARNING]
-&gt; ⚠️ Always follow [3-2-1](https://www.backblaze.com/blog/the-3-2-1-backup-strategy/) backup plan for your precious photos and videos!
-&gt; 
- 
+[![GitHub release](https://img.shields.io/github/v/release/chthollyphile/folia-major?label=release)](https://github.com/chthollyphile/folia-major/releases)
+[![License](https://img.shields.io/github/license/chthollyphile/folia-major)](https://github.com/chthollyphile/folia-major/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/chthollyphile/folia-major?style=social)](https://github.com/chthollyphile/folia-major/stargazers)
+[![Node.js](https://img.shields.io/badge/node-%3E%3D24-339933?logo=node.js&amp;logoColor=white)](https://nodejs.org/)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/chthollyphile/folia-major)
+[![Discord](https://img.shields.io/discord/1541051241822687232?logo=discord&amp;logoColor=white&amp;label=Join%20our%20Discord)](https://discord.gg/dMDBTHxeKd)
+&lt;!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section --&gt;
+[![All Contributors](https://img.shields.io/badge/all_contributors-35-orange.svg?style=flat-square)](CONTRIBUTORS.md)
+&lt;!-- ALL-CONTRIBUTORS-BADGE:END --&gt;
+
+[获取方式](https://github.com/chthollyphile/folia-major#%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F)
+·
+[Vercel 部署](https://vercel.com/new/clone?repository-url=https://github.com/chthollyphile/folia-major)
+·
+[使用指南](https://folia-site.cielaniska.top/guide/)
+·
+[技术说明](docs/technical.md)
+
+&lt;/div&gt;
+
+## 项目简介
+
+Folia是一个以全屏沉浸式歌词播放为核心的在线音乐播放器，支持网易云、酷狗、Navidrome 和本地音乐库，通过智能歌词匹配，AI生成配色主题，以及多种全屏歌词动画为用户提供独特的听歌体验。
+
+提供基于Electron的 windows/ macOS/ Linux 桌面端版本与基于 Node.js 的 Web 版本，支持多平台部署。
+
+如果希望能够在移动设备上使用，或在浏览器上体验，可以选择[一键部署到 Vercel](https://folia-site.cielaniska.top/guide/deploy-vercel) 的 Web 版本，或自行部署到其他支持 Node.js 的平台。
+
+## 展示
+
+![visualizer](./img/visualizer.png)
+
+### 演示视频
+
+https://github.com/user-attachments/assets/af806cf1-f67f-4b88-b2e7-57db507e9e81
+
+https://github.com/user-attachments/assets/fd27f4f0-64b9-4c57-8c3b-10df767f934b
+
+https://github.com/user-attachments/assets/704f195a-2194-434b-86e8-8f36290e5cc4
+
+### 部分主题预览
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td width=&quot;50%&quot;&gt;
+      &lt;img src=&quot;./img/preview-fume.png&quot; alt=&quot;Fume 主题预览&quot; /&gt;
+    &lt;/td&gt;
+    &lt;td width=&quot;50%&quot;&gt;
+      &lt;img src=&quot;./img/preview-lumi.png&quot; alt=&quot;Lumi 主题预览&quot; /&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align=&quot;center&quot;&gt;&lt;strong&gt;浮名&lt;/strong&gt;&lt;/td&gt;
+    &lt;td align=&quot;center&quot;&gt;&lt;strong&gt;流光&lt;/strong&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td width=&quot;50%&quot;&gt;
+      &lt;img src=&quot;./img/preview-cad.png&quot; alt=&quot;Cad 主题预览&quot; /&gt;
+    &lt;/td&gt;
+    &lt;td width=&quot;50%&quot;&gt;
+      &lt;img src=&quot;./img/preview-pat.png&quot; alt=&quot;Pat 主题预览&quot; /&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align=&quot;center&quot;&gt;&lt;strong&gt;心象&lt;/strong&gt;&lt;/td&gt;
+    &lt;td align=&quot;center&quot;&gt;&lt;strong&gt;云阶&lt;/strong&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td width=&quot;50%&quot;&gt;
+      &lt;img src=&quot;./img/preview-cappella.jpg&quot; alt=&quot;群唱 主题预览&quot; /&gt;
+    &lt;/td&gt;
+    &lt;td width=&quot;50%&quot;&gt;
+      &lt;img src=&quot;./img/preview-tilt.png&quot; alt=&quot;Tilt 主题预览&quot; /&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align=&quot;center&quot;&gt;&lt;strong&gt;群唱&lt;/strong&gt;&lt;/td&gt;
+    &lt;td align=&quot;center&quot;&gt;&lt;strong&gt;倾诉&lt;/strong&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+    &lt;tr&gt;
+    &lt;td width=&quot;50%&quot;&gt;
+      &lt;img src=&quot;./img/preview-diorama.png&quot; alt=&quot;镜台 主题预览&quot; /&gt;
+    &lt;/td&gt;
+    &lt;td width=&quot;50%&quot;&gt;
+      &lt;img src=&quot;./img/preview-pendolo.png&quot; alt=&quot;时计 主题预览&quot; /&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align=&quot;center&quot;&gt;&lt;strong&gt;镜台&lt;/strong&gt;&lt;/td&gt;
+    &lt;td align=&quot;center&quot;&gt;&lt;strong&gt;时计&lt;/strong&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+不同的歌词动画具有不同的排版氛围和可调参数，让全屏歌词拥有如同文字PV般的丰富视觉效果，同时又能兼顾响应式布局，自动适配不同窗口尺寸。
+
+## 核心能力
+
+| 模块 | 说明 |
+| --- | --- |
+| 在线搜索与播放 | 搜索歌曲、歌手或专辑后即可播放，并自动加载相关封面与歌词。 |
+| 本地音乐支持 | 可导入本地音频文件，在本地安全保存索引信息，不上传文件内容。详细用法见 [本地音乐库管理](docs/local-library-management.md)。 |
+| 智能歌词匹配 | 本地歌曲可自动匹配在线歌词与封面，也支持手动修正匹配结果。 |
+| 本地歌词文件识别 | 自动加载同目录同名 `.lrc`、`.vtt`、`.ttml`、`.qrc`、`.yrc`、`.krc` 歌词文件，或歌词文件内嵌 LRC 歌词。适配 LDDC 生成的增强型逐字歌词格式。 |
+| Now Playing 接入 | 支持通过本机 [Now Playing](https://github.com/Widdit/now-playing-service/) 服务接入外部播放器的歌曲、时间轴与歌词信息，并驱动 Folia 的舞台视图与全屏歌词渲染。 |
+| AI 主题生成 | 基于歌曲情绪与歌词内容生成沉浸式背景与视觉参数。 |
+| 多端体验 | 提供 Web 部署方式，同时支持桌面端打包分发。 |
+| 模组系统（实验性） | 桌面版可通过 Folium 模组添加歌词动画、背景、播放页图层、命令等，并从 [模组市场](https://folium-compound.cielaniska.top) 安装官方认证的模组。详见 [模组系统](#模组系统folium-v1x)。 |
+
+## 获取方式
+
+桌面版内置前后端运行环境，适合希望即装即用的用户。
+
+### 一键部署
+
+如果你希望快速上线 Web 版本，请阅读 [Vercel 一键部署指南](https://folia-site.cielaniska.top/guide/deploy-vercel) 来创建项目
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/chthollyphile/folia-major) 
+
+项目也支持一键部署到 Cloudflare，请参考 Vercel 的部署教程进行相应调整。
+
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/chthollyphile/folia-major)
+
+Vercel 与 Cloudflare 上的 QQ 音乐不再需要额外部署一个常驻 API 实例：把 `VITE_QQ_API_BASE` 填成 `/api/qq`，再配一个 `QQ_SESSION_SECRET`（服务端密钥，**不加 `VITE_` 前缀**）即可。这种形态默认只支持微信扫码登录，且播放前必须先登录；Cloudflare 上可以再绑定一个 Durable Object，增加 QQ 扫码登录方式。完整步骤、平台差异和排错方法见 [QQ 音乐部署指南](docs/qq-music-deployment.md)。
+
+自托管用户可以使用 [Docker Compose 全栈部署](deploy/docker/README.md)。本地音乐目录访问依赖可信 HTTPS 安全上下文，部署文档包含 NAS 反向代理和证书要求。
+
+关于移动端：
+
+目前推荐移动端用户部署 Web 版本/自托管版本之后，通过chrome for android / iOS Safari 创建 PWA应用（也就是将网页应用添加到桌面，Folia web版本支持安装为PWA应用）来使用。
+
+有一定技术的用户可以使用 capacitor 将本项目的web版本打包成为可安装的安卓apk，具体方法可参考示范仓库：[chthollyphile/folia-sonnet](https://github.com/chthollyphile/folia-sonnet)
+
+### 直接下载
+
+- **Windows / macOS / Linux**: 最新版本的安装包请前往 [Releases 页面](https://github.com/chthollyphile/folia-major/releases/latest) 下载。
+- **Arch Linux**: 可通过 AUR 获取 [folia-major-bin](https://aur.archlinux.org/packages/folia-major-bin)。
+- **Flatpak**: 社区提供的第三方 flatpak，详情见 [Flatpark](https://flatpark.org/apps/top.izuna.foliamajor/)。
+
+&gt; [!IMPORTANT]
+&gt; 如果国内网络从 GitHub Releases 下载较慢，可以使用 [夸克网盘](https://pan.quark.cn/s/6e4c6fa3bc6f) 或 [百度云](https://pan.baidu.com/s/1f0x3g-8PMcNCO-TJ5z1rPw?pwd=flia) 下载。网盘链接仅提供 Windows 与 Apple silicon 的正式版安装包.
+
+Linux 包、Wayland / Hyprland 遥控窗和桌面端细节见 [技术与开发说明](docs/technical.md)。
+
+## 文档与开发
+
+更完整的使用说明请访问 [Folia Guide](https://folia-site.cielaniska.top/guide/)。
+
+部署、环境变量、本地开发、Stage API、常用脚本和技术栈见 [技术与开发说明](docs/technical.md)。
+
+## 模组系统（Folium v1.x）
 
 &gt; [!NOTE]
-&gt; You can find the main documentation, including installation guides, at https://immich.app/.
+&gt; 模组系统是实验性功能，仅桌面版可用，默认关闭，需要在「设置 → 实验室 → 模组系统」中开启。
 
-## Links
+Folium 是 Folia 的模组平台。模组可以添加新的歌词动画模式和背景类型、在播放页上叠加内容、给进度条加按钮和标记、注册命令与设置分区、在歌词显示前改写歌词，也可以通过 Node 入口调用 ffmpeg 等本地能力。模组以可信代码运行，每个模组在启用前都要在原生窗口中确认，文件变化后需要重新确认。
 
-- [Documentation](https://docs.immich.app/)
-- [About](https://docs.immich.app/overview/introduction)
-- [Installation](https://docs.immich.app/install/requirements)
-- [Roadmap](https://immich.app/roadmap)
-- [Demo](#demo)
-- [Features](#features)
-- [Translations](https://docs.immich.app/developer/translations)
-- [Contributing](https://docs.immich.app/overview/support-the-project)
+- **模组市场**：[folium-compound.cielaniska.top](https://folium-compound.cielaniska.top) 提供官方模组和经过审查的社区模组，下载 zip 后拖进模组面板即可安装。
+- **官方认证**：市场里的模组都带有 Folium 签名，安装后显示「官方认证」；没有签名的第三方模组显示「未验证」，同样可以使用。
+- **开发与贡献**：[模组开发与贡献指南](docs/folium/contributing.md)，从写第一个模组、本地调试，到提交到模组市场、审查与签名、发布更新。
+- **API 参考**：[Folium API 参考](docs/folium/api.md)，由契约文件生成的完整接口文档，按注册表、上下文、事件、服务等分类查询。
+- **平台规范**：[Folium 规范](mods/README.md)，包括清单字段、权限、注册表语义、事件、安全模型与版本策略。
+- **示范模组**：仓库的 [`mods/`](mods/) 目录，覆盖歌词动画、调参、进度条、播放页图层与透明视频导出。
 
-## Demo
+## Sync Server
 
-Access the demo [here](https://demo.immich.app). For the mobile app, you can use `https://demo.immich.app` for the `Server Endpoint URL`.
+Folia 提供了可选的官方同步服务端 `sync-server`，用于在多个设备之间同步外观设置与 AI 主题库。服务端由用户自行托管，适合希望跨设备同步配色主题的用户。
 
-### Login credentials
+支持以下部署方式：
 
-| Email           | Password |
-| --------------- | -------- |
-| demo@immich.app | demo     |
+- **Cloudflare Workers / D1**：免服务器运维的 Serverless 部署，推荐使用。
+  [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/chthollyphile/folia-major/tree/main/sync-server)
+- **Docker**：镜像与 Compose 入口见 [Docker 部署目录](deploy/docker/README.md)。
+- **Node.js 自托管**：使用 SQLite，适合本地或不方便使用 Docker 的环境。
 
-## Features
+详细的环境变量、Token 配置与部署步骤请参阅 [Sync-Server 部署指南](https://folia-site.cielaniska.top/guide/deploy-sync)。部署完成后，在 Folia 的“存储设置”中填写服务端地址和 `SYNC_TOKEN` 即可启用同步。
 
-| Features                                     | Mobile | Web |
-| :------------------------------------------- | ------ | --- |
-| Upload and view videos and photos            | Yes    | Yes |
-| Auto backup when the app is opened           | Yes    | N/A |
-| Prevent duplication of assets                | Yes    | Yes |
-| Selective album(s) for backup                | Yes    | N/A |
-| Download photos and videos to local device   | Yes    | Yes |
-| Multi-user support                           | Yes    | Yes |
-| Album and Shared albums                      | Yes    | Yes |
-| Scrubbable/draggable scrollbar               | Yes    | Yes |
-| Support raw formats                          | Yes    | Yes |
-| Metadata view (EXIF, map)                    | Yes    | Yes |
-| Search by metadata, objects, faces, and CLIP | Yes    | Yes |
-| Administrative functions (user management)   | No     | Yes |
-| Background backup                            | Yes    | N/A |
-| Virtual scroll                               | Yes    | Yes |
-| OAuth support                                | Yes    | Yes |
-| API Keys                                     | N/A    | Yes |
-| LivePhoto/MotionPhoto backup and playback    | Yes    | Yes |
-| Support 360 degree image display             | No     | Yes |
-| User-defined storage structure               | Yes    | Yes |
-| Public Sharing                               | Yes    | Yes |
-| Archive and Favorites                        | Yes    | Yes |
-| Global Map                                   | Yes    | Yes |
-| Partner Sharing                              | Yes    | Yes |
-| Facial recognition and clustering            | Yes    | Yes |
-| Memories (x years ago)                       | Yes    | Yes |
-| Offline support                              | Yes    | No  |
-| Read-only gallery                            | Yes    | Yes |
-| Stacked Photos                               | Yes    | Yes |
-| Tags                                         | No     | Yes |
-| Folder View                                  | Yes    | Yes |
+## 本地音乐与匹配说明
 
-## Translations
+Folia 会读取音频文件元数据、同目录歌词和封面，并可通过网易云、QQ 音乐或酷狗音乐补全歌曲信息。自动匹配按网易云、QQ、酷狗依次回退；匹配不准确时，可以手动选择候选、恢复首次导入的本地信息，或进一步合并、拆分艺术家与专辑实体。
 
-Read more about translations [here](https://docs.immich.app/developer/translations).
+完整的导入、重扫、匹配、实体编辑、歌单、缓存和故障排查说明见 [本地音乐库管理](docs/local-library-management.md)。
 
-&lt;a href=&quot;https://hosted.weblate.org/engage/immich/&quot;&gt;
-&lt;img src=&quot;https://hosted.weblate.org/widget/immich/immich/multi-auto.svg&quot; alt=&quot;Translation status&quot; /&gt;
-&lt;/a&gt;
+## Community
 
-## Repository activity
+加入discord社群，共同交流，获得帮助
 
-![Activities](https://repobeats.axiom.co/api/embed/9e86d9dc3ddd137161f2f6d2e758d7863b1789cb.svg &quot;Repobeats analytics image&quot;)
+[![Discord](https://img.shields.io/discord/1541051241822687232?logo=discord&amp;logoColor=white&amp;label=Join%20our%20Discord)](https://discord.gg/dMDBTHxeKd)
 
-## Contributors
+## 贡献者
 
-&lt;a href=&quot;https://github.com/immich-app/immich/graphs/contributors&quot;&gt;
-  &lt;img src=&quot;https://contrib.rocks/image?repo=immich-app/immich&quot; width=&quot;100%&quot;/&gt;
-&lt;/a&gt;
+感谢所有为本项目进行 Issue 提交、Bug 报告、想法建议、测试与代码编写的贡献者，均依据 all-contributors 规范进行统计
+
+由于列表过长，贡献记录请见 [贡献者名单](CONTRIBUTORS.md)。
+
+## 法律与免责声明
+
+本项目在 AI 的广泛协助下开发，因此仍可能存在细微或不易察觉的问题。若给你带来不便，敬请理解。
+
+本项目主要用于展示播放动效、界面设计与相关工程实现。应用中涉及的在线音乐流媒体、歌词、专辑封面及其他内容，其版权均归对应权利人所有。
+
+本仓库及其源代码仅供个人学习、技术交流与非营利测试使用。请勿将其用于商业盈利用途。若因对在线资源的传播、加工或再分发而引发版权纠纷或其他责任，均由使用者自行承担，项目开发者不承担相关责任。
+
+请始终尊重数字版权，并在条件允许时通过官方平台支持正版音乐。
+
+## 致谢
+
+特别感谢以下项目和资源：
+
+- [chenmozhijin/LDDC](https://github.com/chenmozhijin/LDDC)
+- [NeteaseCloudMusicApiEnhanced](https://github.com/NeteaseCloudMusicApiEnhanced/api-enhanced)
+- [chenglou/pretext](https://github.com/chenglou/pretext)
+- [MakcRe/KuGouMusicApi](https://github.com/MakcRe/KuGouMusicApi)
+- [paper-design/shaders](https://github.com/paper-design/shaders)
+- [yakult-green-tea/qq-music-api](https://github.com/yakult-green-tea/qq-music-api)
+
+本项目接入了 [Apple Music-like Lyrics TTML 逐词歌词库](https://github.com/amll-dev/amll-ttml-db) 以提供高质量的歌词文件，感谢此歌词库的作者和贡献者们。
+
+## 许可证
+
+本项目基于 `AGPL-3.0` 许可证开源。
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[agalwood/Motrix]]></title>
+            <link>https://github.com/agalwood/Motrix</link>
+            <guid>https://github.com/agalwood/Motrix</guid>
+            <pubDate>Mon, 12 Oct 2026 00:07:37 GMT</pubDate>
+            <description><![CDATA[A full-featured download manager.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/agalwood/Motrix">agalwood/Motrix</a></h1>
+            <p>A full-featured download manager.</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 56,483</p>
+            <p>Forks: 5,061</p>
+            <p>Stars today: 158 stars today</p>
+            <h2>README</h2><pre>&lt;div&gt;
+  &lt;img src=&quot;./public/app-icon.png&quot; alt=&quot;Motrix&quot; width=&quot;256&quot; /&gt;
+  &lt;h1&gt;Motrix&lt;/h1&gt;
+  &lt;p&gt;A modern, full-featured download manager that stays simple to use&lt;/p&gt;
+&lt;/div&gt;
+
+[![GitHub release](https://img.shields.io/github/v/release/agalwood/Motrix.svg)](https://github.com/agalwood/Motrix/releases) ![Build/release](https://github.com/agalwood/Motrix/workflows/Build/release/badge.svg) ![Total Downloads](https://img.shields.io/github/downloads/agalwood/Motrix/total.svg)
+
+English | [简体中文](./README.zh-CN.md)
+
+## Overview
+
+Motrix is a clean, full-featured desktop download manager for HTTP, FTP, BitTorrent, magnet links, and more.
+
+**Motrix Turbo** is Motrix v2, rebuilt from the ground up with Electron, React, and TypeScript while keeping the clean, straightforward experience of v1. The download core is independent of the UI. Browser extensions and command-line tools communicate with the app over **MDXP** (Motrix Download eXchange Protocol), an open protocol built on JSON-RPC 2.0, while plugins run in isolated sandboxes.
+
+The same core powers two ways to run Motrix:
+
+- **Desktop app:** Runs on macOS, Windows, and Linux
+- **Headless server:** Runs without a desktop environment, either directly on Node.js or in Docker, and includes a web UI for NAS devices and home servers
+
+## 🧪 Beta testing
+
+Motrix Turbo v2 is currently in beta. After its remaining release gates pass,
+download [v2.0.0-beta.47 from GitHub Releases](https://github.com/agalwood/Motrix/releases/tag/v2.0.0-beta.47)
+and read the [full release notes](./docs/release-notes/2.0.0-beta.47.md) before
+installing it.
+
+Back up your existing Motrix data and downloads before testing. The desktop
+Migration Assistant imports selected v1 tasks as paused records and preserves
+the original files. Resuming downloads requires a separate explicit action;
+legacy progress import is unavailable on Windows. Keep a backup of the v1
+profile and the engine&#039;s pre-upgrade database snapshot. When practical, test v2
+in parallel using a separate OS account, machine, or Docker data directory.
+
+## Screenshots
+
+### Dashboard
+
+&lt;picture&gt;
+  &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;./screenshots/motrix-dashboard-en-dark.webp&quot;&gt;
+  &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;./screenshots/motrix-dashboard-en-light.webp&quot;&gt;
+  &lt;img alt=&quot;Motrix Dashboard&quot; src=&quot;./screenshots/motrix-dashboard-en-light.webp&quot;&gt;
+&lt;/picture&gt;
+
+### Downloads
+
+&lt;picture&gt;
+  &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;./screenshots/motrix-downloads-en-dark.webp&quot;&gt;
+  &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;./screenshots/motrix-downloads-en-light.webp&quot;&gt;
+  &lt;img alt=&quot;Motrix Downloads&quot; src=&quot;./screenshots/motrix-downloads-en-light.webp&quot;&gt;
+&lt;/picture&gt;
+
+### Settings
+
+&lt;picture&gt;
+  &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;./screenshots/motrix-settings-en-dark.webp&quot;&gt;
+  &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;./screenshots/motrix-settings-en-light.webp&quot;&gt;
+  &lt;img alt=&quot;Motrix Settings&quot; src=&quot;./screenshots/motrix-settings-en-light.webp&quot;&gt;
+&lt;/picture&gt;
+
+## ✨ Features
+
+- 🕹 Clean, intuitive interface with dark mode
+- 🦄 BitTorrent downloads with per-file selection, plus magnet link support
+- 📡 Built-in tracker list management with automatic updates and health checks
+- 🔌 UPnP and NAT-PMP port mapping
+-  🚥  Upload and download limits with multiple speed-limit profiles
+-  💾  SQLite-backed sessions that restore downloads after a restart
+-  📊  Customizable Dashboard with transfer stats, live activity, and task tiles
+- 🔔 System notifications when downloads finish, plus an in-app notification center
+- 🧩 QuickJS-based plugin sandboxing, fine-grained permissions, and an in-app marketplace
+-  🌐  [Motrix Extension](https://github.com/motrixapp/motrix-extension) for Chrome, Edge, and Firefox hands browser downloads off to Motrix in one click
+- ⌨️  Official `@motrix/cli` client for everyday shell use and AI agents
+-  🐳  Docker-ready headless server with secure device-code pairing for remote CLI and agent clients
+-  🎬  Extensible URL Resolver plugins for extracting media from supported sites
+-  🤖  System tray integration and launch at startup
+-  🌍  Simplified Chinese and English UI, with more languages planned
+-  🔗  Handlers for `motrix://` and `magnet:` links, plus `.torrent` file associations
+
+## 🧩 Ecosystem
+
+Motrix extends beyond the desktop app with a shared protocol library, command-line client, browser extensions, and a complete plugin toolchain:
+
+| Project | Distribution | What it does |
+|---------|--------------|--------------|
+| [`@motrix/mdxp`](https://github.com/motrixapp/mdxp) | npm package | Defines the shared JSON-RPC 2.0 wire schemas and Zod types for MDXP, with helpers for bidirectional connections |
+| [`@motrix/cli`](https://github.com/motrixapp/cli) | npm package | Provides the `motrix` command, automatically discovers a local desktop app, and pairs with remote instances |
+| [Motrix Extension](https://github.com/motrixapp/motrix-extension) | Browser extension | Intercepts downloads in Chrome, Edge, and Firefox (Manifest V3), hands them off to Motrix, and pairs securely with the desktop app over native messaging |
+| [Motrix Plugin SDK](https://github.com/motrixapp/plugin-sdk) | Four npm packages | Includes `@motrix/plugin-manifest-schema`, `@motrix/plugin-api`, `@motrix/plugin-cli`, and `create-motrix-plugin` for developing, testing, and packaging plugins |
+| [Builtin Plugins](https://github.com/motrixapp/builtin-plugins) | Signed `.moext` packages | Includes three official plugins: **Filename Template** for renaming files from a template before they are saved, **Page Scraper** for extracting direct file links from HTML pages, and **URL Resolver** as the foundation for site-specific media resolution |
+| Plugin Registry | Public JSON feed | Publishes plugin listings and install metadata at `dl.motrix.app/registry/plugins.json` for both the website and the in-app marketplace |
+
+### CLI quick start
+
+```bash
+npm install -g @motrix/cli    # Requires Node.js 22 or later
+
+motrix add https://example.com/file.iso --save-dir ~/Downloads
+motrix list                   # List downloads
+motrix watch --stats          # Stream live progress as NDJSON
+motrix pair --name my-nas     # Pair with a remote or headless instance
+```
+
+### Build a plugin
+
+The [Motrix Plugin SDK](https://github.com/motrixapp/plugin-sdk) provides the TypeScript API, manifest schema, project scaffolder, and CLI used throughout the plugin development workflow:
+
+```bash
+pnpm create motrix-plugin my-plugin
+cd my-plugin &amp;&amp; pnpm install
+pnpm dev                         # Watch-build and launch Motrix with the plugin
+pnpm exec motrix-plugin validate # Validate motrix-plugin.json
+pnpm run pack                    # Create dist/&lt;id&gt;-&lt;version&gt;.moext
+pnpm exec motrix-plugin lint     # Check the packed bundle
+```
+
+The default scaffold starts with a `beforeCreate` URL resolver. Pass `post-action` after the project name to start with an `afterComplete` notification plugin instead. Plugins can hook into `beforeCreate`, `beforeFinalize`, `afterComplete`, and `onError`, contribute callable commands and settings, and access the runtime through the `motrix:plugin-api` virtual module.
+
+Plugins are bundled as a single ES2020 module and run inside a QuickJS sandbox without Node.js APIs or direct file and network access. Declare activation events, required capabilities, and URL-scoped host permissions in `motrix-plugin.json`; Motrix shows those requests to the user before granting access. See the [Plugin SDK documentation](https://github.com/motrixapp/plugin-sdk) for templates, the manifest and runtime API references, localization, sandbox constraints, packaging, and distribution.
+
+## Browser extension
+
+Motrix Extension is available from the official browser stores for use with Motrix 2:
+
+- [Chrome Web Store](https://chromewebstore.google.com/detail/motrix-extension/lggbokfckofcgjndaboioakcmincinpo)
+- [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/motrix-extension/efcflljngohddnmfmebiamigoikmdfbf)
+- [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/motrix-extension/)
+
+For installation and pairing, see the [browser extension guide](https://motrix.app/manual/browser-extension/). Development builds remain available from the [extension repository](https://github.com/motrixapp/motrix-extension#manual-browser-workflow-development).
+
+##  📦  Installation
+
+### Desktop app
+
+Download Motrix from [motrix.app](https://motrix.app) and choose the package for your operating system. Most Mac users should choose the Apple Silicon build; Intel builds are available for older Macs with Intel processors.
+
+After the remaining release gates pass, the current beta desktop packages
+will be distributed through the GitHub prerelease linked above. The protected
+release tag also publishes verified Snap builds to `latest/edge`. Choose the
+package that matches your operating system and architecture:
+
+| Platform | Architectures | Packages / channel | Recommendation |
+|----------|---------------|--------------------|----------------|
+| macOS 13+ | `arm64` (Apple Silicon), `x64` (Intel) | `.dmg` / `.zip` | Use the `.dmg` matching your Mac; choose `x64` only for an Intel-based Mac |
+| Windows | `x64` | `.exe` (NSIS installer) / `.zip` | Use the `.exe` installer for a normal installation or `.zip` for a manually extracted copy |
+| Linux | `x64`, `arm64` | `.AppImage` / `.deb` / `.rpm` | Use the portable `.AppImage` on any distribution, `.deb` on Debian or Ubuntu, or `.rpm` on Fedora or openSUSE |
+| Linux (Snap Store) | `amd64`, `arm64` | `latest/edge` | Install the strictly confined beta with `sudo snap install motrix --edge` |
+| Linux (Flatpak) | `x86_64`, `aarch64` | `.flatpak` | Install a versioned bundle from a release that includes it; see the [Flatpak guide](docs/flatpak.md) |
+| Arch Linux / Omarchy | `x64`, `arm64` | `.pacman` | Install the native Arch package with `sudo pacman -U ./Motrix-&lt;version&gt;-&lt;arch&gt;.pacman`; see the [Arch installation guide](docs/arch-linux.md) |
+
+The `.AppImage` asks on first launch whether to register its desktop entry and
+URL-scheme handlers under your user data directory; declining leaves your system
+untouched. You can enable or remove this desktop integration at any time from
+Settings → Integration.
+The Snap Store package is strictly confined. Its approved `personal-files`
+interface permits Motrix to register Native Messaging hosts for supported
+browsers; it does not grant general access to files outside the normal Snap
+interfaces. Release tags build and validate Flatpak application bundles for
+both architectures before publication. Older releases, including beta.39,
+contain only the Flatpak Native Host companion. These single-file bundles
+require manual upgrades; they do not configure a Motrix update repository.
+Windows `arm64` and all 32-bit packages are not available.
+Windows `x64` packages are unsigned and may trigger a Windows SmartScreen
+warning.
+
+### Command-line client
+
+```bash
+npm install -g @motrix/cli
+```
+
+You can also install it from Settings → Integration → Command-line tools in the desktop app.
+
+### Headless server with Docker
+
+Tagged releases publish a multi-architecture Server image to Docker Hub and
+GHCR. Beta releases publish only the immutable version tag and do not update
+`latest`; the included `compose.yaml` keeps Server state separate from
+downloaded resources:
+
+```bash
+mkdir -p motrix-data downloads
+sudo chown 1000:1000 motrix-data downloads
+export MOTRIX_IMAGE=&#039;docker.io/motrixapp/motrix-server:2.0.0-beta.47&#039;
+export MOTRIX_PUBLIC_URL=&#039;http://nas.example.lan:8080&#039;
+docker compose pull server
+docker compose up -d --wait
+```
+
+The runtime is non-root, supports a read-only root filesystem, validates mount
+permissions before accepting work, and preserves downloads, sessions, and
+installed plugins across container replacement. The standard direct-LAN setup
+publishes the Web service on port 8080 and MDXP on port 16801. Set
+`MOTRIX_PUBLIC_URL` to the Web approval URL that remote clients can actually
+reach; the Compose files do not substitute a misleading localhost URL.
+
+If the Web approval URL is temporarily unavailable, an SSH operator can list
+and approve the exact client code without exposing another port:
+
+```bash
+docker compose exec server motrix-admin pairing pending
+docker compose exec server motrix-admin pairing approve ABCD-EFGH
+```
+
+Remote CLI and agent clients pair through the device-code flow. Browser
+extensions can pair with the headless Server when
+`MOTRIX_REMOTE_EXTENSION_ENABLED=true` and
+`MOTRIX_REMOTE_EXTENSION_PUBLIC_URL` is the WS/WSS address entered in the
+Extension. HTTPS remains the default operator requirement. A direct trusted-LAN
+HTTP operator additionally requires
+`MOTRIX_ALLOW_INSECURE_OPERATOR_HTTP=true` and produces a startup warning;
+never enable it on the Internet or an untrusted LAN. Internet access requires a
+TLS reverse proxy and firewall rules around the origin ports. See the
+[Docker Server deployment guide](./docs/docker-server.md) for ownership setup,
+Docker Hub/GHCR image and tag selection, DSM 7 and fnOS installation, ports,
+diagnostics, and backup/upgrade instructions.
+
+##  🛠  Development
+
+Development requires Node.js 22 or later and pnpm. Use the pnpm version specified by the `packageManager` field in `package.json`.
+
+```bash
+git clone https://github.com/agalwood/Motrix.git
+cd Motrix
+
+pnpm install     # Install dependencies, download aria2 for your platform, and rebuild native modules
+pnpm start       # Start the Electron app in development mode with Vite HMR in the renderer
+
+pnpm test        # Run the Vitest unit tests
+pnpm test:e2e    # Run the Playwright E2E tests
+pnpm run lint    # Run Biome checks
+
+pnpm build       # Fetch signed built-in plugins, then build the native host and four Vite targets
+```
+
+### Preview the in-window application menu on macOS
+
+Windows and Linux render the application menu inside the Motrix window. To
+preview that chrome while developing on macOS, start the app with the preview
+flag enabled:
+
+```bash
+MOTRIX_PREVIEW_MAC_MENU=1 pnpm start
+```
+
+The flag hides the main window&#039;s macOS traffic-light buttons, enables the
+renderer dropdown menu, and shows the custom window controls used on Windows
+and Linux. Collapse the sidebar in this mode to check the application menu,
+attached actions, drag region, and caption-control safe areas together.
+Restart the development process after changing the flag because both Electron
+and Vite read it at startup.
+
+This mode is intended for layout and command-item debugging. Electron routes
+macOS role items through AppKit&#039;s native menu, so role-backed actions such as
+**Window → Minimize** do not behave identically when invoked from the preview
+dropdown. Validate those native role actions on Windows or Linux.
+
+See the scripts in `package.json` for the available packaging commands. Platform-specific settings for macOS, Windows, and Linux live in `electron-builder.json`.
+
+##  🔧  Tech stack
+
+| Area | Stack |
+|------|-------|
+| Desktop shell | Electron 44 |
+| UI | React 19 + Tailwind CSS 4 + shadcn/ui |
+| Language | TypeScript in strict mode |
+| Build system | Vite 8 with separate main, preload, worker, and renderer targets |
+| Validation | Zod 4 for settings, IPC payloads, and wire schemas |
+| Download engine | A Motrix-maintained fork of [aria2](https://github.com/motrixapp/aria2), bundled with the app |
+| Persistence | better-sqlite3 for download session storage and recovery |
+| Plugin sandbox | quickjs-emscripten |
+| Server runtime | Node.js + Fastify + WebSocket |
+| Internationalization | i18next + react-i18next |
+| Quality tooling | Biome, Vitest, and Playwright |
+
+The codebase has four strict layers. CI enforces the dependency boundaries between them, keeping the core portable and leaving a clear path for a future Rust rewrite:
+
+```
+renderer (React UI)
+   |  IPC via window.motrix
+app core (tasks, settings, plugins, bridge)
+   |
+engine adapter
+   |
+aria2 (download engine)
+```
+
+The Electron desktop app and the Node.js headless server share the same core. Platform-specific capabilities such as notifications and secret storage have separate implementations with consistent behavior.
+
+## 🤝 Contributing
+
+Contributions of code, tests, documentation, translations, issue reports, and design feedback are welcome. Before opening a pull request, read the [contribution guidelines](./CONTRIBUTING.md) for the development workflow, architecture boundaries, implementation standards, and required validation.
+
+All participants must follow the [Code of Conduct](./CODE_OF_CONDUCT.md). Report suspected vulnerabilities privately according to the [Security Policy](./SECURITY.md), not through a public issue or discussion.
+
+##  📜  License
+
+[MIT](./LICENSE) © 2018-present Dr_rOot
+
+See [`THIRD_PARTY_NOTICES.md`](./THIRD_PARTY_NOTICES.md) for third-party license information.
+Release packages also include a generated dependency inventory, consolidated license texts, and an SPDX 2.3 SBOM under `legal/`.
+</pre>
+          ]]></content:encoded>
+            <category>TypeScript</category>
+        </item>
+        <item>
+            <title><![CDATA[getnao/nao]]></title>
+            <link>https://github.com/getnao/nao</link>
+            <guid>https://github.com/getnao/nao</guid>
+            <pubDate>Mon, 12 Oct 2026 00:07:36 GMT</pubDate>
+            <description><![CDATA[👾 nao is an open source analytics agent. (1) Create context with nao-core cli, (2) deploy nao chat interface for everyone]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/getnao/nao">getnao/nao</a></h1>
+            <p>👾 nao is an open source analytics agent. (1) Create context with nao-core cli, (2) deploy nao chat interface for everyone</p>
+            <p>Language: TypeScript</p>
+            <p>Stars: 1,906</p>
+            <p>Forks: 282</p>
+            <p>Stars today: 20 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://getnao.io&quot;&gt;
+    &lt;picture&gt;
+      &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;.github/images/Icon_template_IOS.svg&quot; /&gt;
+      &lt;img src=&quot;.github/images/Icon_template_IOS.svg&quot; height=&quot;128&quot; alt=&quot;nao logo&quot; /&gt;
+    &lt;/picture&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;h1 align=&quot;center&quot;&gt;nao&lt;/h1&gt;
+
+&lt;h3 align=&quot;center&quot;&gt;
+  The #1 Open-Source Analytics Agent
+&lt;/h3&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  🌐 &lt;a href=&quot;https://getnao.io&quot;&gt;Website&lt;/a&gt; · 📚 &lt;a href=&quot;https://docs.getnao.io&quot;&gt;Documentation&lt;/a&gt; · 💬 &lt;a href=&quot;https://join.slack.com/t/naolabs/shared_invite/zt-4080jlm79-nm52x5nZhG2N1ben8zwpiQ&quot;&gt;Slack&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;br/&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://getnao.io&quot;&gt;
+    &lt;img src=&quot;.github/images/nao_UI.png&quot; alt=&quot;nao Chat Interface&quot; /&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;br/&gt;
+
+## What is nao?
+
+nao is a framework to build and deploy analytics agent. &lt;br/&gt;
+Create the context of your analytics agent with nao-core cli: data, metadata, modeling, rules, etc. &lt;br/&gt;
+Deploy a UI for anyone to chat with your agent and run analytics on your data.
+
+## Key Features
+
+For **data teams**:
+
+- 🧱 **Open Context Builder** — Create a file-system like context for your agent. Add anything you want in the context: data, metadata, docs, tools, MCPs. No limit.
+- 🏳️ **Data Stack Agnostic** — Works with any data warehouse, stack, type of context, LLM.
+- 🕵🏻‍♀️ **Agent Reliability Visibility** — Unit test your agent performance before deploying it to users. Version the context and track the performance of your agent over time. Get users feedbacks to improve the agent and track their usage.
+- 🔒 **Self-hosted &amp; secure** — Self-host your analytics agent and use your own LLM keys to guarantee maximum security for your data.
+
+For **business users**:
+
+- 🤖 **Natural Language to Insights** — Ask questions in plain English, get analytics straight away
+- 📊 **Native Data Visualization** — Create and customize visualizations directly in the chat interface
+- 🧊 **Transparent Reasoning** — See the agent reasoning and sources clearly
+- 👍 **Easy Feedback** — Send feedback to the data team when a answer is right or wrong
+
+## ⚡️ Quickstart your agent in 1 minute
+
+- **Step 1**: Install nao-core package
+
+    ```bash
+    pip install nao-core
+    ```
+
+&lt;br/&gt;
+
+- **Step 2**: Initialize a nao project
+
+    ```bash
+    nao init
+    ```
+
+    It will ask you:
+    - To name your project
+    - If you want to connect a database _(optional)_
+    - If you want to add a repo in agent context _(optional)_
+    - To add an LLM key _(optional)_
+    - If you want to setup a Slack connection _(optional)_
+
+    💡 You can skip any optional question and configure them later in your `nao_config.yaml` file.
+
+    This will create:
+    - A new folder with your project name
+    - An architecture for your context files
+    - A `nao_config.yaml` configuration file
+    - A `RULES.md` file
+
+&lt;br/&gt;
+
+- **Step 3**: Verify your setup
+
+    cd to the project folder and run:
+
+    ```bash
+    nao debug
+    ```
+
+&lt;br/&gt;
+
+- **Step 4**: Synchronize your context
+
+    ```bash
+    nao sync
+    ```
+
+    This will populate your context folder with your context files (data, metadata, repos, etc.)
+
+&lt;br/&gt;
+
+- **Step 5**: Launch the chat and ask questions
+
+    ```bash
+    nao chat
+    ```
+
+    This will start the nao chat UI. It will open the chat interface in your browser at `http://localhost:5005`.
+    From there, you can start asking questions to your agent.
+
+## Evaluation framework
+
+Unit test your agent performance before deploying it to users. First, create a folder `tests/` with questions and expected SQL in yaml.
+Then, measure agent&#039;s performance on examples with nao test command:
+
+```bash
+nao test
+```
+
+View results in tests panel:
+
+```bash
+nao test server
+```
+
+## Commands
+
+```bash
+nao --help
+Usage: nao COMMAND
+
+╭─ Commands ────────────────────────────────────────────────────────────────╮
+│ chat         Start the nao chat UI.                                       │
+│ init         Initialize a new nao project.                                │
+│ sync         Sync context from your context sources (databases, repos)    │
+│ test         Measure agent&#039;s performance on test examples.                │
+│ debug        Debug and troubleshoot your nao setup.                       │
+│ --help (-h)  Display this message and exit.                               │
+│ --version    Display application version.                                 │
+╰───────────────────────────────────────────────────────────────────────────╯
+```
+
+## 🐳 Docker
+
+Pull the image from DockerHub:
+
+```bash
+docker pull getnao/nao:latest
+```
+
+Run nao chat with Docker using the example project bundled in the image:
+
+```bash
+docker run -d \
+  --name nao \
+  -p 5005:5005 \
+  -e BETTER_AUTH_URL=http://localhost:5005 \
+  getnao/nao:latest
+```
+
+Run nao chat with Docker using your local nao project:
+
+```bash
+docker run -d \
+  --name nao \
+  -p 5005:5005 \
+  -e BETTER_AUTH_URL=http://localhost:5005 \
+  -v /path/to/your/nao-project:/app/project \
+  -e NAO_DEFAULT_PROJECT_PATH=/app/project \
+  getnao/nao:latest
+```
+
+Access the UI at http://localhost:5005 (or at any URL you configured).
+
+See the [DockerHub page](https://hub.docker.com/r/getnao/nao) for more details.
+
+For end-to-end self-hosted deployment (for example on Cloud Run with PostgreSQL), see the [Deployment Guide](https://docs.getnao.io/nao-agent/self-hosting/deployment-guide).
+
+## 🧩 Skills
+
+Use nao skills to create your nao project and context with your favourite agent.
+
+Install the nao skill pack:
+
+```bash
+npx skills add getnao/nao
+```
+
+Docs on nao skills: https://docs.getnao.io/nao-agent/context-engineering/skills
+
+## 👩🏻‍💻 Development
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, commands, and guidelines.
+
+### Start nao locally
+
+Prerequisites:
+
+- nvm
+- bun
+- uv
+
+Run the following commands:
+
+```
+npm run npm:pin
+npm install
+npm run db:migrate -w apps/backend
+```
+
+Create a .env file at the root of the repository and input environment variables
+
+Minimum variables necessary are:
+
+```
+BETTER_AUTH_SECRET=#run `openssl rand -base64 32` to generate
+# Public URL of your app (used for authentication, trusted origins, and Slack redirects)
+BETTER_AUTH_URL=http://localhost:3000
+
+# LLM providers
+OPENAI_API_KEY=12345678
+
+NAO_DEFAULT_PROJECT_PATH=#path to example folder
+```
+
+Run the following command:
+
+```
+npm run dev
+```
+
+Go to http://localhost:3000 on your browser
+
+## 📒 Stack
+
+### Backend
+
+- Fastify: https://fastify.dev/docs/latest/
+- Drizzle: https://orm.drizzle.team/docs/get-started
+- tRPC router: https://trpc.io/docs/server/routers
+
+### Frontend
+
+- tRPC client: https://trpc.io/docs/client/tanstack-react-query/usage
+- Tanstack Query: https://tanstack.com/query/latest/docs/framework/react/overview
+- Shadcn: https://ui.shadcn.com/docs/components
+
+## ⛹️‍♀️ Join the Community
+
+- Star the repo
+- Subscribe to releases (Watch → Custom → Releases)
+- Follow us on [LinkedIn](https://www.linkedin.com/company/getnao)
+- Join our [Slack](https://join.slack.com/t/naolabs/shared_invite/zt-4080jlm79-nm52x5nZhG2N1ben8zwpiQ)
+- Contribute to the repo!
+
+## 🫰🏻 Partners
+
+nao Labs is a proud Y Combinator company!
+
+## 📄 License
+
+This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details.
 </pre>
           ]]></content:encoded>
             <category>TypeScript</category>
