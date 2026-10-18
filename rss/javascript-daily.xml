@@ -4,7 +4,7 @@
         <title>GitHub Trending Today for javascript - JavaScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for javascript.</description>
-        <lastBuildDate>Sat, 17 Oct 2026 00:05:34 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 18 Oct 2026 00:06:40 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
@@ -13,15 +13,15 @@
             <title><![CDATA[affaan-m/ECC]]></title>
             <link>https://github.com/affaan-m/ECC</link>
             <guid>https://github.com/affaan-m/ECC</guid>
-            <pubDate>Sat, 17 Oct 2026 00:05:34 GMT</pubDate>
+            <pubDate>Sun, 18 Oct 2026 00:06:40 GMT</pubDate>
             <description><![CDATA[The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a></h1>
             <p>The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 281,488</p>
-            <p>Forks: 41,849</p>
-            <p>Stars today: 1,057 stars today</p>
+            <p>Stars: 282,488</p>
+            <p>Forks: 41,985</p>
+            <p>Stars today: 1,145 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
   &lt;img src=&quot;assets/hero.png&quot; alt=&quot;ECC - the agent harness operating system&quot; width=&quot;100%&quot; /&gt;
 &lt;/p&gt;
@@ -385,18 +385,138 @@ codex plugin marketp
             <category>JavaScript</category>
         </item>
         <item>
+            <title><![CDATA[michael-denyer/pstack-claude]]></title>
+            <link>https://github.com/michael-denyer/pstack-claude</link>
+            <guid>https://github.com/michael-denyer/pstack-claude</guid>
+            <pubDate>Sun, 18 Oct 2026 00:06:39 GMT</pubDate>
+            <description><![CDATA[Claude Code, Codex, Copilot, Pi, OpenCode, Gemini, and Prime Agent versions of Poteto's pstack. Rigorous agent workflows with Cursor primitives translated for other harnesses.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/michael-denyer/pstack-claude">michael-denyer/pstack-claude</a></h1>
+            <p>Claude Code, Codex, Copilot, Pi, OpenCode, Gemini, and Prime Agent versions of Poteto's pstack. Rigorous agent workflows with Cursor primitives translated for other harnesses.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 2,765</p>
+            <p>Forks: 261</p>
+            <p>Stars today: 118 stars today</p>
+            <h2>README</h2><pre># pstack
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-yellow?logo=buy-me-a-coffee&amp;logoColor=white)](https://buymeacoffee.com/codenyer)
+
+Lauren Tan&#039;s [pstack](https://github.com/cursor/plugins/tree/main/pstack) is an opinionated Cursor skill stack that improves agent outcomes. This is a port for Claude Code, Codex, Pi, GitHub Copilot and other agent harnesses. It tracks upstream and also carries named policy forks, each declared in [`tools/forks.json`](tools/forks.json).
+
+Tell `poteto-mode` your goal and it will invoke the correct workflow for the task. It keeps your code concise, simple and verified.
+
+For concurrency bugs and invariants that tests cannot reach, see the separate [agent-formal-verify](https://github.com/michael-denyer/agent-formal-verify) plugin, which adds TLA+ model checking and Lean proofs.
+
+## Install
+
+### Claude Code
+
+Run in Claude Code:
+
+```text
+/plugin marketplace add michael-denyer/pstack-claude
+/plugin install pstack@pstack-claude
+```
+
+### Codex
+
+Run in your terminal:
+
+```shell
+codex plugin marketplace add michael-denyer/pstack-claude
+codex plugin add pstack@pstack-claude
+```
+
+### Pi
+
+Run in your terminal:
+
+```shell
+pi install git:github.com/michael-denyer/pstack-claude
+```
+
+The package loads the skills and the pstack Pi extension, which adds the subagent, question, and wake-up tools the skills use, plus `/loop` and the routing instruction. Invoke a skill with `/skill:&lt;name&gt;`.
+
+### GitHub Copilot
+
+Run in your terminal:
+
+```shell
+copilot plugin marketplace add michael-denyer/pstack-claude
+copilot plugin install pstack@pstack-claude
+```
+
+This installs pstack for the Copilot CLI and the GitHub Copilot app, which share `~/.copilot`. Start a new session afterwards. Copilot ships no default pstack models, so the first skill that needs one runs `setup-pstack` to pick from the models your account lists, and later sessions reuse that choice.
+
+The Copilot build is tested on Copilot CLI 1.0.87 through 1.0.92. On those versions the routing hook&#039;s context reaches the session alongside other plugins&#039; session-start context. If a later version keeps only one plugin&#039;s context, `setup-pstack` offers a [standing instruction](plugins/pstack/skills/setup-pstack/copilot.md#wire-it-in) for `~/.copilot/copilot-instructions.md` instead. On 1.0.92, once the CLI caches its computer-use experiment assignment, `copilot -p` sessions list no plugin skills and a `skill` call returns &quot;Skill not found&quot;. Interactive sessions, the hooks, and the agents are unaffected.
+
+Run `setup-pstack` to change model defaults, set a reasoning effort per role (for example `arena runners: opus @xhigh, fable @max`, which Claude Code dispatches through the plugin&#039;s `pstack:effort-&lt;level&gt;` or `pstack:poteto-agent-&lt;level&gt;` agents; roles without a level keep the session&#039;s effort unless the sheet&#039;s `default effort` line names one), or turn automatic routing off. The plugin installs the routing hook on Claude Code, Codex, and GitHub Copilot; Codex asks you to trust it through `/hooks` before it runs. On Pi the extension injects the same routing instruction. In Claude Code and the Copilot CLI, use `/pstack:setup-pstack`.
+
+### Other harnesses
+
+OpenCode (the CLI and the desktop app), Gemini CLI, Prime Agent, and skills-only Codex installs read skills from `~/.agents/skills/`. Run in your terminal:
+
+```shell
+git clone https://github.com/michael-denyer/pstack-claude
+cd pstack-claude
+mkdir -p ~/.agents/skills
+for s in plugins/pstack/skills/*/; do
+  target=~/.agents/skills/&quot;$(basename &quot;$s&quot;)&quot;
+  test -e &quot;$target&quot; || test -L &quot;$target&quot; || ln -s &quot;$(pwd)/$s&quot; &quot;$target&quot;
+done
+```
+
+To update, run `git pull` in the clone, then run the `for` loop again to link skills added since the last run. These installs have no routing hook, so ask for `poteto-mode` by name or add a standing instruction to the harness&#039;s instruction file. See [shared installation](docs/reference.md#shared-skills-installation) for per-harness notes and uninstalling.
+
+## Getting started
+
+```text
+Use poteto-mode to fix the search filter resetting when I change pages.
+```
+
+For a bug, it reproduces the failure, uses `how` and `why` to investigate, delegates the fix, then reruns the failing case. If the fix crosses a function boundary, it brings in `architect` before implementation. You receive the fix and the failing and passing evidence.
+
+[Other playbooks](plugins/pstack/skills/poteto-mode/SKILL.md#playbooks) cover planning, features, refactoring, performance issues, investigations, prototypes, PR maintenance, shipping, and longer projects.
+
+![poteto-mode on Claude Code, Codex, and Pi turns a request into verified work. Choose a playbook, plan and delegate with architect, arena, or swarm, then review and verify with interrogate, tests, and measurements. Project playbooks customize the workflow, and setup-pstack configures the model and reasoning effort per role. Supporting skills include how, why, and unslop.](assets/pstack-overview.png)
+
+## Details
+
+- [Skills and slash commands](docs/reference.md#slash-commands)
+- [Runtime setup](docs/reference.md#runtime-support)
+- [Models and dependencies](docs/reference.md#configuration-and-dependencies)
+- [Maintenance and port scope](docs/reference.md#maintenance)
+
+## Data handling
+
+pstack has no server or telemetry. Anything its skills ask your agent to read, including session transcripts, goes to your model provider. Scripts run locally, and PR tools use your GitHub CLI login.
+
+## Contributing
+
+Thanks for helping make this port better. Bug reports, documentation fixes, and runtime improvements are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the checks and where your change belongs. Report vulnerabilities privately as described in [SECURITY.md](SECURITY.md).
+
+To support maintenance of this port, [buy the maintainer a coffee](https://buymeacoffee.com/codenyer).
+
+## License
+
+This port, including its modifications and additions, is also [MIT-licensed](LICENSE), © 2026 Michael Denyer. Original pstack © 2026 Lauren Tan; imported cursor-team-kit and thermos skills © 2026 Cursor. See [LICENSE-cursor-team-kit](LICENSE-cursor-team-kit), [LICENSE-thermos](LICENSE-thermos), and [NOTICE.md](NOTICE.md).
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
             <title><![CDATA[hmjz100/LinkSwift]]></title>
             <link>https://github.com/hmjz100/LinkSwift</link>
             <guid>https://github.com/hmjz100/LinkSwift</guid>
-            <pubDate>Sat, 17 Oct 2026 00:05:33 GMT</pubDate>
+            <pubDate>Sun, 18 Oct 2026 00:06:38 GMT</pubDate>
             <description><![CDATA[一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/hmjz100/LinkSwift">hmjz100/LinkSwift</a></h1>
             <p>一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 23,665</p>
-            <p>Forks: 1,435</p>
-            <p>Stars today: 538 stars today</p>
+            <p>Stars: 24,370</p>
+            <p>Forks: 1,492</p>
+            <p>Stars today: 1,060 stars today</p>
             <h2>README</h2><pre>&gt; [!IMPORTANT]
 &gt; 如果您是从 GreasyFork 找到这的，建议前往下方的 [安装](#安装) 选择一个合适的源覆盖安装，避免因脚本失效或 GF 黑产刷子导致无法及时更新。
 
@@ -575,682 +695,780 @@ v1.1.3（基于原版 v6.2.7）
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[michael-denyer/pstack-claude]]></title>
-            <link>https://github.com/michael-denyer/pstack-claude</link>
-            <guid>https://github.com/michael-denyer/pstack-claude</guid>
-            <pubDate>Sat, 17 Oct 2026 00:05:32 GMT</pubDate>
-            <description><![CDATA[Claude Code, Codex, Copilot, Pi, OpenCode, Gemini, and Prime Agent versions of Poteto's pstack. Rigorous agent workflows with Cursor primitives translated for other harnesses.]]></description>
+            <title><![CDATA[vercel/next.js]]></title>
+            <link>https://github.com/vercel/next.js</link>
+            <guid>https://github.com/vercel/next.js</guid>
+            <pubDate>Sun, 18 Oct 2026 00:06:37 GMT</pubDate>
+            <description><![CDATA[The React Framework]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/michael-denyer/pstack-claude">michael-denyer/pstack-claude</a></h1>
-            <p>Claude Code, Codex, Copilot, Pi, OpenCode, Gemini, and Prime Agent versions of Poteto's pstack. Rigorous agent workflows with Cursor primitives translated for other harnesses.</p>
+            <h1><a href="https://github.com/vercel/next.js">vercel/next.js</a></h1>
+            <p>The React Framework</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 2,682</p>
-            <p>Forks: 239</p>
-            <p>Stars today: 420 stars today</p>
-            <h2>README</h2><pre># pstack
+            <p>Stars: 143,056</p>
+            <p>Forks: 35,151</p>
+            <p>Stars today: 28 stars today</p>
+            <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[DietrichGebert/ponytail]]></title>
+            <link>https://github.com/DietrichGebert/ponytail</link>
+            <guid>https://github.com/DietrichGebert/ponytail</guid>
+            <pubDate>Sun, 18 Oct 2026 00:06:36 GMT</pubDate>
+            <description><![CDATA[Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/DietrichGebert/ponytail">DietrichGebert/ponytail</a></h1>
+            <p>Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 166,234</p>
+            <p>Forks: 8,992</p>
+            <p>Stars today: 840 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;assets/logo-dark.png&quot;&gt;
+    &lt;img src=&quot;assets/logo.png&quot; width=&quot;220&quot; alt=&quot;Ponytail, the lazy senior dev&quot;&gt;
+  &lt;/picture&gt;
+&lt;/p&gt;
 
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-yellow?logo=buy-me-a-coffee&amp;logoColor=white)](https://buymeacoffee.com/codenyer)
+&lt;h1 align=&quot;center&quot;&gt;Ponytail&lt;/h1&gt;
 
-Lauren Tan&#039;s [pstack](https://github.com/cursor/plugins/tree/main/pstack) is an opinionated Cursor skill stack that improves agent outcomes. This is a port for Claude Code, Codex, Pi, GitHub Copilot and other agent harnesses. It tracks upstream and also carries named policy forks, each declared in [`tools/forks.json`](tools/forks.json).
+&lt;p align=&quot;center&quot;&gt;
+  &lt;em&gt;He says nothing. He writes one line. It works.&lt;/em&gt;
+&lt;/p&gt;
 
-Tell `poteto-mode` your goal and it will invoke the correct workflow for the task. It keeps your code concise, simple and verified.
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://trendshift.io/repositories/50668?utm_source=repository-badge&amp;amp;utm_medium=badge&amp;amp;utm_campaign=badge-repository-50668&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/50668&quot; alt=&quot;DietrichGebert%2Fponytail | Trendshift&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+&lt;/p&gt;
 
-For concurrency bugs and invariants that tests cannot reach, see the separate [agent-formal-verify](https://github.com/michael-denyer/agent-formal-verify) plugin, which adds TLA+ model checking and Lean proofs.
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://img.shields.io/github/stars/DietrichGebert/ponytail?style=flat-square&amp;color=111111&amp;label=stars&quot; alt=&quot;Stars&quot;&gt;
+  &lt;img src=&quot;https://img.shields.io/github/v/release/DietrichGebert/ponytail?style=flat-square&amp;color=111111&amp;label=release&quot; alt=&quot;Release&quot;&gt;
+  &lt;img src=&quot;https://img.shields.io/npm/v/@dietrichgebert/ponytail?style=flat-square&amp;color=111111&amp;label=npm&quot; alt=&quot;npm&quot;&gt;
+  &lt;img src=&quot;https://img.shields.io/badge/works%20with-20%20agents-111111?style=flat-square&quot; alt=&quot;Works with 20 agents&quot;&gt;
+  &lt;img src=&quot;https://img.shields.io/badge/license-MIT-111111?style=flat-square&quot; alt=&quot;MIT license&quot;&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://ponytail.dev/stories&quot;&gt;&lt;img src=&quot;assets/stories-banner.png&quot; alt=&quot;Using Ponytail at work? Tell us your story&quot; width=&quot;760&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://trendshift.io/repositories/50668&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/trendshift/repositories/50668/daily&quot; alt=&quot;DietrichGebert/ponytail | Trendshift&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://trendshift.io/repositories/50668&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/trendshift/repositories/50668/weekly&quot; alt=&quot;DietrichGebert/ponytail | Trendshift&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://trendshift.io/repositories/50668?utm_source=trendshift-badge&amp;amp;utm_medium=badge&amp;amp;utm_campaign=badge-trendshift-50668&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/trendshift/repositories/50668/monthly?language=JavaScript&quot; alt=&quot;DietrichGebert%2Fponytail | Trendshift monthly ranking&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/v5/hero.jpg&quot; width=&quot;880&quot; alt=&quot;Ponytail 5, rebuilt from the ground up: -53% code, -41% time, -26% cost, -45% tokens. And yet 98% of risky logic ships with a test, without Ponytail 68%.&quot;&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;strong&gt;Ponytail 5: rebuilt from the ground up.&lt;/strong&gt;&lt;br&gt;
+  &lt;strong&gt;-53% code &amp;middot; -41% time &amp;middot; -26% cost &amp;middot; -45% tokens&lt;/strong&gt;&lt;br&gt;
+  &lt;strong&gt;And yet: 98% of risky logic ships with a test.&lt;/strong&gt; Without Ponytail: 68%.&lt;br&gt;
+  &lt;sub&gt;Benchmarked in Claude Code, the same agent with and without the skill: 39 tasks including a real FastAPI + React repo, Opus 5.5, 5 runs each. &lt;a href=&quot;#numbers&quot;&gt;Details&lt;/a&gt;.&lt;/sub&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;sub&gt;&lt;a href=&quot;i18n/README.es.md&quot;&gt;Español&lt;/a&gt; &amp;middot; &lt;a href=&quot;i18n/README.ko.md&quot;&gt;한국어&lt;/a&gt; &amp;middot; &lt;a href=&quot;i18n/README.zh-CN.md&quot;&gt;简体中文&lt;/a&gt; &amp;middot; &lt;a href=&quot;i18n/README.ja.md&quot;&gt;日本語&lt;/a&gt;&lt;/sub&gt;
+&lt;/p&gt;
+
+---
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://ponytail.dev/soon&quot;&gt;&lt;img src=&quot;assets/waitlist-banner.png&quot; alt=&quot;Something&#039;s coming, join the waitlist&quot; width=&quot;760&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+## Already built with Ponytail
+
+&lt;a href=&quot;https://theretriever.app&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;assets/retriever-logo-dark.svg&quot;&gt;
+    &lt;img src=&quot;assets/retriever-logo-light.svg&quot; height=&quot;128&quot; alt=&quot;Retriever&quot;&gt;
+  &lt;/picture&gt;
+&lt;/a&gt;
+
+---
+
+You know him. Long ponytail. Oval glasses. Has been at the company longer than the version control. You show him fifty lines; he looks at them, says nothing, and replaces them with one.
+
+Ponytail puts him inside your AI agent.
+
+## Numbers
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/v5/chart.png&quot; width=&quot;880&quot; alt=&quot;Share of the no-skill baseline. Lines of code: Ponytail v4.13 52%, Ponytail 5 47%. Output tokens: 57% and 55%. Cost: 84% and 74%. Time: 62% and 59%.&quot;&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/v5/tests.png&quot; width=&quot;880&quot; alt=&quot;Half the code, and yet better: 98% of risky logic ships with a test (no skill 68%); the agent&#039;s own tests catch 66% of injected bugs (no skill 46%).&quot;&gt;
+&lt;/p&gt;
+
+Two things the chart does not show: in a blind comparison, Ponytail 5&#039;s replies beat the previous Ponytail&#039;s 110 to 67. And on the six security tasks (SQL injection, path traversal, forged tokens, rate limiting, malformed CSV rows, caching) it passed all 30 runs: less code, no less safe. Method, per-task tables and limits: [benchmarks/results/2026-10-07-agentic.md](benchmarks/results/2026-10-07-agentic.md).
+
+**The rule was never &quot;fewest tokens.&quot;** It is: write only what the task needs, and never cut validation, error handling, security, or accessibility. The code ends up small because it is necessary, not golfed. Lower cost and latency are a side effect.
+
+## Before / after
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/v5/beforeafter.png&quot; width=&quot;880&quot; alt=&quot;Add a date picker to the frontend. No skill: 335 lines, a calendar and a date picker built by hand. Ponytail 5: one 10-line file that reuses the repo&#039;s Input with type date, so the browser brings the calendar.&quot;&gt;
+&lt;/p&gt;
+
+You ask for a date picker. Without Ponytail, the agent installs a date picker library or builds a whole calendar by hand: 335 lines. Ponytail 5 first looks at what is already there: the repo has an `Input` component, and every browser has a date picker. It puts the two together. 10 lines.
+
+More survivors in [examples/](examples/).
+
+## The review, rebuilt
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/v5/review.png&quot; width=&quot;880&quot; alt=&quot;The review, rebuilt. A real /ponytail-review finding from the benchmark: the change renamed a field, and an untouched file, src/routes/feed.js, now crashes. Must fix: the Atom feed now crashes on every request, with what this is, the problem, the fix, and what happens if we skip it. 100% of planted problems found, no skill 87%. 100% of problems outside the diff found, no skill 78%.&quot;&gt;
+&lt;/p&gt;
+
+`/ponytail-review` used to look only for code to cut. Now it reviews like the senior dev who gets paged when it breaks: it reads the code your change touches, not just the diff, and checks bugs, security, real load, missing tests, speed, and what to cut. Each finding says what the code does, what goes wrong, how to fix it, and what happens if you don&#039;t.
+
+## The audit, rebuilt
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/v5/audit.png&quot; width=&quot;880&quot; alt=&quot;Your whole repo, ranked. Fix this first. A real /ponytail-audit from the benchmark on a warehouse stock repo: 1 must fix, office batches with 1,200 fail completely; 2 must fix, the import silently skips bad rows; 3 must fix, a mistyped SKU in an office batch is silently ignored; 4 should fix, the risky code paths have no tests; 5 nice to have, the API crashes on a body that isn&#039;t an object. Verdict: fix 1 first.&quot;&gt;
+&lt;/p&gt;
+
+`/ponytail-audit` runs the same checks on the whole repo. It maps the code first: entry points, how data moves, what load the project expects. Then it ranks what it finds and tells you what to fix first. The old audit only listed what to delete.
+
+## New in 5.3: the band
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/band/band.png&quot; width=&quot;880&quot; alt=&quot;The ponytail band in Claude Code, above the prompt. Detail mode: cost $23.80, last turn $1.14, average $0.72 per turn; 56.7M tokens, 168k output, 33 turns; agent time 52m 14s; reuse 71%, 5 used, 2 new; tests passed after the last change. Compact mode shows the same in one line.&quot;&gt;
+&lt;/p&gt;
+
+In Claude Code, ponytail now shows a band above the prompt: what the current task costs, how many tokens and how much agent time it used, how often it reused existing code instead of writing new code, and whether the tests passed after the last change. Its buttons switch the level, run `/ponytail-review` or `/ponytail-audit`, copy the task as Markdown, and fold the band into one line. Don&#039;t want it? `/ponytail band` hides it, the same command brings it back. Needs Claude Code 2.1.290 or later, in the terminal or the desktop app. It does not show in the VS Code chat panel, cloud sessions or `claude -p`.
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/band/board.png&quot; width=&quot;880&quot; alt=&quot;The ponytail board, a local page: 61 sessions, 20h 13m agent time, $285.30 and 492.5M tokens in the last 30 days; agent time per project over time; the latest sessions with their tests; active days and streak.&quot;&gt;
+&lt;/p&gt;
+
+**Board** opens a local page with every task across your projects: cost, agent time and tokens over time, every session with its tests, and the days you worked. By default, everything stays on your machine, in `~/.config/ponytail/band/`. `/ponytail band import` adds your past Claude Code sessions to it, with their cost, agent time and tokens.
+
+## How it works
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/v5/ladder.png&quot; width=&quot;880&quot; alt=&quot;Before writing code, stop at the first rung that holds: 1 does this need to exist, 2 already in this codebase, 3 does the standard library do it, 4 a native platform feature, 5 an installed dependency, 6 can it be one line, 7 only then the minimum that works, plus one small test if it has logic.&quot;&gt;
+&lt;/p&gt;
+
+The ladder runs *after* it understands the problem, not instead of it: it reads the code the change touches and traces the real flow before picking a rung. Lazy about the solution, never about reading.
+
+Lazy, not negligent: trust-boundary validation, data-loss handling, security, and accessibility are never on the chopping block.
+
+Logic with a branch, a loop, a parser, money or security leaves one small test behind. Every reply ends with what was skipped or not checked and any risk you should know.
+
+## The prompt
+
+Ponytail is one prompt: [`skills/ponytail/SKILL.md`](skills/ponytail/SKILL.md). The compact version, for agents that read a rules file, is [`AGENTS.md`](AGENTS.md). Everything else in this repo loads that prompt into different agents.
 
 ## Install
 
-### Claude Code
+**Claude Code**, as two separate prompts:
 
-Run in Claude Code:
-
-```text
-/plugin marketplace add michael-denyer/pstack-claude
-/plugin install pstack@pstack-claude
+```
+/plugin marketplace add DietrichGebert/ponytail
+```
+```
+/plugin install ponytail@ponytail
 ```
 
-### Codex
+**Codex:**
 
-Run in your terminal:
-
-```shell
-codex plugin marketplace add michael-denyer/pstack-claude
-codex plugin add pstack@pstack-claude
+```bash
+codex plugin marketplace add DietrichGebert/ponytail
+codex plugin add ponytail@ponytail
 ```
 
-### Pi
+Then open `/hooks` in Codex, trust its two lifecycle hooks, and start a new thread.
 
-Run in your terminal:
+**Any other agent:** copy [`AGENTS.md`](AGENTS.md) into your project, or ask your agent to install [`skills/ponytail/SKILL.md`](skills/ponytail/SKILL.md) as a skill. Step by step for Copilot, Cursor, OpenCode, Gemini and the rest: **[INSTALL.md](INSTALL.md)**.
 
-```shell
-pi install git:github.com/michael-denyer/pstack-claude
-```
+That was it. He&#039;d be proud. He won&#039;t say it.
 
-The package loads the skills and the pstack Pi extension, which adds the subagent, question, and wake-up tools the skills use, plus `/loop` and the routing instruction. Invoke a skill with `/skill:&lt;name&gt;`.
+Active every session, with a handful of commands (see [Commands](#commands)). `/ponytail ultra` exists for when the codebase has wronged you personally. Startup and mode-change text shows the current mode.
 
-### GitHub Copilot
+Only install ponytail from `DietrichGebert/ponytail` on GitHub or `@dietrichgebert/ponytail` on npm. It never ships `.exe` or `.dll` files; a copy that does is not mine.
 
-Run in your terminal:
+## Commands
 
-```shell
-copilot plugin marketplace add michael-denyer/pstack-claude
-copilot plugin install pstack@pstack-claude
-```
+| Command | What it does |
+|---------|--------------|
+| `/ponytail [lite \| full \| ultra \| off]` | Set the intensity, or turn it off. No argument switches ponytail on at the default level if it is off, and otherwise reports the current level. |
+| `/ponytail band [on \| off]` | Claude Code only: hide or show the band above the prompt. No argument switches it. The level stays. |
+| `/ponytail band import` | Claude Code only: add your past Claude Code sessions to the board, with their cost, agent time and tokens. |
+| `/ponytail-review` | Review the current diff like the senior dev who gets paged when it breaks: bugs, security, real load, risky code without a test, slow paths, and what to cut. Each finding says what the code does, what goes wrong, how to fix it, and what happens if you don&#039;t. Name a target in plain words to narrow or widen it: `uncommitted`, `staged`, `branch`, or a PR link. |
+| `/ponytail-audit` | The same check for the whole repo, most important first. |
+| `/ponytail-debt` | Harvest the `shortcut:` comments you&#039;ve deferred into a ledger, so &quot;later&quot; doesn&#039;t become &quot;never&quot;. |
+| `/ponytail-gain` | Show the measured impact scoreboard (less code, less cost, more speed) from the benchmark. |
+| `/ponytail-help` | Quick reference for the commands above. |
 
-This installs pstack for the Copilot CLI and the GitHub Copilot app, which share `~/.copilot`. Start a new session afterwards. Copilot ships no default pstack models, so the first skill that needs one runs `setup-pstack` to pick from the models your account lists, and later sessions reuse that choice.
+Commands need a skill-capable host (Claude Code, Codex, Devin CLI, OpenCode, Gemini, Antigravity CLI, pi, Hermes Agent, Qoder, Grok Build). In Codex CLI and the IDE extension they&#039;re skills under the plugin&#039;s namespace; invoke with `$ponytail:ponytail-review`. Cursor with the [hooks](INSTALL.md#cursor) gets `/ponytail` level switching only, typed as a plain message. The instruction-only adapters (Cursor&#039;s rule file, Windsurf, Cline, Copilot, Kiro, Antigravity&#039;s `AGENTS.md` fallback) load the always-on ruleset without the commands.
 
-The Copilot build is tested on Copilot CLI 1.0.87 through 1.0.92. On those versions the routing hook&#039;s context reaches the session alongside other plugins&#039; session-start context. If a later version keeps only one plugin&#039;s context, `setup-pstack` offers a [standing instruction](plugins/pstack/skills/setup-pstack/copilot.md#wire-it-in) for `~/.copilot/copilot-instructions.md` instead. On 1.0.92, once the CLI caches its computer-use experiment assignment, `copilot -p` sessions list no plugin skills and a `skill` call returns &quot;Skill not found&quot;. Interactive sessions, the hooks, and the agents are unaffected.
+## FAQ
 
-Run `setup-pstack` to change model defaults, set a reasoning effort per role (for example `arena runners: opus @xhigh, fable @max`, which Claude Code dispatches through the plugin&#039;s `pstack:effort-&lt;level&gt;` or `pstack:poteto-agent-&lt;level&gt;` agents; roles without a level keep the session&#039;s effort unless the sheet&#039;s `default effort` line names one), or turn automatic routing off. The plugin installs the routing hook on Claude Code, Codex, and GitHub Copilot; Codex asks you to trust it through `/hooks` before it runs. On Pi the extension injects the same routing instruction. In Claude Code and the Copilot CLI, use `/pstack:setup-pstack`.
+**Does it need a config file?**
+No. An optional `~/.config/ponytail/config.json` or `PONYTAIL_DEFAULT_MODE` env var can set the default level, but nothing is required.
 
-### Other harnesses
+**Why does it write `shortcut:` comments?**
+They mark a deliberate shortcut and when to revisit it, and `/ponytail-debt` collects them into a ledger. Want another word, or none? Say so in your project&#039;s `CLAUDE.md` or `AGENTS.md`, then run `/ponytail-debt &lt;your word&gt;`.
 
-OpenCode (the CLI and the desktop app), Gemini CLI, Prime Agent, and skills-only Codex installs read skills from `~/.agents/skills/`. Run in your terminal:
+**What if I really need the 120-line cache class?**
+You don&#039;t. Insist anyway and he&#039;ll build it. Slowly. Correctly. While looking at you.
 
-```shell
-git clone https://github.com/michael-denyer/pstack-claude
-cd pstack-claude
-mkdir -p ~/.agents/skills
-for s in plugins/pstack/skills/*/; do
-  target=~/.agents/skills/&quot;$(basename &quot;$s&quot;)&quot;
-  test -e &quot;$target&quot; || test -L &quot;$target&quot; || ln -s &quot;$(pwd)/$s&quot; &quot;$target&quot;
-done
-```
+**Does it scale?**
+The code you never wrote scales infinitely. Zero bugs, zero CVEs, 100% uptime since forever.
 
-To update, run `git pull` in the clone, then run the `for` loop again to link skills added since the last run. These installs have no routing hook, so ask for `poteto-mode` by name or add a standing instruction to the harness&#039;s instruction file. See [shared installation](docs/reference.md#shared-skills-installation) for per-harness notes and uninstalling.
+**Why &quot;ponytail&quot;?**
+You know exactly why.
 
-## Getting started
+## Sponsors
 
-```text
-Use poteto-mode to fix the search filter resetting when I change pages.
-```
-
-For a bug, it reproduces the failure, uses `how` and `why` to investigate, delegates the fix, then reruns the failing case. If the fix crosses a function boundary, it brings in `architect` before implementation. You receive the fix and the failing and passing evidence.
-
-[Other playbooks](plugins/pstack/skills/poteto-mode/SKILL.md#playbooks) cover planning, features, refactoring, performance issues, investigations, prototypes, PR maintenance, shipping, and longer projects.
-
-![poteto-mode on Claude Code, Codex, and Pi turns a request into verified work. Choose a playbook, plan and delegate with architect, arena, or swarm, then review and verify with interrogate, tests, and measurements. Project playbooks customize the workflow, and setup-pstack configures the model and reasoning effort per role. Supporting skills include how, why, and unslop.](assets/pstack-overview.png)
-
-## Details
-
-- [Skills and slash commands](docs/reference.md#slash-commands)
-- [Runtime setup](docs/reference.md#runtime-support)
-- [Models and dependencies](docs/reference.md#configuration-and-dependencies)
-- [Maintenance and port scope](docs/reference.md#maintenance)
-
-## Data handling
-
-pstack has no server or telemetry. Anything its skills ask your agent to read, including session transcripts, goes to your model provider. Scripts run locally, and PR tools use your GitHub CLI login.
-
-## Contributing
-
-Thanks for helping make this port better. Bug reports, documentation fixes, and runtime improvements are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the checks and where your change belongs. Report vulnerabilities privately as described in [SECURITY.md](SECURITY.md).
-
-To support maintenance of this port, [buy the maintainer a coffee](https://buymeacoffee.com/codenyer).
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://greenpt.com/&quot;&gt;
+    &lt;picture&gt;
+      &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;assets/logo-greenpt-dark.svg&quot;&gt;
+      &lt;img src=&quot;assets/logo-greenpt.svg&quot; width=&quot;260&quot; alt=&quot;GreenPT&quot;&gt;
+    &lt;/picture&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
 
 ## License
 
-This port, including its modifications and additions, is also [MIT-licensed](LICENSE), © 2026 Michael Denyer. Original pstack © 2026 Lauren Tan; imported cursor-team-kit and thermos skills © 2026 Cursor. See [LICENSE-cursor-team-kit](LICENSE-cursor-team-kit), [LICENSE-thermos](LICENSE-thermos), and [NOTICE.md](NOTICE.md).
+[MIT](LICENSE). The shortest license that works.
+
+## Star History
+
+&lt;a href=&quot;https://www.star-history.com/dietrichgebert/ponytail#history&quot;&gt;
+ &lt;picture&gt;
+   &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/chart?repos=DietrichGebert/ponytail&amp;type=Date&amp;theme=dark&quot; /&gt;
+   &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/chart?repos=DietrichGebert/ponytail&amp;type=Date&quot; /&gt;
+   &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/chart?repos=DietrichGebert/ponytail&amp;type=Date&quot; /&gt;
+ &lt;/picture&gt;
+&lt;/a&gt;
 </pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[superdesigndev/superdesign-skill]]></title>
-            <link>https://github.com/superdesigndev/superdesign-skill</link>
-            <guid>https://github.com/superdesigndev/superdesign-skill</guid>
-            <pubDate>Sat, 17 Oct 2026 00:05:31 GMT</pubDate>
-            <description><![CDATA[The design skill for Claude Code, Cursor and any coding agent. Stop shipping AI-slop UI: turn it into shippable, tasteful frontend. Install: npx skills add superdesigndev/superdesign-skill. Powered by superdesign.dev]]></description>
+            <title><![CDATA[decolua/9router]]></title>
+            <link>https://github.com/decolua/9router</link>
+            <guid>https://github.com/decolua/9router</guid>
+            <pubDate>Sun, 18 Oct 2026 00:06:35 GMT</pubDate>
+            <description><![CDATA[Unlimited FREE AI coding. Connect Claude Code, Codex, Cursor, Cline, Copilot, Antigravity to FREE Claude/GPT/Gemini via 40+ providers. Auto-fallback, RTK -40% tokens, never hit limits.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/superdesigndev/superdesign-skill">superdesigndev/superdesign-skill</a></h1>
-            <p>The design skill for Claude Code, Cursor and any coding agent. Stop shipping AI-slop UI: turn it into shippable, tasteful frontend. Install: npx skills add superdesigndev/superdesign-skill. Powered by superdesign.dev</p>
+            <h1><a href="https://github.com/decolua/9router">decolua/9router</a></h1>
+            <p>Unlimited FREE AI coding. Connect Claude Code, Codex, Cursor, Cline, Copilot, Antigravity to FREE Claude/GPT/Gemini via 40+ providers. Auto-fallback, RTK -40% tokens, never hit limits.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 815</p>
-            <p>Forks: 62</p>
-            <p>Stars today: 40 stars today</p>
-            <h2>README</h2><pre># Superdesign: UI, presentations, and graphics for coding agents
-
-**Stop shipping AI-slop UI.** Coding agents write great code and mediocre interfaces: generic layouts, default shadcn everything, no taste. Superdesign is the skill that gives your agent design judgment, so the UI it ships actually looks considered.
-
-Install it once and your agent (Claude Code, Cursor, Codex, and 70+ others) can find real design direction and generate + iterate high-quality UI, presentations, and graphics on an infinite canvas, all without leaving your terminal.
-
-&gt; Powered by [superdesign.dev](https://superdesign.dev), the AI product design agent.
-
-[![Superdesign skill demo](https://i.ytimg.com/vi/AZYJWyWZ6pQ/maxresdefault.jpg)](https://youtu.be/AZYJWyWZ6pQ)
-
-*▶ Watch the skill in action.*
-
----
-
-## What is Superdesign?
-
-**Superdesign is an AI product design agent.** It gives coding agents (Claude Code, Cursor, Codex, and 70+ others) real design judgment, so the UI they ship looks considered instead of generic.
-
-- **What it does** — finds design direction, sets up design systems, approves presentation outlines, and generates + iterates high-quality UI, slide decks, and graphics on an infinite canvas.
-- **Who it&#039;s for** — developers, indie hackers, and product/UI designers who want to go from idea to shippable UI fast without leaving their coding agent.
-- **How it&#039;s different** — style-preset skills just swap in a theme or a component library. Superdesign designs *into* your existing design system: it reads your code for context, gathers real style references, and produces branchable drafts you refine.
-- **Cross-session continuity** — after the first real-codebase design, the skill remembers the project, draft, extracted components, and budgeted source-context bundle so later unchanged iterations resume without repeating codebase discovery.
-- **Two ways in** — this skill from any coding agent, or the web app at [superdesign.dev](https://superdesign.dev).
-
-&gt; **Not the legacy IDE extension.** The archived open-source `superdesigndev/superdesign` VS Code extension is an older, separate project. This skill and [superdesign.dev](https://superdesign.dev) are the current, maintained product.
-
----
-
-## Install
-
-**Any coding agent** — installs the skill for any of the [70+ supported coding agents](https://github.com/vercel-labs/skills#supported-agents):
-
-```
-npx skills add superdesigndev/superdesign-skill
-```
-
-**Claude Code** — install it as a plugin instead, so it stays namespaced and updates with `/plugin update`:
-
-```
-/plugin marketplace add superdesigndev/superdesign-skill
-/plugin install superdesign@superdesign
-```
-
-The skill is then invoked as `/superdesign:superdesign`. (Do not also run `npx skills add` in Claude Code — that installs a second, unnamespaced copy of the same skill.)
-
-Either way, install the CLI it drives:
-
-```
-npm install -g @superdesign/cli@latest
-superdesign login
-```
-
-## Use it
-
-Just talk to your agent:
-
-```
-/superdesign help me redesign this settings page so it doesn&#039;t look like default AI slop
-```
-
-```
-/superdesign set up a design system from my current codebase
-```
-
-```
-/superdesign improve the design of my dashboard
-```
-
-```
-/superdesign create an 8-slide presentation about our product launch
-```
-
-The skill handles the rest: it reads your code for context, gathers real style references, and produces design drafts you can branch and refine.
-
----
-
-# Core scenarios (what this skill handles)
-
-1. **Design or improve UI** (feature/page/flow)
-2. **Create a presentation** with an editable approved outline
-3. **Create graphics** (posters, covers, social posts, and ads)
-4. **Set or extract a design system**
-5. **Generate supporting images or video**
-
-## Tooling overview
-
-### A) Inspiration &amp; Style Tools (generic, always available)
-
-Use these to discover style direction, references, and brand context. Browse the full [prompt library](https://superdesign.dev/library) in the web app, or query it from the CLI:
-
-- **Search prompt library** (style/components/pages)
-
-  ```bash
-  superdesign search-prompts --query &quot;&lt;keyword&gt;&quot;
-  superdesign search-prompts --tags &quot;style&quot;
-  superdesign search-prompts --tags &quot;style&quot; --query &quot;&lt;style keyword&gt;&quot;
-  ```
-
-- **Get prompt details** — read the compact index first, then fetch the full body only for the slug(s) you pick
-
-  ```bash
-  superdesign get-prompts --slugs &quot;&lt;slug1,slug2,...&gt;&quot;          # index
-  superdesign get-prompts --slugs &quot;&lt;slug&gt;&quot; --full             # full body of the chosen slug(s)
-  ```
-
-- **Extract a site&#039;s design DNA from a URL** (style guide, tokens, content, brand, clone)
-  ```bash
-  superdesign extract-website --url https://example.com --design-md
-  ```
-
-### B) Canvas Design Tools
-
-Use design agent to generate high quality design drafts:
-- Create project (optionally seed a baseline draft from an HTML template via `--template`)
-- Create design draft
-- Iterate design draft (replace / branch)
-- Plan flow pages → execute flow pages
-- Fetch specific design draft
-- Create a presentation from an approved ordered slide outline
-- Read stored presentation outline and preferences for safe iteration
-- List reusable Project Brand Assets
-
----
-
-## Overall SOP for designing features on top of existing app:
-1. Investigate existing UI, workflow
-2. Setup design system file if not exist yet
-3. Requirements gathering: ask the user using the session&#039;s available user-input mechanism; if none is available, ask in chat (optionally use Inspiration tools when needed)
-4. Ask user whether ready to design in superdesign OR implement UI directly
-5. If yes to superdesign
-  5.1 Create/update a pixel perfect html replica of current UI of page that we will design on top of in `.superdesign/replica_html_template/&lt;name&gt;.html` (html should only contain &amp; reflect how UI look now, the actual design should be handled by superdesign agent)
-  5.2 Create project with this replica html + design system guide
-  5.3 Start desigining by iterating &amp; branching design draft based on designDraft ID returned from project
-
-
-## Always-on rules
-- Design system should live at: `.superdesign/design-system.md`
-- If `.superdesign/design-system.md` is missing, run **Design System Setup** first.
-- Ask high-signal questions about constraints, taste, and tradeoffs using the session&#039;s available user-input mechanism; if none is available, ask in chat.
-- Read each command&#039;s default output directly — it is agent-optimized (compact TOON plus `help[]` next-step hints). Add `--json` only when you genuinely need the full machine-readable payload, and `--full` only to expand truncated fields.
-
----
-
-## replica_html_template rules (Canvas only)
-
-The purpose of replica html template is creating a lightweight version of existing UI so design agent can iterate on top of it (Since superdesign doesn&#039;t have access to your codebase directly, this is important context)
-
-Overall process for designing features on top of existing app:
-1. Identify &amp; understand existing UI of page related
-2. Create/update a pixel perfect replica html in `.superdesign/replica_html_template/&lt;name&gt;.html` (Only replicate how UI look now, do NOT design)
-  - If design task is redesign profile page, then replicate current profile page UI pixel perfectly
-  - If design task is add new button to side panel, identify which page side panel is using, then replicate that page UI pixel perfectly
-
-**replica_html_template = BEFORE state (what exists now).** It provides context for Superdesign agent.
-Actual design will be done via superdesign agent, by passing the prompt
-
-The replica_html_template must contain **ONLY UI that currently exists in the codebase**. 
-- **DO NOT** design or improve anything in the replica_html_template
-- **DO NOT** add placeholder sections like `&lt;!-- NEW FEATURE - DESIGN THIS --&gt;`
-- **DO** create pixel-perfect replica of current UI state
-- Save to: `.superdesign/replica_html_template/&lt;name&gt;.html`
-
-### Naming &amp; Reuse
-
-**Naming convention** 
-Name replica_html_template for reusability: Use the page route (e.g., `home.html`, `settings-profile.html`, `dashboard.html`)
-This makes it easy to identify if a page_template already exists.
-
-**Before creating a replica_html_template:**
-1. Check if `.superdesign/replica_html_template/` already contains a matching file
-2. If exists: reuse it or update to reflect the latest existing UI
-3. If not exists: create the neww file
-
-### Example: Adding a &quot;Book Demo&quot; section to home page
-
-**BAD approach:**
-
-```html
-&lt;!-- replica_html_template includes a sketched Book Demo section --&gt;
-&lt;section class=&quot;book-demo&quot;&gt;
-  &lt;!-- DESIGN THIS - Add CTA here --&gt;
-  &lt;h3&gt;Book a Demo&lt;/h3&gt;
-  &lt;button&gt;Schedule&lt;/button&gt;
-&lt;/section&gt;
-```
-
-**GOOD approach:**
-
-```html
-&lt;!-- replica_html_template is pure replica of existing home page (hero + projects) --&gt;
-```
-
-Then in the iterate command:
-1/ create project passing this replica html
-2/ create design draft based on design draft id
-
----
-
-# 1) Design System Setup
-
-### Step 0 — Ask user (one question)
-
-&quot;Do you want to **create a new design system** or **extract from the current codebase**?&quot;
-
-### A) Extract from codebase
-
-1. Investigate codebase:
-   - Product context: what is being built, target users, core value proposition, key user journeys and page structure
-   - design tokens, typography, colors, spacing, radius, shadows
-   - motion/animation patterns
-   - example components usage + implementation patterns
-2. Write standalone design system to:
-   - `.superdesign/design-system.md`
-   - Must be implementable without the codebase
-
-### B) Create a new design system (to improve current UI)
-
-1. Investigate codebase to understand:
-   - Product context: what is being built, target users, core value proposition, key user journeys and page structure
-   - needed pages/components
-2. Gather inspirations (generic tools):
-   - `superdesign search-prompts --tags &quot;style&quot;`
-   - `superdesign get-prompts --slugs ...` (index first; add `--full` for the chosen slug&#039;s full body)
-   - optional: `superdesign extract-website --url ... --design-md` (style guide → design.md; add `--brand` for assets)
-3. Ask the user to choose a direction using the session&#039;s available user-input mechanism; if none is available, ask in chat
-4. Write:
-   - `.superdesign/design-system.md` (product context + UX flows + visual design, adapted to references)
-
----
-
-# 2) Designing X (feature/page/flow)
-
-### Example workflow - Add feature to existing page
-
-1. Investigate the existing design and ask targeted questions about requirements and taste using the session&#039;s available user-input mechanism; if none is available, ask in chat
-2. After clarifying, Ask user whether ready to design in superdesign OR implement UI directly
-3. If design in superdesign
-  3.1 Ensure `.superdesign/design-system.md` exists (setup if missing)
-  3.2 Identify page most relevant, and build a pixel-perfect replica in replica_html_template:
-    - `.superdesign/replica_html_template/&lt;page&gt;-&lt;feature&gt;.html`
-  3.3 Create project, seeding the baseline draft from the replica HTML template (returns `draftId`):
-    ```bash
-    superdesign create-project \
-      --title &quot;&lt;feature&gt;&quot; \
-      --template .superdesign/replica_html_template/&lt;file&gt;.html
-    ```
-    → Note: `draftId` in the response is the baseline draft. The design system is passed as a `--context-file` on the iterate step below, not on `create-project`.
-  3.4 Branch designs from baseline (use `draftId` from step 3.3)
-    ```bash
-    superdesign iterate-design-draft \
-      --draft-id &lt;draftId&gt; \
-      -p &quot;Dark theme with neon accents&quot; \
-      -p &quot;Minimal with more whitespace&quot; \
-      -p &quot;Bold gradients and shadows&quot; \
-      --mode branch \
-      --context-file .superdesign/design-system.md
-    ```
-  3.5 Share design title &amp; preview URL → collect feedback → iterate
-
-
-### Advanced usage
-
-#### Design multiple page OR a full user journey
-
-Execute:
-
-```bash
-superdesign execute-flow-pages \
-  --draft-id &lt;draftId&gt; \
-  --pages &#039;[{&quot;title&quot;:&quot;Signup&quot;,&quot;prompt&quot;:&quot;...&quot;},{&quot;title&quot;:&quot;Payment&quot;,&quot;prompt&quot;:&quot;...&quot;}]&#039;
-```
-
-#### Get HTML reference from a draft
-
-```bash
-superdesign get-design --draft-id &lt;draftId&gt; --output ./design.html
-```
-
----
-
-## Quick reference (key commands)
-
-```bash
-# Inspirations
-superdesign search-prompts --query &quot;&lt;keyword&gt;&quot;
-superdesign search-prompts --tags &quot;style&quot;
-superdesign get-prompts --slugs &quot;&lt;slug1,slug2&gt;&quot;          # index; add --full for full bodies
-superdesign extract-website --url https://example.com --design-md   # style guide; add --brand/--tokens/--content-structure/--clone for more
-
-# Canvas - Create project
-# Optional --template &lt;path&gt; seeds the first (baseline) draft from an HTML file.
-# The design system is passed as --context-file on the draft/iterate commands, not here.
-superdesign create-project --title &quot;X&quot;
-superdesign create-project --title &quot;X&quot; --template ./index.html
-
-# Presentation - approve the outline in chat before this call
-superdesign create-presentation --project-id &lt;id&gt; --title &quot;X&quot; \
-  --outline-file ./slides.json --visual-direction &quot;...&quot; \
-  --navigation-controls show --transition auto --brand-assets use
-
-# Iterate: replace mode (single variation, updates in place)
-superdesign iterate-design-draft --draft-id &lt;id&gt; -p &quot;...&quot; --mode replace
-
-# Iterate: Explore multiple versions &amp; variations (each prompt = one variation, prompt should be just directional, do not specify color, style, let superdesign design expert fill in details, you just give direction)
-superdesign iterate-design-draft --draft-id &lt;id&gt; -p &quot;dark theme&quot; -p &quot;minimal&quot; -p &quot;bold&quot; --mode branch
-
-# Iterate: Auto explore (only give exploration direction, and let Superdesign fill in details, e.g. explore different styles; Default do not use this)
-superdesign iterate-design-draft --draft-id &lt;id&gt; -p &quot;...&quot; --mode branch --count 3
-
-# Fetch &amp; get designs
-superdesign fetch-design-nodes --project-id &lt;id&gt;
-superdesign get-design --draft-id &lt;id&gt; --json          # full HTML payload; or --output &lt;path&gt; to write to a file
-
-# Create new design from scratch without any reference - ONLY use this for creating brand new design, default NEVER use this
-superdesign create-design-draft --project-id &lt;id&gt; --title &quot;X&quot; -p &quot;...&quot;
-```
-
----
-
-## Links
-
-- Web app: [superdesign.dev](https://superdesign.dev)
-- Prompt library: [superdesign.dev/library](https://superdesign.dev/library)
-- Design system convention: [DESIGN.md](./DESIGN.md)
-- Skill install for 70+ agents: [vercel-labs/skills](https://github.com/vercel-labs/skills)
-
-## License
-
-MIT. See [LICENSE](./LICENSE).
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[laoma528/awesome-zhuiju-free]]></title>
-            <link>https://github.com/laoma528/awesome-zhuiju-free</link>
-            <guid>https://github.com/laoma528/awesome-zhuiju-free</guid>
-            <pubDate>Sat, 17 Oct 2026 00:05:30 GMT</pubDate>
-            <description><![CDATA[免费无广告的追剧资源指南，人工精选资源、每天检测资源有效性。收录在线影视、影视APP、网盘搜索、磁力BT、字幕、TVBox / 影视仓空壳软件/配置地址、IPTV直播源、会员拼团、影视相关开源项目。开源，社区共同维护。]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/laoma528/awesome-zhuiju-free">laoma528/awesome-zhuiju-free</a></h1>
-            <p>免费无广告的追剧资源指南，人工精选资源、每天检测资源有效性。收录在线影视、影视APP、网盘搜索、磁力BT、字幕、TVBox / 影视仓空壳软件/配置地址、IPTV直播源、会员拼团、影视相关开源项目。开源，社区共同维护。</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 12,389</p>
-            <p>Forks: 857</p>
-            <p>Stars today: 87 stars today</p>
+            <p>Stars: 30,974</p>
+            <p>Forks: 6,130</p>
+            <p>Stars today: 52 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+  &lt;img src=&quot;./images/9router.png?1&quot; alt=&quot;9Router Dashboard&quot; width=&quot;800&quot;/&gt;
+  
+  # 9Router - FREE AI Router &amp; Token Saver
+  
+  **Never stop coding. Save 20-40% tokens with RTK + auto-fallback to FREE &amp; cheap AI models.**
+  
+  **Connect All AI Code Tools (Claude Code, Cursor, Antigravity, Copilot, Codex, Gemini, OpenCode, Cline, OpenClaw...) to 40+ AI Providers &amp; 100+ Models.**
+  
+  [![npm](https://img.shields.io/npm/v/9router.svg)](https://www.npmjs.com/package/9router)
+  [![Downloads](https://img.shields.io/npm/dm/9router.svg)](https://www.npmjs.com/package/9router)
+  [![Docker Pulls](https://img.shields.io/docker/pulls/decolua/9router.svg?logo=docker&amp;label=Docker%20pulls)](https://hub.docker.com/r/decolua/9router)
+  [![GHCR](https://img.shields.io/badge/GHCR-decolua%2F9router-blue?logo=github)](https://github.com/decolua/9router/pkgs/container/9router)
+  [![License](https://img.shields.io/npm/l/9router.svg)](https://github.com/decolua/9router/blob/main/LICENSE)
 
-# Awesome Zhuiju Free
+&lt;a href=&quot;https://trendshift.io/repositories/22628&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/22628&quot; alt=&quot;decolua%2F9router | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
 
-### 免费无广告的追剧资源指南
+[🚀 Quick Start](#-quick-start) • [💡 Features](#-key-features) • [📖 Setup](#-setup-guide) • [🌐 Website](https://9router.com)
 
-&lt;p&gt;
-  &lt;strong&gt;收录范围&lt;/strong&gt;&lt;br&gt;
-  🎬 在线影视 · 影视APP · 网盘搜索&lt;br&gt;
-  📦 磁力BT/字幕 · TVBox/影视仓接口&lt;br&gt;
-  📡 IPTV直播源 · 会员拼团 · 开源项目
-&lt;/p&gt;
-
-&lt;p&gt;&lt;sub&gt;━━━━━━━━━━━━━━━━━━━━&lt;/sub&gt;&lt;/p&gt;
-
-&lt;p&gt;
-  &lt;strong&gt;项目亮点&lt;/strong&gt;&lt;br&gt;
-  🔍 人工精选，免费无广告资源&lt;br&gt;
-  ✅ 每天自动检测，资源是否可用&lt;br&gt;
-  🔓 完全开源，社区共同维护
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://zhuiju.me&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/网站-zhuiju.me-0A66C2?style=flat-square&quot; alt=&quot;网站 zhuiju.me&quot; height=&quot;24&quot;&gt;&lt;/a&gt;
-  &lt;!-- resource-count:start --&gt;
-&lt;a href=&quot;resources/resources.json&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/已收录-119_个资源-00A98F?style=flat-square&quot; alt=&quot;已收录 119 个资源&quot; height=&quot;24&quot;&gt;&lt;/a&gt;
-&lt;!-- resource-count:end --&gt;
-  &lt;a href=&quot;https://github.com/laoma528/awesome-zhuiju-free/actions/workflows/check-availability.yml&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/检测时间-2026--10--17-00B4D8?style=flat-square&quot; alt=&quot;检测时间 2026-10-17&quot; height=&quot;24&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/laoma528/awesome-zhuiju-free/stargazers&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/stars/laoma528/awesome-zhuiju-free?style=flat-square&amp;label=Stars&amp;color=F7B801&quot; alt=&quot;GitHub Stars&quot; height=&quot;24&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/laoma528/awesome-zhuiju-free/forks&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/forks/laoma528/awesome-zhuiju-free?style=flat-square&amp;label=Forks&amp;color=38BDF8&quot; alt=&quot;GitHub Forks&quot; height=&quot;24&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://creativecommons.org/licenses/by/4.0/&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/许可证-CC_BY_4.0-6F42C1?style=flat-square&quot; alt=&quot;许可证 CC BY 4.0&quot; height=&quot;24&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://deepwiki.com/laoma528/awesome-zhuiju-free&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Ask-DeepWiki-1F6FEB?style=flat-square&quot; alt=&quot;Ask DeepWiki&quot; height=&quot;24&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/laoma528/awesome-zhuiju-free&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Awesome-追剧资源-FC60A8?style=flat-square&quot; alt=&quot;Awesome 追剧资源&quot; height=&quot;24&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/laoma528/awesome-zhuiju-free/actions/workflows/check-availability.yml&quot;&gt;&lt;img src=&quot;https://github.com/laoma528/awesome-zhuiju-free/actions/workflows/check-availability.yml/badge.svg?branch=main&quot; alt=&quot;Check availability&quot; height=&quot;24&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/laoma528/awesome-zhuiju-free/actions/workflows/validate-data.yml&quot;&gt;&lt;img src=&quot;https://github.com/laoma528/awesome-zhuiju-free/actions/workflows/validate-data.yml/badge.svg?branch=main&quot; alt=&quot;Validate data&quot; height=&quot;24&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://hits.sh/github.com/laoma528/awesome-zhuiju-free/&quot;&gt;&lt;img src=&quot;https://hits.sh/github.com/laoma528/awesome-zhuiju-free.svg?style=flat-square&amp;label=Visits&amp;color=0A66C2&quot; alt=&quot;Visits&quot; height=&quot;24&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://trendshift.io/repositories/79445?utm_source=trendshift-badge&amp;amp;utm_medium=badge&amp;amp;utm_campaign=badge-trendshift-79445&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/trendshift/repositories/79445/daily?language=JavaScript&quot; alt=&quot;laoma528%2Fawesome-zhuiju-free | Trendshift&quot; width=&quot;250&quot; height=&quot;55&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-**[查看资源](#精选资源)** · **[提交资源](https://github.com/laoma528/awesome-zhuiju-free/issues/new?template=resource.yml)** · **[报告失效](https://github.com/laoma528/awesome-zhuiju-free/issues/new?template=broken-link.yml)**
-
-觉得有用？点个 ⭐ Star 支持一下，帮助更多追剧党发现这里。
+[🇧🇷 Português (Brasil)](./i18n/README.pt-BR.md) • [🇻🇳 Tiếng Việt](./i18n/README.vi.md) • [🇨🇳 中文](./i18n/README.zh-CN.md) • [🇯🇵 日本語](./i18n/README.ja-JP.md) • [🇷🇺 Русский](./i18n/README.ru.md) • [🇹🇭 ไทย](./i18n/README.th.md) • [🇮🇷 فارسی](./i18n/README.fa_IR.md) • [🇮🇩 Indonesia](./i18n/README.id-ID.md) • [🇪🇸 Español](./i18n/README.es.md) • [🇫🇷 Français](./i18n/README.fr.md)
 
 &lt;/div&gt;
 
 ---
 
-## 为什么选这份指南
+## 🤔 Why 9Router?
 
-| | 资源筛选 | 资源失效 | 是否开源 | 参与贡献 |
-|---|:---:|:---:|:---:|:---:|
-| 普通导航站 | ❌ 缺少筛选 | ❌ 无人管 | ❌ 否 | ❌ 不行 |
-| 本项目 | ✅ 人工精选 | ✅ 每天自动检测 | ✅ 是，数据公开 | ✅ 通过 Issue 提交 |
+**Stop wasting money, tokens and hitting limits:**
 
-### 广告 · 支持项目运营
+- ❌ Subscription quota expires unused every month
+- ❌ Rate limits stop you mid-coding
+- ❌ Tool outputs (git diff, grep, ls...) burn tokens fast
+- ❌ Expensive APIs ($20-50/month per provider)
+- ❌ Manual switching between providers
 
-&gt; **ChatGPT 会员订阅｜Plus ¥128/月**&lt;br&gt;
-&gt; 官方渠道 · 1 分钟到账 · 全程质保 · [点击充值](https://prodclub.xyz/r/3F8974?src=github)
+**9Router solves this:**
 
-&lt;sub&gt;商业广告，与影视资源推荐、评分和收录无关。&lt;/sub&gt;
+- ✅ **RTK Token Saver** - Auto-compress tool_result content, save 20-40% tokens per request
+- ✅ **Maximize subscriptions** - Track quota, use every bit before reset
+- ✅ **Auto fallback** - Subscription → Cheap → Free, zero downtime
+- ✅ **Multi-account** - Round-robin between accounts per provider
+- ✅ **Universal** - Works with Claude Code, Codex, Cursor, Cline, any CLI tool
 
 ---
 
-## 精选资源
+## 🔄 How It Works
 
-&lt;!-- featured-resources:start --&gt;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;#在线影视&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/在线影视-45-0A66C2?style=flat-square&quot; alt=&quot;在线影视&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;#影视app&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/影视APP-4-00A98F?style=flat-square&quot; alt=&quot;影视APP&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;#网盘资源搜索&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/网盘搜索-4-4285F4?style=flat-square&quot; alt=&quot;网盘资源搜索&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;#磁力-bt&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/磁力%26_BT-16-F7B801?style=flat-square&quot; alt=&quot;磁力&amp; BT&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;#字幕资源&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/字幕资源-3-6F42C1?style=flat-square&quot; alt=&quot;字幕资源&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;#tvbox影视仓空壳&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/TVBox%2F影视仓空壳-7-00B4D8?style=flat-square&quot; alt=&quot;TVBox/影视仓空壳&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;#tvbox影视仓配置地址&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/TVBox%2F影视仓接口-15-38BDF8?style=flat-square&quot; alt=&quot;TVBox/影视仓配置地址&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;#直播源&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/直播源-2-E91E63?style=flat-square&quot; alt=&quot;直播源&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;#会员拼团&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/会员拼团-0-F97316?style=flat-square&quot; alt=&quot;会员拼团&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;#开源项目&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/开源项目-15-181717?style=flat-square&quot; alt=&quot;开源项目&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
+```
+┌─────────────┐
+│  Your CLI   │  (Claude Code, Codex, OpenClaw, Cursor, Cline...)
+│   Tool      │
+└──────┬──────┘
+       │ http://localhost:20128/v1
+       ↓
+┌─────────────────────────────────────────────┐
+│           9Router (Smart Router)            │
+│  • RTK Token Saver (cut tool_result tokens) │
+│  • Format translation (OpenAI ↔ Claude)     │
+│  • Quota tracking                           │
+│  • Auto token refresh                       │
+└──────┬──────────────────────────────────────┘
+       │
+       ├─→ [Tier 1: SUBSCRIPTION] Claude Code, Codex, GitHub Copilot
+       │   ↓ quota exhausted
+       ├─→ [Tier 2: CHEAP] GLM ($0.6/1M), MiniMax ($0.2/1M)
+       │   ↓ budget limit
+       └─→ [Tier 3: FREE] Kiro, OpenCode Free, Vertex ($300 credits)
 
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;查看自动检测状态说明&lt;/strong&gt;&lt;/summary&gt;
+Result: Never stop coding, minimal cost + 20-40% token savings via RTK
+```
 
-精选内容来自 [`resources/resources.json`](resources/resources.json)。状态由 GitHub Actions 每日自动检测：`🟢 可访问`、`🟡 访问受限`、`🔴 无法访问`、`⚪ 未检测`。检测结果仅代表 GitHub Actions 节点当时的网络情况。
+---
 
-状态只判断主页是否响应，不替代完整体验评价。完整检测结果见 [`reports/availability.json`](reports/availability.json)。
+## ⚡ Quick Start
 
-检测任务每天北京时间 09:00 左右运行；新增或修改资源后也会自动运行。你也可以在 [Check availability](https://github.com/laoma528/awesome-zhuiju-free/actions/workflows/check-availability.yml) 页面手动触发。
+**1. Install globally:**
 
-&lt;/details&gt;
+```bash
+npm install -g 9router
+9router
+```
 
-### 在线影视
+🎉 Dashboard opens at `http://localhost:20128`
 
-| 资源 | 简介 | 推荐指数 | 状态 | 检测时间 |
-| --- | --- | :---: | :---: | :---: |
-| [创享影视](&lt;https://ys.cxkjg.cn/&gt;) | 无广告三网高峰秒播（[@zxaay](&lt;https://github.com/zxaay&gt;)贡献） | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:ys-cxkjg-cn-39 --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:ys-cxkjg-cn-39 --&gt; | &lt;!-- availability-date:ys-cxkjg-cn-39 --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:ys-cxkjg-cn-39 --&gt; |
-| [洛雪TV](&lt;https://tv.lxyy.club/&gt;) | 4K无广告（[@anyongki](&lt;https://github.com/anyongki&gt;)贡献） | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:tv-lxyy-club-36 --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:tv-lxyy-club-36 --&gt; | &lt;!-- availability-date:tv-lxyy-club-36 --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:tv-lxyy-club-36 --&gt; |
-| [西瓜影视](&lt;https://www.kanmovie.com/&gt;) | 没有搜不到的资源（[@miaodongsu7](&lt;https://github.com/miaodongsu7&gt;)贡献） | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:kanmovie-com-34 --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:kanmovie-com-34 --&gt; | &lt;!-- availability-date:kanmovie-com-34 --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:kanmovie-com-34 --&gt; |
-| [可可影视](&lt;https://www.kkys14.com/&gt;) | 最新Netflix新剧（可访问） | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:103-39-111-180-29 --&gt;🔴&amp;#8288;无法&amp;#8288;访问&lt;!-- /availability:103-39-111-180-29 --&gt; | &lt;!-- availability-date:103-39-111-180-29 --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:103-39-111-180-29 --&gt; |
-| [ZIP0](&lt;https://zip0.com/?r=KBDIG8&gt;) | 在线影视搜索与播放 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:zip0 --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:zip0 --&gt; | &lt;!-- availability-date:zip0 --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:zip0 --&gt; |
-| [剧OK](&lt;https://juok3.top/&gt;) | 最新电视剧、最新电影 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:juok --&gt;🟡&amp;#8288;访问&amp;#8288;受限&lt;!-- /availability:juok --&gt; | &lt;!-- availability-date:juok --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:juok --&gt; |
-| [剧踪影院](&lt;https://www.juzong01.me/&gt;) | 海内外 SVIP 超前更新 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:juzong --&gt;🟡&amp;#8288;访问&amp;#8288;受限&lt;!-- /availability:juzong --&gt; | &lt;!-- availability-date:juzong --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:juzong --&gt; |
-| [简云影视](&lt;https://jianyunys.com/&gt;) | 纯净无广告/1080P高清秒播 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:jianyunys --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:jianyunys --&gt; | &lt;!-- availability-date:jianyunys --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:jianyunys --&gt; |
-| [片库](&lt;https://4k01.pianku.online/&gt;) | 纯净无广告/1080P高清秒播 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:pianku --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:pianku --&gt; | &lt;!-- availability-date:pianku --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:pianku --&gt; |
-| [66 大片网](&lt;https://www.77dpw.vip/&gt;) | 免费电影在线观看 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:66-dapianwang --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:66-dapianwang --&gt; | &lt;!-- availability-date:66-dapianwang --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:66-dapianwang --&gt; |
-| [嘀嗒影视](&lt;https://www.didahd.xyz/&gt;) | 高分电影聚集地，超清秒播 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:didahd --&gt;🟡&amp;#8288;访问&amp;#8288;受限&lt;!-- /availability:didahd --&gt; | &lt;!-- availability-date:didahd --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:didahd --&gt; |
-| [追影](&lt;https://zhuiying3.cc/&gt;) | 蓝光高清、无广告免费在线秒播 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:zhuiying --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:zhuiying --&gt; | &lt;!-- availability-date:zhuiying --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:zhuiying --&gt; |
-| [歪比巴卜](&lt;https://wbbb1.com/&gt;) | 高清视频免费在线观看（可访问） | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:wbbb --&gt;🔴&amp;#8288;无法&amp;#8288;访问&lt;!-- /availability:wbbb --&gt; | &lt;!-- availability-date:wbbb --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:wbbb --&gt; |
-| [开心影院](&lt;https://www.kxyy1.cc/&gt;) | 最新电影热播电视剧 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:kxyy --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:kxyy --&gt; | &lt;!-- availability-date:kxyy --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:kxyy --&gt; |
-| [豆花电影网](&lt;https://dhvideo.cc/&gt;) | 最新免费电影_在线观看 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:dhvideo --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:dhvideo --&gt; | &lt;!-- availability-date:dhvideo --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:dhvideo --&gt; |
-| [饭搭子影视](&lt;https://fdzys.com&gt;) | 最新热门电影电视剧动漫综艺 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:fdzys --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:fdzys --&gt; | &lt;!-- availability-date:fdzys --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:fdzys --&gt; |
-| [SA视频](&lt;https://www.lsjys11.com/&gt;) | 最新电影电视剧动漫综艺（可访问） | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:sa-video --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:sa-video --&gt; | &lt;!-- availability-date:sa-video --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:sa-video --&gt; |
-| [91毒舌](&lt;https://www.duse0.com/&gt;) | 最新Netflix新剧、4K高清（可访问） | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:duse91 --&gt;🔴&amp;#8288;无法&amp;#8288;访问&lt;!-- /availability:duse91 --&gt; | &lt;!-- availability-date:duse91 --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:duse91 --&gt; |
-| [好好看](&lt;https://www.hhkan2.com/&gt;) | 4K高清Netflix新剧（可访问需梯子） | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:haohaokan --&gt;🔴&amp;#8288;无法&amp;#8288;访问&lt;!-- /availability:haohaokan --&gt; | &lt;!-- availability-date:haohaokan --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:haohaokan --&gt; |
-| [蛋蛋魔法](&lt;https://ddmf.net&gt;) | 国内外热播剧，有福利伦理片（需梯子） | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:ddmf --&gt;🟡&amp;#8288;访问&amp;#8288;受限&lt;!-- /availability:ddmf --&gt; | &lt;!-- availability-date:ddmf --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:ddmf --&gt; |
-| [青空次元](&lt;https://www.sorani.net&gt;) | 网友称最夯动漫在线站 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:sorani --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:sorani --&gt; | &lt;!-- availability-date:sorani --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:sorani --&gt; |
-| [APP影院](&lt;https://www.appmovie.art&gt;) | 国内外热播剧，纯净无广告 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:appmovie --&gt;🟡&amp;#8288;访问&amp;#8288;受限&lt;!-- /availability:appmovie --&gt; | &lt;!-- availability-date:appmovie --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:appmovie --&gt; |
-| [Auete影视](&lt;https://www.aeete.com&gt;) | 蓝光超清精品影视，发布页auete.pro | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:auete-video --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:auete-video --&gt; | &lt;!-- availability-date:auete-video --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:auete-video --&gt; |
-| [电影人生](&lt;https://dyrs.tv&gt;) | 高清电影在线观看 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:dyrs --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:dyrs --&gt; | &lt;!-- availability-date:dyrs --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:dyrs --&gt; |
-| [奈飞工厂](&lt;https://www.netflixgc.com&gt;) | 最新美剧，无广告（需梯子） | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:netflixgc --&gt;🟡&amp;#8288;访问&amp;#8288;受限&lt;!-- /availability:netflixgc --&gt; | &lt;!-- availability-date:netflixgc --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:netflixgc --&gt; |
-| [PPnix](&lt;https://www.ppnix.com/cn/&gt;) | 在线观看电影电视剧 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:ppnix --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:ppnix --&gt; | &lt;!-- availability-date:ppnix --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:ppnix --&gt; |
-| [白嫖者联盟](&lt;https://www.tdgo.shop&gt;) | 热门热播剧，无广告速度快（需梯子） | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:tdgo --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:tdgo --&gt; | &lt;!-- availability-date:tdgo --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:tdgo --&gt; |
-| [爱电影](&lt;https://kuhh4jo.com&gt;) | 最新热门电影/电视剧（需梯子） | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:ai-movie --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:ai-movie --&gt; | &lt;!-- availability-date:ai-movie --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:ai-movie --&gt; |
-| [937影视](&lt;https://www.937tv.vip&gt;) | 看全网影视剧（需梯子） | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:tv-937 --&gt;🟡&amp;#8288;访问&amp;#8288;受限&lt;!-- /availability:tv-937 --&gt; | &lt;!-- availability-date:tv-937 --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:tv-937 --&gt; |
-| [注视影视](&lt;https://gaze.red/&gt;) | 国内海外影视剧资源（需梯子） | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:gaze-red --&gt;🟡&amp;#8288;访问&amp;#8288;受限&lt;!-- /availability:gaze-red --&gt; | &lt;!-- availability-date:gaze-red --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:gaze-red --&gt; |
-| [樱之空](&lt;https://skr.skr1.cc:666/&gt;) | 国内外各种动漫都比较齐全 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:skr-skr1-cc-9 --&gt;🟡&amp;#8288;访问&amp;#8288;受限&lt;!-- /availability:skr-skr1-cc-9 --&gt; | &lt;!-- availability-date:skr-skr1-cc-9 --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:skr-skr1-cc-9 --&gt; |
-| [爱盼](&lt;https://www.aipan.me/&gt;) | 4K影视资源聚合站 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:aipan-me-25 --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:aipan-me-25 --&gt; | &lt;!-- availability-date:aipan-me-25 --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:aipan-me-25 --&gt; |
-| [宅男影视](&lt;https://zndy.top/&gt;) | 想看就看 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:zndy --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:zndy --&gt; | &lt;!-- availability-date:zndy --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:zndy --&gt; |
-| [奈飞工厂](&lt;https://naifei.fyi/&gt;) | 国区可访问，资源无广 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:naifei-fyi-19 --&gt;🔴&amp;#8288;无法&amp;#8288;访问&lt;!-- /availability:naifei-fyi-19 --&gt; | &lt;!-- availability-date:naifei-fyi-19 --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:naifei-fyi-19 --&gt; |
-| [布布追剧](&lt;https://bubuzhuiju.com&gt;) | 速度快，有广告能接受 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:bubu-zhuiju --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:bubu-zhuiju --&gt; | &lt;!-- availability-date:bubu-zhuiju --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:bubu-zhuiju --&gt; |
-| [影猫仓库](&lt;https://www.ymck.pro&gt;) | 热门影视剧，有广告能接受 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:yingmao-cangku --&gt;🟡&amp;#8288;访问&amp;#8288;受限&lt;!-- /availability:yingmao-cangku --&gt; | &lt;!-- availability-date:yingmao-cangku --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:yingmao-cangku --&gt; |
-| [独播库](&lt;https://www.dbku.tv&gt;) | 页面无广告，纯净 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:dbku --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:dbku --&gt; | &lt;!-- availability-date:dbku --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:dbku --&gt; |
-| [爱壹帆](&lt;https://iyf.tv&gt;) | 海外华人影视站（需梯子/有VIP限制） | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:iyf --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:iyf --&gt; | &lt;!-- availability-date:iyf --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:iyf --&gt; |
-| [LIBVIO](&lt;https://libviobd.com&gt;) | 海外影视的老牌网站，发布页www.libvio.app | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:libvio --&gt;🟡&amp;#8288;访问&amp;#8288;受限&lt;!-- /availability:libvio --&gt; | &lt;!-- availability-date:libvio --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:libvio --&gt; |
-| [No影视](&lt;https://novipnoad.org/&gt;) | 海外影视剧资源聚合站（需梯子） | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:no-video --&gt;🟡&amp;#8288;访问&amp;#8288;受限&lt;!-- /availability:no-video --&gt; | &lt;!-- availability-date:no-video --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:no-video --&gt; |
-| [搜TV啦](&lt;https://www.sotvla.cc/&gt;) | 国内海外高清影视剧资源 | 🌟&amp;#8288;🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:sotvla --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:sotvla --&gt; | &lt;!-- availability-date:sotvla --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:sotvla --&gt; |
-| [4k影视](&lt;https://www.4kvm.cc/&gt;) | 有广告能接受（需梯子/VIP限制） | 🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:4kvm-cc-18 --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:4kvm-cc-18 --&gt; | &lt;!-- availability-date:4kvm-cc-18 --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:4kvm-cc-18 --&gt; |
-| [爱看机器人](&lt;https://www1.aikanbot.com&gt;) | 热门电影电视剧（有跳转广告） | 🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:aikanbot --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:aikanbot --&gt; | &lt;!-- availability-date:aikanbot --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:aikanbot --&gt; |
-| [奈菲影视](&lt;https://www.nfyingshi.com&gt;) | 热门美剧（需梯子/有VIP限制） | 🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:nfyingshi --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:nfyingshi --&gt; | &lt;!-- availability-date:nfyingshi --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:nfyingshi --&gt; |
-| [厂长资源](&lt;https://www.czzymovie.com&gt;) | 高清、秒播不卡顿，有广告 | 🌟&amp;#8288;🌟&amp;#8288;🌟 | &lt;!-- availability:czzymovie --&gt;🟡&amp;#8288;访问&amp;#8288;受限&lt;!-- /availability:czzymovie --&gt; | &lt;!-- availability-date:czzymovie --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:czzymovie --&gt; |
+**2. Connect a FREE provider (no signup needed):**
 
-&lt;p align=&quot;right&quot;&gt;&lt;a href=&quot;#精选资源&quot;&gt;返回分类导航&lt;/a&gt;&lt;/p&gt;
+Dashboard → Providers → Connect **Kiro AI** (~50 credits/month free: Claude 4.5 + GLM-5 + MiniMax) or **OpenCode Free** (no auth) → Done!
 
-### 影视APP
+**3. Use in your CLI tool:**
 
-&lt;table width=&quot;100%&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th width=&quot;15%&quot; nowrap&gt;资源&lt;/th&gt;
-      &lt;th width=&quot;25%&quot; nowrap&gt;简介&lt;/th&gt;
-      &lt;th width=&quot;32%&quot; nowrap&gt;支持平台&lt;/th&gt;
-      &lt;th width=&quot;12%&quot; nowrap&gt;状态&lt;/th&gt;
-      &lt;th width=&quot;16%&quot; nowrap&gt;检测时间&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td nowrap&gt;&lt;a href=&quot;https://b.zhuiju.me/archives/23/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;iOS影视APP&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;各类可用APP合集&lt;/td&gt;
-      &lt;td align=&quot;center&quot;&gt;iOS&lt;/td&gt;
-      &lt;td align=&quot;center&quot; nowrap&gt;&lt;!-- availability:ios-yingshi-app --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:ios-yingshi-app --&gt;&lt;/td&gt;
-      &lt;td align=&quot;center&quot; nowrap&gt;&lt;!-- availability-date:ios-yingshi-app --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:ios-yingshi-app --&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td nowrap&gt;&lt;a href=&quot;https://b.zhuiju.me/archives/4/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;SeleneTV&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;跨平台 MoonTV 客户端&lt;/td&gt;
-      &lt;td align=&quot;center&quot;&gt;Android / iOS / macOS / Windows&lt;/td&gt;
-      &lt;td align=&quot;center&quot; nowrap&gt;&lt;!-- availability:selenetv-app --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:selenetv-app --&gt;&lt;/td&gt;
-      &lt;td align=&quot;center&quot; nowrap&gt;&lt;!-- availability-date:selenetv-app --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:selenetv-app --&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td nowrap&gt;&lt;a href=&quot;https://kazumi.app/download&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Kazumi&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;免费无广告/在线番剧&lt;/td&gt;
-      &lt;td align=&quot;center&quot;&gt;Android / iOS / Windows / macOS / HarmonyOS&lt;/td&gt;
-      &lt;td align=&quot;center&quot; nowrap&gt;&lt;!-- availability:kazumi --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:kazumi --&gt;&lt;/td&gt;
-      &lt;td align=&quot;center&quot; nowrap&gt;&lt;!-- availability-date:kazumi --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:kazumi --&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td nowrap&gt;&lt;a href=&quot;https://animeko.org/downloads/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Animeko&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;在线弹幕追番平台&lt;/td&gt;
-      &lt;td align=&quot;center&quot;&gt;Android / Windows / macOS / Linux / iOS&lt;/td&gt;
-      &lt;td align=&quot;center&quot; nowrap&gt;&lt;!-- availability:animeko-app --&gt;🟢&amp;#8288;可&amp;#8288;访问&lt;!-- /availability:animeko-app --&gt;&lt;/td&gt;
-      &lt;td align=&quot;center&quot; nowrap&gt;&lt;!-- availability-date:animeko-app --&gt;2026&amp;#8209;10&amp;#8209;17&lt;!-- /availability-date:animeko-app --&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
+```
+Claude Code/Codex/OpenClaw/Cursor/Cline Settings:
+  Endpoint: http://localhost:20128/v1
+  API Key: [copy from dashboard]
+  Model: kr/claude-sonnet-4.5
+```
+
+**That&#039;s it!** Start coding with FREE AI models.
+
+**Alternative: run from source (this repository):**
+
+This repository package is private (`9router-app`), so source/Docker execution is the expected local development path.
+
+```bash
+cp .env.example .env
+npm install
+PORT=20128 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run dev
+```
+
+Production mode:
+
+```bash
+# Create Temporary Memory For Build
+sudo fallocate -l 2G /swapfile_temp
+sudo chmod 600 /swapfile_temp
+sudo mkswap /swapfile_temp
+sudo swapon /swapfile_temp
+
+export MAKEFLAGS=&quot;-j1&quot;
+export DLIB_NO_GUI_SUPPORT=1
+export CFLAGS=&quot;-mno-avx&quot;
+
+npm run build
+
+# Clear temporary swap
+sudo swapoff /swapfile_temp
+sudo rm /swapfile_temp
+
+PORT=20128 HOSTNAME=0.0.0.0 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run start
+```
+
+Default URLs:
+
+- Dashboard: `http://localhost:20128/dashboard`
+- OpenAI-compatible API: `http://localhost:20128/v1`
+
+---
+
+## Video Guides
+
+&lt;div align=&quot;center&quot;&gt;
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;
+      &lt;a href=&quot;https://www.youtube.com/watch?v=X69n5Lm06Yw&quot;&gt;
+        &lt;img src=&quot;https://img.youtube.com/vi/X69n5Lm06Yw/maxresdefault.jpg&quot; alt=&quot;Tiết kiệm chi phí LLM với 9Router&quot; width=&quot;300&quot;/&gt;
+      &lt;/a&gt;&lt;br/&gt;
+      &lt;b&gt;🇻🇳 Tiếng Việt&lt;/b&gt;&lt;br/&gt;
+      &lt;sub&gt;Tiết kiệm chi phí LLM cho OpenClaw với 9Router&lt;br/&gt;by &lt;a href=&quot;https://www.youtube.com/c/M%C3%ACAIblog&quot;&gt;Mì AI&lt;/a&gt;&lt;/sub&gt;
+    &lt;/td&gt;
+    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;
+      &lt;a href=&quot;https://youtu.be/VQAw612S27Y&quot;&gt;
+        &lt;img src=&quot;https://img.youtube.com/vi/VQAw612S27Y/maxresdefault.jpg&quot; alt=&quot;9Router + Claude Code FREE Unlimited Setup&quot; width=&quot;300&quot;/&gt;
+      &lt;/a&gt;&lt;br/&gt;
+      &lt;b&gt;🇵🇰 اردو / हिन्दी&lt;/b&gt;&lt;br/&gt;
+      &lt;sub&gt;9Router + Claude Code FREE Unlimited Setup&lt;br/&gt;by &lt;a href=&quot;https://www.youtube.com/@BuildAIWithHamid&quot;&gt;Build AI With Hamid&lt;/a&gt;&lt;/sub&gt;
+    &lt;/td&gt;
+    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;
+      &lt;a href=&quot;https://www.youtube.com/watch?v=raEyZPg5xE0&quot;&gt;
+        &lt;img src=&quot;https://img.youtube.com/vi/raEyZPg5xE0/maxresdefault.jpg&quot; alt=&quot;9Router Setup Tutorial&quot; width=&quot;300&quot;/&gt;
+      &lt;/a&gt;&lt;br/&gt;
+      &lt;b&gt;🇺🇸 English&lt;/b&gt;&lt;br/&gt;
+      &lt;sub&gt;9Router + Claude Code FREE Setup&lt;br/&gt;by &lt;a href=&quot;https://www.youtube.com/@BuildAIWithHamid&quot;&gt;Build AI With Hamid&lt;/a&gt;&lt;/sub&gt;
+    &lt;/td&gt;
+    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;
+      &lt;a href=&quot;https://youtu.be/3dF5GIYMrcQ?si=bAyfyiHbARJQAHj_&quot;&gt;
+        &lt;img src=&quot;https://img.youtube.com/vi/3dF5GIYMrcQ/hqdefault.jpg&quot; alt=&quot;9Router Setup Tutorial&quot; width=&quot;300&quot;/&gt;
+      &lt;/a&gt;&lt;br/&gt;
+      &lt;b&gt;🇺🇸 English&lt;/b&gt;&lt;br/&gt;
+      &lt;sub&gt;9Router + Claude Code FREE Setup&lt;br/&gt;by &lt;a href=&quot;https://www.youtube.com/@BuildAIWithHamid&quot;&gt;Build AI With Hamid&lt;/a&gt;&lt;/sub&gt;
+    &lt;/td&gt;
+    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;
+      &lt;a href=&quot;https://www.youtube.com/watch?v=o3qYCyjrFYg&quot;&gt;
+        &lt;img src=&quot;https://img.youtube.com/vi/o3qYCyjrFYg/maxresdefault.jpg&quot; alt=&quot;Claude Code FREE Forever&quot; width=&quot;300&quot;/&gt;
+      &lt;/a&gt;&lt;br/&gt;
+      &lt;b&gt;🇺🇸 English&lt;/b&gt;&lt;br/&gt;
+      &lt;sub&gt;Claude Code FREE Forever — Unlimited Models&lt;br/&gt;by &lt;a href=&quot;https://www.youtube.com/@BuildAIWithHamid&quot;&gt;Build AI With Hamid&lt;/a&gt;&lt;/sub&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;
+      &lt;a href=&quot;https://www.youtube.com/watch?v=Ttpc26m39Dw&quot;&gt;
+        &lt;img src=&quot;https://img.youtube.com/vi/Ttpc26m39Dw/maxresdefault.jpg&quot; alt=&quot;Claude CLI Free Setup&quot; width=&quot;300&quot;/&gt;
+      &lt;/a&gt;&lt;br/&gt;
+      &lt;b&gt;🇺🇸 English&lt;/b&gt;&lt;br/&gt;
+      &lt;sub&gt;Claude CLI Free Setup with 9Router 🚀&lt;br/&gt;by &lt;a href=&quot;https://www.youtube.com/@CodeVerseSoban&quot;&gt;CodeVerse Soban&lt;/a&gt;&lt;/sub&gt;
+    &lt;/td&gt;
+    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;
+      &lt;a href=&quot;https://www.youtube.com/watch?v=G-5A_D5Pm6Y&quot;&gt;
+        &lt;img src=&quot;https://img.youtube.com/vi/G-5A_D5Pm6Y/maxresdefault.jpg&quot; alt=&quot;Cài đặt OpenClaw Free A-Z&quot; width=&quot;300&quot;/&gt;
+      &lt;/a&gt;&lt;br/&gt;
+      &lt;b&gt;🇻🇳 Tiếng Việt&lt;/b&gt;&lt;br/&gt;
+      &lt;sub&gt;Cài Đặt OpenClaw Free Từ A-Z + 9Router&lt;br/&gt;by &lt;a href=&quot;https://www.youtube.com/@maigia&quot;&gt;Mai Gia&lt;/a&gt;&lt;/sub&gt;
+    &lt;/td&gt;
+    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;
+      &lt;a href=&quot;https://www.youtube.com/watch?v=JXmg8_gccgE&quot;&gt;
+        &lt;img src=&quot;https://img.youtube.com/vi/JXmg8_gccgE/maxresdefault.jpg&quot; alt=&quot;FREE OpenClaw with Claude Opus&quot; width=&quot;300&quot;/&gt;
+      &lt;/a&gt;&lt;br/&gt;
+      &lt;b&gt;🇺🇸 English&lt;/b&gt;&lt;br/&gt;
+      &lt;sub&gt;FREE OpenClaw + Claude Opus 4.6&lt;br/&gt;by &lt;a href=&quot;https://www.youtube.com/@BuildAIWithHamid&quot;&gt;Build AI With Hamid&lt;/a&gt;&lt;/sub&gt;
+    &lt;/td&gt;
+    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;
+      &lt;a href=&quot;https://www.youtube.com/watch?v=CkVZZUSTXAI&quot;&gt;
+        &lt;img src=&quot;https://img.youtube.com/vi/CkVZZUSTXAI/mqdefault.jpg&quot; alt=&quot;Claude CLI Free Setup&quot; width=&quot;300&quot;/&gt;
+      &lt;/a&gt;&lt;br/&gt;
+      &lt;b&gt;🇮🇩 Indonesia&lt;/b&gt;&lt;br/&gt;
+      &lt;sub&gt;Koding 24 Jam Anti Rate Limit! Hemat Token AI 65% | Tutorial Quick Setup 9Router 🚀&lt;br/&gt;by &lt;a href=&quot;https://www.youtube.com/@krisswuh&quot;&gt;Krisswuh&lt;/a&gt;&lt;/sub&gt;
+    &lt;/td&gt;
+    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;
+      &lt;a href=&quot;https://www.youtube.com/watch?v=TXGv4eofe1I&quot;&gt;
+        &lt;img src=&quot;https://img.youtube.com/vi/TXGv4eofe1I/mqdefault.jpg&quot; alt=&quot;Cara Deploy 9Router di Hugging Face GRATIS Non-Stop! | Alternatif VPS RAM 16GB&quot; width=&quot;300&quot;/&gt;
+      &lt;/a&gt;&lt;br/&gt;
+      &lt;b&gt;🇮🇩 Indonesia&lt;/b&gt;&lt;br/&gt;
+      &lt;sub&gt;Cara Deploy 9Router di Hugging Face GRATIS Non-Stop! | Alternatif VPS RAM 16GB&lt;br/&gt;by &lt;a href=&quot;https://www.youtube.com/@krisswuh&quot;&gt;Krisswuh&lt;/a&gt;&lt;/sub&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;
+      &lt;a href=&quot;https://www.youtube.com/watch?v=GyX-DLvePW8&quot;&gt;
+        &lt;img src=&quot;https://img.youtube.com/vi/GyX-DLvePW8/hqdefault.jpg&quot; alt=&quot;این شکلی از هر API ای استفاده کن برای هوش مصنوعی&quot; width=&quot;300&quot;/&gt;
+      &lt;/a&gt;&lt;br/&gt;
+      &lt;b&gt;🇮🇷 Persian-فارسی&lt;/b&gt;&lt;br/&gt;
+      &lt;sub dir=&quot;rtl&quot;&gt;این شکلی از هر API ای استفاده کن برای هوش مصنوعی&lt;br/&gt;by &lt;a href=&quot;https://www.youtube.com/@Matin_SenPai&quot;&gt;Matin SenPai&lt;/a&gt;&lt;/sub&gt;
+    &lt;/td&gt;
+    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;
+      &lt;a href=&quot;https://www.youtube.com/watch?v=hPusYX-5Pmw&quot;&gt;
+        &lt;img src=&quot;https://img.youtube.com/vi/hPusYX-5Pmw/maxresdefault.jpg&quot; alt=&quot;Hướng Dẫn Setup OpenClaw + 9Router: Tạo Bot Zalo AI Tự Động Từ A-Z&quot; width=&quot;300&quot;/&gt;
+      &lt;/a&gt;&lt;br/&gt;
+      &lt;b&gt;🇻🇳 Tiếng Việt&lt;/b&gt;&lt;br/&gt;
+      &lt;sub&gt;Hướng Dẫn Setup OpenClaw + 9Router: Tạo Bot Zalo AI Tự Động Từ A-Z&lt;br/&gt;by &lt;a href=&quot;https://github.com/tuanminhhole&quot;&gt;tuanminhhole&lt;/a&gt;&lt;/sub&gt;
+    &lt;/td&gt;
+    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;
+      &lt;a href=&quot;https://www.youtube.com/watch?v=hgnE7MKi3Y4&quot;&gt;
+        &lt;img src=&quot;https://img.youtube.com/vi/hgnE7MKi3Y4/maxresdefault.jpg&quot; alt=&quot;Bye Limit! Cara Bikin Sistem &#039;AI Unlimited&#039; 100% Gratis Dengan 9Router!
+&quot; width=&quot;300&quot;/&gt;
+      &lt;/a&gt;&lt;br/&gt;
+      &lt;b&gt;🇮🇩 Indonesia&lt;/b&gt;&lt;br/&gt;
+      &lt;sub&gt;Bye Limit! Cara Bikin Sistem &quot;AI Unlimited&quot; 100% Gratis Dengan 9Router!&lt;br/&gt;by &lt;a href=&quot;https://www.youtube.com/@neptiver&quot;&gt;neptiver&lt;/a&gt;&lt;/sub&gt;
+    &lt;/td&gt;
+    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;&lt;/td&gt;
+    &lt;td align=&quot;center&quot; width=&quot;320&quot;&gt;&lt;/td&gt;
+  &lt;/tr&gt;
 &lt;/table&gt;
 
-&lt;p align=&quot;right&quot;&gt;&lt;a href=&quot;#精选资源&quot;&gt;返回分类导航&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
 
-### 网盘资源搜索
+&gt; 🎬 **Made a video about 9Router?** Submit a [Pull Request](https://github.com/decolua/9router/pulls) adding your video to this section — we&#039;ll merge it!
 
-| 资源 | 简介 | 推荐指数 | 状态 | 检测时间 |
-|
+---
+
+## 🛠️ Supported CLI Tools
+
+9Router works seamlessly with all major AI coding tools:
+
+&lt;div align=&quot;center&quot;&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/claude.png&quot; width=&quot;60&quot; alt=&quot;Claude Code&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Claude-Code&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/openclaw.png&quot; width=&quot;60&quot; alt=&quot;OpenClaw&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;OpenClaw&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/codex.png&quot; width=&quot;60&quot; alt=&quot;Codex&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Codex&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/opencode.png&quot; width=&quot;60&quot; alt=&quot;OpenCode&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;OpenCode&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/cursor.png&quot; width=&quot;60&quot; alt=&quot;Cursor&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Cursor&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/antigravity.png&quot; width=&quot;60&quot; alt=&quot;Antigravity&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Antigravity&lt;/b&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/cline.png&quot; width=&quot;60&quot; alt=&quot;Cline&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Cline&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/continue.png&quot; width=&quot;60&quot; alt=&quot;Continue&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Continue&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/droid.png&quot; width=&quot;60&quot; alt=&quot;Droid&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Droid&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/roo.png&quot; width=&quot;60&quot; alt=&quot;Roo&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Roo&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/copilot.png&quot; width=&quot;60&quot; alt=&quot;Copilot&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Copilot&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/kilocode.png&quot; width=&quot;60&quot; alt=&quot;Kilo Code&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Kilo Code&lt;/b&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/opendesign.png&quot; width=&quot;60&quot; alt=&quot;OpenDesign&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;OpenDesign&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/jcode.png&quot; width=&quot;60&quot; alt=&quot;jcode&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;jcode&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/grok-cli.png&quot; width=&quot;60&quot; alt=&quot;Grok Build&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Grok Build&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/devin-cli.png&quot; width=&quot;60&quot; alt=&quot;Devin CLI&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Devin CLI&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/deepseek-tui.png&quot; width=&quot;60&quot; alt=&quot;DeepSeek TUI&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;DeepSeek TUI&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/qwen.png&quot; width=&quot;60&quot; alt=&quot;Qwen Code&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Qwen Code&lt;/b&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+
+---
+
+## 🌐 Supported Providers
+
+### 🔐 OAuth Providers
+
+&lt;div align=&quot;center&quot;&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/claude.png&quot; width=&quot;60&quot; alt=&quot;Claude Code&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Claude-Code&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/antigravity.png&quot; width=&quot;60&quot; alt=&quot;Antigravity&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Antigravity&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/codex.png&quot; width=&quot;60&quot; alt=&quot;Codex&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Codex&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/github.png&quot; width=&quot;60&quot; alt=&quot;GitHub&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;GitHub&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/cursor.png&quot; width=&quot;60&quot; alt=&quot;Cursor&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Cursor&lt;/b&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;120&quot;&gt;
+        &lt;img src=&quot;./public/providers/kimchi.png&quot; width=&quot;60&quot; alt=&quot;Kimchi&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Kimchi&lt;/b&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+
+### 🆓 Free Providers
+
+&lt;div align=&quot;center&quot;&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; width=&quot;150&quot;&gt;
+        &lt;img src=&quot;./public/providers/kiro.png&quot; width=&quot;70&quot; alt=&quot;Kiro&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Kiro AI&lt;/b&gt;&lt;br/&gt;
+        &lt;sub&gt;Claude 4.5 + GLM-5 + MiniMax&lt;br/&gt;50 credits/month free&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;150&quot;&gt;
+        &lt;img src=&quot;./public/providers/opencode.png&quot; width=&quot;70&quot; alt=&quot;OpenCode Free&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;OpenCode Free&lt;/b&gt;&lt;br/&gt;
+        &lt;sub&gt;No auth • Auto-fetch models&lt;br/&gt;Free (model list varies)&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;150&quot;&gt;
+        &lt;img src=&quot;./public/providers/gemini.png&quot; width=&quot;70&quot; alt=&quot;Vertex AI&quot;/&gt;&lt;br/&gt;
+        &lt;b&gt;Vertex AI&lt;/b&gt;&lt;br/&gt;
+        &lt;sub&gt;Gemini 3 Pro + GLM-5 + DeepSeek&lt;br/&gt;$300 credits free&lt;/sub&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+
+&gt; **Note:** iFlow, Qwen Code and Gemini CLI free tiers were discontinued in 2026. Use Kiro / OpenCode Free / Vertex instead.
+&gt;
+&gt; **Kiro AI** moved to a paid model in Sep 2025 — the free tier is now capped at **50 credits/month** (plus 500 trial credits for new accounts in the first 30 days). Paid tiers: Pro $20/mo (1,000 credits), Pro+ $40/mo (2,000), Pro Max $100/mo (5,000), Power $200/mo (10,000).
+&gt; **OpenCode Free** model list fluctuates over time (some models free only for limited promos) — subject to change without notice.
+&gt; **Vertex AI**: the $300 free credit for new GCP accounts is still valid, but since Mar 2026 the **Gemini API endpoint no longer consumes these credits** — call the **Vertex AI Studio** endpoint instead.
+
+### 🔑 API Key Providers (40+)
+
+&lt;div align=&quot;center&quot;&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/openrouter.png&quot; width=&quot;50&quot; alt=&quot;OpenRouter&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;OpenRouter&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/glm.png&quot; width=&quot;50&quot; alt=&quot;GLM&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;GLM&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/kimi.png&quot; width=&quot;50&quot; alt=&quot;Kimi&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;Kimi&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/minimax.png&quot; width=&quot;50&quot; alt=&quot;MiniMax&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;MiniMax&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/openai.png&quot; width=&quot;50&quot; alt=&quot;OpenAI&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;OpenAI&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/anthropic.png&quot; width=&quot;50&quot; alt=&quot;Anthropic&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;Anthropic&lt;/sub&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/gemini.png&quot; width=&quot;50&quot; alt=&quot;Gemini&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;Gemini&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/deepseek.png&quot; width=&quot;50&quot; alt=&quot;DeepSeek&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;DeepSeek&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/groq.png&quot; width=&quot;50&quot; alt=&quot;Groq&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;Groq&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/xai.png&quot; width=&quot;50&quot; alt=&quot;xAI&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;xAI&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/mistral.png&quot; width=&quot;50&quot; alt=&quot;Mistral&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;Mistral&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/perplexity.png&quot; width=&quot;50&quot; alt=&quot;Perplexity&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;Perplexity&lt;/sub&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/together.png&quot; width=&quot;50&quot; alt=&quot;Together&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;Together AI&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/fireworks.png&quot; width=&quot;50&quot; alt=&quot;Fireworks&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;Fireworks&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/cerebras.png&quot; width=&quot;50&quot; alt=&quot;Cerebras&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;Cerebras&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/cohere.png&quot; width=&quot;50&quot; alt=&quot;Cohere&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;Cohere&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/nvidia.png&quot; width=&quot;50&quot; alt=&quot;NVIDIA&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;NVIDIA&lt;/sub&gt;
+      &lt;/td&gt;
+      &lt;td align=&quot;center&quot; width=&quot;100&quot;&gt;
+        &lt;img src=&quot;./public/providers/siliconflow.png&quot; width=&quot;50&quot; alt=&quot;SiliconFlow&quot;/&gt;&lt;br/&gt;
+        &lt;sub&gt;SiliconFlow&lt;/sub&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;p&gt;&lt;i&gt;...and 20+ more providers including Nebius, Chutes, Hyperbolic, and custom OpenAI/Anthropic compatible endpoints&lt;/i&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+### 🏠 Self-hosted Providers
+
+For speech and embeddings served from **your own** machine — whisper.cpp,
+faster-whisper, Speaches, Kokoro-FastAPI, openedai-speech, llama.cpp/llama-server,
+vLLM, Infinity, text-embeddings-inference, or anything else that speaks the OpenAI
+shape.
+
+| Provider | Endpoint used | Typical server |
+| --- | --- | --- |
+| **Self-hosted STT** | `/v1/audio/transcriptions` | whisper.cpp, faster-whisper |
+| **Self-hosted TTS** | `/v1/audio/speech` | Kokoro-FastAPI, openedai-speech |
+| **Self-hosted Embeddi
 
 ... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
@@ -1260,15 +1478,15 @@ MIT. See [LICENSE](./LICENSE).
             <title><![CDATA[plugin87/ux-ui-agent-skills]]></title>
             <link>https://github.com/plugin87/ux-ui-agent-skills</link>
             <guid>https://github.com/plugin87/ux-ui-agent-skills</guid>
-            <pubDate>Sat, 17 Oct 2026 00:05:29 GMT</pubDate>
+            <pubDate>Sun, 18 Oct 2026 00:06:34 GMT</pubDate>
             <description><![CDATA[Turn Claude into a senior design architect: DTCG tokens, 52 components, WCAG 2.2 AA-AAA, 138 design systems, any-framework code, and 50 objective gates that fail the build instead of faking success.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/plugin87/ux-ui-agent-skills">plugin87/ux-ui-agent-skills</a></h1>
             <p>Turn Claude into a senior design architect: DTCG tokens, 52 components, WCAG 2.2 AA-AAA, 138 design systems, any-framework code, and 50 objective gates that fail the build instead of faking success.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 2,011</p>
-            <p>Forks: 210</p>
-            <p>Stars today: 137 stars today</p>
+            <p>Stars: 2,034</p>
+            <p>Forks: 217</p>
+            <p>Stars today: 32 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
 
 # UX/UI Agent Skills
@@ -1643,15 +1861,15 @@ npx playwright install chrome        # real Chrome: six gates re
             <title><![CDATA[github/awesome-copilot]]></title>
             <link>https://github.com/github/awesome-copilot</link>
             <guid>https://github.com/github/awesome-copilot</guid>
-            <pubDate>Sat, 17 Oct 2026 00:05:28 GMT</pubDate>
+            <pubDate>Sun, 18 Oct 2026 00:06:33 GMT</pubDate>
             <description><![CDATA[Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/github/awesome-copilot">github/awesome-copilot</a></h1>
             <p>Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 40,094</p>
-            <p>Forks: 5,143</p>
-            <p>Stars today: 46 stars today</p>
+            <p>Stars: 40,132</p>
+            <p>Forks: 5,149</p>
+            <p>Stars today: 39 stars today</p>
             <h2>README</h2><pre># 🤖 Awesome GitHub Copilot
 [![Powered by Awesome Copilot](https://img.shields.io/badge/Powered_by-Awesome_Copilot-blue?logo=githubcopilot)](https://aka.ms/awesome-github-copilot) [![GitHub contributors from allcontributors.org](https://img.shields.io/github/all-contributors/github/awesome-copilot?color=ee8449)](#contributors-)
 
@@ -1816,224 +2034,449 @@ Thanks goes to these wonderful people ([emoji key](./CONTRIBUTING.md#contributor
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[kunchenguid/lavish-axi]]></title>
-            <link>https://github.com/kunchenguid/lavish-axi</link>
-            <guid>https://github.com/kunchenguid/lavish-axi</guid>
-            <pubDate>Sat, 17 Oct 2026 00:05:27 GMT</pubDate>
-            <description><![CDATA[HTML is the new markdown. Lavish is the new editor for your HTML artifacts.]]></description>
+            <title><![CDATA[withmarbleapp/os-taxonomy]]></title>
+            <link>https://github.com/withmarbleapp/os-taxonomy</link>
+            <guid>https://github.com/withmarbleapp/os-taxonomy</guid>
+            <pubDate>Sun, 18 Oct 2026 00:06:32 GMT</pubDate>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/kunchenguid/lavish-axi">kunchenguid/lavish-axi</a></h1>
-            <p>HTML is the new markdown. Lavish is the new editor for your HTML artifacts.</p>
+            <h1><a href="https://github.com/withmarbleapp/os-taxonomy">withmarbleapp/os-taxonomy</a></h1>
+            <p></p>
             <p>Language: JavaScript</p>
-            <p>Stars: 4,172</p>
-            <p>Forks: 380</p>
-            <p>Stars today: 25 stars today</p>
-            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;lavish-axi&lt;/h1&gt;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/kunchenguid/lavish-axi/actions/workflows/ci.yml&quot;
-    &gt;&lt;img alt=&quot;CI&quot; src=&quot;https://img.shields.io/github/actions/workflow/status/kunchenguid/lavish-axi/ci.yml?style=flat-square&amp;label=ci&quot;
-  /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/kunchenguid/lavish-axi/actions/workflows/release-please.yml&quot;
-    &gt;&lt;img alt=&quot;Release&quot; src=&quot;https://img.shields.io/github/actions/workflow/status/kunchenguid/lavish-axi/release-please.yml?style=flat-square&amp;label=release&quot;
-  /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://www.npmjs.com/package/lavish-axi&quot;
-    &gt;&lt;img alt=&quot;npm&quot; src=&quot;https://img.shields.io/npm/v/lavish-axi?style=flat-square&quot;
-  /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-blue?style=flat-square&quot;
-    &gt;&lt;img alt=&quot;Platform&quot; src=&quot;https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-blue?style=flat-square&quot;
-  /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://x.com/kunchenguid&quot;
-    &gt;&lt;img alt=&quot;X&quot; src=&quot;https://img.shields.io/badge/X-@kunchenguid-black?style=flat-square&quot;
-  /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://discord.gg/Wsy2NpnZDu&quot;
-    &gt;&lt;img alt=&quot;Discord&quot; src=&quot;https://img.shields.io/discord/1439901831038763092?style=flat-square&amp;label=discord&quot;
-  /&gt;&lt;/a&gt;
-&lt;/p&gt;
+            <p>Stars: 5,364</p>
+            <p>Forks: 910</p>
+            <p>Stars today: 392 stars today</p>
+            <h2>README</h2><pre># Marble Skill Taxonomy
 
-&lt;h3 align=&quot;center&quot;&gt;For when a rich editor is not rich enough.&lt;/h3&gt;
+An open, structured taxonomy of **what children learn** across the primary/elementary years — decomposed into fine-grained &quot;micro-topics&quot;, wired into a prerequisite graph, and aligned to national curriculum standards. Produced by [Marble](https://withmarble.com).
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img alt=&quot;Lavish Editor demo&quot; src=&quot;lavish-editor-marketing/renders/lavish-editor-marketing.gif&quot; width=&quot;960&quot; /&gt;
-&lt;/p&gt;
+&gt; **Version:** `v1` · **Topics:** 1,590 · **Prerequisite edges:** 3,221 · **Subjects:** 8
 
-HTML is the new markdown. Lavish is the new editor for your HTML artifacts.
+## See it
 
-Agents are good at producing rich HTML artifacts, but the human-agent collaboration loop on such artifacts is lacking and falls back into screenshots and long responses for “tell me what to change.”
-That loses the thing HTML is best at: interactivity.
+![The taxonomy as a rotating 3D graph: every dot a micro-topic, colored by subject, wired by prerequisites](media/curriculum-viz.gif)
 
-Lavish Editor opens agent-generated HTML files in a local browser, lets you pinpoint elements and selected text, edit diagrams your agent authored as Mermaid whiteboards, and send feedback to the agent to address.
+Every dot is a micro-topic, colored by subject; height is age; each thread is a prerequisite ([full-quality video](media/curriculum-viz.mp4)). Explore it interactively at [withmarble.com/curriculum](https://withmarble.com/curriculum) — tap any concept to trace everything a learner must master before it.
 
-- **Local-first** - Review local HTML artifacts with a local CLI and no cloud dependency in the core feedback loop; hosted sharing through third-party ht-ml.app is explicit and opt-in.
-- **Human-AI collaboration** - Annotate elements and selected text ranges, edit Mermaid whiteboard diagrams, and send messages to the agent without leaving Lavish Editor.
-- **Battery included** - Lavish Editor teaches your agent good visualization for common use cases such as product or technical plans, design explorations and more out of the box.
 
-Lavish Editor is an [AXI](https://axi.md), which means -
+## What this is
 
-- It&#039;s just a CLI any capable agent can run without setup.
-- It&#039;s optimized for agent ergonomics. TOON output, long polling, and contextual disclosure making it highly token efficient.
-- The skill and hooks below only handle discovery; agents learn to use the AXI by using it.
+Most curriculum data is either a flat list of standards or locked inside a product. This dataset is a **connected graph of learning**:
 
-## Quick Start
+- **1,590 micro-topics** — a single, teachable idea (e.g. *&quot;Building sentences&quot;*, *&quot;Apparent brightness of stars&quot;*), each with a plain-language description, mastery **evidence** criteria, a type (conceptual / procedural / representational / language / meta), a subject + domain, and an approximate age range.
+- **3,221 prerequisite dependencies** — a directed acyclic graph: *&quot;topic X depends on prerequisite Y&quot;*, each edge tagged `hard`/`soft` and carrying a one-line **reason**.
+- **Curriculum alignment** — each micro-topic links to the standards it was distilled from (NGSS, Common Core, the UK National Curriculum, and more).
+- **Domain clusters** — 183 parent-friendly one-paragraph summaries per (subject, domain, age band).
 
-Install the Lavish skill in the [Agent Skills](https://agentskills.io) format with [`npx skills`](https://github.com/vercel-labs/skills):
+### Subjects
 
-```sh
-npx skills add kunchenguid/lavish-axi --skill lavish
+| Subject | Topics |
+|---|---:|
+| Science | 547 |
+| Mathematics | 503 |
+| English | 286 |
+| History | 90 |
+| Personal &amp; Social Development | 88 |
+| Life Skills | 37 |
+| Computing | 21 |
+| Learning to Learn | 18 |
+
+## Files
+
+All data lives in [`data/`](data/) as UTF-8 JSON. See [`schema/`](schema/) for JSON Schemas and [`manifest.json`](data/manifest.json) for counts + SHA-256 checksums.
+
+| File | What it holds |
+|---|---|
+| [`data/topics.json`](data/topics.json) | The micro-topics (graph **nodes**). |
+| [`data/dependencies.json`](data/dependencies.json) | Prerequisite **edges** (`topicId` depends on `prerequisiteId`). |
+| [`data/curriculum-standards.json`](data/curriculum-standards.json) | The source curriculum standards, grouped by curriculum. |
+| [`data/clusters.json`](data/clusters.json) | Parent-friendly domain summaries. |
+| [`data/manifest.json`](data/manifest.json) | Counts, per-subject breakdown, per-file checksums. |
+
+### A topic
+
+```json
+{
+  &quot;id&quot;: &quot;mt_N8CpN1EJrP&quot;,
+  &quot;type&quot;: &quot;CONCEPTUAL&quot;,
+  &quot;subject&quot;: &quot;English&quot;,
+  &quot;domain&quot;: &quot;Grammar &amp; Punctuation&quot;,
+  &quot;name&quot;: &quot;Building sentences&quot;,
+  &quot;description&quot;: &quot;Understand that words combine to make sentences — a sentence expresses a complete thought…&quot;,
+  &quot;ageRangeStart&quot;: 4,
+  &quot;ageRangeEnd&quot;: 6,
+  &quot;centrality&quot;: 0.257,
+  &quot;evidence&quot;: [
+    &quot;Distinguish between complete sentences and fragments&quot;,
+    &quot;Compose a complete sentence with a subject and verb&quot;
+  ],
+  &quot;assessmentPrompt&quot;: &quot;If {{name}} says something like \&quot;The dog\&quot;, can they tell you that&#039;s not a complete sentence…?&quot;,
+  &quot;standards&quot;: [&quot;ccss-ela:L.K.1f&quot;, &quot;uk-nc-2013:Eng.App2.Y1.Sent.1&quot;]
+}
 ```
 
-That is the entire setup - no npm install needed.
-The skill teaches your agent to run Lavish through `npx -y lavish-axi`, so the CLI comes along on demand.
-It stays a short stub and sends the agent to `npx -y lavish-axi --help`, `reply --help`, `design`, and `playbook` for current instructions, so an installed copy cannot go stale against a newer CLI.
-Its frontmatter also includes Hermes Agent metadata, so Hermes-compatible harnesses can categorize and surface it as a first-class productivity skill.
-This installs the public `lavish` skill.
-The repository also contains an internal `lavish-design` brand skill for maintainers; default `npx skills add ... --list` and skills.sh discovery hide it unless `INSTALL_INTERNAL_SKILLS=1` is set.
+- `id` — stable identifier (`mt_…`), referenced by dependencies and by neighbours.
+- `standards` — keys into `curriculum-standards.json` (`&quot;&lt;curriculum-slug&gt;:&lt;code&gt;&quot;`).
+- `assessmentPrompt` — a natural-language check for the idea. Contains a `{{name}}` placeholder (the child&#039;s name); substitute or strip before display.
 
-Then, in agents that expose skills as slash commands (Claude Code, for example), invoke it directly:
+### A dependency
 
-```
-/lavish let&#039;s discuss our plan here
+```json
+{ &quot;topicId&quot;: &quot;mt__00ZSLnB7p&quot;, &quot;prerequisiteId&quot;: &quot;mt_VBl1T1sFCM&quot;, &quot;strength&quot;: &quot;hard&quot;,
+  &quot;reason&quot;: &quot;Must understand vibrations make sound before finding volume patterns&quot; }
 ```
 
-Or just ask for anything that is easier to grasp visually - a plan, comparison, diagram, table, code view, or report - and the agent loads the skill on its own when it recognizes the task.
+`topicId` **depends on** `prerequisiteId`. Reverse the edge to get &quot;unlocks&quot;.
 
-By default the skill lands in the current project&#039;s skills directory (`.claude/skills/`, for example); add `-g` to install it for all projects (`~/.claude/skills/`).
+## Using it
 
-## Other Ways to Use Lavish
+Pure data — no runtime, no dependencies. Load the JSON and go.
 
-The skill is the recommended path, but it is not the only one.
+```js
+import topics from &#039;./data/topics.json&#039; with { type: &#039;json&#039; };
+import deps from &#039;./data/dependencies.json&#039; with { type: &#039;json&#039; };
 
-### Zero setup
-
-Lavish is an AXI, so any capable agent can run the CLI directly with nothing installed at all.
-Just tell your agent:
-
-```
-Use `npx -y lavish-axi` to write a product or technical plan for what we discussed.
-```
-
-### Session hook
-
-Want Lavish&#039;s ambient context - including your live open sessions - fed into every agent session instead of loading on demand?
-Install the CLI globally and opt into the hook:
-
-```sh
-npm install -g lavish-axi
-lavish-axi setup hooks
+const byId = new Map(topics.topics.map(t =&gt; [t.id, t]));
+const prereqs = deps.dependencies
+  .filter(d =&gt; d.topicId === &#039;mt_N8CpN1EJrP&#039;)
+  .map(d =&gt; byId.get(d.prerequisiteId).name);
 ```
 
-This installs a `SessionStart` hook for **Claude Code**, **Codex**, **OpenCode**, and **GitHub Copilot CLI** that surfaces open sessions, visualization playbooks, and usage guidance at the start of each session.
-Unlike the skill, the hook also shows your live open sessions, so a fresh agent session can resume an in-flight review.
-**Restart your agent session after running this** so the new hook takes effect.
+Validate structure + referential integrity:
 
-### Agent Plugin
-
-Lavish also ships as an [Agent Plugin](https://agent-plugins.org) - the vendor-neutral packaging standard for skills and MCP servers - so clients that speak that format can load it directly.
-
-**No marketplace is involved.** The installed npm package _is_ the plugin: `plugin.json` sits at the package root next to the `skills/` directory, so whatever `npm install` already put on disk is a complete, conformant plugin. Install the CLI, then register it:
-
-```sh
-npm install -g lavish-axi
-lavish-axi setup plugin
+```bash
+node scripts/validate.mjs
 ```
 
-That registers the installed package with every supported client it finds - **VS Code**, **Cursor**, and **GitHub Copilot CLI** - and reports which ones were absent. It is opt-in and idempotent, and it repairs the registered path after a reinstall or relocation. Reload each client afterward.
+## License
 
-Each client is registered independently: one that cannot be registered is reported with what to do about it, and never blocks the others or fails the command.
+This dataset is **multi-licensed** — read this before you use or redistribute it.
 
-To register by hand instead, point any client at the package directory (`npm root -g`/`lavish-axi`):
+| Layer | License |
+|---|---|
+| **The database** — the collection, structure, IDs, topic↔topic and topic↔standard relationships | [**ODbL 1.0**](LICENSE) — free for research **and** commercial use, **attribution** required, **share-alike** (derivative *databases* must stay open under ODbL). |
+| **The textual content Marble authored** — topic `description`/`name`/`evidence`/`assessmentPrompt`, dependency `reason`s, cluster `summary`s | [**CC BY-SA 4.0**](LICENSE-CONTENT) — same spirit: attribution + share-alike. |
+| **`curriculum-standards.json`** — extracted from third-party frameworks | **Not** Marble&#039;s to relicense. Each source is under **its own upstream license** — see [**PROVENANCE.md**](PROVENANCE.md). |
 
-| Client             | Register with                                                                                                      |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| VS Code            | `&quot;chat.pluginLocations&quot;: { &quot;&lt;package-dir&gt;&quot;: true }` in user settings                                               |
-| Cursor             | link the package dir at `~/.cursor/plugins/local/lavish-axi` (`setup plugin` handles Windows link compatibility)   |
-| GitHub Copilot CLI | `copilot plugin install &lt;package-dir&gt;` (or `copilot plugin install kunchenguid/lavish-axi` straight from the repo) |
+**Why share-alike + still commercial-friendly:** ODbL distinguishes a *derivative database* (extend/modify the taxonomy → must stay open) from a *produced work* (use it inside a product, model, or app → stays yours). So you can build a commercial product on this without open-sourcing your product; you only owe back improvements to the *taxonomy itself*.
 
-Codex and ChatGPT install plugins only from marketplace sources, so Codex users should use the session hook above instead.
-Lavish declares no MCP server - the CLI itself is the agent interface - so a plugin install brings the same `lavish` skill, and the skill and plugin are alternatives rather than a stack.
+### Attribution
 
-### From source
+Any use must credit:
 
-```sh
-git clone https://github.com/kunchenguid/lavish-axi.git
-cd lavish-axi
-pnpm install --frozen-lockfile
-pnpm run build
-pnpm link
+&gt; Marble Skill Taxonomy (v1) · © Generative Spark, Inc. (Marble) · https://withmarble.com · licensed under ODbL 1.0 (database) and CC BY-SA 4.0 (content).
+
+Plus the upstream notices in [PROVENANCE.md](PROVENANCE.md) for any curriculum standards you use. See [CITATION.cff](CITATION.cff) for a formal citation.
+
+## What&#039;s *not* here
+
+Deliberately excluded from this release: semantic embeddings (derived, recomputable) and any per-child / user data (never published). See [CHANGELOG.md](CHANGELOG.md).
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[coreyhaines31/marketingskills]]></title>
+            <link>https://github.com/coreyhaines31/marketingskills</link>
+            <guid>https://github.com/coreyhaines31/marketingskills</guid>
+            <pubDate>Sun, 18 Oct 2026 00:06:31 GMT</pubDate>
+            <description><![CDATA[Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/coreyhaines31/marketingskills">coreyhaines31/marketingskills</a></h1>
+            <p>Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 55,253</p>
+            <p>Forks: 8,188</p>
+            <p>Stars today: 162 stars today</p>
+            <h2>README</h2><pre># Marketing Skills for AI Agents
+
+A collection of AI agent skills focused on marketing tasks. Built for technical marketers and founders who want AI coding agents to help with conversion optimization, copywriting, SEO, analytics, and growth engineering. Works with Claude Code, OpenAI Codex, Cursor, Windsurf, and any agent that supports the [Agent Skills spec](https://agentskills.io).
+
+Built by [Corey Haines](https://corey.co?ref=marketingskills). Need hands-on help? Check out [Conversion Factory](https://conversionfactory.co?ref=marketingskills) — Corey&#039;s agency for conversion optimization, landing pages, and growth strategy. Want to learn more about marketing? Subscribe to [Swipe Files](https://swipefiles.com?ref=marketingskills). Want to get dangerously good at using AI for marketing? Check out [AI Marketing Training](https://conversionfactory.co/offers/ai-marketing-training?ref=marketingskills). Want an autonomous AI agent that uses these skills to be your CMO? Try [Magister](https://magistermarketing.com?ref=marketingskills).
+
+New to the terminal and coding agents? Check out the companion guide [Coding for Marketers](https://codingformarketers.com?ref=marketingskills).
+
+Want your agent to read your marketing accounts? Follow the [guided tool connection workflow](tools/SETUP.md) for scoped credentials and a first read-only result.
+
+**Contributions welcome!** Found a way to improve a skill or have a new one to add? [Open a PR](#contributing).
+
+Run into a problem or have a question? [Open an issue](https://github.com/coreyhaines31/marketingskills/issues) — we&#039;re happy to help.
+
+## Partners
+
+The library is free and MIT-licensed. [Verified Partners](tools/REGISTRY.md#verified-partners) fund the work — vetted, disclosed tool integrations, listed alongside the neutral options and never influencing what the core skills recommend. The full rules and boundaries are in [tools/PARTNERS.md](tools/PARTNERS.md). [Become a partner →](https://marketing-skills.com/sponsorship)
+
+&lt;!-- PARTNERS:START --&gt;
+&gt; ◆ **[Converly](https://converly.io?ref=marketingskills)** — *Conversion tracking / attribution.* Server-side conversion tracking that fires when someone submits a form, books a meeting, or starts a chat — passing click IDs and identifiers for Enhanced Conversions (Google) and high EMQ match rates (Meta), across 100+ tools. CLI + MCP so your agent sets it up in minutes. → [Integration guide](tools/integrations/converly.md)
+
+&gt; ◆ **[Ploy](https://ploy.ai?ref=marketingskills)** — *AI website &amp; growth platform.* AI marketing platform built around a hosted website builder — an in-app agent that builds and publishes pages, PloyDB for pages at scale, routing to add pages to an existing site, built-in analytics and visitor identification, and a CLI for coding agents. → [Integration guide](tools/integrations/ploy.md)
+
+&gt; ◆ **[AIsa](https://aisa.one)** — *SEO, search &amp; social data.* One AIsa key, pay as you go, instead of a subscription to every data platform. Agents get SEO, search, social, and market data from Similarweb, Semrush, Ahrefs, DataForSEO, Tavily, Reddit, X, and more through REST or MCP, and pay only for the calls they make. → [Integration guide](tools/integrations/aisa.md)
+&lt;!-- PARTNERS:END --&gt;
+
+&lt;!-- The Partners block above is generated from partners.json — run `node scripts/sync-partners.mjs` after editing it. --&gt;
+
+## What are Skills?
+
+Skills are markdown files that give AI agents specialized knowledge and workflows for specific tasks. When you add these to your project, your agent can recognize when you&#039;re working on a marketing task and apply the right frameworks and best practices.
+
+## How Skills Work Together
+
+Skills reference each other and build on shared context. The `product-marketing` skill is the foundation — every other skill checks it first to understand your product, audience, and positioning before doing anything.
+
+```
+                            ┌──────────────────────────────────────┐
+                            │          product-marketing           │
+                            │    (read by all other skills first)  │
+                            └──────────────────┬───────────────────┘
+                                               │
+    ┌──────────────┬─────────────┬─────────────┼─────────────┬──────────────┬──────────────┐
+    ▼              ▼             ▼             ▼             ▼              ▼              ▼
+┌──────────┐ ┌──────────┐ ┌──────────┐ ┌────────────┐ ┌──────────┐ ┌─────────────┐ ┌───────────┐
+│  SEO &amp;   │ │   CRO    │ │Content &amp; │ │  Paid &amp;    │ │ Growth &amp; │ │  Sales &amp;    │ │ Strategy  │
+│ Content  │ │          │ │   Copy   │ │Measurement │ │Retention │ │    GTM      │ │           │
+├──────────┤ ├──────────┤ ├──────────┤ ├────────────┤ ├──────────┤ ├─────────────┤ ├───────────┤
+│seo-audit │ │cro       │ │copywritin│ │ads         │ │referrals │ │revops       │ │mktg-ideas │
+│ai-seo    │ │signup    │ │copy-edit │ │ad-creative │ │free-tools│ │sales-enable │ │mktg-psych │
+│site-arch │ │onboarding│ │cold-email│ │ab-testing  │ │churn-    │ │launch       │ │customer-  │
+│programm  │ │popups    │ │emails    │ │analytics   │ │ prevent  │ │pricing      │ │ research  │
+│schema    │ │paywalls  │ │social    │ │            │ │community │ │competitors  │ │           │
+│content   │ │          │ │video     │ │            │ │lead-magnt│ │comp-profile │ │           │
+│aso       │ │          │ │image     │ │            │ │co-mktg   │ │directory    │ │           │
+│          │ │          │ │sms       │ │            │ │          │ │prospecting  │ │           │
+└────┬─────┘ └────┬─────┘ └────┬─────┘ └─────┬──────┘ └────┬─────┘ └──────┬──────┘ └─────┬─────┘
+     │            │            │              │             │              │              │
+     └────────────┴─────┬──────┴──────────────┴─────────────┴──────────────┴──────────────┘
+                        │
+         Skills cross-reference each other:
+           copywriting ↔ cro ↔ ab-testing
+           revops ↔ sales-enablement ↔ cold-email
+           seo-audit ↔ schema ↔ ai-seo
+           customer-research → copywriting, cro, competitors
 ```
 
-## How It Works
+See each skill&#039;s **Related Skills** section for the full dependency map.
 
-```
-┌───────────────┐
-│ Agent writes  │
-│ artifact.html │
-└───────┬───────┘
-        ▼
-┌────────────────────────┐
-│ lavish-axi &lt;file_path&gt; │
-│ opens local browser UI │
-└───────┬────────────────┘
-        ▼
-┌────────────────────────┐
-│ Human annotates text   │
-│ or elements, sends     │
-│ chat, or queues layout │
-│ issues from the inbox  │
-└───────┬────────────────┘
-        ▼
-┌────────────────────────┐
-│ lavish-axi poll waits  │
-│ and returns prompts    │
-│ the user queued        │
-└────────────────────────┘
+## Available Skills
+
+&lt;!-- SKILLS:START --&gt;
+| Skill | Description |
+|-------|-------------|
+| [ab-testing](skills/ab-testing/) | When the user wants to plan, design, or implement an A/B test or experiment, or build a growth experimentation program.... |
+| [ad-creative](skills/ad-creative/) | When the user wants to generate, iterate, or scale ad creative — headlines, descriptions, primary text, or full ad... |
+| [ads](skills/ads/) | When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X,... |
+| [ai-seo](skills/ai-seo/) | When the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers.... |
+| [analytics](skills/analytics/) | When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions... |
+| [aso](skills/aso/) | When the user wants to audit or optimize an App Store or Google Play listing. Also use when the user mentions &#039;ASO... |
+| [attribution](skills/attribution/) | When the user wants to figure out which marketing actually drives conversions and revenue, choose or interpret an... |
+| [churn-prevention](skills/churn-prevention/) | When the user wants to reduce churn, build cancellation flows, set up save offers, recover failed payments, or... |
+| [co-marketing](skills/co-marketing/) | When the user wants to find co-marketing partners, plan joint campaigns, or brainstorm partnership opportunities. Use... |
+| [cold-email](skills/cold-email/) | Write and run B2B cold outbound that gets replies, from cold emails and follow-ups to sending setup, LinkedIn,... |
+| [community-marketing](skills/community-marketing/) | Build and leverage online communities to drive product growth and brand loyalty. Use when the user wants to create a... |
+| [competitor-profiling](skills/competitor-profiling/) | When the user wants to research, profile, or analyze competitors from their URLs. Also use when the user mentions... |
+| [competitors](skills/competitors/) | When the user wants to create competitor comparison or alternative pages for SEO and buyer-facing use. Also use when... |
+| [content-strategy](skills/content-strategy/) | When the user wants to plan a content strategy, decide what content to create, or figure out what topics to cover. Also... |
+| [copy-editing](skills/copy-editing/) | When the user wants to edit, review, or improve existing marketing copy, or refresh outdated content. Also use when the... |
+| [copywriting](skills/copywriting/) | When the user wants to write, rewrite, or improve marketing copy for any page, including homepage, landing pages,... |
+| [cro](skills/cro/) | When the user wants to optimize, improve, or increase conversions on any marketing page or form — including homepage,... |
+| [customer-research](skills/customer-research/) | When the user wants to conduct, analyze, or synthesize customer research. Use when the user mentions &quot;customer... |
+| [directory-submissions](skills/directory-submissions/) | When the user wants to submit their product to startup, SaaS, AI, agent, MCP, no-code, or review directories for... |
+| [emails](skills/emails/) | When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email... |
+| [events](skills/events/) | When the user wants to plan, run, sponsor, speak at, or get pipeline from events — webinars, conferences, trade shows,... |
+| [free-tools](skills/free-tools/) | When the user wants to plan, evaluate, or build a free tool for marketing purposes — lead generation, SEO value, or... |
+| [image](skills/image/) | When the user wants to create, generate, edit, or optimize images for marketing — blog heroes, social graphics, product... |
+| [influencer-marketing](skills/influencer-marketing/) | When the user wants to run influencer, creator, or ambassador partnerships to promote their product — finding and... |
+| [launch](skills/launch/) | When the user wants to plan a product launch, feature announcement, or release strategy. Also use when the user... |
+| [lead-magnets](skills/lead-magnets/) | When the user wants to create, plan, or optimize a lead magnet for email capture or lead generation. Also use when the... |
+| [marketing-council](skills/marketing-council/) | When the user wants multiple expert perspectives on a marketing question — a simulated board of advisors staffed by... |
+| [marketing-ideas](skills/marketing-ideas/) | When the user needs marketing ideas, inspiration, or strategies for their SaaS or software product. Also use when the... |
+| [marketing-loops](skills/marketing-loops/) | When the user wants to set up a recurring, self-running marketing workflow — a repeatable loop an AI agent runs on a... |
+| [marketing-plan](skills/marketing-plan/) | When the user needs a comprehensive marketing plan for a client, a company they advise, or their own product. Also use... |
+| [marketing-psychology](skills/marketing-psychology/) | When the user wants to apply psychological principles, mental models, or behavioral science to marketing. Also use when... |
+| [offers](skills/offers/) | When the user wants to design, construct, or improve an offer — the thing they actually sell — including value framing,... |
+| [onboarding](skills/onboarding/) | When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also... |
+| [paywalls](skills/paywalls/) | When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use... |
+| [popups](skills/popups/) | When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners for conversion purposes. Also... |
+| [pricing](skills/pricing/) | When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions... |
+| [product-marketing](skills/product-marketing/) | When the user wants to create or update their product marketing context document. Also use when the user mentions... |
+| [programmatic-seo](skills/programmatic-seo/) | When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions... |
+| [prospecting](skills/prospecting/) | When the user wants to find, qualify, and build a list of prospects to reach out to, across B2B SaaS, general B2B, or... |
+| [public-relations](skills/public-relations/) | When the user wants help with public relations, earned media, press coverage, journalist outreach, or media strategy... |
+| [referrals](skills/referrals/) | When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy.... |
+| [revops](skills/revops/) | When the user wants help with revenue operations, lead lifecycle management, or marketing-to-sales handoff processes.... |
+| [sales-enablement](skills/sales-enablement/) | When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, or demo scripts. Also... |
+| [schema](skills/schema/) | When the user wants to add, fix, or optimize schema markup and structured data on their site. Also use when the user... |
+| [seo-audit](skills/seo-audit/) | When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions &quot;SEO... |
+| [signup](skills/signup/) | When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the... |
+| [site-architecture](skills/site-architecture/) | When the user wants to plan, map, or restructure their website&#039;s page hierarchy, navigation, URL structure, or internal... |
+| [sms](skills/sms/) | When the user wants to plan, build, or optimize SMS, MMS, or WhatsApp marketing — including welcome flows, abandoned... |
+| [social](skills/social/) | When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram,... |
+| [video](skills/video/) | When the user wants to create, generate, or produce video content using AI tools or programmatic frameworks. Also use... |
+&lt;!-- SKILLS:END --&gt;
+
+## Installation
+
+### Option 1: CLI Install (Recommended)
+
+Use [npx skills](https://github.com/vercel-labs/skills) to install skills directly:
+
+```bash
+# Install all skills
+npx skills add coreyhaines31/marketingskills
+
+# Install specific skills
+npx skills add coreyhaines31/marketingskills --skill cro copywriting
+
+# List available skills
+npx skills add coreyhaines31/marketingskills --list
 ```
 
-- **File-path identity** - Sessions are keyed by the canonical HTML file path, so agents do not need opaque IDs.
-- **Portable artifacts** - The artifact runs in a sandboxed iframe while Lavish injects a small SDK for annotations, snapshots, feedback controls, and render-time layout checks.
-  Author-defined links and popups can open in top-level tabs, while artifact documents remain sandboxed without same-origin access.
-  Lavish does not inject any design system, so the saved HTML file renders identically whether you open it through `lavish-axi` or directly in a browser.
-  Run `lavish-axi design` for the single source of agent-facing design guidance, including optional CDN snippets and the whiteboard (Mermaid) opt-in snippet.
-- **Self-paint warning** - `lavish-axi &lt;html-file&gt;`, `export`, and `share` run a render-free check for artifacts missing an explicit page background and return a one-line `self_paint_warning`.
-  The check fails open - any stylesheet link, `@import`, Tailwind runtime script, `color-scheme`, or `html`/`body`/`:root` background signal suppresses it - and it never blocks the open.
-- **Open-time layout gate** - The browser chrome masks an artifact only while the real in-iframe audit waits for fonts and final geometry.
-  The first completed client-side check reveals the artifact, whatever it found and even if reporting that check to the server fails; the gate never holds the review hostage waiting for a repair or a network round-trip.
-  The user can click **Show anyway**, and a bounded safety timeout fails open from every gate state.
-  If the review cannot load at all - the chrome&#039;s own script never runs, or the server does not answer the artifact&#039;s load request after several retries - the mask names the problem and offers **Check and reload** without removing the independent **Show anyway** escape.
-  A review already loaded in another browser tab is named the same way, with a **Take over here** button that moves it into the current tab, because Lavish loads an artifact in one tab at a time.
-- **Layout issues inbox** - Detection is passive. After fonts and finite animations settle, the injected SDK confirms severe failures from direct rendered evidence such as materially escaped meaningful content or required controls, clipped text fragments, viewport reachability, or near-total semantic occlusion.
-  Explicit ellipsis and line clamp, standard visually hidden accessibility text, intentional scrollers or masks, parent overhang, generic element scroll geometry, decorative overlap, and uncertain motion do not produce findings by themselves.
-  Proven failures are filed in a **Layout issues** button in the top bar, which is hidden while nothing is unresolved and otherwise shows the unresolved count.
-  Its drawer lists each issue with severity, a plain-language explanation, the affected viewport, the target/component identity, when it was last seen, and its lifecycle state, plus per-issue **Reveal** (highlight it in the artifact) and **Dismiss** actions.
-  Nothing is selected by default. The user picks issues (or **Select all**) and **Queue selected fixes** turns that whole group into one ordinary queued prompt, tagged `layout-warnings`, that reaches the agent through the normal feedback path when they send.
-  Detection never returns `lavish-axi poll` and never wakes an agent; only the user queueing a fix does. The one exception is a fatal `artifact_failures` response, for failures that make the review itself unusable, such as the artifact document or one of its own local assets failing to load.
-- **Layout issue lifecycle** - Each issue is identified by a stable fingerprint of the diagnostic rule, the normalized target identity, and the viewport class, so repeat detections update one record instead of inflating the count.
-  `Open` means the latest completed check for its viewport still detects it. `Queued for fix` means the user asked for a repair - it stays unresolved and counted, and cannot be queued again while that request is outstanding.
-  `Resolved` requires a newer successful artifact load plus a complete check at the same viewport that no longer detects it; it then leaves the count but keeps a bounded history.
-  `Still present` (recurring) means a queued issue survived a newer revision, so it is selectable again with its earlier attempt retained. `Unverified` means a reload or check failed or was incomplete, so the prior issue was preserved rather than cleared. `Returned` means a resolved issue came back on a later revision.
-  Dismissal applies only to the current artifact revision; a later revision surfaces the issue again if it is still detected. A check at one viewport never clears an issue found at another, and a viewport removed from the configured diagnostic set (`LAVISH_AXI_DIAGNOSTIC_VIEWPORTS`, default all) is marked obsolete with an explicit reason rather than reading as fixed.
-- **Revisions legend** - Opt-in. After a round of feedback the agent regenerates the whole file, and a one-sentence edit is invisible on a long artifact. The agent can declare what it changed in the artifact itself: one `&lt;script type=&quot;application/json&quot; data-lavish-revisions&gt;` array of `{ id, label, timestamp, summary }` entries, plus `data-lavish-revision=&quot;&lt;id&gt;&quot;` on each block it edited or added. Run `lavish-axi design` for the snippet.
-  A **Revisions** button then appears in the top bar with a legend listing each round - colour swatch, label, time, and the agent&#039;s summary - and **Reveal** steps through that round&#039;s changed blocks, flashing them one at a time.
-  Each revision&#039;s swatch carries a distinct border style and fill pattern as well as a colour, so the rounds stay distinguishable without colour. Artifacts with no registry show no button and are otherwise unaffected, a malformed registry is ignored rather than surfaced as an error, and at most 6 revisions are listed - one per distinguishable swatch.
-  Lavish never marks up the artifact for this: the legend lives in the browser chrome, so the served page stays identical to the saved file, and the registry and marks travel with the file through export.
-- **Local assets** - Copy local images, CSS, fonts, and scripts next to the HTML artifact and reference them with relative paths from that directory; root-prefixed paths such as `/assets/logo.png` will not resolve through Lavish&#039;s artifact route.
-- **Export and sharing** - `lavish-axi export` writes `&lt;name&gt;.export.html` by inlining local assets only, stripping the annotation SDK, and leaving remote CDN/font references as links that still need network access.
-  `lavish-axi share` publishes the same local-inlined HTML to [ht-ml.app](https://ht-ml.app), a third-party hosting service not part of Lavish.
-  Publishing sends the artifact to ht-ml.app&#039;s servers, public by default, or private and password-protected with `--private` (Lavish generates the password and returns it once, in the command output and in the browser publish dialog) or `--password &lt;pw&gt;` (one you supply, never echoed back). A generated password is a shared secret: give it to whoever should read the page, and expect it to appear in your agent&#039;s transcript, because the agent has to relay it. Lavish does not store it.
-  The response includes a secret `update_key` shown once. Keep it to republish the same URL later with `--site &lt;site_id&gt; --update-key &lt;key&gt;`, which replaces the HTML in place and leaves the password alone unless you pass `--private` (rotate to a new generated one) or `--password &lt;pw&gt;` (set one). Locking a page that was public is not instant - it can keep answering from ht-ml.app&#039;s CDN cache for minutes after the password is set - while a page that was already private has no such cached copy.
-  A page&#039;s password cannot be removed: ht-ml.app accepts a request to clear one and silently ignores it, so Lavish offers no way to make a private page public rather than telling you it did something the host did not do. Republish as a new page if you need a public URL.
-  ht-ml.app has no delete endpoint, so `--unpublish --site &lt;site_id&gt; --update-key &lt;key&gt;` replaces the page with a short placeholder and locks it behind a discarded random password rather than removing it: the URL still resolves and the host still holds what was published. The content swap is immediate, but the lock is not: a page that was public can keep serving the placeholder to uncredentialed visitors from ht-ml.app&#039;s CDN cache for minutes afterwards. The `update_key` plus `--private` republishes real content behind a new password you can share.
-  Bundling never fetches remote URLs, Lavish itself does not set a CSP, local reads stay confined and size-capped, and absolute `file://` paths outside safe inlined asset references are redacted before output.
-  Per-asset and per-bundle inline caps default to 10 MB and 25 MB, overridable with `LAVISH_AXI_EXPORT_MAX_ASSET_BYTES` and `LAVISH_AXI_EXPORT_MAX_BUNDLE_BYTES`.
-  Unresolved local assets or export notices such as author-set CSP meta tags and redacted file URLs are surfaced in command or browser output.
-  Use `--token` or `LAVISH_AXI_HTML_APP_TOKEN` for an optional bearer token when publishing a new page (a republish or `--unpublish` authorizes with the `update_key` instead and rejects `--token`); set `LAVISH_AXI_HTML_APP_API_URL` to override the ht-ml.app API base and point `share` at a backend you control (see [Self-hosting the share backend](docs/self-hosting-share.md) for the contract it must implement).
-- **Live reload** - Lavish watches the HTML artifact file by default and preserves review context across reloads: the artifact iframe scroll position, an open annotation card&#039;s unsent text, and answers to `data-lavish-question` controls (application-owned form state is left alone). Unsent annotation text also survives a full reload of the review page itself. While a queued layout-issue batch is outstanding, closely spaced saves coalesce so one batch of fixes costs one refresh. To also reload on sibling asset changes, add `data-lavish-live-reload-root` to the root element or `&lt;meta name=&quot;lavish-live-reload&quot; content=&quot;root&quot;&gt;`.
-  If the element an unsent annotation was attached to is gone from the artifact for good, Lavish cannot reopen that card, and if the artifact replaces a queued note while you are editing it, the replacement is kept as the artifact sent it. Either way, Lavish writes your edited text into the conversation panel under **Unsent annotation** - selectable, never written over anything you have typed, and kept there across reloads; no note is ever dropped to make room for a newer one, and a note the browser refuses to store says so where it is shown.
-- **Feedback controls** - Native controls (radios, checkboxes, inputs, selects, buttons, labels, disclosure summaries, contenteditable) and custom widgets with an interactive ARIA role (`button`, `checkbox`, `combobox`, `menuitem`, `menuitemcheckbox`, `menuitemradio`, `option`, `radio`, `switch`, `tab`, `treeitem`) are interactive automatically, so they do not need `data-lavish-action`. A link (`&lt;a href&gt;`) stays annotatable when it carries one of these roles or sits inside such a widget.
-  Artifacts can start in explore mode with `data-lavish-annotate=&quot;off&quot;` on the root `&lt;html&gt;` element so stray clicks do not open annotation cards. Annotation stays on by default (or with `&quot;on&quot;`); unknown values default to on. The toolbar reflects the page default and can override it; the reviewer&#039;s choice persists across artifact reloads within that review page. See `lavish-axi playbook input` for author guidance.
-  For reversible choices, let option clicks update local state, then queue exactly one final answer from a per-question submit or Queue answer button with `window.lavish.queuePrompt()`.
-  If someone may open a decision artifact as a standalone HTML file, `lavish-axi playbook input` provides an optional Copy all answers control they ca
+The CLI detects which agents you have installed and asks where to install. For Claude Code it installs into `.claude/skills/`; universal agents share `.agents/skills/`.
+
+&gt; [!TIP]
+&gt; If you run the command from **inside** an agent session (e.g., asking Claude Code to install the skills for you), the CLI runs non-interactively and may only install to the universal `.agents/skills/` directory, which Claude Code does not read. Pass the agent explicitly:
+&gt;
+&gt; ```bash
+&gt; npx skills add coreyhaines31/marketingskills -a claude-code
+&gt; ```
+
+### Option 2: Claude Code Plugin
+
+Install via Claude Code&#039;s built-in plugin system:
+
+```bash
+# Add the marketplace
+/plugin marketplace add coreyhaines31/marketingskills
+
+# Install all marketing skills
+/plugin install marketing-skills
+```
+
+&gt; **Note:** `/plugin` is only available in an interactive Claude Code CLI session. It is **not** available in Claude Code on the web, GitHub Actions, or other non-interactive/remote environments — in those cases you&#039;ll see `/plugin isn&#039;t available in this environment`. Use **Option 1 (`npx skills`)** instead, or the equivalent CLI commands:
+&gt;
+&gt; ```bash
+&gt; claude plugin marketplace add coreyhaines31/marketingskills
+&gt; claude plugin install marketing-skills@marketingskills
+&gt; ```
+
+### Option 3: OpenAI Codex Plugin
+
+Install via Codex&#039;s plugin system:
+
+```bash
+# Add the marketplace
+codex plugin marketplace add coreyhaines31/marketingskills
+
+# Then browse and install from inside a Codex session
+/plugins
+```
+
+Select **marketing-skills** to install all skills. To pick up new releases later, run `codex plugin marketplace upgrade`.
+
+### Option 4: Clone and Copy
+
+Clone the entire repo and copy the skills folder:
+
+```bash
+git clone https://github.com/coreyhaines31/marketingskills.git
+cp -r marketingskills/skills/* .agents/skills/
+```
+
+### Option 5: Git Submodule
+
+Add as a submodule for easy updates:
+
+```bash
+git submodule add https://github.com/coreyhaines31/marketingskills.git .agents/marketingskills
+```
+
+Then reference skills from `.agents/marketingskills/skills/`.
+
+### Option 6: Fork and Customize
+
+1. Fork this repository
+2. Customize skills for your specific needs
+3. Clone your fork into your projects
+
+### Option 7: SkillKit (Multi-Agent)
+
+Use [SkillKit](https://github.com/rohitg00/skillkit) to install skills across multiple AI agents (Claude Code, Cursor, Copilot, etc.):
+
+```bash
+# Install all skills
+npx skillkit install coreyhaines31/marketingskills
+
+# Install specific skills
+npx skillkit install coreyhaines31/marketingskills --skill cro copywriting
+
+# List available skills
+npx skillkit install coreyhaines31/marketingskills --list
+```
+
+### Option 8: Claude Web Skill ZIPs
+
+Download the desired `&lt;name&gt;-claude-web.zip` from [Releases](https://github.com/coreyhaines31/marketingskills/releases/latest), then use **Customize → Skills → + Create skill → Upload a skill** in Claude. Each archive contains one skill. Account permissions and code execution must allow skills.
+
+The web-target archive uses an explicitly reviewed shorter description; its instructions and resources are preserved. The attached web manifest lists any skills whose description still needs review; newly created release notes also summarize omissions. Installing a ZIP does not configure local CLIs, MCP servers, credentials, or related skills. See [release packaging and verification](docs/skill-release-packaging.md) for archive contents, source variants, and unverified client limitations.
+
+## Upgrading from v1.x to v2.0
+
+v2.0 renames 17 skills and consolidates `page-cro` + `form-cro` into a single `cro` skill. If you installed the v1.x skills, you&#039;ll have **stale old-name folders** in your install directory after upgrading — the new skills install alongside the old ones, so you&#039;ll see both `skills/page-cro/` and `skills/cro/`, etc. Clean them up:
+
+```bash
+# From the directory where you installed the skills (e.g., .agents/skills/ or .claude/skills/)
+rm -rf page-cro form-cro \
+       ab-test-setup analytics-tracking aso-audit competitor-alternatives \
+       email-sequence free-tool-strategy launch-strategy onboarding-cro \
+       paid-ads paywall-upgrade-cro popup-cro pricing-strategy \
+       product-marketing-context referral-program schema-markup \
+       signup-flow-cro social-content
+```
+
+Then reinstall the v2.0 skills via your usual method (e.g., `npx skills add coreyhaines31/marketingskills`).
+
+### Migrate the product marketing context file
+
+In v2.0 the context file moved from `.claude/` to `.agents/` and was renamed from `product-marketing-context.md` to `product-marketing.md`. Move your existing context file:
+
+```bash
+mkdir -p .agents
+# v2.0 file (or pre-v2.0 file with new name)
+mv .claude/product-marketing.md .agents/product-marketing.md 2&gt;/dev/null
+# pre-v2.0 file with legacy name
+mv .claude/product-marketing-context.md .agents/product-marketing.md 2&gt;/dev/null
+```
+
+Skills will still check `.claude/` and the legacy `product-marketing-context.md` filename as fallbacks, so nothing breaks if you don&#039;t migrate.
+
+### Full rename map
+
+| Old | New |
+|-----|-----|
+| `ab-test-setup` | `ab-testing` |
+| `analytics-tracking` | `analytics` |
+| `aso-audit` | `aso` |
+| `competitor-alternatives` | `competitors` |
+| `email-sequence` | `emails` |
+| `form-cro` | merged
 
 ... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[usebruno/bruno]]></title>
+            <link>https://github.com/usebruno/bruno</link>
+            <guid>https://github.com/usebruno/bruno</guid>
+            <pubDate>Sun, 18 Oct 2026 00:06:30 GMT</pubDate>
+            <description><![CDATA[Opensource IDE For Exploring and Testing API's (lightweight alternative to Postman/Insomnia)]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/usebruno/bruno">usebruno/bruno</a></h1>
+            <p>Opensource IDE For Exploring and Testing API's (lightweight alternative to Postman/Insomnia)</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 47,704</p>
+            <p>Forks: 3,009</p>
+            <p>Stars today: 21 stars today</p>
+            <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
