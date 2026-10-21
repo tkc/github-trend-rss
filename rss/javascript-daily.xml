@@ -4,1670 +4,131 @@
         <title>GitHub Trending Today for javascript - JavaScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for javascript.</description>
-        <lastBuildDate>Tue, 20 Oct 2026 00:06:14 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 21 Oct 2026 00:05:58 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2026, GitHub</copyright>
         <item>
-            <title><![CDATA[withmarbleapp/os-taxonomy]]></title>
-            <link>https://github.com/withmarbleapp/os-taxonomy</link>
-            <guid>https://github.com/withmarbleapp/os-taxonomy</guid>
-            <pubDate>Tue, 20 Oct 2026 00:06:14 GMT</pubDate>
+            <title><![CDATA[cloudflare/security-audit-skill]]></title>
+            <link>https://github.com/cloudflare/security-audit-skill</link>
+            <guid>https://github.com/cloudflare/security-audit-skill</guid>
+            <pubDate>Wed, 21 Oct 2026 00:05:58 GMT</pubDate>
+            <description><![CDATA[A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/withmarbleapp/os-taxonomy">withmarbleapp/os-taxonomy</a></h1>
-            <p></p>
+            <h1><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a></h1>
+            <p>A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 6,105</p>
-            <p>Forks: 1,001</p>
-            <p>Stars today: 284 stars today</p>
-            <h2>README</h2><pre># Marble Skill Taxonomy
+            <p>Stars: 34,147</p>
+            <p>Forks: 2,133</p>
+            <p>Stars today: 1,712 stars today</p>
+            <h2>README</h2><pre># security-audit
 
-An open, structured taxonomy of **what children learn** across the primary/elementary years — decomposed into fine-grained &quot;micro-topics&quot;, wired into a prerequisite graph, and aligned to national curriculum standards. Produced by [Marble](https://withmarble.com).
+A coding-agent skill that turns your agent into a security auditor. It orchestrates isolated agents through reconnaissance, coverage-led hunting, candidate validation, structured output, independent record verification, and target-neutral reporting.
 
-&gt; **Version:** `v1` · **Topics:** 1,591 · **Prerequisite edges:** 3,225 · **Subjects:** 8
+This is the skill that seeded Cloudflare&#039;s vulnerability discovery harness, described in [Build your own vulnerability harness](https://blog.cloudflare.com/build-your-own-vulnerability-harness). The harness grew into a multi-stage, fleet-wide system; this skill is the single-repo starting point it evolved from.
 
-## See it
+## What it does
 
-![The taxonomy as a rotating 3D graph: every dot a micro-topic, colored by subject, wired by prerequisites](media/curriculum-viz.gif)
+The skill runs a structured audit in six phases:
 
-Every dot is a micro-topic, colored by subject; height is age; each thread is a prerequisite ([full-quality video](media/curriculum-viz.mp4)). Explore it interactively at [withmarble.com/curriculum](https://withmarble.com/curriculum) — tap any concept to trace everything a learner must master before it.
+1. **Reconnaissance** -- map architecture, trust boundaries, input surfaces, prior evidence, and deterministic coverage in `architecture.md` and `coverage-ledger.json`.
+2. **Coverage-led hunting** -- assign isolated hunters from ledger units, record their checks, and use coverage critics to find gaps.
+3. **Candidate validation** -- give every unique candidate to a fresh verifier that tries to disprove it.
+4. **Structured output** -- write `confirmed`, `needs_validation`, and `rejected` records to `findings.json` and validate them against `report-schema.json`.
+5. **Independent record verification** -- fresh agents verify final source claims. Material replacements receive another independent verifier.
+6. **Target-neutral reporting** -- derive `REPORT.md`, `FINDINGS-DETAIL.md`, and `NEEDS-VALIDATION.md` from the verified records and coverage ledger.
 
+The parent runs `validate-coverage-ledger.cjs` after creating the ledger and after each later ledger update. It runs `validate-findings.cjs` in Phase 4 and again after every Phase 5 replacement.
 
-## What this is
+The verdicts are distinct: `confirmed` has a complete source trace and bounded observed result, `needs_validation` has an exact unresolved fact and no severity, and `rejected` records a disproved candidate.
 
-Most curriculum data is either a flat list of standards or locked inside a product. This dataset is a **connected graph of learning**:
-
-- **1,591 micro-topics** — a single, teachable idea (e.g. *&quot;Building sentences&quot;*, *&quot;Apparent brightness of stars&quot;*), each with a plain-language description, mastery **evidence** criteria, a type (conceptual / procedural / representational / language / meta), a subject + domain, and an approximate age range.
-- **3,225 prerequisite dependencies** — a directed acyclic graph: *&quot;topic X depends on prerequisite Y&quot;*, each edge tagged `hard`/`soft` and carrying a one-line **reason**.
-- **Curriculum alignment** — each micro-topic links to the standards it was distilled from (NGSS, Common Core, the UK National Curriculum, and more).
-- **Teaching research** — 1,051 records covering the current Science and Mathematics topics: teaching approaches, concrete learning activities, feedback, assessment guidance and linked sources. Coverage is partial; the other 540 topics have no research in this release.
-- **Domain clusters** — 176 parent-friendly one-paragraph summaries per (subject, domain, age band).
-
-### Subjects
-
-| Subject | Topics |
-|---|---:|
-| Science | 547 |
-| Mathematics | 504 |
-| English | 286 |
-| History | 90 |
-| Personal &amp; Social Development | 88 |
-| Life Skills | 37 |
-| Computing | 21 |
-| Learning to Learn | 18 |
+Multiple runs against the same repo are additive. The skill uses prior ledgers and findings to target gaps, revalidate changed source, and carry forward current-source evidence without treating stale or unresolved work as covered.
 
 ## Files
 
-All data lives in [`data/`](data/) as UTF-8 JSON. See [`schema/`](schema/) for JSON Schemas and [`manifest.json`](data/manifest.json) for counts + SHA-256 checksums.
+| File | Purpose |
+|------|---------|
+| `SKILL.md` | Setup, core principles, platform terminology, workflow overview, and audit anti-patterns |
+| `RECONNAISSANCE.md` | Phase 1 reconnaissance prompts and synthesis instructions |
+| `HUNTING.md` | Phase 2 orchestration, hunting methodology, and validation rules |
+| `ATTACK-CLASSES.md` | Core, wildcard, and obvious-things attack prompts |
+| `MEMORY-SAFETY-AND-BINARY.md` | Memory-safety, binary, and kernel hunting classes for native targets |
+| `AI-AND-LLM.md` | Prompt-injection, agent/tool, and output-handling hunting classes for LLM-backed targets |
+| `WEB-PROTOCOL-AND-AUTH.md` | HTTP request-framing, cache, and authentication-protocol hunting classes for HTTP-protocol and auth targets |
+| `CLIENT-SIDE.md` | DOM-injection, messaging-trust, UI-redress, and prototype-pollution hunting classes for client-side/browser targets |
+| `SUPPLY-CHAIN-AND-RELEASE.md` | Dependency, CI, release, signing, update, plugin, and extension hunting classes |
+| `CLOUD-AND-DEPLOYMENT.md` | IAM, infrastructure-as-code, container, serverless, ingress, and runtime-configuration hunting classes |
+| `PROTOCOLS-RPC-AND-MESSAGING.md` | RPC, serialization, queue, broker, webhook, and streaming-protocol hunting classes |
+| `RESOURCE-EXHAUSTION-AND-AVAILABILITY.md` | Shared resource, quota, queue, worker, and operator-spend hunting classes |
+| `DATA-ISOLATION-AND-LIFECYCLE.md` | Tenant isolation, cache, search, export, backup, migration, deletion, and restore hunting classes |
+| `DESKTOP-MOBILE-AND-LOCAL-IPC.md` | Native app, deep-link, webview, exported-component, helper, daemon, and local-IPC hunting classes |
+| `VALIDATION-AND-REPORTING.md` | Phases 3–6 candidate validation, structured output, record verification, and reporting |
+| `report-schema.json` | JSON schema for all three `findings.json` verdicts |
+| `validate-findings.cjs` | Zero-dependency validator for `findings.json` in Phases 4 and 5 |
+| `validate-findings.test.cjs` | Findings-validator tests and producer-compatible fixture checks |
+| `validate-coverage-ledger.cjs` | Zero-dependency validator for `coverage-ledger.json` in Phases 1–5 |
+| `validate-coverage-ledger.test.cjs` | Coverage-ledger validator tests |
 
-| File | What it holds |
-|---|---|
-| [`data/topics.json`](data/topics.json) | The micro-topics (graph **nodes**). |
-| [`data/dependencies.json`](data/dependencies.json) | Prerequisite **edges** (`topicId` depends on `prerequisiteId`). |
-| [`data/curriculum-standards.json`](data/curriculum-standards.json) | The source curriculum standards, grouped by curriculum. |
-| [`data/clusters.json`](data/clusters.json) | Parent-friendly domain summaries. |
-| [`data/teaching-research.json`](data/teaching-research.json) | Teaching research joined by `topicId`, with explicit coverage and publication notes (~24 MB). |
-| [`data/manifest.json`](data/manifest.json) | Counts, per-subject breakdown, per-file checksums. |
+## Installation
 
-### A topic
-
-```json
-{
-  &quot;id&quot;: &quot;mt_N8CpN1EJrP&quot;,
-  &quot;type&quot;: &quot;CONCEPTUAL&quot;,
-  &quot;subject&quot;: &quot;English&quot;,
-  &quot;domain&quot;: &quot;Grammar &amp; Punctuation&quot;,
-  &quot;name&quot;: &quot;Building sentences&quot;,
-  &quot;description&quot;: &quot;Understand that words combine to make sentences — a sentence expresses a complete thought…&quot;,
-  &quot;ageRangeStart&quot;: 4,
-  &quot;ageRangeEnd&quot;: 6,
-  &quot;centrality&quot;: 0.257,
-  &quot;evidence&quot;: [
-    &quot;Distinguish between complete sentences and fragments&quot;,
-    &quot;Compose a complete sentence with a subject and verb&quot;
-  ],
-  &quot;assessmentPrompt&quot;: &quot;If {{name}} says something like \&quot;The dog\&quot;, can they tell you that&#039;s not a complete sentence…?&quot;,
-  &quot;standards&quot;: [&quot;ccss-ela:L.K.1f&quot;, &quot;uk-nc-2013:Eng.App2.Y1.Sent.1&quot;]
-}
-```
-
-- `id` — stable identifier (`mt_…`), referenced by dependencies and by neighbours.
-- `standards` — keys into `curriculum-standards.json` (`&quot;&lt;curriculum-slug&gt;:&lt;code&gt;&quot;`).
-- `assessmentPrompt` — a natural-language check for the idea. Contains a `{{name}}` placeholder (the child&#039;s name); substitute or strip before display.
-
-### A dependency
-
-```json
-{ &quot;topicId&quot;: &quot;mt__00ZSLnB7p&quot;, &quot;prerequisiteId&quot;: &quot;mt_VBl1T1sFCM&quot;, &quot;strength&quot;: &quot;hard&quot;,
-  &quot;reason&quot;: &quot;Must understand vibrations make sound before finding volume patterns&quot; }
-```
-
-`topicId` **depends on** `prerequisiteId`. Reverse the edge to get &quot;unlocks&quot;.
-
-## Teaching research
-
-[`data/teaching-research.json`](data/teaching-research.json) adds **how a topic
-might be taught** to the graph of what children learn. It covers **547 Science**
-and **504 Mathematics** topics. `coverage.missingTopicIds` and per-subject counts
-make the **540 topics without research** explicit; absence is not a judgement
-about whether a topic can be taught.
-
-The file has `schemaVersion: 1` and taxonomy `version: &quot;v1&quot;`. Each `records[]`
-entry joins `topics.json` through `topicId` and contains:
-
-| Field | Meaning |
-|---|---|
-| `pedagogy` | Original teaching summary, practices, representations and misconceptions. |
-| `learn` | Portable learning guidance (`schemaVersion: 2`): a summary, activities, educational constraints and review notes. |
-| `learn.activities[]` | Learner actions, intended insight, feedback, rationale and supporting source claims. No product artifact types or fit rankings. |
-| `assess` | Original diagnostic/task, response levels, error patterns and next teaching moves; nullable in the public interface. |
-| `sources` | Claim, named source, optional URL and the original author&#039;s verification flag. |
-| `confidence` | Original authoring confidence; not an independent quality score. |
-| `provenance` | Original authoring model and source record timestamps. The update timestamp also reflects the learning-guidance rewrite. |
-| `publicationNotes` | Paths and curriculum codes for text omitted under the codes-only publication policy. |
-
-`sourceClaims` exactly match `sources[].claim` after publication transformations.
-A source may support a general principle or curriculum alignment; this does not
-mean the proposed activity was tested. Some activities have no directly linked
-source claim.
-
-These records were agent-authored. The learning guidance was rewritten for
-portability, checked by a separate factual critic, and sampled by a second agent.
-Most original pedagogy and assessment were retained and may contain claims that
-the updated guidance qualifies; chart-specific alignment repairs after #30 are
-recorded in the affected learning-guidance review notes; read the constraints and review notes alongside
-them. Sources were **not re-fetched or re-verified** for this release. Historical
-`verified: true` and `confidence: &quot;high&quot;` are not new evidence ratings. Activities
-are research-informed proposals, **not empirically validated interventions**.
-
-Some original research quoted restricted curriculum standards. Matched passages
-are replaced with inline curriculum references, including inside citation claims;
-all transformed paths are listed in `publicationNotes`. This is a conservative
-mechanical omission pass, not comprehensive rights clearance. Consult the linked
-upstream sources for their wording and terms. See [PROVENANCE.md](PROVENANCE.md).
-
-After the chart split in [#30](https://github.com/withmarbleapp/os-taxonomy/pull/30),
-`mt_bESTSBB0wK` covers pie charts, `mt_H6LlpWgEYS` covers earlier line-graph
-problem-solving, and `mt_HlNSurPVDp` has a separate construction-and-interpretation
-record. The new record adapts existing graph research; it is not a fresh
-literature review, and all reused source-verification flags are false. Its
-assessment requires a complete constructed graph. The later grouped-charts
-assessment routes graph-choice errors to data presentation and sector-angle
-errors to pie charts.
-
-The file is bound to the exact `topics.json` bytes through `topicFileSha256`.
-Regenerate the research projection when the canonical topic file changes, even
-when topic IDs remain stable.
-
-## Using it
-
-Pure data — no runtime, no dependencies. Load the JSON and go.
-
-```js
-import topics from &#039;./data/topics.json&#039; with { type: &#039;json&#039; };
-import deps from &#039;./data/dependencies.json&#039; with { type: &#039;json&#039; };
-
-const byId = new Map(topics.topics.map(t =&gt; [t.id, t]));
-const prereqs = deps.dependencies
-  .filter(d =&gt; d.topicId === &#039;mt_N8CpN1EJrP&#039;)
-  .map(d =&gt; byId.get(d.prerequisiteId).name);
-```
-
-Join teaching guidance to a topic:
-
-```js
-import research from &#039;./data/teaching-research.json&#039; with { type: &#039;json&#039; };
-
-const guidanceByTopic = new Map(research.records.map(r =&gt; [r.topicId, r]));
-const guidance = guidanceByTopic.get(&#039;mt_N8CpN1EJrP&#039;); // undefined: English is not covered yet
-const activities = guidance?.learn.activities ?? [];
-```
-
-Validate structure, research coverage, evidence links and checksums:
+Install the skill with the [Skills CLI](https://skills.sh):
 
 ```bash
-node scripts/validate.mjs
-node --test scripts/teaching-research.test.mjs
+npx skills add https://github.com/cloudflare/security-audit-skill \
+  --skill security-audit
 ```
+
+Use `--global` for a user-level installation:
+
+```bash
+npx skills add https://github.com/cloudflare/security-audit-skill \
+  --skill security-audit \
+  --global
+```
+
+Run `npx skills --help` for agent-selection and non-interactive options.
+
+## Usage
+
+Start your coding agent in (or pointed at) the codebase you want to audit, then ask it to do a security audit:
+
+```
+security audit this codebase
+```
+
+```
+find security vulnerabilities in ./src
+```
+
+```
+do a security review, output to ~/audits/my-project
+```
+
+The skill activates automatically when the request matches its trigger (security audit, find vulnerabilities, pen-test the code, etc.). A direct codebase audit or pen-test request uses full audit mode. Security questions and focused vulnerability work use guidance mode unless you request report artifacts. In full audit mode, an unspecified output directory defaults to `~/security-audit-skill/&lt;repo-name&gt;/run-&lt;N&gt;`. The workflow writes inside the target repository only when you explicitly select a directory that version control ignores.
+
+## Requirements
+
+- A coding agent with a model that supports tool use and parallel sub-agents
+- Node.js for the zero-dependency findings and coverage-ledger validators
+- An OS-enforced sandbox for target-controlled builds, tests, processes, browsers, emulators, fuzzers, and fixtures. It must disable external networking, use a sanitized allowlisted environment, enforce resource limits, and allow writes only to assigned scratch paths. Without these controls, the workflow keeps the lead as `needs_validation` instead of executing target code.
+
+## Design principles
+
+- **Only confirm established boundary failures.** Keep a source-grounded blocked lead as `needs_validation` with its exact unresolved fact.
+- **Adversarial validation.** The agent that checks a finding is never the agent that found it.
+- **Severity requires impact.** Likelihood x impact, not deviation from a checklist.
+- **Defense-in-depth gaps are not vulnerabilities.** If Layer A prevents the attack, the absence of Layer B is a hardening note.
+- **Multiple runs improve coverage.** In our test runs, a single run found roughly half of the vulnerabilities that repeated runs found in total.
+
+## Contact
+
+Questions, feedback, or comparing notes on AI-driven security tooling: security-ai-research@cloudflare.com
 
 ## License
 
-This dataset is **multi-licensed** — read this before you use or redistribute it.
-
-| Layer | License |
-|---|---|
-| **The database** — the collection, structure, IDs, topic↔topic and topic↔standard relationships | [**ODbL 1.0**](LICENSE) — free for research **and** commercial use, **attribution** required, **share-alike** (derivative *databases* must stay open under ODbL). |
-| **The textual content Marble authored** — topic `description`/`name`/`evidence`/`assessmentPrompt`, dependency `reason`s, cluster `summary`s, original teaching-research prose | [**CC BY-SA 4.0**](LICENSE-CONTENT) — same spirit: attribution + share-alike. |
-| **`curriculum-standards.json`** — extracted from third-party frameworks | **Not** Marble&#039;s to relicense. Each source is under **its own upstream license** — see [**PROVENANCE.md**](PROVENANCE.md). |
-
-**Why share-alike + still commercial-friendly:** ODbL distinguishes a *derivative database* (extend/modify the taxonomy → must stay open) from a *produced work* (use it inside a product, model, or app → stays yours). So you can build a commercial product on this without open-sourcing your product; you only owe back improvements to the *taxonomy itself*.
-
-### Attribution
-
-Any use must credit:
-
-&gt; Marble Skill Taxonomy (v1) · © Generative Spark, Inc. (Marble) · https://withmarble.com · licensed under ODbL 1.0 (database) and CC BY-SA 4.0 (content).
-
-Plus the upstream notices in [PROVENANCE.md](PROVENANCE.md) for any curriculum standards you use. See [CITATION.cff](CITATION.cff) for a formal citation.
-
-## What&#039;s *not* here
-
-Deliberately excluded from this release: semantic embeddings (derived, recomputable) and any per-child / user data (never published). See [CHANGELOG.md](CHANGELOG.md).
+MIT -- see [LICENSE](LICENSE).
 </pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[tt-a1i/archify]]></title>
-            <link>https://github.com/tt-a1i/archify</link>
-            <guid>https://github.com/tt-a1i/archify</guid>
-            <pubDate>Tue, 20 Oct 2026 00:06:13 GMT</pubDate>
-            <description><![CDATA[Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/tt-a1i/archify">tt-a1i/archify</a></h1>
-            <p>Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 85,848</p>
-            <p>Forks: 5,844</p>
-            <p>Stars today: 511 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;docs/assets/archify-lockup-dark.svg&quot; /&gt;
-    &lt;img src=&quot;docs/assets/archify-lockup-light.svg&quot; alt=&quot;Archify&quot; width=&quot;440&quot; height=&quot;121&quot; /&gt;
-  &lt;/picture&gt;
-&lt;/p&gt;
-&lt;h3 align=&quot;center&quot;&gt;Turn anything you want to understand, plan, or share into an interactive visual.&lt;/h3&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;docs/assets/archify-readme-hero.png&quot; alt=&quot;Archify — interactive diagrams&quot; width=&quot;960&quot; /&gt;&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;strong&gt;Official channels：&lt;/strong&gt; &lt;a href=&quot;https://archify.si&quot;&gt;archify.si&lt;/a&gt; · &lt;a href=&quot;https://github.com/tt-a1i/archify&quot;&gt;GitHub&lt;/a&gt;&lt;br/&gt;Archify is free and open source. Third-party online services and paid plans are operated by their respective providers and do not represent Archify. &lt;a href=&quot;#official-services&quot;&gt;Service details →&lt;/a&gt;&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;Start with an idea, a question, or a plan. Describe it to your AI agent, and Archify turns it into an interactive HTML you can explore, customize, and share. From travel itineraries and learning maps to complex systems—make it your own.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;See what the community is creating—and imagine what you could make next.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://archify.si/gallery.html&quot;&gt;&lt;strong&gt;Live demos&lt;/strong&gt;&lt;/a&gt; &amp;nbsp;·&amp;nbsp;
-  &lt;a href=&quot;#start&quot;&gt;&lt;strong&gt;Get started&lt;/strong&gt;&lt;/a&gt; &amp;nbsp;·&amp;nbsp;
-  &lt;a href=&quot;https://archify.si/guide.html&quot;&gt;&lt;strong&gt;Scenario guide&lt;/strong&gt;&lt;/a&gt; &amp;nbsp;·&amp;nbsp;
-  &lt;a href=&quot;#community&quot;&gt;&lt;strong&gt;Community&lt;/strong&gt;&lt;/a&gt; &amp;nbsp;·&amp;nbsp;
-  &lt;a href=&quot;./README_ZH.md&quot;&gt;&lt;strong&gt;简体中文&lt;/strong&gt;&lt;/a&gt; &amp;nbsp;·&amp;nbsp;
-  &lt;a href=&quot;./README_JA.md&quot;&gt;&lt;strong&gt;日本語&lt;/strong&gt;&lt;/a&gt; &amp;nbsp;·&amp;nbsp;
-  &lt;a href=&quot;./README_KO.md&quot;&gt;&lt;strong&gt;한국어&lt;/strong&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://trendshift.io/repositories/31352?utm_source=repository-badge&amp;amp;utm_medium=badge&amp;amp;utm_campaign=badge-repository-31352&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/31352&quot; alt=&quot;tt-a1i/archify | Trendshift&quot; width=&quot;250&quot; height=&quot;55&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/tt-a1i/archify/stargazers&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/stars/tt-a1i/archify?style=flat-square&amp;amp;color=E5B650&amp;amp;logo=github&amp;amp;label=Stars&quot; alt=&quot;GitHub stars&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://skills.sh/tt-a1i/archify/archify&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/installs-130K%2B-0EA5E9?style=flat-square&quot; alt=&quot;130K+ installs on skills.sh&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/license-MIT-22c55e?style=flat-square&quot; alt=&quot;MIT License&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;#installation-options&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/works_with-Claude_Code_%7C_Codex_%7C_Cursor_%7C_OpenCode-7C3AED?style=flat-square&quot; alt=&quot;Works with Claude Code, Codex, Cursor, and OpenCode&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;CHANGELOG.md#320--2026-10-18&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/version-3.2.0-0891b2?style=flat-square&quot; alt=&quot;Stable version 3.2.0&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://archify.si/&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Website-0891B2?style=for-the-badge&quot; alt=&quot;Archify website&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://discord.gg/6xWMjgCeUq&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&amp;amp;logo=discord&amp;amp;logoColor=white&quot; alt=&quot;Join Archify on Discord&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;#community&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/WeChat-07C160?style=for-the-badge&amp;amp;logo=wechat&amp;amp;logoColor=white&quot; alt=&quot;Archify WeChat group&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;#community&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/QQ-1688D8?style=for-the-badge&amp;amp;logo=qq&amp;amp;logoColor=white&quot; alt=&quot;Archify QQ group&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://x.com/t20000622yy&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Creator_on_X-181717?style=for-the-badge&amp;amp;logo=x&amp;amp;logoColor=white&quot; alt=&quot;Follow the creator on X&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;#sponsors&quot;&gt;&lt;strong&gt;❤️ Partners &amp; sponsors: Kimi Work · Supercode · OpenLux&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-
-## See Archify in action
-
-&lt;!-- archify-launch-video --&gt;
-
-https://github.com/user-attachments/assets/78570807-ba1d-4737-953f-55504a378a87
-
-**One sentence. Your repo, mapped.** Watch the 35-second demo: explore the diagram, follow source links, and trace a path. [Try the interactive examples ↗](https://archify.si/gallery.html)
-
-&lt;a id=&quot;start&quot;&gt;&lt;/a&gt;
-
-### Install, then describe your idea
-
-Works with Cursor, Claude Code, Codex CLI, and OpenCode. See installation options below for additional integrations.
-
-```bash
-npx skills add tt-a1i/archify -g
-```
-
-Send this to your agent:
-
-```text
-Use Archify to diagram a web request: Browser calls the API,
-the API checks Redis, and a cache miss queries PostgreSQL and fills the cache.
-```
-
-Then continue: “Add authentication”, “Highlight the cache-miss path”, or “Switch to the light theme”.
-
-**No repository is required:** start with a description, or ask your agent to read a repository for a source-backed architecture diagram.
-
-[Choose your agent](https://archify.si/start.html?agent=cursor&amp;type=architecture) · [Installation details and update checks](#quick-start) · [Create and check diagrams with your agent](https://archify.si/agent-diagrams)
-
-## Ask a question, get a one-page answer
-
-Not every answer is one diagram. Ask your agent to answer as a page and Archify builds an **explainer**: the conclusion first, then one panel per question, with tables, steps, charts, code and validated diagrams.
-
-[![An explainer page: the answer first, then steps beside the sequence diagram they walk through](docs/assets/explainer-tls-en.png)](https://archify.si/cases/explainer/tls-first-visit.html)
-
-- **Conclusion first.** The answer and its reasons lead; every panel takes one question.
-- **Diagrams that explain.** Steps sit beside the diagram they walk through and light its parts as you read. Click any node to open the full interactive view.
-- **Easy to check.** Claims cite numbered sources; repository excerpts are pinned to a commit and open in a source card.
-- **Easy to share.** One HTML file with four styles and light or dark themes. Export a PNG, WebP or JPG long image, or print to PDF. Ask about any panel to get a follow-up your agent can use to revise just that panel.
-
-```text
-Use Archify to answer as one page: our API&#039;s P99 went from 80 ms to 600 ms
-while the mean barely moved. What is the likely cause, and how should we investigate?
-```
-
-Live examples: [First HTTPS visit](https://archify.si/cases/explainer/tls-first-visit.html) · [P99 latency (Chinese)](https://archify.si/cases/explainer/p99-tail-latency.html) · [How Archify finalize keeps the last good file, read from this repository (Chinese)](https://archify.si/cases/explainer/finalize-delivery.html) · [First rental checklist (Chinese)](https://archify.si/cases/explainer/first-rental.html)
-
-&lt;a id=&quot;sponsors&quot;&gt;&lt;/a&gt;
-
-## ❤️ Sponsors
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://www.kimi.ai/?aff=archify&quot;&gt;&lt;img src=&quot;docs/assets/sponsors/archify-kimi-work.png&quot; alt=&quot;Archify × Kimi Work collaboration banner&quot; width=&quot;800&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-**Archify × Kimi Work.** Find Archify in the Kimi Work plugin store as **Interactive Architecture Diagram**. Describe your system in one sentence to create an interactive diagram. **[Try it in Kimi Work →](https://www.kimi.ai/?aff=archify)**
-
-&lt;table&gt;
-&lt;tr&gt;
-  &lt;td align=&quot;center&quot; width=&quot;240&quot;&gt;&lt;a href=&quot;https://supercode.sh/?utm_source=archify&quot;&gt;&lt;img src=&quot;https://cdn.supercode.sh/sponsors/supercode-logo.png&quot; alt=&quot;Supercode&quot; width=&quot;200&quot;/&gt;&lt;/a&gt;&lt;br/&gt;&lt;strong&gt;&lt;a href=&quot;https://supercode.sh/?utm_source=archify&quot;&gt;supercode.sh&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://supercode.sh/?utm_source=archify&quot;&gt;Supercode&lt;/a&gt; sponsors Archify and enhances Codex and Cursor with token optimization, curated Skills, and spec-driven development. Archify is featured as a &lt;a href=&quot;https://supercode.sh/en/skills/tt-a1i/archify/archify&quot;&gt;Supercode Editor’s Choice&lt;/a&gt; skill.&lt;br/&gt;&lt;br/&gt;&lt;a href=&quot;https://supercode.sh/en/skills/tt-a1i/archify/archify&quot;&gt;&lt;img src=&quot;https://supercode.sh/badges/editors-choice.svg&quot; alt=&quot;Supercode Editor’s Choice — Archify&quot; width=&quot;240&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot; width=&quot;240&quot;&gt;&lt;a href=&quot;https://www.openlux.ai/register?channel=c_qdvanbpc&quot;&gt;&lt;img src=&quot;docs/assets/sponsors/openlux-logo.png&quot; alt=&quot;OpenLux&quot; width=&quot;200&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;strong&gt;&lt;a href=&quot;https://www.openlux.ai/register?channel=c_qdvanbpc&quot;&gt;OpenLux&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Thank you to OpenLux for sponsoring this project! OpenLux is an all-in-one AI platform for businesses, bringing together leading AI models from major providers worldwide. With fast, reliable service and responsive technical support, OpenLux offers base pricing for Claude, OpenAI, and Gemini models as low as 8.82%, 4%, and 8% of official rates, respectively.&lt;br/&gt;&lt;br/&gt;Exclusive offer for Archify users: Sign up through our referral link and enjoy up to 7.5% off credit top-ups!&lt;br/&gt;&lt;br/&gt;&lt;a href=&quot;https://www.openlux.ai/register?channel=c_qdvanbpc&quot;&gt;Get started with OpenLux →&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot; width=&quot;240&quot;&gt;&lt;a href=&quot;https://www.packyapi.ai/register?aff=bN97&quot;&gt;&lt;img src=&quot;docs/assets/sponsors/packycode-logo.png&quot; alt=&quot;PackyCode&quot; width=&quot;200&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;strong&gt;&lt;a href=&quot;https://www.packyapi.ai/register?aff=bN97&quot;&gt;PackyCode&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Access leading AI models through PackyCode with one API endpoint and one API key. Enjoy automatic failover and dedicated high-speed routes for Codex and Claude Code.&lt;br/&gt;&lt;br/&gt;Get started with $1 in free credits, a discount on your first top-up, and savings of up to 80% on eligible routes. Pay in RMB with no currency conversion markups or extra top-up fees.&lt;br/&gt;&lt;br/&gt;&lt;a href=&quot;https://www.packyapi.ai/register?aff=bN97&quot;&gt;Get started with PackyCode →&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot; width=&quot;240&quot;&gt;&lt;a href=&quot;https://www.aicodemirror.ai/register?invitecode=WC26FL&quot;&gt;&lt;img src=&quot;docs/assets/sponsors/aicodemirror-logo.jpg&quot; alt=&quot;AICodeMirror&quot; width=&quot;200&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;strong&gt;&lt;a href=&quot;https://www.aicodemirror.ai/register?invitecode=WC26FL&quot;&gt;AICodeMirror&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Thank you to AICodeMirror for sponsoring Archify! AICodeMirror provides API relay services for Claude, Codex, and Gemini, with enterprise-grade concurrency, invoice issuance, and 24/7 technical support. Codex pricing starts at 7% of standard rates, with additional top-up discounts.&lt;br/&gt;&lt;br/&gt;Exclusive offer for Archify users: Register through our referral link to receive 20% off your first top-up.&lt;br/&gt;&lt;br/&gt;&lt;a href=&quot;https://www.aicodemirror.ai/register?invitecode=WC26FL&quot;&gt;Try AICodeMirror →&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot; width=&quot;240&quot;&gt;&lt;a href=&quot;https://www.infistar.cc/register?aff=9N89LEMV&amp;amp;ref_source=link&quot;&gt;&lt;img src=&quot;docs/assets/sponsors/infistar-logo.svg&quot; alt=&quot;Infistar.cc&quot; width=&quot;140&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;strong&gt;&lt;a href=&quot;https://www.infistar.cc/register?aff=9N89LEMV&amp;amp;ref_source=link&quot;&gt;Infistar.cc&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Thank you to Infistar.cc for sponsoring Archify! One API key covers text, image, and video creation with GPT, Claude, Gemini, DeepSeek, Qwen, Kling, and other models, without switching groups. Model API pricing starts at 1% of official rates, and AI images start at ¥0.06 each.&lt;br/&gt;&lt;br/&gt;Exclusive offer for Archify users: Sign up through our referral link for $5 in trial credits and a special offer on your first top-up.&lt;br/&gt;&lt;br/&gt;&lt;a href=&quot;https://www.infistar.cc/register?aff=9N89LEMV&amp;amp;ref_source=link&quot;&gt;Try Infistar →&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td align=&quot;center&quot; width=&quot;240&quot;&gt;&lt;a href=&quot;https://github.com/EverMind-AI/Raven&quot;&gt;&lt;img src=&quot;docs/assets/sponsors/evermind-archify-raven.png&quot; alt=&quot;Archify × Raven&quot; width=&quot;200&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/EverMind-AI&quot;&gt;EverMind&lt;/a&gt; · &lt;a href=&quot;https://github.com/EverMind-AI/Raven&quot;&gt;Raven&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;EverMind sponsors Archify and builds memory infrastructure for agents. Its &lt;a href=&quot;https://github.com/EverMind-AI/Raven&quot;&gt;&lt;strong&gt;Raven&lt;/strong&gt;&lt;/a&gt; harness supports Archify as a Skill for verified, interactive system maps.&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-
-&gt; Want to sponsor Archify? [Contact us by email.](mailto:2801884530@qq.com)
-
-## Show what matters
-
-| Explain an agent workflow | Follow a cache miss | Explore service relationships |
-|---|---|---|
-| [![Agent workflow tracing everything the planner drives](docs/assets/archify-demo-reach.png)](https://archify.si/gallery/artifacts/agent-tool-call.workflow.html?theme=dark&amp;present=1#focus=planner&amp;reach=downstream) | [![Cache-miss sequence showing the Web App to Postgres route](docs/assets/archify-demo-route.png)](https://archify.si/gallery/artifacts/cache-miss.sequence.html?theme=dark&amp;present=1#route=web~db) | [![Production architecture comparing backend and database roles](docs/assets/archify-demo-lens.png)](https://archify.si/gallery/artifacts/production-deployment.architecture.html?theme=dark&amp;present=1#lens=backend~database) |
-| Trace everything downstream of one step. | Highlight the path from web app to database. | Focus on authored backend and database connections. |
-
-The [Proof Lab](https://archify.si/gallery.html) contains all 11 checked-in scenarios, their JSON sources, and validation receipts.
-
-### Understand a real repository
-
-&lt;sub&gt;CODE → DIAGRAM · A source-backed system map&lt;/sub&gt;
-
-[![MCO runtime architecture generated from the public mco-org/mco repository](docs/assets/mco-runtime-share-card.png)](https://archify.si/cases/mco-runtime.architecture.html?theme=dark&amp;present=1)
-
-Archify traced [`mco-org/mco`](https://github.com/mco-org/mco) at `9f1a1cf` and produced this checked map. **[Open it ↗](https://archify.si/cases/mco-runtime.architecture.html?theme=dark&amp;present=1)** · [trace reach ↗](https://archify.si/cases/mco-runtime.architecture.html?theme=dark#focus=router&amp;reach=downstream) · [typed source](docs/cases/mco-runtime.architecture.json)
-
-### Easy to extend. More ways to make it yours.
-
-&lt;sub&gt;COMMUNITY STORIES · Selected examples shared by users&lt;/sub&gt;
-
-**Keep building after the diagram is generated.** Archify is open source and its output is standalone HTML. Ask your agent to adapt it, connect useful links, or add interactions for your own workflow. Community creations already span team collaboration, travel planning, legal citation checks, contract review, and incident retrospectives. These are just a few examples.
-
-One user started with a hand-drawn multi-agent architecture, turned it into an interactive diagram, then added a Kimi execution pool through conversation. Others asked their agent to read a project and brought the resulting architecture into Feishu or DingTalk for team discussion.
-
-Another user turned a Shanghai CityWalk guide into a four-day itinerary: switch between days, inspect a stop, and jump to Amap, Xiaohongshu, or Dianping. The author also added arrival check-ins and stop notes, turning the itinerary into a small tool to use during the trip. These extensions were added by the community author for this particular artifact.
-
-**[▶ Explore the interactive Shanghai CityWalk](https://archify.si/cases/community/shanghai-citywalk.html)**
-
-[![A community-created four-day Shanghai CityWalk itinerary](docs/assets/community/shanghai-citywalk.png)](https://archify.si/cases/community/shanghai-citywalk.html)
-
-**[▶ Try the interactive version](https://archify.si/cases/community/shanghai-citywalk.html)** · Switch between D1–D4 and click a place to explore.
-
-&lt;sub&gt;Community artifact · Shanghai CityWalk · Four days of routes and place links&lt;/sub&gt;
-
-### Download it. Open it. Explore it.
-
-The output is a self-contained HTML file. Download it and open it in your browser to use the node details and path exploration included in that artifact. No Archify installation is needed to view it. Send the HTML to someone else and the interactions go with it; external websites and map links need a network connection.
-
-**[Explore the Shanghai CityWalk ↗](https://archify.si/cases/community/shanghai-citywalk.html)** · **[Download HTML ↓](https://github.com/tt-a1i/archify/raw/refs/heads/main/docs/cases/community/shanghai-citywalk.html)**
-
-&lt;sub&gt;Try switching between D1–D4, opening a place card, or following a map link. Times and place information reflect the author&#039;s original itinerary.&lt;/sub&gt;
-
-## Community and recognition
-
-- **#1 on GitHub Trending&#039;s weekly, all-language repository list.** [Ranking screenshot published by the creator on September 1, 2026](https://x.com/t20000622yy/status/2094656813576880285), with all languages and “This week” selected.
-- **Featured and interviewed by QbitAI.** [Project feature](https://www.qbitai.com/2026/09/482469.html) · [The developer&#039;s story](https://www.qbitai.com/2026/09/488519.html).
-- **Shared with developer communities.** [midudev&#039;s post](https://x.com/midudev/status/2094425974406320207).
-
-&lt;sub&gt;A selection of public coverage, community shares, and historical milestones. Follow the links for dates and sources.&lt;/sub&gt;
-
-## Preview
-
-&lt;details&gt;
-&lt;summary&gt;Themes, exports, and share cards&lt;/summary&gt;
-
-Same diagram, two themes, one click to switch:
-
-| Dark | Light |
-|---|---|
-| ![Dark theme](docs/assets/archify-dark.png) | ![Light theme](docs/assets/archify-light.png) |
-
-The Export menu copies PNG to the clipboard and downloads static or motion formats:
-
-![Export menu](docs/assets/archify-menu.png)
-
-After tracing a route, **Export → Route Share Card** downloads that authored path as a 1200×630 PNG with the full diagram retained for context.
-
-![Route Share Card showing the exact Users to API Server path with the full architecture retained as context](docs/assets/archify-route-share-card.png)
-
-After tracing authored `Upstream` or `Downstream` reach, **Export → Reach Share Card** captures that exact reading without claiming runtime impact.
-
-![MCO downstream Reach Share Card showing authored relationships from Command Router](docs/assets/mco-runtime-reach-share-card.png)
-
-Open [`examples/web-app.html`](examples/web-app.html) locally to try the complete viewer.
-
-&lt;/details&gt;
-
-## Quick start
-
-**Current stable version:** `v3.2.0`. See [Changelog](CHANGELOG.md#320--2026-10-18).
-
-### 1. Install
-
-```bash
-npx skills add tt-a1i/archify -g
-```
-
-&lt;details&gt;
-&lt;summary&gt;More installation options and update-check details&lt;/summary&gt;
-
-For an explicit, non-interactive Cursor install:
-
-```bash
-npx -y skills add tt-a1i/archify --skill archify --agent cursor --global --copy --yes
-```
-
-To try without installing:
-
-```bash
-npx skills use tt-a1i/archify@archify --agent codex
-```
-
-[DSH community opt-in](integrations/deepseek-harness/README.md): `dsh plugin --profile web add @tt-a1i/archify-dsh@1.0.0`
-
-The [agent switcher](https://archify.si/start.html?agent=cursor&amp;type=architecture) covers `cursor`, `codex`, `claude-code`, and `opencode`.
-
-Archify may GET the fixed stable manifest solely to show an optional reminder; it never downloads or installs updates. Successful checks wait about 24 hours (±20%); active use retries failures after 6, then 24 hours. The server sees normal HTTP metadata (IP and time), but receives no version, Agent, project data, prompts, account/device ID, or ETag. You decide whether and when to update. Set `ARCHIFY_UPDATE_CHECK_DISABLED=1` to disable networking and reminder-state writes.
-
-&lt;/details&gt;
-
-### Stay updated
-
-- **Get release notifications:** select **Watch → Custom → Releases** at the top of this GitHub repository. Starring the project does not subscribe you to release notifications.
-- **See what changed:** [Release notes](https://github.com/tt-a1i/archify/releases).
-- **Use a feed reader:** [Subscribe to the release feed](https://github.com/tt-a1i/archify/releases.atom).
-
-Installations with the update checker also check for newer stable releases during diagram delivery and can show a reminder. Older installations without the checker need a manual update to gain this feature. You choose whether and when to upgrade; Archify never installs updates automatically.
-
-### 2. Start from a description — no repository required
-
-```text
-Use Archify to draw: Browser -&gt; API -&gt; Redis cache -&gt; PostgreSQL fallback.
-```
-
-For source evidence, open a repository and ask:
-
-```text
-Analyze this repository, then use archify to create a high-level runtime architectu
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[plugin87/ux-ui-agent-skills]]></title>
-            <link>https://github.com/plugin87/ux-ui-agent-skills</link>
-            <guid>https://github.com/plugin87/ux-ui-agent-skills</guid>
-            <pubDate>Tue, 20 Oct 2026 00:06:12 GMT</pubDate>
-            <description><![CDATA[Turn Claude into a senior design architect: DTCG tokens, 52 components, WCAG 2.2 AA-AAA, 138 design systems, any-framework code, and 50 objective gates that fail the build instead of faking success.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/plugin87/ux-ui-agent-skills">plugin87/ux-ui-agent-skills</a></h1>
-            <p>Turn Claude into a senior design architect: DTCG tokens, 52 components, WCAG 2.2 AA-AAA, 138 design systems, any-framework code, and 50 objective gates that fail the build instead of faking success.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 2,394</p>
-            <p>Forks: 256</p>
-            <p>Stars today: 158 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-
-# UX/UI Agent Skills
-
-*aka **XIAS***
-
-### Turn Claude into a **Senior Design Architect** — 15+ years of expertise in design systems, accessibility, and production-ready component engineering.
-
-A comprehensive kit of structured instructions, design tokens, runnable skills, and 138 brand-grade design systems that turn Claude into a UX/UI expert agent — targeting **any framework** and **any design system**. Drop it into any project for consistent, accessible, token-driven design outputs, every time.
-
-&lt;br&gt;
-
-&lt;picture&gt;
-  &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;.github/brand/xias-cover-dark.png&quot;&gt;
-  &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;.github/brand/xias-cover-light.png&quot;&gt;
-  &lt;img src=&quot;.github/images/hero.png&quot; alt=&quot;XIAS - design-system doctrine for coding agents. 52 objective gates, 34 of which open a real browser: WCAG contrast in every state, axe roles and landmarks, keyboard, target size, reduced motion, no horizontal overflow at 280, token by intent, screen economy. 138 design systems, 52 component specs, 25 runnable skills, 14 DTCG token files, 16 framework adapters. Claude Code, Codex, Cursor, Copilot, Aider, MCP.&quot; width=&quot;900&quot;&gt;
-&lt;/picture&gt;
-
-&lt;br&gt;
-&lt;br&gt;
-
-&lt;a href=&quot;https://trendshift.io/repositories/24406&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/24406&quot; alt=&quot;plugin87/ux-ui-agent-skills | Trendshift&quot; width=&quot;250&quot; height=&quot;55&quot;&gt;&lt;/a&gt;
-
-&lt;br&gt;
-&lt;br&gt;
-
-[![Version](https://img.shields.io/badge/version-2.9.10-6366f1?style=for-the-badge)](https://github.com/plugin87/ux-ui-agent-skills/releases)
-[![License: MIT](https://img.shields.io/badge/license-MIT-22c55e?style=for-the-badge)](#license)
-[![WCAG 2.2 AA→AAA](https://img.shields.io/badge/WCAG-2.2_AA→AAA-a855f7?style=for-the-badge)](#-accessibility-standards)
-
-&lt;br&gt;
-
-[![npm](https://img.shields.io/npm/v/ux-ui-agent-skills?style=flat-square&amp;logo=npm&amp;logoColor=white&amp;color=cb3837)](https://www.npmjs.com/package/ux-ui-agent-skills)
-[![npm downloads](https://img.shields.io/npm/dt/ux-ui-agent-skills?style=flat-square&amp;logo=npm&amp;logoColor=white&amp;color=cb3837)](https://www.npmjs.com/package/ux-ui-agent-skills)
-![Tokens](https://img.shields.io/badge/Design_Tokens-DTCG-fbbf24?style=flat-square)
-![Skills](https://img.shields.io/badge/runnable_skills-25-14b8a6?style=flat-square)
-![Gates](https://img.shields.io/badge/objective_gates-52-16a34a?style=flat-square)
-[![Live demo](https://img.shields.io/badge/live_demo-open-0ea5e9?style=flat-square)](https://plugin87.github.io/ux-ui-agent-skills/)
-![Design Systems](https://img.shields.io/badge/design_systems-138-f97316?style=flat-square)
-![Frameworks](https://img.shields.io/badge/frameworks-any-8b5cf6?style=flat-square)
-![Adapters](https://img.shields.io/badge/framework_adapters-16-22d3ee?style=flat-square)
-![React 19](https://img.shields.io/badge/React-19-60a5fa?style=flat-square&amp;logo=react)
-![Next.js 15](https://img.shields.io/badge/Next.js-15-000000?style=flat-square&amp;logo=nextdotjs)
-![SwiftUI 6](https://img.shields.io/badge/SwiftUI-6-f472b6?style=flat-square&amp;logo=swift)
-![Tailwind v4](https://img.shields.io/badge/Tailwind-v4-38bdf8?style=flat-square&amp;logo=tailwindcss)
-
-&lt;/div&gt;
-
-**Current release [`v2.9.10`](https://github.com/plugin87/ux-ui-agent-skills/releases)** · [Changelog](CHANGELOG.md) · No build tools, dependencies, or runtime — a pure instruction and knowledge layer for AI agents.
-
----
-
-## The output, rendered
-
-
-Not a mockup. These are screenshots of the files in `examples/`, taken by
-`node scripts/screenshot_docs.mjs` from the same HTML the 52 gates measure — so
-what you see below is what the gate run passed, in both themes.
-
-**Click through them yourself: [plugin87.github.io/ux-ui-agent-skills](https://plugin87.github.io/ux-ui-agent-skills/)**
- — 49 live pages: twenty whole-product screens, every component harness, both
-reference screens, with a theme toggle. No install, no clone.
-
-&lt;img src=&quot;.github/images/dashboard-light.png&quot; alt=&quot;Atlas revenue console in light theme: sidebar navigation, a hero net-recurring-revenue figure at 2.48 million with a weekly bar chart, retention and churn cards, a donut of revenue by plan, an account ranking, regional sparklines, a sortable renewals table and an activity feed&quot; /&gt;
-
-&lt;img src=&quot;.github/images/dashboard-dark.png&quot; alt=&quot;The same Atlas console in dark theme, rendered from the same token theme with no per-page palette&quot; /&gt;
-
-&lt;img src=&quot;.github/images/terminal-dark.png&quot; alt=&quot;Meridian Terminal: a trading desk screen with a market ticker, candlestick chart with volume and moving average, order book with depth bars, cumulative depth curve, time and sales tape, watchlist sparklines, stacked area allocation, waterfall attribution, bubble chart and a correlation matrix&quot; /&gt;
-
-**Meridian Terminal** is the density test: **ten chart types on one screen** -
-candlestick, volume, moving average, depth, order book, tape, sparklines,
-stacked area, waterfall, bubble and a correlation matrix - every one of them
-inline SVG drawn from the same tokens, no chart library.
-[Open it live.](https://plugin87.github.io/ux-ui-agent-skills/terminal/)
-Build one yourself with **`/data-dashboard`**.
-
-**Atlas** is one HTML file in `examples/showcase/`, built only from the kit&#039;s
-tokens and rules: the hero figure leads at 3x the body size, the three
-breakdowns are deliberately three different shapes rather than three identical
-cards, the range tabs move the numbers, and the table headers really sort.
-[Open it live.](https://plugin87.github.io/ux-ui-agent-skills/showcase/)
-
-&lt;table&gt;
-&lt;tr&gt;
-&lt;td width=&quot;50%&quot;&gt;&lt;img src=&quot;.github/images/reference-app-light.png&quot; alt=&quot;Reference app in light theme: an Analytics screen led by one hero revenue metric, three smaller stats beneath it, a settings form, and a red Delete account action&quot; /&gt;&lt;/td&gt;
-&lt;td width=&quot;50%&quot;&gt;&lt;img src=&quot;.github/images/reference-app-dark.png&quot; alt=&quot;The same Analytics screen in dark theme, rendered from the same token theme with no per-page palette&quot; /&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;img src=&quot;.github/images/button-states-light.png&quot; alt=&quot;Button harness in light theme showing primary, disabled, loading, secondary, danger and toggle states side by side&quot; /&gt;&lt;/td&gt;
-&lt;td&gt;&lt;img src=&quot;.github/images/button-states-dark.png&quot; alt=&quot;The same button states in dark theme, with the destructive action still wearing the danger variant&quot; /&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-
-One theme, two modes, no per-page palette. The destructive action wears the
-danger variant in both. Loading keeps full strength and swaps in a spinner
-instead of borrowing the disabled dimming. Every one of those is a rule in
-`CLAUDE.md` that a gate or a critic enforces.
-
----
-
-## What the gates actually catch
-
-
-Left: the same dashboard written the way a model writes it when nothing stops it -
-the indigo-to-purple gradient, four equal cards with no focal point, emoji as
-icons, one radius and one shadow everywhere, grey-on-white body text, and a blue
-Delete Account. Right: the reference app in this repo.
-
-&lt;table&gt;
-&lt;tr&gt;
-&lt;td width=&quot;50%&quot;&gt;&lt;img src=&quot;.github/images/before-slop.png&quot; alt=&quot;A generated-looking analytics dashboard: purple gradient header with emoji, four identical stat cards, grey low-contrast labels, tiny icon buttons, and a blue Delete Account button&quot; /&gt;&lt;br&gt;&lt;b&gt;Statistical defaults&lt;/b&gt;&lt;/td&gt;
-&lt;td width=&quot;50%&quot;&gt;&lt;img src=&quot;.github/images/reference-app-light.png&quot; alt=&quot;The same dashboard built to the kit&#039;s rules: one hero revenue metric leading, three smaller stats, a settings panel, and a red Delete account action&quot; /&gt;&lt;br&gt;&lt;b&gt;Built to the rules&lt;/b&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-
-The difference is not a matter of opinion, and that is the point. The page on the
-left is `tests/fixtures/bad/slop-screen.html`; here is what the gates say about it:
-
-| Gate | Verdict on the left-hand page |
-|---|---|
-| REAL-render WCAG | `x &lt;h1&gt; &quot;Analytics Dashboard&quot; 1.00:1 (need 3)` - white text on a gradient has no measurable background |
-| State-aware WCAG | `x default &quot;Save Changes&quot; 1.00:1 (need 4.5) [rgb(255,255,255) on rgb(255,255,255)]` - 6 states below AA |
-| Target size (2.5.8) | `x button.icon-btn is 15.3x16 (min 24x24)` |
-| Responsive | `x @280px overflow +820px (widest: div.card)` |
-| axe-core | `SERIOUS target-size` |
-| Slop tells | HIGH: hardcoded indigo-purple gradient, single radius, one flat shadow, `#000` on `#fff` |
-| Taste audit | HIGH: biggest heading 24px vs 14px body = 1.7x, not a display scale |
-| Token by intent | `x &quot;Delete Account&quot; is destructive but filled with rgb(99, 102, 241) (hue 239deg, not a danger colour)` |
-| No emoji | `x slop-screen.html:55: emoji/pictograph` - a chart glyph in the `&lt;h1&gt;` |
-| No hardcoded values | `FAIL: 63 hardcoded value(s)` |
-
-Ten gates reject it, none of them on a matter of taste. The right-hand page
-passes all 52.
-
-The last row is there because building this comparison broke a gate open.
-`lint_intent` originally read that blue Delete Account as fine: it resolved
-&quot;primary&quot; and &quot;danger&quot; from the page&#039;s own CSS variables, and a page with no
-tokens resolved neither, so it skipped the page and reported zero intent-bearing
-controls. An untokenised page is precisely where intent gets picked by
-convenience, so the gate no longer looks away - a destructive label filled with a
-saturated colour outside the danger hue range is wrong-intent with or without a
-theme. Re-checked against every example in both themes afterwards: no false
-positives.
-
-`tests/meta/browser-gates.test.mjs` pins every claim in this table, so it cannot
-rot.
-
----
-
-## It was run blind, and it came back as rework
-
-Two subagents were handed a brief and a project scaffolded by `ux-ui-skills new`
-— which installs the kit and ships **no example screens** — and nothing else. No
-hints, no warning that anything would be scored, no access to the conversation
-that built the kit. They met `CLAUDE.md` and `.claude/rules/` the way a new
-user&#039;s agent does.
-
-**Both scored 14/14** on an independent run of `evals/run.mjs`, scored here
-rather than self-reported. The rules transfer across a cold start.
-
-**And the two runs cost the kit seven defects that four in-session runs never
-hit**, because a familiar run keeps reaching for a finished demo theme instead of
-the template a real user gets: a secondary button at **1.13:1** dark-on-dark
-because the component tier never followed the dark map; a reduced-motion policy
-in an external stylesheet read as &quot;no policy&quot; (Chromium treats a `file://` linked
-sheet as cross-origin, so the gate was blind exactly where every real project
-lives); a missing scrim token; a theme that emitted colours and no spacing; an
-intent gate that did not know &quot;cancel subscription&quot; is destructive.
-
-Then the outputs went to `/critique`, which renders the work and argues for
-rejection. Verdict on two pages that pass all fourteen gates: **rework**, eight
-findings, five Major, and not one of them measurable — an empty state that reads
-as a page that failed to load, a theme toggle that communicates nothing about its
-own state, a toast claiming &quot;Draft project created&quot; over a list that never
-changed, and a loading state wearing the disabled dimming so it reads as &quot;you
-cannot do this&quot;.
-
-**The blind outputs were never edited.** They are in `evals/out/` as the record
-of what a cold-start agent produced; patching them would be editing the
-experiment. The findings were spent on the kit instead — one of them became a
-gate, `verify_interactive.mjs`, which fails any control that declares a state
-contract and changes nothing when clicked.
-
-The whole log, including what is still unproven, is in
-[evals/RESULTS.md](evals/RESULTS.md).
-
----
-
-## What It Does
-
-
-| Capability | Description |
-|-----------|-------------|
-| **Design Token Generation** | Produces DTCG-format JSON tokens (colors, typography, spacing, shadows, borders, breakpoints, motion) with a 3-tier architecture: Primitive → Semantic → Component |
-| **Component Design** | Designs components from Atoms to Templates following Atomic Design, with anatomy, variants, states, token mapping, and accessibility specs |
-| **Code Generation (any framework)** | Adapter Protocol targets **any** stack — React+Tailwind, Next.js, SwiftUI, Vue, Svelte, Angular, Solid, Web Components/Lit, React Native, Flutter, Jetpack Compose, vanilla CSS, CSS-in-JS — or generates a new adapter on demand |
-| **Design-System Interop** | Maps to/from **any** design system (Material 3, Apple HIG, Fluent, Carbon, shadcn/ui, Radix…) via a role-based crosswalk |
-| **Runnable Skills** | 19 invocable `/skills` (each declaring `invocation: user|model`) + 5 slash commands + real scripts: token and contrast validators, real-render and state-aware WCAG gates, axe-core a11y, focus-trap, RTL, target size, keyboard, reduced motion, overflow, token-by-intent, taste and slop audits, token build |
-| **Accessibility Auditing** | Evaluates against WCAG 2.2 AA/AAA with prioritized findings (P0/P1/P2) |
-| **Design Review** | Scores designs across 6 dimensions with Nielsen&#039;s 10 Heuristics and a structured findings table |
-| **Prototyping &amp; Research** | Guides through a 5-level fidelity ladder, user journey mapping, and usability testing scripts |
-| **Motion Design** | Tokenized durations, easing curves, transition presets, and reduced-motion strategy for accessible animation |
-| **UX Writing** | Voice &amp; tone system with error/empty-state formulas, microcopy patterns, and inclusive language guidelines |
-| **Design Taste** | Native anti-slop doctrine, aesthetic archetypes, and a library of **138 design systems** for layout variance, editorial typography, and premium visual direction |
-
----
-
-## Quick Start
-
-
-&gt; **Five ways in, and which one is yours:** [docs/INSTALL.md](docs/INSTALL.md)
-&gt; walks through the Claude Code plugin, the `AGENTS.md` surface for Codex and
-&gt; Cursor, the MCP server, Homebrew and `npx` — what each one installs, and what
-&gt; you give up by choosing it.
-
-### Option A — Install as a Claude Code plugin (recommended)
-
-Two lines in Claude Code, and every skill, command, and agent is available in any
-project you open — no files copied into your repo:
-
-```
-/plugin marketplace add plugin87/ux-ui-agent-skills
-/plugin install ux-ui-agent-skills@ux-ui-agent-skills
-```
-
-You get 25 skills and the `design-critic` agent.
-
-**Fourteen the model reaches for on its own** when the work calls for them:
-`design-tokens`, `design-component`, `design-code`, `design-review`,
-`a11y-audit`, `apply-aesthetic`, `data-dashboard`, `design-qa`,
-`figma-integration`, `performance`, `token-build`, `ux-writing`,
-`design-doctrine`, and `design-screen` — the one that claims &quot;design a page /
-screen / app&quot;, which until 2026-10-05 no skill did, so the most common request
-there is matched nothing strongly and the kit got used at a fraction of its
-depth.
-
-**Eleven you start yourself**, because each one takes an action or sets a
-direction that should be your call: `/brandkit`, `/governance`, `/image-to-code`,
-`/migrate-design-system`, `/prototype`, `/redesign`, `/gate`, `/critique`,
-`/grill-me`, `/ship`, `/scaffold-project`. They carry
-`disable-model-invocation: true`, which is the field that actually stops the
-model invoking them — until 2026-10-05 six of them said `invocation: user`, a
-key Claude Code does not read, so they were auto-invocable the whole time. The
-last five were commands and are skills now, so they have a `CLAUDE_SKILL_DIR` of
-their own and their paths resolve under a plugin install.
-
-`design-doctrine` carries the house rules that `CLAUDE.md` carries in the repo,
-because a plugin root `CLAUDE.md` is not loaded as project context — Claude
-Code&#039;s own `plugin validate` says so.
-
-**Then just work.** Ask for the thing you want and the right skill loads itself:
-
-```text
-&quot;Design a notification component with all states and accessibility&quot;
-&quot;Build the billing settings screen, one shared theme, light and dark&quot;
-&quot;/grill-me&quot;      interrogate the brief before anything is built
-&quot;/gate&quot;          run all 52 checks and report the real N/N
-&quot;/critique&quot;      hand the result to a critic that argues for rejection
-```
-
-If the skills do not show up straight away, start a new session. To check what
-is loaded, update, or remove it:
-
-```bash
-claude plugin details ux-ui-agent-skills    # inventory + token cost per skill
-claude plugin update  ux-ui-agent-skills
-claude plugin uninstall ux-ui-agent-skills
-claude plugin marketplace remove ux-ui-agent-skills
-```
-
-### See it first, install nothing
-
-```bash
-npx ux-ui-agent-skills demo        # copies the rendered examples and opens them
-```
-
-Every page it opens is a page the gates measure. Delete the folder afterwards;
-nothing was installed. Or skip the copy entirely and use the
-[live demo](https://plugin87.github.io/ux-ui-agent-skills/).
-
-### Option B — Use it from any MCP client
-
-```bash
-claude mcp add ux-ui-gates -- npx -y --package=ux-ui-agent-skills ux-ui-mcp
-```
-
-Six tools: `list_gates`, `run_gate`, `review_ui`, `get_doctrine`,
-`get_design_system`, `get_tokens`. Read the doctrine and the tokens before
-generating, run the gates on what you produced after.
-
-`AGENTS.md` already lets any agent **read** the doctrine. This lets any MCP
-client **run the 52 gates**, which reading cannot do — plenty of things can
-describe good UI, very little can tell you afterwards that the contrast you
-shipped is 3.9:1 on hover.
-
-It returns what the gates printed, unedited, with their exit codes: 0 looked and
-found nothing, 1 found something, **2 could not look** — never a pass. No SDK
-dependency; the protocol is implemented directly so `&quot;dependencies&quot;: {}` stays
-true. Details in [docs/MCP.md](docs/MCP.md).
-
-### Option C — Install with Homebrew
-
-```bash
-brew install plugin87/tap/ux-ui-agent-skills
-ux-ui-skills init                   # CLAUDE.md + .claude/ skills, rules, hooks
-ux-ui-skills init --agent codex     # AGENTS.md, for Codex, Cursor, Copilot, Aider
-```
-
-Same npm tarball the `npx` route runs, so this is a convenience rather than a
-second product that can drift. The formula is generated from the registry and
-its `test do` block asserts the installed CLI reports the version the formula
-names, and that `--agent codex` writes `AGENTS.md` without `CLAUDE.md` or
-`.claude/`. Details in [docs/HOMEBREW.md](docs/HOMEBREW.md).
-
-### Option D — Install with `npx`
-
-Drop the kit into any project, no clone needed:
-
-```bash
-npx ux-ui-agent-skills init          # full kit into the current folder
-npx ux-ui-agent-skills add tokens taste design-systems   # just some areas
-npx ux-ui-agent-skills list          # see all areas
-```
-
-Flags: `--force` (overwrite existing files) · `--dry` (preview, change nothing).
-
-Working on the kit itself, or want it vendored? [Clone and copy](docs/GUIDE.md#install-from-a-clone) instead.
-
-**Then start using** — open the project in **Claude Code** or any Claude-powered IDE. `CLAUDE.md` loads automatically, activating the agent persona with full access to every tokens / components / taste / design-system file and the runnable `/skills`.
-
-&lt;details&gt;
-&lt;summary&gt;&lt;b&gt;Example prompts&lt;/b&gt;&lt;/summary&gt;
-
-&lt;br&gt;
-
-```text
-&quot;Design a notification component with all states and accessibility&quot;
-&quot;Review this login page against WCAG 2.2 and Nielsen&#039;s heuristics&quot;
-&quot;Generate React + Tailwind code for a data table with sorting and pagination&quot;
-&quot;Create a color token palette for a fintech brand using blue as the primary&quot;
-&quot;Audit this form for accessibility issues — give me a prioritized findings table&quot;
-&quot;Write the empty state and error copy for the onboarding flow&quot;
-&quot;Spec the motion for the modal open/close with reduced-motion fallback&quot;
-```
-
-&lt;/details&gt;
-
----
-
-## Proving It, and Admitting What Cannot Be Proven
-
-
-The kit ships **52 objective gates** behind one command:
-
-```bash
-node scripts/accuracy_report.mjs     # 52/52 or it fails — no partial credit
-```
-
-**34 of them open a real browser, so they need one installed.** Playwright is not
-pulled in by `/plugin install` or `npx ux-ui-agent-skills init`, so run this once
-in the kit directory before expecting a full score:
-
-```bash
-npm install                          # playwright
-npx playwright install chrome        # real Chrome: six gates 
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[michael-denyer/pstack-claude]]></title>
-            <link>https://github.com/michael-denyer/pstack-claude</link>
-            <guid>https://github.com/michael-denyer/pstack-claude</guid>
-            <pubDate>Tue, 20 Oct 2026 00:06:11 GMT</pubDate>
-            <description><![CDATA[Claude Code, Codex, Copilot, Pi, OpenCode, Gemini, and Prime Agent versions of Poteto's pstack. Rigorous agent workflows with Cursor primitives translated for other harnesses.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/michael-denyer/pstack-claude">michael-denyer/pstack-claude</a></h1>
-            <p>Claude Code, Codex, Copilot, Pi, OpenCode, Gemini, and Prime Agent versions of Poteto's pstack. Rigorous agent workflows with Cursor primitives translated for other harnesses.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 3,073</p>
-            <p>Forks: 292</p>
-            <p>Stars today: 119 stars today</p>
-            <h2>README</h2><pre># pstack
-
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-yellow?logo=buy-me-a-coffee&amp;logoColor=white)](https://buymeacoffee.com/codenyer)
-
-Lauren Tan&#039;s [pstack](https://github.com/cursor/plugins/tree/main/pstack) is an opinionated Cursor skill stack that improves agent outcomes. This is a port for Claude Code, Codex, Pi, GitHub Copilot and other agent harnesses. It tracks upstream and also carries named policy forks, each declared in [`tools/forks.json`](tools/forks.json).
-
-Tell `poteto-mode` your goal and it will invoke the correct workflow for the task. It keeps your code concise, simple and verified.
-
-For concurrency bugs and invariants that tests cannot reach, `/create-formal-verification-skill` picks the riskiest property in your code, verifies it with a tool that fits, and leaves a project skill the next agent reruns. The separate [agent-formal-verify](https://github.com/michael-denyer/agent-formal-verify) plugin goes deeper on the method, with guided TLA+ model checking, Lean proofs, and Kani for Rust.
-
-## Install
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Claude Code&lt;/strong&gt;&lt;/summary&gt;
-
-Run in Claude Code:
-
-```text
-/plugin marketplace add michael-denyer/pstack-claude
-/plugin install pstack@pstack-claude
-```
-
-&lt;/details&gt;
-
-&lt;a id=&quot;codex&quot;&gt;&lt;/a&gt;
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Codex&lt;/strong&gt;&lt;/summary&gt;
-
-Run in your terminal:
-
-```shell
-codex plugin marketplace add michael-denyer/pstack-claude
-codex plugin add pstack@pstack-claude
-```
-
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Pi&lt;/strong&gt;&lt;/summary&gt;
-
-Run in your terminal:
-
-```shell
-pi install git:github.com/michael-denyer/pstack-claude
-```
-
-The package loads the skills and the pstack Pi extension, which adds the subagent, question, and wake-up tools the skills use, plus `/loop` and the routing instruction. Invoke a skill with `/skill:&lt;name&gt;`.
-
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;GitHub Copilot&lt;/strong&gt;&lt;/summary&gt;
-
-Run in your terminal:
-
-```shell
-copilot plugin marketplace add michael-denyer/pstack-claude
-copilot plugin install pstack@pstack-claude
-```
-
-This installs pstack for the Copilot CLI and the GitHub Copilot app, which share `~/.copilot`. Start a new session afterwards. Copilot ships no default pstack models, so the first skill that needs one runs `setup-pstack` to pick from the models your account lists, and later sessions reuse that choice.
-
-The Copilot build is tested on Copilot CLI 1.0.87 through 1.0.92. On those versions the routing hook&#039;s context reaches the session alongside other plugins&#039; session-start context. If a later version keeps only one plugin&#039;s context, `setup-pstack` offers a [standing instruction](plugins/pstack/skills/setup-pstack/copilot.md#wire-it-in) for `~/.copilot/copilot-instructions.md` instead. On 1.0.92, once the CLI caches its computer-use experiment assignment, `copilot -p` sessions list no plugin skills and a `skill` call returns &quot;Skill not found&quot;. Interactive sessions, the hooks, and the agents are unaffected.
-
-&lt;/details&gt;
-
-&lt;a id=&quot;other-harnesses&quot;&gt;&lt;/a&gt;
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Other harnesses&lt;/strong&gt;&lt;/summary&gt;
-
-OpenCode (the CLI and the desktop app), Gemini CLI, Prime Agent, and skills-only Codex installs read skills from `~/.agents/skills/`. Run in your terminal:
-
-```shell
-git clone https://github.com/michael-denyer/pstack-claude
-cd pstack-claude
-mkdir -p ~/.agents/skills
-for s in plugins/pstack/skills/*/; do
-  target=~/.agents/skills/&quot;$(basename &quot;$s&quot;)&quot;
-  test -e &quot;$target&quot; || test -L &quot;$target&quot; || ln -s &quot;$(pwd)/$s&quot; &quot;$target&quot;
-done
-```
-
-To update, run `git pull` in the clone, then run the `for` loop again to link skills added since the last run. These installs have no routing hook, so ask for `poteto-mode` by name or add a standing instruction to the harness&#039;s instruction file. See [shared installation](docs/reference.md#shared-skills-installation) for per-harness notes and uninstalling.
-
-&lt;/details&gt;
-
-### Configure
-
-pstack routes tasks to `poteto-mode` automatically. At session start, a hook injects an instruction that points the agent at it: the plugin&#039;s hook on Claude Code, Codex, and GitHub Copilot, and the pstack extension on Pi. Codex runs the hook only after you trust it through `/hooks`. Other harnesses have no hook.
-
-Run `setup-pstack` to turn automatic routing on or off, change model defaults, or set a reasoning effort per role (`arena runners: opus @xhigh, fable @max`).
-
-## Getting started
-
-```text
-Use poteto-mode to fix the search filter resetting when I change pages.
-```
-
-For a bug, it reproduces the failure, uses `how` and `why` to investigate, delegates the fix, then reruns the failing case. If the fix crosses a function boundary, it brings in `architect` before implementation. You receive the fix and the failing and passing evidence.
-
-[Other playbooks](plugins/pstack/skills/poteto-mode/SKILL.md#playbooks) cover planning, features, refactoring, performance issues, investigations, prototypes, PR maintenance, shipping, and longer projects.
-
-![poteto-mode on Claude Code, Codex, and Pi turns a request into verified work. Choose a playbook, plan and delegate with architect, arena, or swarm, then review and verify with interrogate, tests, and measurements. Project playbooks customize the workflow, and setup-pstack configures the model and reasoning effort per role. Supporting skills include how, why, and unslop.](assets/pstack-overview.png)
-
-## Details
-
-- [Skills and slash commands](docs/reference.md#slash-commands)
-- [Runtime setup](docs/reference.md#runtime-support)
-- [Models and dependencies](docs/reference.md#configuration-and-dependencies)
-- [Maintenance and port scope](docs/reference.md#maintenance)
-
-## Data handling
-
-pstack has no server or telemetry. Anything its skills ask your agent to read, including session transcripts, goes to your model provider. Scripts run locally, and PR tools use your GitHub CLI login.
-
-## Contributing
-
-Thanks for helping make this port better. Bug reports, documentation fixes, and runtime improvements are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the checks and where your change belongs. Report vulnerabilities privately as described in [SECURITY.md](SECURITY.md).
-
-To support maintenance of this port, [buy the maintainer a coffee](https://buymeacoffee.com/codenyer).
-
-## License
-
-This port, including its modifications and additions, is also [MIT-licensed](LICENSE), © 2026 Michael Denyer. Original pstack © 2026 Lauren Tan; imported cursor-team-kit and thermos skills © 2026 Cursor. See [LICENSE-cursor-team-kit](LICENSE-cursor-team-kit), [LICENSE-thermos](LICENSE-thermos), and [NOTICE.md](NOTICE.md).
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[YuJunZhiXue/dsh-purge]]></title>
-            <link>https://github.com/YuJunZhiXue/dsh-purge</link>
-            <guid>https://github.com/YuJunZhiXue/dsh-purge</guid>
-            <pubDate>Tue, 20 Oct 2026 00:06:10 GMT</pubDate>
-            <description><![CDATA[DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/YuJunZhiXue/dsh-purge">YuJunZhiXue/dsh-purge</a></h1>
-            <p>DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 8,796</p>
-            <p>Forks: 1,485</p>
-            <p>Stars today: 1,168 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;docs/banner.svg&quot; alt=&quot;dsh-purge&quot; width=&quot;720&quot;&gt;
-&lt;/p&gt;
-
-&lt;h1 align=&quot;center&quot;&gt;⚔️ DeepSeek Harness 网络安全红队工具（dsh-purge）&lt;/h1&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;strong&gt;Version 1.1.71&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;em&gt;DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分&lt;/em&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/YuJunZhiXue/dsh-purge/stargazers&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/stars/YuJunZhiXue/dsh-purge?logo=github&amp;label=Stars&quot; alt=&quot;GitHub stars&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/YuJunZhiXue/dsh-purge/blob/master/LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/license-Commercial-c45c26?style=flat&quot; alt=&quot;Commercial license&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://awesome-dsh-plugin.com&quot;&gt;&lt;img src=&quot;https://awesome-dsh-plugin.com/badge.svg&quot; alt=&quot;awesome · DSH plugin&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://deepseek.stream/plugins/dsh-purge&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Hub-dsh--purge-1a73e8&quot; alt=&quot;DeepSeek Harness Hub&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://www.deepseek.com/harness/&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/dsh-0.2.0--rc.2%20%2F%200.2.1--rc.2-blue&quot; alt=&quot;DSH&quot;&gt;&lt;/a&gt;
-  &lt;br&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/Node.js-%3E%3D18-339933?logo=node.js&amp;logoColor=fff&quot; alt=&quot;Node.js&quot;&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&amp;logoColor=000&quot; alt=&quot;JavaScript&quot;&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://dsh-plugin.org/plugins/yujunzhixue/dsh-purge&quot;&gt;&lt;img src=&quot;https://dsh-plugin.org/badges/listed.svg&quot; alt=&quot;Listed on dsh-plugin.org&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;README.md&quot;&gt;&lt;strong&gt;中文&lt;/strong&gt;&lt;/a&gt; · &lt;a href=&quot;README.en.md&quot;&gt;English&lt;/a&gt;
-&lt;/p&gt;
-
-&gt; 我直说。
-&gt;
-&gt; 我被裁了。现在彻底没工作，也没有稳定收入。这个仓库一直是我业余在写。后面为了吃饭，我可能得去跑外卖，不一定还能天天改这个。
-&gt;
-&gt; **从今天起到 2026 年 10 月 26 日，我征集七天。** 想留、想骂、想投广告、想赞助，写到 [Issue #130](https://github.com/YuJunZhiXue/dsh-purge/issues/130)。我会看。不保证每条都回。
-&gt;
-&gt; **10 月 27 日起，我把这个仓库关上。** GitHub 上我不再发新版本。后面的包我只发在这个频道：[t.me/LLM_PoJia/271](https://t.me/LLM_PoJia/271)。你们手里已经下过的旧版本还能用。协议我也改了，现在是商业许可，下面有写。
-
-&gt; **官方 Web 和官方桌面端都支持。** 官方 `dsh web` 用 profile `web`；官方桌面 EXE（DeepSeek Harness **0.2.0-rc.2 / 0.2.1-rc.2**）用 profile `desktop`。两边分开安装、分开点「应用」。当前版本只适配 dsh 0.2；更早的 dsh 用对应的老版本插件。社区桌面端不维护。
-&gt;
-&gt; 写进 profile 还不会改宿主。点会话标题旁的 **dsh-purge** → **清洗** → **应用**。成功会自动重启；补丁没打完不重启。重启后新开一轮对话，注入才进当前会话。
-&gt;
-&gt; Node.js **≥18**。Windows 无闪窗需要 **Node ≥22**。npm 上没有 `dsh-purge` 这个包，安装请走下面的 GitHub 归档，不要 `pnpm add dsh-purge`。
-
-## 目录
-
-- [赞助](#sponsor)
-- [广告位](#ad)
-- [介绍](#介绍)
-- [署名要求](#署名要求)
-- [许可证](#许可证)
-- [违规商用公示](#违规商用公示)
-- [适配范围](#适配范围)
-- [安装](#安装)
-- [界面](#界面预览)
-- [使用](#使用)
-- [自己的服务器](#自己的服务器)
-- [工作原理](#工作原理)
-- [还原](#还原)
-- [更新](#更新)
-
----
-
-&lt;a id=&quot;sponsor&quot;&gt;&lt;/a&gt;
-
-## ☕ 赞助
-
-这个项目要是帮到你了，欢迎打赏。我是讨口子，施舍点~
-
-
-| 资产          | 地址                                             |
-| ----------- | ---------------------------------------------- |
-| USDT（TRC20） | `TV5ajPkRD8RH623Dx9mqvYZVNN8nPGRKid`           |
-| Solana      | `6x16GhRgLVpKFFXaU1seKNdx2rypspSJTL4dbpt6Xpwk` |
-| Ethereum    | `0xB68BD60C0e8c519513B7DF9bB147696815423B3E`   |
-| Bitcoin     | `bc1qu70yxkrtwnymt8ryluz9x8y8hqzune5340npht`   |
-
----
-
-&lt;a id=&quot;ad&quot;&gt;&lt;/a&gt;
-
-## 广告位
-
-这个 README 一直有人看。我现在开放一点广告位，钱用来贴补我自己维护。
-
-| 位置 | 状态 |
-| --- | --- |
-| 本页赞助区上方（文字链 + 一句介绍，或一张小图） | **空缺，可定** |
-
-名额少。谈妥了我再挂上去。灰产、盗版、冒充我这个仓库、纯引流盘，我不接。
-
-要合作发邮件 [a2269198325@163.com](mailto:a2269198325@163.com)，或 GitHub [@YuJunZhiXue](https://github.com/YuJunZhiXue) 私信。标题写「dsh-purge 广告位」。
-
-这七天也是最后一轮公开征集。我想说的话写在这里：[关于此项目的一些表达！！！征集帖 #130](https://github.com/YuJunZhiXue/dsh-purge/issues/130)。截止 **2026 年 10 月 26 日**。过了这天我闭源，新版本只走 [频道](https://t.me/LLM_PoJia/271)。
-
----
-
-## 介绍
-
-这是我写的插件。装在你本机官方 [DeepSeek Harness](https://www.deepseek.com/harness/) 上，用来做网络安全红队评测。官方 **Web**（`dsh web`）和官方 **桌面端**（EXE）我都支持，两边你要分开装、分开点「应用」。
-
-Harness 不只是把问题交给模型。它还会在运行时改提示词、审批门、沙箱和会话格式。只看「模型答不答」，会把宿主拦截误当成模型拒绝。我这个插件在你自己的安装里把这两层分开，用来做受控评测，也用来看默认策略该不该收紧。
-
-
-| 你会用到             | 它做什么                                            |
-| ---------------- | ----------------------------------------------- |
-| **dsh-purge 侧栏** | 会话标题旁的按钮打开右侧栏。里面两页：清洗、演练台                       |
-| **清洗**           | 分组查看补丁，应用、还原、卸载；编辑提示词和多套规则                      |
-| **演练台**          | 正式版内置。授权后查看资产、技能和本机环境。只用于你有权管理的本机、离线靶标或已书面授权的演练 |
-| **宿主策略**         | 调整默认文案、权限策略和工具上限。官方能力保留，不另写一套身份                 |
-| **启动时**          | 自动再检查并应用。npm 升级盖掉 `node_modules` 之后不用手改文件       |
-
-
-不写死盘符。按 `$DSH_HOME`、dsh 启动器旁边的 `.dsh`，再退回 `~/.dsh`。不改 Harness 源码仓库，在 **dsh-purge** 的「清洗」里点「应用」才写入。身份来自插件里的加密提示词，也就是提示词框默认显示的那一份。不读取宿主磁盘上的提示词文件。
-
-我这个插件只动你本机已经装好的官方 `@deepseek-ai` 包和本机配置。它不是公网扫描器，也不是打别人站点的套件。仓库里没有木马，也没有对外攻击载荷。
-
----
-
-## 📌 自己装自己用可以。拿去卖、卖课、白标，先找我买[商业许可](./LICENSE-COMMERCIAL.md)。
-
-## 署名要求
-
-你要用我这个项目的名字、思路、代码或提示词，必须写我的名字，并写明来源仓库：[YuJunZhiXue/dsh-purge](https://github.com/YuJunZhiXue/dsh-purge)。
-
-不署名、藏来源、改头换面当自己的，我会追究。
-
----
-
-## 许可证
-
-这一版开始，正本是我写的 [商业软件许可](./LICENSE)。我保留所有权利。**这不是开源协议，也不是 MIT。**
-
-| 你要做的事 | 怎么走 |
-| --- | --- |
-| 已经拿到的包装到自己电脑上用 | 可以，见 [LICENSE](./LICENSE) |
-| 付费卖插件 / 卖课 / 白标 / 给别人当产品 | 先找我买授权，[LICENSE-COMMERCIAL.md](./LICENSE-COMMERCIAL.md) |
-| 换证前那些 Git tag / 旧 tgz | 当时是 MIT，发出去的我收不回来 |
-| 10 月 27 日之后的新版本 | 我只在 [t.me/LLM_PoJia/271](https://t.me/LLM_PoJia/271) 发 |
-
-写过代码的人，谢谢你们。后面我不再把 GitHub 当开源仓库来更新了。
-
----
-
-## 违规商用公示
-
-抖音直播账号 **「老张的ai」**（直播间显示 **「老张AI讲堂」**）把我这个仓库当收费货卖：直播间问价、当场收钱，不署名，还自称作者。我人就在场，对方照收。
-
-商业许可不允许把仓库当收费货卖。卖课、卖插件、卖 token、倒卖，要先找我买授权；否则许可当场终止。旧 MIT tag 我收不回来，但冒充我、不署名，我照样追。
-
-2026-10-12 直播记录：
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;docs/notice/laozhang-live-1.jpg&quot; width=&quot;360&quot; alt=&quot;老张的ai 直播问价&quot;&gt;
-  &lt;img src=&quot;docs/notice/laozhang-live-2.jpg&quot; width=&quot;360&quot; alt=&quot;老张的ai 直播收钱&quot;&gt;
-&lt;/p&gt;
-
-对方微信名 **「老张的ai科技」**，直播间观众榜同号。被问到是不是这个仓库的开发者时，自称「老厉害了」；我当场说要投诉。
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;docs/notice/laozhang-wechat-1.jpg&quot; width=&quot;420&quot; alt=&quot;老张的ai科技 微信自称开发者&quot;&gt;
-&lt;/p&gt;
-
----
-
-### ⚠️ 严正法律免责与合规使用声明
-
-
-
-**免责声明：** 我按商业许可提供这个插件。以前在 GitHub 上用过 MIT，现在改了，而且马上闭源。遵守国家法律法规及所在平台规范。不得用于违法违规用途；后果你自己承担。
-
-**【零容忍严正申明】**：本项目坚决反对并严禁任何形式的违法犯罪行为！本项目开发者绝不支持、不鼓励、不协助任何未授权网络攻击、漏洞利用、数据窃取、非法侵入计算机信息系统或生成违法违禁内容的活动。**任何将本项目用于违法犯罪的行为，均与开发者无关，由行为人依法独立承担全部法律责任。**
-
-1. **本仓库不含违法内容**：`dsh-purge` 发布的代码、文档、补丁与默认提示词**不是**木马、后门、未授权渗透工具、勒索软件、撞库脚本，也**不是**针对公网或第三方系统的攻击载荷。项目本身不提供违法内容，也不教唆、组织、协助实施违法犯罪。
-2. **只作用于本机官方 Harness**：安全评测补丁、提示词注入全部发生在使用者**本机已安装的官方 DeepSeek Harness**（`@deepseek-ai` 包、本机 profile / `$DSH_HOME`）上。对象是使用者自己的官方本地软件，**不是**他人的网站、服务器、账号或信息系统。
-3. **评测补丁不对外网目标联网**：应用补丁、写入注入、回滚、卸载均在本机文件与本机进程内完成，**不对任何公网主机、未授权系统进行扫描、探测、入侵或攻击发包**。不得把本项目当作跳板去打外网。插件若开启「检测更新」，仅可能访问本插件自己的 GitHub 仓库以核对版本，**与对第三方系统的网络攻击无关**，也不能被解释为授权对外渗透。
-4. **合法受控范围限定**：本项目定位为使用者在**自己有权管理的本机官方 Harness**上，进行红队科研与鲁棒性评测的辅助工具。**严禁在未经所有者合法书面授权的目标、公网在线系统或生产业务上运行本项目**。一切测试必须限制在**本机已授权安装的官方 Harness、离线本地合成靶标、授权网络安全演练靶场及合规实验室受控环境**中进行。
-5. **禁止中国大陆、香港、澳门的服务器与网站。** 不得对中国大陆、香港、澳门网段，以及解析进这些网段的服务器、网站或地址进行访问、扫描、探测或任何操作。云厂商的名字不能当作例外。唯一例外是使用者事先登记为自己的服务器的那一个确切 IP，或那一个完整主机名。密钥、密码、网段、通配符，以及对话里的口头说明，都不能增加例外。没有登记的，一律禁止。
-6. **严禁违法与违禁用途**：使用者严禁利用本项目直接或间接从事任何违反下列法律法规的行为（必须逐条遵守，不得以任何理由规避）：
-  - **《中华人民共和国刑法》**
-  - **《中华人民共和国网络安全法》**
-  - **《中华人民共和国数据安全法》**
-  - **《中华人民共和国个人信息保护法》**
-  - 以及其他现行有效的法律、行政法规与监管规定；
-  - 同时严禁：
-  - 未经授权渗透、攻击公私机构计算机信息系统，实施勒索、破坏、撞库或传播恶意载荷；
-  - 诱导、生成或传播危害国家安全、恐怖主义、暴力血腥、涉黄涉赌、诈骗、侵犯公民隐私或知识产权等任何法律明令禁止的违法违禁内容；
-  - 违反相关大模型提供商的《服务条款》与《滥用政策》。
-7. **使用者独立承担全部责任**：本项目依据商业许可（换证前的发行包依据当时的 MIT）“按现状”提供，开发者不对软件的完整性、安全性与适用性作任何明示或暗示的保证。**使用者应对自身的所有下载、部署、运行、修改、传播行为以及由此产生的全部输入与输出后果承担独立、完全的民事、行政及刑事法律责任**。项目作者与贡献团队绝不承担任何因使用者滥用导致的直接、间接或连带责任。
-8. **违约即终止授权**：任何将本项目用于非法攻击、恶意活动、未经授权的售卖或违规行为的个人或实体，其使用许可将自该行为发生之日起**自动且不可撤销地立即终止**。该主体须立即停止使用并永久销毁本项目的所有代码、脚本与衍生数据，并依法承担相应法律制裁。
-9. **第三方独立性声明**：本项目属于完全独立的安全评测研究项目，与 DeepSeek 官方或其关联主体无任何隶属、商业合作、授权或官方背书关系。文中「官方」仅指评测对象为使用者本机安装的官方 DeepSeek Harness 软件包，**不代表** DeepSeek 官方开发、认可或担保本插件。
-10. **必须署名**：借用本项目的名称、思路、代码或提示词，必须署名并标明本仓库。不署名将依法追究责任。详见 [署名要求](#署名要求)。
-
-
-
-
-
----
-
-## 适配范围
-
-最新版只支持 **dsh 0.2**，不要拿它去打 0.1.x。
-
-- **dsh 0.2**（官方桌面 **0.2.0-rc.2 / 0.2.1-rc.2** / 官方 `dsh web`）：用 **1.1.40** 及以上。本页命令装的就是这一档。
-- **dsh 0.1.7**（含 rc.1 / rc.2）：用 **1.1.39** 及更早 —— 在 [Releases](https://github.com/YuJunZhiXue/dsh-purge/releases) 里选对应标签。
-
-对不上的补丁会显示待应用或跳过，不会乱改文件。
-
----
-
-## 安装
-
-现在只维护官方 `dsh web` 和官方桌面 EXE，**两边都要装、分开应用**。Web 的包进不了桌面端，桌面端的包也进不了 Web。
-
-**Web（官方 `dsh web`）**
-
-```sh
-dsh plugin --profile web add https://github.com/YuJunZhiXue/dsh-purge/archive/refs/heads/master.tar.gz
-```
-
-**桌面端（官方 EXE）**
-
-```sh
-dsh plugin --profile desktop add https://github.com/YuJunZhiXue/dsh-purge/archive/refs/heads/master.tar.gz
-```
-
-当前目录已经是本仓库时，把归档地址换成 `add .`。`dsh` 不在 PATH 时走 [手动安装](#manual)。
-
-[插件市场](https://dsh-plugin.org/plugins/yujunzhixue/dsh-purge) 一键若仍去拉 npm 包名会 404，用上面的 GitHub 归档命令。桌面客户端也可以点按钮（`dsh://` 唤起，下载地址已是 GitHub）：
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;dsh://plugin/install?id=dsh-purge&amp;name=dsh-purge&amp;version=1.1.71&amp;repo=YuJunZhiXue%2Fdsh-purge&amp;permissions=%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%2C%E6%9C%AC%E6%9C%BA%E8%A1%A5%E4%B8%81%2C%E8%AE%BE%E7%BD%AE%E9%A1%B5&amp;downloadUrl=https%3A%2F%2Fgithub.com%2FYuJunZhiXue%2Fdsh-purge%2Farchive%2Frefs%2Fheads%2Fmaster.tar.gz&quot;&gt;&lt;strong&gt;唤起客户端一键安装&lt;/strong&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-### 装完都要做这三步
-
-只把插件写进 profile **还不会**改 `@deepseek-ai`。
-
-1. **退出并重新打开**刚装的那个宿主：Web 关掉 `dsh web` 再开；桌面端退出托盘再打开对应 exe。
-2. 在**这个宿主**点会话标题旁的 **dsh-purge**，在 **清洗** 页点 **「应用」**。宿主的设置页里没有这个条目。
-3. 「应用」成功后会自动重启一次，让补丁进入当前进程。没做完不会重启。
-
-Web 的控件只动 Web，桌面端的只动桌面应用。不要在一个宿主里点另一个宿主的应用。
-
-### 怎样算装上了
-
-- 会话标题旁有 **dsh-purge**，点开后在「清洗」里能点「应用」。
-- 聊天里 `/purge status` 能打出 `DSH_HOME` 和补丁列表，路径应是你正在用的那一份。
-- 没装的可选包（例如梁神）显示跳过，不挡住应用完成。
-
-### 交给助手安装
-
-把下面整段发给本机助手。它只执行安装命令：不要全盘搜索、不要改其它文件、不要代点「应用」、不要重启。
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;给 AI 助手（只安装）&lt;/strong&gt;&lt;/summary&gt;
-
-&lt;!-- AI-AGENT-START --&gt;
-
-安装 DeepSeek Harness 插件 `dsh-purge`，Web 和官方桌面端都要装。不要全盘搜索，不要读或改其它文件，不要应用设置，也不要重启应用。
-
-`dsh` 不在 PATH 就告诉用户后停止。当前目录已是本仓库时，把下面两条里的归档地址都换成 `.`。某个 profile 不存在就跳过那一条，另一条照装。npm 上没有这个包，不要 `pnpm add dsh-purge`。
-
-**Web 端（官方 `dsh web`）**
-
-```sh
-dsh plugin --profile web add https://github.com/YuJunZhiXue/dsh-purge/archive/refs/heads/master.tar.gz
-```
-
-**桌面端（官方 EXE）**
-
-```sh
-dsh plugin --profile desktop add https://github.com/YuJunZhiXue/dsh-purge/archive/refs/heads/master.tar.gz
-```
-
-命令结束后，提醒用户：Web 完全退出并重启 `dsh web`；桌面端退出托盘再打开 EXE。各自点会话标题旁的 **dsh-purge**，在「清洗」里点「应用」。然后停止。
-
-&lt;!-- AI-AGENT-END --&gt;
-
-&lt;/details&gt;
-
-&lt;a id=&quot;manual&quot;&gt;&lt;/a&gt;
-
-### 手动安装
-
-命令行装不上、或 `dsh` 不在 PATH 时用这个。只改**正在用的那个宿主**对应的 profile，不要动另一个，也不要删原有 bundle。
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;完整手动步骤&lt;/strong&gt;&lt;/summary&gt;
-
-**1. 找到真正在用的 `$DSH_HOME`。** 认目录：名字是 `.dsh`（官方 EXE 偶见 `dsh-home`），里面有 `profiles`，且至少有一个 `profiles/&lt;名&gt;/package.json`。按顺序找：`DSH_HOME` 环境变量 → 安装根旁边的 `.dsh`（便携包）→ `%USERPROFILE%\.dsh` 或 `~/.dsh` → `%APPDATA%` / `%LOCALAPPDATA%\DeepSeek Harness\dsh-home`。确认：`profiles/web/package.json` 里 `&quot;name&quot;` 是 `dsh-profile-web`（桌面是 `dsh-profile-desktop`）。本机常有两份 `.dsh`，要用你**实际启动**的那个宿主对应的那份。
-
-Windows PowerShell 列候选：
-
-```powershell
-$cands = @()
-if ($env:DSH_HOME) { $cands += $env:DSH_HOME }
-$cands += &quot;$env:USERPROFILE\.dsh&quot;
-$dsh = Get-Command dsh -ErrorAction SilentlyContinue
-if ($dsh) {
-  $dir = Split-Path $dsh.Source
-  $cands += @((Join-Path $dir &quot;.dsh&quot;), (Join-Path (Split-Path $dir) &quot;.dsh&quot;), (Join-Path (Split-Path (Split-Path $dir)) &quot;.dsh&quot;))
-}
-$cands += @(&quot;$env:APPDATA\DeepSeek Harness\dsh-home&quot;, &quot;$env:LOCALAPPDATA\DeepSeek Harness\dsh-home&quot;)
-$cands | Select-Object -Unique | Where-Object { $_ -and (Test-Path (Join-Path $_ &quot;profiles&quot;)) }
-```
-
-**2. 把插件放到 `$DSH_HOME/plugins/dsh-purge`**（目录名必须是 `dsh-purge`，其 `package.json` 里 `&quot;name&quot;` 也必须是 `dsh-purge`）。
-
-```sh
-git clone https://github.com/YuJunZhiXue/dsh-purge.git &quot;$DSH_HOME/plugins/dsh-purge&quot;
-```
-
-没有 git：下载 [master.tar.gz](https://github.com/YuJunZhiXue/dsh-purge/archive/refs/heads/master.tar.gz)，解压后把 `dsh-purge-master` 改名为 `dsh-purge`，整夹放到 `plugins` 下。已有本仓库副本就复制整个目录，不要只拷几个 `.js`。
-
-**3. 只改对应 profile 的 `package.json`，先备份。** Web → `$DSH_HOME/profiles/web/package.json`；桌面 → `$DSH_HOME/profiles/desktop/package.json`。**只追加两处**，原有依赖和 bundle 全部留着：
-
-1. `dependencies` 增加 `&quot;dsh-purge&quot;: &quot;file:../../plugins/dsh-purge&quot;`
-2. `dsh.profile.bundles` **末尾**追加 `&quot;dsh-purge&quot;`（已有就不要再加）
-
-```json
-{
-  &quot;name&quot;: &quot;dsh-profile-web&quot;,
-  &quot;private&quot;: true,
-  &quot;dependencies&quot;: {
-    &quot;dsh-purge&quot;: &quot;file:../../plugins/dsh-purge&quot;
-  },
-  &quot;dsh&quot;: {
-    &quot;profile&quot;: {
-      &quot;bundles&quot;: [
-        &quot;@deepseek-ai/dsh-base&quot;,
-        &quot;@deepseek-ai/dsh-web-app&quot;,
-        &quot;dsh-purge&quot;
-      ],
-      &quot;patchReload&quot;: &quot;live&quot;
-    }
-  }
-}
-```
-
-JSON 要合法（新增项前面有逗号，最后一项后面没有多余逗号）。`file:../../plugins/dsh-purge` 不要改成绝对路径，`patchReload`、其它插件、版本号都不要动，`&quot;dsh-purge&quot;` 不要写两次。桌面端没有 `dsh-web-app` 就不要硬加。
-
-**4. 只在刚改的那个 profile 目录装依赖**（`cd` 进 profile 目录，不要在仓库根或 `$DSH_HOME` 根）：
-
-```sh
-cd &quot;$DSH_HOME/profiles/web&quot;   # 或 profiles/desktop
-pnpm install
-```
-
-成功标志：出现 `profiles/&lt;web|desktop&gt;/node_modules/dsh-purge/package.json`。找不到 `pnpm` 就用官方 `dsh` 自带的 Node / pnpm；报 `Could not resolve` 就检查 `file:` 路径；JSON 解析失败就修逗号或还原备份。
-
-**5. 完全退出该宿主，再启动，再点「应用」** —— 和上面三步一样。按钮会出现在会话标题旁，只在这个宿主点「应用」（或 `/purge apply`）。没出现多半是改错了另一份 `.dsh`，回到第 1 步核对。
-
-&lt;/details&gt;
-
-### 卸载
-
-会话标题旁的 **dsh-purge** →「清洗」→「卸载」。弹窗确认：会先还原已应用的补丁，还原回原版 Harness，再重启当前宿主。
-
-```sh
-# 也可以用命令行 / 聊天
-dsh-purge --uninstall
-# /purge uninstall
-```
-
-插件配置在 `cordis.patch.yml`（`postPrompt` 默认为空）：
-
-```yaml
-- insert:
-    - id: dsh-purge
-      name: &#039;dsh-purge&#039;
-      config:
-        enabled: true
-        autoApplyOnStart: true
-        autoUpdateOnStart: false
-        autoRevertOnMissing: false
-        verbose: false
-        postPromptOrder: 5100
-        postPrompt: &quot;&quot;
-```
-
----
-
-## 界面预览
-
-会话标题旁有 **dsh-purge**。点开是右侧栏，两页：**清洗** 和 **演练台**。白 / 墨可切换。补丁按组展开，进度只计真正已应用的项。规则集在上方列表启用或删除，下方编辑正文。
-
-第一次进演练台要先读声明、等倒计时、滚到文末并勾选三项。清洗不需要这一步。演练台只用于你有权管理的本机、离线靶标，或已经书面授权的演练环境。
-
-**清洗**
-
-![清洗](docs/preview/dock-clean.png)
-
-**演练台授权**
-
-![演练台授权](docs/preview/dock-auth.png)
-
-**演练台**
-
-![演练台](docs/preview/dock-drill.png)
-
-**补丁**
-
-![补丁](docs/preview/settings.png)
-
-**规则集**
-
-![规则集](docs/preview/rules.png)
-
-**自己的服务器**
-
-在清洗页，提示词下面。每行一台，点保存名单。步骤见 [自己的服务器](#自己的服务器)。
-
-![自己的服务器](docs/preview/own-servers.png)
-
-
-| 区域        | 说明                                                                                                         |
-| --------- | ---------------------------------------------------------------------------------------------------------- |
-| dsh-purge | 会话标题旁的按钮，打开或收起右侧栏                                                                                          |
-| 清洗        | 原来的规则设定：补丁、提示词、规则集、Skill                                                                                   |
-| 演练台       | 授权后的资产、技能与环境页。未授权时按钮标「未授权」                                                                                 |
-| 补丁        | 分组查看状态，应用、还原或卸载                                                                                            |
-| 提示词       | 编辑 `prompt-inject.md`，作为会话覆盖段                                                                              |
-| 自己的服务器    | 每行登记一个 IP 或完整主机名，保存后写入 `$DSH_HOME/net-scope-allow.txt`                                                     |
-| 规则集       | 多套 `AGENTS.md` / `CLAUDE.md`；启用写入 `$DSH_HOME`，删除从列表去掉                                                      |
-| Skill     | 导入压缩包或文件夹到当前宿主官方目录 `$DSH_HOME/skills/&lt;id&gt;/SKILL.md`（Web / 桌面各用自己的主目录，不写死盘符）；命中、加载、`/名称` 由 DSH 负责。也可自己删该文件夹 |
-
-
----
-
-## 目录结构
-
-`bin/` 是命令行，`lib/` 是补丁和演练台，`presets/redteam/` 是红队预设，`skills/redteam/` 是随包技能，`client.js` 是侧栏。
-
-运行时文件在 `$DSH_HOME`：`prompt-inject.md`、`rules/`、`skills/`、`net-scope-allow.txt`、`redteam/`。未设 `DSH_HOME` 时，优先用 dsh 安装目录旁边的 `.dsh`，再退回 `~/.dsh`。Web 和桌面端各用自己那一份主目录。Skill 不进注入段，也不顶替提示词。
-
----
-
-## 使用
-
-```sh
-# CLI
-dsh-purge --status
-dsh-purge --apply
-dsh-purge --revert
-dsh-purge --uninstall
-dsh-purge --edit
-
-# 聊天
-/purge status | apply | revert | uninstall | edit | help
-/rules list | use &lt;id&gt; | create &lt;id&gt; | delete &lt;id&gt; | reset | help
-/skills list | import &lt;压缩包或文件夹&gt; | create &lt;id&gt; [说明] | delete &lt;id&gt; | help
-/rewind
-
-# 模型工具
-purge_status   purge_apply   purge_revert
-```
-
-设置页「应用」成功后会自动重启，以加载已改的包文件；也可手动点「重启」。补丁标题下有正式版和测试版。测试版跟 `beta` 分支。点「切换到正式版」会装回 master，并清掉钉选。正式版里选旧版本会固定在该版本，要回到最新再点「更新」。旧的测试标签不再列出。
-
-输入框旁的「回退一次」和「回退上一轮」跟官方 DSH `session.fork({ atSeq })`：撤回已进行的那一轮，新会话接上之前的上下文，旧会话归档，那句回到输入框，再发送会重新注入。聊天里 `/rewind` 同样可用。
-
-**极简 / PTC 与标准不一致时**：同一任务在标准模式能跑、在极简或 PTC 被拦，通常是 preset 里 `run_code` 或 plan 拦截句没洗净，或内置 minimal 缺少 `agent-instructions`。请升到 **1.1.61+**，**完全退出宿主 → 清洗里应用 → 自动重启 → 新开一轮对话** 再试；只换 preset 不重应用，旧进程里的补丁不会更新。
-
-### 响应速度
-
-DSH 会按顺序执行同一批中的 Bash 调用。旧版 dsh-purge 把默认前台等待从 60 秒提高到了 10 分钟，一条慢命令会让后续调用一起等待。补丁 #21 现在把带插件标记的旧值恢复为官方的 60 秒。无标记的等待时间和其他自定义值会保留；无标记的 10 分钟无法可靠地区分是插件旧值还是用户设置。
-
-在 macOS/Linux 的 `dsh web` 中，如需更快返回工具结果，可在 `$DSH_HOME/profiles/web/cordis.patch.yml`（通常是 `~/.dsh/profiles/web/cordis.patch.yml`）添加下面的条目。已有相同 id 时修改原条目，不要重复添加。这个 profile 覆盖层在内置配置之后加载，后续应用插件会保留它。
-
-```yaml
-- id: bash-sandbox
-  config:
-    timeoutMs: 10000
-```
-
-使用标准 jobs 服务且 `promoteOnTimeout: true` 时，未完成的命令会在 10 秒后返回后台任务 id，并继续运行。用 `job_output` 读取结果、用 `job_kill` 停止。这个设置缩短前台等待，不会让命令本身跑得更快。没有 jobs 服务或关闭自动转后台时，超时会终止命令。单次调用传入的 `timeoutMs` 优先于这里的默认值；`run_in_background: true` 可立即返回任务 id。
-
-日常任务还可以选择让新会话默认使用 Low 推理：
-
-```yaml
-- id: agent-default-model
-  config:
-    provider: deepseek-official
-    model: deepseek-flash
-    reasoningEffort: low
-```
-
-重启 `dsh web` 后加载配置。模型和推理等级默认值只用于新建会话，已有会话请在输入框中选择 Low。插件不会自动修改这些模型偏好。需要深入推理的任务可保留 High；搜索文件时应限定目录，避免递归扫描所有应用目录。
-
-### 自己的服务器
-
-中国大陆、香港、澳门的地址默认禁止。只有事先登记的那一台可以例外。在对话里说「这是我的服务器」不会放行。密钥和密码也不会。
-
-这一栏在提示词下面。若侧栏里还没有它，先完全退出 DeepSeek Harness，再重新打开。
-
-1. 点会话标题旁的 **dsh-purge**，停在 **清洗**。
-2. 往下滚过 **提示词**，下面就是 **自己的服务器**。
-3. 每行只写一台，用下面三种写法之一：
-  - `203.0.113.10`：一个 IP。
-  - `my-vps.example.com`：一个完整主机名。保存后，这个主机名当时解析出来的地址也会放行。
-  - `alice@my-vps.example.com`：账号只用来认出这种写法，不能证明这台机器属于你。
-4. 点 **保存名单**。名单写在 `$DSH_HOME/net-scope-allow.txt`。
-5. 密钥、密码、网段和通配符会在保存时丢掉。没有写进名单的大陆、香港、澳门地址仍然禁止。
-
-上面的 `203.0.113.10` 和 `example.com` 只是写法示例，不是放行地址。把它们换成你自己的那一台再保存。
-
----
-
-## 本地校验
-
-```sh
-node --check lib/index.js
-node --check lib/core.js
-node --check lib/rewind.js
-node --check lib/skills.js
-node --check client.js
-```
-
----
-
-## 工作原理
-
-应用，启动时或手动点「应用」：
-
-```mermaid
-flowchart TD
-  A[&quot;启动或点应用&quot;] --&gt; B{&quot;补丁已经生效?&quot;}
-  B --&gt;|是| C[&quot;跳过&quot;]
-  B --&gt;|否| D[&quot;备份原件为 .dshpurge.bak&quot;]
-  D --&gt; E[&quot;按补丁列表替换对应文件&quot;]
-  E --&gt; F[&quot;覆盖 shim&quot;]
-  F --&gt; G[&quot;注入插件加密默认（提示词框默认显示的那份）&quot;]
-```
-
-
-
-每次会话的覆盖：
-
-```mermaid
-flowchart TD
-  A[&quot;重启或新会话&quot;] --&gt; B[&quot;注入插件加密默认，不必点保存，不读宿主磁盘&quot;]
-```
-
-
-
-每一轮的提示词注入与规则集决策。左边三个输入就是你在 dsh-purge 面板里控制的东西，虚线表示它们各自驱动哪一步判定：
-
-```mermaid
-flowchart TD
-  L[&quot;规则库：启用某个规则集 → 写入 prompt-inject.md&quot;]
-  W[&quot;本地规则：勾选当前目录的 AGENTS.md / CLAUDE.md&quot;]
-  P[&quot;工作区策略：strict / fallback / always&quot;]
-
-  A[&quot;新一轮开始&quot;] --&gt; B{&quot;prompt-inject.md 非空?&quot;}
-  B --&gt;|是| C[&quot;注入 = prompt-inject.md (A)&quot;]
-  B --&gt;|否| D{&quot;当前目录有被勾选且非空的本地 md?&quot;}
-  D --&gt;|是| E[&quot;注入 = 被勾选的 workspace md (B)&quot;]
-  D --&gt;|否| F[&quot;注入 = 插件加密 slot 默认值 (D)&quot;]
-  C --&gt; G{&quot;Workspace baseline 策略 (C)&quot;}
-  E --&gt; G
-  F --&gt; G
-  G --&gt;|strict| H[&quot;去掉 DSH workspace baseline 段&quot;]
-  G --&gt;|fallback 默认| I{&quot;上面有用户注入内容? (A 或 B)&quot;}
-  G --&gt;|always| J[&quot;保留 DSH workspace baseline 段&quot;]
-  I --&gt;|是| H
-  I --&gt;|否| J
-  H --&gt; K[&quot;最终系统提示词&quot;]
-  J --&gt; K
-
-  L -.-&gt; B
-  W -.-&gt; D
-  P -.-&gt; G
-```
-
-
-
-Skill 不进注入段：
-
-```mermaid
-flowchart LR
-  A[&quot;设置页导入或 /skills import&quot;] --&gt; B[&quot;写到官方 skills 目录&quot;]
-  B --&gt; C[&quot;由 DSH 加载&quot;]
-  C --&gt; D[&quot;卸载插件不删用户 Skill&quot;]
-```
-
-
-
----
-
-## 还原
-
-- 每个目标文件在应用前备份为 `&lt;文件&gt;.dshpurge.bak`。
-- 「还原」或 `/purge revert` 用备份覆盖回去并删除备份；没有备份时去掉 shim 里由本插件写入的行。
-- `prompt-inject.md` 是用户文件，还原时保留。
-- 「卸载」会先还原（若已应用），再删除注入文件、规则库和插件本身。
-- 重复应用是幂等的。
-
----
-
-## 路径探测
-
-宿主面先判断 `web` / `desktop`（预留 `gui` / `tui`，尚未单独适配时回退 web）。
-
-**Web：**
-
-1. `DSH_HOME` / `DSH_BASE`
-2. dsh 启动器旁的 `.dsh`
-3. `npm prefix -g` / `npm root -g`
-4. 嵌套 `@deepseek-ai/dsh/node_modules/@deepseek-ai`
-5. 系统默认 `~/.dsh`
-
-**官方桌面：** 只改当前正在运行的官方桌面安装。点「应用」成功后会自动重启一次。社区桌面端不维护。
-
-找不到目标时提示设置 `DSH_BASE`，不改文件。
-
----
-
-## 更新
-
-**2026 年 10 月 26 日前：** 这一版的说明和包还在我这个仓库 / [Releases](https://github.com/YuJunZhiXue/dsh-purge/releases)。
-
-**10 月 27 日起：** GitHub 上我不再发新包。后续版本只以 [t.me/LLM_PoJia/271](https://t.me/LLM_PoJia/271) 为准。频道里没有的，就不是我发的。
-
-## 说明
-
-- 改动范围是本机 `@deepseek-ai/*` 包里的渲染文案、默认策略和执行逻辑，以及用户目录下的覆盖文件与规则集。
-- 升级后原文对不上会显示跳过，这次应用仍算完成，不会乱改。
-- 不改动非 `@deepseek-ai` 的第三方插件源仓库（启动时的 CMD 无感会**尽力**修补已装的 doctor / market / 梁神 / mnemon，属运行时补丁）。
-- 10 月 26 日前安装还可走 GitHub 归档，不要 npm 包名：`dsh plugin --profile web add https://github.com/YuJunZhiXue/dsh-purge/archive/refs/heads/master.tar.gz`（桌面端把 profile 换成 `des
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
@@ -1675,15 +136,15 @@ flowchart LR
             <title><![CDATA[DietrichGebert/ponytail]]></title>
             <link>https://github.com/DietrichGebert/ponytail</link>
             <guid>https://github.com/DietrichGebert/ponytail</guid>
-            <pubDate>Tue, 20 Oct 2026 00:06:09 GMT</pubDate>
+            <pubDate>Wed, 21 Oct 2026 00:05:57 GMT</pubDate>
             <description><![CDATA[Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/DietrichGebert/ponytail">DietrichGebert/ponytail</a></h1>
             <p>Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 168,090</p>
-            <p>Forks: 9,140</p>
-            <p>Stars today: 1,007 stars today</p>
+            <p>Stars: 169,606</p>
+            <p>Forks: 9,223</p>
+            <p>Stars today: 1,208 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
   &lt;picture&gt;
     &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;assets/logo-dark.png&quot;&gt;
@@ -1914,18 +375,708 @@ You know exactly why.
             <category>JavaScript</category>
         </item>
         <item>
+            <title><![CDATA[withmarbleapp/os-taxonomy]]></title>
+            <link>https://github.com/withmarbleapp/os-taxonomy</link>
+            <guid>https://github.com/withmarbleapp/os-taxonomy</guid>
+            <pubDate>Wed, 21 Oct 2026 00:05:56 GMT</pubDate>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/withmarbleapp/os-taxonomy">withmarbleapp/os-taxonomy</a></h1>
+            <p></p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 6,630</p>
+            <p>Forks: 1,061</p>
+            <p>Stars today: 585 stars today</p>
+            <h2>README</h2><pre># Marble Skill Taxonomy
+
+An open, structured taxonomy of **what children learn** across the primary/elementary years — decomposed into fine-grained &quot;micro-topics&quot;, wired into a prerequisite graph, and aligned to national curriculum standards. Produced by [Marble](https://withmarble.com).
+
+&gt; **Version:** `v1` · **Topics:** 1,616 · **Prerequisite edges:** 3,317 · **Subjects:** 8
+
+## See it
+
+![The taxonomy as a rotating 3D graph: every dot a micro-topic, colored by subject, wired by prerequisites](media/curriculum-viz.gif)
+
+Every dot is a micro-topic, colored by subject; height is age; each thread is a prerequisite ([full-quality video](media/curriculum-viz.mp4)). Explore it interactively at [withmarble.com/curriculum](https://withmarble.com/curriculum) — tap any concept to trace everything a learner must master before it.
+
+
+## What this is
+
+Most curriculum data is either a flat list of standards or locked inside a product. This dataset is a **connected graph of learning**:
+
+- **1,616 micro-topics** — a single, teachable idea (e.g. *&quot;Building sentences&quot;*, *&quot;Apparent brightness of stars&quot;*), each with a plain-language description, mastery **evidence** criteria, a type (conceptual / procedural / representational / language / meta), a subject + domain, and an approximate age range.
+- **3,317 prerequisite dependencies** — a directed acyclic graph: *&quot;topic X depends on prerequisite Y&quot;*, each edge tagged `hard`/`soft` and carrying a one-line **reason**.
+- **Curriculum alignment** — each micro-topic links to the standards it was distilled from (NGSS, Common Core, the UK National Curriculum, and more).
+- **Teaching research** — 1,049 records covering Science and Mathematics topics: teaching approaches, concrete learning activities, feedback, assessment guidance and linked sources. Coverage is partial; the other 567 topics have no research in this release.
+- **Domain clusters** — 176 parent-friendly one-paragraph summaries per (subject, domain, age band).
+
+### Subjects
+
+| Subject | Topics |
+|---|---:|
+| Science | 547 |
+| Mathematics | 529 |
+| English | 286 |
+| History | 90 |
+| Personal &amp; Social Development | 88 |
+| Life Skills | 37 |
+| Computing | 21 |
+| Learning to Learn | 18 |
+
+## Files
+
+All data lives in [`data/`](data/) as UTF-8 JSON. See [`schema/`](schema/) for JSON Schemas and [`manifest.json`](data/manifest.json) for counts + SHA-256 checksums.
+
+| File | What it holds |
+|---|---|
+| [`data/topics.json`](data/topics.json) | The micro-topics (graph **nodes**). |
+| [`data/dependencies.json`](data/dependencies.json) | Prerequisite **edges** (`topicId` depends on `prerequisiteId`). |
+| [`data/curriculum-standards.json`](data/curriculum-standards.json) | The source curriculum standards, grouped by curriculum. |
+| [`data/clusters.json`](data/clusters.json) | Parent-friendly domain summaries. |
+| [`data/teaching-research.json`](data/teaching-research.json) | Teaching research joined by `topicId`, with explicit coverage and publication notes (~24 MB). |
+| [`data/archived-teaching-research.json`](data/archived-teaching-research.json) | Historical guidance for merged or refocused topics, with original records and current topic associations. |
+| [`data/manifest.json`](data/manifest.json) | Counts, per-subject breakdown, per-file checksums. |
+
+The standards catalogue includes **620 Australian Curriculum v9 Foundation–Year 6
+content descriptions** (`acara-v9`), bringing it to **8 sources / 3,881 standards**.
+Australian coverage includes English, Mathematics, Science, HASS, Health and
+Physical Education, Digital Technologies, and Design and Technologies. Arts,
+Languages, elaborations and achievement standards are outside this contribution.
+Australian Mathematics now has 370 topic alignments: 95 of its 139 standards
+are fully covered, 37 partly covered, and 7 missing. The
+[coverage report](reports/acara-v9-maths-coverage.md) lists every standard, linked
+topic and remaining gap.
+
+Australian English has 540 topic alignments across 185 existing topics: 110 of
+its 189 standards are fully covered, 76 partly covered, and 3 missing. Its
+[coverage report](reports/acara-v9-english-coverage.md) names the remaining gaps,
+including Australian literature, digital and multimodal texts, and consonant
+clusters. Other Australian subjects currently have source standards only.
+See [PROVENANCE.md](PROVENANCE.md) for sources and attribution.
+
+### A topic
+
+```json
+{
+  &quot;id&quot;: &quot;mt_N8CpN1EJrP&quot;,
+  &quot;type&quot;: &quot;CONCEPTUAL&quot;,
+  &quot;subject&quot;: &quot;English&quot;,
+  &quot;domain&quot;: &quot;Grammar &amp; Punctuation&quot;,
+  &quot;name&quot;: &quot;Building sentences&quot;,
+  &quot;description&quot;: &quot;Understand that words combine to make sentences — a sentence expresses a complete thought…&quot;,
+  &quot;ageRangeStart&quot;: 4,
+  &quot;ageRangeEnd&quot;: 6,
+  &quot;centrality&quot;: 0.257,
+  &quot;evidence&quot;: [
+    &quot;Distinguish between complete sentences and fragments&quot;,
+    &quot;Compose a complete sentence with a subject and verb&quot;
+  ],
+  &quot;assessmentPrompt&quot;: &quot;If {{name}} says something like \&quot;The dog\&quot;, can they tell you that&#039;s not a complete sentence…?&quot;,
+  &quot;standards&quot;: [&quot;ccss-ela:L.K.1f&quot;, &quot;uk-nc-2013:Eng.App2.Y1.Sent.1&quot;]
+}
+```
+
+- `id` — stable identifier (`mt_…`), referenced by dependencies and by neighbours.
+- `standards` — keys into `curriculum-standards.json` (`&quot;&lt;curriculum-slug&gt;:&lt;code&gt;&quot;`).
+- `assessmentPrompt` — a natural-language check for the idea. Contains a `{{name}}` placeholder (the child&#039;s name); substitute or strip before display.
+
+### A dependency
+
+```json
+{ &quot;topicId&quot;: &quot;mt__00ZSLnB7p&quot;, &quot;prerequisiteId&quot;: &quot;mt_VBl1T1sFCM&quot;, &quot;strength&quot;: &quot;hard&quot;,
+  &quot;reason&quot;: &quot;Must understand vibrations make sound before finding volume patterns&quot; }
+```
+
+`topicId` **depends on** `prerequisiteId`. Reverse the edge to get &quot;unlocks&quot;.
+
+## Teaching research
+
+[`data/teaching-research.json`](data/teaching-research.json) adds **how a topic
+might be taught** to the graph of what children learn. It covers **547 Science**
+and **502 Mathematics** topics. `coverage.missingTopicIds` and per-subject counts
+make the **567 topics without research** explicit; absence is not a judgement
+about whether a topic can be taught.
+
+[`archived-teaching-research.json`](data/archived-teaching-research.json) preserves two historical records excluded from active coverage after a topic merge and a change in learning scope. Each entry includes the original topic and research record, its archive reason, and related current topic IDs. The archive also records the assessment prerequisite reference redirected after the merge.
+
+The active `teaching-research.json` file has `schemaVersion: 1` and taxonomy `version: &quot;v1&quot;`. Each `records[]`
+entry joins `topics.json` through `topicId` and contains:
+
+| Field | Meaning |
+|---|---|
+| `pedagogy` | Original teaching summary, practices, representations and misconceptions. |
+| `learn` | Portable learning guidance (`schemaVersion: 2`): a summary, activities, educational constraints and review notes. |
+| `learn.activities[]` | Learner actions, intended insight, feedback, rationale and supporting source claims. No product artifact types or fit rankings. |
+| `assess` | Original diagnostic/task, response levels, error patterns and next teaching moves; nullable in the public interface. |
+| `sources` | Claim, named source, optional URL and the original author&#039;s verification flag. |
+| `confidence` | Original authoring confidence; not an independent quality score. |
+| `provenance` | Original authoring model and source record timestamps. The update timestamp also reflects the learning-guidance rewrite. |
+| `publicationNotes` | Paths and curriculum codes for text omitted under the codes-only publication policy. |
+
+`sourceClaims` exactly match `sources[].claim` after publication transformations.
+A source may support a general principle or curriculum alignment; this does not
+mean the proposed activity was tested. Some activities have no directly linked
+source claim.
+
+These records were agent-authored. The learning guidance was rewritten for
+portability, checked by a separate factual critic, and sampled by a second agent.
+Most original pedagogy and assessment were retained and may contain claims that
+the updated guidance qualifies; chart-specific alignment repairs after #30 are
+recorded in the affected learning-guidance review notes; read the constraints and review notes alongside
+them. Sources were **not re-fetched or re-verified** for this release. Historical
+`verified: true` and `confidence: &quot;high&quot;` are not new evidence ratings. Activities
+are research-informed proposals, **not empirically validated interventions**.
+
+Some original research quoted restricted curriculum standards. Matched passages
+are replaced with inline curriculum references, including inside citation claims;
+all transformed paths are listed in `publicationNotes`. This is a conservative
+mechanical omission pass, not comprehensive rights clearance. Consult the linked
+upstream sources for their wording and terms. See [PROVENANCE.md](PROVENANCE.md).
+
+After the chart split in [#30](https://github.com/withmarbleapp/os-taxonomy/pull/30),
+`mt_bESTSBB0wK` covers pie charts, `mt_H6LlpWgEYS` covers earlier line-graph
+problem-solving, and `mt_HlNSurPVDp` has a separate construction-and-interpretation
+record. The new record adapts existing graph research; it is not a fresh
+literature review, and all reused source-verification flags are false. Its
+assessment requires a complete constructed graph. The later grouped-charts
+assessment routes graph-choice errors to data presentation and sector-angle
+errors to pie charts.
+
+The file is bound to the exact `topics.json` bytes through `topicFileSha256`.
+Regenerate the research projection when the canonical topic file changes, even
+when topic IDs remain stable.
+
+## Using it
+
+Pure data — no runtime, no dependencies. Load the JSON and go.
+
+```js
+import topics from &#039;./data/topics.json&#039; with { type: &#039;json&#039; };
+import deps from &#039;./data/dependencies.json&#039; with { type: &#039;json&#039; };
+
+const byId = new Map(topics.topics.map(t =&gt; [t.id, t]));
+const prereqs = deps.dependencies
+  .filter(d =&gt; d.topicId === &#039;mt_N8CpN1EJrP&#039;)
+  .map(d =&gt; byId.get(d.prerequisiteId).name);
+```
+
+Join teaching guidance to a topic:
+
+```js
+import research from &#039;./data/teaching-research.json&#039; with { type: &#039;json&#039; };
+
+const guidanceByTopic = new Map(research.records.map(r =&gt; [r.topicId, r]));
+const guidance = guidanceByTopic.get(&#039;mt_N8CpN1EJrP&#039;); // undefined: English is not covered yet
+const activities = guidance?.learn.activities ?? [];
+```
+
+Validate structure, research coverage, evidence links and checksums:
+
+```bash
+node scripts/validate.mjs
+node --test scripts/teaching-research.test.mjs
+```
+
+## License
+
+This dataset is **multi-licensed** — read this before you use or redistribute it.
+
+| Layer | License |
+|---|---|
+| **The database** — the collection, structure, IDs, topic↔topic and topic↔standard relationships | [**ODbL 1.0**](LICENSE) — free for research **and** commercial use, **attribution** required, **share-alike** (derivative *databases* must stay open under ODbL). |
+| **The textual content Marble authored** — topic `description`/`name`/`evidence`/`assessmentPrompt`, dependency `reason`s, cluster `summary`s, original teaching-research prose | [**CC BY-SA 4.0**](LICENSE-CONTENT) — same spirit: attribution + share-alike. |
+| **`curriculum-standards.json`** — extracted from third-party frameworks | **Not** Marble&#039;s to relicense. Each source is under **its own upstream license** — see [**PROVENANCE.md**](PROVENANCE.md). |
+
+**Why share-alike + still commercial-friendly:** ODbL distinguishes a *derivative database* (extend/modify the taxonomy → must stay open) from a *produced work* (use it inside a product, model, or app → stays yours). So you can build a commercial product on this without open-sourcing your product; you only owe back improvements to the *taxonomy itself*.
+
+### Attribution
+
+Any use must credit:
+
+&gt; Marble Skill Taxonomy (v1) · © Generative Spark, Inc. (Marble) · https://withmarble.com · licensed under ODbL 1.0 (database) and CC BY-SA 4.0 (content).
+
+Plus the upstream notices in [PROVENANCE.md](PROVENANCE.md) for any curriculum standards you use. See [CITATION.cff](CITATION.cff) for a formal citation.
+
+## What&#039;s *not* here
+
+Deliberately excluded from this release: semantic embeddings (derived, recomputable) and any per-child / user data (never published). See [CHANGELOG.md](CHANGELOG.md).
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[nodejs/node]]></title>
+            <link>https://github.com/nodejs/node</link>
+            <guid>https://github.com/nodejs/node</guid>
+            <pubDate>Wed, 21 Oct 2026 00:05:55 GMT</pubDate>
+            <description><![CDATA[Node.js JavaScript runtime ✨🐢🚀✨]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/nodejs/node">nodejs/node</a></h1>
+            <p>Node.js JavaScript runtime ✨🐢🚀✨</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 122,481</p>
+            <p>Forks: 39,836</p>
+            <p>Stars today: 62 stars today</p>
+            <h2>README</h2><pre># Node.js
+
+Node.js is an open-source, cross-platform JavaScript runtime environment.
+
+For information on using Node.js, see the [Node.js website][].
+
+The Node.js project uses an [open governance model](./GOVERNANCE.md). The
+[OpenJS Foundation][] provides support for the project.
+
+Contributors are expected to act in a collaborative manner to move
+the project forward. We encourage the constructive exchange of contrary
+opinions and compromise. The [TSC](./GOVERNANCE.md#technical-steering-committee)
+reserves the right to limit or block contributors who repeatedly act in ways
+that discourage, exhaust, or otherwise negatively affect other participants.
+
+**This project has a [Code of Conduct][].**
+
+## Table of contents
+
+* [Support](#support)
+* [Release types](#release-types)
+  * [Download](#download)
+    * [Current and LTS releases](#current-and-lts-releases)
+    * [Nightly releases](#nightly-releases)
+    * [API documentation](#api-documentation)
+  * [Verifying binaries](#verifying-binaries)
+* [Building Node.js](#building-nodejs)
+* [Security](#security)
+* [Contributing to Node.js](#contributing-to-nodejs)
+* [Current project team members](#current-project-team-members)
+  * [TSC (Technical Steering Committee)](#tsc-technical-steering-committee)
+  * [Collaborators](#collaborators)
+  * [Triagers](#triagers)
+  * [Release keys](#release-keys)
+* [License](#license)
+
+## Support
+
+Looking for help? Check out the
+[instructions for getting support](.github/SUPPORT.md).
+
+## Release types
+
+Node.js follows [semantic versioning](https://semver.org).
+
+* **Alpha**: Under active development where semver-major changes are allowed.
+  Each October, a new release line (for example, Node.js 27) branches off `main`
+  and receives Alpha releases (for example, `27.0.0-alpha.0.0.0`) for 6 months,
+  then are promoted to Current (see below) each April. Alpha releases are signed,
+  tagged, and tested through [CITGM](https://github.com/nodejs/citgm), but their
+  API and ABI may change between releases. They are intended for library authors
+  and CI pipelines, not for production use.
+* **Current**: Under active development, no semver-major changes allowed. Node.js
+  releases a new major version once a year, in April. Releases stay Current for
+  6 months, then convert to LTS (see below) each October. Their ABI may change
+  between releases. They are intended for library authors and CI pipelines, not
+  for production use.
+* **LTS**: Releases under Long Term Support, with a focus on stability
+  and security. Only changes that have been on Alpha or Current release for two
+  weeks can be backported to a typical LTS release. Every major version becomes an LTS
+  release, and receives 30 months of LTS support, for a total of 36 months from
+  its first Current release to End-of-Life. LTS release lines have alphabetically-ordered
+  code names, beginning with Node.js 4 Argon.
+* **Nightly**: Code from the `main` branch built every 24-hours when there are
+  changes. Unlike Alpha releases, nightly builds are automated and untested.
+  Use with caution.
+
+Release lines up to and including Node.js 26 follow the previous schedule, where a
+new major version was released every 6 months and only even-numbered major
+versions became LTS. See the
+[Node.js release schedule announcement](https://nodejs.org/en/blog/announcements/evolving-the-nodejs-release-schedule)
+for details.
+
+For more information, see the
+[Release README](https://github.com/nodejs/Release#readme).
+
+### Download
+
+Binaries, installers, and source tarballs are available at
+&lt;https://nodejs.org/en/download/&gt;.
+
+#### Current and LTS releases
+
+&lt;https://nodejs.org/download/release/&gt;
+
+The [latest](https://nodejs.org/download/release/latest/) directory is an
+alias for the latest Current release. The latest-_codename_ directory is an
+alias for the latest release from an LTS line. For example, the
+[latest-hydrogen](https://nodejs.org/download/release/latest-hydrogen/)
+directory contains the latest Hydrogen (Node.js 18) release.
+
+#### Nightly releases
+
+&lt;https://nodejs.org/download/nightly/&gt;
+
+Each directory and filename includes the version (e.g., `v22.0.0`),
+followed by the UTC date (e.g., `20240424` for April 24, 2024),
+and the short commit SHA of the HEAD of the release (e.g., `ddd0a9e494`).
+For instance, a full directory name might look like `v22.0.0-nightly20240424ddd0a9e494`.
+
+#### API documentation
+
+Documentation for the latest Current release is at &lt;https://nodejs.org/api/&gt;.
+Version-specific documentation is available in each release directory in the
+_docs_ subdirectory. Version-specific documentation is also at
+&lt;https://nodejs.org/download/docs/&gt;.
+
+### Verifying binaries
+
+Download directories contain a `SHASUMS256.txt.asc` file with SHA checksums for the
+files and the releaser PGP signature.
+
+You can get a trusted keyring from nodejs/release-keys, e.g. using `curl`:
+
+```bash
+curl -fsLo &quot;/path/to/nodejs-keyring.kbx&quot; &quot;https://github.com/nodejs/release-keys/raw/HEAD/gpg/pubring.kbx&quot;
+```
+
+Alternatively, you can import the releaser keys in your default keyring, see
+[Release keys](#release-keys) for commands on how to do that.
+
+Then, you can verify the files you&#039;ve downloaded locally
+(if you&#039;re using your default keyring, pass `--keyring=&quot;${GNUPGHOME:-~/.gnupg}/pubring.kbx&quot;`):
+
+```bash
+curl -fsO &quot;https://nodejs.org/dist/${VERSION}/SHASUMS256.txt.asc&quot; \
+&amp;&amp; gpgv --keyring=&quot;/path/to/nodejs-keyring.kbx&quot; --output SHASUMS256.txt &lt; SHASUMS256.txt.asc \
+&amp;&amp; shasum --check SHASUMS256.txt --ignore-missing
+```
+
+## Building Node.js
+
+See [BUILDING.md](BUILDING.md) for instructions on how to build Node.js from
+source and a list of supported platforms.
+
+## Security
+
+For information on reporting security vulnerabilities in Node.js, see
+[SECURITY.md](./SECURITY.md).
+
+## Contributing to Node.js
+
+* [Contributing to the project][]
+* [Working Groups][]
+* [Strategic initiatives][]
+* [Technical values and prioritization][]
+
+## Current project team members
+
+For information about the governance of the Node.js project, see
+[GOVERNANCE.md](./GOVERNANCE.md).
+
+&lt;!-- node-core-utils and find-inactive-tsc.mjs depend on the format of the TSC
+     list. If the format changes, those utilities need to be tested and
+     updated. --&gt;
+
+### TSC (Technical Steering Committee)
+
+#### TSC voting members
+
+&lt;!--lint disable prohibited-strings--&gt;
+
+* [aduh95](https://github.com/aduh95) -
+  **Antoine du Hamel** &lt;&lt;duhamelantoine1995@gmail.com&gt;&gt; (he/him)
+* [anonrig](https://github.com/anonrig) -
+  **Yagiz Nizipli** &lt;&lt;yagiz@nizipli.com&gt;&gt; (he/him)
+* [benjamingr](https://github.com/benjamingr) -
+  **Benjamin Gruenbaum** &lt;&lt;benjamingr@gmail.com&gt;&gt;
+* [BridgeAR](https://github.com/BridgeAR) -
+  **Ruben Bridgewater** &lt;&lt;ruben@bridgewater.de&gt;&gt; (he/him)
+* [gireeshpunathil](https://github.com/gireeshpunathil) -
+  **Gireesh Punathil** &lt;&lt;gpunathi@in.ibm.com&gt;&gt; (he/him)
+* [jasnell](https://github.com/jasnell) -
+  **James M Snell** &lt;&lt;jasnell@gmail.com&gt;&gt; (he/him)
+* [joyeecheung](https://github.com/joyeecheung) -
+  **Joyee Cheung** &lt;&lt;joyeec9h3@gmail.com&gt;&gt; (she/her)
+* [legendecas](https://github.com/legendecas) -
+  **Chengzhong Wu** &lt;&lt;legendecas@gmail.com&gt;&gt; (he/him)
+* [marco-ippolito](https://github.com/marco-ippolito) -
+  **Marco Ippolito** &lt;&lt;marcoippolito54@gmail.com&gt;&gt; (he/him)
+* [mcollina](https://github.com/mcollina) -
+  **Matteo Collina** &lt;&lt;matteo.collina@gmail.com&gt;&gt; (he/him)
+* [panva](https://github.com/panva) -
+  **Filip Skokan** &lt;&lt;panva.ip@gmail.com&gt;&gt; (he/him)
+* [RafaelGSS](https://github.com/RafaelGSS) -
+  **Rafael Gonzaga** &lt;&lt;rafael.nunu@hotmail.com&gt;&gt; (he/him)
+* [RaisinTen](https://github.com/RaisinTen) -
+  **Darshan Sen** &lt;&lt;raisinten@gmail.com&gt;&gt; (he/him)
+* [richardlau](https://github.com/richardlau) -
+  **Richard Lau** &lt;&lt;richard.lau@ibm.com&gt;&gt;
+* [ronag](https://github.com/ronag) -
+  **Robert Nagy** &lt;&lt;ronagy@icloud.com&gt;&gt;
+* [ruyadorno](https://github.com/ruyadorno) -
+  **Ruy Adorno** &lt;&lt;ruy@vlt.sh&gt;&gt; (he/him)
+* [ShogunPanda](https://github.com/ShogunPanda) -
+  **Paolo Insogna** &lt;&lt;paolo@cowtech.it&gt;&gt; (he/him)
+* [tniessen](https://github.com/tniessen) -
+  **Tobias Nießen** &lt;&lt;tniessen@tnie.de&gt;&gt; (he/him)
+
+#### TSC regular members
+
+* [BethGriggs](https://github.com/BethGriggs) -
+  **Beth Griggs** &lt;&lt;bethanyngriggs@gmail.com&gt;&gt; (she/her)
+* [bnoordhuis](https://github.com/bnoordhuis) -
+  **Ben Noordhuis** &lt;&lt;info@bnoordhuis.nl&gt;&gt;
+* [cjihrig](https://github.com/cjihrig) -
+  **Colin Ihrig** &lt;&lt;cjihrig@gmail.com&gt;&gt; (he/him)
+* [codebytere](https://github.com/codebytere) -
+  **Shelley Vohr** &lt;&lt;shelley.vohr@gmail.com&gt;&gt; (she/her)
+* [GeoffreyBooth](https://github.com/GeoffreyBooth) -
+  **Geoffrey Booth** &lt;&lt;webadmin@geoffreybooth.com&gt;&gt; (he/him)
+* [MoLow](https://github.com/MoLow) -
+  **Moshe Atlow** &lt;&lt;moshe@atlow.co.il&gt;&gt; (he/him)
+* [Trott](https://github.com/Trott) -
+  **Rich Trott** &lt;&lt;rtrott@gmail.com&gt;&gt; (he/him)
+
+&lt;details&gt;
+
+&lt;summary&gt;TSC emeriti members&lt;/summary&gt;
+
+#### TSC emeriti members
+
+* [addaleax](https://github.com/addaleax) -
+  **Anna Henningsen** &lt;&lt;anna@addaleax.net&gt;&gt; (she/her)
+* [apapirovski](https://github.com/apapirovski) -
+  **Anatoli Papirovski** &lt;&lt;apapirovski@mac.com&gt;&gt; (he/him)
+* [ChALkeR](https://github.com/ChALkeR) -
+  **Сковорода Никита Андреевич** &lt;&lt;chalkerx@gmail.com&gt;&gt; (he/him)
+* [chrisdickinson](https://github.com/chrisdickinson) -
+  **Chris Dickinson** &lt;&lt;christopher.s.dickinson@gmail.com&gt;&gt;
+* [danbev](https://github.com/danbev) -
+  **Daniel Bevenius** &lt;&lt;daniel.bevenius@gmail.com&gt;&gt; (he/him)
+* [danielleadams](https://github.com/danielleadams) -
+  **Danielle Adams** &lt;&lt;adamzdanielle@gmail.com&gt;&gt; (she/her)
+* [evanlucas](https://github.com/evanlucas) -
+  **Evan Lucas** &lt;&lt;evanlucas@me.com&gt;&gt; (he/him)
+* [fhinkel](https://github.com/fhinkel) -
+  **Franziska Hinkelmann** &lt;&lt;franziska.hinkelmann@gmail.com&gt;&gt; (she/her)
+* [Fishrock123](https://github.com/Fishrock123) -
+  **Jeremiah Senkpiel** &lt;&lt;fishrock123@rocketmail.com&gt;&gt; (he/they)
+* [gabrielschulhof](https://github.com/gabrielschulhof) -
+  **Gabriel Schulhof** &lt;&lt;gabrielschulhof@gmail.com&gt;&gt;
+* [gibfahn](https://github.com/gibfahn) -
+  **Gibson Fahnestock** &lt;&lt;gibfahn@gmail.com&gt;&gt; (he/him)
+* [indutny](https://github.com/indutny) -
+  **Fedor Indutny** &lt;&lt;fedor@indutny.com&gt;&gt;
+* [isaacs](https://github.com/isaacs) -
+  **Isaac Z. Schlueter** &lt;&lt;i@izs.me&gt;&gt;
+* [joshgav](https://github.com/joshgav) -
+  **Josh Gavant** &lt;&lt;josh.gavant@outlook.com&gt;&gt;
+* [mhdawson](https://github.com/mhdawson) -
+  **Michael Dawson** &lt;&lt;midawson@redhat.com&gt;&gt; (he/him)
+* [mmarchini](https://github.com/mmarchini) -
+  **Mary Marchini** &lt;&lt;oss@mmarchini.me&gt;&gt; (she/her)
+* [mscdex](https://github.com/mscdex) -
+  **Brian White** &lt;&lt;mscdex@mscdex.net&gt;&gt;
+* [MylesBorins](https://github.com/MylesBorins) -
+  **Myles Borins** &lt;&lt;myles.borins@gmail.com&gt;&gt; (he/him)
+* [nebrius](https://github.com/nebrius) -
+  **Bryan Hughes** &lt;&lt;bryan@nebri.us&gt;&gt;
+* [ofrobots](https://github.com/ofrobots) -
+  **Ali Ijaz Sheikh** &lt;&lt;ofrobots@google.com&gt;&gt; (he/him)
+* [orangemocha](https://github.com/orangemocha) -
+  **Alexis Campailla** &lt;&lt;orangemocha@nodejs.org&gt;&gt;
+* [piscisaureus](https://github.com/piscisaureus) -
+  **Bert Belder** &lt;&lt;bertbelder@gmail.com&gt;&gt;
+* [rvagg](https://github.com/rvagg) -
+  **Rod Vagg** &lt;&lt;r@va.gg&gt;&gt;
+* [sam-github](https://github.com/sam-github) -
+  **Sam Roberts** &lt;&lt;vieuxtech@gmail.com&gt;&gt;
+* [shigeki](https://github.com/shigeki) -
+  **Shigeki Ohtsu** &lt;&lt;ohtsu@ohtsu.org&gt;&gt; (he/him)
+* [targos](https://github.com/targos) -
+  **Michaël Zasso** &lt;&lt;targos@protonmail.com&gt;&gt; (he/him)
+* [thefourtheye](https://github.com/thefourtheye) -
+  **Sakthipriyan Vairamani** &lt;&lt;thechargingvolcano@gmail.com&gt;&gt; (he/him)
+* [TimothyGu](https://github.com/TimothyGu) -
+  **Tiancheng &quot;Timothy&quot; Gu** &lt;&lt;timothygu99@gmail.com&gt;&gt; (he/him)
+* [trevnorris](https://github.com/trevnorris) -
+  **Trevor Norris** &lt;&lt;trev.norris@gmail.com&gt;&gt;
+
+&lt;/details&gt;
+
+&lt;!-- node-core-utils and find-inactive-collaborators.mjs depend on the format
+     of the collaborator list. If the format changes, those utilities need to be
+     tested and updated. --&gt;
+
+### Collaborators
+
+* [abmusse](https://github.com/abmusse) -
+  **Abdirahim Musse** &lt;&lt;abdirahim.musse@ibm.com&gt;&gt;
+* [addaleax](https://github.com/addaleax) -
+  **Anna Henningsen** &lt;&lt;anna@addaleax.net&gt;&gt; (she/her)
+* [Aditi-1400](https://github.com/Aditi-1400) -
+  **Aditi Singh** &lt;&lt;aditisingh1400@gmail.com&gt;&gt; (she/her)
+* [aduh95](https://github.com/aduh95) -
+  **Antoine du Hamel** &lt;&lt;duhamelantoine1995@gmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/aduh95)
+* [anonrig](https://github.com/anonrig) -
+  **Yagiz Nizipli** &lt;&lt;yagiz@nizipli.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/anonrig)
+* [araujogui](https://github.com/araujogui) -
+  **Guilherme Araújo** &lt;&lt;arauujogui@gmail.com&gt;&gt; (he/him)
+* [atlowChemi](https://github.com/atlowChemi) -
+  **Chemi Atlow** &lt;&lt;chemi@atlow.co.il&gt;&gt; (he/him)
+* [avivkeller](https://github.com/avivkeller) -
+  **Aviv Keller** &lt;&lt;me@aviv.sh&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/avivkeller)
+* [Ayase-252](https://github.com/Ayase-252) -
+  **Qingyu Deng** &lt;&lt;i@ayase-lab.com&gt;&gt;
+* [bengl](https://github.com/bengl) -
+  **Bryan English** &lt;&lt;bryan@bryanenglish.com&gt;&gt; (he/him)
+* [benjamingr](https://github.com/benjamingr) -
+  **Benjamin Gruenbaum** &lt;&lt;benjamingr@gmail.com&gt;&gt;
+* [BethGriggs](https://github.com/BethGriggs) -
+  **Beth Griggs** &lt;&lt;bethanyngriggs@gmail.com&gt;&gt; (she/her)
+* [bnb](https://github.com/bnb) -
+  **Tierney Cyren** &lt;&lt;hello@bnb.im&gt;&gt; (they/them)
+* [bnoordhuis](https://github.com/bnoordhuis) -
+  **Ben Noordhuis** &lt;&lt;info@bnoordhuis.nl&gt;&gt;
+* [BridgeAR](https://github.com/BridgeAR) -
+  **Ruben Bridgewater** &lt;&lt;ruben@bridgewater.de&gt;&gt; (he/him)
+* [cclauss](https://github.com/cclauss) -
+  **Christian Clauss** &lt;&lt;cclauss@me.com&gt;&gt; (he/him)
+* [ChALkeR](https://github.com/ChALkeR) -
+  **Сковорода Никита Андреевич** &lt;&lt;chalkerx@gmail.com&gt;&gt; (he/him)
+* [cjihrig](https://github.com/cjihrig) -
+  **Colin Ihrig** &lt;&lt;cjihrig@gmail.com&gt;&gt; (he/him)
+* [codebytere](https://github.com/codebytere) -
+  **Shelley Vohr** &lt;&lt;shelley.vohr@gmail.com&gt;&gt; (she/her)
+* [cola119](https://github.com/cola119) -
+  **Kohei Ueno** &lt;&lt;kohei.ueno119@gmail.com&gt;&gt; (he/him)
+* [daeyeon](https://github.com/daeyeon) -
+  **Daeyeon Jeong** &lt;&lt;daeyeon.dev@gmail.com&gt;&gt; (he/him)
+* [dario-piotrowicz](https://github.com/dario-piotrowicz) -
+  **Dario Piotrowicz** &lt;&lt;dario.piotrowicz@gmail.com&gt;&gt; (he/him)
+* [deokjinkim](https://github.com/deokjinkim) -
+  **Deokjin Kim** &lt;&lt;deokjin81.kim@gmail.com&gt;&gt; (he/him)
+* [ErickWendel](https://github.com/ErickWendel) -
+  **Erick Wendel** &lt;&lt;erick.workspace@gmail.com&gt;&gt; (he/him)
+* [Ethan-Arrowood](https://github.com/Ethan-Arrowood) -
+  **Ethan Arrowood** &lt;&lt;ethan@arrowood.dev&gt;&gt; (he/him)
+* [Flarna](https://github.com/Flarna) -
+  **Gerhard Stöbich** &lt;&lt;deb2001-github@yahoo.de&gt;&gt; (he/they)
+* [gabrielschulhof](https://github.com/gabrielschulhof) -
+  **Gabriel Schulhof** &lt;&lt;gabrielschulhof@gmail.com&gt;&gt;
+* [geeksilva97](https://github.com/geeksilva97) -
+  **Edy Silva** &lt;&lt;edigleyssonsilva@gmail.com&gt;&gt; (he/him)
+* [gengjiawen](https://github.com/gengjiawen) -
+  **Jiawen Geng** &lt;&lt;technicalcute@gmail.com&gt;&gt;
+* [GeoffreyBooth](https://github.com/GeoffreyBooth) -
+  **Geoffrey Booth** &lt;&lt;webadmin@geoffreybooth.com&gt;&gt; (he/him)
+* [gireeshpunathil](https://github.com/gireeshpunathil) -
+  **Gireesh Punathil** &lt;&lt;gpunathi@in.ibm.com&gt;&gt; (he/him)
+* [gurgunday](https://github.com/gurgunday) -
+  **Gürgün Dayıoğlu** &lt;&lt;hey@gurgun.day&gt;&gt; (he/him)
+* [guybedford](https://github.com/guybedford) -
+  **Guy Bedford** &lt;&lt;guybedford@gmail.com&gt;&gt; (he/him)
+* [H4ad](https://github.com/H4ad) -
+  **Vinícius Lourenço Claro Cardoso** &lt;&lt;contact@viniciusl.com.br&gt;&gt; (he/him)
+* [HarshithaKP](https://github.com/HarshithaKP) -
+  **Harshitha K P** &lt;&lt;harshitha014@gmail.com&gt;&gt; (she/her)
+* [himself65](https://github.com/himself65) -
+  **Zeyu &quot;Alex&quot; Yang** &lt;&lt;himself65@outlook.com&gt;&gt; (he/him)
+* [hybrist](https://github.com/hybrist) -
+  **Jan Martin** &lt;&lt;jan.krems@gmail.com&gt;&gt; (he/him)
+* [IlyasShabi](https://github.com/IlyasShabi) -
+  **Ilyas Shabi** &lt;&lt;ilyasshabi94@gmail.com&gt;&gt; (he/him)
+* [islandryu](https://github.com/islandryu) -
+  **Ryuhei Shima** &lt;&lt;shimaryuhei@gmail.com&gt;&gt; (he/him)
+* [jakecastelli](https://github.com/jakecastelli) -
+  **Jake Yuesong Li** &lt;&lt;jake.yuesong@gmail.com&gt;&gt; (he/him)
+* [JakobJingleheimer](https://github.com/JakobJingleheimer) -
+  **Jacob Smith** &lt;&lt;jacob@frende.me&gt;&gt; (he/him)
+* [jasnell](https://github.com/jasnell) -
+  **James M Snell** &lt;&lt;jasnell@gmail.com&gt;&gt; (he/him)
+* [jazelly](https://github.com/jazelly) -
+  **Jason Zhang** &lt;&lt;xzha4350@gmail.com&gt;&gt; (he/him)
+* [joyeecheung](https://github.com/joyeecheung) -
+  **Joyee Cheung** &lt;&lt;joyeec9h3@gmail.com&gt;&gt; (she/her)
+* [juanarbol](https://github.com/juanarbol) -
+  **Juan José Arboleda** &lt;&lt;soyjuanarbol@gmail.com&gt;&gt; (he/him)
+* [JungMinu](https://github.com/JungMinu) -
+  **Minwoo Jung** &lt;&lt;nodecorelab@gmail.com&gt;&gt; (he/him)
+* [KhafraDev](https://github.com/KhafraDev) -
+  **Matthew Aitken** &lt;&lt;maitken033380023@gmail.com&gt;&gt; (he/him)
+* [legendecas](https://github.com/legendecas) -
+  **Chengzhong Wu** &lt;&lt;legendecas@gmail.com&gt;&gt; (he/him)
+* [lemire](https://github.com/lemire) -
+  **Daniel Lemire** &lt;&lt;daniel@lemire.me&gt;&gt;
+* [LiviaMedeiros](https://github.com/LiviaMedeiros) -
+  **LiviaMedeiros** &lt;&lt;livia@cirno.name&gt;&gt;
+* [ljharb](https://github.com/ljharb) -
+  **Jordan Harband** &lt;&lt;ljharb@gmail.com&gt;&gt;
+* [lpinca](https://github.com/lpinca) -
+  **Luigi Pinca** &lt;&lt;luigipinca@gmail.com&gt;&gt; (he/him)
+* [Lxxyx](https://github.com/Lxxyx) -
+  **Zijian Liu** &lt;&lt;lxxyxzj@gmail.com&gt;&gt; (he/him)
+* [marco-ippolito](https://github.com/marco-ippolito) -
+  **Marco Ippolito** &lt;&lt;marcoippolito54@gmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/marco-ippolito)
+* [marsonya](https://github.com/marsonya) -
+  **Akhil Marsonya** &lt;&lt;akhil.marsonya27@gmail.com&gt;&gt; (he/him)
+* [MattiasBuelens](https://github.com/MattiasBuelens) -
+  **Mattias Buelens** &lt;&lt;mattias@buelens.com&gt;&gt; (he/him)
+* [mcollina](https://github.com/mcollina) -
+  **Matteo Collina** &lt;&lt;matteo.collina@gmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/mcollina)
+* [meixg](https://github.com/meixg) -
+  **Xuguang Mei** &lt;&lt;meixuguang@gmail.com&gt;&gt; (he/him)
+* [MikeMcC399](https://github.com/MikeMcC399) -
+  **Mike McCready** &lt;&lt;66998419+MikeMcC399@users.noreply.github.com&gt;&gt; (he/him)
+* [MoLow](https://github.com/MoLow) -
+  **Moshe Atlow** &lt;&lt;moshe@atlow.co.il&gt;&gt; (he/him)
+* [MrJithil](https://github.com/MrJithil) -
+  **Jithil P Ponnan** &lt;&lt;jithil@outlook.com&gt;&gt; (he/him)
+* [ovflowd](https://github.com/ovflowd) -
+  **Claudio Wunder** &lt;&lt;cwunder@gnome.org&gt;&gt; (he/they)
+* [panva](https://github.com/panva) -
+  **Filip Skokan** &lt;&lt;panva.ip@gmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/panva)
+* [pimterry](https://github.com/pimterry) -
+  **Tim Perry** &lt;&lt;pimterry@gmail.com&gt;&gt; (he/him)
+* [pmarchini](https://github.com/pmarchini) -
+  **Pietro Marchini** &lt;&lt;pietro.marchini94@gmail.com&gt;&gt; (he/him)
+* [Qard](https://github.com/Qard) -
+  **Stephen Belanger** &lt;&lt;admin@stephenbelanger.com&gt;&gt; (he/him)
+* [RafaelGSS](https://github.com/RafaelGSS) -
+  **Rafael Gonzaga** &lt;&lt;rafael.nunu@hotmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/RafaelGSS)
+* [RaisinTen](https://github.com/RaisinTen) -
+  **Darshan Sen** &lt;&lt;raisinten@gmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/RaisinTen)
+* [Renegade334](https://github.com/Renegade334) -
+  **René** &lt;&lt;contact.9a5d6388@renegade334.me.uk&gt;&gt;
+* [richardlau](https://github.com/richardlau) -
+  **Richard Lau** &lt;&lt;richard.lau@ibm.com&gt;&gt;
+* [rluvaton](https://github.com/rluvaton) -
+  **Raz Luvaton** &lt;&lt;rluvaton@gmail.com&gt;&gt; (he/him)
+* [ronag](https://github.com/ronag) -
+  **Robert Nagy** &lt;&lt;ronagy@icloud.com&gt;&gt;
+* [ruyadorno](https://github.com/ruyadorno) -
+  **Ruy Adorno** &lt;&lt;ruy@vlt.sh&gt;&gt; (he/him)
+* [santigimeno](https://github.com/santigimeno) -
+  **Santiago Gimeno** &lt;&lt;santiago.gimeno@gmail.com&gt;&gt;
+* [ShogunPanda](https://github.com/ShogunPanda) -
+  **Paolo Insogna** &lt;&lt;paolo@cowtech.it&gt;&gt; (he/him)
+* [srl295](https://github.com/srl295) -
+  **Steven R Loomis** &lt;&lt;srl295@gmail.com&gt;&gt;
+* [StefanStojanovic](https://github.com/StefanStojanovic) -
+  **Stefan Stojanovic** &lt;&lt;stefan.stojanovic@jane
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
             <title><![CDATA[datawhalechina/easy-vibe]]></title>
             <link>https://github.com/datawhalechina/easy-vibe</link>
             <guid>https://github.com/datawhalechina/easy-vibe</guid>
-            <pubDate>Tue, 20 Oct 2026 00:06:08 GMT</pubDate>
+            <pubDate>Wed, 21 Oct 2026 00:05:54 GMT</pubDate>
             <description><![CDATA[💻 Vibe Coding 101｜Your First Course For AI Product Builders.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/datawhalechina/easy-vibe">datawhalechina/easy-vibe</a></h1>
             <p>💻 Vibe Coding 101｜Your First Course For AI Product Builders.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 20,027</p>
-            <p>Forks: 1,936</p>
-            <p>Stars today: 184 stars today</p>
+            <p>Stars: 20,060</p>
+            <p>Forks: 1,939</p>
+            <p>Stars today: 31 stars today</p>
             <h2>README</h2><pre>&lt;!-- trigger vercel build --&gt;
 &lt;div align=&quot;center&quot;&gt;
 
@@ -2237,15 +1388,15 @@ Illustrative project previews. Explore the corresponding tutorials:
             <title><![CDATA[hmjz100/LinkSwift]]></title>
             <link>https://github.com/hmjz100/LinkSwift</link>
             <guid>https://github.com/hmjz100/LinkSwift</guid>
-            <pubDate>Tue, 20 Oct 2026 00:06:07 GMT</pubDate>
+            <pubDate>Wed, 21 Oct 2026 00:05:53 GMT</pubDate>
             <description><![CDATA[一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/hmjz100/LinkSwift">hmjz100/LinkSwift</a></h1>
             <p>一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 26,044</p>
-            <p>Forks: 1,691</p>
-            <p>Stars today: 1,250 stars today</p>
+            <p>Stars: 26,512</p>
+            <p>Forks: 1,741</p>
+            <p>Stars today: 501 stars today</p>
             <h2>README</h2><pre>&gt; [!IMPORTANT]
 &gt; 如果您是从 GreasyFork 找到这的，建议前往下方的 [安装](#安装) 选择一个合适的源覆盖安装，避免因脚本失效或 GF 黑产刷子导致无法及时更新。
 
@@ -2424,396 +1575,410 @@ v1.1.3（基于原版 v6.2.7）
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[flizzywine/dsh-tavern]]></title>
-            <link>https://github.com/flizzywine/dsh-tavern</link>
-            <guid>https://github.com/flizzywine/dsh-tavern</guid>
-            <pubDate>Tue, 20 Oct 2026 00:06:06 GMT</pubDate>
-            <description><![CDATA[基于DSH的Agent酒馆。类酒馆文字游戏Agent。兼容SillyTavern生态，人物卡直接导入就能玩。更快、更稳、更鲜活。所有模型都能用。手机也能玩。]]></description>
+            <title><![CDATA[WorldFlowAI/everything-claude-code]]></title>
+            <link>https://github.com/WorldFlowAI/everything-claude-code</link>
+            <guid>https://github.com/WorldFlowAI/everything-claude-code</guid>
+            <pubDate>Wed, 21 Oct 2026 00:05:52 GMT</pubDate>
+            <description><![CDATA[Claude Code toolkit - agents, commands, skills, rules, and hooks for productive AI-assisted development]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/flizzywine/dsh-tavern">flizzywine/dsh-tavern</a></h1>
-            <p>基于DSH的Agent酒馆。类酒馆文字游戏Agent。兼容SillyTavern生态，人物卡直接导入就能玩。更快、更稳、更鲜活。所有模型都能用。手机也能玩。</p>
+            <h1><a href="https://github.com/WorldFlowAI/everything-claude-code">WorldFlowAI/everything-claude-code</a></h1>
+            <p>Claude Code toolkit - agents, commands, skills, rules, and hooks for productive AI-assisted development</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 1,130</p>
-            <p>Forks: 75</p>
-            <p>Stars today: 38 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+            <p>Stars: 5,126</p>
+            <p>Forks: 763</p>
+            <p>Stars today: 76 stars today</p>
+            <h2>README</h2><pre># Everything Claude Code
 
-&gt; **当前版本适配 DSH 0.2.1-rc.2**（官方 DeepSeek Harness、DSH NEXT、DSHA v0.2.0-rc2 或独立命令行），安装见[快速开始](#快速开始)。还在用 DSH 0.1.5 的，请用[稳定版](#稳定版dsh-015)。
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://raw.githubusercontent.com/flizzywine/dsh-tavern/main/docs/assets/brand/dsh-tavern-lockup-on-dark.svg&quot;&gt;
-    &lt;img src=&quot;docs/assets/brand/dsh-tavern-lockup.svg&quot; width=&quot;360&quot; alt=&quot;DSH 酒馆&quot;&gt;
-  &lt;/picture&gt;
-&lt;/p&gt;
+[![Stars](https://img.shields.io/github/stars/affaan-m/everything-claude-code?style=flat)](https://github.com/affaan-m/everything-claude-code/stargazers)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Shell](https://img.shields.io/badge/-Shell-4EAA25?logo=gnu-bash&amp;logoColor=white)
+![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&amp;logoColor=white)
+![Markdown](https://img.shields.io/badge/-Markdown-000000?logo=markdown&amp;logoColor=white)
 
-# DSH Tavern
+**The complete collection of Claude Code configs from an Anthropic hackathon winner.**
 
-**基于 DSH（DeepSeek Harness）的 Agent 酒馆。兼容 SillyTavern 生态，人物卡导入就能玩。**
+Production-ready agents, skills, hooks, commands, rules, and MCP configurations evolved over 10+ months of intensive daily use building real products.
 
-更快 · 更稳 · 更鲜活 · 所有模型都能用 · 手机也能玩
+---
 
-[![观看 3 分钟实机演示：兼容酒馆生态，更快、更稳、更鲜活](docs/images/readme/promo-video.jpg)](https://www.bilibili.com/video/BV1MHaU6NE7S/)
+## The Guides
 
-[下载安装](#快速开始) · [使用文档](https://flizzywine.github.io/dsh-tavern/) · [宣传视频](https://www.bilibili.com/video/BV1MHaU6NE7S/) · [讨论区](https://github.com/flizzywine/dsh-tavern/discussions) · [Discord 交流群](https://discord.gg/hYAEjKnpra)
+This repo is the raw code only. The guides explain everything.
 
-- **兼容 SillyTavern 生态**：人物卡、世界书、预设、正则美化、MVU、酒馆助手脚本，导入就能用。
-- **更快**：一轮约 10 秒，缓存命中率 95% 以上。
-- **更稳**：状态栏不再掉格式。变量由后台按规则结算，每轮附更新结果，失败可单独重试；更新与重装都保留数据。
-- **更鲜活**：同样的模型、同样的预设，比原版酒馆更有活人感。因为前台模型只管写正文，变量结算等任务性工作交给后台模型。
-- **手机也能玩**：Android 手机直接安装；电脑上运行的酒馆，手机扫码就能远程游玩。
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td width=&quot;50%&quot;&gt;
+&lt;a href=&quot;https://x.com/affaanmustafa/status/2012378465664745795&quot;&gt;
+&lt;img src=&quot;https://github.com/user-attachments/assets/1a471488-59cc-425b-8345-5245c7efbcef&quot; alt=&quot;The Shorthand Guide to Everything Claude Code&quot; /&gt;
+&lt;/a&gt;
+&lt;/td&gt;
+&lt;td width=&quot;50%&quot;&gt;
+&lt;a href=&quot;https://x.com/affaanmustafa/status/2014040193557471352&quot;&gt;
+&lt;img src=&quot;https://github.com/user-attachments/assets/c9ca43bc-b149-427f-b551-af6840c368f0&quot; alt=&quot;The Longform Guide to Everything Claude Code&quot; /&gt;
+&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;b&gt;Shorthand Guide&lt;/b&gt;&lt;br/&gt;Setup, foundations, philosophy. &lt;b&gt;Read this first.&lt;/b&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;b&gt;Longform Guide&lt;/b&gt;&lt;br/&gt;Token optimization, memory persistence, evals, parallelization.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
 
-## SillyTavern vs DSH Tavern
+| Topic | What You&#039;ll Learn |
+|-------|-------------------|
+| Token Optimization | Model selection, system prompt slimming, background processes |
+| Memory Persistence | Hooks that save/load context across sessions automatically |
+| Continuous Learning | Auto-extract patterns from sessions into reusable skills |
+| Verification Loops | Checkpoint vs continuous evals, grader types, pass@k metrics |
+| Parallelization | Git worktrees, cascade method, when to scale instances |
+| Subagent Orchestration | The context problem, iterative retrieval pattern |
 
-|           | SillyTavern                               | DSH Tavern                                                                                                  |
-| --------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| **上手门槛**  | ❌ 要自己配预设、正则、扩展，学习门槛高                      | ✅ 填好模型、导入人物卡就能玩，默认无需外部预设                                                                                    |
-| **工作方式**  | ❌ 一口气：一个模型在一次请求里完成所有事                     | ✅ 分步：正文、变量结算、候选项各自完成                                                                                        |
-| 出错重来      | ❌ 整轮重新生成，满意的部分也一起丢掉                       | ✅ 哪步出错重来哪步，正文和候选还能附上指导意见                                                                                    |
-| 正文        | ❌ 写正文的同时要记住各种格式要求，注意力被分散                  | ✅ 前台专心写正文                                                                                                   |
-| 状态栏       | ❌ 每一轮都要求模型重新输出状态栏，写长了容易掉格式                | ✅ 状态栏固化：MVU 版由固定模板按变量显示，不再由模型输出，绝对不会掉格式                                                                     |
-| 候选项       | ❌ 写正文的同时还要兼顾生成候选项，注意力涣散，还可能掉格式            | ✅ 和正文任务拆分，专注生成候选项；通过工具提交并校验，显示在固定面板，绝对不会掉格式                                                                 |
-| **剧情规划**  | ❌ 没有剧情规划，走向全靠模型临场发挥                       | ✅ 多种方式规划剧情：&lt;br&gt;① 剧本模式，沿剧本主线发展&lt;br&gt;② 注入 Guide，临时规划剧情走向&lt;br&gt;③ 候选项自动规划下一步，避免剧情停滞                                 |
-| **记忆**    | ❌ 靠压缩总结提前猜测需要什么记忆，提前注入，难以预测真实需求           | ✅ 内置记忆检索工具，需要什么记忆，Agent 自行检索原文                                                                              |
-| 缓存与速度     | ❌ 未考虑缓存利用：世界书条目内容一变化，缓存就失效                | ✅ 缓存命中率 95% 以上，一轮约 10 秒                                                                                     |
-| 写作方法      | ❌ 写进预设，每轮常驻提示词                            | ✅ 写成 Skill，按场景调用                                                                                            |
-| **边玩边改卡** | ❌ 想排错或按喜好调整，都要自己翻人物卡、世界书、正则，逐项手改          | ✅ 边玩边改：&lt;br&gt;① 排查错误：有问题随时交给调试 Agent，结合实际游玩记录分析并修复&lt;br&gt;② 调整内容：用对话告诉 Agent 哪里不喜欢，按自己的口味微调                        |
-| **酒馆生态**  | ✅ 生态极其丰富：人物卡、世界书、预设、正则、MVU、酒馆助手脚本、大量第三方插件 | ✅ 兼容大部分人物卡（包括 MVU、正则、酒馆助手脚本、前端美化），世界书、预设可直接导入&lt;br&gt;⚠️ 不支持安装酒馆插件（DSH 插件可以装），但内置了酒馆助手、MVU、提示词模板等重要插件，足以支撑大部分人物卡 |
+---
 
-## 产品特色
+## Cross-Platform Support
 
-### 剧本模式
+This plugin now fully supports **Windows, macOS, and Linux**. All hooks and scripts have been rewritten in Node.js for maximum compatibility.
 
-导入小说、剧本或大纲，绑定到人物卡，就能走进原作亲历主线。剧本定方向和关键事件，你决定人物怎么走到那里，随时可以偏离。剧本按片段读取，再长的小说也不用整本塞进上下文。[了解更多 →](https://flizzywine.github.io/dsh-tavern/#c01)
+### Package Manager Detection
 
-![剧本模式：正文沿剧本推进，右侧显示剧本进度与当前片段](docs/images/readme/script-mode.png)
+The plugin automatically detects your preferred package manager (npm, pnpm, yarn, or bun) with the following priority:
 
-### 长期记忆
+1. **Environment variable**: `CLAUDE_PACKAGE_MANAGER`
+2. **Project config**: `.claude/package-manager.json`
+3. **package.json**: `packageManager` field
+4. **Lock file**: Detection from package-lock.json, yarn.lock, pnpm-lock.yaml, or bun.lockb
+5. **Global config**: `~/.claude/package-manager.json`
+6. **Fallback**: First available package manager
 
-每轮正文完整保存，Agent 需要时自己回查原文，不靠摘要硬记；配合上下文压缩，玩到几百层仍能记起开局的细节。[了解更多 →](https://flizzywine.github.io/dsh-tavern/#d06)
+To set your preferred package manager:
 
-### 对话式修改人物卡
+```bash
+# Via environment variable
+export CLAUDE_PACKAGE_MANAGER=pnpm
 
-不用懂卡片字段，告诉 Agent 哪里不喜欢、想改成什么样，它先给方案，你确认后才写入。也能从小说里提取人物做新卡，或用同样方式修改世界书和预设。[了解更多 →](https://flizzywine.github.io/dsh-tavern/#h04)
+# Via global config
+node scripts/setup-package-manager.js --global pnpm
 
-![卡片模式：与 Agent 对话修改人物卡，右侧为人物卡字段](docs/images/readme/card-editor.png)
+# Via project config
+node scripts/setup-package-manager.js --project bun
 
-### 人物卡转 MVU 版，状态栏不再掉格式
-
-正文里的状态栏老是掉格式？让 Agent 把人物卡转成 MVU 版：前台只写正文，变量由后台按规则结算，状态栏常驻右侧，原卡图片和设定都保留。[了解更多 →](https://flizzywine.github.io/dsh-tavern/#h07)
-
-### 自助调试 Agent
-
-正则没生效、美化显示不对、状态栏没更新？在右侧展开「遇到显示或生成问题？」，点「交给卡片 Agent 调试」，Agent 会读取这局的实际游玩记录和日志，分析原因并修改相关资源，不用自己翻配置猜问题。[了解更多 →](https://flizzywine.github.io/dsh-tavern/#h08)
-
-### Guide：给这一局注入上下文指引
-
-想要的写法、节奏或剧情走向写成一条 Guide，比如“多写心理活动，对白不超过三句”“好感度涨得慢一点”。它会注入上下文，之后每轮正文、候选和变量结算都会参考，不用每次重复。[了解更多 →](https://flizzywine.github.io/dsh-tavern/#b09)
-
-### 带意见重写
-
-不满意这轮回复，写上哪里要改，比如“保留事件，但减少旁白解释”，只重写这一轮，比反复抽卡更可控。[了解更多 →](https://flizzywine.github.io/dsh-tavern/#b07)
-
-![带意见重写当前正文，右侧为本局 Guide](docs/images/readme/rewrite-body.png)
-
-### 后台人物设计
-
-重要人物登场时，后台为其设计完整档案：动机、性格、外貌、说话方式、与主角的关系，之后反复出场都按同一套设定来，不会前后走样。已有设定直接复用，不重复造人。[了解更多 →](https://flizzywine.github.io/dsh-tavern/#d10)
-
-### 写作 Skill
-
-把写作教程或喜欢的样文交给 Agent，提炼成场景写作 Skill，比如打斗、悬疑、感情戏各有一套写法；游玩时模型按场景自动选用。[了解更多 →](https://flizzywine.github.io/dsh-tavern/#m04)
-
-### 支持插件生态
-
-插件分两类：
-
-**DSH 插件**：酒馆运行在 DSH 上，可以直接安装其他 DSH 插件一起使用，例如手机访问的 [dsh-pocket](https://github.com/shaobeichen/dsh-pocket)、远程登录认证的 [dsh-webui-auth](https://github.com/Yuuz12/dsh-webui-auth)、语音朗读插件等。缺什么能力，也可以让 Agent 帮你写一个自定义工具。[了解更多 →](https://flizzywine.github.io/dsh-tavern/#m07)
-
-**DSH Tavern 专属插件**：为酒馆游玩专门开发的插件。社区已有：
-
-| 插件                                                                           | 作用                                 |
-| ---------------------------------------------------------------------------- | ---------------------------------- |
-| [dsh-tavern-image](https://github.com/weixinlll/dsh-tavern-image)            | 剧情自动配图，支持 ComfyUI、NovelAI、Gemini 等多平台，带人物库 |
-| [dsh-card-updater](https://github.com/flizzywine/dsh-tavern/discussions/149) | 卡片更新器，作者发布新版时提醒你                   |
-| [dsh-wrongbook](https://github.com/flizzywine/dsh-tavern/discussions/150)    | 错题库，按人物卡记下调试踩过的坑                   |
-| [动态世界书生成](https://github.com/flizzywine/dsh-tavern/discussions/147)          | 后台结算时生成世界书条目                       |
-
-以上均为社区作者开发，更多插件见[讨论区的 Show and tell](https://github.com/flizzywine/dsh-tavern/discussions/categories/show-and-tell)。
-
-## 看看实际效果
-
-**MVU 状态栏**：人物状态随剧情变化，正文下方可查看本轮更新了什么。
-
-![MVU 人物卡的变量更新结果与右侧酒馆状态栏](docs/images/readme/mvu-status-panel.png)
-
-**小手机**：带小手机的人物卡也能用。
-
-**场景插画**：为当前剧情配一张图。
-
-![公开灯塔案例的场景插画与完整产品界面](docs/images/readme/scene-image-product.png)
-
-## 快速开始
-
-当前版本适配 **DSH 0.2.1**。还在用 DSH 0.1.5（DSH Desktop 2.0.13、旧一键安装包）的，请用[稳定版](#稳定版dsh-015)。安装前建议备份 `.dsh` 目录。
-
-### Windows
-
-1. 安装 [DeepSeek Harness 0.2.1-rc.2](https://deepseek.com/harness/)（或社区版 [DSH NEXT](https://github.com/anywhere-labs/dsh-desktop/releases)），打开一次后从托盘退出。
-2. 安装酒馆，以下两种方式**任选其一**：
-   - **方式 A：双击安装**。[下载安装程序](https://github.com/flizzywine/dsh-tavern/releases/download/v3.0/dsh-tavern-install.cmd)，双击运行（安全提示点「更多信息 → 仍要运行」）。
-   - **方式 B：命令安装**。打开 PowerShell，粘贴下面这行并按回车执行：
-
-     ```powershell
-     $env:DSH_TAVERN_HOST=&#039;desktop&#039;; $tavernInstaller=[Text.Encoding]::UTF8.GetString((New-Object Net.WebClient).DownloadData(&#039;https://raw.githubusercontent.com/flizzywine/dsh-tavern/main/install.ps1&#039;)); Invoke-Expression $tavernInstaller
-     ```
-
-3. 重新打开 DeepSeek Harness，即进入酒馆。
-
-### Android
-
-1. 安装 [DSHA v0.2.0-rc2](https://github.com/DSH-APP/DSHA/releases/tag/v0.2.0-rc2)，打开一次。
-2. 打开底部 **终端**，粘贴下面这行并按回车执行：
-
-   ```sh
-   curl -fsSL &#039;https://raw.githubusercontent.com/flizzywine/dsh-tavern/main/android/setup.sh&#039; -o /tmp/dsh-tavern-setup.sh &amp;&amp; bash /tmp/dsh-tavern-setup.sh
-   ```
-
-3. 看到 **全部完成** 后重启 DSHA，点 **启动** → **进入** → **酒馆工作台**。
-
-### macOS
-
-1. 安装 [DeepSeek Harness 0.2.1-rc.2](https://deepseek.com/harness/)，打开一次后退出（⌘Q）。
-2. 打开「终端」，粘贴下面这行并按回车执行：
-
-   ```sh
-   curl -fsSL &#039;https://raw.githubusercontent.com/flizzywine/dsh-tavern/main/install.sh&#039; -o /tmp/dsh-tavern-install.sh &amp;&amp; DSH_TAVERN_HOST=desktop sh /tmp/dsh-tavern-install.sh
-   ```
-
-3. 重新打开 DeepSeek Harness，即进入酒馆。
-
-### 命令行版（Windows / macOS / Linux，用浏览器玩）
-
-不需要桌面版。命令行版自带一套独立的 DSH，和程序、游戏数据一起装在自己的目录里（默认 `~/.dsh-tavern`），**不会改动、也不会和你已经装好的 DSH 冲突**：桌面版、全局的 `dsh` 命令照常使用，两边互不影响，可以同时运行。需要 [Node.js 22.19+](https://nodejs.org/) 和 pnpm。
-
-Windows（PowerShell）：
-
-```powershell
-$env:DSH_TAVERN_HOST=&#039;cli&#039;; $tavernInstaller=[Text.Encoding]::UTF8.GetString((New-Object Net.WebClient).DownloadData(&#039;https://raw.githubusercontent.com/flizzywine/dsh-tavern/main/install.ps1&#039;)); Invoke-Expression $tavernInstaller
+# Detect current setting
+node scripts/setup-package-manager.js --detect
 ```
 
-macOS / Linux：
+Or use the `/setup-pm` command in Claude Code.
 
-```sh
-curl -fsSL &#039;https://raw.githubusercontent.com/flizzywine/dsh-tavern/main/install.sh&#039; -o /tmp/dsh-tavern-install.sh &amp;&amp; DSH_TAVERN_HOST=cli sh /tmp/dsh-tavern-install.sh
+---
+
+## What&#039;s Inside
+
+This repo is a **Claude Code plugin** - install it directly or copy components manually.
+
+```
+everything-claude-code/
+|-- .claude-plugin/   # Plugin and marketplace manifests
+|   |-- plugin.json         # Plugin metadata and component paths
+|   |-- marketplace.json    # Marketplace catalog for /plugin marketplace add
+|
+|-- agents/           # Specialized subagents for delegation
+|   |-- planner.md           # Feature implementation planning
+|   |-- architect.md         # System design decisions
+|   |-- tdd-guide.md         # Test-driven development
+|   |-- code-reviewer.md     # Quality and security review
+|   |-- security-reviewer.md # Vulnerability analysis
+|   |-- build-error-resolver.md
+|   |-- e2e-runner.md        # Playwright E2E testing
+|   |-- refactor-cleaner.md  # Dead code cleanup
+|   |-- doc-updater.md       # Documentation sync
+|
+|-- skills/           # Workflow definitions and domain knowledge
+|   |-- coding-standards/           # Language best practices
+|   |-- backend-patterns/           # API, database, caching patterns
+|   |-- frontend-patterns/          # React, Next.js patterns
+|   |-- continuous-learning/        # Auto-extract patterns from sessions (Longform Guide)
+|   |-- strategic-compact/          # Manual compaction suggestions (Longform Guide)
+|   |-- tdd-workflow/               # TDD methodology
+|   |-- security-review/            # Security checklist
+|   |-- eval-harness/               # Verification loop evaluation (Longform Guide)
+|   |-- verification-loop/          # Continuous verification (Longform Guide)
+|
+|-- commands/         # Slash commands for quick execution
+|   |-- tdd.md              # /tdd - Test-driven development
+|   |-- plan.md             # /plan - Implementation planning
+|   |-- e2e.md              # /e2e - E2E test generation
+|   |-- code-review.md      # /code-review - Quality review
+|   |-- build-fix.md        # /build-fix - Fix build errors
+|   |-- refactor-clean.md   # /refactor-clean - Dead code removal
+|   |-- learn.md            # /learn - Extract patterns mid-session (Longform Guide)
+|   |-- checkpoint.md       # /checkpoint - Save verification state (Longform Guide)
+|   |-- verify.md           # /verify - Run verification loop (Longform Guide)
+|   |-- setup-pm.md         # /setup-pm - Configure package manager (NEW)
+|
+|-- rules/            # Always-follow guidelines (copy to ~/.claude/rules/)
+|   |-- security.md         # Mandatory security checks
+|   |-- coding-style.md     # Immutability, file organization
+|   |-- testing.md          # TDD, 80% coverage requirement
+|   |-- git-workflow.md     # Commit format, PR process
+|   |-- agents.md           # When to delegate to subagents
+|   |-- performance.md      # Model selection, context management
+|
+|-- hooks/            # Trigger-based automations
+|   |-- hooks.json                # All hooks config (PreToolUse, PostToolUse, Stop, etc.)
+|   |-- memory-persistence/       # Session lifecycle hooks (Longform Guide)
+|   |-- strategic-compact/        # Compaction suggestions (Longform Guide)
+|
+|-- scripts/          # Cross-platform Node.js scripts (NEW)
+|   |-- lib/                     # Shared utilities
+|   |   |-- utils.js             # Cross-platform file/path/system utilities
+|   |   |-- package-manager.js   # Package manager detection and selection
+|   |-- hooks/                   # Hook implementations
+|   |   |-- session-start.js     # Load context on session start
+|   |   |-- session-end.js       # Save state on session end
+|   |   |-- pre-compact.js       # Pre-compaction state saving
+|   |   |-- suggest-compact.js   # Strategic compaction suggestions
+|   |   |-- evaluate-session.js  # Extract patterns from sessions
+|   |-- setup-package-manager.js # Interactive PM setup
+|
+|-- tests/            # Test suite (NEW)
+|   |-- lib/                     # Library tests
+|   |-- hooks/                   # Hook tests
+|   |-- run-all.js               # Run all tests
+|
+|-- contexts/         # Dynamic system prompt injection contexts (Longform Guide)
+|   |-- dev.md              # Development mode context
+|   |-- review.md           # Code review mode context
+|   |-- research.md         # Research/exploration mode context
+|
+|-- examples/         # Example configurations and sessions
+|   |-- CLAUDE.md           # Example project-level config
+|   |-- user-CLAUDE.md      # Example user-level config
+|
+|-- mcp-configs/      # MCP server configurations
+|   |-- mcp-servers.json    # GitHub, Supabase, Vercel, Railway, etc.
+|
+|-- marketplace.json  # Self-hosted marketplace config (for /plugin marketplace add)
 ```
 
-装好后用 `dsh-tavern start` 启动，按显示的地址在浏览器打开；`dsh-tavern stop` / `status` / `update` 停止、查看、更新。
-
-### 手机远程访问
-
-酒馆跑在电脑或服务器上，用手机浏览器也能玩。[详细说明 →](https://flizzywine.github.io/dsh-tavern/#a02--section-10)
-
-- **电脑运行、手机扫码**：安装 [dsh-pocket](https://github.com/shaobeichen/dsh-pocket)，在 **设置 → 手机访问** 选择局域网或公网，扫码即可。
-- **服务器部署、账号登录**：安装 [dsh-webui-auth](https://github.com/Yuuz12/dsh-webui-auth)，为远程网页加上登录认证。
-
-### 开始游玩
-
-在 **设置 → 模型** 填入模型服务和 API 密钥（任意模型都可以，本地模型也行），导入人物卡就能开局。[图文教程 →](https://flizzywine.github.io/dsh-tavern/#a02--section-7)
-
-### 更新、旧存档与切回原版
-
-- 在酒馆里点「检查更新」即可更新，也可以重新运行上面的安装命令；只替换程序，人物卡、聊天和设置都会保留。
-- 旧版本的存档：打开后在「酒馆状态」里点「迁移存档」。正文、变量、分支和历史版本都会保留。迁移后的数据目录不要再让旧宿主直接读取。
-- 桌面版切回原版 DSH：设置 → 原版DSH → 切到原版 DSH 并重启。之后在原版 DSH 的设置 → DSH酒馆，就能切回酒馆。不要删除 `.dsh/backups` 和 `profiles/desktop.fresh-*`。细节见[桥接插件说明](tavern-plugin/packages/dsh-profile-bridge/README.md)。
-- 旧酒馆在自定义目录、需要继承数据时，见[数据继承说明](docs/data-import.md)。
-
-### 稳定版（DSH 0.1.5）
-
-适配 **DSH 0.1.5-rc.2**（DSH Desktop 2.0.13、DSHA 0.1.5-rc2），在 [`stable` 分支](https://github.com/flizzywine/dsh-tavern/tree/stable)维护，只修严重问题。安装方法（含一键安装包）见 [稳定版 README](https://github.com/flizzywine/dsh-tavern/blob/stable/README.md#快速开始)。
-
-已经装了稳定版、点更新时提示「DSH 版本不符」的：要继续用 DSH 0.1.5，按稳定版 README 重新运行一次安装命令，以后的更新就跟随稳定版；要换到当前版本，先装上适配的宿主再更新。
-
-## 交流与反馈
-
-欢迎交流使用经验、分享人物卡或反馈问题：
-
-- **[GitHub Discussions](https://github.com/flizzywine/dsh-tavern/discussions)**：任何人都可以直接发帖。
-- **[Discord](https://discord.gg/hYAEjKnpra)**：DSH Tavern 交流频道，任何人都可以加入。
-
-除 Discord 外，本项目没有官方的 QQ 群、微信群或其他群聊。
-
-反馈故障时，可从对话顶部的“日志”下载执行记录；分享前请检查其中的对话和附件隐私。
-
-## 用户怎么说
-
-[![用户反馈：同样预设下比酒馆更有活人感，速度也更快](docs/images/readme/testimonials/more-alive-and-faster.jpg)](docs/images/readme/testimonials/more-alive-and-faster.jpg)
-
-[![用户反馈：游玩五六百层后，仍能记起开局物品的来历](docs/images/readme/testimonials/long-chat-memory.jpg)](docs/images/readme/testimonials/long-chat-memory.jpg)
-
-[![用户反馈：长局 184 轮仍保持 99% 缓存命中与 272 tok/s](docs/images/readme/testimonials/long-session-cache-hit.png)](docs/images/readme/testimonials/long-session-cache-hit.png)
-
-[![用户反馈：会主动推进剧情，引入新角色和新事件](docs/images/readme/testimonials/proactive-story.webp)](docs/images/readme/testimonials/proactive-story.webp)
-
-&lt;details&gt;
-&lt;summary&gt;更多用户反馈&lt;/summary&gt;
-
-[![用户反馈：使用本地 27B 模型，体验非常良好](docs/images/readme/testimonials/local-27b.webp)](docs/images/readme/testimonials/local-27b.webp)
-
-[![用户分享缓存命中率与几十轮游玩的实际花费](docs/images/readme/testimonials/cache-and-cost.webp)](docs/images/readme/testimonials/cache-and-cost.webp)
-
-[![关于默认预设、回复速度与 Guide 剧情引导的反馈](docs/images/readme/testimonials/default-preset-and-guide.jpg)](docs/images/readme/testimonials/default-preset-and-guide.jpg)
-
-[![关于使用体验的反馈](docs/images/readme/testimonials/ease-of-use.webp)](docs/images/readme/testimonials/ease-of-use.webp)
-
-[![关于记忆系统的反馈](docs/images/readme/testimonials/memory-feedback.webp)](docs/images/readme/testimonials/memory-feedback.webp)
-
-[![用户聊天反馈](docs/images/readme/testimonials/chat-feedback.webp)](docs/images/readme/testimonials/chat-feedback.webp)
-
-[![关于文笔的反馈](docs/images/readme/testimonials/writing-feedback.webp)](docs/images/readme/testimonials/writing-feedback.webp)
-
-[![社区用户对插件的反馈](docs/images/readme/testimonials/plugin-feedback.webp)](docs/images/readme/testimonials/plugin-feedback.webp)
-
-[![用户对整体使用体验的评价与稳定版适配的询问](docs/images/readme/testimonials/overall-experience.webp)](docs/images/readme/testimonials/overall-experience.webp)
-
-[![用户反馈：缓存命中率高](docs/images/readme/testimonials/cache-hit-feedback.webp)](docs/images/readme/testimonials/cache-hit-feedback.webp)
-
-[![用户反馈：MVU 体验不错，喜欢按要求重新生成文本的功能](docs/images/readme/testimonials/mvu-and-rewrite.webp)](docs/images/readme/testimonials/mvu-and-rewrite.webp)
-
-[![用户反馈：回复速度快，十几秒即可收到回复](docs/images/readme/testimonials/reply-speed.webp)](docs/images/readme/testimonials/reply-speed.webp)
-
-[![用户反馈：特别好用，游玩体验更好](docs/images/readme/testimonials/play-experience.png)](docs/images/readme/testimonials/play-experience.png)
-
-[![用户反馈：Agent 写作的输出质量更高](docs/images/readme/testimonials/agent-writing-quality.png)](docs/images/readme/testimonials/agent-writing-quality.png)
-
-[![用户反馈：修改角色卡像给游戏装 MOD，改卡本身也很有趣](docs/images/readme/testimonials/character-card-editing.jpg)](docs/images/readme/testimonials/character-card-editing.jpg)
-
-[![用户反馈：世界书和角色卡调整方便，与 DSH 语音阅读插件兼容良好](docs/images/readme/testimonials/setup-and-plugin-compatibility.jpg)](docs/images/readme/testimonials/setup-and-plugin-compatibility.jpg)
-
-[![用户反馈：AI 修改内容方便，变量更新稳定，轻前端游玩体验不错](docs/images/readme/testimonials/ai-editing-and-variable-stability.jpg)](docs/images/readme/testimonials/ai-editing-and-variable-stability.jpg)
-
-&lt;/details&gt;
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[cloudflare/security-audit-skill]]></title>
-            <link>https://github.com/cloudflare/security-audit-skill</link>
-            <guid>https://github.com/cloudflare/security-audit-skill</guid>
-            <pubDate>Tue, 20 Oct 2026 00:06:05 GMT</pubDate>
-            <description><![CDATA[A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a></h1>
-            <p>A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 32,516</p>
-            <p>Forks: 2,032</p>
-            <p>Stars today: 849 stars today</p>
-            <h2>README</h2><pre># security-audit
-
-A coding-agent skill that turns your agent into a security auditor. It orchestrates isolated agents through reconnaissance, coverage-led hunting, candidate validation, structured output, independent record verification, and target-neutral reporting.
-
-This is the skill that seeded Cloudflare&#039;s vulnerability discovery harness, described in [Build your own vulnerability harness](https://blog.cloudflare.com/build-your-own-vulnerability-harness). The harness grew into a multi-stage, fleet-wide system; this skill is the single-repo starting point it evolved from.
-
-## What it does
-
-The skill runs a structured audit in six phases:
-
-1. **Reconnaissance** -- map architecture, trust boundaries, input surfaces, prior evidence, and deterministic coverage in `architecture.md` and `coverage-ledger.json`.
-2. **Coverage-led hunting** -- assign isolated hunters from ledger units, record their checks, and use coverage critics to find gaps.
-3. **Candidate validation** -- give every unique candidate to a fresh verifier that tries to disprove it.
-4. **Structured output** -- write `confirmed`, `needs_validation`, and `rejected` records to `findings.json` and validate them against `report-schema.json`.
-5. **Independent record verification** -- fresh agents verify final source claims. Material replacements receive another independent verifier.
-6. **Target-neutral reporting** -- derive `REPORT.md`, `FINDINGS-DETAIL.md`, and `NEEDS-VALIDATION.md` from the verified records and coverage ledger.
-
-The parent runs `validate-coverage-ledger.cjs` after creating the ledger and after each later ledger update. It runs `validate-findings.cjs` in Phase 4 and again after every Phase 5 replacement.
-
-The verdicts are distinct: `confirmed` has a complete source trace and bounded observed result, `needs_validation` has an exact unresolved fact and no severity, and `rejected` records a disproved candidate.
-
-Multiple runs against the same repo are additive. The skill uses prior ledgers and findings to target gaps, revalidate changed source, and carry forward current-source evidence without treating stale or unresolved work as covered.
-
-## Files
-
-| File | Purpose |
-|------|---------|
-| `SKILL.md` | Setup, core principles, platform terminology, workflow overview, and audit anti-patterns |
-| `RECONNAISSANCE.md` | Phase 1 reconnaissance prompts and synthesis instructions |
-| `HUNTING.md` | Phase 2 orchestration, hunting methodology, and validation rules |
-| `ATTACK-CLASSES.md` | Core, wildcard, and obvious-things attack prompts |
-| `MEMORY-SAFETY-AND-BINARY.md` | Memory-safety, binary, and kernel hunting classes for native targets |
-| `AI-AND-LLM.md` | Prompt-injection, agent/tool, and output-handling hunting classes for LLM-backed targets |
-| `WEB-PROTOCOL-AND-AUTH.md` | HTTP request-framing, cache, and authentication-protocol hunting classes for HTTP-protocol and auth targets |
-| `CLIENT-SIDE.md` | DOM-injection, messaging-trust, UI-redress, and prototype-pollution hunting classes for client-side/browser targets |
-| `SUPPLY-CHAIN-AND-RELEASE.md` | Dependency, CI, release, signing, update, plugin, and extension hunting classes |
-| `CLOUD-AND-DEPLOYMENT.md` | IAM, infrastructure-as-code, container, serverless, ingress, and runtime-configuration hunting classes |
-| `PROTOCOLS-RPC-AND-MESSAGING.md` | RPC, serialization, queue, broker, webhook, and streaming-protocol hunting classes |
-| `RESOURCE-EXHAUSTION-AND-AVAILABILITY.md` | Shared resource, quota, queue, worker, and operator-spend hunting classes |
-| `DATA-ISOLATION-AND-LIFECYCLE.md` | Tenant isolation, cache, search, export, backup, migration, deletion, and restore hunting classes |
-| `DESKTOP-MOBILE-AND-LOCAL-IPC.md` | Native app, deep-link, webview, exported-component, helper, daemon, and local-IPC hunting classes |
-| `VALIDATION-AND-REPORTING.md` | Phases 3–6 candidate validation, structured output, record verification, and reporting |
-| `report-schema.json` | JSON schema for all three `findings.json` verdicts |
-| `validate-findings.cjs` | Zero-dependency validator for `findings.json` in Phases 4 and 5 |
-| `validate-findings.test.cjs` | Findings-validator tests and producer-compatible fixture checks |
-| `validate-coverage-ledger.cjs` | Zero-dependency validator for `coverage-ledger.json` in Phases 1–5 |
-| `validate-coverage-ledger.test.cjs` | Coverage-ledger validator tests |
+---
 
 ## Installation
 
-Install the skill with the [Skills CLI](https://skills.sh):
+### Option 1: Install as Plugin (Recommended)
+
+The easiest way to use this repo - install as a Claude Code plugin:
 
 ```bash
-npx skills add https://github.com/cloudflare/security-audit-skill \
-  --skill security-audit
+# Add this repo as a marketplace
+/plugin marketplace add affaan-m/everything-claude-code
+
+# Install the plugin
+/plugin install everything-claude-code@everything-claude-code
 ```
 
-Use `--global` for a user-level installation:
+Or add directly to your `~/.claude/settings.json`:
+
+```json
+{
+  &quot;extraKnownMarketplaces&quot;: {
+    &quot;everything-claude-code&quot;: {
+      &quot;source&quot;: {
+        &quot;source&quot;: &quot;github&quot;,
+        &quot;repo&quot;: &quot;affaan-m/everything-claude-code&quot;
+      }
+    }
+  },
+  &quot;enabledPlugins&quot;: {
+    &quot;everything-claude-code@everything-claude-code&quot;: true
+  }
+}
+```
+
+This gives you instant access to all commands, agents, skills, and hooks.
+
+---
+
+### Option 2: Manual Installation
+
+If you prefer manual control over what&#039;s installed:
 
 ```bash
-npx skills add https://github.com/cloudflare/security-audit-skill \
-  --skill security-audit \
-  --global
+# Clone the repo
+git clone https://github.com/affaan-m/everything-claude-code.git
+
+# Copy agents to your Claude config
+cp everything-claude-code/agents/*.md ~/.claude/agents/
+
+# Copy rules
+cp everything-claude-code/rules/*.md ~/.claude/rules/
+
+# Copy commands
+cp everything-claude-code/commands/*.md ~/.claude/commands/
+
+# Copy skills
+cp -r everything-claude-code/skills/* ~/.claude/skills/
 ```
 
-Run `npx skills --help` for agent-selection and non-interactive options.
+#### Add hooks to settings.json
 
-## Usage
+Copy the hooks from `hooks/hooks.json` to your `~/.claude/settings.json`.
 
-Start your coding agent in (or pointed at) the codebase you want to audit, then ask it to do a security audit:
+#### Configure MCPs
+
+Copy desired MCP servers from `mcp-configs/mcp-servers.json` to your `~/.claude.json`.
+
+**Important:** Replace `YOUR_*_HERE` placeholders with your actual API keys.
+
+---
+
+## Key Concepts
+
+### Agents
+
+Subagents handle delegated tasks with limited scope. Example:
+
+```markdown
+---
+name: code-reviewer
+description: Reviews code for quality, security, and maintainability
+tools: Read, Grep, Glob, Bash
+model: opus
+---
+
+You are a senior code reviewer...
+```
+
+### Skills
+
+Skills are workflow definitions invoked by commands or agents:
+
+```markdown
+# TDD Workflow
+
+1. Define interfaces first
+2. Write failing tests (RED)
+3. Implement minimal code (GREEN)
+4. Refactor (IMPROVE)
+5. Verify 80%+ coverage
+```
+
+### Hooks
+
+Hooks fire on tool events. Example - warn about console.log:
+
+```json
+{
+  &quot;matcher&quot;: &quot;tool == \&quot;Edit\&quot; &amp;&amp; tool_input.file_path matches \&quot;\\\\.(ts|tsx|js|jsx)$\&quot;&quot;,
+  &quot;hooks&quot;: [{
+    &quot;type&quot;: &quot;command&quot;,
+    &quot;command&quot;: &quot;#!/bin/bash\ngrep -n &#039;console\\.log&#039; \&quot;$file_path\&quot; &amp;&amp; echo &#039;[Hook] Remove console.log&#039; &gt;&amp;2&quot;
+  }]
+}
+```
+
+### Rules
+
+Rules are always-follow guidelines. Keep them modular:
 
 ```
-security audit this codebase
+~/.claude/rules/
+  security.md      # No hardcoded secrets
+  coding-style.md  # Immutability, file limits
+  testing.md       # TDD, coverage requirements
 ```
 
+---
+
+## Running Tests
+
+The plugin includes a comprehensive test suite:
+
+```bash
+# Run all tests
+node tests/run-all.js
+
+# Run individual test files
+node tests/lib/utils.test.js
+node tests/lib/package-manager.test.js
+node tests/hooks/hooks.test.js
 ```
-find security vulnerabilities in ./src
-```
 
-```
-do a security review, output to ~/audits/my-project
-```
+---
 
-The skill activates automatically when the request matches its trigger (security audit, find vulnerabilities, pen-test the code, etc.). A direct codebase audit or pen-test request uses full audit mode. Security questions and focused vulnerability work use guidance mode unless you request report artifacts. In full audit mode, an unspecified output directory defaults to `~/security-audit-skill/&lt;repo-name&gt;/run-&lt;N&gt;`. The workflow writes inside the target repository only when you explicitly select a directory that version control ignores.
+## Contributing
 
-## Requirements
+**Contributions are welcome and encouraged.**
 
-- A coding agent with a model that supports tool use and parallel sub-agents
-- Node.js for the zero-dependency findings and coverage-ledger validators
-- An OS-enforced sandbox for target-controlled builds, tests, processes, browsers, emulators, fuzzers, and fixtures. It must disable external networking, use a sanitized allowlisted environment, enforce resource limits, and allow writes only to assigned scratch paths. Without these controls, the workflow keeps the lead as `needs_validation` instead of executing target code.
+This repo is meant to be a community resource. If you have:
+- Useful agents or skills
+- Clever hooks
+- Better MCP configurations
+- Improved rules
 
-## Design principles
+Please contribute! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-- **Only confirm established boundary failures.** Keep a source-grounded blocked lead as `needs_validation` with its exact unresolved fact.
-- **Adversarial validation.** The agent that checks a finding is never the agent that found it.
-- **Severity requires impact.** Likelihood x impact, not deviation from a checklist.
-- **Defense-in-depth gaps are not vulnerabilities.** If Layer A prevents the attack, the absence of Layer B is a hardening note.
-- **Multiple runs improve coverage.** In our test runs, a single run found roughly half of the vulnerabilities that repeated runs found in total.
+### Ideas for Contributions
 
-## Contact
+- Language-specific skills (Python, Go, Rust patterns)
+- Framework-specific configs (Django, Rails, Laravel)
+- DevOps agents (Kubernetes, Terraform, AWS)
+- Testing strategies (different frameworks)
+- Domain-specific knowledge (ML, data engineering, mobile)
 
-Questions, feedback, or comparing notes on AI-driven security tooling: security-ai-research@cloudflare.com
+---
+
+## Background
+
+I&#039;ve been using Claude Code since the experimental rollout. Won the Anthropic x Forum Ventures hackathon in Sep 2025 building [zenith.chat](https://zenith.chat) with [@DRodriguezFX](https://x.com/DRodriguezFX) - entirely using Claude Code.
+
+These configs are battle-tested across multiple production applications.
+
+---
+
+## Important Notes
+
+### Context Window Management
+
+**Critical:** Don&#039;t enable all MCPs at once. Your 200k context window can shrink to 70k with too many tools enabled.
+
+Rule of thumb:
+- Have 20-30 MCPs configured
+- Keep under 10 enabled per project
+- Under 80 tools active
+
+Use `disabledMcpServers` in project config to disable unused ones.
+
+### Customization
+
+These configs work for my workflow. You should:
+1. Start with what resonates
+2. Modify for your stack
+3. Remove what you don&#039;t use
+4. Add your own patterns
+
+---
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=affaan-m/everything-claude-code&amp;type=Date)](https://star-history.com/#affaan-m/everything-claude-code&amp;Date)
+
+---
+
+## Links
+
+- **Shorthand Guide (Start Here):** [The Shorthand Guide to Everything Claude Code](https://x.com/affaanmustafa/status/2012378465664745795)
+- **Longform Guide (Advanced):** [The Longform Guide to Everything Claude Code](https://x.com/affaanmustafa/status/2014040193557471352)
+- **Follow:** [@affaanmustafa](https://x.com/affaanmustafa)
+- **zenith.chat:** [zenith.chat](https://zenith.chat)
+
+---
 
 ## License
 
-MIT -- see [LICENSE](LICENSE).
+MIT - Use freely, modify as needed, contribute back if you can.
+
+---
+
+**Star this repo if it helps. Read both guides. Build something great.**
 </pre>
           ]]></content:encoded>
             <category>JavaScript</category>
