@@ -4,147 +4,24 @@
         <title>GitHub Trending Today for javascript - JavaScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for javascript.</description>
-        <lastBuildDate>Thu, 22 Oct 2026 00:05:36 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 23 Oct 2026 00:06:06 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2026, GitHub</copyright>
         <item>
-            <title><![CDATA[cloudflare/security-audit-skill]]></title>
-            <link>https://github.com/cloudflare/security-audit-skill</link>
-            <guid>https://github.com/cloudflare/security-audit-skill</guid>
-            <pubDate>Thu, 22 Oct 2026 00:05:36 GMT</pubDate>
-            <description><![CDATA[A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a></h1>
-            <p>A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 36,412</p>
-            <p>Forks: 2,274</p>
-            <p>Stars today: 2,012 stars today</p>
-            <h2>README</h2><pre># security-audit
-
-A coding-agent skill that turns your agent into a security auditor. It orchestrates isolated agents through reconnaissance, coverage-led hunting, candidate validation, structured output, independent record verification, and target-neutral reporting.
-
-This is the skill that seeded Cloudflare&#039;s vulnerability discovery harness, described in [Build your own vulnerability harness](https://blog.cloudflare.com/build-your-own-vulnerability-harness). The harness grew into a multi-stage, fleet-wide system; this skill is the single-repo starting point it evolved from.
-
-## What it does
-
-The skill runs a structured audit in six phases:
-
-1. **Reconnaissance** -- map architecture, trust boundaries, input surfaces, prior evidence, and deterministic coverage in `architecture.md` and `coverage-ledger.json`.
-2. **Coverage-led hunting** -- assign isolated hunters from ledger units, record their checks, and use coverage critics to find gaps.
-3. **Candidate validation** -- give every unique candidate to a fresh verifier that tries to disprove it.
-4. **Structured output** -- write `confirmed`, `needs_validation`, and `rejected` records to `findings.json` and validate them against `report-schema.json`.
-5. **Independent record verification** -- fresh agents verify final source claims. Material replacements receive another independent verifier.
-6. **Target-neutral reporting** -- derive `REPORT.md`, `FINDINGS-DETAIL.md`, and `NEEDS-VALIDATION.md` from the verified records and coverage ledger.
-
-The parent runs `validate-coverage-ledger.cjs` after creating the ledger and after each later ledger update. It runs `validate-findings.cjs` in Phase 4 and again after every Phase 5 replacement.
-
-The verdicts are distinct: `confirmed` has a complete source trace and bounded observed result, `needs_validation` has an exact unresolved fact and no severity, and `rejected` records a disproved candidate.
-
-Multiple runs against the same repo are additive. The skill uses prior ledgers and findings to target gaps, revalidate changed source, and carry forward current-source evidence without treating stale or unresolved work as covered.
-
-## Files
-
-| File | Purpose |
-|------|---------|
-| `SKILL.md` | Setup, core principles, platform terminology, workflow overview, and audit anti-patterns |
-| `RECONNAISSANCE.md` | Phase 1 reconnaissance prompts and synthesis instructions |
-| `HUNTING.md` | Phase 2 orchestration, hunting methodology, and validation rules |
-| `ATTACK-CLASSES.md` | Core, wildcard, and obvious-things attack prompts |
-| `MEMORY-SAFETY-AND-BINARY.md` | Memory-safety, binary, and kernel hunting classes for native targets |
-| `AI-AND-LLM.md` | Prompt-injection, agent/tool, and output-handling hunting classes for LLM-backed targets |
-| `WEB-PROTOCOL-AND-AUTH.md` | HTTP request-framing, cache, and authentication-protocol hunting classes for HTTP-protocol and auth targets |
-| `CLIENT-SIDE.md` | DOM-injection, messaging-trust, UI-redress, and prototype-pollution hunting classes for client-side/browser targets |
-| `SUPPLY-CHAIN-AND-RELEASE.md` | Dependency, CI, release, signing, update, plugin, and extension hunting classes |
-| `CLOUD-AND-DEPLOYMENT.md` | IAM, infrastructure-as-code, container, serverless, ingress, and runtime-configuration hunting classes |
-| `PROTOCOLS-RPC-AND-MESSAGING.md` | RPC, serialization, queue, broker, webhook, and streaming-protocol hunting classes |
-| `RESOURCE-EXHAUSTION-AND-AVAILABILITY.md` | Shared resource, quota, queue, worker, and operator-spend hunting classes |
-| `DATA-ISOLATION-AND-LIFECYCLE.md` | Tenant isolation, cache, search, export, backup, migration, deletion, and restore hunting classes |
-| `DESKTOP-MOBILE-AND-LOCAL-IPC.md` | Native app, deep-link, webview, exported-component, helper, daemon, and local-IPC hunting classes |
-| `VALIDATION-AND-REPORTING.md` | Phases 3–6 candidate validation, structured output, record verification, and reporting |
-| `report-schema.json` | JSON schema for all three `findings.json` verdicts |
-| `validate-findings.cjs` | Zero-dependency validator for `findings.json` in Phases 4 and 5 |
-| `validate-findings.test.cjs` | Findings-validator tests and producer-compatible fixture checks |
-| `validate-coverage-ledger.cjs` | Zero-dependency validator for `coverage-ledger.json` in Phases 1–5 |
-| `validate-coverage-ledger.test.cjs` | Coverage-ledger validator tests |
-
-## Installation
-
-Install the skill with the [Skills CLI](https://skills.sh):
-
-```bash
-npx skills add https://github.com/cloudflare/security-audit-skill \
-  --skill security-audit
-```
-
-Use `--global` for a user-level installation:
-
-```bash
-npx skills add https://github.com/cloudflare/security-audit-skill \
-  --skill security-audit \
-  --global
-```
-
-Run `npx skills --help` for agent-selection and non-interactive options.
-
-## Usage
-
-Start your coding agent in (or pointed at) the codebase you want to audit, then ask it to do a security audit:
-
-```
-security audit this codebase
-```
-
-```
-find security vulnerabilities in ./src
-```
-
-```
-do a security review, output to ~/audits/my-project
-```
-
-The skill activates automatically when the request matches its trigger (security audit, find vulnerabilities, pen-test the code, etc.). A direct codebase audit or pen-test request uses full audit mode. Security questions and focused vulnerability work use guidance mode unless you request report artifacts. In full audit mode, an unspecified output directory defaults to `~/security-audit-skill/&lt;repo-name&gt;/run-&lt;N&gt;`. The workflow writes inside the target repository only when you explicitly select a directory that version control ignores.
-
-## Requirements
-
-- A coding agent with a model that supports tool use and parallel sub-agents
-- Node.js for the zero-dependency findings and coverage-ledger validators
-- An OS-enforced sandbox for target-controlled builds, tests, processes, browsers, emulators, fuzzers, and fixtures. It must disable external networking, use a sanitized allowlisted environment, enforce resource limits, and allow writes only to assigned scratch paths. Without these controls, the workflow keeps the lead as `needs_validation` instead of executing target code.
-
-## Design principles
-
-- **Only confirm established boundary failures.** Keep a source-grounded blocked lead as `needs_validation` with its exact unresolved fact.
-- **Adversarial validation.** The agent that checks a finding is never the agent that found it.
-- **Severity requires impact.** Likelihood x impact, not deviation from a checklist.
-- **Defense-in-depth gaps are not vulnerabilities.** If Layer A prevents the attack, the absence of Layer B is a hardening note.
-- **Multiple runs improve coverage.** In our test runs, a single run found roughly half of the vulnerabilities that repeated runs found in total.
-
-## Contact
-
-Questions, feedback, or comparing notes on AI-driven security tooling: security-ai-research@cloudflare.com
-
-## License
-
-MIT -- see [LICENSE](LICENSE).
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
             <title><![CDATA[DietrichGebert/ponytail]]></title>
             <link>https://github.com/DietrichGebert/ponytail</link>
             <guid>https://github.com/DietrichGebert/ponytail</guid>
-            <pubDate>Thu, 22 Oct 2026 00:05:35 GMT</pubDate>
+            <pubDate>Fri, 23 Oct 2026 00:06:06 GMT</pubDate>
             <description><![CDATA[Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/DietrichGebert/ponytail">DietrichGebert/ponytail</a></h1>
             <p>Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 171,585</p>
-            <p>Forks: 9,340</p>
-            <p>Stars today: 2,079 stars today</p>
+            <p>Stars: 173,430</p>
+            <p>Forks: 9,436</p>
+            <p>Stars today: 1,948 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
   &lt;picture&gt;
     &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;assets/logo-dark.png&quot;&gt;
@@ -375,17 +252,1099 @@ You know exactly why.
             <category>JavaScript</category>
         </item>
         <item>
+            <title><![CDATA[cloudflare/security-audit-skill]]></title>
+            <link>https://github.com/cloudflare/security-audit-skill</link>
+            <guid>https://github.com/cloudflare/security-audit-skill</guid>
+            <pubDate>Fri, 23 Oct 2026 00:06:05 GMT</pubDate>
+            <description><![CDATA[A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a></h1>
+            <p>A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 39,522</p>
+            <p>Forks: 2,460</p>
+            <p>Stars today: 2,979 stars today</p>
+            <h2>README</h2><pre># security-audit
+
+A coding-agent skill that turns your agent into a security auditor. It orchestrates isolated agents through reconnaissance, coverage-led hunting, candidate validation, structured output, independent record verification, and target-neutral reporting.
+
+This is the skill that seeded Cloudflare&#039;s vulnerability discovery harness, described in [Build your own vulnerability harness](https://blog.cloudflare.com/build-your-own-vulnerability-harness). The harness grew into a multi-stage, fleet-wide system; this skill is the single-repo starting point it evolved from.
+
+## What it does
+
+The skill runs a structured audit in six phases:
+
+1. **Reconnaissance** -- map architecture, trust boundaries, input surfaces, prior evidence, and deterministic coverage in `architecture.md` and `coverage-ledger.json`.
+2. **Coverage-led hunting** -- assign isolated hunters from ledger units, record their checks, and use coverage critics to find gaps.
+3. **Candidate validation** -- give every unique candidate to a fresh verifier that tries to disprove it.
+4. **Structured output** -- write `confirmed`, `needs_validation`, and `rejected` records to `findings.json` and validate them against `report-schema.json`.
+5. **Independent record verification** -- fresh agents verify final source claims. Material replacements receive another independent verifier.
+6. **Target-neutral reporting** -- derive `REPORT.md`, `FINDINGS-DETAIL.md`, and `NEEDS-VALIDATION.md` from the verified records and coverage ledger.
+
+The parent runs `validate-coverage-ledger.cjs` after creating the ledger and after each later ledger update. It runs `validate-findings.cjs` in Phase 4 and again after every Phase 5 replacement.
+
+The verdicts are distinct: `confirmed` has a complete source trace and bounded observed result, `needs_validation` has an exact unresolved fact and no severity, and `rejected` records a disproved candidate.
+
+Multiple runs against the same repo are additive. The skill uses prior ledgers and findings to target gaps, revalidate changed source, and carry forward current-source evidence without treating stale or unresolved work as covered.
+
+## Files
+
+| File | Purpose |
+|------|---------|
+| `SKILL.md` | Setup, core principles, platform terminology, workflow overview, and audit anti-patterns |
+| `RECONNAISSANCE.md` | Phase 1 reconnaissance prompts and synthesis instructions |
+| `HUNTING.md` | Phase 2 orchestration, hunting methodology, and validation rules |
+| `ATTACK-CLASSES.md` | Core, wildcard, and obvious-things attack prompts |
+| `MEMORY-SAFETY-AND-BINARY.md` | Memory-safety, binary, and kernel hunting classes for native targets |
+| `AI-AND-LLM.md` | Prompt-injection, agent/tool, and output-handling hunting classes for LLM-backed targets |
+| `WEB-PROTOCOL-AND-AUTH.md` | HTTP request-framing, cache, and authentication-protocol hunting classes for HTTP-protocol and auth targets |
+| `CLIENT-SIDE.md` | DOM-injection, messaging-trust, UI-redress, and prototype-pollution hunting classes for client-side/browser targets |
+| `SUPPLY-CHAIN-AND-RELEASE.md` | Dependency, CI, release, signing, update, plugin, and extension hunting classes |
+| `CLOUD-AND-DEPLOYMENT.md` | IAM, infrastructure-as-code, container, serverless, ingress, and runtime-configuration hunting classes |
+| `PROTOCOLS-RPC-AND-MESSAGING.md` | RPC, serialization, queue, broker, webhook, and streaming-protocol hunting classes |
+| `RESOURCE-EXHAUSTION-AND-AVAILABILITY.md` | Shared resource, quota, queue, worker, and operator-spend hunting classes |
+| `DATA-ISOLATION-AND-LIFECYCLE.md` | Tenant isolation, cache, search, export, backup, migration, deletion, and restore hunting classes |
+| `DESKTOP-MOBILE-AND-LOCAL-IPC.md` | Native app, deep-link, webview, exported-component, helper, daemon, and local-IPC hunting classes |
+| `VALIDATION-AND-REPORTING.md` | Phases 3–6 candidate validation, structured output, record verification, and reporting |
+| `report-schema.json` | JSON schema for all three `findings.json` verdicts |
+| `validate-findings.cjs` | Zero-dependency validator for `findings.json` in Phases 4 and 5 |
+| `validate-findings.test.cjs` | Findings-validator tests and producer-compatible fixture checks |
+| `validate-coverage-ledger.cjs` | Zero-dependency validator for `coverage-ledger.json` in Phases 1–5 |
+| `validate-coverage-ledger.test.cjs` | Coverage-ledger validator tests |
+
+## Installation
+
+Install the skill with the [Skills CLI](https://skills.sh):
+
+```bash
+npx skills add https://github.com/cloudflare/security-audit-skill \
+  --skill security-audit
+```
+
+Use `--global` for a user-level installation:
+
+```bash
+npx skills add https://github.com/cloudflare/security-audit-skill \
+  --skill security-audit \
+  --global
+```
+
+Run `npx skills --help` for agent-selection and non-interactive options.
+
+## Usage
+
+Start your coding agent in (or pointed at) the codebase you want to audit, then ask it to do a security audit:
+
+```
+security audit this codebase
+```
+
+```
+find security vulnerabilities in ./src
+```
+
+```
+do a security review, output to ~/audits/my-project
+```
+
+The skill activates automatically when the request matches its trigger (security audit, find vulnerabilities, pen-test the code, etc.). A direct codebase audit or pen-test request uses full audit mode. Security questions and focused vulnerability work use guidance mode unless you request report artifacts. In full audit mode, an unspecified output directory defaults to `~/security-audit-skill/&lt;repo-name&gt;/run-&lt;N&gt;`. The workflow writes inside the target repository only when you explicitly select a directory that version control ignores.
+
+## Requirements
+
+- A coding agent with a model that supports tool use and parallel sub-agents
+- Node.js for the zero-dependency findings and coverage-ledger validators
+- An OS-enforced sandbox for target-controlled builds, tests, processes, browsers, emulators, fuzzers, and fixtures. It must disable external networking, use a sanitized allowlisted environment, enforce resource limits, and allow writes only to assigned scratch paths. Without these controls, the workflow keeps the lead as `needs_validation` instead of executing target code.
+
+## Design principles
+
+- **Only confirm established boundary failures.** Keep a source-grounded blocked lead as `needs_validation` with its exact unresolved fact.
+- **Adversarial validation.** The agent that checks a finding is never the agent that found it.
+- **Severity requires impact.** Likelihood x impact, not deviation from a checklist.
+- **Defense-in-depth gaps are not vulnerabilities.** If Layer A prevents the attack, the absence of Layer B is a hardening note.
+- **Multiple runs improve coverage.** In our test runs, a single run found roughly half of the vulnerabilities that repeated runs found in total.
+
+## Contact
+
+Questions, feedback, or comparing notes on AI-driven security tooling: security-ai-research@cloudflare.com
+
+## License
+
+MIT -- see [LICENSE](LICENSE).
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[nodejs/node]]></title>
+            <link>https://github.com/nodejs/node</link>
+            <guid>https://github.com/nodejs/node</guid>
+            <pubDate>Fri, 23 Oct 2026 00:06:04 GMT</pubDate>
+            <description><![CDATA[Node.js JavaScript runtime ✨🐢🚀✨]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/nodejs/node">nodejs/node</a></h1>
+            <p>Node.js JavaScript runtime ✨🐢🚀✨</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 122,568</p>
+            <p>Forks: 39,923</p>
+            <p>Stars today: 76 stars today</p>
+            <h2>README</h2><pre># Node.js
+
+Node.js is an open-source, cross-platform JavaScript runtime environment.
+
+For information on using Node.js, see the [Node.js website][].
+
+The Node.js project uses an [open governance model](./GOVERNANCE.md). The
+[OpenJS Foundation][] provides support for the project.
+
+Contributors are expected to act in a collaborative manner to move
+the project forward. We encourage the constructive exchange of contrary
+opinions and compromise. The [TSC](./GOVERNANCE.md#technical-steering-committee)
+reserves the right to limit or block contributors who repeatedly act in ways
+that discourage, exhaust, or otherwise negatively affect other participants.
+
+**This project has a [Code of Conduct][].**
+
+## Table of contents
+
+* [Support](#support)
+* [Release types](#release-types)
+  * [Download](#download)
+    * [Current and LTS releases](#current-and-lts-releases)
+    * [Nightly releases](#nightly-releases)
+    * [API documentation](#api-documentation)
+  * [Verifying binaries](#verifying-binaries)
+* [Building Node.js](#building-nodejs)
+* [Security](#security)
+* [Contributing to Node.js](#contributing-to-nodejs)
+* [Current project team members](#current-project-team-members)
+  * [TSC (Technical Steering Committee)](#tsc-technical-steering-committee)
+  * [Collaborators](#collaborators)
+  * [Triagers](#triagers)
+  * [Release keys](#release-keys)
+* [License](#license)
+
+## Support
+
+Looking for help? Check out the
+[instructions for getting support](.github/SUPPORT.md).
+
+## Release types
+
+Node.js follows [semantic versioning](https://semver.org).
+
+* **Alpha**: Under active development where semver-major changes are allowed.
+  Each October, a new release line (for example, Node.js 27) branches off `main`
+  and receives Alpha releases (for example, `27.0.0-alpha.0.0.0`) for 6 months,
+  then are promoted to Current (see below) each April. Alpha releases are signed,
+  tagged, and tested through [CITGM](https://github.com/nodejs/citgm), but their
+  API and ABI may change between releases. They are intended for library authors
+  and CI pipelines, not for production use.
+* **Current**: Under active development, no semver-major changes allowed. Node.js
+  releases a new major version once a year, in April. Releases stay Current for
+  6 months, then convert to LTS (see below) each October. Their ABI may change
+  between releases. They are intended for library authors and CI pipelines, not
+  for production use.
+* **LTS**: Releases under Long Term Support, with a focus on stability
+  and security. Only changes that have been on Alpha or Current release for two
+  weeks can be backported to a typical LTS release. Every major version becomes an LTS
+  release, and receives 30 months of LTS support, for a total of 36 months from
+  its first Current release to End-of-Life. LTS release lines have alphabetically-ordered
+  code names, beginning with Node.js 4 Argon.
+* **Nightly**: Code from the `main` branch built every 24-hours when there are
+  changes. Unlike Alpha releases, nightly builds are automated and untested.
+  Use with caution.
+
+Release lines up to and including Node.js 26 follow the previous schedule, where a
+new major version was released every 6 months and only even-numbered major
+versions became LTS. See the
+[Node.js release schedule announcement](https://nodejs.org/en/blog/announcements/evolving-the-nodejs-release-schedule)
+for details.
+
+For more information, see the
+[Release README](https://github.com/nodejs/Release#readme).
+
+### Download
+
+Binaries, installers, and source tarballs are available at
+&lt;https://nodejs.org/en/download/&gt;.
+
+#### Current and LTS releases
+
+&lt;https://nodejs.org/download/release/&gt;
+
+The [latest](https://nodejs.org/download/release/latest/) directory is an
+alias for the latest Current release. The latest-_codename_ directory is an
+alias for the latest release from an LTS line. For example, the
+[latest-hydrogen](https://nodejs.org/download/release/latest-hydrogen/)
+directory contains the latest Hydrogen (Node.js 18) release.
+
+#### Nightly releases
+
+&lt;https://nodejs.org/download/nightly/&gt;
+
+Each directory and filename includes the version (e.g., `v22.0.0`),
+followed by the UTC date (e.g., `20240424` for April 24, 2024),
+and the short commit SHA of the HEAD of the release (e.g., `ddd0a9e494`).
+For instance, a full directory name might look like `v22.0.0-nightly20240424ddd0a9e494`.
+
+#### API documentation
+
+Documentation for the latest Current release is at &lt;https://nodejs.org/api/&gt;.
+Version-specific documentation is available in each release directory in the
+_docs_ subdirectory. Version-specific documentation is also at
+&lt;https://nodejs.org/download/docs/&gt;.
+
+### Verifying binaries
+
+Download directories contain a `SHASUMS256.txt.asc` file with SHA checksums for the
+files and the releaser PGP signature.
+
+You can get a trusted keyring from nodejs/release-keys, e.g. using `curl`:
+
+```bash
+curl -fsLo &quot;/path/to/nodejs-keyring.kbx&quot; &quot;https://github.com/nodejs/release-keys/raw/HEAD/gpg/pubring.kbx&quot;
+```
+
+Alternatively, you can import the releaser keys in your default keyring, see
+[Release keys](#release-keys) for commands on how to do that.
+
+Then, you can verify the files you&#039;ve downloaded locally
+(if you&#039;re using your default keyring, pass `--keyring=&quot;${GNUPGHOME:-~/.gnupg}/pubring.kbx&quot;`):
+
+```bash
+curl -fsO &quot;https://nodejs.org/dist/${VERSION}/SHASUMS256.txt.asc&quot; \
+&amp;&amp; gpgv --keyring=&quot;/path/to/nodejs-keyring.kbx&quot; --output SHASUMS256.txt &lt; SHASUMS256.txt.asc \
+&amp;&amp; shasum --check SHASUMS256.txt --ignore-missing
+```
+
+## Building Node.js
+
+See [BUILDING.md](BUILDING.md) for instructions on how to build Node.js from
+source and a list of supported platforms.
+
+## Security
+
+For information on reporting security vulnerabilities in Node.js, see
+[SECURITY.md](./SECURITY.md).
+
+## Contributing to Node.js
+
+* [Contributing to the project][]
+* [Working Groups][]
+* [Strategic initiatives][]
+* [Technical values and prioritization][]
+
+## Current project team members
+
+For information about the governance of the Node.js project, see
+[GOVERNANCE.md](./GOVERNANCE.md).
+
+&lt;!-- node-core-utils and find-inactive-tsc.mjs depend on the format of the TSC
+     list. If the format changes, those utilities need to be tested and
+     updated. --&gt;
+
+### TSC (Technical Steering Committee)
+
+#### TSC voting members
+
+&lt;!--lint disable prohibited-strings--&gt;
+
+* [aduh95](https://github.com/aduh95) -
+  **Antoine du Hamel** &lt;&lt;duhamelantoine1995@gmail.com&gt;&gt; (he/him)
+* [anonrig](https://github.com/anonrig) -
+  **Yagiz Nizipli** &lt;&lt;yagiz@nizipli.com&gt;&gt; (he/him)
+* [benjamingr](https://github.com/benjamingr) -
+  **Benjamin Gruenbaum** &lt;&lt;benjamingr@gmail.com&gt;&gt;
+* [BridgeAR](https://github.com/BridgeAR) -
+  **Ruben Bridgewater** &lt;&lt;ruben@bridgewater.de&gt;&gt; (he/him)
+* [gireeshpunathil](https://github.com/gireeshpunathil) -
+  **Gireesh Punathil** &lt;&lt;gpunathi@in.ibm.com&gt;&gt; (he/him)
+* [jasnell](https://github.com/jasnell) -
+  **James M Snell** &lt;&lt;jasnell@gmail.com&gt;&gt; (he/him)
+* [joyeecheung](https://github.com/joyeecheung) -
+  **Joyee Cheung** &lt;&lt;joyeec9h3@gmail.com&gt;&gt; (she/her)
+* [legendecas](https://github.com/legendecas) -
+  **Chengzhong Wu** &lt;&lt;legendecas@gmail.com&gt;&gt; (he/him)
+* [marco-ippolito](https://github.com/marco-ippolito) -
+  **Marco Ippolito** &lt;&lt;marcoippolito54@gmail.com&gt;&gt; (he/him)
+* [mcollina](https://github.com/mcollina) -
+  **Matteo Collina** &lt;&lt;matteo.collina@gmail.com&gt;&gt; (he/him)
+* [panva](https://github.com/panva) -
+  **Filip Skokan** &lt;&lt;panva.ip@gmail.com&gt;&gt; (he/him)
+* [RafaelGSS](https://github.com/RafaelGSS) -
+  **Rafael Gonzaga** &lt;&lt;rafael.nunu@hotmail.com&gt;&gt; (he/him)
+* [RaisinTen](https://github.com/RaisinTen) -
+  **Darshan Sen** &lt;&lt;raisinten@gmail.com&gt;&gt; (he/him)
+* [richardlau](https://github.com/richardlau) -
+  **Richard Lau** &lt;&lt;richard.lau@ibm.com&gt;&gt;
+* [ronag](https://github.com/ronag) -
+  **Robert Nagy** &lt;&lt;ronagy@icloud.com&gt;&gt;
+* [ruyadorno](https://github.com/ruyadorno) -
+  **Ruy Adorno** &lt;&lt;ruy@vlt.sh&gt;&gt; (he/him)
+* [ShogunPanda](https://github.com/ShogunPanda) -
+  **Paolo Insogna** &lt;&lt;paolo@cowtech.it&gt;&gt; (he/him)
+* [tniessen](https://github.com/tniessen) -
+  **Tobias Nießen** &lt;&lt;tniessen@tnie.de&gt;&gt; (he/him)
+
+#### TSC regular members
+
+* [BethGriggs](https://github.com/BethGriggs) -
+  **Beth Griggs** &lt;&lt;bethanyngriggs@gmail.com&gt;&gt; (she/her)
+* [bnoordhuis](https://github.com/bnoordhuis) -
+  **Ben Noordhuis** &lt;&lt;info@bnoordhuis.nl&gt;&gt;
+* [cjihrig](https://github.com/cjihrig) -
+  **Colin Ihrig** &lt;&lt;cjihrig@gmail.com&gt;&gt; (he/him)
+* [codebytere](https://github.com/codebytere) -
+  **Shelley Vohr** &lt;&lt;shelley.vohr@gmail.com&gt;&gt; (she/her)
+* [GeoffreyBooth](https://github.com/GeoffreyBooth) -
+  **Geoffrey Booth** &lt;&lt;webadmin@geoffreybooth.com&gt;&gt; (he/him)
+* [MoLow](https://github.com/MoLow) -
+  **Moshe Atlow** &lt;&lt;moshe@atlow.co.il&gt;&gt; (he/him)
+* [Trott](https://github.com/Trott) -
+  **Rich Trott** &lt;&lt;rtrott@gmail.com&gt;&gt; (he/him)
+
+&lt;details&gt;
+
+&lt;summary&gt;TSC emeriti members&lt;/summary&gt;
+
+#### TSC emeriti members
+
+* [addaleax](https://github.com/addaleax) -
+  **Anna Henningsen** &lt;&lt;anna@addaleax.net&gt;&gt; (she/her)
+* [apapirovski](https://github.com/apapirovski) -
+  **Anatoli Papirovski** &lt;&lt;apapirovski@mac.com&gt;&gt; (he/him)
+* [ChALkeR](https://github.com/ChALkeR) -
+  **Сковорода Никита Андреевич** &lt;&lt;chalkerx@gmail.com&gt;&gt; (he/him)
+* [chrisdickinson](https://github.com/chrisdickinson) -
+  **Chris Dickinson** &lt;&lt;christopher.s.dickinson@gmail.com&gt;&gt;
+* [danbev](https://github.com/danbev) -
+  **Daniel Bevenius** &lt;&lt;daniel.bevenius@gmail.com&gt;&gt; (he/him)
+* [danielleadams](https://github.com/danielleadams) -
+  **Danielle Adams** &lt;&lt;adamzdanielle@gmail.com&gt;&gt; (she/her)
+* [evanlucas](https://github.com/evanlucas) -
+  **Evan Lucas** &lt;&lt;evanlucas@me.com&gt;&gt; (he/him)
+* [fhinkel](https://github.com/fhinkel) -
+  **Franziska Hinkelmann** &lt;&lt;franziska.hinkelmann@gmail.com&gt;&gt; (she/her)
+* [Fishrock123](https://github.com/Fishrock123) -
+  **Jeremiah Senkpiel** &lt;&lt;fishrock123@rocketmail.com&gt;&gt; (he/they)
+* [gabrielschulhof](https://github.com/gabrielschulhof) -
+  **Gabriel Schulhof** &lt;&lt;gabrielschulhof@gmail.com&gt;&gt;
+* [gibfahn](https://github.com/gibfahn) -
+  **Gibson Fahnestock** &lt;&lt;gibfahn@gmail.com&gt;&gt; (he/him)
+* [indutny](https://github.com/indutny) -
+  **Fedor Indutny** &lt;&lt;fedor@indutny.com&gt;&gt;
+* [isaacs](https://github.com/isaacs) -
+  **Isaac Z. Schlueter** &lt;&lt;i@izs.me&gt;&gt;
+* [joshgav](https://github.com/joshgav) -
+  **Josh Gavant** &lt;&lt;josh.gavant@outlook.com&gt;&gt;
+* [mhdawson](https://github.com/mhdawson) -
+  **Michael Dawson** &lt;&lt;midawson@redhat.com&gt;&gt; (he/him)
+* [mmarchini](https://github.com/mmarchini) -
+  **Mary Marchini** &lt;&lt;oss@mmarchini.me&gt;&gt; (she/her)
+* [mscdex](https://github.com/mscdex) -
+  **Brian White** &lt;&lt;mscdex@mscdex.net&gt;&gt;
+* [MylesBorins](https://github.com/MylesBorins) -
+  **Myles Borins** &lt;&lt;myles.borins@gmail.com&gt;&gt; (he/him)
+* [nebrius](https://github.com/nebrius) -
+  **Bryan Hughes** &lt;&lt;bryan@nebri.us&gt;&gt;
+* [ofrobots](https://github.com/ofrobots) -
+  **Ali Ijaz Sheikh** &lt;&lt;ofrobots@google.com&gt;&gt; (he/him)
+* [orangemocha](https://github.com/orangemocha) -
+  **Alexis Campailla** &lt;&lt;orangemocha@nodejs.org&gt;&gt;
+* [piscisaureus](https://github.com/piscisaureus) -
+  **Bert Belder** &lt;&lt;bertbelder@gmail.com&gt;&gt;
+* [rvagg](https://github.com/rvagg) -
+  **Rod Vagg** &lt;&lt;r@va.gg&gt;&gt;
+* [sam-github](https://github.com/sam-github) -
+  **Sam Roberts** &lt;&lt;vieuxtech@gmail.com&gt;&gt;
+* [shigeki](https://github.com/shigeki) -
+  **Shigeki Ohtsu** &lt;&lt;ohtsu@ohtsu.org&gt;&gt; (he/him)
+* [targos](https://github.com/targos) -
+  **Michaël Zasso** &lt;&lt;targos@protonmail.com&gt;&gt; (he/him)
+* [thefourtheye](https://github.com/thefourtheye) -
+  **Sakthipriyan Vairamani** &lt;&lt;thechargingvolcano@gmail.com&gt;&gt; (he/him)
+* [TimothyGu](https://github.com/TimothyGu) -
+  **Tiancheng &quot;Timothy&quot; Gu** &lt;&lt;timothygu99@gmail.com&gt;&gt; (he/him)
+* [trevnorris](https://github.com/trevnorris) -
+  **Trevor Norris** &lt;&lt;trev.norris@gmail.com&gt;&gt;
+
+&lt;/details&gt;
+
+&lt;!-- node-core-utils and find-inactive-collaborators.mjs depend on the format
+     of the collaborator list. If the format changes, those utilities need to be
+     tested and updated. --&gt;
+
+### Collaborators
+
+* [abmusse](https://github.com/abmusse) -
+  **Abdirahim Musse** &lt;&lt;abdirahim.musse@ibm.com&gt;&gt;
+* [addaleax](https://github.com/addaleax) -
+  **Anna Henningsen** &lt;&lt;anna@addaleax.net&gt;&gt; (she/her)
+* [Aditi-1400](https://github.com/Aditi-1400) -
+  **Aditi Singh** &lt;&lt;aditisingh1400@gmail.com&gt;&gt; (she/her)
+* [aduh95](https://github.com/aduh95) -
+  **Antoine du Hamel** &lt;&lt;duhamelantoine1995@gmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/aduh95)
+* [anonrig](https://github.com/anonrig) -
+  **Yagiz Nizipli** &lt;&lt;yagiz@nizipli.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/anonrig)
+* [araujogui](https://github.com/araujogui) -
+  **Guilherme Araújo** &lt;&lt;arauujogui@gmail.com&gt;&gt; (he/him)
+* [atlowChemi](https://github.com/atlowChemi) -
+  **Chemi Atlow** &lt;&lt;chemi@atlow.co.il&gt;&gt; (he/him)
+* [avivkeller](https://github.com/avivkeller) -
+  **Aviv Keller** &lt;&lt;me@aviv.sh&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/avivkeller)
+* [Ayase-252](https://github.com/Ayase-252) -
+  **Qingyu Deng** &lt;&lt;i@ayase-lab.com&gt;&gt;
+* [bengl](https://github.com/bengl) -
+  **Bryan English** &lt;&lt;bryan@bryanenglish.com&gt;&gt; (he/him)
+* [benjamingr](https://github.com/benjamingr) -
+  **Benjamin Gruenbaum** &lt;&lt;benjamingr@gmail.com&gt;&gt;
+* [BethGriggs](https://github.com/BethGriggs) -
+  **Beth Griggs** &lt;&lt;bethanyngriggs@gmail.com&gt;&gt; (she/her)
+* [bnb](https://github.com/bnb) -
+  **Tierney Cyren** &lt;&lt;hello@bnb.im&gt;&gt; (they/them)
+* [bnoordhuis](https://github.com/bnoordhuis) -
+  **Ben Noordhuis** &lt;&lt;info@bnoordhuis.nl&gt;&gt;
+* [BridgeAR](https://github.com/BridgeAR) -
+  **Ruben Bridgewater** &lt;&lt;ruben@bridgewater.de&gt;&gt; (he/him)
+* [cclauss](https://github.com/cclauss) -
+  **Christian Clauss** &lt;&lt;cclauss@me.com&gt;&gt; (he/him)
+* [ChALkeR](https://github.com/ChALkeR) -
+  **Сковорода Никита Андреевич** &lt;&lt;chalkerx@gmail.com&gt;&gt; (he/him)
+* [cjihrig](https://github.com/cjihrig) -
+  **Colin Ihrig** &lt;&lt;cjihrig@gmail.com&gt;&gt; (he/him)
+* [codebytere](https://github.com/codebytere) -
+  **Shelley Vohr** &lt;&lt;shelley.vohr@gmail.com&gt;&gt; (she/her)
+* [cola119](https://github.com/cola119) -
+  **Kohei Ueno** &lt;&lt;kohei.ueno119@gmail.com&gt;&gt; (he/him)
+* [daeyeon](https://github.com/daeyeon) -
+  **Daeyeon Jeong** &lt;&lt;daeyeon.dev@gmail.com&gt;&gt; (he/him)
+* [dario-piotrowicz](https://github.com/dario-piotrowicz) -
+  **Dario Piotrowicz** &lt;&lt;dario.piotrowicz@gmail.com&gt;&gt; (he/him)
+* [deokjinkim](https://github.com/deokjinkim) -
+  **Deokjin Kim** &lt;&lt;deokjin81.kim@gmail.com&gt;&gt; (he/him)
+* [ErickWendel](https://github.com/ErickWendel) -
+  **Erick Wendel** &lt;&lt;erick.workspace@gmail.com&gt;&gt; (he/him)
+* [Ethan-Arrowood](https://github.com/Ethan-Arrowood) -
+  **Ethan Arrowood** &lt;&lt;ethan@arrowood.dev&gt;&gt; (he/him)
+* [Flarna](https://github.com/Flarna) -
+  **Gerhard Stöbich** &lt;&lt;deb2001-github@yahoo.de&gt;&gt; (he/they)
+* [gabrielschulhof](https://github.com/gabrielschulhof) -
+  **Gabriel Schulhof** &lt;&lt;gabrielschulhof@gmail.com&gt;&gt;
+* [geeksilva97](https://github.com/geeksilva97) -
+  **Edy Silva** &lt;&lt;edigleyssonsilva@gmail.com&gt;&gt; (he/him)
+* [gengjiawen](https://github.com/gengjiawen) -
+  **Jiawen Geng** &lt;&lt;technicalcute@gmail.com&gt;&gt;
+* [GeoffreyBooth](https://github.com/GeoffreyBooth) -
+  **Geoffrey Booth** &lt;&lt;webadmin@geoffreybooth.com&gt;&gt; (he/him)
+* [gireeshpunathil](https://github.com/gireeshpunathil) -
+  **Gireesh Punathil** &lt;&lt;gpunathi@in.ibm.com&gt;&gt; (he/him)
+* [gurgunday](https://github.com/gurgunday) -
+  **Gürgün Dayıoğlu** &lt;&lt;hey@gurgun.day&gt;&gt; (he/him)
+* [guybedford](https://github.com/guybedford) -
+  **Guy Bedford** &lt;&lt;guybedford@gmail.com&gt;&gt; (he/him)
+* [H4ad](https://github.com/H4ad) -
+  **Vinícius Lourenço Claro Cardoso** &lt;&lt;contact@viniciusl.com.br&gt;&gt; (he/him)
+* [HarshithaKP](https://github.com/HarshithaKP) -
+  **Harshitha K P** &lt;&lt;harshitha014@gmail.com&gt;&gt; (she/her)
+* [himself65](https://github.com/himself65) -
+  **Zeyu &quot;Alex&quot; Yang** &lt;&lt;himself65@outlook.com&gt;&gt; (he/him)
+* [hybrist](https://github.com/hybrist) -
+  **Jan Martin** &lt;&lt;jan.krems@gmail.com&gt;&gt; (he/him)
+* [IlyasShabi](https://github.com/IlyasShabi) -
+  **Ilyas Shabi** &lt;&lt;ilyasshabi94@gmail.com&gt;&gt; (he/him)
+* [islandryu](https://github.com/islandryu) -
+  **Ryuhei Shima** &lt;&lt;shimaryuhei@gmail.com&gt;&gt; (he/him)
+* [jakecastelli](https://github.com/jakecastelli) -
+  **Jake Yuesong Li** &lt;&lt;jake.yuesong@gmail.com&gt;&gt; (he/him)
+* [JakobJingleheimer](https://github.com/JakobJingleheimer) -
+  **Jacob Smith** &lt;&lt;jacob@frende.me&gt;&gt; (he/him)
+* [jasnell](https://github.com/jasnell) -
+  **James M Snell** &lt;&lt;jasnell@gmail.com&gt;&gt; (he/him)
+* [jazelly](https://github.com/jazelly) -
+  **Jason Zhang** &lt;&lt;xzha4350@gmail.com&gt;&gt; (he/him)
+* [joyeecheung](https://github.com/joyeecheung) -
+  **Joyee Cheung** &lt;&lt;joyeec9h3@gmail.com&gt;&gt; (she/her)
+* [juanarbol](https://github.com/juanarbol) -
+  **Juan José Arboleda** &lt;&lt;soyjuanarbol@gmail.com&gt;&gt; (he/him)
+* [JungMinu](https://github.com/JungMinu) -
+  **Minwoo Jung** &lt;&lt;nodecorelab@gmail.com&gt;&gt; (he/him)
+* [KhafraDev](https://github.com/KhafraDev) -
+  **Matthew Aitken** &lt;&lt;maitken033380023@gmail.com&gt;&gt; (he/him)
+* [legendecas](https://github.com/legendecas) -
+  **Chengzhong Wu** &lt;&lt;legendecas@gmail.com&gt;&gt; (he/him)
+* [lemire](https://github.com/lemire) -
+  **Daniel Lemire** &lt;&lt;daniel@lemire.me&gt;&gt;
+* [LiviaMedeiros](https://github.com/LiviaMedeiros) -
+  **LiviaMedeiros** &lt;&lt;livia@cirno.name&gt;&gt;
+* [ljharb](https://github.com/ljharb) -
+  **Jordan Harband** &lt;&lt;ljharb@gmail.com&gt;&gt;
+* [lpinca](https://github.com/lpinca) -
+  **Luigi Pinca** &lt;&lt;luigipinca@gmail.com&gt;&gt; (he/him)
+* [Lxxyx](https://github.com/Lxxyx) -
+  **Zijian Liu** &lt;&lt;lxxyxzj@gmail.com&gt;&gt; (he/him)
+* [marco-ippolito](https://github.com/marco-ippolito) -
+  **Marco Ippolito** &lt;&lt;marcoippolito54@gmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/marco-ippolito)
+* [marsonya](https://github.com/marsonya) -
+  **Akhil Marsonya** &lt;&lt;akhil.marsonya27@gmail.com&gt;&gt; (he/him)
+* [MattiasBuelens](https://github.com/MattiasBuelens) -
+  **Mattias Buelens** &lt;&lt;mattias@buelens.com&gt;&gt; (he/him)
+* [mcollina](https://github.com/mcollina) -
+  **Matteo Collina** &lt;&lt;matteo.collina@gmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/mcollina)
+* [meixg](https://github.com/meixg) -
+  **Xuguang Mei** &lt;&lt;meixuguang@gmail.com&gt;&gt; (he/him)
+* [MikeMcC399](https://github.com/MikeMcC399) -
+  **Mike McCready** &lt;&lt;66998419+MikeMcC399@users.noreply.github.com&gt;&gt; (he/him)
+* [MoLow](https://github.com/MoLow) -
+  **Moshe Atlow** &lt;&lt;moshe@atlow.co.il&gt;&gt; (he/him)
+* [MrJithil](https://github.com/MrJithil) -
+  **Jithil P Ponnan** &lt;&lt;jithil@outlook.com&gt;&gt; (he/him)
+* [ovflowd](https://github.com/ovflowd) -
+  **Claudio Wunder** &lt;&lt;cwunder@gnome.org&gt;&gt; (he/they)
+* [panva](https://github.com/panva) -
+  **Filip Skokan** &lt;&lt;panva.ip@gmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/panva)
+* [pimterry](https://github.com/pimterry) -
+  **Tim Perry** &lt;&lt;pimterry@gmail.com&gt;&gt; (he/him)
+* [pmarchini](https://github.com/pmarchini) -
+  **Pietro Marchini** &lt;&lt;pietro.marchini94@gmail.com&gt;&gt; (he/him)
+* [Qard](https://github.com/Qard) -
+  **Stephen Belanger** &lt;&lt;admin@stephenbelanger.com&gt;&gt; (he/him)
+* [RafaelGSS](https://github.com/RafaelGSS) -
+  **Rafael Gonzaga** &lt;&lt;rafael.nunu@hotmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/RafaelGSS)
+* [RaisinTen](https://github.com/RaisinTen) -
+  **Darshan Sen** &lt;&lt;raisinten@gmail.com&gt;&gt; (he/him) - [Support me](https://github.com/sponsors/RaisinTen)
+* [Renegade334](https://github.com/Renegade334) -
+  **René** &lt;&lt;contact.9a5d6388@renegade334.me.uk&gt;&gt;
+* [richardlau](https://github.com/richardlau) -
+  **Richard Lau** &lt;&lt;richard.lau@ibm.com&gt;&gt;
+* [rluvaton](https://github.com/rluvaton) -
+  **Raz Luvaton** &lt;&lt;rluvaton@gmail.com&gt;&gt; (he/him)
+* [ronag](https://github.com/ronag) -
+  **Robert Nagy** &lt;&lt;ronagy@icloud.com&gt;&gt;
+* [ruyadorno](https://github.com/ruyadorno) -
+  **Ruy Adorno** &lt;&lt;ruy@vlt.sh&gt;&gt; (he/him)
+* [santigimeno](https://github.com/santigimeno) -
+  **Santiago Gimeno** &lt;&lt;santiago.gimeno@gmail.com&gt;&gt;
+* [ShogunPanda](https://github.com/ShogunPanda) -
+  **Paolo Insogna** &lt;&lt;paolo@cowtech.it&gt;&gt; (he/him)
+* [srl295](https://github.com/srl295) -
+  **Steven R Loomis** &lt;&lt;srl295@gmail.com&gt;&gt;
+* [StefanStojanovic](https://github.com/StefanStojanovic) -
+  **Stefan Stojanovic** &lt;&lt;stefan.stojanovic@jane
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[citrolabs/ego-lite]]></title>
+            <link>https://github.com/citrolabs/ego-lite</link>
+            <guid>https://github.com/citrolabs/ego-lite</guid>
+            <pubDate>Fri, 23 Oct 2026 00:06:03 GMT</pubDate>
+            <description><![CDATA[The fastest browser for AI agents to run browser automation, built for sharing your logged-in browser state with your AI agents, like Codex or Claude Code, without disturbing you. Zero cost, zero config.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/citrolabs/ego-lite">citrolabs/ego-lite</a></h1>
+            <p>The fastest browser for AI agents to run browser automation, built for sharing your logged-in browser state with your AI agents, like Codex or Claude Code, without disturbing you. Zero cost, zero config.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 18,800</p>
+            <p>Forks: 1,036</p>
+            <p>Stars today: 311 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+
+&lt;img src=&quot;docs/assets/banner.png&quot; alt=&quot;ego lite&quot; width=&quot;100%&quot; /&gt;
+
+**The fastest browser for AI agents to run web automation**
+
+&lt;a href=&quot;https://trendshift.io/repositories/42334?utm_source=repository-badge&amp;amp;utm_medium=badge&amp;amp;utm_campaign=badge-repository-42334&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/42334&quot; alt=&quot;citrolabs%2Fego-lite | Trendshift&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+
+&lt;p&gt;
+  &lt;a href=&quot;https://cdn.ego.app/setup/macos/arm64/egolite-Y7MbxKIuhzFB.dmg&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Download-Apple%20Silicon-000000?style=for-the-badge&amp;logo=apple&amp;logoColor=white&quot; alt=&quot;Download for Apple Silicon&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://cdn.ego.app/setup/macos/x64/egolite-Y7MbxKIuhzFB.dmg&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Download-Intel-000000?style=for-the-badge&amp;logo=apple&amp;logoColor=white&quot; alt=&quot;Download for Intel&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://cdn.ego.app/setup/windows/x64/egoliteSetup-Y7MbxKIuhzFB.exe&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Download-Windows-000000?style=for-the-badge&amp;logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGgxMS4zNzd2MTEuMzcySDB6bTEyLjYyMyAwSDI0djExLjM3MkgxMi42MjN6TTAgMTIuNjIzaDExLjM3N1YyNEgwem0xMi42MjMgMEgyNFYyNEgxMi42MjN6Ii8%2BPC9zdmc%2B&quot; alt=&quot;Download for Windows&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://discord.gg/5eGZVvHbTq&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Discord-Join-5865F2?style=for-the-badge&amp;logo=discord&amp;logoColor=white&quot; alt=&quot;Discord&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://x.com/ego_agent&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Follow-%40ego__agent-000000?style=for-the-badge&amp;logo=x&amp;logoColor=white&quot; alt=&quot;Follow @ego_agent on X&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://lite.ego.app/document/&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Docs-lite.ego.app-1E90FF?style=for-the-badge&amp;logo=gitbook&amp;logoColor=white&quot; alt=&quot;Docs&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/License-MIT-3DA639?style=for-the-badge&quot; alt=&quot;License MIT&quot; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;b&gt;English&lt;/b&gt; ·
+  &lt;a href=&quot;README.zh-CN.md&quot;&gt;简体中文&lt;/a&gt; ·
+  &lt;a href=&quot;README.ja.md&quot;&gt;日本語&lt;/a&gt; ·
+  &lt;a href=&quot;README.ko.md&quot;&gt;한국어&lt;/a&gt; ·
+  &lt;a href=&quot;README.pt.md&quot;&gt;Português&lt;/a&gt; ·
+  &lt;a href=&quot;README.es.md&quot;&gt;Español&lt;/a&gt; ·
+  &lt;a href=&quot;README.fr.md&quot;&gt;Français&lt;/a&gt; ·
+  &lt;a href=&quot;README.it.md&quot;&gt;Italiano&lt;/a&gt; ·
+  &lt;a href=&quot;README.ru.md&quot;&gt;Русский&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;/div&gt;
+
+ego (lite) is a browser where you and your AI agents work in parallel. Your agents run their browser tasks in their own Spaces, isolated workspaces inside the same browser, while you keep browsing in yours, so no agent ever takes the browser away from you. And the automation itself finishes faster, on fewer tokens.
+
+Existing tools like browser-use and agent-browser are a bridge to the browser, not a browser of their own: they need a separate one to drive, your browser data rarely carries over intact, the connection is unstable, and you and the agent end up fighting over control of the browser. ego lite is one browser designed from the start for the two of you to share. No extra setup, and the agent can always reach your real logins and tabs through `ego-browser`.
+
+## Demo
+
+https://github.com/user-attachments/assets/ffe7954b-58ee-411e-b35d-ec30c58a08bc
+
+## Quick Start
+
+ego lite runs on macOS and Windows, and Linux is on the [roadmap](https://lite.ego.app/roadmap).
+
+### 1. Install
+
+Pick whichever fits your flow.
+
+**1.1 Download the app**
+
+&lt;a href=&quot;https://cdn.ego.app/setup/macos/arm64/egolite-Y7MbxKIuhzFB.dmg&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/⬇%20Apple%20Silicon-.dmg-000000?style=for-the-badge&amp;logo=apple&amp;logoColor=white&quot; alt=&quot;Download ego lite for Apple Silicon&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://cdn.ego.app/setup/macos/x64/egolite-Y7MbxKIuhzFB.dmg&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/⬇%20Intel-.dmg-000000?style=for-the-badge&amp;logo=apple&amp;logoColor=white&quot; alt=&quot;Download ego lite for Intel&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://cdn.ego.app/setup/windows/x64/egoliteSetup-Y7MbxKIuhzFB.exe&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/⬇%20Windows-.exe-000000?style=for-the-badge&amp;logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGgxMS4zNzd2MTEuMzcySDB6bTEyLjYyMyAwSDI0djExLjM3MkgxMi42MjN6TTAgMTIuNjIzaDExLjM3N1YyNEgwem0xMi42MjMgMEgyNFYyNEgxMi42MjN6Ii8%2BPC9zdmc%2B&quot; alt=&quot;Download ego lite for Windows&quot; /&gt;&lt;/a&gt;
+
+Click to download, then open it to install. Either way, ego lite adds the `ego-browser` skill to every agent&#039;s skills directory on your machine.
+
+**1.2 Add the skill with npx**
+
+Install just the `ego-browser` skill:
+
+```bash
+npx skills add citrolabs/ego-lite
+```
+
+The first time your agent runs a browser task, it walks you through installing the ego lite app.
+
+**1.3 Let your agent set it up**
+
+Paste this into your agent:
+
+```
+Set up ego lite for me: https://github.com/citrolabs/ego-lite
+
+Read `skills/ego-browser/references/install.md` and follow the steps to install ego lite.
+```
+
+On first launch, ego lite asks one question, whether to migrate your Chrome data. Say yes and your agent inherits your existing logins, cookies, extensions, and bookmarks.
+
+### 2. Try your first task
+
+In your agent CLI, type `/ego-browser` followed by a space, then describe what you want in plain language:
+
+```
+ego-browser follow @ego_agent on x.com for me
+```
+
+The agent picks up the `ego-browser` skill, opens the page in its own Space, reads a Snapshot (the page turned into structured text), acts on the page, and reports back, all while your own tabs stay untouched.
+
+Your browsing data, cookies, and everything else the browser holds stay on your device. ego lite keeps its data collection deliberately narrow: simple product signals, like whether you&#039;ve set ego lite as your default browser.
+
+## Highlights of ego lite
+
+| Feature | What it does |
+|---|---|
+| **Code-based, not CLI-based: faster runs on fewer tokens for complex tasks** | The capabilities ego lite exposes to the agent are wrapped as JavaScript functions the agent calls directly. The agent gets to do what it does best: write code, composing a multi-step task into a single output instead of getting stuck in a &quot;call two commands, look at the result, call two more commands&quot; loop. Compared to the conventional CLI approach, complex workflows finish far faster, with higher task success rates, far fewer tool calls per task, and a much lower cost per task. |
+| **A dedicated Space for every agent** | ego lite gives each agent its own fully isolated Space. You browse up front, your agent works in the background, and they don&#039;t get in each other&#039;s way. You can see which Space has an agent running at any moment, and take it over or stop it whenever you want. |
+| **Your agents multitask in Spaces, parallel workspaces inside the same browser** | Each Space gets its own AI agent or its own task, all running at the same time. Claude Code enriching 10 leads in 10 parallel Spaces. Codex scraping 5 competitor sites in 5 more. They don&#039;t collide or steal your tabs. Your mouse stays where you left it. |
+| **The strongest page Snapshot on the market** | Thanks to customization inside the browser engine, ego lite produces the highest-quality page snapshots, the view text-only models rely on to &quot;see&quot; and act on a webpage. It reliably handles tough cases like deeply nested iframes, exactly where other approaches consistently break down. |
+| **Any agent can drive it through `ego-browser`** | `ego-browser` is the connection layer between any agent CLI (Claude Code, Codex, Cursor, or a custom one) and ego lite. It exposes the browser as a set of in-page JavaScript tools: snapshot, fill, click, wait, navigate, capture. The agent writes a JavaScript snippet calling those tools, and `ego-browser` runs it on the page in one pass. |
+| **Experience accumulation that makes your agent faster the more you use it** *(coming soon)* | Most of an agent&#039;s time on browser tasks goes to trial and error. ego lite&#039;s official Skill distills every successful action into reusable tools and workflows, so similar tasks down the line run up to 5x faster. |
+
+## ego lite vs existing products
+
+Most tools can automate a browser. The real questions are what browser the agent gets, whether you can keep working at the same time, and whether the tool is built for the agent you already use or a built-in one.
+
+| Feature | ego lite | Browser extensions&lt;br&gt;&lt;sub&gt;Claude/Codex in Chrome&lt;/sub&gt; | Built-in browsers&lt;br&gt;&lt;sub&gt;Claude/ChatGPT built-in browser&lt;/sub&gt; | Cloud browsers&lt;br&gt;&lt;sub&gt;Browserbase/Browser Use&lt;/sub&gt; | Browser CLIs&lt;br&gt;&lt;sub&gt;playwright-cli/Browser Harness&lt;/sub&gt; | AI browsers&lt;br&gt;&lt;sub&gt;Comet/Dia&lt;/sub&gt; |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| Works with any AI agent | ✓ | — | — | ✓ | ✓ | — |
+| Uses your browser logins | ✓ | ✓ | — | — | — | ✓ |
+| Fewer CAPTCHAs | ✓ | ✓ | — | — | — | ✓ |
+| Works across your whole computer | ✓ | — | ✓ | — | ✓ | — |
+| Doesn&#039;t hijack your browser | ✓ | — | ✓ | ✓ | — | — |
+| Parallel multitasking | ✓ | — | — | ✓ | — | — |
+| Runs large scraping jobs | ✓ | — | — | ✓ | ✓ | — |
+| Works as your daily browser | ✓ | ✓ | — | — | — | ✓ |
+| Free | ✓ | — | — | — | ✓ | — |
+| Data stored locally | ✓ | ✓ | ✓ | — | ✓ | — |
+| Reusable skills (coming soon) | ✓ | — | — | — | — | — |
+
+## Benchmarks
+
+Faster runs, higher success rates, fewer tokens. We ran ego-browser and four other browser tools for AI agents on Real-World Bench: 31 complex browser automation tasks on live websites. ego-browser leads on speed, success rate, and cost, and gets your agent through complex web tasks 47% to 63% faster than the other tools.
+
+&lt;div align=&quot;center&quot;&gt;
+
+&lt;img src=&quot;docs/assets/real-world-bench.jpg&quot; alt=&quot;Real-World Bench, 31 tasks: ego-browser vs Browser Harness, playwright-cli, chrome-devtools-cli and agent-browser on turns, rubric average, perfect rate, trajectory efficiency, average duration and average cost&quot; width=&quot;100%&quot; /&gt;
+
+&lt;/div&gt;
+
+Every tool ran the same 31 tasks, driven by the same agent (pi) with the same model (gpt-5.6-sol, thinking effort max) and graded by the same judge against per-task rubrics. A task counts as a full success only when every requirement is met.
+
+## Docs
+
+Tutorials, the full tool reference, and integration guides live at [lite.ego.app/document/](https://lite.ego.app/document/).
+
+## Community
+
+- [Discord](https://discord.gg/5eGZVvHbTq), questions, setup help, and skill sharing
+- [GitHub Discussions](https://github.com/citrolabs/ego-lite/discussions), ideas and longer threads
+- [X/Twitter](https://x.com/ego_agent), updates and releases
+
+## Star History
+
+&lt;a href=&quot;https://github.com/citrolabs/ego-lite/stargazers&quot;&gt;
+&lt;!-- star-history:start --&gt;
+&lt;!-- Generated daily by .github/workflows/star-history.yml and published to the
+     &#039;star-history&#039; branch, because main&#039;s ruleset will not take a bot commit. --&gt;
+&lt;picture&gt;
+  &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://raw.githubusercontent.com/citrolabs/ego-lite/star-history/star-history-dark.svg&quot;&gt;
+  &lt;img alt=&quot;Star history&quot; src=&quot;https://raw.githubusercontent.com/citrolabs/ego-lite/star-history/star-history-light.svg&quot;&gt;
+&lt;/picture&gt;
+&lt;!-- star-history:end --&gt;
+&lt;/a&gt;
+
+## License
+
+The contents of this repository are released under the [MIT License](LICENSE). The ego lite browser is a separate, free download.</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[adobe/skills]]></title>
+            <link>https://github.com/adobe/skills</link>
+            <guid>https://github.com/adobe/skills</guid>
+            <pubDate>Fri, 23 Oct 2026 00:06:02 GMT</pubDate>
+            <description><![CDATA[Adobe Skills for Agents]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/adobe/skills">adobe/skills</a></h1>
+            <p>Adobe Skills for Agents</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 295</p>
+            <p>Forks: 91</p>
+            <p>Stars today: 7 stars today</p>
+            <h2>README</h2><pre># Adobe Skills for AI Coding Agents
+
+Repository of Adobe skills for AI coding agents.
+
+## Installation
+
+### Claude Code Plugins
+
+```bash
+/plugin marketplace add adobe/skills
+/plugin install adobe-analytics@adobe-skills
+/plugin install adobe-cja@adobe-skills
+/plugin install stardust@adobe-skills
+/plugin install web@adobe-skills
+/plugin install aem-edge-delivery-services@adobe-skills
+/plugin install aem-eds-content-ops@adobe-skills
+/plugin install aem-project-management@adobe-skills
+/plugin install app-builder@adobe-skills
+/plugin install aem-cloud-service@adobe-skills
+/plugin install aem-6-5-lts@adobe-skills
+/plugin install workfront@adobe-skills
+/plugin install commerce-app-management@adobe-skills
+/plugin install commerce-app-migration@adobe-skills
+/plugin install commerce-app-review@adobe-skills
+/plugin install run-workflow@adobe-skills
+```
+
+### GitHub Copilot CLI
+
+Copilot reads the Claude plugin manifests in this repository, so the same
+marketplace works there (verified 2026-09-17 with Copilot CLI 1.0.85 and the
+`stardust` plugin). Plugins are also picked up by Copilot in VS Code and the
+cloud agent.
+
+```bash
+copilot plugin marketplace add adobe/skills
+copilot plugin install stardust@adobe-skills
+copilot plugin install aem-edge-delivery-services@adobe-skills
+```
+
+Copilot CLI exposes plugin skills under their bare `name` with no plugin
+prefix, so two installed plugins with a same-named skill are ambiguous there.
+Plugin `dependencies` are not resolved; install them explicitly.
+
+### Vercel Skills (npx skills)
+
+```bash
+npx skills add adobe/skills --all
+```
+
+### upskill (GitHub CLI Extension)
+
+```bash
+gh extension install ai-ecoverse/gh-upskill
+gh upskill adobe/skills --all
+```
+
+### Cursor (preview)
+
+The `app-builder` plugin includes a Cursor-native manifest at `plugins/app-builder/.cursor-plugin/plugin.json` as the pilot for Cursor distribution. Other plugins will gain Cursor support once the pattern is validated. To install locally for development:
+
+```bash
+mkdir -p ~/.cursor/plugins/local/app-builder
+cp -R plugins/app-builder/. ~/.cursor/plugins/local/app-builder/
+# Then in Cursor: Cmd+Shift+P → Developer: Reload Window
+```
+
+Verify the plugin loaded via **Cursor Settings → Plugins** (it should appear with the App Builder skills, including the grouped `appbuilder-workfront` suite). The skills are also visible in **Settings → Rules** under &quot;Agent Decides&quot;.
+
+## Available Skills
+
+### For Business
+
+#### Analytics
+
+Practitioner-focused skills for Adobe&#039;s analytics products — KPI monitoring, funnel and dimension analysis, segment comparison, and stakeholder readouts. Each product has a dedicated plugin and a dedicated MCP server. Requests require IMS auth headers (`Authorization`, `x-gw-ims-org-id`, `x-gw-ims-user-id`); an OAuth proxy may inject these.
+
+##### Adobe Analytics
+
+Available via the [`adobe-analytics`](plugins/adobe-analytics/README.md) plugin. Talks to the AA MCP server at `https://aa-mcp.adobe.io/mcp`.
+
+```bash
+/plugin install adobe-analytics@adobe-skills
+```
+
+| Skill | Description |
+| ----- | ----------- |
+| `aa-kpi-pulse` | KPI digest with period-over-period change and top mover callout&lt;br&gt;• `How are our KPIs looking this week?`&lt;br&gt;• `Compare last month&#039;s KPIs to the same month last year` |
+| `aa-top-movers-watchlist` | Ranks dimension items by biggest gain or loss for a metric&lt;br&gt;• `Top gaining and declining pages this week`&lt;br&gt;• `Which marketing channels grew or shrank most this month?` |
+| `aa-conversion-funnel-analysis` | Step-by-step fallout analysis across a multi-step conversion funnel&lt;br&gt;• `Analyze our checkout funnel`&lt;br&gt;• `Where do mobile users drop off in the signup flow?` |
+| `aa-segment-performance-comparator` | Side-by-side KPI comparison across two or more audience segments&lt;br&gt;• `Compare mobile vs desktop performance`&lt;br&gt;• `How do US visitors compare to UK visitors on key KPIs?` |
+| `aa-executive-briefing` | Narrative performance summary ready for leadership or QBR&lt;br&gt;• `Write last week&#039;s performance briefing for leadership`&lt;br&gt;• `Draft a monthly business review for the board` |
+
+See the [`adobe-analytics` ](plugins/adobe-analytics/README.md)doc for the full plugin description, MCP server template, and skill index.
+
+##### Customer Journey Analytics
+
+Available via the [`adobe-cja`](plugins/adobe-cja/README.md) plugin. Talks to the CJA MCP server at `https://cja-mcp.adobe.io/mcp`.
+
+```bash
+/plugin install adobe-cja@adobe-skills
+```
+
+| Skill | Description |
+| ----- | ----------- |
+| `cja-kpi-pulse` | KPI digest with period-over-period change, trend direction, and dimension breakdown&lt;br&gt;• `How are our KPIs looking this week?`&lt;br&gt;• `Compare last month&#039;s KPIs to the same month last year` |
+| `cja-top-movers-watchlist` | Ranks dimension items by biggest gain or loss for a metric&lt;br&gt;• `Top gaining and declining pages this week`&lt;br&gt;• `Which marketing channels grew or shrank most this month?` |
+| `cja-funnel-health-check` | Step-by-step fallout analysis across a multi-step conversion funnel&lt;br&gt;• `Check the health of our purchase funnel`&lt;br&gt;• `Where do users drop off in our onboarding journey?` |
+| `cja-dimension-analysis` | Cardinality, distribution, trends, anomalies, and data quality for a dimension&lt;br&gt;• `Analyze the Page Name dimension`&lt;br&gt;• `Audit our Marketing Channel values — any spelling variations or duplicates?` |
+| `cja-segment-performance-comparator` | Side-by-side KPI comparison across two or more audience segments&lt;br&gt;• `Compare mobile vs desktop performance`&lt;br&gt;• `How do US visitors compare to UK visitors on key KPIs?` |
+| `cja-executive-briefing` | Narrative performance summary ready for leadership or QBR&lt;br&gt;• `Write last week&#039;s performance briefing for leadership`&lt;br&gt;• `Draft a monthly business review for the board` |
+
+See the [`adobe-cja` ](plugins/adobe-cja/README.md)doc for the full plugin description, MCP server template, and skill index.
+
+#### Workfront
+
+Solution-architecture guidance for Adobe Workfront Planning (WFP, also called Maestro). Available via the [`workfront`](plugins/workfront/skills/wf-planning-solution-architect/README.md) plugin. No MCP server required; public Adobe documentation is searched and fetched live from Experience League at answer time.
+
+```bash
+/plugin install workfront@adobe-skills
+```
+
+| Skill | Description |
+| ----- | ----------- |
+| `wf-planning-solution-architect` | Workspace and record-type design, connections and hierarchies, formula fields, tier limits, and API behavior for Workfront Planning&lt;br&gt;• `Design a Planning workspace for our marketing team`&lt;br&gt;• `A customer wants us to raise the 500 connected records limit`&lt;br&gt;• `Is the CASE function supported in Planning formulas?` |
+| `wf-planning-fusion-optimizer` | Read-only review of an exported Fusion scenario blueprint using the Workfront Planning connector: flags what&#039;s hurting run time, operations, and API call volume&lt;br&gt;• `Why is this Planning Fusion scenario so slow?`&lt;br&gt;• `Review this blueprint for rate-limit issues`&lt;br&gt;• `Reduce operations on our replication scenario` |
+
+See the [`wf-planning-solution-architect`](plugins/workfront/skills/wf-planning-solution-architect/README.md) and [`wf-planning-fusion-optimizer`](plugins/workfront/skills/wf-planning-fusion-optimizer/README.md) docs for the routing model, reference layout, and scripts.
+
+#### Adobe Experience Manager
+
+##### Designing and Modernising with stardust
+
+Design-phase and modernisation skills that improve an existing website, with or without a redesign. Produces static HTML under `stardust/` with platform-agnostic output and optional Edge Delivery Services delivery.
+
+| Skill | Description |
+| ----- | ----------- |
+| `stardust` | Master orchestrator — reasons in the open, assesses site state, and guides through redesign, replica, or reskin |
+| `extract` | Crawls a live site and captures its design system, brand surface, page inventory, and rendered DOM into `stardust/current/` |
+| `direct` | Resolves your intent into concrete `PRODUCT.md` and `DESIGN.md` target specifications under `stardust/direction.md` |
+| `prototype` | Renders before/after pages under `stardust/prototypes/` and iterates through design craft loops |
+| `replica` | Recreates page archetypes as clean HTML/CSS that match the live site near pixel-perfect |
+| `reskin` | Re-lays verbatim content onto a donor design system |
+| `migrate` | Applies the approved design or replica to every page and writes the deployable static tree to `stardust/migrated/` |
+
+See the [`stardust`](plugins/stardust/README.md) documentation for the complete pipeline guide, two-layer architecture, and evaluation details.
+
+##### Developing with Edge Delivery Services
+
+| Skill | Description |
+|-------|-------------|
+| `aem-cli` | Install, run, and configure the Adobe AEM CLI (`aem up` local dev server, `.env`/TLS/proxy setup, `aem import`, `aem content` da.live sync, troubleshooting); migrate from `@adobe/helix-cli` |
+| `create-site` | Start a brand-new site from scratch: GitHub repo from boilerplate, aem-code-sync, initial DA content (nav, footer, homepage), and live URL handoff |
+| `content-driven-development` | Orchestrates the CDD workflow for all code changes |
+| `analyze-and-plan` | Analyze requirements and define acceptance criteria |
+| `building-blocks` | Implement blocks and core functionality |
+| `testing-blocks` | Browser testing and validation |
+| `content-modeling` | Design author-friendly content models |
+| `code-review` | Self-review and PR review |
+
+##### Discovering Blocks
+
+| Skill                          | Description                                             |
+| ------------------------------ | ------------------------------------------------------- |
+| `block-inventory`            | Survey available blocks in project and Block Collection |
+| `block-collection-and-party` | Search reference implementations                        |
+| `docs-search`                | Search aem.live documentation                           |
+| `find-test-content`          | Find existing content for testing                       |
+
+##### Migrating Content
+
+| Skill | Description |
+|-------|-------------|
+| `page-import` | Import webpages into canonical EDS block format (orchestrator) |
+| `scrape-webpage` | Scrape and analyze webpage content |
+| `identify-page-structure` | Analyze page sections |
+| `page-decomposition` | Analyze content sequences |
+| `authoring-analysis` | Determine authoring approach |
+| `generate-import-html` | Generate structured HTML |
+| `preview-import` | Preview imported content |
+| `snowflake` | Static-to-EDS overlay conversion — preserves original DOM byte-for-byte (alternative path to `page-import` for AI-generated/static pages) |
+| `figma-to-content` | Turn a Figma design into an EDS content page in DA — resolves each section to an existing block, a new isolated block, or default content (annotation-first, else inferred), then deploys via the DA Source API |
+
+##### Content &amp; Platform Reference
+
+| Skill | Description |
+|-------|-------------|
+| `da-content` | Reference for DA + EDS content rules: block HTML format, metadata, media handling, DA Source API contract, and silent-failure rules |
+
+##### Managing Projects
+
+Handover documentation and PDF guides generation for AEM Edge Delivery Services projects. Available via the `aem-project-management` plugin.
+
+| Skill           | Description                                                |
+| --------------- | ---------------------------------------------------------- |
+| `handover`    | Orchestrates project documentation generation              |
+| `authoring`   | Generate comprehensive authoring guide for content authors |
+| `development` | Generate technical documentation for developers            |
+| `admin`       | Generate admin guide for site administrators               |
+| `whitepaper`  | Create professional PDF whitepapers from Markdown          |
+| `auth`        | Authenticate with AEM Config Service API                   |
+
+##### AEM as a Cloud Service
+
+All AEM as a Cloud Service skills — component development, Dispatcher, workflows, code assessment, migration, content distribution, RDE, and project bootstrap. Available via the [`aem-cloud-service`](plugins/aem/cloud-service/README.md) plugin.
+
+```bash
+/plugin install aem-cloud-service@adobe-skills
+```
+
+| Skill | Description |
+|-------|-------------|
+| `create-component` | Create complete AEM components: definition, dialog XML, HTL template, Sling Model, unit tests, clientlibs, and optional servlet |
+| `ensure-agents-md` | Bootstrap skill — auto-generates `AGENTS.md` and `CLAUDE.md` from `pom.xml` when missing, tailored to the project&#039;s modules and add-ons |
+| `dispatcher` | Config authoring, technical advisory, incident response, performance tuning, security hardening, and lifecycle orchestration for the Dispatcher. Requires Dispatcher MCP (`AEM_DEPLOYMENT_MODE=cloud`) |
+| `aem-workflow` | Workflow model design, process step development, launcher configuration, triggering, debugging stuck/failed workflows, and incident triaging for the Granite Workflow Engine |
+| `code-assessment` | Detect and fix AEM CS code-quality issues locally — Sling Model patterns, deprecated APIs, scheduler, replication, resource listeners, unbounded queries, outbound call timeouts, and more. Verifies with `mvn compile` |
+| `migration` | Migrate legacy AEM (6.x, AMS, on-prem) to AEM CS using BPA/CAM data — scheduler, replication, event handlers, HTL lint, dialog migration, template modernization, OSGi config. Delegates refactors to `code-assessment` |
+| `content-distribution` | Programmatic content publishing via the Replication API and distribution event monitoring via Sling Distribution events |
+| `aem-rde` *(beta)* | Expert assistance for `aio aem rde` — deploy, inspect, log-tail, snapshot, and troubleshoot Rapid Development Environments |
+
+See the [`aem-cloud-service` plugin README](plugins/aem/cloud-service/README.md) for sub-skill details and MCP requirements.
+
+##### AEM 6.5 LTS
+
+All AEM 6.5 LTS and Adobe Managed Services (AMS) skills — Dispatcher, workflows, replication, and project bootstrap. Available via the [`aem-6-5-lts`](plugins/aem/6.5-lts/README.md) plugin.
+
+```bash
+/plugin install aem-6-5-lts@adobe-skills
+```
+
+| Skill | Description |
+|-------|-------------|
+| `ensure-agents-md` | Bootstrap skill — auto-generates `AGENTS.md` and `CLAUDE.md` for AEM 6.5 LTS projects when missing |
+| `dispatcher` | Config authoring, technical advisory, incident response, performance tuning, and security hardening for AEM 6.5 LTS and AMS. Requires Dispatcher MCP (`AEM_DEPLOYMENT_MODE=ams`) |
+| `aem-workflow` | Workflow model design, development, triggering, launchers, debugging, and triaging — with JMX, Felix Console, and direct log access for 6.5 LTS/AMS |
+| `aem-replication` | Replication agent configuration, content activation/deactivation, Replication API usage (57 Java examples), lifecycle orchestration, and troubleshooting blocked queues and distribution failures |
+
+See the [`aem-6-5-lts` plugin README](plugins/aem/6.5-lts/README.md) for sub-skill details.
+
+### App Builder
+
+Development, customization, testing, and deployment skills for Adobe App Builder projects.
+
+**Skill chaining:**
+
+- **Actions path:** `appbuilder-project-init` → `appbuilder-action-scaffolder` → `appbuilder-testing` → `appbuilder-cicd-pipeline`
+- **UI path:** `appbuilder-project-init` → `appbuilder-ui-scaffolder` → `appbuilder-testing` → `appbuilder-cicd-pipeline`
+- **E2E path:** `appbuilder-ui-scaffolder` or `appbuilder-testing` → `appbuilder-e2e-testing` → `appbuilder-cicd-pipeline`
+
+| Skill                            | Description                                                                               |
+| -------------------------------- | ----------------------------------------------------------------------------------------- |
+| `appbuilder-project-init`      | Initialize App Builder projects and choose the bootstrap path; also first-time machine/CLI setup (Node 20, aio install/login, stage vs prod) |
+| `appbuilder-action-scaffolder` | Scaffold, implement, deploy, and debug Adobe Runtime actions                              |
+| `appbuilder-ui-scaffolder`     | Generate React Spectrum UI components for ExC Shell SPAs and AEM UI Extensions            |
+| `appbuilder-testing`           | Generate and run Jest unit, integration, and contract tests for actions and UI components |
+| `appbuilder-e2e-testing`       | Playwright browser E2E tests for ExC Shell SPAs and AEM extensions                        |
+| `appbuilder-cicd-pipeline`     | Set up CI/CD pipelines for GitHub Actions, Azure DevOps, and GitLab CI                    |
+
+### App Builder — Workfront UI Extensions
+
+Skills for building customized **Workfront** UI applications on Adobe App Builder — a React/Spectrum SPA embedded through Workfront extension points, backed by Adobe I/O Runtime actions that call the Workfront / Planning / Adobe APIs. Shipped as part of the `app-builder` plugin under `plugins/app-builder/skills/appbuilder-workfront/`, as a parent umbrella skill plus three sub-skills. Machine setup and `aio app init` live in `appbuilder-project-init`.
+
+&gt; **Usage guide:** [`plugins/app-builder/USAGE.md`](plugins/app-builder/USAGE.md) is the end-to-end walkthrough for driving these skills from an AI harness — set up the `aio` CLI → build a new project (or migrate existing code) → deploy → publish — with the start point, harness wiring, the questions the AI will ask, copy-paste prompts, and the gotchas to watch for.
+
+**Journey:** `appbuilder-project-init` (set up + scaffold) → `workfront-ui-extension` + `workfront-actions` (build) → `workfront-local-testing` (test) → deploy &amp; publish. Start at the **`appbuilder-workfront`** umbrella for the end-to-end map.
+
+| Skill                     | Description                                                                                       |
+| ------------------------- | ------------------------------------------------------------------------------------------------- |
+| `appbuilder-workfront`    | Umbrella / onboarding: the end-to-end roadmap and how the SPA, actions, and extension points fit; routes to the three sub-skills below |
+| `workfront-ui-extension`  | Front-end SPA: extension points (Main Menu, per-object left panel, widgets), routing, shared context, `actionWebInvoke` |
+| `workfront-actions`       | Runtime actions: `{data,error}` shape, IMS auth passthrough, inputs/config, CommonJS, and the Workfront Public API v21 (search/count, bulk PUT, custom `DE:` fields) |
+| `workfront-local-testing` | Preview a local (`extensionOverride`) or deployed (Extension Manager BYO) build inside Workfront; fix common &quot;not showing&quot; issues |
+
+### Commerce
+
+Skills that ease developing and integrating with Adobe Commerce alongside other Adobe products.
+
+#### Commerce App Management
+
+Scaffold and configure Adobe Commerce App Builder apps using the `aio-commerce-sdk`. `commerce-app-init` scaffolds a bare app with metadata only; domain skills then extend it one concern at a time.
+
+```bash
+/plugin install commerce-app-management@adobe-skills
+```
+
+| Skill | Description |
+| ----- | ----------- |
+| `commerce-app-init` | Scaffold a new Commerce app with metadata |
+| `commerce-app-eventing` | Manage Commerce and external event sources |
+| `commerce-app-webhooks` | Manage webhook interception |
+| `commerce-app-business-config` | Manage custom business configuration |
+| `commerce-app-storage` | Integrate App Builder Database Storage |
+| `commerce-app-admin-ui` | Extend the Commerce Admin UI |
+
+See the [`commerce-app-management`](plugins/commerce/app-management/README.md) doc for the skill-chaining strategy and full skill index.
+
+#### Commerce App Migration
+
+Migrate an Adobe Commerce App Builder project started from the Integration Starter Kit or Checkout Starter Kit to an App Management project using the `aio-commerce-sdk`.
+
+```bash
+/plugin install commerce-app-migration@adobe-skills
+```
+
+| Skill | Description |
+| ----- | ----------
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
             <title><![CDATA[withmarbleapp/os-taxonomy]]></title>
             <link>https://github.com/withmarbleapp/os-taxonomy</link>
             <guid>https://github.com/withmarbleapp/os-taxonomy</guid>
-            <pubDate>Thu, 22 Oct 2026 00:05:34 GMT</pubDate>
+            <pubDate>Fri, 23 Oct 2026 00:06:01 GMT</pubDate>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/withmarbleapp/os-taxonomy">withmarbleapp/os-taxonomy</a></h1>
             <p></p>
             <p>Language: JavaScript</p>
-            <p>Stars: 7,046</p>
-            <p>Forks: 1,140</p>
-            <p>Stars today: 420 stars today</p>
+            <p>Stars: 7,210</p>
+            <p>Forks: 1,159</p>
+            <p>Stars today: 250 stars today</p>
             <h2>README</h2><pre># Marble Skill Taxonomy
 
 An open, structured taxonomy of **what children learn** across the primary/elementary years — decomposed into fine-grained &quot;micro-topics&quot;, wired into a prerequisite graph, and aligned to national curriculum standards. Produced by [Marble](https://withmarble.com).
@@ -711,901 +1670,355 @@ Deliberately excluded from this release: semantic embeddings (derived, recomputa
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[citrolabs/ego-lite]]></title>
-            <link>https://github.com/citrolabs/ego-lite</link>
-            <guid>https://github.com/citrolabs/ego-lite</guid>
-            <pubDate>Thu, 22 Oct 2026 00:05:33 GMT</pubDate>
-            <description><![CDATA[The fastest browser for AI agents to run browser automation, built for sharing your logged-in browser state with your AI agents, like Codex or Claude Code, without disturbing you. Zero cost, zero config.]]></description>
+            <title><![CDATA[Leonxlnx/taste-skill]]></title>
+            <link>https://github.com/Leonxlnx/taste-skill</link>
+            <guid>https://github.com/Leonxlnx/taste-skill</guid>
+            <pubDate>Fri, 23 Oct 2026 00:06:00 GMT</pubDate>
+            <description><![CDATA[Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/citrolabs/ego-lite">citrolabs/ego-lite</a></h1>
-            <p>The fastest browser for AI agents to run browser automation, built for sharing your logged-in browser state with your AI agents, like Codex or Claude Code, without disturbing you. Zero cost, zero config.</p>
+            <h1><a href="https://github.com/Leonxlnx/taste-skill">Leonxlnx/taste-skill</a></h1>
+            <p>Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 18,518</p>
-            <p>Forks: 1,016</p>
-            <p>Stars today: 394 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-
-&lt;img src=&quot;docs/assets/banner.png&quot; alt=&quot;ego lite&quot; width=&quot;100%&quot; /&gt;
-
-**The fastest browser for AI agents to run web automation**
-
-&lt;a href=&quot;https://trendshift.io/repositories/42334?utm_source=repository-badge&amp;amp;utm_medium=badge&amp;amp;utm_campaign=badge-repository-42334&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/42334&quot; alt=&quot;citrolabs%2Fego-lite | Trendshift&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
-
-&lt;p&gt;
-  &lt;a href=&quot;https://cdn.ego.app/setup/macos/arm64/egolite-Y7MbxKIuhzFB.dmg&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Download-Apple%20Silicon-000000?style=for-the-badge&amp;logo=apple&amp;logoColor=white&quot; alt=&quot;Download for Apple Silicon&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://cdn.ego.app/setup/macos/x64/egolite-Y7MbxKIuhzFB.dmg&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Download-Intel-000000?style=for-the-badge&amp;logo=apple&amp;logoColor=white&quot; alt=&quot;Download for Intel&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://cdn.ego.app/setup/windows/x64/egoliteSetup-Y7MbxKIuhzFB.exe&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Download-Windows-000000?style=for-the-badge&amp;logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGgxMS4zNzd2MTEuMzcySDB6bTEyLjYyMyAwSDI0djExLjM3MkgxMi42MjN6TTAgMTIuNjIzaDExLjM3N1YyNEgwem0xMi42MjMgMEgyNFYyNEgxMi42MjN6Ii8%2BPC9zdmc%2B&quot; alt=&quot;Download for Windows&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://discord.gg/5eGZVvHbTq&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Discord-Join-5865F2?style=for-the-badge&amp;logo=discord&amp;logoColor=white&quot; alt=&quot;Discord&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://x.com/ego_agent&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Follow-%40ego__agent-000000?style=for-the-badge&amp;logo=x&amp;logoColor=white&quot; alt=&quot;Follow @ego_agent on X&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://lite.ego.app/document/&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Docs-lite.ego.app-1E90FF?style=for-the-badge&amp;logo=gitbook&amp;logoColor=white&quot; alt=&quot;Docs&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/License-MIT-3DA639?style=for-the-badge&quot; alt=&quot;License MIT&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-  &lt;b&gt;English&lt;/b&gt; ·
-  &lt;a href=&quot;README.zh-CN.md&quot;&gt;简体中文&lt;/a&gt; ·
-  &lt;a href=&quot;README.ja.md&quot;&gt;日本語&lt;/a&gt; ·
-  &lt;a href=&quot;README.ko.md&quot;&gt;한국어&lt;/a&gt; ·
-  &lt;a href=&quot;README.pt.md&quot;&gt;Português&lt;/a&gt; ·
-  &lt;a href=&quot;README.es.md&quot;&gt;Español&lt;/a&gt; ·
-  &lt;a href=&quot;README.fr.md&quot;&gt;Français&lt;/a&gt; ·
-  &lt;a href=&quot;README.it.md&quot;&gt;Italiano&lt;/a&gt; ·
-  &lt;a href=&quot;README.ru.md&quot;&gt;Русский&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;/div&gt;
-
-ego (lite) is a browser where you and your AI agents work in parallel. Your agents run their browser tasks in their own Spaces, isolated workspaces inside the same browser, while you keep browsing in yours, so no agent ever takes the browser away from you. And the automation itself finishes faster, on fewer tokens.
-
-Existing tools like browser-use and agent-browser are a bridge to the browser, not a browser of their own: they need a separate one to drive, your browser data rarely carries over intact, the connection is unstable, and you and the agent end up fighting over control of the browser. ego lite is one browser designed from the start for the two of you to share. No extra setup, and the agent can always reach your real logins and tabs through `ego-browser`.
-
-## Demo
-
-https://github.com/user-attachments/assets/ffe7954b-58ee-411e-b35d-ec30c58a08bc
-
-## Quick Start
-
-ego lite runs on macOS and Windows, and Linux is on the [roadmap](https://lite.ego.app/roadmap).
-
-### 1. Install
-
-Pick whichever fits your flow.
-
-**1.1 Download the app**
-
-&lt;a href=&quot;https://cdn.ego.app/setup/macos/arm64/egolite-Y7MbxKIuhzFB.dmg&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/⬇%20Apple%20Silicon-.dmg-000000?style=for-the-badge&amp;logo=apple&amp;logoColor=white&quot; alt=&quot;Download ego lite for Apple Silicon&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://cdn.ego.app/setup/macos/x64/egolite-Y7MbxKIuhzFB.dmg&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/⬇%20Intel-.dmg-000000?style=for-the-badge&amp;logo=apple&amp;logoColor=white&quot; alt=&quot;Download ego lite for Intel&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://cdn.ego.app/setup/windows/x64/egoliteSetup-Y7MbxKIuhzFB.exe&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/⬇%20Windows-.exe-000000?style=for-the-badge&amp;logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGgxMS4zNzd2MTEuMzcySDB6bTEyLjYyMyAwSDI0djExLjM3MkgxMi42MjN6TTAgMTIuNjIzaDExLjM3N1YyNEgwem0xMi42MjMgMEgyNFYyNEgxMi42MjN6Ii8%2BPC9zdmc%2B&quot; alt=&quot;Download ego lite for Windows&quot; /&gt;&lt;/a&gt;
-
-Click to download, then open it to install. Either way, ego lite adds the `ego-browser` skill to every agent&#039;s skills directory on your machine.
-
-**1.2 Add the skill with npx**
-
-Install just the `ego-browser` skill:
-
-```bash
-npx skills add citrolabs/ego-lite
-```
-
-The first time your agent runs a browser task, it walks you through installing the ego lite app.
-
-**1.3 Let your agent set it up**
-
-Paste this into your agent:
-
-```
-Set up ego lite for me: https://github.com/citrolabs/ego-lite
-
-Read `skills/ego-browser/references/install.md` and follow the steps to install ego lite.
-```
-
-On first launch, ego lite asks one question, whether to migrate your Chrome data. Say yes and your agent inherits your existing logins, cookies, extensions, and bookmarks.
-
-### 2. Try your first task
-
-In your agent CLI, type `/ego-browser` followed by a space, then describe what you want in plain language:
-
-```
-ego-browser follow @ego_agent on x.com for me
-```
-
-The agent picks up the `ego-browser` skill, opens the page in its own Space, reads a Snapshot (the page turned into structured text), acts on the page, and reports back, all while your own tabs stay untouched.
-
-Your browsing data, cookies, and everything else the browser holds stay on your device. ego lite keeps its data collection deliberately narrow: simple product signals, like whether you&#039;ve set ego lite as your default browser.
-
-## Highlights of ego lite
-
-| Feature | What it does |
-|---|---|
-| **Code-based, not CLI-based: faster runs on fewer tokens for complex tasks** | The capabilities ego lite exposes to the agent are wrapped as JavaScript functions the agent calls directly. The agent gets to do what it does best: write code, composing a multi-step task into a single output instead of getting stuck in a &quot;call two commands, look at the result, call two more commands&quot; loop. Compared to the conventional CLI approach, complex workflows finish far faster, with higher task success rates, far fewer tool calls per task, and a much lower cost per task. |
-| **A dedicated Space for every agent** | ego lite gives each agent its own fully isolated Space. You browse up front, your agent works in the background, and they don&#039;t get in each other&#039;s way. You can see which Space has an agent running at any moment, and take it over or stop it whenever you want. |
-| **Your agents multitask in Spaces, parallel workspaces inside the same browser** | Each Space gets its own AI agent or its own task, all running at the same time. Claude Code enriching 10 leads in 10 parallel Spaces. Codex scraping 5 competitor sites in 5 more. They don&#039;t collide or steal your tabs. Your mouse stays where you left it. |
-| **The strongest page Snapshot on the market** | Thanks to customization inside the browser engine, ego lite produces the highest-quality page snapshots, the view text-only models rely on to &quot;see&quot; and act on a webpage. It reliably handles tough cases like deeply nested iframes, exactly where other approaches consistently break down. |
-| **Any agent can drive it through `ego-browser`** | `ego-browser` is the connection layer between any agent CLI (Claude Code, Codex, Cursor, or a custom one) and ego lite. It exposes the browser as a set of in-page JavaScript tools: snapshot, fill, click, wait, navigate, capture. The agent writes a JavaScript snippet calling those tools, and `ego-browser` runs it on the page in one pass. |
-| **Experience accumulation that makes your agent faster the more you use it** *(coming soon)* | Most of an agent&#039;s time on browser tasks goes to trial and error. ego lite&#039;s official Skill distills every successful action into reusable tools and workflows, so similar tasks down the line run up to 5x faster. |
-
-## ego lite vs existing products
-
-Most tools can automate a browser. The real questions are what browser the agent gets, whether you can keep working at the same time, and whether the tool is built for the agent you already use or a built-in one.
-
-| Feature | ego lite | Browser extensions&lt;br&gt;&lt;sub&gt;Claude/Codex in Chrome&lt;/sub&gt; | Built-in browsers&lt;br&gt;&lt;sub&gt;Claude/ChatGPT built-in browser&lt;/sub&gt; | Cloud browsers&lt;br&gt;&lt;sub&gt;Browserbase/Browser Use&lt;/sub&gt; | Browser CLIs&lt;br&gt;&lt;sub&gt;playwright-cli/Browser Harness&lt;/sub&gt; | AI browsers&lt;br&gt;&lt;sub&gt;Comet/Dia&lt;/sub&gt; |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|
-| Works with any AI agent | ✓ | — | — | ✓ | ✓ | — |
-| Uses your browser logins | ✓ | ✓ | — | — | — | ✓ |
-| Fewer CAPTCHAs | ✓ | ✓ | — | — | — | ✓ |
-| Works across your whole computer | ✓ | — | ✓ | — | ✓ | — |
-| Doesn&#039;t hijack your browser | ✓ | — | ✓ | ✓ | — | — |
-| Parallel multitasking | ✓ | — | — | ✓ | — | — |
-| Runs large scraping jobs | ✓ | — | — | ✓ | ✓ | — |
-| Works as your daily browser | ✓ | ✓ | — | — | — | ✓ |
-| Free | ✓ | — | — | — | ✓ | — |
-| Data stored locally | ✓ | ✓ | ✓ | — | ✓ | — |
-| Reusable skills (coming soon) | ✓ | — | — | — | — | — |
-
-## Benchmarks
-
-Faster runs, higher success rates, fewer tokens. We ran ego-browser and four other browser tools for AI agents on Real-World Bench: 31 complex browser automation tasks on live websites. ego-browser leads on speed, success rate, and cost, and gets your agent through complex web tasks 47% to 63% faster than the other tools.
-
-&lt;div align=&quot;center&quot;&gt;
-
-&lt;img src=&quot;docs/assets/real-world-bench.jpg&quot; alt=&quot;Real-World Bench, 31 tasks: ego-browser vs Browser Harness, playwright-cli, chrome-devtools-cli and agent-browser on turns, rubric average, perfect rate, trajectory efficiency, average duration and average cost&quot; width=&quot;100%&quot; /&gt;
-
-&lt;/div&gt;
-
-Every tool ran the same 31 tasks, driven by the same agent (pi) with the same model (gpt-5.6-sol, thinking effort max) and graded by the same judge against per-task rubrics. A task counts as a full success only when every requirement is met.
-
-## Docs
-
-Tutorials, the full tool reference, and integration guides live at [lite.ego.app/document/](https://lite.ego.app/document/).
-
-## Community
-
-- [Discord](https://discord.gg/5eGZVvHbTq), questions, setup help, and skill sharing
-- [GitHub Discussions](https://github.com/citrolabs/ego-lite/discussions), ideas and longer threads
-- [X/Twitter](https://x.com/ego_agent), updates and releases
-
-## Star History
-
-&lt;a href=&quot;https://github.com/citrolabs/ego-lite/stargazers&quot;&gt;
-&lt;!-- star-history:start --&gt;
-&lt;!-- Generated daily by .github/workflows/star-history.yml and published to the
-     &#039;star-history&#039; branch, because main&#039;s ruleset will not take a bot commit. --&gt;
-&lt;picture&gt;
-  &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://raw.githubusercontent.com/citrolabs/ego-lite/star-history/star-history-dark.svg&quot;&gt;
-  &lt;img alt=&quot;Star history&quot; src=&quot;https://raw.githubusercontent.com/citrolabs/ego-lite/star-history/star-history-light.svg&quot;&gt;
-&lt;/picture&gt;
-&lt;!-- star-history:end --&gt;
-&lt;/a&gt;
-
-## License
-
-The contents of this repository are released under the [MIT License](LICENSE). The ego lite browser is a separate, free download.</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[NomaDamas/CozyClay]]></title>
-            <link>https://github.com/NomaDamas/CozyClay</link>
-            <guid>https://github.com/NomaDamas/CozyClay</guid>
-            <pubDate>Thu, 22 Oct 2026 00:05:32 GMT</pubDate>
-            <description><![CDATA[Open source previs software in the browser: block a scene, pose characters, author camera moves and cuts, then take the same shots to an AI video model.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/NomaDamas/CozyClay">NomaDamas/CozyClay</a></h1>
-            <p>Open source previs software in the browser: block a scene, pose characters, author camera moves and cuts, then take the same shots to an AI video model.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 889</p>
-            <p>Forks: 101</p>
-            <p>Stars today: 8 stars today</p>
+            <p>Stars: 101,117</p>
+            <p>Forks: 6,834</p>
+            <p>Stars today: 630 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;docs/images/cozyclay-logo.png&quot; alt=&quot;CozyClay&quot; width=&quot;340&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;assets/taste-skill-wordmark-dark.png&quot; /&gt;
+    &lt;img src=&quot;assets/taste-skill-wordmark.png&quot; alt=&quot;Taste Skill&quot; width=&quot;340&quot; /&gt;
+  &lt;/picture&gt;
 &lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
-  &lt;b&gt;Make the scene first. Then make it a video.&lt;/b&gt;&lt;br&gt;
-  &lt;em&gt;Open source previs in a browser tab: block the set, move the cast, cut the camera, hand the shot to an AI video model.&lt;/em&gt;
+  &lt;a href=&quot;https://tasteskill.dev&quot; title=&quot;Visit tasteskill.dev&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/website-tasteskill.dev-24292f?style=flat&quot; alt=&quot;Visit tasteskill.dev&quot; /&gt;&lt;/a&gt;
+  &amp;nbsp;
+  &lt;a href=&quot;https://tastecode.dev&quot; title=&quot;Visit tastecode.dev&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/new-TasteCode-ff6b00?style=flat&quot; alt=&quot;New: TasteCode&quot; /&gt;&lt;/a&gt;
+  &amp;nbsp;
+  &lt;a href=&quot;LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/license-MIT-24292f?style=flat&amp;amp;logo=github&amp;amp;logoColor=white&quot; alt=&quot;MIT License&quot; /&gt;&lt;/a&gt;
+  &amp;nbsp;
+  &lt;a href=&quot;CHANGELOG.md&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/changelog-view-24292f?style=flat&quot; alt=&quot;Changelog&quot; /&gt;&lt;/a&gt;
 &lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;LICENSE&quot;&gt;&lt;img alt=&quot;License: AGPL-3.0&quot; src=&quot;https://img.shields.io/badge/license-AGPL--3.0-blue&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://www.npmjs.com/package/cozyclay&quot;&gt;&lt;img alt=&quot;npm&quot; src=&quot;https://img.shields.io/npm/v/cozyclay&quot;&gt;&lt;/a&gt;
-  &lt;img alt=&quot;Node 22.19+&quot; src=&quot;https://img.shields.io/badge/node-22.19%2B-brightgreen&quot;&gt;
-  &lt;a href=&quot;https://github.com/NomaDamas/CozyClay/stargazers&quot;&gt;&lt;img alt=&quot;Stars&quot; src=&quot;https://img.shields.io/github/stars/NomaDamas/CozyClay?style=flat&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://tastecode.dev&quot;&gt;
+    &lt;picture&gt;
+      &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;assets/readme-tastecode-dark.webp&quot; /&gt;
+      &lt;img src=&quot;assets/readme-tastecode.webp&quot; alt=&quot;TasteCode is here. Taste Skill as a desktop app, with a design agent built in. Free and open source. Download at tastecode.dev&quot; width=&quot;100%&quot; /&gt;
+    &lt;/picture&gt;
+  &lt;/a&gt;
 &lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://cozyclay.org/#try&quot;&gt;Try it in the browser&lt;/a&gt; ·
-  &lt;a href=&quot;#quick-start&quot;&gt;Quick start&lt;/a&gt; ·
-  &lt;a href=&quot;INSTALL_FOR_AGENTS.md&quot;&gt;Guide for AI agents&lt;/a&gt; ·
-  &lt;a href=&quot;#docs&quot;&gt;Docs&lt;/a&gt; ·
-  &lt;a href=&quot;CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;
-&lt;/p&gt;
+&lt;h3 align=&quot;center&quot;&gt;Sponsors&lt;/h3&gt;
 
-&lt;table&gt;
+&lt;table align=&quot;center&quot;&gt;
   &lt;tr&gt;
-    &lt;td width=&quot;50%&quot;&gt;&lt;video src=&quot;https://github.com/user-attachments/assets/00f28c2f-e8e2-43eb-b253-b6c2436e1818&quot; controls muted width=&quot;100%&quot;&gt;&lt;/video&gt;&lt;/td&gt;
-    &lt;td width=&quot;50%&quot;&gt;&lt;video src=&quot;https://github.com/user-attachments/assets/4c9b1e29-4803-435c-8305-f2c899fb1c2c&quot; controls muted width=&quot;100%&quot;&gt;&lt;/video&gt;&lt;/td&gt;
+    &lt;td align=&quot;center&quot; width=&quot;104&quot;&gt;
+      &lt;a href=&quot;https://interfaces.dev/?utm_source=tasteskill&amp;utm_medium=sponsorship&quot;&gt;
+        &lt;img src=&quot;assets/sponsors/interfaces-dev-icon.webp&quot; alt=&quot;Interfaces&quot; width=&quot;52&quot; height=&quot;52&quot; /&gt;
+      &lt;/a&gt;
+    &lt;/td&gt;
+    &lt;td&gt;&lt;sub&gt;&lt;a href=&quot;https://interfaces.dev/?utm_source=tasteskill&amp;utm_medium=sponsorship&quot;&gt;&lt;strong&gt;interfaces.dev&lt;/strong&gt;&lt;/a&gt; · A design engineering magazine by &lt;a href=&quot;https://github.com/jakubkrehel&quot;&gt;&lt;strong&gt;Jakub Krehel&lt;/strong&gt;&lt;/a&gt;&lt;/sub&gt;&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td align=&quot;center&quot;&gt;&lt;sub&gt;Top: the greybox blocked in CozyClay. Bottom: the AI video made from it.&lt;/sub&gt;&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;&lt;sub&gt;Same idea, a parkour jump: the blocking holds the timing and the camera.&lt;/sub&gt;&lt;/td&gt;
+    &lt;td align=&quot;center&quot; width=&quot;104&quot;&gt;
+      &lt;a href=&quot;https://reactbits.dev&quot;&gt;
+        &lt;picture&gt;
+          &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;assets/sponsors/reactbits-icon-dark.svg&quot; /&gt;
+          &lt;img src=&quot;assets/sponsors/reactbits-icon-light.svg&quot; alt=&quot;React Bits&quot; width=&quot;52&quot; height=&quot;52&quot; /&gt;
+        &lt;/picture&gt;
+      &lt;/a&gt;
+    &lt;/td&gt;
+    &lt;td&gt;&lt;sub&gt;&lt;a href=&quot;https://reactbits.dev&quot;&gt;&lt;strong&gt;React Bits&lt;/strong&gt;&lt;/a&gt; · animated React components for creative interfaces&lt;/sub&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align=&quot;center&quot; width=&quot;104&quot;&gt;&lt;a href=&quot;https://img.ly/&quot;&gt;&lt;img src=&quot;assets/sponsors/imgly-logo.svg&quot; alt=&quot;IMG.LY&quot; width=&quot;52&quot; height=&quot;52&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;sub&gt;&lt;a href=&quot;https://img.ly/&quot;&gt;&lt;strong&gt;IMG.LY&lt;/strong&gt;&lt;/a&gt; · CreativeEditor SDK&lt;/sub&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align=&quot;center&quot; width=&quot;104&quot;&gt;&lt;a href=&quot;https://www.sent.dm&quot;&gt;&lt;img src=&quot;assets/sponsors/sentdm.png&quot; alt=&quot;Sent.dm&quot; width=&quot;52&quot; height=&quot;52&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;sub&gt;&lt;a href=&quot;https://www.sent.dm&quot;&gt;&lt;strong&gt;Sent.dm&lt;/strong&gt;&lt;/a&gt; · messaging APIs for SMS, WhatsApp, and RCS&lt;/sub&gt;&lt;/td&gt;
   &lt;/tr&gt;
 &lt;/table&gt;
 
-## Why
+&lt;p align=&quot;center&quot;&gt;&lt;sub&gt;&lt;a href=&quot;https://github.com/sponsors/Leonxlnx&quot;&gt;Become a sponsor&lt;/a&gt;&lt;/sub&gt;&lt;/p&gt;
 
-AI video costs money per take, and one miss means paying again. A text prompt cannot hold a
-whole scene: where everyone stands, how they move, where the camera is, when it cuts.
+**Taste Skill** is an Agent Skill that makes coding agents design websites and app screens instead of assembling the average landing page. It gives the agent an art direction, real pictures and a way to check its own work in a real browser.
 
-CozyClay lets you make those decisions first, in 3D, where they are cheap to change. Then the video
-model gets the shot as a first frame, a greybox reference clip and a prompt that describes the
-real framing. It follows the blocking instead of guessing.
+Pages it has built, each from one brief:
 
-```mermaid
-flowchart LR
-  S[&quot;Stage&lt;br/&gt;set + cast&quot;] --&gt; M[&quot;Motion&lt;br/&gt;compiled + QA&quot;] --&gt; C[&quot;Camera&lt;br/&gt;shots + cuts&quot;] --&gt; E[&quot;Export&lt;br/&gt;frame · clip · prompt&quot;] --&gt; V[&quot;AI video model&quot;]
-```
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td width=&quot;50%&quot;&gt;&lt;img src=&quot;examples/v2/coffee-storefront.webp&quot; alt=&quot;Coffee shop page with a drawn storefront as its hero&quot; /&gt;&lt;/td&gt;
+    &lt;td width=&quot;50%&quot;&gt;&lt;img src=&quot;examples/v2/night-dates.webp&quot; alt=&quot;Techno night page with its dates set into an archive photograph&quot; /&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td width=&quot;50%&quot;&gt;&lt;img src=&quot;examples/v2/coffee-roast.webp&quot; alt=&quot;Coffee shop page section showing the roast in four photographs&quot; /&gt;&lt;/td&gt;
+    &lt;td width=&quot;50%&quot;&gt;&lt;img src=&quot;examples/v2/coffee-questions.webp&quot; alt=&quot;Coffee shop page questions as stacked index cards&quot; /&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
 
-## Quick start
+The photographs are real, found in open archives and credited by the skill ([credits](examples/v2/CREDITS.md)). Watch the [launch film](https://github.com/Leonxlnx/taste-skill/releases/tag/v2.0.0).
 
-```bash
-npx cozyclay
-```
-
-That is the whole install. You need Node.js 22.19 or newer and a Chromium browser. You do not need
-a GPU, Python or a model download. The studio opens at `http://127.0.0.1:5180/app/`.
-
-&gt; **Asking an AI agent to set it up?** Give it this repository link. Its instructions are in
-&gt; [`INSTALL_FOR_AGENTS.md`](INSTALL_FOR_AGENTS.md).
-
-## What you can do
-
-| | |
-| --- | --- |
-| **Stage** | Build the set from primitives. Add rigged characters, or capsule stand-ins when nobody needs to move a limb. Fly the view like a 3D editor. |
-| **Move** | Describe the action. The agent writes a motion spec, and a deterministic compiler in the browser bakes every frame. QA checks collisions, foot slide, reach and hand contact before you see it. |
-| **Shoot** | Put shots on a timeline, draw dolly rails, look through the lens. Each shot knows the limits of the video model you target. |
-| **Export** | Keyframe pack (first and last frame, greybox clip, camera, prompt), mp4, depth and normal passes, contact sheet, OTIO cut list. |
-| **Storyboard** | Prefer stills? A Storyboard project is a row of panels with captions, an animatic and a contact sheet. |
-| **Undo anything** | Every edit, including each change the agent makes, is one undo step. |
-
-## Direct it with AI
-
-The same scene can be driven from three places, live, while you watch the viewport.
-
-| Surface | Start | For |
-| --- | --- | --- |
-| **Agent panel** | `Cmd/Ctrl+B` in the studio | Chat in the studio. Sign in with ChatGPT or use your own key (Anthropic, OpenAI, Gemini, OpenRouter, CLIProxyAPI). |
-| **MCP server** | `npx -y cozyclay mcp` | Claude Desktop, Claude Code, Cursor or any MCP client. |
-| **Terminal** | `cclay live status --wait` | Coding agents that drive a running studio, JSON in and out. |
-
-```json
-{ &quot;mcpServers&quot;: { &quot;cozyclay&quot;: { &quot;command&quot;: &quot;npx&quot;, &quot;args&quot;: [&quot;-y&quot;, &quot;cozyclay&quot;, &quot;mcp&quot;] } } }
-```
-
-## From source
+## Install
 
 ```bash
-git clone https://github.com/NomaDamas/CozyClay.git &amp;&amp; cd CozyClay
-npm install
-npm run dev     # http://127.0.0.1:5180/app/
-npm test
+npx skills add https://github.com/Leonxlnx/taste-skill --skill &quot;design-taste-frontend&quot;
 ```
 
-## Docs
+That installs the skill with the [`npx skills`](https://github.com/vercel-labs/agent-skills) CLI.
 
-| Read | For |
+The skill runs its scripts with **Node 22+** and an installed **Chrome, Edge or Chromium**. It installs nothing and needs no API keys. Finding pictures needs network access.
+
+&lt;details&gt;
+&lt;summary&gt;Claude Code plugin&lt;/summary&gt;
+
+Run these inside Claude Code. The skill is namespaced under `taste-skill:`, so it does not collide with your other skills.
+
+```
+/plugin marketplace add Leonxlnx/taste-skill
+/plugin install taste-skill@taste-skill
+```
+
+`/plugin update` upgrades it later.
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;Codex plugin&lt;/summary&gt;
+
+```bash
+codex plugin marketplace add Leonxlnx/taste-skill
+codex plugin add taste-skill@taste-skill
+```
+
+Start a new Codex session afterwards so the skill is loaded.
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;From a clone, linked instead of copied&lt;/summary&gt;
+
+`./install.sh` symlinks the skill into Claude Code (`--codex` for Codex, `--all-agents` for both), so a `git pull` updates it in place.
+
+&lt;/details&gt;
+
+Already have the skill? Run the install command again; the install name did not change. Looking for one of the older skills? See [Moved skills](#moved-skills).
+
+## How v2 works
+
+The skill is built from a study of 247 curated sites. A build runs in six steps:
+
+1. Reads the brief and lists what only this client has.
+2. A script deals three of 20 researched directions and the agent picks one.
+3. Finds the idea: one sentence tying the client&#039;s own material to that direction.
+4. Builds with real pictures and footage from open collections, credited.
+5. Checks the page in a real browser at three widths and fails it on slop.
+6. Looks at its own screenshots and fixes the top three problems, up to three rounds.
+
+A build takes roughly 30 to 45 minutes and a few hundred thousand tokens. Details are in the [changelog](CHANGELOG.md) and the [study](skills/taste-skill/references/research.md).
+
+Dashboards and app screens (v2.1) take their own route: the skill deals one of the app styles distilled from real product screens, builds the shell, the data, the charts and the tables to those numbers, and checks the result with app rules: quiet panels, aligned figures, colour spent on data, a phone layout where the navigation folds away. A product&#039;s landing page builds the app it shows the same way, so its screenshots look like a working product.
+
+v2.1 also checks the frame of every page (a clear title on the first screen, equal margins, no section shoved to one side, no random blank stretches) and moves the way strong award sites do, measured on the latest 100 Awwwards Sites of the Day.
+
+## Moved skills
+
+This repo holds one skill, `design-taste-frontend`. The others moved to repos of their own and kept their install names:
+
+| Install name | Where it lives now |
 | --- | --- |
-| [`INSTALL_FOR_AGENTS.md`](INSTALL_FOR_AGENTS.md) | Install, run and connect, written for AI agents |
-| [`docs/motion3-agent-guide.md`](docs/motion3-agent-guide.md) | Motion specs, compile and QA |
-| [`docs/agent-cli.md`](docs/agent-cli.md) | `cclay live`, model providers, sessions |
-| [`mcp/README.md`](mcp/README.md) | MCP tools and the live protocol |
-| [`docs/studio-ui-ia.md`](docs/studio-ui-ia.md) | Every control and where it lives |
-| [`docs/privacy.md`](docs/privacy.md) | Anonymous telemetry and how to turn it off (`cclay telemetry off`) |
-| [`AGENTS.md`](AGENTS.md) | Contribution rules |
+| `high-end-visual-design`, `minimalist-ui`, `industrial-brutalist-ui`, `gpt-taste`, `stitch-design-taste`, `design-taste-frontend-v1`, `design-taste-frontend-v2-experimental` | **[Leonxlnx/taste-skill-classics](https://github.com/Leonxlnx/taste-skill-classics)** |
+| `imagegen-frontend-web`, `imagegen-frontend-mobile`, `brandkit`, `image-to-code` | **[Leonxlnx/imagegen-skills](https://github.com/Leonxlnx/imagegen-skills)** |
+| `redesign-existing-projects` | Part of `design-taste-frontend`, which audits an existing page in a real browser before changing anything |
+| `full-output-enforcement` | Removed. For the same problem, see **[Leonxlnx/unlazy](https://github.com/Leonxlnx/unlazy)** |
 
-Found a bug or want a feature? [Open an issue](https://github.com/NomaDamas/CozyClay/issues).
+Install a moved skill from its new repo under the same name:
+
+```bash
+npx skills add https://github.com/Leonxlnx/taste-skill-classics --skill &quot;high-end-visual-design&quot;
+```
+
+## Common Questions
+
+**What does the skill need?**  
+Node 22 or newer and Chrome, Edge or Chromium. It installs nothing and uses no API keys. It needs the internet only to find pictures.
+
+**Where do the pictures come from, and can I use them?**  
+From open collections such as Wikimedia Commons, Openverse and the Met. Only public domain, CC0, CC BY and CC BY-SA files are offered, and the skill puts the credits on the page. Replace them with your own when you have them.
+
+**Does it work with React, Vue, Svelte, plain HTML?**  
+Yes. The rules are about design, not a framework.
+
+**Is it for dashboards and app screens?**  
+Yes, since v2.1. The skill tells a page from an app screen and builds a dashboard, an admin view or a settings screen with its own run: a style dealt from a study of real product screens, quiet panels, honest data and charts, and its own checks (`inspect.mjs --app`).
+
+## Support the project
+
+If Taste Skill helps you, consider sponsoring:
+
+[Sponsor on GitHub](https://github.com/sponsors/Leonxlnx)
+
+### Open Source Supporters
+
+&lt;table align=&quot;center&quot;&gt;
+  &lt;tr&gt;
+    &lt;td align=&quot;center&quot; width=&quot;104&quot;&gt;&lt;a href=&quot;https://www.kimi.com&quot;&gt;&lt;img src=&quot;assets/sponsors/kimi-icon.png&quot; alt=&quot;Kimi&quot; width=&quot;52&quot; height=&quot;52&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;a href=&quot;https://www.kimi.com&quot;&gt;&lt;picture&gt;&lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/1/2026-06-05/1d8h69mt3v89kkekg24gg&quot; /&gt;&lt;img alt=&quot;Kimi Open Source Friends&quot; src=&quot;https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/1/2026-06-05/1d8h69fudcmosb3pipls0&quot; height=&quot;42&quot; /&gt;&lt;/picture&gt;&lt;/a&gt;&lt;br /&gt;&lt;sub&gt;&lt;a href=&quot;https://platform.kimi.ai?track_id=track-20f0d64bcaba419bb425a3e8c306f65d&amp;aff=taste-skill&quot;&gt;&lt;strong&gt;Get a Kimi API key&lt;/strong&gt;&lt;/a&gt;: taste-skill users get 10% bonus API credits on their first purchase.&lt;/sub&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align=&quot;center&quot; width=&quot;104&quot;&gt;&lt;a href=&quot;https://vercel.com/open-source-program&quot;&gt;&lt;img src=&quot;assets/sponsors/vercel-logo.svg&quot; alt=&quot;Vercel&quot; width=&quot;52&quot; height=&quot;52&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;a href=&quot;https://vercel.com/open-source-program&quot;&gt;&lt;img src=&quot;assets/vercel-oss-program-badge.svg&quot; alt=&quot;Vercel Open Source Program&quot; height=&quot;28&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+### Community Sponsors
+
+&lt;p&gt;
+&lt;a href=&quot;https://github.com/dnakov&quot;&gt;&lt;img src=&quot;https://github.com/dnakov.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;dnakov&quot; title=&quot;dnakov&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/AkramReshad&quot;&gt;&lt;img src=&quot;https://github.com/AkramReshad.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;AkramReshad&quot; title=&quot;AkramReshad&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/ajmalaksar25&quot;&gt;&lt;img src=&quot;https://github.com/ajmalaksar25.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;ajmalaksar25&quot; title=&quot;ajmalaksar25&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/krikkkk&quot;&gt;&lt;img src=&quot;https://github.com/krikkkk.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;krikkkk&quot; title=&quot;krikkkk&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/navanchauhan&quot;&gt;&lt;img src=&quot;https://github.com/navanchauhan.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;navanchauhan&quot; title=&quot;navanchauhan&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/robinebers&quot;&gt;&lt;img src=&quot;https://github.com/robinebers.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;robinebers&quot; title=&quot;robinebers&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/JKc66&quot;&gt;&lt;img src=&quot;https://github.com/JKc66.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;JKc66&quot; title=&quot;JKc66&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/u2393696078-rgb&quot;&gt;&lt;img src=&quot;https://github.com/u2393696078-rgb.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;u2393696078-rgb&quot; title=&quot;u2393696078-rgb&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/a-human-created-this&quot;&gt;&lt;img src=&quot;https://github.com/a-human-created-this.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;a-human-created-this&quot; title=&quot;a-human-created-this&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/AtharvaJaiswal005&quot;&gt;&lt;img src=&quot;https://github.com/AtharvaJaiswal005.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;AtharvaJaiswal005&quot; title=&quot;AtharvaJaiswal005&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/ghughes7&quot;&gt;&lt;img src=&quot;https://github.com/ghughes7.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;ghughes7&quot; title=&quot;ghughes7&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/mccun934&quot;&gt;&lt;img src=&quot;https://github.com/mccun934.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;mccun934&quot; title=&quot;mccun934&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/techmedic5&quot;&gt;&lt;img src=&quot;https://github.com/techmedic5.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;techmedic5&quot; title=&quot;techmedic5&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/bytewerk-dev&quot;&gt;&lt;img src=&quot;https://github.com/bytewerk-dev.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;bytewerk-dev&quot; title=&quot;bytewerk-dev&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/LuisGot&quot;&gt;&lt;img src=&quot;https://github.com/LuisGot.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;LuisGot&quot; title=&quot;LuisGot&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/oskar-collab&quot;&gt;&lt;img src=&quot;https://github.com/oskar-collab.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;oskar-collab&quot; title=&quot;oskar-collab&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/denvit&quot;&gt;&lt;img src=&quot;https://github.com/denvit.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;denvit&quot; title=&quot;denvit&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/onedollarstock&quot;&gt;&lt;img src=&quot;https://github.com/onedollarstock.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;onedollarstock&quot; title=&quot;onedollarstock&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/KANA-33&quot;&gt;&lt;img src=&quot;https://github.com/KANA-33.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;KANA-33&quot; title=&quot;KANA-33&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/emilkowalski&quot;&gt;&lt;img src=&quot;https://github.com/emilkowalski.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;emilkowalski&quot; title=&quot;emilkowalski&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/AnthonyLiuVa&quot;&gt;&lt;img src=&quot;https://github.com/AnthonyLiuVa.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;AnthonyLiuVa&quot; title=&quot;AnthonyLiuVa&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/Wolfy18&quot;&gt;&lt;img src=&quot;https://github.com/Wolfy18.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;Wolfy18&quot; title=&quot;Wolfy18&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/Gigslol&quot;&gt;&lt;img src=&quot;https://github.com/Gigslol.png&quot; width=&quot;40&quot; height=&quot;40&quot; style=&quot;border-radius:50%&quot; alt=&quot;Gigslol&quot; title=&quot;Gigslol&quot; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+ &lt;a href=&quot;https://www.star-history.com/leonxlnx/taste-skill&quot;&gt;
+  &lt;picture&gt;
+   &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/badge?repo=Leonxlnx/taste-skill&amp;theme=dark&quot; /&gt;
+   &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/badge?repo=Leonxlnx/taste-skill&quot; /&gt;
+   &lt;img alt=&quot;Star History Rank&quot; src=&quot;https://api.star-history.com/badge?repo=Leonxlnx/taste-skill&quot; /&gt;
+  &lt;/picture&gt;
+ &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;sub&gt;Feedback: open an issue or pull request, DM [@lexnlin](https://x.com/lexnlin) or [@blueemi99](https://x.com/blueemi99), or email [hello@tasteskill.dev](mailto:hello@tasteskill.dev).&lt;/sub&gt;
+
+&lt;sub&gt;Taste Skill has no official token, coin, or crypto project. Any token using my name, image, or project is unaffiliated and not endorsed by me.&lt;/sub&gt;
 
 ## License
 
-AGPL-3.0-or-later. See [`LICENSE`](LICENSE), [`LICENSING.md`](LICENSING.md) and
-[`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md). Made by [Doyun](https://github.com/HaD0Yun) at
-[NomaDamas](https://github.com/NomaDamas).
+[MIT License](LICENSE) · Copyright (c) 2026 Leonxlnx
 </pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[tt-a1i/archify]]></title>
-            <link>https://github.com/tt-a1i/archify</link>
-            <guid>https://github.com/tt-a1i/archify</guid>
-            <pubDate>Thu, 22 Oct 2026 00:05:31 GMT</pubDate>
-            <description><![CDATA[Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.]]></description>
+            <title><![CDATA[mrdoob/three.js]]></title>
+            <link>https://github.com/mrdoob/three.js</link>
+            <guid>https://github.com/mrdoob/three.js</guid>
+            <pubDate>Fri, 23 Oct 2026 00:05:59 GMT</pubDate>
+            <description><![CDATA[JavaScript 3D Library.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/tt-a1i/archify">tt-a1i/archify</a></h1>
-            <p>Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.</p>
+            <h1><a href="https://github.com/mrdoob/three.js">mrdoob/three.js</a></h1>
+            <p>JavaScript 3D Library.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 87,064</p>
-            <p>Forks: 5,864</p>
-            <p>Stars today: 744 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;docs/assets/archify-lockup-dark.svg&quot; /&gt;
-    &lt;img src=&quot;docs/assets/archify-lockup-light.svg&quot; alt=&quot;Archify&quot; width=&quot;440&quot; height=&quot;121&quot; /&gt;
-  &lt;/picture&gt;
-&lt;/p&gt;
-&lt;h3 align=&quot;center&quot;&gt;Turn anything you want to understand, plan, or share into an interactive visual.&lt;/h3&gt;
+            <p>Stars: 116,790</p>
+            <p>Forks: 36,696</p>
+            <p>Stars today: 53 stars today</p>
+            <h2>README</h2><pre># three.js
 
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;docs/assets/archify-readme-hero.png&quot; alt=&quot;Archify — interactive diagrams&quot; width=&quot;960&quot; /&gt;&lt;/p&gt;
+[![NPM Package][npm]][npm-url]
+[![Build Size][build-size]][build-size-url]
+[![NPM Downloads][npm-downloads]][npmtrends-url]
+[![jsDelivr Downloads][jsdelivr-downloads]][jsdelivr-url]
+[![Discord][discord]][discord-url]
 
-&lt;p align=&quot;center&quot;&gt;&lt;strong&gt;Official channels：&lt;/strong&gt; &lt;a href=&quot;https://archify.si&quot;&gt;archify.si&lt;/a&gt; · &lt;a href=&quot;https://github.com/tt-a1i/archify&quot;&gt;GitHub&lt;/a&gt;&lt;br/&gt;Archify is free and open source. Third-party online services and paid plans are operated by their respective providers and do not represent Archify. &lt;a href=&quot;#official-services&quot;&gt;Service details →&lt;/a&gt;&lt;/p&gt;
+#### JavaScript 3D library
 
-&lt;p align=&quot;center&quot;&gt;Start with an idea, a question, or a plan. Describe it to your AI agent, and Archify turns it into an interactive HTML you can explore, customize, and share. From travel itineraries and learning maps to complex systems—make it your own.&lt;/p&gt;
+The aim of the project is to create an easy-to-use, lightweight, cross-browser, general-purpose 3D library. The current builds only include WebGL and WebGPU renderers but SVG and CSS3D renderers are also available as addons.
 
-&lt;p align=&quot;center&quot;&gt;See what the community is creating—and imagine what you could make next.&lt;/p&gt;
+[Examples](https://threejs.org/examples/) &amp;mdash;
+[Docs](https://threejs.org/docs/) &amp;mdash;
+[Manual](https://threejs.org/manual/) &amp;mdash;
+[Wiki](https://github.com/mrdoob/three.js/wiki) &amp;mdash;
+[Migrating](https://github.com/mrdoob/three.js/wiki/Migration-Guide) &amp;mdash;
+[Questions](https://stackoverflow.com/questions/tagged/three.js) &amp;mdash;
+[Forum](https://discourse.threejs.org/) &amp;mdash;
+[Discord](https://discord.gg/56GBJwAnUS)
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://archify.si/gallery.html&quot;&gt;&lt;strong&gt;Live demos&lt;/strong&gt;&lt;/a&gt; &amp;nbsp;·&amp;nbsp;
-  &lt;a href=&quot;#start&quot;&gt;&lt;strong&gt;Get started&lt;/strong&gt;&lt;/a&gt; &amp;nbsp;·&amp;nbsp;
-  &lt;a href=&quot;https://archify.si/guide.html&quot;&gt;&lt;strong&gt;Scenario guide&lt;/strong&gt;&lt;/a&gt; &amp;nbsp;·&amp;nbsp;
-  &lt;a href=&quot;#community&quot;&gt;&lt;strong&gt;Community&lt;/strong&gt;&lt;/a&gt; &amp;nbsp;·&amp;nbsp;
-  &lt;a href=&quot;./README_ZH.md&quot;&gt;&lt;strong&gt;简体中文&lt;/strong&gt;&lt;/a&gt; &amp;nbsp;·&amp;nbsp;
-  &lt;a href=&quot;./README_JA.md&quot;&gt;&lt;strong&gt;日本語&lt;/strong&gt;&lt;/a&gt; &amp;nbsp;·&amp;nbsp;
-  &lt;a href=&quot;./README_KO.md&quot;&gt;&lt;strong&gt;한국어&lt;/strong&gt;&lt;/a&gt;
-&lt;/p&gt;
+### Usage
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://trendshift.io/repositories/31352?utm_source=repository-badge&amp;amp;utm_medium=badge&amp;amp;utm_campaign=badge-repository-31352&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/31352&quot; alt=&quot;tt-a1i/archify | Trendshift&quot; width=&quot;250&quot; height=&quot;55&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
+This code creates a scene, a camera, and a geometric cube, and it adds the cube to the scene. It then creates a `WebGL` renderer for the scene and camera, and it adds that viewport to the `document.body` element. Finally, it animates the cube within the scene for the camera.
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/tt-a1i/archify/stargazers&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/stars/tt-a1i/archify?style=flat-square&amp;amp;color=E5B650&amp;amp;logo=github&amp;amp;label=Stars&quot; alt=&quot;GitHub stars&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://skills.sh/tt-a1i/archify/archify&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/installs-130K%2B-0EA5E9?style=flat-square&quot; alt=&quot;130K+ installs on skills.sh&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/license-MIT-22c55e?style=flat-square&quot; alt=&quot;MIT License&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;#installation-options&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/works_with-Claude_Code_%7C_Codex_%7C_Cursor_%7C_OpenCode-7C3AED?style=flat-square&quot; alt=&quot;Works with Claude Code, Codex, Cursor, and OpenCode&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;CHANGELOG.md#320--2026-10-18&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/version-3.2.0-0891b2?style=flat-square&quot; alt=&quot;Stable version 3.2.0&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
+```javascript
+import * as THREE from &#039;three&#039;;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://archify.si/&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Website-0891B2?style=for-the-badge&quot; alt=&quot;Archify website&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://discord.gg/6xWMjgCeUq&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&amp;amp;logo=discord&amp;amp;logoColor=white&quot; alt=&quot;Join Archify on Discord&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;#community&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/WeChat-07C160?style=for-the-badge&amp;amp;logo=wechat&amp;amp;logoColor=white&quot; alt=&quot;Archify WeChat group&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;#community&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/QQ-1688D8?style=for-the-badge&amp;amp;logo=qq&amp;amp;logoColor=white&quot; alt=&quot;Archify QQ group&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://x.com/t20000622yy&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Creator_on_X-181717?style=for-the-badge&amp;amp;logo=x&amp;amp;logoColor=white&quot; alt=&quot;Follow the creator on X&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
+const width = window.innerWidth, height = window.innerHeight;
 
-&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;#sponsors&quot;&gt;&lt;strong&gt;❤️ Partners &amp; sponsors: Kimi Work · Supercode · OpenLux&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+// init
 
-## See Archify in action
+const camera = new THREE.PerspectiveCamera( 70, width / height, 0.01, 10 );
+camera.position.z = 1;
 
-&lt;!-- archify-launch-video --&gt;
+const scene = new THREE.Scene();
 
-https://github.com/user-attachments/assets/78570807-ba1d-4737-953f-55504a378a87
+const geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
+const material = new THREE.MeshNormalMaterial();
 
-**One sentence. Your repo, mapped.** Watch the 35-second demo: explore the diagram, follow source links, and trace a path. [Try the interactive examples ↗](https://archify.si/gallery.html)
+const mesh = new THREE.Mesh( geometry, material );
+scene.add( mesh );
 
-&lt;a id=&quot;start&quot;&gt;&lt;/a&gt;
+const renderer = new THREE.WebGLRenderer( { antialias: true } );
+renderer.setSize( width, height );
+renderer.setAnimationLoop( animate );
+document.body.appendChild( renderer.domElement );
 
-### Install, then describe your idea
+// animation
 
-Works with Cursor, Claude Code, Codex CLI, and OpenCode. See installation options below for additional integrations.
+function animate( time ) {
 
-```bash
-npx skills add tt-a1i/archify -g
+	mesh.rotation.x = time / 2000;
+	mesh.rotation.y = time / 1000;
+
+	renderer.render( scene, camera );
+
+}
 ```
 
-Send this to your agent:
+If everything goes well, you should see [this](https://jsfiddle.net/w43x5Lgh/).
 
-```text
-Use Archify to diagram a web request: Browser calls the API,
-the API checks Redis, and a cache miss queries PostgreSQL and fills the cache.
-```
+### Cloning this repository
 
-Then continue: “Add authentication”, “Highlight the cache-miss path”, or “Switch to the light theme”.
-
-**No repository is required:** start with a description, or ask your agent to read a repository for a source-backed architecture diagram.
-
-[Choose your agent](https://archify.si/start.html?agent=cursor&amp;type=architecture) · [Installation details and update checks](#quick-start) · [Create and check diagrams with your agent](https://archify.si/agent-diagrams)
-
-## Ask a question, get a one-page answer
-
-Not every answer is one diagram. Ask your agent to answer as a page and Archify builds an **explainer**: the conclusion first, then one panel per question, with tables, steps, charts, code and validated diagrams.
-
-[![An explainer page: the answer first, then steps beside the sequence diagram they walk through](docs/assets/explainer-tls-en.png)](https://archify.si/cases/explainer/tls-first-visit.html)
-
-- **Conclusion first.** The answer and its reasons lead; every panel takes one question.
-- **Diagrams that explain.** Steps sit beside the diagram they walk through and light its parts as you read. Click any node to open the full interactive view.
-- **Easy to check.** Claims cite numbered sources; repository excerpts are pinned to a commit and open in a source card.
-- **Easy to share.** One HTML file with four styles and light or dark themes. Export a PNG, WebP or JPG long image, or print to PDF. Ask about any panel to get a follow-up your agent can use to revise just that panel.
-
-```text
-Use Archify to answer as one page: our API&#039;s P99 went from 80 ms to 600 ms
-while the mean barely moved. What is the likely cause, and how should we investigate?
-```
-
-Live examples: [First HTTPS visit](https://archify.si/cases/explainer/tls-first-visit.html) · [P99 latency (Chinese)](https://archify.si/cases/explainer/p99-tail-latency.html) · [How Archify finalize keeps the last good file, read from this repository (Chinese)](https://archify.si/cases/explainer/finalize-delivery.html) · [First rental checklist (Chinese)](https://archify.si/cases/explainer/first-rental.html)
-
-&lt;a id=&quot;sponsors&quot;&gt;&lt;/a&gt;
-
-## ❤️ Sponsors
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://www.kimi.ai/?aff=archify&quot;&gt;&lt;img src=&quot;docs/assets/sponsors/archify-kimi-work.png&quot; alt=&quot;Archify × Kimi Work collaboration banner&quot; width=&quot;800&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-**Archify × Kimi Work.** Find Archify in the Kimi Work plugin store as **Interactive Architecture Diagram**. Describe your system in one sentence to create an interactive diagram. **[Try it in Kimi Work →](https://www.kimi.ai/?aff=archify)**
-
-&lt;table&gt;
-&lt;tr&gt;
-  &lt;td align=&quot;center&quot; width=&quot;240&quot;&gt;&lt;a href=&quot;https://supercode.sh/?utm_source=archify&quot;&gt;&lt;img src=&quot;https://cdn.supercode.sh/sponsors/supercode-logo.png&quot; alt=&quot;Supercode&quot; width=&quot;200&quot;/&gt;&lt;/a&gt;&lt;br/&gt;&lt;strong&gt;&lt;a href=&quot;https://supercode.sh/?utm_source=archify&quot;&gt;supercode.sh&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://supercode.sh/?utm_source=archify&quot;&gt;Supercode&lt;/a&gt; sponsors Archify and enhances Codex and Cursor with token optimization, curated Skills, and spec-driven development. Archify is featured as a &lt;a href=&quot;https://supercode.sh/en/skills/tt-a1i/archify/archify&quot;&gt;Supercode Editor’s Choice&lt;/a&gt; skill.&lt;br/&gt;&lt;br/&gt;&lt;a href=&quot;https://supercode.sh/en/skills/tt-a1i/archify/archify&quot;&gt;&lt;img src=&quot;https://supercode.sh/badges/editors-choice.svg&quot; alt=&quot;Supercode Editor’s Choice — Archify&quot; width=&quot;240&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot; width=&quot;240&quot;&gt;&lt;a href=&quot;https://www.openlux.ai/register?channel=c_qdvanbpc&quot;&gt;&lt;img src=&quot;docs/assets/sponsors/openlux-logo.png&quot; alt=&quot;OpenLux&quot; width=&quot;200&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;strong&gt;&lt;a href=&quot;https://www.openlux.ai/register?channel=c_qdvanbpc&quot;&gt;OpenLux&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Thank you to OpenLux for sponsoring this project! OpenLux is an all-in-one AI platform for businesses, bringing together leading AI models from major providers worldwide. With fast, reliable service and responsive technical support, OpenLux offers base pricing for Claude, OpenAI, and Gemini models as low as 8.82%, 4%, and 8% of official rates, respectively.&lt;br/&gt;&lt;br/&gt;Exclusive offer for Archify users: Sign up through our referral link and enjoy up to 7.5% off credit top-ups!&lt;br/&gt;&lt;br/&gt;&lt;a href=&quot;https://www.openlux.ai/register?channel=c_qdvanbpc&quot;&gt;Get started with OpenLux →&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot; width=&quot;240&quot;&gt;&lt;a href=&quot;https://www.packyapi.ai/register?aff=bN97&quot;&gt;&lt;img src=&quot;docs/assets/sponsors/packycode-logo.png&quot; alt=&quot;PackyCode&quot; width=&quot;200&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;strong&gt;&lt;a href=&quot;https://www.packyapi.ai/register?aff=bN97&quot;&gt;PackyCode&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Access leading AI models through PackyCode with one API endpoint and one API key. Enjoy automatic failover and dedicated high-speed routes for Codex and Claude Code.&lt;br/&gt;&lt;br/&gt;Get started with $1 in free credits, a discount on your first top-up, and savings of up to 80% on eligible routes. Pay in RMB with no currency conversion markups or extra top-up fees.&lt;br/&gt;&lt;br/&gt;&lt;a href=&quot;https://www.packyapi.ai/register?aff=bN97&quot;&gt;Get started with PackyCode →&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot; width=&quot;240&quot;&gt;&lt;a href=&quot;https://www.aicodemirror.ai/register?invitecode=WC26FL&quot;&gt;&lt;img src=&quot;docs/assets/sponsors/aicodemirror-logo.jpg&quot; alt=&quot;AICodeMirror&quot; width=&quot;200&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;strong&gt;&lt;a href=&quot;https://www.aicodemirror.ai/register?invitecode=WC26FL&quot;&gt;AICodeMirror&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Thank you to AICodeMirror for sponsoring Archify! AICodeMirror provides API relay services for Claude, Codex, and Gemini, with enterprise-grade concurrency, invoice issuance, and 24/7 technical support. Codex pricing starts at 7% of standard rates, with additional top-up discounts.&lt;br/&gt;&lt;br/&gt;Exclusive offer for Archify users: Register through our referral link to receive 20% off your first top-up.&lt;br/&gt;&lt;br/&gt;&lt;a href=&quot;https://www.aicodemirror.ai/register?invitecode=WC26FL&quot;&gt;Try AICodeMirror →&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot; width=&quot;240&quot;&gt;&lt;a href=&quot;https://www.infistar.cc/register?aff=9N89LEMV&amp;amp;ref_source=link&quot;&gt;&lt;img src=&quot;docs/assets/sponsors/infistar-logo.svg&quot; alt=&quot;Infistar.cc&quot; width=&quot;140&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;strong&gt;&lt;a href=&quot;https://www.infistar.cc/register?aff=9N89LEMV&amp;amp;ref_source=link&quot;&gt;Infistar.cc&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Thank you to Infistar.cc for sponsoring Archify! One API key covers text, image, and video creation with GPT, Claude, Gemini, DeepSeek, Qwen, Kling, and other models, without switching groups. Model API pricing starts at 1% of official rates, and AI images start at ¥0.06 each.&lt;br/&gt;&lt;br/&gt;Exclusive offer for Archify users: Sign up through our referral link for $5 in trial credits and a special offer on your first top-up.&lt;br/&gt;&lt;br/&gt;&lt;a href=&quot;https://www.infistar.cc/register?aff=9N89LEMV&amp;amp;ref_source=link&quot;&gt;Try Infistar →&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td align=&quot;center&quot; width=&quot;240&quot;&gt;&lt;a href=&quot;https://github.com/EverMind-AI/Raven&quot;&gt;&lt;img src=&quot;docs/assets/sponsors/evermind-archify-raven.png&quot; alt=&quot;Archify × Raven&quot; width=&quot;200&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/EverMind-AI&quot;&gt;EverMind&lt;/a&gt; · &lt;a href=&quot;https://github.com/EverMind-AI/Raven&quot;&gt;Raven&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;EverMind sponsors Archify and builds memory infrastructure for agents. Its &lt;a href=&quot;https://github.com/EverMind-AI/Raven&quot;&gt;&lt;strong&gt;Raven&lt;/strong&gt;&lt;/a&gt; harness supports Archify as a Skill for verified, interactive system maps.&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-
-&gt; Want to sponsor Archify? [Contact us by email.](mailto:2801884530@qq.com)
-
-## Show what matters
-
-| Explain an agent workflow | Follow a cache miss | Explore service relationships |
-|---|---|---|
-| [![Agent workflow tracing everything the planner drives](docs/assets/archify-demo-reach.png)](https://archify.si/gallery/artifacts/agent-tool-call.workflow.html?theme=dark&amp;present=1#focus=planner&amp;reach=downstream) | [![Cache-miss sequence showing the Web App to Postgres route](docs/assets/archify-demo-route.png)](https://archify.si/gallery/artifacts/cache-miss.sequence.html?theme=dark&amp;present=1#route=web~db) | [![Production architecture comparing backend and database roles](docs/assets/archify-demo-lens.png)](https://archify.si/gallery/artifacts/production-deployment.architecture.html?theme=dark&amp;present=1#lens=backend~database) |
-| Trace everything downstream of one step. | Highlight the path from web app to database. | Focus on authored backend and database connections. |
-
-The [Proof Lab](https://archify.si/gallery.html) contains all 11 checked-in scenarios, their JSON sources, and validation receipts.
-
-### Understand a real repository
-
-&lt;sub&gt;CODE → DIAGRAM · A source-backed system map&lt;/sub&gt;
-
-[![MCO runtime architecture generated from the public mco-org/mco repository](docs/assets/mco-runtime-share-card.png)](https://archify.si/cases/mco-runtime.architecture.html?theme=dark&amp;present=1)
-
-Archify traced [`mco-org/mco`](https://github.com/mco-org/mco) at `9f1a1cf` and produced this checked map. **[Open it ↗](https://archify.si/cases/mco-runtime.architecture.html?theme=dark&amp;present=1)** · [trace reach ↗](https://archify.si/cases/mco-runtime.architecture.html?theme=dark#focus=router&amp;reach=downstream) · [typed source](docs/cases/mco-runtime.architecture.json)
-
-### Easy to extend. More ways to make it yours.
-
-&lt;sub&gt;COMMUNITY STORIES · Selected examples shared by users&lt;/sub&gt;
-
-**Keep building after the diagram is generated.** Archify is open source and its output is standalone HTML. Ask your agent to adapt it, connect useful links, or add interactions for your own workflow. Community creations already span team collaboration, travel planning, legal citation checks, contract review, and incident retrospectives. These are just a few examples.
-
-One user started with a hand-drawn multi-agent architecture, turned it into an interactive diagram, then added a Kimi execution pool through conversation. Others asked their agent to read a project and brought the resulting architecture into Feishu or DingTalk for team discussion.
-
-Another user turned a Shanghai CityWalk guide into a four-day itinerary: switch between days, inspect a stop, and jump to Amap, Xiaohongshu, or Dianping. The author also added arrival check-ins and stop notes, turning the itinerary into a small tool to use during the trip. These extensions were added by the community author for this particular artifact.
-
-**[▶ Explore the interactive Shanghai CityWalk](https://archify.si/cases/community/shanghai-citywalk.html)**
-
-[![A community-created four-day Shanghai CityWalk itinerary](docs/assets/community/shanghai-citywalk.png)](https://archify.si/cases/community/shanghai-citywalk.html)
-
-**[▶ Try the interactive version](https://archify.si/cases/community/shanghai-citywalk.html)** · Switch between D1–D4 and click a place to explore.
-
-&lt;sub&gt;Community artifact · Shanghai CityWalk · Four days of routes and place links&lt;/sub&gt;
-
-### Download it. Open it. Explore it.
-
-The output is a self-contained HTML file. Download it and open it in your browser to use the node details and path exploration included in that artifact. No Archify installation is needed to view it. Send the HTML to someone else and the interactions go with it; external websites and map links need a network connection.
-
-**[Explore the Shanghai CityWalk ↗](https://archify.si/cases/community/shanghai-citywalk.html)** · **[Download HTML ↓](https://github.com/tt-a1i/archify/raw/refs/heads/main/docs/cases/community/shanghai-citywalk.html)**
-
-&lt;sub&gt;Try switching between D1–D4, opening a place card, or following a map link. Times and place information reflect the author&#039;s original itinerary.&lt;/sub&gt;
-
-## Community and recognition
-
-- **#1 on GitHub Trending&#039;s weekly, all-language repository list.** [Ranking screenshot published by the creator on September 1, 2026](https://x.com/t20000622yy/status/2094656813576880285), with all languages and “This week” selected.
-- **Featured and interviewed by QbitAI.** [Project feature](https://www.qbitai.com/2026/09/482469.html) · [The developer&#039;s story](https://www.qbitai.com/2026/09/488519.html).
-- **Shared with developer communities.** [midudev&#039;s post](https://x.com/midudev/status/2094425974406320207).
-
-&lt;sub&gt;A selection of public coverage, community shares, and historical milestones. Follow the links for dates and sources.&lt;/sub&gt;
-
-## Preview
-
-&lt;details&gt;
-&lt;summary&gt;Themes, exports, and share cards&lt;/summary&gt;
-
-Same diagram, two themes, one click to switch:
-
-| Dark | Light |
-|---|---|
-| ![Dark theme](docs/assets/archify-dark.png) | ![Light theme](docs/assets/archify-light.png) |
-
-The Export menu copies PNG to the clipboard and downloads static or motion formats:
-
-![Export menu](docs/assets/archify-menu.png)
-
-After tracing a route, **Export → Route Share Card** downloads that authored path as a 1200×630 PNG with the full diagram retained for context.
-
-![Route Share Card showing the exact Users to API Server path with the full architecture retained as context](docs/assets/archify-route-share-card.png)
-
-After tracing authored `Upstream` or `Downstream` reach, **Export → Reach Share Card** captures that exact reading without claiming runtime impact.
-
-![MCO downstream Reach Share Card showing authored relationships from Command Router](docs/assets/mco-runtime-reach-share-card.png)
-
-Open [`examples/web-app.html`](examples/web-app.html) locally to try the complete viewer.
-
-&lt;/details&gt;
-
-## Quick start
-
-**Current stable version:** `v3.2.0`. See [Changelog](CHANGELOG.md#320--2026-10-18).
-
-### 1. Install
-
-```bash
-npx skills add tt-a1i/archify -g
-```
-
-&lt;details&gt;
-&lt;summary&gt;More installation options and update-check details&lt;/summary&gt;
-
-For an explicit, non-interactive Cursor install:
-
-```bash
-npx -y skills add tt-a1i/archify --skill archify --agent cursor --global --copy --yes
-```
-
-To try without installing:
-
-```bash
-npx skills use tt-a1i/archify@archify --agent codex
-```
-
-[DSH community opt-in](integrations/deepseek-harness/README.md): `dsh plugin --profile web add @tt-a1i/archify-dsh@1.0.0`
-
-The [agent switcher](https://archify.si/start.html?agent=cursor&amp;type=architecture) covers `cursor`, `codex`, `claude-code`, and `opencode`.
-
-Archify may GET the fixed stable manifest solely to show an optional reminder; it never downloads or installs updates. Successful checks wait about 24 hours (±20%); active use retries failures after 6, then 24 hours. The server sees normal HTTP metadata (IP and time), but receives no version, Agent, project data, prompts, account/device ID, or ETag. You decide whether and when to update. Set `ARCHIFY_UPDATE_CHECK_DISABLED=1` to disable networking and reminder-state writes.
-
-&lt;/details&gt;
-
-### Stay updated
-
-- **Get release notifications:** select **Watch → Custom → Releases** at the top of this GitHub repository. Starring the project does not subscribe you to release notifications.
-- **See what changed:** [Release notes](https://github.com/tt-a1i/archify/releases).
-- **Use a feed reader:** [Subscribe to the release feed](https://github.com/tt-a1i/archify/releases.atom).
-
-Installations with the update checker also check for newer stable releases during diagram delivery and can show a reminder. Older installations without the checker need a manual update to gain this feature. You choose whether and when to upgrade; Archify never installs updates automatically.
-
-### 2. Start from a description — no repository required
-
-```text
-Use Archify to draw: Browser -&gt; API -&gt; Redis cache -&gt; PostgreSQL fallback.
-```
-
-For source evidence, open a repository and ask:
-
-```text
-Analyze this repository, then use archify to create a high-level runtime architectu
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[xmanrui/dsh-im]]></title>
-            <link>https://github.com/xmanrui/dsh-im</link>
-            <guid>https://github.com/xmanrui/dsh-im</guid>
-            <pubDate>Thu, 22 Oct 2026 00:05:30 GMT</pubDate>
-            <description><![CDATA[通过扫码或机器人凭据把IM机器人接入DeepSeek Harness（支持飞书、微信、钉钉、企业微信、QQ、Slack、Telegram、Discord和WhatsApp）。 Connect IM bots to DeepSeek Harness via QR code or credentials (9 channels).]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/xmanrui/dsh-im">xmanrui/dsh-im</a></h1>
-            <p>通过扫码或机器人凭据把IM机器人接入DeepSeek Harness（支持飞书、微信、钉钉、企业微信、QQ、Slack、Telegram、Discord和WhatsApp）。 Connect IM bots to DeepSeek Harness via QR code or credentials (9 channels).</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 2,274</p>
-            <p>Forks: 237</p>
-            <p>Stars today: 46 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;assets/logo-dsh-im-connecting-readme-3x2.png&quot; alt=&quot;DSH-IM — Connecting DeepSeek Harness&quot; width=&quot;420&quot; height=&quot;280&quot; align=&quot;middle&quot;&gt;&amp;nbsp;&amp;nbsp;
-  &lt;img src=&quot;assets/logo-plugin-phone.png&quot; alt=&quot;DSH-IM phone logo&quot; width=&quot;280&quot; height=&quot;280&quot; align=&quot;middle&quot;&gt;
-&lt;/p&gt;
-
----
-
-&lt;div align=&quot;center&quot;&gt;
-  &lt;p&gt;&lt;strong&gt;让 DeepSeek Harness 触手可及&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;Connecting DeepSeek Harness&lt;/strong&gt;&lt;/p&gt;
-
-  &lt;p&gt;
-    &lt;img src=&quot;https://dsh-im-random-badge.xmanrui-dsh-im.workers.dev&quot; alt=&quot;滑动变祖器：今天是梁子或今天是梁圣（随机）&quot;&gt;
-    &lt;a href=&quot;LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/license/xmanrui/dsh-im&quot; alt=&quot;MIT 许可证&quot;&gt;&lt;/a&gt;
-    &lt;a href=&quot;#recognition&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/DeepSeek%20Harness-%E5%AE%98%E6%96%B9%E8%B5%9E%E5%8A%A9-4176E6?style=flat&quot; alt=&quot;DeepSeek Harness 官方赞助&quot;&gt;&lt;/a&gt;
-    &lt;a href=&quot;https://deepseek1024.com/&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/deepseek1024-%E4%B8%8B%E8%BD%BD%E9%87%8FTop%2010-D97706?style=flat&quot; alt=&quot;deepseek1024 下载量Top 10&quot;&gt;&lt;/a&gt;
-    &lt;a href=&quot;https://dshfind.com/zh/plugins/xmanrui/dsh-im&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/dshfind-%E5%88%86%E7%B1%BB%E7%AC%AC%E4%B8%80-d97706&quot; alt=&quot;dshfind: 分类第一&quot;&gt;&lt;/a&gt;
-    &lt;a href=&quot;https://dshfind.com/zh/plugins/xmanrui/dsh-im?ref=badge&quot;&gt;&lt;img src=&quot;https://dshfind.com/api/badge/xmanrui/dsh-im?metric=downloads&amp;amp;lang=zh&quot; alt=&quot;dshfind downloads&quot;&gt;&lt;/a&gt;
-  &lt;/p&gt;
-
-  &lt;p&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/%E5%BE%AE%E4%BF%A1-07C160?logo=wechat&amp;amp;logoColor=white&quot; alt=&quot;微信&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/%E9%A3%9E%E4%B9%A6-3370FF?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTcuMiA0LjVoNy42YzEuMiAwIDIuMS41NSAyLjcgMS41OCAxLjA1IDEuOCAxLjU1IDMuNDUgMS41OCA0Ljk1LTIuMDQtLjYyLTQuMi0uMTUtNi4yMiAxLjQ1QzExLjMgOS43IDkuNDIgNy4wNCA3LjIgNC41WiIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMC44IDEzLjU1YzMuMy0yLjkzIDUuNzItNC4yNCA5LjQ3LTIuNTItMS4yIDEuNDUtMi4yNyA0LjE4LTMuODYgNS40My0xLjY3IDEuMzEtMy45LjUtNS42MS0uNjR2LTIuMjdaIi8%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTQuNCA4LjM1YzMuNDcgMy42MSA3LjI1IDYuMSAxMC4zMyA1LjcgMS4wNi0uMTQgMi4yLS43MiAzLjQtMS43Mi0xLjA0IDIuNjUtMi42IDQuOC01LjA2IDYtMi40NiAxLjItNS41Ni41Mi03LjQyLS43MkEyLjc2IDIuNzYgMCAwIDEgNC40IDE1LjNWOC4zNVoiLz48L3N2Zz4%3D&quot; alt=&quot;飞书&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/%E9%92%89%E9%92%89-1677FF?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTM3LjA1IDIyLjc4M2MtNi43NTgtNS4yMTYtMTQuMzc4LTEyLjEyOC0yMi43My0xOS41MzgtLjY1NS0uNTg1LTEuMjQyLS4zNTQtMS41MzYuNDItMS44OCA0Ljk3My0uMDU4IDkuMzg2IDIuODg5IDExLjkzMnM3LjM2OCA0LjkxMiAxMC4wNTggNi4xNTVjLjEwNS4wNDkuMDEzLjIwMy0uMDkzLjE2My00Ljk1My0yLjE4Mi04LjM5Ny0zLjc2NS0xMy4wNy03LjM2OC0uNDk3LS4zODgtMS4wMS0uMjQyLTEuMDcuNTIxLS4zODQgNC43NDggMi42NTcgOC40ODMgNi4wNTggOS43NDUgMi4xLjc4MSA0LjM5OCAxLjIxMiA2LjUzIDEuNDc0LjEwOS4wMTUuMDg0LjE3OC0uMDI3LjE3OC0yLjc0Ny4wMS02LjA1OC0uNjU0LTguOTM1LTEuNzUxLS42MDYtLjIzMy0uODE4LjI1LS43MjIuNjMzLjQ5MSAyLjAwOCAyLjk3NCA1LjA3NiA2LjkyNiA1LjczYTEyIDEyIDAgMCAwIDIuMjI4LjExNWMuMTY0IDAgLjIwOC4wODkuMTU0LjIxN3EtMi42ODUgNC42LTIuODAzIDQuNzk3Yy0uMDkxLjE1Mi0uMDM2LjI3NS4xNTYuMjc1aDMuNTQzYy4xNjQgMCAuMjY0LjEwNi4xOC4yNDZsLTQuOTU4IDguMTk2Yy0uMTkxLjMyOC4wMzUuNTY1LjM5NS4zMDFzMTUuMjEyLTExLjEzMyAxNS42MzYtMTEuNDQ4Yy4xOTUtLjE0Mi4xNDgtLjMyNy0uMTI0LS4zMjdoLTMuMThjLS4yMDYgMC0uMjUyLS4xNC0uMTExLS4yOC4xNC0uMTQxIDMuNjAyLTMuNTk0IDQuODM3LTQuODg4IDEuMjgzLTEuMzUgMS45MzgtMy44MjUtLjIzMS01LjQ5OCIvPjwvc3ZnPg%3D%3D&quot; alt=&quot;钉钉&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1-3370FF?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuMzUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTE3LjcgMTQuNWMxLjA1LTEuMTIgMS42NS0yLjUyIDEuNjUtNC4wMyAwLTMuODItMy41OC02LjkyLTgtNi45MnMtOCAzLjEtOCA2LjkyIDMuNTggNi45MiA4IDYuOTJjMS4xNyAwIDIuMjgtLjIyIDMuMjgtLjYyIi8%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTE2LjEgMTUuMTVjLjctLjcgMS44My0uNyAyLjUzIDBzLjcgMS44MyAwIDIuNTMtMS44My43LTIuNTMgMC0uNy0xLjgzIDAtMi41M1pNMTkuMjUgMTMuNDVhMS4zNiAxLjM2IDAgMSAxIDEuOTIgMS45MiAxLjM2IDEuMzYgMCAwIDEtMS45Mi0xLjkyWk0xOS41NSAxOC4wNWExLjE2IDEuMTYgMCAxIDEgMS42NCAxLjY0IDEuMTYgMS4xNiAwIDAgMS0xLjY0LTEuNjRaTTE1LjI1IDE4Ljc1YS45Mi45MiAwIDEgMSAxLjMgMS4zLjkyLjkyIDAgMCAxLTEuMy0xLjNaIi8%2BPC9zdmc%2B&quot; alt=&quot;企业微信&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/QQ-1EBAFC?logo=qq&amp;amp;logoColor=white&quot; alt=&quot;QQ&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/Slack-4A154B?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTYgMTVhMiAyIDAgMSAxLTItMmgydjJabTEgMGEyIDIgMCAxIDEgNCAwdjVhMiAyIDAgMSAxLTQgMHYtNVptMi04YTIgMiAwIDEgMSAyLTJ2Mkg5Wm0wIDFhMiAyIDAgMSAxIDAgNEg0YTIgMiAwIDEgMSAwLTRoNVptOCAyYTIgMiAwIDEgMSAyIDJoLTJ2LTJabS0xIDBhMiAyIDAgMSAxLTQgMFY1YTIgMiAwIDEgMSA0IDB2NVptLTIgOGEyIDIgMCAxIDEtMiAydi0yaDJabTAtMWEyIDIgMCAxIDEgMC00aDVhMiAyIDAgMSAxIDAgNGgtNVoiLz48L3N2Zz4%3D&quot; alt=&quot;Slack&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/Telegram-26A5E4?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTIzLjk1IDQuNTdjLS4zNi0xLjQ1LTEuNDMtMS43Ni0yLjgyLTEuMjRMMS41IDEwLjljLTEuMzQuNTItMS4zMiAxLjI3LS4yNCAxLjZsNS4wMyAxLjU3IDExLjY2LTcuMzZjLjU1LS4zNCAxLjA1LS4xNi42NC4yMWwtOS40NCA4LjUyLS4zNyA1LjEyYy41NCAwIC43OC0uMjQgMS4wOC0uNTNsMi41OS0yLjUxIDUuMzggMy45N2MuOTkuNTUgMS43LjI3IDEuOTUtLjkyTDIzLjk1IDQuNTdaIi8%2BPC9zdmc%2B&quot; alt=&quot;Telegram&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/Discord-5865F2?logo=discord&amp;amp;logoColor=white&quot; alt=&quot;Discord&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/WhatsApp-25D366?logo=whatsapp&amp;amp;logoColor=white&quot; alt=&quot;WhatsApp&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/iMessage-34C759?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTEyIDNDNS45MjUgMyAxIDcuMDI5IDEgMTJjMCAyLjc1MSAxLjUxNCA1LjIxNCAzLjkwMSA2Ljg2NS4yOTEgMS41MjYtLjE3NCAyLjY0OC0xLjI1OCAzLjY0IDIuMDQ3LjAyNSAzLjQ0Mi0uNTA5IDQuNjQzLTEuNThBMTMuMiAxMy4yIDAgMCAwIDEyIDIxYzYuMDc1IDAgMTEtNC4wMjkgMTEtOVMxOC4wNzUgMyAxMiAzWiIvPjwvc3ZnPg%3D%3D&quot; alt=&quot;iMessage&quot;&gt;
-  &lt;/p&gt;
-
-  &lt;p&gt;
-    &lt;a href=&quot;https://trendshift.io/repositories/169119#achievements&quot;&gt;
-      &lt;img src=&quot;https://trendshift.io/api/badge/trendshift/repositories/169119/daily?language=JavaScript&quot; alt=&quot;DSH-IM — Trendshift JavaScript 日榜第 3 名&quot; width=&quot;420&quot;&gt;
-    &lt;/a&gt;
-  &lt;/p&gt;
-
-  &lt;p&gt;&lt;strong&gt;简体中文&lt;/strong&gt; · &lt;a href=&quot;README.en.md&quot;&gt;English&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-
----
-
-&lt;a id=&quot;recognition&quot;&gt;&lt;/a&gt;
-
-&gt; [!NOTE]
-&gt; **DSH-IM 已获得 DeepSeek Harness 官方 Token 赞助，价值人民币 2,000 元**。感谢官方对本项目的支持！
-&gt;
-&gt; 本项目由社区开发者独立开发与维护。
-
-&lt;!-- --&gt;
-
-&gt; [!IMPORTANT]
-&gt; **安装请认准完整包名：`@xmanrui/dsh-im`**
-&gt;
-&gt; 为避免名称混淆，在插件市场搜索、插件安装框中填写或使用命令安装时，请复制下方完整包名。
-&gt;
-&gt; ```text
-&gt; @xmanrui/dsh-im
-&gt; ```
-&gt;
-&gt; 选择对应的一条命令：**Desktop** 在内置终端执行，**Web** 在启动当前 Harness 的终端执行。
-&gt;
-&gt; ```sh
-&gt; dsh plugin --profile desktop add -w @xmanrui/dsh-im
-&gt; ```
-&gt;
-&gt; ```sh
-&gt; dsh plugin --profile web add -w @xmanrui/dsh-im
-&gt; ```
-&gt;
-&gt; 安装后重启 Desktop 或 `dsh web`，Web 刷新浏览器，再打开「设置 → IM机器人」。
-
-## 简介
-
-通过扫码、App Manifest 或已有机器人凭据把 IM 机器人接入 DeepSeek Harness，并让本机 Harness 主动连接公网 AI Office。一个插件、一个设置入口，统一管理内置 IM 渠道和 AI Office Connector。**每个 IM 渠道都支持接入多个机器人**，各机器人的连接状态、工作区、模型和会话绑定彼此独立；iMessage 是本机 Messages.app 身份接入的例外，详见[iMessage 渠道说明](docs/imessage.md)。
-
-Connect IM bots to DeepSeek Harness by scanning a QR code, using an App Manifest, or entering existing bot credentials, and let the local Harness connect outward to a public AI Office. One plugin and one settings entry manage the built-in IM channels and the AI Office Connector.
-
-## 界面
-
-![IM 机器人页面](docs/images/imbot.png)
-
-&lt;img src=&quot;docs/images/Context_enhancement.png&quot; alt=&quot;上下文增强页面&quot; width=&quot;49%&quot;&gt; &lt;img src=&quot;docs/images/access_mode.png&quot; alt=&quot;访问模式页面&quot; width=&quot;49%&quot;&gt;
-
-## 当前内置渠道
-
-| 渠道 | 接入方式 | 消息与回复 |
-| --- | --- | --- |
-| 飞书 | 扫码创建机器人，或使用 App ID + App Secret 手动绑定 | 长连接接收消息；可选择飞书原生“实时直播”、单张实时过程卡或逐步消息展示任务过程；每机器人可开启语音交互（可选渠道能力，默认关闭）：语音消息转写为文字走正常流程，答案同时以语音回复 |
-| 微信 | 使用微信扫码绑定机器人 | 腾讯 iLink 长轮询收发消息；等待 Harness 回答时显示“正在输入”，最终回复按 1,800 字符分段发送 |
-| 钉钉 | 扫码创建机器人，或使用 Client ID + Client Secret 手动绑定 | 钉钉 Stream 长连接；通过 AI Card 流式显示回答 |
-| 企业微信 | 使用企业微信 App 扫码创建智能机器人，或使用 Bot ID + Secret 手动绑定 | 官方 WebSocket 长连接；原生显示“正在思考中”、工具执行进度和流式回答 |
-| 企业微信应用 | 在企业微信管理后台创建自建应用，填写企业 ID、AgentId、Secret、Token、EncodingAESKey（可选代理地址） | HTTP 回调接收；私聊支持流式回复（微信端不支持时自动改为分段文本），支持图片输入与结果文件回传；成员的微信关注该企业的微信插件后可在微信中直接使用 |
-| QQ | 使用手机 QQ 扫码创建机器人，或使用 AppID + AppSecret 手动绑定 | WebSocket 长连接；私聊显示“正在输入”并以单条 Markdown 回复，群聊被 @ 后只发送最终答案 |
-| Slack | 使用预置 App Manifest 创建应用，再填写 Bot Token（`xoxb-`）和 App Token（`xapp-`） | Socket Mode 长连接；私聊直接回复，频道被 @ 后响应，优先使用官方流式消息 API |
-| Telegram | 使用 @BotFather 生成的 Bot Token | Bot API 长轮询；默认私聊直接响应、群聊被提及或回复时响应，也可为每个机器人独立启用私聊白名单安全模式；关闭思考过程留痕时，私聊、群聊和 Topic 均通过占位消息编辑展示进度并原位完成富文本回复，避免 Android 私聊 Draft 占用发送入口，平台不支持富文本时回退为普通文字 |
-| Discord | 使用 Developer Portal 生成的 Bot Token | Gateway v10 长连接；私信直接回复；服务器文字/公告频道首次 @ 后创建原生 Thread，后续在线程中无需重复 @，并通过编辑消息流式显示回答 |
-| WhatsApp | 使用手机 WhatsApp 扫码关联设备 | WhatsApp Web 长连接；默认仅响应账号自聊，也可切换到指定联系人或开放响应模式；群聊仅在被 @ 或回复机器人消息时触发，主人普通发言不触发；显示已读和“正在输入”，通过每秒编辑同一条消息显示工具进度和逐步生成的回答，长回复自动分段，编辑失败时回退为完整文字回复 |
-| iMessage | 在 macOS Messages.app 中登录 iMessage，并按[渠道说明](docs/imessage.md)授予本机权限 | 使用 macOS 原生 Messages.app 收发文本私聊；不依赖 BlueBubbles；每个 macOS 用户账户使用一个本机 iMessage 身份 |
-| Matrix（实验功能） | 填写 homeserver 地址，并提供访问令牌，或用户 ID 与密码 | CS API 长轮询接收；私聊直接回复，房间被 @ 后响应，支持线程回复、HTML 白名单富文本与编辑式流式输出，可回传图片和结果文件；包含实验性房间消息加解密，限制见下文 |
-
-WhatsApp 会保存最近 2,000 条机器人群消息的标识，重启后仍可通过引用这些消息唤醒机器人。升级前未记录或已超出保留范围的历史消息不会作为唤醒依据；请 @ 机器人或回复其新消息。
-
-Matrix 加密目前仅供非敏感测试：默认 optional 模式尝试启动加密引擎，失败时跳过收到的加密消息；required 模式在引擎启动失败时拒绝连接。尚未实现交互式设备验证、密钥备份、SSSS 或媒体附件内容加密，本次发布未验证真实 homeserver／Element 互通，请勿将其视为完整的端到端保密保障。
-
-企业微信自建应用的回调基址、代理地址和企业可信 IP 配置，见[企业微信自建应用接入说明](docs/企业微信自建应用接入.md)。
-
-其他 IM 平台可继续按同一渠道适配器结构接入。
-
-扫码新建的飞书和 QQ 机器人，默认允许所有用户在私聊和群聊中聊天及执行内置命令；可在机器人的访问设置中调整白名单和命令权限。已有机器人的访问设置保持不变。
-
-飞书群聊默认接收其他机器人明确 @ 当前机器人的消息，无需额外开关；未 @、仅 @ 其他成员或全体、机器人自身发送的消息和机器人私聊消息仍会忽略，即使群聊响应方式设为“全部”。消息仍受群聊白名单与命令权限约束。飞书应用需要租户权限 `im:message.group_at_msg.include_bot:readonly`（“获取群组中其他机器人和用户@当前机器人的消息”）；扫码新建应用会默认申请，已有或手动绑定的应用可点击“补全权限”或私聊执行 `/repair`，扫码并完成飞书要求的发布审批后生效。详见[飞书接收消息权限说明](https://open.feishu.cn/document/server-docs/im-v1/message/events/receive)。
-
-支持图片输入的内置渠道均支持把 JPEG、PNG、WebP 图片，以及以图片文件方式发送的 GIF，连同可选文字说明发送给 Harness；默认每张原图最多接收 30 MB、每条消息最多 20 张；原图保存到会话工作区，模型副本自动缩放或压缩到单张 5 MB、总计 20 MB 以内，仍超限或模型不支持图片时按文件交给模型处理。这四项限制可在「通用设置 → 附件 → 图片输入」调整，对后续消息生效；原图沿用附件保留时长。调高模型输入上限会增加请求体积、处理耗时和模型成本，也仍受平台及宿主限制。iMessage 首版仅支持文本私聊，不包含在图片能力中。飞书下载用户消息中的图片或文件需要租户权限 `im:message:readonly`，确认页将其显示为“获取单聊、群组消息”；飞书目前没有为该下载接口提供仅限图片的更窄权限。扫码新建的应用会默认申请；已有或手动绑定的应用可私聊机器人执行 `/repair`，或在「IM机器人」设置页点击“补全权限”，扫码增量补全该权限、上传机器人图片或文件所需的 `im:resource`、原生命令面板所需的 `application:app_slash_command:read` / `write`，以及卡片回调。
-
-### 群聊天记录与群文件
-
-WhatsApp、飞书、Telegram、Discord、Slack、QQ 支持自动保存实际收到的群消息和附件，包括平台允许接收的未 @ 消息。采集默认开启，保存本身不触发模型回复；在群内 @ 机器人即可按需查询聊天记录、总结讨论或读取文件。
-
-记录按群共享，独立于机器人、AI 会话和工作区，默认滚动保留 **14 天**。可在 **DSH 设置 → IM机器人 → 齿轮「通用设置」→ 通用** 修改保留天数。只保存实际接收的内容，不回填完整历史；QQ 当前按应用来源隔离，Discord 线程独立保存。
-
-详见[群消息记录与群文件使用指南](docs/group-history.md)：包含六渠道权限与设置步骤、查询示例、存储位置、文件限制和排查方法。WhatsApp、飞书、QQ 已完成文字及文本附件实测；Telegram 已完成文字实测，文件暂未验证；Discord、Slack 待真实群验收。
-
-### 超时后的结果补发
-
-已接入的 IM 渠道共用超时任务跟踪：收到“等待模型回复超时”后，插件会继续检查原任务，完成后向原聊天或线程补发最终文字；插件重启或连接恢复后也会继续检查。`/stop` 只停止当前聊天提交的对应回合，切换会话后不再向该聊天补发旧会话的结果。无需新增设置，正常回复流程保持原样。
-
-补发仍受渠道发送权限和配额限制。明确发送失败最多尝试三次；发送结果不确定时保留记录并停止自动重试，避免重复消息。此机制恢复文字结果和终态通知，不重放问题、审批或文件工具调用。详见[延迟交付说明](docs/deferred-delivery.md)。
-
-### 结果文件与图片回传
-
-支持文件回传的内置渠道均可把 Harness 可读取的文件作为渠道原生附件回传。已有文件和当前任务新生成的文件都可以直接发送；该能力对所有已连接机器人默认可用，无需开关或机器人白名单，原有文字、图片、流式回复、命令和会话行为保持不变。iMessage 首版不支持文件或附件回传。
-
-模型调用文件回传工具后，插件把指定文件交给当前渠道的原生接口。图片会优先以原生图片消息呈现；渠道不支持或明确拒绝图片发送时自动回退为文件附件，发送结果不确定时不会补发文件造成重复消息。插件不额外设置文件来源、创建时间、工作区边界、扩展名、内容、数量、大小或有效期规则；文件只需真实存在且可读取。渠道平台仍可能依据自身权限、配额、文件能力或账号等级拒绝发送，插件会按平台返回结果提示。
-
-| 渠道 | 平台要求 |
-| --- | --- |
-| 微信 | 当前绑定协议和会话需支持原生文件消息，实际可发送范围以微信接口返回为准。 |
-| 飞书 | 飞书文件上传接口要求文件非空且不超过平台 30 MB；应用需有租户权限 `im:resource`（“读取与上传图片或文件资源”）。内置扫码流程新建应用时默认申请该权限；已有或手动绑定的应用可通过“补全权限”或私聊 `/repair` 增量补全并完成飞书要求的审批。飞书开发者后台当前没有单独的 `im:resource:upload` 权限。 |
-| 钉钉 | 应用需开通 `qyapi_base`，机器人需具备文件消息能力；实际格式和大小以当前 OAPI 与机器人能力返回为准。 |
-| 企业微信 | 应用需具备素材上传和文件消息能力，实际可发送范围以企业微信接口返回为准。 |
-| QQ | 机器人需具备文件消息能力，并受 QQ 当日文件上传配额约束；额度耗尽时会明确提示稍后重试。 |
-| Slack | Bot Token 需有 `files:read`、`files:write` 和 `reactions:write`；实际文件大小上限由 Workspace 当前策略决定。已有 App 新增或变更 Scope 后，必须重新授权/安装 App 并重新连接机器人。 |
-| Telegram | 机器人必须能在当前聊天发送文档，实际可发送范围以 Bot API 返回为准。 |
-| Discord | Developer Portal 的 Bot 设置中需启用 **Message Content Intent**；机器人需有 **Send Messages**、**Create Public Threads**、**Send Messages in Threads** 和 **Read Message History** 权限；发送结果文件还需 **Attach Files**。实际附件额度由当前账号与服务器能力决定。 |
-| WhatsApp | 当前绑定会话需支持 Document Message，实际可发送范围以 WhatsApp/Baileys 返回为准。 |
-| Matrix | homeserver 需允许媒体上传，单文件实际上限由其媒体仓库配置决定；被拒绝时插件会明确提示检查媒体大小限制与上传权限。 |
-
-## AI Office Connector
-
-[查看 AI Office Connector 说明](docs/AI-Office-Connector.md)
-
-## 安装
-
-推荐从 npm 安装已发布的稳定版本 **`@xmanrui/dsh-im`**。请按实际使用的运行方式选择对应命令：
-
-**DSH Desktop**：在当前 Desktop 的内置终端中执行：
+Cloning the repo with all its history results in a ~2 GB download. If you don&#039;t need the whole history you can use the `depth` parameter to significantly reduce download size.
 
 ```sh
-dsh plugin --profile desktop add -w @xmanrui/dsh-im
+git clone --depth=1 https://github.com/mrdoob/three.js.git
 ```
 
-安装完成后重启 DSH Desktop。
+### Change log
 
-**DSH Web**：在启动当前 Harness 的终端环境中执行：
+[Releases](https://github.com/mrdoob/three.js/releases)
 
-```sh
-dsh plugin --profile web add -w @xmanrui/dsh-im
-```
 
-安装完成后重启 `dsh web`，并刷新浏览器。
-
-重启后打开「设置 → IM机器人」。IM机器人使用 `order: 21`，尽量排在一级设置菜单的「Agent 预设」之后；插件页面不再保留旧入口。从旧版升级不会改变已有机器人、凭据、工作区、Agent Preset 或会话绑定。
-
-本机 `dsh web` 和 DSH Desktop 默认直接复用当前 Host 的内部服务：通过 Typert Gateway 调用 Session Controller 和 Workspace Controller，不需要配置 Harness 地址，也不绕行本机 HTTP 端口。Desktop 的兼容模式、扩展窗口和增强模式均无需开启“允许在浏览器中打开”或局域网访问。渠道配置中显式设置的 `harnessBaseUrl` 仅保留给旧版远程 HTTP/WebSocket Harness；内部调用失败不会自动改连其他 Host。
-
-如需试用尚未发布到 npm 的最新代码，可以改用 GitHub 源安装器：
-
-```sh
-npx -y github:xmanrui/dsh-im install
-```
-
-GitHub 源安装会直接拉取并构建 Git 依赖；pnpm 10 及以上版本可能要求先在 profile 的 `pnpm-workspace.yaml` 中允许该依赖执行构建脚本。普通用户建议优先使用 npm 稳定版。
-
-安装后，在对应渠道页面按照内置引导完成扫码或凭据配置。所有 Secret 和 Token 只提交给本机 Harness Host，并写入受保护的凭据存储；状态接口和机器人列表不会回传这些凭据。
-
-如果本机必须通过正向代理访问飞书，请在启动 `dsh web` 前把 `HTTPS_PROXY` 设置为包含协议的 HTTP 代理 URL（例如 `http://proxy:8080`；也支持小写 `https_proxy`，并兼容使用 `HTTP_PROXY` 作为回退），修改后重启 Host。飞书注册和凭据验证会复用 SDK 的代理感知 HTTP 客户端，消息长连接会显式通过这个代理建立 WebSocket；长连接目前不读取 `ALL_PROXY` 或 `NO_PROXY`。
-
-如果本机无法直连 Telegram Bot API，请使用 Node.js 22.21 或更高版本，并在启动 `dsh web` 前启用 Node 的环境变量代理支持：
-
-```sh
-NODE_USE_ENV_PROXY=1 \
-HTTPS_PROXY=http://proxy:8080 \
-HTTP_PROXY=http://proxy:8080 \
-NO_PROXY=localhost,127.0.0.1 \
-dsh web
-```
-
-代理地址按本机网络环境填写；修改代理后需要重启 Host。绑定 Telegram Bot Token 时，如果页面提示无法访问 Bot API，请优先检查代理地址、Node.js 版本和 `NO_PROXY` 配置。
-
-| 默认行为 | 说明 |
-| --- | --- |
-| 机器人别名 | 点击机器人名称旁的铅笔设置别名，保存后立即显示，无需重启或重连。原名称始终保留，可点击“恢复原名称”或清空别名后保存；仅影响本机设置页中的显示名称。 |
-| 机器人工作区 | 每个机器人独立保存工作区。新机器人默认使用 `$DSH_HOME/im`（未设置时为 `~/.dsh/im`），机器人或对话实际选用该目录时自动创建；全部使用其他工作区时，不会仅因启动插件而创建该目录。新会话显示在「未分组」；之后可在机器人卡片中修改。显式配置的 `workspace` 优先，`dshHome` 可覆盖环境变量 `DSH_HOME`。 |
-| 模型 | 每个 IM 渠道的每个机器人都可在工作区下方独立选择模型；未选择时跟随 Host 默认。切换只影响之后新建的会话；当前聊天先发送 `/new`，再发送普通消息才会使用新选择。 |
-| 思考强度 | 在模型下方显式选择该模型支持的思考强度，或跟随模型默认。档位、说明和默认值来自 DSH；切换模型后恢复新模型默认强度。每个机器人独立保存，只影响之后新建的会话。 |
-| Agent Preset | 每个机器人可在设置页卡片中选择 Agent Preset。未选择时跟随 Host 的 `agent-presets.default`；渠道级 `config.agentPreset` 只作为该渠道之后新接入机器人的默认值。切换不会修改或清空已有会话；若当前聊天已有会话，需先发送 `/new`，再发送一条普通消息，才会按新选择创建会话。 |
-| 上下文增强 | 从机器人卡片打开设置，分别决定群聊、私聊是否增强；两个开关默认均关闭，旧机器人升级后也不会自动开启。 |
-| 飞书指令面板 | 每个飞书机器人可在「更多设置 → 指令面板」里决定聊天输入框打 `/` 时列出哪些指令、按什么顺序：「跟随默认」使用插件自带的 31 条清单（随插件版本更新），「自定义」则恰好是所选指令和所选顺序。隐藏只是不在候选里出现，手动输入同一命令照旧可用；清单之外手工添加的指令不会被删除。配好一个机器人后，可用「保存并同步到其他机器人」一次写到该渠道的其他所有机器人（会覆盖它们各自的面板设置；离线机器人下次启动时生效）。保存后由机器人后台同步，指令较多时需要一点时间。 |
-| 飞书被 @ 时开话题 | 默认开启。在群聊或私聊里 @机器人 提问时，机器人会在那条消息下新建一条飞书话题，问答都落在话题内；该话题是 dsh 会话列表里一条独立会话，话题里的后续消息属于同一个会话。只发一个 @机器人（打开菜单）不会新建话题，没有 @机器人 的消息仍留在原会话。可在机器人卡片的「群聊」设置里关闭，关闭后群聊与私聊都恢复平铺回复。 |
-| 飞书任务过程展示 | 每个飞书机器人可选择不显示过程、实时直播、实时过程卡或逐步消息。实时直播使用飞书原生思考过程展示推理、工具调用和结果，最终答案单独发送；需要飞书 PC 7.70、移动端 7.74 或更新版本。飞书原生思考过程目前无法发到话题内，因此话题中的回合会改用实时过程卡，过程与答案都留在话题里。 |
-| 会话渠道标识 | 本机 Host 的 IM 渠道与 AI Office 会话自动标记来源。Web 会话列表和搜索结果将「微信 ·」等前缀显示为渠道 Logo；保留 DSH 原有的自动标题生成与更新。已有会话在下次加载时补上。 |
-
-渠道前缀在 DSH 生成标题后追加，完整保留原始标题与自动／手动来源，不会将自动标题锁定为手动命名，也不会额外调用模型。重复生成、刷新或重启不会叠加前缀；真实的手动命名仍遵循 DSH 原有的锁定规则。此功能由当前 Host 的会话事件驱动，显式连接远程 `harnessBaseUrl` 时需在目标 Host 上安装该插件。
-
-Logo 由 dsh-im 的浏览器适配显示，无需修改 DSH。适配保留原始文字节点和点击、菜单、拖拽操作；复制、读屏及其他界面仍保留文字渠道名。DSH 页面结构不匹配、浏览器不支持或图标加载失败时，自动保留文字前缀；插件卸载后恢复原始显示。
-
-### 排队与插话
-
-在机器人卡片中打开 **「更多设置 → 通用」**，选择 **「任务运行时的新消息处理方式」**，然后保存。每个机器人独立设置，覆盖全部 13 个聊天渠道。
-
-- **排队（默认）**：当前任务结束后再处理新消息，需要等待时会回复排队提示。
-- **插话**：任务运行期间，新的普通纯文字作为补充指令加入当前任务，Agent 在下一步读取，并回复提交提示。无需每次输入 `/steer`。
-
-没有运行中的任务时正常开始新任务；图片、文件、语音和带引用的消息继续按原有方式处理。原有群聊提及规则和权限限制保留，自动插话需要具备 `/steer` 权限。两种模式均可使用 `/steer 补充内容` 手动插话。
-
-保存后立即影响新收到的消息，已排队的消息不会转为插话。AI Office 当前没有普通聊天消息追加入口，此设置不适用。
-
-### 主动投递
-
-支持主动投递的 IM 渠道可以使用稳定的 `botId + targetId` 主动发送文字消息。机器人设置页支持从已聊会话选择或手工填写目标、保存前测试当前路由，以及复制调用参数；HTTP POST、同 Host 插件和 Connection RPC 共用同一目标配置与投递核心。
-
-已保存的私聊目标还可以开启默认关闭的「会话双向同步」。开启后，DSH Web／CLI 在该私聊当前 Session 中发送的用户文字和最终助手文字会同步回私聊，定时任务成功完成后的最终助手文字也会同步；IM 侧原有提问与 `/steer` 不会重复。开关自动跟随 `/session`、`/new` 和工作区切换后的当前 Session。首版仅支持当前 Host 的私聊文字；群聊、Topic、Thread 与显式远程 `harnessBaseUrl` 不支持。
-
-同步回答按渠道能力呈现 Markdown：复用飞书卡片、Telegram 富文本、QQ／钉钉／Slack 的格式消息，以及企业微信机器人、Matrix、Discord 的已有能力；WhatsApp 适配常用格式，企业微信应用和微信保留完整文本。格式降级与长消息处理沿用或复用渠道机制，发送结果未知时不新增自动重发。
-
-设置步骤、各渠道字段、完整调用示例、管理端点、错误码与排错说明请查看[《主动投递使用指南》](PROACTIVE_DELIVERY.md)（[English](PROACTIVE_DELIVERY.en.md)）。
-
-### 客户端面板接入
-
-支持全局面板的 DSH 在左侧边栏提供「IM机器人」，沿用插件页的双对话框造型，以单色细线图标显示，点击打开完整 IM 管理面板。原「设置 → IM机器人」和插件详情页的「打开 IM机器人」入口保留。宿主也可通过可选客户端服务 `dshImClient` 嵌入面板；接口、兼容要求与接入示例见[客户端接入文档](docs/client-integration.md)。
-
-### 上下文增强
-
-[查看上下文增强说明](docs/上下文增强.md)
-
-### 访问模式
-
-[查看访问模式说明](docs/访问模式.md)
-
-## 检查与安装更新
-
-[查看检查与安装更新说明](docs/检查与安装更新.md)
-
-## 机器人命令
-
-| 命令 | 作用 |
-| --- | --- |
-| `/help` | 显示机器人支持的命令和用法。 |
-| `/menu`、`/m` | 飞书、钉钉和企业微信打开交互菜单。钉钉的会话、工作区、预设和模型按两列排列，选择后立即生效，并在原卡片更新结果。企微下拉选择后点击应用；菜单仅通过 `/m` 或 `/menu` 手动打开，进入单聊时不自动展示，按钮执行后仅反馈结果，不自动补发菜单。菜单还提供新会话、停止、压缩、清空上下文、状态与帮助等按钮。 |
-| QQ `/menu`、`/m` | 打开按钮与数字菜单：会话选择、工作区、模式／预设、模型、新会话、会话列表、停止、压缩、补充指令、归档显示切换、状态和帮助。列表支持分页；按钮不可用时回复数字选择。菜单按聊天和操作者隔离，15 分钟或重启后失效；普通消息退出数字选择，审批、提问和批量输入保留原有优先级。 |
-| `/new` | 解除当前聊天的会话绑定，让下一条普通消息开启全新 Harness 会话。 |
-| `/status` | 检查当前机器人与 DeepSeek Harness 的连接状态。 |
-| `/version` | 查看当前运行的 dsh-im 插件版本。 |
-| `/models` | 按序号列出当前配置的全部可用模型。 |
-| `/model` | 查看当前聊天绑定会话正在使用的模型和推理等级。 |
-| `/model &lt;序号或 Provider/模型ID&gt; [推理等级ID]` | 切换当前会话模型，并可同时指定目标模型支持的推理等级。 |
-| `/reasoninglist`、`/reasonings` | 等价命令；列出当前模型支持的推理等级。 |
-| `/reasoning` | 查看当前会话的模型和推理等级。 |
-| `/reasoning &lt;序号或等级ID&gt;` | 切换当前模型的推理等级。 |
-| `/reasoning --default` | 恢复当前模型的默认推理等级。 |
-| `/presetlist`、`/presets` | 两个等价命令；按序号列出 Host 当前可用的 Agent Preset，并标记 Host 默认项和当前机器人的选择。 |
-| `/preset` | 查看当前机器人的新会话 Agent Preset 设置。 |
-| `/preset &lt;序号或 Preset ID&gt;` | 设置当前机器人的 Agent Preset；纯数字 ID 使用 `/preset id:&lt;ID&gt;`。 |
-| `/preset --default` | 清除当前机器人的显式选择，让后续新 Session 跟随 Host 默认。 |
-| `/permissionlist` | 飞书、QQ：按序号列出当前绑定会话的可用权限档位。 |
-| `/permission [序号或完整ID]` | 飞书、QQ：查看或直接切换当前会话权限；纯数字 ID 使用 `/permission id:&lt;ID&gt;`。 |
-| `/stop` | 立即停止当前聊天正在运行的任务，并保留尚未开始的排队消息。 |
-| `/steer &lt;补充指令&gt;` | 把补充指令立即加入当前聊天正在运行的任务。 |
-| `/batch` | 在私聊中开启批量输入，最多收集 10 条纯文字消息。 |
-| `/send` | 将已收集的消息按原顺序作为一次输入提交。 |
-| `/cancel` | 取消批量输入并丢弃已收集的消息。 |
-| `/repair` | 在飞书私聊中增量修复卡片回调，并补全媒体、群聊机器人 @ 消息与原生 Slash Command 面板所需的权限。 |
-| `/compact` | 立即压缩当前聊天绑定会话的较早上下文。 |
-| `/clear` | 清空当前聊天绑定会话的模型上下文，同时保留 Session 绑定和历史记录；当前 Host 未注册该命令时会明确提示未支持。 |
-| `/workspace &lt;工作区序号或绝对路径&gt;`、`/ws &lt;工作区序号或绝对路径&gt;` | 按 `/workspacelist` 序号或绝对路径切换当前机器人的 Harness 工作区。 |
-| `/workspacelist`、`/workspaces`、`/wsl` | 列出当前 Harness Host 上仍然存在的工作区绝对路径。 |
-| `/sessionlist [工作区序号或绝对路径]`、`/sessions [...]` | 两个等价命令；列出指定工作区的会话 ID 和标题，默认 IM 目录也包含其中的未分组会话；省略参数时使用当前工作区。 |
-| `/sessionlist --limit N`、`/sessions --limit N` | 列出当前工作区现有顺序中的前 N 个会话；N 必须是正整数。 |
-| `/session &lt;Session ID&gt;` | 将当前聊天绑定到指定的已有 Harness 会话。 |
-| `/history [数量]` | 在私聊中查看当前绑定会话的最近历史消息，默认 3 条，最多 5 条。 |
-| 交互式提问 | 回复选项序号、选项文字或自定义文字；多选时用逗号分隔。飞书中，提问发起人发送图片或图文消息会结束本轮追问，并在同一会话继续处理图片，无需答完剩余问题或重新发图。 |
-| 远程审批 | 回复 `批准` / `拒绝` / `同意` / `不同意` / `yes` / `no`。 |
-
-Web 与机器人可同时处理同一审批，先提交的「
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+[npm]: https://img.shields.io/npm/v/three
+[npm-url]: https://www.npmjs.com/package/three
+[build-size]: https://badgen.net/bundlephobia/minzip/three
+[build-size-url]: https://bundlephobia.com/result?p=three
+[npm-downloads]: https://img.shields.io/npm/dw/three
+[npmtrends-url]: https://www.npmtrends.com/three
+[jsdelivr-downloads]: https://data.jsdelivr.com/v1/package/npm/three/badge?style=rounded
+[jsdelivr-url]: https://www.jsdelivr.com/package/npm/three
+[discord]: https://img.shields.io/discord/685241246557667386
+[discord-url]: https://discord.gg/56GBJwAnUS
+</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
@@ -1613,15 +2026,15 @@ Web 与机器人可同时处理同一审批，先提交的「
             <title><![CDATA[shaobeichen/dsh-pocket]]></title>
             <link>https://github.com/shaobeichen/dsh-pocket</link>
             <guid>https://github.com/shaobeichen/dsh-pocket</guid>
-            <pubDate>Thu, 22 Oct 2026 00:05:29 GMT</pubDate>
+            <pubDate>Fri, 23 Oct 2026 00:05:58 GMT</pubDate>
             <description><![CDATA[把 DeepSeek Harness 装进你的口袋：电脑上跑 dsh web，手机扫码即同步访问（局域网 + 公网，实时同屏）Put DeepSeek Harness in your pocket: run dsh web on your computer and access it synchronously by scanning a QR code on your phone (LAN + public network, real‑time screen mirroring)]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/shaobeichen/dsh-pocket">shaobeichen/dsh-pocket</a></h1>
             <p>把 DeepSeek Harness 装进你的口袋：电脑上跑 dsh web，手机扫码即同步访问（局域网 + 公网，实时同屏）Put DeepSeek Harness in your pocket: run dsh web on your computer and access it synchronously by scanning a QR code on your phone (LAN + public network, real‑time screen mirroring)</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 2,183</p>
-            <p>Forks: 96</p>
-            <p>Stars today: 215 stars today</p>
+            <p>Stars: 2,244</p>
+            <p>Forks: 100</p>
+            <p>Stars today: 88 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
   &lt;img src=&quot;docs/banner.jpg&quot; alt=&quot;DSH Pocket&quot; width=&quot;100%&quot;&gt;
 &lt;/p&gt;
