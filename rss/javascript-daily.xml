@@ -4,147 +4,24 @@
         <title>GitHub Trending Today for javascript - JavaScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for javascript.</description>
-        <lastBuildDate>Mon, 26 Oct 2026 00:06:24 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 27 Oct 2026 00:05:51 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2026, GitHub</copyright>
         <item>
-            <title><![CDATA[cloudflare/security-audit-skill]]></title>
-            <link>https://github.com/cloudflare/security-audit-skill</link>
-            <guid>https://github.com/cloudflare/security-audit-skill</guid>
-            <pubDate>Mon, 26 Oct 2026 00:06:24 GMT</pubDate>
-            <description><![CDATA[A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a></h1>
-            <p>A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 46,840</p>
-            <p>Forks: 2,903</p>
-            <p>Stars today: 2,878 stars today</p>
-            <h2>README</h2><pre># security-audit
-
-A coding-agent skill that turns your agent into a security auditor. It orchestrates isolated agents through reconnaissance, coverage-led hunting, candidate validation, structured output, independent record verification, and target-neutral reporting.
-
-This is the skill that seeded Cloudflare&#039;s vulnerability discovery harness, described in [Build your own vulnerability harness](https://blog.cloudflare.com/build-your-own-vulnerability-harness). The harness grew into a multi-stage, fleet-wide system; this skill is the single-repo starting point it evolved from.
-
-## What it does
-
-The skill runs a structured audit in six phases:
-
-1. **Reconnaissance** -- map architecture, trust boundaries, input surfaces, prior evidence, and deterministic coverage in `architecture.md` and `coverage-ledger.json`.
-2. **Coverage-led hunting** -- assign isolated hunters from ledger units, record their checks, and use coverage critics to find gaps.
-3. **Candidate validation** -- give every unique candidate to a fresh verifier that tries to disprove it.
-4. **Structured output** -- write `confirmed`, `needs_validation`, and `rejected` records to `findings.json` and validate them against `report-schema.json`.
-5. **Independent record verification** -- fresh agents verify final source claims. Material replacements receive another independent verifier.
-6. **Target-neutral reporting** -- derive `REPORT.md`, `FINDINGS-DETAIL.md`, and `NEEDS-VALIDATION.md` from the verified records and coverage ledger.
-
-The parent runs `validate-coverage-ledger.cjs` after creating the ledger and after each later ledger update. It runs `validate-findings.cjs` in Phase 4 and again after every Phase 5 replacement.
-
-The verdicts are distinct: `confirmed` has a complete source trace and bounded observed result, `needs_validation` has an exact unresolved fact and no severity, and `rejected` records a disproved candidate.
-
-Multiple runs against the same repo are additive. The skill uses prior ledgers and findings to target gaps, revalidate changed source, and carry forward current-source evidence without treating stale or unresolved work as covered.
-
-## Files
-
-| File | Purpose |
-|------|---------|
-| `SKILL.md` | Setup, core principles, platform terminology, workflow overview, and audit anti-patterns |
-| `RECONNAISSANCE.md` | Phase 1 reconnaissance prompts and synthesis instructions |
-| `HUNTING.md` | Phase 2 orchestration, hunting methodology, and validation rules |
-| `ATTACK-CLASSES.md` | Core, wildcard, and obvious-things attack prompts |
-| `MEMORY-SAFETY-AND-BINARY.md` | Memory-safety, binary, and kernel hunting classes for native targets |
-| `AI-AND-LLM.md` | Prompt-injection, agent/tool, and output-handling hunting classes for LLM-backed targets |
-| `WEB-PROTOCOL-AND-AUTH.md` | HTTP request-framing, cache, and authentication-protocol hunting classes for HTTP-protocol and auth targets |
-| `CLIENT-SIDE.md` | DOM-injection, messaging-trust, UI-redress, and prototype-pollution hunting classes for client-side/browser targets |
-| `SUPPLY-CHAIN-AND-RELEASE.md` | Dependency, CI, release, signing, update, plugin, and extension hunting classes |
-| `CLOUD-AND-DEPLOYMENT.md` | IAM, infrastructure-as-code, container, serverless, ingress, and runtime-configuration hunting classes |
-| `PROTOCOLS-RPC-AND-MESSAGING.md` | RPC, serialization, queue, broker, webhook, and streaming-protocol hunting classes |
-| `RESOURCE-EXHAUSTION-AND-AVAILABILITY.md` | Shared resource, quota, queue, worker, and operator-spend hunting classes |
-| `DATA-ISOLATION-AND-LIFECYCLE.md` | Tenant isolation, cache, search, export, backup, migration, deletion, and restore hunting classes |
-| `DESKTOP-MOBILE-AND-LOCAL-IPC.md` | Native app, deep-link, webview, exported-component, helper, daemon, and local-IPC hunting classes |
-| `VALIDATION-AND-REPORTING.md` | Phases 3–6 candidate validation, structured output, record verification, and reporting |
-| `report-schema.json` | JSON schema for all three `findings.json` verdicts |
-| `validate-findings.cjs` | Zero-dependency validator for `findings.json` in Phases 4 and 5 |
-| `validate-findings.test.cjs` | Findings-validator tests and producer-compatible fixture checks |
-| `validate-coverage-ledger.cjs` | Zero-dependency validator for `coverage-ledger.json` in Phases 1–5 |
-| `validate-coverage-ledger.test.cjs` | Coverage-ledger validator tests |
-
-## Installation
-
-Install the skill with the [Skills CLI](https://skills.sh):
-
-```bash
-npx skills add https://github.com/cloudflare/security-audit-skill \
-  --skill security-audit
-```
-
-Use `--global` for a user-level installation:
-
-```bash
-npx skills add https://github.com/cloudflare/security-audit-skill \
-  --skill security-audit \
-  --global
-```
-
-Run `npx skills --help` for agent-selection and non-interactive options.
-
-## Usage
-
-Start your coding agent in (or pointed at) the codebase you want to audit, then ask it to do a security audit:
-
-```
-security audit this codebase
-```
-
-```
-find security vulnerabilities in ./src
-```
-
-```
-do a security review, output to ~/audits/my-project
-```
-
-The skill activates automatically when the request matches its trigger (security audit, find vulnerabilities, pen-test the code, etc.). A direct codebase audit or pen-test request uses full audit mode. Security questions and focused vulnerability work use guidance mode unless you request report artifacts. In full audit mode, an unspecified output directory defaults to `~/security-audit-skill/&lt;repo-name&gt;/run-&lt;N&gt;`. The workflow writes inside the target repository only when you explicitly select a directory that version control ignores.
-
-## Requirements
-
-- A coding agent with a model that supports tool use and parallel sub-agents
-- Node.js for the zero-dependency findings and coverage-ledger validators
-- An OS-enforced sandbox for target-controlled builds, tests, processes, browsers, emulators, fuzzers, and fixtures. It must disable external networking, use a sanitized allowlisted environment, enforce resource limits, and allow writes only to assigned scratch paths. Without these controls, the workflow keeps the lead as `needs_validation` instead of executing target code.
-
-## Design principles
-
-- **Only confirm established boundary failures.** Keep a source-grounded blocked lead as `needs_validation` with its exact unresolved fact.
-- **Adversarial validation.** The agent that checks a finding is never the agent that found it.
-- **Severity requires impact.** Likelihood x impact, not deviation from a checklist.
-- **Defense-in-depth gaps are not vulnerabilities.** If Layer A prevents the attack, the absence of Layer B is a hardening note.
-- **Multiple runs improve coverage.** In our test runs, a single run found roughly half of the vulnerabilities that repeated runs found in total.
-
-## Contact
-
-Questions, feedback, or comparing notes on AI-driven security tooling: security-ai-research@cloudflare.com
-
-## License
-
-MIT -- see [LICENSE](LICENSE).
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
             <title><![CDATA[affaan-m/ECC]]></title>
             <link>https://github.com/affaan-m/ECC</link>
             <guid>https://github.com/affaan-m/ECC</guid>
-            <pubDate>Mon, 26 Oct 2026 00:06:23 GMT</pubDate>
+            <pubDate>Tue, 27 Oct 2026 00:05:51 GMT</pubDate>
             <description><![CDATA[The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a></h1>
             <p>The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 288,843</p>
-            <p>Forks: 42,824</p>
-            <p>Stars today: 853 stars today</p>
+            <p>Stars: 289,821</p>
+            <p>Forks: 42,942</p>
+            <p>Stars today: 896 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
   &lt;img src=&quot;assets/hero.png&quot; alt=&quot;ECC - the agent harness operating system&quot; width=&quot;100%&quot; /&gt;
 &lt;/p&gt;
@@ -508,18 +385,506 @@ codex plugin marketp
             <category>JavaScript</category>
         </item>
         <item>
+            <title><![CDATA[cloudflare/security-audit-skill]]></title>
+            <link>https://github.com/cloudflare/security-audit-skill</link>
+            <guid>https://github.com/cloudflare/security-audit-skill</guid>
+            <pubDate>Tue, 27 Oct 2026 00:05:50 GMT</pubDate>
+            <description><![CDATA[A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a></h1>
+            <p>A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 48,534</p>
+            <p>Forks: 3,025</p>
+            <p>Stars today: 1,860 stars today</p>
+            <h2>README</h2><pre># security-audit
+
+A coding-agent skill that turns your agent into a security auditor. It orchestrates isolated agents through reconnaissance, coverage-led hunting, candidate validation, structured output, independent record verification, and target-neutral reporting.
+
+This is the skill that seeded Cloudflare&#039;s vulnerability discovery harness, described in [Build your own vulnerability harness](https://blog.cloudflare.com/build-your-own-vulnerability-harness). The harness grew into a multi-stage, fleet-wide system; this skill is the single-repo starting point it evolved from.
+
+## What it does
+
+The skill runs a structured audit in six phases:
+
+1. **Reconnaissance** -- map architecture, trust boundaries, input surfaces, prior evidence, and deterministic coverage in `architecture.md` and `coverage-ledger.json`.
+2. **Coverage-led hunting** -- assign isolated hunters from ledger units, record their checks, and use coverage critics to find gaps.
+3. **Candidate validation** -- give every unique candidate to a fresh verifier that tries to disprove it.
+4. **Structured output** -- write `confirmed`, `needs_validation`, and `rejected` records to `findings.json` and validate them against `report-schema.json`.
+5. **Independent record verification** -- fresh agents verify final source claims. Material replacements receive another independent verifier.
+6. **Target-neutral reporting** -- derive `REPORT.md`, `FINDINGS-DETAIL.md`, and `NEEDS-VALIDATION.md` from the verified records and coverage ledger.
+
+The parent runs `validate-coverage-ledger.cjs` after creating the ledger and after each later ledger update. It runs `validate-findings.cjs` in Phase 4 and again after every Phase 5 replacement.
+
+The verdicts are distinct: `confirmed` has a complete source trace and bounded observed result, `needs_validation` has an exact unresolved fact and no severity, and `rejected` records a disproved candidate.
+
+Multiple runs against the same repo are additive. The skill uses prior ledgers and findings to target gaps, revalidate changed source, and carry forward current-source evidence without treating stale or unresolved work as covered.
+
+## Files
+
+| File | Purpose |
+|------|---------|
+| `SKILL.md` | Setup, core principles, platform terminology, workflow overview, and audit anti-patterns |
+| `RECONNAISSANCE.md` | Phase 1 reconnaissance prompts and synthesis instructions |
+| `HUNTING.md` | Phase 2 orchestration, hunting methodology, and validation rules |
+| `ATTACK-CLASSES.md` | Core, wildcard, and obvious-things attack prompts |
+| `MEMORY-SAFETY-AND-BINARY.md` | Memory-safety, binary, and kernel hunting classes for native targets |
+| `AI-AND-LLM.md` | Prompt-injection, agent/tool, and output-handling hunting classes for LLM-backed targets |
+| `WEB-PROTOCOL-AND-AUTH.md` | HTTP request-framing, cache, and authentication-protocol hunting classes for HTTP-protocol and auth targets |
+| `CLIENT-SIDE.md` | DOM-injection, messaging-trust, UI-redress, and prototype-pollution hunting classes for client-side/browser targets |
+| `SUPPLY-CHAIN-AND-RELEASE.md` | Dependency, CI, release, signing, update, plugin, and extension hunting classes |
+| `CLOUD-AND-DEPLOYMENT.md` | IAM, infrastructure-as-code, container, serverless, ingress, and runtime-configuration hunting classes |
+| `PROTOCOLS-RPC-AND-MESSAGING.md` | RPC, serialization, queue, broker, webhook, and streaming-protocol hunting classes |
+| `RESOURCE-EXHAUSTION-AND-AVAILABILITY.md` | Shared resource, quota, queue, worker, and operator-spend hunting classes |
+| `DATA-ISOLATION-AND-LIFECYCLE.md` | Tenant isolation, cache, search, export, backup, migration, deletion, and restore hunting classes |
+| `DESKTOP-MOBILE-AND-LOCAL-IPC.md` | Native app, deep-link, webview, exported-component, helper, daemon, and local-IPC hunting classes |
+| `VALIDATION-AND-REPORTING.md` | Phases 3–6 candidate validation, structured output, record verification, and reporting |
+| `report-schema.json` | JSON schema for all three `findings.json` verdicts |
+| `validate-findings.cjs` | Zero-dependency validator for `findings.json` in Phases 4 and 5 |
+| `validate-findings.test.cjs` | Findings-validator tests and producer-compatible fixture checks |
+| `validate-coverage-ledger.cjs` | Zero-dependency validator for `coverage-ledger.json` in Phases 1–5 |
+| `validate-coverage-ledger.test.cjs` | Coverage-ledger validator tests |
+
+## Installation
+
+Install the skill with the [Skills CLI](https://skills.sh):
+
+```bash
+npx skills add https://github.com/cloudflare/security-audit-skill \
+  --skill security-audit
+```
+
+Use `--global` for a user-level installation:
+
+```bash
+npx skills add https://github.com/cloudflare/security-audit-skill \
+  --skill security-audit \
+  --global
+```
+
+Run `npx skills --help` for agent-selection and non-interactive options.
+
+## Usage
+
+Start your coding agent in (or pointed at) the codebase you want to audit, then ask it to do a security audit:
+
+```
+security audit this codebase
+```
+
+```
+find security vulnerabilities in ./src
+```
+
+```
+do a security review, output to ~/audits/my-project
+```
+
+The skill activates automatically when the request matches its trigger (security audit, find vulnerabilities, pen-test the code, etc.). A direct codebase audit or pen-test request uses full audit mode. Security questions and focused vulnerability work use guidance mode unless you request report artifacts. In full audit mode, an unspecified output directory defaults to `~/security-audit-skill/&lt;repo-name&gt;/run-&lt;N&gt;`. The workflow writes inside the target repository only when you explicitly select a directory that version control ignores.
+
+## Requirements
+
+- A coding agent with a model that supports tool use and parallel sub-agents
+- Node.js for the zero-dependency findings and coverage-ledger validators
+- An OS-enforced sandbox for target-controlled builds, tests, processes, browsers, emulators, fuzzers, and fixtures. It must disable external networking, use a sanitized allowlisted environment, enforce resource limits, and allow writes only to assigned scratch paths. Without these controls, the workflow keeps the lead as `needs_validation` instead of executing target code.
+
+## Design principles
+
+- **Only confirm established boundary failures.** Keep a source-grounded blocked lead as `needs_validation` with its exact unresolved fact.
+- **Adversarial validation.** The agent that checks a finding is never the agent that found it.
+- **Severity requires impact.** Likelihood x impact, not deviation from a checklist.
+- **Defense-in-depth gaps are not vulnerabilities.** If Layer A prevents the attack, the absence of Layer B is a hardening note.
+- **Multiple runs improve coverage.** In our test runs, a single run found roughly half of the vulnerabilities that repeated runs found in total.
+
+## Contact
+
+Questions, feedback, or comparing notes on AI-driven security tooling: security-ai-research@cloudflare.com
+
+## License
+
+MIT -- see [LICENSE](LICENSE).
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[addyosmani/agent-skills]]></title>
+            <link>https://github.com/addyosmani/agent-skills</link>
+            <guid>https://github.com/addyosmani/agent-skills</guid>
+            <pubDate>Tue, 27 Oct 2026 00:05:49 GMT</pubDate>
+            <description><![CDATA[Production-grade engineering skills for AI coding agents.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a></h1>
+            <p>Production-grade engineering skills for AI coding agents.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 110,809</p>
+            <p>Forks: 11,586</p>
+            <p>Stars today: 326 stars today</p>
+            <h2>README</h2><pre># Agent Skills
+
+**Production-grade engineering skills for AI coding agents.**
+
+Skills encode the workflows, quality gates, and best practices that senior engineers use when building software. These ones are packaged so AI agents follow them consistently across every phase of development.
+
+&lt;a href=&quot;https://trendshift.io/repositories/25200&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/25200&quot; alt=&quot;addyosmani%2Fagent-skills | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+
+![Addy&#039;s Agent Skills](https://addyosmani.com/assets/images/addys-agent-skills.jpg)
+
+```
+  DEFINE          PLAN           BUILD          VERIFY         REVIEW          SHIP
+ ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐
+ │ Idea │ ───▶ │ Spec │ ───▶ │ Code │ ───▶ │ Test │ ───▶ │  QA  │ ───▶ │  Go  │
+ │Refine│      │  PRD │      │ Impl │      │Debug │      │ Gate │      │ Live │
+ └──────┘      └──────┘      └──────┘      └──────┘      └──────┘      └──────┘
+  /spec          /plan          /build        /test         /review       /ship
+```
+
+---
+
+## Commands
+
+9 slash commands that map to the development lifecycle. Each one activates the right skills automatically.
+
+| What you&#039;re doing | Command | Key principle |
+|-------------------|---------|---------------|
+| Define what to build | `/spec` | Spec before code |
+| Plan how to build it | `/plan` | Small, atomic tasks |
+| Build incrementally | `/build` | One slice at a time |
+| Prove it works | `/test` | Tests are proof |
+| Set the quality bar | `/constraints` | Decide it once, enforce it everywhere |
+| Review before merge | `/review` | Improve code health |
+| Audit web performance | `/webperf` | Measure before you optimize |
+| Simplify the code | `/code-simplify` | Clarity over cleverness |
+| Ship to production | `/ship` | Faster is safer |
+
+In Claude Code these install as plugin commands. Where a built-in command has the same name, as `/review` does, use the namespaced form: `/agent-skills:review`.
+
+Want fewer manual steps once the spec exists? **`/build auto`** generates the plan and implements every task in a single approved pass — you approve the plan once, then it runs autonomously. It removes the human stepping *between* tasks, not the verification: every task is still test-driven and committed individually, and it pauses on failures or risky steps.
+
+Skills also activate automatically based on what you&#039;re doing — designing an API triggers `api-and-interface-design`, building UI triggers `frontend-ui-engineering`, and so on.
+
+---
+
+## Quick Start
+
+**Fastest path — any agent, one command.** The open [skills CLI](https://github.com/vercel-labs/skills) installs into 70+ agents (Claude Code, Cursor, Codex, Copilot, Cline, and more):
+
+```bash
+npx skills add addyosmani/agent-skills            # install all 25 skills
+npx skills add addyosmani/agent-skills --list     # browse before installing
+```
+
+Or grab individual skills:
+
+```bash
+npx skills add addyosmani/agent-skills --skill code-review-and-quality   # five-axis review before merge
+npx skills add addyosmani/agent-skills --skill interview-me              # requirements interrogation, one question at a time
+npx skills add addyosmani/agent-skills --skill test-driven-development   # red-green-refactor, enforced
+```
+
+&gt; **Installing one skill?** A per-skill `npx` install copies only
+&gt; `skills/&lt;name&gt;/`, not the repo-level `references/` directory. The skill still
+&gt; works, but paths to supplementary shared checklists are unavailable. Use a
+&gt; whole-repo integration, clone the repository, or copy the needed checklist into
+&gt; a `references/` directory inside the installed skill. This portability gap is
+&gt; tracked in [#361](https://github.com/addyosmani/agent-skills/issues/361).
+
+Prefer a native integration? Pick your tool below.
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Claude Code (recommended)&lt;/b&gt;&lt;/summary&gt;
+
+**Marketplace install:**
+
+```
+/plugin marketplace add addyosmani/agent-skills
+/plugin install agent-skills@addy-agent-skills
+```
+
+&gt; **SSH errors?** The marketplace clones repos via SSH. If you don&#039;t have SSH keys set up on GitHub, either [add your SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) or use the full HTTPS URL to force HTTPS cloning during the marketplace-add step:
+&gt; ```bash
+&gt; /plugin marketplace add https://github.com/addyosmani/agent-skills.git
+&gt; /plugin install agent-skills@addy-agent-skills
+&gt; ```
+&gt;
+&gt; If `/plugin install` still fails with `git@github.com: Permission denied (publickey)` on Windows or macOS, the recommended workaround is to configure Git once to rewrite GitHub SSH URLs to HTTPS for subprocess clones:
+&gt; ```bash
+&gt; git config --global url.&quot;https://github.com/&quot;.insteadOf git@github.com:
+&gt; ```
+
+**Local / development:**
+
+```bash
+git clone https://github.com/addyosmani/agent-skills.git
+claude --plugin-dir /path/to/agent-skills
+```
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Cursor&lt;/b&gt;&lt;/summary&gt;
+
+Put workflow skills under `.cursor/skills/` (sync from `agent-skills/skills/`) and short policies in `.cursor/rules/*.mdc` — do not paste full skills into rules. Both directories live in your project; this repo does not ship a `.cursor/` folder. See [docs/cursor-setup.md](docs/cursor-setup.md).
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Antigravity CLI&lt;/b&gt;&lt;/summary&gt;
+
+Install as a native plugin for skills and subagents. In affected Antigravity CLI releases, legacy command TOMLs are reported as converted but their wrapper commands are not discoverable; invoke the underlying namespaced skills directly. See [docs/antigravity-setup.md](docs/antigravity-setup.md#lifecycle-workflows-and-command-compatibility).
+
+**Install from the repo:**
+
+```bash
+agy plugin install https://github.com/addyosmani/agent-skills.git
+```
+
+**Install from a local clone:**
+
+```bash
+git clone https://github.com/addyosmani/agent-skills.git
+agy plugin install ./agent-skills
+```
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Gemini CLI&lt;/b&gt;&lt;/summary&gt;
+
+Install as native skills for auto-discovery, or add to `GEMINI.md` for persistent context. See [docs/gemini-cli-setup.md](docs/gemini-cli-setup.md).
+
+**Install from the repo:**
+
+```bash
+gemini skills install https://github.com/addyosmani/agent-skills.git --path skills
+```
+
+**Install from a local clone:**
+
+```bash
+gemini skills install ./agent-skills/skills/
+```
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Windsurf&lt;/b&gt;&lt;/summary&gt;
+
+Add skill contents to your Windsurf rules configuration. See [docs/windsurf-setup.md](docs/windsurf-setup.md).
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;OpenCode&lt;/b&gt;&lt;/summary&gt;
+
+Copy skills to `.opencode/skills/` (or `~/.config/opencode/skills/`), add a project-local `AGENTS.md`, and use the built-in `skill` tool for agent-driven execution. Optional slash commands can be added under `.opencode/commands/`.
+
+See [docs/opencode-setup.md](docs/opencode-setup.md).
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;GitHub Copilot&lt;/b&gt;&lt;/summary&gt;
+
+Use agent definitions from `agents/` as Copilot personas and skill content in `.github/copilot-instructions.md`. The lifecycle slash commands (`/spec`, `/plan`, `/build`, `/test`, `/review`, `/ship`) are Claude Code commands and do not appear in Copilot; invoke the skills by name (`/spec-driven-development`, …) instead. See [docs/copilot-setup.md](docs/copilot-setup.md).
+
+Using the standalone `copilot` CLI? Install it as a plugin — see [docs/copilot-cli-setup.md](docs/copilot-cli-setup.md).
+
+&lt;/details&gt;
+
+&lt;details&gt;
+  &lt;summary&gt;&lt;b&gt;Kiro IDE &amp; CLI &lt;/b&gt;&lt;/summary&gt;
+  Skills for Kiro reside under &quot;.kiro/skills/&quot; and can be stored under Project or Global level. Kiro also supports Agents.md. See Kiro docs at https://kiro.dev/docs/skills/
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Codex&lt;/b&gt;&lt;/summary&gt;
+
+Install as a native Codex plugin (Codex CLI v0.122+):
+
+```bash
+codex plugin marketplace add addyosmani/agent-skills
+codex plugin add agent-skills@agent-skills
+```
+
+The first command registers the marketplace; the second installs the plugin. Codex reads the root `skills/` directory directly through `.codex-plugin/plugin.json`. Once installed, invoke skills in chat using `@` (e.g., `@spec-driven-development`). See [docs/codex-setup.md](docs/codex-setup.md) for local installation and troubleshooting.
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Command Code&lt;/b&gt;&lt;/summary&gt;
+
+Install natively with the built-in `cmd skills` command. Command Code clones the repo, discovers every `SKILL.md`, and installs into `.commandcode/skills/`:
+
+```bash
+cmd skills add addyosmani/agent-skills            # pick skills to install (project)
+cmd skills add addyosmani/agent-skills --global   # install for all projects (~/.commandcode/skills/)
+cmd skills add addyosmani/agent-skills -s spec-driven-development  # install a specific skill
+```
+
+Installed skills show up in the TUI slash menu, e.g. `/spec-driven-development`. See [docs/commandcode-setup.md](docs/commandcode-setup.md).
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Other Agents&lt;/b&gt;&lt;/summary&gt;
+
+Skills are plain Markdown - they work with any agent that accepts system prompts or instruction files. See [docs/getting-started.md](docs/getting-started.md). Hosts that install the pack but aren&#039;t listed above are in [docs/other-hosts.md](docs/other-hosts.md).
+
+&lt;/details&gt;
+
+
+
+---
+
+## Adoption
+
+Already installed? How you roll the pack out depends on your codebase. The **[Adoption Guide](docs/adoption-guide.md)** covers two paths: the full lifecycle from day one for a greenfield project, or an incremental, verification-first rollout for an established codebase.
+
+---
+
+## All 25 Skills
+
+The commands above are entry points. The pack includes 25 skills total — 24 lifecycle skills plus the `using-agent-skills` meta-skill. Each skill is a structured workflow with steps, verification gates, and anti-rationalization tables. You can also reference any skill directly.
+
+### Meta - Discover which skill applies
+
+| Skill | What It Does | Use When |
+|-------|-------------|----------|
+| [using-agent-skills](skills/using-agent-skills/SKILL.md) | Maps incoming work to the right skill workflow and defines shared operating rules | Starting a session or deciding which skill applies |
+
+### Define - Clarify what to build
+
+| Skill | What It Does | Use When |
+|-------|-------------|----------|
+| [interview-me](skills/interview-me/SKILL.md) | One-question-at-a-time interview that extracts what the user actually wants instead of what they think they should want, until ~95% confidence | The ask is underspecified, or the user invokes &quot;interview me&quot; / &quot;grill me&quot; |
+| [idea-refine](skills/idea-refine/SKILL.md) | Structured divergent/convergent thinking to turn vague ideas into concrete proposals | You have a rough concept that needs exploration |
+| [spec-driven-development](skills/spec-driven-development/SKILL.md) | Write a PRD covering objectives, commands, structure, code style, testing, and boundaries before any code | Starting a new project, feature, or significant change |
+| [constraint-driven-development](skills/constraint-driven-development/SKILL.md) | Interviews you for a quality bar with sane default thresholds, writes CONSTRAINTS.md, places each check by cost, and catches agents silencing checks or skipping tests to get green | No standards are written down, or an agent is producing more than anyone reads |
+
+### Plan - Break it down
+
+| Skill | What It Does | Use When |
+|-------|-------------|----------|
+| [planning-and-task-breakdown](skills/planning-and-task-breakdown/SKILL.md) | Decompose specs into small, verifiable tasks with acceptance criteria and dependency ordering | You have a spec and need implementable units |
+
+### Build - Write the code
+
+| Skill | What It Does | Use When |
+|-------|-------------|----------|
+| [incremental-implementation](skills/incremental-implementation/SKILL.md) | Thin vertical slices - implement, test, verify, commit. Feature flags, safe defaults, rollback-friendly changes | Any change touching more than one file |
+| [test-driven-development](skills/test-driven-development/SKILL.md) | Red-Green-Refactor, test pyramid (80/15/5), test sizes, DAMP over DRY, Beyonce Rule, browser testing | Implementing logic, fixing bugs, or changing behavior |
+| [context-engineering](skills/context-engineering/SKILL.md) | Feed agents the right information at the right time - rules files, context packing, MCP integrations | Starting a session, switching tasks, or when output quality drops |
+| [source-driven-development](skills/source-driven-development/SKILL.md) | Ground every framework decision in official documentation - verify, cite sources, flag what&#039;s unverified | You want authoritative, source-cited code for any framework or library |
+| [doubt-driven-development](skills/doubt-driven-development/SKILL.md) | Adversarial fresh-context review of every non-trivial decision in-flight - CLAIM → EXTRACT → DOUBT → RECONCILE → STOP, with optional user-authorized cross-model escalation | Stakes are high (production, security, irreversible), working in unfamiliar code, or a confident output is cheaper to verify now than to debug later |
+| [frontend-ui-engineering](skills/frontend-ui-engineering/SKILL.md) | Component architecture, design systems, state management, responsive design, WCAG 2.1 AA accessibility | Building or modifying user-facing interfaces |
+| [api-and-interface-design](skills/api-and-interface-design/SKILL.md) | Contract-first design, Hyrum&#039;s Law, One-Version Rule, error semantics, boundary validation | Designing APIs, module boundaries, or public interfaces |
+
+### Verify - Prove it works
+
+| Skill | What It Does | Use When |
+|-------|-------------|----------|
+| [browser-testing-with-devtools](skills/browser-testing-with-devtools/SKILL.md) | Chrome DevTools MCP for live runtime data - DOM inspection, console logs, network traces, performance profiling | Building or debugging anything that runs in a browser |
+| [debugging-and-error-recovery](skills/debugging-and-error-recovery/SKILL.md) | Five-step triage: reproduce, localize, reduce, fix, guard. Stop-the-line rule, safe fallbacks | Tests fail, builds break, or behavior is unexpected |
+
+### Review - Quality gates before merge
+
+| Skill | What It Does | Use When |
+|-------|-------------|----------|
+| [code-review-and-quality](skills/code-review-and-quality/SKILL.md) | Five-axis review, change sizing (~100 lines), severity labels (Nit/Optional/FYI), review speed norms, splitting strategies | Before merging any change |
+| [code-simplification](skills/code-simplification/SKILL.md) | Chesterton&#039;s Fence, Rule of 500, reduce complexity while preserving exact behavior | Code works but is harder to read or maintain than it should be |
+| [security-and-hardening](skills/security-and-hardening/SKILL.md) | OWASP Top 10 prevention, auth patterns, secrets management, dependency auditing, three-tier boundary system | Handling user input, auth, data storage, or external integrations |
+| [performance-optimization](skills/performance-optimization/SKILL.md) | Measure-first approach - Core Web Vitals targets, profiling workflows, bundle analysis, anti-pattern detection | Performance requirements exist or you suspect regressions |
+
+### Ship - Deploy with confidence
+
+| Skill | What It Does | Use When |
+|-------|-------------|----------|
+| [git-workflow-and-versioning](skills/git-workflow-and-versioning/SKILL.md) | Trunk-based development, atomic commits, change sizing (~100 lines), the commit-as-save-point pattern | Making any code change (always) |
+| [ci-cd-and-automation](skills/ci-cd-and-automation/SKILL.md) | Shift Left, Faster is Safer, feature flags, quality gate pipelines, failure feedback loops | Setting up or modifying build and deploy pipelines |
+| [deprecation-and-migration](skills/deprecation-and-migration/SKILL.md) | Code-as-liability mindset, compulsory vs advisory deprecation, migration patterns, zombie code removal | Removing old systems, migrating users, or sunsetting features |
+| [documentation-and-adrs](skills/documentation-and-adrs/SKILL.md) | Architecture Decision Records, API docs, inline documentation standards - document the *why* | Making architectural decisions, changing APIs, or shipping features |
+| [observability-and-instrumentation](skills/observability-and-instrumentation/SKILL.md) | Structured logging, RED metrics, OpenTelemetry tracing, symptom-based alerting - instrument as you build | Adding telemetry, or shipping anything that runs in production |
+| [shipping-and-launch](skills/shipping-and-launch/SKILL.md) | Pre-launch checklists, feature flag lifecycle, staged rollouts, rollback procedures, monitoring setup | Preparing to deploy to production |
+
+---
+
+## Agent Personas
+
+Pre-configured specialist personas for targeted reviews:
+
+| Agent | Role | Perspective |
+|-------|------|-------------|
+| [code-reviewer](agents/code-reviewer.md) | Senior Staff Engineer | Five-axis code review with &quot;would a staff engineer approve this?&quot; standard |
+| [test-engineer](agents/test-engineer.md) | QA Specialist | Test strategy, coverage analysis, and the Prove-It pattern |
+| [security-auditor](agents/security-auditor.md) | Security Engineer | Vulnerability detection, threat modeling, OWASP assessment |
+| [web-performance-auditor](agents/web-performance-auditor.md) | Web Performance Engineer | Core Web Vitals audit with Quick/Deep modes and a metric-honesty rule; run it via `/webperf` |
+
+See [docs/agents.md](docs/agents.md) for the decision matrix, orchestration rules, and how personas compose with skills and slash commands.
+
+---
+
+## Reference Checklists
+
+Quick-reference material that skills pull in when needed:
+
+| Reference | Covers |
+|-----------|--------|
+| [definition-of-done.md](references/definition-of-done.md) | Project-wide standing bar every change clears, contrasted with per-task acceptance criteria |
+| [testing-patterns.md](references/testing-patterns.md) | Test structure, naming, mocking, React/API/E2E examples, anti-patterns (JavaScript/TypeScript) |
+| [security-checklist.md](references/security-checklist.md) | Pre-commit checks, auth, input validation, headers, CORS, OWASP Top 10 |
+| [performance-checklist.md](references/performance-checklist.md) | Core Web Vitals targets, frontend/backend checklists, measurement commands |
+| [accessibility-checklist.md](references/accessibility-checklist.md) | Keyboard nav, screen readers, visual design, ARIA, testing tools |
+| [observability-checklist.md](references/observability-checklist.md) | On-call questions, structured logging, RED/USE metrics, tracing, symptom-based alerting, pre-launch gate |
+| [orchestration-patterns.md](references/orchestration-patterns.md) | Endorsed multi-persona orchestration patterns, anti-patterns, and the &quot;personas don&#039;t invoke personas&quot; rule |
+
+---
+
+## How Skills Work
+
+Every skill follows a consistent anatomy:
+
+```
+┌─────────────────────────────────────────────────┐
+│  SKILL.md                                       │
+│                                                 │
+│  ┌─ Frontmatter ─────────────────────────────┐  │
+│  │ name: lowercase-hyphen-name               │  │
+│  │ description: Guides agents through [task].│  │
+│  │              Use when…                    │  │
+│  └───────────────────────────────────────────┘  │                                                                                                
+│  Overview         → What this skill does        │
+│  When to Use      → Triggering conditions       │
+│  Process          → Step-by-step workflow       │
+│  Rationalizations → Excuses + rebuttals         │
+│  Red Flags        → Signs something&#039;s wrong     │
+│  Verification     → Evidence requirements       │
+└─────────────────────────────────────────────────┘
+```
+
+**Key design choices:**
+
+- **Process, not prose.** Skills are workflows agents follow, not reference docs they read. Each has steps, checkpoints, and exit criteria.
+- **Anti-rationalization.** Every skill includes a table of common excuses agents use to skip steps (e.g., &quot;I&#039;ll add tests later&quot;) with documented counter-arguments.
+-
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
             <title><![CDATA[is-a-dev/register]]></title>
             <link>https://github.com/is-a-dev/register</link>
             <guid>https://github.com/is-a-dev/register</guid>
-            <pubDate>Mon, 26 Oct 2026 00:06:22 GMT</pubDate>
+            <pubDate>Tue, 27 Oct 2026 00:05:48 GMT</pubDate>
             <description><![CDATA[Grab your own sweet-looking '.is-a.dev' subdomain.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/is-a-dev/register">is-a-dev/register</a></h1>
             <p>Grab your own sweet-looking '.is-a.dev' subdomain.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 11,638</p>
-            <p>Forks: 33,493</p>
-            <p>Stars today: 22 stars today</p>
+            <p>Stars: 11,648</p>
+            <p>Forks: 33,584</p>
+            <p>Stars today: 7 stars today</p>
             <h2>README</h2><pre>&lt;!-- &lt;p align=&quot;center&quot;&gt;
    &lt;img alt=&quot;is-a.dev Banner&quot; src=&quot;https://raw.githubusercontent.com/is-a-dev/register/main/media/banner.png&quot;&gt;
 &lt;/p&gt; --&gt;
@@ -583,469 +948,1146 @@ We would like to thank all of our current and past [supporters](https://is-a.dev
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[maboloshi/github-chinese]]></title>
-            <link>https://github.com/maboloshi/github-chinese</link>
-            <guid>https://github.com/maboloshi/github-chinese</guid>
-            <pubDate>Mon, 26 Oct 2026 00:06:21 GMT</pubDate>
-            <description><![CDATA[GitHub 汉化插件，GitHub 中文化界面。 (GitHub Translation To Chinese)]]></description>
+            <title><![CDATA[bilawalsidhu/gods-eye-view]]></title>
+            <link>https://github.com/bilawalsidhu/gods-eye-view</link>
+            <guid>https://github.com/bilawalsidhu/gods-eye-view</guid>
+            <pubDate>Tue, 27 Oct 2026 00:05:47 GMT</pubDate>
+            <description><![CDATA[A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/maboloshi/github-chinese">maboloshi/github-chinese</a></h1>
-            <p>GitHub 汉化插件，GitHub 中文化界面。 (GitHub Translation To Chinese)</p>
+            <h1><a href="https://github.com/bilawalsidhu/gods-eye-view">bilawalsidhu/gods-eye-view</a></h1>
+            <p>A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 36,644</p>
-            <p>Forks: 2,040</p>
-            <p>Stars today: 121 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;&lt;a name=&quot;readme-top&quot;&gt;&lt;/a&gt;
+            <p>Stars: 60,418</p>
+            <p>Forks: 11,789</p>
+            <p>Stars today: 400 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
 
-# [GitHub 中文化插件][github-project-link]
+# 🌐 God&#039;s Eye View
 
-&gt; 让 GitHub 界面全面中文化 | 源自 [52cik/github-hans](https://github.com/52cik/github-hans)
+[![CI](https://github.com/bilawalsidhu/gods-eye-view/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bilawalsidhu/gods-eye-view/actions/workflows/ci.yml) [![Reached #1 on GitHub Trending](https://img.shields.io/badge/%231_GitHub_Trending-thank_you!-F0A63C?style=flat-square&amp;logo=github)](https://x.com/bilawalsidhu/status/2093798887815348521)
 
-**简体中文** · [繁體中文](./README_zh-TW.md) · [反馈问题][github-issues-link]
+### A spy-satellite simulator in your browser — then you realize the sources are public and the data is real.
 
-&lt;!-- SHIELD GROUP --&gt;
+Photorealistic 3D globe. Live aircraft, ships, satellites, earthquakes, traffic, and public cameras. Hands-free voice control powered by a realtime AI agent.
 
-[![GitHub stars][github-stars-shield]][github-stars-link]
-[![GitHub forks][github-forks-shield]][github-forks-link]
-[![GitHub issues][github-issues-shield]][github-issues-link]
-[![license GPL-3.0][github-license-shield]][github-license-link]
-[![GreasyFork installs][greasyFork-shield]][greasyFork-link]
+_No place left behind._
 
-&lt;a href=&quot;https://hellogithub.com/repository/738d0abae49543f18d887a7e29ec9e90&quot; target=&quot;_blank&quot;&gt;
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.hellogithub.com/v1/widgets/recommend.svg?rid=738d0abae49543f18d887a7e29ec9e90&amp;claim_uid=zepvSg6Vwl4EqMr&amp;theme=dark&quot; /&gt;
-    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.hellogithub.com/v1/widgets/recommend.svg?rid=738d0abae49543f18d887a7e29ec9e90&amp;claim_uid=zepvSg6Vwl4EqMr&amp;theme=neutral&quot; /&gt;
-    &lt;img alt=&quot;Featured｜HelloGitHub&quot; src=&quot;https://api.hellogithub.com/v1/widgets/recommend.svg?rid=738d0abae49543f18d887a7e29ec9e90&amp;claim_uid=zepvSg6Vwl4EqMr&amp;theme=neutral&quot; style=&quot;width: 250px; height: 54px;&quot; /&gt;
-  &lt;/picture&gt;
+![Orbital HUD, a tracked live globe, FLIR terrain — then OPEN SOURCED](docs/media/hero-open-source-reveal.gif)
+
+&lt;a href=&quot;https://www.youtube.com/@bilawalsidhu&quot;&gt;
+  &lt;img src=&quot;docs/media/youtube-popular-videos.png&quot; alt=&quot;The God&#039;s Eye View video series on YouTube&quot; width=&quot;100%&quot;&gt;
 &lt;/a&gt;
+
+▶️ **From the project behind the viral God&#039;s Eye View series** _(formerly WorldView)_ — [5M+ on YouTube](https://youtube.com/playlist?list=PL6qSg2I-7_koPbDnSMo0QeeHX_RknA2uv&amp;si=nBGYMoHWQw41v93Q) · [25M+ across socials](https://www.google.com/search?q=god%27s+eye+view)
+
+🏆 **Reached #1 on GitHub Trending, daily and weekly · August 2026**
+
+**[#8 Product of the Day](https://www.producthunt.com/products/god-s-eye-view?launch=god-s-eye-view)** · Hunted by Chris Messina, creator of the hashtag
+
+_“pretty cool”_ — [Brendan Eich](https://x.com/BrendanEich/status/2094592096401490266), creator of JavaScript and co-founder of Mozilla and Brave · Featured on **[Pinokio](https://pinokio.co/posts/01m1m4p9xxm3qw7dnnpj2wr93g)**
+
+⚡ **Start without API keys.** Install with [Pinokio](https://pinokio.co/apps/github-com-bilawalsidhu-gods-eye-view) or run locally from the terminal. Add optional keys inside the app. **[→ Quick Start](#-quick-start)**
 
 &lt;/div&gt;
 
-&gt; [!warning]
-&gt; 本项目从未发布至 GitCode，如您发现请截图并保留证据
+---
+
+&lt;div align=&quot;center&quot;&gt;
+
+**[Quick Start](#-quick-start) · [First Five Minutes](#-the-first-five-minutes) · [Talk to It](#-talk-to-it) · [What&#039;s Live](#-whats-on-the-globe) · [Under the Hood](#-under-the-hood) · [Keys &amp; Costs](#-api-keys) · [Contributing](CONTRIBUTING.md)**
+
+&lt;/div&gt;
+
+---
+
+## 🌍 Why This Exists
+
+God&#039;s Eye View brings public signals into one explorable globe. Track the world live. Talk to it. Break it. Extend it.
+
+Flight transponders, ship beacons, orbital elements, seismographs, and public cameras already tell us a lot about the world. God&#039;s Eye View puts them in the same place, so you can move between a global picture and an individual aircraft, ship, or street. It runs locally in your browser, with source code you can inspect and extend.
+
+&gt; Half the magic is that it looks like a forbidden cockpit. The other half is that every line of code is inspectable.
+
+Most feeds are live or regularly refreshed. Traffic is simulated along real
+roads using aggregate location data. CCTV camera poses and rocket launch
+trajectories are coarse estimates.
+
+Start with the included data sources, then add your own. Each layer is a separate module.
+
+---
+
+## 🎛️ What This Thing Does
+
+- **🛩️ Cockpit view:** Ride inside a tracked flight — the camera holds the terrain under you all the way down.
+- **📡 Contacts:** A 250 km roster of everything near your target — step through live aircraft and drop into any cockpit.
+- **🎯 Click-to-track anything:** Camera locks on, draws a fading trail, surfaces full metadata — and a tracked fire or vessel hands you off to the nearest live camera in one click.
+- **🖊️ Voice whiteboard:** Speak annotations onto the world — real boundary polygons, marks, and routes.
+- **🛫 3D hangar:** Real per-class aircraft models — 787, ATR-72, Citation, Bell 206, MQ-9 — and a tracked contact swaps from glyph to 3D model as you close in.
+- **🎨 Reskin reality:** GLSL sensor looks over the normal globe — CRT, NVG, FLIR/thermal, Noir, Snow.
+- **🟩 Detection overlay:** Screen-space bounding boxes and IDs on everything in view.
+- **🎖️ Military HUD:** Tactical heads-up display with intelligence-style telemetry.
+- **🌐 Global Context:** Stage the full situational picture with one switch — and get your exact view back when you leave.
+- **🎥 Scene director:** Capture cinematic camera tours for clips and demos.
+- **🔗 Share Links:** Camera, style, layers, and even one tracked target serialize into a URL — a live target is a handoff, not a bookmark.
+- **🏠 Reset Globe:** One control — or one sentence — back to the full Earth.
+- **🌦️ Weather:** Animate GFS or ECMWF forecast wind, replay observed radar, satellite clouds and lightning on one timeline, and follow NHC/CPHC cyclone tracks. No key needed.
+- **📷 Mapped ALPR cameras:** License-plate-reader camera locations tagged in OpenStreetMap, one city at a time. Locations and tags only; no key needed.
+- **🔭 Satellite passes:** Ask by voice when any loaded satellite next rises over you: rise, peak and set times, and whether you can see it.
+- **🔎 Analyst answers:** Count, filter and rank satellites, datacenters and dams by voice, alongside flights, ships, fires and quakes; answers say when a feed is stale or on a fallback.
+- **🧭 Tilt and North Up:** Switch between straight-down and a 35° oblique, or put north at the top, while a tracked target stays centered.
+- **🔍 Keyless search:** Type decimal coordinates, a two-dimensional WGS84 `geo:` URI (for example, `geo:39.7392,-104.9903`), or a bundled city or landmark to fly there with no geocoder request; other names use Google when configured, then Photon and Nominatim.
+- **📦 Shareable scenes:** Import, preview and share Director scenes as files or bundles, with camera anchors, authored moves and data packs.
+- **🌊 Nepal flood scene:** Replay the Bhote Koshi flood: flood path, witness sources and before-and-after imagery (bundled data is non-commercial; see [DATA_SOURCES.md](DATA_SOURCES.md)).
+
+---
+
+&lt;div align=&quot;center&quot;&gt;
+
+[![YouTube video about the God&#039;s Eye View open source release](https://img.youtube.com/vi/GRJaKcXZS94/maxresdefault.jpg)](https://www.youtube.com/watch?v=GRJaKcXZS94)
+
+▶️ **[The full walkthrough of everything below, on YouTube](https://www.youtube.com/watch?v=GRJaKcXZS94)**
+
+&lt;/div&gt;
+
+## ⚡ Quick Start
+
+**Start without an account or API keys.** Both paths open the same app with
+Esri satellite imagery and keyless terrain. OSM is the fallback if Esri is
+unreachable. Flights, military traffic, satellites, earthquakes, public
+cameras, radio, and launches are available without keys.
+
+For photorealistic 3D, add a **Cesium ion token** for eligible personal,
+non-commercial use, or a **Google Maps key** for the direct, metered route and
+Google place search. Provider terms and quotas apply. Add keys through the
+app&#039;s **POWER UP** panel; [Keys &amp; Costs](#-api-keys) explains the options.
+
+&gt; **Already installed?** Update to the latest version. Older versions query
+&gt; public OpenStreetMap Overpass servers, which now refuse them, so Traffic,
+&gt; Mapped Installations and ALPR stay empty until you update.
+
+### Path 1 — One click, no terminal
+
+1. Install or update [Pinokio](https://desktop.pinokio.co/) to **8.2 or later**.
+2. Open [God&#039;s Eye View in Pinokio](https://pinokio.co/apps/github-com-bilawalsidhu-gods-eye-view).
+3. Click **Install**, then **Start**.
+
+Available on **Windows, macOS, and Linux**. The Pinokio maintainer reports
+cross-platform testing of the fixed installer. The launcher installs the
+locked dependencies, finds a free local port, and opens the app in your system
+browser. The Server menu item keeps the launcher console available.
+
+**Tried before and installation failed?** Update Pinokio and try again.
+Version 8.2 fixes the launcher installation issue;
+[details from the Pinokio maintainer](https://pinokio.co/posts/01m1m4p9xxm3qw7dnnpj2wr93g).
+
+**Using an older launcher or opening the embedded view manually?** If the globe
+is very choppy, before treating that as a GPU
+compatibility or minimum-hardware problem, copy the local server URL shown by
+Pinokio and open the same URL in your normal hardware-accelerated browser. One
+Pinokio 8.2.0 user reported severe stutter in Pinokio&#039;s embedded view that went
+away when the same running server was opened in an external browser ([#365](https://github.com/bilawalsidhu/gods-eye-view/issues/365)).
+That points to the embedded browser rather than the app server or your
+hardware; it does not establish a minimum GPU requirement.
+
+### Path 2 — Terminal / coding agent
+
+Use **Node.js 24.x (24.14.0 or later) or 26.x**. The setup doctor warns about
+Node 25, which is end-of-life.
+
+```bash
+git clone https://github.com/bilawalsidhu/gods-eye-view.git
+cd gods-eye-view
+npm ci
+npm run doctor
+npm run dev
+```
+
+Open **`http://localhost:4173`**. Choose **Live Contacts**, **Space Missions**,
+**Environmental**, or **Explore Manually** from the first-run panel.
 
 &lt;details&gt;
-&lt;summary&gt;&lt;kbd&gt;目录树&lt;/kbd&gt;&lt;/summary&gt;
-
-#### TOC
-- [🌟 功能特性](#-功能特性)
-- [🌐 兼容环境](#-兼容环境)
-- [💻 安装指南](#-安装指南)
-    - [浏览器（Tampermonkey）](#浏览器tampermonkey)
-    - [VS Code 市场扩展](#vs-code-市场扩展)
-- [🔧 本地调试](#-本地调试)
-- [🔄 更新日志](#-更新日志)
-- [📌 待办事项](#-待办事项)
-- [🤝 参与贡献](#-参与贡献)
-- [🖼️ 效果预览](#-效果预览)
-- [🙏 特别鸣谢](#-特别鸣谢)
-- [📈 项目统计](#-项目统计)
-- [🎁 欢迎打赏](#-欢迎打赏)
-&lt;/details&gt;
-
-## 🌟 功能特性
-
-- [x] 全面中文化 GitHub 界面元素（菜单栏、标题、按钮等）
-- [x] 智能正则匹配功能
-- [x] 支持项目描述的人机翻译
-- [x] 自动本地化时间元素
-- [x] 持续更新词库
-
-## 🌐 兼容环境
-
-浏览器类型           | 支持的脚本管理器
-:------------------: | :---------------:
-Chrome / Chromium 内核 | [Tampermonkey][Tampermonkey], [Violentmonkey][Violentmonkey]
-Safari（全平台）     | [Tampermonkey][Tampermonkey], [Macaque][Macaque], [Stay][Stay]
-Firefox / Gecko 内核   | [Tampermonkey][Tampermonkey], [Violentmonkey][Violentmonkey]
-Via（Android）       | 内置管理器
-VS Code 集成浏览器  |
-
-## 💻 安装指南
-
-### 浏览器（Tampermonkey）
-
-1. 安装用户脚本管理器：
-    - 推荐：[Tampermonkey][Tampermonkey]
-1. **基于 Chrome / Chromium 内核浏览器：**
-    1. 务必开启 “扩展程序” 管理中的 **“开发者模式”**[^1]
-    1. 务必开启 “扩展程序” 管理中脚本管理器扩展的 **“允许运行用户脚本”**
-    1. 具体可参考 [Tampermonkey 官方指引](https://www.tampermonkey.net/faq.php#Q209)
-1. 选择安装源：
-    - [GitHub 源【开发版】][main.user.js]
-    - [南大镜像源【开发版】][main(nju.edu).user.js]
-    - [GreasyFork 源【稳定版】][main(greasyfork).user.js]
-1. 刷新页面后，插件即可生效
-1. 必要时，重启浏览器
-
-[^1]: [Chrome 切换到 Manifest V3后，使用问题](https://github.com/maboloshi/github-chinese/issues/234)
-
-&gt; [!NOTE]
-&gt; **版本说明**：
-&gt; - 🚀 开发版：实时更新，每周五自动更新词库
-&gt; - 🛡️ 稳定版：每周一同步开发版词库，更稳定
-
-### VS Code 集成浏览器
-
-请参考[扩展的自述文件](vscode-extension/README.md)。
-
-## 🔧 本地调试
-
-1. 安装 [Tampermonkey][Tampermonkey]，并启用 “允许访问文件网址”。
-1. 下载词库文件到本地（如：`D:\github-chinese\locals.js`）
-1. 在脚本管理器中修改引用路径：
-   ```js
-   // 原始路径
-   // @require https://raw.githubusercontent.com/...
-   
-   // 修改为
-   // @require file:///D:/github-chinese/locals.js
-   ```
-1. 刷新页面生效
-
-&gt; [!IMPORTANT]
-&gt; **若无效：**
-&gt; 1. 进入 [Tampermonkey][Tampermonkey] 插件`设置页`
-&gt; 1. 将 `通用 - 配置模式` 设置为`高级`，进入高级设置模式
-&gt; 1. 找到 `安全 - 允许脚本访问本地文件` 并设置为 `外部(@require 和 @resource)`
-
-&gt; [!TIP]
-&gt; 💡 **温馨提示：** 您可以将词库文件拖拽至浏览器地址栏，复制路径直接使用。
-
-&lt;div align=&quot;right&quot;&gt;
-
-[![][back-to-top]](#readme-top)
-
-&lt;/div&gt;
-
-
-## 🔄 更新日志
-
-### 最新版本
-
-#### v1.9.4.4 (2026-06-20)
-
-1. 兼容修复`1.9.2.4`,`1.9.4.4`：
-   - 区分 React GlobalNav 与页面主体共享的 Primer 弹层，恢复下拉菜单即时、完整翻译。
-
-#### v1.9.4.3 (2026-06-17)
-
-1. 兼容修复`1.9.2.3`,`1.9.4.3`：
-   - 收窄 React 搜索模块忽略范围，恢复仓库议题页和搜索页主体区域翻译。
-
-#### v1.9.4.2 (2026-06-17)
-
-1. 兼容修复`1.9.2.2`,`1.9.4.2`：
-   - 在保持 React 头部搜索框稳定的前提下，恢复头部导航、菜单、搜索弹层和提示翻译。
-
-#### v1.9.4.1 (2026-06-16)
-
-1. 临时修复`1.9.2`,`1.9.4`：
-   - 关于 GitHub 引入 React 机制导致头部搜索框消失。副作用整个头部导航全部加入忽略规则，无法翻译。
-
-#### v1.9.4 (2026-05-17)
-
-1. 代码重构：
-   - 全面结构化重组：抽离配置常量 `CONFIG`、状态管理器 `State`
-   - 引入 `safe()` 错误边界包裹关键函数，便于排错
-   - 函数拆分细化：`watchUpdate` → `setupMutationObserver` + `processMutations`，`transDesc` → `handleTransClick` + `requestRemoteTrans` + `showTransResult`
-   - `processMutations` 祖先去重：同一批 mutation 中后代节点不再重复遍历
-1. 新增功能：
-   - 翻译结果 UI 暗色主题适配（CSS 变量 + `prefers-color-scheme` 媒体查询），使用 `GM_addStyle` 插入
-   - 未命中词条管理器 `MissedTermsManager`（记录、导出 JSON、清空、统计、菜单）
-   - 开发者模式（`CONFIG.DEV`）控制未命中词条菜单显隐
-   - Tampermonkey `onurlchange` 事件支持（`setupUrlChangeListener`）
-1. 修复：
-   - 修复翻译 API 响应 XSS 漏洞：`innerHTML` 模板拼接改为 `textContent` 安全赋值（由 #692 报告）
-   - 修复 TreeWalker 过滤器在 `ignoreSelectors` 为空时抛出 `SyntaxError`
-   - 修复翻译按钮可能重复添加的问题（`nextSibling` 空值检查）
-   - 修复 `RELATIVE-TIME` shadowRoot 为 null 时的崩溃
-   - 修复从未识别页面离开后 `State.pageConfig` 未清空，导致旧配置残留的问题
-1. 性能优化：减少无效迭代，消除不必要的 DOM 遍历
-
-#### v1.9.3 (2024-08-18)
-
-1. 新增功能：通过设置中文环境，自动本地化时间元素，仅保留`on`开头的时间正则，并停用时间元素监视
-1. 优化突变翻译处理：
-   - 引入`characterDataPage`规则，对特定页面启用`筛选字符数据`的变更
-   - 引入`ignoreMutationSelectorPage`规则，忽略特定突变元素
-1. 合并`reIgnoreClass，reIgnoreItemprop，ignoreId，ignoreTag`为`ignoreSelectorPage`规则，处理全局及特定页面，忽略特定元素
-1. 引入全局缓存模式，减少重复构建包括不限于基于`page`变化的忽略规则、正则规则数组等
-1. 调整：更新讯飞听见翻译引擎v2.0
-1. 优化：梳理、优化脚本
-1. 调整：调整词库语言代码为`zh-CN`, 与环境语言设置一致
-
-&lt;details&gt;&lt;summary&gt;&lt;kbd&gt;查看更多历史版本&lt;/kbd&gt;&lt;/summary&gt;
-
-#### v1.9.2 (2024-06-14)
-
-1. 适配`www.githubstatus.com`
-1. 适配`skills.github.com`
-
-#### v1.9.1 (2024-05-23)
-
-1. 更新`切换正则功能按钮`
-
-#### v1.9.0 (2023-12-09)
-
-1. 重新定义版本号规则, 如`1.9.0-2023-12-09`。
-   - `1.9.0`: 主版本号（由项目所有者更新）
-   - `2023-12-09`：`词库`发布版本号（由 GitHub Action 自动更新）
-1. 加强: [GitHub 源【开发版】][main.user.js]每周一凌晨自动更新`词库`发布版本号
-1. 加强: [GreasyFork 源【稳定版】][main(greasyfork).user.js]每周五凌晨自动更新`词库`发布版本号, 词库内容同上一次[GitHub 源【开发版】][main.user.js]
-1. 加强：在 `README.md` 中自动更新贡献者头像
-1. 更新: 忽略规则, 词条等
-
-#### v1.8.5 (2023-08-31)
-
-1. 优化: `transDesc 函数`代码
-1. 修复: 重复添加`translate-me`翻译按钮
-1. 加强：`watchUpdate 函数`新增节点文本更新的情况
-1. 调整: `transBySelector和transDesc函数`延迟执行时间
-1. 更新: 忽略规则, 词条等
-
-#### v1.8.4 (2023-08-08)
-
-1. 修复: `Itemprop`过滤规则, 依然使用正则方式
-1. 修复: `tooltipped`样式提示, 依然使用正则方式
-
-#### v1.8.3 (2023-08-07)
-
-1. 梳理、优化脚本
-1. 更新: 忽略规则, 大量词条等
-
-#### v1.8.2 (2023-05-15)
-
-1. `greasyfork 托管`源切换到`按页面精细化词条模式`
-1. 调整词库格式
-1. 功能加强: 优化`元素筛选器`翻译逻辑
-1. 更新: 忽略规则, 大量词条等
-
-#### v1.8.1 (2023-01-22)
-
-1. 修复: #8 与 dark reader 扩展发生冲突，导致时间显示出现问题
-1. `GitHub`源开始切换到`按页面精细化词条模式(开发版)`, 词库未完全迁移适配
-1. 停止`greasyfork`源词库文件的同步更新
-
-#### v1.8.0 (2023-01-18)
-
-1. 删除: `TURBO-FRAME`框架处理代码. Github 已调整新动态加载模式, 直接检测`url`的变化就能获取对应的`page`信息
-1. 新增: 支持时间元素的`Shadow DOM`翻译, 并监听变化
-1. 新增: 启用并更新`时间元素翻译`专项正则词条
-1. 新增: 仅当`page`有效才翻译页面
-1. 修复: 原`简介翻译`引擎`GitHub中文社区`失效, 改为`讯飞`引擎(测试)
-1. 修复: 追加公共正则重复迭代的问题
-1. 修复: 正则标记变量`RegExp`与构造函数`new RegExp`冲突
-1. 更新: 忽略规则, 词条等
-
-预告, 下次将细化`page`匹配规则, 导致词库文件结构大调整, 词库文件会适当变大, 页面正则更精细效率会提升
-
-#### v1.7.9 (2022-07-17)
-
-GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/defunkt/jquery-pjax) 切换到 [hotwired/turbo](turbo.hotwired.dev), 导致已有的动态监测方式逐步失效
-
-目前, 通过以下修复:
-
-1. 新增 `BODY` 元素新增监视
-1. 解析 `TURBO-FRAME` 框架, 获取对应的 `page`
-1. 修复 github 新动态加载模式, 导致`翻译描述`返回值无法插入
-1. 修复 github 新动态加载模式, 导致`chrome`浏览器自带翻译功能卡死页面
-
-其他更新:
-
-1. 修复`rePagePath`,`rePagePathRepo`,`rePagePathOrg`匹配规则，限制路径匹配层次，排除干扰
-1. 直接使用网页URL`document.URL`变化触发`标题翻译`和`JS 筛选器`翻译
-1. 修复`关闭正则`无法生效, 需要刷新页面才生效
-1. 日常更新词库和忽略规则
-1. 更新`JS 筛选器`规则
-
-#### v1.7.8 (2022-06-29)
-
-1. 紧急修复: GitHub 变更了`document.body`和`title`更新机制, 导致原有的`监测更新`规则部分失效, 目前使用`document.documentElement`监视整个页面 DOM 的变更
-1. 跳过`&lt;HEAD&gt;`标签
-1. `标题翻译`和`JS 筛选器`翻译, 依据 URL变化更新
-
-#### v1.7.7 (2022-06-26)
-
-1. 新增`时间元素翻译`功能
-1. 重写`页面标题翻译`函数
-1. 梳理`遍历节点`函数逻辑
-1. 优化`transPage`函数，默认翻译公共部分
-1. 调整`getPage`函数, 使`ClassName匹配规则`优先
-1. 优化`translate`函数, 跳过`不存在英文字母和符号,.`, 保留首尾空白部分等
-1. 部分函数重命名，使用`es6`新语法
-1. 日常更新词库和忽略规则，修复一个`JS 选择器规则`
-
-#### v1.7.6 (2022-05-12)
-
-1. 日常更新词库和忽略规则
-1. 添加手动开启/禁用正则翻译，添加切换菜单
-1. 优化翻译文本函数：避免已翻译词汇二次匹配，提高效率；局部翻译优先于全局
+&lt;summary&gt;Startup performance&lt;/summary&gt;
+
+A point-in-time M5/Chrome capture measured a median 1.86-second cold start.
+This is a comparison baseline, not a guarantee for your machine or connection.
+See [docs/PERFORMANCE.md](docs/PERFORMANCE.md).
 
 &lt;/details&gt;
 
-&lt;div align=&quot;right&quot;&gt;
+**macOS shortcut:** `./scripts/dev-fresh.sh` clears the Vite cache and pulls any
+configured keys straight from the Keychain. It starts keyless too.
 
-[![][back-to-top]](#readme-top)
+### Path 3 — Docker
 
-&lt;/div&gt;
+No Node install needed; the container publishes the same dev server.
 
+```bash
+git clone https://github.com/bilawalsidhu/gods-eye-view.git
+cd gods-eye-view
+docker compose up
+```
 
-## 📌 待办事项
+Open **`http://localhost:4173`** as above. Everything the app saves stays in the folder you cloned, so `docker compose down` never loses anything:
 
-1. 添加 GitHub 专用名词解释
-1. 整理 [Git](https://git-scm.com/) &amp; [GitHub](https://github.com/) 学习资料
-1. 完善文档翻译，需大家 PR 共同翻译
+- `.env` - your API keys, whether saved from Provider Settings or typed in by hand
+- `.gev-cache/` - downloaded map and satellite data, so later starts are faster
+- `.gev-logs/` - logs
 
-## 🤝 参与贡献
+Back up that folder and you&#039;ve backed up everything; delete `.env` to forget your keys. Source edits still hot-reload. The port is published to `127.0.0.1` only, so the default matches the native one.
 
-欢迎通过以下方式参与贡献：
+The local MCP server and ChatGPT OAuth voice are not available under Docker; use an OpenAI API key for voice.
 
-1. 完善词库翻译（编辑 `locals.js`）
-1. 提交议题报告，参与话题讨论
-1. 改进代码逻辑
+Publishing it wider is the [Sharing an instance](#-sharing-an-instance) opt-in, and it hands out **Provider Settings** too: the launcher trusts the container gateway as this machine, and a wider publish delivers everyone else from that same address. For an instance you mean to share, put the keys in `.env` by hand instead. [SECURITY.md](SECURITY.md) has the detail.
 
-[![][pr-welcome-shield]][pr-welcome-link]
+When you widen the publish, also set `GEV_KEY_SETUP_TRUSTED_PEERS=none` so the launcher trusts no gateway address.
 
-### 翻译参考资源:
+```bash
+GEV_KEY_SETUP_TRUSTED_PEERS=none docker compose up
+```
 
-1. [Pro Git 第二版 简体中文](https://git-scm.com/book/zh/v2)
-1. [Pro Git: 翻译约定](https://github.com/progit/progit2-zh/blob/master/TRANSLATION_NOTES.asc)
-1. [Git 官方软件包的简体中文翻译](https://github.com/git/git/blob/master/po/zh_CN.po)
-1. [GitHub 词汇表官方译本](https://docs.github.com/cn/get-started/quickstart/github-glossary)
-1. **[CSS 选择器](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference/Selectors) 用于编写忽略规则**
+Compose forwards `GEV_KEY_SETUP_TRUSTED_PEERS` and `GEV_ALLOWED_HOSTS` from your
+shell or the project&#039;s `.env`; an exported shell value takes precedence. You can
+also put `GEV_KEY_SETUP_TRUSTED_PEERS=none` in `.env` for a persistent setting.
+Unset or blank trusted peers retain automatic gateway discovery; `none` explicitly
+disables it. The startup log confirms that no additional peers are trusted.
 
-&gt; [查看详细贡献指南](https://github.com/maboloshi/github-chinese/discussions/57)
+&lt;details&gt;
+&lt;summary&gt;Running on Linux, a NAS, or behind a reverse proxy&lt;/summary&gt;
 
-## 🖼️ 效果预览
+Run it as the user who should own the files it writes. `id` shows the numbers; for yourself on Linux:
 
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img1.png&quot;/&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img3.png&quot;/&gt;
-    &lt;img src=&quot;https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img1.png&quot; width=&quot;75%&quot; /&gt;
-  &lt;/picture&gt;
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img2.png&quot;/&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img4.png&quot;/&gt;
-    &lt;img src=&quot;https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img2.png&quot; width=&quot;75%&quot; /&gt;
-  &lt;/picture&gt;
+```bash
+env UID=$(id -u) GID=$(id -g) docker compose up
+```
 
-## 🙏 特别鸣谢
+On a NAS, clone onto the share you want the data on and use the share owner&#039;s ids:
 
-### 核心团队
+```bash
+cd /volume1/docker
+git clone https://github.com/bilawalsidhu/gods-eye-view.git
+cd gods-eye-view
+env UID=1026 GID=100 docker compose up -d
+```
 
-- [maboloshi](https://github.com/maboloshi) - 项目作者
-- [wyc-26](https://github.com/wyc-26)，[陈生杂物房](https://github.com/TC999) - 项目协作者
-- [52cik](https://github.com/52cik) - 项目原作者
+Keep the `env`: bash treats `UID` as read-only, so a plain `UID=1026` in front of a command is silently ignored. If the container can&#039;t write the checkout, it says so at start. Docker Desktop on macOS and Windows maps ownership for you.
 
-### 贡献者墙
+On SELinux hosts (Fedora, RHEL), compose mounts the checkout with `:z` so the container may read it; Docker may relabel the checkout for container access, which can take a moment on a large checkout. Without that, the start fails with `Cannot find module &#039;/app/scripts/docker-start.mjs&#039;`.
 
-一如既往，感谢我们出色的贡献者❤️！
+Behind a reverse proxy, put your keys in `.env` or pass them as environment variables - Provider Settings refuses proxied requests on purpose - and add the hostname you serve it on, for example `GEV_ALLOWED_HOSTS=globe.example.lan` (see [Sharing an instance](#-sharing-an-instance)).
 
-&lt;!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT--&gt;
-&lt;a href=&quot;https://github.com/maboloshi&quot; title=&quot;沙漠之子&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/7850715?v=4&quot; width=&quot;42;&quot; alt=&quot;沙漠之子&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/52cik&quot; title=&quot;楼教主&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/5033310?v=4&quot; width=&quot;42;&quot; alt=&quot;楼教主&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/TC999&quot; title=&quot;陈生杂物房&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/88823709?v=4&quot; width=&quot;42;&quot; alt=&quot;陈生杂物房&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/wyc-26&quot; title=&quot;wyc-26&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/154735436?v=4&quot; width=&quot;42;&quot; alt=&quot;wyc-26&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/qznfbnj&quot; title=&quot;其智乃反不能及&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/100760086?v=4&quot; width=&quot;42;&quot; alt=&quot;其智乃反不能及&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/PtJade-Ceramic&quot; title=&quot;PtJade Ceramic&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/185668489?v=4&quot; width=&quot;42;&quot; alt=&quot;PtJade Ceramic&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/tangyuan0821&quot; title=&quot;Tang Yuan&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/195516213?v=4&quot; width=&quot;42;&quot; alt=&quot;Tang Yuan&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/LuYifei2011&quot; title=&quot;Lu Yifei&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/118034848?v=4&quot; width=&quot;42;&quot; alt=&quot;Lu Yifei&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/mvanhorn&quot; title=&quot;Matt Van Horn&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/455140?v=4&quot; width=&quot;42;&quot; alt=&quot;Matt Van Horn&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/th-dd&quot; title=&quot;叹号大帝&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/162813557?v=4&quot; width=&quot;42;&quot; alt=&quot;叹号大帝&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/MrBaoboer&quot; title=&quot;Mr.Baoboer&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/272576744?v=4&quot; width=&quot;42;&quot; alt=&quot;Mr.Baoboer&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/pylover7&quot; title=&quot;大叶子&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/56282729?v=4&quot; width=&quot;42;&quot; alt=&quot;大叶子&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/cat-kun&quot; title=&quot;cat-kun&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/8529528?v=4&quot; width=&quot;42;&quot; alt=&quot;cat-kun&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/ChinaGodMan&quot; title=&quot;人民的勤务员&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/96548841?v=4&quot; width=&quot;42;&quot; alt=&quot;人民的勤务员&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/pooneyy&quot; title=&quot;poney&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/85266337?v=4&quot; width=&quot;42;&quot; alt=&quot;poney&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/pecasha&quot; title=&quot;Pecasha&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/9607128?v=4&quot; width=&quot;42;&quot; alt=&quot;Pecasha&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/Kisechan&quot; title=&quot;Kise Platinyl&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/162338950?v=4&quot; width=&quot;42;&quot; alt=&quot;Kise Platinyl&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/wang93wei&quot; title=&quot;AlanWang&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/6371053?v=4&quot; width=&quot;42;&quot; alt=&quot;AlanWang&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/Iamliuxiaozhen&quot; title=&quot;Oliver Lin&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/149680880?v=4&quot; width=&quot;42;&quot; alt=&quot;Oliver Lin&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/SomSamantray&quot; title=&quot;Som Samantray&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/92726151?v=4&quot; width=&quot;42;&quot; alt=&quot;Som Samantray&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/heicks&quot; title=&quot;create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/12287943?v=4&quot; width=&quot;42;&quot; alt=&quot;create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/daydaygo&quot; title=&quot;dayday&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/3986303?v=4&quot; width=&quot;42;&quot; alt=&quot;dayday&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/pangshitong&quot; title=&quot;pangshitong&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/41714457?v=4&quot; width=&quot;42;&quot; alt=&quot;pangshitong&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/saime428&quot; title=&quot;saime428&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/51110572?v=4&quot; width=&quot;42;&quot; alt=&quot;saime428&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/wang4yu6peng13&quot; title=&quot;wang4yu6peng13&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/10207042?v=4&quot; width=&quot;42;&quot; alt=&quot;wang4yu6peng13&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/wmwlwmwl&quot; title=&quot;wmwlwmwl&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/168271477?v=4&quot; width=&quot;42;&quot; alt=&quot;wmwlwmwl&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/xuexb&quot; title=&quot;前端小武&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/3872051?v=4&quot; width=&quot;42;&quot; alt=&quot;前端小武&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/xuezhaju&quot; title=&quot;学渣驹&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/175468713?v=4&quot; width=&quot;42;&quot; alt=&quot;学渣驹&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/3DMXM&quot; title=&quot;小莫&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/28587093?v=4&quot; width=&quot;42;&quot; alt=&quot;小莫&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/YiShengJunn&quot; title=&quot;益生君&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/134821571?v=4&quot; width=&quot;42;&quot; alt=&quot;益生君&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/yrljroli&quot; title=&quot;苓𥤚&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/169890386?v=4&quot; width=&quot;42;&quot; alt=&quot;苓𥤚&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/TNTXZ&quot; title=&quot;TNTXZ&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/119731745?v=4&quot; width=&quot;42;&quot; alt=&quot;TNTXZ&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/shuwn&quot; title=&quot;Shuwn Hsu&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/20023822?v=4&quot; width=&quot;42;&quot; alt=&quot;Shuwn Hsu&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/OctoBored&quot; title=&quot;OctoBored&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/212877535?v=4&quot; width=&quot;42;&quot; alt=&quot;OctoBored&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/NyA1K0&quot; title=&quot;NyA!K0&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/177237971?v=4&quot; width=&quot;42;&quot; alt=&quot;NyA!K0&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/MaydayV&quot; title=&quot;MaydayV&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/61279703?v=4&quot; width=&quot;42;&quot; alt=&quot;MaydayV&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/KS-OTO&quot; title=&quot;KS-OTO&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/6616413?v=4&quot; width=&quot;42;&quot; alt=&quot;KS-OTO&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/swsoyee&quot; title=&quot;InfinityLoop&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/20528423?v=4&quot; width=&quot;42;&quot; alt=&quot;InfinityLoop&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/ImgBotApp&quot; title=&quot;Imgbot&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/31427850?v=4&quot; width=&quot;42;&quot; alt=&quot;Imgbot&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/HeavenlessLing&quot; title=&quot;Heavenless&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/238226870?v=4&quot; width=&quot;42;&quot; alt=&quot;Heavenless&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/BluewhaleYF&quot; title=&quot;Flint Shen&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/206069864?v=4&quot; width=&quot;42;&quot; alt=&quot;Flint Shen&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/neveler&quot; title=&quot;neveler&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/55753029?v=4&quot; width=&quot;42;&quot; alt=&quot;neveler&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/Aethersailor&quot; title=&quot;Aethersailor&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/22260104?v=4&quot; width=&quot;42;&quot; alt=&quot;Aethersailor&quot;/&gt;&lt;/a&gt;
-&lt;!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END--&gt;
+&lt;/details&gt;
 
-&gt; 贡献者列表，由 [GitHub Action][update-contributors-images] 自动生成
+&lt;details&gt;
+&lt;summary&gt;IPv6-only networks, rebuilding, and the test suites&lt;/summary&gt;
 
-&lt;div align=&quot;right&quot;&gt;
+The launcher reads the IPv4 default gateway, so an IPv6-only Docker network
+finds none: it logs `No default gateway; Provider Settings stays loopback-only`
+and the panel refuses every save. Put your keys in `.env` by hand there, or name
+the gateway yourself with `GEV_KEY_SETUP_TRUSTED_PEERS` after reading
+[SECURITY.md](SECURITY.md).
 
-[![][back-to-top]](#readme-top)
+`node_modules` deliberately stays inside the image, so it survives in an
+anonymous volume across restarts: after a `git pull` that changes dependencies,
+recreate it with `docker compose down -v &amp;&amp; docker compose up --build`. The
+image also skips Puppeteer&#039;s Chromium download, which keeps it small but leaves
+`npm run test:track` to the host — `npm run build` and `npm test` run fine in
+the container.
 
-&lt;/div&gt;
+&lt;/details&gt;
 
+### Then power it up — in the app, not in a file
 
-## 📈 项目统计
+Keys are upgrades, not prerequisites. When you want one, click the **POWER UP**
+chip in the bottom-right corner: Provider Settings lists every supported key,
+what it switches on, and where to get it. Paste, hit **SAVE KEYS**, and the app
+restarts itself with the new capability on. Once everything is configured the
+chip reads **POWERED UP** — and if a compact layout hides it, `?setup=1`
+reopens the same panel.
 
-&lt;a href=&quot;https://star-history.dera.page/#maboloshi/github-chinese&amp;Timeline&quot;&gt;
-  &lt;picture&gt;
-    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://star-history.dera.page/svg?repos=maboloshi/github-chinese&amp;type=Timeline&amp;theme=dark&quot; /&gt;
-    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://star-history.dera.page/svg?repos=maboloshi/github-chinese&amp;type=Timeline&quot; /&gt;
-    &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://star-history.dera.page/svg?repos=maboloshi/github-chinese&amp;type=Timeline&quot; width=&quot;75%&quot; /&gt;
-  &lt;/picture&gt;
-&lt;/a&gt;
+- **Where keys land:** Pinokio → the app&#039;s ignored `pinokio/ENVIRONMENT`; a
+  terminal clone → the repo-root `.env`. Either file is made owner-only
+  _before_ a secret is written into it. These are local plaintext files,
+  excluded from Git; the app uses your keys to contact the providers.
+- **Keys you already have stay yours:** values from your shell or the macOS
+  Keychain show as _configured externally_ and are read-only to the panel.
+- **What to get first:** the free [Cesium ion](https://cesium.com/ion) token
+  (eligible personal, non-commercial use; current terms and quotas apply) for
+  photorealistic 3D and world terrain; a Google Maps key only for the
+  billing-enabled, metered route + Google place search; OpenAI when you want to
+  talk to the world. Full map, costs included, in [Keys &amp; Costs](#-api-keys).
 
-![Alt](https://repobeats.axiom.co/api/embed/ae4c378f0e6ec317654ec5c4e8b01218c734cd53.svg &quot;Repobeats analytics image&quot;)
+&lt;details&gt;
+&lt;summary&gt;Older Pinokio versions and credential storage&lt;/summary&gt;
 
-&lt;div align=&quot;right&quot;&gt;
+Do not enter credentials in Pinokio 8.0.40&#039;s native **Configure** panel: that
+release does not save this nested app file correctly, and it logs submitted
+values. Use **POWER UP → Provider Settings** inside GEV instead. The Pinokio
+8.2 announcement fixes installation; it does not establish that this separate
+Configure issue is resolved. On macOS, the Keychain via
+`./scripts/dev-fresh.sh` remains the stronger storage option.
 
-[![][back-to-top]](#readme-top)
+&lt;/details&gt;
 
-&lt;/div&gt;
+The server binds to **localhost** on both paths, and Provider Settings answers
+requests only from your machine. Browser-side keys (Google Maps, Cesium ion)
+must be restricted at their providers — [SECURITY.md](SECURITY.md) shows how,
+and it carries the LAN-sharing rules alongside [Keys &amp; Costs](#-api-keys).
 
-## 🎁 欢迎打赏
-[赞赏列表](https://github.com/maboloshi/maboloshi/issues/1)
-|                                        微信赞赏                                        |                                       支付宝赞赏                                       |
-| :--------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: |
-| &lt;img src=&quot;https://cdn.jsdelivr.net/gh/maboloshi/maboloshi/img/wechat.png?raw=true&quot; alt=&quot;WeChat QRcode&quot; width=200&gt; &lt;br&gt;&lt;small&gt;☕喝点咖啡继续干☕&lt;/small&gt; | &lt;img src=&quot;https://cdn.jsdelivr.net/gh/maboloshi/maboloshi/img/alipay-1.jpg?raw=true&quot; alt=&quot;AliPay QRcode&quot; width=200&gt; &lt;br&gt;&lt;small&gt;🌶️来包辣条吧~🍪&lt;/small&gt; |
+---
 
+## 🕐 The First Five Minutes
 
-&lt;!-- LINK GROUP --&gt;
+Choose a first-run mission, or try these in order. The GIFs show Google Photorealistic 3D; your starting basemap depends on the keys you&#039;ve added.
 
-[back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square
-[github-project-link]: https://github.com/maboloshi/github-chinese &quot;GitHub 中文化插件&quot;
-[github-issues-link]: https://github.com/maboloshi/github-chinese/issues &quot;议题&quot;
-[github-issues-shield]: https://img.shields.io/github/issues/maboloshi/github-chinese?style=flat-square&amp;logo=github&amp;label=Issue
-[github-stars-link]: https://github.com/maboloshi/github-chinese/stargazers &quot;星标&quot;
-[github-stars-shield]: https://img.shields.io/github/stars/maboloshi/github-chinese?style=flat-square&amp;logo=github&amp;label=Star
-[github-forks-link]: https://github.com/maboloshi/github-chinese/network &quot;复刻&quot;
-[github-forks-shield]: https://img.shields.io/github/forks/maboloshi/github-chinese?style=flat-square&amp;logo=github&amp;label=Fork
-[github-license-link]: https://opensource.org/licenses/GPL-3.0  &quot;许可证&quot;
-[github-license-shield]: https://img.shields.io/github/license/maboloshi/github-chinese?style=flat-square&amp;logo=github&amp;label=License
-[greasyFork-link]: https://greasyfork.org/scripts/435208  &quot;GreasyFork 源 - GitHub 中文化插件&quot;
-[greasyFork-shield]: https://img.shields.io/greasyfork/dt/435208?style=flat-square&amp;logo=GreasyFork&amp;label=GreasyFork%20Installs
-[pr-welcome-link]: https://github.com/maboloshi/github-chinese/pulls
-[pr-welcome-shield]: https://img.shields.io/badge/🤯_pr_welcome-%E2%86%92-ffcb47?labelColor=black&amp;style=for-the-badge &quot;欢迎提交 PR&quot;
-[Tampermonkey]: http://tampermonkey.net/ &quot;篡改猴&quot;
-[Violentmonkey]: https://violentmonkey.github.io/ &quot;暴力猴&quot;
-[Macaque]: https://macaque.app/ &quot;猕猴&quot;
-[Stay]: https://apps.apple.com/cn/app/stay-for-safari-%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BC%B4%E4%BE%A3/id1591620171 &quot;Stay&quot;
-[main.user.js]: https://github.com/maboloshi/github-chinese/raw/gh-pages/main.user.js &quot;GitHub 中文化插件 - GitHub 源&quot;
-[main(nju.edu).user.js]:https://mirror.nju.edu.cn/gi
+1. **Light up the sky.** Take the **Live Contacts** mission (or turn on **Flights** yourself) — thousands of live aircraft, gliding on real telemetry, detection mesh already reading the scene. Click one: the camera locks on, a trail draws behind it, and its live telemetry card comes up.
+2. **Take the controls.** Hit **COCKPIT** on your tracked plane and ride it down, switching sensors mid-flight: NVG into Ironbow FLIR.
+
+![Riding with a live aircraft in cockpit view while switching sensor modes](docs/media/06-cockpit-ar.gif)
+
+3. **Drop into a busy airport.** Search one and descend to the taxiways with **3D** aircraft on — grounded contacts, taxi trails, the whole apron working in real time.
+
+![Moving from a full airport overhead down to close taxiway inspection with 3D flight models](docs/media/start-here/airport-ground-traffic-google-3d.gif)
+
+4. **Look through a public camera.** Turn on **Cameras** over Austin, London, California, Finland, or Delaware (live video). The feeds aren&#039;t webcam embeds — they project _into_ the 3D city. Cycle coverage to **VIEWSHED** and every camera draws its estimated coverage volume — where it reaches, and where it goes blind.
+
+![Diving into an Austin intersection with a live public camera projected into the 3D scene](docs/media/03-austin-cctv.gif)
+
+5. **Track something in orbit.** Turn on **Satellites** and click the ISS — you ride along at orbital distance, orbit ring and all.
+
+![Tracking the ISS along its orbital path as it crosses over Ukraine](docs/media/14-iss-over-ukraine.gif)
+
+6. **Switch the optics.** Tap `1`–`7` — CRT, NVG, FLIR — and the whole live planet re-renders through a different sensor.
+
+![Cycling a dense live globe through CRT, FLIR, and NVG in one continuous view](docs/media/01-style-sweep.gif)
+
+7. **Talk to it** _(needs an OpenAI key)_: _&quot;Take me to LAX and select the nearest airborne aircraft.&quot;_
+8. **Come home.** Hit **Reset Globe** — or just say _&quot;zoom out to a globe view.&quot;_
+
+**Keyboard:** `1`–`7` visual styles · `H` HUD · `D` detection · `C` cockpit · `` ` `` frame rate · `Esc` out. Trackpad pinch zooms the globe.
+
+---
+
+## 🛩️ The Cockpit
+
+&gt; Every plane should let you do this.
+
+Real-time cockpit mode, built from live flight data: the camera rides your contact with real terrain holding underneath, all the way down — sensor styles come along for the ride, and **Contacts** keeps the 250 km roster one click away: jump plane to plane and fall straight into the next cockpit.
+
+![Jumping between live aircraft and falling straight into a cockpit view](docs/media/12-switch-aircraft-cockpit.gif)
+
+The cockpit even carries its own briefing strip: nearby live signals, regional headlines, and real local weather — with an opt-in **WX** mode that renders volumetric clouds from actual observations around your aircraft.
+
+![A live military contact ridden through Normal, NVG, and Ironbow FLIR with dense detection](docs/media/start-here/military-cockpit-dense-google-3d.gif)
+
+_Why cockpit mode exists: you&#039;re riding a real aircraft over real terrain — and you get to pick which sensor you see the world through._
+
+---
+
+## 🎙️ Talk to It
+
+The standalone app offers **OpenAI** and **Gemini** in the GEV MIC provider chooser. OpenAI is the initial default; your choice is saved in this browser. To use Gemini, add `GEMINI_API_KEY` in Provider Settings or your local `.env` file, then select Gemini. `GEMINI_LIVE_MODEL` defaults to `gemini-3.8-live`. The permanent key stays on the local server, which issues a constrained, single-use session credential.
+
+Changing provider ends the current conversation. If voice is on, the new provider starts with the same open-mic or push-to-talk mode; a held Space key is not carried over. Gemini uses the same map actions and captions, but has no OpenAI cost meter or MINI tier. When Gemini reports that its session has expired, start voice again for a new conversation. The provider chooser does not change the OpenAI-backed AI HUD summary.
+
+&gt; Voice can use an **OpenAI API key** or, on the same machine, an opt-in signed-in **ChatGPT/Codex OAuth** session. The API-key path remains the default. Selecting ChatGPT OAuth in Provider Settings reuses an existing local sign-in or starts the Codex browser sign-in flow and selects OAuth when it completes. The OpenAI key still drives the **AI HUD summary**: a terse, five-word intelligence-style readout of the current view that regenerates as you move.
+
+The OAuth option is experimental. OpenAI documents ChatGPT plan usage for the [Respon
 
 ... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[xmanrui/dsh-im]]></title>
+            <link>https://github.com/xmanrui/dsh-im</link>
+            <guid>https://github.com/xmanrui/dsh-im</guid>
+            <pubDate>Tue, 27 Oct 2026 00:05:46 GMT</pubDate>
+            <description><![CDATA[通过扫码或机器人凭据把IM机器人接入DeepSeek Harness（支持飞书、微信、钉钉、企业微信、QQ、Slack、Telegram、Discord和WhatsApp）。 Connect IM bots to DeepSeek Harness via QR code or credentials (9 channels).]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/xmanrui/dsh-im">xmanrui/dsh-im</a></h1>
+            <p>通过扫码或机器人凭据把IM机器人接入DeepSeek Harness（支持飞书、微信、钉钉、企业微信、QQ、Slack、Telegram、Discord和WhatsApp）。 Connect IM bots to DeepSeek Harness via QR code or credentials (9 channels).</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 2,616</p>
+            <p>Forks: 262</p>
+            <p>Stars today: 109 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/logo-dsh-im-connecting-readme-3x2.png&quot; alt=&quot;DSH-IM — Connecting DeepSeek Harness&quot; width=&quot;420&quot; height=&quot;280&quot; align=&quot;middle&quot;&gt;&amp;nbsp;&amp;nbsp;
+  &lt;img src=&quot;assets/logo-plugin-phone.png&quot; alt=&quot;DSH-IM phone logo&quot; width=&quot;280&quot; height=&quot;280&quot; align=&quot;middle&quot;&gt;
+&lt;/p&gt;
+
+---
+
+&lt;div align=&quot;center&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;让 DeepSeek Harness 触手可及&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Connecting DeepSeek Harness&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;
+    &lt;img src=&quot;https://dsh-im-random-badge.xmanrui-dsh-im.workers.dev&quot; alt=&quot;滑动变祖器：今天是梁子或今天是梁圣（随机）&quot;&gt;
+    &lt;a href=&quot;LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/license/xmanrui/dsh-im&quot; alt=&quot;MIT 许可证&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;#recognition&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/DeepSeek%20Harness-%E5%AE%98%E6%96%B9%E8%B5%9E%E5%8A%A9-4176E6?style=flat&quot; alt=&quot;DeepSeek Harness 官方赞助&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://deepseek1024.com/&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/deepseek1024-%E4%B8%8B%E8%BD%BD%E9%87%8FTop%2010-D97706?style=flat&quot; alt=&quot;deepseek1024 下载量Top 10&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://dshfind.com/zh/plugins/xmanrui/dsh-im&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/dshfind-%E5%88%86%E7%B1%BB%E7%AC%AC%E4%B8%80-d97706&quot; alt=&quot;dshfind: 分类第一&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://dshfind.com/zh/plugins/xmanrui/dsh-im?ref=badge&quot;&gt;&lt;img src=&quot;https://dshfind.com/api/badge/xmanrui/dsh-im?metric=downloads&amp;amp;lang=zh&quot; alt=&quot;dshfind downloads&quot;&gt;&lt;/a&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/%E5%BE%AE%E4%BF%A1-07C160?logo=wechat&amp;amp;logoColor=white&quot; alt=&quot;微信&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/%E9%A3%9E%E4%B9%A6-3370FF?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTcuMiA0LjVoNy42YzEuMiAwIDIuMS41NSAyLjcgMS41OCAxLjA1IDEuOCAxLjU1IDMuNDUgMS41OCA0Ljk1LTIuMDQtLjYyLTQuMi0uMTUtNi4yMiAxLjQ1QzExLjMgOS43IDkuNDIgNy4wNCA3LjIgNC41WiIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMC44IDEzLjU1YzMuMy0yLjkzIDUuNzItNC4yNCA5LjQ3LTIuNTItMS4yIDEuNDUtMi4yNyA0LjE4LTMuODYgNS40My0xLjY3IDEuMzEtMy45LjUtNS42MS0uNjR2LTIuMjdaIi8%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTQuNCA4LjM1YzMuNDcgMy42MSA3LjI1IDYuMSAxMC4zMyA1LjcgMS4wNi0uMTQgMi4yLS43MiAzLjQtMS43Mi0xLjA0IDIuNjUtMi42IDQuOC01LjA2IDYtMi40NiAxLjItNS41Ni41Mi03LjQyLS43MkEyLjc2IDIuNzYgMCAwIDEgNC40IDE1LjNWOC4zNVoiLz48L3N2Zz4%3D&quot; alt=&quot;飞书&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/%E9%92%89%E9%92%89-1677FF?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTM3LjA1IDIyLjc4M2MtNi43NTgtNS4yMTYtMTQuMzc4LTEyLjEyOC0yMi43My0xOS41MzgtLjY1NS0uNTg1LTEuMjQyLS4zNTQtMS41MzYuNDItMS44OCA0Ljk3My0uMDU4IDkuMzg2IDIuODg5IDExLjkzMnM3LjM2OCA0LjkxMiAxMC4wNTggNi4xNTVjLjEwNS4wNDkuMDEzLjIwMy0uMDkzLjE2My00Ljk1My0yLjE4Mi04LjM5Ny0zLjc2NS0xMy4wNy03LjM2OC0uNDk3LS4zODgtMS4wMS0uMjQyLTEuMDcuNTIxLS4zODQgNC43NDggMi42NTcgOC40ODMgNi4wNTggOS43NDUgMi4xLjc4MSA0LjM5OCAxLjIxMiA2LjUzIDEuNDc0LjEwOS4wMTUuMDg0LjE3OC0uMDI3LjE3OC0yLjc0Ny4wMS02LjA1OC0uNjU0LTguOTM1LTEuNzUxLS42MDYtLjIzMy0uODE4LjI1LS43MjIuNjMzLjQ5MSAyLjAwOCAyLjk3NCA1LjA3NiA2LjkyNiA1LjczYTEyIDEyIDAgMCAwIDIuMjI4LjExNWMuMTY0IDAgLjIwOC4wODkuMTU0LjIxN3EtMi42ODUgNC42LTIuODAzIDQuNzk3Yy0uMDkxLjE1Mi0uMDM2LjI3NS4xNTYuMjc1aDMuNTQzYy4xNjQgMCAuMjY0LjEwNi4xOC4yNDZsLTQuOTU4IDguMTk2Yy0uMTkxLjMyOC4wMzUuNTY1LjM5NS4zMDFzMTUuMjEyLTExLjEzMyAxNS42MzYtMTEuNDQ4Yy4xOTUtLjE0Mi4xNDgtLjMyNy0uMTI0LS4zMjdoLTMuMThjLS4yMDYgMC0uMjUyLS4xNC0uMTExLS4yOC4xNC0uMTQxIDMuNjAyLTMuNTk0IDQuODM3LTQuODg4IDEuMjgzLTEuMzUgMS45MzgtMy44MjUtLjIzMS01LjQ5OCIvPjwvc3ZnPg%3D%3D&quot; alt=&quot;钉钉&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1-3370FF?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuMzUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTE3LjcgMTQuNWMxLjA1LTEuMTIgMS42NS0yLjUyIDEuNjUtNC4wMyAwLTMuODItMy41OC02LjkyLTgtNi45MnMtOCAzLjEtOCA2LjkyIDMuNTggNi45MiA4IDYuOTJjMS4xNyAwIDIuMjgtLjIyIDMuMjgtLjYyIi8%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTE2LjEgMTUuMTVjLjctLjcgMS44My0uNyAyLjUzIDBzLjcgMS44MyAwIDIuNTMtMS44My43LTIuNTMgMC0uNy0xLjgzIDAtMi41M1pNMTkuMjUgMTMuNDVhMS4zNiAxLjM2IDAgMSAxIDEuOTIgMS45MiAxLjM2IDEuMzYgMCAwIDEtMS45Mi0xLjkyWk0xOS41NSAxOC4wNWExLjE2IDEuMTYgMCAxIDEgMS42NCAxLjY0IDEuMTYgMS4xNiAwIDAgMS0xLjY0LTEuNjRaTTE1LjI1IDE4Ljc1YS45Mi45MiAwIDEgMSAxLjMgMS4zLjkyLjkyIDAgMCAxLTEuMy0xLjNaIi8%2BPC9zdmc%2B&quot; alt=&quot;企业微信&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/QQ-1EBAFC?logo=qq&amp;amp;logoColor=white&quot; alt=&quot;QQ&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/Slack-4A154B?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTYgMTVhMiAyIDAgMSAxLTItMmgydjJabTEgMGEyIDIgMCAxIDEgNCAwdjVhMiAyIDAgMSAxLTQgMHYtNVptMi04YTIgMiAwIDEgMSAyLTJ2Mkg5Wm0wIDFhMiAyIDAgMSAxIDAgNEg0YTIgMiAwIDEgMSAwLTRoNVptOCAyYTIgMiAwIDEgMSAyIDJoLTJ2LTJabS0xIDBhMiAyIDAgMSAxLTQgMFY1YTIgMiAwIDEgMSA0IDB2NVptLTIgOGEyIDIgMCAxIDEtMiAydi0yaDJabTAtMWEyIDIgMCAxIDEgMC00aDVhMiAyIDAgMSAxIDAgNGgtNVoiLz48L3N2Zz4%3D&quot; alt=&quot;Slack&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/Telegram-26A5E4?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTIzLjk1IDQuNTdjLS4zNi0xLjQ1LTEuNDMtMS43Ni0yLjgyLTEuMjRMMS41IDEwLjljLTEuMzQuNTItMS4zMiAxLjI3LS4yNCAxLjZsNS4wMyAxLjU3IDExLjY2LTcuMzZjLjU1LS4zNCAxLjA1LS4xNi42NC4yMWwtOS40NCA4LjUyLS4zNyA1LjEyYy41NCAwIC43OC0uMjQgMS4wOC0uNTNsMi41OS0yLjUxIDUuMzggMy45N2MuOTkuNTUgMS43LjI3IDEuOTUtLjkyTDIzLjk1IDQuNTdaIi8%2BPC9zdmc%2B&quot; alt=&quot;Telegram&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/Discord-5865F2?logo=discord&amp;amp;logoColor=white&quot; alt=&quot;Discord&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/WhatsApp-25D366?logo=whatsapp&amp;amp;logoColor=white&quot; alt=&quot;WhatsApp&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/iMessage-34C759?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTEyIDNDNS45MjUgMyAxIDcuMDI5IDEgMTJjMCAyLjc1MSAxLjUxNCA1LjIxNCAzLjkwMSA2Ljg2NS4yOTEgMS41MjYtLjE3NCAyLjY0OC0xLjI1OCAzLjY0IDIuMDQ3LjAyNSAzLjQ0Mi0uNTA5IDQuNjQzLTEuNThBMTMuMiAxMy4yIDAgMCAwIDEyIDIxYzYuMDc1IDAgMTEtNC4wMjkgMTEtOVMxOC4wNzUgMyAxMiAzWiIvPjwvc3ZnPg%3D%3D&quot; alt=&quot;iMessage&quot;&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+    &lt;a href=&quot;https://trendshift.io/repositories/169119#achievements&quot;&gt;
+      &lt;img src=&quot;https://trendshift.io/api/badge/repositories/169119&quot; alt=&quot;DSH-IM — GitHub Trending JavaScript 日榜第 7 名&quot; width=&quot;48%&quot; align=&quot;middle&quot;&gt;
+    &lt;/a&gt;&amp;nbsp;
+    &lt;a href=&quot;https://trendshift.io/repositories/169119#achievements&quot;&gt;
+      &lt;img src=&quot;https://trendshift.io/api/badge/trendshift/repositories/169119/daily?language=JavaScript&quot; alt=&quot;DSH-IM — Trendshift JavaScript 日榜第 3 名&quot; width=&quot;48%&quot; align=&quot;middle&quot;&gt;
+    &lt;/a&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;简体中文&lt;/strong&gt; · &lt;a href=&quot;README.en.md&quot;&gt;English&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+---
+
+## ❤️ 赞助商
+
+&lt;table width=&quot;100%&quot;&gt;
+  &lt;tr&gt;
+    &lt;td width=&quot;180&quot; align=&quot;center&quot; valign=&quot;middle&quot;&gt;
+      &lt;a href=&quot;https://88api.ai/sign-up?aff=lJoL&quot;&gt;&lt;img src=&quot;assets/sponsors/88api.jpg&quot; alt=&quot;88API Token聚合平台&quot; width=&quot;150&quot;&gt;&lt;/a&gt;
+    &lt;/td&gt;
+    &lt;td valign=&quot;middle&quot;&gt;
+      &lt;a href=&quot;https://88api.ai/sign-up?aff=lJoL&quot;&gt;&lt;strong&gt;88API Token聚合平台&lt;/strong&gt;&lt;/a&gt;赞助了本项目！88API 是一家由香港企业运营并且主要面向开发者、创作者与 AI 应用用户的一站式多模型 API 平台，通过统一接口接入文本、图片、语音和视频模型，覆盖 AI 编程、智能翻译、内容创作、配音、图像生成、视频生成等常见工作流。可提供高质量的折扣Deepseek官转算力和自有B300集群自部署Deepseek算力；支持国际主流付款方式，可提供发票，提供企业级稳定服务。&lt;a href=&quot;https://88api.ai/sign-up?aff=lJoL&quot;&gt;&lt;strong&gt;通过此链接注册可以获取专属赠送额度！&lt;/strong&gt;&lt;/a&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td width=&quot;180&quot; align=&quot;center&quot; valign=&quot;middle&quot;&gt;
+      &lt;a id=&quot;recognition&quot;&gt;&lt;/a&gt;
+      &lt;a href=&quot;https://github.com/deepseek-ai/deepseek-harness&quot;&gt;&lt;strong&gt;DeepSeek&lt;br&gt;Harness&lt;/strong&gt;&lt;/a&gt;
+    &lt;/td&gt;
+    &lt;td valign=&quot;middle&quot;&gt;
+      &lt;strong&gt;DSH-IM 已获得 &lt;a href=&quot;https://github.com/deepseek-ai/deepseek-harness&quot;&gt;DeepSeek Harness&lt;/a&gt; 官方 Token 赞助&lt;/strong&gt;。感谢官方对本项目的支持！
+      &lt;p&gt;本项目由社区开发者独立开发与维护。&lt;/p&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+---
+
+&gt; [!IMPORTANT]
+&gt; **安装请认准完整包名：`@xmanrui/dsh-im`**
+&gt;
+&gt; 为避免名称混淆，在插件市场搜索、插件安装框中填写或使用命令安装时，请复制下方完整包名。
+&gt;
+&gt; ```text
+&gt; @xmanrui/dsh-im
+&gt; ```
+&gt;
+&gt; 选择对应的一条命令：**Desktop** 在内置终端执行，**Web** 在启动当前 Harness 的终端执行。
+&gt;
+&gt; ```sh
+&gt; dsh plugin --profile desktop add -w @xmanrui/dsh-im
+&gt; ```
+&gt;
+&gt; ```sh
+&gt; dsh plugin --profile web add -w @xmanrui/dsh-im
+&gt; ```
+&gt;
+&gt; 安装后重启 Desktop 或 `dsh web`，Web 刷新浏览器，再打开「设置 → IM机器人」。
+
+## 简介
+
+通过扫码、App Manifest 或已有机器人凭据把 IM 机器人接入 DeepSeek Harness，并让本机 Harness 主动连接公网 AI Office。一个插件、一个设置入口，统一管理内置 IM 渠道和 AI Office Connector。**每个 IM 渠道都支持接入多个机器人**，各机器人的连接状态、工作区、模型和会话绑定彼此独立；iMessage 是本机 Messages.app 身份接入的例外，详见[iMessage 渠道说明](docs/imessage.md)。
+
+Connect IM bots to DeepSeek Harness by scanning a QR code, using an App Manifest, or entering existing bot credentials, and let the local Harness connect outward to a public AI Office. One plugin and one settings entry manage the built-in IM channels and the AI Office Connector.
+
+## 界面
+
+![IM 机器人页面](docs/images/imbot.png)
+
+&lt;img src=&quot;docs/images/Context_enhancement.png&quot; alt=&quot;上下文增强页面&quot; width=&quot;49%&quot;&gt; &lt;img src=&quot;docs/images/access_mode.png&quot; alt=&quot;访问模式页面&quot; width=&quot;49%&quot;&gt;
+
+## 当前内置渠道
+
+| 渠道 | 接入方式 | 消息与回复 |
+| --- | --- | --- |
+| 飞书 | 扫码创建机器人，或使用 App ID + App Secret 手动绑定 | 长连接接收消息；可选择飞书原生“实时直播”、单张实时过程卡或逐步消息展示任务过程；每机器人可开启语音交互（可选渠道能力，默认关闭）：语音消息转写为文字走正常流程，答案同时以语音回复 |
+| 微信 | 使用微信扫码绑定机器人 | 腾讯 iLink 长轮询收发消息；等待 Harness 回答时显示“正在输入”，最终回复按 1,800 字符分段发送 |
+| 钉钉 | 扫码创建机器人，或使用 Client ID + Client Secret 手动绑定 | 钉钉 Stream 长连接；通过 AI Card 流式显示回答 |
+| 企业微信 | 使用企业微信 App 扫码创建智能机器人，或使用 Bot ID + Secret 手动绑定 | 官方 WebSocket 长连接；原生显示“正在思考中”、工具执行进度和流式回答 |
+| 企业微信应用 | 在企业微信管理后台创建自建应用，填写企业 ID、AgentId、Secret、Token、EncodingAESKey（可选代理地址） | HTTP 回调接收；私聊支持流式回复（微信端不支持时自动改为分段文本），支持图片输入与结果文件回传；成员的微信关注该企业的微信插件后可在微信中直接使用 |
+| QQ | 使用手机 QQ 扫码创建机器人，或使用 AppID + AppSecret 手动绑定 | WebSocket 长连接；私聊显示“正在输入”并以单条 Markdown 回复，群聊被 @ 后只发送最终答案 |
+| Slack | 使用预置 App Manifest 创建应用，再填写 Bot Token（`xoxb-`）和 App Token（`xapp-`） | Socket Mode 长连接；私聊直接回复，频道被 @ 后响应，优先使用官方流式消息 API |
+| Telegram | 使用 @BotFather 生成的 Bot Token | Bot API 长轮询；默认私聊直接响应、群聊被提及或回复时响应，也可为每个机器人独立启用私聊白名单安全模式；关闭思考过程留痕时，私聊、群聊和 Topic 均通过占位消息编辑展示进度并原位完成富文本回复，避免 Android 私聊 Draft 占用发送入口，平台不支持富文本时回退为普通文字 |
+| Discord | 使用 Developer Portal 生成的 Bot Token | Gateway v10 长连接；私信直接回复；服务器文字/公告频道首次 @ 后创建原生 Thread，后续在线程中无需重复 @，并通过编辑消息流式显示回答 |
+| WhatsApp | 使用手机 WhatsApp 扫码关联设备 | WhatsApp Web 长连接；默认仅响应账号自聊，也可切换到指定联系人或开放响应模式；群聊仅在被 @ 或回复机器人消息时触发，主人普通发言不触发；显示已读和“正在输入”，通过每秒编辑同一条消息显示工具进度和逐步生成的回答，长回复自动分段，编辑失败时回退为完整文字回复 |
+| iMessage | 在 macOS Messages.app 中登录 iMessage，并按[渠道说明](docs/imessage.md)授予本机权限 | 使用 macOS 原生 Messages.app 收发文本私聊；不依赖 BlueBubbles；每个 macOS 用户账户使用一个本机 iMessage 身份 |
+| Matrix（实验功能） | 填写 homeserver 地址，并提供访问令牌，或用户 ID 与密码 | CS API 长轮询接收；私聊直接回复，房间被 @ 后响应，支持线程回复、HTML 白名单富文本与编辑式流式输出，可回传图片和结果文件；包含实验性房间消息加解密，限制见下文 |
+
+WhatsApp 会保存最近 2,000 条机器人群消息的标识，重启后仍可通过引用这些消息唤醒机器人。升级前未记录或已超出保留范围的历史消息不会作为唤醒依据；请 @ 机器人或回复其新消息。
+
+Matrix 加密目前仅供非敏感测试：默认 optional 模式尝试启动加密引擎，失败时跳过收到的加密消息；required 模式在引擎启动失败时拒绝连接。尚未实现交互式设备验证、密钥备份、SSSS 或媒体附件内容加密，本次发布未验证真实 homeserver／Element 互通，请勿将其视为完整的端到端保密保障。
+
+企业微信自建应用的回调基址、代理地址和企业可信 IP 配置，见[企业微信自建应用接入说明](docs/企业微信自建应用接入.md)。
+
+其他 IM 平台可继续按同一渠道适配器结构接入。
+
+扫码新建的飞书和 QQ 机器人，默认允许所有用户在私聊和群聊中聊天及执行内置命令；可在机器人的访问设置中调整白名单和命令权限。已有机器人的访问设置保持不变。
+
+飞书群聊默认接收其他机器人明确 @ 当前机器人的消息，无需额外开关；未 @、仅 @ 其他成员或全体、机器人自身发送的消息和机器人私聊消息仍会忽略，即使群聊响应方式设为“全部”。消息仍受群聊白名单与命令权限约束。飞书应用需要租户权限 `im:message.group_at_msg.include_bot:readonly`（“获取群组中其他机器人和用户@当前机器人的消息”）；扫码新建应用会默认申请，已有或手动绑定的应用可点击“补全权限”或私聊执行 `/repair`，扫码并完成飞书要求的发布审批后生效。详见[飞书接收消息权限说明](https://open.feishu.cn/document/server-docs/im-v1/message/events/receive)。
+
+支持图片输入的内置渠道均支持把 JPEG、PNG、WebP 图片，以及以图片文件方式发送的 GIF，连同可选文字说明发送给 Harness；默认每张原图最多接收 30 MB、每条消息最多 20 张；原图保存到会话工作区，模型副本自动缩放或压缩到单张 5 MB、总计 20 MB 以内，仍超限或模型不支持图片时按文件交给模型处理。这四项限制可在「通用设置 → 附件 → 图片输入」调整，对后续消息生效；原图沿用附件保留时长。调高模型输入上限会增加请求体积、处理耗时和模型成本，也仍受平台及宿主限制。iMessage 首版仅支持文本私聊，不包含在图片能力中。飞书下载用户消息中的图片或文件需要租户权限 `im:message:readonly`，确认页将其显示为“获取单聊、群组消息”；飞书目前没有为该下载接口提供仅限图片的更窄权限。扫码新建的应用会默认申请；已有或手动绑定的应用可私聊机器人执行 `/repair`，或在「IM机器人」设置页点击“补全权限”，扫码增量补全该权限、上传机器人图片或文件所需的 `im:resource`、原生命令面板所需的 `application:app_slash_command:read` / `write`，以及卡片回调。
+
+### 群聊天记录与群文件
+
+WhatsApp、飞书、Telegram、Discord、Slack、QQ 支持自动保存实际收到的群消息和附件，包括平台允许接收的未 @ 消息。采集默认开启，保存本身不触发模型回复；在群内 @ 机器人即可按需查询聊天记录、总结讨论或读取文件。
+
+记录按群共享，独立于机器人、AI 会话和工作区，默认滚动保留 **14 天**。可在 **DSH 设置 → IM机器人 → 齿轮「通用设置」→ 通用** 修改保留天数。只保存实际接收的内容，不回填完整历史；QQ 当前按应用来源隔离，Discord 线程独立保存。
+
+详见[群消息记录与群文件使用指南](docs/group-history.md)：包含六渠道权限与设置步骤、查询示例、存储位置、文件限制和排查方法。WhatsApp、飞书、QQ 已完成文字及文本附件实测；Telegram 已完成文字实测，文件暂未验证；Discord、Slack 待真实群验收。
+
+### 超时后的结果补发
+
+已接入的 IM 渠道共用超时任务跟踪：收到“等待模型回复超时”后，插件会继续检查原任务，完成后向原聊天或线程补发最终文字；插件重启或连接恢复后也会继续检查。`/stop` 只停止当前聊天提交的对应回合，切换会话后不再向该聊天补发旧会话的结果。无需新增设置，正常回复流程保持原样。
+
+补发仍受渠道发送权限和配额限制。明确发送失败最多尝试三次；发送结果不确定时保留记录并停止自动重试，避免重复消息。此机制恢复文字结果和终态通知，不重放问题、审批或文件工具调用。详见[延迟交付说明](docs/deferred-delivery.md)。
+
+### 结果文件与图片回传
+
+支持文件回传的内置渠道均可把 Harness 可读取的文件作为渠道原生附件回传。已有文件和当前任务新生成的文件都可以直接发送；该能力对所有已连接机器人默认可用，无需开关或机器人白名单，原有文字、图片、流式回复、命令和会话行为保持不变。iMessage 首版不支持文件或附件回传。
+
+模型调用文件回传工具后，插件把指定文件交给当前渠道的原生接口。图片会优先以原生图片消息呈现；渠道不支持或明确拒绝图片发送时自动回退为文件附件，发送结果不确定时不会补发文件造成重复消息。插件不额外设置文件来源、创建时间、工作区边界、扩展名、内容、数量、大小或有效期规则；文件只需真实存在且可读取。渠道平台仍可能依据自身权限、配额、文件能力或账号等级拒绝发送，插件会按平台返回结果提示。
+
+| 渠道 | 平台要求 |
+| --- | --- |
+| 微信 | 当前绑定协议和会话需支持原生文件消息，实际可发送范围以微信接口返回为准。 |
+| 飞书 | 飞书文件上传接口要求文件非空且不超过平台 30 MB；应用需有租户权限 `im:resource`（“读取与上传图片或文件资源”）。内置扫码流程新建应用时默认申请该权限；已有或手动绑定的应用可通过“补全权限”或私聊 `/repair` 增量补全并完成飞书要求的审批。飞书开发者后台当前没有单独的 `im:resource:upload` 权限。 |
+| 钉钉 | 应用需开通 `qyapi_base`，机器人需具备文件消息能力；实际格式和大小以当前 OAPI 与机器人能力返回为准。 |
+| 企业微信 | 应用需具备素材上传和文件消息能力，实际可发送范围以企业微信接口返回为准。 |
+| QQ | 机器人需具备文件消息能力，并受 QQ 当日文件上传配额约束；额度耗尽时会明确提示稍后重试。 |
+| Slack | Bot Token 需有 `files:read`、`files:write` 和 `reactions:write`；实际文件大小上限由 Workspace 当前策略决定。已有 App 新增或变更 Scope 后，必须重新授权/安装 App 并重新连接机器人。 |
+| Telegram | 机器人必须能在当前聊天发送文档，实际可发送范围以 Bot API 返回为准。 |
+| Discord | Developer Portal 的 Bot 设置中需启用 **Message Content Intent**；机器人需有 **Send Messages**、**Create Public Threads**、**Send Messages in Threads** 和 **Read Message History** 权限；发送结果文件还需 **Attach Files**。实际附件额度由当前账号与服务器能力决定。 |
+| WhatsApp | 当前绑定会话需支持 Document Message，实际可发送范围以 WhatsApp/Baileys 返回为准。 |
+| Matrix | homeserver 需允许媒体上传，单文件实际上限由其媒体仓库配置决定；被拒绝时插件会明确提示检查媒体大小限制与上传权限。 |
+
+## AI Office Connector
+
+[查看 AI Office Connector 说明](docs/AI-Office-Connector.md)
+
+## 安装
+
+推荐从 npm 安装已发布的稳定版本 **`@xmanrui/dsh-im`**。请按实际使用的运行方式选择对应命令：
+
+**DSH Desktop**：在当前 Desktop 的内置终端中执行：
+
+```sh
+dsh plugin --profile desktop add -w @xmanrui/dsh-im
+```
+
+安装完成后重启 DSH Desktop。
+
+**DSH Web**：在启动当前 Harness 的终端环境中执行：
+
+```sh
+dsh plugin --profile web add -w @xmanrui/dsh-im
+```
+
+安装完成后重启 `dsh web`，并刷新浏览器。
+
+重启后打开「设置 → IM机器人」。IM机器人使用 `order: 21`，尽量排在一级设置菜单的「Agent 预设」之后；插件页面不再保留旧入口。从旧版升级不会改变已有机器人、凭据、工作区、Agent Preset 或会话绑定。
+
+本机 `dsh web` 和 DSH Desktop 默认直接复用当前 Host 的内部服务：通过 Typert Gateway 调用 Session Controller 和 Workspace Controller，不需要配置 Harness 地址，也不绕行本机 HTTP 端口。Desktop 的兼容模式、扩展窗口和增强模式均无需开启“允许在浏览器中打开”或局域网访问。渠道配置中显式设置的 `harnessBaseUrl` 仅保留给旧版远程 HTTP/WebSocket Harness；内部调用失败不会自动改连其他 Host。
+
+如需试用尚未发布到 npm 的最新代码，可以改用 GitHub 源安装器：
+
+```sh
+npx -y github:xmanrui/dsh-im install
+```
+
+GitHub 源安装会直接拉取并构建 Git 依赖；pnpm 10 及以上版本可能要求先在 profile 的 `pnpm-workspace.yaml` 中允许该依赖执行构建脚本。普通用户建议优先使用 npm 稳定版。
+
+安装后，在对应渠道页面按照内置引导完成扫码或凭据配置。所有 Secret 和 Token 只提交给本机 Harness Host，并写入受保护的凭据存储；状态接口和机器人列表不会回传这些凭据。
+
+如果本机必须通过正向代理访问飞书，请在启动 `dsh web` 前把 `HTTPS_PROXY` 设置为包含协议的 HTTP 代理 URL（例如 `http://proxy:8080`；也支持小写 `https_proxy`，并兼容使用 `HTTP_PROXY` 作为回退），修改后重启 Host。飞书注册和凭据验证会复用 SDK 的代理感知 HTTP 客户端，消息长连接会显式通过这个代理建立 WebSocket；长连接目前不读取 `ALL_PROXY` 或 `NO_PROXY`。
+
+如果本机无法直连 Telegram Bot API，请使用 Node.js 22.21 或更高版本，并在启动 `dsh web` 前启用 Node 的环境变量代理支持：
+
+```sh
+NODE_USE_ENV_PROXY=1 \
+HTTPS_PROXY=http://proxy:8080 \
+HTTP_PROXY=http://proxy:8080 \
+NO_PROXY=localhost,127.0.0.1 \
+dsh web
+```
+
+代理地址按本机网络环境填写；修改代理后需要重启 Host。绑定 Telegram Bot Token 时，如果页面提示无法访问 Bot API，请优先检查代理地址、Node.js 版本和 `NO_PROXY` 配置。
+
+| 默认行为 | 说明 |
+| --- | --- |
+| 机器人别名 | 点击机器人名称旁的铅笔设置别名，保存后立即显示，无需重启或重连。原名称始终保留，可点击“恢复原名称”或清空别名后保存；仅影响本机设置页中的显示名称。 |
+| 机器人工作区 | 每个机器人独立保存工作区。新机器人默认使用 `$DSH_HOME/im`（未设置时为 `~/.dsh/im`），机器人或对话实际选用该目录时自动创建；全部使用其他工作区时，不会仅因启动插件而创建该目录。新会话显示在「未分组」；之后可在机器人卡片中修改。显式配置的 `workspace` 优先，`dshHome` 可覆盖环境变量 `DSH_HOME`。 |
+| 模型 | 每个 IM 渠道的每个机器人都可在工作区下方独立选择模型；未选择时跟随 Host 默认。切换只影响之后新建的会话；当前聊天先发送 `/new`，再发送普通消息才会使用新选择。 |
+| 思考强度 | 在模型下方显式选择该模型支持的思考强度，或跟随模型默认。档位、说明和默认值来自 DSH；切换模型后恢复新模型默认强度。每个机器人独立保存，只影响之后新建的会话。 |
+| Agent Preset | 每个机器人可在设置页卡片中选择 Agent Preset。未选择时跟随 Host 的 `agent-presets.default`；渠道级 `config.agentPreset` 只作为该渠道之后新接入机器人的默认值。切换不会修改或清空已有会话；若当前聊天已有会话，需先发送 `/new`，再发送一条普通消息，才会按新选择创建会话。 |
+| 上下文增强 | 从机器人卡片打开设置，分别决定群聊、私聊是否增强；两个开关默认均关闭，旧机器人升级后也不会自动开启。 |
+| 飞书指令面板 | 每个飞书机器人可在「更多设置 → 指令面板」里决定聊天输入框打 `/` 时列出哪些指令、按什么顺序：「跟随默认」使用插件自带的 31 条清单（随插件版本更新），「自定义」则恰好是所选指令和所选顺序。隐藏只是不在候选里出现，手动输入同一命令照旧可用；清单之外手工添加的指令不会被删除。配好一个机器人后，可用「保存并同步到其他机器人」一次写到该渠道的其他所有机器人（会覆盖它们各自的面板设置；离线机器人下次启动时生效）。保存后由机器人后台同步，指令较多时需要一点时间。 |
+| 飞书被 @ 时开话题 | 默认开启。在群聊或私聊里 @机器人 提问时，机器人会在那条消息下新建一条飞书话题，问答都落在话题内；该话题是 dsh 会话列表里一条独立会话，话题里的后续消息属于同一个会话。只发一个 @机器人（打开菜单）不会新建话题，没有 @机器人 的消息仍留在原会话。可在机器人卡片的「群聊」设置里关闭，关闭后群聊与私聊都恢复平铺回复。 |
+| 飞书任务过程展示 | 每个飞书机器人可选择不显示过程、实时直播、实时过程卡或逐步消息。实时直播使用飞书原生思考过程展示推理、工具调用和结果，最终答案单独发送；需要飞书 PC 7.70、移动端 7.74 或更新版本。飞书原生思考过程目前无法发到话题内，因此话题中的回合会改用实时过程卡，过程与答案都留在话题里。 |
+| 会话渠道标识 | 本机 Host 的 IM 渠道与 AI Office 会话自动标记来源。Web 会话列表和搜索结果将「微信 ·」等前缀显示为渠道 Logo；保留 DSH 原有的自动标题生成与更新。已有会话在下次加载时补上。 |
+
+渠道前缀在 DSH 生成标题后追加，完整保留原始标题与自动／手动来源，不会将自动标题锁定为手动命名，也不会额外调用模型。重复生成、刷新或重启不会叠加前缀；真实的手动命名仍遵循 DSH 原有的锁定规则。此功能由当前 Host 的会话事件驱动，显式连接远程 `harnessBaseUrl` 时需在目标 Host 上安装该插件。
+
+Logo 由 dsh-im 的浏览器适配显示，无需修改 DSH。适配保留原始文字节点和点击、菜单、拖拽操作；复制、读屏及其他界面仍保留文字渠道名。DSH 页面结构不匹配、浏览器不支持或图标加载失败时，自动保留文字前缀；插件卸载后恢复原始显示。
+
+### 排队与插话
+
+在机器人卡片中打开 **「更多设置 → 通用」**，选择 **「任务运行时的新消息处理方式」**，然后保存。每个机器人独立设置，覆盖全部 13 个聊天渠道。
+
+- **排队（默认）**：当前任务结束后再处理新消息，需要等待时会回复排队提示。
+- **插话**：任务运行期间，新的普通纯文字作为补充指令加入当前任务，Agent 在下一步读取，并回复提交提示。无需每次输入 `/steer`。
+
+没有运行中的任务时正常开始新任务；图片、文件、语音和带引用的消息继续按原有方式处理。原有群聊提及规则和权限限制保留，自动插话需要具备 `/steer` 权限。两种模式均可使用 `/steer 补充内容` 手动插话。
+
+保存后立即影响新收到的消息，已排队的消息不会转为插话。AI Office 当前没有普通聊天消息追加入口，此设置不适用。
+
+### 主动投递
+
+支持主动投递的 IM 渠道可以使用稳定的 `botId + targetId` 主动发送文字消息。机器人设置页支持从已聊会话选择或手工填写目标、保存前测试当前路由，以及复制调用参数；HTTP POST、同 Host 插件和 Connection RPC 共用同一目标配置与投递核心。
+
+已保存的私聊目标还可以开启默认关闭的「会话双向同步」。开启后，DSH Web／CLI 在该私聊当前 Session 中发送的用户文字和最终助手文字会同步回私聊，定时任务成功完成后的最终助手文字也会同步；IM 侧原有提问与 `/steer` 不会重复。开关自动跟随 `/session`、`/new` 和工作区切换后的当前 Session。首版仅支持当前 Host 的私聊文字；群聊、Topic、Thread 与显式远程 `harnessBaseUrl` 不支持。
+
+同步回答按渠道能力呈现 Markdown：复用飞书卡片、Telegram 富文本、QQ／钉钉／Slack 的格式消息，以及企业微信机器人、Matrix、Discord 的已有能力；WhatsApp 适配常用格式，企业微信应用和微信保留完整文本。格式降级与长消息处理沿用或复用渠道机制，发送结果未知时不新增自动重发。
+
+设置步骤、各渠道字段、完整调用示例、管理端点、错误码与排错说明请查看[《主动投递使用指南》](PROACTIVE_DELIVERY.md)（[English](PROACTIVE_DELIVERY.en.md)）。
+
+### 客户端面板接入
+
+支持全局面板的 DSH 在左侧边栏提供「IM机器人」，沿用插件页的双对话框造型，以单色细线图标显示，点击打开完整 IM 管理面板。原「设置 → IM机器人」和插件详情页的「打开 IM机器人」入口保留。宿主也可通过可选客户端服务 `dshImClient` 嵌入面板；接口、兼容要求与接入示例见[客户端接入文档](docs/client-integration.md)。
+
+### 上下文增强
+
+[查看上下文增强说明](docs/上下文增强.md)
+
+### 访问模式
+
+[查看访问模式说明](docs/访问模式.md)
+
+## 检查与安装更新
+
+[查看检查与安装更新说明](docs/检查与安装更新.md)
+
+## 机器人命令
+
+| 命令 | 作用 |
+| --- | --- |
+| `/help` | 显示机器人支持的命令和用法。 |
+| `/menu`、`/m` | 飞书、钉钉和企业微信打开交互菜单。钉钉的会话、工作区、预设和模型按两列排列，选择后立即生效，并在原卡片更新结果。企微下拉选择后点击应用；菜单仅通过 `/m` 或 `/menu` 手动打开，进入单聊时不自动展示，按钮执行后仅反馈结果，不自动补发菜单。菜单还提供新会话、停止、压缩、清空上下文、状态与帮助等按钮。 |
+| QQ `/menu`、`/m` | 打开按钮与数字菜单：会话选择、工作区、模式／预设、模型、新会话、会话列表、停止、压缩、补充指令、归档显示切换、状态和帮助。列表支持分页；按钮不可用时回复数字选择。菜单按聊天和操作者隔离，15 分钟或重启后失效；普通消息退出数字选择，审批、提问和批量输入保留原有优先级。 |
+| `/new` | 解除当前聊天的会话绑定，让下一条普通消息开启全新 Harness 会话。 |
+| `/status` | 检查当前机器人与 DeepSeek Harness 的连接状态。 |
+| `/version` | 查看当前运行的 dsh-im 插件版本。 |
+| `/models` | 按序号列出当前配置的全部可用模型。 |
+| `/model` | 查看当前聊天绑定会话正在使用的模型和推理等级。 |
+| `/model &lt;序号或 Provider/模型ID&gt; [推理等级ID]` | 切换当前会话模型，并可同时指定目标模型支持的推理等级。 |
+| `/reasoninglist`、`/reasonings` | 等价命令；列出当前模型支持的推理等级。 |
+| `/reasoning` | 查看当前会话的模型和推理等级。 |
+| `/reasoning &lt;序号或等级ID&gt;` | 切换当前模型的推理等级。 |
+| `/reasoning --default` | 恢复当前模型的默认推理等级。 |
+| `/presetlist`、`/presets` | 两个等价命令；按序号列出 Host 当前可用的 Agent Preset，并标记 Host 默认项和当前机器人的选择。 |
+| `/preset` | 查看当前机器人的新会话 Agent Preset 设置。 |
+| `/preset &lt;序号或 Preset ID&gt;` | 设置当前机器人的 Agent Preset；纯数字 ID 使用 `/preset id:&lt;ID&gt;`。 |
+| `/preset --default` | 清除当前机器人的显式选择，让后续新 Session 跟随 Host 默认。 |
+| `/permis
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[OpenWhispr/openwhispr]]></title>
+            <link>https://github.com/OpenWhispr/openwhispr</link>
+            <guid>https://github.com/OpenWhispr/openwhispr</guid>
+            <pubDate>Tue, 27 Oct 2026 00:05:45 GMT</pubDate>
+            <description><![CDATA[Voice-to-text dictation app with local (Nvidia Parakeet/Whisper) and cloud models (BYOK). Privacy-first and available cross-platform.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/OpenWhispr/openwhispr">OpenWhispr/openwhispr</a></h1>
+            <p>Voice-to-text dictation app with local (Nvidia Parakeet/Whisper) and cloud models (BYOK). Privacy-first and available cross-platform.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 10,058</p>
+            <p>Forks: 1,287</p>
+            <p>Stars today: 74 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;src/assets/logo.svg&quot; alt=&quot;OpenWhispr&quot; width=&quot;120&quot; /&gt;
+&lt;/p&gt;
+
+&lt;h1 align=&quot;center&quot;&gt;OpenWhispr&lt;/h1&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://github.com/OpenWhispr/openwhispr/blob/main/LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/license/OpenWhispr/openwhispr?style=flat&quot; alt=&quot;License&quot; /&gt;&lt;/a&gt;
+  &lt;img src=&quot;https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-lightgrey?style=flat&quot; alt=&quot;Platform&quot; /&gt;
+  &lt;a href=&quot;https://github.com/OpenWhispr/openwhispr/releases/latest&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/v/release/OpenWhispr/openwhispr?style=flat&amp;sort=semver&quot; alt=&quot;GitHub release&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/OpenWhispr/openwhispr/releases&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/downloads/OpenWhispr/openwhispr/total?style=flat&amp;color=blue&quot; alt=&quot;Downloads&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/OpenWhispr/openwhispr/stargazers&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/stars/OpenWhispr/openwhispr?style=flat&quot; alt=&quot;GitHub stars&quot; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  The open-source and free alternative to WisprFlow and Granola.&lt;br/&gt;
+  Privacy-first voice-to-text dictation with AI agents, meeting transcription, and notes. Cross-platform for macOS, Windows, and Linux.
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://openwhispr.com&quot;&gt;Website&lt;/a&gt; &amp;middot;
+  &lt;a href=&quot;https://docs.openwhispr.com&quot;&gt;Docs&lt;/a&gt; &amp;middot;
+  &lt;a href=&quot;https://github.com/OpenWhispr/openwhispr/releases/latest&quot;&gt;Download&lt;/a&gt; &amp;middot;
+  &lt;a href=&quot;https://docs.openwhispr.com/api/overview&quot;&gt;API&lt;/a&gt; &amp;middot;
+  &lt;a href=&quot;https://github.com/OpenWhispr/openwhispr/blob/main/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;
+&lt;/p&gt;
+
+---
+
+OpenWhispr turns your voice into text, notes, and actions from your desktop. Press a hotkey, speak, and your words appear at your cursor. Choose between fully private offline transcription with local speech-to-text models like Orukeet, Whisper, NVIDIA Parakeet, and Cohere Transcribe — where your audio never leaves your device — or cloud processing for speed. No data collection, no telemetry, fully open source.
+
+## Download
+
+| Platform              | Download                                                                                                                                                                                                                                                                                  |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| macOS (Apple Silicon) | [`.dmg`](https://github.com/OpenWhispr/openwhispr/releases/latest)                                                                                                                                                                                                                        |
+| macOS (Intel) \*      | [`.dmg`](https://github.com/OpenWhispr/openwhispr/releases/latest)                                                                                                                                                                                                                        |
+| Windows               | [`.exe`](https://github.com/OpenWhispr/openwhispr/releases/latest)                                                                                                                                                                                                                        |
+| Linux                 | [`.AppImage`](https://github.com/OpenWhispr/openwhispr/releases/latest) / [`.deb`](https://github.com/OpenWhispr/openwhispr/releases/latest) / [`.rpm`](https://github.com/OpenWhispr/openwhispr/releases/latest) / [`.tar.gz`](https://github.com/OpenWhispr/openwhispr/releases/latest) |
+
+\* On Intel Macs, live speaker identification and voice fingerprinting are unavailable: they depend on ONNX Runtime, which [stopped shipping macOS x86_64 binaries in 1.24](https://github.com/microsoft/onnxruntime/releases/tag/v1.24.1). Meetings still record and transcribe normally, and notes search falls back to keyword matching instead of semantic search.
+
+On macOS or x86_64 Linux, you can also install the community-maintained [Homebrew cask](https://formulae.brew.sh/cask/openwhispr):
+
+```bash
+brew install --cask openwhispr
+```
+
+## Features
+
+- **Voice dictation** — global hotkey to dictate into any app with automatic pasting
+- **Dictation translation** — dedicated hotkey to dictate in one language and paste the text in another
+- **AI agent** — talk to GPT-5, Claude, Gemini, Groq, Tinfoil, OpenRouter, or local models with a named voice assistant
+- **Voice Assistant hotkey** — dedicated hotkey that sends what you say straight to your AI assistant as a command, no wake word needed and no cleanup pass; highlighted text is edited in place. With auto-paste enabled, answers paste at a focused text cursor or stream into a floating panel and copy to the clipboard when no writable cursor is available. You can also opt in to sending a screenshot of your current screen as context
+- **Meeting transcription** — auto-detect Zoom, Teams, and FaceTime calls with live speaker diarization, voice fingerprinting, and Google, Microsoft, or Apple Calendar integration
+- **Local speaker diarization** — on-device speaker labelling with voice fingerprint recognition across meetings, no cloud required
+- **Notes** — create, organize, and search notes with folders, semantic search, cloud sync, and AI actions
+- **Team spaces &amp; sharing** — free for signed-in users; share notes on the web with link, domain, or invite-only visibility, and collaborate in team spaces with roles, invitations, and server-enforced membership
+- **Audio import** — transcribe existing audio and video: drag in files, batch-upload, or paste a YouTube/audio URL, with optional speaker detection
+- **Local or cloud — your choice** — all core features (transcription, AI reasoning, speaker diarization, semantic search) work with local models or cloud providers — including GPU-accelerated local Whisper on Metal, CUDA, and Vulkan (AMD/Intel)
+- **Enterprise controls** — enforce organization policy, company SSO and SCIM, and centrally managed Amazon Bedrock or Azure OpenAI access without distributing cloud keys
+- **Public API &amp; MCP** — manage notes and transcriptions programmatically or connect your AI assistant via the [MCP server](https://docs.openwhispr.com/integrations/mcp)
+
+## Quick start
+
+```bash
+git clone https://github.com/OpenWhispr/openwhispr.git
+cd openwhispr
+npm install
+npm run dev
+```
+
+Requires Node.js 24+. See the [full documentation](https://docs.openwhispr.com/quickstart) for setup guides, platform-specific instructions, and build details.
+
+The commands above run the desktop application, which remains at the repository root. The Expo mobile application lives in [`openwhispr-mobile`](openwhispr-mobile/) with its own dependencies, lockfile, build configuration, and release process. See the [mobile README](openwhispr-mobile/README.md) for its setup instructions.
+
+## Documentation
+
+Visit **[docs.openwhispr.com](https://docs.openwhispr.com)** for:
+
+- [Getting started](https://docs.openwhispr.com/quickstart)
+- [Platform guides](https://docs.openwhispr.com/platform/macos) (macOS, Windows, Linux)
+- [API reference](https://docs.openwhispr.com/api/overview)
+- [MCP server setup](https://docs.openwhispr.com/integrations/mcp)
+- [Troubleshooting](https://docs.openwhispr.com/troubleshooting)
+
+Repo examples:
+
+- [Custom ASR shim](examples/custom-asr-shim/) for Self-Hosted transcription against non-OpenAI-compatible ASR APIs
+
+## Tech stack
+
+React 19, TypeScript, Tailwind CSS v4, Electron 41, better-sqlite3, whisper.cpp, sherpa-onnx, shadcn/ui
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=OpenWhispr/openwhispr&amp;type=date&amp;legend=top-left)](https://www.star-history.com/#OpenWhispr/openwhispr&amp;type=date&amp;legend=top-left)
+
+## Sponsors
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://console.neon.tech/app/?promo=openwhispr&quot;&gt;
+    &lt;picture&gt;
+      &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://neon.com/brand/neon-logo-dark-color.svg&quot;&gt;
+      &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://neon.com/brand/neon-logo-light-color.svg&quot;&gt;
+      &lt;img width=&quot;250&quot; alt=&quot;Neon&quot; src=&quot;https://neon.com/brand/neon-logo-light-color.svg&quot;&gt;
+    &lt;/picture&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https://console.neon.tech/app/?promo=openwhispr&quot;&gt;Neon&lt;/a&gt; is the serverless Postgres platform powering OpenWhispr Cloud.&lt;/p&gt;
+
+## Contributing
+
+We welcome contributions. Fork the repo, create a feature branch, and open a pull request. See the [contributing guide](https://docs.openwhispr.com/contributing) for development setup and guidelines.
+
+## License
+
+[MIT](LICENSE) — free for personal and commercial use.
+
+## Acknowledgments
+
+- **[OpenAI Whisper](https://github.com/openai/whisper)** — speech recognition model powering local and cloud transcription
+- **[whisper.cpp](https://github.com/ggerganov/whisper.cpp)** — high-performance C++ implementation for local processing
+- **[NVIDIA Parakeet](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3)** — fast multilingual ASR model
+- **[sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx)** — cross-platform ONNX runtime for Parakeet inference
+- **[Hugging Face](https://huggingface.co/)** — model hub hosting Whisper, Parakeet, and embedding model weights
+- **[llama.cpp](https://github.com/ggerganov/llama.cpp)** — local LLM inference for AI text processing
+- **[Electron](https://www.electronjs.org/)** — cross-platform desktop framework
+- **[React](https://react.dev/)** — UI component library
+- **[shadcn/ui](https://ui.shadcn.com/)** — accessible components built on Radix primitives
+- **[Neon](https://console.neon.tech/app/?promo=openwhispr)** — serverless Postgres powering OpenWhispr Cloud
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[darkzOGx/youtube-automation-agent]]></title>
+            <link>https://github.com/darkzOGx/youtube-automation-agent</link>
+            <guid>https://github.com/darkzOGx/youtube-automation-agent</guid>
+            <pubDate>Tue, 27 Oct 2026 00:05:44 GMT</pubDate>
+            <description><![CDATA[🎬 Open-source, self-hosted AI agent that runs a YouTube channel end to end: researches topics, writes scripts, generates narration, visuals and video, optimizes SEO, and publishes after your approval, then learns from analytics. Works with Gemini, OpenAI, OpenRouter, DeepSeek and more.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/darkzOGx/youtube-automation-agent">darkzOGx/youtube-automation-agent</a></h1>
+            <p>🎬 Open-source, self-hosted AI agent that runs a YouTube channel end to end: researches topics, writes scripts, generates narration, visuals and video, optimizes SEO, and publishes after your approval, then learns from analytics. Works with Gemini, OpenAI, OpenRouter, DeepSeek and more.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 4,705</p>
+            <p>Forks: 1,510</p>
+            <p>Stars today: 51 stars today</p>
+            <h2>README</h2><pre># YouTube Automation Agent
+
+**The open-source AI agent that runs a YouTube channel end to end, with you approving every video before it goes out.**
+
+It researches topics, writes scripts, generates narration and visuals, assembles real MP4s, writes titles, descriptions and tags, schedules approved videos, and learns from analytics and from what your audience says. It runs on your own machine with your own API keys.
+
+[![CI](https://github.com/darkzOGx/youtube-automation-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/darkzOGx/youtube-automation-agent/actions/workflows/ci.yml)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Node.js 18.17+](https://img.shields.io/badge/node-18.17%2B-43853d.svg)](package.json)
+
+**Latest release:** v2.11.0 (October 13, 2026). See the [changelog](CHANGELOG.md) for release notes and what has landed on `master` since.
+
+&lt;!-- Launch gate: add only a real 30–45 second dashboard demo captured from a verified end-to-end run. --&gt;
+
+## Why it&#039;s different
+
+- **You approve before anything is published.** Finished videos wait for fact review, media-rights confirmation, and your approval. Turning on autonomy doesn&#039;t skip those checks.
+- **Real output only.** Simulated or placeholder media is clearly marked and can never be approved or uploaded.
+- **Self-hosted.** Your keys, media, and channel data stay on your machine.
+- **Learns from evidence, with your sign-off.** Lessons from analytics, retention curves, and comments shape future videos only after you approve them.
+- **Your choice of providers.** Eight text providers or OpenRouter, five AI video providers, or free local slideshow rendering.
+
+## Quick start
+
+You need:
+
+- Node.js 18.17 or newer
+- A Google account and YouTube Data API credentials ([setup steps](#youtube-required-free))
+- An API key for at least one [text provider](#text). Gemini has free tiers for text and narration.
+
+```bash
+git clone https://github.com/darkzOGx/youtube-automation-agent.git
+cd youtube-automation-agent
+npm install
+npx playwright install chromium   # renders slideshow videos; on Linux add --with-deps
+npm run walkthrough
+npm start
+```
+
+Then open `http://localhost:3456`.
+
+1. **`npm run walkthrough`** explains each provider choice, tests your keys, and connects your YouTube channel. For a shorter flow, use `npm run setup`. Every setting is documented in [`.env.example`](.env.example).
+2. **Check readiness.** In the dashboard, open **Production readiness** and choose **Run verified check**. It makes small live text and narration requests, checks access to your channel, and builds and decodes a test MP4, without uploading anything.
+3. **Make videos.** Open **Autonomous operator**, describe the channel you want, and choose **Activate &amp; run now**, or create a single video from the dashboard. Finished videos wait in **Pipeline** for your review and approval.
+
+FFmpeg is installed with `npm install` through `ffmpeg-static`. Python is only needed to test an external DarkzSEO checkout.
+
+## How it works
+
+| Stage | What the agent does | What you control |
+| --- | --- | --- |
+| Research | Finds topics and builds a content strategy | Niche, audience, blocked topics |
+| Script | Writes the hook, narrative, CTA, and metadata | Voice, format, length, brand direction |
+| Production | Generates narration and visuals, then assembles a real MP4 | Provider choice and media fallbacks |
+| Review | Runs quality checks and opens the video for review | Facts, media rights, edits, approval |
+| Publish | Schedules and uploads approved content | Privacy, timing, final decision |
+| Learn | Captures 24-hour and 7-day evidence, measures your chosen outcome, then proposes the next move | Choose the KPI and approve or reject each lesson |
+
+```mermaid
+graph TD
+    O[Autonomous Channel Operator] --&gt; A[Research and Editorial Plan]
+    A --&gt; B[Content Strategy Agent]
+    B --&gt; C[Script Writer Agent]
+    C --&gt; D[Thumbnail Designer Agent]
+    C --&gt; E[SEO Optimizer Agent]
+    D --&gt; F[Production Management Agent]
+    E --&gt; F
+    F --&gt; Z[DarkzSEO Discoverability Preflight]
+    Z --&gt; G[Review and Approval Gates]
+    G --&gt; H[Publishing &amp; Scheduling Agent]
+    H --&gt; I[Analytics &amp; Optimization Agent]
+    I --&gt;|feedback loop| A
+```
+
+## Features
+
+Each item links to its walkthrough in the [feature guide](docs/features.md).
+
+**Plan**
+- [Autonomous Channel Operator](docs/features.md#autonomous-channel-operator): give it an objective, audience, content pillars, cadence, and limits. It researches trends and competitors, builds an evidence-labeled plan, and sends each video through production.
+- [Outcome &amp; ROI Studio](docs/features.md#outcome--roi-studio): set a target (views, watch hours, net subscribers, engagement, or revenue) and a budget, and track progress. Missing data shows as unavailable, never as zero.
+
+**Produce**
+- [Production readiness](docs/features.md#production-readiness): a verified check of every provider, your channel, and video assembly before anything runs on its own. Paid image and video probes are separate opt-ins.
+- [Resumable generation](docs/features.md#resumable-generation): every stage is checkpointed, so a crash or timeout resumes where it stopped instead of starting over.
+- [AI video generation](docs/features.md#ai-video-generation): local slideshow by default; Seedance, MiniMax H3, Gemini Omni, Kling, or Wan for real clips, with a cap on paid seconds.
+- [Shorts Repurposing Studio](docs/features.md#shorts-repurposing-studio): turn an approved video into three 9:16 Short drafts with burned-in captions, reusing existing media so no new generation credits are spent.
+
+**Review**
+- **Content review:** quality checks, metadata editing, approval, and scheduling for each video.
+- [Scene Repair Studio](docs/features.md#scene-repair-studio-and-narration): edit, reorder, lock, replace, or regenerate a single scene, then rebuild the video.
+- [Evidence desk](docs/features.md#evidence-desk): link each factual claim in the script to a verified source before approval.
+- [Discoverability preflight](docs/features.md#discoverability-preflight): advisory search and AI-answer checks from a bundled DarkzSEO audit. No Python needed.
+
+**Learn**
+- [Learning loop](docs/features.md#learning-loop): compares each video&#039;s 24-hour and 7-day results with your channel&#039;s own history and proposes changes for you to approve.
+- [Controlled growth experiments](docs/features.md#controlled-growth-experiments): test approved title and thumbnail variants on a live video. A winner needs a 95% evidence threshold, and the original is restored before you decide.
+- [Scene-aware retention](docs/features.md#scene-aware-retention): see which scene lost viewers.
+
+**Engage**
+- [Audience Engagement Studio](docs/features.md#audience-engagement-studio): comment sync, themes and questions, spam quarantine, reply drafts that post only after you approve them, and video ideas mined from repeated requests.
+
+## AI providers
+
+### Text
+
+Pick one in the walkthrough, or set its key in `.env`. The SDK base URL is configured for you.
+
+| Provider | Models | Key | Env var |
+| --- | --- | --- | --- |
+| **Google Gemini** | Gemini 3.8 Flash, Gemini 4 Argon (paid only), 3.5 Flash-Lite | [AI Studio](https://aistudio.google.com/apikey) | `GEMINI_API_KEY` |
+| **OpenAI** | GPT-6.1 Sol, GPT-6 Astra, GPT-6 Luna | [platform.openai.com](https://platform.openai.com/api-keys) | `OPENAI_API_KEY` |
+| **OpenRouter** | 400+ models through one key; curated defaults are checked against its live catalog | [openrouter.ai](https://openrouter.ai/keys) | `OPENROUTER_API_KEY` |
+| **Kimi (Moonshot AI)** | Kimi K3, K2.7 Code, K2.6 | [platform.kimi.ai](https://platform.kimi.ai) | `MOONSHOT_API_KEY` |
+| **MiMo (Xiaomi)** | MiMo V2.6 Pro, V2.6 Flash | [mimo.mi.com](https://mimo.mi.com) | `MIMO_API_KEY` |
+| **GLM (Zhipu AI)** | GLM-5.3, 5.3 Flash, 5.2 | [z.ai](https://z.ai) | `GLM_API_KEY` |
+| **DeepSeek** | DeepSeek V4.1 Flash, V4 Pro | [platform.deepseek.com](https://platform.deepseek.com/api_keys) | `DEEPSEEK_API_KEY` |
+| **MiniMax** | MiniMax M3.1 Flash, M3 | [platform.minimax.io](https://platform.minimax.io/user-center/basic-information/interface-key) | `MINIMAX_TEXT_API_KEY` |
+
+Anthropic Claude is available through OpenRouter (`anthropic/claude-fable-5.1`). OpenRouter, Kimi, MiMo, GLM, DeepSeek, and MiniMax cover scripts only. Add a Gemini or OpenAI key for images and narration, or ElevenLabs for narration.
+
+### Narration and images
+
+- **Narration** uses the first configured provider in this order: ElevenLabs (Eleven v3, needs `ELEVENLABS_API_KEY` and `ELEVENLABS_VOICE_ID`), OpenAI (`gpt-4o-mini-tts`), then Gemini (`gemini-3.8-flash-tts`). A video without working narration can&#039;t be approved.
+- **Images** use OpenAI (GPT Image 2) and Gemini (`gemini-3.1-flash-image`, which needs billing enabled), each falling back to the other. With neither, slides use gradient backgrounds and thumbnails come from the built-in designer.
+
+### Video
+
+Local slideshow rendering is the default, so you never pay for video unless you choose a provider in **Channel setup** and set a paid-seconds cap. If a provider fails, the video falls back to the local slideshow.
+
+| Provider | Default model | Best fit | Clip limits | Env var |
+| --- | --- | --- | --- | --- |
+| ByteDance | `bytedance/seedance-2.5` through Replicate | Cinematic long scenes and large reference sets | 4–30 seconds | `REPLICATE_API_TOKEN` |
+| MiniMax | `MiniMax-H3` | Multimodal references, native stereo audio, optional 2K | 4–15 seconds | `MINIMAX_API_KEY` |
+| Google | `gemini-omni-1.1-flash` | Fast generation and conversational editing | 3–10 seconds | `GEMINI_API_KEY` |
+| Kuaishou | `kling-v3-omni` | Storyboards and character/voice consistency | 3–15 seconds | `KLING_ACCESS_KEY`, `KLING_SECRET_KEY` |
+| Alibaba | Wan 2.7 task-specific models | Efficient generation, reference video, and continuation | 2–15 seconds | `DASHSCOPE_API_KEY` |
+
+Long videos use hybrid assembly: generated clips for the hook and key sections, with the rest of the timeline filled locally. See [AI video generation](docs/features.md#ai-video-generation).
+
+## Configuration
+
+### YouTube (required, free)
+
+1. Create a project in [Google Cloud Console](https://console.cloud.google.com/).
+2. Enable **YouTube Data API v3**, and **YouTube Analytics API** for retention and outcome data.
+3. Create an OAuth 2.0 client of type **Desktop app** (not Web application) and save the JSON as `config/credentials.json`.
+4. Under **Google Auth Platform → Audience**, add the Google account that owns your channel as a **test user**. Otherwise sign-in fails with `Error 403: access_denied`. While the app is in Testing mode, Google expires the sign-in after 7 days.
+
+### Environment variables
+
+`npm run walkthrough` writes your configuration for you. To edit it by hand, copy [`.env.example`](.env.example) to `.env`; it documents every setting. The essentials:
+
+```env
+# One text provider (see the table above)
+GEMINI_API_KEY=...
+
+# Optional: narration, images, and AI video
+# ELEVENLABS_API_KEY=...
+# ELEVENLABS_VOICE_ID=...
+# OPENAI_API_KEY=sk-...
+# VIDEO_PROVIDER=slideshow   # auto, seedance, minimax_h3, google_omni, kling, wan
+# VIDEO_MAX_GENERATED_SECONDS=60
+
+# App
+PORT=3456
+# HOST=127.0.0.1             # default: this machine only
+# API_KEY=some-long-random-string
+CHANNEL_NAME=Your Channel Name
+DEFAULT_PRIVACY_STATUS=private
+```
+
+The dashboard listens on `127.0.0.1` by default. If you set `HOST=0.0.0.0` to reach it from other devices, also set `API_KEY`, which every request that changes something must then send in the `x-api-key` header.
+
+## Automation
+
+The scheduler starts with `npm start` and uses the server&#039;s local time.
+
+| When | What runs |
+| --- | --- |
+| Daily at 06:00 | Content generation, following the active channel strategy&#039;s cadence |
+| Every 15 minutes | Publishing queue |
+| Daily at 09:00 | Analytics collection |
+| Daily at 22:00 | Optimization |
+| Every 4 hours | Comment sync and growth-experiment refresh |
+| Sundays at 08:00 | Weekly strategy review |
+
+Details are in the [feature guide](docs/features.md#automation-schedule).
+
+## HTTP API
+
+The dashboard server also exposes an HTTP API:
+
+```bash
+curl http://localhost:3456/health
+
+curl -X POST http://localhost:3456/generate \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;x-api-key: $API_KEY&quot; \
+  -d &#039;{&quot;topic&quot;: &quot;Top 10 Life Hacks&quot;, &quot;style&quot;: &quot;list&quot;}&#039;
+
+curl http://localhost:3456/api/jobs/:jobId
+```
+
+See the [API reference](docs/api.md) for every route.
+
+## Troubleshooting
+
+| Problem | Fix |
+| --- | --- |
+| `Missing credentials for: an AI provider` | Configure any one text provider with `npm run walkthrough` or `npm run credentials:setup`. OpenAI isn&#039;t required. |
+| Google sign-in shows `Error 403: access_denied` | Add your Google account as a test user under **Google Auth Platform → Audience**. |
+| No video is produced, or it&#039;s marked simulated | Read the ✗ lines in the startup capability check. Make sure you ran `npx playwright install chromium` and that FFmpeg is available (`npm install` fetches it, or set `FFMPEG_PATH`). |
+| Images or thumbnails are missing | Image generation needs OpenAI, or Gemini with billing enabled. The content review panel shows the provider&#039;s exact error. |
+| Narration failed (for example, ElevenLabs HTTP 400) | Check the key, its credits, and that `ELEVENLABS_VOICE_ID` is a voice in your account, then use **Regenerate narration only**. |
+| `Error loading sharp module` on Android/Termux | Update to the latest `master`, then run `rm -rf node_modules &amp;&amp; npm install --cpu=wasm32`. |
+| The publishing queue runs but nothing publishes | Approved videos publish at their scheduled time (default: the next day at 2 PM). |
+| YouTube API quota exceeded | Check quotas in Google Cloud Console and reduce posting frequency. |
+| Content generation failed | Check your keys and credits, the job&#039;s error in the dashboard, and `logs/`. |
+
+For debug logging, run `LOG_LEVEL=debug NODE_ENV=development npm start`. Questions and setup help go in [Discussions](https://github.com/darkzOGx/youtube-automation-agent/discussions).
+
+## Project structure
+
+```
+youtube-automation-agent/
+├── agents/          # one file per pipeline agent (strategy, script, thumbnail, SEO, production, publishing, analytics)
+├── dashboard/       # web dashboard served by index.js
+├── database/        # SQLite schema and access layer
+├── schedules/       # cron-based automation
+├── utils/           # AI text, media, and video providers; operator, readiness, engagement, and other services
+├── config/          # credential files (examples are committed)
+├── data/            # generated content and the local database
+├── docs/            # feature guide, API reference, design notes
+├── examples/        # verified real output from the community
+├── index.js         # Express server and agent startup
+├── walkthrough.js   # guided setup (npm run walkthrough)
+├── setup.js         # classic setup (npm run setup)
+└── test.js          # system test suite (npm test)
+```
+
+## Extending
+
+### Add a text provider
+
+Any provider with an OpenAI-compatible chat completions API can be added as a preset in `utils/ai-text-service.js`:
+
+```javascript
+deepseek: {
+  name: &#039;DeepSeek&#039;,
+  baseURL: &#039;https://api.deepseek.com&#039;,
+  defaultModel: &#039;deepseek-flash&#039;,
+  models: [&#039;deepseek-flash&#039;, &#039;deepseek-v4-pro&#039;],
+  envKey: &#039;DEEPSEEK_API_KEY&#039;,
+},
+```
+
+Then add a matching entry to `AI_PROVIDER_GUIDE` in `walkthrough.js` and a setup option in `utils/credential-manager.js`, and run `npm test`. The walkthrough test fails if any provider is missing a complete guide.
+
+### Add a video provider
+
+Video providers live in `utils/video-providers.js`. Each one extends `VideoProvider`, implements `isAvailable`, `createTask`, `getTask`, and `downloadResult`, and is registered in `VideoProviderRegistry`.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for ground rules (short version: one focused concern per PR, no lockfile churn, lint and tests must pass). For questions and setup help, use [Discussions](https://github.com/darkzOGx/youtube-automation-agent/discussions); Issues are for bugs.
+
+```bash
+git clone &lt;your-fork&gt;
+cd youtube-automation-agent
+npm install
+npm run lint   # CI runs this on every PR
+npm test
+```
+
+Made something real with it? Share verified output in [examples](examples/README.md).
+
+## Built by
+
+[@darkzOGx](https://github.com/darkzOGx), a solo builder shipping AI automation and developer tools. Find me on [X](https://x.com/darkzOGx) and [laderalabs.io](https://laderalabs.io).
+
+If YouTube Automation Agent saves you time, a star helps it reach more developers.
+
+More from darkzOGx:
+
+- [darkzloop](https://github.com/darkzOGx/darkzloop): terminal agent runner that turns any LLM into a disciplined software engineer (FSM control, model-agnostic, BYO auth)
+- [darkzBOX](https://github.com/darkzOGx/darkzBOX): open-source Instantly.ai clone with smart automated email replies
+- [open-sales-researcher](https://github.com/darkzOGx/open-sales-researcher): autonomous B2B company research. Works with Claude Code, Cursor, Copilot.
+- [darkzseo](https://github.com/darkzOGx/darkzseo): SEO tooling
+- [ConstructionBids.ai](https://constructionbids.ai): AI scans every federal, state &amp; local public works bid and matches you to contracts you&#039;ll win.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
+
+## Acknowledgments
+
+- [Google](https://ai.google.dev/): Gemini 3.8 Flash, Gemini 4 Argon, Gemini 3.1 Flash Image, Gemini 3.8 Flash TTS, Gemini Omni Flash, and the YouTube Data and Analytics APIs
+- [OpenAI](https://openai.com/): GPT-6.1 Sol, GPT Image 2, gpt-4o-mini-tts
+- [OpenRouter](https://openrouter.ai/): unified multi-model API
+- [Moonshot AI](https://www.moonshot.ai/): Kimi K3
+- [Xiaomi](https://mimo.mi.com/): MiMo V2.6 Pro
+- [Zhipu AI](https://z.ai/): GLM-5.3
+- [DeepSeek](https://www.deepseek.com/): DeepSeek V4.1 Flash
+- [MiniMax](https://www.minimax.io/): MiniMax M3 text and H3 video
+- [ElevenLabs](https://elevenlabs.io/): Eleven v3 TTS
+- [Replicate](https://replicate.com/): Seedance 2.5 and Wan 2.7 hosting
+- [Kuaishou Kling](https://kling.ai/): Kling 3.0 Omni
+- [Alibaba Cloud Model Studio](https://modelstudio.console.alibabacloud.com/): Wan 2.7
+
+---
+
+&gt; This tool is for legitimate content creation. Comply with [YouTube&#039;s Terms of Service](https://www.youtube.com/t/terms) and Community Guidelines.
+</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
@@ -1053,15 +2095,15 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
             <title><![CDATA[ulsklyc/yuvomi]]></title>
             <link>https://github.com/ulsklyc/yuvomi</link>
             <guid>https://github.com/ulsklyc/yuvomi</guid>
-            <pubDate>Mon, 26 Oct 2026 00:06:20 GMT</pubDate>
+            <pubDate>Tue, 27 Oct 2026 00:05:43 GMT</pubDate>
             <description><![CDATA[One home instead of many subscriptions. Yuvomi is a self-hosted family planner: tasks, calendar, budget, meals, shopping, health and more in one PWA on your own server or NAS. Docker, Podman, TrueNAS, Umbrel, Unraid. No tracking, MIT.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/ulsklyc/yuvomi">ulsklyc/yuvomi</a></h1>
             <p>One home instead of many subscriptions. Yuvomi is a self-hosted family planner: tasks, calendar, budget, meals, shopping, health and more in one PWA on your own server or NAS. Docker, Podman, TrueNAS, Umbrel, Unraid. No tracking, MIT.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 2,004</p>
-            <p>Forks: 187</p>
-            <p>Stars today: 116 stars today</p>
+            <p>Stars: 2,045</p>
+            <p>Forks: 189</p>
+            <p>Stars today: 49 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
   &lt;img src=&quot;docs/logo.svg&quot; alt=&quot;Yuvomi logo&quot; width=&quot;92&quot; /&gt;
 
@@ -1364,431 +2406,441 @@ the sources above disagree, the ones above are right.
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[WebKit/WebKit]]></title>
-            <link>https://github.com/WebKit/WebKit</link>
-            <guid>https://github.com/WebKit/WebKit</guid>
-            <pubDate>Mon, 26 Oct 2026 00:06:19 GMT</pubDate>
-            <description><![CDATA[Home of the WebKit project, the browser engine used by Safari, Mail, App Store and many other applications on macOS, iOS and Linux.]]></description>
+            <title><![CDATA[chuspeeism/dashi-ppt-skill]]></title>
+            <link>https://github.com/chuspeeism/dashi-ppt-skill</link>
+            <guid>https://github.com/chuspeeism/dashi-ppt-skill</guid>
+            <pubDate>Tue, 27 Oct 2026 00:05:42 GMT</pubDate>
+            <description><![CDATA[An AI-agent skill that generates browser-editable presentations from multiple visual themes, exportable to HTML, PDF, and PPTX.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/WebKit/WebKit">WebKit/WebKit</a></h1>
-            <p>Home of the WebKit project, the browser engine used by Safari, Mail, App Store and many other applications on macOS, iOS and Linux.</p>
+            <h1><a href="https://github.com/chuspeeism/dashi-ppt-skill">chuspeeism/dashi-ppt-skill</a></h1>
+            <p>An AI-agent skill that generates browser-editable presentations from multiple visual themes, exportable to HTML, PDF, and PPTX.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 10,276</p>
-            <p>Forks: 2,285</p>
-            <p>Stars today: 9 stars today</p>
-            <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
+            <p>Stars: 10,054</p>
+            <p>Forks: 866</p>
+            <p>Stars today: 86 stars today</p>
+            <h2>README</h2><pre># Dashi PPT Skill · 大师 PPT / 网页 PPT / 可编辑 PPTX
+
+![GitHub stars](https://img.shields.io/github/stars/chuspeeism/dashi-ppt-skill?style=flat-square)
+![Skill](https://img.shields.io/badge/Skill-Agent-111111?style=flat-square)
+![HTML Deck](https://img.shields.io/badge/HTML-Deck-0A7CFF?style=flat-square)
+![PPTX Export](https://img.shields.io/badge/PPTX-%E5%8F%AF%E7%BC%96%E8%BE%91%E5%AF%BC%E5%87%BA-D24726?style=flat-square)
+![Claude Code](https://img.shields.io/badge/Claude%20Code-Supported-6B5B95?style=flat-square)
+![Codex](https://img.shields.io/badge/Codex-Supported-222222?style=flat-square)
+![豆包](https://img.shields.io/badge/%E8%B1%86%E5%8C%85-Supported-3370FF?style=flat-square)
+![Marvis](https://img.shields.io/badge/Marvis-Supported-FF5A5F?style=flat-square)
+![Workbuddy](https://img.shields.io/badge/Workbuddy-Supported-2EA44F?style=flat-square)
+![Dumate](https://img.shields.io/badge/Dumate-Supported-F59E0B?style=flat-square)
+![Qclaw](https://img.shields.io/badge/Qclaw-Supported-14B8A6?style=flat-square)
+[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue?style=flat-square)](./LICENSE)
+
+[English](./README.en.md) · [简体中文](README.md)
+
+一个真正适合职场人的 PPT Skill。把文档丢给你的 AI Agent，每一页都自带编辑控制台的 PPT Skill——不满意的地方直接在浏览器里改，改完还能一键导出成真实的、可编辑的 PPTX。
+
+- 12 套视觉主题
+- 1020 个版式页面
+- 8576 个可调控件
+
+![生成效果演示](https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/hero-result.gif)
+
+## 12 套内置视觉主题
+
+Skill 会展示预览让你选择主题，可以随时让 Agent 整套换掉。下面每套主题的预览，都是从它自己的版式库里挑出的 4 个正文版式（图表、分析模型、卡片、目录等），全部由这个 Skill 真实渲染，非示意图：
+
+|  |  |
+|---|---|
+| &lt;img src=&quot;https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/theme01.jpg&quot; width=&quot;440&quot; alt=&quot;轻拟态风内页预览&quot;&gt;&lt;br&gt;**theme01**&lt;br&gt; | &lt;img src=&quot;https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/theme02.jpg&quot; width=&quot;440&quot; alt=&quot;炫光紫绿风内页预览&quot;&gt;&lt;br&gt;**theme02**&lt;br&gt; |
+| &lt;img src=&quot;https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/theme03.jpg&quot; width=&quot;440&quot; alt=&quot;深浅代码风内页预览&quot;&gt;&lt;br&gt;**theme03**&lt;br&gt; | &lt;img src=&quot;https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/theme04.jpg&quot; width=&quot;440&quot; alt=&quot;玻璃糖果风内页预览&quot;&gt;&lt;br&gt;**theme04**&lt;br&gt; |
+| &lt;img src=&quot;https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/theme05.jpg&quot; width=&quot;440&quot; alt=&quot;色谱图表风内页预览&quot;&gt;&lt;br&gt;**theme05**&lt;br&gt; | &lt;img src=&quot;https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/theme06.jpg&quot; width=&quot;440&quot; alt=&quot;深色图谱风内页预览&quot;&gt;&lt;br&gt;**theme06**&lt;br&gt; |
+| &lt;img src=&quot;https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/theme07.jpg&quot; width=&quot;440&quot; alt=&quot;冷白调研风内页预览&quot;&gt;&lt;br&gt;**theme07**&lt;br&gt; | &lt;img src=&quot;https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/theme08.jpg&quot; width=&quot;440&quot; alt=&quot;黑金实验风内页预览&quot;&gt;&lt;br&gt;**theme08**&lt;br&gt; |
+| &lt;img src=&quot;https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/theme09.jpg&quot; width=&quot;440&quot; alt=&quot;深蓝杂志风内页预览&quot;&gt;&lt;br&gt;**theme09**&lt;br&gt; | &lt;img src=&quot;https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/theme10.jpg&quot; width=&quot;440&quot; alt=&quot;金色指数风内页预览&quot;&gt;&lt;br&gt;**theme10**&lt;br&gt; |
+| &lt;img src=&quot;https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/theme11.jpg&quot; width=&quot;440&quot; alt=&quot;高能增长风内页预览&quot;&gt;&lt;br&gt;**theme11**&lt;br&gt; | &lt;img src=&quot;https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/theme12.jpg&quot; width=&quot;440&quot; alt=&quot;声波霓虹风内页预览&quot;&gt;&lt;br&gt;**theme12**&lt;br&gt; |
+
+## 快速开始
+
+**一键安装/更新**：
+
+```bash
+npx dashi-ppt-skill@latest
+```
+国内网络:
+```bash
+npx --registry=https://registry.npmmirror.com dashi-ppt-skill@latest
+```
+安装和更新是同一条命令,重跑即原地更新(已装依赖自动保留)。
+让 AI Agent 帮你安装：
+
+```text
+帮我安装 skill：npx dashi-ppt-skill@latest，国内镜像 npx --registry=https://registry.npmmirror.com dashi-ppt-skill@latest
+```
+
+环境要求：Node.js 20+ 和 npm；导出 PPTX / PDF 需要本机装有 Chrome / Chromium / Edge。
+
+## 效果
+
+- **12套主题**：覆盖多种 PPT 使用场景和风格
+- **1020个版式**：每套主题独立的页面结构和视觉语言，20 种页面角色（封面、目录、指标、趋势、对比、流程、风险、结尾……）
+- **图表与分析模型**：雷达图、瀑布图、矩形树图、漏斗、热力图、桑基图、甘特图，以及 SWOT、波特五力、PEST、商业模式画布、双钻模型等分析模型版式
+- **自带控制台**：滑杆、开关、下拉——换布局、调模块数量、换配色、换页面重点
+- **文字可编辑**：点击任意文字就地修改
+- **媒体替换**：点击或拖拽替换媒体槽，文字资料也会自动预留图片占位符
+- **一键导出**：HTML离线包 / PDF / 可编辑 PPTX
+
+## 适用场景
+
+**合适**：行业研究 / 融资复盘 / 竞品分析 / 趋势报告 / 项目汇报 / 方案展示 / 路演材料 / 内部培训——需要快速形成结构完整、视觉统一、还能继续改的演示文稿
+
+**不合适**：需要逐像素手工定制视觉的场景
+
+## HTML 与导出能力
+
+- **适配 Agent 能力**：HTML / Agent 能直接读、改、校验；每一页由&quot;版式 + 文案字段&quot;构成
+- **表现力更高**：入场动画、翻页动画、交互控件、明暗模式切换等
+- **产物即编辑器**：结果为网页版 PPT 编辑器——翻页、改字、换图、调版式，打开就能用
+- **导出PPTX**：一键导出成真实的 PPTX——逐节点还原、文字保持可编辑
+
+HTML 版与导出 PPTX 版的逐页对比：
+
+![HTML 与导出 PPTX 逐页对比](https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/html-vs-pptx.gif)
+
+## 平台支持
+
+&gt; 下表只列出已实测的平台，不代表&quot;仅限这些&quot;。
+
+| 平台 | 状态 | 说明 |
+|------|------|------|
+| Claude Code | 支持 ||
+| Codex | 支持 | 可调用生图能力补充配图 |
+| 豆包 | 支持 | 需要启动办公模式 |
+| Marvis / Workbuddy / Dumate / Qclaw | 支持 | skill 文件放在任意位置、读取 `SKILL.md` 即可 |
+| Cursor / 其他本地 Agent | 可用 | 需要能读写文件并执行 shell 命令 |
+| 普通网页 Chatbot | 不推荐 | 生成器需要本地 Node.js 环境 |
+
+## 使用流程
+
+把手头的文档丢进去，直接说要做 PPT，等待几分钟就能生成一份完整的 PPT：
+
+1. 描述需求 — 主题、受众、页数、想突出的结论
+2. 选风格 — Skill 会展示 12 套风格预览让你选择；同时确认是否需要图片 / 视频
+3. 自动组稿 — Skill 把需求整理成结构化的内容，并设计对应的 PPT 方案
+4. 随手编辑 — 改文字、换图片、调模块数量、换配色，改动自动保存
+5. 交付 — 可以选择让 Agent 换风格调细节；满意导出需要的格式
+
+![图片占位符一键填图](https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/image-placeholder.gif)
+
+## 生成后编辑
+
+&gt; 生成之后如何编辑，比生成本身更重要
+
+设计调节：每页都附带一个控制台，20 多个维度的编辑空间——内容、布局、模块数量、页面重点、预设配色、翻页动画；
+文字编辑:任意文本点击即可编辑；
+图片、视频槽：点击或拖拽即可替换，上传自动压缩。
+
+| 点击任意文字就地编辑 | 加图片 |
+|---|---|
+| ![点击文字就地编辑，装饰元素随字数自适应](https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/text-edit.gif) | ![向页面插入图片](https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/add-image.gif) |
+
+### 控制台改：布局、模块数量、图表、配色
+
+拖动控制台右侧的滑杆，就能自定义页面中模块的数量；页面的逻辑重点也可以通过滑杆调换，帮你把握演讲节奏。
+
+| 拖滑杆增减模块 | 换布局 |
+|---|---|
+| ![拖动滑杆调节目录、表格、多项式、图片数量](https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/slider-edit.gif) | ![一句话切换页面布局](https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/layout-switch.gif) |
+
+| 换图表 | 风格内配色切换 |
+|---|---|
+| ![一句话更换图表类型](https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/chart-switch.gif) | ![每套风格内支持局部配色调换](https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/palette-switch.gif) |
+
+### 翻页动画
+
+9种切换动画可以随意选择
+
+![翻页过渡动画效果](https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/transitions.gif)
+
+### 其他
+
+- 左侧缩略图目录支持拖拽重排页面，页面可跳过 / 删除 / 复制
+- 顶栏一键进入放映模式、切换明暗主题、重置全部改动
+
+图表版式：
+
+![多种图表版式展示](https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/layouts-tour.gif)
+
+分析模型与专业版式
+
+![内置分析模型版式](https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/analysis-models.png)
+
+高频使用的目录页、表格页、数字海报页、图文页：
+
+![常用版式](https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/common-layouts.png)
+
+## 导出
+
+![一键导出可编辑 PPT](https://github.com/chuspeeism/dashi-ppt-skill/releases/download/readme-assets-v1/export-pptx.gif)
+
+可以跨过 HTML 的中间态，直接跟 Agent 说&quot;用这个 skill 生成 PPT 格式的文件&quot;，从提示词一步到 PPTX。
+
+命令行导出：
+
+```bash
+npm --prefix &lt;project目录&gt; run export:pptx -- &lt;PPT输出目录&gt;/ppt 输出.pptx
+npm --prefix &lt;project目录&gt; run export:pdf  -- &lt;PPT输出目录&gt;/ppt
+```
+
+## FAQ
+
+**能导出可编辑的 PPTX 吗？**
+&gt; 能。虽然 PPT 无法拥有 HTML 的全量能力，但我们尽最大可能保留了可编辑性。
+
+**生成一套 PPT 大概消耗多少 token？**
+&gt; 一套 10 页的 PPT 实测约 10 万 token（随文档长度和往返修改次数浮动）。按 Codex 5 小时额度窗口粗算，大约够生成 10 套
+
+**可以自定义xxx？**
+&gt; 当前自定义样式仅限于特定范围。这是有意为之：稳定的产出比自由的选色更重要。
+
+**需要联网吗？我的内容安全吗？**
+
+&gt; 内容层面零上传：你的文档和 PPT 内容不会发送到任何服务器，生成、编辑、导出都在本机完成，成品离线可开。会联网的只有两件事：首次生成时 npm 自动安装依赖；完成任务后的静默版本检查（只拉取最新版本号，不上传任何内容）。另外本地预览服务默认在同一局域网内可访问，仅供浏览，导出接口只对本机开放。
+
+**无法导出 PPTX？**
+
+&gt; 导出 PPTX / PDF 需要本机 Chrome / Chromium / Edge（可用 `CHROME_PATH` 环境变量指定）。
+
+## 开源协议 License
+
+本项目采用 **GNU Affero General Public License v3.0（AGPL-3.0）** 开源——这是 OSI 认证开源协议中 copyleft 效力最强的一个。你可以自由使用、修改、分发本项目（包括商业用途）；但如果你分发修改版，或基于本项目及其修改版通过网络对外提供服务（如 SaaS），必须以 AGPL-3.0 向用户公开完整的对应源代码。
+
+**例外**：子包 `project/packages/html-deck-to-pptx`（导出引擎）为**专有组件**，仅授权作为本 skill 的组成部分使用，不得单独提取、复制或再分发（详见该目录下的 LICENSE；其 v0.2.7 及之前的历史版本曾以 MIT 发布，该授权仅对历史版本有效）。
+
+Copyright (c) 2026 [chuspeeism](https://github.com/chuspeeism)。完整协议文本见根目录 [LICENSE](LICENSE) 文件。如需 AGPL-3.0 之外的商业授权，请联系作者。
+
+## Star History
+
+&lt;a href=&quot;https://www.star-history.com/?repos=chuspeeism%2Fdashi-ppt-skill&amp;type=date&amp;legend=top-left&quot;&gt;
+ &lt;picture&gt;
+   &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/chart?repos=chuspeeism/dashi-ppt-skill&amp;type=date&amp;theme=dark&amp;legend=top-left&amp;sealed_token=MpgO76zZLzPPs8bi8jDFZyG1b8gYNbtA8RQhnghNJ0wtwmM9UwUwNiBiy0rtx1stNTntfSl1TJCqxLCMvnTKnj6He8CPK9MYawX-G8i4x4HabmaLVCC0gg&quot; /&gt;
+   &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/chart?repos=chuspeeism/dashi-ppt-skill&amp;type=date&amp;legend=top-left&amp;sealed_token=MpgO76zZLzPPs8bi8jDFZyG1b8gYNbtA8RQhnghNJ0wtwmM9UwUwNiBiy0rtx1stNTntfSl1TJCqxLCMvnTKnj6He8CPK9MYawX-G8i4x4HabmaLVCC0gg&quot; /&gt;
+   &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/chart?repos=chuspeeism/dashi-ppt-skill&amp;type=date&amp;legend=top-left&amp;sealed_token=MpgO76zZLzPPs8bi8jDFZyG1b8gYNbtA8RQhnghNJ0wtwmM9UwUwNiBiy0rtx1stNTntfSl1TJCqxLCMvnTKnj6He8CPK9MYawX-G8i4x4HabmaLVCC0gg&quot; /&gt;
+ &lt;/picture&gt;
+&lt;/a&gt;
+</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[tradesdontlie/tradingview-mcp]]></title>
-            <link>https://github.com/tradesdontlie/tradingview-mcp</link>
-            <guid>https://github.com/tradesdontlie/tradingview-mcp</guid>
-            <pubDate>Mon, 26 Oct 2026 00:06:18 GMT</pubDate>
-            <description><![CDATA[AI-assisted TradingView chart analysis — connect Claude Code to your TradingView Desktop for personal workflow automation]]></description>
+            <title><![CDATA[babalae/bettergi-scripts-list]]></title>
+            <link>https://github.com/babalae/bettergi-scripts-list</link>
+            <guid>https://github.com/babalae/bettergi-scripts-list</guid>
+            <pubDate>Tue, 27 Oct 2026 00:05:41 GMT</pubDate>
+            <description><![CDATA[BetterGI 的脚本仓库，内含BetterGI 的JS脚本、路径追踪、战斗策略、七圣召唤策略。]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/tradesdontlie/tradingview-mcp">tradesdontlie/tradingview-mcp</a></h1>
-            <p>AI-assisted TradingView chart analysis — connect Claude Code to your TradingView Desktop for personal workflow automation</p>
+            <h1><a href="https://github.com/babalae/bettergi-scripts-list">babalae/bettergi-scripts-list</a></h1>
+            <p>BetterGI 的脚本仓库，内含BetterGI 的JS脚本、路径追踪、战斗策略、七圣召唤策略。</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 6,943</p>
-            <p>Forks: 2,853</p>
-            <p>Stars today: 14 stars today</p>
-            <h2>README</h2><pre># TradingView MCP Bridge
+            <p>Stars: 658</p>
+            <p>Forks: 475</p>
+            <p>Stars today: 20 stars today</p>
+            <h2>README</h2><pre># BetterGI · 更好的原神 的脚本仓库
 
-[![MCP Toplist](https://mcptoplist.com/badge/glama%2Ftradesdontlie%2Ftradingview-mcp.svg)](https://mcptoplist.com/server/glama%2Ftradesdontlie%2Ftradingview-mcp)
+[BetterGI](https://github.com/babalae/better-genshin-impact) 的 📜 脚本仓库
 
-Personal AI assistant for your TradingView Desktop charts. Connects Claude Code to your locally running TradingView app via Chrome DevTools Protocol for AI-assisted chart analysis, Pine Script development, and workflow automation.
+在线版脚本仓库：[bgi.sh](https://bgi.sh)  备用地址：[https://s.bettergi.com](https://s.bettergi.com/)
 
-&gt; [!WARNING]
-&gt; **This tool is not affiliated with, endorsed by, or associated with TradingView Inc.** It interacts with your locally running TradingView Desktop application via Chrome DevTools Protocol. Review the [Disclaimer](#disclaimer) before use.
+作者Q群：764972801 （非作者请勿加入）
 
-&gt; [!IMPORTANT]
-&gt; **Requires a valid TradingView subscription.** This tool does not bypass or circumvent any TradingView paywall or access control. It reads from and controls the TradingView Desktop app already running on your machine.
+[如何提交到本仓库？（谁都能看懂的 GitHub Pull Request 使用指南）](https://bettergi.com/dev/pr.html)
 
-&gt; [!NOTE]
-&gt; **All data processing occurs locally on your machine.** No TradingView data is transmitted, stored, or redistributed externally by this tool.
+## 脚本提交说明
 
-&gt; [!CAUTION]
-&gt; This tool accesses undocumented internal TradingView APIs via the Electron debug interface. These can change or break without notice in any TradingView update. Pin your TradingView Desktop version if stability matters to you.
+- 战斗策略提交到 [repo/combat](https://github.com/babalae/bettergi-scripts-list/tree/main/repo/combat) 目录；
+- JS 脚本提交到 [repo/js](https://github.com/babalae/bettergi-scripts-list/tree/main/repo/js) 目录；
+- 地图追踪路线提交到 [repo/pathing](https://github.com/babalae/bettergi-scripts-list/tree/main/repo/pathing) 目录；
+- 七圣召唤策略提交到 [repo/tcg](https://github.com/babalae/bettergi-scripts-list/tree/main/repo/tcg) 目录。
 
-## How It Works (and why it&#039;s safe to run)
+## 提交规范
 
-This tool does not connect to TradingView&#039;s servers, modify any TradingView files, or intercept any network traffic. It communicates exclusively with your locally running TradingView Desktop instance via Chrome DevTools Protocol (CDP) — a standard debugging interface built into all Chromium/Electron applications by Google, including VS Code, Slack, and Discord.
+以下为提交时应遵守的规范，不符合规范的以及作者长期不回复的（通常为1个月），将做 close 处理。
 
-The debug port is disabled by default and must be explicitly enabled by you using a standard Chromium flag (`--remote-debugging-port=9222`). Nothing happens without that deliberate step.
+### 战斗策略
 
-## What This Tool Does Not Do
+创建战斗策略请参考文档[自动战斗](https://www.bettergi.com/feats/task/domain.html)和已有的其他战斗策略
 
-- Connect to TradingView&#039;s servers or APIs
-- Store, transmit, or redistribute any market data
-- Work without a valid TradingView subscription and installed Desktop app
-- Bypass any TradingView paywall or access restriction
-- Execute real trades (chart interaction only)
-- Work if TradingView changes their internal Electron structure
+#### 命名规则
 
-## Research Context
+- 策略的名称**应包含使用的角色简写**
+- 只能用于副本，不适用于锄地的战斗策略应当增加“-副本”的后缀
+- 不应添加过多冗余修饰词  
 
-This project explores an open research question: **how can LLM-based agents interact with professional trading interfaces to support human decision-making?**
+#### 注释与署名
 
-Specifically it investigates:
+- 使用“//”进行注释，必要时应当在策略中使用注释以明确使用的条件等
+- 推荐在策略中同时通过注释说明自动战斗设置中的相关部分，例如：“// 检查战斗结束的延时：设置为 0.4”
+- 署名使用“//作者：你的名字”，错误的格式将导致无法识别
 
-- How structured tool APIs (MCP) can bridge LLMs and stateful desktop financial applications
-- What latency, context, and reliability constraints emerge when an agent operates on live chart data
-- How agents handle ambiguous financial UI state (e.g. interpreting Pine Script output, reading indicator tables)
-- Whether natural language is an effective interface for chart navigation and Pine Script development
-- The failure modes of LLM agents operating in real-time data environments
+#### 注意事项
 
-This is not a trading bot. It is an interface layer that makes a trading application legible to an LLM agent, allowing researchers and developers to study human-AI collaboration in financial workflows.
+- 确保你充分了解自动战斗的完整机制（如战斗结束检查的触发）和每个动作的具体内容再开始编写战斗策略
+- 由 AI 生成的策略不会被接受  
+- 提交前请进行充分的实战测试与优化，提供战斗耗时数据。存在已有策略时，请提供多项对比数据  
 
-See [RESEARCH.md](RESEARCH.md) for open questions, findings, and related work.
+### 地图追踪
 
-## Prerequisites
+#### 文件命名
 
-- **TradingView Desktop app** (paid subscription required for real-time data)
-- **Node.js 18+**
-- **Claude Code** with MCP support (for MCP tools) or any terminal (for CLI)
-- **macOS, Windows, or Linux**
+路线文件名格式：
 
-## What It Does
-
-Gives your AI assistant eyes and hands on your own chart:
-
-- **Pine Script development** — write, inject, compile, debug, and iterate on scripts with AI assistance
-- **Chart navigation** — change symbols, timeframes, zoom to dates, add/remove indicators
-- **Visual analysis** — read your chart&#039;s indicator values, price levels, and annotations
-- **Draw on charts** — trend lines, horizontal lines, rectangles, text annotations
-- **Manage alerts** — create, list, and delete price alerts
-- **Replay practice** — step through historical bars, practice entries/exits
-- **Screenshots** — capture chart state for AI visual analysis
-- **Multi-pane layouts** — set up 2x2, 3x1, etc. grids with different symbols per pane
-- **Monitor your chart** — stream JSONL from your locally running chart for local monitoring scripts
-- **CLI access** — every MCP tool is also a `tv` CLI command, pipe-friendly with JSON output
-- **Launch TradingView** — auto-detect and launch with debug mode from any platform
-
-## Install with Claude Code
-
-Paste this into Claude Code and it will handle the rest:
-
-&gt; Install the TradingView MCP server. Clone https://github.com/tradesdontlie/tradingview-mcp.git, run npm install, add it to my MCP config at ~/.claude/.mcp.json, and launch TradingView with the debug port. Then verify the connection with tv_health_check.
-
-Or follow the manual steps below.
-
-## Quick Start
-
-### 1. Install
-
-```bash
-git clone https://github.com/tradesdontlie/tradingview-mcp.git
-cd tradingview-mcp
-npm install
+```text
+编号-材料名称-[区域]-[二级区域]-二级子区域-数量
 ```
 
-### 2. Launch TradingView with CDP
+其中：
 
-TradingView Desktop must be running with Chrome DevTools Protocol enabled on port 9222.
+- **编号**：默认两位数；超过 100 条时可使用三位数或 `A01` 等形式。排序应按传送便利性或材料获取效率进行。
+- **材料名称**：使用游戏内官方名称。采集物不得使用“XX突破材料”等非正式名称；敌怪使用 F1 讨伐页面中的名称。
+- **区域**：如 `蒙德`、`璃月`、`稻妻` 等，仅跨区域材料需要标注。
+- **二级区域**：如 `珉林`，按实际需要填写。
+- **二级子区域**：如 `绝云间`。若无明确子区域，可使用起始锚点显示区域或路线主要经过区域。
+- **数量**：路线预期获取数量。
 
-**Mac:**
-```bash
-./scripts/launch_tv_debug_mac.sh
+文件名原则上仅包含上述信息，不应加入“快速路线”“推荐路线”等额外描述。
+
+```text
+✔ 01-水晶块-璃月-绝云间-6个
+✔ 02-水晶块-璃月-荻花洲-8个
+✘ 01-水晶块-璃月-快速路径-绝云间-6个
+```
+同一二级子区域存在多条路线时，可增加方位区分。
+
+路线文件名必须与 JSON 中的 `name` 字段一致，说明文件统一命名为 `README.md`。
+
+#### 文件夹结构
+
+路线应放入对应分类，目前包括：
+
+`锄地专区`、`地方特产`、`敌人与魔物`、`矿物`、`食材与炼金`、`其他`
+
+一级目录以材料名称命名；必要时可增加用于区分项目、采集方式或作者的子目录。
+
+```text
+repo/pathing/矿物
+├── 水晶块
+│   ├── 01-水晶块-璃月-绝云间-6个
+│   └── 02-水晶块-璃月-荻花洲-8个
+└── 星银矿石
+    └── 01-星银矿石-覆雪之路-7个
+```
+  
+已有路线存在冲突时：
+
+| 情况 | 处理方式 |
+| --- | --- |
+| 修复、补充原路线 | 直接提交至原目录 |
+| 同类路线但实现不同 | 使用 `名称@作者` 建立独立目录 |
+| 采集角色、方式或目标不同 | 使用 `采集方式@作者`、`效率路线@作者` 等名称区分 |
+
+例如：
+
+```text
+水晶矿
+├── 大剑@作者A
+├── 钟离@作者B
+└── 大剑效率路线@作者C
 ```
 
-**Windows:**
-```bash
-scripts\launch_tv_debug.bat
-```
+### JS 脚本
 
-**Linux:**
-```bash
-./scripts/launch_tv_debug_linux.sh
-```
+创建 JS 脚本请参考文档[创建脚本](https://bettergi.com/dev/js/create.html)
 
-**Or launch manually on any platform:**
-```bash
-/path/to/TradingView --remote-debugging-port=9222
-```
+#### 文件夹命名规则
 
-**Or use the MCP tool** (auto-detects your install):
-&gt; &quot;Use tv_launch to start TradingView in debug mode&quot;
+- 脚本的文件夹名称**应体现脚本的用途**，简要用途可在描述文件 [manifest.json](https://bettergi.com/dev/js/create.html#manifest-json) 中说明，详细用途可在`README.md` 中说明
 
-### 3. Add to Claude Code
+- 脚本的主体文件夹名称可采用 [大驼峰式命名法](https://zh.wikipedia.org/wiki/%E9%A7%9D%E5%B3%B0%E5%BC%8F%E5%A4%A7%E5%B0%8F%E5%AF%AB) 等命名方式，名称中不应包含空格，如：
+  
+  ```
+  repo/js
+  ├── 
+  ├── AutoLeyLineOutcrop
+  ├── AutoXXX
+  └── ...
+  ```
 
-Add to your Claude Code MCP config (`~/.claude/.mcp.json` or project `.mcp.json`):
+- 常见的脚本结构目录如下：
+  
+  ```
+  repo/js
+  └── jsName
+      ├── Assets
+      │   ├── Pathing
+      │   │   └── xxx.json
+      │   └── RecognitionObject
+      │       └── xxx.png
+      │
+      ├── src
+      │   ├── modules
+      │   │   ├── recognition.js
+      │   │   ├── navigation.js
+      │   │   └── task.js
+      │   ├── utils
+      │   │   └── common.js
+      │   └── constants.js
+      │
+      ├── main.js
+      ├── manifest.json
+      ├── settings.json
+      └── README.md
+  ```
 
-```json
-{
-  &quot;mcpServers&quot;: {
-    &quot;tradingview&quot;: {
-      &quot;command&quot;: &quot;node&quot;,
-      &quot;args&quot;: [&quot;/path/to/tradingview-mcp/src/server.js&quot;]
-    }
+- `Assets`用于存放脚本使用到的资源文件，其中
+  
+  - `Pathing`用于存放[地图追踪](https://bettergi.com/feats/autos/pathing-dev.html)文件
+  - `RecognitionObject`用于存放[模板匹配、图像识别](https://bettergi.com/dev/js/rec.html#%E6%A8%A1%E6%9D%BF%E5%8C%B9%E9%85%8D)对象
+
+#### HTML遮罩内容规范
+
+脚本内由于可以通过`html`文件进行遮罩渲染，用于引导提示、脚本配置等工作，制作遮罩时应遵守如下规则：  
+* 需考虑dom元素过多或不当操作引起的浏览器引擎内存占用问题，不能过度影响普通玩家在运行时的内存占用
+* 提交代码时如使用了html遮罩，需要将能够人为理解的页面项目完整源码上传（框架打包产物通常不易于理解），或是在pr信息中附上个人开源仓库链接（每次html有更新时都需要）
+* 不可用于展示宣传、推广性质的信息，如QQ群号、平台广告、外部视频等（包括iframe中的链接）
+* 显示的内容不可有侮辱、贬低、指责他人的意图
+
+#### 其他注意事项
+
+- 当脚本足够大时，应按工程化标准进行实现，具体标准请自行学习  
+- `README.md`中应详细介绍脚本使用方式，如有必要再对技术实现做解释。禁止提交未经人工润色、AI 味浓厚、内容臃肿的`README.md`
+- main.js 应主要负责脚本入口、初始化以及各模块的调用，例如：
+
+  ```
+  import { runTask } from &quot;./src/modules/task.js&quot;;
+  
+  async function main() {
+      await runTask();
   }
-}
-```
+  
+  main();
+  ```
+  
+  随着逻辑增加，应及时将不同职责拆分为独立模块。原则上不推荐大于500行、几乎没有模块导入的单文件 main.js，这会显著增加各方面成本。
 
-Replace `/path/to/tradingview-mcp` with your actual path.
+## Contributors
 
-### 4. Verify
+&lt;a href=&quot;https://next.ossinsight.io/widgets/official/compose-recent-active-contributors?repo_id=866958830&amp;limit=30&quot; target=&quot;_blank&quot; style=&quot;display: block&quot; align=&quot;center&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://next.ossinsight.io/widgets/official/compose-recent-active-contributors/thumbnail.png?repo_id=866958830&amp;limit=30&amp;image_size=auto&amp;color_scheme=dark&quot; width=&quot;655&quot; height=&quot;auto&quot;&gt;
+    &lt;img alt=&quot;Active Contributors of babalae/bettergi-scripts-list - Last 28 days&quot; src=&quot;https://next.ossinsight.io/widgets/official/compose-recent-active-contributors/thumbnail.png?repo_id=866958830&amp;limit=30&amp;image_size=auto&amp;color_scheme=light&quot; width=&quot;655&quot; height=&quot;auto&quot;&gt;
+  &lt;/picture&gt;
+&lt;/a&gt;
 
-Ask Claude: *&quot;Use tv_health_check to verify TradingView is connected&quot;*
+## 相关源码
 
-## CLI
+脚本仓库页面的源码
 
-Every MCP tool is also accessible as a `tv` CLI command. All output is JSON for piping with `jq`.
+- 旧版：[bettergi-scripts-web](https://github.com/huiyadanli/bettergi-scripts-web)
+- 新版：[bettergi-script-web](https://github.com/zaodonganqi/bettergi-script-web)
 
-```bash
-# Install globally (optional)
-npm link
 
-# Or run directly
-node src/cli/index.js &lt;command&gt;
-```
-
-### Quick Examples
-
-```bash
-tv status                          # check connection
-tv quote                           # current price
-tv symbol AAPL                     # change symbol
-tv ohlcv --summary                 # price summary
-tv screenshot -r chart             # capture chart
-tv pine compile                    # compile Pine Script
-tv pane layout 2x2                 # 4-chart grid
-tv pane symbol 1 ES1!              # set pane symbol
-tv stream quote | jq &#039;.close&#039;      # monitor price changes
-```
-
-### All Commands
-
-```
-tv status / launch / state / symbol / timeframe / type / info / search
-tv quote / ohlcv / values
-tv data lines/labels/tables/boxes/strategy/trades/equity/depth/indicator
-tv pine get/set/compile/analyze/check/save/new/open/list/errors/console
-tv draw shape/list/get/remove/clear
-tv alert list/create/delete
-tv watchlist get/add
-tv indicator add/remove/toggle/set/get
-tv layout list/switch
-tv pane list/layout/focus/symbol
-tv tab list/new/close/switch
-tv replay start/step/stop/status/autoplay/trade
-tv stream quote/bars/values/lines/labels/tables/all
-tv ui click/keyboard/hover/scroll/find/eval/type/panel/fullscreen/mouse
-tv screenshot / discover / ui-state / range / scroll
-```
-
-## Streaming
-
-The `tv stream` commands poll your locally running TradingView Desktop instance at regular intervals via Chrome DevTools Protocol on localhost.
-
-No connection is made to TradingView&#039;s servers. All data stays on your machine.
-
-&gt; [!WARNING]
-&gt; Programmatic consumption of TradingView data may conflict with their Terms of Use regardless of the data source. You are solely responsible for ensuring your usage complies.
-
-```bash
-tv stream quote                          # price tick monitoring
-tv stream bars                           # bar-by-bar updates
-tv stream values                         # indicator value monitoring
-tv stream lines --filter &quot;NY Levels&quot;     # price level monitoring
-tv stream tables --filter Profiler       # table data monitoring
-tv stream all                            # all panes at once (multi-symbol)
-```
-
-## How Claude Knows Which Tool to Use
-
-Claude reads [`CLAUDE.md`](CLAUDE.md) automatically when working in this project. It contains a complete decision tree:
-
-| You say... | Claude uses... |
-|------------|---------------|
-| &quot;What&#039;s on my chart?&quot; | `chart_get_state` → `data_get_study_values` → `quote_get` |
-| &quot;What levels are showing?&quot; | `data_get_pine_lines` → `data_get_pine_labels` |
-| &quot;Read the session table&quot; | `data_get_pine_tables` with `study_filter` |
-| &quot;Give me a full analysis&quot; | `quote_get` → `data_get_study_values` → `data_get_pine_lines` → `data_get_pine_labels` → `data_get_pine_tables` → `data_get_ohlcv` (summary) → `capture_screenshot` |
-| &quot;Switch to AAPL daily&quot; | `chart_set_symbol` → `chart_set_timeframe` |
-| &quot;Write a Pine Script for...&quot; | `pine_set_source` → `pine_smart_compile` → `pine_get_errors` |
-| &quot;Start replay at March 1st&quot; | `replay_start` → `replay_step` → `replay_trade` |
-| &quot;Set up a 4-chart grid&quot; | `pane_set_layout` → `pane_set_symbol` for each pane |
-| &quot;Draw a level at 24500&quot; | `draw_shape` (horizontal_line) |
-| &quot;Take a screenshot&quot; | `capture_screenshot` |
-
-## Tool Reference (78 MCP tools)
-
-### Chart Reading
-
-| Tool | When to use | Output size |
-|------|------------|-------------|
-| `chart_get_state` | First call — get symbol, timeframe, all indicator names + IDs | ~500B |
-| `data_get_study_values` | Read current RSI, MACD, BB, EMA values from all indicators | ~500B |
-| `quote_get` | Get latest price, OHLC, volume | ~200B |
-| `data_get_ohlcv` | Get price bars. **Use `summary: true`** for compact stats | 500B (summary) / 8KB (100 bars) |
-
-### Custom Indicator Data (Pine Drawings)
-
-Read `line.new()`, `label.new()`, `table.new()`, `box.new()` output from any visible Pine indicator.
-
-| Tool | When to use | Output size |
-|------|------------|-------------|
-| `data_get_pine_lines` | Read horizontal price levels (support/resistance, session levels) | ~1-3KB |
-| `data_get_pine_labels` | Read text annotations + prices (&quot;PDH 24550&quot;, &quot;Bias Long&quot;) | ~2-5KB |
-| `data_get_pine_tables` | Read data tables (session stats, analytics dashboards) | ~1-4KB |
-| `data_get_pine_boxes` | Read price zones / ranges as {high, low} pairs | ~1-2KB |
-
-**Always use `study_filter`** to target a specific indicator: `study_filter: &quot;Profiler&quot;`.
-
-### Chart Control
-
-| Tool | What it does |
-|------|-------------|
-| `chart_set_symbol` | Change ticker (BTCUSD, AAPL, ES1!, NYMEX:CL1!) |
-| `chart_set_timeframe` | Change resolution (1, 5, 15, 60, D, W, M) |
-| `chart_set_type` | Change style (Candles, HeikinAshi, Line, Area, Renko) |
-| `chart_manage_indicator` | Add/remove indicators. **Use full names**: &quot;Relative Strength Index&quot; not &quot;RSI&quot; |
-| `chart_scroll_to_date` | Jump to a date (ISO: &quot;2025-01-15&quot;) |
-| `chart_set_visible_range` | Zoom to exact range (unix timestamps) |
-| `symbol_info` / `symbol_search` | Symbol metadata and search |
-| `indicator_set_inputs` / `indicator_toggle_visibility` | Change indicator settings, show/hide |
-
-### Multi-Pane Layouts
-
-| Tool | What it does |
-|------|-------------|
-| `pane_list` | List all panes with symbols and active state |
-| `pane_set_layout` | Change grid: `s`, `2h`, `2v`, `2x2`, `4`, `6`, `8` |
-| `pane_focus` | Focus a specific pane by index |
-| `pane_set_symbol` | Set symbol on any pane |
-
-### Tab Management
-
-| Tool | What it does |
-|------|-------------|
-| `tab_list` | List open chart tabs |
-| `tab_new` / `tab_close` | Open/close tabs |
-| `tab_switch` | Switch to a tab by index |
-
-### Pine Script Development
-
-| Tool | Step |
-|------|------|
-| `pine_set_source` | 1. Inject code into editor |
-| `pine_smart_compile` | 2. Compile with auto-detection + error check |
-| `pine_get_errors` | 3. Read compilation errors if any |
-| `pine_get_console` | 4. Read log.info() output |
-| `pine_save` | 5. Save to TradingView cloud |
-| `pine_get_source` | Read current script (**warning: can be 200KB+ for complex scripts**) |
-| `pine_new` | Create blank indicator/strategy/library |
-| `pine_open` / `pine_list_scripts` | Open or list saved scripts |
-| `pine_analyze` | Offline static analysis (no chart needed) |
-| `pine_check` | Server-side compile check (no chart needed) |
-
-### Replay Mode
-
-| Tool | Step |
-|------|------|
-| `replay_start` | Enter replay at a date |
-| `replay_step` | Advance one bar |
-| `replay_autoplay` | Auto-advance (set speed in ms) |
-| `replay_trade` | Buy/sell/close positions |
-| `replay_status` | Check position, P&amp;L, date |
-| `replay_stop` | Return to realtime |
-
-### Drawing, Alerts, UI Automation
-
-| Tool | What it does |
-|------|-------------|
-| `draw_shape` | Draw horizontal_line, trend_line, rectangle, text |
-| `draw_list` / `draw_remove_one` / `draw_clear` | Manage drawings |
-| `alert_create` / `alert_list` / `alert_delete` | Manage price alerts |
-| `capture_screenshot` | Screenshot (regions: full, chart, strategy_tester) |
-| `batch_run` | Run action across multiple symbols/timeframes |
-| `watchlist_get` / `watchlist_add` | Read/modify watchlist |
-| `layout_list` / `layout_switch` | Manage saved layouts |
-| `ui_open_panel` / `ui_click` / `ui_evaluate` | UI automation |
-| `tv_launch` / `tv_health_check` / `tv_discover` | Connection management |
-
-## Context Management
-
-Tools return compact output by default to minimize context usage. For a typical &quot;analyze my chart&quot; workflow, total context is ~5-10KB instead of ~80KB.
-
-| Feature | How it saves context |
-|---------|---------------------|
-| Pine lines | Returns deduplicated price levels only, not every line object |
-| Pine labels | Capped at 50 per study, text+price only |
-| Pine tables | Pre-formatted row strings, no cell metadata |
-| Pine boxes | Deduplicated {high, low} zones only |
-| OHLCV summary mode | Stats + last 5 bars instead of all bars |
-| Indicator inputs | Encrypted/encoded blobs auto-filtered |
-| `verbose: true` | Pass on any pine tool to get raw data with IDs/colors when needed |
-| `study_filter` | Target one indicator instead of scanning all |
-
-## Finding TradingView on Your System
-
-Launch scripts and `tv_launch` auto-detect TradingView. If auto-detection fails:
-
-| Platform | Common Locations |
-|----------|-----------------|
-| **Mac** | `/Applications/TradingView.app/Contents/MacOS/TradingView` |
-| **Windows** | `%LOCALAPPDATA%\TradingView\TradingView.exe`, `%PROGRAMFILES%\WindowsApps\TradingView*\TradingView.exe` |
-| **Linux** | `/opt/TradingView/tradingview`, `~/.local/share/TradingView/TradingView`, `/snap/tradingview/current/tradingview` |
-
-The key flag: `--remote-debugging-port=9222`
-
-## Testing
-
-```bash
-# Requires TradingView running with --remote-debugging-port=9222
-npm test
-```
-
-29 tests covering: Pine Script static analysis, server-side compilation, and CLI routing.
-
-## Architecture
-
-```
-Claude Code  ←→  MCP Server (stdio)  ←→  CDP (port 9222)  ←→  TradingView Desktop (Electron)
-```
-
-- **Transport**: MCP over stdio (84 tools) + CLI (`tv` command, 30 commands with 66 subcommands)
-- **Connection**: Chrome DevTools Protocol on localhost:9222
-- **Streaming**: Poll-and-diff loop with deduplication, JSONL output to stdout
-- **No dependencies** beyond `@modelcontextprotocol/sdk` and `chrome-remote-interface`
-
-## Attributions
-
-This project is not affiliated with, endorsed by, or associated with:
-- **TradingView Inc.** — TradingView is a trademark of TradingView Inc.
-- **Anthropic** — Claude and Claude Code are trademarks of Anthropic, PBC.
-
-This tool is an independent MCP server that connects to Claude Code via the standard MCP protocol. It does not contain or modify any Anthropic software.
-
-## Disclaimer
-
-This project is provided **for personal, educational, and research purposes only**.
-
-**How this tool works:** This tool uses Chrome DevTools Protocol (CDP), the standard debugging interface built into Chromium-based applications. It does not reverse engineer any proprietary TradingView protocol, connect to TradingView&#039;s servers, or bypass any access controls. The debug port must be explicitly enabled by the user via a standard Chromium command-line flag (`--remote-debugging-port=9222`).
-
-By using this software, you acknowledge and agree that:
-
-1. **You are solely responsible** for ensuring your use of this tool complies with [TradingView&#039;s Terms of Use](https://www.tradingview.com/policies/) and all applicable laws.
-2. TradingView&#039;s Terms of Use **restrict automated data collection, scraping, and non-display usage** of their platform and data. This tool uses Chrome DevTools Protocol to programmatically interact with the TradingView Desktop app, which may conflict with those terms.
-3. **You assume all risk** associated with using this tool. The authors are not responsible for any account bans, suspensions, legal actions, or other consequences resulting from its use.
-4. This tool **must not be used** for, including but not limited to:
-   - Redistributing, reselling, or commercially exploiting TradingView&#039;s market data
-   - Circumventing TradingView&#039;s access controls or subscription restrictions
-   - Performing automated trading or algorithmic decision-making using extracted data
-   - Violating the intellectual property rights of Pine Script indicator authors
-   - Connecting to TradingView&#039;s servers or infrastructure (all access is via the locally running Desktop app)
-5. The streaming functionality monitors your locally running TradingView Desktop instance only. It does not connect to TradingView&#039;s servers or extract data from TradingView&#039;s infrastructure.
-6. Market data accessed through this tool remains subject to exchange and data provider licensing terms. **Do not redistribute, store, or commercially exploit any data obtained through this tool.**
-7. This tool accesses internal, undocumented TradingView application interfaces that may change or break at any time without notice.
-
-**Use at your own risk.** If you are unsure whether your intended use complies with TradingView&#039;s terms, do not use this tool.
-
-## License
-
-MIT — see [LICENSE](LICENSE) for details.
-
-The MIT license applies to the source code of this project only. It does not grant any rights to TradingView&#039;s software, data, trademarks, or intellectual property.
+地图路径追踪的源码：[bettergi-map](https://github.com/huiyadanli/bettergi-map)
 </pre>
           ]]></content:encoded>
             <category>JavaScript</category>
