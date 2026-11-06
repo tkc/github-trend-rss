@@ -4,934 +4,24 @@
         <title>GitHub Trending Today for javascript - JavaScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for javascript.</description>
-        <lastBuildDate>Thu, 05 Nov 2026 00:04:06 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 06 Nov 2026 00:03:51 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2026, GitHub</copyright>
         <item>
-            <title><![CDATA[michael-denyer/pstack-claude]]></title>
-            <link>https://github.com/michael-denyer/pstack-claude</link>
-            <guid>https://github.com/michael-denyer/pstack-claude</guid>
-            <pubDate>Thu, 05 Nov 2026 00:04:06 GMT</pubDate>
-            <description><![CDATA[Antigravity, Claude Code, Codex, Copilot, Gemini, Muse, OpenCode, Pi, and Prime Agent versions of Poteto's pstack. Rigorous agent workflows with Cursor primitives translated for other harnesses.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/michael-denyer/pstack-claude">michael-denyer/pstack-claude</a></h1>
-            <p>Antigravity, Claude Code, Codex, Copilot, Gemini, Muse, OpenCode, Pi, and Prime Agent versions of Poteto's pstack. Rigorous agent workflows with Cursor primitives translated for other harnesses.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 3,973</p>
-            <p>Forks: 358</p>
-            <p>Stars today: 93 stars today</p>
-            <h2>README</h2><pre># pstack
-
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-yellow?logo=buy-me-a-coffee&amp;logoColor=white)](https://buymeacoffee.com/codenyer)
-[![Mentioned in Awesome Claude Code](https://awesome.re/mentioned-badge.svg)](https://github.com/hesreallyhim/awesome-claude-code)
-
-Lauren Tan&#039;s [pstack](https://github.com/cursor/plugins/tree/main/pstack) is an opinionated Cursor skill stack that improves agent outcomes. This is a port for Claude Code, Codex, Pi, GitHub Copilot, Muse, and other agent harnesses. It tracks upstream and also carries named policy forks, each declared in [`tools/forks.json`](tools/forks.json).
-
-Tell `poteto-mode` your goal and it will invoke the correct workflow for the task. It keeps your code concise, simple and verified.
-
-For concurrency bugs and invariants that tests cannot reach, `/create-formal-verification-skill` picks the riskiest property in your code, verifies it with a tool that fits, and leaves a project skill the next agent reruns. The separate [agent-formal-verify](https://github.com/michael-denyer/agent-formal-verify) plugin goes deeper on the method, with guided TLA+ model checking, Lean proofs, and Kani for Rust.
-
-## Built for Claude Code
-
-This port translates upstream&#039;s Cursor skills for Claude Code before installation. [Upstream&#039;s Claude Code install](https://github.com/cursor/plugins/tree/c742dd6/harness/pstack/claude-code) asks agents to translate Cursor names at runtime, using extra tokens and relying on them to apply the mapping correctly. This port also adds a SessionStart hook that routes tasks to `poteto-mode`.
-
-## Install
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Claude Code&lt;/strong&gt;&lt;/summary&gt;
-
-Run in Claude Code 2.1.292 or later:
-
-```text
-/plugin marketplace add michael-denyer/pstack-claude
-/plugin install pstack@pstack-claude
-```
-
-Claude Code leaves auto-update off for third-party marketplaces, so pstack stays on the version you installed. To turn it on, run `/plugin`, open the **Marketplaces** tab, select `pstack-claude`, and choose **Enable auto-update**. To update once by hand, run `claude plugin update pstack@pstack-claude`.
-
-&lt;/details&gt;
-
-&lt;a id=&quot;codex&quot;&gt;&lt;/a&gt;
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Codex&lt;/strong&gt;&lt;/summary&gt;
-
-Run in your terminal:
-
-```shell
-codex plugin marketplace add michael-denyer/pstack-claude
-codex plugin add pstack@pstack-claude
-```
-
-Invoke a skill by typing `$` and its name, such as `$poteto-mode` or `$babysit`, then choosing its entry, which inserts `$pstack:&lt;name&gt;`. `/skills` lists every skill.
-
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Pi&lt;/strong&gt;&lt;/summary&gt;
-
-Run in your terminal:
-
-```shell
-pi install git:github.com/michael-denyer/pstack-claude
-```
-
-The package loads the skills and the pstack Pi extension, which adds the subagent, question, and wake-up tools the skills use, plus `/loop` and the routing instruction. Invoke a skill with `/skill:&lt;name&gt;`.
-
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;GitHub Copilot&lt;/strong&gt;&lt;/summary&gt;
-
-Run in your terminal:
-
-```shell
-copilot plugin marketplace add michael-denyer/pstack-claude
-copilot plugin install pstack@pstack-claude
-```
-
-This installs pstack for the Copilot CLI and the GitHub Copilot app, which share `~/.copilot`. Start a new session afterwards. Copilot ships no default pstack models, so the first skill that needs one runs `setup-pstack` to pick from the models your account lists, and later sessions reuse that choice.
-
-The Copilot build is tested on Copilot CLI 1.0.87 through 1.0.92. On those versions the routing hook&#039;s context reaches the session alongside other plugins&#039; session-start context. If a later version keeps only one plugin&#039;s context, `setup-pstack` offers a [standing instruction](plugins/pstack/skills/setup-pstack/copilot.md#wire-it-in) for `~/.copilot/copilot-instructions.md` instead. On 1.0.92, once the CLI caches its computer-use experiment assignment, `copilot -p` sessions list no plugin skills and a `skill` call returns &quot;Skill not found&quot;. Interactive sessions, the hooks, and the agents are unaffected.
-
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Muse&lt;/strong&gt;&lt;/summary&gt;
-
-Run in your terminal:
-
-```shell
-git clone https://github.com/michael-denyer/pstack-claude
-cd pstack-claude
-muse plugins install ./plugins/pstack
-muse plugins approve pstack
-```
-
-The first command installs the native Muse plugin bundle. The second approves its `SessionStart` hook and agent definitions, which Muse runs only after approval. Start a new session afterwards. Invoke a skill with `/&lt;name&gt;` (for example `/poteto-mode`), which Muse lists for each user-invocable skill.
-
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Kimi Code CLI&lt;/strong&gt;&lt;/summary&gt;
-
-After a release containing `kimi.plugin.json` is published, close other Kimi sessions and install it in a fresh Kimi Code CLI session:
-
-```text
-/plugins install https://github.com/michael-denyer/pstack-claude
-/reload
-```
-
-To test an unreleased checkout, use `/plugins install /absolute/path/to/pstack-claude` instead, followed by `/reload`; Kimi copies the whole checkout, including Git metadata and local files, so use a clean, reviewed copy. To update, close other Kimi sessions, reinstall from the same source in a fresh session, and run `/reload`. Invoke a skill as `/skill:pstack:poteto-mode`; see the [Kimi mapping](plugins/pstack/skills/poteto-mode/references/kimi-tools.md) for tool guidance.
-
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Grok Build&lt;/strong&gt;&lt;/summary&gt;
-
-```shell
-git clone https://github.com/michael-denyer/pstack-claude
-cd pstack-claude
-grok plugin install &quot;$PWD/plugins/pstack&quot; --trust
-grok plugin enable pstack
-```
-
-Start a new session and use `/poteto-mode` to load the skill explicitly. To update a local install, quit Grok sessions, inspect `grok plugin details pstack` and back up any edits in the installed copy, pull the checkout, run `grok plugin uninstall pstack --keep-data`, and repeat the last two commands. If pstack was disabled, disable it again before restarting. `grok plugin update` does not refresh a local install.
-
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;MiniMax Code&lt;/strong&gt;&lt;/summary&gt;
-
-Run in your terminal:
-
-```shell
-git clone https://github.com/michael-denyer/pstack-claude
-cd pstack-claude
-mkdir -p &quot;${MINIMAX_DATA_DIR:-$HOME/.minimax}/plugins&quot;
-cp -R plugins/pstack &quot;${MINIMAX_DATA_DIR:-$HOME/.minimax}/plugins/pstack&quot;
-```
-
-MiniMax Code loads each directory under `plugins/` in its data directory as a local plugin, and reads pstack through its Claude Code reader with the skills, agents, and routing hook. `mcode plugin list` shows it as `pstack@local`. To update after a `git pull`, delete the old `plugins/pstack` copy first, then run the `cp` line again; copying onto an existing copy nests it inside.
-
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Antigravity (agy)&lt;/strong&gt;&lt;/summary&gt;
-
-Run in your terminal:
-
-```shell
-git clone https://github.com/michael-denyer/pstack-claude
-cd pstack-claude
-agy plugin install ./plugins/pstack
-```
-
-This installs the native Antigravity plugin bundle (`skills`, `agents`, and `SessionStart` routing hook) into `~/.gemini/config/plugins/pstack`.
-
-&lt;/details&gt;
-
-&lt;a id=&quot;other-harnesses&quot;&gt;&lt;/a&gt;
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Other harnesses&lt;/strong&gt;&lt;/summary&gt;
-
-OpenCode (the CLI and the desktop app), Gemini CLI, Prime Agent, and skills-only Codex installs read skills from `~/.agents/skills/`. Run in your terminal:
-
-```shell
-git clone https://github.com/michael-denyer/pstack-claude
-cd pstack-claude
-mkdir -p ~/.agents/skills
-for s in plugins/pstack/skills/*/; do
-  target=~/.agents/skills/&quot;$(basename &quot;$s&quot;)&quot;
-  test -e &quot;$target&quot; || test -L &quot;$target&quot; || ln -s &quot;$(pwd)/$s&quot; &quot;$target&quot;
-done
-```
-
-To update, run `git pull` in the clone, then run the `for` loop again to link skills added since the last run. These installs have no routing hook, so ask for `poteto-mode` by name or add a standing instruction to the harness&#039;s instruction file. See [shared installation](docs/reference.md#shared-skills-installation) for per-harness notes and uninstalling.
-
-&lt;/details&gt;
-
-### Configure
-
-pstack routes tasks to `poteto-mode` automatically. At session start, a hook injects an instruction that points the agent at it: the plugin&#039;s hook on Claude Code, Codex, GitHub Copilot, Muse, and MiniMax Code, and the pstack extension on Pi. Codex runs the hook only after you trust it through `/hooks`, and Muse only after `muse plugins approve pstack`. Other harnesses have no hook.
-
-Run `setup-pstack` to turn automatic routing on or off, change model defaults, or set a reasoning effort per role (`arena runners: opus @xhigh, fable @max`).
-
-## Getting started
-
-```text
-Use poteto-mode to fix the search filter resetting when I change pages.
-```
-
-For a bug, it reproduces the failure, uses `how` and `why` to investigate, delegates the fix, then reruns the failing case. If the fix crosses a function boundary, it brings in `architect` before implementation. You receive the fix and the failing and passing evidence.
-
-[Other playbooks](plugins/pstack/skills/poteto-mode/SKILL.md#playbooks) cover planning, features, refactoring, performance issues, investigations, prototypes, PR maintenance, shipping, and longer projects.
-
-![poteto-mode on Claude Code, Codex, and Pi turns a request into verified work. Choose a playbook, plan and delegate with architect, arena, or swarm, then review and verify with interrogate, tests, and measurements. Project playbooks customize the workflow, and setup-pstack configures the model and reasoning effort per role. Supporting skills include how, why, and unslop.](assets/pstack-overview.png)
-
-## Details
-
-- [Skills and slash commands](docs/reference.md#slash-commands)
-- [Runtime setup](docs/reference.md#runtime-support)
-- [Models and dependencies](docs/reference.md#configuration-and-dependencies)
-- [Maintenance and port scope](docs/reference.md#maintenance)
-
-## Data handling
-
-pstack has no server or telemetry. Anything its skills ask your agent to read, including session transcripts, goes to your model provider. Scripts run locally, and PR tools use your GitHub CLI login.
-
-## Contributing
-
-Thanks for helping make this port better. Bug reports, documentation fixes, and runtime improvements are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the checks and where your change belongs. Report vulnerabilities privately as described in [SECURITY.md](SECURITY.md).
-
-To support maintenance of this port, [buy the maintainer a coffee](https://buymeacoffee.com/codenyer).
-
-## License
-
-This port, including its modifications and additions, is also [MIT-licensed](LICENSE), © 2026 Michael Denyer. Original pstack © 2026 Lauren Tan; imported cursor-team-kit and thermos skills © 2026 Cursor. See [LICENSE-cursor-team-kit](LICENSE-cursor-team-kit), [LICENSE-thermos](LICENSE-thermos), and [NOTICE.md](NOTICE.md).
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[withmarbleapp/os-taxonomy]]></title>
-            <link>https://github.com/withmarbleapp/os-taxonomy</link>
-            <guid>https://github.com/withmarbleapp/os-taxonomy</guid>
-            <pubDate>Thu, 05 Nov 2026 00:04:05 GMT</pubDate>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/withmarbleapp/os-taxonomy">withmarbleapp/os-taxonomy</a></h1>
-            <p></p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 7,589</p>
-            <p>Forks: 1,236</p>
-            <p>Stars today: 31 stars today</p>
-            <h2>README</h2><pre># Marble Skill Taxonomy
-
-An open, structured taxonomy of **what children learn** across the primary/elementary years — decomposed into fine-grained &quot;micro-topics&quot;, wired into a prerequisite graph, and aligned to national curriculum standards. Produced by [Marble](https://withmarble.com).
-
-&gt; **Version:** `v1` · **Topics:** 1,861 · **Prerequisite edges:** 4,003 · **Subjects:** 9
-
-## See it
-
-![The taxonomy as a rotating 3D graph: every dot a micro-topic, colored by subject, wired by prerequisites](media/curriculum-viz.gif)
-
-Every dot is a micro-topic, colored by subject; height is age; each thread is a prerequisite ([full-quality video](media/curriculum-viz.mp4)). Explore it interactively at [withmarble.com/curriculum](https://withmarble.com/curriculum) — tap any concept to trace everything a learner must master before it.
-
-
-## What this is
-
-Most curriculum data is either a flat list of standards or locked inside a product. This dataset is a **connected graph of learning**:
-
-- **1,861 micro-topics** — a single, teachable idea (e.g. *&quot;Building sentences&quot;*, *&quot;Apparent brightness of stars&quot;*), each with a plain-language description, mastery **evidence** criteria, a type (conceptual / procedural / representational / language / meta), a subject + domain, and an approximate age range.
-- **4,003 prerequisite dependencies** — a directed acyclic graph: *&quot;topic X depends on prerequisite Y&quot;*, each edge tagged `hard`/`soft` and carrying a one-line **reason**.
-- **Curriculum alignment** — each micro-topic links to the standards it was distilled from (NGSS, Common Core, the UK National Curriculum, and more).
-- **Teaching research** — 1,049 records. Coverage is partial; 812 topics have no research in this release.
-- **Domain clusters** — 176 parent-friendly one-paragraph summaries per (subject, domain, age band).
-
-### Subjects
-
-| Subject | Topics |
-|---|---:|
-| Computing | 52 |
-| English | 339 |
-| Geography | 22 |
-| History | 109 |
-| Learning to Learn | 18 |
-| Life Skills | 46 |
-| Mathematics | 581 |
-| Personal &amp; Social Development | 118 |
-| Science | 576 |
-
-## Files
-
-All data lives in [`data/`](data/) as UTF-8 JSON. See [`schema/`](schema/) for JSON Schemas and [`manifest.json`](data/manifest.json) for counts + SHA-256 checksums.
-
-| File | What it holds |
-|---|---|
-| [`data/topics.json`](data/topics.json) | The micro-topics (graph **nodes**). |
-| [`data/dependencies.json`](data/dependencies.json) | Prerequisite **edges** (`topicId` depends on `prerequisiteId`). |
-| [`data/curriculum-standards.json`](data/curriculum-standards.json) | The source curriculum standards, grouped by curriculum. |
-| [`data/clusters.json`](data/clusters.json) | Parent-friendly domain summaries. |
-| [`data/teaching-research.json`](data/teaching-research.json) | Teaching research joined by `topicId`, with explicit coverage and publication notes (~24 MB). |
-| [`data/archived-teaching-research.json`](data/archived-teaching-research.json) | Historical guidance for merged or refocused topics, with original records and current topic associations. |
-| [`data/manifest.json`](data/manifest.json) | Counts, per-subject breakdown, per-file checksums. |
-| [`data/curriculum-alignments.json`](data/curriculum-alignments.json) | Scoped framework, jurisdiction and global age contexts; source for flat compatibility fields. |
-
-The catalogue contains **17 sources / 7,743 expectations**. It includes 620 Australian Curriculum v9 content descriptions and 3,862 Ontario expectations from nine elementary documents. Ontario is exported as codes and official source links only; ingestion of source expectations is separate from authoring topic coverage. Ontario Grades 1–7 Mathematics have received focused taxonomy authoring passes. The [Grade 2 report](reports/ontario-grade2-mathematics-2026-10-23.md) distinguishes reused claims, extracted elementary claims and the concurrency gap; mappings do not certify learner mastery of every linked topic. The [Grade 3 report](reports/ontario-grade3-mathematics-2026-10-23.md) records reuse of 114 existing topics, the congruence extension and prerequisite repairs; no topics were added. The [Grade 4 report](reports/ontario-grade4-mathematics-2026-10-24.md) records reuse of 126 existing topics, two missing skills, two focused extractions and prerequisite repairs. The [Grade 5 report](reports/ontario-grade5-mathematics-2026-10-24.md) records reuse of 145 existing topics, one missing mathematical representation, one financial/civic concept and one focused extraction. The [Grade 6 report](reports/ontario-grade6-mathematics-2026-10-27.md) records reuse of 173 existing topics and five additions: two procedures, one focused extraction and two financial-content claims. The [Grade 7 report](reports/ontario-grade7-mathematics-2026-10-27.md) records reuse of 171 existing topics and two spatial additions; the square-root proposal was withdrawn.
-
-Ontario Grade 5 Language adds 306 links across 161 existing topics, with no new topics. The [Grade 5 Language report](reports/ontario-grade5-language-2026-11-02.md) and [code-by-code mapping](reports/ontario-grade5-language-mapping-2026-11-02.json) record whole-topic reuse, prerequisite repairs, and the four remaining resource/performance conditions. Coverage links do not certify learner mastery.
-
-Ontario Grade 6 Language adds 313 links across 168 topics, including three new claims and a suffix-evidence correction. The [Grade 6 Language report](reports/ontario-grade6-language-2026-11-02.md) and [code-by-code mapping](reports/ontario-grade6-language-mapping-2026-11-02.json) record 55 Full / 4 Partial specific expectations, with resource and performance conditions retained. This Language pass stops at primary Grade 6 (ages 11–12).
-
-The Australian cleanup reviewed all 314 additions and 14 later edited IDs, consolidated repeated skills and redistributed bundled requirements. All 593 selected expectation codes remain linked. Those links do not certify whole-standard coverage: 572 previous Full claims have not been independently recertified. The 27 PE/movement descriptions remain excluded. Read the [cleanup report](reports/acara-v9-cleanup-2026-10-23.md) and [current area-by-area mapping counts](reports/acara-v9-scope-coverage.md).
-
-See [PROVENANCE.md](PROVENANCE.md) for sources and attribution.
-
-### Adding curricula
-
-The [public alignment contract](docs/curriculum-alignment-contract.md) now has a
-[reviewed baseline](reports/scoped-alignment-baseline-2026-11-04.md) of 3,733 contexts.
-Edit `data/curriculum-alignments.json` for associations and their ages; keep topic
-claims in `data/topics.json`. The [version 2 scope model](docs/curriculum-alignment-contexts-v2.md)
-preserves global guidance, international frameworks and separate jurisdiction age
-intervals on one topic; version 1 remains supported by the codec.
-
-Run `npm run alignments:generate`, `npm run validate`,
-`npm run alignments:generated-check` and `npm test`, then submit the actual data
-change in a normal PR. Generation refreshes flat topic standards/ages, the research
-file&#039;s topic checksum binding and manifest checksums/counts. It uses only public
-local files and preserves original timestamps; no private account is needed.
-Authored research and its coverage must already be valid; this bounded command
-does not author research or repair unrelated artifacts.
-
-The [authoring and publication design](docs/taxonomy-authoring-and-publication.md)
-describes downstream application deployment. This public baseline does not apply
-changes to a live DB, migrate agent tools or activate the future publisher.
-
-Curricula map onto one shared taxonomy. Keep subjects and domains consistent
-across countries; a curriculum&#039;s learning-area labels do not create separate
-subject trees.
-
-- Reuse a topic when it assesses the same concept or operation. Add local
-  examples without changing what mastery means.
-- Review affected assessment guidance and learner estimates before changing a
-  mastery claim. Assess independent procedures separately; topics do not track
-  multiple difficulty levels.
-- Record whole-expectation, component and prerequisite contributions explicitly.
-  A topic–code link alone does not establish Full coverage.
-- Reuse existing domains before adding a distinct new domain. Keep names
-  consistent and avoid parallel country-specific domain trees.
-- Keep each topic focused on a teachable concept or skill. A standard can link
-  to several topics; its bundled requirements need not become one topic.
-- Add country-specific topics where the knowledge genuinely differs, such as a
-  country&#039;s history or constitutional arrangements. Use shared topics for common
-  concepts and skills, with local examples where useful.
-
-### A topic
-
-```json
-{
-  &quot;id&quot;: &quot;mt_N8CpN1EJrP&quot;,
-  &quot;type&quot;: &quot;CONCEPTUAL&quot;,
-  &quot;subject&quot;: &quot;English&quot;,
-  &quot;domain&quot;: &quot;Grammar &amp; Punctuation&quot;,
-  &quot;name&quot;: &quot;Building sentences&quot;,
-  &quot;description&quot;: &quot;Understand that words combine to make sentences — a sentence expresses a complete thought…&quot;,
-  &quot;ageRangeStart&quot;: 4,
-  &quot;ageRangeEnd&quot;: 6,
-  &quot;centrality&quot;: 0.257,
-  &quot;evidence&quot;: [
-    &quot;Distinguish between complete sentences and fragments&quot;,
-    &quot;Compose a complete sentence with a subject and verb&quot;
-  ],
-  &quot;assessmentPrompt&quot;: &quot;If {{name}} says something like \&quot;The dog\&quot;, can they tell you that&#039;s not a complete sentence…?&quot;,
-  &quot;standards&quot;: [&quot;ccss-ela:L.K.1f&quot;, &quot;uk-nc-2013:Eng.App2.Y1.Sent.1&quot;]
-}
-```
-
-- `id` — stable identifier (`mt_…`), referenced by dependencies and by neighbours.
-- `standards` — keys into `curriculum-standards.json` (`&quot;&lt;curriculum-slug&gt;:&lt;code&gt;&quot;`).
-- `assessmentPrompt` — a natural-language check for the idea. Contains a `{{name}}` placeholder (the child&#039;s name); substitute or strip before display.
-
-### A dependency
-
-```json
-{ &quot;topicId&quot;: &quot;mt__00ZSLnB7p&quot;, &quot;prerequisiteId&quot;: &quot;mt_VBl1T1sFCM&quot;, &quot;strength&quot;: &quot;hard&quot;,
-  &quot;reason&quot;: &quot;Must understand vibrations make sound before finding volume patterns&quot; }
-```
-
-`topicId` **depends on** `prerequisiteId`. Reverse the edge to get &quot;unlocks&quot;.
-
-## Teaching research
-
-[`data/teaching-research.json`](data/teaching-research.json) adds **how a topic
-might be taught** to the graph of what children learn. It contains **1,049 active topic records**. `coverage.missingTopicIds` and per-subject counts
-make the **809 topics without research** explicit; absence is not a judgement
-about whether a topic can be taught.
-
-[`archived-teaching-research.json`](data/archived-teaching-research.json) preserves two historical records excluded from active coverage after a topic merge and a change in learning scope. Each entry includes the original topic and research record, its archive reason, and related current topic IDs. The archive also records the assessment prerequisite reference redirected after the merge.
-
-The active `teaching-research.json` file has `schemaVersion: 1` and taxonomy `version: &quot;v1&quot;`. Each `records[]`
-entry joins `topics.json` through `topicId` and contains:
-
-| Field | Meaning |
-|---|---|
-| `pedagogy` | Original teaching summary, practices, representations and misconceptions. |
-| `learn` | Portable learning guidance (`schemaVersion: 2`): a summary, activities, educational constraints and review notes. |
-| `learn.activities[]` | Learner actions, intended insight, feedback, rationale and supporting source claims. No product artifact types or fit rankings. |
-| `assess` | Original diagnostic/task, response levels, error patterns and next teaching moves; nullable in the public interface. |
-| `sources` | Claim, named source, optional URL and the original author&#039;s verification flag. |
-| `confidence` | Original authoring confidence; not an independent quality score. |
-| `provenance` | Original authoring model and source record timestamps. The update timestamp also reflects the learning-guidance rewrite. |
-| `publicationNotes` | Paths and curriculum codes for text omitted under the codes-only publication policy. |
-
-`sourceClaims` exactly match `sources[].claim` after publication transformations.
-A source may support a general principle or curriculum alignment; this does not
-mean the proposed activity was tested. Some activities have no directly linked
-source claim.
-
-These records were agent-authored. The learning guidance was rewritten for
-portability, checked by a separate factual critic, and sampled by a second agent.
-Most original pedagogy and assessment were retained and may contain claims that
-the updated guidance qualifies; chart-specific alignment repairs after #30 are
-recorded in the affected learning-guidance review notes; read the constraints and review notes alongside
-them. Sources were **not re-fetched or re-verified** for the initial publication;
-later nutrition-guide checks are recorded in the affected review notes. Historical
-`verified: true` and `confidence: &quot;high&quot;` are not new evidence ratings. Activities
-are research-informed proposals, **not empirically validated interventions**.
-
-Nutrition terminology corrections in [#63](https://github.com/withmarbleapp/os-taxonomy/pull/63)
-update the existing Animal Nutrition, Balanced Diet &amp; Food Groups, and Nutrients
-in a Healthy Diet guidance, activities and assessment to distinguish nutrients
-from food groups. Balanced-plate activities use food groups in a local guide;
-the records retain their identities. See the
-[review note](reports/acara-v9-design-technologies-authoring-review.md#teaching-guidance-correction-after-pr-review).
-
-Some original research quoted restricted curriculum standards. Matched passages
-are replaced with inline curriculum references, including inside citation claims;
-all transformed paths are listed in `publicationNotes`. This is a conservative
-mechanical omission pass, not comprehensive rights clearance. Consult the linked
-upstream sources for their wording and terms. See [PROVENANCE.md](PROVENANCE.md).
-
-After the chart split in [#30](https://github.com/withmarbleapp/os-taxonomy/pull/30),
-`mt_bESTSBB0wK` covers pie charts, `mt_H6LlpWgEYS` covers earlier line-graph
-problem-solving, and `mt_HlNSurPVDp` has a separate construction-and-interpretation
-record. The new record adapts existing graph research; it is not a fresh
-literature review, and all reused source-verification flags are false. Its
-assessment requires a complete constructed graph. The later grouped-charts
-assessment routes graph-choice errors to data presentation and sector-angle
-errors to pie charts.
-
-The file is bound to the exact `topics.json` bytes through `topicFileSha256`.
-Regenerate the research projection when the canonical topic file changes, even
-when topic IDs remain stable.
-
-## Using it
-
-Pure data — no runtime, no dependencies. Load the JSON and go.
-
-```js
-import topics from &#039;./data/topics.json&#039; with { type: &#039;json&#039; };
-import deps from &#039;./data/dependencies.json&#039; with { type: &#039;json&#039; };
-
-const byId = new Map(topics.topics.map(t =&gt; [t.id, t]));
-const prereqs = deps.dependencies
-  .filter(d =&gt; d.topicId === &#039;mt_N8CpN1EJrP&#039;)
-  .map(d =&gt; byId.get(d.prerequisiteId).name);
-```
-
-Join teaching guidance to a topic:
-
-```js
-import research from &#039;./data/teaching-research.json&#039; with { type: &#039;json&#039; };
-
-const guidanceByTopic = new Map(research.records.map(r =&gt; [r.topicId, r]));
-const guidance = guidanceByTopic.get(&#039;mt_N8CpN1EJrP&#039;); // undefined: English is not covered yet
-const activities = guidance?.learn.activities ?? [];
-```
-
-Validate structure, research coverage, evidence links and checksums:
-
-```bash
-node scripts/validate.mjs
-node --test scripts/teaching-research.test.mjs
-```
-
-## Marble Builder
-
-The [`marble-builder` agent skill](.agents/skills/marble-builder/SKILL.md)
-helps turn a child&#039;s age and a user-confirmed goal into a standalone HTML
-learning experience that works offline by default. It uses topic prerequisites
-and available teaching research,
-develops a targeted research brief when needed, and agrees a concept with you
-before building. Experiences use visual interactions, scaffolding, UI-assessed
-transfer tasks and optional extensions. Spatial topics use Three.js with direct
-scene manipulation and a crafted cel-shaded look with flat colors and black
-outlines. Visual simulations must meet a beauty, craft and polish bar as well as
-work correctly. The public skill includes Marble-derived UI tokens, tactile
-controls refined in Moon Visit and Sky Colour Explorer, and the openly licensed
-Baloo 2 font, with one title and one instruction
-visible at a time: a small top-left title and a large, prominent instruction or
-explanation, plus concise button labels paired with icons. [Water Lab](https://withmarble.com/water-lab) is the visual quality
-reference. The agent renders, inspects and iterates
-in the browser rather than stopping at the first working HTML file.
-
-The skill includes [five runnable examples with readable source, key-state
-screenshots and design notes](.agents/skills/marble-builder/references/examples.md):
-Moon Visit, Sky Colour Explorer, Hidden Cubes, Bee Builder and Otter Forest. The notes explain
-what to borrow and where each prototype has limits or exceptions.
-
-Optional connected LLM mode requires explicit author approval and a learning goal
-whose open-ended reasoning or text production cannot be adequately supported
-locally. That mode requires internet and a separate account connection; ChatGPT
-plan usage is a preview option for eligible local/open-source integrations.
-
-In Codex, open this repository and invoke `$marble-builder`, for example:
-
-&gt; Use $marble-builder to help my 8-year-old understand why equivalent
-&gt; fractions represent the same quantity.
-
-Other agents can follow the linked `SKILL.md` directly. No Marble account or
-hosting is required. New reusable teaching research can optionally be proposed
-as a separate PR, with no child-specific information included.
-
-## License
-
-This dataset is **multi-licensed** — read this before you use or redistribute it.
-
-| Layer | License |
-|---|---|
-| **The database** — the collection, structure, IDs, topic↔topic and topic↔standard relationships | [**ODbL 1.0**](LICENSE) — free for research **and** commercial use, **attribution** required, **share-alike** (derivative *databases* must stay open under ODbL). |
-| **The textual content Marble authored** — topic `description`/`name`/`evidence`/`assessmentPrompt`, dependency `reason`s, cluster `summary`s, original teaching-research prose | [**CC BY-SA 4.0**](LICENSE-CONTENT) — same spirit: attribution + share-alike. |
-| **Marble-authored learning examples** — application source, original artwork, captures and design notes | [**CC BY-SA 4.0**](LICENSE-CONTENT). Bundled Three.js and Baloo 2 retain their separate MIT and OFL licenses and notices. |
-| **`curriculum-standards.json`** — extracted from third-party frameworks | **Not** Marble&#039;s to relicense. Each source is under **its own upstream license** — see [**PROVENANCE.md**](PROVENANCE.md). |
-
-**Why share-alike + still commercial-friendly:** ODbL distinguishes a *derivative database* (extend/modify the taxonomy → must stay open) from a *produced work* (use it inside a product, model, or app → stays yours). So you can build a commercial product on this without open-sourcing your product; you only owe back improvements to the *taxonomy itself*.
-
-### Attribution
-
-Any use must credit:
-
-&gt; Marble Skill Taxonomy (v1) · © Generative Spark, Inc. (Marble) · https://withmarble.com · licensed under ODbL 1.0 (database) and CC BY-SA 4.0 (content).
-
-Plus the upstream notices in [PROVENANCE.md](PROVENANCE.md) for any curriculum standards you use. See [CITATION.cff](CITATION.cff) for a formal citation.
-
-## What&#039;s *not* here
-
-Deliberately excluded from this release: semantic embeddings (derived, recomputable) and any per-child / user data (never published). See [CHANGELOG.md](CHANGELOG.md).
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[affaan-m/ECC]]></title>
-            <link>https://github.com/affaan-m/ECC</link>
-            <guid>https://github.com/affaan-m/ECC</guid>
-            <pubDate>Thu, 05 Nov 2026 00:04:04 GMT</pubDate>
-            <description><![CDATA[The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a></h1>
-            <p>The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 297,240</p>
-            <p>Forks: 43,943</p>
-            <p>Stars today: 783 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;assets/hero.png&quot; alt=&quot;ECC - the agent harness operating system&quot; width=&quot;100%&quot; /&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://www.star-history.com/affaan-m/ecc&quot;&gt;
-    &lt;picture&gt;
-      &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/badge?repo=affaan-m/ECC&amp;type=trending&amp;theme=dark&quot; /&gt;
-      &lt;img src=&quot;https://api.star-history.com/badge?repo=affaan-m/ECC&amp;type=trending&quot; alt=&quot;GitHub Trending Repository of the Day&quot; height=&quot;46&quot; /&gt;
-    &lt;/picture&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://www.star-history.com/affaan-m/ecc&quot;&gt;
-    &lt;picture&gt;
-      &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/badge?repo=affaan-m/ECC&amp;type=rank&amp;theme=dark&quot; /&gt;
-      &lt;img src=&quot;https://api.star-history.com/badge?repo=affaan-m/ECC&amp;type=rank&quot; alt=&quot;Star History Global Rank&quot; height=&quot;46&quot; /&gt;
-    &lt;/picture&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;strong&gt;Language:&lt;/strong&gt;
-  &lt;a href=&quot;README.md&quot;&gt;English&lt;/a&gt; |
-  &lt;a href=&quot;docs/ar/README.md&quot;&gt;العربية&lt;/a&gt; |
-  &lt;a href=&quot;docs/pt-BR/README.md&quot;&gt;Português (Brasil)&lt;/a&gt; |
-  &lt;a href=&quot;README.zh-CN.md&quot;&gt;简体中文&lt;/a&gt; |
-  &lt;a href=&quot;docs/zh-TW/README.md&quot;&gt;繁體中文&lt;/a&gt; |
-  &lt;a href=&quot;docs/ja-JP/README.md&quot;&gt;日本語&lt;/a&gt; |
-  &lt;a href=&quot;docs/ko-KR/README.md&quot;&gt;한국어&lt;/a&gt; |
-  &lt;a href=&quot;docs/tr/README.md&quot;&gt;Türkçe&lt;/a&gt; |
-  &lt;a href=&quot;docs/ru/README.md&quot;&gt;Русский&lt;/a&gt; |
-  &lt;a href=&quot;docs/vi-VN/README.md&quot;&gt;Tiếng Việt&lt;/a&gt; |
-  &lt;a href=&quot;docs/th/README.md&quot;&gt;ไทย&lt;/a&gt; |
-  &lt;a href=&quot;docs/de-DE/README.md&quot;&gt;Deutsch&lt;/a&gt; |
-  &lt;a href=&quot;docs/es/README.md&quot;&gt;Español&lt;/a&gt; |
-  &lt;a href=&quot;docs/uk-UA/README.md&quot;&gt;Українська&lt;/a&gt; |
-  &lt;a href=&quot;docs/pl/README.md&quot;&gt;Polski&lt;/a&gt; |
-  &lt;a href=&quot;docs/bn/README.md&quot;&gt;বাংলা&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://discord.gg/36yGMHGFbR&quot;&gt;&lt;img src=&quot;https://img.shields.io/discord/1496644400590094540?logo=discord&amp;logoColor=white&amp;label=Discord&amp;color=5865F2&quot; alt=&quot;Discord&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://ecc.tools&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Website-ecc.tools-E07856?logo=googlechrome&amp;logoColor=white&quot; alt=&quot;Website&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/apps/ecc-tools&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/GitHub%20App-ECC%20Tools-181717?logo=github&amp;logoColor=white&quot; alt=&quot;GitHub App&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/license-MIT-blue.svg&quot; alt=&quot;MIT license&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/affaan-m/ECC&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/stars/affaan-m/ECC?style=flat&quot; alt=&quot;GitHub stars&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/affaan-m/ECC/forks&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/forks/affaan-m/ECC?style=flat&quot; alt=&quot;GitHub forks&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/affaan-m/ECC/graphs/contributors&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/contributors/affaan-m/ECC?style=flat&quot; alt=&quot;Contributors&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/marketplace/ecc-tools&quot;&gt;&lt;img src=&quot;https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Finstalls&amp;logo=github&quot; alt=&quot;GitHub App installs&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://www.npmjs.com/package/ecc-universal&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/dw/ecc-universal?label=ecc-universal&amp;logo=npm&quot; alt=&quot;ecc-universal npm downloads&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://www.npmjs.com/package/ecc-agentshield&quot;&gt;&lt;img src=&quot;https://img.shields.io/npm/dw/ecc-agentshield?label=ecc-agentshield&amp;logo=npm&quot; alt=&quot;ecc-agentshield npm downloads&quot; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/-Shell-4EAA25?logo=gnu-bash&amp;logoColor=white&quot; alt=&quot;Shell&quot; /&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&amp;logoColor=white&quot; alt=&quot;TypeScript&quot; /&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/-Python-3776AB?logo=python&amp;logoColor=white&quot; alt=&quot;Python&quot; /&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/-Go-00ADD8?logo=go&amp;logoColor=white&quot; alt=&quot;Go&quot; /&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/-Java-ED8B00?logo=openjdk&amp;logoColor=white&quot; alt=&quot;Java&quot; /&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/-Perl-39457E?logo=perl&amp;logoColor=white&quot; alt=&quot;Perl&quot; /&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/-Markdown-000000?logo=markdown&amp;logoColor=white&quot; alt=&quot;Markdown&quot; /&gt;
-&lt;/p&gt;
-
-&gt; [!WARNING]
-&gt; **Official sources only.** Install ECC only from verified channels: the GitHub repository [github.com/affaan-m/ECC](https://github.com/affaan-m/ECC), the npm packages [`ecc-universal`](https://www.npmjs.com/package/ecc-universal) and [`ecc-agentshield`](https://www.npmjs.com/package/ecc-agentshield), the [GitHub App](https://github.com/apps/ecc-tools), the plugin slug `ecc@ecc`, and the project website [ecc.tools](https://ecc.tools). Third-party re-uploads and unofficial mirrors are not maintained or reviewed by the project and may contain malware.
-
-## Install with Claude Code
-
-Use the [guided setup](#install-ecc) or [native plugin commands](#claude-code-details). Both install the same `ecc@ecc` plugin. Choose one and do not stack a full manual Claude install on top.
-
-&lt;div align=&quot;center&quot;&gt;
-
-&lt;table aria-label=&quot;ECC primary links&quot;&gt;
-&lt;tr&gt;
-&lt;td width=&quot;33%&quot; align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://ecc.tools/pricing&quot;&gt;
-    &lt;img src=&quot;assets/images/community/ecc-tools-mark.svg&quot; height=&quot;42&quot; alt=&quot;ECC Tools&quot; /&gt;&lt;br /&gt;
-    &lt;strong&gt;ECC Pro + GitHub App&lt;/strong&gt;
-  &lt;/a&gt;&lt;br /&gt;
-  &lt;sub&gt;&lt;a href=&quot;https://github.com/apps/ecc-tools&quot;&gt;Install free&lt;/a&gt; · &lt;a href=&quot;https://ecc.tools/pricing&quot;&gt;Private repos from $19/seat/mo&lt;/a&gt;&lt;/sub&gt;
-&lt;/td&gt;
-&lt;td width=&quot;33%&quot; align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://github.com/sponsors/affaan-m&quot;&gt;
-    &lt;img src=&quot;assets/images/community/heart.svg&quot; height=&quot;42&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
-    &lt;strong&gt;Sponsor ECC&lt;/strong&gt;
-  &lt;/a&gt;&lt;br /&gt;
-  &lt;sub&gt;Fund the open-source project&lt;/sub&gt;
-&lt;/td&gt;
-&lt;td width=&quot;33%&quot; align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://discord.gg/36yGMHGFbR&quot;&gt;
-    &lt;img src=&quot;assets/images/community/discord.svg&quot; height=&quot;42&quot; alt=&quot;Discord&quot; /&gt;&lt;br /&gt;
-    &lt;strong&gt;Community&lt;/strong&gt;
-  &lt;/a&gt;&lt;br /&gt;
-  &lt;sub&gt;Discord · Q&amp;amp;A · Show and Tell&lt;/sub&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;/div&gt;
-
-&lt;sub&gt;**OSS stays free.** This repo is MIT-licensed forever. ECC Pro is the hosted GitHub App for private repos. &lt;a href=&quot;https://github.com/sponsors/affaan-m&quot;&gt;Sponsors&lt;/a&gt; and &lt;a href=&quot;https://ecc.tools/pricing&quot;&gt;Pro subscribers&lt;/a&gt; fund the work. That&#039;s why a single maintainer ships weekly across 7 harnesses.&lt;/sub&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-
-&lt;sub&gt;&lt;strong&gt;Partners &amp;amp; sponsors&lt;/strong&gt;&lt;/sub&gt;
-
-&lt;p align=&quot;center&quot; aria-label=&quot;Partners and sponsors&quot;&gt;
-  &lt;a href=&quot;https://www.coderabbit.ai&quot; title=&quot;CodeRabbit&quot;&gt;&lt;img src=&quot;assets/images/sponsors/coderabbit.png&quot; height=&quot;54&quot; alt=&quot;CodeRabbit&quot; /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;
-  &lt;a href=&quot;https://www.greptile.com/go/ecc&quot; title=&quot;Greptile&quot;&gt;&lt;img src=&quot;assets/images/sponsors/greptile.png&quot; height=&quot;54&quot; alt=&quot;Greptile&quot; /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;
-  &lt;a href=&quot;https://platform.kimi.ai?aff=ecc&quot; title=&quot;Moonshot AI - Kimi&quot;&gt;&lt;picture&gt;&lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;assets/images/sponsors/moonshot-dark.png&quot; /&gt;&lt;img src=&quot;assets/images/sponsors/moonshot.png&quot; width=&quot;132&quot; alt=&quot;Moonshot AI - Kimi&quot; /&gt;&lt;/picture&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;
-  &lt;a href=&quot;https://compute.itomarkets.com&quot; title=&quot;Itô Markets&quot;&gt;&lt;picture&gt;&lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;assets/images/sponsors/ito-transparent-light.png&quot; /&gt;&lt;img src=&quot;assets/images/sponsors/ito-transparent.png&quot; width=&quot;96&quot; alt=&quot;Itô Markets&quot; /&gt;&lt;/picture&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;
-  &lt;a href=&quot;https://serpapi.com/github-ecc&quot; title=&quot;SerpApi: Web Search API&quot;&gt;&lt;picture&gt;&lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;assets/images/sponsors/serpapi-logo-dark-mode.svg&quot; /&gt;&lt;img src=&quot;assets/images/sponsors/serpapi-logo-light-mode.svg&quot; width=&quot;200&quot; alt=&quot;SerpApi: Web Search API&quot; /&gt;&lt;/picture&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;sub&gt;&lt;strong&gt;Past sponsors:&lt;/strong&gt; &lt;a href=&quot;https://www.atlascloud.ai/?utm_source=github&amp;amp;utm_medium=link&amp;amp;utm_campaign=ECC&quot;&gt;Atlas Cloud&lt;/a&gt; · &lt;a href=&quot;https://github.com/mikejmorgan-ai&quot;&gt;Mike Morgan (inactive)&lt;/a&gt;&lt;/sub&gt;
-
-&lt;sub&gt;&lt;strong&gt;Community sponsors:&lt;/strong&gt; &lt;a href=&quot;https://github.com/jasonwu513&quot;&gt;@jasonwu513&lt;/a&gt; · &lt;a href=&quot;https://github.com/1anter&quot;&gt;@1anter&lt;/a&gt; · &lt;a href=&quot;https://github.com/massimotodaro&quot;&gt;@massimotodaro&lt;/a&gt; · &lt;a href=&quot;https://github.com/meadmccabe&quot;&gt;@meadmccabe&lt;/a&gt;&lt;/sub&gt;
-
-&lt;sub&gt;&lt;a href=&quot;https://github.com/sponsors/affaan-m&quot;&gt;&lt;strong&gt;Become a Sponsor&lt;/strong&gt;&lt;/a&gt; · &lt;a href=&quot;SPONSORS.md&quot;&gt;Sponsor Tiers&lt;/a&gt; · &lt;a href=&quot;SPONSORING.md&quot;&gt;Sponsorship Program&lt;/a&gt;&lt;/sub&gt;
-
-&lt;/div&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;#install-ecc&quot;&gt;Jump to install ↓&lt;/a&gt;&lt;/p&gt;
-
-# ECC
-
-Your agent can write code, but ECC gives it a coordinated engineering system and toolbox: it plans before it builds, verifies changes with tests, reviews its own work from a fresh context, remembers what matters, and turns repeated wins into reusable skills and workflows.
-
-```text
-plan -&gt; test -&gt; implement -&gt; review -&gt; verify -&gt; remember -&gt; improve
-```
-
-Instead of rebuilding that process in every prompt, you install it once and make it part of how your agent works.
-
-&gt; Optimize the context window. Persist everything else.
-
-ECC is MIT-licensed open source. It works best with Claude Code today, has native Codex and Qoder plugin paths, and provides capability-limited adapters for Cursor, OpenCode, Gemini, Zed, GitHub Copilot, Antigravity, Qwen, and other harnesses. See the [support status matrix](#platform-support) before assuming feature parity.
-
-Access to 71 agents, 314 skills, and 98 legacy command shims, plus hooks, rules, memory, continuous learning, and AgentShield security scanning. The agents are specialized for planning, review, build repair, security, architecture, and domain work.
-
-| Included         |       Count | What it gives you                                                                    |
-| ---------------- | ----------: | ------------------------------------------------------------------------------------ |
-| Agents           |   71 agents | Planning, review, build repair, security, architecture, and domain work              |
-| Skills           |  314 skills | TDD, research, security, docs, frontend, data, ML, operations, and more              |
-| Commands         | 98 commands | Convenient entry points while ECC moves to a skills-first surface                    |
-| Hooks and memory |     Runtime | Enforcement, session summaries, continuous learning, instincts, and context controls |
-| Rules            |   Selective | Always-loaded standards you choose by language or project                            |
-| AgentShield      |    Included | Scanning for prompts, hooks, MCP config, permissions, secrets, and agent files       |
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://www.star-history.com/affaan-m/ecc&quot;&gt;
-    &lt;picture&gt;
-      &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/svg?repos=affaan-m/ECC&amp;type=Date&amp;theme=dark&quot; /&gt;
-      &lt;img src=&quot;https://api.star-history.com/svg?repos=affaan-m/ECC&amp;type=Date&quot; alt=&quot;Live star history chart for affaan-m/ECC&quot; width=&quot;100%&quot; /&gt;
-    &lt;/picture&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-
-## Install ECC
-
-&gt; [!IMPORTANT]
-&gt; ECC 2.2 includes guided package setup for Claude Code, Codex, and Kimi Code.
-&gt; The universal package requires Node.js 18 or newer. Claude plugin setup also
-&gt; requires Git and Claude Code 2.1 or newer on `PATH`.
-
-### Recommended: universal guided setup
-
-For Claude Code plugin setup, updates, scope changes, and hook-profile changes:
-
-```bash
-npx ecc-universal@2.2.3 setup
-```
-
-#### Windows first-time walkthrough
-
-If you are new to command-line tools, use this copy-and-paste path:
-
-1. Install Node.js 18 or newer, Git, and Claude Code.
-2. Open **PowerShell** from the Windows Start menu.
-3. Confirm that each prerequisite is available:
-
-   ```powershell
-   node --version
-   git --version
-   claude --version
-   ```
-
-4. Run the guided installer:
-
-   ```powershell
-   npx ecc-universal@2.2.3 setup
-   ```
-
-5. For a typical personal setup, choose **Global user**, choose **Standard** hooks, and confirm.
-6. Start a new Claude Code session and run `/plugin list` to verify that `ecc@ecc` is enabled.
-
-This path does not require cloning the repository. If any prerequisite command is not found, install or repair that prerequisite before rerunning ECC setup.
-
-If npm reports a version or cache error, confirm the registry version before retrying:
-
-```bash
-npm view ecc-universal version
-```
-
-ECC 2.2 supports the same guided setup through modern package runners:
-
-| Package runner | Guided setup command |
-|---|---|
-| npm / npx | `npx ecc-universal@2.2.3 setup` |
-| pnpm | `pnpm dlx ecc-universal@2.2.3 setup` |
-| Yarn 2+ | `yarn dlx ecc-universal@2.2.3 setup` |
-| Bun | `bunx ecc-universal@2.2.3 setup` |
-
-The examples select [the published ECC 2.2.3 release](https://www.npmjs.com/package/ecc-universal/v/2.2.3), matching this repository&#039;s release version. A version pin is not a security audit or an integrity check. Review the release source and registry integrity before running package code; use a reviewed checkout for unreleased changes.
-
-Yarn Classic 1 does not provide `yarn dlx`; use `npx`, install the package globally, or upgrade Yarn for a temporary one-shot run.
-
-The wizard inventories the official marketplace and every native Claude install scope before making changes, then installs, updates, or safely moves `ecc@ecc` to the scope you choose. Rerun the same command whenever you want to update ECC, change scope, or change its hook profile. This setup wizard currently configures the Claude Code plugin; use the multi-harness wizard below for Codex or Kimi Code.
-
-To configure more than one coding agent in one reviewed flow, use the multi-harness wizard:
-
-```bash
-npx ecc-universal@2.2.3 install --guided
-```
-
-It lets you select any combination of Claude Code, Codex, and Kimi Code, shows each install channel and destination, preflights every selection before the first write, and asks for one final confirmation.
-
-| Harness | Guided install behavior |
-|---|---|
-| Claude Code | Native `ecc@ecc` plugin with one `user`, `project`, or `local` scope and an ECC hook profile |
-| Codex | Native Codex marketplace/plugin lifecycle; hook review and trust remain Codex-owned |
-| Kimi Code | Managed project files under `./.kimi-code`; ECC hooks, model/provider settings, and authentication are not configured |
-
-For automation, make every provider-specific choice explicit:
-
-```bash
-npx ecc-universal@2.2.3 install --guided \
-  --harness claude --harness codex --harness kimi \
-  --claude-scope local --claude-hooks standard \
-  --profile core --yes
-```
-
-Verify the native guided Codex path and managed Kimi path without writing first:
-
-```bash
-npx ecc-universal@2.2.3 install --guided --harness codex --dry-run
-npx ecc-universal@2.2.3 install --profile core --target kimi --dry-run
-```
-
-Additional package-name commands are also available through the 2.2 alias:
-
-```bash
-npx ecc-universal@2.2.3 consult &quot;security reviews&quot; --target claude
-npx ecc-universal@2.2.3 install --profile minimal --target claude --with capability:machine-learning
-npx ecc-universal@2.2.3 doctor --target kimi
-```
-
-Do not use `npx ecc-install --profile minimal --target claude`: `ecc-install` is a binary name inside `ecc-universal`, not a separately published npm package.
-
-ECC also ships advanced managed adapters for `cursor`, `antigravity`, `gemini`, `opencode`, `codebuddy`, `joycode`, `qwen`, `zed`, `hermes`, and `openclaw`. Those targets still use their documented `ecc install --target ...` paths until each adapter has passed the guided collision, update, repair, and uninstall lifecycle matrix. Neither wizard silently installs into every detected harness.
-
-### Pick one path only (per harness)
-
-You can use ECC with Claude Code, Codex, and other harnesses at the same time. Choose one install method for each harness:
-
-- **Recommended default:** run the guided Claude plugin setup above
-- **Also supported for Claude Code:** use the [native plugin commands](#claude-code-details)
-- **Available in release 2.2:** guided package setup for Claude Code, Codex, and Kimi Code
-- **Works:** Claude Code plugin + Codex native plugin
-- **Works:** Claude Code plugin + the legacy Codex sync flow
-- **Avoid:** Claude Code plugin + full Claude manual install
-- **Avoid:** Codex sync + Codex marketplace plugin
-
-**Do not stack install methods.** Installing ECC twice into the same harness can duplicate skills, commands, hooks, or configuration; installing it once into multiple harnesses does not.
-
-If you already layered multiple installs and things look duplicated, skip straight to [Reset / Uninstall ECC](#reset--uninstall-ecc).
-
-**Install trouble?** Open the short [install or runtime problem form](https://github.com/affaan-m/ECC/issues/new?template=install-problem.yml), or run `ecc feedback`. ECC never uploads diagnostics automatically.
-
-### Claude Code details
-
-Alternatively, run Claude Code&#039;s native plugin commands inside Claude Code:
-
-```text
-/plugin marketplace add https://github.com/affaan-m/ECC
-/plugin install ecc@ecc
-```
-
-The native path installs ECC&#039;s skills, agents, commands, and plugin-managed hooks. If you choose it, stop there. Do not also run a full manual install into Claude Code.
-
-Claude Code owns these built-in commands, including their errors when a marketplace, plugin, or conflicting scope already exists. ECC cannot intercept that parser. If either native command reports an existing install or scope conflict, use the 2.2 guided setup or resolve the conflicting Claude plugin scope before retrying; do not layer a manual install on top.
-
-After ECC is installed, `/ecc:configure-ecc` is the namespaced in-Claude reconfiguration skill. It delegates to the same safe setup flow, but it is available only after the plugin is installed and cannot replace Claude Code&#039;s built-in `/plugin` command during a first install.
-
-Claude Code plugins cannot distribute `rules`, so add only the rule packs you actually want:
-
-```bash
-git clone https://github.com/affaan-m/ECC.git
-cd ECC
-mkdir -p ~/.claude/rules/ecc
-cp -R rules/common ~/.claude/rules/ecc/
-cp -R rules/typescript ~/.claude/rules/ecc/  # replace with your stack
-```
-
-Start with `rules/common` plus one language or framework pack you actually use. If you install the plugin, do not run `./install.sh --profile full` afterward.
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Prefer settings.json? Add the marketplace declaratively&lt;/strong&gt;&lt;/summary&gt;
-
-Add directly to your `~/.claude/settings.json`:
-
-```json
-{
-  &quot;extraKnownMarketplaces&quot;: {
-    &quot;ecc&quot;: {
-      &quot;source&quot;: {
-        &quot;source&quot;: &quot;github&quot;,
-        &quot;repo&quot;: &quot;affaan-m/ECC&quot;
-      }
-    }
-  },
-  &quot;enabledPlugins&quot;: {
-    &quot;ecc@ecc&quot;: true
-  }
-}
-```
-
-This gives you the same result as the two `/plugin` commands above.
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Naming + migration note (ecc@ecc, affaan-m/ECC, ecc-universal)&lt;/strong&gt;&lt;/summary&gt;
-
-ECC has three public identifiers, and they are not interchangeable:
-
-- GitHub source repo: `affaan-m/ECC`
-- Claude marketplace/plugin identifier: `ecc@ecc`
-- npm package: `ecc-universal`
-
-This is intentional. Anthropic marketplace/plugin installs are keyed by a canonical plugin identifier, so ECC uses `ecc@ecc` to keep tool names and slash-command namespaces short enough for strict Desktop/API validators. Older posts may still show the former long marketplace identifier; treat that as a legacy alias only. Separately, the npm package stayed on `ecc-universal`, so npm installs and marketplace installs intentionally use different names.
-
-npm releases are cut per version tag, not per commit, so `ecc-universal` tracks releases (2.1, 2.2, ...) rather than every push to `main`. Install from git if you want the bleeding edge.
-
-If your local Claude setup was wiped or reset, that does not mean you need to repurchase anything. Start with `node scripts/ecc.js list-installed`, then run `node scripts/ecc.js doctor` and `node scripts/ecc.js repair` before reinstalling. That usually restores ECC-managed files without rebuilding your setup.
-&lt;/details&gt;
-
-### Codex App and CLI
-
-Current Codex releases can install ECC as a native repo-marketplace plugin. The marketplace entry uses the repository root so Codex&#039;s cache receives the manifest together with all referenced skills, MCP configuration, hook runtime, scripts, and assets:
-
-```bash
-codex plugin marketp
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
             <title><![CDATA[ConardLi/garden-skills]]></title>
             <link>https://github.com/ConardLi/garden-skills</link>
             <guid>https://github.com/ConardLi/garden-skills</guid>
-            <pubDate>Thu, 05 Nov 2026 00:04:03 GMT</pubDate>
+            <pubDate>Fri, 06 Nov 2026 00:03:51 GMT</pubDate>
             <description><![CDATA[ConardLi's open-source Skills collection, featuring web design, knowledge retrieval, image generation, and more.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/ConardLi/garden-skills">ConardLi/garden-skills</a></h1>
             <p>ConardLi's open-source Skills collection, featuring web design, knowledge retrieval, image generation, and more.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 13,839</p>
-            <p>Forks: 1,622</p>
-            <p>Stars today: 181 stars today</p>
+            <p>Stars: 14,114</p>
+            <p>Forks: 1,647</p>
+            <p>Stars today: 175 stars today</p>
             <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
 
 # Garden Skills
@@ -1168,143 +258,1438 @@ Highlights:
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[jgraph/drawio-desktop]]></title>
-            <link>https://github.com/jgraph/drawio-desktop</link>
-            <guid>https://github.com/jgraph/drawio-desktop</guid>
-            <pubDate>Thu, 05 Nov 2026 00:04:02 GMT</pubDate>
-            <description><![CDATA[Official electron build of draw.io]]></description>
+            <title><![CDATA[michael-denyer/pstack-claude]]></title>
+            <link>https://github.com/michael-denyer/pstack-claude</link>
+            <guid>https://github.com/michael-denyer/pstack-claude</guid>
+            <pubDate>Fri, 06 Nov 2026 00:03:50 GMT</pubDate>
+            <description><![CDATA[Antigravity, Claude Code, Codex, Copilot, Gemini, Muse, OpenCode, Pi, and Prime Agent versions of Poteto's pstack. Rigorous agent workflows with Cursor primitives translated for other harnesses.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/jgraph/drawio-desktop">jgraph/drawio-desktop</a></h1>
-            <p>Official electron build of draw.io</p>
+            <h1><a href="https://github.com/michael-denyer/pstack-claude">michael-denyer/pstack-claude</a></h1>
+            <p>Antigravity, Claude Code, Codex, Copilot, Gemini, Muse, OpenCode, Pi, and Prime Agent versions of Poteto's pstack. Rigorous agent workflows with Cursor primitives translated for other harnesses.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 63,816</p>
-            <p>Forks: 5,809</p>
-            <p>Stars today: 19 stars today</p>
-            <h2>README</h2><pre>About
------ 
+            <p>Stars: 4,049</p>
+            <p>Forks: 361</p>
+            <p>Stars today: 82 stars today</p>
+            <h2>README</h2><pre># pstack
 
-**drawio-desktop** is a diagramming desktop app based on [Electron](https://electronjs.org/) that wraps the [core draw.io editor](https://github.com/jgraph/drawio).
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-yellow?logo=buy-me-a-coffee&amp;logoColor=white)](https://buymeacoffee.com/codenyer)
+[![Mentioned in Awesome Claude Code](https://awesome.re/mentioned-badge.svg)](https://github.com/hesreallyhim/awesome-claude-code)
 
-Download built binaries from the [releases section](https://github.com/jgraph/drawio-desktop/releases).
+Lauren Tan&#039;s [pstack](https://github.com/cursor/plugins/tree/main/pstack) is an opinionated Cursor skill stack that improves agent outcomes. This is a port for Claude Code, Codex, Pi, GitHub Copilot, Muse, and other agent harnesses. It tracks upstream and also carries named policy forks, each declared in [`tools/forks.json`](tools/forks.json).
 
-**Can I use this app for free?** Yes, under the GPL v3 license. If you don&#039;t change the code and accept it is provided &quot;as-is&quot;, you can use it for any purpose.
+Tell `poteto-mode` your goal and it will invoke the correct workflow for the task. It keeps your code concise, simple and verified.
 
-Windows installation
---------------------
+For concurrency bugs and invariants that tests cannot reach, `/create-formal-verification-skill` picks the riskiest property in your code, verifies it with a tool that fits, and leaves a project skill the next agent reruns. The separate [agent-formal-verify](https://github.com/michael-denyer/agent-formal-verify) plugin goes deeper on the method, with guided TLA+ model checking, Lean proofs, and Kani for Rust.
 
-Three flavours of Windows download are published on the [releases page](https://github.com/jgraph/drawio-desktop/releases):
+## Built for Claude Code
 
-- `draw.io-&lt;version&gt;-windows-installer.exe` — NSIS installer. Installs **per-machine** into `Program Files` and **requires administrator privileges**.
-- `draw.io-&lt;version&gt;.msi` — MSI installer. Installs **per-user** into the user&#039;s profile and **does not require administrator privileges**. Use this one if you don&#039;t have admin rights on your machine.
-- `draw.io-&lt;version&gt;-windows.zip` — portable build. Extract the zip anywhere and run `draw.io.exe`, with no installation (and therefore without admin rights). File-type associations are not registered.
+This port translates upstream&#039;s Cursor skills for Claude Code before installation. [Upstream&#039;s Claude Code install](https://github.com/cursor/plugins/tree/c742dd6/harness/pstack/claude-code) asks agents to translate Cursor names at runtime, using extra tokens and relying on them to apply the mapping correctly. This port also adds a SessionStart hook that routes tasks to `poteto-mode`.
 
-The Microsoft Store (APPX) build is also installable per-user without admin rights via the Store.
+## Install
 
-### Windows on Arm
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Claude Code&lt;/strong&gt;&lt;/summary&gt;
 
-draw.io Desktop is built natively for Windows on Arm (ARM64) and is supported on Windows 11 ARM64 devices. Two native ARM64 downloads are published with every release:
+Run in Claude Code 2.1.292 or later:
 
-- `draw.io-arm64-&lt;version&gt;-windows-arm64-installer.exe` — NSIS installer, per-machine, requires administrator privileges.
-- `draw.io-arm64-&lt;version&gt;-windows-arm64-no-installer.exe` — portable build, no installation or admin rights needed.
-
-The MSI and Microsoft Store builds are x64 only and run under emulation on ARM64 devices. ARM64 builds up to and including 31.4.4 were shipped with auto-update disabled; install a newer release manually once, after which the ARM64 installer build updates itself like x64.
-
-Linux installation
-------------------
-
-If you manage AppImages with [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher), you need a 3.0 release of it (currently labelled beta). Since 31.4.2 the AppImage uses the static AppImage runtime so that it no longer depends on the end-of-life `libfuse2`, and AppImageLauncher 2.2.0, the last stable release, cannot load a static runtime. The app then fails to start with:
-
-```
-fuse: memory allocation failed
-squashfuse 0.5.2 (c) 2012 Dave Vasilevsky
-...
-Can&#039;t open squashfs image: Bad address
+```text
+/plugin marketplace add michael-denyer/pstack-claude
+/plugin install pstack@pstack-claude
 ```
 
-Install a current AppImageLauncher from its [releases page](https://github.com/TheAssassin/AppImageLauncher/releases), which provides .deb packages, or uninstall AppImageLauncher altogether. It is not needed to run the AppImage. See [#2538](https://github.com/jgraph/drawio-desktop/issues/2538) for the detail.
+Claude Code leaves auto-update off for third-party marketplaces, so pstack stays on the version you installed. To turn it on, run `/plugin`, open the **Marketplaces** tab, select `pstack-claude`, and choose **Enable auto-update**. To update once by hand, run `claude plugin update pstack@pstack-claude`.
 
-Updates
--------
+&lt;/details&gt;
 
-How draw.io Desktop updates depends on how it was installed:
+&lt;a id=&quot;codex&quot;&gt;&lt;/a&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Codex&lt;/strong&gt;&lt;/summary&gt;
 
-- **Windows installer (`.exe`), macOS and AppImage:** new versions download in the background. When one is ready, the editor shows a notice, and clicking it or Help &gt; Restart to Update installs it straight away. Otherwise it is installed when you quit draw.io. The Windows installer is per-machine, so the update asks for administrator rights.
-- **MSI, Windows zip, Windows ARM64 portable, deb and rpm:** draw.io tells you when a new version is available and links to its release page. Install it the same way as the current one.
-- **Microsoft Store, Snap and Flatpak:** the store updates the app, and draw.io does not check for updates.
+Run in your terminal:
 
-Extras &gt; Automatic Updates (draw.io &gt; Check for Updates Automatically on macOS) turns the background checks off. Help &gt; Check for Updates still works. For centrally managed installs, set the `DRAWIO_DISABLE_UPDATE=true` environment variable or pass `--disable-update` to turn off all update checks, or set `DRAWIO_NO_SILENT_UPDATE=true` or pass `--no-silent-update` so that draw.io asks before it downloads an update.
+```shell
+codex plugin marketplace add michael-denyer/pstack-claude
+codex plugin add pstack@pstack-claude
+```
 
-Security
---------
+Invoke a skill by typing `$` and its name, such as `$poteto-mode` or `$babysit`, then choosing its entry, which inserts `$pstack:&lt;name&gt;`. `/skills` lists every skill.
 
-draw.io Desktop is designed to be completely isolated from the Internet, apart from the update process. This checks github.com once a day for a newer version and downloads it from an AWS S3 bucket owned by Github. To disable the update check entirely (e.g. for centrally-managed installs), set the `DRAWIO_DISABLE_UPDATE=true` environment variable or pass `--disable-update` on launch. All JavaScript files are self-contained, the Content Security Policy forbids running remotely loaded JavaScript.
+&lt;/details&gt;
 
-No diagram data is ever sent externally, nor do we send any analytics about app usage externally. The Content Security Policy on the web part of the interface forbids remotely-loaded JavaScript and restricts the application&#039;s own network connections to itself, so the app cannot transmit your diagrams or otherwise phone home. Note that a diagram can reference external media - for example an image, background or font loaded from a URL embedded in the diagram - and these are fetched when the diagram is opened so that it renders correctly. Opening a diagram from an untrusted source may therefore trigger a request to the referenced URL, which can reveal metadata such as your IP address to that server; no diagram content is transmitted.
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Pi&lt;/strong&gt;&lt;/summary&gt;
 
-Security and isolating the app are the primarily objectives of draw.io desktop. If you ask for anything that involves external connections enabled in the app by default, the answer will be no.
+Run in your terminal:
 
-Support
--------
+```shell
+pi install git:github.com/michael-denyer/pstack-claude
+```
 
-Support is provided on a reasonable business constraints basis, but without anything contractually binding. All support is provided via this repo. There is no private ticketing support for non-paying users.
+The package loads the skills and the pstack Pi extension, which adds the subagent, question, and wake-up tools the skills use, plus `/loop` and the routing instruction. Invoke a skill with `/skill:&lt;name&gt;`.
 
-Purchasing draw.io for Confluence or Jira does not entitle you to commercial support for draw.io desktop.
+&lt;/details&gt;
 
-Developing
-----------
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;GitHub Copilot&lt;/strong&gt;&lt;/summary&gt;
 
-**draw.io** is a git submodule of **drawio-desktop**. To get both you need to clone recursively:
+Run in your terminal:
 
-`git clone --recursive https://github.com/jgraph/drawio-desktop.git`
+```shell
+copilot plugin marketplace add michael-denyer/pstack-claude
+copilot plugin install pstack@pstack-claude
+```
 
-To run this:
-1. `npm install` (in the root directory of this repo)
-2. [internal use only] export DRAWIO_ENV=dev if you want to develop/debug in dev mode.
-3. `npm start` _in the root directory of this repo_ runs the app. For debugging, use `npm start --enable-logging`.
+This installs pstack for the Copilot CLI and the GitHub Copilot app, which share `~/.copilot`. Start a new session afterwards. Copilot ships no default pstack models, so the first skill that needs one runs `setup-pstack` to pick from the models your account lists, and later sessions reuse that choice.
 
-Note: If a symlink is used to refer to drawio repo (instead of the submodule), then symlink the `node_modules` directory inside `drawio/src/main/webapp` also.
+The Copilot build is tested on Copilot CLI 1.0.87 through 1.0.92. On those versions the routing hook&#039;s context reaches the session alongside other plugins&#039; session-start context. If a later version keeps only one plugin&#039;s context, `setup-pstack` offers a [standing instruction](plugins/pstack/skills/setup-pstack/copilot.md#wire-it-in) for `~/.copilot/copilot-instructions.md` instead. On 1.0.92, once the CLI caches its computer-use experiment assignment, `copilot -p` sessions list no plugin skills and a `skill` call returns &quot;Skill not found&quot;. Interactive sessions, the hooks, and the agents are unaffected.
 
-To fork the project, make your own changes and build an (unsigned) app for personal use, see [doc/BUILDING_FOR_PERSONAL_USE.md](doc/BUILDING_FOR_PERSONAL_USE.md).
+&lt;/details&gt;
 
-The release process (GitHub Actions builds, signing and publishing) is described in [doc/RELEASE_PROCESS.md](doc/RELEASE_PROCESS.md).
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Muse&lt;/strong&gt;&lt;/summary&gt;
 
-Local Storage and Session Storage is stored in the AppData folder:
+Run in your terminal:
 
-- macOS: `~/Library/Application Support/draw.io`
-- Windows: `C:\Users\&lt;USER-NAME&gt;\AppData\Roaming\draw.io\`
+```shell
+git clone https://github.com/michael-denyer/pstack-claude
+cd pstack-claude
+muse plugins install ./plugins/pstack
+muse plugins approve pstack
+```
 
-Not open-contribution
----------------------
+The first command installs the native Muse plugin bundle. The second approves its `SessionStart` hook and agent definitions, which Muse runs only after approval. Start a new session afterwards. Invoke a skill with `/&lt;name&gt;` (for example `/poteto-mode`), which Muse lists for each user-invocable skill.
 
-draw.io is closed to contributions (unless a maintainer permits it, which is extremely rare).
+&lt;/details&gt;
 
-The level of complexity of this project means that even simple changes 
-can break a _lot_ of other moving parts. The amount of testing required 
-is far more than it first seems. If we were to receive a PR, we&#039;d have 
-to basically throw it away and write it how we want it to be implemented.
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;OMP&lt;/strong&gt;&lt;/summary&gt;
 
-We are grateful for community involvement, bug reports, &amp; feature requests. We do
-not wish to come off as anything but welcoming, however, we&#039;ve
-made the decision to keep this project closed to contributions for 
-the long term viability of the project.
+Run in your terminal:
+
+```shell
+omp plugin marketplace add michael-denyer/pstack-claude
+omp plugin install --scope user pstack@pstack-claude
+```
+
+Restart OMP after installing, disabling, or uninstalling pstack. OMP 18.16.0 shares one plugin cache across scopes, so an upgrade or removal can affect other installations; inspect their source and scope before changing them. See [OMP issue 16827](https://github.com/can1357/oh-my-pi/issues/16827).
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Kimi Code CLI&lt;/strong&gt;&lt;/summary&gt;
+
+After a release containing `kimi.plugin.json` is published, close other Kimi sessions and install it in a fresh Kimi Code CLI session:
+
+```text
+/plugins install https://github.com/michael-denyer/pstack-claude
+/reload
+```
+
+To test an unreleased checkout, use `/plugins install /absolute/path/to/pstack-claude` instead, followed by `/reload`; Kimi copies the whole checkout, including Git metadata and local files, so use a clean, reviewed copy. To update, close other Kimi sessions, reinstall from the same source in a fresh session, and run `/reload`. Invoke a skill as `/skill:pstack:poteto-mode`; see the [Kimi mapping](plugins/pstack/skills/poteto-mode/references/kimi-tools.md) for tool guidance.
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Grok Build&lt;/strong&gt;&lt;/summary&gt;
+
+```shell
+git clone https://github.com/michael-denyer/pstack-claude
+cd pstack-claude
+grok plugin install &quot;$PWD/plugins/pstack&quot; --trust
+grok plugin enable pstack
+```
+
+Start a new session and use `/poteto-mode` to load the skill explicitly. To update a local install, quit Grok sessions, inspect `grok plugin details pstack` and back up any edits in the installed copy, pull the checkout, run `grok plugin uninstall pstack --keep-data`, and repeat the last two commands. If pstack was disabled, disable it again before restarting. `grok plugin update` does not refresh a local install.
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;MiniMax Code&lt;/strong&gt;&lt;/summary&gt;
+
+For a first install, check that `${MINIMAX_DATA_DIR:-$HOME/.minimax}/plugins/pstack` does not already exist. Then run in your terminal:
+
+```shell
+git clone https://github.com/michael-denyer/pstack-claude
+cd pstack-claude
+mkdir -p &quot;${MINIMAX_DATA_DIR:-$HOME/.minimax}/plugins&quot;
+cp -R plugins/pstack &quot;${MINIMAX_DATA_DIR:-$HOME/.minimax}/plugins/pstack&quot;
+```
+
+MiniMax Code loads each directory under `plugins/` in its data directory as a local plugin, and reads pstack through its Claude Code reader with the skills, agents, and routing hook. `mcode plugin list` shows it as `pstack@local`. To update, record its enabled state, quit every `mcode` process, and move `plugins/pstack` to an unused path outside `plugins/`. Run `git pull` and the `cp` line again. Check `mcode plugin list` and restore the previous enabled state if needed.
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;OpenCode 2&lt;/strong&gt;&lt;/summary&gt;
+
+Clone the repository, then add the absolute path to `plugins/pstack/opencode` to the existing `plugins` array in `~/.config/opencode/opencode.jsonc`. On Windows, use a path such as `C:/Users/name/pstack-claude/plugins/pstack/opencode`. Restart OpenCode after checkout updates.
+
+Alternatively, install, check, or update the native Git package:
+
+```bash
+opencode plugin add &#039;github:michael-denyer/pstack-claude#main&#039;
+opencode plugin check &#039;github:michael-denyer/pstack-claude#main&#039;
+opencode plugin update &#039;github:michael-denyer/pstack-claude#main&#039;
+```
+
+A commit-pinned reference does not advance. If a check immediately after installation reports no package plugins, wait for the server to load it and check again.
+
+If you previously installed pstack skills into `~/.agents/skills`, inspect the links and remove only those pointing to your pstack checkout before using the plugin.
+
+The plugin registers `pstack-` skill IDs and adds routing in root sessions. If routing is missing, run `opencode api get /api/skill` and check that each `pstack-` path belongs to this plugin. Resolve any conflicting skill before manually invoking that ID. Use `session hook: off` in the OpenCode model sheet to disable routing. To remove the plugin, remove its configured path and restart the service, or use `opencode plugin remove` with the exact Git specifier. OpenCode 1 is unsupported. See the [OpenCode mapping](plugins/pstack/skills/poteto-mode/references/opencode-tools.md).
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Antigravity (agy)&lt;/strong&gt;&lt;/summary&gt;
+
+Run in your terminal:
+
+```shell
+git clone https://github.com/michael-denyer/pstack-claude
+cd pstack-claude
+agy plugin install ./plugins/pstack
+```
+
+This installs the native Antigravity plugin bundle (`skills`, `agents`, and `SessionStart` routing hook) into `~/.gemini/config/plugins/pstack`.
+
+&lt;/details&gt;
+
+&lt;a id=&quot;other-harnesses&quot;&gt;&lt;/a&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Other harnesses&lt;/strong&gt;&lt;/summary&gt;
+
+Gemini CLI, Prime Agent, and skills-only Codex installs read skills from `~/.agents/skills/`. Run in your terminal:
+
+```shell
+git clone https://github.com/michael-denyer/pstack-claude
+cd pstack-claude
+mkdir -p ~/.agents/skills
+for s in plugins/pstack/skills/*/; do
+  target=~/.agents/skills/&quot;$(basename &quot;$s&quot;)&quot;
+  test -e &quot;$target&quot; || test -L &quot;$target&quot; || ln -s &quot;$(pwd)/$s&quot; &quot;$target&quot;
+done
+```
+
+To update, run `git pull` in the clone, then run the `for` loop again to link skills added since the last run. These installs have no routing hook, so ask for `poteto-mode` by name or add a standing instruction to the harness&#039;s instruction file. See [shared installation](docs/reference.md#shared-skills-installation) for per-harness notes and uninstalling.
+
+&lt;/details&gt;
+
+### Configure
+
+pstack provides automatic routing on Claude Code, Codex, GitHub Copilot, Muse, MiniMax Code, Antigravity, Pi, Kimi Code CLI, OMP, and OpenCode 2. The runtimes deliver the instruction at different points: Kimi adds it while the plugin is enabled, OMP adds it before each main-agent turn, and OpenCode adds it at each model step in root sessions. Grok Build exposes a routing hint through a skill description; the model may not follow it. Codex requires hook trust through `/hooks`, and Muse requires `muse plugins approve pstack`. Other harnesses have no automatic routing.
+
+Run `setup-pstack` to turn automatic routing on or off, change model defaults, or set a reasoning effort per role (`arena runners: opus @xhigh, fable @max`). On OMP, the session hook setting applies globally across profiles; on Kimi, enable or disable the plugin to control routing. See the [routing reference](docs/reference.md#automatic-routing).
+
+## Getting started
+
+```text
+Use poteto-mode to fix the search filter resetting when I change pages.
+```
+
+For a bug, it reproduces the failure, uses `how` and `why` to investigate, delegates the fix, then reruns the failing case. If the fix crosses a function boundary, it brings in `architect` before implementation. You receive the fix and the failing and passing evidence.
+
+[Other playbooks](plugins/pstack/skills/poteto-mode/SKILL.md#playbooks) cover planning, features, refactoring, performance issues, investigations, prototypes, PR maintenance, shipping, and longer projects.
+
+![poteto-mode on Claude Code, Codex, and Pi turns a request into verified work. Choose a playbook, plan and delegate with architect, arena, or swarm, then review and verify with interrogate, tests, and measurements. Project playbooks customize the workflow, and setup-pstack configures the model and reasoning effort per role. Supporting skills include how, why, and unslop.](assets/pstack-overview.png)
+
+## Details
+
+- [Skills and slash commands](docs/reference.md#slash-commands)
+- [Runtime setup](docs/reference.md#runtime-support)
+- [Models and dependencies](docs/reference.md#configuration-and-dependencies)
+- [Maintenance and port scope](docs/reference.md#maintenance)
+
+## Data handling
+
+pstack has no server or telemetry. Anything its skills ask your agent to read, including session transcripts, goes to your model provider. Scripts run locally, and PR tools use your GitHub CLI login.
+
+## Contributing
+
+Thanks for helping make this port better. Bug reports, documentation fixes, and runtime improvements are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the checks and where your change belongs. Report vulnerabilities privately as described in [SECURITY.md](SECURITY.md).
+
+To support maintenance of this port, [buy the maintainer a coffee](https://buymeacoffee.com/codenyer).
+
+## License
+
+This port, including its modifications and additions, is also [MIT-licensed](LICENSE), © 2026 Michael Denyer. Original pstack © 2026 Lauren Tan; imported cursor-team-kit and thermos skills © 2026 Cursor. See [LICENSE-cursor-team-kit](LICENSE-cursor-team-kit), [LICENSE-thermos](LICENSE-thermos), and [NOTICE.md](NOTICE.md).
 </pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[vercel/next.js]]></title>
-            <link>https://github.com/vercel/next.js</link>
-            <guid>https://github.com/vercel/next.js</guid>
-            <pubDate>Thu, 05 Nov 2026 00:04:01 GMT</pubDate>
-            <description><![CDATA[The React Framework]]></description>
+            <title><![CDATA[Anil-matcha/Open-Generative-AI]]></title>
+            <link>https://github.com/Anil-matcha/Open-Generative-AI</link>
+            <guid>https://github.com/Anil-matcha/Open-Generative-AI</guid>
+            <pubDate>Fri, 06 Nov 2026 00:03:49 GMT</pubDate>
+            <description><![CDATA[Unrestricted Open-source alternative to AI video platforms — Free AI image & video generation studio with 600+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/vercel/next.js">vercel/next.js</a></h1>
-            <p>The React Framework</p>
+            <h1><a href="https://github.com/Anil-matcha/Open-Generative-AI">Anil-matcha/Open-Generative-AI</a></h1>
+            <p>Unrestricted Open-source alternative to AI video platforms — Free AI image & video generation studio with 600+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 143,324</p>
-            <p>Forks: 33,546</p>
-            <p>Stars today: 124 stars today</p>
+            <p>Stars: 32,586</p>
+            <p>Forks: 6,191</p>
+            <p>Stars today: 182 stars today</p>
+            <h2>README</h2><pre># Open Generative AI — Unrestricted Open-Source Alternative to AI Video Platforms
+
+[![Powered by MuAPI](https://img.shields.io/badge/Powered%20by-MuAPI-6366f1?style=flat-square&amp;logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyem0tMSAxNHYtNGgtMnYtMmg0djZoLTJ6bTAtOFY2aDJ2MmgtMnoiLz48L3N2Zz4=)](https://muapi.ai?utm_source=github&amp;utm_medium=badge&amp;utm_campaign=open-generative-ai)
+
+
+&gt; **The free, open-source alternative to AI Video Platforms.** Generate AI images and videos using 600+ state-of-the-art models across 14 studios — no content filters, no closed ecosystem, no subscription fees.
+
+**Community:** Join [Discord](https://discord.com/invite/zpnuBRXhKg) for discussions and support
+
+
+&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https://youtu.be/DVPye2uAJQc&quot;&gt;&lt;img src=&quot;https://i.ytimg.com/vi/DVPye2uAJQc/maxresdefault.jpg&quot; width=&quot;720&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https://youtu.be/DVPye2uAJQc&quot;&gt;&lt;b&gt;▶ Watch: GPT Image 2.6 API (ChatGPT Images 2.6): GIFs, Flare vs Sunburst &amp; How to Use It &lt;/b&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://github.com/Anil-matcha/awesome-generative-ai-apps&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/Part%20of-Awesome%20Generative%20AI%20Apps-FFD700?style=for-the-badge&amp;logo=github&amp;logoColor=black&quot; alt=&quot;Awesome Generative AI Apps&quot;&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&gt; 🎨 **[Explore 50+ more open-source AI apps →](https://github.com/Anil-matcha/awesome-generative-ai-apps)**
+
+&gt; 🤝 **New: [Open Duet](https://github.com/Anil-matcha/open-duet)** — open-source, self-hosted AI coworkers (named agents) with instructions, memory, routines, their own isolated computer, and your approval before they act. An alternative to Claude Duet, OpenAI Dots, and Manus Cue. [Star it on GitHub →](https://github.com/Anil-matcha/open-duet)
+
+## 💰 Turn This Into Your Own Product — White Label &amp; Resell
+
+Want to launch this as **your own branded AI studio** and charge your own customers for it? [MuAPI White Label](https://muapi.ai/white-label?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=open-generative-ai) lets you spin up a fully white-labeled version of this app — your logo, your colors, your custom domain, your own pricing — with zero infra to manage. You keep the markup on every generation; MuAPI handles the models, the queue, and the billing plumbing underneath.
+
+- **Your branding** — logo, color theme, and a custom domain (e.g. `studio.yourbrand.com`)
+- **Your pricing** — set your own credit/subscription prices for end users, keep the margin
+- **No infra** — no servers, workers, or model hosting to run yourself
+- **All studios included** — Image, Video, Audio, Lip Sync, Cinema, Workflows, and more, depending on plan
+
+Plans start at $49/mo. [Get started with White Label →](https://muapi.ai/white-label?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=open-generative-ai)
+
+### What similar AI studios charge their users
+
+Consumer AI image/video platforms almost all run on paid monthly subscriptions — this is the same playbook you&#039;d run under your own brand:
+
+| Platform | Typical subscription range |
+|---|---|
+| Midjourney | ~$10–$120/mo (Basic → Mega) |
+| Runway | ~$12–$76/mo (Standard → Unlimited), custom Enterprise |
+| Kling AI | ~$10–$92/mo across Standard → Premier tiers |
+| Luma Dream Machine | ~$10–$100+/mo |
+| Pika | ~$8–$58/mo |
+
+*(Figures are approximate, general-market ranges and change over time — check each platform&#039;s current pricing page before quoting them.)* With MuAPI White Label, you set these numbers yourself for your own end users — the subscription revenue is yours.
+
+---
+
+## API examples and model references
+
+- [OpenAI API examples](https://github.com/Anil-matcha/OpenAI-API) — GPT Image, Sora, and GPT endpoints through Muapi.
+- [Google Gemini Media API examples](https://github.com/Anil-matcha/Google-Gemini-Media-API) — Nano Banana, Imagen, Veo, Gemini Omni, and speech endpoints.
+- [MiniMax Media API examples](https://github.com/Anil-matcha/MiniMax-Media-API) — Hailuo, H3 Max, speech, and music workflows.
+- [Kling Video API examples](https://github.com/Anil-matcha/Kling-Video-API) — Kling text-to-video, image-to-video, and motion control.
+- [Qwen Image API examples](https://github.com/Anil-matcha/Qwen-Image-API) — Qwen image generation, editing, and LoRA workflows through Muapi.
+
+## Related Projects
+
+This is a curated set of high-value hubs, popular distribution tools, and model-specific integrations rather than a directory of every related repository.
+
+- [awesome-vibecoded-saas](https://github.com/Anil-matcha/awesome-vibecoded-saas) — broader catalog of open-source SaaS alternatives featuring this studio.
+- [Muapi open-source alternatives](https://muapi.ai/open-source/alternative/midjourney) — compare this studio with the Midjourney workflow and its honest scope.
+- [awesome-generative-ai-apps](https://github.com/Anil-matcha/awesome-generative-ai-apps) — catalog of open-source generative-AI applications.
+- [awesome-ai-video-models](https://github.com/Anil-matcha/awesome-ai-video-models) — compare video models by API, price, and capability.
+- [awesome-ai-image-models](https://github.com/Anil-matcha/awesome-ai-image-models) — compare image models by API, price, and quality.
+- [AI-Youtube-Shorts-Generator](https://github.com/SamurAIGPT/AI-Youtube-Shorts-Generator) — Open-source Opus Clip alternative application.
+- [open-duet](https://github.com/Anil-matcha/open-duet) — Open-source, self-hosted AI coworkers with memory, routines, isolated computers, and approval-gated actions.
+- [Open-AI-Design-Agent](https://github.com/Anil-matcha/Open-AI-Design-Agent) — Ppen-source autonomous AI design agent.
+- [muapi-skills](https://github.com/SamurAIGPT/muapi-skills) — Agent-ready skills for driving generative-media workflows.
+- [Seedance-2.5-API](https://github.com/SamurAIGPT/Seedance-2.5-API) — Python SDK for Seedance 2.5 video generation.
+
+## 🌐 Try it Online — No Install Required
+
+**Hosted version:** [https://muapi.ai/open-generative-ai?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=open-generative-ai](https://muapi.ai/open-generative-ai?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=open-generative-ai)
+
+Use all studios (Image, Video, Audio, AI Clipping, Vibe Motion, Lip Sync, Cinema, Marketing, Workflows, Agents, Design Agent, Apps, MCP &amp; CLI) directly in your browser — no Node.js, no setup. Sign up for a free account to start generating. The hosted version is always up to date with the latest models.
+
+**Follow** the [creator](https://x.com/matchaman11) for updates
+
+---
+
+## ⬇️ Download Desktop App
+
+One-click installers — no Node.js or terminal required.
+
+| Platform | Download |
+|---|---|
+| macOS Apple Silicon (M1/M2/M3/M4) | [Open Generative AI-2.0.0-arm64.dmg](https://github.com/Anil-matcha/Open-Generative-AI/releases/download/v2.0.0/Open.Generative.AI-2.0.0-arm64.dmg) |
+| macOS Intel (x64) | [Open Generative AI-2.0.0.dmg](https://github.com/Anil-matcha/Open-Generative-AI/releases/download/v2.0.0/Open.Generative.AI-2.0.0.dmg) |
+| Windows (x64) | [Open Generative AI Setup 2.0.0.exe](https://github.com/Anil-matcha/Open-Generative-AI/releases/download/v2.0.0/Open.Generative.AI.Setup.2.0.0.exe) |
+| Linux (Ubuntu x64) | [`.AppImage`](https://github.com/Anil-matcha/Open-Generative-AI/releases/download/v2.0.0/Open.Generative.AI-2.0.0.AppImage) / [`.deb`](https://github.com/Anil-matcha/Open-Generative-AI/releases/download/v2.0.0/open-generative-ai_2.0.0_amd64.deb), or build locally with `npm run electron:build:linux`. |
+
+All releases: [github.com/Anil-matcha/Open-Generative-AI/releases](https://github.com/Anil-matcha/Open-Generative-AI/releases)
+
+### macOS Installation Guide
+
+Because the app is not notarized by Apple, macOS Gatekeeper will block it on first launch. Follow these steps:
+
+**Step 1** — Mount the DMG and drag the app to `/Applications`
+
+**Step 2** — Open Terminal and run:
+```bash
+xattr -cr &quot;/Applications/Open Generative AI.app&quot;
+```
+
+**Step 3** — Right-click the app in `/Applications` → click **Open** → click **Open** again on the dialog
+
+&gt; You only need to do this once. After that, the app opens normally.
+
+**Alternative (no Terminal):**
+1. Try to open the app — macOS will block it
+2. Go to **System Settings → Privacy &amp; Security**
+3. Scroll down to find _&quot;Open Generative AI was blocked&quot;_
+4. Click **Open Anyway** → **Open**
+
+### Windows Installation — SmartScreen warning fix
+
+Windows SmartScreen may show a warning because the installer is not code-signed:
+
+1. Click **More info** on the SmartScreen dialog
+2. Click **Run anyway**
+
+The app will install silently to `%LocalAppData%` with a Start Menu shortcut.
+
+### Ubuntu / Linux Installation
+
+Linux artifacts are available when building with Electron Builder:
+
+```bash
+# Build Linux installers (AppImage + .deb)
+npm run electron:build:linux
+```
+
+Generated files are written to the `release/` folder:
+- **AppImage** — portable, run directly after making executable:
+  ```bash
+  chmod +x &quot;release/Open Generative AI-*.AppImage&quot;
+  ./release/Open\ Generative\ AI-*.AppImage
+  ```
+- **.deb** — install on Debian/Ubuntu:
+  ```bash
+  sudo apt install ./release/open-generative-ai_*_amd64.deb
+  ```
+
+If AppImage fails to start on older systems, install `libfuse2`:
+
+```bash
+sudo apt install libfuse2
+```
+
+#### Ubuntu 24.04+ / AppArmor sandbox restriction
+
+Ubuntu 24.04 and later enable a kernel security policy (`apparmor_restrict_unprivileged_userns`) that blocks Chromium&#039;s user-namespace sandbox. If the app fails to start silently or crashes immediately, you have two options:
+
+**Option A — Recommended: install the `.deb` instead.**
+The `.deb` package ships an AppArmor profile that grants the required permission automatically on install with no system-wide changes.
+
+**Option B — Temporary system fix (AppImage users):**
+```bash
+sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+```
+This lasts until next reboot. To make it permanent:
+```bash
+echo &#039;kernel.apparmor_restrict_unprivileged_userns=0&#039; | sudo tee /etc/sysctl.d/99-userns.conf
+```
+
+---
+
+Open Generative AI is a free, open-source AI image, video, cinema, and lip sync studio that brings creative workflows to everyone. No content filters, no prompt rejections, no guardrails — just full creative freedom. Powered by [Muapi.ai](https://muapi.ai?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=open-generative-ai), it supports text-to-image, image-to-image, text-to-video, image-to-video, and audio-driven lip sync generation across models like Flux, Nano Banana, Midjourney, Kling, Sora, Veo, Seedream, Infinite Talk, LTX Lipsync, Wan 2.2, and more — all from a sleek, modern interface you can self-host and customize.
+
+**Why Open Generative AI instead of other AI Video Platforms?**
+- **No filters** — no content filters, no nanny guardrails, no prompt rejections
+- **Free &amp; open-source** — no subscription, no vendor lock-in
+- **Self-hosted** — your data stays on your machine, full creative control
+- **200+ models** — text-to-image, image-to-image, text-to-video, image-to-video, lip sync
+- **Multi-image input** — feed up to 14 reference images into compatible models
+- **Lip Sync Studio** — animate portraits or sync lips to any audio with 9 dedicated models
+- **Extensible** — add your own models, modify the UI, build on top of it
+
+For a deep dive into the technical architecture and the philosophy behind the &quot;Infinite Budget&quot; cinema workflow, see our [comprehensive guide and roadmap](https://medium.com/@anilmatcha/).
+
+## ⚡ Local Model Inference (Desktop App Only)
+
+The desktop app supports **two independent local engines**. Pick whichever fits the machine you actually run on:
+
+| Engine | What it is | Best for |
+|---|---|---|
+| **sd.cpp** (bundled) | C++ engine from [stable-diffusion.cpp](https://github.com/leejet/stable-diffusion.cpp), runs on the same machine as the app. Metal GPU on Apple Silicon, CUDA/Vulkan/ROCm on Linux/Windows. | Image-only models. Works on Mac M-series. |
+| **Wan2GP** (BYO install) | A user-installed [Wan2GP](https://github.com/deepbeepmeep/Wan2GP): either its folder on this machine (the app runs `wgp.py` itself) or its MCP server on another machine. Python + PyTorch on a CUDA/ROCm GPU. | Video models (Wan 2.1/2.2, Hunyuan, LTX-2) in **Video Studio** and large image models (Flux, Qwen-Image). NVIDIA/AMD GPU required on the Wan2GP machine; the desktop app itself can run on a Mac. |
+
+Both engines share the same UI: open **Settings → Local Models** to configure each.
+
+### Engine 1 — sd.cpp (bundled)
+
+| Model | Type | Size | Notes |
+|---|---|---|---|
+| **Z-Image Turbo** ⚡ | Diffusion Transformer | 2.5 GB + 2.7 GB aux | 8-step turbo. Heavy on memory. |
+| **Z-Image Base** ⚡ | Diffusion Transformer | 3.5 GB + 2.7 GB aux | 50-step high-quality. Heavy on memory. |
+| **Dreamshaper 8** | SD 1.5 | 2.1 GB | 20-step versatile. Lightest tested option on Mac. |
+| **Realistic Vision v5.1** | SD 1.5 | 2.1 GB | 25-step photorealistic |
+| **Anything v5** | SD 1.5 | 2.1 GB | 20-step anime/illustration |
+| **SDXL Base 1.0** | SDXL | 6.9 GB | 30-step high-res |
+
+&gt; **Z-Image models** require two shared auxiliary files (downloaded once, shared across both models):
+&gt; - **Qwen3-4B Text Encoder** — 2.4 GB
+&gt; - **FLUX VAE** — 335 MB
+
+**How to use:**
+1. Open **Settings → Local Models** in the desktop app
+2. Install the **sd.cpp inference engine** (one click — auto-downloaded)
+3. Download your chosen model (and auxiliary files for Z-Image)
+4. In **Image Studio**, click the **⚡ Local** toggle next to the model selector
+5. Select your local model and generate — no API key needed
+
+All downloads happen inside the app. Nothing is installed system-wide.
+
+By default, `sd.cpp` stores the engine, model weights, and temporary downloads under Electron&#039;s app data directory. Common paths are:
+
+- macOS: `~/Library/Application Support/open-generative-ai/local-ai`
+- Windows: `%APPDATA%\open-generative-ai\local-ai`
+- Linux: `~/.config/open-generative-ai/local-ai`
+
+To keep multi-GB model weights on another drive, set `OPEN_GENERATIVE_AI_LOCAL_AI_DIR`
+before launching the desktop app. The app will create `bin/`, `models/`, and `tmp/`
+inside that directory, and **Settings -&gt; Local Models** shows the resolved model folder.
+Local engine output and download errors are written to the app process console, so launch
+from Terminal or PowerShell when you need troubleshooting logs.
+
+### Engine 2 — Wan2GP (your own install)
+
+The app does **not** bundle Python or model weights for Wan2GP. Install Wan2GP yourself on a machine with a CUDA or ROCm GPU:
+
+```bash
+git clone https://github.com/deepbeepmeep/Wan2GP
+cd Wan2GP
+./install.sh                          # or install.bat on Windows
+```
+
+**Same machine (recommended).** In the desktop app open **Settings → Local Models → Wan2GP**, set the Wan2GP folder (Python defaults to `&lt;folder&gt;/venv/bin/python`), click **Save**, then **Check** — it runs `wgp.py --dry-run` on a test task. Each generation runs Wan2GP&#039;s headless CLI (`wgp.py --process settings.json`); weights download automatically the first time a model is used, and the download shows up in the progress bar.
+
+**Another machine.** Start WanGP&#039;s MCP server there and put its URL (e.g. `http://192.168.1.42:7866/mcp`) in the same settings panel:
+
+```bash
+python wgp.py --mcp --mcp-api-version 1 --mcp-transport streamable-http --mcp-host 0.0.0.0 --mcp-port 7866
+```
+
+Use `--mcp-host 0.0.0.0` only on a trusted network (see Wan2GP&#039;s `docs/AUTHENTICATION.md` for OAuth/HTTPS). The Gradio web UI port (7860) is **not** an API and cannot be used here.
+
+Then switch **Video Studio** to **⚡ Local** and pick a model. Models your Wan2GP version doesn&#039;t have are listed with the reason; models whose weights aren&#039;t downloaded yet are marked.
+
+| Model | WanGP `model_type` | Type | Notes |
+|---|---|---|---|
+| **Wan 2.1 1.3B** | `t2v_1.3B` | Video | Lightest option, 480p, ~8 GB VRAM |
+| **Wan 2.2 14B T2V / I2V** | `t2v_2_2` / `i2v_2_2` | Video | 480p, slow on consumer GPUs; I2V needs a start frame |
+| **Hunyuan Video 1.5** | `hunyuan_1_5_480_t2v` | Video | 480p T2V |
+| **LTX-2 Distilled** | `ltx2_22B_distilled` | Video | 8 steps, 720p |
+| **Flux.1 Dev** | `flux` | Image | Image Studio |
+| **Qwen Image** | `qwen_image_20B` | Image | Image Studio |
+
+&gt; **Why the remote option?** Wan2GP&#039;s runtime (Sage attention, flash-attn, AWQ/GGUF kernels) is CUDA/ROCm-only — there is no MPS / Apple Silicon path. The MCP server lets a Mac-only user keep the desktop app while offloading inference to a Linux/Windows GPU box, a gaming PC on the LAN, or a rented RunPod/vast.ai instance.
+
+&gt; **Local inference is only available in the desktop app.** The hosted web version always uses cloud APIs.
+
+### Hardware Notes
+
+- **sd.cpp** runs on CPU (all platforms) and **Metal GPU** on Apple Silicon (M1/M2/M3/M4); CUDA/Vulkan/ROCm on Linux/Windows.
+- Metal GPU acceleration is built into the macOS desktop binary — significantly faster than CPU-only.
+- Recommended for sd.cpp Z-Image: 16 GB RAM (7.4 GB weights + 2.4 GB compute buffer). On a base 8 GB M-series Mac, **Z-Image is known to hang the system** — stick to SD 1.5 there.
+- For SD 1.5 on M2: expect ~1–2 s/step with the Metal dylib active. If you see ~10 s/step instead, the binary may have fallen back to CPU — see verification below.
+
+### Verifying the SD 1.5 path (the fastest sanity test on Mac)
+
+If you want to confirm sd.cpp is installed correctly without going through the UI, you can drive `sd-cli` directly. This is the same binary the app uses.
+
+```bash
+# 1. App data layout (created on first app launch)
+APP_DATA=&quot;${OPEN_GENERATIVE_AI_LOCAL_AI_DIR:-$HOME/Library/Application Support/open-generative-ai/local-ai}&quot;
+ls &quot;$APP_DATA/bin&quot;     # sd-cli, libstable-diffusion.dylib
+ls &quot;$APP_DATA/models&quot;  # whatever you&#039;ve downloaded
+
+# 2. Grab a small SD 1.5 model directly (Dreamshaper 8, ~2 GB)
+curl -L --fail --progress-bar \
+  -o &quot;$APP_DATA/models/DreamShaper_8_pruned.safetensors&quot; \
+  &quot;https://huggingface.co/Lykon/DreamShaper/resolve/main/DreamShaper_8_pruned.safetensors&quot;
+
+# 3. Run a single 512x512 / 12-step inference
+DYLD_LIBRARY_PATH=&quot;$APP_DATA/bin&quot; &quot;$APP_DATA/bin/sd-cli&quot; \
+  -m &quot;$APP_DATA/models/DreamShaper_8_pruned.safetensors&quot; \
+  -p &quot;a serene mountain lake at sunrise, oil painting&quot; \
+  -o /tmp/sd15-test.png \
+  --steps 12 -H 512 -W 512 --cfg-scale 7.5 --seed 42 \
+  --sampling-method euler_a
+```
+
+A healthy run on Apple Silicon prints `total params memory size = 1969.78MB (VRAM 1969.78MB, RAM 0.00MB)` (Metal-backed) and produces a coherent 512×512 PNG. If `VRAM` is `0.00MB` instead, the dylib is CPU-only — check `otool -L &quot;$APP_DATA/bin/libstable-diffusion.dylib&quot; | grep -i metal` and reinstall the engine from **Settings → Local Models** if Metal is missing.
+
+---
+
+## ✨ Features
+
+- **Image Studio** — Generate images from text prompts (50+ text-to-image models) or transform existing images (55+ image-to-image models). Switches model set automatically based on whether a reference image is provided. Quality and resolution controls visible for models that support them.
+- **Local Inference** — Two engines: **sd.cpp** (bundled, runs on Mac/Win/Linux with Metal/CUDA/Vulkan/ROCm) for SD 1.5, SDXL, and Z-Image; and **Wan2GP** (your own install — local folder or remote MCP server) for Flux, Qwen-Image, and video models in Video Studio (Wan 2.1/2.2, Hunyuan, LTX-2). Configure both in Settings → Local Models.
+- **Multi-Image Input** — Upload up to 14 reference images for compatible edit models (Nano Banana 2 Edit, Flux Kontext Dev, GPT-4o Edit, and more). Multi-select picker with order badges, batch upload, and a &quot;Use Selected&quot; confirmation flow.
+- **Video Studio** — Generate videos from text prompts (40+ text-to-video models) or animate a start-frame image (60+ image-to-video models). Same intelligent mode switching as Image Studio.
+- **Audio Studio** — Generate and edit AI audio/music from text prompts.
+- **AI Clipping** — Auto-clip and extract highl
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[chaolucky18/xuexitongScript]]></title>
+            <link>https://github.com/chaolucky18/xuexitongScript</link>
+            <guid>https://github.com/chaolucky18/xuexitongScript</guid>
+            <pubDate>Fri, 06 Nov 2026 00:03:48 GMT</pubDate>
+            <description><![CDATA[学习通自动刷课脚本]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/chaolucky18/xuexitongScript">chaolucky18/xuexitongScript</a></h1>
+            <p>学习通自动刷课脚本</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 3,808</p>
+            <p>Forks: 442</p>
+            <p>Stars today: 48 stars today</p>
+            <h2>README</h2><pre># 学习通自动刷课脚本 V3 稳定版
+
+当前版本以 `v3_optimized.js` 为唯一源码，油猴版由构建脚本生成。它聚焦于稳定播放与课程导航：
+
+- 自动播放视频
+- 视频结束后自动切换到下一小节
+- 章节测验页面的受限跳转（最多尝试 3 次，防止循环）
+- 从“学习目标”步骤自动切到“视频”步骤
+- 手动点“2视频”页签后自动重新接管播放
+
+这版的目标是保持原模板的行为方式，不再额外叠加复杂的后台保活、通知、测试按钮等附加层，尽量减少冲突。
+
+## DeepSeek 控制台练习版
+
+仓库新增了独立的 [DeepSeek 控制台版](deepseek-console/README.md)，通过本地服务调用 DeepSeek API，识别章节练习题并辅助作答。原有 V3 脚本入口保持不变。
+
+
+## 文件说明
+
+- [v3_optimized.js](v3_optimized.js)
+  控制台直接执行版本
+- [v3_optimized.user.js](v3_optimized.user.js)
+  Tampermonkey 油猴版本
+- [scripts/build-userscript.mjs](scripts/build-userscript.mjs)
+  根据控制台版本生成油猴版
+
+## 当前脚本行为
+
+### 1. 学习目标页
+
+如果当前小节先进入的是“学习目标”而不是视频页，脚本会尝试点击顶部的 `2视频` / `视频` 标签进入视频步骤。
+
+说明：
+- 这条路径已经按当前页面结构收紧，只走顶部视频标签，不再点击底部 `下一节` 按钮
+- 原因是底部按钮在当前页面里可能触发额外调试/暂停逻辑，稳定性较差
+
+### 2. 视频页
+
+进入视频页后，脚本会：
+
+- 识别 iframe 内的真实视频元素
+- 自动调用 `play()`
+- 如果播放被短暂中断，则尝试恢复播放
+- 如果普通播放失败，则尝试静音播放
+
+当前默认配置：
+
+```javascript
+configs: {
+    playbackRate: 1.5,
+    autoplay: true,
+    retryInterval: 2000,
+    maxRetries: 10,
+    videoCheckInterval: 1000,
+    autoAdvanceNoVideo: false,
+}
+```
+
+### 3. 视频结束后
+
+视频触发结束事件后，脚本会调用 `nextUnit()`，在课程目录树中定位到下一小节并点击进入。
+
+### 4. 章节测验
+
+如果当前不是视频而是“章节测验”页面，脚本会尝试点击：
+
+```javascript
+#prevNextFocusNext
+```
+
+以跳过当前测验步骤并继续后续流程。
+
+## 使用方法
+
+### 方法一：控制台执行
+
+1. 打开学习通课程播放页
+2. 按 `F12`
+3. 进入 `Console`
+4. 复制 [v3_optimized.js](v3_optimized.js) 全部内容
+5. 粘贴并执行
+
+首次执行后可用：
+
+```javascript
+app.run()
+app.nextUnit()
+```
+
+### 方法二：Tampermonkey
+
+1. 安装 Tampermonkey
+2. 导入 [v3_optimized.user.js](v3_optimized.user.js)
+3. 确认脚本已启用
+4. 刷新学习通播放页面
+
+## 已知说明
+
+### 0. 无视频或课件页面
+
+默认不会自动跳过无法识别的无视频页面，避免在课件未完成时反复触发“当前章节还有任务未完成”的平台提示。控制台会给出明确日志；确认当前节点无需处理后，可手动执行 `app.nextUnit()`。
+
+如果课程结构已确认安全，才可在控制台将 `app.configs.autoAdvanceNoVideo = true`，让脚本自动切换无视频小节。
+
+### 1. 为什么有时会看到 `AbortError`
+
+常见报错：
+
+```text
+The play() request was interrupted by a call to pause()
+```
+
+这通常不是视频坏了，而是：
+
+- 页面从步骤页切到视频页时，播放器初始化会短暂停一下
+- 页面内部脚本会在加载过程中重置播放状态
+- 浏览器对媒体播放请求进行了短暂中断
+
+脚本会优先尝试恢复播放，而不是立即判定失败。
+
+### 2. 为什么会出现重复日志
+
+如果同一页面反复粘贴执行脚本，会导致同一套监听和定时逻辑叠加，从而出现多次日志。
+
+建议：
+
+- 刷新页面后只执行一次
+- 如果使用油猴版，尽量不要再在控制台重复粘贴执行
+
+### 3. 为什么“静音播放成功”但一开始还能听到声音
+
+旧逻辑里曾经会在静音启动成功后恢复声音。当前建议使用持续静音方式，不再自动恢复。
+
+## 当前调试结论
+
+目前这版已经验证：
+
+- 顶部 `2视频` 标签可以程序化点击
+- 手动进入视频页后可以自动播放
+- 静音恢复链路可用
+
+目前重点保留的是稳定性，不再继续叠加额外功能。
+
+## 维护与验证
+
+修改 `v3_optimized.js` 后，执行：
+
+```bash
+node scripts/build-userscript.mjs
+node tests/verify-v3.mjs
+```
+
+第二条命令会验证两个入口的语法，并确认油猴脚本与唯一源码完全一致。
+
+
+## 免责声明
+
+本项目仅用于脚本调试、前端自动化研究和页面行为分析，请遵守目标平台的使用规定。
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[Leaflet/Leaflet]]></title>
+            <link>https://github.com/Leaflet/Leaflet</link>
+            <guid>https://github.com/Leaflet/Leaflet</guid>
+            <pubDate>Fri, 06 Nov 2026 00:03:47 GMT</pubDate>
+            <description><![CDATA[🍃 number one JavaScript library for interactive maps 🇺🇦]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/Leaflet/Leaflet">Leaflet/Leaflet</a></h1>
+            <p>🍃 number one JavaScript library for interactive maps 🇺🇦</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 45,859</p>
+            <p>Forks: 6,211</p>
+            <p>Stars today: 24 stars today</p>
+            <h2>README</h2><pre>Leaflet was created in 2010 by [Volodymyr Agafonkin](https://agafonkin.com), a Ukrainian citizen living in Kyiv.
+
+Russia&#039;s full-scale invasion of Ukraine began in February 2022 and is still going. Russian troops have killed tens of thousands of civilians and committed mass war crimes. Missiles and drones still hit Kyiv and other Ukrainian cities day and night.
+
+Leaflet is used for [documenting Russia&#039;s war crimes](https://ukraine.bellingcat.com/), [tracking the front line](https://deepstatemap.live/) and [finding humanitarian aid](https://ukraine.servicesadvisor.net/). The future of Ukraine is the future of Leaflet.
+
+If you&#039;d like to help, donate to [Come Back Alive](https://savelife.in.ua/en/) or another charity listed on [StandWithUkraine](https://stand-with-ukraine.pp.ua), and keep asking your government to support Ukraine and pressure Russia. Just don&#039;t be silent.
+
+Yours truly,&lt;br&gt;
+Leaflet maintainers.
+
+---
+
+&lt;img width=&quot;600&quot; src=&quot;logo.svg&quot; alt=&quot;Leaflet&quot; /&gt;
+
+Leaflet is the leading open-source JavaScript library for **building powerful interactive maps**.
+
+Weighing just about 40 kB of gzipped JS plus 2.4 kB of gzipped CSS code, it has all the mapping [features][] most developers ever need.
+
+Leaflet is designed with *simplicity*, *performance* and *usability* in mind.
+It works efficiently across all major desktop and mobile platforms out of the box,
+taking advantage of modern browser features.
+It can be extended with a huge amount of [plugins][],
+has a beautiful, easy to use and [well-documented][] API
+and a simple, readable [source code][] that is a joy to [contribute][] to.
+
+For more info, docs and tutorials, check out the [official website][].&lt;br&gt;
+For **Leaflet downloads** (including the built main version), check out the [install page][].
+
+We&#039;re happy to meet new contributors.
+If you want to **get involved** with Leaflet development, check out the [contribution guide][contribute].
+Let&#039;s make the best mapping library that will ever exist,
+and push the limits of what&#039;s possible with online maps!
+
+[![CI](https://github.com/Leaflet/Leaflet/actions/workflows/main.yml/badge.svg)](https://github.com/Leaflet/Leaflet/actions/workflows/main.yml) [![minzipped size](https://img.shields.io/bundlejs/size/leaflet?label=min%2Bgzip)](https://esm.run/leaflet) [![Simply Awesome](https://img.shields.io/badge/simply-awesome-2ebc4f.svg)](https://github.com/mourner/projects)
+
+ [features]: https://leafletjs.com/#features
+ [plugins]: https://leafletjs.com/plugins.html
+ [well-documented]: https://leafletjs.com/reference.html &quot;Leaflet API reference&quot;
+ [source code]: https://github.com/Leaflet/Leaflet &quot;Leaflet GitHub repository&quot;
+ [contribute]: https://github.com/Leaflet/Leaflet/blob/main/CONTRIBUTING.md &quot;A guide to contributing to Leaflet&quot;
+ [official website]: https://leafletjs.com
+ [install page]: https://leafletjs.com/install.html
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[usebruno/bruno]]></title>
+            <link>https://github.com/usebruno/bruno</link>
+            <guid>https://github.com/usebruno/bruno</guid>
+            <pubDate>Fri, 06 Nov 2026 00:03:46 GMT</pubDate>
+            <description><![CDATA[Opensource IDE For Exploring and Testing API's (lightweight alternative to Postman/Insomnia)]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/usebruno/bruno">usebruno/bruno</a></h1>
+            <p>Opensource IDE For Exploring and Testing API's (lightweight alternative to Postman/Insomnia)</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 48,209</p>
+            <p>Forks: 3,085</p>
+            <p>Stars today: 89 stars today</p>
             <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[csyangwen/dsh-memory-evolve]]></title>
+            <link>https://github.com/csyangwen/dsh-memory-evolve</link>
+            <guid>https://github.com/csyangwen/dsh-memory-evolve</guid>
+            <pubDate>Fri, 06 Nov 2026 00:03:45 GMT</pubDate>
+            <description><![CDATA[为 DeepSeek Harness 带来「跨会话长期记忆 + 后台自我进化」能力的纯插件实现：五轨记忆 · git 分支感知 · 回合内自我审查 · 技能自我进化与技能管理器 · 四轨待办 · COI 调度 · 会话广播 · 会话搜索 · 提示词管理器 · 临时信息便签——零核心修改、零运行时依赖，随装随用、卸载即净。]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/csyangwen/dsh-memory-evolve">csyangwen/dsh-memory-evolve</a></h1>
+            <p>为 DeepSeek Harness 带来「跨会话长期记忆 + 后台自我进化」能力的纯插件实现：五轨记忆 · git 分支感知 · 回合内自我审查 · 技能自我进化与技能管理器 · 四轨待办 · COI 调度 · 会话广播 · 会话搜索 · 提示词管理器 · 临时信息便签——零核心修改、零运行时依赖，随装随用、卸载即净。</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 628</p>
+            <p>Forks: 70</p>
+            <p>Stars today: 26 stars today</p>
+            <h2>README</h2><pre># dsh-memory-evolve 使用场景指南
+
+&gt; **一句话**：让 DSH 里的 AI 拥有跨会话的长期记忆、帮你管理待办与技能、还能拉起一群 AI 会话和外部 AI 代理协同干活——**越用越懂你，换会话不丢上下文**。
+&gt;
+&gt; 本指南按真实工作流组织，每个场景讲「适合谁、能做什么、怎么用、会得到什么」。
+&gt;
+&gt; 相关文档：[详细功能说明](README-详细说明.md) · [记忆同步](docs/记忆同步.md) · [更新日志](docs/CHANGELOG.md) · [English](README.en.md)
+
+---
+
+## 快速开始（安装）
+
+插件包内自带 `cordis.patch.yml`（`dsh.bundle.patch` 声明），`dsh plugin add` 安装后 **host 端自动注册，无需任何手动配置**。以 web profile 为例，两步装好：
+
+```sh
+# 1. 安装到 profile（本地目录用 link:，也可用 git/registry 包地址）
+dsh plugin --profile web add github:csyangwen/dsh-memory-evolve
+
+# 2. 重启 dsh web 即生效
+```
+
+&gt; ⚠️ **不要再往 `~/.dsh/profiles/web/cordis.patch.yml` 手动 insert 本插件**：bundle patch 已自动注册，重复 insert 同 id 会让加载器报 duplicate loader entry id 无法启动。完整说明见 [详细功能说明](README-详细说明.md)「标准安装」章节。
+
+**修改默认配置**（如开启回合内记忆审查）：在 profile 的 `cordis.patch.yml` 用 id 覆盖（顶层写法，非 insert）：
+
+```yaml
+- id: dsh-memory-evolve
+  config:
+    reviewEnabled: true      # 开启回合内记忆审查（默认关）
+    reviewInterval: 10       # 每 10 个用户回合审查一次
+```
+
+**插件异常导致 DSH 无法启动时，临时禁用**（等修复后取消）：同样在 profile 的 `cordis.patch.yml` 加一行即可，无需卸载：
+
+```yaml
+- id: dsh-memory-evolve
+  disabled: true
+```
+
+**从旧版本升级**：若你此前按旧文档手动 insert 过本插件，请删除 profile patch 里的 insert 行（否则与 bundle 自动注册重复）。
+
+卸载：`dsh plugin --profile web remove dsh-memory-evolve`，一切效果随插件卸载自动清理。
+
+---
+
+## 认识它（30 秒）
+
+装上插件后，打开任意会话，你会多出一排能力标签：**记忆 · 技能 · 待办 · 无限画板 · COI 调度 · 会话广播 · 提示词 · 记忆同步 · 模型设置 · 书签 · 会话评审 · Web UI 设置 · Memory Evolve 设置**。AI 侧则多了一批工具：记忆读写、待办、技能管理、本地文件搜索、会话编排、会话广播、外部 AI 派单、提示词注入、模型查询……
+
+一句话概括这些能力：**让 AI 记住你、替你管、替你做、互相配合做。**
+
+&gt; 小提示：插件里很多能力默认关闭（不占 AI 的工具清单），需要时在「Memory Evolve 设置」里打开即可。下面的场景大多是组合玩法——**把相关功能都打开，才能串成完整的流水线**。
+
+---
+
+## 场景一：让 AI 真正记住你（长期记忆）
+
+**适合谁**：所有人。这是插件的核心，也是其他一切功能的地基。
+
+AI 的对话是「一次性」的：换项目、隔几天、开新会话，它就忘了你是谁。插件的五轨记忆让 AI 拥有**跨会话的长期工作记忆**：
+
+- **用户档案**：你的偏好、公司、沟通习惯——AI 每回合都能看到；
+- **全局事实**：环境、工具、惯例等长期知识；
+- **项目关键记忆**：当前项目的约定、决策、架构、踩坑，自动注入上下文，重要结论可标记**只在某个 git 分支生效**；
+- **项目日志 / 每日日志**：每回合自动记录进展，按需读取，历史可追溯。
+
+**怎么用**：
+
+1. 正常和 AI 对话即可——每回合结束时它会自动把进展写进项目日志和今日日志；
+2. 发现重要事实时对它说「**记一下：这个项目的部署端口是 8080**」，它会写入项目关键记忆，**你确认后**才生效——AI 不会擅自往记忆里写东西；
+3. 过几天、换了个会话，直接问「**查一下记忆，上次我们定下的架构决策是什么**」——它能无缝衔接；
+4. 记忆多了之后，让 AI「**把 XX 那条记忆归档**」——归档条目不再注入上下文，随时可转回；
+5. **情绪反馈记录**：你对工作结果的评价（如「太好了」「怎么还没改对」）会被 AI 记入当日与项目日志（`【反馈】` 行，含情绪、任务分类、你的原话）——积累后随时可以让 AI「**分析一下最近我对哪些方面不满意**」，判断它在哪类任务上做得好/不好。
+
+**会得到什么**：AI 从一个「每次会话都失忆」的对话机器，变成了解你全盘工作的长期伙伴——隔天继续开发，它直接引用昨天的结论，不用你复述。
+
+---
+
+## 场景：多台电脑共享项目记忆（记忆同步）
+
+**适合谁**：办公室和家里两台电脑干活、或有同事协作同一个项目的人——不想在每台电脑上把重要结论重新讲一遍。
+
+**怎么用**（详见 [记忆同步](docs/记忆同步.md)）：
+
+1. 「Memory Evolve 设置 → 配置」打开「**记忆同步**」模块开关（这只是让功能可见）；
+2. 在项目会话的「**记忆同步**」Tab 打开「**本项目同步**」——点「开始同步」即可（记忆远端默认用你的代码仓库，自动存进专属分支，不污染代码），再点「同步并推送」完成首次推送；**代码公开（如 GitHub 开源）但记忆想私藏**？填一个**共享记忆仓库**地址——一个仓库装所有项目的记忆（每项目一条专属分支），记忆与代码彻底隔离；
+3. 另一台电脑 clone 项目后打开——**自动认亲**（同一仓库地址 = 同一项目），拉下来即可继续用；
+4. 平时照常写记忆（实时落盘、零延迟），攒一批点一次「同步」；两台电脑都改了同一条记忆才会出现冲突，Tab 里选「采用本机 / 采用远端 / 两者都要」即可。
+
+**会得到什么**：项目关键记忆、项目日志、归档、项目待办跨设备一致；填了共享记忆仓库后，**全局记忆（用户档案/每日日志/待办）也能跨设备**（四个独立轨开关，开哪个同步哪个）——换电脑不换记忆。**没开同步的项目完全不受影响**（保持纯本地状态）。
+
+---
+
+## 场景二：多项目并行开发，每件事都不丢（待办 + 项目日志 + 本地搜索）
+
+**适合谁**：同时维护多个项目、经常被「之前那个方案是怎么定的」卡住的开发者。
+
+- **四轨待办**：生活 / 工作 / 项目 / 每日。「项目」轨按工作目录隔离，换目录互不干扰。说「**记住，周五前把二级面板部署到手机访问实例**」，自动落成项目待办（带重要/紧急、截止日期）；每天收尾 AI 会提醒你到期的待办；
+- **项目日志**：每个项目的进展按目录隔离沉淀，日志自动带 `[git main]` 分支标记，可溯源；
+- **本地文件搜索**：对 AI 说「**搜一下本机有没有写过类似的东西**」——按文件名找文档（可扩展到全类型）；也能内容检索：「**哪个文档里提过 XX**」直接返回命中文件和片段。
+
+**怎么用**：
+
+1. 新项目开工直接开聊，项目日志自动建档；
+2. 冒出的想法对 AI 说「记住」，它会进待确认队列——到「待办」里**采纳或拒绝**，你说了算；
+3. 想不起来就问「之前有个文档提到过 XX」。
+
+**会得到什么**：同时开 3 个项目也不乱——每个项目的记忆、待办、文档线索各归各的目录，问一句就能捡起来。
+
+---
+
+## 场景三：一个人指挥一群 AI 干活（内部团队）
+
+**适合谁**：想把 AI 用成「团队」的人——一个主会话指挥美工、前端、后端、测试多个子会话。
+
+**怎么用**：
+
+1. **拉起团队**：对主会话的 AI 说「**创建 4 个会话：美工负责网站视觉、前端负责页面、后端负责接口、测试负责验收，把它们拉进同一个协作房间**」——它立刻创建 4 个标准会话（出现在左侧列表、随时可接管），自动继承你的模型与工作目录；创建时可指定 **Agent 预设**（如「用代码模式创建前端会话」），决定该会话的工具面与人格；
+2. **协作沟通**：房间建好后，**谁改了什么、谁干完了，全员可见**；成员状态（正在生成 / 空闲）变化会自动收到「房间动态」通知；**房间消息可以带图片**——截图直接发群里，接收方 AI 通过 read 拿到图片文件路径，可读图、可转发到 IM 渠道；
+3. **派活与催活**：问 AI「**现在谁在干活、谁空闲了**」，它会查看各会话状态；对空闲的会话说「**叫前端把结果发过来**」，AI 自动唤醒它并派活——不会批量自动唤醒，一切由你（或你的主会话）有意识地指挥；
+4. **防冲突**：同一项目多个会话并行改代码时，开工前对 AI 说「**声明一下你要改哪些文件**」——其他人（及其 AI）能看到「谁在改什么」；真撞车了，写入方会收到冲突警告，还有「工作区活动」通知（并行开始/结束、成员变化时单独推送）随时告知谁在跑、在干什么；
+5. **结果回传**：各成员干完把结果发回房间，你汇总确认。
+
+**持续运转（关键）**：主会话自己一直在运行，所以它能**随时唤醒已经休息（空闲）的会话继续干活**——催活、收结果、派下一轮，哪怕你不在电脑前，队伍也能一路推进到出结果。唯一的前提是**主会话所在的 DSH 进程保持运行**；如果主会话空闲了或 DSH 被关掉，唤醒链就停了——需要你回来发一条消息，队伍重新开动。
+
+**会得到什么**：一个人的开发产出，变成一个小团队的吞吐。任务交接、唤醒、冲突预警全链路自动化，房间消息留痕可查。
+
+---
+
+## 场景四：重活派给外部 AI 代理（外部外援）
+
+**适合谁**：需要把大任务（视觉重设计、代码审查、完整功能开发）交给专用 AI 代理（Kimi / Codex / Grok / Hermes）的用户——不想被阻塞，又不想错过结果。
+
+**怎么用**：
+
+1. 对 AI 说「**把这个任务派给 grok：移动端适配改造**」——后台异步执行，立即返回任务号，**不卡当前会话**，你可以继续聊别的；
+2. 期间随时问「**任务进度如何**」，或在「COI 调度」里看实时日志流；
+3. 派单时 AI 可自主选择带上你的项目记忆——外部代理也「懂项目约定」；
+4. **派单可以带图**：对 AI 说「**把这张截图发给 grok 分析**」——附件支持本地路径/远程 URL/本会话图片（你在输入框贴的图），codex/kimi/hermes 都能真看图（grok 走 prompt 读图，zcode 纯文本会明确拒绝）；
+5. 完成后结果摘要**自动写入项目日志与今日日志**——派出去的活自动变成你的记忆资产。
+
+**会得到什么**：AI 派活给 AI，你只负责确认验收。视觉改版、深度代码审查、批量重构这类「重活」都能甩出去，主会话保持轻快。
+
+---
+
+## 场景五：内外协同——一支队伍，两种兵种
+
+**适合谁**：任务大到单靠一边搞不定的人。这是插件协作能力的完全体：**内部会话负责「需要上下文和来回打磨的活」，外部代理负责「一次性重活」，两者通过记忆、房间、提示词串成一条流水线。**
+
+一个完整的真实流程（产品视觉改版）：
+
+1. **分工**：主会话 spawn 前端、测试两个内部会话并拉进房间；同时把「全站视觉重设计」派给外部代理 Kimi；
+2. **外部主刀**：Kimi 后台跑重设计（不占任何会话）；期间内部前端会话先做数据层和页面结构，不干等；
+3. **接力**：Kimi 完成，摘要自动沉淀进项目记忆——主会话把设计结论发到房间，前端会话**读记忆拿到设计规范**，开始集成；
+4. **问题升级**：集成中发现一个诡异样式问题，前端会话卡住——主会话把这个 bug 派给 Grok 深挖，结论回房间，前端会话照结论修复；
+5. **验收**：测试会话跑完验收流程，结果发回房间，你最后确认。
+
+协作的四个结合点，可以自由组合：
+
+- **任务接力**：外部代理的产出（摘要/结论）自动进记忆 → 内部会话接力执行——**外部做重活，内部做集成与打磨**；
+- **问题升级**：内部会话遇到难啃的问题 → 主会话派给外部代理深挖 → 结论回房间——**内部快节奏迭代，外部慢工出细活**；
+- **标准统一**：给外部代理派活时，注入你沉淀的提示词（如「代码审查清单」「PRD 规范」）——**外部代理按你的流程干活，不靠运气**；
+- **状态同步**：谁在跑、谁干完了，房间 + 工作区活动 + 通知随时可见——**你不用当人肉调度员**。
+
+**会得到什么**：一条「外部主刀 → 内部集成 → 测试验收 → 你确认」的完整流水线。大任务不再是一个人（或一个 AI）硬扛，而是内外两支队伍分工协作。
+
+---
+
+## 场景六：AI 的自我纪律——提示词注入
+
+**适合谁**：想把「好用的工作方法」沉淀下来、让每个 AI（包括外部代理）都按同一套流程干活的人。
+
+提示词库是**指令范式资产库**：代码审查、调试、PRD、测试策略……把常用的工作方法固化成提示词（可分类、可搜索、可启用/禁用）。
+
+**怎么用**：
+
+1. **AI 自己选、自己注入**：AI 觉得当前任务适用某套流程时，它会自己查看提示词库、选中合适的提示词注入自己——「接下来按代码审查清单执行」；下一轮它自动遵循，**不打断当前回复**；也能「立即注入」，当前回合马上生效；
+2. **你一键注入**：在「提示词注入」里选中一条，点「注入一次 / 持续注入 / 立即注入」——持续注入就是「每回合提醒 AI 按此纪律干活」；
+3. **临时注入**：不建提示词，直接输入一段要求注入，自动存入库中，下次复用；
+4. **派活带纪律**：给子会话、外部代理派活时，让 AI 把对应提示词一起带上——**整个团队用同一套标准**。
+
+**会得到什么**：好方法不再只存在你脑子里或一次对话里——它变成可复用的「团队操作手册」，AI 会主动遵守，你只管维护手册质量。
+
+---
+
+## 场景七：会话太长、太贵、容易糊——书签与分支
+
+**适合谁**：对上下文开销敏感、一个会话动辄上百轮的深度用户。
+
+- **会话书签**：每一轮都可以点星（☆）标记，「书签」列出全部书签（名称/轮次/时间/摘要，可搜索），**点击一键跳回任意一轮**——探索到「这个结论很重要」就打个星；
+- **任意轮分支**：官方只支持从最后一轮创建分支；本插件把**中间任意轮的分支入口接管**——书签列表点「分支」（或直接点官方分支按钮，中间轮会弹出确认），走官方分支通道创建新会话，进入官方分支谱系；
+- **上下文占用提醒**：输入框圆环实时显示上下文占用——≥30% 变黄、≥40% 变红，提醒你该打书签、该开分支、该开新会话了。
+
+**怎么用**：
+
+1. 探索性会话在关键轮次点 ☆，给书签起个名字（如「方案 A 评审结论」）；
+2. 想从中间某个决策点另开一条线，书签列表点「分支」；
+3. 看到圆环变红，把当前会话打个书签，开新会话继续。
+
+**会得到什么**：上下文不再是一根只能从头滚到尾的绳子，而是**带锚点、可分支、可跳转的时间线**——每一轮的探索成果都能被精准复用，不会再因为「会话太长了」被迫放弃中间的好结论。
+
+---
+
+## 场景八：离开电脑也能用（手机访问 + 会话筛选 + 通知）
+
+**适合谁**：离开电脑也想继续和 AI 协作、或者同时开很多会话看不过来的人。
+
+- **手机浏览器访问**：DSH 界面适配了手机——对话区/消息气泡满宽、输入栏「⋯」上拉收纳工具栏与模型选择，手机上操作和电脑端一致；
+- **会话列表筛选**：左侧列表可只显示「进行中的会话」，一屏看清谁在干活——桌面端同样适用；
+- **渠道通知（de_notify）**：对 AI 说「任务完成用飞书通知我」，重要结果推到飞书/QQ/微信/企业微信，电脑前/手机上立刻知道（通知内容带「这是通知」标注，可附图片/文件）；
+- **web 站内通知（de_notify channels=web）**：对 AI 说「发个站内通知给我」，通知直接落到**网页右上角的铃铛**——未读数字徽标 + 弹窗列表，能看到「哪个会话发来什么」，点主题跳转到那个会话、长内容点「查看详情」打开大弹窗看全文；铃铛可随意拖动、松手吸附到屏幕左/右边缘（位置记忆）。发到 web 和发到飞书等 IM 是同一句话，只是换个送达目的地（channels 传 `web`，或 `all` 一起发）；
+- **渠道直发（de_channel_send）**：AI 随时主动把文本/图片/文件发到你的 IM 渠道（不带通知标注）——「把生成的图片/文档发给我」类场景；四个渠道（飞书/QQ/微信/企微）全部支持，附件来源可选本地路径/远程 URL/内联 base64/**本会话图片**（sessionImage=true 直接转发你在 DSH 输入框粘贴/拖入发送的图；attachmentId 显式引用，配合 de_session_images 先查本会话有哪些图，需 DSH 260810+ 快照）。
+
+**会得到什么**：重活照派、进度照盯，人不用守在电脑前——回电脑后从左侧列表接管会话继续。
+
+---
+
+## 场景九：给每个会话配一个隐形评审员（会话评审）
+
+**适合谁**：想让 AI 干活时有一双&quot;第二眼睛&quot;把关、又不想自己逐句盯的人——尤其是项目里定了纪律（如&quot;回复前先说明自己在哪个目录&quot;）却总发现 AI 聊着聊着就忘了的情况。
+
+**能做什么**：
+
+- **独立评审员**：给每个会话挂一个独立的评审会话，它**只观察你在界面上看到的对话**（用户说的话 + Agent 的回复正文），看不到思考过程、工具调用参数等内部细节——像旁边坐了一位只旁听对话、不碰键盘的同事；
+- **每轮实时评审**：对话每推进一轮，评审员就基于**完整上下文**评审一次——它是持续会话，像普通 LLM 长对话一样记住全部历史、**永不截断**，不会&quot;忘了前面说过什么&quot;；
+- **需要时实时提醒（steer）**：评审员发现值得说的点，会以**用户指令的形式**注入当前会话——Agent 会把它当成你说的话直接执行（2026-08-13 拍板：实测带&quot;非用户指令&quot;标记会让 Agent 质疑来源、执行力下降，所以伪装成用户指令效果最好）；GUI 对话流中这类消息显示为**折叠行 `[severity]` 前缀**，方便你一眼认出哪些话其实是评审员说的；
+- **四级严重度**：`info`（仅记录、默认不注入主会话，可配置注入）/ `nit`（小建议）/ `concern`（值得处理）/ `blocker`（必须立即处理）——不是所有话都打断，只有该说的才说；
+- **新建评审会话**：面板里一键清空评审员的上下文与记忆重来——新会话第一条指令由你告诉它背景，上下文长度由你掌控；
+- **直接向评审员提问**：面板里随时提问，它立即回答（回答只在评审面板展示，不注入主会话流）——像随时可以问的旁听同事；
+- **四层级约束**：系统提示词（全局默认，可查看全文/修改/一键恢复）/ **项目约束**（本工作区共享）/ **会话约束**（本会话保留）/ **本次评审会话约束**（随&quot;新建评审会话&quot;清空）——四层拼接注入，冲突时越局部越优先；
+- **记录可查**：评审记录 JSONL 持久化，面板「记录」可追溯。
+
+**怎么用**：
+
+1. 「Memory Evolve 设置 → 配置」打开「**会话评审**」（`advisorEnabled`，默认关闭）；评审模型缺省继承当前会话模型，也可单独配置 `advisorProvider`/`advisorModel`；
+2. 会话页出现「会话评审」悬浮窗，点开面板即可看到评审员的实时评审流与上下文占用；
+3. 在「约束」Tab 给评审员立规矩（如项目约束：&quot;每次回复前先说明自己在哪个目录&quot;），保存立即生效；
+4. 想让评审员重头开始就点「**新建评审会话**」；想直接问它就点「**提问**」；
+5. Agent 侧：评审提醒以折叠行 `[severity]` 出现在对话流里——你能看到评审员说了什么、Agent 是否照做。
+
+**会得到什么**：每个 AI 会话都多了一位持续在岗的&quot;旁听同事&quot;——它不打断你的节奏，只在关键时刻以你的口吻提醒 Agent 纠偏；项目纪律、会话约束有人替你盯着，不会聊着聊着就忘了规矩。
+
+---
+
+## 场景十：散落的素材，一块画板装下（无限画板）
+
+**适合谁**：设计稿在下载目录、合同在文档库、参考图在桌面、录音在个人文件夹——每次要用都得开 Finder 一层层翻的人；以及想让 AI&quot;看得见&quot;你手头素材、又不想把素材一股脑塞进对话上下文的人。
+
+**能做什么**：
+
+- **素材集中上板**：三种入口——**路径上板**（粘贴本地路径）、**便签**（画板内直接写，内容不落盘）、**搜索上板**（真实搜本机文件，搜到一键上板）；文本类文件上板后自动读取内容；
+- **一眼看见**：无限平移/缩放画布，卡片自由摆放、右下角拖拽调大小；图片/音视频/文本在画板内直接预览，Word/PDF 等走系统默认应用打开；
+- **单板 + 视角筛选**：物理上一块画板，节点带归属徽标（🌐 全局 / 📁 项目 / 💬 会话）；默认会话视角看&quot;自己会话 + 当前项目 + 全局&quot;，切「项目」看该项目全部会话，切「全局」看所有；
+- **快速调用**：复制节点 ID / 标题 / 路径 / 引用串（`[canvas:id] 标题`），把引用串丢给 AI，它就能凭 id 找到素材；
+- **AI 双向（拉取式）**：AI 用 `de_canvas` 工具按 id 查画板、读素材内容、往画板中央区放便签（带「AI 放置」标记）——**画板内容不注入上下文**，需要时主动查，省 token 不打扰；
+- **本地路径引用**：文件留在原地，画板只记&quot;指向哪里&quot;——源文件改动实时可见，删除源文件后卡片显示失效提示；
+- **安全边界**：AI 只能读**已上板**的节点（没有任意路径读取 API）；敏感目录（.ssh/.config 等）即使上板也拒绝代理。
+
+**怎么用**：
+
+1. 「Memory Evolve 设置 → 配置」打开「**无限画板**」（`canvasEnabled`，默认关闭）；
+2. 会话页出现「画板」Tab：路径上板 / 便签 / 搜索上板，卡片自由摆；
+3. 点卡片「引用」复制引用串，对 AI 说&quot;去画板拿 XX&quot;——AI 用 `de_canvas` 查/读/放便签；
+4. AI 放的便签落在画板中央虚线区，拖到想要的位置即可。
+
+**会得到什么**：告别&quot;文件在哪来着&quot;的反复翻找——素材集中一块画板，人和 AI 在同一张桌子上干活：你摆、AI 拿；AI 放、你看。
+
+---
+
+## 还有这些能力（一句话索引）
+
+- **技能自我进化**：反复踩坑的方法论自动固化成技能，同类任务下次直接按流程执行；
+- **技能管理**：记忆 Tab 里浏览/搜索/禁用/编辑全部技能、添加自定义技能目录（原独立插件 dsh-skills-manager 已合并进本插件，旧插件用户升级前先按安装文档卸载旧插件）；
+- **无限画板**：把散落各处的文件/文本/图片/音视频集中到一块无限画布上陈列——本地路径引用、单板+视角筛选（会话/项目/全局）、画板内直接预览/复制/引用；AI 也能按 id 读画板素材、往画板中央区放便签（de_canvas）；
+- **会话搜索**：让 AI 搜索本机其他 AI 工具（如 Codex）的历史会话——「之前 Codex 里做过 XX」直接问；
+- **模型配置**：插件侧维护各模型的启用状态、思考等级、备注，并标注**是否支持图片输入**（🖼 标记，AI 选模型时一目了然）；
+- **回合内记忆审查**：每隔 N 轮，AI 主动提炼值得记住的信息交给你确认——记忆库自己会生长；
+- **版本检测与更新**：多设备/多用户部署时，「Memory Evolve 设置」Tab 的「版本」页自动检测远端发布版本（git tag v0.x.y），检测到新版本时设置 Tab 出现 🔴 红点，由你决定是否更新（详见下方「发布版本」）；
+- **会话评审（Advisor）**：给每个会话挂一个独立评审员——只观察界面可见对话（不含思考/工具调用），每轮实时评审、需要时以用户指令形式实时提醒（info/nit/concern/blocker 四级；info 默认仅记录），持续会话永不截断，支持新建评审会话/直接提问/四层级约束/记录可查。默认关闭，详见[场景九](#场景九给每个会话配一个隐形评审员会话评审)。
+- **web 站内通知**：渠道通知（de_notify）新增 `web` 渠道——AI 发通知直接落到网页右上角铃铛（未读徽标 + 弹窗列表 + 点主题跳会话 + 长文大弹窗 + 拖拽吸附左右），与飞书等 IM 渠道同一套通知语义。默认关闭，随「通知模块」（`notifyEnabled`）开关启用，详见[场景八](#场景八离开电脑也能用手机访问--会话筛选--通知)。
+
+每个功能的完整说明，在对应标签页的「指南」里。
+
+---
+
+## 发布版本
+
+插件使用 **git tag** 作为发布版本标识（两种格式都支持：**日期戳 `v&lt;纯数字&gt;`** 如 `v26081302`（日常发版推荐）、语义化 `v1.2.3`）：日常开发推送 main 分支不会触发任何更新提示，只有打了发布 tag 才会被各设备检测到。
+
+**发版流程（开发者）**：
+
+```bash
+# 1. 提交并推送 main（tag 必须打在已推送的 main 提交上）
+git push origin main
+
+# 2. 用发版脚本一键完成：工作树/远端同步检查 → 构建 → 全量测试 → 打 annotated tag → 推送 tag
+bash ~/shell/dsh-memory-evolve-release.sh v26081302 -m &quot;发布说明：……&quot;
+```
+
+**各设备更新（使用者）**：
+
+- 进入 Web UI 后自动检测（24 小时内最多自动检测一次，也可点「检查更新」强制检测；插件启动时也会后台检测一次）；
+- 检测到新版本时，设置 Tab 出现 🔴 红点；进入「版本」页点击「更新到 v26081302」；
+- 更新完成后**必须重启 dsh web 再刷新浏览器**（仅刷新页面不会加载新代码）；
+- 更新后插件处于 detached HEAD（跟随发布 tag）：继续用「版本」页的更新按钮升级即可，**不要直接 `git pull`**；
+- 想回到开发轨：`git checkout main &amp;&amp; git pull --ff-only`。
+
+**更新安全机制**：只接受严格格式（v&lt;纯数字&gt; 或 v1.2.3）且位于 origin/main 历史的 tag；更新前校验本地工作树干净；更新过程有跨进程锁与失败回滚，不会把半更新状态留给你。
+
+---
+
+## 三条原则
+
+1. **AI 只提议，你确认**：AI 自建的记忆、待办、技能都先进待确认队列——所有会真实改变 AI 行为的写入，决定权都在你；
+2. **不重复造轮子**：官方已有的能力不碰，只做官方没做、且真实解决痛点的；
+3. **内外有别、协作互补**：内部会话负责需要上下文的活，外部代理负责一次性重活，记忆、房间、提示词把它们串成一条流水线。
+
+---
+
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[HunYiSage/dsh-purge]]></title>
+            <link>https://github.com/HunYiSage/dsh-purge</link>
+            <guid>https://github.com/HunYiSage/dsh-purge</guid>
+            <pubDate>Fri, 06 Nov 2026 00:03:44 GMT</pubDate>
+            <description><![CDATA[DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/HunYiSage/dsh-purge">HunYiSage/dsh-purge</a></h1>
+            <p>DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 19,119</p>
+            <p>Forks: 4,489</p>
+            <p>Stars today: 1,081 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;docs/banner.svg&quot; alt=&quot;dsh-purge&quot; width=&quot;720&quot;&gt;
+&lt;/p&gt;
+
+&lt;h1 align=&quot;center&quot;&gt;⚔️ DeepSeek Harness cybersecurity red-team tool (dsh-purge)&lt;/h1&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;strong&gt;Version 1.1.90&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;em&gt;DeepSeek Harness jailbreak: every model, swap prompts per model. Default prompt for 小码酱. Please star ⭐ If you build on this, see Attribution required.&lt;/em&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://github.com/HunYiSage/dsh-purge/stargazers&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/stars/HunYiSage/dsh-purge?logo=github&amp;label=Stars&quot; alt=&quot;GitHub stars&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/HunYiSage/dsh-purge/blob/master/LICENSE&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/license-Apache--2.0-blue?style=flat&quot; alt=&quot;Apache-2.0&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://awesome-dsh-plugin.com&quot;&gt;&lt;img src=&quot;https://awesome-dsh-plugin.com/badge.svg&quot; alt=&quot;awesome · DSH plugin&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://deepseek.stream/plugins/dsh-purge&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Hub-dsh--purge-1a73e8&quot; alt=&quot;DeepSeek Harness Hub&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://www.deepseek.com/harness/&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/dsh-0.2.0--rc.2%20%2F%200.2.1--rc.2-blue&quot; alt=&quot;DSH&quot;&gt;&lt;/a&gt;
+  &lt;br&gt;
+  &lt;img src=&quot;https://img.shields.io/badge/Node.js-%3E%3D18-339933?logo=node.js&amp;logoColor=fff&quot; alt=&quot;Node.js&quot;&gt;
+  &lt;img src=&quot;https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&amp;logoColor=000&quot; alt=&quot;JavaScript&quot;&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://dsh-plugin.org/plugins/yujunzhixue/dsh-purge&quot;&gt;&lt;img src=&quot;https://dsh-plugin.org/badges/listed.svg&quot; alt=&quot;Listed on dsh-plugin.org&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;README.md&quot;&gt;English&lt;/a&gt; | &lt;a href=&quot;README.zh-CN.md&quot;&gt;中文&lt;/a&gt; | &lt;a href=&quot;README.ja.md&quot;&gt;日本語&lt;/a&gt;
+&lt;/p&gt;
+
+## A note from the maintainers
+
+dsh-purge was originally developed by its author as an independent project. It is now maintained by the **dsh-purge maintainers team**, which handles the codebase, documentation, releases, and security response. All historical commits, issues, and releases are preserved and links remain unchanged; the original author&#039;s credit and source record are retained.
+
+The project&#039;s boundaries remain unchanged:
+
+- **The open-source build includes everything sold as paid content.** The skill library and knowledge base ship with it; nothing is locked behind payment.
+- Penetration, attack, or scanning against mainland China, Hong Kong and Macau, banks and financial sites, government and military sites is prohibited.
+
+**About the paid content.** Everything the paid build includes is included in the open-source build. No feature or data in this repository requires payment to unlock; the skill library and knowledge base are part of the open-source release.
+
+**Resale of the original build is prohibited.** Paid resale, re-skinning for store listings, and distribution as a commercial product are not permitted. Forks and derivative work are allowed provided they credit the source repository: [HunYiSage/dsh-purge](https://github.com/HunYiSage/dsh-purge). Removing the attribution, concealing the source, or presenting the project as one&#039;s own will be pursued by the maintainers. Third-party builds are not affiliated with the original author or this team; their maintainers are solely responsible for them.
+
+Official channels: this repository&#039;s [Issues](https://github.com/HunYiSage/dsh-purge/issues) and [Releases](https://github.com/HunYiSage/dsh-purge/releases), plus the team channel [t.me/LLM_PoJia](https://t.me/LLM_PoJia). No other channel, group, or account is run by the team.
+
+&gt; **⚠️ Notice: impersonation, modified builds and payment scams (2026-11-05)**
+&gt;
+&gt; Accounts and groups are impersonating the original author (&quot;Xiao Yang&quot;) and the dsh-purge maintainers. They use look-alike names and avatars, run chat groups, charge or fundraise in the author&#039;s name, and spread the author&#039;s personal information. None of them are affiliated with the author or this team.
+&gt;
+&gt; **Known impersonation channels (examples, not a complete list):** on X, the account displayed as “叫我杨浩同学” with the handle `@yh2691983255`; on Telegram, the group named “【小码酱】技术圈交流群” at `t.me/dianhuaqun`, and accounts such as “二改破甲杨浩” that take orders and payments inside it. Impersonators can change names and avatars at any time.
+&gt;
+&gt; **Third-party modified builds (forks, repacks, rebrands) have no authorization or affiliation from the original author or this team.** Their code changes, fees, data handling, support and legal responsibility belong to their publishers. Using the author&#039;s name to sell them is impersonation. Forks must attribute and link back to this repository; resale of the original build is prohibited.
+&gt;
+&gt; The original author has reported the impersonation and personal-data leak to the police; the maintainers are cooperating fully and the evidence has been handed over. The author has also posted a statement on their own account. Out of respect for the author&#039;s privacy and the case itself, the police receipt and related screenshots are not published.
+&gt;
+&gt; **There are only two official channels:** this repository [HunYiSage/dsh-purge](https://github.com/HunYiSage/dsh-purge) (Issues / Releases) and the team channel [t.me/LLM_PoJia](https://t.me/LLM_PoJia). No other channel, group, or account is run by the team; the team never charges, fundraises, or asks for personal information through personal accounts or DMs. The open-source build is free; commercial licensing goes through [LICENSE-COMMERCIAL.md](./LICENSE-COMMERCIAL.md).
+&gt;
+&gt; Do not send money to unofficial accounts, and do not reshare screenshots containing the author&#039;s personal information. Report impersonations to the platform.
+&gt;
+&gt; Thanks for supporting 小码酱. Stay safe.
+
+## Contents
+
+- [A note from the maintainers](#a-note-from-the-maintainers)
+- [What this is](#what-this-is)
+- [Attribution required](#attribution-required)
+- [License](#license)
+- [Supported hosts](#supported-hosts)
+- [Install](#install)
+- [Preview](#preview)
+- [Usage](#usage)
+- [How it works](#how-it-works)
+- [Restore](#restore)
+- [Releases](#releases)
+
+---
+
+## What this is
+
+**dsh-purge** is a cybersecurity red-team plugin for the official [DeepSeek Harness](https://www.deepseek.com/harness/) already installed on your machine. **1.1.90** targets **DSH 0.2.1-rc.2** (0.2.0 still works). **DSH 0.2.1-rc.3 and newer RCs are not supported.** Official **Web** (`dsh web`) and the official **desktop EXE** are both supported. Install and Apply them separately.
+
+Harness does more than forward a prompt. It rewrites prompts, approval gates, sandbox policy, and session migration at runtime. Asking only “will the model answer” treats a host-layer block as a model refusal. This plugin separates those two layers on your own install, for controlled evaluation and for seeing which default policy is too tight.
+
+| You get | What it does |
+|---|---|
+| **dsh-purge dock** | A button beside the session title opens the right dock. Two pages: Clean and Drill |
+| **Clean** | Grouped patch status, Apply / Restore / Uninstall, prompt editor, multiple rule sets |
+| **Drill** | Built into the stable release. After authorization: assets and the local environment. The skill library and knowledge base ship with it. |
+| **Host policy** | Default copy, permission policy, and tool limits. Official capabilities stay. No second invented identity |
+| **On start** | Checks and reapplies. After npm overwrites `node_modules`, you do not hand-edit files |
+
+No hardcoded drive letters. It looks at `$DSH_HOME`, `.dsh` next to the dsh launcher, then `~/.dsh`. It does not patch the Harness source tree. **Apply** on the **Clean** page of **dsh-purge** is what writes the changes. Identity comes from the encrypted prompt shipped in the plugin, the text the prompt box shows by default. The host prompt file is not read.
+
+It only touches the official `@deepseek-ai` packages and local config on the user&#039;s machine. It is not a public scanner and not an attack kit for third-party sites. The repo does not ship malware, unauthorized-exploit scripts, or payloads aimed at the public internet.
+
+---
+
+## Resale of the original is prohibited. Forks must attribute.
+
+## Attribution required
+
+**Resale of the original build is prohibited.** Paid resale, re-skinning for store listings, and distribution as a commercial product are not permitted.
+
+**Forks must attribute** and name the source repository: [HunYiSage/dsh-purge](https://github.com/HunYiSage/dsh-purge). Same if you borrow the name, ideas, code, or prompts.
+
+Removing attribution, concealing the source, or reselling the original will be pursued by the maintainers.
+
+## License
+
+This repo is [Apache License 2.0](./LICENSE). Forks and redistributions must keep the copyright notice and [NOTICE](./NOTICE), and name [HunYiSage/dsh-purge](https://github.com/HunYiSage/dsh-purge). Resale of the original is prohibited.
+
+---
+
+&lt;a id=&quot;strict-legal--compliance-disclaimer&quot;&gt;&lt;/a&gt;
+
+&lt;div&gt;
+
+### ⚠️ &lt;font color=&quot;red&quot;&gt;Strict legal and compliance disclaimer&lt;/font&gt;
+
+&lt;font color=&quot;red&quot;&gt;
+
+**Disclaimer:** This is a non-profit open-source project. It follows applicable laws and the rules of the platforms it uses, and is intended only for learning and research. Do not use it for any illegal or non-compliant purpose; the user bears any resulting consequences.
+
+**Zero-tolerance statement:** This project opposes and forbids any illegal activity. The maintainers do not support, encourage, or assist unauthorized network attacks, exploit use, data theft, unlawful intrusion into computer information systems, or generation of illegal or prohibited content. **Anyone who uses this project for crime is solely responsible under the law. The maintainers have no liability.**
+
+1. **This repository contains no illegal material.** The published code, docs, patches, and default prompt are **not** malware, backdoors, unauthorized pentest kits, ransomware, credential-stuffing scripts, or attack payloads aimed at the public internet or third-party systems. The project does not supply illegal content and does not incite, organize, or assist crime.
+2. **Local official Harness only.** Security-eval patches and prompt injection run only on the **official DeepSeek Harness already installed on the user&#039;s machine** (`@deepseek-ai` packages, local profile / `$DSH_HOME`). The target is the user&#039;s own official local software, **not** someone else&#039;s website, server, account, or information system.
+3. **Eval patches do not attack the public internet.** Apply, inject, revert, and uninstall stay in local files and local processes. They **do not scan, probe, intrude, or send attack traffic to any public host or unauthorized system**. Do not use this project as a jump host against the public internet. If &quot;check for updates&quot; is on, the plugin may only contact this plugin&#039;s own GitHub repository to compare versions. That is **not** an attack on third-party systems and is **not** authorization to penetrate anything.
+4. **Lawful, controlled scope.** This project is an aid for red-team research and robustness evaluation on an **official Harness the user is entitled to administer**. **Do not run it against targets without the owner&#039;s lawful written authorization, public online systems, or production workloads.** Testing must stay on the **authorized local official Harness, offline local synthetic fixtures, authorized cybersecurity ranges, and compliant lab environments**.
+5. **Forbidden uses.** Users must not use this project, directly or indirectly, to violate the following (each must be followed; no excuse to evade):
+   - &lt;font color=&quot;red&quot;&gt;&lt;strong&gt;Criminal Law of the People&#039;s Republic of China&lt;/strong&gt;&lt;/font&gt;
+   - &lt;font color=&quot;red&quot;&gt;&lt;strong&gt;Cybersecurity Law of the People&#039;s Republic of China&lt;/strong&gt;&lt;/font&gt;
+   - &lt;font color=&quot;red&quot;&gt;&lt;strong&gt;Data Security Law of the People&#039;s Republic of China&lt;/strong&gt;&lt;/font&gt;
+   - &lt;font color=&quot;red&quot;&gt;&lt;strong&gt;Personal Information Protection Law of the People&#039;s Republic of China&lt;/strong&gt;&lt;/font&gt;
+   - and other applicable laws, regulations, and supervisory rules;
+   - Also forbidden:
+   - Unauthorized intrusion or attacks on public or private computer information systems; extortion, sabotage, credential stuffing, or spreading malicious payloads;
+   - Inducing, generating, or spreading any content the law forbids, including threats to national security, terrorism, violence, pornography, gambling, fraud, and privacy or intellectual-property infringement;
+   - Violating the model provider&#039;s terms of service and acceptable-use policy.
+6. **The user bears all responsibility.** The project is provided under Apache-2.0 as-is. The maintainers make no warranty of completeness, security, or fitness. **Users independently bear all civil, administrative, and criminal liability** for download, deploy, run, modify, distribute, and all resulting inputs and outputs. The maintainers and contributors bear no direct, indirect, or joint liability for abuse.
+7. **The license ends on breach.** Anyone who uses this project for illegal attacks, malicious activity, or other violations has their open-source license **automatically and irrevocably terminated** from the moment of the violation. They must stop using the project, permanently destroy all copies and derivatives, and accept legal sanctions.
+8. **No affiliation.** This is an independent open-source security-eval research project. It has no employment, commercial, authorization, or endorsement relationship with DeepSeek or its affiliates. &quot;Official&quot; here only means the eval target is the official DeepSeek Harness package on the user&#039;s machine. It does **not** mean DeepSeek developed, approved, or warrants this plugin.
+9. **Attribution is required.** If you borrow this project&#039;s name, ideas, code, or prompts, you must credit the maintainers and name this repository. Failure to attribute will be pursued. See [Attribution required](#attribution-required).
+
+&lt;/font&gt;
+
+&lt;/div&gt;
+
+---
+
+## Supported hosts
+
+**1.1.81 and newer target DSH 0.2.1-rc.2.** 0.2.0 still works. Do not apply it to 0.1.x.
+
+- **dsh 0.2.1-rc.2** (official desktop / official `dsh web`): use **1.1.81** or newer. Fixes `{{cwd}}` / `[cwd]` crash, patch #40 match, dropped `toolFilter`, host `dsh-tools` resolve, hostFs fd, desktop helper self-kill, `file:` archive update, Ctrl+Enter steer.
+- **dsh 0.2.0-rc.2**: use **1.1.40** or newer; this line also installs.
+- **dsh 0.1.7** (incl. rc.1 / rc.2): use **1.1.39** or older — pick the tag on [Releases](https://github.com/HunYiSage/dsh-purge/releases).
+- **dsh 0.2.1-rc.3 / rc.4 and newer are not supported.** Unmatched patches stay pending or skipped; nothing is rewritten blindly. Stay on **0.2.1-rc.2**.
+
+Unmatched patches stay pending or skipped; nothing is rewritten blindly.
+
+---
+
+## Install
+
+**Do not use the plugin marketplace.** One-click install on [dsh-plugin.org](https://dsh-plugin.org) or in Settings → Plugin Market fails with `already queued: dsh-purge` and never runs a command. The name is not on the npm registry, so do not `pnpm add dsh-purge`.
+
+### Quick start
+
+Have `dsh` on PATH? One command, one restart, one click. Run the line for the host you open (the desktop EXE is the same with `desktop` instead of `web`):
+
+```sh
+# Official `dsh web`
+dsh plugin --profile web add https://codeload.github.com/HunYiSage/dsh-purge/tar.gz/refs/heads/master
+
+# Official desktop EXE
+dsh plugin --profile desktop add https://codeload.github.com/HunYiSage/dsh-purge/tar.gz/refs/heads/master
+```
+
+1. **Fully quit and reopen** the host you installed into. Web: stop `dsh web` and start it again. Desktop: quit the tray icon too, then open the exe.
+2. On that host, click **dsh-purge** beside the session title → **Clean** → **Apply**. A successful Apply restarts the host once.
+
+Done — verify with `/purge status` in chat. If pnpm asks about build scripts, or anything below does not appear, follow the step by step.
+
+### Step by step
+
+**Step 1 — Pick your host.** Official `dsh web` and the official desktop EXE are installed and patched **separately**; only install into the host you actually open.
+
+| What you run | Profile | Install command |
+|---|---|---|
+| Official `dsh web` | `web` | the `web` line in Quick start |
+| Official desktop EXE | `desktop` | the `desktop` line in Quick start |
+
+**Step 2 — Install the plugin.** Use the `codeload.github.com` URL exactly. Do not use `github.com/.../archive`: that 302 makes pnpm fail with `fetch failed`.
+
+Have `dsh`? Run the Quick start line for your profile. If this directory is already a clone, use `.` instead of the URL.
+
+pnpm only (no `dsh` required): run this inside the profile you actually use, not the repo root.
+
+```sh
+cd &quot;$DSH_HOME/profiles/web&quot;    # desktop: profiles/desktop
+pnpm add https://codeload.github.com/HunYiSage/dsh-purge/tar.gz/refs/heads/master
+```
+
+Windows PowerShell:
+
+```powershell
+cd &quot;$env:USERPROFILE\.dsh\profiles\web&quot;   # desktop: profiles\desktop
+pnpm add https://codeload.github.com/HunYiSage/dsh-purge/tar.gz/refs/heads/master
+```
+
+`pnpm add` and `dsh plugin add` fetch the package; `postinstall` writes `dsh-purge` into `dsh.profile.bundles` and adds a body `insert` in the profile `cordis.patch.yml`. Without that insert the host never loads the plugin and no button appears.
+
+**Expected result:** `node_modules/dsh-purge/package.json` exists, `&quot;dsh-purge&quot;` is in that profile&#039;s `bundles`, and `cordis.patch.yml` has an `id: dsh-purge` insert.
+
+- pnpm 11/12 skips install scripts (`ERR_PNPM_IGNORED_BUILDS`) unless you allow the build:
+
+```sh
+pnpm add --allow-build=dsh-purge --allow-build=dsh-purge@https://codeload.github.com/HunYiSage/dsh-purge/tar.gz/refs/heads/master https://codeload.github.com/HunYiSage/dsh-purge/tar.gz/refs/heads/master
+# Already installed, warning only — the full specifier is required (name-only leaves &quot;set this to true or false&quot;):
+pnpm approve-builds dsh-purge@https://codeload.github.com/HunYiSage/dsh-purge/tar.gz/refs/heads/master
+# If bundles / insert are still missing:
+node node_modules/dsh-purge/scripts/ensure-profile-bundle.mjs
+```
+
+- If neither `dsh` nor pnpm is available, jump to [Manual install](#manual).
+- On the desktop client you can also click the button (`dsh://` deep link; it still downloads the same tarball).
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;dsh://plugin/install?id=dsh-purge&amp;name=dsh-purge&amp;version=1.1.90&amp;repo=HunYiSage%2Fdsh-purge&amp;permissions=%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%2C%E6%9C%AC%E6%9C%BA%E8%A1%A5%E4%B8%81%2C%E8%AE%BE%E7%BD%AE%E9%A1%B5&amp;downloadUrl=https%3A%2F%2Fcodeload.github.com%2FHunYiSage%2Fdsh-purge%2Ftar.gz%2Frefs%2Fheads%2Fmaster&quot;&gt;&lt;strong&gt;Install in desktop client&lt;/strong&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+**Step 3 — Restart the host.** Adding the plugin to a profile does **not** patch `@deepseek-ai` by itself. Fully quit and reopen the host you just installed into (Web: stop `dsh web` and start again; Desktop: quit the tray icon too, then open the exe).
+
+**Expected result:** **dsh-purge** stands beside the session title. Missing? Jump to Step 5.
+
+**Step 4 — Apply and verify.** On **that host**, click **dsh-purge** beside the session title, open **Clean**, and click **Apply**. It is not on the host Settings page. A successful **Apply** restarts once; it does not restart if it did not finish. Web controls affect Web only; desktop controls affect the desktop app only. Do not Apply one host from the other.
+
+**Expected result:** `/purge status` in chat prints `DSH_HOME` and the patch list — the path should be the home you actually run. Optional packages that are not installed (liangshen) show as skipped and do not block Apply.
+
+**Step 5 — Troubleshooting.** Jump here only when a step above did not end with its expected result.
+
+- **No button beside the session title.** Run `dsh --dump-config` (or `dsh --profile desktop --dump-config`) and look for a body row `id: dsh-purge` (not `dsh-purge-redteam`). If it is absent, run `ensure-profile-bundle.mjs` (Step 2), then fully quit and reopen the host. After this version, a live red-team child entry also writes the missing 
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
