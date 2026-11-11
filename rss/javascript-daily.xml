@@ -4,24 +4,389 @@
         <title>GitHub Trending Today for javascript - JavaScript Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for javascript.</description>
-        <lastBuildDate>Tue, 10 Nov 2026 00:03:52 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 11 Nov 2026 00:03:52 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2026, GitHub</copyright>
         <item>
+            <title><![CDATA[addyosmani/agent-skills]]></title>
+            <link>https://github.com/addyosmani/agent-skills</link>
+            <guid>https://github.com/addyosmani/agent-skills</guid>
+            <pubDate>Wed, 11 Nov 2026 00:03:52 GMT</pubDate>
+            <description><![CDATA[Production-grade engineering skills for AI coding agents.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a></h1>
+            <p>Production-grade engineering skills for AI coding agents.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 115,137</p>
+            <p>Forks: 12,094</p>
+            <p>Stars today: 465 stars today</p>
+            <h2>README</h2><pre># Agent Skills
+
+**Production-grade engineering skills for AI coding agents.**
+
+Skills encode the workflows, quality gates, and best practices that senior engineers use when building software. These ones are packaged so AI agents follow them consistently across every phase of development.
+
+&lt;a href=&quot;https://trendshift.io/repositories/25200&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/25200&quot; alt=&quot;addyosmani%2Fagent-skills | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+
+![Addy&#039;s Agent Skills](https://addyosmani.com/assets/images/addys-agent-skills.jpg)
+
+```
+  DEFINE          PLAN           BUILD          VERIFY         REVIEW          SHIP
+ ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐
+ │ Idea │ ───▶ │ Spec │ ───▶ │ Code │ ───▶ │ Test │ ───▶ │  QA  │ ───▶ │  Go  │
+ │Refine│      │  PRD │      │ Impl │      │Debug │      │ Gate │      │ Live │
+ └──────┘      └──────┘      └──────┘      └──────┘      └──────┘      └──────┘
+  /spec          /plan          /build        /test         /review       /ship
+```
+
+---
+
+## Commands
+
+9 slash commands that map to the development lifecycle. Each one activates the right skills automatically.
+
+| What you&#039;re doing | Command | Key principle |
+|-------------------|---------|---------------|
+| Define what to build | `/spec` | Spec before code |
+| Plan how to build it | `/plan` | Small, atomic tasks |
+| Build incrementally | `/build` | One slice at a time |
+| Prove it works | `/test` | Tests are proof |
+| Set the quality bar | `/constraints` | Decide it once, enforce it everywhere |
+| Review before merge | `/review` | Improve code health |
+| Audit web performance | `/webperf` | Measure before you optimize |
+| Simplify the code | `/code-simplify` | Clarity over cleverness |
+| Ship to production | `/ship` | Faster is safer |
+
+In Claude Code these install as plugin commands. Where a built-in command has the same name, as `/review` does, use the namespaced form: `/agent-skills:review`.
+
+Want fewer manual steps once the spec exists? **`/build auto`** generates the plan and implements every task in a single approved pass — you approve the plan once, then it runs autonomously. It removes the human stepping *between* tasks, not the verification: every task is still test-driven and committed individually, and it pauses on failures or risky steps.
+
+Skills also activate automatically based on what you&#039;re doing — designing an API triggers `api-and-interface-design`, building UI triggers `frontend-ui-engineering`, and so on.
+
+---
+
+## Quick Start
+
+**Fastest path — any agent, one command.** The open [skills CLI](https://github.com/vercel-labs/skills) installs into 70+ agents (Claude Code, Cursor, Codex, Copilot, Cline, and more):
+
+```bash
+npx skills add addyosmani/agent-skills            # install all 25 skills
+npx skills add addyosmani/agent-skills --list     # browse before installing
+```
+
+Or grab individual skills:
+
+```bash
+npx skills add addyosmani/agent-skills --skill code-review-and-quality   # five-axis review before merge
+npx skills add addyosmani/agent-skills --skill interview-me              # requirements interrogation, one question at a time
+npx skills add addyosmani/agent-skills --skill test-driven-development   # red-green-refactor, enforced
+```
+
+&gt; **Installing one skill?** A per-skill `npx` install copies only
+&gt; `skills/&lt;name&gt;/`, not the repo-level `references/` directory. The skill still
+&gt; works, but paths to supplementary shared checklists are unavailable. Use a
+&gt; whole-repo integration, clone the repository, or copy the needed checklist into
+&gt; a `references/` directory inside the installed skill. This portability gap is
+&gt; tracked in [#361](https://github.com/addyosmani/agent-skills/issues/361).
+
+Prefer a native integration? Pick your tool below.
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Claude Code (recommended)&lt;/b&gt;&lt;/summary&gt;
+
+**Marketplace install:**
+
+```
+/plugin marketplace add addyosmani/agent-skills
+/plugin install agent-skills@addy-agent-skills
+```
+
+&gt; **SSH errors?** The marketplace clones repos via SSH. If you don&#039;t have SSH keys set up on GitHub, either [add your SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) or use the full HTTPS URL to force HTTPS cloning during the marketplace-add step:
+&gt; ```bash
+&gt; /plugin marketplace add https://github.com/addyosmani/agent-skills.git
+&gt; /plugin install agent-skills@addy-agent-skills
+&gt; ```
+&gt;
+&gt; If `/plugin install` still fails with `git@github.com: Permission denied (publickey)` on Windows or macOS, the recommended workaround is to configure Git once to rewrite GitHub SSH URLs to HTTPS for subprocess clones:
+&gt; ```bash
+&gt; git config --global url.&quot;https://github.com/&quot;.insteadOf git@github.com:
+&gt; ```
+
+**Local / development:**
+
+```bash
+git clone https://github.com/addyosmani/agent-skills.git
+claude --plugin-dir /path/to/agent-skills
+```
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Cursor&lt;/b&gt;&lt;/summary&gt;
+
+Put workflow skills under `.cursor/skills/` (sync from `agent-skills/skills/`) and short policies in `.cursor/rules/*.mdc` — do not paste full skills into rules. Both directories live in your project; this repo does not ship a `.cursor/` folder. See [docs/cursor-setup.md](docs/cursor-setup.md).
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Antigravity CLI&lt;/b&gt;&lt;/summary&gt;
+
+Install as a native plugin for skills and subagents. In affected Antigravity CLI releases, legacy command TOMLs are reported as converted but their wrapper commands are not discoverable; invoke the underlying namespaced skills directly. See [docs/antigravity-setup.md](docs/antigravity-setup.md#lifecycle-workflows-and-command-compatibility).
+
+**Install from the repo:**
+
+```bash
+agy plugin install https://github.com/addyosmani/agent-skills.git
+```
+
+**Install from a local clone:**
+
+```bash
+git clone https://github.com/addyosmani/agent-skills.git
+agy plugin install ./agent-skills
+```
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Gemini CLI&lt;/b&gt;&lt;/summary&gt;
+
+Install as native skills for auto-discovery, or add to `GEMINI.md` for persistent context. See [docs/gemini-cli-setup.md](docs/gemini-cli-setup.md).
+
+**Install from the repo:**
+
+```bash
+gemini skills install https://github.com/addyosmani/agent-skills.git --path skills
+```
+
+**Install from a local clone:**
+
+```bash
+gemini skills install ./agent-skills/skills/
+```
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Windsurf&lt;/b&gt;&lt;/summary&gt;
+
+Add skill contents to your Windsurf rules configuration. See [docs/windsurf-setup.md](docs/windsurf-setup.md).
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;OpenCode&lt;/b&gt;&lt;/summary&gt;
+
+Copy skills to `.opencode/skills/` (or `~/.config/opencode/skills/`), add a project-local `AGENTS.md`, and use the built-in `skill` tool for agent-driven execution. Optional slash commands can be added under `.opencode/commands/`.
+
+See [docs/opencode-setup.md](docs/opencode-setup.md).
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;GitHub Copilot&lt;/b&gt;&lt;/summary&gt;
+
+Use agent definitions from `agents/` as Copilot personas and skill content in `.github/copilot-instructions.md`. The lifecycle slash commands (`/spec`, `/plan`, `/build`, `/test`, `/review`, `/ship`) are Claude Code commands and do not appear in Copilot; invoke the skills by name (`/spec-driven-development`, …) instead. See [docs/copilot-setup.md](docs/copilot-setup.md).
+
+Using the standalone `copilot` CLI? Install it as a plugin — see [docs/copilot-cli-setup.md](docs/copilot-cli-setup.md).
+
+&lt;/details&gt;
+
+&lt;details&gt;
+  &lt;summary&gt;&lt;b&gt;Kiro IDE &amp; CLI &lt;/b&gt;&lt;/summary&gt;
+  Skills for Kiro reside under &quot;.kiro/skills/&quot; and can be stored under Project or Global level. Kiro also supports Agents.md. See Kiro docs at https://kiro.dev/docs/skills/
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Codex&lt;/b&gt;&lt;/summary&gt;
+
+Install as a native Codex plugin (Codex CLI v0.122+):
+
+```bash
+codex plugin marketplace add addyosmani/agent-skills
+codex plugin add agent-skills@agent-skills
+```
+
+The first command registers the marketplace; the second installs the plugin. Codex reads the root `skills/` directory directly through `.codex-plugin/plugin.json`. Once installed, invoke skills in chat using `@` (e.g., `@spec-driven-development`). See [docs/codex-setup.md](docs/codex-setup.md) for local installation and troubleshooting.
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Command Code&lt;/b&gt;&lt;/summary&gt;
+
+Install natively with the built-in `cmd skills` command. Command Code clones the repo, discovers every `SKILL.md`, and installs into `.commandcode/skills/`:
+
+```bash
+cmd skills add addyosmani/agent-skills            # pick skills to install (project)
+cmd skills add addyosmani/agent-skills --global   # install for all projects (~/.commandcode/skills/)
+cmd skills add addyosmani/agent-skills -s spec-driven-development  # install a specific skill
+```
+
+Installed skills show up in the TUI slash menu, e.g. `/spec-driven-development`. See [docs/commandcode-setup.md](docs/commandcode-setup.md).
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;b&gt;Other Agents&lt;/b&gt;&lt;/summary&gt;
+
+Skills are plain Markdown - they work with any agent that accepts system prompts or instruction files. See [docs/getting-started.md](docs/getting-started.md). Hosts that install the pack but aren&#039;t listed above are in [docs/other-hosts.md](docs/other-hosts.md).
+
+&lt;/details&gt;
+
+
+
+---
+
+## Adoption
+
+Already installed? How you roll the pack out depends on your codebase. The **[Adoption Guide](docs/adoption-guide.md)** covers two paths: the full lifecycle from day one for a greenfield project, or an incremental, verification-first rollout for an established codebase.
+
+---
+
+## All 25 Skills
+
+The commands above are entry points. The pack includes 25 skills total — 24 lifecycle skills plus the `using-agent-skills` meta-skill. Each skill is a structured workflow with steps, verification gates, and anti-rationalization tables. You can also reference any skill directly.
+
+### Meta - Discover which skill applies
+
+| Skill | What It Does | Use When |
+|-------|-------------|----------|
+| [using-agent-skills](skills/using-agent-skills/SKILL.md) | Maps incoming work to the right skill workflow and defines shared operating rules | Starting a session or deciding which skill applies |
+
+### Define - Clarify what to build
+
+| Skill | What It Does | Use When |
+|-------|-------------|----------|
+| [interview-me](skills/interview-me/SKILL.md) | One-question-at-a-time interview that extracts what the user actually wants instead of what they think they should want, until ~95% confidence | The ask is underspecified, or the user invokes &quot;interview me&quot; / &quot;grill me&quot; |
+| [idea-refine](skills/idea-refine/SKILL.md) | Structured divergent/convergent thinking to turn vague ideas into concrete proposals | You have a rough concept that needs exploration |
+| [spec-driven-development](skills/spec-driven-development/SKILL.md) | Write a PRD covering objectives, commands, structure, code style, testing, and boundaries before any code | Starting a new project, feature, or significant change |
+| [constraint-driven-development](skills/constraint-driven-development/SKILL.md) | Interviews you for a quality bar with sane default thresholds, writes CONSTRAINTS.md, places each check by cost, and catches agents silencing checks or skipping tests to get green | No standards are written down, or an agent is producing more than anyone reads |
+
+### Plan - Break it down
+
+| Skill | What It Does | Use When |
+|-------|-------------|----------|
+| [planning-and-task-breakdown](skills/planning-and-task-breakdown/SKILL.md) | Decompose specs into small, verifiable tasks with acceptance criteria and dependency ordering | You have a spec and need implementable units |
+
+### Build - Write the code
+
+| Skill | What It Does | Use When |
+|-------|-------------|----------|
+| [incremental-implementation](skills/incremental-implementation/SKILL.md) | Thin vertical slices - implement, test, verify, commit. Feature flags, safe defaults, rollback-friendly changes | Any change touching more than one file |
+| [test-driven-development](skills/test-driven-development/SKILL.md) | Red-Green-Refactor, test pyramid (80/15/5), test sizes, DAMP over DRY, Beyonce Rule, browser testing | Implementing logic, fixing bugs, or changing behavior |
+| [context-engineering](skills/context-engineering/SKILL.md) | Feed agents the right information at the right time - rules files, context packing, MCP integrations | Starting a session, switching tasks, or when output quality drops |
+| [source-driven-development](skills/source-driven-development/SKILL.md) | Ground every framework decision in official documentation - verify, cite sources, flag what&#039;s unverified | You want authoritative, source-cited code for any framework or library |
+| [doubt-driven-development](skills/doubt-driven-development/SKILL.md) | Adversarial fresh-context review of every non-trivial decision in-flight - CLAIM → EXTRACT → DOUBT → RECONCILE → STOP, with optional user-authorized cross-model escalation | Stakes are high (production, security, irreversible), working in unfamiliar code, or a confident output is cheaper to verify now than to debug later |
+| [frontend-ui-engineering](skills/frontend-ui-engineering/SKILL.md) | Component architecture, design systems, state management, responsive design, WCAG 2.1 AA accessibility | Building or modifying user-facing interfaces |
+| [api-and-interface-design](skills/api-and-interface-design/SKILL.md) | Contract-first design, Hyrum&#039;s Law, One-Version Rule, error semantics, boundary validation | Designing APIs, module boundaries, or public interfaces |
+
+### Verify - Prove it works
+
+| Skill | What It Does | Use When |
+|-------|-------------|----------|
+| [browser-testing-with-devtools](skills/browser-testing-with-devtools/SKILL.md) | Chrome DevTools MCP for live runtime data - DOM inspection, console logs, network traces, performance profiling | Building or debugging anything that runs in a browser |
+| [debugging-and-error-recovery](skills/debugging-and-error-recovery/SKILL.md) | Five-step triage: reproduce, localize, reduce, fix, guard. Stop-the-line rule, safe fallbacks | Tests fail, builds break, or behavior is unexpected |
+
+### Review - Quality gates before merge
+
+| Skill | What It Does | Use When |
+|-------|-------------|----------|
+| [code-review-and-quality](skills/code-review-and-quality/SKILL.md) | Five-axis review, change sizing (~100 lines), severity labels (Nit/Optional/FYI), review speed norms, splitting strategies | Before merging any change |
+| [code-simplification](skills/code-simplification/SKILL.md) | Chesterton&#039;s Fence, Rule of 500, reduce complexity while preserving exact behavior | Code works but is harder to read or maintain than it should be |
+| [security-and-hardening](skills/security-and-hardening/SKILL.md) | OWASP Top 10 prevention, auth patterns, secrets management, dependency auditing, three-tier boundary system | Handling user input, auth, data storage, or external integrations |
+| [performance-optimization](skills/performance-optimization/SKILL.md) | Measure-first approach - Core Web Vitals targets, profiling workflows, bundle analysis, anti-pattern detection | Performance requirements exist or you suspect regressions |
+
+### Ship - Deploy with confidence
+
+| Skill | What It Does | Use When |
+|-------|-------------|----------|
+| [git-workflow-and-versioning](skills/git-workflow-and-versioning/SKILL.md) | Trunk-based development, atomic commits, change sizing (~100 lines), the commit-as-save-point pattern | Making any code change (always) |
+| [ci-cd-and-automation](skills/ci-cd-and-automation/SKILL.md) | Shift Left, Faster is Safer, feature flags, quality gate pipelines, failure feedback loops | Setting up or modifying build and deploy pipelines |
+| [deprecation-and-migration](skills/deprecation-and-migration/SKILL.md) | Code-as-liability mindset, compulsory vs advisory deprecation, migration patterns, zombie code removal | Removing old systems, migrating users, or sunsetting features |
+| [documentation-and-adrs](skills/documentation-and-adrs/SKILL.md) | Architecture Decision Records, API docs, inline documentation standards - document the *why* | Making architectural decisions, changing APIs, or shipping features |
+| [observability-and-instrumentation](skills/observability-and-instrumentation/SKILL.md) | Structured logging, RED metrics, OpenTelemetry tracing, symptom-based alerting - instrument as you build | Adding telemetry, or shipping anything that runs in production |
+| [shipping-and-launch](skills/shipping-and-launch/SKILL.md) | Pre-launch checklists, feature flag lifecycle, staged rollouts, rollback procedures, monitoring setup | Preparing to deploy to production |
+
+---
+
+## Agent Personas
+
+Pre-configured specialist personas for targeted reviews:
+
+| Agent | Role | Perspective |
+|-------|------|-------------|
+| [code-reviewer](agents/code-reviewer.md) | Senior Staff Engineer | Five-axis code review with &quot;would a staff engineer approve this?&quot; standard |
+| [test-engineer](agents/test-engineer.md) | QA Specialist | Test strategy, coverage analysis, and the Prove-It pattern |
+| [security-auditor](agents/security-auditor.md) | Security Engineer | Vulnerability detection, threat modeling, OWASP assessment |
+| [web-performance-auditor](agents/web-performance-auditor.md) | Web Performance Engineer | Core Web Vitals audit with Quick/Deep modes and a metric-honesty rule; run it via `/webperf` |
+
+See [docs/agents.md](docs/agents.md) for the decision matrix, orchestration rules, and how personas compose with skills and slash commands.
+
+---
+
+## Reference Checklists
+
+Quick-reference material that skills pull in when needed:
+
+| Reference | Covers |
+|-----------|--------|
+| [definition-of-done.md](references/definition-of-done.md) | Project-wide standing bar every change clears, contrasted with per-task acceptance criteria |
+| [testing-patterns.md](references/testing-patterns.md) | Test structure, naming, mocking, React/API/E2E examples, anti-patterns (JavaScript/TypeScript) |
+| [security-checklist.md](references/security-checklist.md) | Pre-commit checks, auth, input validation, headers, CORS, OWASP Top 10 |
+| [performance-checklist.md](references/performance-checklist.md) | Core Web Vitals targets, frontend/backend checklists, measurement commands |
+| [accessibility-checklist.md](references/accessibility-checklist.md) | Keyboard nav, screen readers, visual design, ARIA, testing tools |
+| [observability-checklist.md](references/observability-checklist.md) | On-call questions, structured logging, RED/USE metrics, tracing, symptom-based alerting, pre-launch gate |
+| [orchestration-patterns.md](references/orchestration-patterns.md) | Endorsed multi-persona orchestration patterns, anti-patterns, and the &quot;personas don&#039;t invoke personas&quot; rule |
+
+---
+
+## How Skills Work
+
+Every skill follows a consistent anatomy:
+
+```
+┌─────────────────────────────────────────────────┐
+│  SKILL.md                                       │
+│                                                 │
+│  ┌─ Frontmatter ─────────────────────────────┐  │
+│  │ name: lowercase-hyphen-name               │  │
+│  │ description: Guides agents through [task].│  │
+│  │              Use when…                    │  │
+│  └───────────────────────────────────────────┘  │                                                                                                
+│  Overview         → What this skill does        │
+│  When to Use      → Triggering conditions       │
+│  Process          → Step-by-step workflow       │
+│  Rationalizations → Excuses + rebuttals         │
+│  Red Flags        → Signs something&#039;s wrong     │
+│  Verification     → Evidence requirements       │
+└─────────────────────────────────────────────────┘
+```
+
+**Key design choices:**
+
+- **Process, not prose.** Skills are workflows agents follow, not reference docs they read. Each has steps, checkpoints, and exit criteria.
+- **Anti-rationalization.** Every skill includes a table of common excuses agents use to skip steps (e.g., &quot;I&#039;ll add tests later&quot;) with documented counter-arguments.
+-
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
             <title><![CDATA[Anil-matcha/Open-Generative-AI]]></title>
             <link>https://github.com/Anil-matcha/Open-Generative-AI</link>
             <guid>https://github.com/Anil-matcha/Open-Generative-AI</guid>
-            <pubDate>Tue, 10 Nov 2026 00:03:52 GMT</pubDate>
+            <pubDate>Wed, 11 Nov 2026 00:03:51 GMT</pubDate>
             <description><![CDATA[Uncensored Open-source alternative to AI video platforms — Free AI image & video generation studio with 600+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/Anil-matcha/Open-Generative-AI">Anil-matcha/Open-Generative-AI</a></h1>
             <p>Uncensored Open-source alternative to AI video platforms — Free AI image & video generation studio with 600+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 33,661</p>
-            <p>Forks: 6,387</p>
-            <p>Stars today: 313 stars today</p>
+            <p>Stars: 33,917</p>
+            <p>Forks: 6,452</p>
+            <p>Stars today: 263 stars today</p>
             <h2>README</h2><pre># Open Generative AI — Unrestricted Open-Source Alternative to AI Video Platforms
 
 [![Powered by MuAPI](https://img.shields.io/badge/Powered%20by-MuAPI-6366f1?style=flat-square&amp;logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyem0tMSAxNHYtNGgtMnYtMmg0djZoLTJ6bTAtOFY2aDJ2MmgtMnoiLz48L3N2Zz4=)](https://muapi.ai?utm_source=github&amp;utm_medium=badge&amp;utm_campaign=open-generative-ai)
@@ -32,8 +397,8 @@
 **Community:** Join [Discord](https://discord.com/invite/zpnuBRXhKg) for discussions and support
 
 
-&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https://youtu.be/DksS8GiXMcg&quot;&gt;&lt;img src=&quot;https://i.ytimg.com/vi/DksS8GiXMcg/maxresdefault.jpg&quot; width=&quot;720&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https://youtu.be/DksS8GiXMcg&quot;&gt;&lt;b&gt;▶ Watch: Cheapest Seedance 2.5 &amp; 2.0 API: Real Faces, No Restrictions &lt;/b&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https://youtu.be/4Nehxhw-YXY&quot;&gt;&lt;img src=&quot;https://i.ytimg.com/vi/4Nehxhw-YXY/maxresdefault.jpg&quot; width=&quot;720&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https://youtu.be/4Nehxhw-YXY&quot;&gt;&lt;b&gt;▶ Watch: Seedream 5.5 Uncensored (Spicy) API Guide: Text-to-Image, Edit &amp; Layer Decomposition &lt;/b&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
   &lt;a href=&quot;https://github.com/Anil-matcha/awesome-generative-ai-apps&quot;&gt;
@@ -329,742 +694,1635 @@ A healthy run on Apple Silicon prints `total params memory size = 1969.78MB (VRA
 - **Multi-Image Input** — Upload up to 14 reference images for compatible edit models (Nano Banana 2 Edit, Flux Kontext Dev, GPT-4o Edit, and more). Multi-select picker with order badges, batch upload, and a &quot;Use Selected&quot; confirmation flow.
 - **Video Studio** — Generate videos from text prompts (40+ text-to-video models) or animate a start-frame image (60+ image-to-video models). Same intelligent mode switching as Image Studio.
 - **Audio Studio** — Generate and edit AI audio/music from text prompts.
-- **AI Clipping** — Auto-clip and extract highlights from longer v
+- **AI Clipping** — Auto-clip and extract 
 
 ... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[reisxd/TizenTube]]></title>
-            <link>https://github.com/reisxd/TizenTube</link>
-            <guid>https://github.com/reisxd/TizenTube</guid>
-            <pubDate>Tue, 10 Nov 2026 00:03:51 GMT</pubDate>
-            <description><![CDATA[A TizenBrew module to remove ads and add support for SponsorBlock for your Tizen TV.]]></description>
+            <title><![CDATA[DietrichGebert/ponytail]]></title>
+            <link>https://github.com/DietrichGebert/ponytail</link>
+            <guid>https://github.com/DietrichGebert/ponytail</guid>
+            <pubDate>Wed, 11 Nov 2026 00:03:50 GMT</pubDate>
+            <description><![CDATA[Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/reisxd/TizenTube">reisxd/TizenTube</a></h1>
-            <p>A TizenBrew module to remove ads and add support for SponsorBlock for your Tizen TV.</p>
+            <h1><a href="https://github.com/DietrichGebert/ponytail">DietrichGebert/ponytail</a></h1>
+            <p>Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 2,491</p>
-            <p>Forks: 246</p>
-            <p>Stars today: 9 stars today</p>
-            <h2>README</h2><pre># ▶️ TizenTube
+            <p>Stars: 188,382</p>
+            <p>Forks: 10,472</p>
+            <p>Stars today: 835 stars today</p>
+            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;assets/logo-dark.png&quot;&gt;
+    &lt;img src=&quot;assets/logo.png&quot; width=&quot;220&quot; alt=&quot;Ponytail, the lazy senior dev&quot;&gt;
+  &lt;/picture&gt;
+&lt;/p&gt;
+
+&lt;h1 align=&quot;center&quot;&gt;Ponytail&lt;/h1&gt;
+
 &lt;p align=&quot;center&quot;&gt;
-    &lt;img width=&quot;600px&quot; src=&quot;.github/assets/TizenTube Standalone Banner.png&quot;&gt;
-    &lt;br&gt;
-    &lt;sub&gt; TizenTube logo, banner and README by &lt;a href=&quot;https://github.com/Zyborg777&quot;&gt;@Zyborg777&lt;/a&gt; &lt;/sub&gt;
+  &lt;em&gt;He says nothing. He writes one line. It works.&lt;/em&gt;
 &lt;/p&gt;
 
-**TizenTube** is a TizenBrew module that enhances your favourite streaming websites viewing experience by removing ads and adding support for Sponsorblock. **Now works as a standalone app!**
-
-** **
-🤖 **Looking for an app for Android TVs?** Check out [TizenTube Cobalt](https://github.com/reisxd/TizenTubeCobalt). It offers everything TizenTube has for Android TVs.
-
-
-&lt;p align=&quot;left&quot;&gt;
-    &lt;a href=&quot;https://github.com/reisxd/TizenTubeCobalt/releases/latest&quot;&gt;
-        &lt;picture&gt;
-            &lt;img width=&quot;250px&quot;
-                src=&quot;.github/assets/TizenTube_Cobalt_dl-button.png&quot; /&gt;
-        &lt;/picture&gt;
-    &lt;/a&gt;
-&lt;/p&gt;
-
-## ❓ How to install
-
-Follow the guide in the [Installation Guide](./docs/README.md).
-
-## ✨ Features
-- 📺 **Picture-in-Picture Mode**
-- 🛑 **Ad Blocker**: Enjoy your favourite streaming website without interruptions from ads.
-- ❗ **SponsorBlock Support**: Automatically skip sponsored segments in videos.
-- ⏭️ **Video Speed Control**: Adjust playback speed to your preference.
-- 🔺 **[DeArrow](https://dearrow.ajay.app/) Support**: Remove clickbait and misleading video titles.
-- ➕ **More to come!** Request features via [issues](https://github.com/reisxd/TizenTube/issues/new).
-
-## 🌐 Community and Support 
-| Links |
-| ------------- |
-| [r/TizenTube Subreddit](https://www.reddit.com/r/TizenTube/)  |
-| [Discord Server](https://discord.gg/m2P7v8Y2qR)  | 
-| [Telegram](https://t.me/tizentubeofficial)  |
-| [Matrix Space](https://matrix.to/#/!BLE5ubNYktI30e8K0j:matrix.6513006.xyz)  |
-| [Report Issues / Request Features](https://github.com/reisxd/TizenTube/issues)  |
-</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[hmjz100/LinkSwift]]></title>
-            <link>https://github.com/hmjz100/LinkSwift</link>
-            <guid>https://github.com/hmjz100/LinkSwift</guid>
-            <pubDate>Tue, 10 Nov 2026 00:03:50 GMT</pubDate>
-            <description><![CDATA[一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/hmjz100/LinkSwift">hmjz100/LinkSwift</a></h1>
-            <p>一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 39,053</p>
-            <p>Forks: 2,807</p>
-            <p>Stars today: 222 stars today</p>
-            <h2>README</h2><pre>&gt; [!IMPORTANT]
-&gt; 如果您是从 GreasyFork 找到这的，建议前往下方的 [安装](#安装) 选择一个合适的源覆盖安装，避免因脚本失效或 GF 黑产刷子导致无法及时更新。
-
-![LinkSwift](https://socialify.git.ci/hmjz100/LinkSwift/image?description=1&amp;descriptionEditable=%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8E%20JavaScript%20%E7%9A%84%E7%BD%91%E7%9B%98%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7&amp;language=1&amp;logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBkPSJNMTAzLjYgMTA3LjRjMy41LTIuMiA4LjktNi4xIDEzLjgtMTIuNXM3LjMtMTIuNSA4LjUtMTYuNWMuNS0xLjcgMi4yLTcuNSAyLjItMTQuNyAwLTEwLjEtMy4zLTI1LjEtMTUuNC0zNi44LTE0LjUtMTQtMzIuMS0xNC4zLTM1LjctMTQuMy04IDAtMTUuNyAxLjktMjIuNiA1LjJDNDQgMjMgMzUuNyAzMS40IDMwLjggNDEuN2MtMS4zIDIuOC00IDQuNy03LjEgNS00IC4zLTcuNSA0LjQtOC45IDkuNi0uNSAxLjktMS42IDMuNS0zLjEgNC43QzQuNCA2Ni44IDAgNzUuNyAwIDg1YzAgNi44IDIuMyAxMy4xIDYuMSAxOC4yIDUuNSA3LjQgMTQuMiAxMi4yIDI0IDEyLjJoNDcuMWM0LjQgMCAxMS0uNSAxOC4zLTMuNSAzLjItMS40IDUuOS0zIDguMS00LjV6IiBmaWxsPSIjQTA5OUYwIi8%2BPHBhdGggZD0iTTExOS44IDY0LjNjLjEtMTcuMS0xMC40LTI4LTEyLjUtMzAuMUM5NSAyMi4xIDc5LjkgMjEuOCA3Ni45IDIxLjhjLTE3LjYgMC0zMy4zIDEwLjUtMzkuOSAyNi43LS42IDEuMy0xLjggMi4zLTMuNCAyLjNoLS40Yy01LjggMC0xMC42IDQuOC0xMC42IDEwLjd2LjVjMCAxLjQtLjggMi42LTEuOSAzLjNDMTMuNCA2OSA4LjggNzYuOCA4LjggODVjMCAxMi4yIDkuOSAyMi4zIDIyLjIgMjIuM2g0NS4yYzMuNi0uMSAxNy42LS45IDI5LjYtMTIgMi45LTIuOCAxMy45LTEzLjcgMTQtMzF6IiBmaWxsPSIjNTc0QUI4Ii8%2BPHBhdGggZD0iTTExMC44IDU3LjRsLjIgMy4zYzAgMS4zLTEuMSAyLjQtMi4zIDIuNC0xLjMgMC0yLjMtMS4xLTIuMy0yLjRsLS4xLTIuOHYtLjNjMC0xLjIuOS0yLjIgMi4xLTIuM2guM2MuNyAwIDEuMy4zIDEuNy43LS4yLjEuMy41LjQgMS40em0tMy4zLTEwLjNjMCAxLjItMSAyLjMtMi4yIDIuM2gtLjFjLS44IDAtMS42LS41LTItMS4yLTQuNi04LjMtMTMuMy0xMy41LTIyLjgtMTMuNS0xLjIgMC0yLjMtMS0yLjMtMi4ydi0uMWMwLTEuMiAxLTIuMyAyLjItMi4zaC4xYTMwLjM3IDMwLjM3IDAgMCAxIDE1LjggNC40YzQuNiAyLjggOC40IDYuOCAxMS4xIDExLjUuMS4zLjIuNy4yIDEuMXpNODguMyA3My44TDczLjUgOTMuMmMtMS41IDEuOS0zLjUgMy4xLTUuNyAzLjVoLS4yYy0uNC4xLS44LjEtMS4yLjEtLjYgMC0xLjEtLjEtMS42LS4yLTIuMi0uNC00LjItMS43LTUuNi0zLjVMNDQuMyA3My45Yy0yLTIuNi0yLjUtNS40LTEuNC03LjcuMS0uMS4xLS4yLjItLjIgMS4yLTIgMy41LTMuMiA2LjQtMy4yaDYuNnYtNS43YzAtNi44IDQuNy0xMiAxMC45LTEyIDQuOCAwIDguNSAyLjYgMTAuMyA3LjIuNSAxLjMtLjIgMi43LTEuNSAzLjJzLTIuOC0uMS0zLjMtMS40Yy0xLjEtMi43LTIuOS00LTUuNS00LTMuNSAwLTYgMy02IDd2OC4xYzAgLjUtLjIgMS0uNiAxLjQtLjYuNy0xLjcgMS4xLTIuNiAxLjFoLTguNGMtMS4zIDAtMiAuNC0yLjEuNy0uMi40IDAgMS4zLjkgMi40TDYzLjEgOTBjLjkgMS4yIDIuMSAxLjggMy4zIDEuOHMyLjMtLjYgMy4xLTEuN2wxNC44LTE5LjNjLjktMS4xIDEuMS0yIC45LTIuNC0uMi0uMy0uOS0uNy0yLjEtLjdoLTcuNmMtLjkgMC0xLjctLjUtMi4xLTEuMi0uMy0uNC0uNC0uOC0uNC0xLjMgMC0xLjQgMS4xLTIuNSAyLjUtMi41aDcuNmMzLjEgMCA1LjUgMS4zIDYuNiAzLjVsLjMuN2MuNyAyLjEuMSA0LjYtMS43IDYuOXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4%3D&amp;name=1&amp;owner=1&amp;pattern=Charlie%20Brown&amp;theme=Auto)
-
-&lt;p align=&quot;center&quot;&gt;“出淤泥而不染，濯清涟而不妖”&lt;/p&gt;
-&lt;hr&gt;
 &lt;p align=&quot;center&quot;&gt;
-   搭配使用，效果更佳！👋扩展脚本
-   &lt;br/&gt;
-   &lt;a href=&quot;https://github.com/hmjz100/123panYouthMember#安装&quot;&gt;123 云盘会员青春版&lt;/a&gt; | &lt;a href=&quot;#安装&quot;&gt;百度网盘会员青春版&lt;/a&gt; | &lt;a href=&quot;https://scriptcat.org/script-show-page/2470&quot; target=&quot;_blank&quot;&gt;阿里云盘会员青春版&lt;/a&gt;
-   &lt;br/&gt;
-   ↓&amp;nbsp;&amp;nbsp;↓&amp;nbsp;&amp;nbsp;↓&amp;nbsp;&amp;nbsp;↓&amp;nbsp;&amp;nbsp;↓
+  &lt;a href=&quot;https://trendshift.io/repositories/50668?utm_source=repository-badge&amp;amp;utm_medium=badge&amp;amp;utm_campaign=badge-repository-50668&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/50668&quot; alt=&quot;DietrichGebert%2Fponytail | Trendshift&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
 &lt;/p&gt;
+
 &lt;p align=&quot;center&quot;&gt;
-   &lt;img alt=&quot;Github Stargazers&quot; src=&quot;https://img.shields.io/github/stars/hmjz100/LinkSwift.svg?label=%e6%98%9f%e6%a0%87&amp;logo=github&amp;logoColor=white&amp;labelColor=black&amp;color=gold&amp;style=for-the-badge&amp;cacheSeconds=10&quot;&gt;
-   &lt;img alt=&quot;Github Forks&quot; src=&quot;https://img.shields.io/github/forks/hmjz100/LinkSwift?label=%e5%a4%8d%e5%88%bb&amp;logo=github&amp;logoColor=white&amp;labelColor=black&amp;color=grey&amp;style=for-the-badge&amp;cacheSeconds=10&quot;&gt;
-   &lt;img alt=&quot;Github Licence&quot; src=&quot;https://img.shields.io/github/license/hmjz100/LinkSwift?label=%e8%ae%b8%e5%8f%af&amp;logo=github&amp;logoColor=white&amp;labelColor=black&amp;color=grey&amp;style=for-the-badge&amp;cacheSeconds=10&quot;&gt;
-   &lt;br/&gt;
-   &lt;a href=&quot;https://trendshift.io/repositories/13630&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/13630&quot; alt=&quot;hmjz100%2FLinkSwift | Trendshift&quot; style=&quot;width: 250px; height: 55px;&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
-   &lt;br/&gt;
-   &lt;img src=&quot;https://img.shields.io/chrome-web-store/v/gcalenpjmijncebpfijmoaglllgpjagf.svg?label=Tampermonkey%20BETA%20%E7%AF%A1%E6%94%B9%E7%8C%B4%E6%B5%8B%E8%AF%95%E7%89%88&amp;logo=tampermonkey&amp;logoColor=red&amp;color=red&amp;style=for-the-badge&quot; alt=&quot;Tampermonkey BETA 篡改猴测试版&quot;&gt;
-   &lt;img src=&quot;https://img.shields.io/chrome-web-store/v/dhdgffkkebhmkfjojejmpbldmpobfkfo.svg?label=Tampermonkey%20%E7%AF%A1%E6%94%B9%E7%8C%B4&amp;logo=tampermonkey&amp;logoColor=white&amp;color=brightgreen&amp;style=for-the-badge&quot; alt=&quot;TamperMonkey 篡改猴&quot;&gt;
-   &lt;br/&gt;
-   &lt;img src=&quot;https://img.shields.io/badge/Google_Chrome-≥76.0-yellow.svg?style=for-the-badge&quot; alt=&quot;Google Chrome-≥76.0&quot;&gt;
-   &lt;img src=&quot;https://img.shields.io/badge/Microsoft_Edge-≥88.0-blue.svg?style=for-the-badge&quot; alt=&quot;Microsoft Edge-≥88.0&quot;&gt;
-   &lt;img src=&quot;https://img.shields.io/badge/支持平台-Windows_|_Mac_|_Linux_|_Android-blueviolet.svg?style=for-the-badge&quot; alt=&quot;支持平台&quot;&gt;
-   &lt;br/&gt;
-   &lt;img alt=&quot;Starchart&quot; src=&quot;https://starchart.cc/hmjz100/LinkSwift.svg?variant=adaptive&amp;line=%23574ab8&quot;&gt;
+  &lt;img src=&quot;https://img.shields.io/github/stars/DietrichGebert/ponytail?style=flat-square&amp;color=111111&amp;label=stars&quot; alt=&quot;Stars&quot;&gt;
+  &lt;img src=&quot;https://img.shields.io/github/v/release/DietrichGebert/ponytail?style=flat-square&amp;color=111111&amp;label=release&quot; alt=&quot;Release&quot;&gt;
+  &lt;img src=&quot;https://img.shields.io/npm/v/@dietrichgebert/ponytail?style=flat-square&amp;color=111111&amp;label=npm&quot; alt=&quot;npm&quot;&gt;
+  &lt;img src=&quot;https://img.shields.io/badge/works%20with-20%20agents-111111?style=flat-square&quot; alt=&quot;Works with 20 agents&quot;&gt;
+  &lt;img src=&quot;https://img.shields.io/badge/license-MIT-111111?style=flat-square&quot; alt=&quot;MIT license&quot;&gt;
 &lt;/p&gt;
 
-## 安装
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://ponytail.dev/stories&quot;&gt;&lt;img src=&quot;assets/stories-banner.png&quot; alt=&quot;Using Ponytail at work? Tell us your story&quot; width=&quot;760&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
 
-根据需要选择合适的源，点击链接即可安装
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://trendshift.io/repositories/50668&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/trendshift/repositories/50668/daily&quot; alt=&quot;DietrichGebert/ponytail | Trendshift&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://trendshift.io/repositories/50668&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/trendshift/repositories/50668/weekly&quot; alt=&quot;DietrichGebert/ponytail | Trendshift&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://trendshift.io/repositories/50668?utm_source=trendshift-badge&amp;amp;utm_medium=badge&amp;amp;utm_campaign=badge-trendshift-50668&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/trendshift/repositories/50668/monthly?language=JavaScript&quot; alt=&quot;DietrichGebert%2Fponytail | Trendshift monthly ranking&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+&lt;/p&gt;
 
-### LinkSwift
-直链获取、UI 美化、支持多种下载器
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/v5/hero.jpg&quot; width=&quot;880&quot; alt=&quot;Ponytail 5, rebuilt from the ground up: -53% code, -41% time, -26% cost, -45% tokens. And yet 98% of risky logic ships with a test, without Ponytail 68%.&quot;&gt;
+&lt;/p&gt;
 
-#### 正式版
-- Github 国际: [hmjz100/LinkSwift/（改）网盘直链下载助手.user.js](https://github.com/hmjz100/LinkSwift/raw/main/（改）网盘直链下载助手.user.js)
-- OpenUserJS 国际（更新不及时）: [hmjz100/LinkSwift.user.js](https://openuserjs.org/install/hmjz100/LinkSwift.user.js)
-- Gitee 国内: [hmjz100/LinkSwift/（改）网盘直链下载助手.user.js](https://gitee.com/hmjz100/LinkSwift/raw/main/（改）网盘直链下载助手.user.js)
-- 脚本猫 国内: [hmjz100/1604/LinkSwift.user.js](https://scriptcat.org/scripts/code/1604/LinkSwift.user.js)
+&lt;p align=&quot;center&quot;&gt;
+  &lt;strong&gt;Ponytail 5: rebuilt from the ground up.&lt;/strong&gt;&lt;br&gt;
+  &lt;strong&gt;-53% code &amp;middot; -41% time &amp;middot; -26% cost &amp;middot; -45% tokens&lt;/strong&gt;&lt;br&gt;
+  &lt;strong&gt;And yet: 98% of risky logic ships with a test.&lt;/strong&gt; Without Ponytail: 68%.&lt;br&gt;
+  &lt;sub&gt;Benchmarked in Claude Code, the same agent with and without the skill: 39 tasks including a real FastAPI + React repo, Opus 5.5, 5 runs each. &lt;a href=&quot;#numbers&quot;&gt;Details&lt;/a&gt;.&lt;/sub&gt;
+&lt;/p&gt;
 
-#### 金丝雀版
-此版本可能不稳定，但有着最新的功能、修复等。
-
-- Github 国际: [hmjz100/LinkSwift/（改）网盘直链下载助手.user.js](https://github.com/hmjz100/LinkSwift/raw/dev/（改）网盘直链下载助手.user.js)
-
-### （改）百度网盘会员青春版
-迁移到新仓库啦~ &lt;a href=&quot;https://github.com/hmjz100/BaiduNetDiskYouthMember#安装&quot;&gt;跳转到仓库&lt;/a&gt;
-
-### 123 云盘会员青春版
-&lt;a href=&quot;https://github.com/hmjz100/123panYouthMember#安装&quot;&gt;跳转到仓库&lt;/a&gt;
-
-## 说明
-
-&gt; [!IMPORTANT]
-&gt; 本项目所获取的下载链接均基于各大网盘服务商公开的 API 接口获取。  
-&gt; 项目未以任何形式承诺、宣传或实现对网盘限速机制、功能的破解。
-&gt; 
-&gt; 若在实际使用过程中获得较快的下载速度，通常系平台策略差异、网络环境或服务商阶段性调整所致，  
-&gt; 请勿将其误解为本项目具备破解限速的能力或提供相应服务。
-
-&gt; [!IMPORTANT]
-&gt; 本项目始终遵循合规与克制的原则，不触及、不损害任何网盘服务商的核心利益，  
-&gt; 仅为协助无法或不便使用官方客户端的用户实现合法的文件下载需求。
-&gt; 
-&gt; 任何第三方在推广、转载或介绍本项目过程中所作出的夸大、误导性宣传*，均不代表本项目立场。  
-&gt; 由此产生的一切后果与责任，与本项目无关，须由相关行为主体自行承担。  
-&gt; *（包括但不限于 “加速下载”“速度起飞” 等表述）
-
-基于[【网盘直链下载助手】](https://www.baiduyun.wiki/install.html)修改
-- 原作者: [油小猴](https://www.youxiaohou.com/)  
-- 原仓库: [https://github.com/syhyz1990/baiduyun](https://github.com/syhyz1990/baiduyun)
-- 本脚本发布至脚本猫: [https://scriptcat.org/script-show-page/1604](https://scriptcat.org/script-show-page/1604)
-  - 还有 OpenUserJS: [https://openuserjs.org/scripts/hmjz100/LinkSwift](https://openuserjs.org/scripts/hmjz100/LinkSwift)
-
-## 简介
-
-支持 百度网盘/阿里云盘/中国移动云盘/天翼云盘/迅雷云盘/夸克网盘/UC网盘/123云盘 八大网盘，相比较原脚本，增加了更多功能~
-
-#### 卑微的小标题
-
-~~这个脚本只有一个人在修改\~~~ 如果喜欢的话还请留个 Star 哦\~   
-- 如有 bug 等问题请在这发[议题反馈](https://github.com/hmjz100/LinkSwift/issues)
-
-## 贡献者
-
-感谢下列为本项目做过贡献的开发者！
-
-&lt;a href=&quot;https://github.com/hmjz100/LinkSwift/graphs/contributors&quot;&gt;
-  &lt;img src=&quot;https://contrib.rocks/image?repo=hmjz100/LinkSwift&quot; /&gt;
-&lt;/a&gt;
-
-
-## 版本号
-v1.1.3（基于原版 v6.2.7）  
-本脚本目前仅在 Github、Gitee、脚本猫脚本站 与 OpenUserJS 发布；  
-如果您是在其他渠道获取到本脚本的，安装后所带来的问题作者概不负责。
-
-## 更新日志
-
-| 版本号 | 创建日期 | 更新日志 |
-| -------- | -------- | -------- |
-| 1.1.3   | 2026年02月16日 | LinkSwift 开发者在此祝您新春快乐！&lt;br/&gt;爆竹声中一岁除，春风送暖入屠苏。LinkSwift 迎来功能更新：&lt;br/&gt;1、新增 - IDM 客户端设置；&lt;br/&gt;2、优化 - 链接缓存、浮动提示框；&lt;br/&gt;3、适配 - 百度网盘分享页。 |
-| 1.1.2.1 | 2025年12月28日 | 1、新增 - API 下载的推送到 IDM 功能；&lt;br/&gt;（感谢 &lt;a href=&quot;https://github.com/Night-stars-1&quot; target=&quot;_blank&quot;&gt;Night Stars&lt;/a&gt; 的帮助）&lt;br/&gt;2、修复 - 复制 Aria2、cURL 命令行错误。 |
-| 1.1.2   | 2025年12月26日 | 1、适配 - 123 云盘新策略；&lt;br/&gt;2、适配 - 夸克、UC 网盘分享页；&lt;br/&gt;3、新增 - 增强下载的多块多线程支持；&lt;br/&gt;4、优化 - 页面绿化的部分匹配规则；&lt;br/&gt;5、优化 - 增强下载进度条样式。 |
-| 1.1.1.9 | 2025年09月13日 | 1、修复 - 123 云盘下载视频变为缩略图。 |
-| 1.1.1.8 | 2025年09月11日 | 1、修复 - 适配新版 123 云盘分享页。 |
-| 1.1.1.7 | 2025年08月02日 | 1、修复 - 缺失声明 (at)connect 导致的问题。 |
-| 1.1.1.6 | 2025年07月28日 | 1、废弃 - 百度网盘 BDUSS Cookie 相关代码，转向使用更安全的 AccessToken；&lt;br/&gt;2、废弃 - 百度网盘分享页面下载相关代码；&lt;br/&gt;3、优化 - 下载窗口可在设置改变后动态修改界面。 |
-| 1.1.1.5 | 2025年07月21日 | 1、增加 AB Download Manager 下载方式；&lt;br/&gt;2、支持从设置页面一键返回下载窗口，无需重复获取链接。 |
-| 1.1.1.4 | 2025年07月19日 | 1、适配 123 云盘新版页面。 |
-| 1.1.1.3 | 2025年06月19日 | 1、修复夸克网盘无法获取下载链接的 Bug；&lt;br/&gt;2、修复 API 下载无法复制全部链接。 |
-| 1.1.1.2 | 2025年06月08日 | 1、修复无法删除第一项远程配置的 Bug。 |
-| 1.1.1.1 | 2025年06月02日 | 1、修复推送到 Aria2 时推送成功但报错的 Bug。 |
-| 1.1.1   | 2025年06月01日 | 六一儿童节快乐！萌萌哒更新~&lt;br/&gt;1、配置文件格式更新，支持添加、删除、切换多个服务配置；&lt;br/&gt;2、支持比特彗星推送下载，原 RPC 已并入 Aria2 下载；&lt;br/&gt;3、界面增加 Font Awesome 图标！更好看啦；&lt;br/&gt;4、优化脚本代码、界面，运行更轻快；&lt;br/&gt;5、修复上个版本遗存的问题。 |
-| 1.1.0.1 | 2025年05月09日 | 1、修复查看 RPC 下载任务的 Bug。 |
-| 1.1.0   | 2025年05月08日 | 1、支持 UC 网盘、123 云盘；&lt;br/&gt;2、改进了网盘主题的注入方式；&lt;br/&gt;3、聚合并重构了部分重复函数，对整体脚本逻辑进行了梳理和精简；&lt;br/&gt;4、将脚本执行阶段从 document-body 适配为 document-start。 |
-| 1.0.9.7 | 2025年02月13日 | 1、修复移动云盘下载错误；&lt;br/&gt;2、优化代码，更好的错误识别；&lt;br/&gt;3、去除了油小猴云服务。 |
-| 1.0.9.6 | 2024年10月28日 | 1、支持在百度网盘中选择文件夹下载；&lt;br/&gt;2、优化部分提示。 |
-| 1.0.9.5 | 2024年10月14日 | 1、修复因代码逻辑错误而无法获取链接的 Bug。 |
-| 1.0.9.4 | 2024年10月09日 | 1、修复因百度网盘 AccessToken 过期导致无法获取链接的 Bug。 |
-| 1.0.9.3 | 2024年08月10日 | 1、若网盘不支持在分享中下载，将仅显示保存网盘按钮；&lt;br/&gt;2、优化下载界面，支持选择 Iframe 或 Blob 的方式来下载文件，增加按钮的提示文本；&lt;br/&gt;3、优化 CSS 样式，统一了 SweetAlert2 按钮样式，同时适配了 Dark Reader 插件，界面更协调；&lt;br/&gt;4、支持修改油小猴网站主题色；&lt;br/&gt;5、原有主题相关设置现已移动至助手美化页面中。 |
-| 1.0.9.2 | 2024年08月04日 | 1、修复使用API下载时有可能会导致IDM无限弹窗的Bug。 |
-| 1.0.9.1 | 2024年07月30日 | 1、修复在百度网盘旧版下脚本无法删除元素的Bug。 |
-| 1.0.9   | 2024年07月29日 | 1、跟进官方V6.2.7，修复因无法进行百度授权而导致获取直链报错 9019 的 Bug。 |
-| 1.0.8.9 | 2024年07月22日 | 1、跟进官方V6.2.3，优化保存到网盘提示，修复阿里云盘、移动云盘失效的问题；&lt;br/&gt;2、优化修改网盘主题的代码，减少对页面的破坏。 |
-| 1.0.8.8 | 2024年05月09日 | 1、修复下载菜单字体过小的Bug。|
-| 1.0.8.7 | 2024年05月06日 | 1、修复在阿里云盘分享页面下点击“未点亮”按钮时没有任何反应的Bug；&lt;br&gt;2、更新并优化网盘界面精简规则；&lt;br/&gt;3、支持更换 百度网盘、阿里云盘、迅雷云盘、夸克网盘、移动云盘 界面的主题颜色。 |
-| 1.0.8.6 | 2024年04月08日 | 1、新增移动云盘会员中心页面，可在网盘中点击“会员中心”按钮查看(但无法使用第三方支付)。 |
-| 1.0.8.5 | 2024年04月07日 | 1、跟进官方V6.1.6，修复迅雷网盘分享页面无法选中文件，修复移动云盘无法判断页面。 |
-| 1.0.8.4 | 2024年04月07日 | 1、修复因重复绑定按钮而导致命令重复执行的Bug；&lt;br&gt;2、优化调试信息界面排版；&lt;br&gt;3、移除对百度网盘手机网页版的支持。 |
-| 1.0.8.3 | 2024年02月11日 | 1、适配阿里云盘新域名alipan.com。 |
-| 1.0.8.2 | 2023年11月29日 | 1、更换新图标。 |
-| 1.0.8.1 | 2023年11月25日 | 1、修复因重复绑定按钮而导致RPC下载会发送多条下载请求的Bug；&lt;br&gt;2、选择不使用油小猴服务器时，“用ghproxy连接Github仓库”更换为“用jsdelivr连接Github仓库”；&lt;br&gt;3、跟进官方V6.1.4版本，修复移动网盘无法获取链接，支持阿里云盘新域名alipan.com。 |
-| 1.0.8   | 2023年11月05日 | 1、修复迅雷网盘勾选文件后仍提示未勾选。 |
-| 1.0.7.9 | 2023年11月05日 | 1、更新精简网盘元素匹配规则，防止因通知横条而导致不能点到“API下载”以下的按钮。 |
-| 1.0.7.8 | 2023年09月10日 | 1、跟进官方V6.1.2，加入V2接口；&lt;br&gt;2、修复百度网盘下载时因为获取不到accessToken而一直转圈。 |
-| 1.0.7.7 | 2023年09月03日 | 1、修复百度网盘的按钮会因为主题不同而被改变颜色的Bug；&lt;br&gt;2、更新夸克网盘按钮与界面。 |
-| 1.0.7.6 | 2023年09月01日 | 1、修复“注入”功能；&lt;br&gt;2、黑暗模式支持随设置热切换。 |
-| 1.0.7.5 | 2023年08月31日 | 1、修复阿里云盘下载逻辑；&lt;br&gt;2、精简代码；&lt;br&gt;3、支持深色模式；&lt;br&gt;4、修改部分提示文本；&lt;br&gt;5、修改部分CSS；&lt;br&gt;6、设置可测试RPC连接。 |
-| 1.0.7.4 | 2023年08月27日 | 1、优化下载逻辑；&lt;br&gt;2、修复阿里云盘无法使用API下载。 |
-| 1.0.7.3 | 2023年08月24日 | 1、如果出现网络请求错误时支持自动重新请求；&lt;br&gt;2、可选择是否使用油小猴服务器。 |
-| 1.0.7.2 | 2023年07月29日 | 1、修复使用RPC下载时会重复发送链接的Bug。 |
-| 1.0.7.1 | 2023年07月27日 | 1、\[实验功能，不影响正常使用\]支持百度网盘手机网页版，勾选文件后可在顶栏找到“下载助手”按钮。 |
-| 1.0.7   | 2023年07月26日 | 1、重构夸克网盘、阿里云盘按钮。 |
-| 1.0.6.9 | 2023年07月25日 | 1、下载窗口加入关闭按钮。 |
-| 1.0.6.8 | 2023年07月24日 | 1、修复夸克网盘按钮错位。 |
-| 1.0.6.7 | 2023年07月24日 | 1、将百度网盘界面修改为主题色，可在设置选择是否修改；&lt;br&gt;2、增加主题色名称，更改部分内容颜色；&lt;br&gt;3、移动云盘API下载支持批量复制；&lt;br&gt;4、优化控制台输出结果；&lt;br&gt;5、百度网盘API下载不使用IDM时可以显示剩余时间；&lt;br&gt;6、“取消点亮按钮”按钮的位置现已移动到设置页面。&lt;br&gt;7、homo特有的彩蛋又回来力(喜)。 |
-| 1.0.6.6 | 2023年06月07日 | 1、修复暗号错误。 |
-| 1.0.6.5 | 2023年06月04日 | 1、修复即使输入正确暗号也不能成功点亮按钮的服务器错误。 |
-| 1.0.6.4 | 2023年06月02日 | 1、跟进官方V6.1.1版本，修复阿里云盘获取下载链接时的问题。 |
-| 1.0.6.3 | 2023年05月19日 | 1、照顾小屏幕用户，将始终显示复制全部链接的按钮；&lt;br&gt;2、增加取消下载时的动画。 |
-| 1.0.6.2 | 2023年05月08日 | 1、修复部分界面错位，实现CSS内置；&lt;br&gt;2、百度网盘界面将变得更加简洁。 |
-| 1.0.6.1 | 2023年05月06日 | 1、新增百度云盘API下载支持复制链接；&lt;br&gt;2、为了照顾手机浏览器用户，增大项目之间间隙，新增隐藏IDM提示选项，可在助手设置中启用；&lt;br&gt;3、修改CSS，界面会出现更多的主题色；&lt;br&gt;4、支持在油小猴官网查看暗号；&lt;br&gt;5、修复部分语法错误。 |
-| 1.0.6   | 2023年04月15日 | 1、修复了打开阿里云盘分享连接时因下载移动端广告导致只能点击API下载；&lt;br&gt;2、跟进官方6.0.4版本，修复夸克网盘获取下载链接失效、支持移动云盘。 |
-| 1.0.5.5 | 2023年04月01日 | 1、感谢[Night Stars](https://github.com/Night-stars-1)的帮助，修复因为原作者服务器导致的初始化暗号识别错误；&lt;br&gt;2、修改一些文本以及提供给服务器的信息。 |
-| 1.0.5.4 | 2023年03月13日 | 1、小修小改css，让主题色出现在更多地方；&lt;br&gt;2、修改下载链接获取失败的提示；&lt;br&gt;3、增加更多的主题色，可在助手设置查看；&lt;br&gt;4、homo彩蛋被删去力（悲）。 |
-| 1.0.5.3 | 2023年03月10日 | 1、阿里云盘可以摸到下载菜单了。 |
-| 1.0.5.2 | 2022年10月04日 | 1、增加脚本信息菜单；&lt;br&gt;2、优化阿里云盘显示svg图片；&lt;br&gt;3、修改弹窗按钮颜色。 |
-| 1.0.5.1 | 2022年09月30日 | 1、修复在切换按钮主题后夸克网盘不能正常显示按钮。 |
-| 1.0.5   | 2022年09月21日 | 1、跟进官方5.9.4版，修复文件名识别。 |
-| 1.0.4   | 2022年08月13日 | 1、修复了原作者留下的夸克网盘切换文件夹就多一个“下载助手”按钮的大BUG；&lt;br&gt;2、在下载菜单增加“助手设置”“更新日志”按钮；&lt;br&gt;3、修改阿里云盘和夸克网盘下载助手按钮样式；&lt;br&gt;4、增加“取消点亮按钮”油猴菜单；&lt;br&gt;5、修改部分css，使其与选择的主题更贴切。 |
-| 1.0.3   | 2022年08月11日 | 1、增加homo特有的彩蛋 |
-| 1.0.2   | 2022年08月10日 | 1、修改并加宽界面，调整部分css，使Sweetalert2界面更美观，更与原版相近；&lt;br&gt;2、修改部分提示文字，使文字更容易复制。 |
-| 1.0.1   | 2022年08月10日 | 1、去除更新提示；&lt;br&gt;2、更新Sweetalert2至11版本。 |
-| 1.0.0   | 2022年08月10日 | (脚本发布)&lt;br&gt;1、增加“注入”功能（bushi）；&lt;br&gt;2、去除广告。 |
+&lt;p align=&quot;center&quot;&gt;
+  &lt;sub&gt;&lt;a href=&quot;i18n/README.es.md&quot;&gt;Español&lt;/a&gt; &amp;middot; &lt;a href=&quot;i18n/README.ko.md&quot;&gt;한국어&lt;/a&gt; &amp;middot; &lt;a href=&quot;i18n/README.zh-CN.md&quot;&gt;简体中文&lt;/a&gt; &amp;middot; &lt;a href=&quot;i18n/README.ja.md&quot;&gt;日本語&lt;/a&gt;&lt;/sub&gt;
+&lt;/p&gt;
 
 ---
 
-&lt;p align=&quot;center&quot;&gt;这是给认真阅读完README文件的人的赞美&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;个人博客: &lt;a target=&quot;_blank&quot; href=&quot;https://hmjz100blog.rf.gd&quot;&gt;https://hmjz100blog.rf.gd&lt;/a&gt;&lt;/p&gt;</pre>
-          ]]></content:encoded>
-            <category>JavaScript</category>
-        </item>
-        <item>
-            <title><![CDATA[tradesdontlie/tradingview-mcp]]></title>
-            <link>https://github.com/tradesdontlie/tradingview-mcp</link>
-            <guid>https://github.com/tradesdontlie/tradingview-mcp</guid>
-            <pubDate>Tue, 10 Nov 2026 00:03:49 GMT</pubDate>
-            <description><![CDATA[AI-assisted TradingView chart analysis — connect Claude Code to your TradingView Desktop for personal workflow automation]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/tradesdontlie/tradingview-mcp">tradesdontlie/tradingview-mcp</a></h1>
-            <p>AI-assisted TradingView chart analysis — connect Claude Code to your TradingView Desktop for personal workflow automation</p>
-            <p>Language: JavaScript</p>
-            <p>Stars: 7,134</p>
-            <p>Forks: 2,896</p>
-            <p>Stars today: 5 stars today</p>
-            <h2>README</h2><pre># TradingView MCP Bridge
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://ponytail.dev/soon&quot;&gt;&lt;img src=&quot;assets/waitlist-banner.png&quot; alt=&quot;Something&#039;s coming, join the waitlist&quot; width=&quot;760&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
 
-[![MCP Toplist](https://mcptoplist.com/badge/glama%2Ftradesdontlie%2Ftradingview-mcp.svg)](https://mcptoplist.com/server/glama%2Ftradesdontlie%2Ftradingview-mcp)
+## Already built with Ponytail
 
-Personal AI assistant for your TradingView Desktop charts. Connects Claude Code to your locally running TradingView app via Chrome DevTools Protocol for AI-assisted chart analysis, Pine Script development, and workflow automation.
+&lt;a href=&quot;https://theretriever.app&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;assets/retriever-logo-dark.svg&quot;&gt;
+    &lt;img src=&quot;assets/retriever-logo-light.svg&quot; height=&quot;128&quot; alt=&quot;Retriever&quot;&gt;
+  &lt;/picture&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://photoreunion.app/?ref=ponytail-gh&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;assets/photoreunion-logo-dark.svg&quot;&gt;
+    &lt;img src=&quot;assets/photoreunion-logo-light.svg&quot; height=&quot;128&quot; alt=&quot;PhotoReunion&quot;&gt;
+  &lt;/picture&gt;
+&lt;/a&gt;
 
-&gt; [!WARNING]
-&gt; **This tool is not affiliated with, endorsed by, or associated with TradingView Inc.** It interacts with your locally running TradingView Desktop application via Chrome DevTools Protocol. Review the [Disclaimer](#disclaimer) before use.
+---
 
-&gt; [!IMPORTANT]
-&gt; **Requires a valid TradingView subscription.** This tool does not bypass or circumvent any TradingView paywall or access control. It reads from and controls the TradingView Desktop app already running on your machine.
+You know him. Long ponytail. Oval glasses. Has been at the company longer than the version control. You show him fifty lines; he looks at them, says nothing, and replaces them with one.
 
-&gt; [!NOTE]
-&gt; **All data processing occurs locally on your machine.** No TradingView data is transmitted, stored, or redistributed externally by this tool.
+Ponytail puts him inside your AI agent.
 
-&gt; [!CAUTION]
-&gt; This tool accesses undocumented internal TradingView APIs via the Electron debug interface. These can change or break without notice in any TradingView update. Pin your TradingView Desktop version if stability matters to you.
+## Numbers
 
-## How It Works (and why it&#039;s safe to run)
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/v5/chart.png&quot; width=&quot;880&quot; alt=&quot;Share of the no-skill baseline. Lines of code: Ponytail v4.13 52%, Ponytail 5 47%. Output tokens: 57% and 55%. Cost: 84% and 74%. Time: 62% and 59%.&quot;&gt;
+&lt;/p&gt;
 
-This tool does not connect to TradingView&#039;s servers, modify any TradingView files, or intercept any network traffic. It communicates exclusively with your locally running TradingView Desktop instance via Chrome DevTools Protocol (CDP) — a standard debugging interface built into all Chromium/Electron applications by Google, including VS Code, Slack, and Discord.
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/v5/tests.png&quot; width=&quot;880&quot; alt=&quot;Half the code, and yet better: 98% of risky logic ships with a test (no skill 68%); the agent&#039;s own tests catch 66% of injected bugs (no skill 46%).&quot;&gt;
+&lt;/p&gt;
 
-The debug port is disabled by default and must be explicitly enabled by you using a standard Chromium flag (`--remote-debugging-port=9222`). Nothing happens without that deliberate step.
+Two things the chart does not show: in a blind comparison, Ponytail 5&#039;s replies beat the previous Ponytail&#039;s 110 to 67. And on the six security tasks (SQL injection, path traversal, forged tokens, rate limiting, malformed CSV rows, caching) it passed all 30 runs: less code, no less safe. Method, per-task tables and limits: [benchmarks/results/2026-10-07-agentic.md](benchmarks/results/2026-10-07-agentic.md).
 
-## What This Tool Does Not Do
+**The rule was never &quot;fewest tokens.&quot;** It is: write only what the task needs, and never cut validation, error handling, security, or accessibility. The code ends up small because it is necessary, not golfed. Lower cost and latency are a side effect.
 
-- Connect to TradingView&#039;s servers or APIs
-- Store, transmit, or redistribute any market data
-- Work without a valid TradingView subscription and installed Desktop app
-- Bypass any TradingView paywall or access restriction
-- Execute real trades (chart interaction only)
-- Work if TradingView changes their internal Electron structure
+## Before / after
 
-## Research Context
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/v5/beforeafter.png&quot; width=&quot;880&quot; alt=&quot;Add a date picker to the frontend. No skill: 335 lines, a calendar and a date picker built by hand. Ponytail 5: one 10-line file that reuses the repo&#039;s Input with type date, so the browser brings the calendar.&quot;&gt;
+&lt;/p&gt;
 
-This project explores an open research question: **how can LLM-based agents interact with professional trading interfaces to support human decision-making?**
+You ask for a date picker. Without Ponytail, the agent installs a date picker library or builds a whole calendar by hand: 335 lines. Ponytail 5 first looks at what is already there: the repo has an `Input` component, and every browser has a date picker. It puts the two together. 10 lines.
 
-Specifically it investigates:
+More survivors in [examples/](examples/).
 
-- How structured tool APIs (MCP) can bridge LLMs and stateful desktop financial applications
-- What latency, context, and reliability constraints emerge when an agent operates on live chart data
-- How agents handle ambiguous financial UI state (e.g. interpreting Pine Script output, reading indicator tables)
-- Whether natural language is an effective interface for chart navigation and Pine Script development
-- The failure modes of LLM agents operating in real-time data environments
+## The review, rebuilt
 
-This is not a trading bot. It is an interface layer that makes a trading application legible to an LLM agent, allowing researchers and developers to study human-AI collaboration in financial workflows.
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/v5/review.png&quot; width=&quot;880&quot; alt=&quot;The review, rebuilt. A real /ponytail-review finding from the benchmark: the change renamed a field, and an untouched file, src/routes/feed.js, now crashes. Must fix: the Atom feed now crashes on every request, with what this is, the problem, the fix, and what happens if we skip it. 100% of planted problems found, no skill 87%. 100% of problems outside the diff found, no skill 78%.&quot;&gt;
+&lt;/p&gt;
 
-See [RESEARCH.md](RESEARCH.md) for open questions, findings, and related work.
+`/ponytail-review` used to look only for code to cut. Now it reviews like the senior dev who gets paged when it breaks: it reads the code your change touches, not just the diff, and checks bugs, security, real load, missing tests, speed, and what to cut. Each finding says what the code does, what goes wrong, how to fix it, and what happens if you don&#039;t.
 
-## Prerequisites
+## The audit, rebuilt
 
-- **TradingView Desktop app** (paid subscription required for real-time data)
-- **Node.js 18+**
-- **Claude Code** with MCP support (for MCP tools) or any terminal (for CLI)
-- **macOS, Windows, or Linux**
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/v5/audit.png&quot; width=&quot;880&quot; alt=&quot;Your whole repo, ranked. Fix this first. A real /ponytail-audit from the benchmark on a warehouse stock repo: 1 must fix, office batches with 1,200 fail completely; 2 must fix, the import silently skips bad rows; 3 must fix, a mistyped SKU in an office batch is silently ignored; 4 should fix, the risky code paths have no tests; 5 nice to have, the API crashes on a body that isn&#039;t an object. Verdict: fix 1 first.&quot;&gt;
+&lt;/p&gt;
 
-## What It Does
+`/ponytail-audit` runs the same checks on the whole repo. It maps the code first: entry points, how data moves, what load the project expects. Then it ranks what it finds and tells you what to fix first. The old audit only listed what to delete.
 
-Gives your AI assistant eyes and hands on your own chart:
+## New in 5.3: the band
 
-- **Pine Script development** — write, inject, compile, debug, and iterate on scripts with AI assistance
-- **Chart navigation** — change symbols, timeframes, zoom to dates, add/remove indicators
-- **Visual analysis** — read your chart&#039;s indicator values, price levels, and annotations
-- **Draw on charts** — trend lines, horizontal lines, rectangles, text annotations
-- **Manage alerts** — create, list, and delete price alerts
-- **Replay practice** — step through historical bars, practice entries/exits
-- **Screenshots** — capture chart state for AI visual analysis
-- **Multi-pane layouts** — set up 2x2, 3x1, etc. grids with different symbols per pane
-- **Monitor your chart** — stream JSONL from your locally running chart for local monitoring scripts
-- **CLI access** — every MCP tool is also a `tv` CLI command, pipe-friendly with JSON output
-- **Launch TradingView** — auto-detect and launch with debug mode from any platform
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/band/band.png&quot; width=&quot;880&quot; alt=&quot;The ponytail band in Claude Code, above the prompt. Detail mode: cost $23.80, last turn $1.14, average $0.72 per turn; 56.7M tokens, 168k output, 33 turns; agent time 52m 14s; reuse 71%, 5 used, 2 new; tests passed after the last change. Compact mode shows the same in one line.&quot;&gt;
+&lt;/p&gt;
 
-## Install with Claude Code
+In Claude Code, ponytail now shows a band above the prompt: what the current task costs, how many tokens and how much agent time it used, how often it reused existing code instead of writing new code, and whether the tests passed after the last change. Its buttons switch the level, run `/ponytail-review` or `/ponytail-audit`, copy the task as Markdown, and fold the band into one line. Don&#039;t want it? `/ponytail band` hides it, the same command brings it back. Needs Claude Code 2.1.290 or later, in the terminal or the desktop app. It does not show in the VS Code chat panel, cloud sessions or `claude -p`.
 
-Paste this into Claude Code and it will handle the rest:
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/band/board.png&quot; width=&quot;880&quot; alt=&quot;The ponytail board, a local page: 61 sessions, 20h 13m agent time, $285.30 and 492.5M tokens in the last 30 days; agent time per project over time; the latest sessions with their tests; active days and streak.&quot;&gt;
+&lt;/p&gt;
 
-&gt; Install the TradingView MCP server. Clone https://github.com/tradesdontlie/tradingview-mcp.git, run npm install, add it to my MCP config at ~/.claude/.mcp.json, and launch TradingView with the debug port. Then verify the connection with tv_health_check.
+**Board** opens a local page with every task across your projects: cost, agent time and tokens over time, every session with its tests, and the days you worked. By default, everything stays on your machine, in `~/.config/ponytail/band/`. `/ponytail band import` adds your past Claude Code sessions to it, with their cost, agent time and tokens.
 
-Or follow the manual steps below.
+## How it works
 
-## Quick Start
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;assets/v5/ladder.png&quot; width=&quot;880&quot; alt=&quot;Before writing code, stop at the first rung that holds: 1 does this need to exist, 2 already in this codebase, 3 does the standard library do it, 4 a native platform feature, 5 an installed dependency, 6 can it be one line, 7 only then the minimum that works, plus one small test if it has logic.&quot;&gt;
+&lt;/p&gt;
 
-### 1. Install
+The ladder runs *after* it understands the problem, not instead of it: it reads the code the change touches and traces the real flow before picking a rung. Lazy about the solution, never about reading.
+
+Lazy, not negligent: trust-boundary validation, data-loss handling, security, and accessibility are never on the chopping block.
+
+Logic with a branch, a loop, a parser, money or security leaves one small test behind. Every reply ends with what was skipped or not checked and any risk you should know.
+
+## The prompt
+
+Ponytail is one prompt: [`skills/ponytail/SKILL.md`](skills/ponytail/SKILL.md). The compact version, for agents that read a rules file, is [`AGENTS.md`](AGENTS.md). Everything else in this repo loads that prompt into different agents.
+
+## Install
+
+**Claude Code**, as two separate prompts:
+
+```
+/plugin marketplace add DietrichGebert/ponytail
+```
+```
+/plugin install ponytail@ponytail
+```
+
+**Codex:**
 
 ```bash
-git clone https://github.com/tradesdontlie/tradingview-mcp.git
-cd tradingview-mcp
-npm install
+codex plugin marketplace add DietrichGebert/ponytail
+codex plugin add ponytail@ponytail
 ```
 
-### 2. Launch TradingView with CDP
+Then open `/hooks` in Codex, trust its two lifecycle hooks, and start a new thread.
 
-TradingView Desktop must be running with Chrome DevTools Protocol enabled on port 9222.
+**Any other agent:** copy [`AGENTS.md`](AGENTS.md) into your project, or ask your agent to install [`skills/ponytail/SKILL.md`](skills/ponytail/SKILL.md) as a skill. Step by step for Copilot, Cursor, OpenCode, Gemini and the rest: **[INSTALL.md](INSTALL.md)**.
 
-**Mac:**
-```bash
-./scripts/launch_tv_debug_mac.sh
-```
+That was it. He&#039;d be proud. He won&#039;t say it.
 
-**Windows:**
-```bash
-scripts\launch_tv_debug.bat
-```
+Active every session, with a handful of commands (see [Commands](#commands)). `/ponytail ultra` exists for when the codebase has wronged you personally. Startup and mode-change text shows the current mode.
 
-**Linux:**
-```bash
-./scripts/launch_tv_debug_linux.sh
-```
+Only install ponytail from `DietrichGebert/ponytail` on GitHub or `@dietrichgebert/ponytail` on npm. It never ships `.exe` or `.dll` files; a copy that does is not mine.
 
-**Or launch manually on any platform:**
-```bash
-/path/to/TradingView --remote-debugging-port=9222
-```
+## Commands
 
-**Or use the MCP tool** (auto-detects your install):
-&gt; &quot;Use tv_launch to start TradingView in debug mode&quot;
+| Command | What it does |
+|---------|--------------|
+| `/ponytail [lite \| full \| ultra \| off]` | Set the intensity, or turn it off. No argument switches ponytail on at the default level if it is off, and otherwise reports the current level. |
+| `/ponytail band [on \| off]` | Claude Code only: hide or show the band above the prompt. No argument switches it. The level stays. |
+| `/ponytail band import` | Claude Code only: add your past Claude Code sessions to the board, with their cost, agent time and tokens. |
+| `/ponytail-review` | Review the current diff like the senior dev who gets paged when it breaks: bugs, security, real load, risky code without a test, slow paths, and what to cut. Each finding says what the code does, what goes wrong, how to fix it, and what happens if you don&#039;t. Name a target in plain words to narrow or widen it: `uncommitted`, `staged`, `branch`, or a PR link. |
+| `/ponytail-audit` | The same check for the whole repo, most important first. |
+| `/ponytail-debt` | Harvest the `shortcut:` comments you&#039;ve deferred into a ledger, so &quot;later&quot; doesn&#039;t become &quot;never&quot;. |
+| `/ponytail-gain` | Show the measured impact scoreboard (less code, less cost, more speed) from the benchmark. |
+| `/ponytail-help` | Quick reference for the commands above. |
 
-### 3. Add to Claude Code
+Commands need a skill-capable host (Claude Code, Codex, Devin CLI, OpenCode, Gemini, Antigravity CLI, pi, Hermes Agent, Qoder, Grok Build). In Codex CLI and the IDE extension they&#039;re skills under the plugin&#039;s namespace; invoke with `$ponytail:ponytail-review`. Cursor with the [hooks](INSTALL.md#cursor) gets `/ponytail` level switching only, typed as a plain message. The instruction-only adapters (Cursor&#039;s rule file, Windsurf, Cline, Copilot, Kiro, Antigravity&#039;s `AGENTS.md` fallback) load the always-on ruleset without the commands.
 
-Add to your Claude Code MCP config (`~/.claude/.mcp.json` or project `.mcp.json`):
+## FAQ
 
-```json
-{
-  &quot;mcpServers&quot;: {
-    &quot;tradingview&quot;: {
-      &quot;command&quot;: &quot;node&quot;,
-      &quot;args&quot;: [&quot;/path/to/tradingview-mcp/src/server.js&quot;]
-    }
-  }
-}
-```
+**Does it need a config file?**
+No. An optional `~/.config/ponytail/config.json` or `PONYTAIL_DEFAULT_MODE` env var can set the default level, but nothing is required.
 
-Replace `/path/to/tradingview-mcp` with your actual path.
+**Why does it write `shortcut:` comments?**
+They mark a deliberate shortcut and when to revisit it, and `/ponytail-debt` collects them into a ledger. Want another word, or none? Say so in your project&#039;s `CLAUDE.md` or `AGENTS.md`, then run `/ponytail-debt &lt;your word&gt;`.
 
-### 4. Verify
+**What if I really need the 120-line cache class?**
+You don&#039;t. Insist anyway and he&#039;ll build it. Slowly. Correctly. While looking at you.
 
-Ask Claude: *&quot;Use tv_health_check to verify TradingView is connected&quot;*
+**Does it scale?**
+The code you never wrote scales infinitely. Zero bugs, zero CVEs, 100% uptime since forever.
 
-## CLI
+**Why &quot;ponytail&quot;?**
+You know exactly why.
 
-Every MCP tool is also accessible as a `tv` CLI command. All output is JSON for piping with `jq`.
+## Sponsors
 
-```bash
-# Install globally (optional)
-npm link
-
-# Or run directly
-node src/cli/index.js &lt;command&gt;
-```
-
-### Quick Examples
-
-```bash
-tv status                          # check connection
-tv quote                           # current price
-tv symbol AAPL                     # change symbol
-tv ohlcv --summary                 # price summary
-tv screenshot -r chart             # capture chart
-tv pine compile                    # compile Pine Script
-tv pane layout 2x2                 # 4-chart grid
-tv pane symbol 1 ES1!              # set pane symbol
-tv stream quote | jq &#039;.close&#039;      # monitor price changes
-```
-
-### All Commands
-
-```
-tv status / launch / state / symbol / timeframe / type / info / search
-tv quote / ohlcv / values
-tv data lines/labels/tables/boxes/strategy/trades/equity/depth/indicator
-tv pine get/set/compile/analyze/check/save/new/open/list/errors/console
-tv draw shape/list/get/remove/clear
-tv alert list/create/delete
-tv watchlist get/add
-tv indicator add/remove/toggle/set/get
-tv layout list/switch
-tv pane list/layout/focus/symbol
-tv tab list/new/close/switch
-tv replay start/step/stop/status/autoplay/trade
-tv stream quote/bars/values/lines/labels/tables/all
-tv ui click/keyboard/hover/scroll/find/eval/type/panel/fullscreen/mouse
-tv screenshot / discover / ui-state / range / scroll
-```
-
-## Streaming
-
-The `tv stream` commands poll your locally running TradingView Desktop instance at regular intervals via Chrome DevTools Protocol on localhost.
-
-No connection is made to TradingView&#039;s servers. All data stays on your machine.
-
-&gt; [!WARNING]
-&gt; Programmatic consumption of TradingView data may conflict with their Terms of Use regardless of the data source. You are solely responsible for ensuring your usage complies.
-
-```bash
-tv stream quote                          # price tick monitoring
-tv stream bars                           # bar-by-bar updates
-tv stream values                         # indicator value monitoring
-tv stream lines --filter &quot;NY Levels&quot;     # price level monitoring
-tv stream tables --filter Profiler       # table data monitoring
-tv stream all                            # all panes at once (multi-symbol)
-```
-
-## How Claude Knows Which Tool to Use
-
-Claude reads [`CLAUDE.md`](CLAUDE.md) automatically when working in this project. It contains a complete decision tree:
-
-| You say... | Claude uses... |
-|------------|---------------|
-| &quot;What&#039;s on my chart?&quot; | `chart_get_state` → `data_get_study_values` → `quote_get` |
-| &quot;What levels are showing?&quot; | `data_get_pine_lines` → `data_get_pine_labels` |
-| &quot;Read the session table&quot; | `data_get_pine_tables` with `study_filter` |
-| &quot;Give me a full analysis&quot; | `quote_get` → `data_get_study_values` → `data_get_pine_lines` → `data_get_pine_labels` → `data_get_pine_tables` → `data_get_ohlcv` (summary) → `capture_screenshot` |
-| &quot;Switch to AAPL daily&quot; | `chart_set_symbol` → `chart_set_timeframe` |
-| &quot;Write a Pine Script for...&quot; | `pine_set_source` → `pine_smart_compile` → `pine_get_errors` |
-| &quot;Start replay at March 1st&quot; | `replay_start` → `replay_step` → `replay_trade` |
-| &quot;Set up a 4-chart grid&quot; | `pane_set_layout` → `pane_set_symbol` for each pane |
-| &quot;Draw a level at 24500&quot; | `draw_shape` (horizontal_line) |
-| &quot;Take a screenshot&quot; | `capture_screenshot` |
-
-## Tool Reference (78 MCP tools)
-
-### Chart Reading
-
-| Tool | When to use | Output size |
-|------|------------|-------------|
-| `chart_get_state` | First call — get symbol, timeframe, all indicator names + IDs | ~500B |
-| `data_get_study_values` | Read current RSI, MACD, BB, EMA values from all indicators | ~500B |
-| `quote_get` | Get latest price, OHLC, volume | ~200B |
-| `data_get_ohlcv` | Get price bars. **Use `summary: true`** for compact stats | 500B (summary) / 8KB (100 bars) |
-
-### Custom Indicator Data (Pine Drawings)
-
-Read `line.new()`, `label.new()`, `table.new()`, `box.new()` output from any visible Pine indicator.
-
-| Tool | When to use | Output size |
-|------|------------|-------------|
-| `data_get_pine_lines` | Read horizontal price levels (support/resistance, session levels) | ~1-3KB |
-| `data_get_pine_labels` | Read text annotations + prices (&quot;PDH 24550&quot;, &quot;Bias Long&quot;) | ~2-5KB |
-| `data_get_pine_tables` | Read data tables (session stats, analytics dashboards) | ~1-4KB |
-| `data_get_pine_boxes` | Read price zones / ranges as {high, low} pairs | ~1-2KB |
-
-**Always use `study_filter`** to target a specific indicator: `study_filter: &quot;Profiler&quot;`.
-
-### Chart Control
-
-| Tool | What it does |
-|------|-------------|
-| `chart_set_symbol` | Change ticker (BTCUSD, AAPL, ES1!, NYMEX:CL1!) |
-| `chart_set_timeframe` | Change resolution (1, 5, 15, 60, D, W, M) |
-| `chart_set_type` | Change style (Candles, HeikinAshi, Line, Area, Renko) |
-| `chart_manage_indicator` | Add/remove indicators. **Use full names**: &quot;Relative Strength Index&quot; not &quot;RSI&quot; |
-| `chart_scroll_to_date` | Jump to a date (ISO: &quot;2025-01-15&quot;) |
-| `chart_set_visible_range` | Zoom to exact range (unix timestamps) |
-| `symbol_info` / `symbol_search` | Symbol metadata and search |
-| `indicator_set_inputs` / `indicator_toggle_visibility` | Change indicator settings, show/hide |
-
-### Multi-Pane Layouts
-
-| Tool | What it does |
-|------|-------------|
-| `pane_list` | List all panes with symbols and active state |
-| `pane_set_layout` | Change grid: `s`, `2h`, `2v`, `2x2`, `4`, `6`, `8` |
-| `pane_focus` | Focus a specific pane by index |
-| `pane_set_symbol` | Set symbol on any pane |
-
-### Tab Management
-
-| Tool | What it does |
-|------|-------------|
-| `tab_list` | List open chart tabs |
-| `tab_new` / `tab_close` | Open/close tabs |
-| `tab_switch` | Switch to a tab by index |
-
-### Pine Script Development
-
-| Tool | Step |
-|------|------|
-| `pine_set_source` | 1. Inject code into editor |
-| `pine_smart_compile` | 2. Compile with auto-detection + error check |
-| `pine_get_errors` | 3. Read compilation errors if any |
-| `pine_get_console` | 4. Read log.info() output |
-| `pine_save` | 5. Save to TradingView cloud |
-| `pine_get_source` | Read current script (**warning: can be 200KB+ for complex scripts**) |
-| `pine_new` | Create blank indicator/strategy/library |
-| `pine_open` / `pine_list_scripts` | Open or list saved scripts |
-| `pine_analyze` | Offline static analysis (no chart needed) |
-| `pine_check` | Server-side compile check (no chart needed) |
-
-### Replay Mode
-
-| Tool | Step |
-|------|------|
-| `replay_start` | Enter replay at a date |
-| `replay_step` | Advance one bar |
-| `replay_autoplay` | Auto-advance (set speed in ms) |
-| `replay_trade` | Buy/sell/close positions |
-| `replay_status` | Check position, P&amp;L, date |
-| `replay_stop` | Return to realtime |
-
-### Drawing, Alerts, UI Automation
-
-| Tool | What it does |
-|------|-------------|
-| `draw_shape` | Draw horizontal_line, trend_line, rectangle, text |
-| `draw_list` / `draw_remove_one` / `draw_clear` | Manage drawings |
-| `alert_create` / `alert_list` / `alert_delete` | Manage price alerts |
-| `capture_screenshot` | Screenshot (regions: full, chart, strategy_tester) |
-| `batch_run` | Run action across multiple symbols/timeframes |
-| `watchlist_get` / `watchlist_add` | Read/modify watchlist |
-| `layout_list` / `layout_switch` | Manage saved layouts |
-| `ui_open_panel` / `ui_click` / `ui_evaluate` | UI automation |
-| `tv_launch` / `tv_health_check` / `tv_discover` | Connection management |
-
-## Context Management
-
-Tools return compact output by default to minimize context usage. For a typical &quot;analyze my chart&quot; workflow, total context is ~5-10KB instead of ~80KB.
-
-| Feature | How it saves context |
-|---------|---------------------|
-| Pine lines | Returns deduplicated price levels only, not every line object |
-| Pine labels | Capped at 50 per study, text+price only |
-| Pine tables | Pre-formatted row strings, no cell metadata |
-| Pine boxes | Deduplicated {high, low} zones only |
-| OHLCV summary mode | Stats + last 5 bars instead of all bars |
-| Indicator inputs | Encrypted/encoded blobs auto-filtered |
-| `verbose: true` | Pass on any pine tool to get raw data with IDs/colors when needed |
-| `study_filter` | Target one indicator instead of scanning all |
-
-## Finding TradingView on Your System
-
-Launch scripts and `tv_launch` auto-detect TradingView. If auto-detection fails:
-
-| Platform | Common Locations |
-|----------|-----------------|
-| **Mac** | `/Applications/TradingView.app/Contents/MacOS/TradingView` |
-| **Windows** | `%LOCALAPPDATA%\TradingView\TradingView.exe`, `%PROGRAMFILES%\WindowsApps\TradingView*\TradingView.exe` |
-| **Linux** | `/opt/TradingView/tradingview`, `~/.local/share/TradingView/TradingView`, `/snap/tradingview/current/tradingview` |
-
-The key flag: `--remote-debugging-port=9222`
-
-## Testing
-
-```bash
-# Requires TradingView running with --remote-debugging-port=9222
-npm test
-```
-
-29 tests covering: Pine Script static analysis, server-side compilation, and CLI routing.
-
-## Architecture
-
-```
-Claude Code  ←→  MCP Server (stdio)  ←→  CDP (port 9222)  ←→  TradingView Desktop (Electron)
-```
-
-- **Transport**: MCP over stdio (84 tools) + CLI (`tv` command, 30 commands with 66 subcommands)
-- **Connection**: Chrome DevTools Protocol on localhost:9222
-- **Streaming**: Poll-and-diff loop with deduplication, JSONL output to stdout
-- **No dependencies** beyond `@modelcontextprotocol/sdk` and `chrome-remote-interface`
-
-## Attributions
-
-This project is not affiliated with, endorsed by, or associated with:
-- **TradingView Inc.** — TradingView is a trademark of TradingView Inc.
-- **Anthropic** — Claude and Claude Code are trademarks of Anthropic, PBC.
-
-This tool is an independent MCP server that connects to Claude Code via the standard MCP protocol. It does not contain or modify any Anthropic software.
-
-## Disclaimer
-
-This project is provided **for personal, educational, and research purposes only**.
-
-**How this tool works:** This tool uses Chrome DevTools Protocol (CDP), the standard debugging interface built into Chromium-based applications. It does not reverse engineer any proprietary TradingView protocol, connect to TradingView&#039;s servers, or bypass any access controls. The debug port must be explicitly enabled by the user via a standard Chromium command-line flag (`--remote-debugging-port=9222`).
-
-By using this software, you acknowledge and agree that:
-
-1. **You are solely responsible** for ensuring your use of this tool complies with [TradingView&#039;s Terms of Use](https://www.tradingview.com/policies/) and all applicable laws.
-2. TradingView&#039;s Terms of Use **restrict automated data collection, scraping, and non-display usage** of their platform and data. This tool uses Chrome DevTools Protocol to programmatically interact with the TradingView Desktop app, which may conflict with those terms.
-3. **You assume all risk** associated with using this tool. The authors are not responsible for any account bans, suspensions, legal actions, or other consequences resulting from its use.
-4. This tool **must not be used** for, including but not limited to:
-   - Redistributing, reselling, or commercially exploiting TradingView&#039;s market data
-   - Circumventing TradingView&#039;s access controls or subscription restrictions
-   - Performing automated trading or algorithmic decision-making using extracted data
-   - Violating the intellectual property rights of Pine Script indicator authors
-   - Connecting to TradingView&#039;s servers or infrastructure (all access is via the locally running Desktop app)
-5. The streaming functionality monitors your locally running TradingView Desktop instance only. It does not connect to TradingView&#039;s servers or extract data from TradingView&#039;s infrastructure.
-6. Market data accessed through this tool remains subject to exchange and data provider licensing terms. **Do not redistribute, store, or commercially exploit any data obtained through this tool.**
-7. This tool accesses internal, undocumented TradingView application interfaces that may change or break at any time without notice.
-
-**Use at your own risk.** If you are unsure whether your intended use complies with TradingView&#039;s terms, do not use this tool.
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://greenpt.com/&quot;&gt;
+    &lt;picture&gt;
+      &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;assets/logo-greenpt-dark.svg&quot;&gt;
+      &lt;img src=&quot;assets/logo-greenpt.svg&quot; width=&quot;260&quot; alt=&quot;GreenPT&quot;&gt;
+    &lt;/picture&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
 
 ## License
 
-MIT — see [LICENSE](LICENSE) for details.
+[MIT](LICENSE). The shortest license that works.
 
-The MIT license applies to the source code of this project only. It does not grant any rights to TradingView&#039;s software, data, trademarks, or intellectual property.
+## Star History
+
+&lt;a href=&quot;https://www.star-history.com/dietrichgebert/ponytail#history&quot;&gt;
+ &lt;picture&gt;
+   &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/chart?repos=DietrichGebert/ponytail&amp;type=Date&amp;theme=dark&quot; /&gt;
+   &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/chart?repos=DietrichGebert/ponytail&amp;type=Date&quot; /&gt;
+   &lt;img alt=&quot;Star History Chart&quot; src=&quot;https://api.star-history.com/chart?repos=DietrichGebert/ponytail&amp;type=Date&quot; /&gt;
+ &lt;/picture&gt;
+&lt;/a&gt;
 </pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
         <item>
-            <title><![CDATA[is-a-dev/register]]></title>
-            <link>https://github.com/is-a-dev/register</link>
-            <guid>https://github.com/is-a-dev/register</guid>
-            <pubDate>Tue, 10 Nov 2026 00:03:48 GMT</pubDate>
-            <description><![CDATA[Grab your own sweet-looking '.is-a.dev' subdomain.]]></description>
+            <title><![CDATA[bilawalsidhu/gods-eye-view]]></title>
+            <link>https://github.com/bilawalsidhu/gods-eye-view</link>
+            <guid>https://github.com/bilawalsidhu/gods-eye-view</guid>
+            <pubDate>Wed, 11 Nov 2026 00:03:49 GMT</pubDate>
+            <description><![CDATA[A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/is-a-dev/register">is-a-dev/register</a></h1>
-            <p>Grab your own sweet-looking '.is-a.dev' subdomain.</p>
+            <h1><a href="https://github.com/bilawalsidhu/gods-eye-view">bilawalsidhu/gods-eye-view</a></h1>
+            <p>A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.</p>
             <p>Language: JavaScript</p>
-            <p>Stars: 11,780</p>
-            <p>Forks: 34,749</p>
-            <p>Stars today: 12 stars today</p>
+            <p>Stars: 64,149</p>
+            <p>Forks: 12,642</p>
+            <p>Stars today: 254 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+
+# 🌐 God&#039;s Eye View
+
+[![CI](https://github.com/bilawalsidhu/gods-eye-view/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bilawalsidhu/gods-eye-view/actions/workflows/ci.yml) [![Reached #1 on GitHub Trending](https://img.shields.io/badge/%231_GitHub_Trending-thank_you!-F0A63C?style=flat-square&amp;logo=github)](https://x.com/bilawalsidhu/status/2093798887815348521)
+
+### A spy-satellite simulator in your browser — then you realize the sources are public and the data is real.
+
+Photorealistic 3D globe. Live aircraft, ships, satellites, earthquakes, traffic, and public cameras. Hands-free voice control powered by a realtime AI agent.
+
+_No place left behind._
+
+![Orbital HUD, a tracked live globe, FLIR terrain — then OPEN SOURCED](docs/media/hero-open-source-reveal.gif)
+
+&lt;a href=&quot;https://www.youtube.com/@bilawalsidhu&quot;&gt;
+  &lt;img src=&quot;docs/media/youtube-popular-videos.png&quot; alt=&quot;The God&#039;s Eye View video series on YouTube&quot; width=&quot;100%&quot;&gt;
+&lt;/a&gt;
+
+▶️ **From the project behind the viral God&#039;s Eye View series** _(formerly WorldView)_ — [5M+ on YouTube](https://youtube.com/playlist?list=PL6qSg2I-7_koPbDnSMo0QeeHX_RknA2uv&amp;si=nBGYMoHWQw41v93Q) · [25M+ across socials](https://www.google.com/search?q=god%27s+eye+view)
+
+🏆 **Reached #1 on GitHub Trending, daily and weekly · August 2026**
+
+**[#8 Product of the Day](https://www.producthunt.com/products/god-s-eye-view?launch=god-s-eye-view)** · Hunted by Chris Messina, creator of the hashtag
+
+_“pretty cool”_ — [Brendan Eich](https://x.com/BrendanEich/status/2094592096401490266), creator of JavaScript and co-founder of Mozilla and Brave · Featured on **[Pinokio](https://pinokio.co/posts/01m1m4p9xxm3qw7dnnpj2wr93g)**
+
+⚡ **Start without API keys.** Install with [Pinokio](https://pinokio.co/apps/github-com-bilawalsidhu-gods-eye-view) or run locally from the terminal. Add optional keys inside the app. **[→ Quick Start](#-quick-start)**
+
+&lt;/div&gt;
+
+---
+
+&lt;div align=&quot;center&quot;&gt;
+
+**[Quick Start](#-quick-start) · [First Five Minutes](#-the-first-five-minutes) · [Talk to It](#-talk-to-it) · [What&#039;s Live](#-whats-on-the-globe) · [Under the Hood](#-under-the-hood) · [Keys &amp; Costs](#-api-keys) · [Contributing](CONTRIBUTING.md)**
+
+&lt;/div&gt;
+
+---
+
+## 🌍 Why This Exists
+
+God&#039;s Eye View brings public signals into one explorable globe. Track the world live. Talk to it. Break it. Extend it.
+
+Flight transponders, ship beacons, orbital elements, seismographs, and public cameras already tell us a lot about the world. God&#039;s Eye View puts them in the same place, so you can move between a global picture and an individual aircraft, ship, or street. It runs locally in your browser, with source code you can inspect and extend.
+
+&gt; Half the magic is that it looks like a forbidden cockpit. The other half is that every line of code is inspectable.
+
+Most feeds are live or regularly refreshed. Traffic is simulated along real
+roads using aggregate location data. CCTV camera poses and rocket launch
+trajectories are coarse estimates.
+
+Start with the included data sources, then add your own. Each layer is a separate module.
+
+---
+
+## 🎛️ What This Thing Does
+
+- **🛩️ Cockpit view:** Ride inside a tracked flight — the camera holds the terrain under you all the way down.
+- **📡 Contacts:** A 250 km roster of everything near your target — step through live aircraft and drop into any cockpit.
+- **🎯 Click-to-track anything:** Camera locks on, draws a fading trail, surfaces full metadata — and a tracked fire or vessel hands you off to the nearest live camera in one click.
+- **🖊️ Voice whiteboard:** Speak annotations onto the world — real boundary polygons, marks, and routes.
+- **🛫 3D hangar:** Real per-class aircraft models — 787, ATR-72, Citation, Bell 206, MQ-9 — and a tracked contact swaps from glyph to 3D model as you close in.
+- **🎨 Reskin reality:** GLSL sensor looks over the normal globe — CRT, NVG, FLIR/thermal, Noir.
+- **🟩 Detection overlay:** Screen-space bounding boxes and IDs on everything in view.
+- **🎖️ Military HUD:** Tactical heads-up display with intelligence-style telemetry.
+- **🌐 Global Context:** Stage the full situational picture with one switch — and get your exact view back when you leave.
+- **🎥 Scene director:** Capture cinematic camera tours for clips and demos.
+- **🔗 Share Links:** Camera, style, layers, and even one tracked target serialize into a URL — a live target is a handoff, not a bookmark.
+- **🏠 Reset Globe:** One control — or one sentence — back to the full Earth.
+- **🌦️ Weather:** Animate GFS or ECMWF forecast wind, replay observed radar, satellite clouds and lightning on one timeline, and follow NHC/CPHC cyclone tracks. No key needed.
+- **📷 Mapped ALPR cameras:** License-plate-reader camera locations tagged in OpenStreetMap, one city at a time. Locations and tags only; no key needed.
+- **🔭 Satellite passes:** Ask by voice when any loaded satellite next rises over you: rise, peak and set times, and whether you can see it.
+- **🔎 Analyst answers:** Count, filter and rank satellites, datacenters and dams by voice, alongside flights, ships, fires and quakes; answers say when a feed is stale or on a fallback.
+- **🧭 Tilt and North Up:** Switch between straight-down and a 35° oblique, or put north at the top, while a tracked target stays centered.
+- **🔍 Keyless search:** Type decimal coordinates, a two-dimensional WGS84 `geo:` URI (for example, `geo:39.7392,-104.9903`), or a bundled city or landmark to fly there with no geocoder request; other names use Google when configured, then Photon and Nominatim.
+- **📦 Shareable scenes:** Import, preview and share Director scenes as files or bundles, with camera anchors, authored moves and data packs.
+- **🌊 Nepal flood scene:** Replay the Bhote Koshi flood: flood path, witness sources and before-and-after imagery (bundled data is non-commercial; see [DATA_SOURCES.md](DATA_SOURCES.md)).
+
+---
+
+&lt;div align=&quot;center&quot;&gt;
+
+[![YouTube video about the God&#039;s Eye View open source release](https://img.youtube.com/vi/GRJaKcXZS94/maxresdefault.jpg)](https://www.youtube.com/watch?v=GRJaKcXZS94)
+
+▶️ **[The full walkthrough of everything below, on YouTube](https://www.youtube.com/watch?v=GRJaKcXZS94)**
+
+&lt;/div&gt;
+
+## ⚡ Quick Start
+
+**Local setup needs no account or API keys.** The app opens with
+Esri satellite imagery and keyless terrain. OSM is the fallback if Esri is
+unreachable. Flights, military traffic, satellites, earthquakes, public
+cameras, radio, and launches are available without keys.
+
+For photorealistic 3D, add a **Cesium ion token** for eligible personal,
+non-commercial use, or a **Google Maps key** for the direct, metered route and
+Google place search. Provider terms and quotas apply. Add keys through the
+app&#039;s **POWER UP** panel; [Keys &amp; Costs](#-api-keys) explains the options.
+
+&gt; **Already installed?** Update to the latest version. Older versions query
+&gt; public OpenStreetMap Overpass servers, which now refuse them, so Traffic,
+&gt; Mapped Installations and ALPR stay empty until you update.
+
+### Path 1 — One click, no terminal
+
+1. Install or update [Pinokio](https://desktop.pinokio.co/) to **8.2 or later**.
+2. Open [God&#039;s Eye View in Pinokio](https://pinokio.co/apps/github-com-bilawalsidhu-gods-eye-view).
+3. Click **Install**, then **Start**.
+
+Available on **Windows, macOS, and Linux**. The Pinokio maintainer reports
+cross-platform testing of the fixed installer. The launcher installs the
+locked dependencies, finds a free local port, and opens the app in your system
+browser. The Server menu item keeps the launcher console available.
+
+**Tried before and installation failed?** Update Pinokio and try again.
+Version 8.2 fixes the launcher installation issue;
+[details from the Pinokio maintainer](https://pinokio.co/posts/01m1m4p9xxm3qw7dnnpj2wr93g).
+
+**Using an older launcher or opening the embedded view manually?** If the globe
+is very choppy, before treating that as a GPU
+compatibility or minimum-hardware problem, copy the local server URL shown by
+Pinokio and open the same URL in your normal hardware-accelerated browser. One
+Pinokio 8.2.0 user reported severe stutter in Pinokio&#039;s embedded view that went
+away when the same running server was opened in an external browser ([#365](https://github.com/bilawalsidhu/gods-eye-view/issues/365)).
+That points to the embedded browser rather than the app server or your
+hardware; it does not establish a minimum GPU requirement.
+
+### Path 2 — Terminal / coding agent
+
+Use **Node.js 24.x (24.14.0 or later) or 26.x**; 24.22.1 or later (26.12.1 or
+later on 26) includes the October 21, 2026 security fixes, among them
+CVE-2026-111497. The setup doctor warns about Node 25, which is end-of-life.
+
+```bash
+git clone https://github.com/bilawalsidhu/gods-eye-view.git
+cd gods-eye-view
+npm ci
+npm run doctor
+npm run dev
+```
+
+Open **`http://localhost:4173`**. Choose **Live Contacts**, **Space Missions**,
+**Environmental**, or **Explore Manually** from the first-run panel.
+
+&lt;details&gt;
+&lt;summary&gt;Startup performance&lt;/summary&gt;
+
+A point-in-time M5/Chrome capture measured a median 1.86-second cold start.
+This is a comparison baseline, not a guarantee for your machine or connection.
+See [docs/PERFORMANCE.md](docs/PERFORMANCE.md).
+
+&lt;/details&gt;
+
+**macOS shortcut:** `./scripts/dev-fresh.sh` clears the Vite cache and pulls any
+configured keys straight from the Keychain. It starts keyless too.
+
+### Path 3 — Docker
+
+No Node install needed; the container publishes the same dev server.
+
+```bash
+git clone https://github.com/bilawalsidhu/gods-eye-view.git
+cd gods-eye-view
+docker compose up
+```
+
+Open **`http://localhost:4173`** as above. Everything the app saves stays in the folder you cloned, so `docker compose down` never loses anything:
+
+- `.env` - your API keys, whether saved from Provider Settings or typed in by hand
+- `.gev-cache/` - downloaded map and satellite data, so later starts are faster
+- `.gev-logs/` - logs
+
+Back up that folder and you&#039;ve backed up everything; delete `.env` to forget your keys. Source edits still hot-reload. The port is published to `127.0.0.1` only, so the default matches the native one.
+
+The local MCP server and ChatGPT OAuth voice are not available under Docker; use an OpenAI API key for voice.
+
+Publishing it wider is the [Sharing an instance](#-sharing-an-instance) opt-in, and it hands out **Provider Settings** too: the launcher trusts the container gateway as this machine, and a wider publish delivers everyone else from that same address. For an instance you mean to share, put the keys in `.env` by hand instead. [SECURITY.md](SECURITY.md) has the detail.
+
+When you widen the publish, also set `GEV_KEY_SETUP_TRUSTED_PEERS=none` so the launcher trusts no gateway address.
+
+```bash
+GEV_KEY_SETUP_TRUSTED_PEERS=none docker compose up
+```
+
+Compose forwards `GEV_KEY_SETUP_TRUSTED_PEERS` and `GEV_ALLOWED_HOSTS` from your
+shell or the project&#039;s `.env`; an exported shell value takes precedence. You can
+also put `GEV_KEY_SETUP_TRUSTED_PEERS=none` in `.env` for a persistent setting.
+Unset or blank trusted peers retain automatic gateway discovery; `none` explicitly
+disables it. The startup log confirms that no additional peers are trusted.
+
+&lt;details&gt;
+&lt;summary&gt;Running on Linux, a NAS, or behind a reverse proxy&lt;/summary&gt;
+
+Run it as the user who should own the files it writes. `id` shows the numbers; for yourself on Linux:
+
+```bash
+env UID=$(id -u) GID=$(id -g) docker compose up
+```
+
+On a NAS, clone onto the share you want the data on and use the share owner&#039;s ids:
+
+```bash
+cd /volume1/docker
+git clone https://github.com/bilawalsidhu/gods-eye-view.git
+cd gods-eye-view
+env UID=1026 GID=100 docker compose up -d
+```
+
+Keep the `env`: bash treats `UID` as read-only, so a plain `UID=1026` in front of a command is silently ignored. If the container can&#039;t write the checkout, it says so at start. Docker Desktop on macOS and Windows maps ownership for you.
+
+On SELinux hosts (Fedora, RHEL), compose mounts the checkout with `:z` so the container may read it; Docker may relabel the checkout for container access, which can take a moment on a large checkout. Without that, the start fails with `Cannot find module &#039;/app/scripts/docker-start.mjs&#039;`.
+
+Behind a reverse proxy, put your keys in `.env` or pass them as environment variables - Provider Settings and the News layer refuse proxied requests on purpose - and add the hostname you serve it on, for example `GEV_ALLOWED_HOSTS=globe.example.lan` (see [Sharing an instance](#-sharing-an-instance)). The map routes compare the browser&#039;s `Origin` with the `Host` the server sees, so the proxy must pass the original `Host` and, when it terminates TLS, `X-Forwarded-Proto`. Caddy does both by default; for nginx add `proxy_set_header Host $http_host;`, `proxy_set_header X-Forwarded-Proto $scheme;` and `proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;`. On an install outside Docker, that forwarding header also rate-limits the proxy&#039;s users apart from your own browser. Under the default Docker bridge network every client on the host, your browser included, reaches the container from its gateway address and shares one Overpass bucket.
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;IPv6-only networks, rebuilding, and the test suites&lt;/summary&gt;
+
+The launcher reads the IPv4 default gateway, so an IPv6-only Docker network
+finds none: it logs `No default gateway; Provider Settings stays loopback-only`
+and the panel refuses every save. Put your keys in `.env` by hand there, or name
+the gateway yourself with `GEV_KEY_SETUP_TRUSTED_PEERS` after reading
+[SECURITY.md](SECURITY.md).
+
+`node_modules` deliberately stays inside the image, so it survives in an
+anonymous volume across restarts: after a `git pull` that changes dependencies,
+recreate it with `docker compose down -v &amp;&amp; docker compose up --build`. The
+image also skips Puppeteer&#039;s Chromium download, which keeps it small but leaves
+`npm run test:track` to the host — `npm run build` and `npm test` run fine in
+the container.
+
+&lt;/details&gt;
+
+### Path 4 — GitHub Codespaces (cloud, no local install)
+
+Codespaces requires a GitHub account. Overpass queries, the News layer and OpenAI
+voice token requests return HTTP 403 through its forwarded HTTPS URL, even with API keys
+in `.env` and `GEV_ALLOWED_HOSTS` configured. Use a local setup for these features.
+
+The codespace runs the dev server in a cloud workspace, so Node and the dependencies
+never touch your machine. The globe still renders in your own browser, so it
+needs the same graphics there as any other path. GitHub Free includes 120
+core-hours a month with no card on file — about 60 hours on the default 2-core
+machine. Org and Enterprise plans include no free quota; current terms and
+quotas apply.
+
+1. Fork this repository, then open **your fork** on GitHub.
+2. Click the green **Code** button, the **Codespaces** tab, then **Create codespace on main**.
+3. In the codespace terminal:
+   ```bash
+   nvm install 24 &amp;&amp; nvm use 24
+   npm ci
+   npm run doctor
+   GEV_ALLOWED_HOSTS=&quot;$CODESPACE_NAME-4173.$GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN&quot; npm run dev
+   ```
+4. Open the **Ports** tab, find `4173`, and click the globe icon to open it in
+   the browser. The port is private by default, so the URL asks for your GitHub
+   login. Keep it private: a public port lets anyone use the app and the keys
+   in your `.env`.
+
+`GEV_ALLOWED_HOSTS` there is required, not optional. The dev server answers only
+the hostnames it trusts, and a forwarded port arrives on
+`$CODESPACE_NAME-4173.$GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN`. Without it the
+page is `Blocked request. This host is not allowed.` Leading-dot wildcards are
+ignored on purpose, so pass that exact name.
+
+⚠️ **A codespace is reachable from the internet.** Treat it as the
+wider-publish case in [Sharing an instance](#-sharing-an-instance). Provider
+Settings is unavailable on the forwarded URL. Never commit your workspace
+`.env`. [SECURITY.md](SECURITY.md) has the threat model.
+
+### Then power it up — in the app, not in a file
+
+For a local setup, keys are upgrades, not prerequisites. When you want one,
+click the **POWER UP** chip in the bottom-right corner: Provider Settings lists every supported key,
+what it switches on, and where to get it. Paste, hit **SAVE KEYS**, and the app
+restarts itself with the new capability on. Once everything is configured the
+chip reads **POWERED UP** — and if a compact layout hides it, `?setup=1`
+reopens the same panel.
+
+- **Where keys land:** Pinokio → the app&#039;s ignored `pinokio/ENVIRONMENT`; a
+  terminal clone → the repo-root `.env`. Either file is made owner-only
+  _before_ a secret is written into it. These are local plaintext files,
+  excluded from Git; the app uses your keys to contact the providers.
+- **Keys you already have stay yours:** values from your shell or the macOS
+  Keychain show as _configured externally_ and are read-only to the panel.
+- **What to get first:** the free [Cesium ion](https://cesium.com/ion) token
+  (eligible personal, non-commercial use; current terms and quotas apply) for
+  photorealistic 3D and world terrain; a Google Maps key only for the
+  billing-enabled, metered route + Google place search; OpenAI when you want to
+  talk to the world. Full map, costs included, in [Keys &amp; Costs](#-api-keys).
+
+&lt;details&gt;
+&lt;summary&gt;Older Pinokio versions and credential storage&lt;/summary&gt;
+
+Do not enter credentials in Pinokio 8.0.40&#039;s native **Configure** panel: that
+release does not save this nested app file correctly, and it logs submitted
+values. Use **POWER UP → Provider Settings** inside GEV instead. The Pinokio
+8.2 announcement fixes installation; it does not establish that this separate
+Configure issue is resolved. On macOS, the Keychain via
+`./scripts/dev-fresh.sh` remains the stronger storage option.
+
+&lt;/details&gt;
+
+The server binds to **localhost** on both paths, and Provider Settings answers
+requests only from your machine. Browser-side keys (Google Maps, Cesium ion)
+must be restricted at their providers — [SECURITY.md](SECURITY.md) shows how,
+and it carries the LAN-sharing rules alongside [Keys &amp; Costs](#-api-keys).
+
+---
+
+## 🕐 The First Five Minutes
+
+Choose a first-run mission, or try these in order. The GIFs show Google Photorealistic 3D; your starting basemap depends on the keys you&#039;ve added.
+
+1. **Light up the sky.** Take the **Live Contacts** mission (or turn on **Flights** yourself) — thousands of live aircraft, gliding on real telemetry, detection mesh already reading the scene. Click one: the camera locks on, a trail draws behind it, and its live telemetry card comes up.
+2. **Take the controls.** Hit **COCKPIT** on your tracked plane and ride it down, switching sensors mid-flight: NVG into Ironbow FLIR.
+
+![Riding with a live aircraft in cockpit view while switching sensor modes](docs/media/06-cockpit-ar.gif)
+
+3. **Drop into a busy airport.** Search one and descend to the taxiways with **3D** aircraft on — grounded contacts, taxi trails, the whole apron working in real time.
+
+![Moving from a full airport overhead down to close taxiway inspection with 3D flight models](docs/media/start-here/airport-ground-traffic-google-3d.gif)
+
+4. **Look through a public camera.** Turn on **Cameras** over Austin, London, California, Finland, or Delaware (live video). The feeds aren&#039;t webcam embeds — they project _into_ the 3D city. Cycle coverage to **VIEWSHED** and every camera draws its estimated coverage volume — where it reaches, and where it goes blind.
+
+![Diving into an Austin intersection with a live public camera projected into the 3D scene](docs/media/03-austin-cctv.gif)
+
+5. **Track something in orbit.** Turn on **Satellites** and click the ISS — you ride along at orbital distance, orbit ring and all.
+
+![Tracking the ISS along its orbital path as it crosses over Ukraine](docs/media/14-iss-over-ukraine.gif)
+
+6. **Switch the optics.** Tap `1`–`6` — CRT, NVG, FLIR — and the whole live planet re-renders through a different sensor.
+
+![Cycling a dense live globe through CRT, FLIR, and NVG in one continuous view](docs/media/01-style-
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[NomaDamas/k-skill]]></title>
+            <link>https://github.com/NomaDamas/k-skill</link>
+            <guid>https://github.com/NomaDamas/k-skill</guid>
+            <pubDate>Wed, 11 Nov 2026 00:03:48 GMT</pubDate>
+            <description><![CDATA[한국인을 위한 스킬 모음집 - 에이전트를 한국인으로]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/NomaDamas/k-skill">NomaDamas/k-skill</a></h1>
+            <p>한국인을 위한 스킬 모음집 - 에이전트를 한국인으로</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 8,376</p>
+            <p>Forks: 1,005</p>
+            <p>Stars today: 23 stars today</p>
+            <h2>README</h2><pre>🌐 [한국어](README.md) | [English](README.en.md) | [中文](README.zh.md) | [日本語](README.ja.md)
+
+&gt; 외국인 관광객 및 한국 거주 외국인은 영어·중국어·일본어 README를 참고하세요.
+
+# k-skill
+
+![k-skill thumbnail](docs/assets/k-skill-thumbnail.png)
+
+&lt;p&gt;
+  &lt;a href=&quot;https://trendshift.io/repositories/34026?utm_source=repository-badge&amp;amp;utm_medium=badge&amp;amp;utm_campaign=badge-repository-34026&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/repositories/34026&quot; alt=&quot;NomaDamas%2Fk-skill | Trendshift&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://trendshift.io/repositories/34026?utm_source=trendshift-badge&amp;amp;utm_medium=badge&amp;amp;utm_campaign=badge-trendshift-34026&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/trendshift/repositories/34026/daily?language=JavaScript&quot; alt=&quot;NomaDamas%2Fk-skill | Trendshift Daily&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://trendshift.io/repositories/34026?utm_source=trendshift-badge&amp;amp;utm_medium=badge&amp;amp;utm_campaign=badge-trendshift-34026&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/trendshift/repositories/34026/weekly?language=JavaScript&quot; alt=&quot;NomaDamas%2Fk-skill | Trendshift Weekly&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://trendshift.io/repositories/34026?utm_source=trendshift-badge&amp;amp;utm_medium=badge&amp;amp;utm_campaign=badge-trendshift-34026&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://trendshift.io/api/badge/trendshift/repositories/34026/monthly?language=JavaScript&quot; alt=&quot;NomaDamas%2Fk-skill | Trendshift Monthly&quot; width=&quot;250&quot; height=&quot;55&quot;/&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+한국인인가요? 이 스킬 모음집을 다운로드 받아 두세요. 언젠가 **무조건** 쓸 때가 옵니다!
+KTX, KBO, 로또, 당근, 쿠팡, 카톡, 정부24, 홈택스 등등 귀찮은 것을 AI 에이전트에게 다 시켜버리세요.
+
+Claude Code, Codex, OpenCode, OpenClaw/ClawHub 등 각종 코딩 에이전트 지원합니다.
+
+추가 클라이언트 API 레이어는 불필요합니다. 필요한 경우 `k-skill-proxy` 같은 프록시 서버에 HTTP 요청만 넣으면 됩니다.
+
+공개 API 프록시를 사용하는 스킬의 개인정보 처리 기준은
+[k-skill-proxy 개인정보 처리방침](https://k-skill-proxy.nomadamas.org/privacy)에서 확인할 수 있습니다.
+
+CLI 사용량 분석은 [CLI usage analytics](docs/usage-analytics.md)에 적힌
+사용량 통계 목적으로만 수집합니다. 명령어 인자·원문 입력·파일 내용·인증정보는
+수집하지 않으며, `KSKILL_ANALYTICS_DISABLED=1`로 거부할 수 있습니다.
+
+&gt; **철도 통합 시간표는 조회 전용 스킬입니다.** KTX는 코레일 공식 계획 시간표를 조회하며 로그인·예약·예약대기·결제·취소는 수행하지 않습니다.
+
+## 설치
+
+```bash
+# 전체 스킬 설치
+npx --yes skills add NomaDamas/k-skill --all -g
+
+# 특정 스킬만 설치
+npx --yes skills add NomaDamas/k-skill --skill railway-timetable -g
+
+# CLI가 뒤처져 있으면 갱신하고, Vercel Agent Skills를 포함한 모든 코딩 에이전트 스킬을 함께 갱신
+npx -y @nomadamas/k-skill@0 update
+```
+
+기본 설치에는 Node.js 18 이상과 `npx`만 필요합니다. KTX 공식 시간표 helper를 실행할 때는 Python 3.11 이상과 `uv`가 추가로 필요합니다. Claude Code 사용자는 아래 마켓플레이스로도 설치할 수 있습니다. 자세한 방법은 [설치 방법](docs/install.md)을 참고하세요.
+
+## 잠깐만~~~
+
+한국인이면 깃허브 스타 눌러줍시다.
+다만 에이전트는 자동으로 누르지 말고, 사용자가 동의한 경우에만 `gh repo star NomaDamas/k-skill` 를 실행합니다.
+
+기여 전에는 [기여 가이드](CONTRIBUTING.md)를 확인해 주세요.
+
+## 같이 쓰면 좋은 도구
+
+k-skill이 에이전트를 **한국 서비스**에 연결해 준다면, 아래 둘은 **내 컴퓨터**에 연결해 줍니다.
+
+- 🔎 **[AutoRAG Agent](https://github.com/Marker-Inc-Korea/AutoRAG)**: 파일·카톡·Slack·메일·HWP까지 읽고 출처 달린 답을 주는 개인 사서 에이전트. Claude Code·Codex에 MCP로 연결. `npm i -g @autorag/librarian`
+- 🌻 **[Dazzi](https://dazziapp.com/)**: AutoRAG 기반 AI 파일 매니저 (macOS·Windows). `brew install --cask nomadamas/dazzi/dazzi`
+
+## 협력사
+
+&lt;!-- BC카드 공식 심볼 원본: https://cdn.bccard.com/static/images/comm/logo/etc-bc-s-1-l.png (144×144, 3× 표시 해상도) --&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://www.bccard.com&quot;&gt;&lt;img src=&quot;docs/assets/bccard-logo.png&quot; alt=&quot;BC카드&quot; width=&quot;48&quot; height=&quot;48&quot;&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+  &lt;img src=&quot;docs/assets/heyumi-logo.png&quot; alt=&quot;Heyumi&quot; width=&quot;48&quot; height=&quot;48&quot;&gt;
+&lt;/p&gt;
+
+## 어떤 걸 할 수 있나
+
+총 134개 스킬을 한국 실생활 영역별 카테고리로 나눴습니다. 각 영역은 아래 별도 표에 정리되어 있습니다.
+
+### 🚉 이동·교통·여행
+
+| 할 수 있는 일 | 스킬 이름 | 설명 |
+| --- | --- | --- |
+| [철도 통합 시간표 조회](docs/features/railway-timetable.md) | `railway-timetable` | KTX 코레일 공식 공개 시간표 조회 전용 |
+| [고속버스 예매](docs/features/express-bus-booking.md) | `express-bus-booking` | KOBUS 배차·좌석·요금·임시 선점 조회와 예매 지원 |
+| [시외버스 예매](docs/features/intercity-bus-booking.md) | `intercity-bus-booking` | 티머니 배차·좌석·요금·임시 선점 조회와 예매 지원 |
+| [항공권 가격 조회](docs/features/flight-ticket-search.md) | `flight-ticket-search` | `fast-flights` 기반 Google Flights 공개 검색으로 항공권 후보, 예약 검색 링크, 날짜/월/연도별 최저가·평균가 비교 (조회 전용, 예매·결제 없음) |
+| [마이리얼트립 MCP 검색](docs/features/myrealtrip-search.md) | `myrealtrip-search` | 공식 MCP 서버로 항공권, 숙소, 투어·티켓·액티비티 검색과 상세·옵션 확인 |
+| [외교부 해외안전·여행경보 조회](docs/features/mofa-travel-safety.md) | `mofa-travel-safety` | 외교부 0404 국가·지역별 공식 여행경보와 경보 내용 조회 (프록시 경유) |
+| [자연휴양림 빈 객실 조회](docs/features/foresttrip-vacancy.md) | `foresttrip-vacancy` | 공식 숲나들e 빈 객실 조회와 예약 지원 |
+| [서울 지하철 도착정보 조회](docs/features/seoul-subway-arrival.md) | `seoul-subway-arrival` | 서울 지하철 역 기준 실시간 도착 예정 열차 확인 |
+| [서울 따릉이 실시간 대여소 조회](docs/features/seoul-bike.md) | `seoul-bike` | 현재 좌표 주변 또는 대여소 이름 기준 따릉이 대여 가능 자전거와 빈 거치대 조회 |
+| [서울 실시간 혼잡도 조회](docs/features/seoul-density.md) | `seoul-density` | 서울 주요 121개 핫스팟의 실시간 혼잡도 단계와 추정 인구 조회 |
+| [한국 대중교통 길찾기](docs/features/korean-transit-route.md) | `korean-transit-route` | ODsay LIVE API + Kakao geocoding 기반 출발지→도착지 지하철+버스+도보 경로 및 환승 정보 조회 |
+| [카카오맵 장소·자동차 길찾기](docs/features/kakao-map.md) | `kakao-map` | Kakao Local 키워드/카테고리/좌표↔주소 변환 + Kakao Mobility 자동차 길찾기(거리·소요시간·통행료·예상 택시요금) |
+| [고속도로 교통량·소통·CCTV 조회](docs/features/highway-traffic-status.md) | `highway-traffic-status` | 한국도로공사·ITS 공개 API로 고속도로 구간별 실시간 속도/교통량/정체 등급과 CCTV 스트림 메타데이터 조회 |
+| [KOMSA 연안여객선 정보 조회](docs/features/komsa-ferry-info.md) | `komsa-ferry-info` | KOMSA MTIS 공식 API로 연안여객선 운항 일정·선박·기항지·항로·운항상태 조회(프록시 경유) |
+| [근처 가장 싼 주유소 찾기](docs/features/cheap-gas-nearby.md) | `cheap-gas-nearby` | 현재 위치 기준 근처 최저가 주유소 조회 |
+| [근처 공영주차장 찾기](docs/features/parking-lot-search.md) | `parking-lot-search` | 현재 위치 기준 근처 공영주차장 위치·요금·운영시간 조회 |
+| [전기차 충전소 위치·상태 조회](docs/features/ev-charger-nearby.md) | `ev-charger-nearby` | 지역·충전소 기준 전기차 충전소 정보와 충전기 현재 상태 조회 (공공데이터포털 15076352, 프록시 경유) |
+| [지하철 분실물 조회](docs/features/subway-lost-property.md) | `subway-lost-property` | 지하철 역/물품명 기준 공식 LOST112 분실물 검색 조건과 유실물센터 진입점 안내 |
+
+### 🏠 부동산·주택
+
+| 할 수 있는 일 | 스킬 이름 | 설명 |
+| --- | --- | --- |
+| [한국 부동산 실거래가 조회](docs/features/real-estate-search.md) | `real-estate-search` | 아파트/오피스텔/빌라/단독주택 실거래가·전월세·지역코드 조회 |
+| [한국 주택 공시가격 조회](docs/features/housing-official-price.md) | `housing-official-price` | realtyprice.kr 공개 웹 데이터 표면에서 공동주택·개별주택 정부 공시가격 이력을 직접 조회 (공식 문서화된 OpenAPI 아님) |
+| [민영주택 청약가점·예치금 기준 조회](docs/features/housing-subscription-reference.md) | `housing-subscription-reference` | 「주택공급에 관한 규칙」 별표 1·별표 2 기준 청약가점(무주택기간·부양가족·가입기간 84점)과 지역·면적별 청약 예치금 조회 (외부 CSV 의존 없이 번들 참고값) |
+| [개별공시지가 조회](docs/features/gongsijiga-search.md) | `gongsijiga-search` | realtyprice.kr 공개 API에서 지번 단위 개별공시지가(원/㎡) 다년도 추이·전년 대비 변동률 조회 |
+| [건축물대장 표제부 조회](docs/features/building-register-search.md) | `building-register-search` | 주소·PNU·법정동 코드와 필지로 주용도·연면적·층수·사용승인일 조회 (공공데이터포털 15134735, 프록시 경유) |
+| [LH 청약 공고문 조회](docs/features/lh-notice-search.md) | `lh-notice-search` | 한국토지주택공사(LH) 임대/분양/주거복지(신혼희망타운)/토지/상가 공고를 지역·상태·공고유형·키워드로 조회하고 마감 여부를 KST 기준으로 표시 |
+| [SH 청약·주택 공고문 조회](docs/features/sh-notice-search.md) | `sh-notice-search` | 서울주택도시개발공사(SH) 공개 공고/공지 게시판을 직접 조회해 키워드·공고 종류별 목록, 상세 본문, 첨부 미리보기 메타데이터 확인 |
+| [법원 경매 부동산 매각공고 조회](docs/features/court-auction-notice-search.md) | `court-auction-notice-search` | 대법원경매정보(courtauction.go.kr) 부동산 매각공고를 매각기일·법원·기일/기간 입찰 조건으로 검색해 사건번호·용도·주소·감정평가액·최저매각가격을 펼치고, 사건번호로 직접 사건정보·물건내역·매각기일이력을 조회 |
+| [당근부동산 검색](docs/features/daangn-realty-search.md) | `daangn-realty-search` | 당근부동산 공개 웹 데이터 표면으로 지역 기반 부동산 매물 검색과 상세 확인 |
+
+### ⚖️ 법률·공공
+
+| 할 수 있는 일 | 스킬 이름 | 설명 |
+| --- | --- | --- |
+| [한국 법령 검색](docs/features/korean-law-search.md) | `korean-law-search` | 한국 법령/조문/판례/유권해석 검색, 개정 조문만 주면 현행을 가져와 만드는 신･구조문대비표(한글 `.hwpx` 저장) |
+| [한국 특허 정보 검색](docs/features/korean-patent-search.md) | `korean-patent-search` | 한국 특허/실용신안 키워드 검색 및 출원번호 상세 조회 |
+| [한국 개인정보처리방침·이용약관 자동 생성](docs/features/korean-privacy-terms.md) | `korean-privacy-terms` | Next.js 프로젝트에 개인정보보호법·약관규제법·전자상거래법 기반 개인정보처리방침/이용약관/쿠키 배너/동의 모달을 생성하는 `kimlawtech/korean-privacy-terms` (Apache-2.0) thin wrapper |
+| [등기부등본 자동화](docs/features/iros-registry-automation.md) | `iros-registry-automation` | 인터넷등기소(IROS)에서 법인/부동산 등기부등본 장바구니, 수동 결제 후 열람·저장 흐름을 보조 |
+| [법인등기 신청 컨설팅](docs/features/corporate-registration-consulting.md) | `corporate-registration-consulting` | 일반 영리 주식회사 발기설립 기준으로 법인명·이사·주소 등 사용자 결정사항을 받아 표준 정관, 설립등기 첨부서류, 등록면허세·과밀억제권역 중과 체크, rhwp 기반 HWP 양식 순차 작성 흐름을 참고용으로 안내 |
+| [지급명령 신청 보조](docs/features/court-payment-order-assistant.md) | `court-payment-order-assistant` | 법원 전자소송 지급명령 신청에 필요한 채권자·채무자·청구원인·증빙 정보를 정리하고 초안/체크리스트와 로그인 이후 브라우저 handoff를 준비 |
+| [국회 의안·표결 조회](docs/features/assembly-bill-vote-search.md) | `assembly-bill-vote-search` | 열린국회정보 Open API로 의안 검색·상세와 국회의원 본회의 표결 조회 (프록시 경유, 조회 전용) |
+| [공무국외출장 보고서 조회](docs/features/gov-overseas-trip-report.md) | `gov-overseas-trip-report` | 선관위·권익위·정보공개포털·대구/대전/경기/경북 의회 등 공개 표면에서 국외출장/훈련 보고서·현황을 조회하고, 표 밖 기관은 discover로 능동 탐색(로그인 벽 제외, 판정 아님) |
+| [공유누리 공공시설 검색](docs/features/sharenuri-facility-search.md) | `sharenuri-facility-search` | 공유누리 공개 통합검색으로 전국 공공개방자원(회의실·체육시설·숙소·물품 등) 키워드·지역·무료 여부 조회와 상세정보·예약 경로 안내 (인증키·로그인 불필요) |
+
+### 🏢 사업·상권·세무
+
+| 할 수 있는 일 | 스킬 이름 | 설명 |
+| --- | --- | --- |
+| [사업자등록정보 확인](docs/features/nts-business-registration.md) | `nts-business-registration` | 국세청 사업자등록번호 상태조회와 사업자등록정보 진위확인(공공데이터포털 API, 프록시 경유) |
+| [사업자 실사 종합](docs/features/biz-health-check.md) | `biz-health-check` | 사업자등록번호를 중심으로, 상호·지역을 함께 주면 국세청 상태·국민연금·체납 명단·금융위 법인개요·부정당제재·인허가 영업상태를 교차 조회한 실사 리포트(점수·판정 없이 사실만) |
+| [국민연금 가입 사업장 조회](docs/features/national-pension-workplace.md) | `national-pension-workplace` | 사업장명으로 국민연금 가입자수·당월 고지금액·월별 추이 조회(공공데이터포털 API, 프록시 경유) |
+| [국세 체납 명단공개 검색](docs/features/nts-tax-delinquency.md) | `nts-tax-delinquency` | 상호·법인명으로 국세청 고액·상습체납자 명단공개 대조(무인증 공개 검색) |
+| [금융위 기업기본정보 조회](docs/features/fsc-corporate-info.md) | `fsc-corporate-info` | 법인명으로 대표자·설립일·업종 등 법인 개요 조회와 사업자번호 교차검증(공공데이터포털 API, 프록시 경유) |
+| [인허가 영업상태 조회](docs/features/localdata-business-status.md) | `localdata-business-status` | 상호+시군구로 동네 사업장(208업종)의 영업/휴업/폐업·업력·주소 조회(LOCALDATA 무인증) |
+| [장수 점포 레이더](docs/features/store-longevity-radar.md) | `store-longevity-radar` | 상가(상권)정보 공개파일(무인증)로 업종·상호 키워드 점포 전수를 뽑고, 과거 스냅샷과 상호+좌표 매칭해 장수 점포 추출 |
+| [한국 사업자 장부 자동화](docs/features/korean-jangbu-for.md) | `korean-jangbu-for` | `kimlawtech/korean-jangbu-for` 기반 카드·은행·영수증·세금계산서 입력 → 표준 거래내역·계정과목·세무사 전달 CSV·경영 리포트 생성 thin wrapper |
+| [팝빌 업무 API](docs/features/popbill.md) | `popbill` | 팝빌 전자세금계산서·전자명세서·현금영수증·문자·카카오톡·팩스·휴폐업/기업정보·계좌조회·홈택스 수집을 로컬 BYOK 방식으로 호출 |
+| [네이버 검색광고 성과 조회](docs/features/naver-ad-performance.md) | `naver-ad-performance` | 네이버 검색광고 캠페인/광고그룹/키워드의 노출수·클릭수·광고비·CTR·CPC·전환수 조회, 연관키워드·월간 조회수 도구 (읽기 전용, 로컬 실행 전용) |
+
+### 🏛️ 정부지원·조달
+
+| 할 수 있는 일 | 스킬 이름 | 설명 |
+| --- | --- | --- |
+| [창업진흥원 K-Startup 조회](docs/features/kstartup-search.md) | `kstartup-search` | 창업진흥원 K-Startup 통합공고 사업·지원사업 공고·창업 콘텐츠·통계보고서 조회 (공공데이터포털 15125364, 프록시 경유) |
+| [정부지원 전수조사](docs/features/government-support-survey.md) | `government-support-survey` | K-Startup·기업마당·NIPA·KOCCA·SMTECH 공개 공고를 통합 조회하고 소스별 완전성·공식 링크와 함께 프로젝트 적합성을 보수적으로 검토 |
+| [나라장터 발주계획 검색](docs/features/g2b-order-plan-search.md) | `g2b-order-plan-search` | 물품·공사·용역·외자 발주계획을 발주년월·게시일시·기관·사업명 조건으로 조회(공공데이터포털 API, 프록시 경유) |
+| [부정당제재업체 조회](docs/features/g2b-sanctioned-supplier.md) | `g2b-sanctioned-supplier` | 사업자번호로 나라장터 부정당제재(조회시점 유효 제재) 조회(공공데이터포털 API, 프록시 경유) |
+| [국방전자조달 공고 조회](docs/features/d2b-notice-search.md) | `d2b-notice-search` | 국방전자조달시스템(D2B) 공개 입찰공고 화면을 Aside Browser 우선으로 조회하고 공고건명·공고구분·날짜·G2B공고번호·발주기관 조건으로 검색 |
+| [S2B 학교장터 공고 조회](docs/features/s2b-notice-search.md) | `s2b-notice-search` | S2B 학교장터 공개 고객 공고/견적요청 화면을 브라우저 우선으로 조회하고 목록·상세 HTML fixture를 파싱 |
+| [보임 업체·입찰 찾기](docs/features/boim-business-search.md) | `boim-business-search` | 지역×업종·상호로 전국 업체, 품명으로 공공 조달 실적 업체, 낱말로 진행 중 공공기관 입찰 공고(나라장터·국방전자조달·LH·한국수자원공사·누리장터)를 한 번에 조회(보임 공개 검색, 무인증) |
+| [전기차 보조금 현황 조회](docs/features/ev-subsidy-status.md) | `ev-subsidy-status` | 지자체별 전기차 민간공고·접수·출고·출고잔여 대수와 모델별 보조금 조회 |
+
+### 🧑‍💼 채용·일자리
+
+| 할 수 있는 일 | 스킬 이름 | 설명 |
+| --- | --- | --- |
+| [잡코리아 인재검색](docs/features/jobkorea-talent-search.md) | `jobkorea-talent-search` | 잡코리아 기업회원 로그인 세션에서 마스킹 후보 정보를 읽고 유료 열람 전 shortlist 작성 |
+| [사람인 인재풀 검색](docs/features/saramin-talent-search.md) | `saramin-talent-search` | 사람인 기업회원 인재풀에서 마스킹 후보 정보를 읽고 유료 열람 전 shortlist 작성 |
+| [이력서 기반 채용공고 매칭](docs/features/job-posting-match.md) | `job-posting-match` | 구직자의 이력서·희망조건을 바탕으로 잡코리아·사람인 공개 채용공고를 검색하고 적합도와 지원 전략 정리 |
+| [당근알바 검색](docs/features/daangn-jobs-search.md) | `daangn-jobs-search` | 당근알바 공개 웹 데이터 표면으로 키워드·지역 기반 알바 공고 검색과 상세 조회 |
+
+### 📈 금융·투자·경제통계
+
+| 할 수 있는 일 | 스킬 이름 | 설명 |
+| --- | --- | --- |
+| [한국 주식 정보 조회](docs/features/korean-stock-search.md) | `korean-stock-search` | KRX 상장 종목 검색, 기본정보, 일별 시세 조회 |
+| [한국 채권 종목 조회·비교](docs/features/korean-bond-search.md) | `korean-bond-search` | GS Quant의 Instrument/Data 구조화 방식에서 영감을 받아 한국 채권을 표준 Bond Instrument 필드로 정리하고, 발행조건·잔액·CALL/PUT·CB/EB/BW를 출처·확인시각과 함께 검색·비교 (로그인·API 키 불필요) |
+| [금감원 DART 전자공시 조회](docs/features/k-dart.md) | `k-dart` | 공시검색, 기업개황, 재무제표, 배당, 증자/감자, 감사의견, 주요사항보고서 등 14개 endpoint |
+| [국내·해외 기업분석](docs/features/company-analysis.md) | `company-analysis` | 공개 공시·실적발표를 대조해 3대 재무제표의 변화, 사업·경쟁구도, 주요 일정과 조회 시점 주가를 6개 섹션의 채팅 분석으로 정리 (로그인·API 키 불필요) |
+| [토스증권 조회](docs/features/toss-investment.md) | `toss-investment` | 토스증권 공식 Open API(OAuth2)로 계좌·보유주식·시세·주문조회 등 조회 전용 |
+| [대신증권 리포트 조회](docs/features/daishin-report-search.md) | `daishin-report-search` | GitHub Pages에 공개된 대신증권 리포트 HTML 미러에서 최신 리포트 목록, 원문, 설명 페이지, Rating/Target 표를 조회 |
+| [국가데이터처 KOSIS 통계 조회](docs/features/kosis-stats.md) | `kosis-stats` | 국가데이터처가 운영하는 KOSIS(국가통계포털) Open API로 통계표 검색·메타·데이터·대용량 자료 조회 (조회 전용) |
+| [한국은행 ECOS 경제통계 조회](docs/features/bok-ecos-stats.md) | `bok-ecos-stats` | 한국은행 ECOS Open API로 기준금리·환율·소비자물가지수·통화량 시계열과 100대 핵심지표 조회 |
+| [한·미 국채시장 분석](docs/features/government-bond-analysis.md) | `government-bond-analysis` | 한국·미국 국채 금리와 커브 변화, 같은 관측일의 10년 금리차, 공식 입찰·통화정책 일정을 검증해 고정된 형식으로 정리 |
+| [멀티에셋 모닝 브리핑](docs/features/multi-asset-morning-briefing.md) | `multi-asset-morning-briefing` | 미국·한국 최근 완료 세션을 독립 확인하고 글로벌 주식·금리·FX·원자재·변동성과 한국 전달 경로, 향후 5거래일 일정을 근거 링크가 있는 7개 섹션으로 작성 (로그인·API 키 불필요) |
+| [사건별 시장반응 리서치](docs/features/market-event-impact.md) | `market-event-impact` | GS Quant의 event_study·event_impact_analysis·CalendarAlignment 구조에서 영감을 받아 정례·비정형 사건의 핵심 변화와 시장 해석, 교차자산 전달경로를 조사하고 이벤트 스터디는 보조 증거로 제시하며 유사사례·다음 촉매까지 정리 (로그인·API 키 불필요) |
+
+### 💊 건강·의료
+
+| 할 수 있는 일 | 스킬 이름 | 설명 |
+| --- | --- | --- |
+| [근처 응급실 병상 상태 확인](docs/features/emergency-room-beds.md) | `emergency-room-beds` | 현재 위치 기준 가까운 응급실 운영·입원실/병상 운영 플래그와 갱신시각 조회 (정확한 잔여 병상 수/가동률은 공개 E-Gen nearby 목록에 없음) |
+| [장기요양·건강검진기관 조회](docs/features/nhis-care-checkup-search.md) | `nhis-care-checkup-search` | 국민건강보험공단 장기요양기관·건강검진기관 공개 후보 조회 (공공데이터포털 15059029·15154419, 프록시 경유) |
+| [의약품 안전 체크](docs/features/mfds-drug-safety.md) | `mfds-drug-safety` | 식약처 e약은요·안전상비의약품 정보를 인터뷰-first 흐름으로 프록시 조회 |
+| [약학정보원 의약품 검색](docs/features/kpic-drug-search.md) | `kpic-drug-search` | 약학정보원(KPIC) 공개 이름 검색과 약품 코드별 상세 원문 조회 (API 키, 로그인, 프록시 불필요) |
+| [식품 안전 체크](docs/features/mfds-food-safety.md) | `mfds-food-safety` | 식약처 부적합 식품·식품안전나라 회수 정보를 인터뷰-first 흐름으로 프록시 조회 |
+| [동물약국·동물용의약품 취급 약국 조회](docs/features/animal-pharmacy-search.md) | `animal-pharmacy-search` | 홍익메디케어 공개 MCP로 지역별 동물약국, 제품 검색, 최근 6개월 구매 이력 기반 취급 약국 조회 |
+
+### 🛒 쇼핑·중고거래
+
+| 할 수 있는 일 | 스킬 이름 | 설명 |
+| --- | --- | --- |
+| [쿠팡 상품 검색](docs/features/coupang-product-search.md) | `coupang-product-search` | 쿠팡 상품 검색, 로켓배송 필터, 가격대 검색, 비교, 베스트, 골드박스 특가 조회 |
+| [다나와 최저가 비교](docs/features/danawa-price-search.md) | `danawa-price-search` | 다나와 공개 검색/가격비교 표면으로 상품 후보·쇼핑몰별 가격·배송비 포함 실구매가·카드 할인가·무이자 할부 비교 |
+| [마켓컬리 상품 조회](docs/features/market-kurly-search.md) | `market-kurly-search` | 마켓컬리 상품 검색, 현재 가격, 할인 여부, 품절 여부 조회 |
+| [다이소 상품 조회](docs/features/daiso-product-search.md) | `daiso-product-search` | 다이소 매장별 상품 픽업 가능 여부 확인 (정확한 매장별 재고 수량은 다이소몰 보안 정책으로 2026-05-05 부터 차단됨) |
+| [올리브영 검색](docs/features/olive-young-search.md) | `olive-young-search` | 올리브영 매장·상품·재고 조회 |
+| [오늘의집 오늘의딜 조회](docs/features/ohou-today-deal.md) | `ohou-today-deal` | 오늘의집 공개 오늘의딜 특가 상품의 할인율·가격·리뷰·링크 조회 |
+| [번개장터 검색](docs/features/bunjang-search.md) | `bunjang-search` | 번개장터 검색, 상세조회, 선택적 찜/채팅, AI TOON export |
+| [당근 중고거래 검색](docs/features/daangn-used-goods-search.md) | `daangn-used-goods-search` | 당근 중고거래 공개 웹 데이터 표면으로 키워드·지역 기반 매물 검색과 상세 조회 |
+| [당근중고차 검색](docs/features/daangn-cars-search.md) | `daangn-cars-search` | 당근중고차 공개 웹 데이터 표면으로 지역·가격 조건 기반 차량 검색과 상세 조회 |
+| [소비자 가격·리콜정보 조회](docs/features/consumer-price-safety-search.md) | `consumer-price-safety-search` | 참가격 가격정보와 소비자24 물품·리콜정보 조회 |
+| [택배 배송조회](docs/features/delivery-tracking.md) | `delivery-tracking` | CJ대한통운·우체국 송장 번호로 배송 상태 조회 |
+
+### 🍚 먹거리·주류
+
+| 할 수 있는 일 | 스킬 이름 | 설명 |
+| --- | --- | --- |
+| [KAMIS 농수축산물 가격 조회](docs/features/kamis-food-price.md) | `kamis-food-price` | KAMIS 공식 농수축산물 도매·소매 가격과 기간 비교값 조회 (프록시 경유) |
+| [근처 술집 조회](docs/features/kakao-bar-nearby.md) | `kakao-bar-nearby` | 현재 위치 기준 영업 상태·메뉴·좌석·전화번호가 포함된 근처 술집 조회 |
+| [올라포케 역삼 포케](docs/features/hola-poke-yeoksam.md) | `hola-poke-yeoksam` | 올라포케 역삼점 메뉴, 매장 정보, 이벤트 참여 흐름 안내 |
+| [BC카드 eat.pl 맛집 검색](docs/features/bccard-eatpl-search.md) | `bccard-eatpl-search` | 지역·역·동네 기준 맛집·음식점·카페 검색. 최근 1개월 결제 데이터 기반 매출 상위와 상세 링크 |
+| [헤이유미 예약 가능한 맛집 검색·식당 예약](docs/features/heyyumi.md) | `heyyumi` | 구글 로그인 한 번(키 불필요)으로 지역·메뉴·조건별 식당·카페 검색, 예약 요청과 매장 수락/거절 확인, 실시간 자리·웨이팅 문의. 외국어로 물어도 된다 |
+
+### ⚽ 스포츠·경기
+
+| 할 수 있는 일 | 스킬 이름 | 설명 |
+| --- | --- | --- |
+| [한국 마라톤 일정 조회](docs/features/korean-marathon-schedule.md) | `korean-marathon-schedule` | 고러닝 공개 페이지와 대한철인3종협회 일정에서 마라톤·철인3종 대회 일정, 장소, 신청 마감일, 종목 조회 |
+| [KBO 경기 결과 조회](docs/features/kbo-results.md) | `kbo-results` | 날짜별 KBO 경기 일정, 결과, 팀별 필터링 |
+| [KBL 경기 결과 조회](docs/features/kbl-results.md) | `kbl-results` | 날짜별 KBL 경기 일정, 결과, 팀별 필터링, 현재 순위 확인 |
+| [K리그 경기 결과 조회](docs/features/kleague-results.md) | `kleague-results` | 날짜별 K리그1/K리그2 경기 결과, 팀별 필터링, 현재 순위 확인 |
+| [LCK 경기 분석](docs/features/lck-analytics.md) | `lck-analytics` | LCK 경기 결과, 현재 순위, live turning point, 밴픽, 패치 메타, 팀 파워 레이팅 |
+
+### 🎭 문화·역사·여가
+
+| 할 수 있는 일 | 스킬 이름 | 설명 |
+| --- | --- | --- |
+| [영화관 검색](docs/features/korean-cinema-search.md) | `korean-cinema-search` | CGV·메가박스·롯데시네마 영화관, 상영작, 시간표, 잔여석 조회 |
+| [공연 일정·잔여석 조회](docs/features/ticket-availability.md) | `ticket-availability` | YES24·인터파크 공연의 회차별 일정과 등급별 잔여석 수를 단일 HTTP 호출로 조회 (조회 전용, 예매·결제 없음) |
+| [KOPIS 공연 조회](docs/features/kopis-performance-search.md) | `kopis-performance-search` | KOPIS 공연·시설 목록과 상세 조회 (프록시 경유). 예매·결제는 공식 예매처 |
+| [로또 당첨 확인](docs/features/lotto-results.md) | `lotto-results` | 로또 최신 회차, 특정 회차, 번호 대조 |
+| [조선왕조실록 검색](docs/features/joseon-sillok-search.md) | `joseon-sillok-search` | 조선왕조실록 키워드 검색과 왕별/연도별 필터, 기사 발췌 조회 |
+| [국가유산 검색·행사 조회](docs/features/korean-heritage-search.md) | `korean-heritage-search` | 국가유산청 공식 Open API로 국가유산 목록·상세정보·좌표와 월별 국가유산 활용 행사 조회 |
+
+### ⛪ 종교
+
+| 할 수 있는 일 | 스킬 이름 | 설명 |
+| --- | --- | --- |
+| [종교시설 찾기](docs/features/religious-facility-search.md) | `religious-facility-search` | 동네·역명·랜드마크 기준 근처 교회·성당·사찰 거리순 조회와 주소·전화·카카오맵 링크 정리 (사용자 키 불필요) |
+
+### 🎓 교육·장학·학술
+
+| 할 수 있는 일 | 스킬 이름 | 설명 |
+| --- | --- | --- |
+| [장학금 검색 및 조회](docs/features/korean-scholarship-search.md) | `korean-scholarship-search` | 한국장학재단·전국 대학교·재단·기업 장학 공고를 검색해 금액·자격·지원구간·링크를 정리하고 KST 기준 현재 날짜 마감 상태와 조건별 필터링까지 제공 |
+| [학교 급식 식단 조회](docs/features/k-schoollunch-menu.md) | `k-schoollunch-menu` | 교육청·학교명으로 NEIS 학교 검색·급식 식단 조회 |
+| [도서관 도서 조회](docs/features/library-book-search.md) | `library-book-search` | 도서관 정보나루 기반 도서 검색, 상세, 소장 도서관, 도서관별 소장 여부 조회 |
+| [KERIS/RISS 학술자료 검색](docs/features/keris-academic-search.md) | `keris-academic-search` | 학위논문·국내외 학술논문·단행본·연구보고서·학술지 메타데이터와 원문 가능 표시 조회 |
+
+### 📰 뉴스·정보·리서치
+
+| 할 수 있는 일 | 스킬 이름 | 설명 |
+| --- | --- | --- |
+| [네이버 뉴스 검색](docs/features/naver-news-search.md) | `naver-news-search` | 네이버 검색 Open API
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[chinese-poetry/chinese-poetry]]></title>
+            <link>https://github.com/chinese-poetry/chinese-poetry</link>
+            <guid>https://github.com/chinese-poetry/chinese-poetry</guid>
+            <pubDate>Wed, 11 Nov 2026 00:03:47 GMT</pubDate>
+            <description><![CDATA[The most comprehensive database of Chinese poetry 🧶最全中华古诗词数据库, 唐宋两朝近一万四千古诗人, 接近5.5万首唐诗加26万宋诗. 两宋时期1564位词人，21050首词。]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/chinese-poetry/chinese-poetry">chinese-poetry/chinese-poetry</a></h1>
+            <p>The most comprehensive database of Chinese poetry 🧶最全中华古诗词数据库, 唐宋两朝近一万四千古诗人, 接近5.5万首唐诗加26万宋诗. 两宋时期1564位词人，21050首词。</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 54,241</p>
+            <p>Forks: 10,935</p>
+            <p>Stars today: 53 stars today</p>
             <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-   &lt;img height=&quot;350&quot; alt=&quot;is-a.dev Banner&quot; src=&quot;https://raw.githubusercontent.com/is-a-dev/register/main/media/banner.png&quot;&gt;
+  &lt;a href=&quot;https://github.com/chinese-poetry/chinese-poetry&quot;&gt;
+      &lt;img src=&quot;https://avatars3.githubusercontent.com/u/30764933?s=200&amp;v=4&quot; alt=&quot;chinese-poetry&quot;&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;h2 align=&quot;center&quot;&gt;chinese-poetry: 最全中文诗歌古典文集数据库&lt;/h2&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://travis-ci.com/chinese-poetry/chinese-poetry&quot; rel=&quot;nofollow&quot;&gt;
+    &lt;img height=&quot;28px&quot; alt=&quot;Build Status&quot; src=&quot;https://img.shields.io/travis/chinese-poetry/chinese-poetry?style=for-the-badge&quot; style=&quot;max-width:100%;&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://github.com/chinese-poetry/chinese-poetry/blob/master/LICENSE&quot;&gt;
+    &lt;img height=&quot;28px&quot; alt=&quot;License&quot; src=&quot;http://img.shields.io/badge/license-mit-blue.svg?style=for-the-badge&quot; style=&quot;max-width:100%;&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://github.com/chinese-poetry/chinese-poetry/graphs/contributors&quot;&gt;
+    &lt;img height=&quot;28px&quot; alt=&quot;Contributors&quot; src=&quot;https://img.shields.io/github/contributors/chinese-poetry/chinese-poetry.svg?style=for-the-badge&quot; style=&quot;max-width:100%;&quot;&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://www.patreon.com/jackeygao&quot; rel=&quot;nofollow&quot;&gt;
+    &lt;img height=&quot;28px&quot; alt=&quot;Patreon&quot; src=&quot;https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Djackeygao%26type%3Dpledges&amp;style=for-the-badge&quot; style=&quot;max-width:100%;&quot;&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+
+最全的中华古典文集数据库，包含 5.5 万首唐诗、26 万首宋诗、2.1 万首宋词和其他古典文集。诗人包括唐宋两朝近 1.4 万古诗人，和两宋时期 1.5 千古词人。数据来源于互联网。
+
+**为什么要做这个仓库?** 古诗是中华民族乃至全世界的瑰宝，我们应该传承下去，虽然有古典文集，但大多数人并没有拥有这些书籍。从某种意义上来说，这些庞大的文集离我们是有一定距离的。而电子版方便拷贝，所以此开源数据库诞生了。此数据库通过 JSON 格式分发，可以让你很方便的开始你的项目。
+
+古诗采集没有记录过程，因为古诗数据庞大，目标网站有限制，采集过程经常中断超过了一个星期。2017 年新加入全宋词，[全宋词爬取过程及数据分析](https://jackeygao.github.io/r/words/crawl-ci.html)。
+
+## 高频词分析图
+
+&lt;details open&gt;
+  &lt;summary&gt;&lt;b&gt;宋词受欢迎的词牌名&lt;/b&gt;&lt;/summary&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/jackeygao/chinese-poetry/master/images/ci_rhythmic_topK.png&quot; alt=&quot;两宋喜欢的词牌名&quot;&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+
+&lt;details&gt;
+  &lt;summary&gt;&lt;b&gt;宋词高频词&lt;/b&gt;&lt;/summary&gt;
+  &lt;img src=&quot;https://raw.githubusercontent.com/jackeygao/chinese-poetry/master/images/ci_words_topK.png&quot; alt=&quot;宋词高频词&quot; style=&quot;max-width:100%;&quot;&gt;
+&lt;/details&gt;
+
+&lt;details&gt;
+  &lt;summary&gt;&lt;b&gt;宋词作者作品榜&lt;/b&gt;&lt;/summary&gt;
+  &lt;img src=&quot;https://raw.githubusercontent.com/jackeygao/chinese-poetry/master/images/ci_author_topK.png&quot; alt=&quot;宋词作者作品榜&quot; style=&quot;max-width:100%;&quot;&gt;
+&lt;/details&gt;
+
+&lt;details&gt;
+  &lt;summary&gt;&lt;b&gt;唐诗高频词&lt;/b&gt;&lt;/summary&gt;
+  &lt;img src=&quot;https://raw.githubusercontent.com/jackeygao/chinese-poetry/master/images/tang_text_topK.png&quot; alt=&quot;唐诗高频词&quot; style=&quot;max-width:100%;&quot;&gt;
+&lt;/details&gt;
+
+&lt;details&gt;
+  &lt;summary&gt;&lt;b&gt;唐诗作者作品榜&lt;/b&gt;&lt;/summary&gt;
+  &lt;img src=&quot;https://raw.githubusercontent.com/jackeygao/chinese-poetry/master/images/tang_author_topK.png&quot; alt=&quot;唐诗作者作品榜&quot; style=&quot;max-width:100%;&quot;&gt;
+&lt;/details&gt;
+
+&lt;details&gt;
+  &lt;summary&gt;&lt;b&gt;宋诗高频词&lt;/b&gt;&lt;/summary&gt;
+  &lt;img src=&quot;https://raw.githubusercontent.com/jackeygao/chinese-poetry/master/images/song_text_topK.png&quot; alt=&quot;宋诗高频词&quot; style=&quot;max-width:100%;&quot;&gt;
+&lt;/details&gt;
+
+&lt;details&gt;
+  &lt;summary&gt;&lt;b&gt;宋诗作者作品榜&lt;/b&gt;&lt;/summary&gt;
+  &lt;img src=&quot;https://raw.githubusercontent.com/jackeygao/chinese-poetry/master/images/song_author_topK.png&quot; alt=&quot;宋诗作者作品榜&quot; style=&quot;max-width:100%;&quot;&gt;
+&lt;/details&gt;
+
+## 数据集
+
+- [唐诗宋诗](./全唐诗)
+- [全宋词](./宋词)
+- [五代·花间集](./五代诗词/huajianji)
+- [五代·南唐二主词](./五代诗词/nantang)
+- [论语](./论语)
+- [诗经](./诗经)
+- [幽梦影](./幽梦影)
+- [四书五经](./四书五经)
+- [蒙学](./蒙学)
+- [纳兰性德诗集](./纳兰性德)
+- [御定全唐詩](./御定全唐詩)
+
+
+## 贡献
+
+本项目目的是借助技术来生成格式化(JSON)数据，让开发者更方便快速的构建诗词类应用程序。身单力薄，欢迎更多人来维护，你可以通过以下方法来参与贡献：
+
+- 直接提交 PR 或者通过 issue 讨论来优化完善此数据库，理论上古诗歌体非宗教类都欢迎加入，部分有争议性的数据需要社区投票讨论决定是否加入。关于诗句的纠错在创建 PR 时请标明出处。更多规范请[参考贡献规范文档](https://github.com/chinese-poetry/chinese-poetry/wiki/%E5%8F%82%E4%B8%8E%E8%B4%A1%E7%8C%AE%E8%A7%84%E8%8C%83)。
+
+- 如果你没有办法直接参与完善的过程，你也可以通过 「[爱发电赞助](https://afdian.net/a/chinese-poetry)」  「[Patreon 周期性赞助](https://www.patreon.com/jackeygao)」 的形式来持续帮助并激励我去优化完善此数据库。如果您不喜欢周期性赞助，你也可以通过「[支付宝](https://github.com/jackeyGao/JackeyGao.github.io/blob/master/static/images/alipay.png)」或者「[微信赞赏码](https://github.com/jackeyGao/JackeyGao.github.io/blob/master/static/images/wechat.jpg)」进行一次性赞助(备注留下邮箱)。
+
+- 如有建议或吐槽，欢迎联系我的邮箱 gaojunqi@outlook.com。
+
+无论通过哪种形式贡献最终都会使之变得更好！
+
+### 赞助者
+
+无
+
+### 贡献者
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://opencollective.com/chinese-poetry/contributors.svg?width=890&amp;button=false&quot; alt=&quot;Contributors&quot;&gt;
+&lt;/p&gt;
+
+## 案例展示
+
+&lt;details&gt;
+  &lt;summary&gt;案例展示&lt;/summary&gt;
+  
+- [中文诗歌主页](https://chinese-poetry.github.io)是一个基于浏览器的诗词网站，包含唐诗三百首、宋词三百首等文集。
+- [animalize](https://github.com/animalize) **/** [QuanTangshi](https://github.com/animalize/QuanTangshi)  *离线全唐诗 Android*
+- [justdark](https://github.com/justdark) **/** [pytorch-poetry-gen](https://github.com/justdark/pytorch-poetry-gen)  *a char-RNN based on pytorch*
+- [Clover27](https://github.com/Clover27) **/** [ancient-Chinese-poem-generator](https://github.com/Clover27/ancient-Chinese-poem-generator)  *Ancient-Chinese-Poem-Generator*
+- [chinese-poetry](https://github.com/chinese-poetry) **/** [poetry-calendar](http://chinese-poetry.github.io/poetry-calendar/)  *诗词周历*
+- [chenyuntc](https://github.com/chenyuntc) **/** [pytorch-book](https://github.com/chenyuntc/pytorch-book/blob/master/chapter9-神经网络写诗(CharRNN)/) *简体唐诗生成(char-RNN)，可生成藏头诗，自定义诗歌意境，前缀等。*
+- [okcy1016](https://github.com/okcy1016) **/** [poetry-desktop](https://github.com/okcy1016/poetry-desktop/) *诗词桌面*
+- [huangjianke](https://github.com/huangjianke) **/** [weapp-poem](https://github.com/huangjianke/weapp-poem/) *诗词墨客 小程序版*
+- [汉字之美](https://hz.xusenlin.com/) *汉字之美是一个方便查询的诗词网站，简洁干净，方便使用。*
+- [PaddlePaddle](https://github.com/PaddlePaddle) **/** [PaddleNLP](https://github.com/PaddlePaddle/PaddleNLP#%E4%BA%A4%E4%BA%92%E5%BC%8Fnotebook%E6%95%99%E7%A8%8B) *基于ERNIE-GEN(Transformer)的深度学习诗词生成，可自行修改逻辑来生成多种诗词风格。*
+- [Harold-y](https://github.com/Harold-y) **/** [chinese-poetry-db-web](https://github.com/Harold-y/chinese-poetry-db-web) *基于本仓库的MySQL DB整合 + 诗词Web端展示与检索*
+  
+&lt;/details&gt;
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=chinese-poetry/chinese-poetry&amp;type=Date)](https://star-history.com/#chinese-poetry/chinese-poetry&amp;Date)
+
+## License
+
+[MIT](https://github.com/chinese-poetry/chinese-poetry/blob/master/LICENSE) 许可证。
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[cloudflare/security-audit-skill]]></title>
+            <link>https://github.com/cloudflare/security-audit-skill</link>
+            <guid>https://github.com/cloudflare/security-audit-skill</guid>
+            <pubDate>Wed, 11 Nov 2026 00:03:46 GMT</pubDate>
+            <description><![CDATA[A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a></h1>
+            <p>A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 69,289</p>
+            <p>Forks: 4,579</p>
+            <p>Stars today: 1,189 stars today</p>
+            <h2>README</h2><pre># security-audit
+
+A coding-agent skill that turns your agent into a security auditor. It orchestrates isolated agents through reconnaissance, coverage-led hunting, candidate validation, structured output, independent record verification, and target-neutral reporting.
+
+This is the skill that seeded Cloudflare&#039;s vulnerability discovery harness, described in [Build your own vulnerability harness](https://blog.cloudflare.com/build-your-own-vulnerability-harness). The harness grew into a multi-stage, fleet-wide system; this skill is the single-repo starting point it evolved from.
+
+## What it does
+
+The skill runs a structured audit in six phases:
+
+1. **Reconnaissance** -- map architecture, trust boundaries, input surfaces, prior evidence, and deterministic coverage in `architecture.md` and `coverage-ledger.json`.
+2. **Coverage-led hunting** -- assign isolated hunters from ledger units, record their checks, and use coverage critics to find gaps.
+3. **Candidate validation** -- give every unique candidate to a fresh verifier that tries to disprove it.
+4. **Structured output** -- write `confirmed`, `needs_validation`, and `rejected` records to `findings.json` and validate them against `report-schema.json`.
+5. **Independent record verification** -- fresh agents verify final source claims. Material replacements receive another independent verifier.
+6. **Target-neutral reporting** -- derive `REPORT.md`, `FINDINGS-DETAIL.md`, and `NEEDS-VALIDATION.md` from the verified records and coverage ledger.
+
+The parent runs `validate-coverage-ledger.cjs` after creating the ledger and after each later ledger update. It runs `validate-findings.cjs` in Phase 4 and again after every Phase 5 replacement.
+
+The verdicts are distinct: `confirmed` has a complete source trace and bounded observed result, `needs_validation` has an exact unresolved fact and no severity, and `rejected` records a disproved candidate.
+
+Multiple runs against the same repo are additive. The skill uses prior ledgers and findings to target gaps, revalidate changed source, and carry forward current-source evidence without treating stale or unresolved work as covered.
+
+## Files
+
+| File | Purpose |
+|------|---------|
+| `SKILL.md` | Setup, core principles, platform terminology, workflow overview, and audit anti-patterns |
+| `RECONNAISSANCE.md` | Phase 1 reconnaissance prompts and synthesis instructions |
+| `HUNTING.md` | Phase 2 orchestration, hunting methodology, and validation rules |
+| `ATTACK-CLASSES.md` | Core, wildcard, and obvious-things attack prompts |
+| `MEMORY-SAFETY-AND-BINARY.md` | Memory-safety, binary, and kernel hunting classes for native targets |
+| `AI-AND-LLM.md` | Prompt-injection, agent/tool, and output-handling hunting classes for LLM-backed targets |
+| `WEB-PROTOCOL-AND-AUTH.md` | HTTP request-framing, cache, and authentication-protocol hunting classes for HTTP-protocol and auth targets |
+| `CLIENT-SIDE.md` | DOM-injection, messaging-trust, UI-redress, and prototype-pollution hunting classes for client-side/browser targets |
+| `SUPPLY-CHAIN-AND-RELEASE.md` | Dependency, CI, release, signing, update, plugin, and extension hunting classes |
+| `CLOUD-AND-DEPLOYMENT.md` | IAM, infrastructure-as-code, container, serverless, ingress, and runtime-configuration hunting classes |
+| `PROTOCOLS-RPC-AND-MESSAGING.md` | RPC, serialization, queue, broker, webhook, and streaming-protocol hunting classes |
+| `RESOURCE-EXHAUSTION-AND-AVAILABILITY.md` | Shared resource, quota, queue, worker, and operator-spend hunting classes |
+| `DATA-ISOLATION-AND-LIFECYCLE.md` | Tenant isolation, cache, search, export, backup, migration, deletion, and restore hunting classes |
+| `DESKTOP-MOBILE-AND-LOCAL-IPC.md` | Native app, deep-link, webview, exported-component, helper, daemon, and local-IPC hunting classes |
+| `VALIDATION-AND-REPORTING.md` | Phases 3–6 candidate validation, structured output, record verification, and reporting |
+| `report-schema.json` | JSON schema for all three `findings.json` verdicts |
+| `validate-findings.cjs` | Zero-dependency validator for `findings.json` in Phases 4 and 5 |
+| `validate-findings.test.cjs` | Findings-validator tests and producer-compatible fixture checks |
+| `validate-coverage-ledger.cjs` | Zero-dependency validator for `coverage-ledger.json` in Phases 1–5 |
+| `validate-coverage-ledger.test.cjs` | Coverage-ledger validator tests |
+
+## Installation
+
+Install the skill with the [Skills CLI](https://skills.sh):
+
+```bash
+npx skills add https://github.com/cloudflare/security-audit-skill \
+  --skill security-audit
+```
+
+Use `--global` for a user-level installation:
+
+```bash
+npx skills add https://github.com/cloudflare/security-audit-skill \
+  --skill security-audit \
+  --global
+```
+
+Run `npx skills --help` for agent-selection and non-interactive options.
+
+## Usage
+
+Start your coding agent in (or pointed at) the codebase you want to audit, then ask it to do a security audit:
+
+```
+security audit this codebase
+```
+
+```
+find security vulnerabilities in ./src
+```
+
+```
+do a security review, output to ~/audits/my-project
+```
+
+The skill activates automatically when the request matches its trigger (security audit, find vulnerabilities, pen-test the code, etc.). A direct codebase audit or pen-test request uses full audit mode. Security questions and focused vulnerability work use guidance mode unless you request report artifacts. In full audit mode, an unspecified output directory defaults to `~/security-audit-skill/&lt;repo-name&gt;/run-&lt;N&gt;`. The workflow writes inside the target repository only when you explicitly select a directory that version control ignores.
+
+## Requirements
+
+- A coding agent with a model that supports tool use and parallel sub-agents
+- Node.js for the zero-dependency findings and coverage-ledger validators
+- An OS-enforced sandbox for target-controlled builds, tests, processes, browsers, emulators, fuzzers, and fixtures. It must disable external networking, use a sanitized allowlisted environment, enforce resource limits, and allow writes only to assigned scratch paths. Without these controls, the workflow keeps the lead as `needs_validation` instead of executing target code.
+
+## Design principles
+
+- **Only confirm established boundary failures.** Keep a source-grounded blocked lead as `needs_validation` with its exact unresolved fact.
+- **Adversarial validation.** The agent that checks a finding is never the agent that found it.
+- **Severity requires impact.** Likelihood x impact, not deviation from a checklist.
+- **Defense-in-depth gaps are not vulnerabilities.** If Layer A prevents the attack, the absence of Layer B is a hardening note.
+- **Multiple runs improve coverage.** In our test runs, a single run found roughly half of the vulnerabilities that repeated runs found in total.
+
+## Contact
+
+Questions, feedback, or comparing notes on AI-driven security tooling: security-ai-research@cloudflare.com
+
+## License
+
+MIT -- see [LICENSE](LICENSE).
+</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[DeanChensj/jiangshan-map]]></title>
+            <link>https://github.com/DeanChensj/jiangshan-map</link>
+            <guid>https://github.com/DeanChensj/jiangshan-map</guid>
+            <pubDate>Wed, 11 Nov 2026 00:03:45 GMT</pubDate>
+            <description><![CDATA[江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 164 territory snapshots, ancient-to-modern place genealogy & classical poetry routes]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/DeanChensj/jiangshan-map">DeanChensj/jiangshan-map</a></h1>
+            <p>江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 164 territory snapshots, ancient-to-modern place genealogy & classical poetry routes</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 5,244</p>
+            <p>Forks: 613</p>
+            <p>Stars today: 245 stars today</p>
+            <h2>README</h2><pre># Chronicles of the Realm · 江山时序
+
+&lt;p align=&quot;left&quot;&gt;
+  &lt;strong&gt;English&lt;/strong&gt; · &lt;a href=&quot;README_ZH.md&quot;&gt;简体中文 (Chinese)&lt;/a&gt; · &lt;a href=&quot;README_ZH_HANT.md&quot;&gt;繁體中文 (Traditional Chinese)&lt;/a&gt; · &lt;a href=&quot;README_JA.md&quot;&gt;日本語 (Japanese)&lt;/a&gt;
+&lt;/p&gt;
+
+**An Interactive Historical Atlas of China from the Warring States (403 BCE) to the Present — Scrub Through Time, Trace Ancient Cities, and Walk in the Footsteps of History**
+
+[**Play Live Demo (English UI) → https://deanchen.me/jiangshan-map/?lang=en**](https://deanchen.me/jiangshan-map/?lang=en)
+
+*The story behind it (in Chinese): [From textbook maps to 1k GitHub stars](https://deanchen.me/history/atlas/2026/10/25/jiangshan-map-story.html)*
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://www.star-history.com/deanchensj/jiangshan-map&quot;&gt;
+    &lt;picture&gt;
+      &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://api.star-history.com/badge?repo=deanchensj/jiangshan-map&amp;type=trending&amp;theme=dark&quot; /&gt;
+      &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://api.star-history.com/badge?repo=deanchensj/jiangshan-map&amp;type=trending&quot; /&gt;
+      &lt;img alt=&quot;GitHub Trending · Repository of the Day #2&quot; src=&quot;https://api.star-history.com/badge?repo=deanchensj/jiangshan-map&amp;type=trending&quot; height=&quot;56&quot; /&gt;
+    &lt;/picture&gt;
+  &lt;/a&gt;
 &lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
-   &lt;img alt=&quot;Domains&quot; src=&quot;https://img.shields.io/github/directory-file-count/is-a-dev/register/domains?color=5c46eb&amp;label=domains&amp;style=for-the-badge&quot;&gt;
-   &lt;img alt=&quot;Open Pull Requests&quot; src=&quot;https://img.shields.io/github/issues-raw/is-a-dev/register?color=5c46eb&amp;label=issues&amp;style=for-the-badge&quot;&gt;
-   &lt;img alt=&quot;Open Issues&quot; src=&quot;https://img.shields.io/github/issues-pr-raw/is-a-dev/register?color=5c46eb&amp;label=pull%20requests&amp;style=for-the-badge&quot;&gt;
-   &lt;br&gt;
+  &lt;a href=&quot;https://deanchen.me/jiangshan-map/?lang=en&quot;&gt;
+    &lt;img src=&quot;assets/hero_demo_en.webp&quot; alt=&quot;Chronicles of the Realm — 15s Interactive Overview (Warring States Unification, 2,400-Year Dynastic Scrubbing, Chang&#039;an Place Genealogy &amp; Su Shi&#039;s Exile Route)&quot; width=&quot;100%&quot; /&gt;
+  &lt;/a&gt;
 &lt;/p&gt;
 
-&lt;h1 align=&quot;center&quot;&gt;is-a.dev&lt;/h1&gt;
+---
 
-&lt;p align=&quot;center&quot;&gt;&lt;strong&gt;is-a.dev&lt;/strong&gt; is a service that allows developers to get a sweet-looking &lt;code&gt;.is-a.dev&lt;/code&gt; subdomain for their personal websites.&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;📕 &lt;a href=&quot;https://docs.is-a.dev&quot;&gt;Documentation&lt;/a&gt; &amp;bull; 📜 &lt;a href=&quot;https://is-a.dev/terms&quot;&gt;Terms of Service&lt;/a&gt; &amp;bull; 💖 &lt;a href=&quot;https://donate.is-a.dev&quot;&gt;Donate&lt;/a&gt;&lt;/p&gt;
+## Why It&#039;s Fun to Explore
+
+Have you ever wondered while reading Chinese history or classical poetry:
+- *&quot;Where exactly on today&#039;s map are Jiankang (the Six Dynasties capital), Huangzhou (where Su Dongpo composed the Red Cliffs Rhapsody in exile), Languan Pass in the Qinling Mountains (where Han Yu halted his horse in the snow), or Zhuxianzhen (Yue Fei&#039;s northern campaign frontier)?&quot;*
+- *&quot;How many names did Chang&#039;an hold across two millennia, and what pivotal events unfolded on that soil?&quot;*
+- *&quot;How did the realm evolve step by step—from the Partition of Jin and the Seven Warring States at the opening of Sima Guang&#039;s Zizhi Tongjian (403 BCE), Qin&#039;s unification campaigns, Emperor Wu of Han opening the Hexi Corridor, High Tang&#039;s Four Garrisons of Anxi, and Yuan&#039;s Xuanzhengyuan jurisdiction over Tibet, to Zeng Jize&#039;s recovery of Ili (1881 CE) and the 20th-century shift from the &#039;Begonia Leaf&#039; (秋海棠) map to the &#039;Rooster&#039; (雄鸡) map?&quot;*
+
+**Chronicles of the Realm (`jiangshan-map`)** brings together **2,400+ years** of Chinese history across **18 historical periods** into a single interactive parchment atlas—featuring **multi-stage territorial and prefecture snapshots**, **ancient cities**, **strategic mountain passes**, **poetic and battlefield landmarks**, **chronological milestones**, and **reigning monarchs &amp; imperial eras**. No heavy print atlases required—just drag the timeline and click any city to travel through space and time.
 
 ---
 
-## 📢 Announcements
-Please join our [Discord server](https://discord.gg/is-a-dev-830872854677422150) for announcements, service updates, and downtime notifications regarding the service.
+### Feature 1: Scrub the Timeline to Watch Realms Rise &amp; Fall, Track Monarchs, and Compare Ancient &amp; Modern Borders
 
-Only critical announcements are posted on GitHub, everything else is posted on our Discord server.
+- **Multi-Polity Confrontations on a Single Canvas**: From the Seven Warring States (Qin, Chu, Qi, Yan, Zhao, Wei, Han) alongside Zhou, Yue, Ba-Shu, Zhongshan, and Yiqu, to the Three Kingdoms warlords (Yuan Shao, Cao Cao, Liu Bei, Sun Quan, Gongsun&#039;s Liaodong), Northern &amp; Southern Dynasties, Five Dynasties &amp; Ten Kingdoms, and Song, Liao, Western Xia, Dali, Jin, and the Mongols—all rendered side-by-side in high-contrast traditional parchment hues. Hover over any polity in the bottom-left legend to highlight its territory, or click to zoom straight to it.
+- **Multi-Stage Territorial Evolution &amp; Dashed &quot;Ghost Boundary Diffs&quot;**: At every major territorial milestone—such as Qin&#039;s conquest of Ba-Shu (316 BCE), Yan General Qin Kai&#039;s expansion into Liaodong (300 BCE), Ma Yuan&#039;s bronze pillars in Jiaozhi (43 CE), Sima Yi&#039;s campaign in Liaodong (238 CE), Li Jing&#039;s conquest of Tuyuhun (635 CE), the Four Garrisons of Anxi &amp; Wang Xuance&#039;s campaign in Central India (648 CE), Yuan&#039;s Xuanzhengyuan rule over Tibet (1288 CE), Ming&#039;s Hami &amp; Seven Guards West of Jiayuguan (1404 CE), the 1881 Treaty of Saint Petersburg recovering Ili, the 1898 foreign leased territories, the 1945 retrocession of Taiwan, and the 1946 transition from the **&quot;Begonia Leaf&quot; (秋海棠)** map to the **&quot;Rooster&quot; (雄鸡)** map—click any milestone or phase dot to switch maps and reveal the previous phase&#039;s dashed vermilion **Ghost Boundary Diff** so territorial gains and losses are immediately visible.
+- **Inline Reigning Monarch &amp; Imperial Era Display**: The timeline dynamically displays the reigning monarch (temple/posthumous title + personal name + reign span, e.g., `Emperor Wu of Han · Liu Che`, `Emperor Taizong of Tang · Li Shimin`, `Emperor Shengzu of Qing · Xuanye`) alongside the exact imperial era year.
+- **Ancient Prefecture Hover Inspection &amp; Modern X-Ray Lens**: First-level administrative divisions (Commanderies, Circuits, Routes, and Provinces) are rendered with deduplicated **Parchment Casing** borders. Zoom in and hover over any prefecture (e.g., Ming `Yingtian Prefecture` or Three Kingdoms `Jingzhou`) to inspect its jurisdiction and modern provincial equivalents, or toggle the **X-Ray Lens** to project modern provincial boundaries directly over the historical map.
+- **Dynamic River Courses, Ancient Lakes &amp; Grand Engineering Works**: As you scrub through time, historical shifts of the Yellow River, expanding and shrinking ancient lakes (*Yunmeng Marsh*, *Lop Nur / Puchanghai*), Warring States/Qin/Han/Ming Great Walls, Sui-Tang &amp; Grand Canals, the Silk Road, and Zheng He&#039;s maritime routes evolve in lockstep with each era; ancient coastlines around the Bohai Gulf, northern Jiangsu, the Yangtze estuary, and the Pearl River Delta also advance and retreat by era.
+- **Zoomable Timeline**: Drag the handles at either end of the timeline inward to zoom into one stretch of history (handy for short eras such as Qin, the Three Kingdoms, or the Five Dynasties); double-click the timeline to return to the full overview.
 
----
+&gt; [Try It Live: Ming Dynasty Yongle 13 (1415 CE) · Two Capitals, Thirteen Provinces &amp; &quot;Yingtian Prefecture&quot; Inspection →](https://deanchen.me/jiangshan-map/?year=1415&amp;zoom=1.75&amp;center=115.8,33.2&amp;hover=Yingtian%20Prefecture&amp;lang=en)
 
-&gt; [!NOTE]
-&gt; We&#039;ve launched another free subdomain service! Claim your `.is-a.bot` subdomain [here](https://github.com/free-domains/is-a.bot).
-
----
-
-# ✏️ Register
-&gt; If you want a visual guide, check out [this blog post](https://blog.wharrison.com.au/2024/07/is-a-dev/).
-
-- [Fork](https://github.com/is-a-dev/register/fork) the repository.
-- Follow the instructions on our [documentation](https://docs.is-a.dev).
-  - Do not use AI to generate your request, it **WILL** always get it wrong and will delay you getting a domain.
-- Once you open your pull request (PR), it will be reviewed. *Keep an eye on it in case changes are needed!*
-   - If changes have been requested, please make the specified changes otherwise **you will be rejected**.
-- Once your PR is merged, your DNS records should be published with-in a few minutes.
-- Enjoy your new `.is-a.dev` subdomain! Please consider leaving a star ⭐️ to help support us!
+![Ming Dynasty 1415 CE · Yingtian Prefecture Hover Preview](assets/preview_1415_ming_yingtian_en.webp)
 
 ---
 
-## ⛔ Report Abuse
-If you find any subdomains being abused or breaking our [ToS](https://is-a.dev/terms), please report them by [creating an issue](https://github.com/is-a-dev/register/issues/new?assignees=&amp;labels=report-abuse&amp;projects=&amp;template=report-abuse.md&amp;title=Report+abuse) with relevant evidence.
+### Feature 2: Click Any Ancient City or Strategic Pass to Uncover 2,400 Years of History (`Trace Place`)
+
+**Click any ancient city or mountain pass** on the map (or double-click anywhere on the canvas) to open its **Trace Place** genealogy card:
+- **Bilingual City Lore Banner &amp; 2,400-Year Administrative Genealogy**: At the top of the card, read a curated **poetic epigraph and historical biography** for the city; below, trace how its name and administrative jurisdiction evolved across all 18 historical eras—from Warring States and Qin commanderies, Han regional inspectorates, Tang circuits, and Song routes to Yuan/Ming/Qing provinces and modern municipalities—complete with `Imperial Capital` badges and dynastic seat remarks.
+- **Site-Specific Landmark Events**: Beneath each dynasty row, inspect major historical events that took place right on that spot (e.g., *Shang Yang&#039;s Reforms* and *Qin&#039;s Unification* at Xianyang, *Guan Yu Flooding the Seven Armies* at Fancheng, the *Xuanwu Gate Incident* at Chang&#039;an, or *Yue Fei&#039;s Martyrdom* at Lin&#039;an). Click the **`Key Events`** pill in the top-right of the card to filter for dynasties with major events, and click any event to time-travel straight to that year!
+- **Strategic Mountain Passes &amp; Poetic / Battlefield Landmarks**: Explore famous mountain passes—including *Hangu Pass*, *Tongguan*, *Jianmen Pass*, *Yanmen Pass*, *Yumen Pass*, *Yangguan*, and *Shanhai Pass*—rendered with traditional *Hanque* gatehouse icons and strategic terrain notes, alongside famous battlefields and literary landmarks such as *Red Cliffs (Chibi)*, *Gaixia*, *Wuzhang Plains*, *Orchid Pavilion (Lanting)*, *Yueyang Tower*, *Pavilion of Prince Teng*, *Languan Pass*, *Loulan*, *Lop Nur*, and *Issyk-Kul*.
+
+&gt; [Try It Live: High Tang Kaiyuan 29 (741 CE) · Open Chang&#039;an&#039;s 2,400-Year Genealogy Card →](https://deanchen.me/jiangshan-map/?year=741&amp;place=Chang&#039;an&amp;lang=en)
+
+![High Tang 741 CE · Chang&#039;an Trace Place &amp; Key Events](assets/preview_741_tang_trace_en.webp)
 
 ---
 
-## 💖 Supporting Us
-If you would like to help support us, please consider [donating](https://donate.is-a.dev) or [sponsoring](https://donate.is-a.dev/sponsor).
+### Feature 3: Person Chronicles — Trace Any Historical Figure Across Time &amp; Space
 
-We are proudly supported by Cloudflare&#039;s [Project Alexandria](https://www.cloudflare.com/lp/project-alexandria) program for our DNS management.
+Click the top-left **Universal Search Box** (with a rotatable `e.g.` figure preview and quick-search chips, or type any monarch, general, statesman, monk, or poet such as `Cao Cao`, `Huo Qubing`, `Sima Qian`, `Yue Fei`, or `Zheng He`) to open **Person Chronicle (`点人溯事`)**, plotting every milestone of their life with delicate cartographic hairline arcs and directional ticks across changing dynastic borders:
+- **Qin Shi Huang&#039;s Unification Campaigns (238–221 BCE)**: From suppressing the rebellion at Xianyang and Wang Jian&#039;s attack on Ye, to the fall of Han, Zhao, Yan, Wei, Chu, and Dai, culminating in the surrender of Qi at Linzi—as you advance stop by stop, watch the six rival kingdoms merge into the Qin Empire right on the map!
+- **Zhang Qian&#039;s Mission to the Western Regions (138–126 BCE)**: Depart Chang&#039;an, endure over a decade of Xiongnu captivity without surrendering the Han imperial staff, and blaze the trail to Dayuan (Fergana), Kangju, and the Greater Yuezhi.
+- **Zhuge Liang&#039;s Emergence &amp; Northern Expeditions (207–234 CE)**: From the Three Visits at Longzhong and the alliance at Chaisang before Red Cliffs, to entering Shu, the White Emperor City entrustment, the Southern Campaign across the Lu River, Hanzhong&#039;s *Memorial on Deploying the Troops*, Mount Qi, and the autumn winds of Wuzhang Plains.
+- **Xuanzang&#039;s Pilgrimage to India (627–645 CE)**: Slip past Yumen Pass alone across the Moheyan Desert, scale the icy Bedel Pass, cross the Indus, study at Nalanda Monastery, and debate at Kanyakubja (Kanauj) before returning to Chang&#039;an.
+- **Li Bai&#039;s Grand Travels Across Tang China (701–762 CE)**: From Suyab and boyhood in Shu, sailing out through the Three Gorges at twenty-four, scattering gold in Yangzhou, serving in the Hanlin Academy at Chang&#039;an, meeting Du Fu in Luoyang, receiving amnesty at White Emperor City, to his final years at Dangtu.
+- **Su Shi&#039;s Literary Exile Across Song China (1056–1101 CE)**: From leaving Meishan for the capital Kaifeng and gazing at the moon in Mizhou, to composing the *Red Cliffs Rhapsody* in Huangzhou exile, Huizhou, and crossing the sea to Danzhou on Hainan Island.
+- **Wang Yangming&#039;s Unity of Knowledge &amp; Action (1472–1529 CE)**: From birth in Yuyao and imprisonment in Beijing, to his enlightenment at Longchang in Guizhou, pacifying bandits in Southern Ganzhou, capturing the rebel Prince of Ning in 35 days, teaching at the Tianquan Bridge in Shaoxing, and his final words *&quot;This mind is bright and clear; what more is there to say?&quot;* at Nan&#039;an.
+- **Multi-Person Chronicles**: Type two or three names into the search box (e.g. `Li Bai, Du Fu, Gao Shi` or `Cao Cao, Liu Bei, Sun Quan`) to merge their journeys onto one timeline. Places where they met in the same year are marked as shared encounters, and the `Shared N` pill narrows the list to just those stops.
+- **Event Storylines**: Major events unfold stop by stop, just like a person&#039;s life. The An Lushan Rebellion (755–763 CE) is laid out in ten stops across three acts, with the Tang loyalists and the rebels drawn in two colors so each side&#039;s advances are easy to follow.
 
-We would like to thank all of our current and past [supporters](https://is-a.dev/thanks).
-</pre>
+Each time you step to the next event (`‹ / ›`, `← / →`, or `Space` to auto-play), **the timeline year, reigning monarch, imperial era, and dynastic territories evolve in sync with their footsteps**, highlighting the active transition arc alongside bilingual primary-source excerpts and poems written at that exact site.
+
+&gt; [Try It Live: Follow Su Dongpo&#039;s Exile to Mizhou &amp; Huangzhou (1075–1082 CE) →](https://deanchen.me/jiangshan-map/?person=sushi&amp;lang=en)
+
+![Person Chronicle · Su Shi&#039;s Life &amp; Exile Route](assets/preview_journey_sushi_en.webp)
+
+---
+
+### Feature 4: Easter Egg · Map Pinpoint Challenge — What Imperial Court Rank Would You Earn?
+
+Think you know Chinese historical geography? Click **`Quiz ›`** in the corner of the **Universal Search Box** guide bar (or type `quiz` for **`Map Pinpoint · Ancient Place Quiz`**):
+- **Dynastic Historical Clues + Blind Map Pinpointing**: City labels are hidden while the prompt asks you to locate an ancient city across a 10-round progressive difficulty deck—accompanied by **dynastic historical clues** (without spoiling the modern city name). Drop your pin to preview and adjust, click the on-pin **`✓ Confirm`** button to lock in your answer with concentric distance score rings, and earn points based on great-circle distance to the true coordinates!
+- Complete 10 rounds to receive a traditional imperial cartographic title such as **Grand Historian &amp; Master Cartographer (太史令 · 舆图大家)**, **Director of the Bureau of Operations (职方郎中)**, or **Prefectural Retainer (州郡从事)**.
+
+&gt; [Try It Live: Western Han Emperor Wu, Yuanshou 2 (121 BCE) · Start the Map Pinpoint Challenge →](https://deanchen.me/jiangshan-map/?year=-121&amp;quiz=locate&amp;lang=en)
+
+![Western Han 121 BCE · Map Pinpoint Challenge Preview](assets/preview_quiz_challenge_en.webp)
+
+---
+
+## Keyboard Shortcuts &amp; Shareable Deep Links
+
+### Keyboard Shortcuts
+
+| Key / Action | Effect |
+| :--- | :--- |
+| **`/`** or **`Cmd/Ctrl + K`** | Focus the **Universal Search Box**: search **historical figures** (`Qin Shi Huang`/`Zhang Qian`/`Su Shi`), **ancient &amp; modern cities** (`Xianyang`/`Chang&#039;an`/`Luoyang`/`Kaifeng`), **reigning monarchs** (`Emperor Wu of Han`/`Taizong of Tang`/`Liu Che`/`Li Shimin`), **imperial eras** (`Zhenguan`/`Yongle`/`Kangxi`), **poetic &amp; battlefield landmarks** (`Red Cliffs`/`Wuzhang Plains`/`Languan`/`Lanting`), **mountain passes** (`Hangu Pass`/`Jianmen Pass`/`Yumen Pass`), **historical events**, or the **Ancient Place Quiz** |
+| **`←` / `→`** or bottom **`‹ / ›`** | Jump to the previous / next historical phase, milestone event, or person event stop (hold `Shift + ← / →` to step by `10` years) |
+| **`Space`** | Auto-play / pause timeline evolution (or auto-advance stops in Person Chronicle mode) |
+| **`Esc`** | Close active popups/cards, clear search highlights, or exit custom multi-stop routes |
+| **`Single-click city` / `Double-click map`** | Open the 18-era **Trace Place &amp; Key Events** genealogy card for that location |
+| **`Hover / Click legend swatch`** | Hover to isolate &amp; highlight that polity&#039;s territory; click to auto-zoom to its bounding box |
+
+### Shareable Deep Links
+
+Append query parameters to share any historical moment, battle, city genealogy, or multi-stop route:
+- **Jump to a specific year or territorial shift**: [`?year=-403&amp;lang=en`](https://deanchen.me/jiangshan-map/?year=-403&amp;lang=en) (403 BCE · Partition of Jin) / [`?year=-121&amp;lang=en`](https://deanchen.me/jiangshan-map/?year=-121&amp;lang=en) (121 BCE · Huo Qubing opens the Hexi Corridor) / [`?year=648&amp;lang=en`](https://deanchen.me/jiangshan-map/?year=648&amp;lang=en) (648 CE · Four Garrisons of Anxi &amp; Wang Xuance in India) / [`?year=1288&amp;lang=en`](https://deanchen.me/jiangshan-map/?year=1288&amp;lang=en) (1288 CE · Yuan Xuanzhengyuan over Tibet) / [`?year=1881&amp;lang=en`](https://deanchen.me/jiangshan-map/?year=1881&amp;lang=en) (1881 CE · Zeng Jize recovers Ili) / [`?year=1945&amp;lang=en`](https://deanchen.me/jiangshan-map/?year=1945&amp;lang=en) (1945 CE · Retrocession of Taiwan)
+- **Pinpoint a famous battle**: [`?year=-260&amp;place=长平&amp;lang=en`](https://deanchen.me/jiangshan-map/?year=-260&amp;place=长平&amp;lang=en) (Battle of Changping) / [`?year=208&amp;place=赤壁&amp;lang=en`](https://deanchen.me/jiangshan-map/?year=208&amp;place=赤壁&amp;lang=en) (Battle of Red Cliffs) / [`?year=383&amp;place=淝水&amp;lang=en`](https://deanchen.me/jiangshan-map/?year=383&amp;place=淝水&amp;lang=en) (Battle of Fei River)
+- **Inspect a city&#039;s 2,400-year genealogy**: [`?year=741&amp;place=长安&amp;lang=en`](https://deanchen.me/jiangshan-map/?year=741&amp;place=长安&amp;lang=en) (Chang&#039;an / Xi&#039;an) / [`?year=1415&amp;place=应天府&amp;lang=en`](https://deanchen.me/jiangshan-map/?year=1415&amp;place=应天府&amp;lang=en) (Jiankang / Yingtian / Nanjing) / [`?year=819&amp;place=蓝关&amp;lang=en`](https://deanchen.me/jiangshan-map/?year=819&amp;place=蓝关&amp;lang=en) (Han Yu at Languan Pass)
+- **Plot a custom poetic or campaign route**: [`?year=763&amp;place=剑外,巴峡,巫峡,襄阳,洛阳&amp;lang=en`](https://deanchen.me/jiangshan-map/?year=763&amp;place=剑外,巴峡,巫峡,襄阳,洛阳&amp;lang=en) (Du Fu&#039;s 763 CE homeward route) / [`?year=1079,1080,1094,1097&amp;place=湖州,黄州,惠州,儋州&amp;lang=en`](https://deanchen.me/jiangshan-map/?year=1079,1080,1094,1097&amp;place=湖州,黄州,惠州,儋州&amp;lang=en) (Su Shi&#039;s multi-year exile route across Huzhou, Huangzhou, Huizhou, and Danzhou)
+- **Open a person&#039;s spatio-temporal chronicle**: [`?person=qinshihuang&amp;lang=en`](https://deanchen.me/jiangshan-map/?person=qinshihuang&amp;lang=en) (Qin Shi Huang) / [`?person=zhangqian&amp;lang=en`](https://deanchen.me/jiangshan-map/?person=zhangqian&amp;lang=en) (Zhang Qian) / [`?person=zhugeliang&amp;lang=en`](https://deanchen.me/jiangshan-map/?person=zhugeliang&amp;lang=en) (Zhuge Liang) / [`?person=xuanzang&amp;lang=en`](https://deanchen.me/jiangshan-map/?person=xuanzang&amp;lang=en) (Xuanzang) / [`?person=libai&amp;lang=en`](https://deanchen.me/jiangshan-map/?person=libai&amp;lang=en) (Li Bai) / [`?person=sushi&amp;lang=en`](https://deanchen.me/jiangshan-map/?person=sushi&amp;lang=en) (Su Shi) / [`?person=wangyangming&amp;lang=en`](https://deanchen.me/jiangshan-map/?person=wangyangming&amp;lang=en) (Wang Yangming)
+- **Compare several people or follow an event**: [`?person=libai,dufu&amp;lang=en`](https://deanchen.me/jiangshan-map/?person=libai,dufu&amp;lang=en) (Li Bai &amp; Du Fu) / [`?person=caocao,liubei,sunquan&amp;lang=en`](https://deanchen.me/jiangshan-map/?person=caocao,liubei,sunquan&amp;lang=en) (Cao Cao, Liu Bei &amp; Sun Quan) / [`?event=anshi&amp;lang=en`](https://deanchen.me/jiangshan-map/?event=anshi&amp;lang=en) (An Lushan Rebellion)
+- **Start a quiz round**: [`?year=-121&amp;quiz=locate&amp;lang=en`](https://deanchen.me/jiangshan-map/?year=-121&amp;quiz=locate&amp;lang=en) (Map Pinpoint Challenge)
+- **Switch UI language**: [`?lang=en`](https://deanchen.me/jiangshan-map/?lang=en) (English) / [`?lang=zh-tw`](https://deanchen.me/jiangshan-map/?lang=zh-tw) (Traditional Chinese) / [`/`](https://deanchen.me/jiangshan-map/) (Simplified Chinese)
+
+### Embed in Your Page
+
+Put any view of the atlas into a blog post, Notion page, or course site:
+
+1. Open the atlas and set up the view you want (a year, a regime profile, a place card, or a person&#039;s trajectory). The address bar always mirrors what you see.
+2. Copy the URL and add `&amp;embed=1`.
+3. Paste it into an `&lt;iframe&gt;`:
+
+```html
+&lt;iframe
+  src=&quot;https://deanchen.me/jiangshan-map/?embed=1&amp;year=1104&amp;trace=101.778,36.617&amp;from=1072&amp;to=1126&amp;lang=en&quot;
+  width=&quot;100%&quot; height=&quot;480&quot; loading=&quot;lazy&quot; style=&quot;border:0&quot;
+  title=&quot;Chronicles of the Realm · 1104 CE, Northern Song&quot;&gt;&lt;/iframe&gt;
+```
+
+The embedded map hides the site chrome and keeps only the map, a compact timeline, a title chip, an &quot;Open in Jiangshan Atlas ↗&quot; link, and a note that historical borders are approximate. Readers click once to start panning and zooming, so scrolling your page never gets stuck on the map.
+
+| Parameter | Effect |
+|---|---|
+| `embed=1` | Turn on embed mode (required) |
+| `year`, `polity`, `person`, `stop`, `trace`, `lang` | Same as the share links above |
+| `from=1072&amp;to=1126` | Limit the timeline to this range; the timeline zooms to show only it |
+| `lock=1` | Freeze the map at `year` and hide the timeline |
+| `autoplay=1` | Play a person&#039;s trajectory stop by stop (with `person`), or play the timeline |
+
+WeChat Official Accounts, Zhihu, and Xiaohongshu do not allow iframes; share the plain link there instead.
+
+---
+
+## AI Agent, MCP &amp; LLM Integration
+
+**Chronicles of the Realm** works out o
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
+          ]]></content:encoded>
+            <category>JavaScript</category>
+        </item>
+        <item>
+            <title><![CDATA[conorbronsdon/avoid-ai-writing]]></title>
+            <link>https://github.com/conorbronsdon/avoid-ai-writing</link>
+            <guid>https://github.com/conorbronsdon/avoid-ai-writing</guid>
+            <pubDate>Wed, 11 Nov 2026 00:03:44 GMT</pubDate>
+            <description><![CDATA[Skill that audits and rewrites content to remove AI writing patterns. Use it with your favorite agents including Claude Code, OpenClaw, Codex, and Hermes.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/conorbronsdon/avoid-ai-writing">conorbronsdon/avoid-ai-writing</a></h1>
+            <p>Skill that audits and rewrites content to remove AI writing patterns. Use it with your favorite agents including Claude Code, OpenClaw, Codex, and Hermes.</p>
+            <p>Language: JavaScript</p>
+            <p>Stars: 5,557</p>
+            <p>Forks: 478</p>
+            <p>Stars today: 37 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+
+# avoid-ai-writing
+
+Audit &amp; rewrite content to remove AI writing patterns. A practical skill for any AI agent. Supports detect-only and edit-in-place modes, plus voice profiles.
+
+[![GitHub stars](https://img.shields.io/github/stars/conorbronsdon/avoid-ai-writing?style=social)](https://github.com/conorbronsdon/avoid-ai-writing/stargazers)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
+[![npm version](https://img.shields.io/npm/v/avoid-ai-writing-detector.svg)](https://www.npmjs.com/package/avoid-ai-writing-detector)
+[![detector](https://github.com/conorbronsdon/avoid-ai-writing/actions/workflows/detector-test.yml/badge.svg)](https://github.com/conorbronsdon/avoid-ai-writing/actions/workflows/detector-test.yml)
+[![Podcast](https://img.shields.io/badge/Podcast-Chain_of_Thought-purple?style=flat-square)](https://chainofthought.show/?utm_source=github&amp;utm_medium=referral&amp;utm_campaign=repo-readme&amp;utm_content=avoid-ai-writing)
+[![X](https://img.shields.io/badge/X-@ConorBronsdon-black?style=flat-square&amp;logo=x)](https://x.com/ConorBronsdon)
+
+&lt;img src=&quot;docs/demo.gif&quot; alt=&quot;The bundled detector engine flagging 13 AI-writing patterns by category in a sample paragraph, then scoring the clean rewrite 0/100&quot; width=&quot;800&quot;&gt;
+&lt;/div&gt;
+
+---
+
+
+A portable writing skill for [Claude Code](https://docs.anthropic.com/en/docs/claude-code), Codex,  [OpenClaw](https://github.com/openclaw/openclaw), [Hermes](https://github.com/NousResearch/hermes-agent), and any other [agentskills.io](https://agentskills.io)-compatible agent. Audits and rewrites content to remove AI writing patterns (&quot;AI-isms&quot;).
+
+The rules and bundled detector are calibrated for English. See [community language adaptations](#community--multilingual) for independently maintained versions in other languages.
+
+**Three modes:**
+- **Rewrite** (default) — flags AI patterns, applies up to two editing passes, verifies the result when possible, and returns one final version.
+- **Detect** — flags AI patterns without rewriting. Shows which flags are real problems vs. judgment calls. Useful when patterns might be intentional, when auditing content you don&#039;t want altered, or when you just want a quick scan.
+- **Edit** — edits a prose file in place (via the Edit tool) with minimal, targeted changes, preserving passages that are already human. Source code, configuration, and generated data are refused because prose rewrites can corrupt structured content. Returns an edits-made + verification report, not the full file.
+
+Use `--iterate 1|2` to set the editing-pass ceiling. `--iterate 1` allows the initial rewrite only. `--iterate 2` uses the default maximum of an initial rewrite plus one correction or preservation repair, and stops early when no justified in-scope edit remains. Checks do not consume a pass, but any change they prompt does. The skill reports how many editing passes it used and any intentional, protected, or unresolved finding.
+
+An optional **voice profile** (casual / professional / technical / warm / blunt) sets how the prose should sound, independent of the audience context profile.
+
+The [glossary](GLOSSARY.md) defines the terms these docs use: word tiers, severity tiers, modes, profiles, and detector options.
+
+## Table of contents
+- [Quick demo](#quick-demo)
+- [Why a skill, not just a prompt](#why-a-skill-not-just-a-prompt)
+- [Installation &amp; Usage](#installation--usage)
+    * [Install the complete skill directory](#install-the-complete-skill-directory)
+    * [Claude Code](#claude-code)
+    * [Claude Cowork — install as a plugin](#claude-cowork--install-as-a-plugin)
+    * [OpenClaw](#openclaw)
+    * [Cursor](#cursor)
+    * [Hermes](#hermes)
+    * [OpenAI Codex](#openai-codex)
+    * [Native ChatGPT and Codex plugin package](#native-chatgpt-and-codex-plugin-package)
+    * [Other agents](#other-agents)
+    * [Triggering the skill](#triggering-the-skill)
+- [Pattern reference](#pattern-reference)
+    * [Content Patterns](#content-patterns)
+    * [Language Patterns](#language-patterns)
+    * [Structure Patterns](#structure-patterns)
+    * [Communication Patterns](#communication-patterns)
+    * [Meta Patterns](#meta-patterns)
+    * [Structural Detection (v3.4)](#structural-detection-v34)
+    * [AI-tool fingerprints &amp; later additions (v3.5–3.8)](#ai-tool-fingerprints--later-additions-v3538)
+    * [Conversational-register patterns (v3.15)](#conversational-register-patterns-v315)
+    * [Share-post framing (v3.20)](#share-post-framing-v320)
+    * [Narrated candor (v3.21)](#narrated-candor-v321)
+    * [Unnecessary hyphenation (v3.24)](#unnecessary-hyphenation-v324)
+- [Full Example](#full-example)
+- [Run the detector](#run-the-detector)
+    * [Score a file or piped text from the command line](#score-a-file-or-piped-text-from-the-command-line)
+    * [Gate prose in GitHub Actions or pre-commit](#gate-prose-in-github-actions-or-pre-commit)
+    * [Use the detector over MCP](#use-the-detector-over-mcp)
+- [House style is a different job](#house-style-is-a-different-job)
+- [More from me](#more-from-me)
+- [Credits](#credits)
+- [Community / Multilingual](#community--multilingual)
+- [Official sources and sponsorship](#official-sources-and-sponsorship)
+- [Disclaimer](#disclaimer)
+- [License](#license)
+
+## Quick demo
+
+**Input:**
+&gt; Certainly! Acme Analytics, a vibrant startup nestled in the heart of Boulder&#039;s thriving tech ecosystem, has secured $40M in Series B funding — marking a watershed moment for the observability landscape. The platform serves as a unified hub, featuring real-time dashboards, boasting sub-second queries, and presenting a seamless integration layer. Moreover, experts believe Acme is poised to disrupt the market. In conclusion, the future looks bright!
+
+**Final rewrite:**
+&gt; Acme Analytics, a Boulder-based startup, raised a $40M Series B. Its observability platform has real-time dashboards, runs queries in under a second, and includes an integration layer.
+
+**Verification:** One editing pass. Review found no further justified in-scope edit; no deterministic preservation check ran in this prose-only demo.
+
+**What it caught:** the chatbot opener (&quot;Certainly!&quot;), promotional modifiers, inflated significance, roundabout verbs, vague attribution, and the generic conclusion. The rewrite keeps the funding, location, and three product capabilities. It removes the unsupported market prediction without inventing an investor or an integration mechanism.
+
+## Why a skill, not just a prompt
+
+A one-shot &quot;make this sound human&quot; prompt catches the obvious stuff. This skill is different:
+
+- **Single final rewrite** — completes its audit, correction, and available verification before returning one full version. A short change summary follows when useful; a detailed audit remains available on request without adding a competing draft.
+- **Two-pass editing** — review can catch patterns that survive the first edit, while one shared limit covers both corrective edits and preservation repairs.
+- **Surface-aware delivery** — checks how the destination renders single newlines before returning prose, unwraps accidental hard-wrapped paragraphs only when those breaks would show, and preserves intentional structure such as lists, poetry, code, and addresses.
+- **112-entry word replacement table across 3 tiers + 10 Tier 3 phrases** — not vibes-based. Every flagged word has a specific, plainer alternative. &quot;Leverage&quot; → &quot;use.&quot; &quot;Commence&quot; → &quot;start.&quot; Tier 1 matches flag unless a listed exception applies, Tier 2 words flag when they cluster, Tier 3 words flag only at high density. Tier 1 itself splits into **1A frequency markers** (`delve`, `tapestry`) and **1B clarity edits** (`in order to`, `utilize`) — same fix, but only 1A is evidence about how a passage was produced, and 1B is weighted lower so a wordiness fix cannot push a document toward an AI classification. Tier 3 *phrases* (multi-word boilerplate like &quot;the integration of,&quot; &quot;decentralized compute&quot;) flag on per-phrase repetition or when 3+ distinct phrases stack in one piece — the LLM-self-varies-boilerplate shape.
+- **74 pattern categories** — representative examples below, each with before/after. Includes structural detection (hashtag stuffing, bare-NP bullet lists, hedge-stacked predictions), AI-tool fingerprints (placeholders, citation markup, UTM params), rhythm/uniformity checks, conversational-register tells, and writer-side tests. The full catalog lives in [`references/patterns.md`](./references/patterns.md); this count is enforced against it in CI.
+- **Detect mode** — flag patterns without rewriting. See which flags are real problems vs. judgment calls. Useful when patterns might be intentional or you&#039;re auditing content you don&#039;t want altered.
+- **Works across platforms** — a directory-based skill runs in Claude Code, Cowork (as a plugin), OpenClaw, Cursor (as a ported rule), and other directory-aware agents. See the install paths below.
+
+## Installation &amp; Usage
+
+### Install the complete skill directory
+
+Use the plugin install below or clone the repository into your agent&#039;s skills directory. Keep `SKILL.md` with `references/patterns.md`: the entry file loads the catalog before auditing. The bundled `scripts/`, `detector/`, and `examples/` provide optional mechanical verification.
+
+For a single-file rules field, use [`dist/avoid-ai-writing.md`](./dist/avoid-ai-writing.md) (about 138 KB). It includes every rule and profile, with manual fallbacks for commands unavailable outside the bundle. Some rules and instructions fields hold far less than that, so check the size limits under [Other agents](#other-agents) before pasting. Do not copy the slim entry file alone. Older installers that fetch only root `SKILL.md` omit its required reference; use a directory install instead.
+
+### Claude Code
+
+**Option 1: Clone into skills directory**
+
+```bash
+git clone https://github.com/conorbronsdon/avoid-ai-writing ~/.claude/skills/avoid-ai-writing
+```
+
+Then invoke it with `/avoid-ai-writing &lt;your text&gt;`.
+
+**Option 2: Copy a self-contained file**
+
+Download `dist/avoid-ai-writing.md` and place it in any directory that Claude Code can read. Reference it in your `CLAUDE.md`:
+
+```markdown
+- Editing for AI patterns → read `path/to/avoid-ai-writing.md`
+```
+
+**Option 3: Use as a slash command**
+
+Optional alias. Claude Code names a command after its file, so use a different name from `avoid-ai-writing`. If you&#039;ve done Option 1, the skill already answers to `/avoid-ai-writing` and a command file with the same name would collide with it. Create a command file (e.g., `~/.claude/commands/clean-ai-writing.md`):
+
+```markdown
+---
+description: Audit and rewrite content to remove AI writing patterns
+---
+
+$ARGUMENTS
+
+Read and follow the instructions in ~/.claude/skills/avoid-ai-writing/SKILL.md
+```
+
+Then use `/clean-ai-writing &lt;your text&gt;` in Claude Code.
+
+### Claude Cowork — install as a plugin
+
+[Cowork](https://claude.com/product/cowork) loads skills only from **installed plugins** — it doesn&#039;t scan `~/.claude/skills/`, so a bare clone (the Claude Code steps above) won&#039;t be discovered there. This repo doubles as a single-plugin [marketplace](https://code.claude.com/docs/en/plugin-marketplaces), so install it as a plugin instead:
+
+```bash
+/plugin marketplace add conorbronsdon/avoid-ai-writing
+/plugin install avoid-ai-writing@conorbronsdon-skills
+/reload-plugins   # or restart the session, to activate the skill
+```
+
+In the Cowork desktop app, do the same from **Customize → Plugins → Add marketplace from GitHub** (`conorbronsdon/avoid-ai-writing`), then install **avoid-ai-writing**. The skill auto-triggers from phrases like &quot;remove AI-isms.&quot; New releases arrive when the plugin&#039;s version is bumped — run `/plugin marketplace update` to pull them.
+
+The same plugin install works in Claude Code if you&#039;d rather have a versioned, updatable plugin than the file clone above.
+
+&gt; Prefer not to install a plugin? Copy `dist/avoid-ai-writing.md` into a folder connected to your Cowork session and tell the agent to follow `./avoid-ai-writing.md` — works as a one-off, no auto-trigger.
+
+### OpenClaw
+
+**Option 1: [Install from ClawHub](https://clawhub.ai/conorbronsdon/avoid-ai-writing)**
+
+```bash
+clawhub install avoid-ai-writing
+```
+
+**Option 2: Clone into skills directory**
+
+```bash
+git clone https://github.com/conorbronsdon/avoid-ai-writing ~/.openclaw/skills/avoid-ai-writing
+```
+
+### Cursor
+
+Drop the ported rule into your project&#039;s `.cursor/rules/`:
+
+```bash
+mkdir -p .cursor/rules
+curl -o .cursor/rules/avoid-ai-writing.mdc \
+  https://raw.githubusercontent.com/conorbronsdon/avoid-ai-writing/main/cursor-rules/avoid-ai-writing.mdc
+```
+
+See [`cursor-rules/README.md`](./cursor-rules/README.md) for activation globs and trigger phrases. Functionally identical to the Claude Code skill — same tier vocabulary, same context profiles, same modes.
+
+### Hermes
+
+Drop the skill into Hermes&#039;s skills directory — it then appears automatically as `/avoid-ai-writing`, no registration needed:
+
+```bash
+git clone https://github.com/conorbronsdon/avoid-ai-writing ~/.hermes/skills/writing/avoid-ai-writing
+```
+
+### OpenAI Codex
+
+Codex reads [Agent Skills](https://developers.openai.com/codex/skills) in the same `SKILL.md` format. Put it in `.agents/skills/` at the repo root, or `~/.agents/skills/` to use it across all your projects:
+
+```bash
+git clone https://github.com/conorbronsdon/avoid-ai-writing .agents/skills/avoid-ai-writing
+```
+
+### Native ChatGPT and Codex plugin package
+
+Published in the [OpenAI Plugins Directory](https://chatgpt.com/plugins/plugins_6a9b77b18b8881918efa9c1255868164); install it there for ChatGPT or Codex.
+
+The [plugin package](./OPENAI_PLUGIN.md) keeps the canonical `SKILL.md` as its editorial authority and provides seven focused Skills:
+
+- `avoid-ai-writing` — uses the canonical audit and rewrite instructions
+- `avoid-ai-writing-router` — routes mixed and multi-stage requests
+- `ai-writing-detector` — runs the bundled deterministic detector
+- `voice-preserving-rewriter` — rewrites returned text while retaining voice
+- `file-edit-in-place` — edits only explicitly named files
+- `preservation-verifier` — checks meaning and constraints before and after a rewrite
+- `false-positive-reviewer` — reviews detector findings that need context
+
+From a cloned checkout, build and validate the package with:
+
+```bash
+python3 scripts/package-openai-plugin.py . /tmp/avoid-ai-writing.zip --json
+python3 scripts/validate-openai-plugin.py . --json
+```
+
+### Other agents
+
+Use the destination below for your tool. Measure the downloaded file with `wc -c dist/avoid-ai-writing.md` for its exact UTF-8 byte count before comparing byte limits; character limits count characters instead.
+
+| Tool | Where to put it | Size limit |
+|------|-----------------|------------|
+| **Windsurf** | clone the skill directory into `.devin/skills/avoid-ai-writing/` (`.windsurf/skills/avoid-ai-writing/` is also supported) ([skills docs](https://docs.windsurf.com/windsurf/cascade/skills)) | Workspace rule files are limited to 12,000 characters ([rules docs](https://docs.windsurf.com/windsurf/cascade/memories)), so the single file does not fit in `.windsurf/rules/` |
+| **Cline** | `.clinerules/avoid-ai-writing.md` | None documented; rules use context tokens on every task ([docs](https://docs.cline.bot/features/cline-rules)) |
+| **GitHub Copilot** (VS Code) | paste into `.github/copilot-instructions.md` | None documented ([docs](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions)) |
+| **Claude.ai Projects** | paste `dist/avoid-ai-writing.md` into the project&#039;s custom instructions | None documented ([docs](https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects)) |
+| **ChatGPT** | install the [native plugin package](#native-chatgpt-and-codex-plugin-package), or upload `dist/avoid-ai-writing.md` as a Custom GPT Knowledge file | A Custom GPT&#039;s Instructions field holds far less than the file; do not paste it there |
+
+For a Custom GPT Knowledge upload, add a short instruction directing the GPT to consult `avoid-ai-writing.md` when auditing or rewriting prose. Knowledge files supply reference material; uploading one alone does not activate the skill. Test the GPT in Preview with an example from this README before relying on it ([GPT configuration docs](https://help.openai.com/en/articles/8554397-creating-a-gpt)).
+
+### Triggering the skill
+
+Once installed, ask your assistant to clean up AI writing:
+
+- &quot;Remove AI-isms from this post&quot;
+- &quot;Audit this draft for AI tells&quot;
+- &quot;Make this sound less like AI&quot;
+- &quot;Clean up AI writing in this paragraph&quot;
+
+In **rewrite mode** (default), the skill completes its review and available verification before returning the rewritten text exactly once:
+
+1. **Final rewrite** — the verified or honestly qualified final version
+2. **Changes** — a short summary when edits were made and the summary is useful
+3. **Verification** — editing passes used, checks that ran, stop reason, and any intentional, protected, source-blocked, or unresolved findings
+
+Ask for a detailed or exhaustive audit to add quoted findings before the final rewrite. The response still contains one full version. Clean input can be returned unchanged with zero editing passes.
+
+In **detect mode**, the skill returns two sections:
+
+1. **Issues found** — every AI-ism identified, grouped by severity (P0/P1/P2)
+2. **Assessment** — which flags are clear problems vs. patterns that may be intentional or effective in context
+
+Trigger detect mode with: &quot;detect,&quot; &quot;flag only,&quot; &quot;audit only,&quot; &quot;just flag,&quot; &quot;scan,&quot; or similar.
+
+## Pattern reference
+
+&gt; Representative examples from the catalog — not the exhaustive list (that&#039;s [`references/patterns.md`](./references/patterns.md)). The skill&#039;s human-facing prose catalog and the [detector engine](./detector/) use **different counts on purpose**: the engine implements 54 `type` categories because it splits the vocabulary tiers and adds stylometric/fingerprint signals (punctuation distribution, function-word entropy, bypass-trick detection) that work as math over a document rather than as a rule you&#039;d look up. The two are mapped in [`detector/CATEGORIES.md`](./detector/CATEGORIES.md); don&#039;t &quot;fix&quot; one count to match the other.
+
+### Content Patterns
+
+| # | Pattern | Before | After |
+|---|---------|--------|-------|
+| 1 | **Significance inflation** | &quot;marking a pivotal moment in the evolution of...&quot; | State the supported event; do not invent a date or purpose |
+| 2 | **Notability name-dropping** | &quot;cited in NYT, BBC, and Wired&quot; | Keep supported citations; remove claims that they prove importance |
+| 3 | **Superficial -ing analyses** | &quot;symbolizing... reflecting... showcasing...&quot; | Replace with specific facts or cut |
+| 4 | **Promotional language** | &quot;nestled within the breathtaking region&quot; | Keep the supplied location; remove promotional modifiers |
+| 5 | **Vague attributions** | &quot;Experts believe it plays a crucial role&quot; | Request the source, or flag the claim for verification |
+| 6 | **Formulaic challenges** | &quot;Despite challenges... continues to thrive&quot; | Name the challenge and the response |
+| 7 | **Novelty inflation** | &quot;He introduced a term I hadn&#039;t heard before&quot; | Keep the personal observation if it matters; do not invent an explanation |
+
+### Language Patterns
+
+| # | Pattern | Before | After |
+|---|---------|--------|-------|
+| 8 | **Word/phrase replacements (3 tiers)** | &quot;leverage... robust... seamless... utilize&quot; | &quot;use... reliable... smooth... use&quot; |
+| 9 | **Copula avoidance** | &quot;serves as... features... boasts&quot; | &quot;is... has&quot; |
+| 10 | **Synonym cycling** | &quot;developers... engineers... practitioners... builders&quot; | &quot;developers&quot; (repeat the clear word) |
+| 11 | **Template phrases** | &quot;a [adj] step towards [adj] infrastructure&quot; | Describe the specific outcome |
+| 12 | **Filler phrases** | &quot;In order to,&quot; &quot;Due to the fact that&quot; | &quot;To,&quot; &quot;Because&quot; |
+| 13 | **False ranges** | &quot;from the Big Bang to dark matter&quot; |
+
+... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
           ]]></content:encoded>
             <category>JavaScript</category>
         </item>
