@@ -4,427 +4,24 @@
         <title>GitHub Trending Today for rust - Rust Daily</title>
         <link>https://github.com/trending</link>
         <description>The most popular GitHub repositories today for rust.</description>
-        <lastBuildDate>Thu, 12 Nov 2026 00:04:30 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 13 Nov 2026 00:04:36 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitHub Trending RSS Generator</generator>
         <language>en</language>
         <copyright>All rights reserved 2026, GitHub</copyright>
         <item>
-            <title><![CDATA[vercel-labs/agent-browser]]></title>
-            <link>https://github.com/vercel-labs/agent-browser</link>
-            <guid>https://github.com/vercel-labs/agent-browser</guid>
-            <pubDate>Thu, 12 Nov 2026 00:04:30 GMT</pubDate>
-            <description><![CDATA[Browser automation CLI for AI agents]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/vercel-labs/agent-browser">vercel-labs/agent-browser</a></h1>
-            <p>Browser automation CLI for AI agents</p>
-            <p>Language: Rust</p>
-            <p>Stars: 49,846</p>
-            <p>Forks: 3,487</p>
-            <p>Stars today: 708 stars today</p>
-            <h2>README</h2><pre># agent-browser
-
-Browser automation for AI agents: open pages, read them as an accessibility tree, and act on elements from the shell.
-
-&lt;p&gt;
-  &lt;a href=&quot;https://vercel.com/labs#labs-products&quot;&gt;&lt;img alt=&quot;Vercel Labs Product&quot; src=&quot;https://img.shields.io/badge/LABS-PRODUCT-0a0a0a.svg?style=for-the-badge&amp;amp;logo=Vercel&amp;amp;labelColor=000000&quot; height=&quot;28&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://www.npmjs.com/package/agent-browser&quot;&gt;&lt;img alt=&quot;npm version: agent-browser&quot; src=&quot;https://img.shields.io/npm/v/agent-browser.svg?style=for-the-badge&amp;amp;labelColor=000000&quot; height=&quot;28&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/vercel-labs/agent-browser/blob/main/LICENSE&quot;&gt;&lt;img alt=&quot;License: Apache-2.0&quot; src=&quot;https://img.shields.io/github/license/vercel-labs/agent-browser.svg?style=for-the-badge&amp;amp;labelColor=000000&quot; height=&quot;28&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://www.npmjs.com/package/agent-browser&quot;&gt;&lt;img alt=&quot;npm downloads per month: agent-browser&quot; src=&quot;https://img.shields.io/npm/dm/agent-browser.svg?style=for-the-badge&amp;amp;labelColor=000000&amp;amp;label=npm%20downloads&quot; height=&quot;28&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://skills.sh/vercel-labs/agent-browser&quot;&gt;&lt;img alt=&quot;skills.sh&quot; src=&quot;https://skills.sh/b/vercel-labs/agent-browser?style=for-the-badge&quot; height=&quot;28&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-agent-browser is a native Rust CLI that gives an AI agent a browser it can drive one command at a time. `snapshot` returns the page as compact text with a ref such as `@e1` for each element. The agent acts on a ref, reads the page again to check the result, and repeats. The browser stays open between commands, so each step is one short shell call.
-
-## Install
-
-```bash
-npm install -g agent-browser
-agent-browser install           # download Chrome for Testing (first time only)
-```
-
-- **Homebrew:** `brew install agent-browser`, then `agent-browser install`.
-- **Linux:** `agent-browser install --with-deps` also installs the browser&#039;s system libraries.
-- **No install:** `npx agent-browser open example.com`.
-
-Project installs, building from source, `upgrade`, and `doctor` are covered in [Installation](https://agent-browser.dev/installation).
-
-## Quick start
-
-```bash
-agent-browser open example.com
-agent-browser snapshot -i       # interactive elements, each with a ref
-agent-browser click @e1         # act on a ref from that snapshot
-agent-browser get url           # check the result
-agent-browser close
-```
-
-The snapshot for `example.com`:
-
-```
-- link &quot;Learn more&quot; [ref=e1]
-```
-
-- Refs describe the page at the time of the snapshot. After navigation or a DOM change, take a new snapshot before using refs again.
-- CSS selectors, text, XPath, and semantic locators also work, for example `agent-browser find role button click --name &quot;Submit&quot;`. See [Selectors](https://agent-browser.dev/selectors).
-- A click fails, instead of reporting success, when the target is hidden, disabled, outside the viewport, or covered by another element such as a consent banner. Dismiss the covering element, take a new snapshot, and retry.
-
-The full walkthrough is in the [quick start](https://agent-browser.dev/quick-start).
-
-## How it works
-
-The CLI sends each command to a background daemon that starts on the first command and controls the browser over the Chrome DevTools Protocol. Each `--session` gets its own daemon and browser. By default, the daemon closes a headless browser and exits after one hour without commands, saving state first when [session persistence](https://agent-browser.dev/sessions) is configured.
-
-Chrome for Testing is the default browser. You can also attach to a running Chrome with `--cdp` or `--auto-connect` ([CDP mode](https://agent-browser.dev/cdp-mode)), select the [Lightpanda](https://agent-browser.dev/engines/lightpanda) or [Obscura](https://agent-browser.dev/engines/obscura) engine with `--engine`, drive Mobile Safari in the [iOS Simulator](https://agent-browser.dev/ios), or use a cloud browser provider such as [Browserbase](https://agent-browser.dev/providers/browserbase), [Browserless](https://agent-browser.dev/providers/browserless), [Browser Use](https://agent-browser.dev/providers/browser-use), [Kernel](https://agent-browser.dev/providers/kernel), or [AgentCore](https://agent-browser.dev/providers/agentcore).
-
-## For AI agents
-
-The CLI ships skills that match its version:
-
-```bash
-agent-browser skills get core                 # the core loop, refs, waiting, and common workflows
-agent-browser skills get core --ref commands  # one reference, such as the full command list
-agent-browser skills get core --full          # adds the full command reference and templates
-agent-browser skills list                     # specialized skills: electron, slack, dogfood, and more
-```
-
-Install the discovery skill into an agent harness from [skills.sh](https://skills.sh/vercel-labs/agent-browser):
-
-```bash
-npx skills add vercel-labs/agent-browser
-```
-
-The installed skill is a thin stub that tells the agent to load `agent-browser skills get core`, so its instructions always match the installed CLI. Or add this to your `AGENTS.md`:
-
-```markdown
-Use `agent-browser` for browser automation. Before the first use, run
-`agent-browser skills get core` and follow it.
-```
-
-For MCP clients, `agent-browser mcp` starts an MCP server over stdio. See [MCP server](https://agent-browser.dev/commands#mcp-server).
-
-## Commands
-
-Run `agent-browser --help` for the full list, or `agent-browser &lt;command&gt; --help` for one command.
-
-| Group | Commands | Docs |
-|---|---|---|
-| Navigate and read | `open`, `back`, `forward`, `reload`, `read`, `snapshot`, `get`, `is` | [Core](https://agent-browser.dev/commands#core), [Snapshots](https://agent-browser.dev/snapshots) |
-| Interact | `click`, `dblclick`, `fill`, `type`, `press`, `keyboard`, `hover`, `focus`, `select`, `check`, `uncheck`, `scroll`, `drag`, `upload`, `mouse`, `find` | [Core](https://agent-browser.dev/commands#core), [Find elements](https://agent-browser.dev/commands#find-elements) |
-| Wait | `wait` | [Wait](https://agent-browser.dev/commands#wait) |
-| Capture | `screenshot`, `pdf`, `record`, `download`, `diff` | [Recording](https://agent-browser.dev/recording), [Diffing](https://agent-browser.dev/diffing), [Files](https://agent-browser.dev/files) |
-| Page and network state | `cookies`, `storage`, `network`, `set`, `clipboard`, `eval`, `pushstate` | [Network](https://agent-browser.dev/network), [Settings](https://agent-browser.dev/commands#settings) |
-| Tabs, frames, and dialogs | `tab`, `frame`, `dialog` | [Tabs and frames](https://agent-browser.dev/commands#tabs-frames) |
-| Debug and performance | `console`, `errors`, `highlight`, `inspect`, `trace`, `profiler`, `vitals`, `react`, `a11y` | [Debugging](https://agent-browser.dev/debugging), [Profiler](https://agent-browser.dev/profiler), [React](https://agent-browser.dev/react) |
-| Sessions and auth | `session`, `state`, `auth`, `profiles`, `confirm`, `deny` | [Sessions](https://agent-browser.dev/sessions), [Security](https://agent-browser.dev/security) |
-| Agents and integrations | `skills`, `mcp`, `webmcp`, `flow`, `chat`, `batch`, `plugin` | [Skills](https://agent-browser.dev/skills), [WebMCP](https://agent-browser.dev/webmcp), [Plugins](https://agent-browser.dev/plugins) |
-| Observe | `stream`, `dashboard` | [Streaming](https://agent-browser.dev/streaming), [Dashboard](https://agent-browser.dev/dashboard) |
-| Setup | `install`, `upgrade`, `doctor`, `connect`, `close` | [Installation](https://agent-browser.dev/installation) |
-
-Flags, environment variables, and `agent-browser.json` are documented in [Configuration](https://agent-browser.dev/configuration).
-
-## Platforms
-
-Native binaries ship for macOS (ARM64, x64), Linux (ARM64, x64, glibc and musl), and Windows (x64). The npm package picks the right binary for the host.
-
-## Development
-
-Building from source requires Node.js 24 or later, pnpm 11 or later, and Rust:
-
-```bash
-pnpm install
-pnpm build:source               # builds the dashboard and the native CLI
-pnpm link --global
-agent-browser install
-```
-
-Run the Rust checks from `cli/`:
-
-```bash
-cargo fmt -- --check
-cargo clippy
-cargo test
-cargo test e2e -- --ignored --test-threads=1   # launches real headless Chrome
-```
-
-[AGENTS.md](AGENTS.md) lists the files to update with each change, the docs checks, and the release process.
-
-## Documentation
-
-- [agent-browser.dev](https://agent-browser.dev): introduction, guides, and reference
-- [Commands](https://agent-browser.dev/commands) and [Configuration](https://agent-browser.dev/configuration)
-- [Security](https://agent-browser.dev/security): the auth vault, domain allowlists, action policies, and content boundaries
-- [Next.js and Vercel](https://agent-browser.dev/next) and [eve](https://agent-browser.dev/eve): running agent-browser in Vercel Sandbox and eve agents
-- [Changelog](CHANGELOG.md)
-
-## License
-
-Apache-2.0
-</pre>
-          ]]></content:encoded>
-            <category>Rust</category>
-        </item>
-        <item>
-            <title><![CDATA[ruvnet/RuView]]></title>
-            <link>https://github.com/ruvnet/RuView</link>
-            <guid>https://github.com/ruvnet/RuView</guid>
-            <pubDate>Thu, 12 Nov 2026 00:04:29 GMT</pubDate>
-            <description><![CDATA[π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/ruvnet/RuView">ruvnet/RuView</a></h1>
-            <p>π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.</p>
-            <p>Language: Rust</p>
-            <p>Stars: 104,055</p>
-            <p>Forks: 13,541</p>
-            <p>Stars today: 222 stars today</p>
-            <h2>README</h2><pre># π RuView
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://cognitum.one/seed&quot;&gt;
-    &lt;img src=&quot;assets/ruview-hero-h3-v3.gif&quot; alt=&quot;RuView - WiFi DensePose — animated visualization of real-time pose estimation, breathing, and heart-rate sensing through WiFi&quot; width=&quot;100%&quot;&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-
-[![RuView: spaces become signals, with an animated conceptual RF field](assets/readme/hero-spatial-v6.svg)](docs/user-guide.md)
-
-&lt;table&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot; width=&quot;33%&quot;&gt;&lt;a href=&quot;docs/user-guide.md&quot;&gt;&lt;img src=&quot;assets/readme/nav-start-spatial-v4.svg&quot; width=&quot;180&quot; alt=&quot;Start here&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;docs/user-guide.md&quot;&gt;Start here&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot; width=&quot;33%&quot;&gt;&lt;a href=&quot;firmware/esp32-csi-node/README.md&quot;&gt;&lt;img src=&quot;assets/readme/nav-hardware-spatial-v4.svg&quot; width=&quot;180&quot; alt=&quot;Hardware&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;firmware/esp32-csi-node/README.md&quot;&gt;Hardware&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot; width=&quot;33%&quot;&gt;&lt;a href=&quot;https://huggingface.co/ruvnet/wifi-densepose-pretrained&quot;&gt;&lt;img src=&quot;assets/readme/nav-models-spatial-v4.svg&quot; width=&quot;180&quot; alt=&quot;Models&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;https://huggingface.co/ruvnet/wifi-densepose-pretrained&quot;&gt;Models&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot; width=&quot;33%&quot;&gt;&lt;a href=&quot;harness/ruview/README.md&quot;&gt;&lt;img src=&quot;assets/readme/nav-agents-spatial-v4.svg&quot; width=&quot;180&quot; alt=&quot;AI toolkit&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;harness/ruview/README.md&quot;&gt;AI toolkit&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot; width=&quot;33%&quot;&gt;&lt;a href=&quot;docs/integrations/home-assistant.md&quot;&gt;&lt;img src=&quot;assets/readme/nav-home-spatial-v4.svg&quot; width=&quot;180&quot; alt=&quot;Smart home&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;docs/integrations/home-assistant.md&quot;&gt;Smart home&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot; width=&quot;33%&quot;&gt;&lt;a href=&quot;https://cognitum.one/seed&quot;&gt;&lt;img src=&quot;assets/readme/nav-seed-spatial-v4.svg&quot; width=&quot;180&quot; alt=&quot;Cognitum Seed&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;https://cognitum.one/seed&quot;&gt;Cognitum Seed&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://ruos.cognitum.one&quot;&gt;
-    &lt;img src=&quot;assets/ruos-animated.svg&quot; alt=&quot;RuView — WiFi becomes spatial awareness, with Ruflo coordination and a ruOS sensing workspace&quot; width=&quot;100%&quot;&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
-
-
-## **See through walls with WiFi** ##
-
-**Turn ordinary WiFi into a spatial intelligence / sensing system.** Detect people, measure breathing and heart rate, track movement, and monitor rooms — through walls, in the dark, with no cameras or wearables. Just physics.
-
-Works natively with the four major smart-home ecosystems: **[Home Assistant](docs/integrations/home-assistant.md)** via the HA-DISCO MQTT publisher, **[Apple Home &amp; HomePod](docs/user-guide-apple-homepod.md)** as a discoverable HAP-1.1 bridge, **[Google Home](docs/integrations/home-assistant.md)** + **[Amazon Alexa](docs/integrations/home-assistant.md)** via the same HA bridge or a [Matter](docs/adr/ADR-122-bfld-ruview-ha-matter-exposure.md) endpoint. Siri, Google Assistant, and Alexa can voice presence and vitals by room with zero custom skills.
-
-[![Works with Home Assistant](https://img.shields.io/badge/Works%20with-Home%20Assistant-blue?logo=home-assistant&amp;logoColor=white&amp;labelColor=41BDF5)](docs/integrations/home-assistant.md) [![Works with Matter](https://img.shields.io/badge/Works%20with-Matter-blue?labelColor=4285F4)](docs/adr/ADR-122-bfld-ruview-ha-matter-exposure.md) [![Works with Apple Home](https://img.shields.io/badge/Works%20with-Apple%20Home-black?logo=apple)](docs/user-guide-apple-homepod.md) [![Works with Google Home](https://img.shields.io/badge/Works%20with-Google%20Home-blue?logo=googlehome)](docs/integrations/home-assistant.md) [![Works with Alexa](https://img.shields.io/badge/Works%20with-Alexa-blue?logo=amazon&amp;logoColor=white&amp;labelColor=00CAFF)](docs/integrations/home-assistant.md)
-
-&gt; Drop into any **Home Assistant** install with one `--mqtt` flag. Or pair into **Apple Home / Google Home / Alexa / SmartThings** as a Matter Bridge. Ships 21 entities per node (11 raw signals + 10 inferred semantic states: someone-sleeping, possible-distress, room-active, elderly-inactivity-anomaly, meeting-in-progress, bathroom-occupied, fall-risk-elevated, bed-exit, no-movement, multi-room-transition) plus 3 starter HA Blueprints. See [`docs/integrations/home-assistant.md`](docs/integrations/home-assistant.md) · [ADR-115](docs/adr/ADR-115-home-assistant-integration.md).
-
-### π RuView is a WiFi sensing platform that turns radio signals into spatial intelligence.
-
-Every WiFi router already fills your space with radio waves. When people move, breathe, or even sit still, they disturb those waves in measurable ways. RuView captures these disturbances using Channel State Information (CSI) from low-cost ESP32 sensors and turns them into actionable data: who&#039;s there, what they&#039;re doing, and whether they&#039;re okay.
-
-[![Explore RuView sensing, models and automation](assets/readme/header-features-spatial-v4.svg)](docs/user-guide.md)
-
-**What it senses:**
-- **Presence and occupancy** — detect people through walls, count them, track entries and exits
-- **Vital signs** — breathing rate and heart rate, contactless, while sleeping or sitting
-- **Activity recognition** — walking, sitting, gestures, falls — from temporal CSI patterns
-- **Environment mapping** — RF fingerprinting identifies rooms, detects moved furniture, spots new objects
-- **Sleep quality** — overnight monitoring with sleep stage classification and apnea screening
-
-**Also included:**
-
-- **Camera-free pose** — estimate 17 body keypoints from WiFi CSI
-- **Built-in model workflow** — record CSI, train models, load RVF files, and switch LoRA profiles
-- **Local automation** — HOMECORE provides state, history, automations, signed Wasm plugins, voice hooks, and HomeKit support
-- **Unified RF world model** — combine WiFi CSI, radar, UWB, and cellular sensing in one privacy-bounded scene model; accuracy is still synthetic until real-data validation
-- **Governed evidence** — attach privacy policy, uncertainty, provenance, and witness records to sensing events
-- **RuView MetaHarness** — use an AI operator to onboard, calibrate, train, verify, and check sensing claims
-
-&lt;!-- ruview-capability-cards --&gt;
-&lt;table&gt;
-&lt;tr&gt;
-&lt;td width=&quot;50%&quot;&gt;&lt;a href=&quot;docs/user-guide.md&quot;&gt;&lt;img src=&quot;assets/readme/feature-presence-spatial-v4.svg&quot; width=&quot;580&quot; alt=&quot;Presence and motion: open documentation and current limitations&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;docs/user-guide.md&quot;&gt;Presence and motion&lt;/a&gt;&lt;/td&gt;
-&lt;td width=&quot;50%&quot;&gt;&lt;a href=&quot;v2/crates/wifi-densepose-signal/README.md&quot;&gt;&lt;img src=&quot;assets/readme/feature-vitals-spatial-v4.svg&quot; width=&quot;580&quot; alt=&quot;Breathing and vital signals: open documentation and current limitations&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;v2/crates/wifi-densepose-signal/README.md&quot;&gt;Breathing and vital signals&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td width=&quot;50%&quot;&gt;&lt;a href=&quot;docs/benchmarks/pose-estimation-cog.md&quot;&gt;&lt;img src=&quot;assets/readme/feature-pose-spatial-v6.svg&quot; width=&quot;580&quot; alt=&quot;Pose research and limitations: open documentation and current limitations&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;docs/benchmarks/pose-estimation-cog.md&quot;&gt;Pose research and limitations&lt;/a&gt;&lt;/td&gt;
-&lt;td width=&quot;50%&quot;&gt;&lt;a href=&quot;firmware/esp32-csi-node/README.md&quot;&gt;&lt;img src=&quot;assets/readme/feature-edge-spatial-v4.svg&quot; width=&quot;580&quot; alt=&quot;Edge sensor mesh: open documentation and current limitations&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;firmware/esp32-csi-node/README.md&quot;&gt;Edge sensor mesh&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td width=&quot;50%&quot;&gt;&lt;a href=&quot;docs/integrations/home-assistant.md&quot;&gt;&lt;img src=&quot;assets/readme/feature-automation-spatial-v4.svg&quot; width=&quot;580&quot; alt=&quot;Local automation: open documentation and current limitations&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;docs/integrations/home-assistant.md&quot;&gt;Local automation&lt;/a&gt;&lt;/td&gt;
-&lt;td width=&quot;50%&quot;&gt;&lt;a href=&quot;harness/ruview/README.md&quot;&gt;&lt;img src=&quot;assets/readme/feature-agents-spatial-v4.svg&quot; width=&quot;580&quot; alt=&quot;Guided AI operator: open documentation and current limitations&quot; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;harness/ruview/README.md&quot;&gt;Guided AI operator&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;RuView MetaHarness&lt;/strong&gt; — guided operation for humans and AI agents&lt;/summary&gt;
-
-The RuView-specific metaharness we created is published as [`@ruvnet/ruview`](harness/ruview/README.md). It provides:
-- source-cited guidance;
-- device access for CSI nodes, radar and LiDAR;
-- firmware flashing with boot evidence;
-- one MCP server, usable over stdio or HTTP for ChatGPT, with a live console widget;
-- a Claude Code mod;
-- guarded Claude Code/Codex agents;
-- deterministic verification;
-- an honesty check for accuracy claims.
-
-Companion packages: [`homecore`](harness/homecore/README.md) (Homecore developer metaharness) and [`@ruvnet/ruview-kernel`](harness/ruview-kernel/README.md) (the vitals pipeline as WASM).
-
-```bash
-# Check the local setup and get source-cited guidance
-npx @ruvnet/ruview@0.9.1 doctor
-npx @ruvnet/ruview@0.9.1 guidance --topic sensing --query &quot;model loading&quot;
-
-# Hardware: what is plugged in, live CSI from your nodes, a 60 GHz radar kit
-npx @ruvnet/ruview@0.9.1 devices
-npx @ruvnet/ruview@0.9.1 esp32 --watch                       # ESP32 + Realtek RAC1 nodes, live view
-npx @ruvnet/ruview@0.9.1 esp32 --seconds 45 --analyze        # live CSI through the vitals kernel
-npx @ruvnet/ruview@0.9.1 mmwave --source esphome --host &lt;kit-ip&gt;
-
-# Agents: MCP over stdio, or over HTTP for ChatGPT (token-protected, read tools only)
-npx @ruvnet/ruview@0.9.1 mcp start
-RUVIEW_MCP_GRANTS=device-access npx @ruvnet/ruview@0.9.1 mcp start --http
-
-# Claude Code: a live sensing pane (/ruview), shipped in the package
-npx @ruvnet/ruview@0.9.1 mod
-
-# Run a read-only RuView agent through Codex
-npx @ruvnet/ruview@0.9.1 agent run --host codex --repo . \
-  --prompt &quot;Find the nearest tests and cite the source files&quot;
-
-# Check claims, replay the deterministic proof, search the reviewed brain
-npx @ruvnet/ruview@0.9.1 claim-check --file REPORT.md
-npx @ruvnet/ruview@0.9.1 verify
-npx @ruvnet/ruview@0.9.1 brain search --query &quot;calibration&quot;
-```
-
-**Safety:**
-- Agent runs are read-only by default. Workspace writes require both `--allow-write` and `--confirm`.
-- Hardware reads need the `device-access` grant.
-- Flashing and calibration never run over the HTTP transport.
-- Device-reported vitals are labelled as unvalidated.
-- Retrieved brain content is evidence, not authority.
-
-A single `npx ruview` package bundling all of this is ready (ADR-376). It is waiting on npm to release the unscoped name.
-
-Full walkthrough: [user guide → RuView npm toolkit](docs/user-guide.md#ruview-npm-toolkit-ruvnetruview).
-
-&lt;/details&gt;
-
-Built on [RuVector](https://github.com/ruvnet/ruvector/) and [Cognitum Seed](https://cognitum.one), RuView runs entirely on edge hardware — an ESP32 mesh (as low as $9 per node) paired with a Cognitum Seed for persistent memory, cryptographic attestation, and AI integration. No cloud, no cameras, no internet required.
-
-The system learns each environment locally using spiking neural networks that adapt in under 30 seconds, with multi-frequency mesh scanning across 6 WiFi channels that uses your neighbors&#039; routers as free radar illuminators. Every measurement is cryptographically attested via an Ed25519 witness chain.
-
-RuView turns ordinary WiFi into a contactless sensor. A $9 ESP32 board reads the radio reflections off the people in a room, and a small pretrained model — published on Hugging Face at [`ruvnet/wifi-densepose-pretrained`](https://huggingface.co/ruvnet/wifi-densepose-pretrained) — tells you who&#039;s there, how they&#039;re breathing, and how their heart rate is trending. The model fits in 8 KB (4-bit quantized) and runs in microseconds on a Raspberry Pi. (The [v2 encoder](https://huggingface.co/ruvnet/wifi-densepose-pretrained) reports an honest, label-free held-out **temporal-triplet accuracy of 82.3%** — up from 66.4% raw; the older &quot;100% presence&quot; figure was measured on a single-class recording and has been retracted in favor of this.) No cameras, no wearables, no app on the user&#039;s phone.
-
-### Built for low-power edge applications
-
-[Edge modules](#edge-intelligence-adr-041) are small programs that run directly on the ESP32 sensor — no internet needed, no cloud fees, instant response.
-
-[![Rust 1.85+](https://img.shields.io/badge/rust-1.85+-orange.svg)](https://www.rust-lang.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests: 1463](https://img.shields.io/badge/tests-1463%20passed-brightgreen.svg)](https://github.com/ruvnet/RuView)
-[![Docker: multi-arch](https://img.shields.io/badge/docker-amd64%20%2B%20arm64-blue.svg)](https://hub.docker.com/r/ruvnet/wifi-densepose)
-[![Vital Signs](https://img.shields.io/badge/vital%20signs-breathing%20%2B%20heartbeat-red.svg)](#vital-sign-detection)
-[![ESP32 Ready](https://img.shields.io/badge/ESP32--S3-CSI%20streaming-purple.svg)](#esp32-s3-hardware-pipeline)
-[![crates.io](https://img.shields.io/crates/v/wifi-densepose-ruvector.svg)](https://crates.io/crates/wifi-densepose-ruvector)
-[![Downloads](https://img.shields.io/badge/downloads-10M%2B-brightgreen.svg)](#-edge-module-catalog)
-
- 
-&gt; | What | How | Speed / scale |
-&gt; |------|-----|---------------|
-&gt; | 🫁 **Breathing rate** | Bandpass 0.1–0.5 Hz on wrapped phase, circular variance, zero-crossing BPM ([#593](https://github.com/ruvnet/RuView/issues/593)) | 6–30 BPM, real-time |
-&gt; | 💓 **Heart rate** | Bandpass 0.8–2.0 Hz, zero-crossing BPM | 40–120 BPM, real-time |
-&gt; | 👤 **Presence detection** | Trained head on Hugging Face ([`ruvnet/wifi-densepose-pretrained`](https://huggingface.co/ruvnet/wifi-densepose-pretrained); v2 encoder = 82.3% held-out temporal-triplet acc, honestly re-benchmarked) + a phase-variance fallback that needs no model | &lt; 1 ms, ~30 s ambient calibration |
-&gt; | 🧬 **CSI embeddings** | 128-dim contrastive encoder shipped on Hugging Face, 4-bit quantised variant fits in 8 KB | **164,183 emb/s** on M4 Pro |
-&gt; | 🦴 **17-keypoint pose estimation** | `cog-pose-estimation` Cog v0.0.1 — signed aarch64 + x86_64 binaries on GCS, loads `pose_v1.safetensors` via Candle (the committed `pose_v1` is a **first-cut** on-device model: PCK@20 = 3.0%, below the ADR-079 ≥35% target, and its runtime path is still a `confidence=0` stub — see [Model weights: what&#039;s real, what&#039;s not](#model-weights-whats-real-whats-not); the **82.69%** figure below is the separate published MM-Fi benchmark, not this live cog). Train your own from paired data in 2.1 s on an RTX 5080 ([ADR-101](docs/adr/ADR-101-pose-estimation-cog.md), [benchmarks](docs/benchmarks/pose-estimation-cog.md)). **SOTA on MM-Fi:** [`ruvnet/wifi-densepose-mmfi-pose`](https://huggingface.co/ruvnet/wifi-densepose-mmfi-pose) hits **82.69% torso-PCK@20** (ensemble 83.59%), beating MultiFormer (72.25%) and CSI2Pose (68.41%) on the matched MM-Fi `random_split` protocol — self-corrected and auditable on [AetherArena](https://huggingface.co/spaces/ruvnet/aether-arena) | 8.4 ms cold-start on a Pi 5 |
-&gt; | 🚶 **Motion / activity** | Motion-band power + phase acceleration | Real-time |
-&gt; | 🤸 **Fall detection** | Phase-acceleration threshold + 3-frame debounce + 5 s cooldown ([#263](https://github.com/ruvnet/RuView/issues/263)) | &lt; 200 ms |
-&gt; | 🧮 **Multi-person count** | Adaptive P95 normalisation + runtime-tunable dedup factor (`/api/v1/config/dedup-factor`, [#491](https://github.com/ruvnet/RuView/pull/491)). Six specialised learned counters available as Cogs: `occupancy-zones`, `elevator-count`, `queue-length`, `customer-flow`, `clean-room`, `person-matching` | Real-time, self-calibrating |
-&gt; | 🌍 **World model prediction** | OccWorld TransVQVAE — 15-frame future occupancy prediction, 209 ms inference, 3.4 GB VRAM on RTX 5080; fine-tune on your space with `occworld_retrain.py` ([ADR-147](docs/adr/ADR-147-nvidia-cosmos-world-foundation-model-integration.md)) | 15 frames × 200×200×16 vox |
-&gt; | 🧱 **Through-wall sensing** | Fresnel-zone geometry + multipath modeling | Up to ~5 m, signal-dependent |
-&gt; | 🧠 **Edge intelligence** | **105-cog catalog** ([ADR-102](docs/adr/ADR-102-edge-module-registry.md)) live from `app-registry.json` — health, security, building, retail, industrial, research, AI, swarm, signal, network, and developer modules. Optional Cognitum Seed adds persistent vector store + kNN + witness chain | $140 total BOM |
-&gt; | 🎯 **Camera-free pre-training** | Self-supervised contrastive encoder, 12.2M training steps on 60K frames, shipped on Hugging Face | 84 s/epoch retrain on M4 Pro |
-&gt; | 📷 **Camera-supervised fine-tune** | MediaPipe + ESP32 CSI paired training, end-to-end Candle pipeline on RTX 5080 ([ADR-079](docs/adr/ADR-079-camera-ground-truth-training.md)) | 2.1 s for 400 epochs (~5 ms/epoch) |
-&gt; | 📡 **Multi-frequency mesh** | Channel hopping across 6 bands, TDM slot scheduling ([ADR-029](docs/adr/ADR-029-ruvsense-multistatic-sensing-mode.md)) | 3× sensing bandwidth |
-&gt; | 🌐 **3D point cloud fusion** | Camera depth (MiDaS) + WiFi CSI + mmWave radar → unified spatial model | 22 ms pipeline · 19K+ points/frame |
-&gt;
-&gt; Browse the full 105-module catalog (with practical descriptions, sizes, and difficulty) below in [🧩 Edge Module Catalog](#-edge-module-catalog), or visit [seed.cognitum.one/store](https://seed.cognitum.one/store).
-&gt;
-&gt; 🤗 **Pretrained weights**: download from [`ruvnet/wifi-densepose-pretrained`](https://huggingface.co/ruvnet/wifi-densepose-pretrained) — see [Loading the pretrained model](#loading-the-pretrained-model) below for one-command setup.
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Quick start options&lt;/strong&gt; — Docker, ESP32-S3/C6, Cognitum Seed, and Python&lt;/summary&gt;
-
-```bash
-# Option 1: Docker (simulated data, no hardware needed)
-docker pull ruvnet/wifi-densepose:latest
-export RUVIEW_API_TOKEN=$(openssl rand -hex 32)   # required; the container exits 64 without it
-docker run -p 127.0.0.1:3000:3000 -e RUVIEW_API_TOKEN ruvnet/wifi-densepose:latest
-# Open http://localhost:3000
-# ESP32 nodes in Docker also need a UDP source guard (RUVIEW_UDP_ALLOW);
-# see docs/user-guide.md &quot;Receiving ESP32 frames in Docker&quot;.
-
-# Option 2a: Live sensing with ESP32-S3 hardware ($9)
-# Flash firmware, provision WiFi, and start sensing:
-python -m esptool --chip esp32s3 --port COM9 --baud 460800 \
-  write_flash 0x0 bootloader.bin 0x8000 partition-table.bin \
-  0xf000 ota_data_initial.bin 0x20000 esp32-csi-node.bin
-python firmware/esp32-csi-node/provision.py --port COM9 \
-  --ssid &quot;YourWiFi&quot; --password &quot;secret&quot; --target-ip 192.168.1.20
-
-# Option 2b: WiFi 6 + 802.15.4 research sensing with ESP32-C6 ($6-10, ADR-110)
-# Same csi-node firmware compiled for the C6 target — picks up the C6
-# overlay (sdkconfig.defaults.esp32c6) automatically.
-cd firmware/esp32-csi-node
-idf.py set-target esp32c6 &amp;&amp; idf.py build
-idf.py -p COM6 flash
-# C6 boot extras (vs S3): HE-LTF subcarrier tagging in ADR-018 bytes 18-19,
-#   802.15.4 mesh time-sync on channel 15, TWT setup when the AP supports it,
-#   opt-in LP-core wake-on-motion for ~5 µA battery seed nodes.
-# v0.6.7 adds: real LP-core RISC-V motion-gate program (debounce + motion
-#   counter) and a Wi-Fi 6 soft-AP with TWT Responder so two C6 boards can
-#   benchmark real iTWT without buying an 11ax router. Both default off,
-#   flip CONFIG_C6_{LP_CORE,SOFTAP_HE}_ENABLE to turn them on.
-
-# Option 3: Full system with Cognitum Seed ($140)
-# ESP32 streams CSI → bridge forwards to Seed for persistent storage + kNN + witness chain
-node scripts/rf-scan.js --port 5006           # Live RF room scan
-node scripts/snn-csi-processor.js --port 5006  # SNN real-time learning
-node scripts/mincut-person-counter.js --port 5006  # Correct person counting
-
-# Option 4: Python — live on PyPI (ADR-117)
-pip install ruview                        # or: pip install wifi-densepose
-# Both ship the same compiled PyO3 wheel (~250 KB, abi3-py310, Linux/macOS/Windows).
-# Add [client] for the asyncio WebSocket + paho-mqtt clients:
-pip install &quot;ruview[client]&quot;              # or: pip install &quot;wifi-densepose[client]&quot;
-
-# from ruview import BreathingExtractor, HeartRateExtractor   # equivalent to:
-# from wifi_densepose import BreathingExtractor, HeartRateExtractor
-# from ruview.client import SensingClient, RuViewMqttClient
-```
-
-&lt;/details&gt;
-
-[![PyPI ruview](https://img.shields.io/pypi/v/ruview?label=ruview)](https://pypi.org/project/ruvie
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>Rust</category>
-        </item>
-        <item>
             <title><![CDATA[tokio-rs/topcoat]]></title>
             <link>https://github.com/tokio-rs/topcoat</link>
             <guid>https://github.com/tokio-rs/topcoat</guid>
-            <pubDate>Thu, 12 Nov 2026 00:04:28 GMT</pubDate>
+            <pubDate>Fri, 13 Nov 2026 00:04:36 GMT</pubDate>
             <description><![CDATA[A batteries-included framework for building web apps]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/tokio-rs/topcoat">tokio-rs/topcoat</a></h1>
             <p>A batteries-included framework for building web apps</p>
             <p>Language: Rust</p>
-            <p>Stars: 7,106</p>
-            <p>Forks: 317</p>
-            <p>Stars today: 451 stars today</p>
+            <p>Stars: 7,162</p>
+            <p>Forks: 325</p>
+            <p>Stars today: 90 stars today</p>
             <h2>README</h2><pre>&lt;!-- For agents: read [llms.txt](https://raw.githubusercontent.com/tokio-rs/topcoat/refs/heads/main/llms.txt) for Topcoat&#039;s APIs and application conventions. --&gt;
 
 &lt;div align=&quot;center&quot;&gt;
@@ -705,238 +302,698 @@ Planned features we&#039;d like to bring to Topcoat. Have an idea? [Open an issu
             <category>Rust</category>
         </item>
         <item>
-            <title><![CDATA[claration/impactor]]></title>
-            <link>https://github.com/claration/impactor</link>
-            <guid>https://github.com/claration/impactor</guid>
-            <pubDate>Thu, 12 Nov 2026 00:04:27 GMT</pubDate>
-            <description><![CDATA[Cross-platform & feature rich iOS/iPadOS/tvOS sideloading application. Formerly known as PlumeImpactor.]]></description>
+            <title><![CDATA[zellij-org/zellij]]></title>
+            <link>https://github.com/zellij-org/zellij</link>
+            <guid>https://github.com/zellij-org/zellij</guid>
+            <pubDate>Fri, 13 Nov 2026 00:04:35 GMT</pubDate>
+            <description><![CDATA[A terminal workspace with batteries included]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/claration/impactor">claration/impactor</a></h1>
-            <p>Cross-platform & feature rich iOS/iPadOS/tvOS sideloading application. Formerly known as PlumeImpactor.</p>
+            <h1><a href="https://github.com/zellij-org/zellij">zellij-org/zellij</a></h1>
+            <p>A terminal workspace with batteries included</p>
             <p>Language: Rust</p>
-            <p>Stars: 3,820</p>
-            <p>Forks: 272</p>
-            <p>Stars today: 22 stars today</p>
-            <h2>README</h2><pre>README not available. Either the repository does not have a README or it could not be accessed.</pre>
+            <p>Stars: 36,038</p>
+            <p>Forks: 1,534</p>
+            <p>Stars today: 37 stars today</p>
+            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;
+  &lt;br&gt;
+  &lt;img src=&quot;https://raw.githubusercontent.com/zellij-org/zellij/main/assets/logo.png&quot; alt=&quot;logo&quot; width=&quot;200&quot;&gt;
+  &lt;br&gt;
+  Zellij
+  &lt;br&gt;
+  &lt;br&gt;
+&lt;/h1&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://raw.githubusercontent.com/zellij-org/zellij/main/assets/demo.gif&quot; alt=&quot;demo&quot;&gt;
+&lt;/p&gt;
+&lt;h4 align=&quot;center&quot;&gt;
+  [&lt;a href=&quot;https://zellij.dev/documentation/installation&quot;&gt;Installation&lt;/a&gt;]
+  [&lt;a href=&quot;https://zellij.dev/screencasts/&quot;&gt;Screencasts &amp; Tutorials&lt;/a&gt;]
+  [&lt;a href=&quot;https://zellij.dev/documentation/configuration&quot;&gt;Configuration&lt;/a&gt;]
+  [&lt;a href=&quot;https://zellij.dev/documentation/layouts&quot;&gt;Layouts&lt;/a&gt;]
+  [&lt;a href=&quot;https://zellij.dev/documentation/faq&quot;&gt;FAQ&lt;/a&gt;]
+&lt;/h4&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://discord.gg/CrUAFH3&quot;&gt;&lt;img alt=&quot;Discord Chat&quot; src=&quot;https://img.shields.io/discord/771367133715628073?color=5865F2&amp;label=discord&amp;style=flat-square&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://matrix.to/#/#zellij_general:matrix.org&quot;&gt;&lt;img alt=&quot;Matrix Chat&quot; src=&quot;https://img.shields.io/matrix/zellij_general:matrix.org?color=1d7e64&amp;label=matrix%20chat&amp;style=flat-square&amp;logo=matrix&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://zellij.dev/documentation/&quot;&gt;&lt;img alt=&quot;Zellij documentation&quot; src=&quot;https://img.shields.io/badge/zellij-documentation-fc0060?style=flat-square&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;br&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;picture&gt;&lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://github.com/user-attachments/assets/bc5daac4-140a-4b83-8729-71c944ee1100&quot;&gt;&lt;img src=&quot;https://github.com/user-attachments/assets/55156624-a71a-46b5-939e-f562e3b2dd7f&quot; alt=&quot;Sponsored by&quot;&gt;&lt;/picture&gt;
+  &amp;nbsp;&amp;nbsp;
+  &lt;a href=&quot;https://www.gresearch.com/&quot;&gt;&lt;picture&gt;&lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://github.com/user-attachments/assets/d609936a-abf8-4406-8cfc-889f76a09d74&quot;&gt;&lt;img src=&quot;https://github.com/user-attachments/assets/742ae902-fe9d-41c6-baf2-4bc143061da3&quot; alt=&quot;G-Research logo&quot;&gt;&lt;/picture&gt;&lt;/a&gt;
+  &amp;nbsp;&amp;nbsp;
+  &lt;a href=&quot;https://www.codo.tech/&quot;&gt;&lt;picture&gt;&lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://github.com/user-attachments/assets/7887429c-f299-4a1f-9b61-2ea5e8cd512f&quot;&gt;&lt;img height=&quot;30&quot; src=&quot;https://github.com/user-attachments/assets/d92b43d1-e009-4c73-a238-e96ffee3a9e0&quot; alt=&quot;codo.tech logo&quot;&gt;&lt;/picture&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+# What is this?
+
+[Zellij](#origin-of-the-name) is a workspace aimed at developers, ops-oriented people and anyone who loves the terminal. Similar programs are sometimes called &quot;Terminal Multiplexers&quot;.
+
+Zellij is designed around the philosophy that one must not sacrifice simplicity for power, taking pride in its great experience out of the box as well as the advanced features it places at its users&#039; fingertips.
+
+Zellij is geared toward beginner and power users alike - allowing deep customizability, personal automation through [layouts](https://zellij.dev/documentation/layouts.html), true multiplayer collaboration, unique UX features such as floating and stacked panes, and a [plugin system](https://zellij.dev/documentation/plugins.html) allowing one to create plugins in any language that compiles to WebAssembly.
+
+Zellij includes a built-in [web-client](https://zellij.dev/tutorials/web-client/), making a terminal optional.
+
+You can get started by [installing](https://zellij.dev/documentation/installation.html) Zellij and checking out the [Screencasts &amp; Tutorials](https://zellij.dev/screencasts/).
+
+For more details about our future plans, read about upcoming features in our [roadmap](#roadmap).
+
+## How do I install it?
+
+The easiest way to install Zellij is through a [package for your OS](./docs/THIRD_PARTY_INSTALL.md).
+
+If one is not available for your OS, you could download a prebuilt binary from the [latest release](https://github.com/zellij-org/zellij/releases/latest) and place it in your `$PATH`. If you&#039;d like, we could [automatically choose one for you](#try-zellij-without-installing).
+
+You can also install (compile) with `cargo`:
+
+```
+cargo install --locked zellij
+```
+
+#### Try Zellij without installing
+
+bash/zsh:
+```bash
+bash &lt;(curl -L https://zellij.dev/launch)
+```
+fish/xonsh:
+```bash
+bash -c &#039;bash &lt;(curl -L https://zellij.dev/launch)&#039;
+```
+
+#### Installing from `main`
+Installing Zellij from the `main` branch is not recommended. This branch represents pre-release code, is constantly being worked on and may contain broken or unusable features. In addition, using it may corrupt the cache for future versions, forcing users to clear it before they can use the officially released version.
+
+That being said - no-one will stop you from using it (and bug reports involving new features are greatly appreciated), but please consider using the latest release instead as detailed at the top of this section.
+
+## How do I start a development environment?
+
+* Clone the project
+* In the project folder, for debug builds run: `cargo xtask run`
+* To run all tests: `cargo xtask test`
+
+For more build commands, see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Configuration
+For configuring Zellij, please see the [Configuration Documentation](https://zellij.dev/documentation/configuration.html).
+
+## About issues in this repository
+Issues in this repository, whether open or closed, do not necessarily indicate a problem or a bug in the software. They only indicate that the reporter wanted to communicate their experiences or thoughts to the maintainers. The Zellij maintainers do their best to go over and reply to all issue reports, but unfortunately cannot promise these will always be dealt with or even read. Your understanding is appreciated.
+
+## Roadmap
+Presented here is the project roadmap, divided into three main sections.
+
+These are issues that are either being actively worked on or are planned for the near future.
+
+***If you&#039;ll click on the image, you&#039;ll be led to an SVG version of it on the website where you can directly click on every issue***
+
+[![roadmap](https://github.com/user-attachments/assets/bb55d213-4a68-4c84-ae72-7db5c9bf94fb)](https://zellij.dev/roadmap)
+
+## Origin of the Name
+[From Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/Zellij)
+
+Zellij (Arabic: الزليج, romanized: zillīj; also spelled zillij or zellige) is a style of mosaic tilework made from individually hand-chiseled tile pieces. The pieces were typically of different colours and fitted together to form various patterns on the basis of tessellations, most notably elaborate Islamic geometric motifs such as radiating star patterns composed of various polygons. This form of Islamic art is one of the main characteristics of architecture in the western Islamic world. It is found in the architecture of Morocco, the architecture of Algeria, early Islamic sites in Tunisia, and in the historic monuments of al-Andalus (in the Iberian Peninsula).
+
+## License
+
+MIT
+
+## Sponsored by
+&lt;a href=&quot;https://terminaltrove.com/&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/121595180?s=200&amp;v=4&quot; width=&quot;80px&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/redcathode&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/75963592?s=200&amp;v=4&quot; width=&quot;80px&quot;&gt;&lt;/a&gt;
+</pre>
           ]]></content:encoded>
             <category>Rust</category>
         </item>
         <item>
-            <title><![CDATA[GyulyVGC/sniffnet]]></title>
-            <link>https://github.com/GyulyVGC/sniffnet</link>
-            <guid>https://github.com/GyulyVGC/sniffnet</guid>
-            <pubDate>Thu, 12 Nov 2026 00:04:26 GMT</pubDate>
-            <description><![CDATA[Comfortably monitor your network traffic 🕵️‍♂️]]></description>
+            <title><![CDATA[Universal-Debloater-Alliance/universal-android-debloater-next-generation]]></title>
+            <link>https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation</link>
+            <guid>https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation</guid>
+            <pubDate>Fri, 13 Nov 2026 00:04:34 GMT</pubDate>
+            <description><![CDATA[Cross-platform GUI written in Rust using ADB to debloat non-rooted Android devices. Improve your privacy, the security and battery life of your device.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/GyulyVGC/sniffnet">GyulyVGC/sniffnet</a></h1>
-            <p>Comfortably monitor your network traffic 🕵️‍♂️</p>
+            <h1><a href="https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation">Universal-Debloater-Alliance/universal-android-debloater-next-generation</a></h1>
+            <p>Cross-platform GUI written in Rust using ADB to debloat non-rooted Android devices. Improve your privacy, the security and battery life of your device.</p>
             <p>Language: Rust</p>
-            <p>Stars: 42,455</p>
-            <p>Forks: 1,998</p>
-            <p>Stars today: 90 stars today</p>
-            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
-&lt;picture&gt;
-&lt;img alt=&quot;&quot; title=&quot;Sniffnet&quot; src=&quot;https://raw.githubusercontent.com/GyulyVGC/sniffnet/main/resources/repository/header_repository.png&quot; width=&quot;95%&quot;/&gt;
-&lt;/picture&gt;
+            <p>Stars: 10,029</p>
+            <p>Forks: 442</p>
+            <p>Stars today: 31 stars today</p>
+            <h2>README</h2><pre># Universal Android Debloater Next Generation
 
-&lt;a href=&quot;#download&quot;&gt;&lt;img alt=&quot;&quot; title=&quot;Download&quot; src=&quot;https://raw.githubusercontent.com/GyulyVGC/sniffnet/main/resources/repository/badges/download.svg&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/GyulyVGC/sniffnet/blob/main/ROADMAP.md&quot;&gt;&lt;img alt=&quot;&quot; title=&quot;Roadmap&quot; src=&quot;https://raw.githubusercontent.com/GyulyVGC/sniffnet/main/resources/repository/badges/roadmap.svg&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://sniffnet.app&quot;&gt;&lt;img alt=&quot;&quot; title=&quot;Website&quot; src=&quot;https://raw.githubusercontent.com/GyulyVGC/sniffnet/main/resources/repository/badges/website.svg&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://github.com/GyulyVGC/sniffnet/wiki&quot;&gt;&lt;img alt=&quot;&quot; title=&quot;Wiki&quot; src=&quot;https://raw.githubusercontent.com/GyulyVGC/sniffnet/main/resources/repository/badges/wiki.svg&quot;/&gt;&lt;/a&gt;
+&gt; [!warning]
+&gt; **DISCLAIMER**: Use at your own risk. We&#039;re not responsible for anything that could happen to your devices.
 
-Application to comfortably monitor your network traffic.&lt;br&gt;
-Cross-platform. Intuitive. Reliable.
-
-Translated in:&lt;br&gt;
-🇨🇳 🇩🇪 🇫🇷 🇷🇺 🇵🇹 🇪🇦 🇮🇹 🇵🇱 [+&amp;nbsp;18&amp;nbsp;more&amp;nbsp;languages](https://github.com/GyulyVGC/sniffnet/issues/60)
+&lt;div align=center&gt;
+&lt;img width=75% alt=&quot;screenshot of apps view&quot; src=./resources/screenshots/v1.0.2.png&gt;
 &lt;/div&gt;
 
+This is a detached fork of the [UAD project](https://github.com/0x192/universal-android-debloater). This aims to improve privacy and efficiency (energy, speed, memory) by removing unnecessary and obscure system apps.
+This can also improve security by reducing the [attack surface](https://en.wikipedia.org/wiki/Attack_surface). Read [the wiki](https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/wiki) for more details.
+
+## Documentation
+
+Everything about UAD-ng (and related stuff) can be found on the Wiki, such as:
+
+- [Getting started](https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/wiki/Getting-started)
+- Features of this app
+- [Usage guide](https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/wiki/Usage)
+- Suggested Android app replacements
+- How to get the cutting-edge version by [building the source-code](https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/wiki/Building-from-source)
+- Weird things OEMs do
+- [Suggested apps for analyzing APKs](https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/wiki/How-to-contribute#useful-apps)
+
+## Privacy
+
+UAD-ng does not collect or transmit any user data. The only external connections are `GET` requests to GitHub for fetching the [package list](https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json) ([crates/uad-core/src/uad_lists.rs](crates/uad-core/src/uad_lists.rs)) and checking for updates ([crates/uad-core/src/update.rs](crates/uad-core/src/update.rs)).
+
+## Contact
+
+**For real-time communication and support, consider joining our Discord guild:**
+
+[&lt;img width=64em alt=&quot;Discord symbol&quot; src=./resources/images/icon_clyde_blurple.svg&gt;](https://discord.gg/CzwbMCPEZa)
+
+**If you prefer using Matrix, we have a bridge to Discord:**
+
+[&lt;img width=64em src=https://matrix.org/images/matrix-favicon.svg&gt;](https://matrix.to/#/#uad-ng:matrix.org)
+
+## Friends
+
+Several projects integrate with or depend on UAD-ng&#039;s data and tools:
+
+- **[Canta](https://github.com/samolego/Canta)** — A mobile Android debloater that uses Shizuku for rootless privilege escalation. It integrates with UAD-ng&#039;s Universal Debloat List to provide safe package recommendations without requiring a PC.
+
+- **Projects by [Muntashir Akon](https://github.com/MuntashirAkon):**
+  - **[AppManager](https://github.com/MuntashirAkon/AppManager)** — An advanced Android app manager with powerful debloating features.
+  - **[android-debloat-list](https://github.com/MuntashirAkon/android-debloat-list)** — A comprehensive, community-driven list of Android packages to debloat, based on UAD-ng&#039;s list.
+- **[De-Bloater](https://github.com/sunilpaulmathew/De-Bloater)** — An application using the power of Magisk to debloat unwanted system apps!
+
+## Special thanks
+
+- [@0x192](https://github.com/0x192) who created the original UAD project.
+- [@mawilms](https://github.com/mawilms) for his LotRO plugin manager ([Lembas](https://github.com/mawilms/lembas)) which helped a lot to understand how to use the [Iced](https://github.com/iced-rs/iced) GUI library.
+- [@casperstorm](https://github.com/casperstorm) for the UI/UX inspiration.
+</pre>
+          ]]></content:encoded>
+            <category>Rust</category>
+        </item>
+        <item>
+            <title><![CDATA[vercel-labs/agent-browser]]></title>
+            <link>https://github.com/vercel-labs/agent-browser</link>
+            <guid>https://github.com/vercel-labs/agent-browser</guid>
+            <pubDate>Fri, 13 Nov 2026 00:04:33 GMT</pubDate>
+            <description><![CDATA[Browser automation CLI for AI agents]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/vercel-labs/agent-browser">vercel-labs/agent-browser</a></h1>
+            <p>Browser automation CLI for AI agents</p>
+            <p>Language: Rust</p>
+            <p>Stars: 50,323</p>
+            <p>Forks: 3,504</p>
+            <p>Stars today: 604 stars today</p>
+            <h2>README</h2><pre># agent-browser
+
+Browser automation for AI agents: open pages, read them as an accessibility tree, and act on elements from the shell.
+
 &lt;p&gt;
-&lt;picture&gt;
-&lt;img alt=&quot;&quot; src=&quot;https://raw.githubusercontent.com/GyulyVGC/sniffnet/main/resources/repository/hr.png&quot; width=&quot;100%&quot;/&gt;
-&lt;/picture&gt;
+  &lt;a href=&quot;https://vercel.com/labs#labs-products&quot;&gt;&lt;img alt=&quot;Vercel Labs Product&quot; src=&quot;https://img.shields.io/badge/LABS-PRODUCT-0a0a0a.svg?style=for-the-badge&amp;amp;logo=Vercel&amp;amp;labelColor=000000&quot; height=&quot;28&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://www.npmjs.com/package/agent-browser&quot;&gt;&lt;img alt=&quot;npm version: agent-browser&quot; src=&quot;https://img.shields.io/npm/v/agent-browser.svg?style=for-the-badge&amp;amp;labelColor=000000&quot; height=&quot;28&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/vercel-labs/agent-browser/blob/main/LICENSE&quot;&gt;&lt;img alt=&quot;License: Apache-2.0&quot; src=&quot;https://img.shields.io/github/license/vercel-labs/agent-browser.svg?style=for-the-badge&amp;amp;labelColor=000000&quot; height=&quot;28&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://www.npmjs.com/package/agent-browser&quot;&gt;&lt;img alt=&quot;npm downloads per month: agent-browser&quot; src=&quot;https://img.shields.io/npm/dm/agent-browser.svg?style=for-the-badge&amp;amp;labelColor=000000&amp;amp;label=npm%20downloads&quot; height=&quot;28&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://skills.sh/vercel-labs/agent-browser&quot;&gt;&lt;img alt=&quot;skills.sh&quot; src=&quot;https://skills.sh/b/vercel-labs/agent-browser?style=for-the-badge&quot; height=&quot;28&quot;&gt;&lt;/a&gt;
 &lt;/p&gt;
 
-&lt;div align=&quot;center&quot;&gt;
-&lt;img alt=&quot;&quot; title=&quot;Overview page&quot; src=&quot;https://raw.githubusercontent.com/GyulyVGC/sniffnet/main/resources/repository/pages/overview.png&quot; width=&quot;95%&quot;/&gt;
-&lt;img alt=&quot;&quot; title=&quot;Inspect page&quot; src=&quot;https://raw.githubusercontent.com/GyulyVGC/sniffnet/main/resources/repository/pages/inspect.png&quot; width=&quot;47%&quot;/&gt;
-&lt;img alt=&quot;&quot; title=&quot;Notifications page&quot; src=&quot;https://raw.githubusercontent.com/GyulyVGC/sniffnet/main/resources/repository/pages/notifications.png&quot; width=&quot;47%&quot;/&gt;
-&lt;img alt=&quot;&quot; title=&quot;Custom theme&quot; src=&quot;https://raw.githubusercontent.com/GyulyVGC/sniffnet/main/resources/repository/pages/deep_cosmos.png&quot; width=&quot;47%&quot;/&gt;
-&lt;img alt=&quot;&quot; title=&quot;Thumbnail mode&quot; src=&quot;https://raw.githubusercontent.com/GyulyVGC/sniffnet/main/resources/repository/pages/thumbnail.png&quot; width=&quot;47%&quot;/&gt;
-&lt;/div&gt;
+agent-browser is a native Rust CLI that gives an AI agent a browser it can drive one command at a time. `snapshot` returns the page as compact text with a ref such as `@e1` for each element. The agent acts on a ref, reads the page again to check the result, and repeats. The browser stays open between commands, so each step is one short shell call.
 
-&lt;p&gt;
-&lt;picture&gt;
-&lt;img alt=&quot;&quot; src=&quot;https://raw.githubusercontent.com/GyulyVGC/sniffnet/main/resources/repository/hr.png&quot; width=&quot;100%&quot;/&gt;
-&lt;/picture&gt;
+## Install
+
+```bash
+npm install -g agent-browser
+agent-browser install           # download Chrome for Testing (first time only)
+```
+
+- **Homebrew:** `brew install agent-browser`, then `agent-browser install`.
+- **Linux:** `agent-browser install --with-deps` also installs the browser&#039;s system libraries.
+- **No install:** `npx agent-browser open example.com`.
+
+Project installs, building from source, `upgrade`, and `doctor` are covered in [Installation](https://agent-browser.dev/installation).
+
+## Quick start
+
+```bash
+agent-browser open example.com
+agent-browser snapshot -i       # interactive elements, each with a ref
+agent-browser click @e1         # act on a ref from that snapshot
+agent-browser get url           # check the result
+agent-browser close
+```
+
+The snapshot for `example.com`:
+
+```
+- link &quot;Learn more&quot; [ref=e1]
+```
+
+- Refs describe the page at the time of the snapshot. After navigation or a DOM change, take a new snapshot before using refs again.
+- CSS selectors, text, XPath, and semantic locators also work, for example `agent-browser find role button click --name &quot;Submit&quot;`. See [Selectors](https://agent-browser.dev/selectors).
+- A click fails, instead of reporting success, when the target is hidden, disabled, outside the viewport, or covered by another element such as a consent banner. Dismiss the covering element, take a new snapshot, and retry.
+
+The full walkthrough is in the [quick start](https://agent-browser.dev/quick-start).
+
+## How it works
+
+The CLI sends each command to a background daemon that starts on the first command and controls the browser over the Chrome DevTools Protocol. Each `--session` gets its own daemon and browser. By default, the daemon closes a headless browser and exits after one hour without commands, saving state first when [session persistence](https://agent-browser.dev/sessions) is configured.
+
+Chrome for Testing is the default browser. You can also attach to a running Chrome with `--cdp` or `--auto-connect` ([CDP mode](https://agent-browser.dev/cdp-mode)), select the [Lightpanda](https://agent-browser.dev/engines/lightpanda) or [Obscura](https://agent-browser.dev/engines/obscura) engine with `--engine`, drive Mobile Safari in the [iOS Simulator](https://agent-browser.dev/ios), or use a cloud browser provider such as [Browserbase](https://agent-browser.dev/providers/browserbase), [Browserless](https://agent-browser.dev/providers/browserless), [Browser Use](https://agent-browser.dev/providers/browser-use), [Kernel](https://agent-browser.dev/providers/kernel), or [AgentCore](https://agent-browser.dev/providers/agentcore).
+
+## For AI agents
+
+The CLI ships skills that match its version:
+
+```bash
+agent-browser skills get core                 # the core loop, refs, waiting, and common workflows
+agent-browser skills get core --ref commands  # one reference, such as the full command list
+agent-browser skills get core --full          # adds the full command reference and templates
+agent-browser skills list                     # specialized skills: electron, slack, dogfood, and more
+```
+
+Install the discovery skill into an agent harness from [skills.sh](https://skills.sh/vercel-labs/agent-browser):
+
+```bash
+npx skills add vercel-labs/agent-browser
+```
+
+The installed skill is a thin stub that tells the agent to load `agent-browser skills get core`, so its instructions always match the installed CLI. Or add this to your `AGENTS.md`:
+
+```markdown
+Use `agent-browser` for browser automation. Before the first use, run
+`agent-browser skills get core` and follow it.
+```
+
+For MCP clients, `agent-browser mcp` starts an MCP server over stdio. See [MCP server](https://agent-browser.dev/commands#mcp-server).
+
+## Commands
+
+Run `agent-browser --help` for the full list, or `agent-browser &lt;command&gt; --help` for one command.
+
+| Group | Commands | Docs |
+|---|---|---|
+| Navigate and read | `open`, `back`, `forward`, `reload`, `read`, `snapshot`, `get`, `is` | [Core](https://agent-browser.dev/commands#core), [Snapshots](https://agent-browser.dev/snapshots) |
+| Interact | `click`, `dblclick`, `fill`, `type`, `press`, `keyboard`, `hover`, `focus`, `select`, `check`, `uncheck`, `scroll`, `drag`, `upload`, `mouse`, `find` | [Core](https://agent-browser.dev/commands#core), [Find elements](https://agent-browser.dev/commands#find-elements) |
+| Wait | `wait` | [Wait](https://agent-browser.dev/commands#wait) |
+| Capture | `screenshot`, `pdf`, `record`, `download`, `diff` | [Recording](https://agent-browser.dev/recording), [Diffing](https://agent-browser.dev/diffing), [Files](https://agent-browser.dev/files) |
+| Page and network state | `cookies`, `storage`, `network`, `set`, `clipboard`, `eval`, `pushstate` | [Network](https://agent-browser.dev/network), [Settings](https://agent-browser.dev/commands#settings) |
+| Tabs, frames, and dialogs | `tab`, `frame`, `dialog` | [Tabs and frames](https://agent-browser.dev/commands#tabs-frames) |
+| Debug and performance | `console`, `errors`, `highlight`, `inspect`, `trace`, `profiler`, `vitals`, `react`, `a11y` | [Debugging](https://agent-browser.dev/debugging), [Profiler](https://agent-browser.dev/profiler), [React](https://agent-browser.dev/react) |
+| Sessions and auth | `session`, `state`, `auth`, `profiles`, `confirm`, `deny` | [Sessions](https://agent-browser.dev/sessions), [Security](https://agent-browser.dev/security) |
+| Agents and integrations | `skills`, `mcp`, `webmcp`, `flow`, `chat`, `batch`, `plugin` | [Skills](https://agent-browser.dev/skills), [WebMCP](https://agent-browser.dev/webmcp), [Plugins](https://agent-browser.dev/plugins) |
+| Observe | `stream`, `dashboard` | [Streaming](https://agent-browser.dev/streaming), [Dashboard](https://agent-browser.dev/dashboard) |
+| Setup | `install`, `upgrade`, `doctor`, `connect`, `close` | [Installation](https://agent-browser.dev/installation) |
+
+Flags, environment variables, and `agent-browser.json` are documented in [Configuration](https://agent-browser.dev/configuration).
+
+## Platforms
+
+Native binaries ship for macOS (ARM64, x64), Linux (ARM64, x64, glibc and musl), and Windows (x64). The npm package picks the right binary for the host.
+
+## Development
+
+Building from source requires Node.js 24 or later, pnpm 11 or later, and Rust:
+
+```bash
+pnpm install
+pnpm build:source               # builds the dashboard and the native CLI
+pnpm link --global
+agent-browser install
+```
+
+Run the Rust checks from `cli/`:
+
+```bash
+cargo fmt -- --check
+cargo clippy
+cargo test
+cargo test e2e -- --ignored --test-threads=1   # launches real headless Chrome
+```
+
+[AGENTS.md](AGENTS.md) lists the files to update with each change, the docs checks, and the release process.
+
+## Documentation
+
+- [agent-browser.dev](https://agent-browser.dev): introduction, guides, and reference
+- [Commands](https://agent-browser.dev/commands) and [Configuration](https://agent-browser.dev/configuration)
+- [Security](https://agent-browser.dev/security): the auth vault, domain allowlists, action policies, and content boundaries
+- [Next.js and Vercel](https://agent-browser.dev/next) and [eve](https://agent-browser.dev/eve): running agent-browser in Vercel Sandbox and eve agents
+- [Changelog](CHANGELOG.md)
+
+## License
+
+Apache-2.0
+</pre>
+          ]]></content:encoded>
+            <category>Rust</category>
+        </item>
+        <item>
+            <title><![CDATA[astral-sh/uv]]></title>
+            <link>https://github.com/astral-sh/uv</link>
+            <guid>https://github.com/astral-sh/uv</guid>
+            <pubDate>Fri, 13 Nov 2026 00:04:32 GMT</pubDate>
+            <description><![CDATA[An extremely fast Python package and project manager, written in Rust.]]></description>
+            <content:encoded><![CDATA[
+            <h1><a href="https://github.com/astral-sh/uv">astral-sh/uv</a></h1>
+            <p>An extremely fast Python package and project manager, written in Rust.</p>
+            <p>Language: Rust</p>
+            <p>Stars: 91,956</p>
+            <p>Forks: 3,809</p>
+            <p>Stars today: 94 stars today</p>
+            <h2>README</h2><pre># uv
+
+&lt;a href=&quot;https://pypi.python.org/pypi/uv&quot;&gt;&lt;img src=&quot;https://img.shields.io/pypi/v/uv.svg&quot; alt=&quot;Latest PyPI version&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://pypi.python.org/pypi/uv&quot;&gt;&lt;img src=&quot;https://img.shields.io/pypi/pyversions/uv.svg&quot; alt=&quot;Supported Python versions&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://discord.gg/astral-sh&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Discord-%235865F2.svg?logo=discord&amp;logoColor=white&quot; alt=&quot;Discord&quot; /&gt;&lt;/a&gt;
+
+An extremely fast Python package and project manager, written in Rust.
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;picture align=&quot;center&quot;&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://github.com/astral-sh/uv/assets/1309177/03aa9163-1c79-4a87-a31d-7a9311ed9310&quot;&gt;
+    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://github.com/astral-sh/uv/assets/1309177/629e59c0-9c6e-4013-9ad4-adb2bcf5080d&quot;&gt;
+    &lt;img alt=&quot;Shows a bar chart with benchmark results.&quot; src=&quot;https://github.com/astral-sh/uv/assets/1309177/629e59c0-9c6e-4013-9ad4-adb2bcf5080d&quot;&gt;
+  &lt;/picture&gt;
 &lt;/p&gt;
 
-## _Support Sniffnet&#039;s development_ 💖
-
-&lt;i&gt;Sniffnet is completely free, open-source software which needs lots of effort and time to develop and maintain.
-
-If you appreciate Sniffnet, [sponsor the project](https://github.com/sponsors/GyulyVGC) to support its [growth](https://github.com/GyulyVGC/sniffnet/blob/main/ROADMAP.md).
-
-For sponsorship inquiries, feel free to reach out at `sponsor@sniffnet.app`.
-
-A special shout-out to these awesome organizations and folks who are sponsoring Sniffnet:&lt;/i&gt;
-
-&lt;table&gt;&lt;tr&gt;&lt;td&gt;
-&lt;a href=&quot;https://www.recall.ai/careers?ashby_jid=7b02811e-bc91-4ef2-925d-f56a5acac13b&amp;utm_source=github&amp;utm_medium=sponsorship&amp;utm_campaign=sniffnet&quot; title=&quot;recall.ai&quot;&gt;
-&lt;img height=&quot;60&quot; src=&quot;https://github.com/user-attachments/assets/5b46a13e-19e5-4924-9801-f142b651cf49&quot; /&gt;
-&lt;/a&gt;&lt;br&gt;
-&lt;blockquote&gt;&lt;i&gt;Processing over 3TB/s of video at peak load, &lt;a href=&quot;https://www.recall.ai/careers?ashby_jid=7b02811e-bc91-4ef2-925d-f56a5acac13b&amp;utm_source=github&amp;utm_medium=sponsorship&amp;utm_campaign=sniffnet&quot;&gt;now hiring in SF&lt;/a&gt;&lt;/i&gt;&lt;/blockquote&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-&lt;p&gt;
-&lt;a href=&quot;https://nlnet.nl&quot; title=&quot;NLnet&quot;&gt;&lt;img src=&quot;https://nlnet.nl/logo/logo.svg&quot; width=&quot;60px&quot; alt=&quot;NLnet&quot;/&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;
-&lt;a href=&quot;https://www.coderabbit.ai/?utm_source=cr_org&amp;utm_medium=github&quot; title=&quot;CodeRabbit&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/u/132028505?s=200&amp;v=4&quot; width=&quot;60px&quot; alt=&quot;CodeRabbit&quot;/&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;
-&lt;a href=&quot;https://ipinfo.io&quot; title=&quot;IPinfo&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/ipinfo?v=4&quot; width=&quot;60px&quot; alt=&quot;IPinfo&quot;/&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;
-&lt;a href=&quot;https://ads.fund&quot; title=&quot;ADS Fund&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/ADS-Fund?v=4&quot; width=&quot;60px&quot; alt=&quot;ADS Fund&quot;/&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;
-&lt;a href=&quot;https://github.com/Cthulu201&quot; title=&quot;Cthulu201&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/Cthulu201?v=4&quot; width=&quot;60px&quot; alt=&quot;Cthulu201&quot;/&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;
-&lt;a href=&quot;https://github.com/ZEROF&quot; title=&quot;ZEROF&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/ZEROF?v=4&quot; width=&quot;60px&quot; alt=&quot;ZEROF&quot;/&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;
-&lt;a href=&quot;https://www.janwalter.org/&quot; title=&quot;Jan Walter&quot;&gt;&lt;img src=&quot;https://avatars.githubusercontent.com/wahn?v=4&quot; width=&quot;60px&quot; alt=&quot;Jan Walter&quot;/&gt;&lt;/a&gt;
-&lt;a href=&quot;https://linktr.ee/golanbenoni&quot; title=&quot;Golan Ben-Oni&quot;&gt;&lt;img src=&quot;https://ugc.production.linktr.ee/eed0c0ea-b302-4286-b940-1e4740d4f54d_84D5JxCc-400x400.jpeg?io=true&amp;size=avatar-v3_0&quot; width=&quot;60px&quot; alt=&quot;Golan Ben-Oni&quot;/&gt;&lt;/a&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;i&gt;Installing &lt;a href=&quot;https://trio.readthedocs.io/&quot;&gt;Trio&lt;/a&gt;&#039;s dependencies with a warm cache.&lt;/i&gt;
 &lt;/p&gt;
 
-## Download
+## Highlights
 
-&lt;picture&gt;&lt;img height=&quot;28px&quot; alt=&quot;&quot; title=&quot;Downloads count&quot; src=&quot;https://raw.githubusercontent.com/sniffnet/sniffnet.github.io/main/assets/img/badges/downloads_badge.svg&quot;/&gt;&lt;/picture&gt;
-&lt;a href=&quot;https://github.com/GyulyVGC/sniffnet/releases/latest&quot;&gt;&lt;img height=&quot;28px&quot; alt=&quot;&quot; title=&quot;Latest version&quot; src=&quot;https://raw.githubusercontent.com/sniffnet/sniffnet.github.io/main/assets/img/badges/version_badge.svg&quot;/&gt;&lt;/a&gt;
+- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and
+  more.
+- [10-100x faster](https://github.com/astral-sh/uv/blob/main/BENCHMARKS.md) than `pip`.
+- Provides [comprehensive project management](#projects), with a
+  [universal lockfile](https://docs.astral.sh/uv/concepts/projects/layout#the-lockfile).
+- [Runs scripts](#scripts), with support for
+  [inline dependency metadata](https://docs.astral.sh/uv/guides/scripts#declaring-script-dependencies).
+- [Installs and manages](#python-versions) Python versions.
+- [Runs and installs](#tools) tools published as Python packages.
+- Includes a [pip-compatible interface](#the-pip-interface) for a performance boost with a familiar
+  CLI.
+- Supports Cargo-style [workspaces](https://docs.astral.sh/uv/concepts/projects/workspaces) for
+  scalable projects.
+- Disk-space efficient, with a [global cache](https://docs.astral.sh/uv/concepts/cache) for
+  dependency deduplication.
+- Installable without Rust or Python via `curl` or `pip`.
+- Supports macOS, Linux, and Windows.
 
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-      &lt;picture&gt;&lt;img alt=&quot;Windows&quot; title=&quot;Windows&quot; height=&quot;85px&quot; src=&quot;https://raw.githubusercontent.com/GyulyVGC/sniffnet/main/resources/repository/badges/windows.svg&quot;/&gt;&lt;/picture&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-      &lt;a href=&quot;https://github.com/GyulyVGC/sniffnet/releases/latest/download/Sniffnet_Windows_x64.msi&quot;&gt;x64&lt;/a&gt; | &lt;a href=&quot;https://github.com/GyulyVGC/sniffnet/releases/latest/download/Sniffnet_Windows_arm64.msi&quot;&gt;arm64&lt;/a&gt; | &lt;a href=&quot;https://github.com/GyulyVGC/sniffnet/releases/latest/download/Sniffnet_Windows_x86.msi&quot;&gt;x86&lt;/a&gt;
-    &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-      &lt;picture&gt;&lt;img alt=&quot;macOS&quot; title=&quot;macOS&quot; height=&quot;85px&quot; src=&quot;https://raw.githubusercontent.com/GyulyVGC/sniffnet/main/resources/repository/badges/macos.svg&quot;/&gt;&lt;/picture&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-      &lt;a href=&quot;https://github.com/GyulyVGC/sniffnet/releases/latest/download/Sniffnet_macOS_Intel.dmg&quot;&gt;Intel&lt;/a&gt; | &lt;a href=&quot;https://github.com/GyulyVGC/sniffnet/releases/latest/download/Sniffnet_macOS_AppleSilicon.dmg&quot;&gt;Apple silicon&lt;/a&gt;
-    &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-      &lt;picture&gt;&lt;img alt=&quot;Linux&quot; title=&quot;Linux&quot; height=&quot;85px&quot; src=&quot;https://raw.githubusercontent.com/GyulyVGC/sniffnet/main/resources/repository/badges/linux.svg&quot;/&gt;&lt;/picture&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-      DEB: &lt;a href=&quot;https://github.com/GyulyVGC/sniffnet/releases/latest/download/Sniffnet_LinuxDEB_amd64.deb&quot;&gt;amd64&lt;/a&gt; | &lt;a href=&quot;https://github.com/GyulyVGC/sniffnet/releases/latest/download/Sniffnet_LinuxDEB_arm64.deb&quot;&gt;arm64&lt;/a&gt; | &lt;a href=&quot;https://github.com/GyulyVGC/sniffnet/releases/latest/download/Sniffnet_LinuxDEB_i386.deb&quot;&gt;i386&lt;/a&gt; | &lt;a href=&quot;https://github.com/GyulyVGC/sniffnet/releases/latest/download/Sniffnet_LinuxDEB_armhf.deb&quot;&gt;armhf&lt;/a&gt;&lt;br&gt;
-      RPM: &lt;a href=&quot;https://github.com/GyulyVGC/sniffnet/releases/latest/download/Sniffnet_LinuxRPM_x86_64.rpm&quot;&gt;x86_64&lt;/a&gt; | &lt;a href=&quot;https://github.com/GyulyVGC/sniffnet/releases/latest/download/Sniffnet_LinuxRPM_aarch64.rpm&quot;&gt;aarch64&lt;/a&gt;&lt;br&gt;
-      AppImage: &lt;a href=&quot;https://github.com/GyulyVGC/sniffnet/releases/latest/download/Sniffnet_LinuxAppImage_amd64.AppImage&quot;&gt;amd64&lt;/a&gt; | &lt;a href=&quot;https://github.com/GyulyVGC/sniffnet/releases/latest/download/Sniffnet_LinuxAppImage_arm64.AppImage&quot;&gt;arm64&lt;/a&gt; | &lt;a href=&quot;https://github.com/GyulyVGC/sniffnet/releases/latest/download/Sniffnet_LinuxAppImage_i386.AppImage&quot;&gt;i386&lt;/a&gt; | &lt;a href=&quot;https://github.com/GyulyVGC/sniffnet/releases/latest/download/Sniffnet_LinuxAppImage_armhf.AppImage&quot;&gt;armhf&lt;/a&gt;
-    &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
+uv is backed by [Astral](https://astral.sh), the creators of
+[Ruff](https://github.com/astral-sh/ruff) and [ty](https://github.com/astral-sh/ty).
 
-Links in the table above will download the latest version of Sniffnet directly from [GitHub releases](https://github.com/GyulyVGC/sniffnet/releases). &lt;br&gt;
-Not what you&#039;re looking for? Check out [alternative installation methods](https://github.com/GyulyVGC/sniffnet/wiki/Alternative-installation-methods).
+## Installation
 
-&gt; [!NOTE]
-&gt;
-&gt; Remember to also install the [required dependencies](https://github.com/GyulyVGC/sniffnet/wiki/Required-dependencies) for your operating system.
+Install uv with our standalone installers:
+
+```bash
+# On macOS and Linux.
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+```bash
+# On Windows.
+powershell -ExecutionPolicy ByPass -c &quot;irm https://astral.sh/uv/install.ps1 | iex&quot;
+```
+
+Or, from [PyPI](https://pypi.org/project/uv/):
+
+```bash
+# With pip.
+pip install uv
+```
+
+```bash
+# Or pipx.
+pipx install uv
+```
+
+If installed via the standalone installer, uv can update itself to the latest version:
+
+```bash
+uv self update
+```
+
+See the [installation documentation](https://docs.astral.sh/uv/getting-started/installation/) for
+details and alternative installation methods.
+
+## Documentation
+
+uv&#039;s documentation is available at [docs.astral.sh/uv](https://docs.astral.sh/uv).
+
+Additionally, the command line reference documentation can be viewed with `uv help`.
 
 ## Features
 
-- 💻 choose a **network adapter** of your PC to inspect
-- 🏷️ select a set of **filters** to apply to the observed traffic
-- 📁 **import** and **export** comprehensive capture reports as **PCAP** files
-- 📊 view overall **statistics** about your Internet traffic
-- 📈 view **real-time charts** about traffic intensity
-- 🏠 identify connections in your **local network**
-- 🌍 discover the **geographical location** of remote hosts
-- 🌐 find out **domain name** and **ASN** of the hosts you are exchanging traffic with
-- 📖 identify **6000+ upper layer services**, protocols, trojans, and worms
-- 🎮 see which **programs** are generating network bandwidth
-- ⭐ save your **favorite** network hosts, services, and programs
-- 📌 keep an eye on your network even when the application is **minimized**
-- ️🔎 search and **inspect** each of your network connections in real time
-- 🔉 set custom **notifications** to inform you when defined network events occur
-- 🚫 import custom **IP blacklists** to highlight potentially dangerous connections
-- 🎨 choose the **style** that fits you the most, including custom themes support
-- ...and more!
+### Projects
 
-## User manual
+uv manages project dependencies and environments, with support for lockfiles, workspaces, and more,
+similar to `rye` or `poetry`:
 
-Do you want to **learn more**? &lt;br&gt;
-Check out the [**Sniffnet Wiki**](https://github.com/GyulyVGC/sniffnet/wiki), a comprehensive manual to help you
-thoroughly master the application from a basic setup to the most advanced functionalities. &lt;br&gt;
-The Wiki includes step-by-step guides, tips, examples of usage, and answers to frequent questions.
+```console
+$ uv init example
+Initialized project `example` at `/home/user/example`
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;a href=&quot;https://github.com/GyulyVGC/sniffnet/wiki&quot;&gt;
-&lt;img alt=&quot;&quot; title=&quot;Sniffnet Wiki&quot; src=&quot;https://raw.githubusercontent.com/GyulyVGC/sniffnet/main/resources/logos/wiki/wikilogo.svg&quot; width=&quot;300px&quot;/&gt;
-&lt;/a&gt;
-&lt;/p&gt;
+$ cd example
 
-## Troubleshooting
+$ uv add ruff
+Creating virtual environment at: .venv
+Resolved 2 packages in 170ms
+   Built example @ file:///home/user/example
+Prepared 2 packages in 627ms
+Installed 2 packages in 1ms
+ + example==0.1.0 (from file:///home/user/example)
+ + ruff==0.5.0
 
-&lt;details&gt;
+$ uv run ruff check
+All checks passed!
 
-  &lt;summary&gt;See details&lt;/summary&gt;
+$ uv lock
+Resolved 2 packages in 0.33ms
 
-### Missing dependencies
-
-Most of the errors that may arise are likely due to your system missing dependencies
-required to correctly analyze a network adapter. &lt;br&gt;
-Check the [required dependencies page](https://github.com/GyulyVGC/sniffnet/wiki/Required-dependencies) 
-for instructions on how to proceed depending on your operating system.
-
-### Rendering problems
-
-In some circumstances, especially if you are running on an old architecture or your graphical drivers are not updated,
-the `wgpu` default renderer used by [iced](https://github.com/iced-rs/iced)
-may manifest bugs (the interface glitches, color gradients are unsupported, or some icons are completely black). &lt;br&gt;
-In these cases you can set an environment variable to switch to the `tiny-skia` renderer,
-a CPU-only software renderer that should work properly on every environment:
-
-```sh
-ICED_BACKEND=tiny-skia
+$ uv sync
+Resolved 2 packages in 0.70ms
+Checked 1 package in 0.02ms
 ```
 
-### ***In any case, don&#039;t hesitate to [open an issue](https://github.com/GyulyVGC/sniffnet/issues/new/choose), and I will do my best to help you!***
+See the [project documentation](https://docs.astral.sh/uv/guides/projects/) to get started.
 
-&lt;/details&gt;
+uv also supports building and publishing projects, even if they&#039;re not managed with uv. See the
+[publish guide](https://docs.astral.sh/uv/guides/publish/) to learn more.
+
+### Scripts
+
+uv manages dependencies and environments for single-file scripts.
+
+Create a new script and add inline metadata declaring its dependencies:
+
+```console
+$ echo &#039;import requests; print(requests.get(&quot;https://astral.sh&quot;))&#039; &gt; example.py
+
+$ uv add --script example.py requests
+Updated `example.py`
+```
+
+Then, run the script in an isolated virtual environment:
+
+```console
+$ uv run example.py
+Reading inline script metadata from: example.py
+Installed 5 packages in 12ms
+&lt;Response [200]&gt;
+```
+
+See the [scripts documentation](https://docs.astral.sh/uv/guides/scripts/) to get started.
+
+### Tools
+
+uv executes and installs command-line tools provided by Python packages, similar to `pipx`.
+
+Run a tool in an ephemeral environment using `uvx` (an alias for `uv tool run`):
+
+```console
+$ uvx pycowsay &#039;hello world!&#039;
+Resolved 1 package in 167ms
+Installed 1 package in 9ms
+ + pycowsay==0.0.0.2
+  &quot;&quot;&quot;
+
+  ------------
+&lt; hello world! &gt;
+  ------------
+   \   ^__^
+    \  (oo)\_______
+       (__)\       )\/\
+           ||----w |
+           ||     ||
+```
+
+Install a tool with `uv tool install`:
+
+```console
+$ uv tool install ruff
+Resolved 1 package in 6ms
+Installed 1 package in 2ms
+ + ruff==0.5.0
+Installed 1 executable: ruff
+
+$ ruff --version
+ruff 0.5.0
+```
+
+See the [tools documentation](https://docs.astral.sh/uv/guides/tools/) to get started.
+
+### Python versions
+
+uv installs Python and allows quickly switching between versions.
+
+Install multiple Python versions:
+
+```console
+$ uv python install 3.12 3.13 3.14
+Installed 3 versions in 972ms
+ + cpython-3.12.12-macos-aarch64-none (python3.12)
+ + cpython-3.13.9-macos-aarch64-none (python3.13)
+ + cpython-3.14.0-macos-aarch64-none (python3.14)
+
+```
+
+Download Python versions as needed:
+
+```console
+$ uv venv --python 3.12.0
+Using Python 3.12.0
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate
+
+$ uv run --python pypy@3.8 -- python --version
+Python 3.8.16 (a9dbdca6fc3286b0addd2240f11d97d8e8de187a, Dec 29 2022, 11:45:30)
+[PyPy 7.3.11 with GCC Apple LLVM 13.1.6 (clang-1316.0.21.2.5)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;&gt;
+```
+
+Use a specific Python version in the current directory:
+
+```console
+$ uv python pin 3.11
+Pinned `.python-version` to `3.11`
+```
+
+See the [Python installation documentation](https://docs.astral.sh/uv/guides/install-python/) to get
+started.
+
+### The pip interface
+
+uv provides a drop-in replacement for common `pip`, `pip-tools`, and `virtualenv` commands.
+
+uv extends their interfaces with advanced features, such as dependency version overrides,
+platform-independent resolutions, reproducible resolutions, alternative resolution strategies, and
+more.
+
+Migrate to uv without changing your existing workflows — and experience a 10-100x speedup — with the
+`uv pip` interface.
+
+Compile requirements into a platform-independent requirements file:
+
+```console
+$ uv pip compile requirements.in \
+   --universal \
+   --output-file requirements.txt
+Resolved 43 packages in 12ms
+```
+
+Create a virtual environment:
+
+```console
+$ uv venv
+Using Python 3.12.3
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate
+```
+
+Install the locked requirements:
+
+```console
+$ uv pip sync requirements.txt
+Resolved 43 packages in 11ms
+Installed 43 packages in 208ms
+ + babel==2.15.0
+ + black==24.4.2
+ + certifi==2024.7.4
+ ...
+```
+
+See the [pip interface documentation](https://docs.astral.sh/uv/pip/index/) to get started.
+
+## Contributing
+
+We are passionate about supporting contributors of all levels of experience and would love to see
+you get involved in the project. See the
+[contributing guide](https://github.com/astral-sh/uv?tab=contributing-ov-file#contributing) to get
+started.
+
+## FAQ
+
+#### How do you pronounce uv?
+
+It&#039;s pronounced as &quot;you - vee&quot; ([`/juː viː/`](https://en.wikipedia.org/wiki/Help:IPA/English#Key))
+
+#### How should I stylize uv?
+
+Just &quot;uv&quot;, please. See the [style guide](./STYLE.md#styling-uv) for details.
+
+#### What platforms does uv support?
+
+See uv&#039;s [platform support](https://docs.astral.sh/uv/reference/platforms/) document.
+
+#### Is uv ready for production?
+
+Yes, uv is stable and widely used in production. See uv&#039;s
+[versioning policy](https://docs.astral.sh/uv/reference/versioning/) document for details.
 
 ## Acknowledgements
 
-- A big shout-out to [all the contributors](https://github.com/GyulyVGC/sniffnet/blob/main/CONTRIBUTORS.md) of Sniffnet!
-- The graphical user interface has been realized with [iced](https://github.com/iced-rs/iced), a cross-platform GUI library for Rust focused on simplicity and type-safety
-- IP geolocation and ASN data are provided by [MaxMind](https://www.maxmind.com)
-- Free code signing for Windows Installer is provided by [SignPath.io](https://about.signpath.io/), certificate by [SignPath Foundation](https://signpath.org/)
-- [Sniffnet](https://ads.fund/token/0xadfc251f8ef00ceaeca2b5c1882dabe5db0833df) project is supported by ADS.FUND
-- Last but not least, thanks to [every single stargazer](https://github.com/GyulyVGC/sniffnet/stargazers): all forms of support made it possible to keep improving Sniffnet!
+uv&#039;s dependency resolver uses [PubGrub](https://github.com/pubgrub-rs/pubgrub) under the hood. We&#039;re
+grateful to the PubGrub maintainers, especially [Jacob Finkelman](https://github.com/Eh2406), for
+their support.
 
-## Stay in the loop
+uv&#039;s Git implementation is based on [Cargo](https://github.com/rust-lang/cargo).
 
-Wait... there&#039;s more!&lt;br&gt;Sniffnet is rapidly evolving, and new features are added on a regular basis.&lt;br&gt;
-Follow the &lt;a href=&quot;https://sniffnet.app/news/&quot;&gt;&lt;b&gt;news&lt;/b&gt;&lt;/a&gt; and Sniffnet socials to never miss an update.
+Some of uv&#039;s optimizations are inspired by the great work we&#039;ve seen in [pnpm](https://pnpm.io/),
+[Orogene](https://github.com/orogene/orogene), and [Bun](https://github.com/oven-sh/bun). We&#039;ve also
+learned a lot from Nathaniel J. Smith&#039;s [Posy](https://github.com/njsmith/posy) and adapted its
+[trampoline](https://github.com/njsmith/posy/tree/main/src/trampolines/windows-trampolines/posy-trampoline)
+for Windows support.
 
-&lt;table align=&quot;center&quot;&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-      &lt;a href=&quot;https://bsky.app/profile/sniffnet.app&quot;&gt;&lt;img width=&quot;48&quot; height=&quot;48&quot; alt=&quot;Bluesky&quot; title=&quot;Bluesky&quot; src=&quot;https://raw.githubusercontent.com/GyulyVGC/sniffnet/main/resources/repository/badges/bluesky.svg&quot;/&gt;&lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-      &lt;a href=&quot;https://www.linkedin.com/company/sniffnet&quot;&gt;&lt;img width=&quot;48&quot; height=&quot;48&quot; alt=&quot;LinkedIn&quot; title=&quot;LinkedIn&quot; src=&quot;https://raw.githubusercontent.com/GyulyVGC/sniffnet/main/resources/repository/badges/linkedin.svg&quot;/&gt;&lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-      &lt;a href=&quot;https://mastodon.social/@sniffnet&quot;&gt;&lt;img width=&quot;48&quot; height=&quot;48&quot; alt=&quot;Mastodon&quot; title=&quot;Mastodon&quot; src=&quot;https://raw.githubusercontent.com/GyulyVGC/sniffnet/main/resources/repository/badges/mastodon.svg&quot;/&gt;&lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-      &lt;a href=&quot;https://t.me/sniffnet&quot;&gt;&lt;img width=&quot;48&quot; height=&quot;48&quot; alt=&quot;Telegram&quot; title=&quot;Telegram&quot; src=&quot;https://raw.githubusercontent.com/GyulyVGC/sniffnet/main/resources/repository/badges/telegram.svg&quot;/&gt;&lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-      &lt;a href=&quot;https://x.com/sniffnet&quot;&gt;&lt;img width=&quot;48&quot; height=&quot;48&quot; alt=&quot;Twitter / X&quot; title=&quot;Twitter / X&quot; src=&quot;https://raw.githubusercontent.com/GyulyVGC/sniffnet/main/resources/repository/badges/x.svg&quot;/&gt;&lt;/a&gt;
-    &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
+## License
 
-You can also reach us by email at `info@sniffnet.app`.
+uv is licensed under either of
+
+- Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or
+  &lt;https://www.apache.org/licenses/LICENSE-2.0&gt;)
+- MIT license ([LICENSE-MIT](LICENSE-MIT) or &lt;https://opensource.org/licenses/MIT&gt;)
+
+at your option.
+
+Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in uv
+by you, as defined in the Apache-2.0 license, shall be dually licensed as above, without any
+additional terms or conditions.
+
+&lt;div align=&quot;center&quot;&gt;
+  &lt;a target=&quot;_blank&quot; href=&quot;https://astral.sh&quot; style=&quot;background:none&quot;&gt;
+    &lt;img src=&quot;https://raw.githubusercontent.com/astral-sh/uv/main/assets/svg/Astral.svg&quot; alt=&quot;Made by Astral&quot;&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
 </pre>
           ]]></content:encoded>
             <category>Rust</category>
@@ -945,15 +1002,15 @@ You can also reach us by email at `info@sniffnet.app`.
             <title><![CDATA[ShayanAbbas1/dbdelve]]></title>
             <link>https://github.com/ShayanAbbas1/dbdelve</link>
             <guid>https://github.com/ShayanAbbas1/dbdelve</guid>
-            <pubDate>Thu, 12 Nov 2026 00:04:25 GMT</pubDate>
+            <pubDate>Fri, 13 Nov 2026 00:04:31 GMT</pubDate>
             <description><![CDATA[Fast and lightweight DB Client made in Rust and GPUI.]]></description>
             <content:encoded><![CDATA[
             <h1><a href="https://github.com/ShayanAbbas1/dbdelve">ShayanAbbas1/dbdelve</a></h1>
             <p>Fast and lightweight DB Client made in Rust and GPUI.</p>
             <p>Language: Rust</p>
-            <p>Stars: 1,097</p>
-            <p>Forks: 58</p>
-            <p>Stars today: 101 stars today</p>
+            <p>Stars: 1,222</p>
+            <p>Forks: 65</p>
+            <p>Stars today: 108 stars today</p>
             <h2>README</h2><pre># &lt;img src=&quot;assets/icon/dbdelve.svg&quot; alt=&quot;&quot; width=&quot;48&quot; align=&quot;absmiddle&quot;&gt; DBDelve
 
 A fast, native, cross-platform, multi-engine database client. Written in Rust
@@ -1148,879 +1205,210 @@ Third-party font and theme licenses are in [NOTICES.md](NOTICES.md).
             <category>Rust</category>
         </item>
         <item>
-            <title><![CDATA[pola-rs/polars]]></title>
-            <link>https://github.com/pola-rs/polars</link>
-            <guid>https://github.com/pola-rs/polars</guid>
-            <pubDate>Thu, 12 Nov 2026 00:04:24 GMT</pubDate>
-            <description><![CDATA[Extremely fast Query Engine for DataFrames, written in Rust]]></description>
+            <title><![CDATA[tauri-apps/tauri]]></title>
+            <link>https://github.com/tauri-apps/tauri</link>
+            <guid>https://github.com/tauri-apps/tauri</guid>
+            <pubDate>Fri, 13 Nov 2026 00:04:30 GMT</pubDate>
+            <description><![CDATA[Build smaller, faster, and more secure desktop and mobile applications with a web frontend.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/pola-rs/polars">pola-rs/polars</a></h1>
-            <p>Extremely fast Query Engine for DataFrames, written in Rust</p>
+            <h1><a href="https://github.com/tauri-apps/tauri">tauri-apps/tauri</a></h1>
+            <p>Build smaller, faster, and more secure desktop and mobile applications with a web frontend.</p>
             <p>Language: Rust</p>
-            <p>Stars: 40,329</p>
-            <p>Forks: 3,238</p>
-            <p>Stars today: 21 stars today</p>
-            <h2>README</h2><pre>&lt;h1 align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://pola.rs&quot;&gt;
-    &lt;img src=&quot;https://raw.githubusercontent.com/pola-rs/polars-static/master/banner/polars_github_banner.svg&quot; alt=&quot;Polars logo&quot;&gt;
-  &lt;/a&gt;
-&lt;/h1&gt;
+            <p>Stars: 112,853</p>
+            <p>Forks: 4,216</p>
+            <p>Stars today: 90 stars today</p>
+            <h2>README</h2><pre>&lt;img src=&quot;.github/splash.png&quot; alt=&quot;Tauri&quot; /&gt;
 
-&lt;div align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://crates.io/crates/polars&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/crates/v/polars.svg&quot; alt=&quot;crates.io Latest Release&quot;/&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://pypi.org/project/polars/&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/pypi/v/polars.svg&quot; alt=&quot;PyPi Latest Release&quot;/&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://www.npmjs.com/package/nodejs-polars&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/npm/v/nodejs-polars.svg&quot; alt=&quot;NPM Latest Release&quot;/&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://community.r-multiverse.org/polars&quot;&gt;
-    &lt;img src=&quot;https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fcommunity.r-multiverse.org%2Fapi%2Fpackages%2Fpolars&amp;query=%24.Version&amp;label=r-multiverse&quot; alt=&quot;R-multiverse Latest Release&quot;/&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;https://doi.org/10.5281/zenodo.7697217&quot;&gt;
-    &lt;img src=&quot;https://zenodo.org/badge/DOI/10.5281/zenodo.7697217.svg&quot; alt=&quot;DOI Latest Release&quot;/&gt;
-  &lt;/a&gt;
-&lt;/div&gt;
+[![status](https://img.shields.io/badge/status-stable-blue.svg)](https://github.com/tauri-apps/tauri/tree/dev)
+[![License](https://img.shields.io/badge/License-MIT%20or%20Apache%202-green.svg)](https://opencollective.com/tauri)
+[![test core](https://img.shields.io/github/actions/workflow/status/tauri-apps/tauri/test-core.yml?label=test%20core&amp;logo=github)](https://github.com/tauri-apps/tauri/actions/workflows/test-core.yml)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftauri-apps%2Ftauri.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftauri-apps%2Ftauri?ref=badge_shield)
+[![Chat Server](https://img.shields.io/badge/chat-discord-7289da.svg)](https://discord.com/invite/tauri)
+[![website](https://img.shields.io/badge/website-tauri.app-purple.svg)](https://tauri.app)
+[![https://good-labs.github.io/greater-good-affirmation/assets/images/badge.svg](https://good-labs.github.io/greater-good-affirmation/assets/images/badge.svg)](https://good-labs.github.io/greater-good-affirmation)
+[![support](https://img.shields.io/badge/sponsor-Open%20Collective-blue.svg)](https://opencollective.com/tauri)
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;b&gt;Documentation&lt;/b&gt;:
-  &lt;a href=&quot;https://docs.pola.rs/api/python/stable/reference/index.html&quot;&gt;Python&lt;/a&gt;
-  -
-  &lt;a href=&quot;https://docs.rs/polars/latest/polars/&quot;&gt;Rust&lt;/a&gt;
-  -
-  &lt;a href=&quot;https://pola-rs.github.io/nodejs-polars/index.html&quot;&gt;Node.js&lt;/a&gt;
-  -
-  &lt;a href=&quot;https://pola-rs.github.io/r-polars/index.html&quot;&gt;R&lt;/a&gt;
-  -
-  &lt;a href=&quot;https://docs.pola.rs/api/python/stable/reference/sql/index.html&quot;&gt;SQL&lt;/a&gt;
-  |
-  &lt;b&gt;Agents&lt;/b&gt;:
-  &lt;a href=&quot;https://github.com/polars-inc/skills/tree/main/polars&quot;&gt;Skill&lt;/a&gt;
-  -
-  &lt;a href=&quot;https://docs.pola.rs/user-guide/misc/polars_llms/&quot;&gt;MCP&lt;/a&gt;
-  |
-  &lt;a href=&quot;https://docs.pola.rs/&quot;&gt;User guide&lt;/a&gt;
-  |
-  &lt;a href=&quot;https://discord.gg/4UfP5cfBE7&quot;&gt;Discord&lt;/a&gt;
-&lt;/p&gt;
+## Introduction
 
-## Polars: Extremely fast Query Engine for DataFrames and SQL
+Tauri is a framework for building tiny, blazingly fast binaries for all major operating systems. Developers can integrate any front-end framework that compiles to HTML, JS and CSS for building their user interface. The backend of the application is a rust-sourced binary with an API that the front-end can interact with.
 
-Polars is an analytical query engine written in Rust. Write your queries with the DataFrame API, in
-SQL, or mix both: they run through the same optimizer and the same engine. It is designed to be
-fast, easy to use and expressive. Key features are:
+The user interface in Tauri apps currently leverages [`tao`](https://docs.rs/tao) as a window handling library on macOS, Windows, Linux, Android and iOS. To render your application, Tauri uses [WRY](https://github.com/tauri-apps/wry), a library which provides a unified interface to the system webview, leveraging WKWebView on macOS &amp; iOS, WebView2 on Windows, WebKitGTK on Linux and Android System WebView on Android.
 
-- **Fast**: written from the ground up in Rust with multi-threaded, vectorized (SIMD) execution
-- **Spill to disk**: Operations that exceed available RAM can spill to disk
-- **Expressive API**: compose complex queries with powerful expressions
-- **Extensible**: extend Polars natively with custom code through
-  [I/O and Expression plugins](https://docs.pola.rs/user-guide/plugins/)
-- **GPU support**: optionally accelerate queries on NVIDIA GPUs
-- **Interoperable**: uses the
-  [Apache Arrow Columnar Format](https://arrow.apache.org/docs/format/Columnar.html) for zero-copy
-  data sharing
+To learn more about the details of how all of these pieces fit together, please consult this [ARCHITECTURE.md](https://github.com/tauri-apps/tauri/blob/dev/ARCHITECTURE.md) document.
 
-To learn more, read the [user guide](https://docs.pola.rs/).
+## Getting Started
 
-## Polars in action
+If you are interested in making a tauri app, please visit the [documentation website](https://tauri.app).
 
-### DataFrame API
-
-Queries are composed from expressions or SQL. This lazy query gets optimized out of the box and runs
-in parallel across all available cores:
-
-```python
-import polars as pl
-
-df = (
-    pl.scan_parquet(&quot;orders.parquet&quot;)
-    .filter(pl.col(&quot;status&quot;) == &quot;shipped&quot;)
-    .group_by(&quot;customer_id&quot;)
-    .agg(
-        pl.col(&quot;amount&quot;).sum().alias(&quot;total&quot;),
-        pl.len().alias(&quot;n_orders&quot;),
-    )
-    .sort(&quot;total&quot;, descending=True)
-    .collect()
-)
-```
-
-### SQL
-
-```python
-import polars as pl
-
-df = pl.sql(&quot;&quot;&quot;
-    WITH totals AS (
-        SELECT customer_id, SUM(amount) AS total, COUNT(*) AS n_orders
-        FROM read_parquet(&#039;orders.parquet&#039;)
-        WHERE status = &#039;shipped&#039;
-        GROUP BY customer_id
-    )
-    SELECT c.name, t.total, t.n_orders, RANK() OVER (ORDER BY t.total DESC) AS rank
-    FROM totals t
-    JOIN read_parquet(&#039;customers.parquet&#039;) c USING (customer_id)
-    ORDER BY t.total DESC
-&quot;&quot;&quot;).collect()
-```
-
-### Mix both
-
-DataFrames and LazyFrames in scope can be queried by name, and the result of a SQL query is a
-regular `LazyFrame`, so you can switch between SQL and expressions freely:
-
-```python
-orders = pl.scan_parquet(&quot;orders.parquet&quot;)
-
-df = (
-    pl.sql(&quot;SELECT customer_id, SUM(amount) AS total FROM orders GROUP BY customer_id&quot;)
-    .filter(pl.col(&quot;total&quot;) &gt; 1_000)
-    .collect()
-)
-```
-
-Read more in the [SQL user guide](https://docs.pola.rs/user-guide/sql/intro/).
-
-## Performance
-
-Polars is very fast. In fact, it is one of the best performing query engines available, for both
-DataFrame and SQL workloads. See the [PDS-H benchmarks](https://www.pola.rs/benchmarks.html)
-results.
-
-## Installation
-
-### Python
-
-Install the latest Polars version with:
+The quickest way to get started is to install the [prerequisites](https://v2.tauri.app/start/prerequisites/) for your system and create a new project with [`create-tauri-app`](https://github.com/tauri-apps/create-tauri-app/#usage). For example with `npm`:
 
 ```sh
-pip install polars
+npm create tauri-app@latest
 ```
 
-See the [User Guide](https://docs.pola.rs/user-guide/installation/#feature-flags) for more details
-on optional dependencies
+## Features
 
-&lt;details&gt;
-&lt;summary&gt;&lt;b&gt;Compile Polars from source&lt;/b&gt;&lt;/summary&gt;
+The list of Tauri&#039;s features includes, but is not limited to:
 
-If you want a bleeding edge release you should compile Polars from source. Advanced users can also
-compile for maximum performance for their architecture.
+- Built-in app bundler to create app bundles in formats like `.app`, `.dmg`, `.deb`, `.rpm`, `.AppImage` and Windows installers like `.exe` (via NSIS) and `.msi` (via WiX).
+- Built-in self updater (desktop only)
+- System tray icons
+- Native notifications
+- Native WebView Protocol (tauri doesn&#039;t create a localhost http(s) server to serve the WebView contents)
+- GitHub action for streamlined CI
+- VS Code extension
 
-This can be done by going through the following steps in sequence:
+### Platforms
 
-1. Install the latest [Rust compiler](https://www.rust-lang.org/tools/install)
-2. Install [maturin](https://maturin.rs/): `pip install maturin`
-3. `cd py-polars` and choose one of the following:
-   - `make build`, slow binary with debug assertions and limited symbols, fast compile times
-   - `make build-debug`, same as `make build`, but with all symbols, produces large binaries
-   - `make build-release`, fast binary without debug assertions, minimal debug symbols, long compile
-     times
-   - `make build-nodebug-release`, same as build-release but without any debug symbols, slightly
-     faster to compile
-   - `make build-debug-release`, same as build-release but with full debug symbols, slightly slower
-     to compile
-   - `make build-dist-release`, fastest binary, extreme compile times
+Tauri currently supports development and distribution on the following platforms:
 
-By default the binary is compiled with optimizations turned on for a modern CPU. Specify `LTS_CPU=1`
-with the command if your CPU is older and does not support e.g. AVX2.
-
-Note that the Rust crate implementing the Python bindings is called `py-polars` to distinguish from
-the wrapped Rust crate `polars` itself. However, both the Python package and the Python module are
-named `polars`, so you can `pip install polars` and `import polars`.
-
-&lt;/details&gt;
-
-Check the [Installation guide](https://docs.pola.rs/user-guide/installation/) for more advanced
-installations. For example when you expect more than 2^32 (~4.2 billion) rows, run on an old CPU
-(e.g. dating from before 2011), or on an `x86-64` build of Python on Apple Silicon under Rosetta.
+| Platform   | Versions                                                                                                        |
+| :--------- | :-------------------------------------------------------------------------------------------------------------- |
+| Windows    | 10 and above                                                                                                    |
+| macOS      | 10.15 and above                                                                                                 |
+| Linux      | webkit2gtk 4.0 for Tauri v1 (for example Ubuntu 18.04). webkit2gtk 4.1 for Tauri v2 (for example Ubuntu 22.04). |
+| iOS/iPadOS | 9 and above                                                                                                     |
+| Android    | 7 and above (currently 8 and above)                                                                             |
 
 ## Contributing
 
-Want to contribute? Read our [contributing guide](https://docs.pola.rs/development/contributing/)
-and check the issue tracker for accepted issues.
+Before you start working on something, it&#039;s best to check if there is an existing issue first. It&#039;s also a good idea to stop by the Discord server and confirm with the team if it makes sense or if someone else is already working on it.
 
-Contributors new to the codebase can look for the `good first issue` label to get familiar with the
-project.
+Please make sure to read the [Contributing Guide](./.github/CONTRIBUTING.md) before making a pull request.
 
-You can [join the Polars Discord server](https://discord.gg/4UfP5cfBE7) for any help along the way.
+Thank you to everyone contributing to Tauri!
 
-## Distributed Polars
+### Documentation
 
-Running into hardware limitations executing your queries? Read how you can
-[horizontally scale your Polars query on a cluster](https://docs.nanook.pola.rs/).
+Documentation in a polyglot system is a tricky proposition. To this end, we prefer to use inline documentation in the Rust &amp; JS source code as much as possible. Check out the hosting repository for the documentation site for further information: &lt;https://github.com/tauri-apps/tauri-docs&gt;
 
-## License
+## Partners
 
-Polars is licensed under the [MIT License](LICENSE) (SPDX: `MIT`).
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; valign=&quot;middle&quot;&gt;
+        &lt;a href=&quot;https://crabnebula.dev&quot; target=&quot;_blank&quot;&gt;
+          &lt;img src=&quot;.github/sponsors/crabnebula.svg&quot; alt=&quot;CrabNebula&quot; width=&quot;283&quot;&gt;
+        &lt;/a&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+For the complete list of sponsors please visit our [website](https://tauri.app#sponsors) and [Open Collective](https://opencollective.com/tauri).
+
+## Organization
+
+Tauri aims to be a sustainable collective based on principles that guide sustainable free and open software communities. To this end it has become a Programme within the [Commons Conservancy](https://commonsconservancy.org/), and you can contribute financially via [Open Collective](https://opencollective.com/tauri).
+
+## Licenses
+
+Code: (c) 2015 - Present - The Tauri Programme within The Commons Conservancy.
+
+MIT or MIT/Apache 2.0 where applicable.
+
+Logo: CC-BY-NC-ND
+
+- Original Tauri Logo Designs by [Alve Larsson](https://alve.io/), [Daniel Thompson-Yvetot](https://github.com/nothingismagick) and [Guillaume Chau](https://github.com/akryum)
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftauri-apps%2Ftauri.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftauri-apps%2Ftauri?ref=badge_large)
 </pre>
           ]]></content:encoded>
             <category>Rust</category>
         </item>
         <item>
-            <title><![CDATA[ja7ad/hydra]]></title>
-            <link>https://github.com/ja7ad/hydra</link>
-            <guid>https://github.com/ja7ad/hydra</guid>
-            <pubDate>Thu, 12 Nov 2026 00:04:23 GMT</pubDate>
-            <description><![CDATA[A fast, resilient, multi-source file retriever and download engine]]></description>
+            <title><![CDATA[rust-lang/rust]]></title>
+            <link>https://github.com/rust-lang/rust</link>
+            <guid>https://github.com/rust-lang/rust</guid>
+            <pubDate>Fri, 13 Nov 2026 00:04:29 GMT</pubDate>
+            <description><![CDATA[Empowering everyone to build reliable and efficient software.]]></description>
             <content:encoded><![CDATA[
-            <h1><a href="https://github.com/ja7ad/hydra">ja7ad/hydra</a></h1>
-            <p>A fast, resilient, multi-source file retriever and download engine</p>
+            <h1><a href="https://github.com/rust-lang/rust">rust-lang/rust</a></h1>
+            <p>Empowering everyone to build reliable and efficient software.</p>
             <p>Language: Rust</p>
-            <p>Stars: 1,408</p>
-            <p>Forks: 85</p>
-            <p>Stars today: 21 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;docs/logo.png&quot; alt=&quot;HYDRA Logo&quot; width=&quot;180&quot;&gt;
-&lt;/p&gt;
+            <p>Stars: 121,852</p>
+            <p>Forks: 16,661</p>
+            <p>Stars today: 107 stars today</p>
+            <h2>README</h2><pre>&lt;div align=&quot;center&quot;&gt;
+  &lt;picture&gt;
+    &lt;source media=&quot;(prefers-color-scheme: dark)&quot; srcset=&quot;https://raw.githubusercontent.com/rust-lang/www.rust-lang.org/master/static/images/rust-social-wide-dark.svg&quot;&gt;
+    &lt;source media=&quot;(prefers-color-scheme: light)&quot; srcset=&quot;https://raw.githubusercontent.com/rust-lang/www.rust-lang.org/master/static/images/rust-social-wide-light.svg&quot;&gt;
+    &lt;img alt=&quot;The Rust Programming Language: A language empowering everyone to build reliable and efficient software&quot;
+         src=&quot;https://raw.githubusercontent.com/rust-lang/www.rust-lang.org/master/static/images/rust-social-wide-light.svg&quot;
+         width=&quot;50%&quot;&gt;
+  &lt;/picture&gt;
 
-&lt;h1 align=&quot;center&quot;&gt;Hydra Download Manager (HDM)&lt;/h1&gt;
+[Website][Rust] | [Getting started] | [Learn] | [Documentation] | [Contributing]
+&lt;/div&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;strong&gt;Fast, resilient, multi-source download manager and accelerator for Windows, macOS, and Linux.&lt;/strong&gt;&lt;br&gt;
-  &lt;a href=&quot;https://hydra.javad.dev&quot;&gt;&lt;strong&gt;https://hydra.javad.dev&lt;/strong&gt;&lt;/a&gt;
-&lt;/p&gt;
+This is the main source code repository for [Rust]. It contains the compiler,
+standard library, and documentation.
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://chromewebstore.google.com/detail/hydra-download-manager-in/oieelfilllghmbnhofajpgpmmilfihmo&quot;&gt;&lt;img src=&quot;docs/img/extension-badges/chrome.png&quot; alt=&quot;Available in the Chrome Web Store&quot; height=&quot;48&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://microsoftedge.microsoft.com/addons/detail/hydra-download-manager-in/obemipfpeenmhkdpkobdkeedhdakaoai&quot;&gt;&lt;img src=&quot;docs/img/extension-badges/edge.png&quot; alt=&quot;Get it from Microsoft Edge&quot; height=&quot;48&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/hdm-integration/&quot;&gt;&lt;img src=&quot;docs/img/extension-badges/firefox.png&quot; alt=&quot;Get the Firefox add-on&quot; height=&quot;48&quot;&gt;&lt;/a&gt;
-&lt;/p&gt;
+[Rust]: https://www.rust-lang.org/
+[Getting Started]: https://www.rust-lang.org/learn/get-started
+[Learn]: https://www.rust-lang.org/learn
+[Documentation]: https://www.rust-lang.org/learn#learn-use
+[Contributing]: CONTRIBUTING.md
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://crates.io/crates/hya-core&quot;&gt;&lt;img src=&quot;https://img.shields.io/crates/v/hya-core.svg?style=flat-square&quot; alt=&quot;crates.io&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://docs.rs/hya-core&quot;&gt;&lt;img src=&quot;https://img.shields.io/docsrs/hya-core?style=flat-square&quot; alt=&quot;docs.rs&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://codecov.io/gh/ja7ad/hydra&quot;&gt;&lt;img src=&quot;https://codecov.io/gh/ja7ad/hydra/graph/badge.svg?token=bQuMUwagma&quot; alt=&quot;Coverage&quot;/&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://github.com/ja7ad/hydra/actions/workflows/ci.yml&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/actions/workflow/status/ja7ad/hydra/ci.yml?branch=main&amp;label=CI&amp;style=flat-square&quot; alt=&quot;CI Status&quot;&gt;&lt;/a&gt;
-  &lt;a href=&quot;LICENSING.md&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/license-GPL--3.0--or--later%20%7C%20MIT%2FApache--2.0-blue?style=flat-square&quot; alt=&quot;License&quot;&gt;&lt;/a&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/rust-2021%20edition-orange?style=flat-square&quot; alt=&quot;Rust Edition&quot;&gt;
-&lt;/p&gt;
+## Why Rust?
 
----
+- **Performance:** Fast and memory-efficient, suitable for critical services, embedded devices, and easily integrated with other languages.
 
-## Contents
+- **Reliability:** Our rich type system and ownership model ensure memory and thread safety, reducing bugs at compile-time.
 
-- [Overview](#overview)
-- [Key Features](#key-features)
-  - [Engine](#engine)
-  - [CLI](#cli)
-  - [Desktop GUI](#desktop-gui)
-- [Installation](#installation)
-  - [Quick Install (Bash / PowerShell)](#quick-install-bash--powershell)
-  - [Homebrew (macOS / Linux)](#homebrew-macos--linux)
-  - [Winget (Windows)](#winget-windows)
-  - [Linux Packages (Ubuntu PPA / Fedora COPR / Arch Linux AUR)](#linux-packages-ubuntu-ppa--fedora-copr--arch-linux-aur)
-  - [AppImage (portable, self-updating)](#appimage-portable-self-updating)
-  - [From Source](#from-source)
-  - [Browser Extension](#browser-extension)
-- [Uninstall](#uninstall)
-  - [Quick Uninstall (prebuilt installs)](#quick-uninstall-prebuilt-installs)
-- [Usage](#usage)
-  - [Portable GUI Profile](#portable-gui-profile)
-- [Plugins](#plugins)
-  - [Plugin architecture](#plugin-architecture)
-  - [Sandbox and native trust](#sandbox-and-native-trust)
-  - [Plugin inputs and authoring](#plugin-inputs-and-authoring)
-- [Benchmark](#benchmark)
-  - [A fair 100 ms path](#a-fair-100-ms-path)
-  - [Four public mirrors](#four-public-mirrors)
-  - [Desktop download managers](#desktop-download-manager)
-- [Embedding HYDRA — `libhydra`](#embedding-hydra--libhydra)
-  - [Platform guides](#platform-guides)
-- [Contributing](#contributing)
-- [Code signing policy](#code-signing-policy)
-- [License](#license)
+- **Productivity:** Comprehensive documentation, a compiler committed to providing great diagnostics, and advanced tooling including package manager and build tool ([Cargo]), auto-formatter ([rustfmt]), linter ([Clippy]) and editor support ([rust-analyzer]).
 
----
+[Cargo]: https://github.com/rust-lang/cargo
+[rustfmt]: https://github.com/rust-lang/rustfmt
+[Clippy]: https://github.com/rust-lang/rust-clippy
+[rust-analyzer]: https://github.com/rust-lang/rust-analyzer
 
-## Overview
+## Quick Start
 
-**Hydra Download Manager (HDM)** is an open-source, high-performance network file retriever and download accelerator designed for speed, resilience, and adaptability. It dynamically partitions downloads across multiple connections and independent mirror sources, continuously rebalancing work to maximize throughput without stalling on slow peers. It ships as both a `wget`/`curl`-compatible CLI and a cross-platform desktop download manager with browser integration.
+Read [&quot;Installation&quot;] from [The Book].
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;docs/img/screenshot.jpg&quot; alt=&quot;Hydra Download Manager&quot; width=&quot;720&quot;&gt;
-&lt;/p&gt;
+[&quot;Installation&quot;]: https://doc.rust-lang.org/book/ch01-01-installation.html
+[The Book]: https://doc.rust-lang.org/book/index.html
 
-## Key Features
+## Installing from Source
 
-&lt;table&gt;
-&lt;tr&gt;&lt;td valign=&quot;top&quot; width=&quot;33%&quot;&gt;
+If you really want to install from source (though this is not recommended), see
+[INSTALL.md](INSTALL.md).
 
-### Engine
+## Getting Help
 
-- **Adaptive Concurrency** — splits files across connections and mirrors, rebalancing live
-- **Range Stealing** — reassigns work from slow peers to fast ones automatically
-- **Stall Detection** — statistical estimators catch degraded connections early
-- **Broad Protocol Support** — HTTP(S), FTP, CONNECT tunneling, SOCKS4/4a/5
-- **Integrity Checks** — checksum manifests plus Reed–Solomon bitrot protection
-- **Flat Memory Use** — direct positioned writes keep RAM usage constant
+See https://www.rust-lang.org/community for a list of chat platforms and forums.
 
-&lt;/td&gt;&lt;td valign=&quot;top&quot; width=&quot;33%&quot;&gt;
+## Contributing
 
-### CLI
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-- **`hydra` or `hya`** — the same CLI under a short second name, on every platform
-- **`wget` / `curl` Compatible** — drop-in flag and dialect support
-- **Interactive TUI** — manage, pause, resume, and monitor queued downloads
-- **Smart File Sorting** — content-based type detection and auto-sort
-- **Remote Checksum Lookup** — verify server-advertised digests before or after download
+For a detailed explanation of the compiler&#039;s architecture and how to begin contributing, see the [rustc-dev-guide](https://rustc-dev-guide.rust-lang.org/).
 
-&lt;/td&gt;&lt;td valign=&quot;top&quot; width=&quot;33%&quot;&gt;
+## License
 
-### Desktop GUI
+Rust is primarily distributed under the terms of both the MIT license and the
+Apache License (Version 2.0), with portions covered by various BSD-like
+licenses.
 
-- **Cross-Platform App** — Windows, macOS, and Linux with categories and progress detail
-- **Browser Integration** — Chrome, Edge, Firefox, and Safari extensions hand off downloads
-- **Queue &amp; Scheduler** — scheduled start/stop times with retry tracking
-- **Desktop Niceties** — tray icon, sounds, launch-on-startup, localized UI
-- **Portable Profile** — `hydra-gui --config ./here` keeps settings, downloads list and logs in that directory
+See [LICENSE-APACHE](LICENSE-APACHE), [LICENSE-MIT](LICENSE-MIT), and
+[COPYRIGHT](COPYRIGHT) for details.
 
-&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
+## Trademark
 
----
+[The Rust Foundation][rust-foundation] owns and protects the Rust and Cargo
+trademarks and logos (the &quot;Rust Trademarks&quot;).
 
-## Installation
+If you want to use these names or brands, please read the
+[Rust language trademark policy][trademark-policy].
 
-### Quick Install (Bash / PowerShell)
+Third-party logos may be subject to third-party copyrights and trademarks. See
+[Licenses][policies-licenses] for details.
 
-**macOS / Linux** — installs the GUI bundle (GUI + CLI + browser extensions) by default:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/ja7ad/hydra/main/install.sh | bash
-```
-
-CLI only:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/ja7ad/hydra/main/install.sh | bash -s -- --cli
-```
-
-**Windows (PowerShell)** — installs the GUI bundle by default:
-
-```powershell
-irm https://raw.githubusercontent.com/ja7ad/hydra/main/install.ps1 | iex
-```
-
-CLI only:
-
-```powershell
-&amp; ([scriptblock]::Create((irm https://raw.githubusercontent.com/ja7ad/hydra/main/install.ps1))) -Cli
-```
-
-The scripts detect your OS and architecture (amd64/arm64), fetch the matching archive from the [latest GitHub release](https://github.com/ja7ad/hydra/releases/latest), and install it — on Linux and macOS to `/usr/local` (falling back to `~/.local`; override with `--prefix DIR`), on Windows to `%LOCALAPPDATA%\Programs\Hydra`. The CLI lands under both `hydra` and the short `hya`; an existing `hya` on the same prefix is never overwritten. GUI installs also register the browser native-messaging host. Pin a release with `--version vX.Y.Z` / `-Version vX.Y.Z`, or download the archives yourself from the [releases page](https://github.com/ja7ad/hydra/releases).
-
-**Linux compatibility.** The CLI archive is a static musl build with no shared
-library of any kind, so `--cli` works on any distribution — old LTS releases,
-minimal containers, Alpine — regardless of its glibc. The desktop artifacts
-(GUI archive, `.deb`, `.rpm`) link the system&#039;s GTK, X11 and ALSA and are built
-on Ubuntu 22.04, which puts their floor at glibc 2.35: Ubuntu 22.04, Debian 12,
-RHEL 9 and newer. The AppImage is built on Ubuntu 20.04 and goes further back,
-to glibc 2.31: Ubuntu 20.04, Debian 11 and newer.
-
-A GUI install is a real desktop app, not a loose binary:
-
-- **Windows** — start-menu and desktop shortcuts (`-Desktop:$false` skips the desktop shortcut) and an **Apps &amp; features** entry, so Hydra is listed and uninstallable from Settings like any other app. A `hydra-&lt;version&gt;-windows-portable-&lt;amd64|arm64&gt;.zip` on the [releases page](https://github.com/ja7ad/hydra/releases) is the alternative for a machine you cannot install on: unpack it anywhere, run `HydraPortable.exe`, and the app keeps its configuration inside the bundle instead of `%APPDATA%\hydra`.
-- **macOS** — `Hydra Download Manager.app` is installed into `/Applications` (override with `--app-dir DIR`, e.g. `~/Applications`), with its icon and name in Launchpad, Spotlight, the Dock and the app switcher. `hydra`, `hya`, `hydra-gui` and `hydra-host` in `&lt;prefix&gt;/bin` are symlinks into the app, so the CLI stays on `PATH` and one update refreshes both.
-- **Linux** — the logo lands in the hicolor icon theme and a `hydra.desktop` entry in your applications directory (plus the prefix&#039;s, for a system-wide install), so the app shows up in the launcher, the dock and the switcher with its own icon.
-
-Either way the GUI can update itself in place afterwards (**Options → General → Check for updates**), including an install that lives in a root-owned directory — it asks for authorisation before replacing those files.
-
-**Beta channel** — `--beta` (`-Beta` on Windows) installs the newest `-rc` pre-release when it is ahead of the latest stable release; otherwise it installs the stable release:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/ja7ad/hydra/main/install.sh | bash -s -- --beta
-```
-
-```powershell
-&amp; ([scriptblock]::Create((irm https://raw.githubusercontent.com/ja7ad/hydra/main/install.ps1))) -Beta
-```
-
-The GUI&#039;s in-app updater follows the same rule: enable **Options → General → Download Beta channel** and update checks will also offer release candidates while one is ahead of stable.
-
-**macOS notes**: since the app isn&#039;t notarized yet, Gatekeeper may block it — see the [macOS Permissions Guide](https://github.com/ja7ad/hydra/wiki/macOS-Permissions-Guide-for-Hydra) for granting the required permissions. If you installed via the `.dmg` and macOS refuses to open the app (&quot;damaged&quot; or &quot;unidentified developer&quot;), clear the quarantine attribute:
-
-```bash
-xattr -cr /Applications/Hydra\ Download\ Manager.app
-```
-
-### Homebrew (macOS / Linux)
-
-**CLI**:
-
-```bash
-brew install ja7ad/tap/hydra
-```
-
-**macOS Desktop App (GUI)**:
-
-```bash
-brew install --cask ja7ad/tap/hydra
-```
-
-### Winget (Windows)
-
-Hydra Download Manager is in the Windows Package Manager repository as `ja7ad.Hydra`:
-
-```powershell
-winget install ja7ad.Hydra
-```
-
-Update it later with `winget upgrade ja7ad.Hydra`, or remove it with `winget uninstall ja7ad.Hydra`.
-
-### Linux Packages (Ubuntu PPA / Fedora COPR / Arch Linux AUR)
-
-**Ubuntu / Debian-based (Launchpad PPA)**:
-
-```bash
-sudo add-apt-repository ppa:sonycore/hydra
-sudo apt update
-sudo apt install hydra-download-manager
-```
-
-&gt; The package is `hydra-download-manager`, not `hydra` — `hydra` in the
-&gt; Ubuntu archive is THC-Hydra, the login cracker, and it is what
-&gt; `apt install hydra` gives you.
-
-&gt; PPA Repository: [launchpad.net/~sonycore/+archive/ubuntu/hydra](https://launchpad.net/~sonycore/+archive/ubuntu/hydra)
-
-**Fedora / RHEL-based (Fedora COPR)**:
-
-```bash
-sudo dnf copr enable sonycore/hydra
-sudo dnf install hydra-download-manager
-```
-
-&gt; COPR Repository: [copr.fedorainfracloud.org/coprs/sonycore/hydra](https://copr.fedorainfracloud.org/coprs/sonycore/hydra/)
-
-**Arch Linux (AUR)**:
-
-Build from source:
-
-```bash
-paru -S hydra-download-manager
-# or: yay -S hydra-download-manager
-```
-
-Precompiled binary:
-
-```bash
-paru -S hydra-download-manager-bin
-# or: yay -S hydra-download-manager-bin
-```
-
-&gt; AUR Packages: [hydra-download-manager](https://aur.archlinux.org/packages/hydra-download-manager) | [hydra-download-manager-bin](https://aur.archlinux.org/packages/hydra-download-manager-bin)
-
-### Flatpak (Flathub)
-
-Install from Flathub:
-
-```bash
-flatpak install flathub io.github.ja7ad.hydra
-```
-
-Run Hydra:
-
-```bash
-flatpak run io.github.ja7ad.hydra
-```
-
-### AppImage (portable, self-updating)
-
-One file, no installation, no root. Download it from the
-[latest release](https://github.com/ja7ad/hydra/releases/latest), make it
-executable, and run it:
-
-```bash
-chmod +x Hydra-*-x86_64.AppImage
-./Hydra-*-x86_64.AppImage
-```
-
-`aarch64` images are published alongside the `x86_64` ones. Every release is
-built on Ubuntu 20.04 and verified to run on 20.04 through the current
-release, so one image covers the whole line and the distributions downstream
-of it.
-
-The image carries the GUI, the `hydra` CLI, the `hydra-host` native-messaging
-bridge and the update finisher. On its first start it writes a menu entry, a
-copy of the browser extensions and the native-messaging manifests into
-`~/.local/share/hydra` — all of them pointing at the image file, so moving or
-renaming it is repaired on the next launch. Nothing is written outside your
-home directory and nothing needs root.
-
-| Command | What it does |
-| --- | --- |
-| `./Hydra-*.AppImage` | run the GUI |
-| `./Hydra-*.AppImage --hydra-exec hydra …` | run the CLI inside the image |
-| `./Hydra-*.AppImage --hydra-install` | write the menu entry and browser manifests now |
-| `./Hydra-*.AppImage --hydra-uninstall` | remove them again (downloads and settings are kept) |
-| `./Hydra-*.AppImage --hydra-extensions` | print the directory to load the unpacked extensions from |
-
-Set `HYDRA_APPIMAGE_NO_INTEGRATION=1` for a run that writes nothing outside
-your download directory. For a fully self-contained copy — settings included —
-create a directory named after the image with a `.home` suffix next to it
-(`Hydra-0.3.14-x86_64.AppImage.home`); the AppImage runtime then uses it as
-`$HOME`, which is what makes the image portable across machines on a USB stick.
-
-**Updates.** This is the one Linux build Hydra can update itself: the deb and
-the rpm install into `/usr`, which only their package manager may rewrite, so
-the in-app updater offers you the new package instead of touching those files.
-An AppImage is a single file you own wherever you put it, so **Update Now**
-replaces that file and relaunches — including when it sits somewhere only root
-can write, where it asks for your password first. The image also advertises
-zsync update information, so `AppImageUpdate` and `appimaged` can update it
-too.
-
-Because it does not bundle GTK, the graphics stack or ALSA — those come from
-your desktop, where they are already correct — a portal-capable desktop is
-still what the file dialogs need. Nothing else is required.
-
-### From Source
-
-Ensure you have Rust (1.80+) installed:
-
-```bash
-git clone https://github.com/ja7ad/hydra.git
-cd hydra
-cargo build --release
-```
-
-The compiled binary will be located at `target/release/hydra`. To build the GUI and native-messaging host as well, run `make build`.
-
-### Browser Extension
-
-Hydra integrates directly with web browsers to automatically capture downloads, provide right-click context menu options, and intercept media streams. The extension popup can also hand each captured download the proxy the browser itself is using, for that download only.
-
-#### Official Store Listings (Recommended)
-
-Install the extension directly from the official store for your browser:
-
-- **Chrome Web Store** (for Google Chrome, Microsoft Edge, Brave, Vivaldi, Opera, Arc, and Chromium-based browsers):  
-  [**Chrome Web Store: Hydra Download Manager Integration**](https://chromewebstore.google.com/detail/hydra-download-manager-in/oieelfilllghmbnhofajpgpmmilfihmo)
-- **Firefox Add-ons (AMO)** (for Mozilla Firefox):  
-  [**Firefox Add-ons: HDM Integration**](https://addons.mozilla.org/en-US/firefox/addon/hdm-integration/)
-- **Safari**: Ships inside the macOS desktop application bundle (enable under *Safari → Settings → Extensions*).
-
-&gt; **Tip:** In the desktop GUI, you can also view status and open extension store listings directly from **Options → Extensions** or the **Extensions** toolbar button.
-
-#### Development &amp; Manual Installation
-
-Extension source code and resources are maintained under the [`extensions/`](extensions/) directory:
-- [`extensions/chrome/`](extensions/chrome/) — Chromium MV3 extension source code (shared core).
-- [`extensions/firefox/`](extensions/firefox/) — Firefox MV3 event-page add-on source.
-- [`extensions/safari/`](extensions/safari/) — Safari Web Extension resources.
-
-Every installer also ships pre-built extension packages with the app in both packed (`.zip` / `.xpi`) and unpacked shapes:
-
-| Install | Extensions directory |
-| --- | --- |
-| Windows (setup.exe) | `%LOCALAPPDATA%\Programs\Hydra\extensions` |
-| Windows (portable .zip) | `HydraPortable\App\Hydra\extensions` |
-| macOS (.app / DMG) | `Hydra Download Manager.app/Contents/Resources/extensions` |
-| macOS (.pkg) | `/Library/Application Support/Hydra/extensions` |
-| Linux (.deb / .rpm) | `/usr/share/hydra-download-manager/extensions` |
-| Linux (AppImage) | `~/.local/share/hydra/extensions` |
-| Archive / `install.sh` | `&lt;prefix&gt;/share/hydra/extensions` |
-
-##### Sideloading Unpacked / Development Builds
-
-- **Chrome, Edge, Opera, Brave, Vivaldi, Arc, Chromium** — open `chrome://extensions`
-  (`edge://extensions`, `opera://extensions`, …), turn on **Developer mode**, choose
-  **Load unpacked**, and pick the [`extensions/chrome/`](extensions/chrome/) (or bundled `chrome/`) directory. The manifest `key` pins the id to
-  `jpnonmbbkjdpeebdhkjoliklfhkdcomj` across all Chromium browsers, matching the native-messaging
-  host allow-list. The packed `.zip` is the Web Store upload format, and the signed `.crx` is for enterprise policy
-  deployment (`ExtensionSettings` / `ExtensionInstallForcelist` against an update manifest you
-  host).
-- **Firefox** — open `about:debugging#/runtime/this-firefox` → **Load Temporary Add-on…** and pick
-  [`extensions/firefox/manifest.json`](extensions/firefox/manifest.json) or the packed `.xpi`. Developer Edition, Nightly, and ESR can install it
-  permanently after setting `xpinstall.signatures.required` to `false` in `about:config`.
-
-##### Building Extensions from Source
-
-To build and assemble extensions from a repository checkout:
-
-```bash
-make extensions                                   # -&gt; target/extensions
-make extensions ARGS=&quot;--crx-key path/to/key.pem&quot;  # also sign a .crx
-```
-
-A `.crx` is packed whenever a signing key is available (`--crx-key`, `$HYDRA_CRX_KEY`, or
-`target/hydra-chrome-crx.pem`); `--crx` generates one if there is none. Sign with the key behind
-the pinned manifest `key` — any other key changes the extension id, and the script says so.
-`ARGS=--sign` additionally fetches an addons.mozilla.org-signed `.xpi` (needs `web-ext` and AMO
-API keys).
-
----
-
-## Uninstall
-
-### Quick Uninstall (prebuilt installs)
-
-**macOS / Linux**:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/ja7ad/hydra/main/uninstall.sh | bash
-```
-
-To also delete config, state, and logs:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/ja7ad/hydra/main/uninstall.sh | bash -s -- --purge
-```
-
-**Windows (PowerShell)**:
-
-```powershell
-irm https://raw.githubusercontent.com/ja7ad/hydra/main/uninstall.ps1 | iex
-```
-
-To also delete config and state:
-
-```powershell
-&amp; ([scriptblock]::Create((irm https://raw.githubusercontent.com/ja7ad/hydra/main/uninstall.ps1))) -Purge
-```
-
-**Winget**:
-
-```powershell
-winget uninstall ja7ad.Hydra
-```
-
-**Homebrew**:
-
-```bash
-# Uninstall CLI
-brew uninstall hydra
-
-# Uninstall macOS Desktop App (and zap settings)
-brew uninstall --cask --zap hydra
-```
-
-The scripts remove binaries, extensions, manifests, desktop shortcuts, and startup entries. On macOS, they also remove the bundled app and package receipts. Config and state are kept by default (`~/.config/hydra` on Linux/macOS, `%APPDATA%\hydra` on Windows); use `--purge` / `-Purge` to delete them.
-
----
-
-## Usage
-
-Download a file, with the connection count chosen automatically:
-
-```bash
-hydra https://example.com/archive.tar.gz
-```
-
-`hya` is the same CLI under a shorter name and works everywhere `hydra` does.
-Every install channel puts both on your `PATH`; use `hya` on a machine that
-already has [THC-Hydra](https://github.com/vanhauser-thc/thc-hydra), the login
-auditor, which is also called `hydra`.
-
-Everything else is in the wiki:
-
-| Guide | Covers |
-| --- | --- |
-| [**Hydra CLI Guide**](https://github.com/ja7ad/hydra/wiki/Hydra-CLI-Guide) | Options, multiple URLs, mirrors, Metalink, `wget`/`curl` mode, the interactive queue manager, cookies and logged-in downloads, checksums and bitrot repair |
-| [YouTube Downloader plugin](https://github.com/ja7ad/hydra/wiki/Youtube-downloader-plugin) | Single videos, playlists and audio-only downloads |
-| 
-
-... [README content truncated due to size. Visit the repository for the complete README] ...</pre>
-          ]]></content:encoded>
-            <category>Rust</category>
-        </item>
-        <item>
-            <title><![CDATA[rustdesk/rustdesk]]></title>
-            <link>https://github.com/rustdesk/rustdesk</link>
-            <guid>https://github.com/rustdesk/rustdesk</guid>
-            <pubDate>Thu, 12 Nov 2026 00:04:22 GMT</pubDate>
-            <description><![CDATA[An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.]]></description>
-            <content:encoded><![CDATA[
-            <h1><a href="https://github.com/rustdesk/rustdesk">rustdesk/rustdesk</a></h1>
-            <p>An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.</p>
-            <p>Language: Rust</p>
-            <p>Stars: 129,058</p>
-            <p>Forks: 20,579</p>
-            <p>Stars today: 157 stars today</p>
-            <h2>README</h2><pre>&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;res/logo-header.svg&quot; alt=&quot;RustDesk - Your remote desktop&quot;&gt;&lt;br&gt;
-  &lt;a href=&quot;#raw-steps-to-build&quot;&gt;Build&lt;/a&gt; •
-  &lt;a href=&quot;#how-to-build-with-docker&quot;&gt;Docker&lt;/a&gt; •
-  &lt;a href=&quot;#file-structure&quot;&gt;Structure&lt;/a&gt; •
-  &lt;a href=&quot;#screenshots&quot;&gt;Screenshots&lt;/a&gt;&lt;br&gt;
-  [&lt;a href=&quot;docs/README-UA.md&quot;&gt;Українська&lt;/a&gt;] | [&lt;a href=&quot;docs/README-CS.md&quot;&gt;česky&lt;/a&gt;] | [&lt;a href=&quot;docs/README-ZH.md&quot;&gt;中文&lt;/a&gt;] | [&lt;a href=&quot;docs/README-HU.md&quot;&gt;Magyar&lt;/a&gt;] | [&lt;a href=&quot;docs/README-ES.md&quot;&gt;Español&lt;/a&gt;] | [&lt;a href=&quot;docs/README-FA.md&quot;&gt;فارسی&lt;/a&gt;] | [&lt;a href=&quot;docs/README-FR.md&quot;&gt;Français&lt;/a&gt;] | [&lt;a href=&quot;docs/README-DE.md&quot;&gt;Deutsch&lt;/a&gt;] | [&lt;a href=&quot;docs/README-PL.md&quot;&gt;Polski&lt;/a&gt;] | [&lt;a href=&quot;docs/README-ID.md&quot;&gt;Indonesian&lt;/a&gt;] | [&lt;a href=&quot;docs/README-FI.md&quot;&gt;Suomi&lt;/a&gt;] | [&lt;a href=&quot;docs/README-ML.md&quot;&gt;മലയാളം&lt;/a&gt;] | [&lt;a href=&quot;docs/README-JP.md&quot;&gt;日本語&lt;/a&gt;] | [&lt;a href=&quot;docs/README-NL.md&quot;&gt;Nederlands&lt;/a&gt;] | [&lt;a href=&quot;docs/README-IT.md&quot;&gt;Italiano&lt;/a&gt;] | [&lt;a href=&quot;docs/README-RU.md&quot;&gt;Русский&lt;/a&gt;] | [&lt;a href=&quot;docs/README-PTPT.md&quot;&gt;Português (Portugal)&lt;/a&gt;] | [&lt;a href=&quot;docs/README-PTBR.md&quot;&gt;Português (Brasil)&lt;/a&gt;] | [&lt;a href=&quot;docs/README-EO.md&quot;&gt;Esperanto&lt;/a&gt;] | [&lt;a href=&quot;docs/README-KR.md&quot;&gt;한국어&lt;/a&gt;] | [&lt;a href=&quot;docs/README-AR.md&quot;&gt;العربي&lt;/a&gt;] | [&lt;a href=&quot;docs/README-VN.md&quot;&gt;Tiếng Việt&lt;/a&gt;] | [&lt;a href=&quot;docs/README-DA.md&quot;&gt;Dansk&lt;/a&gt;] | [&lt;a href=&quot;docs/README-GR.md&quot;&gt;Ελληνικά&lt;/a&gt;] | [&lt;a href=&quot;docs/README-TR.md&quot;&gt;Türkçe&lt;/a&gt;] | [&lt;a href=&quot;docs/README-NO.md&quot;&gt;Norsk&lt;/a&gt;] | [&lt;a href=&quot;docs/README-RO.md&quot;&gt;Română&lt;/a&gt;]&lt;br&gt;
-  &lt;b&gt;We need your help to translate this README, &lt;a href=&quot;https://github.com/rustdesk/rustdesk/tree/master/src/lang&quot;&gt;RustDesk UI&lt;/a&gt; and &lt;a href=&quot;https://github.com/rustdesk/doc.rustdesk.com&quot;&gt;RustDesk Doc&lt;/a&gt; to your native language&lt;/b&gt;
-&lt;/p&gt;
-
-&gt; [!Caution]
-&gt; **Misuse Disclaimer:** &lt;br&gt;
-&gt; The developers of RustDesk do not condone or support any unethical or illegal use of this software. Misuse, such as unauthorized access, control or invasion of privacy, is strictly against our guidelines. The authors are not responsible for any misuse of the application.
-
-
-Chat with us: [Discord](https://discord.gg/nDceKgxnkV) | [Twitter](https://twitter.com/rustdesk) | [Reddit](https://www.reddit.com/r/rustdesk) | [YouTube](https://www.youtube.com/@rustdesk)
-
-[![RustDesk Server Pro](https://img.shields.io/badge/RustDesk%20Server%20Pro-Advanced%20Features-blue)](https://rustdesk.com/pricing.html)
-
-Yet another remote desktop solution, written in Rust. Works out of the box with no configuration required. You have full control of your data, with no concerns about security. You can use our rendezvous/relay server, [set up your own](https://rustdesk.com/server), or [write your own rendezvous/relay server](https://github.com/rustdesk/rustdesk-server-demo).
-
-![image](https://user-images.githubusercontent.com/71636191/171661982-430285f0-2e12-4b1d-9957-4a58e375304d.png)
-
-RustDesk welcomes contribution from everyone. See [CONTRIBUTING.md](docs/CONTRIBUTING.md) for help getting started.
-
-[**FAQ**](https://github.com/rustdesk/rustdesk/wiki/FAQ)
-
-[**BINARY DOWNLOAD**](https://github.com/rustdesk/rustdesk/releases)
-
-[**NIGHTLY BUILD**](https://github.com/rustdesk/rustdesk/releases/tag/nightly)
-
-[&lt;img src=&quot;https://f-droid.org/badge/get-it-on.png&quot;
-    alt=&quot;Get it on F-Droid&quot;
-    height=&quot;80&quot;&gt;](https://f-droid.org/en/packages/com.carriez.flutter_hbb)
-[&lt;img src=&quot;https://flathub.org/api/badge?svg&amp;locale=en&quot;
-    alt=&quot;Get it on Flathub&quot;
-    height=&quot;80&quot;&gt;](https://flathub.org/apps/com.rustdesk.RustDesk)
-
-## Dependencies
-
-Desktop versions use Flutter or Sciter (deprecated) for GUI. This tutorial is for Sciter only, since it is easier and more friendly to start. Check out our [CI](https://github.com/rustdesk/rustdesk/blob/master/.github/workflows/flutter-build.yml) for building the Flutter version.
-
-Please download Sciter dynamic library yourself.
-
-[Windows](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll) |
-[Linux](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so) |
-[macOS](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.osx/libsciter.dylib)
-
-## Raw Steps to build
-
-- Prepare your Rust development env and C++ build env
-
-- Install [vcpkg](https://github.com/microsoft/vcpkg), and set `VCPKG_ROOT` env variable correctly
-
-  - Windows: vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-static
-  - Linux/macOS: vcpkg install libvpx libyuv opus aom
-
-- run `cargo run`
-
-## [Build](https://rustdesk.com/docs/en/dev/build/)
-
-## How to Build on Linux
-
-### Ubuntu 18 (Debian 10)
-
-```sh
-sudo apt install -y zip g++ gcc git curl wget nasm yasm libgtk-3-dev clang libxcb-randr0-dev libxdo-dev \
-        libxfixes-dev libxcb-shape0-dev libxcb-xfixes0-dev libasound2-dev libpulse-dev cmake make \
-        libclang-dev ninja-build libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
-```
-
-### openSUSE Tumbleweed
-
-```sh
-sudo zypper install gcc-c++ git curl wget nasm yasm gcc gtk3-devel clang libxcb-devel libXfixes-devel cmake alsa-lib-devel gstreamer-devel gstreamer-plugins-base-devel xdotool-devel
-```
-
-### Fedora 28 (CentOS 8)
-
-```sh
-sudo yum -y install gcc-c++ git curl wget nasm yasm gcc gtk3-devel clang libxcb-devel libxdo-devel libXfixes-devel pulseaudio-libs-devel cmake alsa-lib-devel gstreamer1-devel gstreamer1-plugins-base-devel
-```
-
-### Arch (Manjaro)
-
-```sh
-sudo pacman -Syu --needed unzip git cmake gcc curl wget yasm nasm zip make pkg-config clang gtk3 xdotool libxcb libxfixes alsa-lib pipewire
-```
-
-### Install vcpkg
-
-```sh
-git clone https://github.com/microsoft/vcpkg
-cd vcpkg
-git checkout 2023.04.15
-cd ..
-vcpkg/bootstrap-vcpkg.sh
-export VCPKG_ROOT=$HOME/vcpkg
-vcpkg/vcpkg install libvpx libyuv opus aom
-```
-
-### Fix libvpx (For Fedora)
-
-```sh
-cd vcpkg/buildtrees/libvpx/src
-cd *
-./configure
-sed -i &#039;s/CFLAGS+=-I/CFLAGS+=-fPIC -I/g&#039; Makefile
-sed -i &#039;s/CXXFLAGS+=-I/CXXFLAGS+=-fPIC -I/g&#039; Makefile
-make
-cp libvpx.a $HOME/vcpkg/installed/x64-linux/lib/
-cd
-```
-
-### Build
-
-```sh
-curl --proto &#039;=https&#039; --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source $HOME/.cargo/env
-git clone --recurse-submodules https://github.com/rustdesk/rustdesk
-cd rustdesk
-mkdir -p target/debug
-wget https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so
-mv libsciter-gtk.so target/debug
-VCPKG_ROOT=$HOME/vcpkg cargo run
-```
-
-## How to build with Docker
-
-Begin by cloning the repository and building the Docker container:
-
-```sh
-git clone https://github.com/rustdesk/rustdesk
-cd rustdesk
-git submodule update --init --recursive
-docker build -t &quot;rustdesk-builder&quot; .
-```
-
-Then, each time you need to build the application, run the following command:
-
-```sh
-docker run --rm -it -v $PWD:/home/user/rustdesk -v rustdesk-git-cache:/home/user/.cargo/git -v rustdesk-registry-cache:/home/user/.cargo/registry -e PUID=&quot;$(id -u)&quot; -e PGID=&quot;$(id -g)&quot; rustdesk-builder
-```
-
-Note that the first build may take longer before dependencies are cached, subsequent builds will be faster. Additionally, if you need to specify different arguments to the build command, you may do so at the end of the command in the `&lt;OPTIONAL-ARGS&gt;` position. For instance, if you wanted to build an optimized release version, you would run the command above followed by `--release`. The resulting executable will be available in the target folder on your system, and can be run with:
-
-```sh
-target/debug/rustdesk
-```
-
-Or, if you&#039;re running a release executable:
-
-```sh
-target/release/rustdesk
-```
-
-Please ensure that you run these commands from the root of the RustDesk repository, or the application may not find the required resources. Also note that other cargo subcommands such as `install` or `run` are not currently supported via this method as they would install or run the program inside the container instead of the host.
-
-## File Structure
-
-- **[libs/hbb_common](https://github.com/rustdesk/rustdesk/tree/master/libs/hbb_common)**: video codec, config, tcp/udp wrapper, and some other utility functions shared with the server
-- **[libs/base](https://github.com/rustdesk/rustdesk/tree/master/libs/base)**: protobuf, fs functions for file transfer, keyboard and platform code used only by this app
-- **[libs/scrap](https://github.com/rustdesk/rustdesk/tree/master/libs/scrap)**: screen capture
-- **[libs/enigo](https://github.com/rustdesk/rustdesk/tree/master/libs/enigo)**: platform specific keyboard/mouse control
-- **[libs/clipboard](https://github.com/rustdesk/rustdesk/tree/master/libs/clipboard)**: file copy and paste implementation for Windows, Linux, macOS.
-- **[src/ui](https://github.com/rustdesk/rustdesk/tree/master/src/ui)**: obsolete Sciter UI (deprecated)
-- **[src/server](https://github.com/rustdesk/rustdesk/tree/master/src/server)**: audio/clipboard/input/video services, and network connections
-- **[src/client.rs](https://github.com/rustdesk/rustdesk/tree/master/src/client.rs)**: start a peer connection
-- **[src/rendezvous_mediator.rs](https://github.com/rustdesk/rustdesk/tree/master/src/rendezvous_mediator.rs)**: Communicate with [rustdesk-server](https://github.com/rustdesk/rustdesk-server), wait for remote direct (TCP hole punching) or relayed connection
-- **[src/platform](https://github.com/rustdesk/rustdesk/tree/master/src/platform)**: platform specific code
-- **[flutter](https://github.com/rustdesk/rustdesk/tree/master/flutter)**: Flutter code for desktop and mobile
-
-## Screenshots
-
-![Connection Manager](https://github.com/rustdesk/rustdesk/assets/28412477/db82d4e7-c4bc-4823-8e6f-6af7eadf7651)
-
-![Connected to a Windows PC](https://github.com/rustdesk/rustdesk/assets/28412477/9baa91e9-3362-4d06-aa1a-7518edcbd7ea)
-
-![File Transfer](https://github.com/rustdesk/rustdesk/assets/28412477/39511ad3-aa9a-4f8c-8947-1cce286a46ad)
-
-![TCP Tunneling](https://github.com/rustdesk/rustdesk/assets/28412477/78e8708f-e87e-4570-8373-1360033ea6c5)
-
+[rust-foundation]: https://rustfoundation.org/
+[trademark-policy]: https://rustfoundation.org/policy/rust-trademark-policy/
+[policies-licenses]: https://www.rust-lang.org/policies/licenses
 </pre>
           ]]></content:encoded>
             <category>Rust</category>
